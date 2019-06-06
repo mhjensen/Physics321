@@ -1,0 +1,28 @@
+TITLE: Variational Calculus
+AUTHOR: "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/" {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA & Department of Physics, University of Oslo, Norway
+AUTHOR: "Scott Pratt":"https://pa.msu.edu/profile/pratts/"  at Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA
+AUTHOR: "Carl Schmidt":"https://pa.msu.edu/profile/schmidt/" at Department of Physics and Astronomy, Michigan State University, USA
+DATE: today
+
+
+
+===== Introduction =====
+
+The calculus of variations involves 
+problems where the quantity to be minimized or maximized is an integral. 
+
+In the general case we have an integral of the type
+!bt
+\[ 
+E[\Phi]= \int_a^b f(\Phi(x),\frac{\partial \Phi}{\partial x},x)dx,
+\]
+!et
+where $E$ is the quantity which is sought minimized or maximized.
+The problem is that although $f$ is a function of the variables $\Phi$, $\partial \Phi/\partial x$ and $x$, the exact dependence of
+$\Phi$ on $x$ is not known.  This means again that even though the integral has fixed limits $a$ and $b$, the path of integration is
+not known. In our case the unknown quantities are the single-particle wave functions and we wish to choose an integration path which makes
+the functional $E[\Phi]$ stationary. This means that we want to find minima, or maxima or saddle points. In physics we search normally for minima.
+Our task is therefore to find the minimum of $E[\Phi]$ so that its variation $\delta E$ is zero  subject to specific
+constraints. In our case the constraints appear as the integral which expresses the orthogonality of the  single-particle wave functions.
+The constraints can be treated via the technique of Lagrangian multipliers
+
