@@ -13,7 +13,7 @@ course many of us meet and it lays the foundation for further physics
 studies. Many of the equations and ways of reasoning about the
 underlying laws of motion and pertinent forces, shape our approaches and understanding
 of the scientific method and discourse, as well as the way we develop our insights
-and deeper understanding of physical systems.  
+and deeper understanding about physical systems.  
 
 There is a wealth of
 well-tested (from both a physics point of view and a pedagogical
@@ -21,15 +21,15 @@ standpoint) exercises and problems which can be solved
 analytically. However, many of these problems represent idealized and
 less realistic situations.  The large majority of these problems are
 solved by paper and pencil and are traditionally aimed
-at what we normally refer to as continuous models.  As a consequence,
-it implies that we can seldomly venture beyond an idealized case
+at what we normally refer to as continuous models from which we may find an analytical solution.  As a consequence,
+when teaching mechanics, it implies that we can seldomly venture beyond an idealized case
 in order to develop our understandings and insights about the
 underlying forces and laws of motion.
 
-On the other, numerical algorithms call for approximate discrete
+On the other hand, numerical algorithms call for approximate discrete
 models and much of the development of methods for continuous models
 are nowadays being replaced by methods for discrete models in science and
-industry, simply because _much larger classes of problems can be addressed_ with discrete models, often also by simpler and more
+industry, simply because _much larger classes of problems can be addressed_ with discrete models, often  by simpler and more
 generic methodologies.
 
 As we will see below, when properly scaling the equations at hand,
@@ -39,7 +39,7 @@ deepen our basic understanding of various physical systems
 
 Analytical solutions are as important as before. In addition, such
 solutions provide us with invaluable benchmarks and tests for our
-discrete models. Such benchmarks, as we will see below, allow us also
+discrete models. Such benchmarks, as we will see below, allow us 
 to discuss possible sources of errors and their behaviors.  And
 finally, since most of our models are based on various algorithms from
 numerical mathematics, we have a unique oppotunity to gain a deeper
@@ -48,11 +48,11 @@ understanding of the mathematical approaches we are using.
 
 
 With computing and data science as important elements in essentially
-all aspects of a modern society, we can then define Computing as
-solving scientific problems using all possible tools, including
+all aspects of a modern society, we could  then try to define Computing as
+_solving scientific problems using all possible tools, including
 symbolic computing, computers and numerical algorithms, and analytical
-paper and pencil solutions. 
-Computing is about developing an understanding of the scientific method by enhancing algorithmic thinking when solving problems.
+paper and pencil solutions_. 
+Computing provides us with the tools to develope our own understanding of the scientific method by enhancing algorithmic thinking.
 
 The way we will teach this course reflects
 this definition of computing. The course contains both classical paper
@@ -65,7 +65,7 @@ equations of motion and how they impact a given system. Furthermore, by introduc
 via computational projects and exercises, we aim at developing your competences and skills about these topics.
 
 
-These competence will enable you to
+These competences will enable you to
 
 * understand how algorithms are used to solve mathematical problems,
 * derive, verify, and implement algorithms,
@@ -91,16 +91,19 @@ particular problem.
 
 ===== A well-known examples to illustrate many of the above concepts =====
 
-Integration by the Trapezoidal Rule is given by following algorithm for an interval $x \in [a,b]$
+Before we venture into a reminder on Python and mechanics relevant applications, let us briefly outline some of the
+abovementioned topics using an example many of you may have seen before in for example CMSE201. 
+A simple algorithm for integration is the Trapezoidal rule. 
+Integration of a function $f(x)$ by the Trapezoidal Rule is given by following algorithm for an interval $x \in [a,b]$
 !bt
 \[
-  \int_a^b(f(x) dx = \frac{1}{2}\left [f(a)+2f(a+h)+\dots+2f(b-h)+f(b)\right] +O(h^3).
+  \int_a^b(f(x) dx = \frac{1}{2}\left [f(a)+2f(a+h)+\dots+2f(b-h)+f(b)\right] +O(h^2),
 \]
 !et
-
+where $h$ is the so-called stepsize defined by the number of integration points $N$ as $h=(b-a)/(n)$.
 Python offers an  extremely versatile programming  environment, allowing for
 the inclusion of analytical studies in a numerical program. Here we show an
-example code with the _trapezoidal rule_ using _SymPy_ to evaluate an integral and compute the absolute error
+example code with the _trapezoidal rule_. We use also _SymPy_ to evaluate the exact value of the integral and compute the absolute error
 with respect to the numerically evaluated one of the integral
 $\int_0^1 dx x^2 = 1/3$.
 The following code for  the trapezoidal rule allows you  to plot the relative error by comparing with the exact result. By increasing to $10^8$ points one arrives at a region where numerical errors start to accumulate.
@@ -169,3 +172,8 @@ The conventions and techniques outlined here will save you a lot of time when yo
  o It takes one quick command to let all your code undergo heavy testing 
  o Tedious manual work with running programs is automated,
  o Your scientific investigations are reproducible, scientific reports with top quality typesetting are produced both for paper and electronic devices.
+
+
+
+===== Content of the course =====
+To be added
