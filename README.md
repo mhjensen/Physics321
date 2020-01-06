@@ -11,33 +11,32 @@ Here you will find a basis overview of the course, with learning outcomes, teach
 
 |  Instructor  |  |   |   |
 |--------------|------|-----|----| 
-| _Morten Hjorth-Jensen_ https://github.com/mhjensen | hjensen@msu.edu | Office: NSCL/FRIB 2130 | 517-908-7290 |
+| _Morten Hjorth-Jensen_ https://github.com/mhjensen | hjensen@msu.edu | Office: NSCL/FRIB 2131 | 5179087290/5172491375 |
 
 
 
 | Office Hours|   |  
 |----------|----------|
-| Monday/Wednesday 4-5:00 PM, Room 2130 NSCL/FRIB | or immediately after class |
+| Monday/Wednesday 4-5:00 PM, Room 2131 NSCL/FRIB | or immediately after class |
 
 | Homework Grader |  |   |   |
 |--------------|------|-----|----| 
-|  |  | |  |
+| Kasun Senanayaka | senanaya@msu.edu | |  |
 
 | Learning Assistant |  |   |   |
 |--------------|------|-----|----| 
-| Dylan Smith |  | |  |
+| Dylan R. Smith | smithdy6@msu.edu | | 3135060012‬ |
 
 
 ### Grading and Calendar
 
 |  |  |
 |------|-----|
-|Homework | 10% |
-| Weekly Friday Quizzes(lowest quiz dropped) | 15% |
-| First Midterm (Monday, Feb. 18) | 20% |
-| Second  Midterm (Monday. Mar. 25) | 20% |
-| Final Exam |  35%  |
-| Extra Credit Assignment (Due Friday April 26)| 10% |
+|Homework | 20% |
+| First Midterm Project (Monday, Feb. 18) | 25% |
+| Second  Midterm Project (Monday. Mar. 25) | 25% |
+| Final Exam |  30%  |
+| Extra Credit Assignment (Due Friday April 24)| 10% |
 
 | Grading scale | | | | | | | 
 |-----|-----|-------|------|--------|--------|--------|
@@ -46,9 +45,76 @@ Here you will find a basis overview of the course, with learning outcomes, teach
 ## Possible textbooks and lecture notes
 
 _Recommended textbook_:
--John R. Taylor, Classical Mechanics (Univ. Sci. Books 2005), https://www.uscibooks.com/taylor2.htm, see also https://github.com/mhjensen/Physics321/tree/master/doc/Literature
+- John R. Taylor, Classical Mechanics (Univ. Sci. Books 2005), https://www.uscibooks.com/taylor2.htm, see also https://github.com/mhjensen/Physics321/tree/master/doc/Literature
 _Additional textbooks_:
 - Anders Malthe-Sørenssen, Elementary Mechanics using Python (Springer 2015), https://www.springer.com/gp/book/9783319195957 and https://github.com/mhjensen/Physics321/tree/master/doc/Literature
 - Alessandro Bettini, A Course in Classical Physics 1 -- Mechanics (Springer 2017), https://github.com/mhjensen/Physics321/tree/master/doc/Literature and https://www.springer.com/gp/book/9783319292564
 _Lecture notes_:
 Posted lecture notes are in the doc/pub folder here or at https://mhjensen.github.io/Physics321/doc/web/course.html for easier viewing. They are not meant to be a replacement for textbook. These notes are updated on a weekly basis and a _git pull_ should thus always give you the latest update. 
+
+##  Teaching schedule with links to material (This will be updated asap)
+###  Week 2, January 6-10, 2020
+- Monday: Introduction to the course and start discussion of vectors, space, time and motion, Taylor chapter 1.2 and lecture notes
+- Wednesday: More on time,space, vectors and motion, Taylor chapters 1.2 and 1.3 and lecture notes
+- Friday: Forces and Newton's laws of motion. Taylor chapter 1.4 and lecture notes. Introduction to Git and GitHub and getting started with numerical exercises. Installing software (anaconda) and first homework, due
+### Week 3, January 13-17, 2020
+- Monday:
+- Wednesday: 
+- Friday:  2nd homework, due 
+### Week 4, January 20-24, 2020
+- Monday: MLK day, no lectures
+- Wednesday: 
+- Friday:  3rd homework, due 
+### Week 5, January 27-31, 2020
+- Monday:
+- Wednesday: 
+- Friday:  4th homework, due 
+### Week 6, February 3-7, 2020
+- Monday:
+- Wednesday: 
+- Friday:  5th homework, due 
+### Week 7, February 10-14, 2020
+- Monday:
+- Wednesday: 
+- Friday:  6th homework, due 
+### Week 8, February 17-21, 2020
+- Monday:
+- Wednesday: 
+- Friday:  _First midterm project, due February 28, 2020_ 
+### Week 9, February 24-28, 2020
+- Monday:
+- Wednesday: 
+- Friday:  
+### Week 10, March 2-6, 2020, Spring break
+- Monday:  No lectures
+- Wednesday: No lectures
+- Friday:  No lectures 
+### Week 11, March  9-13, 2020
+- Monday:
+- Wednesday: 
+- Friday:  7th homework, due 
+### Week 12, March 16-20, 2020
+- Monday:
+- Wednesday: 
+- Friday:  8th homework, due 
+### Week 13, March 23-27, 2020
+- Monday:
+- Wednesday: 
+- Friday:  9th homework, due 
+### Week 14, March 30-April 3, 2020
+- Monday:
+- Wednesday: 
+- Friday:  _Second midterm project, due  _April 10, 2020_
+### Week 15, April  13-17, 2020
+- Monday:
+- Wednesday: 
+- Friday:  10th homework and extra assignments, due 
+### Week 16, April 20-24, 2020
+- Monday:
+- Wednesday: 
+- Friday:  Summary and discussions of finals exams 
+### Week 17, April 27- May 1, 2020, Finals week
+- Final Exam: day to be determined
+
+
+## Learning outcomes (more material to come)
