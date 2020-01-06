@@ -28,7 +28,7 @@ Here you will find a general overview of the course, with learning outcomes, tea
 | Dylan R. Smith | smithdy6@msu.edu | 
 
 
-### Grading and Calendar
+### Grading and dates
 
 | Activity | Percentage of total score |
 |------|-----|
@@ -53,6 +53,7 @@ _Lecture notes_:
 Posted lecture notes are in the doc/pub folder here or at https://mhjensen.github.io/Physics321/doc/web/course.html for easier viewing. They are not meant to be a replacement for textbook. These notes are updated on a weekly basis and a _git pull_ should thus always give you the latest update. 
 
 ##  Teaching schedule with links to material (This will be updated asap)
+Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will sent to everybody. We use also Piazza as a discussion forum. Please use this sign-up link piazza.com/msu/spring2020/phy321. The class link is piazza.com/msu/spring2020/phy321/home
 ###  Week 2, January 6-10, 2020
 - Monday: Introduction to the course and start discussion of vectors, space, time and motion, Taylor chapter 1.2 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/Introduction/html/Introduction.html)
 - Wednesday: More on time,space, vectors and motion, Taylor chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/Introduction/html/Introduction.html), first homework available
