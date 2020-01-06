@@ -19,7 +19,7 @@ Here you will find a basis overview of the course, with learning outcomes, teach
 
 
 
-| Office Hours:|
+| Office Hours|   |  
 |----------|----------|
 | Monday/Wednesday 4-5:00 PM, Room 2130 NSCL/FRIB | or immediately after class |
 
@@ -32,25 +32,19 @@ Here you will find a basis overview of the course, with learning outcomes, teach
 | Dylan Smith |  | |  |
 
 
-GRADING AND CALENDAR:
-Homework
+| GRADING AND CALENDAR |  |
+|------|-----|
+|Homework | 10% |
+| Weekly Friday Quizzes(lowest quiz dropped) | 15% |
+| First Midterm (Monday, Feb. 18) | 20% |
+| Second  Midterm (Monday. Mar. 25) | 20% |
+| Final Exam |  35%  |
+| Extra Credit Assignment (Due Friday April 26)| 10% |
 
-10%
+| Grading scale | | | | | | |
+|-----|-----|-------|------|--------|--------|--------|---|
+| 4.0(90%)| 3.5(80%)| 3.0(70%)| 2.5(60%)| 2.0(50%)| 1.5(40%)| 1.0(30%)|
 
-Weekly Friday Quizzes(lowest quiz dropped)
-15%
-
-First Midterm (Monday, Feb. 18)
-20%
-2nd Midterm (Monday. Mar. 25)
-20%
-Final Exam (Wed. May. 1, 5:45-7:45 PM)
-Biochemistry Building 101
-35%
-Extra Credit Assignment (Due Friday April 26)
-10%
-
-SCALE: 4.0(90%), 3.5(80%), 3.0(70%), 2.5(60%), 2.0(50%), 1.5(40%), 1.0(30%).
 
 SUGGESTED TEXT: John R. Taylor, Classical Mechanics (Univ. Sci. Books 2005)
 
