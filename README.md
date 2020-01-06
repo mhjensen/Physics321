@@ -5,16 +5,16 @@ Here you will find a basis overview of the course, with learning outcomes, teach
 | Lectures |   |    |   
 |---------|----|----|
 | Monday 3:00-3:50PM| Wednesday 3:00-3:50PM | Friday 3:00-3:50PM |
-|-----------|-----------|-----------|
 
-|---------------|
+
+
 | Location :  Room 1420 BPS |
 |-----------|
 
 |  Instructor  |  |   |   |
 |--------------|------|-----|----| 
 | Morten Hjorth-Jensen | hjensen@msu.edu | Office: Cyclotron Lab 2130 | 517-908-7290 |
-|----|----|----|----|
+
 
 
 Office Hours:
