@@ -6,10 +6,10 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Lectures |   |    |   Location |
 |---------|----|----|----|
-| Monday 3:00-3:50PM| Wednesday 3:00-3:50PM | Friday 3:00-3:50PM | Room 1420 BPS |
+| Monday 3:00-3:50pm| Wednesday 3:00-3:50pm | Friday 3:00-3:50pm | Room 1420 BPS |
 
 
-|  Instructor  |  |   |   |
+|  Instructor  | Email | Office  | Office phone/cellphone  |
 |--------------|------|-----|----| 
 | _Morten Hjorth-Jensen_ https://github.com/mhjensen | hjensen@msu.edu | Office: NSCL/FRIB 2131 | 5179087290/5172491375 |
 
@@ -17,25 +17,25 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Office Hours|   |  
 |----------|----------|
-| Monday/Wednesday 4-5:00 PM, Room 2131 NSCL/FRIB | or immediately after class |
+| Monday/Wednesday 4-5:00pm, Room 2131 NSCL/FRIB | or immediately after class |
 
-| Homework Grader |  |   |   |
-|--------------|------|-----|----| 
-| Kasun Senanayaka | senanaya@msu.edu | |  |
+| Homework Grader | Email | 
+|--------------|------| 
+| Kasun Senanayaka | senanaya@msu.edu |
 
-| Learning Assistant |  |   |   |
-|--------------|------|-----|----| 
-| Dylan R. Smith | smithdy6@msu.edu | | 3135060012‬ |
+| Learning Assistant | Email |
+|--------------|------| 
+| Dylan R. Smith | smithdy6@msu.edu | 
 
 
 ### Grading and Calendar
 
-|  |  |
+| Activity | Percentage of total score |
 |------|-----|
 |Homeworks, 10 in total and due Wednesdays the week after | 20% |
 | First Midterm Project, due Friday February 28 | 25% |
 | Second  Midterm Project, due Friday April 10 | 25% |
-| Final Exam |  30%  |
+| Final Exam, April 29, 5:45-7:45pm |  30%  |
 | Extra Credit Assignment (Due Friday April 24)| 10% |
 
 | Grading scale | | | | | | | 
@@ -54,9 +54,9 @@ Posted lecture notes are in the doc/pub folder here or at https://mhjensen.githu
 
 ##  Teaching schedule with links to material (This will be updated asap)
 ###  Week 2, January 6-10, 2020
-- Monday: Introduction to the course and start discussion of vectors, space, time and motion, Taylor chapter 1.2 and lecture notes
-- Wednesday: More on time,space, vectors and motion, Taylor chapters 1.2 and 1.3 and lecture notes, first homework available
-- Friday: Forces and Newton's laws of motion. Taylor chapter 1.4 and lecture notes. Introduction to Git and GitHub and getting started with numerical exercises. Installing software (anaconda) and first homework due January 15.
+- Monday: Introduction to the course and start discussion of vectors, space, time and motion, Taylor chapter 1.2 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/Introduction/html/Introduction.html)
+- Wednesday: More on time,space, vectors and motion, Taylor chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/Introduction/html/Introduction.html), first homework available
+- Friday: Forces and Newton's laws of motion. Taylor chapter 1.4 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/Introduction/html/Introduction.html). Introduction to Git and GitHub and getting started with numerical exercises. Installing software (anaconda) and first homework due January 15.
 ### Week 3, January 13-17, 2020
 - Monday:
 - Wednesday: 
@@ -114,7 +114,7 @@ Posted lecture notes are in the doc/pub folder here or at https://mhjensen.githu
 - Wednesday: 
 - Friday:  Summary and discussions of finals exams 
 ### Week 17, April 27- May 1, 2020, Finals week
-- Final Exam: day to be determined
+- Final Exam:  April 29, 5:45pm - 7:45pm in 1420 Biomedical & Physical Sciences
 
 
 ## Learning outcomes (more material to come)
