@@ -48,7 +48,7 @@ Here you will find a basis overview of the course, with learning outcomes, teach
 _Recommended textbook_:
 -John R. Taylor, Classical Mechanics (Univ. Sci. Books 2005), https://www.uscibooks.com/taylor2.htm, see also https://github.com/mhjensen/Physics321/tree/master/doc/Literature
 _Additional textbooks_:
--Anders Malthe-Sørenssen, Elementary Mechanics using Python (Springer 2015), https://www.springer.com/gp/book/9783319195957 and https://github.com/mhjensen/Physics321/tree/master/doc/Literature
--Alessandro Bettini, A Course in Classical Physics 1 -- Mechanics (Springer 2017), https://github.com/mhjensen/Physics321/tree/master/doc/Literature and https://www.springer.com/gp/book/9783319292564
+- Anders Malthe-Sørenssen, Elementary Mechanics using Python (Springer 2015), https://www.springer.com/gp/book/9783319195957 and https://github.com/mhjensen/Physics321/tree/master/doc/Literature
+- Alessandro Bettini, A Course in Classical Physics 1 -- Mechanics (Springer 2017), https://github.com/mhjensen/Physics321/tree/master/doc/Literature and https://www.springer.com/gp/book/9783319292564
 _Lecture notes_:
 Posted lecture notes are in the doc/pub folder here or at https://mhjensen.github.io/Physics321/doc/web/course.html for easier viewing. They are not meant to be a replacement for textbook. These notes are updated on a weekly basis and a _git pull_ should thus always give you the latest update. 
