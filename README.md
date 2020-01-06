@@ -1,8 +1,8 @@
 # PHY321, Classical Mechanics I, Michigan State University, Spring 2020
 
-Here you will find a basis overview of the course, with learning outcomes, teaching schedule etc.
+Here you will find a general overview of the course, with learning outcomes, teaching schedule etc.
 
-## Practicalities, teaching schedule, deadlines and more
+## Teaching team, grading and other practicalities
 
 | Lectures |   |    |   Location |
 |---------|----|----|----|
@@ -32,9 +32,9 @@ Here you will find a basis overview of the course, with learning outcomes, teach
 
 |  |  |
 |------|-----|
-|Homework | 20% |
-| First Midterm Project (Monday, Feb. 18) | 25% |
-| Second  Midterm Project (Monday. Mar. 25) | 25% |
+|Homeworks, 10 in total and due Wednesdays the week after | 20% |
+| First Midterm Project, due Friday February 28 | 25% |
+| Second  Midterm Project, due Friday April 10 | 25% |
 | Final Exam |  30%  |
 | Extra Credit Assignment (Due Friday April 24)| 10% |
 
@@ -55,28 +55,28 @@ Posted lecture notes are in the doc/pub folder here or at https://mhjensen.githu
 ##  Teaching schedule with links to material (This will be updated asap)
 ###  Week 2, January 6-10, 2020
 - Monday: Introduction to the course and start discussion of vectors, space, time and motion, Taylor chapter 1.2 and lecture notes
-- Wednesday: More on time,space, vectors and motion, Taylor chapters 1.2 and 1.3 and lecture notes
-- Friday: Forces and Newton's laws of motion. Taylor chapter 1.4 and lecture notes. Introduction to Git and GitHub and getting started with numerical exercises. Installing software (anaconda) and first homework, due
+- Wednesday: More on time,space, vectors and motion, Taylor chapters 1.2 and 1.3 and lecture notes, first homework available
+- Friday: Forces and Newton's laws of motion. Taylor chapter 1.4 and lecture notes. Introduction to Git and GitHub and getting started with numerical exercises. Installing software (anaconda) and first homework due January 15.
 ### Week 3, January 13-17, 2020
 - Monday:
 - Wednesday: 
-- Friday:  2nd homework, due 
+- Friday:  2nd homework, due January 22
 ### Week 4, January 20-24, 2020
 - Monday: MLK day, no lectures
 - Wednesday: 
-- Friday:  3rd homework, due 
+- Friday:  3rd homework, due January 29
 ### Week 5, January 27-31, 2020
 - Monday:
 - Wednesday: 
-- Friday:  4th homework, due 
+- Friday:  4th homework, due February 5
 ### Week 6, February 3-7, 2020
 - Monday:
 - Wednesday: 
-- Friday:  5th homework, due 
+- Friday:  5th homework, due February 12
 ### Week 7, February 10-14, 2020
 - Monday:
 - Wednesday: 
-- Friday:  6th homework, due 
+- Friday:  6th homework, due February 19
 ### Week 8, February 17-21, 2020
 - Monday:
 - Wednesday: 
@@ -92,23 +92,23 @@ Posted lecture notes are in the doc/pub folder here or at https://mhjensen.githu
 ### Week 11, March  9-13, 2020
 - Monday:
 - Wednesday: 
-- Friday:  7th homework, due 
+- Friday:  7th homework, due March 18
 ### Week 12, March 16-20, 2020
 - Monday:
 - Wednesday: 
-- Friday:  8th homework, due 
+- Friday:  8th homework, due March 25
 ### Week 13, March 23-27, 2020
 - Monday:
 - Wednesday: 
-- Friday:  9th homework, due 
+- Friday:  9th homework, due April 1
 ### Week 14, March 30-April 3, 2020
 - Monday:
 - Wednesday: 
-- Friday:  _Second midterm project, due  _April 10, 2020_
+- Friday:  _Second midterm project, due  April 10, 2020_
 ### Week 15, April  13-17, 2020
 - Monday:
 - Wednesday: 
-- Friday:  10th homework and extra assignments, due 
+- Friday:  10th homework and extra assignments, due April 24 
 ### Week 16, April 20-24, 2020
 - Monday:
 - Wednesday: 
