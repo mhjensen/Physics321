@@ -8,19 +8,28 @@ Here you will find a basis overview of the course, with learning outcomes, teach
 
 
 
-| Location :  Room 1420 BPS |
+| Location|  
 |-----------|
+|Room 1420 BPS |
+
 
 |  Instructor  |  |   |   |
 |--------------|------|-----|----| 
-| Morten Hjorth-Jensen | hjensen@msu.edu | Office: Cyclotron Lab 2130 | 517-908-7290 |
+| Morten Hjorth-Jensen https://github.com/mhjensen | hjensen@msu.edu | Office: NSCL/FRIB 2130 | 517-908-7290 |
 
 
 
-Office Hours:
-Monday 4-5:00 PM, #2133 NSCL
-or immediately after class
-HW Grader:
+| Office Hours:|
+|----------|----------|
+| Monday/Wednesday 4-5:00 PM, Room 2130 NSCL/FRIB | or immediately after class |
+
+| Homework Grader |  |   |   |
+|--------------|------|-----|----| 
+|  |  | |  |
+
+| Learning Assistant |  |   |   |
+|--------------|------|-----|----| 
+| Dylan Smith |  | |  |
 
 
 GRADING AND CALENDAR:
