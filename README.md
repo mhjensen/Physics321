@@ -2,15 +2,9 @@
 
 Here you will find a basis overview of the course, with learning outcomes, teaching schedule etc.
 
-| Lectures |   |    |   
-|---------|----|----|
-| Monday 3:00-3:50PM| Wednesday 3:00-3:50PM | Friday 3:00-3:50PM |
-
-
-
-| Location|  
-|-----------|
-|Room 1420 BPS |
+| Lectures |   |    |   Location |
+|---------|----|----|----|
+| Monday 3:00-3:50PM| Wednesday 3:00-3:50PM | Friday 3:00-3:50PM | Room 1420 BPS |
 
 
 |  Instructor  |  |   |   |
@@ -41,8 +35,8 @@ Here you will find a basis overview of the course, with learning outcomes, teach
 | Final Exam |  35%  |
 | Extra Credit Assignment (Due Friday April 26)| 10% |
 
-| Grading scale | | | | | | |
-|-----|-----|-------|------|--------|--------|--------|---|
+| Grading scale | | | | | | 
+|-----|-----|-------|------|--------|--------|--------|
 | 4.0(90%)| 3.5(80%)| 3.0(70%)| 2.5(60%)| 2.0(50%)| 1.5(40%)| 1.0(30%)|
 
 
