@@ -9,7 +9,7 @@ Here you will find a basis overview of the course, with learning outcomes, teach
 
 |  Instructor  |  |   |   |
 |--------------|------|-----|----| 
-| [Morten Hjorth-Jensen]https://github.com/mhjensen | hjensen@msu.edu | Office: NSCL/FRIB 2130 | 517-908-7290 |
+| <a href="https://github.com/mhjensen" Morten Hjorth-Jensen /a> | hjensen@msu.edu | Office: NSCL/FRIB 2130 | 517-908-7290 |
 
 
 
