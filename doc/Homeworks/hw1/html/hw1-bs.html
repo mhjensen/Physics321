@@ -40,10 +40,53 @@ Automatically generated HTML file from DocOnce source
 </head>
 
 <!-- tocinfo
-{'highest level': 3, 'sections': [('Exercise 1 (10pt)', 3, None, '___sec0')]}
+{'highest level': 3,
+ 'sections': [('Exercise 1 (10 pt), math reminder, properties of exponential '
+               'function',
+               3,
+               None,
+               '___sec0'),
+              ('Exercise 2 (10 pt), Vector algebra', 3, None, '___sec1'),
+              ('Exercise 3 (10 pt), More vector mathematics',
+               3,
+               None,
+               '___sec2'),
+              ('Exercise 4 (10 pt), Algebra of cross products',
+               3,
+               None,
+               '___sec3'),
+              ('Exercise 5 (10 pt), Area of triangle and law of sines',
+               3,
+               None,
+               '___sec4'),
+              ('Exercise 6 (10pt), Matrices and rotations in the $xy$ plane',
+               3,
+               None,
+               '___sec5'),
+              ('Exercise 7 (40pt), Numerical elements, getting started with '
+               'some simple data',
+               3,
+               None,
+               '___sec6')]}
 end of tocinfo -->
 
 <body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
 
     
 <!-- Bootstrap navigation bar -->
@@ -62,7 +105,13 @@ end of tocinfo -->
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
         <ul class="dropdown-menu">
-     <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;">Exercise 1 (10pt)</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;">Exercise 1 (10 pt), math reminder, properties of exponential function</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec1" style="font-size: 80%;">Exercise 2 (10 pt), Vector algebra</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec2" style="font-size: 80%;">Exercise 3 (10 pt), More vector mathematics</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec3" style="font-size: 80%;">Exercise 4 (10 pt), Algebra of cross products</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec4" style="font-size: 80%;">Exercise 5 (10 pt), Area of triangle and law of sines</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec5" style="font-size: 80%;">Exercise 6 (10pt), Matrices and rotations in the \( xy \) plane</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec6" style="font-size: 80%;">Exercise 7 (40pt), Numerical elements, getting started with some simple data</a></li>
 
         </ul>
       </li>
@@ -94,14 +143,176 @@ end of tocinfo -->
 
 <br>
 <p>
-<center><h4>Jan 7, 2020</h4></center> <!-- date -->
+<center><h4>Jan 8, 2020</h4></center> <!-- date -->
 <br>
 <p>
 </div> <!-- end jumbotron -->
 
-<h3 id="___sec0" class="anchor">Exercise 1 (10pt)  </h3>
+<h3 id="___sec0" class="anchor">Exercise 1 (10 pt), math reminder, properties of exponential function  </h3>
 
 <p>
+The first exercise is meant to remind ourselves about properties of
+the exponential function and imaginary numbers. This is highly
+relevant later in this course when we start analyzing oscillatory
+motion and some some wave mechanics. As physicists we should thus feel comfortable with expressions that
+include \( \exp{(\imath\omega t)} \). Here \( t \) could be interpreted as time and \( \omega \) as a frequency and \( \imath \) is the imaginary unit number.
+
+<ul>
+<li> 1a (2pt): Perform Taylor expansions in powers of \( \omega t \) of the functions \( \cos{(\omega t)} \) and \( \sin{(\omega t)} \).</li>
+<li> 1b (2pt): Perform a Taylor expansion of \( \exp{(i\omega t)} \).</li>
+<li> 1c (3pt): Using parts (a) and (b) here, show that \( \exp{(\imath\omega t)}=\cos{(\omega t)}+\imath\sin{(\omega t)} \).</li>
+<li> 1d (3pt): Show that \( \ln{(&#8722;1)} = \imath\pi \).</li>
+</ul>
+
+<h3 id="___sec1" class="anchor">Exercise 2 (10 pt), Vector algebra  </h3>
+
+<ul>
+<li> 2a (4pt) One of the many uses of the scalar product is to find the angle between two given vectors. Find the angle between the vectors \( \boldsymbol{a}=(1,2,4) \) and \( \boldsymbol{b}=(4,2,1) \) by evaluating their scalar product.</li>
+<li> 2b (6pt) For a cube with sides of length 1, one vertex at the origin, and sides along the \( x \), \( y \), and \( z \) axes, the vector of the body diagonal from the origin can be written \( \boldsymbol{a}=(1, 1, 1) \) and the vector of the face diagonal in the \( xy \) plane from the origin is \( \boldsymbol{b}=(1,1,0) \). Find first the lengths of the body diagonal and the face diagonal. Use then part (2a) to find the angle between the body diagonal and the face diagonal.</li>
+</ul>
+
+<h3 id="___sec2" class="anchor">Exercise 3 (10 pt), More vector mathematics </h3>
+
+<ul>
+<li> 3a (5pt) Show (using the fact that multiplication of reals is distributive) that \( \boldsymbol{a}(\boldsymbol{b}+\boldsymbol{c})=\boldsymbol{a}\boldsymbol{b}+\boldsymbol{a}\boldsymbol{c} \).</li>
+<li> 3b (5pt) Show that (using product rule for differentiating reals)  \( \frac{d}{dt}(\boldsymbol{a}\boldsymbol{b})=\boldsymbol{a}\frac{d\boldsymbol{b}}{dt}+\boldsymbol{b}\frac{d\boldsymbol{a}}{dt} \)</li>
+</ul>
+
+<h3 id="___sec3" class="anchor">Exercise 4 (10 pt), Algebra of cross products  </h3>
+
+<ul>
+<li> 4a (5pt) Show that the cross products are distribuitive \( \boldsymbol{a}\times(\boldsymbol{b}+\boldsymbol{c})=\boldsymbol{a}\times\boldsymbol{b}+\boldsymbol{a}times\boldsymbol{c} \).</li>
+<li> 4b (5pt) Show that \( \frac{d}{dt}(\boldsymbol{a}\times\boldsymbol{b})=\boldsymbol{a}\times\frac{d\boldsymbol{b}}{dt}+\boldsymbol{b}\times\frac{d\boldsymbol{a}}{dt} \). Be careful with the order of factors</li> 
+</ul>
+
+<h3 id="___sec4" class="anchor">Exercise 5 (10 pt), Area of triangle and law of sines </h3>
+
+Exercise 1.18 in the textbook of Taylor, Classical Mechanics. Part (1.18a) gives 5pt and part (1.18b) gives also 5pt.
+
+<h3 id="___sec5" class="anchor">Exercise 6 (10pt), Matrices and rotations in the \( xy \) plane </h3>
+
+The rotation of a three-dimensional  vector \( \boldsymbol{a}=(a_x,a_y,a_z) \) in the \( xy \) plane around an angle \( \phi \) results in a new vector \( \boldsymbol{b}=(b_x,b_y,b_z) \).  This operation can be expressed in terms of linear algebra as a matrix (the rotation matrix) multiplied with a vector. We can write this as
+$$
+\begin{bmatrix} b_x \\ b_y \\ b_z \end{bmatrix} = \begin{bmatrix} \cos{\phi} & \sin{\phi} & 0 \\ -\sin{\phi} & \cos{\phi} & 0 \\ 0 & 0 & 1\end{bmatrix}\begin{bmatrix} a_x \\ a_y \\ a_z \end{bmatrix}.
+$$
+
+We can write this in a more compact form as \( \boldsymbol{b} = \boldsymbol{R}\boldsymbol{a} \), where the rotation matrix is defined as
+$$
+\boldsymbol{R} = \begin{bmatrix} \cos{\phi} & \sin{\phi} & 0 \\ -\sin{\phi} & \cos{\phi} & 0 \\ 0 & 0 & 1\end{bmatrix}.
+$$
+
+
+<ul>
+<li> 6a (5pt) Find the transpose of the matrix \( \boldsymbol{R} \). We label this as \( \boldsymbol{R}^T \).</li>
+<li> 6b (5pt)  This matrix is a so-called unitary/orthogonal matrix.  Show that \( \boldsymbol{R}^T\boldsymbol{R}= \boldsymbol{I} \) where \( \boldsymbol{I} \) is the so-called identity matrix with ones only along the diagonal. How would you interpret this result? For example, are scalar products changed under this transformations?</li> 
+</ul>
+
+<h3 id="___sec6" class="anchor">Exercise 7 (40pt), Numerical elements, getting started with some simple data </h3>
+
+<ul>
+<li> Review basic Python syntax for arrays</li>
+<li> Be able to define and operate on vectors and matrices in Python</li>
+<li> Create plots for motion in 1D space</li>
+</ul>
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic"># Here are basic packages we will be using this week</span>
+
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span> 
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+<span style="color: #666666">%</span>matplotlib inline
+</pre></div>
+<p>
+We will be working with vectors and matrices to get you familiar with them
+
+<ol>
+<li> Initalize two xyz vectors in the below cell using np.array([x,y,z]). Vectors are represented through arrays in python</li>
+<li> V1 should have x1=1, y1 =2, and z1=3.</li> 
+<li> Vector 2 should have x2=4, y2=5,  and z2=6.</li> 
+<li> Print both vectors to make sure it is working peroperly</li>
+</ol>
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>V1 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">1</span>,<span style="color: #666666">2</span>,<span style="color: #666666">3</span>])
+V2 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">4</span>,<span style="color: #666666">5</span>,<span style="color: #666666">6</span>])
+<span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;V1: &quot;</span>, V1)
+<span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;V2: &quot;</span>, V2)
+</pre></div>
+<p>
+Once you have gotten the vectors set up, nice! If not, no worries. Here's a useful link for creating vectors in python <a href="https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html" target="_self"><tt>https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html</tt></a>
+
+<p>
+Now lets do some basic math with vectors. Print the following the following, and double check with hand calculations:
+a.) V1-V2    b.) V2-V1  
+Here is some useful explanation on numpy array operations if you feel a bit confused by what is happening: <a href="https://www.pluralsight.com/guides/overview-basic-numpy-operations" target="_self"><tt>https://www.pluralsight.com/guides/overview-basic-numpy-operations</tt></a>
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">print</span>(V1<span style="color: #666666">-</span>V2)
+<span style="color: #008000; font-weight: bold">print</span>(V2<span style="color: #666666">-</span>V2)
+</pre></div>
+<p>
+Let's take the dot product of V1 and V2 below using V1.dot(V2)
+NOTE: This function is only usable while numpy is imported
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">print</span>(V1<span style="color: #666666">.</span>dot(V2))
+</pre></div>
+<p>
+Matrices can be created in a similar fashion in python.  In this language we can work with them through the package numpy (which we have already imported)
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>M1 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>matrix([[<span style="color: #666666">1</span>,<span style="color: #666666">2</span>,<span style="color: #666666">3</span>],
+             [<span style="color: #666666">4</span>,<span style="color: #666666">5</span>,<span style="color: #666666">6</span>],
+             [<span style="color: #666666">7</span>,<span style="color: #666666">8</span>,<span style="color: #666666">9</span>]])
+M2 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>matrix([[<span style="color: #666666">1</span>,<span style="color: #666666">2</span>],
+             [<span style="color: #666666">3</span>,<span style="color: #666666">4</span>],
+             [<span style="color: #666666">5</span>,<span style="color: #666666">6</span>]])
+M3 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>matrix([[<span style="color: #666666">9</span>,<span style="color: #666666">8</span>,<span style="color: #666666">7</span>],
+             [<span style="color: #666666">4</span>,<span style="color: #666666">5</span>,<span style="color: #666666">6</span>],
+             [<span style="color: #666666">7</span>,<span style="color: #666666">6</span>,<span style="color: #666666">9</span>]])
+</pre></div>
+<p>
+Matrices can be added in the same way vectors are added in python.
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;M1*M2: &quot;</span>, M1<span style="color: #666666">*</span>M2)
+<span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;M1+M3: &quot;</span>, M1<span style="color: #666666">+</span>M3)
+</pre></div>
+<p>
+Run the cell below and notice how when doing M2xM1 this does not work. Do not worry, this is expected if you remember how matrices work. The first matrix's number of columns must equal the second matrix's number of rows.
+
+<p>
+After you run the below cell once. Fix the problem by making a new matrix M4 that has two rows (number of columns is up to you) and update the print outputs appropriately (changing M1 to M4).
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;M2xM1: &quot;</span>, M2<span style="color: #666666">*</span>M1) 
+</pre></div>
+<p>
+That's enough vectors and matrices for now. Let's move on to some physics problems :) 
+(Yes, the actual subject we are studying for)
+
+<p>
+We'll be working with a basic projectile motion for this part. Let's plot the motion of a dropped ball.
+
+<p>
+Congratulations, you are at the end of the assignment!
+
+<p>
+Consider reviewing some Python documentation online to get the hang of variables and functions more. Or relax and take a break after. Whatever floats your boat.
 
 <!-- ------------------- end of main content --------------- -->
 

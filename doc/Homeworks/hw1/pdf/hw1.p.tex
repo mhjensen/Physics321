@@ -45,6 +45,12 @@ final,                   % draft: marks overfull hboxes, figures with paths
 
 \usepackage[pdftex]{graphicx}
 
+\usepackage{ptex2tex}
+% #ifdef MINTED
+\usepackage{minted}
+\usemintedstyle{default}
+% #endif
+
 \usepackage[T1]{fontenc}
 %\usepackage[latin1]{inputenc}
 \usepackage{ucs}
@@ -125,14 +131,173 @@ PHY321: Classical Mechanics 1
 
 % --- begin date ---
 \begin{center}
-Jan 7, 2020
+Jan 8, 2020
 \end{center}
 % --- end date ---
 
 \vspace{1cm}
 
 
-\paragraph{Exercise 1 (10pt).}
+\paragraph{Exercise 1 (10 pt), math reminder, properties of exponential function.}
+The first exercise is meant to remind ourselves about properties of
+the exponential function and imaginary numbers. This is highly
+relevant later in this course when we start analyzing oscillatory
+motion and some some wave mechanics. As physicists we should thus feel comfortable with expressions that
+include $\exp{(\imath\omega t)}$. Here $t$ could be interpreted as time and $\omega$ as a frequency and $\imath$ is the imaginary unit number.
+
+\begin{itemize}
+\item 1a (2pt): Perform Taylor expansions in powers of $\omega t$ of the functions $\cos{(\omega t)}$ and $\sin{(\omega t)}$.
+
+\item 1b (2pt): Perform a Taylor expansion of $\exp{(i\omega t)}$.
+
+\item 1c (3pt): Using parts (a) and (b) here, show that $\exp{(\imath\omega t)}=\cos{(\omega t)}+\imath\sin{(\omega t)}$.
+
+\item 1d (3pt): Show that $\ln{(−1)} = \imath\pi$.
+\end{itemize}
+
+\noindent
+\paragraph{Exercise 2 (10 pt), Vector algebra.}
+\begin{itemize}
+\item 2a (4pt) One of the many uses of the scalar product is to find the angle between two given vectors. Find the angle between the vectors $\bm{a}=(1,2,4)$ and $\bm{b}=(4,2,1)$ by evaluating their scalar product.
+
+\item 2b (6pt) For a cube with sides of length 1, one vertex at the origin, and sides along the $x$, $y$, and $z$ axes, the vector of the body diagonal from the origin can be written $\bm{a}=(1, 1, 1)$ and the vector of the face diagonal in the $xy$ plane from the origin is $\bm{b}=(1,1,0)$. Find first the lengths of the body diagonal and the face diagonal. Use then part (2a) to find the angle between the body diagonal and the face diagonal.
+\end{itemize}
+
+\noindent
+\paragraph{Exercise 3 (10 pt), More vector mathematics.}
+\begin{itemize}
+\item 3a (5pt) Show (using the fact that multiplication of reals is distributive) that $\bm{a}(\bm{b}+\bm{c})=\bm{a}\bm{b}+\bm{a}\bm{c}$.
+
+\item 3b (5pt) Show that (using product rule for differentiating reals)  $\frac{d}{dt}(\bm{a}\bm{b})=\bm{a}\frac{d\bm{b}}{dt}+\bm{b}\frac{d\bm{a}}{dt}$
+\end{itemize}
+
+\noindent
+\paragraph{Exercise 4 (10 pt), Algebra of cross products.}
+\begin{itemize}
+\item 4a (5pt) Show that the cross products are distribuitive $\bm{a}\times(\bm{b}+\bm{c})=\bm{a}\times\bm{b}+\bm{a}times\bm{c}$.
+
+\item 4b (5pt) Show that $\frac{d}{dt}(\bm{a}\times\bm{b})=\bm{a}\times\frac{d\bm{b}}{dt}+\bm{b}\times\frac{d\bm{a}}{dt}$. Be careful with the order of factors 
+\end{itemize}
+
+\noindent
+\paragraph{Exercise 5 (10 pt), Area of triangle and law of sines.}
+Exercise 1.18 in the textbook of Taylor, Classical Mechanics. Part (1.18a) gives 5pt and part (1.18b) gives also 5pt.
+
+\paragraph{Exercise 6 (10pt), Matrices and rotations in the $xy$ plane.}
+The rotation of a three-dimensional  vector $\bm{a}=(a_x,a_y,a_z)$ in the $xy$ plane around an angle $\phi$ results in a new vector $\bm{b}=(b_x,b_y,b_z)$.  This operation can be expressed in terms of linear algebra as a matrix (the rotation matrix) multiplied with a vector. We can write this as
+\[
+\begin{bmatrix} b_x \\ b_y \\ b_z \end{bmatrix} = \begin{bmatrix} \cos{\phi} & \sin{\phi} & 0 \\ -\sin{\phi} & \cos{\phi} & 0 \\ 0 & 0 & 1\end{bmatrix}\begin{bmatrix} a_x \\ a_y \\ a_z \end{bmatrix}.
+\]
+We can write this in a more compact form as $\bm{b} = \bm{R}\bm{a}$, where the rotation matrix is defined as
+\[
+\bm{R} = \begin{bmatrix} \cos{\phi} & \sin{\phi} & 0 \\ -\sin{\phi} & \cos{\phi} & 0 \\ 0 & 0 & 1\end{bmatrix}.
+\]
+
+\begin{itemize}
+\item 6a (5pt) Find the transpose of the matrix $\bm{R}$. We label this as $\bm{R}^T$.
+
+\item 6b (5pt)  This matrix is a so-called unitary/orthogonal matrix.  Show that $\bm{R}^T\bm{R}= \bm{I}$ where $\bm{I}$ is the so-called identity matrix with ones only along the diagonal. How would you interpret this result? For example, are scalar products changed under this transformations? 
+\end{itemize}
+
+\noindent
+\paragraph{Exercise 7 (40pt), Numerical elements, getting started with some simple data.}
+\begin{itemize}
+\item Review basic Python syntax for arrays
+
+\item Be able to define and operate on vectors and matrices in Python
+
+\item Create plots for motion in 1D space
+\end{itemize}
+
+\noindent
+\bpycod
+# Here are basic packages we will be using this week
+
+import numpy as np 
+import matplotlib.pyplot as plt
+%matplotlib inline
+\epycod
+
+We will be working with vectors and matrices to get you familiar with them
+
+\begin{enumerate}
+\item Initalize two xyz vectors in the below cell using np.array([x,y,z]). Vectors are represented through arrays in python
+
+\item V1 should have x1=1, y1 =2, and z1=3. 
+
+\item Vector 2 should have x2=4, y2=5,  and z2=6. 
+
+\item Print both vectors to make sure it is working peroperly
+\end{enumerate}
+
+\noindent
+\bpycod
+V1 = np.array([1,2,3])
+V2 = np.array([4,5,6])
+print("V1: ", V1)
+print("V2: ", V2)
+\epycod
+
+Once you have gotten the vectors set up, nice! If not, no worries. Here's a useful link for creating vectors in python \href{{https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html}}{\nolinkurl{https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html}}
+
+Now lets do some basic math with vectors. Print the following the following, and double check with hand calculations:
+a.) V1-V2    b.) V2-V1  
+Here is some useful explanation on numpy array operations if you feel a bit confused by what is happening: \href{{https://www.pluralsight.com/guides/overview-basic-numpy-operations}}{\nolinkurl{https://www.pluralsight.com/guides/overview-basic-numpy-operations}}
+
+\bpycod
+print(V1-V2)
+print(V2-V2)
+\epycod
+
+Let's take the dot product of V1 and V2 below using V1.dot(V2)
+NOTE: This function is only usable while numpy is imported
+
+
+\bpycod
+print(V1.dot(V2))
+\epycod
+
+Matrices can be created in a similar fashion in python.  In this language we can work with them through the package numpy (which we have already imported)
+
+
+\bpycod
+M1 = np.matrix([[1,2,3],
+             [4,5,6],
+             [7,8,9]])
+M2 = np.matrix([[1,2],
+             [3,4],
+             [5,6]])
+M3 = np.matrix([[9,8,7],
+             [4,5,6],
+             [7,6,9]])
+\epycod
+
+Matrices can be added in the same way vectors are added in python.
+
+
+\bpycod
+print("M1*M2: ", M1*M2)
+print("M1+M3: ", M1+M3)
+\epycod
+
+Run the cell below and notice how when doing M2xM1 this does not work. Do not worry, this is expected if you remember how matrices work. The first matrix's number of columns must equal the second matrix's number of rows. 
+
+After you run the below cell once. Fix the problem by making a new matrix M4 that has two rows (number of columns is up to you) and update the print outputs appropriately (changing M1 to M4).
+
+
+\bpycod
+print("M2xM1: ", M2*M1) 
+\epycod
+
+That's enough vectors and matrices for now. Let's move on to some physics problems :) 
+(Yes, the actual subject we are studying for)
+
+We'll be working with a basic projectile motion for this part. Let's plot the motion of a dropped ball.
+
+
+Congratulations, you are at the end of the assignment! 
+
+Consider reviewing some Python documentation online to get the hang of variables and functions more. Or relax and take a break after. Whatever floats your boat.
 
 % ------------------- end of main content ---------------
 

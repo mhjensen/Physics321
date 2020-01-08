@@ -4,65 +4,107 @@ DATE: today
 
 
 
-=== Exercise 1 (10pt)  ===
+=== Exercise 1 (10 pt), math reminder, properties of exponential function  ===
+
+The first exercise is meant to remind ourselves about properties of
+the exponential function and imaginary numbers. This is highly
+relevant later in this course when we start analyzing oscillatory
+motion and some some wave mechanics. As physicists we should thus feel comfortable with expressions that
+include $\exp{(\imath\omega t)}$. Here $t$ could be interpreted as time and $\omega$ as a frequency and $\imath$ is the imaginary unit number.
+
+* 1a (2pt): Perform Taylor expansions in powers of $\omega t$ of the functions $\cos{(\omega t)}$ and $\sin{(\omega t)}$.
+* 1b (2pt): Perform a Taylor expansion of $\exp{(i\omega t)}$.
+* 1c (3pt): Using parts (a) and (b) here, show that $\exp{(\imath\omega t)}=\cos{(\omega t)}+\imath\sin{(\omega t)}$.
+* 1d (3pt): Show that $\ln{(−1)} = \imath\pi$.
+
+=== Exercise 2 (10 pt), Vector algebra  ===
+
+* 2a (4pt) One of the many uses of the scalar product is to find the angle between two given vectors. Find the angle between the vectors $\bm{a}=(1,2,4)$ and $\bm{b}=(4,2,1)$ by evaluating their scalar product.
+* 2b (6pt) For a cube with sides of length 1, one vertex at the origin, and sides along the $x$, $y$, and $z$ axes, the vector of the body diagonal from the origin can be written $\bm{a}=(1, 1, 1)$ and the vector of the face diagonal in the $xy$ plane from the origin is $\bm{b}=(1,1,0)$. Find first the lengths of the body diagonal and the face diagonal. Use then part (2a) to find the angle between the body diagonal and the face diagonal.
+
+=== Exercise 3 (10 pt), More vector mathematics ===
+
+* 3a (5pt) Show (using the fact that multiplication of reals is distributive) that $\bm{a}(\bm{b}+\bm{c})=\bm{a}\bm{b}+\bm{a}\bm{c}$.
+* 3b (5pt) Show that (using product rule for differentiating reals)  $\frac{d}{dt}(\bm{a}\bm{b})=\bm{a}\frac{d\bm{b}}{dt}+\bm{b}\frac{d\bm{a}}{dt}$
+
+=== Exercise 4 (10 pt), Algebra of cross products  ===
+
+* 4a (5pt) Show that the cross products are distribuitive $\bm{a}\times(\bm{b}+\bm{c})=\bm{a}\times\bm{b}+\bm{a}times\bm{c}$.
+* 4b (5pt) Show that $\frac{d}{dt}(\bm{a}\times\bm{b})=\bm{a}\times\frac{d\bm{b}}{dt}+\bm{b}\times\frac{d\bm{a}}{dt}$. Be careful with the order of factors 
 
 
-## Classical Mechanics - Week 1 Computational Learning
+=== Exercise 5 (10 pt), Area of triangle and law of sines ===
+Exercise 1.18 in the textbook of Taylor, Classical Mechanics. Part (1.18a) gives 5pt and part (1.18b) gives also 5pt.
 
-### This week we will:
-- Review basic Python syntax for arrays
-- Be able to define and operate on vectors and matrices in Python
-- Create plots for motion in 1D space
+=== Exercise 6 (10pt), Matrices and rotations in the $xy$ plane ===
+The rotation of a three-dimensional  vector $\bm{a}=(a_x,a_y,a_z)$ in the $xy$ plane around an angle $\phi$ results in a new vector $\bm{b}=(b_x,b_y,b_z)$.  This operation can be expressed in terms of linear algebra as a matrix (the rotation matrix) multiplied with a vector. We can write this as
+!bt
+\[
+\begin{bmatrix} b_x \\ b_y \\ b_z \end{bmatrix} = \begin{bmatrix} \cos{\phi} & \sin{\phi} & 0 \\ -\sin{\phi} & \cos{\phi} & 0 \\ 0 & 0 & 1\end{bmatrix}\begin{bmatrix} a_x \\ a_y \\ a_z \end{bmatrix}.
+\]
+!et
+We can write this in a more compact form as $\bm{b} = \bm{R}\bm{a}$, where the rotation matrix is defined as
+!bt
+\[
+\bm{R} = \begin{bmatrix} \cos{\phi} & \sin{\phi} & 0 \\ -\sin{\phi} & \cos{\phi} & 0 \\ 0 & 0 & 1\end{bmatrix}.
+\]
+!et
+
+* 6a (5pt) Find the transpose of the matrix $\bm{R}$. We label this as $\bm{R}^T$.
+* 6b (5pt)  This matrix is a so-called unitary/orthogonal matrix.  Show that $\bm{R}^T\bm{R}= \bm{I}$ where $\bm{I}$ is the so-called identity matrix with ones only along the diagonal. How would you interpret this result? For example, are scalar products changed under this transformations? 
+
+===  Exercise 7 (40pt), Numerical elements, getting started with some simple data ===
+
+* Review basic Python syntax for arrays
+* Be able to define and operate on vectors and matrices in Python
+* Create plots for motion in 1D space
 
 
-```python
+!bc pycod 
 # Here are basic packages we will be using this week
 
 import numpy as np 
 import matplotlib.pyplot as plt
 %matplotlib inline
-```
+!ec
 
-## We will be working with vectors and matrices to get you familiar with them
+We will be working with vectors and matrices to get you familiar with them
 
-#### Initalize two xyz vectors in the below cell using np.array([x,y,z]). Vectors are represented through arrays in python
-#### V1 should have x1=1, y1 =2, and z1=3. 
-#### Vector 2 should have x2=4, y2=5,  and z2=6. 
-#### Print both vectors to make sure it is working peroperly
+o Initalize two xyz vectors in the below cell using np.array([x,y,z]). Vectors are represented through arrays in python
+o V1 should have x1=1, y1 =2, and z1=3. 
+o Vector 2 should have x2=4, y2=5,  and z2=6. 
+o Print both vectors to make sure it is working peroperly
 
-
-
-```python
+!bc pycod
 V1 = np.array([1,2,3])
 V2 = np.array([4,5,6])
 print("V1: ", V1)
 print("V2: ", V2)
-```
+!ec
 
-#### Once you have gotten the vectors set up, nice! If not, no worries. Here's a useful link for creating vectors in python https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html
+Once you have gotten the vectors set up, nice! If not, no worries. Here's a useful link for creating vectors in python https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html
 
-#### Now lets do some basic math with vectors. Print the following the following, and double check with hand calculations:
-##### a.) V1-V2    b.) V2-V1  
+Now lets do some basic math with vectors. Print the following the following, and double check with hand calculations:
+a.) V1-V2    b.) V2-V1  
 Here is some useful explanation on numpy array operations if you feel a bit confused by what is happening: https://www.pluralsight.com/guides/overview-basic-numpy-operations
 
-
-```python
+!bc pycod
 print(V1-V2)
 print(V2-V2)
-```
+!ec
 
-#### Let's take the dot product of V1 and V2 below using V1.dot(V2)
-## NOTE: This function is only usable while numpy is imported
+Let's take the dot product of V1 and V2 below using V1.dot(V2)
+NOTE: This function is only usable while numpy is imported
 
 
-```python
+!bc pycod
 print(V1.dot(V2))
-```
+!ec
 
-#### Matrices can be created in a similar fashion in python.  In this language we can work with them through the package numpy (which we have already imported)
+Matrices can be created in a similar fashion in python.  In this language we can work with them through the package numpy (which we have already imported)
 
 
-```python
+!bc pycod
 M1 = np.matrix([[1,2,3],
              [4,5,6],
              [7,8,9]])
@@ -72,119 +114,31 @@ M2 = np.matrix([[1,2],
 M3 = np.matrix([[9,8,7],
              [4,5,6],
              [7,6,9]])
-```
+!ec
 
-#### Matrices can be added in the same way vectors are added in python.
+Matrices can be added in the same way vectors are added in python.
 
 
-```python
+!bc pycod
 print("M1*M2: ", M1*M2)
 print("M1+M3: ", M1+M3)
-```
+!ec
 
-#### Run the cell below and notice how when doing M2xM1 this does not work. Do not worry, this is expected if you remember how matrices work. The first matrix's number of columns must equal the second matrix's number of rows. 
+Run the cell below and notice how when doing M2xM1 this does not work. Do not worry, this is expected if you remember how matrices work. The first matrix's number of columns must equal the second matrix's number of rows. 
 
 After you run the below cell once. Fix the problem by making a new matrix M4 that has two rows (number of columns is up to you) and update the print outputs appropriately (changing M1 to M4).
 
 
-```python
+!bc pycod
 print("M2xM1: ", M2*M1) 
-```
+!ec
 
-# That's enough vectors and matrices for now. Let's move on to some physics problems :) 
+That's enough vectors and matrices for now. Let's move on to some physics problems :) 
 (Yes, the actual subject we are studying for)
 
 We'll be working with a basic projectile motion for this part. Let's plot the motion of a dropped ball.
 
 
-
-# Problem: Assume I have a ball dangling at a very large height. Let's plot the position of the ball over the course of 5 seconds.
-
-There are many ways to approach this problem, especially in a computational aspect. However, in order to get your feet wet in programing, let us do something basic for this week: 
-
-Determining our equations of motion in respect to time using our Physics I knowledge we get the following:
-
-$\mathbf{P}(\mathbf{t}) = P_i + v_it + \dfrac{1}{2}at^2 $
-
-Where $v_i$ is the initial velocity and $a$ is the accleration of the object.
-
-#### We're going to use these equations to create a simple yet adjustable computation (Run the cell below)
-
-
-```python
-%matplotlib inline
-import matplotlib.patches as mpatches
-
-g = 9.8 #m/s^2
-tf = 5 #s
-t = np.arange(0,tf,.1)
-y = -g*.5*t**2
-
-plt.style.use('ggplot')
-plt.figure(figsize=(8,8))
-plt.scatter(t, y, color = 'b')
-blue_patch = mpatches.Patch(color = 'b', label = 'Y position over time')
-plt.legend(handles=[blue_patch])
-plt.xlabel("Time (s)")
-plt.ylabel("Height (m)")   
-```
-
-### Now using what we have learned from the "Python Basics" notebook and here let's create a program that takes in initial velocity and time we want to analyze, spitting out a graph after it is done:
-
-We will need to modify our $y$ equation to take in velocity also. A command for user inputs is already provided, along with the  skeleton of the funciton. Your job is to complete it using the hints provided and what we did above.
-
-
-```python
-# This is where we create our function 
-# Notice that this function takes in a variable "vi" and "tf"
-def Canon(vi, tf):
-    
-    g = ## Insert value for accleration due to gravity here
-    t = ## Input algorithm for range of t using the np.arange() function
-    y = ## Insert equation for motion of y with velocity as a factor
-    
-    ## Use the scatter plotting function to graph the movement below. Feel free to add labels and other graphics to the plot as you see fit
-    ## (Hint: There is already code for graphing above that you can copy and/or modify for your own usage)
-    
-```
-
-
-```python
-# The next two commands will ask the user for an input. The value will be stored as a "float number"
-Vi = float(input("Please enter initial velocity (m/s)"))
-
-T = float(input("Pleaes enter time you would like to analyze the dropped ball (s)"))
-
-# Now below, we will call upon the Canon function and plug in our asked values
-Canon(Vi, T)
-```
-
-# Q1.) Given an initial velocity of 40 m/s upwards and observed for a time period of 10 seconds, about how high does the ball get? What position is the ball from the origin at the end of the observation? 
-#### (This doesn't need to be exact, use the program above to answer this question)
-
-&#9989; Double click this cell, erase its content, and put your answer to the above question here.
-
-# Notebook Wrap-up. 
-Run the cell below and copy-paste your answers into their corresponding cells.
-
-
-```python
-from IPython.display import HTML
-HTML(
-"""
-<iframe 
-	src="https://forms.gle/9yp9GDXy51s5Hk3y7" 
-	width="100%" 
-	height="1200px" 
-	frameborder="0" 
-	marginheight="0" 
-	marginwidth="0">
-	Loading...
-</iframe>
-"""
-)
-```
-
-# Congratulations, you are at the end of the assignment! 
+Congratulations, you are at the end of the assignment! 
 
 Consider reviewing some Python documentation online to get the hang of variables and functions more. Or relax and take a break after. Whatever floats your boat.
