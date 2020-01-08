@@ -154,7 +154,7 @@ MathJax.Hub.Config({
 The first exercise is meant to remind ourselves about properties of
 the exponential function and imaginary numbers. This is highly
 relevant later in this course when we start analyzing oscillatory
-motion and some some wave mechanics. As physicists we should thus feel comfortable with expressions that
+motion and some wave mechanics. As physicists we should thus feel comfortable with expressions that
 include \( \exp{(\imath\omega t)} \). Here \( t \) could be interpreted as time and \( \omega \) as a frequency and \( \imath \) is the imaginary unit number.
 
 <ul>
@@ -203,35 +203,47 @@ $$
 
 
 <ul>
-<li> 6a (5pt) Find the transpose of the matrix \( \boldsymbol{R} \). We label this as \( \boldsymbol{R}^T \).</li>
-<li> 6b (5pt)  This matrix is a so-called unitary/orthogonal matrix.  Show that \( \boldsymbol{R}^T\boldsymbol{R}= \boldsymbol{I} \) where \( \boldsymbol{I} \) is the so-called identity matrix with ones only along the diagonal. How would you interpret this result? For example, are scalar products changed under this transformations?</li> 
+<li> 6a (4pt) Find the transpose of the matrix \( \boldsymbol{R} \). We label this as \( \boldsymbol{R}^T \).</li>
+<li> 6b (4pt)  This matrix is a so-called unitary/orthogonal matrix.  Show that \( \boldsymbol{R}^T\boldsymbol{R}= \boldsymbol{I} \) where \( \boldsymbol{I} \) is the so-called identity matrix with ones only along the diagonal. How would you interpret this result? For example, are scalar products changed under this transformations?</li>
+<li> 6c (2pt) Find the matrix for rotating a coordinate system by \( 90 \) degrees about the \( x \)-axis.</li>
 </ul>
 
 <h3 id="___sec6" class="anchor">Exercise 7 (40pt), Numerical elements, getting started with some simple data </h3>
 
+<p>
+Our first numerical attempt will involve reading data from file or
+just setting up two vectors, one for position and one for time. Our data are from 
+<a href="https://www.youtube.com/watch?v=93dC0o2aHto" target="_self">Usain Bolt's world record 100m during the olympic games in Beijing in
+2008</a>. The data show the time used in units of 10m (see below). Before we however
+venture into this, we need to repeat some basic Python syntax with an
+emphasis on
+
 <ul>
-<li> Review basic Python syntax for arrays</li>
-<li> Be able to define and operate on vectors and matrices in Python</li>
-<li> Create plots for motion in 1D space</li>
+<li> basic Python syntax for arrays</li>
+<li> define and operate on vectors and matrices in Python</li>
+<li> create plots for motion in 1D space</li>
 </ul>
 
+For more information, see the <a href="https://mhjensen.github.io/Physics321/doc/pub/Introduction/html/Introduction.html" target="_self">introductory slides</a>.
+Here are some of the basic packages we will be using this week
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic"># Here are basic packages we will be using this week</span>
-
-<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span> 
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span> 
 <span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
 <span style="color: #666666">%</span>matplotlib inline
 </pre></div>
 <p>
+The first exercise here deals with simply getting familiar with vectors and matrices.
+
+<p>
 We will be working with vectors and matrices to get you familiar with them
 
 <ol>
-<li> Initalize two xyz vectors in the below cell using np.array([x,y,z]). Vectors are represented through arrays in python</li>
+<li> Initalize two three-dimensional \( xyz \) vectors in the below cell using np.array([x,y,z]). Vectors are represented through arrays in python</li>
 <li> V1 should have x1=1, y1 =2, and z1=3.</li> 
 <li> Vector 2 should have x2=4, y2=5,  and z2=6.</li> 
-<li> Print both vectors to make sure it is working peroperly</li>
+<li> Print both vectors to make sure your code is working properly.</li>
 </ol>
 
 <p>
@@ -243,13 +255,25 @@ V2 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>
 <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;V2: &quot;</span>, V2)
 </pre></div>
 <p>
-Once you have gotten the vectors set up, nice! If not, no worries. Here's a useful link for creating vectors in python <a href="https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html" target="_self"><tt>https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html</tt></a>
+If this is not too familiar, here's a useful link for creating vectors in python <a href="https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html" target="_self"><tt>https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html</tt></a>. Alternatively, look up the <a href="https://mhjensen.github.io/Physics321/doc/pub/Introduction/html/Introduction.html" target="_self">introductory slides</a>.
 
 <p>
-Now lets do some basic math with vectors. Print the following the following, and double check with hand calculations:
-a.) V1-V2    b.) V2-V1  
-Here is some useful explanation on numpy array operations if you feel a bit confused by what is happening: <a href="https://www.pluralsight.com/guides/overview-basic-numpy-operations" target="_self"><tt>https://www.pluralsight.com/guides/overview-basic-numpy-operations</tt></a>
+Now lets do some basic mathematics with vectors.
 
+<p>
+Compute and print the following, and double check with hand calculations:
+
+<ul>
+<li> 7a (2pt)  Calculate \( \boldsymbol{V}_1-\boldsymbol{V}_2 \).</li>
+<li> 7b (2pt)  Calculate \( \boldsymbol{V}_2-\boldsymbol{V}_1 \).</li>
+<li> 7c (2pt) Calculate the dot product \( \boldsymbol{V}_1\boldsymbol{V}_2 \).</li>
+<li> 7d (2pt) Calculate the cross product \( \boldsymbol{V}_1\times\boldsymbol{V}_2 \).</li>
+</ul>
+
+Here is some useful explanation on numpy array operations if you feel a bit confused by what is happening, see <a href=" URL: " target="_self"><tt> URL: </tt></a>https://www.pluralsight.com/guides/overview-basic-numpy-operations""
+
+<p>
+The following code prints the first two exercises
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
@@ -257,16 +281,19 @@ Here is some useful explanation on numpy array operations if you feel a bit conf
 <span style="color: #008000; font-weight: bold">print</span>(V2<span style="color: #666666">-</span>V2)
 </pre></div>
 <p>
-Let's take the dot product of V1 and V2 below using V1.dot(V2)
-NOTE: This function is only usable while numpy is imported
-
+For the dot product of V1 and V2 below we can use the <b>dot</b> function of <b>numpy</b> as follows
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">print</span>(V1<span style="color: #666666">.</span>dot(V2))
 </pre></div>
 <p>
-Matrices can be created in a similar fashion in python.  In this language we can work with them through the package numpy (which we have already imported)
+As a small challenge try to write your own function for the <b>dot</b> product of two vectors.
+
+<p>
+Matrices can be created in a similar fashion in python.  In this
+language we can work with them through the package numpy (which we
+have already imported)
 
 <p>
 
@@ -282,37 +309,61 @@ M3 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>
              [<span style="color: #666666">7</span>,<span style="color: #666666">6</span>,<span style="color: #666666">9</span>]])
 </pre></div>
 <p>
-Matrices can be added in the same way vectors are added in python.
-
+Matrices can be added in the same way vectors are added in python as shown here
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;M1*M2: &quot;</span>, M1<span style="color: #666666">*</span>M2)
-<span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;M1+M3: &quot;</span>, M1<span style="color: #666666">+</span>M3)
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;M1+M2: &quot;</span>, M1<span style="color: #666666">+</span>M2)
 </pre></div>
-<p>
-Run the cell below and notice how when doing M2xM1 this does not work. Do not worry, this is expected if you remember how matrices work. The first matrix's number of columns must equal the second matrix's number of rows.
+<ul>
+<li> 7e (4pt) Let us go back to exercise 6. Define a vector \( \boldsymbol{a}=(1,0,0) \) and set the angle \( \phi \) in the rotation matrix (rotation in the \( xy \) plane) to \( 45 \) degrees. Set up the matrix \( \boldsymbol{R} \) and find the vector \( \boldsymbol{b}=\boldsymbol{R}\boldsymbol{a} \).</li>
+</ul>
 
-<p>
-After you run the below cell once. Fix the problem by making a new matrix M4 that has two rows (number of columns is up to you) and update the print outputs appropriately (changing M1 to M4).
-
+To perform a matrix-vector multiplication of the above type, the following python code may be of use. Here we just define a random vector and a random \( 3\times 3 \) matrix
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;M2xM1: &quot;</span>, M2<span style="color: #666666">*</span>M1) 
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #408080; font-style: italic">#We define a  3 dimensional vector with random numbers</span>
+n <span style="color: #666666">=</span> <span style="color: #666666">3</span>
+a <span style="color: #666666">=</span> np<span style="color: #666666">.</span>random<span style="color: #666666">.</span>rand(n)
+<span style="color: #408080; font-style: italic"># define a matrix of dimension 3 x 3 and set all elements to random numbers with x \in [0, 1]</span>
+R <span style="color: #666666">=</span> np<span style="color: #666666">.</span>random<span style="color: #666666">.</span>rand(n, n)
+<span style="color: #408080; font-style: italic">#print the vector and the matrix</span>
+<span style="color: #008000; font-weight: bold">print</span>(a)
+<span style="color: #008000; font-weight: bold">print</span>(R)
+<span style="color: #408080; font-style: italic"># perform a matrix-vector multiplication. Note that we need to transpose the vector and the odd way to indicate a multiplication with @</span>
+b <span style="color: #666666">=</span> R @ a<span style="color: #666666">.</span>T
+<span style="color: #008000; font-weight: bold">print</span>(b)
 </pre></div>
 <p>
-That's enough vectors and matrices for now. Let's move on to some physics problems :) 
-(Yes, the actual subject we are studying for)
+That's enough vectors and matrices for now. Let's move on to some physics problems! Yes, the actual subject we are studying for.
 
 <p>
-We'll be working with a basic projectile motion for this part. Let's plot the motion of a dropped ball.
+We can opt for two different ways of handling the data. The data is listed in the table here and represents the total time Usain Bolt used in steps of  10 meters of distance. The label \( i \) is just a counter and we start from zero since Python arrays are by default set from zero. The variable \( t \) is time in seconds and \( x \) is the position in meters.
 
 <p>
-Congratulations, you are at the end of the assignment!
 
-<p>
-Consider reviewing some Python documentation online to get the hang of variables and functions more. Or relax and take a break after. Whatever floats your boat.
+<div class="row">
+  <div class="col-xs-5">
+    <table class="table table-striped table-hover table-condensed">
+<thead>
+<tr><td align="center"><b> i  </b></td> <td align="center"><b> 0  </b></td> <td align="center"><b> 1  </b></td> <td align="center"><b> 2  </b></td> <td align="center"><b> 3  </b></td> <td align="center"><b> 4  </b></td> <td align="center"><b> 5  </b></td> <td align="center"><b> 6  </b></td> <td align="center"><b> 7  </b></td> <td align="center"><b> 8  </b></td> <td align="center"><b> 9  </b></td> </tr>
+</thead>
+<tbody>
+<tr><td align="center">   x[m]    </td> <td align="center">   10      </td> <td align="center">   20      </td> <td align="center">   30      </td> <td align="center">   40      </td> <td align="center">   50      </td> <td align="center">   60      </td> <td align="center">   70      </td> <td align="center">   80      </td> <td align="center">   90      </td> <td align="center">   100     </td> </tr>
+<tr><td align="center">   t[s]    </td> <td align="center">   1.85    </td> <td align="center">   2.87    </td> <td align="center">   3.78    </td> <td align="center">   4.65    </td> <td align="center">   5.50    </td> <td align="center">   6.32    </td> <td align="center">   7.14    </td> <td align="center">   7.96    </td> <td align="center">   8.79    </td> <td align="center">   9.69    </td> </tr>
+</tbody>
+    </table>
+  </div> <!-- col-xs-5 -->
+</div> <!-- cell row -->
+<ul>
+<li> 7f (4pt) You can here make a file with the above data and read them in and set up two vectors, one for time and one for position. Alternatively, you can just set up these two vectors directly and define two vectors in your Python code.</li>
+<li> 7g (4pt) Plot the position as function of time</li>
+<li> 7h (10pt) Compute thereafter the mean velocity for every interval \( i \) and the total velocity (from \( i=0 \) to the given interval \( i \)) for each interval and plot these two quantities as function of time. Comment your results.</li>
+<li> 7i (10pt) Finally, compute and plot the mean acceleration for each interval and the total acceleration. Again, comment your results. Can you see whether he slowed down during the last meters?</li> 
+</ul>
+
 
 <!-- ------------------- end of main content --------------- -->
 

@@ -142,7 +142,7 @@ Jan 8, 2020
 The first exercise is meant to remind ourselves about properties of
 the exponential function and imaginary numbers. This is highly
 relevant later in this course when we start analyzing oscillatory
-motion and some some wave mechanics. As physicists we should thus feel comfortable with expressions that
+motion and some wave mechanics. As physicists we should thus feel comfortable with expressions that
 include $\exp{(\imath\omega t)}$. Here $t$ could be interpreted as time and $\omega$ as a frequency and $\imath$ is the imaginary unit number.
 
 \begin{itemize}
@@ -194,40 +194,52 @@ We can write this in a more compact form as $\bm{b} = \bm{R}\bm{a}$, where the r
 \]
 
 \begin{itemize}
-\item 6a (5pt) Find the transpose of the matrix $\bm{R}$. We label this as $\bm{R}^T$.
+\item 6a (4pt) Find the transpose of the matrix $\bm{R}$. We label this as $\bm{R}^T$.
 
-\item 6b (5pt)  This matrix is a so-called unitary/orthogonal matrix.  Show that $\bm{R}^T\bm{R}= \bm{I}$ where $\bm{I}$ is the so-called identity matrix with ones only along the diagonal. How would you interpret this result? For example, are scalar products changed under this transformations? 
+\item 6b (4pt)  This matrix is a so-called unitary/orthogonal matrix.  Show that $\bm{R}^T\bm{R}= \bm{I}$ where $\bm{I}$ is the so-called identity matrix with ones only along the diagonal. How would you interpret this result? For example, are scalar products changed under this transformations?
+
+\item 6c (2pt) Find the matrix for rotating a coordinate system by $90$ degrees about the $x$-axis.
 \end{itemize}
 
 \noindent
 \paragraph{Exercise 7 (40pt), Numerical elements, getting started with some simple data.}
+Our first numerical attempt will involve reading data from file or
+just setting up two vectors, one for position and one for time. Our data are from 
+\href{{https://www.youtube.com/watch?v=93dC0o2aHto}}{Usain Bolt's world record 100m during the olympic games in Beijing in
+2008}. The data show the time used in units of 10m (see below). Before we however
+venture into this, we need to repeat some basic Python syntax with an
+emphasis on
+
 \begin{itemize}
-\item Review basic Python syntax for arrays
+\item basic Python syntax for arrays
 
-\item Be able to define and operate on vectors and matrices in Python
+\item define and operate on vectors and matrices in Python
 
-\item Create plots for motion in 1D space
+\item create plots for motion in 1D space
 \end{itemize}
 
 \noindent
+For more information, see the \href{{https://mhjensen.github.io/Physics321/doc/pub/Introduction/html/Introduction.html}}{introductory slides}.
+Here are some of the basic packages we will be using this week
 \bpycod
-# Here are basic packages we will be using this week
-
 import numpy as np 
 import matplotlib.pyplot as plt
 %matplotlib inline
 \epycod
 
+
+The first exercise here deals with simply getting familiar with vectors and matrices.
+
 We will be working with vectors and matrices to get you familiar with them
 
 \begin{enumerate}
-\item Initalize two xyz vectors in the below cell using np.array([x,y,z]). Vectors are represented through arrays in python
+\item Initalize two three-dimensional $xyz$ vectors in the below cell using np.array([x,y,z]). Vectors are represented through arrays in python
 
 \item V1 should have x1=1, y1 =2, and z1=3. 
 
 \item Vector 2 should have x2=4, y2=5,  and z2=6. 
 
-\item Print both vectors to make sure it is working peroperly
+\item Print both vectors to make sure your code is working properly.
 \end{enumerate}
 
 \noindent
@@ -238,26 +250,41 @@ print("V1: ", V1)
 print("V2: ", V2)
 \epycod
 
-Once you have gotten the vectors set up, nice! If not, no worries. Here's a useful link for creating vectors in python \href{{https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html}}{\nolinkurl{https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html}}
+If this is not too familiar, here's a useful link for creating vectors in python \href{{https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html}}{\nolinkurl{https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html}}. Alternatively, look up the \href{{https://mhjensen.github.io/Physics321/doc/pub/Introduction/html/Introduction.html}}{introductory slides}.
 
-Now lets do some basic math with vectors. Print the following the following, and double check with hand calculations:
-a.) V1-V2    b.) V2-V1  
-Here is some useful explanation on numpy array operations if you feel a bit confused by what is happening: \href{{https://www.pluralsight.com/guides/overview-basic-numpy-operations}}{\nolinkurl{https://www.pluralsight.com/guides/overview-basic-numpy-operations}}
+Now lets do some basic mathematics with vectors.
 
+
+Compute and print the following, and double check with hand calculations:
+
+\begin{itemize}
+\item 7a (2pt)  Calculate $\bm{V}_1-\bm{V}_2$.
+
+\item 7b (2pt)  Calculate $\bm{V}_2-\bm{V}_1$.
+
+\item 7c (2pt) Calculate the dot product $\bm{V}_1\bm{V}_2$.
+
+\item 7d (2pt) Calculate the cross product $\bm{V}_1\times\bm{V}_2$.
+\end{itemize}
+
+\noindent
+Here is some useful explanation on numpy array operations if you feel a bit confused by what is happening, see \href{{URL:}}{\nolinkurl{ URL:}}https://www.pluralsight.com/guides/overview-basic-numpy-operations""
+
+The following code prints the first two exercises
 \bpycod
 print(V1-V2)
 print(V2-V2)
 \epycod
 
-Let's take the dot product of V1 and V2 below using V1.dot(V2)
-NOTE: This function is only usable while numpy is imported
-
-
+For the dot product of V1 and V2 below we can use the \textbf{dot} function of \textbf{numpy} as follows
 \bpycod
 print(V1.dot(V2))
 \epycod
+As a small challenge try to write your own function for the \textbf{dot} product of two vectors.
 
-Matrices can be created in a similar fashion in python.  In this language we can work with them through the package numpy (which we have already imported)
+Matrices can be created in a similar fashion in python.  In this
+language we can work with them through the package numpy (which we
+have already imported)
 
 
 \bpycod
@@ -272,32 +299,61 @@ M3 = np.matrix([[9,8,7],
              [7,6,9]])
 \epycod
 
-Matrices can be added in the same way vectors are added in python.
-
-
+Matrices can be added in the same way vectors are added in python as shown here
 \bpycod
-print("M1*M2: ", M1*M2)
-print("M1+M3: ", M1+M3)
+print("M1+M2: ", M1+M2)
 \epycod
 
-Run the cell below and notice how when doing M2xM1 this does not work. Do not worry, this is expected if you remember how matrices work. The first matrix's number of columns must equal the second matrix's number of rows. 
+\begin{itemize}
+\item 7e (4pt) Let us go back to exercise 6. Define a vector $\bm{a}=(1,0,0)$ and set the angle $\phi$ in the rotation matrix (rotation in the $xy$ plane) to $45$ degrees. Set up the matrix $\bm{R}$ and find the vector $\bm{b}=\bm{R}\bm{a}$.
+\end{itemize}
 
-After you run the below cell once. Fix the problem by making a new matrix M4 that has two rows (number of columns is up to you) and update the print outputs appropriately (changing M1 to M4).
-
-
+\noindent
+To perform a matrix-vector multiplication of the above type, the following python code may be of use. Here we just define a random vector and a random $3\times 3$ matrix
 \bpycod
-print("M2xM1: ", M2*M1) 
+import numpy as np
+#We define a  3 dimensional vector with random numbers
+n = 3
+a = np.random.rand(n)
+# define a matrix of dimension 3 x 3 and set all elements to random numbers with x \in [0, 1]
+R = np.random.rand(n, n)
+#print the vector and the matrix
+print(a)
+print(R)
+# perform a matrix-vector multiplication. Note that we need to transpose the vector and the odd way to indicate a multiplication with @
+b = R @ a.T
+print(b)
 \epycod
 
-That's enough vectors and matrices for now. Let's move on to some physics problems :) 
-(Yes, the actual subject we are studying for)
+That's enough vectors and matrices for now. Let's move on to some physics problems! Yes, the actual subject we are studying for. 
 
-We'll be working with a basic projectile motion for this part. Let's plot the motion of a dropped ball.
+We can opt for two different ways of handling the data. The data is listed in the table here and represents the total time Usain Bolt used in steps of  10 meters of distance. The label $i$ is just a counter and we start from zero since Python arrays are by default set from zero. The variable $t$ is time in seconds and $x$ is the position in meters.
 
 
-Congratulations, you are at the end of the assignment! 
+\begin{quote}
+\begin{tabular}{ccccccccccc}
+\hline
+\multicolumn{1}{c}{ i } & \multicolumn{1}{c}{ 0 } & \multicolumn{1}{c}{ 1 } & \multicolumn{1}{c}{ 2 } & \multicolumn{1}{c}{ 3 } & \multicolumn{1}{c}{ 4 } & \multicolumn{1}{c}{ 5 } & \multicolumn{1}{c}{ 6 } & \multicolumn{1}{c}{ 7 } & \multicolumn{1}{c}{ 8 } & \multicolumn{1}{c}{ 9 } \\
+\hline
+x[m] & 10   & 20   & 30   & 40   & 50   & 60   & 70   & 80   & 90   & 100  \\
+\hline
+t[s] & 1.85 & 2.87 & 3.78 & 4.65 & 5.50 & 6.32 & 7.14 & 7.96 & 8.79 & 9.69 \\
+\hline
+\end{tabular}
+\end{quote}
 
-Consider reviewing some Python documentation online to get the hang of variables and functions more. Or relax and take a break after. Whatever floats your boat.
+\noindent
+\begin{itemize}
+\item 7f (4pt) You can here make a file with the above data and read them in and set up two vectors, one for time and one for position. Alternatively, you can just set up these two vectors directly and define two vectors in your Python code.
+
+\item 7g (4pt) Plot the position as function of time
+
+\item 7h (10pt) Compute thereafter the mean velocity for every interval $i$ and the total velocity (from $i=0$ to the given interval $i$) for each interval and plot these two quantities as function of time. Comment your results.
+
+\item 7i (10pt) Finally, compute and plot the mean acceleration for each interval and the total acceleration. Again, comment your results. Can you see whether he slowed down during the last meters? 
+\end{itemize}
+
+\noindent
 
 % ------------------- end of main content ---------------
 
