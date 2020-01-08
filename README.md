@@ -57,27 +57,27 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 ###  Week 2, January 6-10, 2020
 - Monday: Introduction to the course and start discussion of vectors, space, time and motion, Taylor chapter 1.2 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/Introduction/html/Introduction.html)
 - Wednesday: More on time,space, vectors and motion, Taylor chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/Introduction/html/Introduction.html), first homework available
-- Friday: Forces and Newton's laws of motion. Taylor chapter 1.4 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/Introduction/html/Introduction.html). Introduction to Git and GitHub and getting started with numerical exercises. Installing software (anaconda) and first homework due January 15.
+- Friday: Forces and Newton's laws of motion. Taylor chapter 1.4 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/Introduction/html/Introduction.html). Introduction to Git and GitHub and getting started with numerical exercises. Installing software (anaconda) and first homework due January 17.
 ### Week 3, January 13-17, 2020
 - Monday:
 - Wednesday: 
-- Friday:  2nd homework, due January 22
+- Friday:  2nd homework, due January 24
 ### Week 4, January 20-24, 2020
 - Monday: MLK day, no lectures
 - Wednesday: 
-- Friday:  3rd homework, due January 29
+- Friday:  3rd homework, due January 31
 ### Week 5, January 27-31, 2020
 - Monday:
 - Wednesday: 
-- Friday:  4th homework, due February 5
+- Friday:  4th homework, due February 7
 ### Week 6, February 3-7, 2020
 - Monday:
 - Wednesday: 
-- Friday:  5th homework, due February 12
+- Friday:  5th homework, due February 14
 ### Week 7, February 10-14, 2020
 - Monday:
 - Wednesday: 
-- Friday:  6th homework, due February 19
+- Friday:  6th homework, due February 21
 ### Week 8, February 17-21, 2020
 - Monday:
 - Wednesday: 
@@ -93,15 +93,15 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 ### Week 11, March  9-13, 2020
 - Monday:
 - Wednesday: 
-- Friday:  7th homework, due March 18
+- Friday:  7th homework, due March 20
 ### Week 12, March 16-20, 2020
 - Monday:
 - Wednesday: 
-- Friday:  8th homework, due March 25
+- Friday:  8th homework, due March 27
 ### Week 13, March 23-27, 2020
 - Monday:
 - Wednesday: 
-- Friday:  9th homework, due April 1
+- Friday:  9th homework, due April 3
 ### Week 14, March 30-April 3, 2020
 - Monday:
 - Wednesday: 
@@ -109,7 +109,7 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 ### Week 15, April  13-17, 2020
 - Monday:
 - Wednesday: 
-- Friday:  10th homework and extra assignments, due April 24 
+- Friday:  10th homework and extra assignments, due April 26 
 ### Week 16, April 20-24, 2020
 - Monday:
 - Wednesday: 
