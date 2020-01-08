@@ -1,0 +1,190 @@
+TITLE: PHY321: Classical Mechanics 1
+AUTHOR: Homework 1, due Friday January 17
+DATE: today
+
+
+
+=== Exercise 1 (10pt)  ===
+
+
+## Classical Mechanics - Week 1 Computational Learning
+
+### This week we will:
+- Review basic Python syntax for arrays
+- Be able to define and operate on vectors and matrices in Python
+- Create plots for motion in 1D space
+
+
+```python
+# Here are basic packages we will be using this week
+
+import numpy as np 
+import matplotlib.pyplot as plt
+%matplotlib inline
+```
+
+## We will be working with vectors and matrices to get you familiar with them
+
+#### Initalize two xyz vectors in the below cell using np.array([x,y,z]). Vectors are represented through arrays in python
+#### V1 should have x1=1, y1 =2, and z1=3. 
+#### Vector 2 should have x2=4, y2=5,  and z2=6. 
+#### Print both vectors to make sure it is working peroperly
+
+
+
+```python
+V1 = np.array([1,2,3])
+V2 = np.array([4,5,6])
+print("V1: ", V1)
+print("V2: ", V2)
+```
+
+#### Once you have gotten the vectors set up, nice! If not, no worries. Here's a useful link for creating vectors in python https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html
+
+#### Now lets do some basic math with vectors. Print the following the following, and double check with hand calculations:
+##### a.) V1-V2    b.) V2-V1  
+Here is some useful explanation on numpy array operations if you feel a bit confused by what is happening: https://www.pluralsight.com/guides/overview-basic-numpy-operations
+
+
+```python
+print(V1-V2)
+print(V2-V2)
+```
+
+#### Let's take the dot product of V1 and V2 below using V1.dot(V2)
+## NOTE: This function is only usable while numpy is imported
+
+
+```python
+print(V1.dot(V2))
+```
+
+#### Matrices can be created in a similar fashion in python.  In this language we can work with them through the package numpy (which we have already imported)
+
+
+```python
+M1 = np.matrix([[1,2,3],
+             [4,5,6],
+             [7,8,9]])
+M2 = np.matrix([[1,2],
+             [3,4],
+             [5,6]])
+M3 = np.matrix([[9,8,7],
+             [4,5,6],
+             [7,6,9]])
+```
+
+#### Matrices can be added in the same way vectors are added in python.
+
+
+```python
+print("M1*M2: ", M1*M2)
+print("M1+M3: ", M1+M3)
+```
+
+#### Run the cell below and notice how when doing M2xM1 this does not work. Do not worry, this is expected if you remember how matrices work. The first matrix's number of columns must equal the second matrix's number of rows. 
+
+After you run the below cell once. Fix the problem by making a new matrix M4 that has two rows (number of columns is up to you) and update the print outputs appropriately (changing M1 to M4).
+
+
+```python
+print("M2xM1: ", M2*M1) 
+```
+
+# That's enough vectors and matrices for now. Let's move on to some physics problems :) 
+(Yes, the actual subject we are studying for)
+
+We'll be working with a basic projectile motion for this part. Let's plot the motion of a dropped ball.
+
+
+
+# Problem: Assume I have a ball dangling at a very large height. Let's plot the position of the ball over the course of 5 seconds.
+
+There are many ways to approach this problem, especially in a computational aspect. However, in order to get your feet wet in programing, let us do something basic for this week: 
+
+Determining our equations of motion in respect to time using our Physics I knowledge we get the following:
+
+$\mathbf{P}(\mathbf{t}) = P_i + v_it + \dfrac{1}{2}at^2 $
+
+Where $v_i$ is the initial velocity and $a$ is the accleration of the object.
+
+#### We're going to use these equations to create a simple yet adjustable computation (Run the cell below)
+
+
+```python
+%matplotlib inline
+import matplotlib.patches as mpatches
+
+g = 9.8 #m/s^2
+tf = 5 #s
+t = np.arange(0,tf,.1)
+y = -g*.5*t**2
+
+plt.style.use('ggplot')
+plt.figure(figsize=(8,8))
+plt.scatter(t, y, color = 'b')
+blue_patch = mpatches.Patch(color = 'b', label = 'Y position over time')
+plt.legend(handles=[blue_patch])
+plt.xlabel("Time (s)")
+plt.ylabel("Height (m)")   
+```
+
+### Now using what we have learned from the "Python Basics" notebook and here let's create a program that takes in initial velocity and time we want to analyze, spitting out a graph after it is done:
+
+We will need to modify our $y$ equation to take in velocity also. A command for user inputs is already provided, along with the  skeleton of the funciton. Your job is to complete it using the hints provided and what we did above.
+
+
+```python
+# This is where we create our function 
+# Notice that this function takes in a variable "vi" and "tf"
+def Canon(vi, tf):
+    
+    g = ## Insert value for accleration due to gravity here
+    t = ## Input algorithm for range of t using the np.arange() function
+    y = ## Insert equation for motion of y with velocity as a factor
+    
+    ## Use the scatter plotting function to graph the movement below. Feel free to add labels and other graphics to the plot as you see fit
+    ## (Hint: There is already code for graphing above that you can copy and/or modify for your own usage)
+    
+```
+
+
+```python
+# The next two commands will ask the user for an input. The value will be stored as a "float number"
+Vi = float(input("Please enter initial velocity (m/s)"))
+
+T = float(input("Pleaes enter time you would like to analyze the dropped ball (s)"))
+
+# Now below, we will call upon the Canon function and plug in our asked values
+Canon(Vi, T)
+```
+
+# Q1.) Given an initial velocity of 40 m/s upwards and observed for a time period of 10 seconds, about how high does the ball get? What position is the ball from the origin at the end of the observation? 
+#### (This doesn't need to be exact, use the program above to answer this question)
+
+&#9989; Double click this cell, erase its content, and put your answer to the above question here.
+
+# Notebook Wrap-up. 
+Run the cell below and copy-paste your answers into their corresponding cells.
+
+
+```python
+from IPython.display import HTML
+HTML(
+"""
+<iframe 
+	src="https://forms.gle/9yp9GDXy51s5Hk3y7" 
+	width="100%" 
+	height="1200px" 
+	frameborder="0" 
+	marginheight="0" 
+	marginwidth="0">
+	Loading...
+</iframe>
+"""
+)
+```
+
+# Congratulations, you are at the end of the assignment! 
+
+Consider reviewing some Python documentation online to get the hang of variables and functions more. Or relax and take a break after. Whatever floats your boat.

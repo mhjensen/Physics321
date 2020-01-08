@@ -1,0 +1,92 @@
+TITLE: Overview of course material: Physics 321, Classical Mechanics
+AUTHOR: Department of Physics and Astronomy, Michigan State University, USA
+
+<%
+pub_url = 'https://mhjensen.github.io/Physics321/doc/pub'
+published = ['intro', 'motion', 'momconserv', 'energyconserv', 'harmonic', 'variational', 'lagrange', 'twobody', 'summary',]
+chapters = {
+ 'intro': 'Introduction to Classical Mechanics',
+ 'motion': 'Simple Motion Problems',
+ 'momconserv': 'Momentum Conservation',
+ 'energyconserv': 'Energy Conservation',
+ 'harmonic': 'Harmonic Oscillations',
+ 'variational': 'Variational Calculus',
+ 'lagrange': 'Lagrangian Formalism',
+ 'twobody': 'Two-body Problems',
+ 'summary': 'Summary of course',
+}
+%>
+
+
+
+
+
+<%def name="text_types(name)">
+
+ * LaTeX PDF:
+   * For printing:
+     * "Standard one-page format":"${pub_url}/${name}/pdf/${name}-minted.pdf"
+ * HTML:
+   * "Plain html": "${pub_url}/${name}/html/${name}.html"
+   * "reveal.js beige slide style":"${pub_url}/${name}/html/${name}-reveal.html"
+   * "Bootstrap  slide style, easy for reading on mobile devices":"${pub_url}/${name}/html/${name}-bs.html"
+ * iPython notebook:
+   * "ipynb file":"${pub_url}/${name}/ipynb/${name}.ipynb"
+</%def>
+
+<%def name="slide_types(name)">
+</%def>
+
+The teaching material is produced in various formats for printing and on-screen reading.
+
+
+======= Classical Mechanics  Notes =======
+
+% for ch in published:
+===== ${chapters[ch]} =====
+
+${text_types(ch)}
+
+% endfor
+
+
+
+!split
+===== Teaching schedule Semester: =====
+
+|----------------------------------------------------------------------------------------------------------------------------|
+|  Week   |  Topics to be covered | Quizzes and Homeworks | Reading assignments|  Activities                   |
+|----------------------------------------------------------------------------------------------------------------------------|
+| Week 2|   Introduction to the course  |   |  | |
+|----------------------------------------------------------------------------------------------------------------------------|
+|----------------------------------------------------------------------------------------------------------------------------|
+| Week 10  |  Spring break       |                |    |   |
+|----------------------------------------------------------------------------------------------------------------------------|
+|----------------------------------------------------------------------------------------------------------------------------|
+| Week 18 | Finals week                     |                  |   |    |
+|----------------------------------------------------------------------------------------------------------------------------|
+
+!split
+===== Basic Syllabus =====
+
+The syllabus for this course consists of 
+
+=== Additional literature ===
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
