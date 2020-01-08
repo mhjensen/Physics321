@@ -21,8 +21,8 @@ final,                   % draft: marks overfull hboxes, figures with paths
 \usepackage[pdftex]{graphicx}
 
 \usepackage{fancyvrb} % packages needed for verbatim environments
-\usepackage{verbatim}
-
+%\usepackage{verbatim}
+%\usemintedstyle{default}
 
 \usepackage[T1]{fontenc}
 %\usepackage[latin1]{inputenc}
@@ -206,7 +206,7 @@ emphasis on
 \noindent
 For more information, see the \href{{https://mhjensen.github.io/Physics321/doc/pub/Introduction/html/Introduction.html}}{introductory slides}.
 Here are some of the basic packages we will be using this week
-\begin{verbatim}
+\begin{verbatim}%[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 import numpy as np 
 import matplotlib.pyplot as plt
 %matplotlib inline
@@ -228,7 +228,7 @@ We will be working with vectors and matrices to get you familiar with them
 \end{enumerate}
 
 \noindent
-\begin{verbatim}
+\begin{verbatim}%[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 V1 = np.array([1,2,3])
 V2 = np.array([4,5,6])
 print("V1: ", V1)
@@ -256,13 +256,13 @@ Compute and print the following, and double check with hand calculations:
 Here is some useful explanation on numpy array operations if you feel a bit confused by what is happening, see \href{{URL:}}{\nolinkurl{ URL:}}https://www.pluralsight.com/guides/overview-basic-numpy-operations""
 
 The following code prints the first two exercises
-\begin{verbatim}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
+\begin{verbatim}%[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 print(V1-V2)
 print(V2-V2)
 \end{verbatim}
 
 For the dot product of V1 and V2 below we can use the \textbf{dot} function of \textbf{numpy} as follows
-\begin{verbatim}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
+\begin{verbatim}%[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 print(V1.dot(V2))
 \end{verbatim}
 As a small challenge try to write your own function for the \textbf{dot} product of two vectors.
@@ -272,7 +272,7 @@ language we can work with them through the package numpy (which we
 have already imported)
 
 
-\begin{verbatim}
+\begin{verbatim}%[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 M1 = np.matrix([[1,2,3],
              [4,5,6],
              [7,8,9]])
@@ -285,9 +285,10 @@ M3 = np.matrix([[9,8,7],
 \end{verbatim}
 
 Matrices can be added in the same way vectors are added in python as shown here
-\begin{verbatim}
-print("M1+M2: ", M1+M2)
+\begin{verbatim}%[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
+print("M1+M3: ", M1+M3)
 \end{verbatim}
+What happens if we try to do $M1+M2$?
 
 \begin{itemize}
 \item 7e (4pt) Let us go back to exercise 6. Define a vector $\bm{a}=(1,0,0)$ and set the angle $\phi$ in the rotation matrix (rotation in the $xy$ plane) to $45$ degrees. Set up the matrix $\bm{R}$ and find the vector $\bm{b}=\bm{R}\bm{a}$.
@@ -295,7 +296,7 @@ print("M1+M2: ", M1+M2)
 
 \noindent
 To perform a matrix-vector multiplication of the above type, the following python code may be of use. Here we just define a random vector and a random $3\times 3$ matrix
-\begin{verbatim}
+\begin{verbatim}%[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 import numpy as np
 #We define a  3 dimensional vector with random numbers
 n = 3
@@ -334,7 +335,7 @@ t[s] & 1.85 & 2.87 & 3.78 & 4.65 & 5.50 & 6.32 & 7.14 & 7.96 & 8.79 & 9.69 \\
 
 \noindent
 The following example code may help here
-\begin{verbatim}
+\begin{verbatim}%[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 # we just initialize time and position
 x = np.array([10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0])
 t = np.array([1.85, 2.87, 3.78, 4.65, 5.50, 6.32, 7.14, 7.96, 8.79, 9.69])
