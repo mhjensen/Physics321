@@ -2,6 +2,12 @@ TITLE: PHY321: Classical Mechanics 1
 AUTHOR: Homework 1, due Friday January 17
 DATE: today
 
+===  About the homeworks and projects ===
+
+o You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. _Remember to write your name(s)_!
+o Homeworks are available Wednesday or Thursday the week before the deadline. The deadline is at the Friday lecture.
+o How do I(we)  hand in?  You can hand in the paper and pencil exercises as a hand-written document. For this homework this applies to exercises 1-6. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise (exercise 7 here) should always be handed in as a jupyter notebook by the deadline at D2L. 
+
 
 
 === Exercise 1 (10 pt), math reminder, properties of exponential function  ===
@@ -55,6 +61,9 @@ We can write this in a more compact form as $\bm{b} = \bm{R}\bm{a}$, where the r
 * 6c (2pt) Find the matrix for rotating a coordinate system by $90$ degrees about the $x$-axis.
 
 ===  Exercise 7 (40pt), Numerical elements, getting started with some simple data ===
+
+_This exercise should be handed in as a jupyter-notebook_ at D2L. Remember to write your name(s). 
+
 
 Our first numerical attempt will involve reading data from file or
 just setting up two vectors, one for position and one for time. Our data are from 
@@ -170,6 +179,15 @@ We can opt for two different ways of handling the data. The data is listed in th
 |-------------------------------------------|
 
 * 7f (4pt) You can here make a file with the above data and read them in and set up two vectors, one for time and one for position. Alternatively, you can just set up these two vectors directly and define two vectors in your Python code.
+
+The following example code may help here
+!bc pycod
+n = 10
+# we just initialize time and position
+x = np.array([ 10.0,20.,30.,40.,50.,60.,70.,80.,90.,100.])
+t = = np.array([1.85,2.87,3.78,4.65,5.50,6.32,7.14,7.96,8.79,9.69])
+!ec
+
 * 7g (4pt) Plot the position as function of time
 * 7h (10pt) Compute thereafter the mean velocity for every interval $i$ and the total velocity (from $i=0$ to the given interval $i$) for each interval and plot these two quantities as function of time. Comment your results.
 * 7i (10pt) Finally, compute and plot the mean acceleration for each interval and the total acceleration. Again, comment your results. Can you see whether he slowed down during the last meters? 

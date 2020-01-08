@@ -35,33 +35,34 @@ div { text-align: justify; text-justify: inter-word; }
 
 <!-- tocinfo
 {'highest level': 3,
- 'sections': [('Exercise 1 (10 pt), math reminder, properties of exponential '
+ 'sections': [('About the homeworks and projects', 3, None, '___sec0'),
+              ('Exercise 1 (10 pt), math reminder, properties of exponential '
                'function',
                3,
                None,
-               '___sec0'),
-              ('Exercise 2 (10 pt), Vector algebra', 3, None, '___sec1'),
+               '___sec1'),
+              ('Exercise 2 (10 pt), Vector algebra', 3, None, '___sec2'),
               ('Exercise 3 (10 pt), More vector mathematics',
                3,
                None,
-               '___sec2'),
+               '___sec3'),
               ('Exercise 4 (10 pt), Algebra of cross products',
                3,
                None,
-               '___sec3'),
+               '___sec4'),
               ('Exercise 5 (10 pt), Area of triangle and law of sines',
                3,
                None,
-               '___sec4'),
+               '___sec5'),
               ('Exercise 6 (10pt), Matrices and rotations in the $xy$ plane',
                3,
                None,
-               '___sec5'),
+               '___sec6'),
               ('Exercise 7 (40pt), Numerical elements, getting started with '
                'some simple data',
                3,
                None,
-               '___sec6')]}
+               '___sec7')]}
 end of tocinfo -->
 
 <body>
@@ -104,7 +105,15 @@ MathJax.Hub.Config({
 <center><h4>Jan 8, 2020</h4></center> <!-- date -->
 <br>
 
-<h3 id="___sec0">Exercise 1 (10 pt), math reminder, properties of exponential function  </h3>
+<h3 id="___sec0">About the homeworks and projects </h3>
+
+<ol>
+<li> You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. <b>Remember to write your name(s)</b>!</li>
+<li> Homeworks are available Wednesday or Thursday the week before the deadline. The deadline is at the Friday lecture.</li>
+<li> How do I(we)  hand in?  You can hand in the paper and pencil exercises as a hand-written document. For this homework this applies to exercises 1-6. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise (exercise 7 here) should always be handed in as a jupyter notebook by the deadline at D2L.</li> 
+</ol>
+
+<h3 id="___sec1">Exercise 1 (10 pt), math reminder, properties of exponential function  </h3>
 
 <p>
 The first exercise is meant to remind ourselves about properties of
@@ -120,32 +129,32 @@ include \( \exp{(\imath\omega t)} \). Here \( t \) could be interpreted as time 
 <li> 1d (3pt): Show that \( \ln{(&#8722;1)} = \imath\pi \).</li>
 </ul>
 
-<h3 id="___sec1">Exercise 2 (10 pt), Vector algebra  </h3>
+<h3 id="___sec2">Exercise 2 (10 pt), Vector algebra  </h3>
 
 <ul>
 <li> 2a (4pt) One of the many uses of the scalar product is to find the angle between two given vectors. Find the angle between the vectors \( \boldsymbol{a}=(1,2,4) \) and \( \boldsymbol{b}=(4,2,1) \) by evaluating their scalar product.</li>
 <li> 2b (6pt) For a cube with sides of length 1, one vertex at the origin, and sides along the \( x \), \( y \), and \( z \) axes, the vector of the body diagonal from the origin can be written \( \boldsymbol{a}=(1, 1, 1) \) and the vector of the face diagonal in the \( xy \) plane from the origin is \( \boldsymbol{b}=(1,1,0) \). Find first the lengths of the body diagonal and the face diagonal. Use then part (2a) to find the angle between the body diagonal and the face diagonal.</li>
 </ul>
 
-<h3 id="___sec2">Exercise 3 (10 pt), More vector mathematics </h3>
+<h3 id="___sec3">Exercise 3 (10 pt), More vector mathematics </h3>
 
 <ul>
 <li> 3a (5pt) Show (using the fact that multiplication of reals is distributive) that \( \boldsymbol{a}(\boldsymbol{b}+\boldsymbol{c})=\boldsymbol{a}\boldsymbol{b}+\boldsymbol{a}\boldsymbol{c} \).</li>
 <li> 3b (5pt) Show that (using product rule for differentiating reals)  \( \frac{d}{dt}(\boldsymbol{a}\boldsymbol{b})=\boldsymbol{a}\frac{d\boldsymbol{b}}{dt}+\boldsymbol{b}\frac{d\boldsymbol{a}}{dt} \)</li>
 </ul>
 
-<h3 id="___sec3">Exercise 4 (10 pt), Algebra of cross products  </h3>
+<h3 id="___sec4">Exercise 4 (10 pt), Algebra of cross products  </h3>
 
 <ul>
 <li> 4a (5pt) Show that the cross products are distribuitive \( \boldsymbol{a}\times(\boldsymbol{b}+\boldsymbol{c})=\boldsymbol{a}\times\boldsymbol{b}+\boldsymbol{a}times\boldsymbol{c} \).</li>
 <li> 4b (5pt) Show that \( \frac{d}{dt}(\boldsymbol{a}\times\boldsymbol{b})=\boldsymbol{a}\times\frac{d\boldsymbol{b}}{dt}+\boldsymbol{b}\times\frac{d\boldsymbol{a}}{dt} \). Be careful with the order of factors</li> 
 </ul>
 
-<h3 id="___sec4">Exercise 5 (10 pt), Area of triangle and law of sines </h3>
+<h3 id="___sec5">Exercise 5 (10 pt), Area of triangle and law of sines </h3>
 
 Exercise 1.18 in the textbook of Taylor, Classical Mechanics. Part (1.18a) gives 5pt and part (1.18b) gives also 5pt.
 
-<h3 id="___sec5">Exercise 6 (10pt), Matrices and rotations in the \( xy \) plane </h3>
+<h3 id="___sec6">Exercise 6 (10pt), Matrices and rotations in the \( xy \) plane </h3>
 
 The rotation of a three-dimensional  vector \( \boldsymbol{a}=(a_x,a_y,a_z) \) in the \( xy \) plane around an angle \( \phi \) results in a new vector \( \boldsymbol{b}=(b_x,b_y,b_z) \).  This operation can be expressed in terms of linear algebra as a matrix (the rotation matrix) multiplied with a vector. We can write this as
 $$
@@ -164,7 +173,10 @@ $$
 <li> 6c (2pt) Find the matrix for rotating a coordinate system by \( 90 \) degrees about the \( x \)-axis.</li>
 </ul>
 
-<h3 id="___sec6">Exercise 7 (40pt), Numerical elements, getting started with some simple data </h3>
+<h3 id="___sec7">Exercise 7 (40pt), Numerical elements, getting started with some simple data </h3>
+
+<p>
+<b>This exercise should be handed in as a jupyter-notebook</b> at D2L. Remember to write your name(s).
 
 <p>
 Our first numerical attempt will involve reading data from file or
@@ -310,6 +322,18 @@ We can opt for two different ways of handling the data. The data is listed in th
 </table>
 <ul>
 <li> 7f (4pt) You can here make a file with the above data and read them in and set up two vectors, one for time and one for position. Alternatively, you can just set up these two vectors directly and define two vectors in your Python code.</li>
+</ul>
+
+The following example code may help here
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span>n = <span style="color: #B452CD">10</span>
+<span style="color: #228B22"># we just initialize time and position</span>
+x = np.array([ <span style="color: #B452CD">10.0</span>,<span style="color: #B452CD">20.</span>,<span style="color: #B452CD">30.</span>,<span style="color: #B452CD">40.</span>,<span style="color: #B452CD">50.</span>,<span style="color: #B452CD">60.</span>,<span style="color: #B452CD">70.</span>,<span style="color: #B452CD">80.</span>,<span style="color: #B452CD">90.</span>,<span style="color: #B452CD">100.</span>])
+t = = np.array([<span style="color: #B452CD">1.85</span>,<span style="color: #B452CD">2.87</span>,<span style="color: #B452CD">3.78</span>,<span style="color: #B452CD">4.65</span>,<span style="color: #B452CD">5.50</span>,<span style="color: #B452CD">6.32</span>,<span style="color: #B452CD">7.14</span>,<span style="color: #B452CD">7.96</span>,<span style="color: #B452CD">8.79</span>,<span style="color: #B452CD">9.69</span>])
+</pre></div>
+<ul>
 <li> 7g (4pt) Plot the position as function of time</li>
 <li> 7h (10pt) Compute thereafter the mean velocity for every interval \( i \) and the total velocity (from \( i=0 \) to the given interval \( i \)) for each interval and plot these two quantities as function of time. Comment your results.</li>
 <li> 7i (10pt) Finally, compute and plot the mean acceleration for each interval and the total acceleration. Again, comment your results. Can you see whether he slowed down during the last meters?</li> 

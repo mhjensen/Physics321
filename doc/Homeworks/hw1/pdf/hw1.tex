@@ -110,6 +110,16 @@ Jan 8, 2020
 \vspace{1cm}
 
 
+\paragraph{About the homeworks and projects.}
+\begin{enumerate}
+\item You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. \textbf{Remember to write your name(s)}!
+
+\item Homeworks are available Wednesday or Thursday the week before the deadline. The deadline is at the Friday lecture.
+
+\item How do I(we)  hand in?  You can hand in the paper and pencil exercises as a hand-written document. For this homework this applies to exercises 1-6. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise (exercise 7 here) should always be handed in as a jupyter notebook by the deadline at D2L. 
+\end{enumerate}
+
+\noindent
 \paragraph{Exercise 1 (10 pt), math reminder, properties of exponential function.}
 The first exercise is meant to remind ourselves about properties of
 the exponential function and imaginary numbers. This is highly
@@ -175,6 +185,9 @@ We can write this in a more compact form as $\bm{b} = \bm{R}\bm{a}$, where the r
 
 \noindent
 \paragraph{Exercise 7 (40pt), Numerical elements, getting started with some simple data.}
+\textbf{This exercise should be handed in as a jupyter-notebook} at D2L. Remember to write your name(s). 
+
+
 Our first numerical attempt will involve reading data from file or
 just setting up two vectors, one for position and one for time. Our data are from 
 \href{{https://www.youtube.com/watch?v=93dC0o2aHto}}{Usain Bolt's world record 100m during the olympic games in Beijing in
@@ -317,7 +330,18 @@ t[s] & 1.85 & 2.87 & 3.78 & 4.65 & 5.50 & 6.32 & 7.14 & 7.96 & 8.79 & 9.69 \\
 \noindent
 \begin{itemize}
 \item 7f (4pt) You can here make a file with the above data and read them in and set up two vectors, one for time and one for position. Alternatively, you can just set up these two vectors directly and define two vectors in your Python code.
+\end{itemize}
 
+\noindent
+The following example code may help here
+\begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
+n = 10
+# we just initialize time and position
+x = np.array([ 10.0,20.,30.,40.,50.,60.,70.,80.,90.,100.])
+t = = np.array([1.85,2.87,3.78,4.65,5.50,6.32,7.14,7.96,8.79,9.69])
+\end{minted}
+
+\begin{itemize}
 \item 7g (4pt) Plot the position as function of time
 
 \item 7h (10pt) Compute thereafter the mean velocity for every interval $i$ and the total velocity (from $i=0$ to the given interval $i$) for each interval and plot these two quantities as function of time. Comment your results.
