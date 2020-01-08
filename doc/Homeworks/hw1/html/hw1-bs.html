@@ -41,7 +41,10 @@ Automatically generated HTML file from DocOnce source
 
 <!-- tocinfo
 {'highest level': 3,
- 'sections': [('About the homeworks and projects', 3, None, '___sec0'),
+ 'sections': [('Practicalities about  homeworks and projects',
+               3,
+               None,
+               '___sec0'),
               ('Exercise 1 (10 pt), math reminder, properties of exponential '
                'function',
                3,
@@ -106,7 +109,7 @@ MathJax.Hub.Config({
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
         <ul class="dropdown-menu">
-     <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;">About the homeworks and projects</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;">Practicalities about  homeworks and projects</a></li>
      <!-- navigation toc: --> <li><a href="#___sec1" style="font-size: 80%;">Exercise 1 (10 pt), math reminder, properties of exponential function</a></li>
      <!-- navigation toc: --> <li><a href="#___sec2" style="font-size: 80%;">Exercise 2 (10 pt), Vector algebra</a></li>
      <!-- navigation toc: --> <li><a href="#___sec3" style="font-size: 80%;">Exercise 3 (10 pt), More vector mathematics</a></li>
@@ -150,11 +153,11 @@ MathJax.Hub.Config({
 <p>
 </div> <!-- end jumbotron -->
 
-<h3 id="___sec0" class="anchor">About the homeworks and projects </h3>
+<h3 id="___sec0" class="anchor">Practicalities about  homeworks and projects </h3>
 
 <ol>
 <li> You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. <b>Remember to write your name(s)</b>!</li>
-<li> Homeworks are available Wednesday or Thursday the week before the deadline. The deadline is at the Friday lecture.</li>
+<li> Homeworks are available Wednesday/Thursday the week before the deadline. The deadline is at the Friday lecture.</li>
 <li> How do I(we)  hand in?  You can hand in the paper and pencil exercises as a hand-written document. For this homework this applies to exercises 1-6. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise (exercise 7 here) should always be handed in as a jupyter notebook by the deadline at D2L.</li> 
 </ol>
 
@@ -191,7 +194,7 @@ include \( \exp{(\imath\omega t)} \). Here \( t \) could be interpreted as time 
 <h3 id="___sec4" class="anchor">Exercise 4 (10 pt), Algebra of cross products  </h3>
 
 <ul>
-<li> 4a (5pt) Show that the cross products are distribuitive \( \boldsymbol{a}\times(\boldsymbol{b}+\boldsymbol{c})=\boldsymbol{a}\times\boldsymbol{b}+\boldsymbol{a}times\boldsymbol{c} \).</li>
+<li> 4a (5pt) Show that the cross products are distribuitive \( \boldsymbol{a}\times(\boldsymbol{b}+\boldsymbol{c})=\boldsymbol{a}\times\boldsymbol{b}+\boldsymbol{a}\times\boldsymbol{c} \).</li>
 <li> 4b (5pt) Show that \( \frac{d}{dt}(\boldsymbol{a}\times\boldsymbol{b})=\boldsymbol{a}\times\frac{d\boldsymbol{b}}{dt}+\boldsymbol{b}\times\frac{d\boldsymbol{a}}{dt} \). Be careful with the order of factors</li> 
 </ul>
 
@@ -378,10 +381,14 @@ The following example code may help here
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>n <span style="color: #666666">=</span> <span style="color: #666666">10</span>
-<span style="color: #408080; font-style: italic"># we just initialize time and position</span>
-x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([ <span style="color: #666666">10.0</span>,<span style="color: #666666">20.</span>,<span style="color: #666666">30.</span>,<span style="color: #666666">40.</span>,<span style="color: #666666">50.</span>,<span style="color: #666666">60.</span>,<span style="color: #666666">70.</span>,<span style="color: #666666">80.</span>,<span style="color: #666666">90.</span>,<span style="color: #666666">100.</span>])
-t <span style="color: #666666">=</span> <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">1.85</span>,<span style="color: #666666">2.87</span>,<span style="color: #666666">3.78</span>,<span style="color: #666666">4.65</span>,<span style="color: #666666">5.50</span>,<span style="color: #666666">6.32</span>,<span style="color: #666666">7.14</span>,<span style="color: #666666">7.96</span>,<span style="color: #666666">8.79</span>,<span style="color: #666666">9.69</span>])
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic"># we just initialize time and position</span>
+x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">10.0</span>, <span style="color: #666666">20.0</span>, <span style="color: #666666">30.0</span>, <span style="color: #666666">40.0</span>, <span style="color: #666666">50.0</span>, <span style="color: #666666">60.0</span>, <span style="color: #666666">70.0</span>, <span style="color: #666666">80.0</span>, <span style="color: #666666">90.0</span>, <span style="color: #666666">100.0</span>])
+t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">1.85</span>, <span style="color: #666666">2.87</span>, <span style="color: #666666">3.78</span>, <span style="color: #666666">4.65</span>, <span style="color: #666666">5.50</span>, <span style="color: #666666">6.32</span>, <span style="color: #666666">7.14</span>, <span style="color: #666666">7.96</span>, <span style="color: #666666">8.79</span>, <span style="color: #666666">9.69</span>])
+plt<span style="color: #666666">.</span>plot(t,x, color<span style="color: #666666">=</span><span style="color: #BA2121">&#39;black&#39;</span>)
+plt<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">&quot;Time t[s]&quot;</span>)
+plt<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">&quot;Position x[m]&quot;</span>)
+plt<span style="color: #666666">.</span>title(<span style="color: #BA2121">&quot;Usain Bolt&#39;s world record run&quot;</span>)
+plt<span style="color: #666666">.</span>show()
 </pre></div>
 <ul>
 <li> 7g (4pt) Plot the position as function of time</li>

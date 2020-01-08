@@ -2,10 +2,10 @@ TITLE: PHY321: Classical Mechanics 1
 AUTHOR: Homework 1, due Friday January 17
 DATE: today
 
-===  About the homeworks and projects ===
+===  Practicalities about  homeworks and projects ===
 
 o You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. _Remember to write your name(s)_!
-o Homeworks are available Wednesday or Thursday the week before the deadline. The deadline is at the Friday lecture.
+o Homeworks are available Wednesday/Thursday the week before the deadline. The deadline is at the Friday lecture.
 o How do I(we)  hand in?  You can hand in the paper and pencil exercises as a hand-written document. For this homework this applies to exercises 1-6. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise (exercise 7 here) should always be handed in as a jupyter notebook by the deadline at D2L. 
 
 
@@ -35,7 +35,7 @@ include $\exp{(\imath\omega t)}$. Here $t$ could be interpreted as time and $\om
 
 === Exercise 4 (10 pt), Algebra of cross products  ===
 
-* 4a (5pt) Show that the cross products are distribuitive $\bm{a}\times(\bm{b}+\bm{c})=\bm{a}\times\bm{b}+\bm{a}times\bm{c}$.
+* 4a (5pt) Show that the cross products are distribuitive $\bm{a}\times(\bm{b}+\bm{c})=\bm{a}\times\bm{b}+\bm{a}\times\bm{c}$.
 * 4b (5pt) Show that $\frac{d}{dt}(\bm{a}\times\bm{b})=\bm{a}\times\frac{d\bm{b}}{dt}+\bm{b}\times\frac{d\bm{a}}{dt}$. Be careful with the order of factors 
 
 
@@ -182,10 +182,14 @@ We can opt for two different ways of handling the data. The data is listed in th
 
 The following example code may help here
 !bc pycod
-n = 10
 # we just initialize time and position
-x = np.array([ 10.0,20.,30.,40.,50.,60.,70.,80.,90.,100.])
-t = = np.array([1.85,2.87,3.78,4.65,5.50,6.32,7.14,7.96,8.79,9.69])
+x = np.array([10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0])
+t = np.array([1.85, 2.87, 3.78, 4.65, 5.50, 6.32, 7.14, 7.96, 8.79, 9.69])
+plt.plot(t,x, color='black')
+plt.xlabel("Time t[s]")
+plt.ylabel("Position x[m]")
+plt.title("Usain Bolt's world record run")
+plt.show()
 !ec
 
 * 7g (4pt) Plot the position as function of time

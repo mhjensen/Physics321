@@ -149,11 +149,11 @@ MathJax.Hub.Config({
 <center><h4>Jan 8, 2020</h4></center> <!-- date -->
 <br>
 
-<h3 id="___sec0">About the homeworks and projects </h3>
+<h3 id="___sec0">Practicalities about  homeworks and projects </h3>
 
 <ol>
 <p><li> You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. <b>Remember to write your name(s)</b>!</li>
-<p><li> Homeworks are available Wednesday or Thursday the week before the deadline. The deadline is at the Friday lecture.</li>
+<p><li> Homeworks are available Wednesday/Thursday the week before the deadline. The deadline is at the Friday lecture.</li>
 <p><li> How do I(we)  hand in?  You can hand in the paper and pencil exercises as a hand-written document. For this homework this applies to exercises 1-6. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise (exercise 7 here) should always be handed in as a jupyter notebook by the deadline at D2L.</li> 
 </ol>
 
@@ -190,7 +190,7 @@ include \( \exp{(\imath\omega t)} \). Here \( t \) could be interpreted as time 
 <h3 id="___sec4">Exercise 4 (10 pt), Algebra of cross products  </h3>
 
 <ul>
-<p><li> 4a (5pt) Show that the cross products are distribuitive \( \boldsymbol{a}\times(\boldsymbol{b}+\boldsymbol{c})=\boldsymbol{a}\times\boldsymbol{b}+\boldsymbol{a}times\boldsymbol{c} \).</li>
+<p><li> 4a (5pt) Show that the cross products are distribuitive \( \boldsymbol{a}\times(\boldsymbol{b}+\boldsymbol{c})=\boldsymbol{a}\times\boldsymbol{b}+\boldsymbol{a}\times\boldsymbol{c} \).</li>
 <p><li> 4b (5pt) Show that \( \frac{d}{dt}(\boldsymbol{a}\times\boldsymbol{b})=\boldsymbol{a}\times\frac{d\boldsymbol{b}}{dt}+\boldsymbol{b}\times\frac{d\boldsymbol{a}}{dt} \). Be careful with the order of factors</li> 
 </ul>
 
@@ -379,10 +379,14 @@ The following example code may help here
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span>n = <span style="color: #B452CD">10</span>
-<span style="color: #228B22"># we just initialize time and position</span>
-x = np.array([ <span style="color: #B452CD">10.0</span>,<span style="color: #B452CD">20.</span>,<span style="color: #B452CD">30.</span>,<span style="color: #B452CD">40.</span>,<span style="color: #B452CD">50.</span>,<span style="color: #B452CD">60.</span>,<span style="color: #B452CD">70.</span>,<span style="color: #B452CD">80.</span>,<span style="color: #B452CD">90.</span>,<span style="color: #B452CD">100.</span>])
-t = = np.array([<span style="color: #B452CD">1.85</span>,<span style="color: #B452CD">2.87</span>,<span style="color: #B452CD">3.78</span>,<span style="color: #B452CD">4.65</span>,<span style="color: #B452CD">5.50</span>,<span style="color: #B452CD">6.32</span>,<span style="color: #B452CD">7.14</span>,<span style="color: #B452CD">7.96</span>,<span style="color: #B452CD">8.79</span>,<span style="color: #B452CD">9.69</span>])
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #228B22"># we just initialize time and position</span>
+x = np.array([<span style="color: #B452CD">10.0</span>, <span style="color: #B452CD">20.0</span>, <span style="color: #B452CD">30.0</span>, <span style="color: #B452CD">40.0</span>, <span style="color: #B452CD">50.0</span>, <span style="color: #B452CD">60.0</span>, <span style="color: #B452CD">70.0</span>, <span style="color: #B452CD">80.0</span>, <span style="color: #B452CD">90.0</span>, <span style="color: #B452CD">100.0</span>])
+t = np.array([<span style="color: #B452CD">1.85</span>, <span style="color: #B452CD">2.87</span>, <span style="color: #B452CD">3.78</span>, <span style="color: #B452CD">4.65</span>, <span style="color: #B452CD">5.50</span>, <span style="color: #B452CD">6.32</span>, <span style="color: #B452CD">7.14</span>, <span style="color: #B452CD">7.96</span>, <span style="color: #B452CD">8.79</span>, <span style="color: #B452CD">9.69</span>])
+plt.plot(t,x, color=<span style="color: #CD5555">&#39;black&#39;</span>)
+plt.xlabel(<span style="color: #CD5555">&quot;Time t[s]&quot;</span>)
+plt.ylabel(<span style="color: #CD5555">&quot;Position x[m]&quot;</span>)
+plt.title(<span style="color: #CD5555">&quot;Usain Bolt&#39;s world record run&quot;</span>)
+plt.show()
 </pre></div>
 <ul>
 <p><li> 7g (4pt) Plot the position as function of time</li>
