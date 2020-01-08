@@ -84,23 +84,24 @@ Automatically generated HTML file from DocOnce source
                2,
                None,
                '___sec25'),
+              ('Dimension, units and labels', 3, None, '___sec26'),
               ('Python practicalities, Software and needed installations',
                2,
                None,
-               '___sec26'),
-              ('Python installers', 2, None, '___sec27'),
-              ('Useful Python libraries', 2, None, '___sec28'),
+               '___sec27'),
+              ('Python installers', 2, None, '___sec28'),
+              ('Useful Python libraries', 2, None, '___sec29'),
               ('Numpy examples and Important Matrix and vector handling '
                'packages',
                2,
                None,
-               '___sec29'),
-              ('Basic Matrix Features', 2, None, '___sec30'),
-              ('Some famous Matrices', 3, None, '___sec31'),
-              ('More Basic Matrix Features', 3, None, '___sec32'),
-              ('Numpy and arrays', 2, None, '___sec33'),
-              ('Matrices in Python', 2, None, '___sec34'),
-              ('Meet the Pandas', 2, None, '___sec35')]}
+               '___sec30'),
+              ('Basic Matrix Features', 2, None, '___sec31'),
+              ('Some famous Matrices', 3, None, '___sec32'),
+              ('More Basic Matrix Features', 3, None, '___sec33'),
+              ('Numpy and arrays', 2, None, '___sec34'),
+              ('Matrices in Python', 2, None, '___sec35'),
+              ('Meet the Pandas', 2, None, '___sec36')]}
 end of tocinfo -->
 
 <body>
@@ -164,16 +165,17 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="#___sec23" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Week 16, April 20-24, 2020</a></li>
      <!-- navigation toc: --> <li><a href="#___sec24" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Week 17, April 27- May 1, 2020, Finals week</a></li>
      <!-- navigation toc: --> <li><a href="#___sec25" style="font-size: 80%;"><b>Space, Time, Motion, Reference Frames  and Reminder on vectors and other mathematical quantities</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec26" style="font-size: 80%;"><b>Python practicalities, Software and needed installations</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec27" style="font-size: 80%;"><b>Python installers</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec28" style="font-size: 80%;"><b>Useful Python libraries</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec29" style="font-size: 80%;"><b>Numpy examples and Important Matrix and vector handling packages</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec30" style="font-size: 80%;"><b>Basic Matrix Features</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec31" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Some famous Matrices</a></li>
-     <!-- navigation toc: --> <li><a href="#___sec32" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;More Basic Matrix Features</a></li>
-     <!-- navigation toc: --> <li><a href="#___sec33" style="font-size: 80%;"><b>Numpy and arrays</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec34" style="font-size: 80%;"><b>Matrices in Python</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec35" style="font-size: 80%;"><b>Meet the Pandas</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec26" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Dimension, units and labels</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec27" style="font-size: 80%;"><b>Python practicalities, Software and needed installations</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec28" style="font-size: 80%;"><b>Python installers</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec29" style="font-size: 80%;"><b>Useful Python libraries</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec30" style="font-size: 80%;"><b>Numpy examples and Important Matrix and vector handling packages</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec31" style="font-size: 80%;"><b>Basic Matrix Features</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec32" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Some famous Matrices</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec33" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;More Basic Matrix Features</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec34" style="font-size: 80%;"><b>Numpy and arrays</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec35" style="font-size: 80%;"><b>Matrices in Python</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec36" style="font-size: 80%;"><b>Meet the Pandas</b></a></li>
 
         </ul>
       </li>
@@ -696,9 +698,67 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 <h2 id="___sec25" class="anchor">Space, Time, Motion, Reference Frames  and Reminder on vectors and other mathematical quantities </h2>
 
 <p>
+Our studies will start with the motion of different types of objects
+such as a falling ball, a runner, a bicycle etc etc. It means that an
+object's position in space varies with time.
+In order to study such systems we need to define
+
+<ul>
+<li> choice of origin</li>
+<li> choice of the direction of the axes</li>
+<li> choice of positive direction (left-handed or right-handed system of reference)</li>
+<li> choice of units and dimensions</li>
+</ul>
+
+These choices lead to some important questions such as
+
+<ul>
+<li> is the  physics of a system independent of the origin of the axes?</li>
+<li> is the  physics independent of the directions of the axes, that is are there privileged axes?</li>
+<li> is the physics independent of the orientation of system?</li>
+<li> is the physics independent of the scale of the length?</li>
+</ul>
+
+<h3 id="___sec26" class="anchor">Dimension, units and labels </h3>
+
+<p>
+Throughout this course we will use the standardized SI units. The standard unit for length is thus one meter 1m, for mass
+one kilogram 1kg, for time one second 1s, for force one Newton 1kgms$^{-2}$ and for energy 1 Joule 1kgm$^2$s$^{-2}$.
+
+<p>
+We will use the following notations for various variables (vectors are always boldfaced in these lecture notes):
+
+<ul>
+<li> position \( \boldsymbol{r} \), in one dimention we will normally just use \( x \),</li>
+<li> mass \( m \),</li>
+<li> time \( t \),</li>
+<li> velocity \( \boldsymbol{v} \) or just \( v \) in one dimension,</li>
+<li> acceleration \( \boldsymbol{a} \) or just \( a \) in one dimension,</li>
+<li> momentum \( \boldsymbol{p} \) or just \( p \) in one dimension,</li>
+<li> kinetic energy \( TK \),</li>
+<li> potential energy \( V \) and</li>
+<li> frequency \( \omega \).</li>
+</ul>
+
+More variables will be defined as we need them.
+
+<p>
+It is also important to keep track of dimensionalities. Don't mix this up with a chosen unit for a given variable. We mark the dimensionality in these lectures as \( [a] \), where \( a \) is the quantity we are interested in. Thus
+
+<ul>
+<li> \( [\boldsymbol{r}]= \) length</li>
+<li> \( [m]= \) mass</li>
+<li> \( [T]= \) energy</li>
+<li> \( [t]= \) time</li>
+<li> \( [\boldsymbol{v}]= \) length/time</li>
+<li> \( [\boldsymbol{a}]= \) length/time$^2$</li>
+<li> \( [\boldsymbol{p}]= \) mass$\times$ length/time</li>
+<li> \( [\omega]= \) 1/time</li>
+</ul>
+
 <!-- !split -->
 
-<h2 id="___sec26" class="anchor">Python practicalities, Software and needed installations </h2>
+<h2 id="___sec27" class="anchor">Python practicalities, Software and needed installations </h2>
 
 <p>
 We will make extensive use of Python as programming language and its
@@ -734,7 +794,7 @@ you can use <b>pip</b> as well and simply install Python as
 
 etc etc.
 
-<h2 id="___sec27" class="anchor">Python installers </h2>
+<h2 id="___sec28" class="anchor">Python installers </h2>
 
 <p>
 If you don't want to perform these operations separately and venture
@@ -765,7 +825,7 @@ license.
 Furthermore, <a href="https://colab.research.google.com/notebooks/welcome.ipynb" target="_self">Google's Colab</a> is a free Jupyter notebook environment that requires 
 no setup and runs entirely in the cloud. Try it out!
 
-<h2 id="___sec28" class="anchor">Useful Python libraries </h2>
+<h2 id="___sec29" class="anchor">Useful Python libraries </h2>
 Here we list several useful Python libraries we strongly recommend (if you use anaconda many of these are already there)
 
 <ul>
@@ -794,7 +854,7 @@ further processing. For example, convert to latex as
 <p>
 And to add more versatility, the Python package <a href="http://www.sympy.org/en/index.html" target="_self">SymPy</a> is a Python library for symbolic mathematics. It aims to become a full-featured computer algebra system (CAS)  and is entirely written in Python.
 
-<h2 id="___sec29" class="anchor">Numpy examples and Important Matrix and vector handling packages </h2>
+<h2 id="___sec30" class="anchor">Numpy examples and Important Matrix and vector handling packages </h2>
 
 <p>
 There are several central software libraries for linear algebra and eigenvalue problems. Several of the more
@@ -808,7 +868,7 @@ developed in the 1970s, namely EISPACK and LINPACK.  We describe them shortly he
   <li> BLAS (I, II and III): (Basic Linear Algebra Subprograms) are routines that provide standard building blocks for performing basic vector and matrix operations. Blas I is vector operations, II vector-matrix operations and III matrix-matrix operations. Highly parallelized and efficient codes, all available for download from <a href="http://www.netlib.org" target="_self"><tt>http://www.netlib.org</tt></a>.</li>
 </ul>
 
-<h2 id="___sec30" class="anchor">Basic Matrix Features </h2>
+<h2 id="___sec31" class="anchor">Basic Matrix Features </h2>
 
 <p>
 <div class="panel panel-default">
@@ -859,7 +919,7 @@ $$
 </div>
 
 
-<h3 id="___sec31" class="anchor">Some famous Matrices </h3>
+<h3 id="___sec32" class="anchor">Some famous Matrices </h3>
 
 <ul>
   <li> Diagonal if \( a_{ij}=0 \) for \( i\ne j \)</li>
@@ -873,7 +933,7 @@ $$
   <li> Banded, block upper triangular, block lower triangular....</li>
 </ul>
 
-<h3 id="___sec32" class="anchor">More Basic Matrix Features </h3>
+<h3 id="___sec33" class="anchor">More Basic Matrix Features </h3>
 
 <p>
 <div class="panel panel-default">
@@ -893,7 +953,7 @@ For an \( N\times N \) matrix  \( \mathbf{A} \) the following properties are all
 </div>
 
 
-<h2 id="___sec33" class="anchor">Numpy and arrays </h2>
+<h2 id="___sec34" class="anchor">Numpy and arrays </h2>
 <a href="http://www.numpy.org/" target="_self">Numpy</a> provides an easy way to handle arrays in Python. The standard way to import this library is as
 
 <p>
@@ -978,7 +1038,7 @@ x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>l
 <span style="color: #008000; font-weight: bold">print</span>(x<span style="color: #666666">.</span>itemsize)
 </pre></div>
 
-<h2 id="___sec34" class="anchor">Matrices in Python </h2>
+<h2 id="___sec35" class="anchor">Matrices in Python </h2>
 
 <p>
 Having defined vectors, we are now ready to try out matrices. We can
@@ -1046,7 +1106,7 @@ A <span style="color: #666666">=</span> np<span style="color: #666666">.</span>r
 <span style="color: #008000; font-weight: bold">print</span>(A) 
 </pre></div>
 
-<h2 id="___sec35" class="anchor">Meet the Pandas </h2>
+<h2 id="___sec36" class="anchor">Meet the Pandas </h2>
 
 <p>
 <br /><br /><center><p><img src="fig/pandas.jpg" align="bottom" width=600></p></center><br /><br />

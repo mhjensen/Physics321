@@ -623,11 +623,72 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 
 <section>
 <h2 id="___sec25">Space, Time, Motion, Reference Frames  and Reminder on vectors and other mathematical quantities </h2>
+
+<p>
+Our studies will start with the motion of different types of objects
+such as a falling ball, a runner, a bicycle etc etc. It means that an
+object's position in space varies with time.
+In order to study such systems we need to define
+
+<ul>
+<p><li> choice of origin</li>
+<p><li> choice of the direction of the axes</li>
+<p><li> choice of positive direction (left-handed or right-handed system of reference)</li>
+<p><li> choice of units and dimensions</li>
+</ul>
+<p>
+
+These choices lead to some important questions such as
+
+<ul>
+<p><li> is the  physics of a system independent of the origin of the axes?</li>
+<p><li> is the  physics independent of the directions of the axes, that is are there privileged axes?</li>
+<p><li> is the physics independent of the orientation of system?</li>
+<p><li> is the physics independent of the scale of the length?</li>
+</ul>
+
+<h3 id="___sec26">Dimension, units and labels </h3>
+
+<p>
+Throughout this course we will use the standardized SI units. The standard unit for length is thus one meter 1m, for mass
+one kilogram 1kg, for time one second 1s, for force one Newton 1kgms$^{-2}$ and for energy 1 Joule 1kgm$^2$s$^{-2}$.
+
+<p>
+We will use the following notations for various variables (vectors are always boldfaced in these lecture notes):
+
+<ul>
+<p><li> position \( \boldsymbol{r} \), in one dimention we will normally just use \( x \),</li>
+<p><li> mass \( m \),</li>
+<p><li> time \( t \),</li>
+<p><li> velocity \( \boldsymbol{v} \) or just \( v \) in one dimension,</li>
+<p><li> acceleration \( \boldsymbol{a} \) or just \( a \) in one dimension,</li>
+<p><li> momentum \( \boldsymbol{p} \) or just \( p \) in one dimension,</li>
+<p><li> kinetic energy \( TK \),</li>
+<p><li> potential energy \( V \) and</li>
+<p><li> frequency \( \omega \).</li>
+</ul>
+<p>
+
+More variables will be defined as we need them.
+
+<p>
+It is also important to keep track of dimensionalities. Don't mix this up with a chosen unit for a given variable. We mark the dimensionality in these lectures as \( [a] \), where \( a \) is the quantity we are interested in. Thus
+
+<ul>
+<p><li> \( [\boldsymbol{r}]= \) length</li>
+<p><li> \( [m]= \) mass</li>
+<p><li> \( [T]= \) energy</li>
+<p><li> \( [t]= \) time</li>
+<p><li> \( [\boldsymbol{v}]= \) length/time</li>
+<p><li> \( [\boldsymbol{a}]= \) length/time$^2$</li>
+<p><li> \( [\boldsymbol{p}]= \) mass$\times$ length/time</li>
+<p><li> \( [\omega]= \) 1/time</li>
+</ul>
 </section>
 
 
 <section>
-<h2 id="___sec26">Python practicalities, Software and needed installations </h2>
+<h2 id="___sec27">Python practicalities, Software and needed installations </h2>
 
 <p>
 We will make extensive use of Python as programming language and its
@@ -666,7 +727,7 @@ you can use <b>pip</b> as well and simply install Python as
 
 etc etc.
 
-<h2 id="___sec27">Python installers </h2>
+<h2 id="___sec28">Python installers </h2>
 
 <p>
 If you don't want to perform these operations separately and venture
@@ -699,7 +760,7 @@ license.
 Furthermore, <a href="https://colab.research.google.com/notebooks/welcome.ipynb" target="_blank">Google's Colab</a> is a free Jupyter notebook environment that requires 
 no setup and runs entirely in the cloud. Try it out!
 
-<h2 id="___sec28">Useful Python libraries </h2>
+<h2 id="___sec29">Useful Python libraries </h2>
 Here we list several useful Python libraries we strongly recommend (if you use anaconda many of these are already there)
 
 <ul>
@@ -729,7 +790,7 @@ further processing. For example, convert to latex as
 <p>
 And to add more versatility, the Python package <a href="http://www.sympy.org/en/index.html" target="_blank">SymPy</a> is a Python library for symbolic mathematics. It aims to become a full-featured computer algebra system (CAS)  and is entirely written in Python.
 
-<h2 id="___sec29">Numpy examples and Important Matrix and vector handling packages </h2>
+<h2 id="___sec30">Numpy examples and Important Matrix and vector handling packages </h2>
 
 <p>
 There are several central software libraries for linear algebra and eigenvalue problems. Several of the more
@@ -746,7 +807,7 @@ developed in the 1970s, namely EISPACK and LINPACK.  We describe them shortly he
 <p><li> BLAS (I, II and III): (Basic Linear Algebra Subprograms) are routines that provide standard building blocks for performing basic vector and matrix operations. Blas I is vector operations, II vector-matrix operations and III matrix-matrix operations. Highly parallelized and efficient codes, all available for download from <a href="http://www.netlib.org" target="_blank"><tt>http://www.netlib.org</tt></a>.</li>
 </ul>
 
-<h2 id="___sec30">Basic Matrix Features </h2>
+<h2 id="___sec31">Basic Matrix Features </h2>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -793,7 +854,7 @@ $$
 
 </div>
 
-<h3 id="___sec31">Some famous Matrices </h3>
+<h3 id="___sec32">Some famous Matrices </h3>
 
 <ul>
 
@@ -816,7 +877,7 @@ $$
 <p><li> Banded, block upper triangular, block lower triangular....</li>
 </ul>
 
-<h3 id="___sec32">More Basic Matrix Features </h3>
+<h3 id="___sec33">More Basic Matrix Features </h3>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -840,7 +901,7 @@ For an \( N\times N \) matrix  \( \mathbf{A} \) the following properties are all
 </ul>
 </div>
 
-<h2 id="___sec33">Numpy and arrays </h2>
+<h2 id="___sec34">Numpy and arrays </h2>
 <a href="http://www.numpy.org/" target="_blank">Numpy</a> provides an easy way to handle arrays in Python. The standard way to import this library is as
 
 <p>
@@ -925,7 +986,7 @@ x = np.log(np.array([<span style="color: #B452CD">4.0</span>, <span style="color
 <span style="color: #8B008B; font-weight: bold">print</span>(x.itemsize)
 </pre></div>
 
-<h2 id="___sec34">Matrices in Python </h2>
+<h2 id="___sec35">Matrices in Python </h2>
 
 <p>
 Having defined vectors, we are now ready to try out matrices. We can
@@ -993,7 +1054,7 @@ A = np.random.rand(n, n)
 <span style="color: #8B008B; font-weight: bold">print</span>(A) 
 </pre></div>
 
-<h2 id="___sec35">Meet the Pandas </h2>
+<h2 id="___sec36">Meet the Pandas </h2>
 
 <p>
 <br /><br /><center><p><img src="fig/pandas.jpg" align="bottom" width=600></p></center><br /><br />
