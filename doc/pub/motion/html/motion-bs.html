@@ -7,9 +7,9 @@ Automatically generated HTML file from DocOnce source
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Simple Motion Problems">
+<meta name="description" content="PHY321: Review of Vectors, Math and first Numerical Examples for simple Motion Problems">
 
-<title>Simple Motion Problems</title>
+<title>PHY321: Review of Vectors, Math and first Numerical Examples for simple Motion Problems</title>
 
 <!-- Bootstrap style: bootstrap -->
 <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
@@ -40,10 +40,52 @@ Automatically generated HTML file from DocOnce source
 </head>
 
 <!-- tocinfo
-{'highest level': 2, 'sections': [('Introduction', 2, None, '___sec0')]}
+{'highest level': 2,
+ 'sections': [('Space, Time, Motion, Reference Frames  and Reminder on vectors '
+               'and other mathematical quantities',
+               2,
+               None,
+               '___sec0'),
+              ('Dimension, units and labels', 3, None, '___sec1'),
+              ('Elements of Vector Algebra', 2, None, '___sec2'),
+              ('Falling baseball in one dimension', 2, None, '___sec3'),
+              ('Our Python Encounter', 2, None, '___sec4'),
+              ('Python practicalities, Software and needed installations',
+               2,
+               None,
+               '___sec5'),
+              ('Python installers', 2, None, '___sec6'),
+              ('Useful Python libraries', 2, None, '___sec7'),
+              ('Numpy examples and Important Matrix and vector handling '
+               'packages',
+               2,
+               None,
+               '___sec8'),
+              ('Basic Matrix Features', 2, None, '___sec9'),
+              ('Some famous Matrices', 3, None, '___sec10'),
+              ('More Basic Matrix Features', 3, None, '___sec11'),
+              ('Numpy and arrays', 2, None, '___sec12'),
+              ('Matrices in Python', 2, None, '___sec13'),
+              ('Meet the Pandas', 2, None, '___sec14')]}
 end of tocinfo -->
 
 <body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
 
     
 <!-- Bootstrap navigation bar -->
@@ -54,7 +96,7 @@ end of tocinfo -->
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="motion-bs.html">Simple Motion Problems</a>
+    <a class="navbar-brand" href="motion-bs.html">PHY321: Review of Vectors, Math and first Numerical Examples for simple Motion Problems</a>
   </div>
 
   <div class="navbar-collapse collapse navbar-responsive-collapse">
@@ -62,7 +104,21 @@ end of tocinfo -->
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
         <ul class="dropdown-menu">
-     <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;">Introduction</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;"><b>Space, Time, Motion, Reference Frames  and Reminder on vectors and other mathematical quantities</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec1" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Dimension, units and labels</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec2" style="font-size: 80%;"><b>Elements of Vector Algebra</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec3" style="font-size: 80%;"><b>Falling baseball in one dimension</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec4" style="font-size: 80%;"><b>Our Python Encounter</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec5" style="font-size: 80%;"><b>Python practicalities, Software and needed installations</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec6" style="font-size: 80%;"><b>Python installers</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec7" style="font-size: 80%;"><b>Useful Python libraries</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec8" style="font-size: 80%;"><b>Numpy examples and Important Matrix and vector handling packages</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec9" style="font-size: 80%;"><b>Basic Matrix Features</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec10" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Some famous Matrices</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec11" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;More Basic Matrix Features</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec12" style="font-size: 80%;"><b>Numpy and arrays</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec13" style="font-size: 80%;"><b>Matrices in Python</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec14" style="font-size: 80%;"><b>Meet the Pandas</b></a></li>
 
         </ul>
       </li>
@@ -80,7 +136,7 @@ end of tocinfo -->
 
 
 <div class="jumbotron">
-<center><h1>Simple Motion Problems</h1></center>  <!-- document title -->
+<center><h1>PHY321: Review of Vectors, Math and first Numerical Examples for simple Motion Problems</h1></center>  <!-- document title -->
 
 <p>
 <!-- author(s): <a href="http://mhjgit.github.io/info/doc/web/" target="_self">Morten Hjorth-Jensen</a>, <a href="https://pa.msu.edu/profile/pratts/" target="_self">Scott Pratt</a>, and <a href="https://pa.msu.edu/profile/schmidt/" target="_self">Carl Schmidt</a> -->
@@ -105,12 +161,697 @@ end of tocinfo -->
 <center>[3] <b>Department of Physics and Astronomy, Michigan State University, USA</b></center>
 <br>
 <p>
-<center><h4>Jun 6, 2019</h4></center> <!-- date -->
+<center><h4>Jan 10, 2020</h4></center> <!-- date -->
 <br>
 <p>
+<!-- potential-jumbotron-button -->
 </div> <!-- end jumbotron -->
 
-<h2 id="___sec0" class="anchor">Introduction </h2>
+<!-- !split -->
+
+<h2 id="___sec0" class="anchor">Space, Time, Motion, Reference Frames  and Reminder on vectors and other mathematical quantities </h2>
+
+<p>
+Our studies will start with the motion of different types of objects
+such as a falling ball, a runner, a bicycle etc etc. It means that an
+object's position in space varies with time.
+In order to study such systems we need to define
+
+<ul>
+<li> choice of origin</li>
+<li> choice of the direction of the axes</li>
+<li> choice of positive direction (left-handed or right-handed system of reference)</li>
+<li> choice of units and dimensions</li>
+</ul>
+
+These choices lead to some important questions such as
+
+<ul>
+<li> is the  physics of a system independent of the origin of the axes?</li>
+<li> is the  physics independent of the directions of the axes, that is are there privileged axes?</li>
+<li> is the physics independent of the orientation of system?</li>
+<li> is the physics independent of the scale of the length?</li>
+</ul>
+
+<h3 id="___sec1" class="anchor">Dimension, units and labels </h3>
+
+<p>
+Throughout this course we will use the standardized SI units. The standard unit for length is thus one meter 1m, for mass
+one kilogram 1kg, for time one second 1s, for force one Newton 1kgm/s$^2$ and for energy 1 Joule 1kgm$^2$s$^{-2}$.
+
+<p>
+We will use the following notations for various variables (vectors are always boldfaced in these lecture notes):
+
+<ul>
+<li> position \( \boldsymbol{r} \), in one dimention we will normally just use \( x \),</li>
+<li> mass \( m \),</li>
+<li> time \( t \),</li>
+<li> velocity \( \boldsymbol{v} \) or just \( v \) in one dimension,</li>
+<li> acceleration \( \boldsymbol{a} \) or just \( a \) in one dimension,</li>
+<li> momentum \( \boldsymbol{p} \) or just \( p \) in one dimension,</li>
+<li> kinetic energy \( K \),</li>
+<li> potential energy \( V \) and</li>
+<li> frequency \( \omega \).</li>
+</ul>
+
+More variables will be defined as we need them.
+
+<p>
+It is also important to keep track of dimensionalities. Don't mix this up with a chosen unit for a given variable. We mark the dimensionality in these lectures as \( [a] \), where \( a \) is the quantity we are interested in. Thus
+
+<ul>
+<li> \( [\boldsymbol{r}]= \) length</li>
+<li> \( [m]= \) mass</li>
+<li> \( [K]= \) energy</li>
+<li> \( [t]= \) time</li>
+<li> \( [\boldsymbol{v}]= \) length over time</li>
+<li> \( [\boldsymbol{a}]= \) length over time squared</li>
+<li> \( [\boldsymbol{p}]= \) mass times length over time</li>
+<li> \( [\omega]= \) 1/time</li>
+</ul>
+
+<!-- !split -->
+
+<h2 id="___sec2" class="anchor">Elements of Vector Algebra </h2>
+
+<p>
+Using the fact that multiplication of reals is distributive we can show that
+$$
+\boldsymbol{a}(\boldsymbol{b}+\boldsymbol{c})=\boldsymbol{a}\boldsymbol{b}+\boldsymbol{a}\boldsymbol{c},
+$$
+
+Similarly we can also show that (using product rule for differentiating reals)
+$$
+\frac{d}{dt}(\boldsymbol{a}\boldsymbol{b})=\boldsymbol{a}\frac{d\boldsymbol{b}}{dt}+\boldsymbol{b}\frac{d\boldsymbol{a}}{dt}.
+$$
+
+<p>
+We can repeat these operations for the cross products and show that they are distribuitive
+$$
+\boldsymbol{a}\times(\boldsymbol{b}+\boldsymbol{c})=\boldsymbol{a}\times\boldsymbol{b}+\boldsymbol{a}\times\boldsymbol{c}.
+$$
+
+We have also that
+$$
+\frac{d}{dt}(\boldsymbol{a}\times\boldsymbol{b})=\boldsymbol{a}\times\frac{d\boldsymbol{b}}{dt}+\boldsymbol{b}\times\frac{d\boldsymbol{a}}{dt}.
+$$
+
+The rotation of a three-dimensional  vector \( \boldsymbol{a}=(a_x,a_y,a_z) \) in the \( xy \) plane around an angle \( \phi \) results in a new vector \( \boldsymbol{b}=(b_x,b_y,b_z) \).  This operation can be expressed in terms of linear algebra as a matrix (the rotation matrix) multiplied with a vector. We can write this as
+$$
+\begin{bmatrix} b_x \\ b_y \\ b_z \end{bmatrix} = \begin{bmatrix} \cos{\phi} & \sin{\phi} & 0 \\ -\sin{\phi} & \cos{\phi} & 0 \\ 0 & 0 & 1\end{bmatrix}\begin{bmatrix} a_x \\ a_y \\ a_z \end{bmatrix}.
+$$
+
+We can write this in a more compact form as \( \boldsymbol{b} = \boldsymbol{R}\boldsymbol{a} \), where the rotation matrix is defined as
+$$
+\boldsymbol{R} = \begin{bmatrix} \cos{\phi} & \sin{\phi} & 0 \\ -\sin{\phi} & \cos{\phi} & 0 \\ 0 & 0 & 1\end{bmatrix}.
+$$
+
+<p>
+<!-- !split -->
+
+<h2 id="___sec3" class="anchor">Falling baseball in one dimension </h2>
+
+<p>
+We anticipate the mathematical model to come and assume that we have a
+model for the motion of a falling baseball without air resistance.
+Our system (the baseball) is at an initial height \( y_0 \) (which we will
+specify in the program below) at the initial time \( t_0=0 \). In our program example here we will plot the position every five seconds.
+The mathematical formula for the position \( y(t) \) as function of time \( t \) is 
+$$
+y(t) = y_0-\frac{1}{2}gt^2,
+$$
+
+where $g=9.80665=0.980655\times 10^1$m/s${}^2$ is a constant representing the standard acceleration due to gravity.
+We have here adopted the conventional standard value. This does not take into account other effects, such as buoyancy or drag.
+
+<p>
+As of now we simply assume that  
+we know the formula. Below we will derive it.
+
+<p>
+<!-- !split -->
+
+<h2 id="___sec4" class="anchor">Our Python Encounter </h2>
+
+<p>
+We start with preparing folders for storing our calculations, figures and if needed, specific data files we use as input files.
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic"># Common imports</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">pandas</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">pd</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">os</span>
+
+<span style="color: #408080; font-style: italic"># Where to save the figures and data files</span>
+PROJECT_ROOT_DIR <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Results&quot;</span>
+FIGURE_ID <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Results/FigureFiles&quot;</span>
+DATA_ID <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;DataFiles/&quot;</span>
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>exists(PROJECT_ROOT_DIR):
+    os<span style="color: #666666">.</span>mkdir(PROJECT_ROOT_DIR)
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>exists(FIGURE_ID):
+    os<span style="color: #666666">.</span>makedirs(FIGURE_ID)
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>exists(DATA_ID):
+    os<span style="color: #666666">.</span>makedirs(DATA_ID)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">image_path</span>(fig_id):
+    <span style="color: #008000; font-weight: bold">return</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>join(FIGURE_ID, fig_id)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">data_path</span>(dat_id):
+    <span style="color: #008000; font-weight: bold">return</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>join(DATA_ID, dat_id)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">save_fig</span>(fig_id):
+    plt<span style="color: #666666">.</span>savefig(image_path(fig_id) <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;.png&quot;</span>, format<span style="color: #666666">=</span><span style="color: #BA2121">&#39;png&#39;</span>)
+
+<span style="color: #408080; font-style: italic">#in case we have an input file we wish to read in</span>
+<span style="color: #408080; font-style: italic">#infile = open(data_path(&quot;MassEval2016.dat&quot;),&#39;r&#39;)</span>
+</pre></div>
+<p>
+You could also define a function for making our plots. You
+can obviously avoid this and simply set up various <b>matplotlib</b>
+commands every time you need them. You may however find it convenient
+to collect all such commands in one function and simply call this
+function.
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">pylab</span> <span style="color: #008000; font-weight: bold">import</span> plt, mpl
+plt<span style="color: #666666">.</span>style<span style="color: #666666">.</span>use(<span style="color: #BA2121">&#39;seaborn&#39;</span>)
+mpl<span style="color: #666666">.</span>rcParams[<span style="color: #BA2121">&#39;font.family&#39;</span>] <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;serif&#39;</span>
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">MakePlot</span>(x,y, styles, labels, axlabels):
+    plt<span style="color: #666666">.</span>figure(figsize<span style="color: #666666">=</span>(<span style="color: #666666">10</span>,<span style="color: #666666">6</span>))
+    <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #008000">len</span>(x)):
+        plt<span style="color: #666666">.</span>plot(x[i], y[i], styles[i], label <span style="color: #666666">=</span> labels[i])
+        plt<span style="color: #666666">.</span>xlabel(axlabels[<span style="color: #666666">0</span>])
+        plt<span style="color: #666666">.</span>ylabel(axlabels[<span style="color: #666666">1</span>])
+    plt<span style="color: #666666">.</span>legend(loc<span style="color: #666666">=0</span>)
+</pre></div>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #666666">%</span>matplotlib inline
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.patches</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">mpatches</span>
+
+g <span style="color: #666666">=</span> <span style="color: #666666">9.80655</span> <span style="color: #408080; font-style: italic">#m/s^2</span>
+y_0 <span style="color: #666666">=</span> <span style="color: #666666">10.0</span> <span style="color: #408080; font-style: italic"># in meters</span>
+tf <span style="color: #666666">=</span> <span style="color: #666666">5.0</span> <span style="color: #408080; font-style: italic">#s</span>
+t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>arange(<span style="color: #666666">0</span>,tf,<span style="color: #666666">.1</span>)
+y <span style="color: #666666">=</span>y_0 <span style="color: #666666">-</span>g<span style="color: #666666">*.5*</span>t<span style="color: #666666">**2</span>
+
+plt<span style="color: #666666">.</span>style<span style="color: #666666">.</span>use(<span style="color: #BA2121">&#39;ggplot&#39;</span>)
+plt<span style="color: #666666">.</span>figure(figsize<span style="color: #666666">=</span>(<span style="color: #666666">8</span>,<span style="color: #666666">8</span>))
+plt<span style="color: #666666">.</span>scatter(t, y, color <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;b&#39;</span>)
+blue_patch <span style="color: #666666">=</span> mpatches<span style="color: #666666">.</span>Patch(color <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;b&#39;</span>, label <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;Y position over time&#39;</span>)
+plt<span style="color: #666666">.</span>legend(handles<span style="color: #666666">=</span>[blue_patch])
+plt<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">&quot;Time (s)&quot;</span>)
+plt<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">&quot;Height (m)&quot;</span>)
+save_fig(<span style="color: #BA2121">&quot;FallingBaseball&quot;</span>)
+plt<span style="color: #666666">.</span>show()
+</pre></div>
+<p>
+<!-- !split -->
+
+<h2 id="___sec5" class="anchor">Python practicalities, Software and needed installations </h2>
+
+<p>
+We will make extensive use of Python as programming language and its
+myriad of available libraries.  You will find
+Jupyter notebooks invaluable in your work.
+
+<p>
+If you have Python installed (we strongly recommend Python3) and you feel
+pretty familiar with installing different packages, we recommend that
+you install the following Python packages via <b>pip</b> as 
+
+<ol>
+<li> pip install numpy scipy matplotlib ipython scikit-learn mglearn sympy pandas pillow</li> 
+</ol>
+
+For Python3, replace <b>pip</b> with <b>pip3</b>.
+
+<p>
+For OSX users we recommend, after having installed Xcode, to
+install <b>brew</b>. Brew allows for a seamless installation of additional
+software via for example 
+
+<ol>
+<li> brew install python3</li>
+</ol>
+
+For Linux users, with its variety of distributions like for example the widely popular Ubuntu distribution,
+you can use <b>pip</b> as well and simply install Python as 
+
+<ol>
+<li> sudo apt-get install python3  (or python for pyhton2.7)</li>
+</ol>
+
+etc etc.
+
+<h2 id="___sec6" class="anchor">Python installers </h2>
+
+<p>
+If you don't want to perform these operations separately and venture
+into the hassle of exploring how to set up dependencies and paths, we
+recommend two widely used distrubutions which set up all relevant
+dependencies for Python, namely 
+
+<ul>
+<li> <a href="https://docs.anaconda.com/" target="_self">Anaconda</a>,</li> 
+</ul>
+
+which is an open source
+distribution of the Python and R programming languages for large-scale
+data processing, predictive analytics, and scientific computing, that
+aims to simplify package management and deployment. Package versions
+are managed by the package management system <b>conda</b>. 
+
+<ul>
+<li> <a href="https://www.enthought.com/product/canopy/" target="_self">Enthought canopy</a></li> 
+</ul>
+
+is a Python
+distribution for scientific and analytic computing distribution and
+analysis environment, available for free and under a commercial
+license.
+
+<p>
+Furthermore, <a href="https://colab.research.google.com/notebooks/welcome.ipynb" target="_self">Google's Colab</a> is a free Jupyter notebook environment that requires 
+no setup and runs entirely in the cloud. Try it out!
+
+<h2 id="___sec7" class="anchor">Useful Python libraries </h2>
+Here we list several useful Python libraries we strongly recommend (if you use anaconda many of these are already there)
+
+<ul>
+<li> <a href="https://www.numpy.org/" target="_self">NumPy</a> is a highly popular library for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays</li>
+<li> <a href="https://pandas.pydata.org/" target="_self">The pandas</a> library provides high-performance, easy-to-use data structures and data analysis tools</li> 
+<li> <a href="http://xarray.pydata.org/en/stable/" target="_self">Xarray</a> is a Python package that makes working with labelled multi-dimensional arrays simple, efficient, and fun!</li>
+<li> <a href="https://www.scipy.org/" target="_self">Scipy</a> (pronounced &#8220;Sigh Pie&#8221;) is a Python-based ecosystem of open-source software for mathematics, science, and engineering.</li> 
+<li> <a href="https://matplotlib.org/" target="_self">Matplotlib</a> is a Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms.</li>
+<li> <a href="https://github.com/HIPS/autograd" target="_self">Autograd</a> can automatically differentiate native Python and Numpy code. It can handle a large subset of Python's features, including loops, ifs, recursion and closures, and it can even take derivatives of derivatives of derivatives</li>
+<li> <a href="https://www.sympy.org/en/index.html" target="_self">SymPy</a> is a Python library for symbolic mathematics.</li> 
+<li> <a href="https://scikit-learn.org/stable/" target="_self">scikit-learn</a> has simple and efficient tools for machine learning, data mining and data analysis</li>
+<li> <a href="https://www.tensorflow.org/" target="_self">TensorFlow</a> is a Python library for fast numerical computing created and released by Google</li>
+<li> <a href="https://keras.io/" target="_self">Keras</a> is a high-level neural networks API, written in Python and capable of running on top of TensorFlow, CNTK, or Theano</li>
+<li> And many more such as <a href="https://pytorch.org/" target="_self">pytorch</a>,  <a href="https://pypi.org/project/Theano/" target="_self">Theano</a> etc</li> 
+</ul>
+
+Your jupyter notebook can easily be
+converted into a nicely rendered <b>PDF</b> file or a Latex file for
+further processing. For example, convert to latex as
+
+<p>
+
+<!-- code=text typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>pycod jupyter nbconvert filename.ipynb --to latex 
+</pre></div>
+<p>
+And to add more versatility, the Python package <a href="http://www.sympy.org/en/index.html" target="_self">SymPy</a> is a Python library for symbolic mathematics. It aims to become a full-featured computer algebra system (CAS)  and is entirely written in Python.
+
+<h2 id="___sec8" class="anchor">Numpy examples and Important Matrix and vector handling packages </h2>
+
+<p>
+There are several central software libraries for linear algebra and eigenvalue problems. Several of the more
+popular ones have been wrapped into ofter software packages like those from the widely used text <b>Numerical Recipes</b>. The original source codes in many of the available packages are often taken from the widely used
+software package LAPACK, which follows two other popular packages
+developed in the 1970s, namely EISPACK and LINPACK.  We describe them shortly here.
+
+<ul>
+  <li> LINPACK: package for linear equations and least square problems.</li>
+  <li> LAPACK:package for solving symmetric, unsymmetric and generalized eigenvalue problems. From LAPACK's website <a href="http://www.netlib.org" target="_self"><tt>http://www.netlib.org</tt></a> it is possible to download for free all source codes from this library. Both C/C++ and Fortran versions are available.</li>
+  <li> BLAS (I, II and III): (Basic Linear Algebra Subprograms) are routines that provide standard building blocks for performing basic vector and matrix operations. Blas I is vector operations, II vector-matrix operations and III matrix-matrix operations. Highly parallelized and efficient codes, all available for download from <a href="http://www.netlib.org" target="_self"><tt>http://www.netlib.org</tt></a>.</li>
+</ul>
+
+<h2 id="___sec9" class="anchor">Basic Matrix Features </h2>
+
+<p>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+$$
+ \mathbf{A} =
+      \begin{bmatrix} a_{11} & a_{12} & a_{13} & a_{14} \\
+                                 a_{21} & a_{22} & a_{23} & a_{24} \\
+                                   a_{31} & a_{32} & a_{33} & a_{34} \\
+                                  a_{41} & a_{42} & a_{43} & a_{44}
+             \end{bmatrix}\qquad
+\mathbf{I} =
+      \begin{bmatrix} 1 & 0 & 0 & 0 \\
+                                 0 & 1 & 0 & 0 \\
+                                 0 & 0 & 1 & 0 \\
+                                 0 & 0 & 0 & 1
+             \end{bmatrix}
+$$
+
+<p>
+The inverse of a matrix is defined by
+
+$$
+\mathbf{A}^{-1} \cdot \mathbf{A} = I
+$$
+
+<p>
+
+<div class="row">
+  <div class="col-xs-12">
+    <table class="table table-striped table-hover table-condensed">
+<thead>
+<tr><td align="center"><b>                Relations                 </b></td> <td align="center"><b>      Name     </b></td> <td align="center"><b>                              matrix elements                              </b></td> </tr>
+</thead>
+<tbody>
+<tr><td align="center">   \( A = A^{T} \)                               </td> <td align="center">   symmetric          </td> <td align="center">   \( a_{ij} = a_{ji} \)                                                          </td> </tr>
+<tr><td align="center">   \( A = \left (A^{T} \right )^{-1} \)          </td> <td align="center">   real orthogonal    </td> <td align="center">   \( \sum_k a_{ik} a_{jk} = \sum_k a_{ki} a_{kj} = \delta_{ij} \)                </td> </tr>
+<tr><td align="center">   \( A = A^{ * } \)                             </td> <td align="center">   real matrix        </td> <td align="center">   \( a_{ij} = a_{ij}^{ * } \)                                                    </td> </tr>
+<tr><td align="center">   \( A = A^{\dagger} \)                         </td> <td align="center">   hermitian          </td> <td align="center">   \( a_{ij} = a_{ji}^{ * } \)                                                    </td> </tr>
+<tr><td align="center">   \( A = \left (A^{\dagger} \right )^{-1} \)    </td> <td align="center">   unitary            </td> <td align="center">   \( \sum_k a_{ik} a_{jk}^{ * } = \sum_k a_{ki}^{ * } a_{kj} = \delta_{ij} \)    </td> </tr>
+</tbody>
+    </table>
+  </div> <!-- col-xs-12 -->
+</div> <!-- cell row -->
+<p>
+</div>
+</div>
+
+
+<h3 id="___sec10" class="anchor">Some famous Matrices </h3>
+
+<ul>
+  <li> Diagonal if \( a_{ij}=0 \) for \( i\ne j \)</li>
+  <li> Upper triangular if \( a_{ij}=0 \) for \( i > j \)</li>
+  <li> Lower triangular if \( a_{ij}=0 \) for \( i < j \)</li>
+  <li> Upper Hessenberg if \( a_{ij}=0 \) for \( i > j+1 \)</li>
+  <li> Lower Hessenberg if \( a_{ij}=0 \) for \( i < j+1 \)</li>
+  <li> Tridiagonal if \( a_{ij}=0 \) for \( |i -j| > 1 \)</li>
+  <li> Lower banded with bandwidth \( p \): \( a_{ij}=0 \) for \( i > j+p \)</li>
+  <li> Upper banded with bandwidth \( p \): \( a_{ij}=0 \) for \( i < j+p \)</li>
+  <li> Banded, block upper triangular, block lower triangular....</li>
+</ul>
+
+<h3 id="___sec11" class="anchor">More Basic Matrix Features </h3>
+
+<p>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+For an \( N\times N \) matrix  \( \mathbf{A} \) the following properties are all equivalent
+
+<ul>
+  <li> If the inverse of \( \mathbf{A} \) exists, \( \mathbf{A} \) is nonsingular.</li>
+  <li> The equation \( \mathbf{Ax}=0 \) implies \( \mathbf{x}=0 \).</li>
+  <li> The rows of \( \mathbf{A} \) form a basis of \( R^N \).</li>
+  <li> The columns of \( \mathbf{A} \) form a basis of \( R^N \).</li>
+  <li> \( \mathbf{A} \) is a product of elementary matrices.</li>
+  <li> \( 0 \) is not eigenvalue of \( \mathbf{A} \).</li>
+</ul>
+</div>
+</div>
+
+
+<h2 id="___sec12" class="anchor">Numpy and arrays </h2>
+<a href="http://www.numpy.org/" target="_self">Numpy</a> provides an easy way to handle arrays in Python. The standard way to import this library is as
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+</pre></div>
+<p>
+Here follows a simple example where we set up an array of ten elements, all determined by random numbers drawn according to the normal distribution,
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>n <span style="color: #666666">=</span> <span style="color: #666666">10</span>
+x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>random<span style="color: #666666">.</span>normal(size<span style="color: #666666">=</span>n)
+<span style="color: #008000; font-weight: bold">print</span>(x)
+</pre></div>
+<p>
+We defined a vector \( x \) with \( n=10 \) elements with its values given by the Normal distribution \( N(0,1) \).
+Another alternative is to declare a vector as follows
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">1</span>, <span style="color: #666666">2</span>, <span style="color: #666666">3</span>])
+<span style="color: #008000; font-weight: bold">print</span>(x)
+</pre></div>
+<p>
+Here we have defined a vector with three elements, with \( x_0=1 \), \( x_1=2 \) and \( x_2=3 \). Note that both Python and C++
+start numbering array elements from \( 0 \) and on. This means that a vector with \( n \) elements has a sequence of entities \( x_0, x_1, x_2, \dots, x_{n-1} \). We could also let (recommended) Numpy to compute the logarithms of a specific array as
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>log(np<span style="color: #666666">.</span>array([<span style="color: #666666">4</span>, <span style="color: #666666">7</span>, <span style="color: #666666">8</span>]))
+<span style="color: #008000; font-weight: bold">print</span>(x)
+</pre></div>
+<p>
+In the last example we used Numpy's unary function \( np.log \). This function is
+highly tuned to compute array elements since the code is vectorized
+and does not require looping. We normaly recommend that you use the
+Numpy intrinsic functions instead of the corresponding <b>log</b> function
+from Python's <b>math</b> module. The looping is done explicitely by the
+<b>np.log</b> function. The alternative, and slower way to compute the
+logarithms of a vector would be to write
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> log
+x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">4</span>, <span style="color: #666666">7</span>, <span style="color: #666666">8</span>])
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">0</span>, <span style="color: #008000">len</span>(x)):
+    x[i] <span style="color: #666666">=</span> log(x[i])
+<span style="color: #008000; font-weight: bold">print</span>(x)
+</pre></div>
+<p>
+We note that our code is much longer already and we need to import the <b>log</b> function from the <b>math</b> module. 
+The attentive reader will also notice that the output is \( [1, 1, 2] \). Python interprets automagically our numbers as integers (like the <b>automatic</b> keyword in C++). To change this we could define our array elements to be double precision numbers as
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>log(np<span style="color: #666666">.</span>array([<span style="color: #666666">4</span>, <span style="color: #666666">7</span>, <span style="color: #666666">8</span>], dtype <span style="color: #666666">=</span> np<span style="color: #666666">.</span>float64))
+<span style="color: #008000; font-weight: bold">print</span>(x)
+</pre></div>
+<p>
+or simply write them as double precision numbers (Python uses 64 bits as default for floating point type variables), that is
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>log(np<span style="color: #666666">.</span>array([<span style="color: #666666">4.0</span>, <span style="color: #666666">7.0</span>, <span style="color: #666666">8.0</span>])
+<span style="color: #008000; font-weight: bold">print</span>(x)
+</pre></div>
+<p>
+To check the number of bytes (remember that one byte contains eight bits for double precision variables), you can use simple use the <b>itemsize</b> functionality (the array \( x \) is actually an object which inherits the functionalities defined in Numpy) as 
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>log(np<span style="color: #666666">.</span>array([<span style="color: #666666">4.0</span>, <span style="color: #666666">7.0</span>, <span style="color: #666666">8.0</span>])
+<span style="color: #008000; font-weight: bold">print</span>(x<span style="color: #666666">.</span>itemsize)
+</pre></div>
+
+<h2 id="___sec13" class="anchor">Matrices in Python </h2>
+
+<p>
+Having defined vectors, we are now ready to try out matrices. We can
+define a \( 3 \times 3  \) real matrix \( \hat{A} \) as (recall that we user
+lowercase letters for vectors and uppercase letters for matrices)
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+A <span style="color: #666666">=</span> np<span style="color: #666666">.</span>log(np<span style="color: #666666">.</span>array([ [<span style="color: #666666">4.0</span>, <span style="color: #666666">7.0</span>, <span style="color: #666666">8.0</span>], [<span style="color: #666666">3.0</span>, <span style="color: #666666">10.0</span>, <span style="color: #666666">11.0</span>], [<span style="color: #666666">4.0</span>, <span style="color: #666666">5.0</span>, <span style="color: #666666">7.0</span>] ]))
+<span style="color: #008000; font-weight: bold">print</span>(A)
+</pre></div>
+<p>
+If we use the <b>shape</b> function we would get \( (3, 3) \) as output, that is verifying that our matrix is a \( 3\times 3 \) matrix. We can slice the matrix and print for example the first column (Python organized matrix elements in a row-major order, see below) as
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+A <span style="color: #666666">=</span> np<span style="color: #666666">.</span>log(np<span style="color: #666666">.</span>array([ [<span style="color: #666666">4.0</span>, <span style="color: #666666">7.0</span>, <span style="color: #666666">8.0</span>], [<span style="color: #666666">3.0</span>, <span style="color: #666666">10.0</span>, <span style="color: #666666">11.0</span>], [<span style="color: #666666">4.0</span>, <span style="color: #666666">5.0</span>, <span style="color: #666666">7.0</span>] ]))
+<span style="color: #408080; font-style: italic"># print the first column, row-major order and elements start with 0</span>
+<span style="color: #008000; font-weight: bold">print</span>(A[:,<span style="color: #666666">0</span>]) 
+</pre></div>
+<p>
+We can continue this was by printing out other columns or rows. The example here prints out the second column
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+A <span style="color: #666666">=</span> np<span style="color: #666666">.</span>log(np<span style="color: #666666">.</span>array([ [<span style="color: #666666">4.0</span>, <span style="color: #666666">7.0</span>, <span style="color: #666666">8.0</span>], [<span style="color: #666666">3.0</span>, <span style="color: #666666">10.0</span>, <span style="color: #666666">11.0</span>], [<span style="color: #666666">4.0</span>, <span style="color: #666666">5.0</span>, <span style="color: #666666">7.0</span>] ]))
+<span style="color: #408080; font-style: italic"># print the first column, row-major order and elements start with 0</span>
+<span style="color: #008000; font-weight: bold">print</span>(A[<span style="color: #666666">1</span>,:]) 
+</pre></div>
+<p>
+Numpy contains many other functionalities that allow us to slice, subdivide etc etc arrays. We strongly recommend that you look up the <a href="http://www.numpy.org/" target="_self">Numpy website for more details</a>. Useful functions when defining a matrix are the <b>np.zeros</b> function which declares a matrix of a given dimension and sets all elements to zero
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+n <span style="color: #666666">=</span> <span style="color: #666666">10</span>
+<span style="color: #408080; font-style: italic"># define a matrix of dimension 10 x 10 and set all elements to zero</span>
+A <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros( (n, n) )
+<span style="color: #008000; font-weight: bold">print</span>(A) 
+</pre></div>
+<p>
+or initializing all elements to 
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+n <span style="color: #666666">=</span> <span style="color: #666666">10</span>
+<span style="color: #408080; font-style: italic"># define a matrix of dimension 10 x 10 and set all elements to one</span>
+A <span style="color: #666666">=</span> np<span style="color: #666666">.</span>ones( (n, n) )
+<span style="color: #008000; font-weight: bold">print</span>(A) 
+</pre></div>
+<p>
+or as unitarily distributed random numbers (see the material on random number generators in the statistics part)
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+n <span style="color: #666666">=</span> <span style="color: #666666">10</span>
+<span style="color: #408080; font-style: italic"># define a matrix of dimension 10 x 10 and set all elements to random numbers with x \in [0, 1]</span>
+A <span style="color: #666666">=</span> np<span style="color: #666666">.</span>random<span style="color: #666666">.</span>rand(n, n)
+<span style="color: #008000; font-weight: bold">print</span>(A) 
+</pre></div>
+
+<h2 id="___sec14" class="anchor">Meet the Pandas </h2>
+
+<p>
+<br /><br /><center><p><img src="fig/pandas.jpg" align="bottom" width=600></p></center><br /><br />
+
+<p>
+Another useful Python package is
+<a href="https://pandas.pydata.org/" target="_self">pandas</a>, which is an open source library
+providing high-performance, easy-to-use data structures and data
+analysis tools for Python. <b>pandas</b> stands for panel data, a term borrowed from econometrics and is an efficient library for data analysis with an emphasis on tabular data.
+<b>pandas</b> has two major classes, the <b>DataFrame</b> class with two-dimensional data objects and tabular data organized in columns and the class <b>Series</b> with a focus on one-dimensional data objects. Both classes allow you to index data easily as we will see in the examples below. 
+<b>pandas</b> allows you also to perform mathematical operations on the data, spanning from simple reshapings of vectors and matrices to statistical operations.
+
+<p>
+The following simple example shows how we can, in an easy way make tables of our data. Here we define a data set which includes names, place of birth and date of birth, and displays the data in an easy to read way. We will see repeated use of <b>pandas</b>, in particular in connection with classification of data.
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">pandas</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">pd</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">IPython.display</span> <span style="color: #008000; font-weight: bold">import</span> display
+data <span style="color: #666666">=</span> {<span style="color: #BA2121">&#39;First Name&#39;</span>: [<span style="color: #BA2121">&quot;Frodo&quot;</span>, <span style="color: #BA2121">&quot;Bilbo&quot;</span>, <span style="color: #BA2121">&quot;Aragorn II&quot;</span>, <span style="color: #BA2121">&quot;Samwise&quot;</span>],
+        <span style="color: #BA2121">&#39;Last Name&#39;</span>: [<span style="color: #BA2121">&quot;Baggins&quot;</span>, <span style="color: #BA2121">&quot;Baggins&quot;</span>,<span style="color: #BA2121">&quot;Elessar&quot;</span>,<span style="color: #BA2121">&quot;Gamgee&quot;</span>],
+        <span style="color: #BA2121">&#39;Place of birth&#39;</span>: [<span style="color: #BA2121">&quot;Shire&quot;</span>, <span style="color: #BA2121">&quot;Shire&quot;</span>, <span style="color: #BA2121">&quot;Eriador&quot;</span>, <span style="color: #BA2121">&quot;Shire&quot;</span>],
+        <span style="color: #BA2121">&#39;Date of Birth T.A.&#39;</span>: [<span style="color: #666666">2968</span>, <span style="color: #666666">2890</span>, <span style="color: #666666">2931</span>, <span style="color: #666666">2980</span>]
+        }
+data_pandas <span style="color: #666666">=</span> pd<span style="color: #666666">.</span>DataFrame(data)
+display(data_pandas)
+</pre></div>
+<p>
+In the above we have imported <b>pandas</b> with the shorthand <b>pd</b>, the latter has become the standard way we import <b>pandas</b>. We make then a list of various variables
+and reorganize the aboves lists into a <b>DataFrame</b> and then print out  a neat table with specific column labels as <em>Name</em>, <em>place of birth</em> and <em>date of birth</em>.
+Displaying these results, we see that the indices are given by the default numbers from zero to three.
+<b>pandas</b> is extremely flexible and we can easily change the above indices by defining a new type of indexing as
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>data_pandas <span style="color: #666666">=</span> pd<span style="color: #666666">.</span>DataFrame(data,index<span style="color: #666666">=</span>[<span style="color: #BA2121">&#39;Frodo&#39;</span>,<span style="color: #BA2121">&#39;Bilbo&#39;</span>,<span style="color: #BA2121">&#39;Aragorn&#39;</span>,<span style="color: #BA2121">&#39;Sam&#39;</span>])
+display(data_pandas)
+</pre></div>
+<p>
+Thereafter we display the content of the row which begins with the index <b>Aragorn</b>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>display(data_pandas<span style="color: #666666">.</span>loc[<span style="color: #BA2121">&#39;Aragorn&#39;</span>])
+</pre></div>
+<p>
+We can easily append data to this, for example
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>new_hobbit <span style="color: #666666">=</span> {<span style="color: #BA2121">&#39;First Name&#39;</span>: [<span style="color: #BA2121">&quot;Peregrin&quot;</span>],
+              <span style="color: #BA2121">&#39;Last Name&#39;</span>: [<span style="color: #BA2121">&quot;Took&quot;</span>],
+              <span style="color: #BA2121">&#39;Place of birth&#39;</span>: [<span style="color: #BA2121">&quot;Shire&quot;</span>],
+              <span style="color: #BA2121">&#39;Date of Birth T.A.&#39;</span>: [<span style="color: #666666">2990</span>]
+              }
+data_pandas<span style="color: #666666">=</span>data_pandas<span style="color: #666666">.</span>append(pd<span style="color: #666666">.</span>DataFrame(new_hobbit, index<span style="color: #666666">=</span>[<span style="color: #BA2121">&#39;Pippin&#39;</span>]))
+display(data_pandas)
+</pre></div>
+<p>
+Here are other examples where we use the <b>DataFrame</b> functionality to handle arrays, now with more interesting features for us, namely numbers. We set up a matrix 
+of dimensionality \( 10\times 5 \) and compute the mean value and standard deviation of each column. Similarly, we can perform mathematial operations like squaring the matrix elements and many other operations. 
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">pandas</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">pd</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">IPython.display</span> <span style="color: #008000; font-weight: bold">import</span> display
+np<span style="color: #666666">.</span>random<span style="color: #666666">.</span>seed(<span style="color: #666666">100</span>)
+<span style="color: #408080; font-style: italic"># setting up a 10 x 5 matrix</span>
+rows <span style="color: #666666">=</span> <span style="color: #666666">10</span>
+cols <span style="color: #666666">=</span> <span style="color: #666666">5</span>
+a <span style="color: #666666">=</span> np<span style="color: #666666">.</span>random<span style="color: #666666">.</span>randn(rows,cols)
+df <span style="color: #666666">=</span> pd<span style="color: #666666">.</span>DataFrame(a)
+display(df)
+<span style="color: #008000; font-weight: bold">print</span>(df<span style="color: #666666">.</span>mean())
+<span style="color: #008000; font-weight: bold">print</span>(df<span style="color: #666666">.</span>std())
+display(df<span style="color: #666666">**2</span>)
+</pre></div>
+<p>
+Thereafter we can select specific columns only and plot final results
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>df<span style="color: #666666">.</span>columns <span style="color: #666666">=</span> [<span style="color: #BA2121">&#39;First&#39;</span>, <span style="color: #BA2121">&#39;Second&#39;</span>, <span style="color: #BA2121">&#39;Third&#39;</span>, <span style="color: #BA2121">&#39;Fourth&#39;</span>, <span style="color: #BA2121">&#39;Fifth&#39;</span>]
+df<span style="color: #666666">.</span>index <span style="color: #666666">=</span> np<span style="color: #666666">.</span>arange(<span style="color: #666666">10</span>)
+
+display(df)
+<span style="color: #008000; font-weight: bold">print</span>(df[<span style="color: #BA2121">&#39;Second&#39;</span>]<span style="color: #666666">.</span>mean() )
+<span style="color: #008000; font-weight: bold">print</span>(df<span style="color: #666666">.</span>info())
+<span style="color: #008000; font-weight: bold">print</span>(df<span style="color: #666666">.</span>describe())
+
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">pylab</span> <span style="color: #008000; font-weight: bold">import</span> plt, mpl
+plt<span style="color: #666666">.</span>style<span style="color: #666666">.</span>use(<span style="color: #BA2121">&#39;seaborn&#39;</span>)
+mpl<span style="color: #666666">.</span>rcParams[<span style="color: #BA2121">&#39;font.family&#39;</span>] <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;serif&#39;</span>
+
+df<span style="color: #666666">.</span>cumsum()<span style="color: #666666">.</span>plot(lw<span style="color: #666666">=2.0</span>, figsize<span style="color: #666666">=</span>(<span style="color: #666666">10</span>,<span style="color: #666666">6</span>))
+plt<span style="color: #666666">.</span>show()
+
+
+df<span style="color: #666666">.</span>plot<span style="color: #666666">.</span>bar(figsize<span style="color: #666666">=</span>(<span style="color: #666666">10</span>,<span style="color: #666666">6</span>), rot<span style="color: #666666">=15</span>)
+plt<span style="color: #666666">.</span>show()
+</pre></div>
+<p>
+We can produce a \( 4\times 4 \) matrix
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>b <span style="color: #666666">=</span> np<span style="color: #666666">.</span>arange(<span style="color: #666666">16</span>)<span style="color: #666666">.</span>reshape((<span style="color: #666666">4</span>,<span style="color: #666666">4</span>))
+<span style="color: #008000; font-weight: bold">print</span>(b)
+df1 <span style="color: #666666">=</span> pd<span style="color: #666666">.</span>DataFrame(b)
+<span style="color: #008000; font-weight: bold">print</span>(df1)
+</pre></div>
+<p>
+and many other operations.
+
+<p>
+The <b>Series</b> class is another important class included in
+<b>pandas</b>. You can view it as a specialization of <b>DataFrame</b> but where
+we have just a single column of data. It shares many of the same features as _DataFrame. As with <b>DataFrame</b>,
+most operations are vectorized, achieving thereby a high performance when dealing with computations of arrays, in particular labeled arrays.
+As we will see below it leads also to a very concice code close to the mathematical operations we may be interested in.
+For multidimensional arrays, we recommend strongly <a href="http://xarray.pydata.org/en/stable/" target="_self">xarray</a>. <b>xarray</b> has much of the same flexibility as <b>pandas</b>, but allows for the extension to higher dimensions than two.
+
+<p>
 
 <!-- ------------------- end of main content --------------- -->
 
@@ -127,7 +868,7 @@ end of tocinfo -->
 
 
 <center style="font-size:80%">
-<!-- copyright --> &copy; 1999-2019, "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/". Released under CC Attribution-NonCommercial 4.0 license
+<!-- copyright --> &copy; 1999-2020, "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/". Released under CC Attribution-NonCommercial 4.0 license
 </center>
 
 
