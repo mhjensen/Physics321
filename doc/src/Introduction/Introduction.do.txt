@@ -375,32 +375,28 @@ It is also important to keep track of dimensionalities. Don't mix this up with a
 
 
 !split
-===== Falling baseball =====
+===== Falling baseball in one dimension =====
 
-Problem: Assume I have a ball dangling at a very large height. Let's plot the position of the ball over the course of 5 seconds.
-
-There are many ways to approach this problem, especially in a
-computational aspect. 
-
-Determining our equations of motion in respect to time using our
-Physics I knowledge we get the following:
-
-$\mathbf{P}(\mathbf{t}) = P_i + v_it + \dfrac{1}{2}at^2 $
-
-Where $v_i$ is the initial velocity and $a$ is the acceleration of the
-object.
-
-We're going to use these equations to create a simple yet adjustable computation (Run the cell below)
-
-
+We anticipate the mathematical model to come and assume that we have a
+model for the motion of a falling baseball without air resistance.
+Our system (the baseball) is at an initial height $y_0$ (which we will
+specify in the program below) at the initial time $t_0$. In our discussion here we will plot the position every five seconds.
+The mathematical formula for the position $y(t)$ as function of time $t$ is 
+!bt
+\[
+y(t) = y_0-\frac{1}{2}gt^2,
+\]
+!et
+where $g=9.8$m/s${}^2$ is a constant representing the acceleration due to gravity. 
 !bc pycod
 %matplotlib inline
 import matplotlib.patches as mpatches
 
 g = 9.8 #m/s^2
+y_0 = 10 # in meters
 tf = 5 #s
 t = np.arange(0,tf,.1)
-y = -g*.5*t**2
+y =y_0 -g*.5*t**2
 
 plt.style.use('ggplot')
 plt.figure(figsize=(8,8))
@@ -441,23 +437,6 @@ Given an initial velocity of 40 m/s upwards and observed for a time
 period of 10 seconds, about how high does the ball get? What position
 is the ball from the origin at the end of the observation?
 
-
-!bc pycod
-from IPython.display import HTML
-HTML(
-"""
-<iframe 
-	src="https://forms.gle/9yp9GDXy51s5Hk3y7" 
-	width="100%" 
-	height="1200px" 
-	frameborder="0" 
-	marginheight="0" 
-	marginwidth="0">
-	Loading...
-</iframe>
-"""
-)
-!ec
 
 
 !split

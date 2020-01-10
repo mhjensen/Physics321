@@ -688,29 +688,21 @@ It is also important to keep track of dimensionalities. Don't mix this up with a
 
 
 <section>
-<h2 id="___sec27">Falling baseball </h2>
+<h2 id="___sec27">Falling baseball in one dimension </h2>
 
 <p>
-Problem: Assume I have a ball dangling at a very large height. Let's plot the position of the ball over the course of 5 seconds.
+We anticipate the mathematical model to come and assume that we have a
+model for the motion of a falling baseball without air resistance.
+Our system (the baseball) is at an initial height \( y_0 \) (which we will
+specify in the program below) at the initial time \( t_0 \). In our discussion here we will plot the position every five seconds.
+The mathematical formula for the position \( y(t) \) as function of time \( t \) is 
+<p>&nbsp;<br>
+$$
+y(t) = y_0-\frac{1}{2}gt^2,
+$$
+<p>&nbsp;<br>
 
-<p>
-There are many ways to approach this problem, especially in a
-computational aspect.
-
-<p>
-Determining our equations of motion in respect to time using our
-Physics I knowledge we get the following:
-
-<p>
-\( \mathbf{P}(\mathbf{t}) = P_i + v_it + \dfrac{1}{2}at^2  \)
-
-<p>
-Where \( v_i \) is the initial velocity and \( a \) is the acceleration of the
-object.
-
-<p>
-We're going to use these equations to create a simple yet adjustable computation (Run the cell below)
-
+where $g=9.8$m/s${}^2$ is a constant representing the acceleration due to gravity. 
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
@@ -718,9 +710,10 @@ We're going to use these equations to create a simple yet adjustable computation
 <span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.patches</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">mpatches</span>
 
 g = <span style="color: #B452CD">9.8</span> <span style="color: #228B22">#m/s^2</span>
+y_0 = <span style="color: #B452CD">10</span> <span style="color: #228B22"># in meters</span>
 tf = <span style="color: #B452CD">5</span> <span style="color: #228B22">#s</span>
 t = np.arange(<span style="color: #B452CD">0</span>,tf,.<span style="color: #B452CD">1</span>)
-y = -g*.<span style="color: #B452CD">5</span>*t**<span style="color: #B452CD">2</span>
+y =y_0 -g*.<span style="color: #B452CD">5</span>*t**<span style="color: #B452CD">2</span>
 
 plt.style.use(<span style="color: #CD5555">&#39;ggplot&#39;</span>)
 plt.figure(figsize=(<span style="color: #B452CD">8</span>,<span style="color: #B452CD">8</span>))
@@ -761,25 +754,6 @@ Canon(Vi, T)
 Given an initial velocity of 40 m/s upwards and observed for a time
 period of 10 seconds, about how high does the ball get? What position
 is the ball from the origin at the end of the observation?
-
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">IPython.display</span> <span style="color: #8B008B; font-weight: bold">import</span> HTML
-HTML(
-<span style="color: #CD5555">&quot;&quot;&quot;</span>
-<span style="color: #CD5555">&lt;iframe </span>
-<span style="color: #CD5555">	src=&quot;https://forms.gle/9yp9GDXy51s5Hk3y7&quot; </span>
-<span style="color: #CD5555">	width=&quot;100%&quot; </span>
-<span style="color: #CD5555">	height=&quot;1200px&quot; </span>
-<span style="color: #CD5555">	frameborder=&quot;0&quot; </span>
-<span style="color: #CD5555">	marginheight=&quot;0&quot; </span>
-<span style="color: #CD5555">	marginwidth=&quot;0&quot;&gt;</span>
-<span style="color: #CD5555">	Loading...</span>
-<span style="color: #CD5555">&lt;/iframe&gt;</span>
-<span style="color: #CD5555">&quot;&quot;&quot;</span>
-)
-</pre></div>
 </section>
 
 
