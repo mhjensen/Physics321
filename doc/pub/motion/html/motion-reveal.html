@@ -404,10 +404,10 @@ display(RawData)
 plt.style.use(<span style="color: #CD5555">&#39;ggplot&#39;</span>)
 plt.figure(figsize=(<span style="color: #B452CD">8</span>,<span style="color: #B452CD">8</span>))
 plt.scatter(t, y, color = <span style="color: #CD5555">&#39;b&#39;</span>)
-blue_patch = mpatches.Patch(color = <span style="color: #CD5555">&#39;b&#39;</span>, label = <span style="color: #CD5555">&#39;Y position over time&#39;</span>)
+blue_patch = mpatches.Patch(color = <span style="color: #CD5555">&#39;b&#39;</span>, label = <span style="color: #CD5555">&#39;Height y as function of  time t&#39;</span>)
 plt.legend(handles=[blue_patch])
-plt.xlabel(<span style="color: #CD5555">&quot;Time (s)&quot;</span>)
-plt.ylabel(<span style="color: #CD5555">&quot;Height (m)&quot;</span>)
+plt.xlabel(<span style="color: #CD5555">&quot;t[s]&quot;</span>)
+plt.ylabel(<span style="color: #CD5555">&quot;y[m]&quot;</span>)
 save_fig(<span style="color: #CD5555">&quot;FallingBaseball&quot;</span>)
 plt.show()
 </pre></div>
@@ -614,13 +614,8 @@ n = np.size(t)
 Vaverage = np.zeros(n)
 <span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">1</span>,n):
     Vaverage[i] = (y[i]-y[i-<span style="color: #B452CD">1</span>])/DeltaT
-data = {<span style="color: #CD5555">&#39;t[s]&#39;</span>: t,
-        <span style="color: #CD5555">&#39;y[m]&#39;</span>: y,
-        <span style="color: #CD5555">&#39;v[m/s]&#39;</span>: Vaverage
-        }
-
-<span style="color: #228B22"># Now we can compute the mean accelearatio using our data</span>
-<span style="color: #228B22"># We define first an array Aaverage</span>
+<span style="color: #228B22"># Now we can compute the mean accelearation using our data</span>
+<span style="color: #228B22"># We define first an array Aaverage for the acceleration</span>
 n = np.size(t)
 Aaverage = np.zeros(n)
 Aaverage[<span style="color: #B452CD">0</span>] = -g

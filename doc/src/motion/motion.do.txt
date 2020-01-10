@@ -209,10 +209,10 @@ display(RawData)
 plt.style.use('ggplot')
 plt.figure(figsize=(8,8))
 plt.scatter(t, y, color = 'b')
-blue_patch = mpatches.Patch(color = 'b', label = 'Y position over time')
+blue_patch = mpatches.Patch(color = 'b', label = 'Height y as function of  time t')
 plt.legend(handles=[blue_patch])
-plt.xlabel("Time (s)")
-plt.ylabel("Height (m)")
+plt.xlabel("t[s]")
+plt.ylabel("y[m]")
 save_fig("FallingBaseball")
 plt.show()
 !ec
@@ -390,13 +390,8 @@ n = np.size(t)
 Vaverage = np.zeros(n)
 for i in range(1,n):
     Vaverage[i] = (y[i]-y[i-1])/DeltaT
-data = {'t[s]': t,
-        'y[m]': y,
-        'v[m/s]': Vaverage
-        }
-
-# Now we can compute the mean accelearatio using our data
-# We define first an array Aaverage
+# Now we can compute the mean accelearation using our data
+# We define first an array Aaverage for the acceleration
 n = np.size(t)
 Aaverage = np.zeros(n)
 Aaverage[0] = -g

@@ -398,10 +398,10 @@ display(RawData)
 plt<span style="color: #666666">.</span>style<span style="color: #666666">.</span>use(<span style="color: #BA2121">&#39;ggplot&#39;</span>)
 plt<span style="color: #666666">.</span>figure(figsize<span style="color: #666666">=</span>(<span style="color: #666666">8</span>,<span style="color: #666666">8</span>))
 plt<span style="color: #666666">.</span>scatter(t, y, color <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;b&#39;</span>)
-blue_patch <span style="color: #666666">=</span> mpatches<span style="color: #666666">.</span>Patch(color <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;b&#39;</span>, label <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;Y position over time&#39;</span>)
+blue_patch <span style="color: #666666">=</span> mpatches<span style="color: #666666">.</span>Patch(color <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;b&#39;</span>, label <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;Height y as function of  time t&#39;</span>)
 plt<span style="color: #666666">.</span>legend(handles<span style="color: #666666">=</span>[blue_patch])
-plt<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">&quot;Time (s)&quot;</span>)
-plt<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">&quot;Height (m)&quot;</span>)
+plt<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">&quot;t[s]&quot;</span>)
+plt<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">&quot;y[m]&quot;</span>)
 save_fig(<span style="color: #BA2121">&quot;FallingBaseball&quot;</span>)
 plt<span style="color: #666666">.</span>show()
 </pre></div>
@@ -568,13 +568,8 @@ n <span style="color: #666666">=</span> np<span style="color: #666666">.</span>s
 Vaverage <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
 <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">1</span>,n):
     Vaverage[i] <span style="color: #666666">=</span> (y[i]<span style="color: #666666">-</span>y[i<span style="color: #666666">-1</span>])<span style="color: #666666">/</span>DeltaT
-data <span style="color: #666666">=</span> {<span style="color: #BA2121">&#39;t[s]&#39;</span>: t,
-        <span style="color: #BA2121">&#39;y[m]&#39;</span>: y,
-        <span style="color: #BA2121">&#39;v[m/s]&#39;</span>: Vaverage
-        }
-
-<span style="color: #408080; font-style: italic"># Now we can compute the mean accelearatio using our data</span>
-<span style="color: #408080; font-style: italic"># We define first an array Aaverage</span>
+<span style="color: #408080; font-style: italic"># Now we can compute the mean accelearation using our data</span>
+<span style="color: #408080; font-style: italic"># We define first an array Aaverage for the acceleration</span>
 n <span style="color: #666666">=</span> np<span style="color: #666666">.</span>size(t)
 Aaverage <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
 Aaverage[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> <span style="color: #666666">-</span>g
