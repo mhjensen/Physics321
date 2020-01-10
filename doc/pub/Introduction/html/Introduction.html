@@ -110,23 +110,24 @@ div { text-align: justify; text-justify: inter-word; }
                None,
                '___sec25'),
               ('Dimension, units and labels', 3, None, '___sec26'),
+              ('Falling baseball', 2, None, '___sec27'),
               ('Python practicalities, Software and needed installations',
                2,
                None,
-               '___sec27'),
-              ('Python installers', 2, None, '___sec28'),
-              ('Useful Python libraries', 2, None, '___sec29'),
+               '___sec28'),
+              ('Python installers', 2, None, '___sec29'),
+              ('Useful Python libraries', 2, None, '___sec30'),
               ('Numpy examples and Important Matrix and vector handling '
                'packages',
                2,
                None,
-               '___sec30'),
-              ('Basic Matrix Features', 2, None, '___sec31'),
-              ('Some famous Matrices', 3, None, '___sec32'),
-              ('More Basic Matrix Features', 3, None, '___sec33'),
-              ('Numpy and arrays', 2, None, '___sec34'),
-              ('Matrices in Python', 2, None, '___sec35'),
-              ('Meet the Pandas', 2, None, '___sec36')]}
+               '___sec31'),
+              ('Basic Matrix Features', 2, None, '___sec32'),
+              ('Some famous Matrices', 3, None, '___sec33'),
+              ('More Basic Matrix Features', 3, None, '___sec34'),
+              ('Numpy and arrays', 2, None, '___sec35'),
+              ('Matrices in Python', 2, None, '___sec36'),
+              ('Meet the Pandas', 2, None, '___sec37')]}
 end of tocinfo -->
 
 <body>
@@ -177,7 +178,7 @@ MathJax.Hub.Config({
 <center>[3] <b>Department of Physics and Astronomy, Michigan State University, USA</b></center>
 <br>
 <p>
-<center><h4>Jan 8, 2020</h4></center> <!-- date -->
+<center><h4>Jan 9, 2020</h4></center> <!-- date -->
 <br>
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -679,7 +680,102 @@ It is also important to keep track of dimensionalities. Don't mix this up with a
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec27">Python practicalities, Software and needed installations </h2>
+<h2 id="___sec27">Falling baseball </h2>
+
+<p>
+Problem: Assume I have a ball dangling at a very large height. Let's plot the position of the ball over the course of 5 seconds.
+
+<p>
+There are many ways to approach this problem, especially in a
+computational aspect.
+
+<p>
+Determining our equations of motion in respect to time using our
+Physics I knowledge we get the following:
+
+<p>
+\( \mathbf{P}(\mathbf{t}) = P_i + v_it + \dfrac{1}{2}at^2  \)
+
+<p>
+Where \( v_i \) is the initial velocity and \( a \) is the acceleration of the
+object.
+
+<p>
+We're going to use these equations to create a simple yet adjustable computation (Run the cell below)
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #666666">%</span>matplotlib inline
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.patches</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">mpatches</span>
+
+g <span style="color: #666666">=</span> <span style="color: #666666">9.8</span> <span style="color: #408080; font-style: italic">#m/s^2</span>
+tf <span style="color: #666666">=</span> <span style="color: #666666">5</span> <span style="color: #408080; font-style: italic">#s</span>
+t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>arange(<span style="color: #666666">0</span>,tf,<span style="color: #666666">.1</span>)
+y <span style="color: #666666">=</span> <span style="color: #666666">-</span>g<span style="color: #666666">*.5*</span>t<span style="color: #666666">**2</span>
+
+plt<span style="color: #666666">.</span>style<span style="color: #666666">.</span>use(<span style="color: #BA2121">&#39;ggplot&#39;</span>)
+plt<span style="color: #666666">.</span>figure(figsize<span style="color: #666666">=</span>(<span style="color: #666666">8</span>,<span style="color: #666666">8</span>))
+plt<span style="color: #666666">.</span>scatter(t, y, color <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;b&#39;</span>)
+blue_patch <span style="color: #666666">=</span> mpatches<span style="color: #666666">.</span>Patch(color <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;b&#39;</span>, label <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;Y position over time&#39;</span>)
+plt<span style="color: #666666">.</span>legend(handles<span style="color: #666666">=</span>[blue_patch])
+plt<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">&quot;Time (s)&quot;</span>)
+plt<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">&quot;Height (m)&quot;</span>)
+</pre></div>
+<p>
+We will need to modify our \( y \) equation to take in velocity also. A
+command for user inputs is already provided, along with the skeleton
+of the funciton. Your job is to complete it using the hints provided
+and what we did above.
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic"># This is where we create our function </span>
+<span style="color: #408080; font-style: italic"># Notice that this function takes in a variable &quot;vi&quot; and &quot;tf&quot;</span>
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">Canon</span>(vi, tf):
+    
+    g <span style="color: #666666">=</span> <span style="color: #408080; font-style: italic">## Insert value for accleration due to gravity here</span>
+    t <span style="color: #666666">=</span> <span style="color: #408080; font-style: italic">## Input algorithm for range of t using the np.arange() function</span>
+    y <span style="color: #666666">=</span> <span style="color: #408080; font-style: italic">## Insert equation for motion of y with velocity as a factor</span>
+    
+    <span style="color: #408080; font-style: italic">## Use the scatter plotting function to graph the movement below. Feel free to add labels and other graphics to the plot as you see fit</span>
+    <span style="color: #408080; font-style: italic">## (Hint: There is already code for graphing above that you can copy and/or modify for your own usage)</span>
+<span style="color: #408080; font-style: italic"># The next two commands will ask the user for an input. The value will be stored as a &quot;float number&quot;</span>
+Vi <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>(<span style="color: #BA2121">&quot;Please enter initial velocity (m/s)&quot;</span>))
+
+T <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>(<span style="color: #BA2121">&quot;Pleaes enter time you would like to analyze the dropped ball (s)&quot;</span>))
+
+<span style="color: #408080; font-style: italic"># Now below, we will call upon the Canon function and plug in our asked values</span>
+Canon(Vi, T)
+</pre></div>
+<p>
+Given an initial velocity of 40 m/s upwards and observed for a time
+period of 10 seconds, about how high does the ball get? What position
+is the ball from the origin at the end of the observation?
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">IPython.display</span> <span style="color: #008000; font-weight: bold">import</span> HTML
+HTML(
+<span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;</span>
+<span style="color: #BA2121; font-style: italic">&lt;iframe </span>
+<span style="color: #BA2121; font-style: italic">	src=&quot;https://forms.gle/9yp9GDXy51s5Hk3y7&quot; </span>
+<span style="color: #BA2121; font-style: italic">	width=&quot;100%&quot; </span>
+<span style="color: #BA2121; font-style: italic">	height=&quot;1200px&quot; </span>
+<span style="color: #BA2121; font-style: italic">	frameborder=&quot;0&quot; </span>
+<span style="color: #BA2121; font-style: italic">	marginheight=&quot;0&quot; </span>
+<span style="color: #BA2121; font-style: italic">	marginwidth=&quot;0&quot;&gt;</span>
+<span style="color: #BA2121; font-style: italic">	Loading...</span>
+<span style="color: #BA2121; font-style: italic">&lt;/iframe&gt;</span>
+<span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;</span>
+)
+</pre></div>
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec28">Python practicalities, Software and needed installations </h2>
 
 <p>
 We will make extensive use of Python as programming language and its
@@ -715,7 +811,7 @@ you can use <b>pip</b> as well and simply install Python as
 
 etc etc.
 
-<h2 id="___sec28">Python installers </h2>
+<h2 id="___sec29">Python installers </h2>
 
 <p>
 If you don't want to perform these operations separately and venture
@@ -746,7 +842,7 @@ license.
 Furthermore, <a href="https://colab.research.google.com/notebooks/welcome.ipynb" target="_blank">Google's Colab</a> is a free Jupyter notebook environment that requires 
 no setup and runs entirely in the cloud. Try it out!
 
-<h2 id="___sec29">Useful Python libraries </h2>
+<h2 id="___sec30">Useful Python libraries </h2>
 Here we list several useful Python libraries we strongly recommend (if you use anaconda many of these are already there)
 
 <ul>
@@ -775,7 +871,7 @@ further processing. For example, convert to latex as
 <p>
 And to add more versatility, the Python package <a href="http://www.sympy.org/en/index.html" target="_blank">SymPy</a> is a Python library for symbolic mathematics. It aims to become a full-featured computer algebra system (CAS)  and is entirely written in Python.
 
-<h2 id="___sec30">Numpy examples and Important Matrix and vector handling packages </h2>
+<h2 id="___sec31">Numpy examples and Important Matrix and vector handling packages </h2>
 
 <p>
 There are several central software libraries for linear algebra and eigenvalue problems. Several of the more
@@ -789,7 +885,7 @@ developed in the 1970s, namely EISPACK and LINPACK.  We describe them shortly he
   <li> BLAS (I, II and III): (Basic Linear Algebra Subprograms) are routines that provide standard building blocks for performing basic vector and matrix operations. Blas I is vector operations, II vector-matrix operations and III matrix-matrix operations. Highly parallelized and efficient codes, all available for download from <a href="http://www.netlib.org" target="_blank"><tt>http://www.netlib.org</tt></a>.</li>
 </ul>
 
-<h2 id="___sec31">Basic Matrix Features </h2>
+<h2 id="___sec32">Basic Matrix Features </h2>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -834,7 +930,7 @@ $$
 </div>
 
 
-<h3 id="___sec32">Some famous Matrices </h3>
+<h3 id="___sec33">Some famous Matrices </h3>
 
 <ul>
   <li> Diagonal if \( a_{ij}=0 \) for \( i\ne j \)</li>
@@ -848,7 +944,7 @@ $$
   <li> Banded, block upper triangular, block lower triangular....</li>
 </ul>
 
-<h3 id="___sec33">More Basic Matrix Features </h3>
+<h3 id="___sec34">More Basic Matrix Features </h3>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -867,7 +963,7 @@ For an \( N\times N \) matrix  \( \mathbf{A} \) the following properties are all
 </div>
 
 
-<h2 id="___sec34">Numpy and arrays </h2>
+<h2 id="___sec35">Numpy and arrays </h2>
 <a href="http://www.numpy.org/" target="_blank">Numpy</a> provides an easy way to handle arrays in Python. The standard way to import this library is as
 
 <p>
@@ -952,7 +1048,7 @@ x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>l
 <span style="color: #008000; font-weight: bold">print</span>(x<span style="color: #666666">.</span>itemsize)
 </pre></div>
 
-<h2 id="___sec35">Matrices in Python </h2>
+<h2 id="___sec36">Matrices in Python </h2>
 
 <p>
 Having defined vectors, we are now ready to try out matrices. We can
@@ -1020,7 +1116,7 @@ A <span style="color: #666666">=</span> np<span style="color: #666666">.</span>r
 <span style="color: #008000; font-weight: bold">print</span>(A) 
 </pre></div>
 
-<h2 id="___sec36">Meet the Pandas </h2>
+<h2 id="___sec37">Meet the Pandas </h2>
 
 <p>
 <br /><br /><center><p><img src="fig/pandas.jpg" align="bottom" width=600></p></center><br /><br />

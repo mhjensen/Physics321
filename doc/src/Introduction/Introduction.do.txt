@@ -373,6 +373,93 @@ It is also important to keep track of dimensionalities. Don't mix this up with a
 * $[\omega]=$ 1/time
 
 
+
+!split
+===== Falling baseball =====
+
+Problem: Assume I have a ball dangling at a very large height. Let's plot the position of the ball over the course of 5 seconds.
+
+There are many ways to approach this problem, especially in a
+computational aspect. 
+
+Determining our equations of motion in respect to time using our
+Physics I knowledge we get the following:
+
+$\mathbf{P}(\mathbf{t}) = P_i + v_it + \dfrac{1}{2}at^2 $
+
+Where $v_i$ is the initial velocity and $a$ is the acceleration of the
+object.
+
+We're going to use these equations to create a simple yet adjustable computation (Run the cell below)
+
+
+!bc pycod
+%matplotlib inline
+import matplotlib.patches as mpatches
+
+g = 9.8 #m/s^2
+tf = 5 #s
+t = np.arange(0,tf,.1)
+y = -g*.5*t**2
+
+plt.style.use('ggplot')
+plt.figure(figsize=(8,8))
+plt.scatter(t, y, color = 'b')
+blue_patch = mpatches.Patch(color = 'b', label = 'Y position over time')
+plt.legend(handles=[blue_patch])
+plt.xlabel("Time (s)")
+plt.ylabel("Height (m)")
+!ec
+
+We will need to modify our $y$ equation to take in velocity also. A
+command for user inputs is already provided, along with the skeleton
+of the funciton. Your job is to complete it using the hints provided
+and what we did above.
+
+
+!bc pycod
+# This is where we create our function 
+# Notice that this function takes in a variable "vi" and "tf"
+def Canon(vi, tf):
+    
+    g = ## Insert value for accleration due to gravity here
+    t = ## Input algorithm for range of t using the np.arange() function
+    y = ## Insert equation for motion of y with velocity as a factor
+    
+    ## Use the scatter plotting function to graph the movement below. Feel free to add labels and other graphics to the plot as you see fit
+    ## (Hint: There is already code for graphing above that you can copy and/or modify for your own usage)
+# The next two commands will ask the user for an input. The value will be stored as a "float number"
+Vi = float(input("Please enter initial velocity (m/s)"))
+
+T = float(input("Pleaes enter time you would like to analyze the dropped ball (s)"))
+
+# Now below, we will call upon the Canon function and plug in our asked values
+Canon(Vi, T)
+!ec
+
+Given an initial velocity of 40 m/s upwards and observed for a time
+period of 10 seconds, about how high does the ball get? What position
+is the ball from the origin at the end of the observation?
+
+
+!bc pycod
+from IPython.display import HTML
+HTML(
+"""
+<iframe 
+	src="https://forms.gle/9yp9GDXy51s5Hk3y7" 
+	width="100%" 
+	height="1200px" 
+	frameborder="0" 
+	marginheight="0" 
+	marginwidth="0">
+	Loading...
+</iframe>
+"""
+)
+!ec
+
+
 !split
 ===== Python practicalities, Software and needed installations =====
 
