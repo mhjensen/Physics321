@@ -125,7 +125,7 @@ As of now we simply assume that   we know the formula for the falling object. Af
 !split
 =====  Our Python Encounter =====
 
-We start with preparing folders for storing our calculations, figures and if needed, specific data files we use as input files.
+We start with preparing folders for storing our calculations, figures and if needed, specific data files we use as input or output files.
 
 !bc pycod
 # Common imports
@@ -217,13 +217,15 @@ save_fig("FallingBaseball")
 plt.show()
 !ec
 
+Here we used _pandas_ (see below) to systemize the output of the position as function of time.
+
 
 !split
 ===== Average quantities =====
 We define now the average velocity as
 !bt
 \[
-\overline{v}(t) = \frac({x(t+\Delta t)-x(t)}{\Delta t}.
+\overline{v}(t) = \frac{y(t+\Delta t)-y(t)}{\Delta t}.
 \]
 !et
 In the code we have set the time step $\Delta t$ to a given value. We could define it in terms of the number of points $n$ as
@@ -233,18 +235,18 @@ In the code we have set the time step $\Delta t$ to a given value. We could defi
 \]
 !et
 
-Since we have discretized the variables, we introduce the counter $i$ and let $x(t)\rightarrow x(t_i)=x_i$ and $t\rightarrow t_i$
+Since we have discretized the variables, we introduce the counter $i$ and let $y(t)\rightarrow y(t_i)=y_i$ and $t\rightarrow t_i$
 with $i=0,1,\dots, n$. This gives us the following shorthand notations that we will use for the rest of this course. We define
 !bt
 \[
-x_i = x(t_i)\hspace{0.1cm} i=0,1,2,\dots,n.
+y_i = y(t_i),\hspace{0.2cm} i=0,1,2,\dots,n.
 \]
 !et
 This applies to other variables which depend on say time. Examples are the velocities, accelerations, momenta etc.
 Furthermore we use the shorthand
 !bt
 \[
-x_{i\pm 1} = x(t_i\pm \Delta t)\hspace{0.1cm} i=0,1,2,\dots,n.
+y_{i\pm 1} = y(t_i\pm \Delta t),\hspace{0.12cm} i=0,1,2,\dots,n.
 \]
 !et
 
@@ -253,7 +255,7 @@ x_{i\pm 1} = x(t_i\pm \Delta t)\hspace{0.1cm} i=0,1,2,\dots,n.
 We can then rewrite in a more compact form the average velocity as
 !bt
 \[
-\overline{v}_i = \frac({x_{i+1}-x_{i}}{\Delta t}.
+\overline{v}_i = \frac{y_{i+1}-y_{i}}{\Delta t}.
 \]
 !et
 The velocity is defined as the change in position per unit time.
@@ -261,46 +263,49 @@ In the limit $\Delta t \rightarrow 0$ this defines the instaneous velocity, whic
 We have thus
 !bt
 \[
-v(t) = \frac{dx}{dt}=\lim_{\Delta \rightarrow 0}\frac({x(t+\Delta t)-x_{t}}{\Delta t}.
+v(t) = \frac{dx}{dt}=\lim_{\Delta \rightarrow 0}\frac{y(t+\Delta t)-y_{t}}{\Delta t}.
 \]
 !et
 Similarly, we can define the average acceleration as the change in velocity per unit time as
 !bt
 \[
-\overline{a}_i = \frac({v_{i+1}-v_{i}}{\Delta t},
+\overline{a}_i = \frac{v_{i+1}-v_{i}}{\Delta t},
 \]
 !et
-resulting in the instantaneous accelearation
+resulting in the instantaneous acceleration
 !bt
 \[
-a(t) = \frac{dv}{dt}=\lim_{\Delta \rightarrow 0}\frac({v(t+\Delta t)-v_{t}}{\Delta t}.
+a(t) = \frac{dv}{dt}=\lim_{\Delta \rightarrow 0}\frac{v(t+\Delta t)-v_{t}}{\Delta t}.
 \]
 !et
+
+_A note on notations_: When writing for example the velocity as $v(t)$ we are then referring to the continuous and instantaneous value. A subscript like
+$v_i$ refers always to the descretized values.
 
 !split
 ===== A differential equation =====
 We can rewrite the instantaneous acceleration as
 !bt
 \[
-a(t) = \frac{dv}{dt}=\frac{d}{dt}\frac{dx}{dt}=\frac{d^2x}{dt^2}.
+a(t) = \frac{dv}{dt}=\frac{d}{dt}\frac{dy}{dt}=\frac{d^2y}{dt^2}.
 \]
 !et
 This forms the starting point for our definition of forces later. It is a famous second-order differential equation. If the acceleration is constant we can now recover the formula for the falling ball we started with.
 The acceleration can depend on the position and the velocity. To be more formal we should then write the above differential equation as
 !bt
 \[
-\frac{d^2x}{dt^2}=a(t,x(t),\frac{dx}{dt}).
+\frac{d^2y}{dt^2}=a(t,y(t),\frac{dy}{dt}).
 \]
 !et
 
-With given initial conditions for $x(t_0)$ and $v(t_0)$ we can then
+With given initial conditions for $y(t_0)$ and $v(t_0)$ we can then
 integrate the above equation and find the velocities and positions at
 a given time $t$.
 
 !split
 ===== Integrating our equations =====
 Formally we can then, starting with the acceleration (suppose we have measured it, how could we do that?)
-compute say the height of a building.  To see that we perform the following integrations from an initial time $t_0$  to a given time $t$
+compute say the height of a building.  To see this we perform the following integrations from an initial time $t_0$  to a given time $t$
 !bt
 \[
 \int_{t_0}^t dt a(t) = \int_{t_0}^t dt \frac{dv}{dt} = v(t)-v(t_0),
@@ -317,13 +322,13 @@ v(t)=v(t_0)+\int_{t_0}^t dt a(t).
 When we know the velocity as function of time, we can find the position as function of time starting from the defintion of velocity as the derivative wrt time of the positions, that is we have
 !bt
 \[
-\int_{t_0}^t dt v(t) = \int_{t_0}^t dt \frac{dx}{dt} = x(t)-x(t_0),
+\int_{t_0}^t dt v(t) = \int_{t_0}^t dt \frac{dy}{dt} = y(t)-y(t_0),
 \]
 !et
 or as 
 !bt
 \[
-x(t)=x(t_0)+\int_{t_0}^t dt v(t).
+y(t)=y(t_0)+\int_{t_0}^t dt v(t).
 \]
 !et
 
@@ -334,10 +339,10 @@ spatial dimension.
 
 !split
 ===== Constant acceleration case, the velocity =====
-Let us compute the velocity
+Let us compute the velocity using the constant value for the acceleration given by $-g$. We have
 !bt
 \[
-v(t)=v(t_0)+\int_{t_0}^t dt a(t)=v(t_0)-\int_{t_0}^t dt g.
+v(t)=v(t_0)+\int_{t_0}^t dt a(t)=v(t_0)+\int_{t_0}^t dt (-g).
 \]
 !et
 Using our initial time as $t_0=0$s and setting the initial velocity $v(t_0)=v_0=0$m/s we get when integrating
@@ -355,16 +360,16 @@ v(t)=v_0-g(t-t_0).
 We can then integrate the velocity and obtain the final formula for the position as function of time through
 !bt
 \[
-x(t)=x(t_0)+\int_{t_0}^t dt v(t)=x_0+\int_{t_0}^t dt v(t)=x_0+\int_{t_0}^t dt (-gt),
+y(t)=y(t_0)+\int_{t_0}^t dt v(t)=y_0+\int_{t_0}^t dt v(t)=y_0+\int_{t_0}^t dt (-gt),
 \]
 !et
-With $x_0=10$m and $t_0=0$s, we obtain the equation we started with
+With $y_0=10$m and $t_0=0$s, we obtain the equation we started with
 !bt
 \[
-x(t)=10-\frac{1}{2}gt^2.
+y(t)=10-\frac{1}{2}gt^2.
 \]
 !et
-Note that we started using $y(t)$ instead of $x(t)$. 
+
 
 
 !split

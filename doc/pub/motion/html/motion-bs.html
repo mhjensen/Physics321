@@ -311,7 +311,7 @@ As of now we simply assume that   we know the formula for the falling object. Af
 <h2 id="___sec4" class="anchor">Our Python Encounter </h2>
 
 <p>
-We start with preparing folders for storing our calculations, figures and if needed, specific data files we use as input files.
+We start with preparing folders for storing our calculations, figures and if needed, specific data files we use as input or output files.
 
 <p>
 
@@ -406,12 +406,15 @@ save_fig(<span style="color: #BA2121">&quot;FallingBaseball&quot;</span>)
 plt<span style="color: #666666">.</span>show()
 </pre></div>
 <p>
+Here we used <b>pandas</b> (see below) to systemize the output of the position as function of time.
+
+<p>
 <!-- !split -->
 
 <h2 id="___sec5" class="anchor">Average quantities </h2>
 We define now the average velocity as
 $$
-\overline{v}(t) = \frac({x(t+\Delta t)-x(t)}{\Delta t}.
+\overline{v}(t) = \frac{y(t+\Delta t)-y(t)}{\Delta t}.
 $$
 
 In the code we have set the time step \( \Delta t \) to a given value. We could define it in terms of the number of points \( n \) as
@@ -420,16 +423,16 @@ $$
 $$
 
 <p>
-Since we have discretized the variables, we introduce the counter \( i \) and let \( x(t)\rightarrow x(t_i)=x_i \) and \( t\rightarrow t_i \)
+Since we have discretized the variables, we introduce the counter \( i \) and let \( y(t)\rightarrow y(t_i)=y_i \) and \( t\rightarrow t_i \)
 with \( i=0,1,\dots, n \). This gives us the following shorthand notations that we will use for the rest of this course. We define
 $$
-x_i = x(t_i)\hspace{0.1cm} i=0,1,2,\dots,n.
+y_i = y(t_i),\hspace{0.2cm} i=0,1,2,\dots,n.
 $$
 
 This applies to other variables which depend on say time. Examples are the velocities, accelerations, momenta etc.
 Furthermore we use the shorthand
 $$
-x_{i\pm 1} = x(t_i\pm \Delta t)\hspace{0.1cm} i=0,1,2,\dots,n.
+y_{i\pm 1} = y(t_i\pm \Delta t),\hspace{0.12cm} i=0,1,2,\dots,n.
 $$
 
 <p>
@@ -438,25 +441,29 @@ $$
 <h2 id="___sec6" class="anchor">Compact equations </h2>
 We can then rewrite in a more compact form the average velocity as
 $$
-\overline{v}_i = \frac({x_{i+1}-x_{i}}{\Delta t}.
+\overline{v}_i = \frac{y_{i+1}-y_{i}}{\Delta t}.
 $$
 
 The velocity is defined as the change in position per unit time.
 In the limit \( \Delta t \rightarrow 0 \) this defines the instaneous velocity, which is nothing but the slope of the position at a time \( t \).
 We have thus
 $$
-v(t) = \frac{dx}{dt}=\lim_{\Delta \rightarrow 0}\frac({x(t+\Delta t)-x_{t}}{\Delta t}.
+v(t) = \frac{dx}{dt}=\lim_{\Delta \rightarrow 0}\frac{y(t+\Delta t)-y_{t}}{\Delta t}.
 $$
 
 Similarly, we can define the average acceleration as the change in velocity per unit time as
 $$
-\overline{a}_i = \frac({v_{i+1}-v_{i}}{\Delta t},
+\overline{a}_i = \frac{v_{i+1}-v_{i}}{\Delta t},
 $$
 
-resulting in the instantaneous accelearation
+resulting in the instantaneous acceleration
 $$
-a(t) = \frac{dv}{dt}=\lim_{\Delta \rightarrow 0}\frac({v(t+\Delta t)-v_{t}}{\Delta t}.
+a(t) = \frac{dv}{dt}=\lim_{\Delta \rightarrow 0}\frac{v(t+\Delta t)-v_{t}}{\Delta t}.
 $$
+
+<p>
+<b>A note on notations</b>: When writing for example the velocity as \( v(t) \) we are then referring to the continuous and instantaneous value. A subscript like
+\( v_i \) refers always to the descretized values.
 
 <p>
 <!-- !split -->
@@ -464,17 +471,17 @@ $$
 <h2 id="___sec7" class="anchor">A differential equation </h2>
 We can rewrite the instantaneous acceleration as
 $$
-a(t) = \frac{dv}{dt}=\frac{d}{dt}\frac{dx}{dt}=\frac{d^2x}{dt^2}.
+a(t) = \frac{dv}{dt}=\frac{d}{dt}\frac{dy}{dt}=\frac{d^2y}{dt^2}.
 $$
 
 This forms the starting point for our definition of forces later. It is a famous second-order differential equation. If the acceleration is constant we can now recover the formula for the falling ball we started with.
 The acceleration can depend on the position and the velocity. To be more formal we should then write the above differential equation as
 $$
-\frac{d^2x}{dt^2}=a(t,x(t),\frac{dx}{dt}).
+\frac{d^2y}{dt^2}=a(t,y(t),\frac{dy}{dt}).
 $$
 
 <p>
-With given initial conditions for \( x(t_0) \) and \( v(t_0) \) we can then
+With given initial conditions for \( y(t_0) \) and \( v(t_0) \) we can then
 integrate the above equation and find the velocities and positions at
 a given time \( t \).
 
@@ -483,7 +490,7 @@ a given time \( t \).
 
 <h2 id="___sec8" class="anchor">Integrating our equations </h2>
 Formally we can then, starting with the acceleration (suppose we have measured it, how could we do that?)
-compute say the height of a building.  To see that we perform the following integrations from an initial time \( t_0 \)  to a given time \( t \)
+compute say the height of a building.  To see this we perform the following integrations from an initial time \( t_0 \)  to a given time \( t \)
 $$
 \int_{t_0}^t dt a(t) = \int_{t_0}^t dt \frac{dv}{dt} = v(t)-v(t_0),
 $$
@@ -496,12 +503,12 @@ $$
 <p>
 When we know the velocity as function of time, we can find the position as function of time starting from the defintion of velocity as the derivative wrt time of the positions, that is we have
 $$
-\int_{t_0}^t dt v(t) = \int_{t_0}^t dt \frac{dx}{dt} = x(t)-x(t_0),
+\int_{t_0}^t dt v(t) = \int_{t_0}^t dt \frac{dy}{dt} = y(t)-y(t_0),
 $$
 
 or as 
 $$
-x(t)=x(t_0)+\int_{t_0}^t dt v(t).
+y(t)=y(t_0)+\int_{t_0}^t dt v(t).
 $$
 
 <p>
@@ -514,9 +521,9 @@ spatial dimension.
 <!-- !split -->
 
 <h2 id="___sec9" class="anchor">Constant acceleration case, the velocity </h2>
-Let us compute the velocity
+Let us compute the velocity using the constant value for the acceleration given by \( -g \). We have
 $$
-v(t)=v(t_0)+\int_{t_0}^t dt a(t)=v(t_0)-\int_{t_0}^t dt g.
+v(t)=v(t_0)+\int_{t_0}^t dt a(t)=v(t_0)+\int_{t_0}^t dt (-g).
 $$
 
 Using our initial time as $t_0=0$s and setting the initial velocity $v(t_0)=v_0=0$m/s we get when integrating
@@ -531,15 +538,13 @@ $$
 
 We can then integrate the velocity and obtain the final formula for the position as function of time through
 $$
-x(t)=x(t_0)+\int_{t_0}^t dt v(t)=x_0+\int_{t_0}^t dt v(t)=x_0+\int_{t_0}^t dt (-gt),
+y(t)=y(t_0)+\int_{t_0}^t dt v(t)=y_0+\int_{t_0}^t dt v(t)=y_0+\int_{t_0}^t dt (-gt),
 $$
 
-With $x_0=10$m and $t_0=0$s, we obtain the equation we started with
+With $y_0=10$m and $t_0=0$s, we obtain the equation we started with
 $$
-x(t)=10-\frac{1}{2}gt^2.
+y(t)=10-\frac{1}{2}gt^2.
 $$
-
-Note that we started using \( y(t) \) instead of \( x(t) \).
 
 <p>
 <!-- !split -->
