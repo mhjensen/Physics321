@@ -535,25 +535,26 @@ After this mathematical background we are now ready to compute the mean velocity
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic"># We define first an array Vaverage</span>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic"># Now we can compute the mean velocity using our data</span>
+<span style="color: #408080; font-style: italic"># We define first an array Vaverage</span>
 n <span style="color: #666666">=</span> np<span style="color: #666666">.</span>size(t)
 Vaverage <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
-<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">1</span>,n):
-    Vaverage[i] <span style="color: #666666">=</span> (y[i]<span style="color: #666666">-</span>y[i<span style="color: #666666">-1</span>])<span style="color: #666666">/</span>DeltaT
-<span style="color: #408080; font-style: italic"># Now we can compute the mean accelearation using our data</span>
-<span style="color: #408080; font-style: italic"># We define first an array Aaverage for the acceleration</span>
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">1</span>,n<span style="color: #666666">-1</span>):
+    Vaverage[i] <span style="color: #666666">=</span> (y[i<span style="color: #666666">+1</span>]<span style="color: #666666">-</span>y[i])<span style="color: #666666">/</span>DeltaT
+<span style="color: #408080; font-style: italic"># Now we can compute the mean accelearatio using our data</span>
+<span style="color: #408080; font-style: italic"># We define first an array Aaverage</span>
 n <span style="color: #666666">=</span> np<span style="color: #666666">.</span>size(t)
 Aaverage <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
 Aaverage[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> <span style="color: #666666">-</span>g
-<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">1</span>,n):
-    Aaverage[i] <span style="color: #666666">=</span> (Vaverage[i]<span style="color: #666666">-</span>Vaverage[i<span style="color: #666666">-1</span>])<span style="color: #666666">/</span>DeltaT
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">1</span>,n<span style="color: #666666">-1</span>):
+    Aaverage[i] <span style="color: #666666">=</span> (Vaverage[i<span style="color: #666666">+1</span>]<span style="color: #666666">-</span>Vaverage[i])<span style="color: #666666">/</span>DeltaT
 data <span style="color: #666666">=</span> {<span style="color: #BA2121">&#39;t[s]&#39;</span>: t,
         <span style="color: #BA2121">&#39;y[m]&#39;</span>: y,
         <span style="color: #BA2121">&#39;v[m/s]&#39;</span>: Vaverage,
         <span style="color: #BA2121">&#39;a[m/s^2]&#39;</span>: Aaverage
         }
 NewData <span style="color: #666666">=</span> pd<span style="color: #666666">.</span>DataFrame(data)
-display(NewData)
+display(NewData[<span style="color: #666666">0</span>:n<span style="color: #666666">-2</span>])
 </pre></div>
 <p>
 Something here is however wrong. What has happened?
