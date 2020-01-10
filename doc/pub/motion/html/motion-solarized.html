@@ -70,23 +70,29 @@ div { text-align: justify; text-justify: inter-word; }
               ('Elements of Vector Algebra', 2, None, '___sec2'),
               ('Falling baseball in one dimension', 2, None, '___sec3'),
               ('Our Python Encounter', 2, None, '___sec4'),
+              ('Average quantities', 2, None, '___sec5'),
+              ('Compact equations', 2, None, '___sec6'),
+              ('A differential equation', 2, None, '___sec7'),
+              ('Integrating our equations', 2, None, '___sec8'),
+              ('Constant acceleration case, the velocity', 2, None, '___sec9'),
+              ('Computing the averages', 2, None, '___sec10'),
               ('Python practicalities, Software and needed installations',
                2,
                None,
-               '___sec5'),
-              ('Python installers', 2, None, '___sec6'),
-              ('Useful Python libraries', 2, None, '___sec7'),
+               '___sec11'),
+              ('Python installers', 2, None, '___sec12'),
+              ('Useful Python libraries', 2, None, '___sec13'),
               ('Numpy examples and Important Matrix and vector handling '
                'packages',
                2,
                None,
-               '___sec8'),
-              ('Basic Matrix Features', 2, None, '___sec9'),
-              ('Some famous Matrices', 3, None, '___sec10'),
-              ('More Basic Matrix Features', 3, None, '___sec11'),
-              ('Numpy and arrays', 2, None, '___sec12'),
-              ('Matrices in Python', 2, None, '___sec13'),
-              ('Meet the Pandas', 2, None, '___sec14')]}
+               '___sec14'),
+              ('Basic Matrix Features', 2, None, '___sec15'),
+              ('Some famous Matrices', 3, None, '___sec16'),
+              ('More Basic Matrix Features', 3, None, '___sec17'),
+              ('Numpy and arrays', 2, None, '___sec18'),
+              ('Matrices in Python', 2, None, '___sec19'),
+              ('Meet the Pandas', 2, None, '___sec20')]}
 end of tocinfo -->
 
 <body>
@@ -248,7 +254,7 @@ $$
 We anticipate the mathematical model to come and assume that we have a
 model for the motion of a falling baseball without air resistance.
 Our system (the baseball) is at an initial height \( y_0 \) (which we will
-specify in the program below) at the initial time \( t_0=0 \). In our program example here we will plot the position every five seconds.
+specify in the program below) at the initial time \( t_0=0 \). In our program example here we will plot the position in steps of \( \Delta t \) up to a final time \( t_f \). 
 The mathematical formula for the position \( y(t) \) as function of time \( t \) is 
 $$
 y(t) = y_0-\frac{1}{2}gt^2,
@@ -256,10 +262,15 @@ $$
 
 where $g=9.80665=0.980655\times 10^1$m/s${}^2$ is a constant representing the standard acceleration due to gravity.
 We have here adopted the conventional standard value. This does not take into account other effects, such as buoyancy or drag.
+Furthermore, we stop when the ball hits the ground, which takes place at
+$$
+y(t) = 0= y_0-\frac{1}{2}gt^2,
+$$
+
+which gives us a final time \( t_f=\sqrt{2y_0/g} \).
 
 <p>
-As of now we simply assume that  
-we know the formula. Below we will derive it.
+As of now we simply assume that   we know the formula for the falling object. Afterwards, we will derive it.
 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -327,17 +338,30 @@ mpl.rcParams[<span style="color: #CD5555">&#39;font.family&#39;</span>] = <span 
     plt.legend(loc=<span style="color: #B452CD">0</span>)
 </pre></div>
 <p>
+Thereafter we start setting up the code for the falling object.
+
+<p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
 <div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span>%matplotlib inline
 <span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.patches</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">mpatches</span>
 
 g = <span style="color: #B452CD">9.80655</span> <span style="color: #228B22">#m/s^2</span>
-y_0 = <span style="color: #B452CD">10.0</span> <span style="color: #228B22"># in meters</span>
-tf = <span style="color: #B452CD">5.0</span> <span style="color: #228B22">#s</span>
-t = np.arange(<span style="color: #B452CD">0</span>,tf,.<span style="color: #B452CD">1</span>)
+y_0 = <span style="color: #B452CD">10.0</span> <span style="color: #228B22"># initial position in meters</span>
+DeltaT = <span style="color: #B452CD">0.1</span>  <span style="color: #228B22"># time step</span>
+<span style="color: #228B22"># final time when y = 0, t = sqrt(2*10/g)</span>
+tfinal = np.sqrt(<span style="color: #B452CD">2.0</span>*y_0/g)
+<span style="color: #228B22">#set up arrays </span>
+t = np.arange(<span style="color: #B452CD">0</span>,tfinal,DeltaT)
 y =y_0 -g*.<span style="color: #B452CD">5</span>*t**<span style="color: #B452CD">2</span>
-
+<span style="color: #228B22"># Then make a nice printout in table form using Pandas</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">pandas</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">pd</span>
+<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">IPython.display</span> <span style="color: #8B008B; font-weight: bold">import</span> display
+data = {<span style="color: #CD5555">&#39;t[s]&#39;</span>: t,
+        <span style="color: #CD5555">&#39;y[m]&#39;</span>: y
+        }
+RawData = pd.DataFrame(data)
+display(RawData)
 plt.style.use(<span style="color: #CD5555">&#39;ggplot&#39;</span>)
 plt.figure(figsize=(<span style="color: #B452CD">8</span>,<span style="color: #B452CD">8</span>))
 plt.scatter(t, y, color = <span style="color: #CD5555">&#39;b&#39;</span>)
@@ -351,7 +375,179 @@ plt.show()
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec5">Python practicalities, Software and needed installations </h2>
+<h2 id="___sec5">Average quantities </h2>
+We define now the average velocity as
+$$
+\overline{v}(t) = \frac({x(t+\Delta t)-x(t)}{\Delta t}.
+$$
+
+In the code we have set the time step \( \Delta t \) to a given value. We could define it in terms of the number of points \( n \) as
+$$
+\Delta t = \frac{t_{\mathrm{final}-}t_{\mathrm{initial}}}{n+1}.
+$$
+
+<p>
+Since we have discretized the variables, we introduce the counter \( i \) and let \( x(t)\rightarrow x(t_i)=x_i \) and \( t\rightarrow t_i \)
+with \( i=0,1,\dots, n \). This gives us the following shorthand notations that we will use for the rest of this course. We define
+$$
+x_i = x(t_i)\hspace{0.1cm} i=0,1,2,\dots,n.
+$$
+
+This applies to other variables which depend on say time. Examples are the velocities, accelerations, momenta etc.
+Furthermore we use the shorthand
+$$
+x_{i\pm 1} = x(t_i\pm \Delta t)\hspace{0.1cm} i=0,1,2,\dots,n.
+$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec6">Compact equations </h2>
+We can then rewrite in a more compact form the average velocity as
+$$
+\overline{v}_i = \frac({x_{i+1}-x_{i}}{\Delta t}.
+$$
+
+The velocity is defined as the change in position per unit time.
+In the limit \( \Delta t \rightarrow 0 \) this defines the instaneous velocity, which is nothing but the slope of the position at a time \( t \).
+We have thus
+$$
+v(t) = \frac{dx}{dt}=\lim_{\Delta \rightarrow 0}\frac({x(t+\Delta t)-x_{t}}{\Delta t}.
+$$
+
+Similarly, we can define the average acceleration as the change in velocity per unit time as
+$$
+\overline{a}_i = \frac({v_{i+1}-v_{i}}{\Delta t},
+$$
+
+resulting in the instantaneous accelearation
+$$
+a(t) = \frac{dv}{dt}=\lim_{\Delta \rightarrow 0}\frac({v(t+\Delta t)-v_{t}}{\Delta t}.
+$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec7">A differential equation </h2>
+We can rewrite the instantaneous acceleration as
+$$
+a(t) = \frac{dv}{dt}=\frac{d}{dt}\frac{dx}{dt}=\frac{d^2x}{dt^2}.
+$$
+
+This forms the starting point for our definition of forces later. It is a famous second-order differential equation. If the acceleration is constant we can now recover the formula for the falling ball we started with.
+The acceleration can depend on the position and the velocity. To be more formal we should then write the above differential equation as
+$$
+\frac{d^2x}{dt^2}=a(t,x(t),\frac{dx}{dt}).
+$$
+
+<p>
+With given initial conditions for \( x(t_0) \) and \( v(t_0) \) we can then
+integrate the above equation and find the velocities and positions at
+a given time \( t \).
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec8">Integrating our equations </h2>
+Formally we can then, starting with the acceleration (suppose we have measured it, how could we do that?)
+compute say the height of a building.  To see that we perform the following integrations from an initial time \( t_0 \)  to a given time \( t \)
+$$
+\int_{t_0}^t dt a(t) = \int_{t_0}^t dt \frac{dv}{dt} = v(t)-v(t_0),
+$$
+
+or as 
+$$
+v(t)=v(t_0)+\int_{t_0}^t dt a(t).
+$$
+
+<p>
+When we know the velocity as function of time, we can find the position as function of time starting from the defintion of velocity as the derivative wrt time of the positions, that is we have
+$$
+\int_{t_0}^t dt v(t) = \int_{t_0}^t dt \frac{dx}{dt} = x(t)-x(t_0),
+$$
+
+or as 
+$$
+x(t)=x(t_0)+\int_{t_0}^t dt v(t).
+$$
+
+<p>
+These equations define what is called the integration method for
+finding the position and the velocity as functions of time. There is
+no loss of generality if we extend these equations to more than one
+spatial dimension.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec9">Constant acceleration case, the velocity </h2>
+Let us compute the velocity
+$$
+v(t)=v(t_0)+\int_{t_0}^t dt a(t)=v(t_0)-\int_{t_0}^t dt g.
+$$
+
+Using our initial time as $t_0=0$s and setting the initial velocity $v(t_0)=v_0=0$m/s we get when integrating
+$$
+v(t)=-gt.
+$$
+
+The more general case is
+$$
+v(t)=v_0-g(t-t_0).
+$$
+
+We can then integrate the velocity and obtain the final formula for the position as function of time through
+$$
+x(t)=x(t_0)+\int_{t_0}^t dt v(t)=x_0+\int_{t_0}^t dt v(t)=x_0+\int_{t_0}^t dt (-gt),
+$$
+
+With $x_0=10$m and $t_0=0$s, we obtain the equation we started with
+$$
+x(t)=10-\frac{1}{2}gt^2.
+$$
+
+Note that we started using \( y(t) \) instead of \( x(t) \).
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec10">Computing the averages </h2>
+After this mathematical background we are now ready to compute the mean velocity using our data.
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span><span style="color: #228B22"># We define first an array Vaverage</span>
+n = np.size(t)
+Vaverage = np.zeros(n)
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">1</span>,n):
+    Vaverage[i] = (y[i]-y[i-<span style="color: #B452CD">1</span>])/DeltaT
+data = {<span style="color: #CD5555">&#39;t[s]&#39;</span>: t,
+        <span style="color: #CD5555">&#39;y[m]&#39;</span>: y,
+        <span style="color: #CD5555">&#39;v[m/s]&#39;</span>: Vaverage
+        }
+
+<span style="color: #228B22"># Now we can compute the mean accelearatio using our data</span>
+<span style="color: #228B22"># We define first an array Aaverage</span>
+n = np.size(t)
+Aaverage = np.zeros(n)
+Aaverage[<span style="color: #B452CD">0</span>] = -g
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">1</span>,n):
+    Aaverage[i] = (Vaverage[i]-Vaverage[i-<span style="color: #B452CD">1</span>])/DeltaT
+data = {<span style="color: #CD5555">&#39;t[s]&#39;</span>: t,
+        <span style="color: #CD5555">&#39;y[m]&#39;</span>: y,
+        <span style="color: #CD5555">&#39;v[m/s]&#39;</span>: Vaverage,
+        <span style="color: #CD5555">&#39;a[m/s^2]&#39;</span>: Aaverage
+        }
+NewData = pd.DataFrame(data)
+display(NewData)
+</pre></div>
+<p>
+Something here is however wrong. What has happened?
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec11">Python practicalities, Software and needed installations </h2>
 
 <p>
 We will make extensive use of Python as programming language and its
@@ -387,7 +583,7 @@ you can use <b>pip</b> as well and simply install Python as
 
 etc etc.
 
-<h2 id="___sec6">Python installers </h2>
+<h2 id="___sec12">Python installers </h2>
 
 <p>
 If you don't want to perform these operations separately and venture
@@ -418,7 +614,7 @@ license.
 Furthermore, <a href="https://colab.research.google.com/notebooks/welcome.ipynb" target="_blank">Google's Colab</a> is a free Jupyter notebook environment that requires 
 no setup and runs entirely in the cloud. Try it out!
 
-<h2 id="___sec7">Useful Python libraries </h2>
+<h2 id="___sec13">Useful Python libraries </h2>
 Here we list several useful Python libraries we strongly recommend (if you use anaconda many of these are already there)
 
 <ul>
@@ -447,7 +643,7 @@ further processing. For example, convert to latex as
 <p>
 And to add more versatility, the Python package <a href="http://www.sympy.org/en/index.html" target="_blank">SymPy</a> is a Python library for symbolic mathematics. It aims to become a full-featured computer algebra system (CAS)  and is entirely written in Python.
 
-<h2 id="___sec8">Numpy examples and Important Matrix and vector handling packages </h2>
+<h2 id="___sec14">Numpy examples and Important Matrix and vector handling packages </h2>
 
 <p>
 There are several central software libraries for linear algebra and eigenvalue problems. Several of the more
@@ -461,7 +657,7 @@ developed in the 1970s, namely EISPACK and LINPACK.  We describe them shortly he
   <li> BLAS (I, II and III): (Basic Linear Algebra Subprograms) are routines that provide standard building blocks for performing basic vector and matrix operations. Blas I is vector operations, II vector-matrix operations and III matrix-matrix operations. Highly parallelized and efficient codes, all available for download from <a href="http://www.netlib.org" target="_blank"><tt>http://www.netlib.org</tt></a>.</li>
 </ul>
 
-<h2 id="___sec9">Basic Matrix Features </h2>
+<h2 id="___sec15">Basic Matrix Features </h2>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -506,7 +702,7 @@ $$
 </div>
 
 
-<h3 id="___sec10">Some famous Matrices </h3>
+<h3 id="___sec16">Some famous Matrices </h3>
 
 <ul>
   <li> Diagonal if \( a_{ij}=0 \) for \( i\ne j \)</li>
@@ -520,7 +716,7 @@ $$
   <li> Banded, block upper triangular, block lower triangular....</li>
 </ul>
 
-<h3 id="___sec11">More Basic Matrix Features </h3>
+<h3 id="___sec17">More Basic Matrix Features </h3>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -539,7 +735,7 @@ For an \( N\times N \) matrix  \( \mathbf{A} \) the following properties are all
 </div>
 
 
-<h2 id="___sec12">Numpy and arrays </h2>
+<h2 id="___sec18">Numpy and arrays </h2>
 <a href="http://www.numpy.org/" target="_blank">Numpy</a> provides an easy way to handle arrays in Python. The standard way to import this library is as
 
 <p>
@@ -624,7 +820,7 @@ x = np.log(np.array([<span style="color: #B452CD">4.0</span>, <span style="color
 <span style="color: #8B008B; font-weight: bold">print</span>(x.itemsize)
 </pre></div>
 
-<h2 id="___sec13">Matrices in Python </h2>
+<h2 id="___sec19">Matrices in Python </h2>
 
 <p>
 Having defined vectors, we are now ready to try out matrices. We can
@@ -692,7 +888,7 @@ A = np.random.rand(n, n)
 <span style="color: #8B008B; font-weight: bold">print</span>(A) 
 </pre></div>
 
-<h2 id="___sec14">Meet the Pandas </h2>
+<h2 id="___sec20">Meet the Pandas </h2>
 
 <p>
 <br /><br /><center><p><img src="fig/pandas.jpg" align="bottom" width=600></p></center><br /><br />

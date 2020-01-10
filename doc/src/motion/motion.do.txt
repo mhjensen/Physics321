@@ -103,7 +103,7 @@ We can write this in a more compact form as $\bm{b} = \bm{R}\bm{a}$, where the r
 We anticipate the mathematical model to come and assume that we have a
 model for the motion of a falling baseball without air resistance.
 Our system (the baseball) is at an initial height $y_0$ (which we will
-specify in the program below) at the initial time $t_0=0$. In our program example here we will plot the position every five seconds.
+specify in the program below) at the initial time $t_0=0$. In our program example here we will plot the position in steps of $\Delta t$ up to a final time $t_f$. 
 The mathematical formula for the position $y(t)$ as function of time $t$ is 
 !bt
 \[
@@ -112,9 +112,15 @@ y(t) = y_0-\frac{1}{2}gt^2,
 !et
 where $g=9.80665=0.980655\times 10^1$m/s${}^2$ is a constant representing the standard acceleration due to gravity.
 We have here adopted the conventional standard value. This does not take into account other effects, such as buoyancy or drag.
+Furthermore, we stop when the ball hits the ground, which takes place at
+!bt
+\[
+y(t) = 0= y_0-\frac{1}{2}gt^2,
+\]
+!et
+which gives us a final time $t_f=\sqrt{2y_0/g}$. 
 
-As of now we simply assume that  
-we know the formula. Below we will derive it.
+As of now we simply assume that   we know the formula for the falling object. Afterwards, we will derive it.
 
 !split
 =====  Our Python Encounter =====
@@ -178,18 +184,28 @@ def MakePlot(x,y, styles, labels, axlabels):
 
 
 
-
+Thereafter we start setting up the code for the falling object.
 
 !bc pycod
 %matplotlib inline
 import matplotlib.patches as mpatches
 
 g = 9.80655 #m/s^2
-y_0 = 10.0 # in meters
-tf = 5.0 #s
-t = np.arange(0,tf,.1)
+y_0 = 10.0 # initial position in meters
+DeltaT = 0.1  # time step
+# final time when y = 0, t = sqrt(2*10/g)
+tfinal = np.sqrt(2.0*y_0/g)
+#set up arrays 
+t = np.arange(0,tfinal,DeltaT)
 y =y_0 -g*.5*t**2
-
+# Then make a nice printout in table form using Pandas
+import pandas as pd
+from IPython.display import display
+data = {'t[s]': t,
+        'y[m]': y
+        }
+RawData = pd.DataFrame(data)
+display(RawData)
 plt.style.use('ggplot')
 plt.figure(figsize=(8,8))
 plt.scatter(t, y, color = 'b')
@@ -201,6 +217,187 @@ save_fig("FallingBaseball")
 plt.show()
 !ec
 
+
+!split
+===== Average quantities =====
+We define now the average velocity as
+!bt
+\[
+\overline{v}(t) = \frac({x(t+\Delta t)-x(t)}{\Delta t}.
+\]
+!et
+In the code we have set the time step $\Delta t$ to a given value. We could define it in terms of the number of points $n$ as
+!bt
+\[
+\Delta t = \frac{t_{\mathrm{final}-}t_{\mathrm{initial}}}{n+1}.
+\]
+!et
+
+Since we have discretized the variables, we introduce the counter $i$ and let $x(t)\rightarrow x(t_i)=x_i$ and $t\rightarrow t_i$
+with $i=0,1,\dots, n$. This gives us the following shorthand notations that we will use for the rest of this course. We define
+!bt
+\[
+x_i = x(t_i)\hspace{0.1cm} i=0,1,2,\dots,n.
+\]
+!et
+This applies to other variables which depend on say time. Examples are the velocities, accelerations, momenta etc.
+Furthermore we use the shorthand
+!bt
+\[
+x_{i\pm 1} = x(t_i\pm \Delta t)\hspace{0.1cm} i=0,1,2,\dots,n.
+\]
+!et
+
+!split
+===== Compact equations =====
+We can then rewrite in a more compact form the average velocity as
+!bt
+\[
+\overline{v}_i = \frac({x_{i+1}-x_{i}}{\Delta t}.
+\]
+!et
+The velocity is defined as the change in position per unit time.
+In the limit $\Delta t \rightarrow 0$ this defines the instaneous velocity, which is nothing but the slope of the position at a time $t$.
+We have thus
+!bt
+\[
+v(t) = \frac{dx}{dt}=\lim_{\Delta \rightarrow 0}\frac({x(t+\Delta t)-x_{t}}{\Delta t}.
+\]
+!et
+Similarly, we can define the average acceleration as the change in velocity per unit time as
+!bt
+\[
+\overline{a}_i = \frac({v_{i+1}-v_{i}}{\Delta t},
+\]
+!et
+resulting in the instantaneous accelearation
+!bt
+\[
+a(t) = \frac{dv}{dt}=\lim_{\Delta \rightarrow 0}\frac({v(t+\Delta t)-v_{t}}{\Delta t}.
+\]
+!et
+
+!split
+===== A differential equation =====
+We can rewrite the instantaneous acceleration as
+!bt
+\[
+a(t) = \frac{dv}{dt}=\frac{d}{dt}\frac{dx}{dt}=\frac{d^2x}{dt^2}.
+\]
+!et
+This forms the starting point for our definition of forces later. It is a famous second-order differential equation. If the acceleration is constant we can now recover the formula for the falling ball we started with.
+The acceleration can depend on the position and the velocity. To be more formal we should then write the above differential equation as
+!bt
+\[
+\frac{d^2x}{dt^2}=a(t,x(t),\frac{dx}{dt}).
+\]
+!et
+
+With given initial conditions for $x(t_0)$ and $v(t_0)$ we can then
+integrate the above equation and find the velocities and positions at
+a given time $t$.
+
+!split
+===== Integrating our equations =====
+Formally we can then, starting with the acceleration (suppose we have measured it, how could we do that?)
+compute say the height of a building.  To see that we perform the following integrations from an initial time $t_0$  to a given time $t$
+!bt
+\[
+\int_{t_0}^t dt a(t) = \int_{t_0}^t dt \frac{dv}{dt} = v(t)-v(t_0),
+\]
+!et
+or as 
+!bt
+\[
+v(t)=v(t_0)+\int_{t_0}^t dt a(t).
+\]
+!et
+
+
+When we know the velocity as function of time, we can find the position as function of time starting from the defintion of velocity as the derivative wrt time of the positions, that is we have
+!bt
+\[
+\int_{t_0}^t dt v(t) = \int_{t_0}^t dt \frac{dx}{dt} = x(t)-x(t_0),
+\]
+!et
+or as 
+!bt
+\[
+x(t)=x(t_0)+\int_{t_0}^t dt v(t).
+\]
+!et
+
+These equations define what is called the integration method for
+finding the position and the velocity as functions of time. There is
+no loss of generality if we extend these equations to more than one
+spatial dimension.
+
+!split
+===== Constant acceleration case, the velocity =====
+Let us compute the velocity
+!bt
+\[
+v(t)=v(t_0)+\int_{t_0}^t dt a(t)=v(t_0)-\int_{t_0}^t dt g.
+\]
+!et
+Using our initial time as $t_0=0$s and setting the initial velocity $v(t_0)=v_0=0$m/s we get when integrating
+!bt
+\[
+v(t)=-gt.
+\]
+!et
+The more general case is
+!bt
+\[
+v(t)=v_0-g(t-t_0).
+\]
+!et
+We can then integrate the velocity and obtain the final formula for the position as function of time through
+!bt
+\[
+x(t)=x(t_0)+\int_{t_0}^t dt v(t)=x_0+\int_{t_0}^t dt v(t)=x_0+\int_{t_0}^t dt (-gt),
+\]
+!et
+With $x_0=10$m and $t_0=0$s, we obtain the equation we started with
+!bt
+\[
+x(t)=10-\frac{1}{2}gt^2.
+\]
+!et
+Note that we started using $y(t)$ instead of $x(t)$. 
+
+
+!split
+===== Computing the averages =====
+After this mathematical background we are now ready to compute the mean velocity using our data.
+!bc pycod
+# We define first an array Vaverage
+n = np.size(t)
+Vaverage = np.zeros(n)
+for i in range(1,n):
+    Vaverage[i] = (y[i]-y[i-1])/DeltaT
+data = {'t[s]': t,
+        'y[m]': y,
+        'v[m/s]': Vaverage
+        }
+
+# Now we can compute the mean accelearatio using our data
+# We define first an array Aaverage
+n = np.size(t)
+Aaverage = np.zeros(n)
+Aaverage[0] = -g
+for i in range(1,n):
+    Aaverage[i] = (Vaverage[i]-Vaverage[i-1])/DeltaT
+data = {'t[s]': t,
+        'y[m]': y,
+        'v[m/s]': Vaverage,
+        'a[m/s^2]': Aaverage
+        }
+NewData = pd.DataFrame(data)
+display(NewData)
+!ec
+
+Something here is however wrong. What has happened? 
 
 
 
