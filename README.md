@@ -29,7 +29,7 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Office Hours Dylan Smith|   |  
 |----------|----------|
-| Tuesday/Thursday 1-2:00pm, Physics Help Room BPS | or immediately after class on Friday |
+| Tuesday/Thursday 1-2:00pm, Physics Help Room BPS 1248 | or immediately after class on Friday |
 
 
 ### Grading and dates
