@@ -422,6 +422,98 @@ display(NewData[0:n-2])
 !ec
 
 Note that we don't print the last values! 
+
+
+
+!split
+===== Including Air Resistance in our model =====
+
+In our discussions till now of the falling baseball, we have ignored
+air resistance and simply assumed that our system is only influenced
+by the the graviational force.  We will postpone the derivation of air resistance till later, after our discussion of Newton's laws and forces.
+
+For our discussions here it suffices to state that the accelerations is now modified to
+!bt
+\[
+\bm{a}(t) = -g +D\bm{v}(t)\vert v(t)\vert,
+\]
+!et
+where $\vert v(t)\vert$ is the absolute value of the velocity and $D$ is a constant which pertains to the specific object we are studying.
+Since we are dealing with motion in one dimension, we can simplify the above to
+!bt
+\[
+a(t) = -g +Dv^2(t). 
+\]
+!et
+We can rewrite this as a differential equation
+!bt
+\[
+a(t) = \frac{dv}{dt}=\frac{d^2y}{dt^2}= -g +Dv^2(t). 
+\]
+!et
+Using the integral equations discussed above we can integrate twice and obtain first the velocity as function of time and thereafter the position as function of time.
+
+For this particular case, we can actually obtain an analytical solution for the velocity and for the position. Here we will first compute the solutions analytically, thereafter we will derive Euler's method for solving these differential equations numerically.
+
+!split
+===== Analytical solutions =====
+
+For simplicity let us just write $v(t)$ as $v$. We have
+!bt
+\[
+\frac{dv}{dt}= -g +Dv^2(t). 
+\]
+!et
+
+We can solve this using the technique of separation of variables. We
+isolate on the left all terms that involve $v$ and on the right all
+terms that involved time. We get then
+!bt
+\[
+\frac{dv}{g -Dv^2(t) }= -dt,
+\]
+!et
+We scale now the equation to the left by introducing a constant $v_T=\sqrt{g/D}$. This constant has dimension length/time. Can you show this?
+
+Next we integrate the left hand side from $v_0=0$ m/s to $v$ and right hand side from $t_0=0$ to $t$ and obtain
+!bt
+\[
+\int_{0}^v\frac{dv}{g -Dv^2(t) }= \frac{v_T}{g}\arctanh{\frac{v}{v_T}}  =-\int_0^tdt = -t. 
+\]
+!et
+We can reorganize these equations as
+!bt
+\[
+v_T\arctanh{\frac{v}{v_T}  =-gt,
+\]
+!et
+which gives us $v$ as function of time
+!bt
+\[
+v(t)=v_T\tanh{\frac{-gt}{v_T}}.
+\]
+!et
+
+
+!split
+===== Finding the final height =====
+With the velocity we can then the height $y(t)$ by integrating yet another time, that is
+!bt
+\[
+y(t)=y(t_0)+\int_{t_0}^t dt v(t)=\int_{0}^t dt[v_T\tanh{\frac{-gt}{v_T}}]. 
+\]
+!et
+This integral is a little bit more trickier but we can look it up in a table over 
+known integrals and we get
+!bt
+\[
+y(t)=y(t_0)-\frac{v_T^2}{g}\log{\cosh{\frac{gt}{v_T}}}.
+\]
+!et
+Alternatively we could have used the symbolic Python package _Sympy_ (see AMS chapter 4.2). 
+
+In most cases however, we need to revert to numerical solutions. 
+
 !split
 ===== Python practicalities, Software and needed installations =====
 

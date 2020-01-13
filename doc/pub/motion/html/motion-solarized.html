@@ -76,23 +76,26 @@ div { text-align: justify; text-justify: inter-word; }
               ('Integrating our equations', 2, None, '___sec8'),
               ('Constant acceleration case, the velocity', 2, None, '___sec9'),
               ('Computing the averages', 2, None, '___sec10'),
+              ('Including Air Resistance in our model', 2, None, '___sec11'),
+              ('Analytical solutions', 2, None, '___sec12'),
+              ('Finding the final height', 2, None, '___sec13'),
               ('Python practicalities, Software and needed installations',
                2,
                None,
-               '___sec11'),
-              ('Python installers', 2, None, '___sec12'),
-              ('Useful Python libraries', 2, None, '___sec13'),
+               '___sec14'),
+              ('Python installers', 2, None, '___sec15'),
+              ('Useful Python libraries', 2, None, '___sec16'),
               ('Numpy examples and Important Matrix and vector handling '
                'packages',
                2,
                None,
-               '___sec14'),
-              ('Basic Matrix Features', 2, None, '___sec15'),
-              ('Some famous Matrices', 3, None, '___sec16'),
-              ('More Basic Matrix Features', 3, None, '___sec17'),
-              ('Numpy and arrays', 2, None, '___sec18'),
-              ('Matrices in Python', 2, None, '___sec19'),
-              ('Meet the Pandas', 2, None, '___sec20')]}
+               '___sec17'),
+              ('Basic Matrix Features', 2, None, '___sec18'),
+              ('Some famous Matrices', 3, None, '___sec19'),
+              ('More Basic Matrix Features', 3, None, '___sec20'),
+              ('Numpy and arrays', 2, None, '___sec21'),
+              ('Matrices in Python', 2, None, '___sec22'),
+              ('Meet the Pandas', 2, None, '___sec23')]}
 end of tocinfo -->
 
 <body>
@@ -143,7 +146,7 @@ MathJax.Hub.Config({
 <center>[3] <b>Department of Physics and Astronomy, Michigan State University, USA</b></center>
 <br>
 <p>
-<center><h4>Jan 12, 2020</h4></center> <!-- date -->
+<center><h4>Jan 13, 2020</h4></center> <!-- date -->
 <br>
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -565,10 +568,101 @@ NewData = pd.DataFrame(data)
 display(NewData[<span style="color: #B452CD">0</span>:n-<span style="color: #B452CD">2</span>])
 </pre></div>
 <p>
-Note that we don't print the last values! 
+Note that we don't print the last values!
+
+<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec11">Python practicalities, Software and needed installations </h2>
+<h2 id="___sec11">Including Air Resistance in our model </h2>
+
+<p>
+In our discussions till now of the falling baseball, we have ignored
+air resistance and simply assumed that our system is only influenced
+by the the graviational force.  We will postpone the derivation of air resistance till later, after our discussion of Newton's laws and forces.
+
+<p>
+For our discussions here it suffices to state that the accelerations is now modified to
+$$
+\boldsymbol{a}(t) = -g +D\boldsymbol{v}(t)\vert v(t)\vert,
+$$
+
+where \( \vert v(t)\vert \) is the absolute value of the velocity and \( D \) is a constant which pertains to the specific object we are studying.
+Since we are dealing with motion in one dimension, we can simplify the above to
+$$
+a(t) = -g +Dv^2(t). 
+$$
+
+We can rewrite this as a differential equation
+$$
+a(t) = \frac{dv}{dt}=\frac{d^2y}{dt^2}= -g +Dv^2(t). 
+$$
+
+Using the integral equations discussed above we can integrate twice and obtain first the velocity as function of time and thereafter the position as function of time.
+
+<p>
+For this particular case, we can actually obtain an analytical solution for the velocity and for the position. Here we will first compute the solutions analytically, thereafter we will derive Euler's method for solving these differential equations numerically.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec12">Analytical solutions </h2>
+
+<p>
+For simplicity let us just write \( v(t) \) as \( v \). We have
+$$
+\frac{dv}{dt}= -g +Dv^2(t). 
+$$
+
+<p>
+We can solve this using the technique of separation of variables. We
+isolate on the left all terms that involve \( v \) and on the right all
+terms that involved time. We get then
+$$
+\frac{dv}{g -Dv^2(t) }= -dt,
+$$
+
+We scale now the equation to the left by introducing a constant \( v_T=\sqrt{g/D} \). This constant has dimension length/time. Can you show this?
+
+<p>
+Next we integrate the left hand side from \( v_0=0 \) m/s to \( v \) and right hand side from \( t_0=0 \) to \( t \) and obtain
+$$
+\int_{0}^v\frac{dv}{g -Dv^2(t) }= \frac{v_T}{g}\arctanh{\frac{v}{v_T}}  =-\int_0^tdt = -t. 
+$$
+
+We can reorganize these equations as
+$$
+v_T\arctanh{\frac{v}{v_T}  =-gt,
+$$
+
+which gives us \( v \) as function of time
+$$
+v(t)=v_T\tanh{\frac{-gt}{v_T}}.
+$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec13">Finding the final height </h2>
+With the velocity we can then the height \( y(t) \) by integrating yet another time, that is
+$$
+y(t)=y(t_0)+\int_{t_0}^t dt v(t)=\int_{0}^t dt[v_T\tanh{\frac{-gt}{v_T}}]. 
+$$
+
+This integral is a little bit more trickier but we can look it up in a table over 
+known integrals and we get
+$$
+y(t)=y(t_0)-\frac{v_T^2}{g}\log{\cosh{\frac{gt}{v_T}}}.
+$$
+
+Alternatively we could have used the symbolic Python package <b>Sympy</b> (see AMS chapter 4.2).
+
+<p>
+In most cases however, we need to revert to numerical solutions.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec14">Python practicalities, Software and needed installations </h2>
 
 <p>
 We will make extensive use of Python as programming language and its
@@ -604,7 +698,7 @@ you can use <b>pip</b> as well and simply install Python as
 
 etc etc.
 
-<h2 id="___sec12">Python installers </h2>
+<h2 id="___sec15">Python installers </h2>
 
 <p>
 If you don't want to perform these operations separately and venture
@@ -635,7 +729,7 @@ license.
 Furthermore, <a href="https://colab.research.google.com/notebooks/welcome.ipynb" target="_blank">Google's Colab</a> is a free Jupyter notebook environment that requires 
 no setup and runs entirely in the cloud. Try it out!
 
-<h2 id="___sec13">Useful Python libraries </h2>
+<h2 id="___sec16">Useful Python libraries </h2>
 Here we list several useful Python libraries we strongly recommend (if you use anaconda many of these are already there)
 
 <ul>
@@ -664,7 +758,7 @@ further processing. For example, convert to latex as
 <p>
 And to add more versatility, the Python package <a href="http://www.sympy.org/en/index.html" target="_blank">SymPy</a> is a Python library for symbolic mathematics. It aims to become a full-featured computer algebra system (CAS)  and is entirely written in Python.
 
-<h2 id="___sec14">Numpy examples and Important Matrix and vector handling packages </h2>
+<h2 id="___sec17">Numpy examples and Important Matrix and vector handling packages </h2>
 
 <p>
 There are several central software libraries for linear algebra and eigenvalue problems. Several of the more
@@ -678,7 +772,7 @@ developed in the 1970s, namely EISPACK and LINPACK.  We describe them shortly he
   <li> BLAS (I, II and III): (Basic Linear Algebra Subprograms) are routines that provide standard building blocks for performing basic vector and matrix operations. Blas I is vector operations, II vector-matrix operations and III matrix-matrix operations. Highly parallelized and efficient codes, all available for download from <a href="http://www.netlib.org" target="_blank"><tt>http://www.netlib.org</tt></a>.</li>
 </ul>
 
-<h2 id="___sec15">Basic Matrix Features </h2>
+<h2 id="___sec18">Basic Matrix Features </h2>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -723,7 +817,7 @@ $$
 </div>
 
 
-<h3 id="___sec16">Some famous Matrices </h3>
+<h3 id="___sec19">Some famous Matrices </h3>
 
 <ul>
   <li> Diagonal if \( a_{ij}=0 \) for \( i\ne j \)</li>
@@ -737,7 +831,7 @@ $$
   <li> Banded, block upper triangular, block lower triangular....</li>
 </ul>
 
-<h3 id="___sec17">More Basic Matrix Features </h3>
+<h3 id="___sec20">More Basic Matrix Features </h3>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -756,7 +850,7 @@ For an \( N\times N \) matrix  \( \mathbf{A} \) the following properties are all
 </div>
 
 
-<h2 id="___sec18">Numpy and arrays </h2>
+<h2 id="___sec21">Numpy and arrays </h2>
 <a href="http://www.numpy.org/" target="_blank">Numpy</a> provides an easy way to handle arrays in Python. The standard way to import this library is as
 
 <p>
@@ -841,7 +935,7 @@ x = np.log(np.array([<span style="color: #B452CD">4.0</span>, <span style="color
 <span style="color: #8B008B; font-weight: bold">print</span>(x.itemsize)
 </pre></div>
 
-<h2 id="___sec19">Matrices in Python </h2>
+<h2 id="___sec22">Matrices in Python </h2>
 
 <p>
 Having defined vectors, we are now ready to try out matrices. We can
@@ -909,7 +1003,7 @@ A = np.random.rand(n, n)
 <span style="color: #8B008B; font-weight: bold">print</span>(A) 
 </pre></div>
 
-<h2 id="___sec20">Meet the Pandas </h2>
+<h2 id="___sec23">Meet the Pandas </h2>
 
 <p>
 <br /><br /><center><p><img src="fig/pandas.jpg" align="bottom" width=600></p></center><br /><br />
