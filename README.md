@@ -27,6 +27,10 @@ Here you will find a general overview of the course, with learning outcomes, tea
 |--------------|------| 
 | Dylan R. Smith | smithdy6@msu.edu | 
 
+| Office Hours Dylan Smith|   |  
+|----------|----------|
+| Tuesday/Thursday 1-2:00pm, Physics Help Room BPS | or immediately after class on Friday |
+
 
 ### Grading and dates
 
