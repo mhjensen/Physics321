@@ -717,21 +717,21 @@ We scale now the equation to the left by introducing a constant \( v_T=\sqrt{g/D
 Next we integrate the left hand side from \( v_0=0 \) m/s to \( v \) and right hand side from \( t_0=0 \) to \( t \) and obtain
 <p>&nbsp;<br>
 $$
-\int_{0}^v\frac{dv}{g -Dv^2(t) }= \frac{v_T}{g}\arctanh{\frac{v}{v_T}}  =-\int_0^tdt = -t. 
+\int_{0}^v\frac{dv}{g -Dv^2(t) }= \frac{v_T}{g}\mathrm{arctanh}(\frac{v}{v_T})  =-\int_0^tdt = -t. 
 $$
 <p>&nbsp;<br>
 
 We can reorganize these equations as
 <p>&nbsp;<br>
 $$
-v_T\arctanh{\frac{v}{v_T}  =-gt,
+v_T\mathrm{arctanh}(\frac{v}{v_T})  =-gt,
 $$
 <p>&nbsp;<br>
 
 which gives us \( v \) as function of time
 <p>&nbsp;<br>
 $$
-v(t)=v_T\tanh{\frac{-gt}{v_T}}.
+v(t)=v_T\tanh{-(\frac{gt}{v_T})}.
 $$
 <p>&nbsp;<br>
 </section>
@@ -742,7 +742,7 @@ $$
 With the velocity we can then the height \( y(t) \) by integrating yet another time, that is
 <p>&nbsp;<br>
 $$
-y(t)=y(t_0)+\int_{t_0}^t dt v(t)=\int_{0}^t dt[v_T\tanh{\frac{-gt}{v_T}}]. 
+y(t)=y(t_0)+\int_{t_0}^t dt v(t)=\int_{0}^t dt[v_T\tanh{-(\frac{gt}{v_T})}]. 
 $$
 <p>&nbsp;<br>
 
@@ -750,7 +750,7 @@ This integral is a little bit more trickier but we can look it up in a table ove
 known integrals and we get
 <p>&nbsp;<br>
 $$
-y(t)=y(t_0)-\frac{v_T^2}{g}\log{\cosh{\frac{gt}{v_T}}}.
+y(t)=y(t_0)-\frac{v_T^2}{g}\log{[\cosh{(\frac{gt}{v_T})}]}.
 $$
 <p>&nbsp;<br>
 
@@ -762,7 +762,245 @@ In most cases however, we need to revert to numerical solutions.
 
 
 <section>
-<h2 id="___sec14">Python practicalities, Software and needed installations </h2>
+<h2 id="___sec14">Our first attempt at solving differential equations </h2>
+
+<p>
+Here we will try the simplest possible approach to solving the second-order differential 
+equation
+<p>&nbsp;<br>
+$$
+a(t) =\frac{d^2y}{dt^2}= -g +Dv^2(t). 
+$$
+<p>&nbsp;<br>
+
+We rewrite it as two coupled first-order equations
+<p>&nbsp;<br>
+$$
+\frac{dy}{dt} = v(t),
+$$
+<p>&nbsp;<br>
+
+with initial condition \( y(t_0)=y_0 \) and 
+<p>&nbsp;<br>
+$$
+a(t) =\frac{dv}{dt}= -g +Dv^2(t),
+$$
+<p>&nbsp;<br>
+
+with initial condition \( v(t_0)=v_0 \).
+
+<p>
+Many of the algorithms for solving differential equations start with simple Taylor equations.
+If we now Taylor expand \( y \) and \( v \) around a value \( t+\Delta t \) we have
+<p>&nbsp;<br>
+$$
+y(t+\Delta t) = y(t)+\Delta t \frac{dy}{dt}+\frac{\Delta t^2}{2!} \frac{d^2y}{dt^2}+O(\Delta t^3),
+$$
+<p>&nbsp;<br>
+
+and
+<p>&nbsp;<br>
+$$
+v(t+\Delta t) = v(t)+\Delta t \frac{dv}{dt}+\frac{\Delta t^2}{2!} \frac{d^2v}{dt^2}+O(\Delta t^3).
+$$
+<p>&nbsp;<br>
+
+Using the fact that \( dy/dt = v \) and \( dv/dt=a \) and keeping only terms up to \( \Delta t \) we have
+<p>&nbsp;<br>
+$$
+y(t+\Delta t) = y(t)+\Delta t v(t)+O(\Delta t^2),
+$$
+<p>&nbsp;<br>
+
+and
+<p>&nbsp;<br>
+$$
+v(t+\Delta t) = v(t)+\Delta t a(t)+O(\Delta t^2).
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="___sec15">Discretizing our equations </h2>
+Using our discretized versions of the equations with for example
+\( y_{i}=y(t_i) \) and \( y_{i\pm 1}=y(t_i+\Delta t) \), we can rewrite the
+above equations as (and truncating at \( \Delta t \))
+
+<p>&nbsp;<br>
+$$
+y_{i+1} = y_i+\Delta t v_i,
+$$
+<p>&nbsp;<br>
+
+and
+<p>&nbsp;<br>
+$$
+v_{i+1} = v_i+\Delta t a_i.
+$$
+<p>&nbsp;<br>
+
+These are the famous Euler equations (forward Euler).
+
+<p>
+To solve this numerical we start at a time \( t_0 \) and simply integrate up these equations to a final time \( t_f \),
+The step size \( \Delta t \) is a  parameter in our theory and we can define that as an input parameter. Alternatively, we can define ourselves the number of integration(mesh) points.
+</section>
+
+
+<section>
+<h2 id="___sec16">Code for implementing Euler's method </h2>
+In the code here we implement this simple Eurler scheme choosing a value for \( D=0.0245 \) m/s.
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #228B22"># Common imports</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">pandas</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">pd</span>
+<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> *
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">os</span>
+
+<span style="color: #228B22"># Where to save the figures and data files</span>
+PROJECT_ROOT_DIR = <span style="color: #CD5555">&quot;Results&quot;</span>
+FIGURE_ID = <span style="color: #CD5555">&quot;Results/FigureFiles&quot;</span>
+DATA_ID = <span style="color: #CD5555">&quot;DataFiles/&quot;</span>
+
+<span style="color: #8B008B; font-weight: bold">if</span> <span style="color: #8B008B">not</span> os.path.exists(PROJECT_ROOT_DIR):
+    os.mkdir(PROJECT_ROOT_DIR)
+
+<span style="color: #8B008B; font-weight: bold">if</span> <span style="color: #8B008B">not</span> os.path.exists(FIGURE_ID):
+    os.makedirs(FIGURE_ID)
+
+<span style="color: #8B008B; font-weight: bold">if</span> <span style="color: #8B008B">not</span> os.path.exists(DATA_ID):
+    os.makedirs(DATA_ID)
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">image_path</span>(fig_id):
+    <span style="color: #8B008B; font-weight: bold">return</span> os.path.join(FIGURE_ID, fig_id)
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">data_path</span>(dat_id):
+    <span style="color: #8B008B; font-weight: bold">return</span> os.path.join(DATA_ID, dat_id)
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">save_fig</span>(fig_id):
+    plt.savefig(image_path(fig_id) + <span style="color: #CD5555">&quot;.png&quot;</span>, format=<span style="color: #CD5555">&#39;png&#39;</span>)
+
+
+<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">pylab</span> <span style="color: #8B008B; font-weight: bold">import</span> plt, mpl
+plt.style.use(<span style="color: #CD5555">&#39;seaborn&#39;</span>)
+mpl.rcParams[<span style="color: #CD5555">&#39;font.family&#39;</span>] = <span style="color: #CD5555">&#39;serif&#39;</span>
+
+
+g = <span style="color: #B452CD">9.80655</span> <span style="color: #228B22">#m/s^2</span>
+D = <span style="color: #B452CD">0.00245</span> <span style="color: #228B22">#m/s</span>
+DeltaT = <span style="color: #B452CD">0.1</span>
+<span style="color: #228B22">#set up arrays </span>
+tfinal = <span style="color: #B452CD">0.5</span>
+n = ceil(tfinal/DeltaT)
+<span style="color: #228B22"># define scaling constant vT</span>
+vT = sqrt(g/D)
+<span style="color: #228B22"># set up arrays for t, a, v, and y and we can compare our results with analytical ones</span>
+t = np.zeros(n)
+a = np.zeros(n)
+v = np.zeros(n)
+y = np.zeros(n)
+yanalytic = np.zeros(n)
+<span style="color: #228B22"># Initial conditions</span>
+v[<span style="color: #B452CD">0</span>] = <span style="color: #B452CD">0.0</span>  <span style="color: #228B22">#m/s</span>
+y[<span style="color: #B452CD">0</span>] = <span style="color: #B452CD">10.0</span> <span style="color: #228B22">#m</span>
+yanalytic[<span style="color: #B452CD">0</span>] = y[<span style="color: #B452CD">0</span>]
+<span style="color: #228B22"># Start integrating using Euler&#39;s method</span>
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
+    <span style="color: #228B22"># expression for acceleration</span>
+    a[i] = -g + D*v[i]*v[i]
+    <span style="color: #228B22"># update velocity and position</span>
+    y[i+<span style="color: #B452CD">1</span>] = y[i] + DeltaT*v[i]
+    v[i+<span style="color: #B452CD">1</span>] = v[i] + DeltaT*a[i]
+    <span style="color: #228B22"># update time to next time step and compute analytical answer</span>
+    t[i+<span style="color: #B452CD">1</span>] = t[i] + DeltaT
+    yanalytic[i+<span style="color: #B452CD">1</span>] = y[<span style="color: #B452CD">0</span>]-(vT*vT/g)*log(cosh(g*t[i+<span style="color: #B452CD">1</span>]/vT))
+    <span style="color: #8B008B; font-weight: bold">if</span> ( y[i+<span style="color: #B452CD">1</span>] &lt; <span style="color: #B452CD">0.0</span>):
+        <span style="color: #8B008B; font-weight: bold">break</span>
+a[n-<span style="color: #B452CD">1</span>] = -g + D*v[n-<span style="color: #B452CD">1</span>]*v[n-<span style="color: #B452CD">1</span>]
+data = {<span style="color: #CD5555">&#39;t[s]&#39;</span>: t,
+        <span style="color: #CD5555">&#39;y[m]&#39;</span>: y-yanalytic,
+        <span style="color: #CD5555">&#39;v[m/s]&#39;</span>: v,
+        <span style="color: #CD5555">&#39;a[m/s^2]&#39;</span>: a
+        }
+NewData = pd.DataFrame(data)
+display(NewData)
+<span style="color: #228B22">#finally we plot the data</span>
+fig, axs = plt.subplots(<span style="color: #B452CD">3</span>, <span style="color: #B452CD">1</span>)
+axs[<span style="color: #B452CD">0</span>].plot(t, y, t, yanalytic)
+axs[<span style="color: #B452CD">0</span>].set_xlim(<span style="color: #B452CD">0</span>, tfinal)
+axs[<span style="color: #B452CD">0</span>].set_ylabel(<span style="color: #CD5555">&#39;y and exact&#39;</span>)
+axs[<span style="color: #B452CD">1</span>].plot(t, v)
+axs[<span style="color: #B452CD">1</span>].set_ylabel(<span style="color: #CD5555">&#39;v[m/s]&#39;</span>)
+axs[<span style="color: #B452CD">2</span>].plot(t, a)
+axs[<span style="color: #B452CD">2</span>].set_xlabel(<span style="color: #CD5555">&#39;time[s]&#39;</span>)
+axs[<span style="color: #B452CD">2</span>].set_ylabel(<span style="color: #CD5555">&#39;a[m/s^2]&#39;</span>)
+fig.tight_layout()
+save_fig(<span style="color: #CD5555">&quot;EulerIntegration&quot;</span>)
+plt.show()
+</pre></div>
+<p>
+Try different values for \( \Delta t \) and study the difference between the exact solution and the numerical solution.
+</section>
+
+
+<section>
+<h2 id="___sec17">Simple extension, the Euler-Cromer method </h2>
+
+<p>
+In Euler-Cromer method is simple variant of the standard Euler method but it yields a slightly better error estimate for \( y \). We simply use the newly updated velocity \( v_{i+1} \) as an input to the new position, that is, instead of
+<p>&nbsp;<br>
+$$
+y_{i+1} = y_i+\Delta t v_i,
+$$
+<p>&nbsp;<br>
+
+and
+<p>&nbsp;<br>
+$$
+v_{i+1} = v_i+\Delta t a_i,
+$$
+<p>&nbsp;<br>
+
+we use now the newly calculate for \( v_{i+1} \) as input to \( y_{i+1} \), that is 
+we compute first 
+<p>&nbsp;<br>
+$$
+v_{i+1} = v_i+\Delta t a_i,
+$$
+<p>&nbsp;<br>
+
+and then
+<p>&nbsp;<br>
+$$
+y_{i+1} = y_i+\Delta t v_{i+1},
+$$
+<p>&nbsp;<br>
+
+This gives an error in \( y \) which goes like \( O(\Delta t^2) \) (can you show this?).
+
+<p>
+Implementing the Euler-Cromer method yields a simple change to the previous code. We only need to change the following line in the loop over time
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
+    .....
+    v[i+<span style="color: #B452CD">1</span>] = v[i] + DeltaT*a[i]
+    y[i+<span style="color: #B452CD">1</span>] = y[i] + DeltaT*v[i+<span style="color: #B452CD">1</span>]
+    ....
+</pre></div>
+
+<h2 id="___sec18">Forces and Newton's laws </h2>
+</section>
+
+
+<section>
+<h2 id="___sec19">Python practicalities, Software and needed installations </h2>
 
 <p>
 We will make extensive use of Python as programming language and its
@@ -801,7 +1039,7 @@ you can use <b>pip</b> as well and simply install Python as
 
 etc etc.
 
-<h2 id="___sec15">Python installers </h2>
+<h2 id="___sec20">Python installers </h2>
 
 <p>
 If you don't want to perform these operations separately and venture
@@ -834,7 +1072,7 @@ license.
 Furthermore, <a href="https://colab.research.google.com/notebooks/welcome.ipynb" target="_blank">Google's Colab</a> is a free Jupyter notebook environment that requires 
 no setup and runs entirely in the cloud. Try it out!
 
-<h2 id="___sec16">Useful Python libraries </h2>
+<h2 id="___sec21">Useful Python libraries </h2>
 Here we list several useful Python libraries we strongly recommend (if you use anaconda many of these are already there)
 
 <ul>
@@ -864,7 +1102,7 @@ further processing. For example, convert to latex as
 <p>
 And to add more versatility, the Python package <a href="http://www.sympy.org/en/index.html" target="_blank">SymPy</a> is a Python library for symbolic mathematics. It aims to become a full-featured computer algebra system (CAS)  and is entirely written in Python.
 
-<h2 id="___sec17">Numpy examples and Important Matrix and vector handling packages </h2>
+<h2 id="___sec22">Numpy examples and Important Matrix and vector handling packages </h2>
 
 <p>
 There are several central software libraries for linear algebra and eigenvalue problems. Several of the more
@@ -881,7 +1119,7 @@ developed in the 1970s, namely EISPACK and LINPACK.  We describe them shortly he
 <p><li> BLAS (I, II and III): (Basic Linear Algebra Subprograms) are routines that provide standard building blocks for performing basic vector and matrix operations. Blas I is vector operations, II vector-matrix operations and III matrix-matrix operations. Highly parallelized and efficient codes, all available for download from <a href="http://www.netlib.org" target="_blank"><tt>http://www.netlib.org</tt></a>.</li>
 </ul>
 
-<h2 id="___sec18">Basic Matrix Features </h2>
+<h2 id="___sec23">Basic Matrix Features </h2>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -928,7 +1166,7 @@ $$
 
 </div>
 
-<h3 id="___sec19">Some famous Matrices </h3>
+<h3 id="___sec24">Some famous Matrices </h3>
 
 <ul>
 
@@ -951,7 +1189,7 @@ $$
 <p><li> Banded, block upper triangular, block lower triangular....</li>
 </ul>
 
-<h3 id="___sec20">More Basic Matrix Features </h3>
+<h3 id="___sec25">More Basic Matrix Features </h3>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -975,7 +1213,7 @@ For an \( N\times N \) matrix  \( \mathbf{A} \) the following properties are all
 </ul>
 </div>
 
-<h2 id="___sec21">Numpy and arrays </h2>
+<h2 id="___sec26">Numpy and arrays </h2>
 <a href="http://www.numpy.org/" target="_blank">Numpy</a> provides an easy way to handle arrays in Python. The standard way to import this library is as
 
 <p>
@@ -1060,7 +1298,7 @@ x = np.log(np.array([<span style="color: #B452CD">4.0</span>, <span style="color
 <span style="color: #8B008B; font-weight: bold">print</span>(x.itemsize)
 </pre></div>
 
-<h2 id="___sec22">Matrices in Python </h2>
+<h2 id="___sec27">Matrices in Python </h2>
 
 <p>
 Having defined vectors, we are now ready to try out matrices. We can
@@ -1128,7 +1366,7 @@ A = np.random.rand(n, n)
 <span style="color: #8B008B; font-weight: bold">print</span>(A) 
 </pre></div>
 
-<h2 id="___sec23">Meet the Pandas </h2>
+<h2 id="___sec28">Meet the Pandas </h2>
 
 <p>
 <br /><br /><center><p><img src="fig/pandas.jpg" align="bottom" width=600></p></center><br /><br />
