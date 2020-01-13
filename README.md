@@ -49,23 +49,24 @@ Here you will find a general overview of the course, with learning outcomes, tea
 ## Possible textbooks and lecture notes
 
 _Recommended textbook_:
-- John R. Taylor, Classical Mechanics (Univ. Sci. Books 2005), https://www.uscibooks.com/taylor2.htm, see also https://github.com/mhjensen/Physics321/tree/master/doc/Literature
+- JRT: John R. Taylor, Classical Mechanics (Univ. Sci. Books 2005), https://www.uscibooks.com/taylor2.htm, see also https://github.com/mhjensen/Physics321/tree/master/doc/Literature
 _Additional textbooks_:
-- Anders Malthe-Sørenssen, Elementary Mechanics using Python (Springer 2015), https://www.springer.com/gp/book/9783319195957 and https://github.com/mhjensen/Physics321/tree/master/doc/Literature
-- Alessandro Bettini, A Course in Classical Physics 1 -- Mechanics (Springer 2017), https://github.com/mhjensen/Physics321/tree/master/doc/Literature and https://www.springer.com/gp/book/9783319292564
+- AMS: Anders Malthe-Sørenssen, Elementary Mechanics using Python (Springer 2015), https://www.springer.com/gp/book/9783319195957 and https://github.com/mhjensen/Physics321/tree/master/doc/Literature
+- AB: Alessandro Bettini, A Course in Classical Physics 1 -- Mechanics (Springer 2017), https://github.com/mhjensen/Physics321/tree/master/doc/Literature and https://www.springer.com/gp/book/9783319292564
 _Lecture notes_:
 Posted lecture notes are in the doc/pub folder here or at https://mhjensen.github.io/Physics321/doc/web/course.html for easier viewing. They are not meant to be a replacement for textbook. These notes are updated on a weekly basis and a _git pull_ should thus always give you the latest update. 
 
 ##  Teaching schedule with links to material (This will be updated asap)
 Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will sent to everybody. We use also Piazza as a discussion forum. Please use this sign-up link piazza.com/msu/spring2020/phy321. The class link is piazza.com/msu/spring2020/phy321/home
 ###  Week 2, January 6-10, 2020
-- Monday: Introduction to the course and start discussion of vectors, space, time and motion, Taylor chapter 1.2 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/Introduction/html/Introduction.html)
-- Wednesday: More on time,space, vectors and motion, Taylor chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/Introduction/html/Introduction.html), first homework available
-- Friday: Forces and Newton's laws of motion. Taylor chapter 1.4 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/Introduction/html/Introduction.html). Introduction to Git and GitHub and getting started with numerical exercises. Installing software (anaconda) and first homework due January 17.
+- Monday: Introduction to the course and start discussion of vectors, space, time and motion, JRT chapter 1.2 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/Introduction/html/Introduction.html)
+- Wednesday: More on time,space, vectors and motion, JRT 1.2 and 1.3, AMS chapters 2 and 4  and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/Introduction/html/Introduction.html), first homework available
+- Friday: Forces and Newton's laws of motion. JRT chapter 1.4 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/Introduction/html/Introduction.html). Introduction to Git and GitHub and getting started with numerical exercises. Installing software (anaconda) and first homework due January 17. For solving exercise 7 in the first homework, AMS chapters 2 and 4 are very useful
 ### Week 3, January 13-17, 2020
-- Monday:
-- Wednesday: 
-- Friday:  2nd homework, due January 24
+- Monday: Motion and forces, Newton's laws, examples
+- Wednesday: Motion and forces, Newton's laws, examples
+- Friday:  Motion and forces, Newton's laws, examples,2nd homework, due January 24
+- Good reads are Taylor chapters 1.4, 1.5, 1.6, 2.1-2.4 and AMS chapters 4.2 and  5
 ### Week 4, January 20-24, 2020
 - Monday: MLK day, no lectures
 - Wednesday: 
