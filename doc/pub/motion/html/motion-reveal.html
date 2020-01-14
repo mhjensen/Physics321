@@ -876,12 +876,13 @@ as
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
 <div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #228B22">#define final time, assuming that initial time is zero</span>
+<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> ceil
 tfinal = <span style="color: #B452CD">0.5</span>
 n = ceil(tfinal/DeltaT)
 <span style="color: #8B008B; font-weight: bold">print</span>(n)
 </pre></div>
 <p>
-The <b>ceil</b> function returns the smalles integer not less than the input in say
+The <b>ceil</b> function returns the smallest integer not less than the input in say
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
@@ -889,17 +890,24 @@ The <b>ceil</b> function returns the smalles integer not less than the input in 
 <span style="color: #8B008B; font-weight: bold">print</span>(ceil(x))
 </pre></div>
 <p>
-which in the case here is 21.
+which in the case here is 22.
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
 <div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span>x = <span style="color: #B452CD">21.75</span>
-<span style="color: #8B008B; font-weight: bold">print</span>(ceil(x)
+<span style="color: #8B008B; font-weight: bold">print</span>(ceil(x))
 </pre></div>
 <p>
-In this case we have 22. The  <b>floor</b> function in the <b>math</b> package
-is used to return the closest integer value which is less than or equal to the specified expression or nalue.
+which also yields 22. The  <b>floor</b> function in the <b>math</b> package
+is used to return the closest integer value which is less than or equal to the specified expression or value.
+Compare the previous result to the usage of <b>floor</b>
+<p>
 
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> floor
+x = <span style="color: #B452CD">21.75</span>
+<span style="color: #8B008B; font-weight: bold">print</span>(floor(x))
+</pre></div>
 <p>
 Alternatively, we can define ourselves the number of integration(mesh) points. In this case we could have
 <p>
@@ -908,7 +916,7 @@ Alternatively, we can define ourselves the number of integration(mesh) points. I
 <div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span>n = <span style="color: #B452CD">10</span>
 tinitial = <span style="color: #B452CD">0.0</span>
 tfinal = <span style="color: #B452CD">0.5</span>
-DeltaT = (tfinal-tinitial)/(n+<span style="color: #B452CD">1</span>)
+DeltaT = (tfinal-tinitial)/(n)
 <span style="color: #8B008B; font-weight: bold">print</span>(DeltaT)
 </pre></div>
 <p>

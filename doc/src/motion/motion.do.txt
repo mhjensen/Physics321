@@ -610,29 +610,38 @@ With a given final time _tfinal_  we can then find the number of integration poi
 as
 !bc pycod
 #define final time, assuming that initial time is zero
+from math import ceil
 tfinal = 0.5
 n = ceil(tfinal/DeltaT)
 print(n)
 !ec
-The _ceil_ function returns the smalles integer not less than the input in say
+The _ceil_ function returns the smallest integer not less than the input in say
 !bc pycod
 x = 21.15
 print(ceil(x))
 !ec
-which in the case here is 21.
+which in the case here is 22.
 !bc pycod
 x = 21.75
-print(ceil(x)
+print(ceil(x))
 !ec
-In this case we have 22. The  _floor_ function in the _math_ package
-is used to return the closest integer value which is less than or equal to the specified expression or nalue.
+which also yields 22. The  _floor_ function in the _math_ package
+is used to return the closest integer value which is less than or equal to the specified expression or value.
+Compare the previous result to the usage of _floor_
+!bc pycod
+from math import floor
+x = 21.75
+print(floor(x))
+!ec
+
+
 
 Alternatively, we can define ourselves the number of integration(mesh) points. In this case we could have
 !bc pycod
 n = 10
 tinitial = 0.0
 tfinal = 0.5
-DeltaT = (tfinal-tinitial)/(n+1)
+DeltaT = (tfinal-tinitial)/(n)
 print(DeltaT)
 !ec
 
