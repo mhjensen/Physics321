@@ -58,6 +58,8 @@ It is also important to keep track of dimensionalities. Don't mix this up with a
 !split
 ===== Elements of Vector Algebra =====
 
+_Note_: This section is under revision
+
 In these lectures we will use boldfaced lower-case letters to label a vector. A vector $\bm{a}$ in three dimensions is thus defined as
 !bt
 \[
@@ -327,6 +329,7 @@ We will come back to this soon.
 
 !split
 ===== Integrating our equations =====
+
 Formally we can then, starting with the acceleration (suppose we have measured it, how could we do that?)
 compute say the height of a building.  To see this we perform the following integrations from an initial time $t_0$  to a given time $t$
 !bt
@@ -430,7 +433,9 @@ Note that we don't print the last values!
 
 In our discussions till now of the falling baseball, we have ignored
 air resistance and simply assumed that our system is only influenced
-by the the graviational force.  We will postpone the derivation of air resistance till later, after our discussion of Newton's laws and forces.
+by the gravitational force.  We will postpone the derivation of air
+resistance till later, after our discussion of Newton's laws and
+forces.
 
 For our discussions here it suffices to state that the accelerations is now modified to
 !bt
@@ -451,9 +456,15 @@ We can rewrite this as a differential equation
 a(t) = \frac{dv}{dt}=\frac{d^2y}{dt^2}= -g +Dv^2(t). 
 \]
 !et
-Using the integral equations discussed above we can integrate twice and obtain first the velocity as function of time and thereafter the position as function of time.
 
-For this particular case, we can actually obtain an analytical solution for the velocity and for the position. Here we will first compute the solutions analytically, thereafter we will derive Euler's method for solving these differential equations numerically.
+Using the integral equations discussed above we can integrate twice
+and obtain first the velocity as function of time and thereafter the
+position as function of time.
+
+For this particular case, we can actually obtain an analytical
+solution for the velocity and for the position. Here we will first
+compute the solutions analytically, thereafter we will derive Euler's
+method for solving these differential equations numerically.
 
 !split
 ===== Analytical solutions =====
@@ -467,15 +478,20 @@ For simplicity let us just write $v(t)$ as $v$. We have
 
 We can solve this using the technique of separation of variables. We
 isolate on the left all terms that involve $v$ and on the right all
-terms that involved time. We get then
+terms that involve time. We get then
 !bt
 \[
 \frac{dv}{g -Dv^2(t) }= -dt,
 \]
 !et
-We scale now the equation to the left by introducing a constant $v_T=\sqrt{g/D}$. This constant has dimension length/time. Can you show this?
 
-Next we integrate the left hand side from $v_0=0$ m/s to $v$ and right hand side from $t_0=0$ to $t$ and obtain
+We scale now the equation to the left by introducing a constant
+$v_T=\sqrt{g/D}$. This constant has dimension length/time. Can you
+show this?
+
+Next we integrate the left-hand side (lhs) from $v_0=0$ m/s to $v$ and
+the right-hand side (rhs) from $t_0=0$ to $t$ and obtain
+
 !bt
 \[
 \int_{0}^v\frac{dv}{g -Dv^2(t) }= \frac{v_T}{g}\mathrm{arctanh}(\frac{v}{v_T})  =-\int_0^tdt = -t. 
@@ -497,20 +513,20 @@ v(t)=v_T\tanh{-(\frac{gt}{v_T})}.
 
 !split
 ===== Finding the final height =====
-With the velocity we can then the height $y(t)$ by integrating yet another time, that is
+With the velocity we can then find the height $y(t)$ by integrating yet another time, that is
 !bt
 \[
 y(t)=y(t_0)+\int_{t_0}^t dt v(t)=\int_{0}^t dt[v_T\tanh{-(\frac{gt}{v_T})}]. 
 \]
 !et
-This integral is a little bit more trickier but we can look it up in a table over 
+This integral is a little bit trickier but we can look it up in a table over 
 known integrals and we get
 !bt
 \[
 y(t)=y(t_0)-\frac{v_T^2}{g}\log{[\cosh{(\frac{gt}{v_T})}]}.
 \]
 !et
-Alternatively we could have used the symbolic Python package _Sympy_ (see AMS chapter 4.2). 
+Alternatively we could have used the symbolic Python package _Sympy_  (example will be inserted later). 
 
 In most cases however, we need to revert to numerical solutions. 
 
@@ -525,7 +541,7 @@ equation
 a(t) =\frac{d^2y}{dt^2}= -g +Dv^2(t). 
 \]
 !et
-We rewrite it as two coupled first-order equations
+We rewrite it as two coupled first-order equations (this is a standard approach)
 !bt
 \[
 \frac{dy}{dt} = v(t),
@@ -584,8 +600,55 @@ v_{i+1} = v_i+\Delta t a_i.
 !et
 These are the famous Euler equations (forward Euler).
 
-To solve this numerical we start at a time $t_0$ and simply integrate up these equations to a final time $t_f$,
-The step size $\Delta t$ is a  parameter in our theory and we can define that as an input parameter. Alternatively, we can define ourselves the number of integration(mesh) points.
+To solve these equations numerically we start at a time $t_0$ and simply integrate up these equations to a final time $t_f$,
+The step size $\Delta t$ is an input  parameter in our code.
+You can define it directly in the code below as
+!bc pycod
+DeltaT = 0.1
+!ec
+With a given final time _tfinal_  we can then find the number of integration points via the _ceil_ function included in the _math_ package of Python
+as
+!bc pycod
+#define final time, assuming that initial time is zero
+tfinal = 0.5
+n = ceil(tfinal/DeltaT)
+print(n)
+!ec
+The _ceil_ function returns the smalles integer not less than the input in say
+!bc pycod
+x = 21.15
+print(ceil(x))
+!ec
+which in the case here is 21.
+!bc pycod
+x = 21.75
+print(ceil(x)
+!ec
+In this case we have 22. The  _floor_ function in the _math_ package
+is used to return the closest integer value which is less than or equal to the specified expression or nalue.
+
+Alternatively, we can define ourselves the number of integration(mesh) points. In this case we could have
+!bc pycod
+n = 10
+tinitial = 0.0
+tfinal = 0.5
+DeltaT = (tfinal-tinitial)/(n+1)
+print(DeltaT)
+!ec
+
+Since we will set up one-dimensional arrays that contain the values of
+various variables like time, position, velocity, acceleration etc, we
+need to know the value of $n$, the number of data points (or
+integration or mesh points).  With $n$ we can initialize a given array
+by setting all elelements to zero, as done here
+
+!bc pycod
+# define array a
+a = np.zeros(n)
+print(a)
+!ec
+
+
 
 
 !split

@@ -157,7 +157,7 @@ MathJax.Hub.Config({
 <center>[3] <b>Department of Physics and Astronomy, Michigan State University, USA</b></center>
 <br>
 <p>
-<center><h4>Jan 13, 2020</h4></center> <!-- date -->
+<center><h4>Jan 14, 2020</h4></center> <!-- date -->
 <br>
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -226,6 +226,9 @@ It is also important to keep track of dimensionalities. Don't mix this up with a
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
 <h2 id="___sec2">Elements of Vector Algebra </h2>
+
+<p>
+<b>Note</b>: This section is under revision
 
 <p>
 In these lectures we will use boldfaced lower-case letters to label a vector. A vector \( \boldsymbol{a} \) in three dimensions is thus defined as
@@ -492,6 +495,8 @@ We will come back to this soon.
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
 <h2 id="___sec8">Integrating our equations </h2>
+
+<p>
 Formally we can then, starting with the acceleration (suppose we have measured it, how could we do that?)
 compute say the height of a building.  To see this we perform the following integrations from an initial time \( t_0 \)  to a given time \( t \)
 $$
@@ -589,7 +594,9 @@ Note that we don't print the last values!
 <p>
 In our discussions till now of the falling baseball, we have ignored
 air resistance and simply assumed that our system is only influenced
-by the the graviational force.  We will postpone the derivation of air resistance till later, after our discussion of Newton's laws and forces.
+by the gravitational force.  We will postpone the derivation of air
+resistance till later, after our discussion of Newton's laws and
+forces.
 
 <p>
 For our discussions here it suffices to state that the accelerations is now modified to
@@ -608,10 +615,16 @@ $$
 a(t) = \frac{dv}{dt}=\frac{d^2y}{dt^2}= -g +Dv^2(t). 
 $$
 
-Using the integral equations discussed above we can integrate twice and obtain first the velocity as function of time and thereafter the position as function of time.
+<p>
+Using the integral equations discussed above we can integrate twice
+and obtain first the velocity as function of time and thereafter the
+position as function of time.
 
 <p>
-For this particular case, we can actually obtain an analytical solution for the velocity and for the position. Here we will first compute the solutions analytically, thereafter we will derive Euler's method for solving these differential equations numerically.
+For this particular case, we can actually obtain an analytical
+solution for the velocity and for the position. Here we will first
+compute the solutions analytically, thereafter we will derive Euler's
+method for solving these differential equations numerically.
 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -627,15 +640,20 @@ $$
 <p>
 We can solve this using the technique of separation of variables. We
 isolate on the left all terms that involve \( v \) and on the right all
-terms that involved time. We get then
+terms that involve time. We get then
 $$
 \frac{dv}{g -Dv^2(t) }= -dt,
 $$
 
-We scale now the equation to the left by introducing a constant \( v_T=\sqrt{g/D} \). This constant has dimension length/time. Can you show this?
+<p>
+We scale now the equation to the left by introducing a constant
+\( v_T=\sqrt{g/D} \). This constant has dimension length/time. Can you
+show this?
 
 <p>
-Next we integrate the left hand side from \( v_0=0 \) m/s to \( v \) and right hand side from \( t_0=0 \) to \( t \) and obtain
+Next we integrate the left-hand side (lhs) from \( v_0=0 \) m/s to \( v \) and
+the right-hand side (rhs) from \( t_0=0 \) to \( t \) and obtain
+
 $$
 \int_{0}^v\frac{dv}{g -Dv^2(t) }= \frac{v_T}{g}\mathrm{arctanh}(\frac{v}{v_T})  =-\int_0^tdt = -t. 
 $$
@@ -654,18 +672,18 @@ $$
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
 <h2 id="___sec13">Finding the final height </h2>
-With the velocity we can then the height \( y(t) \) by integrating yet another time, that is
+With the velocity we can then find the height \( y(t) \) by integrating yet another time, that is
 $$
 y(t)=y(t_0)+\int_{t_0}^t dt v(t)=\int_{0}^t dt[v_T\tanh{-(\frac{gt}{v_T})}]. 
 $$
 
-This integral is a little bit more trickier but we can look it up in a table over 
+This integral is a little bit trickier but we can look it up in a table over 
 known integrals and we get
 $$
 y(t)=y(t_0)-\frac{v_T^2}{g}\log{[\cosh{(\frac{gt}{v_T})}]}.
 $$
 
-Alternatively we could have used the symbolic Python package <b>Sympy</b> (see AMS chapter 4.2).
+Alternatively we could have used the symbolic Python package <b>Sympy</b>  (example will be inserted later).
 
 <p>
 In most cases however, we need to revert to numerical solutions.
@@ -682,7 +700,7 @@ $$
 a(t) =\frac{d^2y}{dt^2}= -g +Dv^2(t). 
 $$
 
-We rewrite it as two coupled first-order equations
+We rewrite it as two coupled first-order equations (this is a standard approach)
 $$
 \frac{dy}{dt} = v(t),
 $$
@@ -736,9 +754,70 @@ $$
 These are the famous Euler equations (forward Euler).
 
 <p>
-To solve this numerical we start at a time \( t_0 \) and simply integrate up these equations to a final time \( t_f \),
-The step size \( \Delta t \) is a  parameter in our theory and we can define that as an input parameter. Alternatively, we can define ourselves the number of integration(mesh) points.
+To solve these equations numerically we start at a time \( t_0 \) and simply integrate up these equations to a final time \( t_f \),
+The step size \( \Delta t \) is an input  parameter in our code.
+You can define it directly in the code below as
+<p>
 
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span>DeltaT = <span style="color: #B452CD">0.1</span>
+</pre></div>
+<p>
+With a given final time <b>tfinal</b>  we can then find the number of integration points via the <b>ceil</b> function included in the <b>math</b> package of Python
+as
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span><span style="color: #228B22">#define final time, assuming that initial time is zero</span>
+tfinal = <span style="color: #B452CD">0.5</span>
+n = ceil(tfinal/DeltaT)
+<span style="color: #8B008B; font-weight: bold">print</span>(n)
+</pre></div>
+<p>
+The <b>ceil</b> function returns the smalles integer not less than the input in say
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span>x = <span style="color: #B452CD">21.15</span>
+<span style="color: #8B008B; font-weight: bold">print</span>(ceil(x))
+</pre></div>
+<p>
+which in the case here is 21.
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span>x = <span style="color: #B452CD">21.75</span>
+<span style="color: #8B008B; font-weight: bold">print</span>(ceil(x)
+</pre></div>
+<p>
+In this case we have 22. The  <b>floor</b> function in the <b>math</b> package
+is used to return the closest integer value which is less than or equal to the specified expression or nalue.
+
+<p>
+Alternatively, we can define ourselves the number of integration(mesh) points. In this case we could have
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span>n = <span style="color: #B452CD">10</span>
+tinitial = <span style="color: #B452CD">0.0</span>
+tfinal = <span style="color: #B452CD">0.5</span>
+DeltaT = (tfinal-tinitial)/(n+<span style="color: #B452CD">1</span>)
+<span style="color: #8B008B; font-weight: bold">print</span>(DeltaT)
+</pre></div>
+<p>
+Since we will set up one-dimensional arrays that contain the values of
+various variables like time, position, velocity, acceleration etc, we
+need to know the value of \( n \), the number of data points (or
+integration or mesh points).  With \( n \) we can initialize a given array
+by setting all elelements to zero, as done here
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span><span style="color: #228B22"># define array a</span>
+a = np.zeros(n)
+<span style="color: #8B008B; font-weight: bold">print</span>(a)
+</pre></div>
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
