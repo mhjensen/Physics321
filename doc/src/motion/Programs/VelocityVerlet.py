@@ -29,11 +29,6 @@ def save_fig(fig_id):
     plt.savefig(image_path(fig_id) + ".png", format='png')
 
 
-from pylab import plt, mpl
-plt.style.use('seaborn')
-mpl.rcParams['font.family'] = 'serif'
-
-
 g = 9.80655 #m/s^2
 D = 0.00245 #m/s
 DeltaT = 0.1
@@ -56,10 +51,13 @@ yanalytic[0] = y[0]
 for i in range(n-1):
     # expression for acceleration
     a[i] = -g + D*v[i]*v[i]
-    # update velocity and position
+    # update velocity and position using Verlet's method
     y[i+1] = y[i] + DeltaT*v[i]+0.5*DeltaT*DeltaT*a[i]
+    # we need to cheat here since a depends only on v and not x
+    # we use Euler's method to calculate v[i+1] first 
     v[i+1] = v[i] + DeltaT*a[i]
     a[i+1] = -g + D*v[i+1]*v[i+1]
+    # and here we do the Verlet for the velocity
     v[i+1] = v[i] + 0.5*DeltaT*(a[i+1]+a[i])
     # update time to next time step and compute analytical answer
     t[i+1] = t[i] + DeltaT
@@ -86,6 +84,6 @@ axs[2].plot(t, a)
 axs[2].set_xlabel('time[s]')
 axs[2].set_ylabel('a[m/s^2]')
 fig.tight_layout()
-save_fig("EulerIntegration")
+save_fig("VelocityVerletIntegration")
 plt.show()
 

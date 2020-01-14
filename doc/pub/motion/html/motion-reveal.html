@@ -886,11 +886,6 @@ DATA_ID = <span style="color: #CD5555">&quot;DataFiles/&quot;</span>
     plt.savefig(image_path(fig_id) + <span style="color: #CD5555">&quot;.png&quot;</span>, format=<span style="color: #CD5555">&#39;png&#39;</span>)
 
 
-<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">pylab</span> <span style="color: #8B008B; font-weight: bold">import</span> plt, mpl
-plt.style.use(<span style="color: #CD5555">&#39;seaborn&#39;</span>)
-mpl.rcParams[<span style="color: #CD5555">&#39;font.family&#39;</span>] = <span style="color: #CD5555">&#39;serif&#39;</span>
-
-
 g = <span style="color: #B452CD">9.80655</span> <span style="color: #228B22">#m/s^2</span>
 D = <span style="color: #B452CD">0.00245</span> <span style="color: #228B22">#m/s</span>
 DeltaT = <span style="color: #B452CD">0.1</span>
@@ -952,7 +947,10 @@ Try different values for \( \Delta t \) and study the difference between the exa
 <h2 id="___sec17">Simple extension, the Euler-Cromer method </h2>
 
 <p>
-The Euler-Cromer method is a simple variant of the standard Euler method but it yields a slightly better error estimate for \( y \). We simply use the newly updated velocity \( v_{i+1} \) as an input to the new position, that is, instead of
+The Euler-Cromer method is a simple variant of the standard Euler
+method. We use the newly updated velocity \( v_{i+1} \) as an input to the
+new position, that is, instead of
+
 <p>&nbsp;<br>
 $$
 y_{i+1} = y_i+\Delta t v_i,
@@ -981,18 +979,16 @@ y_{i+1} = y_i+\Delta t v_{i+1},
 $$
 <p>&nbsp;<br>
 
-This gives an error in \( y \) which goes like \( O(\Delta t^2) \) (can you show this?).
-
 <p>
 Implementing the Euler-Cromer method yields a simple change to the previous code. We only need to change the following line in the loop over time
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
 <div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
-    .....
+    <span style="color: #228B22"># more codes in between here</span>
     v[i+<span style="color: #B452CD">1</span>] = v[i] + DeltaT*a[i]
     y[i+<span style="color: #B452CD">1</span>] = y[i] + DeltaT*v[i+<span style="color: #B452CD">1</span>]
-    ....
+    <span style="color: #228B22"># more code</span>
 </pre></div>
 
 <h2 id="___sec18">Forces and Newton's laws </h2>

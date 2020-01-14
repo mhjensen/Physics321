@@ -820,11 +820,6 @@ DATA_ID <span style="color: #666666">=</span> <span style="color: #BA2121">&quot
     plt<span style="color: #666666">.</span>savefig(image_path(fig_id) <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;.png&quot;</span>, format<span style="color: #666666">=</span><span style="color: #BA2121">&#39;png&#39;</span>)
 
 
-<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">pylab</span> <span style="color: #008000; font-weight: bold">import</span> plt, mpl
-plt<span style="color: #666666">.</span>style<span style="color: #666666">.</span>use(<span style="color: #BA2121">&#39;seaborn&#39;</span>)
-mpl<span style="color: #666666">.</span>rcParams[<span style="color: #BA2121">&#39;font.family&#39;</span>] <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;serif&#39;</span>
-
-
 g <span style="color: #666666">=</span> <span style="color: #666666">9.80655</span> <span style="color: #408080; font-style: italic">#m/s^2</span>
 D <span style="color: #666666">=</span> <span style="color: #666666">0.00245</span> <span style="color: #408080; font-style: italic">#m/s</span>
 DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.1</span>
@@ -886,7 +881,10 @@ Try different values for \( \Delta t \) and study the difference between the exa
 <h2 id="___sec17" class="anchor">Simple extension, the Euler-Cromer method </h2>
 
 <p>
-The Euler-Cromer method is a simple variant of the standard Euler method but it yields a slightly better error estimate for \( y \). We simply use the newly updated velocity \( v_{i+1} \) as an input to the new position, that is, instead of
+The Euler-Cromer method is a simple variant of the standard Euler
+method. We use the newly updated velocity \( v_{i+1} \) as an input to the
+new position, that is, instead of
+
 $$
 y_{i+1} = y_i+\Delta t v_i,
 $$
@@ -907,18 +905,16 @@ $$
 y_{i+1} = y_i+\Delta t v_{i+1},
 $$
 
-This gives an error in \( y \) which goes like \( O(\Delta t^2) \) (can you show this?).
-
 <p>
 Implementing the Euler-Cromer method yields a simple change to the previous code. We only need to change the following line in the loop over time
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
-    <span style="color: #666666">.....</span>
+    <span style="color: #408080; font-style: italic"># more codes in between here</span>
     v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>a[i]
     y[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> y[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>v[i<span style="color: #666666">+1</span>]
-    <span style="color: #666666">....</span>
+    <span style="color: #408080; font-style: italic"># more code</span>
 </pre></div>
 
 <h2 id="___sec18" class="anchor">Forces and Newton's laws </h2>

@@ -624,11 +624,6 @@ def save_fig(fig_id):
     plt.savefig(image_path(fig_id) + ".png", format='png')
 
 
-from pylab import plt, mpl
-plt.style.use('seaborn')
-mpl.rcParams['font.family'] = 'serif'
-
-
 g = 9.80655 #m/s^2
 D = 0.00245 #m/s
 DeltaT = 0.1
@@ -688,7 +683,10 @@ Try different values for $\Delta t$ and study the difference between the exact s
 !split
 ===== Simple extension, the Euler-Cromer method =====
 
-The Euler-Cromer method is a simple variant of the standard Euler method but it yields a slightly better error estimate for $y$. We simply use the newly updated velocity $v_{i+1}$ as an input to the new position, that is, instead of
+The Euler-Cromer method is a simple variant of the standard Euler
+method. We use the newly updated velocity $v_{i+1}$ as an input to the
+new position, that is, instead of
+
 !bt
 \[
 y_{i+1} = y_i+\Delta t v_i,
@@ -713,18 +711,20 @@ and then
 y_{i+1} = y_i+\Delta t v_{i+1},
 \]
 !et
-This gives an error in $y$ which goes like $O(\Delta t^2)$ (can you show this?).
 
 Implementing the Euler-Cromer method yields a simple change to the previous code. We only need to change the following line in the loop over time
 !bc pycod
 for i in range(n-1):
-    .....
+    # more codes in between here
     v[i+1] = v[i] + DeltaT*a[i]
     y[i+1] = y[i] + DeltaT*v[i+1]
-    ....
+    # more code
 !ec
 
 ===== Forces and Newton's laws =====
+
+
+
 
 !split
 ===== Python practicalities, Software and needed installations =====
