@@ -275,7 +275,7 @@ We can then rewrite in a more compact form the average velocity as
 \]
 !et
 The velocity is defined as the change in position per unit time.
-In the limit $\Delta t \rightarrow 0$ this defines the instanteneous velocity, which is nothing but the slope of the position at a time $t$.
+In the limit $\Delta t \rightarrow 0$ this defines the instantaneous velocity, which is nothing but the slope of the position at a time $t$.
 We have thus
 !bt
 \[
@@ -345,7 +345,7 @@ v(t)=v(t_0)+\int_{t_0}^t dt a(t).
 !et
 
 
-When we know the velocity as function of time, we can find the position as function of time starting from the defintion of velocity as the derivative wrt time of the positions, that is we have
+When we know the velocity as function of time, we can find the position as function of time starting from the defintion of velocity as the derivative with respect to time, that is we have
 !bt
 \[
 \int_{t_0}^t dt v(t) = \int_{t_0}^t dt \frac{dy}{dt} = y(t)-y(t_0),
@@ -785,6 +785,7 @@ y_{i+1} = y_i+\Delta t v_{i+1},
 !et
 
 Implementing the Euler-Cromer method yields a simple change to the previous code. We only need to change the following line in the loop over time
+steps
 !bc pycod
 for i in range(n-1):
     # more codes in between here
@@ -792,9 +793,6 @@ for i in range(n-1):
     y[i+1] = y[i] + DeltaT*v[i+1]
     # more code
 !ec
-
-===== Forces and Newton's laws =====
-
 
 
 
@@ -1106,7 +1104,7 @@ display(data_pandas)
 !ec
 
 In the above we have imported _pandas_ with the shorthand _pd_, the latter has become the standard way we import _pandas_. We make then a list of various variables
-and reorganize the aboves lists into a _DataFrame_ and then print out  a neat table with specific column labels as *Name*, *place of birth* and *date of birth*.
+and reorganize the above lists into a _DataFrame_ and then print out  a neat table with specific column labels as *Name*, *place of birth* and *date of birth*.
 Displaying these results, we see that the indices are given by the default numbers from zero to three.
 _pandas_ is extremely flexible and we can easily change the above indices by defining a new type of indexing as
 !bc pycod

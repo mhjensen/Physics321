@@ -94,24 +94,23 @@ div { text-align: justify; text-justify: inter-word; }
                2,
                None,
                '___sec17'),
-              ("Forces and Newton's laws", 2, None, '___sec18'),
               ('Python practicalities, Software and needed installations',
                2,
                None,
-               '___sec19'),
-              ('Python installers', 2, None, '___sec20'),
-              ('Useful Python libraries', 2, None, '___sec21'),
+               '___sec18'),
+              ('Python installers', 2, None, '___sec19'),
+              ('Useful Python libraries', 2, None, '___sec20'),
               ('Numpy examples and Important Matrix and vector handling '
                'packages',
                2,
                None,
-               '___sec22'),
-              ('Basic Matrix Features', 2, None, '___sec23'),
-              ('Some famous Matrices', 3, None, '___sec24'),
-              ('More Basic Matrix Features', 3, None, '___sec25'),
-              ('Numpy and arrays', 2, None, '___sec26'),
-              ('Matrices in Python', 2, None, '___sec27'),
-              ('Meet the Pandas', 2, None, '___sec28')]}
+               '___sec21'),
+              ('Basic Matrix Features', 2, None, '___sec22'),
+              ('Some famous Matrices', 3, None, '___sec23'),
+              ('More Basic Matrix Features', 3, None, '___sec24'),
+              ('Numpy and arrays', 2, None, '___sec25'),
+              ('Matrices in Python', 2, None, '___sec26'),
+              ('Meet the Pandas', 2, None, '___sec27')]}
 end of tocinfo -->
 
 <body>
@@ -447,7 +446,7 @@ $$
 $$
 
 The velocity is defined as the change in position per unit time.
-In the limit \( \Delta t \rightarrow 0 \) this defines the instanteneous velocity, which is nothing but the slope of the position at a time \( t \).
+In the limit \( \Delta t \rightarrow 0 \) this defines the instantaneous velocity, which is nothing but the slope of the position at a time \( t \).
 We have thus
 $$
 v(t) = \frac{dy}{dt}=\lim_{\Delta t \rightarrow 0}\frac{y(t+\Delta t)-y(t)}{\Delta t}.
@@ -514,7 +513,7 @@ v(t)=v(t_0)+\int_{t_0}^t dt a(t).
 $$
 
 <p>
-When we know the velocity as function of time, we can find the position as function of time starting from the defintion of velocity as the derivative wrt time of the positions, that is we have
+When we know the velocity as function of time, we can find the position as function of time starting from the defintion of velocity as the derivative with respect to time, that is we have
 $$
 \int_{t_0}^t dt v(t) = \int_{t_0}^t dt \frac{dy}{dt} = y(t)-y(t_0),
 $$
@@ -958,6 +957,7 @@ $$
 
 <p>
 Implementing the Euler-Cromer method yields a simple change to the previous code. We only need to change the following line in the loop over time
+steps
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
@@ -967,13 +967,10 @@ Implementing the Euler-Cromer method yields a simple change to the previous code
     y[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> y[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>v[i<span style="color: #666666">+1</span>]
     <span style="color: #408080; font-style: italic"># more code</span>
 </pre></div>
-
-<h2 id="___sec18">Forces and Newton's laws </h2>
-
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec19">Python practicalities, Software and needed installations </h2>
+<h2 id="___sec18">Python practicalities, Software and needed installations </h2>
 
 <p>
 We will make extensive use of Python as programming language and its
@@ -1009,7 +1006,7 @@ you can use <b>pip</b> as well and simply install Python as
 
 etc etc.
 
-<h2 id="___sec20">Python installers </h2>
+<h2 id="___sec19">Python installers </h2>
 
 <p>
 If you don't want to perform these operations separately and venture
@@ -1040,7 +1037,7 @@ license.
 Furthermore, <a href="https://colab.research.google.com/notebooks/welcome.ipynb" target="_blank">Google's Colab</a> is a free Jupyter notebook environment that requires 
 no setup and runs entirely in the cloud. Try it out!
 
-<h2 id="___sec21">Useful Python libraries </h2>
+<h2 id="___sec20">Useful Python libraries </h2>
 Here we list several useful Python libraries we strongly recommend (if you use anaconda many of these are already there)
 
 <ul>
@@ -1069,7 +1066,7 @@ further processing. For example, convert to latex as
 <p>
 And to add more versatility, the Python package <a href="http://www.sympy.org/en/index.html" target="_blank">SymPy</a> is a Python library for symbolic mathematics. It aims to become a full-featured computer algebra system (CAS)  and is entirely written in Python.
 
-<h2 id="___sec22">Numpy examples and Important Matrix and vector handling packages </h2>
+<h2 id="___sec21">Numpy examples and Important Matrix and vector handling packages </h2>
 
 <p>
 There are several central software libraries for linear algebra and eigenvalue problems. Several of the more
@@ -1083,7 +1080,7 @@ developed in the 1970s, namely EISPACK and LINPACK.  We describe them shortly he
   <li> BLAS (I, II and III): (Basic Linear Algebra Subprograms) are routines that provide standard building blocks for performing basic vector and matrix operations. Blas I is vector operations, II vector-matrix operations and III matrix-matrix operations. Highly parallelized and efficient codes, all available for download from <a href="http://www.netlib.org" target="_blank"><tt>http://www.netlib.org</tt></a>.</li>
 </ul>
 
-<h2 id="___sec23">Basic Matrix Features </h2>
+<h2 id="___sec22">Basic Matrix Features </h2>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -1128,7 +1125,7 @@ $$
 </div>
 
 
-<h3 id="___sec24">Some famous Matrices </h3>
+<h3 id="___sec23">Some famous Matrices </h3>
 
 <ul>
   <li> Diagonal if \( a_{ij}=0 \) for \( i\ne j \)</li>
@@ -1142,7 +1139,7 @@ $$
   <li> Banded, block upper triangular, block lower triangular....</li>
 </ul>
 
-<h3 id="___sec25">More Basic Matrix Features </h3>
+<h3 id="___sec24">More Basic Matrix Features </h3>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -1161,7 +1158,7 @@ For an \( N\times N \) matrix  \( \mathbf{A} \) the following properties are all
 </div>
 
 
-<h2 id="___sec26">Numpy and arrays </h2>
+<h2 id="___sec25">Numpy and arrays </h2>
 <a href="http://www.numpy.org/" target="_blank">Numpy</a> provides an easy way to handle arrays in Python. The standard way to import this library is as
 
 <p>
@@ -1246,7 +1243,7 @@ x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>l
 <span style="color: #008000; font-weight: bold">print</span>(x<span style="color: #666666">.</span>itemsize)
 </pre></div>
 
-<h2 id="___sec27">Matrices in Python </h2>
+<h2 id="___sec26">Matrices in Python </h2>
 
 <p>
 Having defined vectors, we are now ready to try out matrices. We can
@@ -1314,7 +1311,7 @@ A <span style="color: #666666">=</span> np<span style="color: #666666">.</span>r
 <span style="color: #008000; font-weight: bold">print</span>(A) 
 </pre></div>
 
-<h2 id="___sec28">Meet the Pandas </h2>
+<h2 id="___sec27">Meet the Pandas </h2>
 
 <p>
 <br /><br /><center><p><img src="fig/pandas.jpg" align="bottom" width=600></p></center><br /><br />
@@ -1345,7 +1342,7 @@ display(data_pandas)
 </pre></div>
 <p>
 In the above we have imported <b>pandas</b> with the shorthand <b>pd</b>, the latter has become the standard way we import <b>pandas</b>. We make then a list of various variables
-and reorganize the aboves lists into a <b>DataFrame</b> and then print out  a neat table with specific column labels as <em>Name</em>, <em>place of birth</em> and <em>date of birth</em>.
+and reorganize the above lists into a <b>DataFrame</b> and then print out  a neat table with specific column labels as <em>Name</em>, <em>place of birth</em> and <em>date of birth</em>.
 Displaying these results, we see that the indices are given by the default numbers from zero to three.
 <b>pandas</b> is extremely flexible and we can easily change the above indices by defining a new type of indexing as
 <p>
