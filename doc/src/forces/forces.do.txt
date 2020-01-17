@@ -6,9 +6,80 @@ DATE: today
 
 
 !split
-===== Basic elements of Scientific investigations =====
+===== Basic Steps of Scientific Investigations =====
 
-More text to come here
+An overarching aim in this course is to give you a deeper
+understanding of the scientific method. The problems we study will all
+involve cases where we can apply classical mechanics. In our previous
+material we already assumed that we had a model for the motion of an
+object.  Alternatively we could have data from experiment (like Usain
+Bolt's 100m world record run in 2008).  Or we could have performed
+ourselves an experiment and we want to understand which forces are at
+play and whether these forces can be understood in terms of
+fundamental forces.
+
+Our first step consists in identifying the problem. What we sketch
+here may include a mix of experiment and theoretical simulations, or
+just experiment or only theory.
+
+!split
+===== Identifying our System =====
+
+Here we can ask questions like
+o What kind of object is moving
+o What kind of data do we have
+o How do we measure position, velocity, acceleration etc
+o Which initial conditions influence our system
+o Other aspects which allow us to identify the system
+
+!split
+===== Defining a Model =====
+
+With our eventual data and observations we would now like to develop a
+model for the system. At the we want obviously to be able to
+understand which forces are at play and how they influence our
+specific system. That is, can we extract some deeper insights about a
+system?
+
+We need then to
+o Find the forces that act on our system
+o Introduce models for the forces
+o Identify the equations which can govern the system (Newton's second law for example)
+o More elements we deem important for defining our model
+
+!split
+===== Solving the Equations =====
+
+With the model at hand, we can then solve the equations. In classical mechanics this often ends with solving sets of coupled ordinary differential equations or partial differential equations.
+o Using Newton's second law we have equations of the type $\bm{F}=m\bm{a}=md\bm{v}/dt$
+o We need to have defined the initial conditions (typically the initial velocity and position as functions of time) and/or initial conditions and boundary conditions
+o The solution of the equations give us then the position, the velocity and other time-dependent quantities which may specify the motion of a given object.
+
+
+We are not yet done. With our lovely solvers, we need to start thinking.
+
+!split
+===== Analyze =====
+
+Now it is time to ask the big questions. What do our results mean? Can we give a simple interpretation in terms of fundamental laws?  What do our results mean? Are they correct?
+Thus, typical questions we may ask are
+o Are our results for say $\bm{r}(t)$ valid?  Do we trust what we did?  Can you validate and verify the correctness of your results?
+o Evaluate the answers and their implications
+o Compare with experimental data if possible. Does our model make sense?
+o and obviously many other questions.
+
+The analysis stage feeds back to the first stage. It may happen that
+the data we had were not good enough, there could be large statistical
+uncertainties. We may need to collect more data or perhaps we did a
+sloppy job in identifying the degrees of freedom.
+
+All these steps are essential elements in a scientific
+enquiry. Hopefully, through a mix of numerical simulations, analytical
+calculations and experiments we may gain a deeper insight about the
+physics of a specific system.
+
+Let us now remind ourselves of Newton's laws, since these are the laws of motion we will study in this course.
+
 !split
 ===== Newton's Laws =====
 
@@ -39,9 +110,8 @@ o Draw a closed curve around the system.
 o Find contact points—these are the points where contact forces may act.
 o Give names and symbols to all the contact forces.
 o Identify the long-range forces.
-o Make a drawing of the object. Draw the forces as arrows, vectors, starting from where the force is acting. The direction of the vector indicates the
-(positive) direction of the force. Try to make the length of the arrow indicate the relative magnitude of the forces.
-o Draw in the axes of the coordinate system. It is often convenient to make one axis parallel to the direction of motion. When you choose direction of the axis you also choose the positive direction for the axis.
+o Make a drawing of the object. Draw the forces as arrows, vectors, starting from where the force is acting. The direction of the vector(s) indicates the (positive) direction of the force. Try to make the length of the arrow indicate the relative magnitude of the forces.
+o Draw in the axes of the coordinate system. It is often convenient to make one axis parallel to the direction of motion. When you choose the direction of the axis you also choose the positive direction for the axis.
 
 
 !split
@@ -585,4 +655,835 @@ velocity is not small compared to the speed of light, additional
 $\gamma$ factors come into play,
 $\gamma=1/\sqrt{1-(v/c)^2}$. Relativistic motion will not be
 considered in this course.
+
+
+
+!split
+===== Sliding Block tied to a Wall =====
+!bblock
+Another classical case is that of simple harmonic oscillations, here represented by a block sliding on a horizontal frictionless surface. The block is tied to a wall with a spring. If the spring is not compressed or stretched too far, the force on the block at a given position $x$ is 
+!bt
+  \[
+      F=-kx.
+  \]
+!et
+The negative sign means that the force acts to restore the object to an equilibrium position. Newton's equation of motion for this idealized system is then 
+!bt
+  \[
+    m\frac{d^2x}{dt^2}=-kx,
+  \]
+!et
+or we could rephrase it as
+!bt
+  \[
+   \frac{d^2x}{dt^2}=-\frac{k}{m}x=-\omega_0^2x,
+    label{eq:newton1}
+  \]
+!et
+with the angular frequency $\omega_0^2=k/m$. 
+
+The above differential equation has the advantage that it can be solved  analytically with solutions on the form
+!bt
+  \[
+     x(t)=Acos(\omega_0t+\nu),
+  \]
+!et
+where $A$ is the amplitude and $\nu$ the phase constant.   This provides in turn an important test for the numerical
+solution and the development of a program for more complicated cases which cannot be solved analytically. 
+!eblock
+
+
+!split
+===== Simple Example, Block tied to a Wall =====
+!bblock
+With the position $x(t)$ and the velocity  $v(t)=dx/dt$ we can reformulate Newton's equation in the following way
+!bt
+  \[
+      \frac{dx(t)}{dt}=v(t),
+  \]
+!et
+  and
+!bt
+  \[
+      \frac{dv(t)}{dt}=-\omega_0^2x(t).
+  \]
+!et
+  We are now going to solve these equations using the Runge-Kutta method
+  to fourth order discussed previously. 
+!eblock
+
+!split
+===== Simple Example, Block tied to a Wall =====
+!bblock
+Before proceeding however, it is important to note that in addition to the exact solution, we have at least two further tests which can be used to check our solution. 
+
+Since functions like $cos$ are periodic with a period $2\pi$, then the solution $x(t)$ has also to be periodic. This means that
+!bt
+\[
+     x(t+T)=x(t),
+\]
+!et
+with $T$ the period defined as 
+!bt
+\[
+     T=\frac{2\pi}{\omega_0}=\frac{2\pi}{\sqrt{k/m}}.
+\]
+!et
+Observe that $T$ depends only on $k/m$ and not on the amplitude of the solution. 
+!eblock
+
+!split
+===== Simple Example, Block tied to a Wall =====
+!bblock
+In addition to the periodicity test, the total energy has also to be conserved. 
+
+Suppose we choose the initial conditions 
+!bt
+\[
+     x(t=0)=1\hspace{0.1cm} \mathrm{m}\hspace{1cm} v(t=0)=0\hspace{0.1cm}\mathrm{m/s},
+\]
+!et
+meaning that block is at rest at $t=0$ but with a potential energy
+!bt
+\[
+    E_0=\frac{1}{2}kx(t=0)^2=\frac{1}{2}k.
+\]
+!et
+The total energy at any time $t$ has however to be conserved, meaning that our solution has to fulfil the condition
+!bt
+\[
+    E_0=\frac{1}{2}kx(t)^2+\frac{1}{2}mv(t)^2.
+\]
+!et
+!eblock
+
+!split
+===== Simple Example, Block tied to a Wall =====
+!bblock
+An algorithm which implements these equations is included below.
+ * Choose the initial position and speed, with the most common choice $v(t=0)=0$ and some fixed value for the position. 
+ * Choose the method you wish to employ in solving the problem.
+ * Subdivide the time interval $[t_i,t_f] $ into a grid with step size
+!bt
+       \[
+	  h=\frac{t_f-t_i}{N},
+      \]
+!et
+where $N$ is the number of mesh points. 
+ * Calculate now the total energy given by 
+!bt
+  \[
+    E_0=\frac{1}{2}kx(t=0)^2=\frac{1}{2}k.
+  \]
+!et
+ * Choose ODE solver to obtain $x_{i+1}$ and $v_{i+1}$ starting from the previous values $x_i$ and $v_i$.
+ * When we have computed $x(v)_{i+1}$ we upgrade  $t_{i+1}=t_i+h$.
+ * This iterative  process continues till we reach the maximum time $t_f$.
+ * The results are checked against the exact solution. Furthermore, one has to check the stability of the numerical solution against the chosen number of mesh points $N$.      
+!eblock
+
+!split
+===== Simple Example, Block tied to a Wall, python code =====
+!bblock
+The following python program performs essentially the same calculations as the previous c++ code.
+!bc pycod
+#
+# This program solves Newtons equation for a block sliding on
+# an horizontal frictionless surface.
+# The block is tied to the wall with a spring, so N's eq takes the form:
+#
+#  m d^2x/dt^2 = - kx
+#
+# In order to make the solution dimless, we set k/m = 1.
+# This results in two coupled diff. eq's that may be written as:
+#
+#  dx/dt = v
+#  dv/dt = -x
+#
+# The user has to specify the initial velocity and position,
+# and the number of steps. The time interval is fixed to
+# t \in [0, 4\pi) (two periods)
+#
+# Note that this is a highly simplifyed rk4 code, intended
+# for conceptual understanding and experimentation.
+
+import sys
+import numpy, math
+
+#Global variables
+ofile = None;
+E0    = 0.0
+
+def sim(x_0, v_0, N):
+    ts = 0.0
+    te = 4*math.pi
+    h = (te-ts)/float(N)
+
+    t = ts;
+    x = x_0
+    v = v_0
+    while (t < te):
+        kv1 = -h*x
+        kx1 = h*v
+
+        kv2 = -h*(x+kx1/2)
+        kx2 =  h*(v+kv1/2)
+
+        kv3 = -h*(x+kx2/2)
+        kx3 =  h*(v+kv2/2)
+
+        kv4 = -h*(x+kx3/2)
+        kx4 =  h*(v+kv3/2)
+
+        #Write the old values to file
+        output(t,x,v)
+
+        #Update
+        x = x + (kx1 + 2*(kx2+kx3) + kx4)/6
+        v = v + (kv1 + 2*(kv2+kv3) + kv4)/6
+        t = t+h
+        
+def output(t,x,v):
+    de = 0.5*x**2+0.5*v**2 - E0;
+    ofile.write("%15.8E %15.8E %15.8E %15.8E %15.8E\n"\
+                %(t, x, v, math.cos(t),de));
+
+
+#MAIN PROGRAM:
+
+#Get input
+if len(sys.argv) == 5:
+    ofilename =       sys.argv[1];
+    x_0       = float(sys.argv[2])
+    v_0       = float(sys.argv[3])
+    N         =   int(sys.argv[4])
+else:
+    print "Usage:", sys.argv[0], "ofilename x0 v0 N"
+    sys.exit(0)
+
+#Setup
+ofile = open(ofilename, 'w')
+E0    = 0.5*x_0**2+0.5*v_0**2
+
+#Run simulation
+sim(x_0,v_0,N)
+
+#Cleanup
+ofile.close() 
+
+!ec
+!eblock
+
+
+
+!split
+===== The classical pendulum and scaling the equations =====
+!bblock
+The angular equation of motion of the pendulum is given by
+Newton's equation and with no external force it reads 
+!bt
+\begin{equation}
+  ml\frac{d^2\theta}{dt^2}+mgsin(\theta)=0,
+\end{equation}
+!et
+with an angular velocity and acceleration given by
+!bt
+\begin{equation}
+     v=l\frac{d\theta}{dt},
+\end{equation}
+!et
+and 
+!bt
+\begin{equation}
+     a=l\frac{d^2\theta}{dt^2}.
+\end{equation}
+!et
+!eblock
+
+!split
+===== More on the Pendulum =====
+!bblock 
+We do however expect that the motion will gradually come to an end due a viscous drag torque acting on the pendulum. 
+In the presence of the drag, the above equation becomes
+!bt
+\begin{equation}
+   ml\frac{d^2\theta}{dt^2}+\nu\frac{d\theta}{dt}  +mgsin(\theta)=0, label{eq:pend1}
+\end{equation}
+!et
+where $\nu$ is now a positive constant parameterizing the viscosity
+of the medium in question. In order to maintain the motion against
+viscosity, it is necessary to add some external driving force. 
+We choose here a periodic driving force. The last equation becomes then
+!bt
+\begin{equation}
+   ml\frac{d^2\theta}{dt^2}+\nu\frac{d\theta}{dt}  +mgsin(\theta)=Asin(\omega t), label{eq:pend2}
+\end{equation}
+!et
+with $A$ and $\omega$ two constants representing the amplitude and 
+the angular frequency respectively. The latter is called the driving frequency.
+!eblock
+
+
+
+!split
+===== More on the Pendulum =====
+!bblock
+We define 
+!bt
+  \[
+      \omega_0=\sqrt{g/l},
+  \]
+!et
+the so-called natural frequency and the new dimensionless quantities
+!bt
+  \[
+      \hat{t}=\omega_0t,
+  \]
+!et
+with the dimensionless driving frequency
+!bt
+  \[
+     \hat{\omega}=\frac{\omega}{\omega_0},
+  \]
+!et
+and introducing the quantity $Q$, called the *quality factor*,
+!bt
+  \[
+     Q=\frac{mg}{\omega_0\nu},
+  \]
+!et
+  and the dimensionless amplitude 
+!bt
+\[
+\hat{A}=\frac{A}{mg}
+  \]
+!et
+!eblock
+
+!split
+===== More on the Pendulum =====
+!bblock
+We have 
+!bt
+\[
+    \frac{d^2\theta}{d\hat{t}^2}+\frac{1}{Q}\frac{d\theta}{d\hat{t}}  
+     +sin(\theta)=\hat{A}cos(\hat{\omega}\hat{t}).
+\]
+!et
+This equation can in turn be recast in terms of two coupled first-order differential equations as follows
+!bt
+\[
+     \frac{d\theta}{d\hat{t}}=\hat{v},
+\]
+!et
+and
+!bt
+\[
+     \frac{d\hat{v}}{d\hat{t}}=-\frac{\hat{v}}{Q}-sin(\theta)+\hat{A}cos(\hat{\omega}\hat{t}).
+\]
+!et
+These are the equations to be solved.  The factor $Q$ represents the number of oscillations of the undriven system that must occur before  its energy is significantly reduced due to the viscous drag. The  amplitude $\hat{A}$ is measured in units of the maximum possible  gravitational torque while $\hat{\omega}$ is the angular frequency of the external torque measured in units of the pendulum's natural frequency.  
+!eblock
+
+
+
+!split
+===== Gravitational Force =====
+!bblock
+We start with a simpler case first, the Earth-Sun system  in two dimensions only.  The gravitational force $F_G$ is  
+!bt
+  \[
+      F=\frac{GM_{\odot}M_E}{r^2},
+  \]
+!et
+where $G$ is the gravitational constant, 
+!bt
+\[
+M_E=6\times 10^{24}\mathrm{Kg},
+\]
+!et 
+the mass of Earth, 
+!bt
+\[
+M_{\odot}=2\times 10^{30}\mathrm{Kg}, 
+\]
+!et
+the mass of the Sun and 
+!bt
+\[
+r=1.5\times 10^{11}\mathrm{m}, 
+\]
+!et
+is the distance between Earth and the Sun. The latter defines what we call an astronomical unit _AU_.
+From Newton's second law we have then for the $x$ direction
+!bt
+  \[
+   \frac{d^2x}{dt^2}=\frac{F_{x}}{M_E},
+  \]
+!et
+and
+!bt
+  \[
+   \frac{d^2y}{dt^2}=\frac{F_{y}}{M_E},
+  \]
+!et 
+for the $y$ direction.
+!eblock
+
+
+!split
+===== Building a code for the solar system, force equations =====
+!bblock
+Introducing $x=r\cos{(\theta)}$, $y=r\sin{(\theta)}$ and
+!bt
+\[
+r = \sqrt{x^2+y^2},
+\]
+!et 
+we can rewrite 
+!bt
+  \[
+   F_{x}=-\frac{GM_{\odot}M_E}{r^2}\cos{(\theta)}=-\frac{GM_{\odot}M_E}{r^3}x,
+  \]
+!et
+and
+!bt
+  \[
+     F_{y}=-\frac{GM_{\odot}M_E}{r^2}\sin{(\theta)}=-\frac{GM_{\odot}M_E}{r^3}y,
+  \]
+!et 
+for the $y$ direction.
+!eblock
+
+
+!split
+===== Building a code for the solar system, coupled equations =====
+!bblock
+We can rewrite these two equations
+!bt
+  \[
+   F_{x}=-\frac{GM_{\odot}M_E}{r^2}\cos{(\theta)}=-\frac{GM_{\odot}M_E}{r^3}x,
+  \]
+!et
+and
+!bt
+  \[
+     F_{y}=-\frac{GM_{\odot}M_E}{r^2}\sin{(\theta)}=-\frac{GM_{\odot}M_E}{r^3}y,
+  \]
+!et 
+as four first-order coupled differential equations
+!bt
+\[
+   \frac{dv_x}{dt}=-\frac{GM_{\odot}}{r^3}x,
+\]
+!et
+!bt
+\[
+   \frac{dx}{dt}=v_x,
+\]
+!et
+!bt
+\[
+   \frac{dv_y}{dt}=-\frac{GM_{\odot}}{r^3}y,
+\]
+!et
+!bt
+\[
+   \frac{dy}{dt}=v_y.
+\]
+!et
+!eblock
+
+
+!split
+===== Building a code for the solar system, final coupled equations =====
+!bblock
+The four coupled differential equations
+!bt
+\[
+   \frac{dv_x}{dt}=-\frac{GM_{\odot}}{r^3}x,
+\]
+!et
+!bt
+\[
+   \frac{dx}{dt}=v_x,
+\]
+!et
+!bt
+\[
+   \frac{dv_y}{dt}=-\frac{GM_{\odot}}{r^3}y,
+\]
+!et
+!bt
+\[
+   \frac{dy}{dt}=v_y,
+\]
+!et
+can be turned into dimensionless equations or we can introduce astronomical units with $1$ AU = $1.5\times 10^{11}$. 
+
+Using the equations from circular motion (with $r =1\mathrm{AU}$) 
+!bt
+\[
+\frac{M_E v^2}{r} = F = \frac{GM_{\odot}M_E}{r^2},
+\]
+!et 
+we have
+!bt
+\[
+GM_{\odot}=v^2r,
+\]
+!et  
+and using that the velocity of Earth (assuming circular motion) is
+$v = 2\pi r/\mathrm{yr}=2\pi\mathrm{AU}/\mathrm{yr}$, we have
+!bt
+\[
+GM_{\odot}= v^2r = 4\pi^2 \frac{(\mathrm{AU})^3}{\mathrm{yr}^2}.
+\]
+!et 
+!eblock
+
+
+!split
+===== Building a code for the solar system, discretized equations =====
+!bblock
+The four coupled differential equations can then be discretized using Euler's method as (with step length $h$)
+!bt
+\[
+   v_{x,i+1}=v_{x,i}-h\frac{4\pi^2}{r_i^3}x_i,
+\]
+!et
+!bt
+\[
+   x_{i+1}=x_i+hv_{x,i},
+\]
+!et
+!bt
+\[
+   v_{y,i+1}=v_{y,i}-h\frac{4\pi^2}{r_i^3}y_i,
+\]
+!et
+!bt
+\[
+   y_{i+1}=y_i+hv_{y,i},
+\]
+!et
+
+!eblock
+
+
+!split
+===== Building a code for the solar system, adding Jupiter =====
+!bblock
+It is rather straightforward to add a new planet, say Jupiter.
+Jupiter has mass
+!bt
+\[
+M_J=1.9\times 10^{27}\mathrm{kg},
+\]
+!et
+and distance to the Sun of $5.2$ AU. 
+The additional gravitational force the Earth feels from Jupiter in the $x$-direction is
+!bt
+  \[
+   F_{x}^{EJ}=-\frac{GM_JM_E}{r_{EJ}^3}(x_E-x_J),
+  \]
+!et
+where $E$ stands for Earth, $J$ for Jupiter, $r_{EJ}$ is distance between Earth and Jupiter
+!bt
+\[
+r_{EJ} = \sqrt{(x_E-x_J)^2+(y_E-y_J)^2},
+\]
+!et
+and $x_E$ and $y_E$ are the $x$ and $y$ coordinates of Earth, respectively, and 
+$x_J$ and $y_J$ are the $x$ and $y$ coordinates of Jupiter, respectively.
+The $x$-component of the velocity of Earth changes thus to
+!bt
+\[
+   \frac{dv_x^E}{dt}=-\frac{GM_{\odot}}{r^3}x_E-\frac{GM_J}{r_{EJ}^3}(x_E-x_J).
+\]
+!et
+!eblock
+
+
+!split
+===== Building a code for the solar system, adding Jupiter =====
+!bblock
+We can rewrite 
+!bt
+\[
+   \frac{dv_x^E}{dt}=-\frac{GM_{\odot}}{r^3}x_E-\frac{GM_J}{r_{EJ}^3}(x_E-x_J).
+\]
+!et
+to
+!bt
+\[
+   \frac{dv_x^E}{dt}=-\frac{4\pi^2}{r^3}x_E-\frac{4\pi^2M_J/M_{\odot}}{r_{EJ}^3}(x_E-x_J),
+\]
+!et
+where we used 
+!bt
+\[
+GM_J = GM_{\odot}\left(\frac{M_J}{M_{\odot}}\right)=4\pi^2 \frac{M_J}{M_{\odot}}.
+\]
+!et
+Similarly, for the velocity in $y$-direction we have 
+!bt
+\[
+   \frac{dv_y^E}{dt}=-\frac{4\pi^2}{r^3}y_E-\frac{4\pi^2M_J/M_{\odot}}{r_{EJ}^3}(y_E-y_J).
+\]
+!et
+Similar expressions apply for Jupiter. The equations for $x$ and $y$ 
+derivatives are unchanged. This equations are similar for all other planets and as we will see later, it will be convenient to object orient this part when we program the full solar system.
+!eblock
+
+
+!split
+===== How can I get the initial velocities and positions of the planets =====
+!bblock
+"NASA":"http://www.nasa.gov/index.html" has an excellent site at URL:"http://ssd.jpl.nasa.gov/horizons.cgi#top".
+From there you can extract initial conditions in order to start your differential equation solver.
+At the above website you need to change from _OBSERVER_ to _VECTOR_ and then write in the planet you are interested in.
+The generated data contain the $x$, $y$ and $z$ values as well as their corresponding velocities. The velocities are in units of AU per day.
+Alternatively they can be obtained in terms of km and km/s. 
+
+For the first simple system involving the Earth and the Sun, you could just initialize the position with say $x=1$ AU
+and $y=0$ AU. 
+!eblock
+
+!split
+===== How do we develop a larger numerical project  =====
+
+When building up a numerical project there are several elements you should think of, amongst these we take the liberty of mentioning the following.
+ o  How to structure a code in terms of functions and modules
+ o  How to read input data flexibly from the command line
+ o  Find tests and how to write unit tests (test functions). A very good example is "Catch":"https://github.com/philsquared/Catch", a modern, C++-native, header-only, framework for unit-tests. Try to find suitable tests of the mathematical algorithms as well as tests which reflect the physics of the system. 
+ o  It takes one quick command to let all your code undergo heavy testing
+ o  How to refactor code in terms of classes (instead of functions only)
+ o  How to conduct and automate large-scale numerical experiments
+
+!split
+===== More on large numerical projects  =====
+The conventions and techniques outlined here will save you a lot of time when you incrementally extend software over time from simpler to more complicated problems.
+ o Scale your equations in order to simplify, make for example the equations dimensionless or scale them in convenient units
+ o New code is added in a modular fashion to a library (modules)
+ o Programs are run through convenient user interfaces
+ o Tedious manual work with running programs is automated,
+ o Your scientific investigations are reproducible, scientific reports with top quality typesetting are produced both for paper and electronic devices.
+
+
+!split
+===== How to start our solar system project  =====
+!bblock
+
+The simplest possible step is to code the Earth-Sun system using Euler's method in two dimensions.
+The four coupled differential equations can then be discretized using Euler's method as (with step length $h$) are
+!bt
+\[
+   v_{x,i+1}=v_{x,i}-h\frac{4\pi^2}{r_i^3}x_i,
+\]
+!et
+!bt
+\[
+   x_{i+1}=x_i+hv_{x,i},
+\]
+!et
+!bt
+\[
+   v_{y,i+1}=v_{y,i}-h\frac{4\pi^2}{r_i^3}y_i,
+\]
+!et
+!bt
+\[
+   y_{i+1}=y_i+hv_{y,i},
+\]
+!et
+
+!eblock
+
+
+
+
+
+!split
+===== How to start our solar system project, the simple Euler equations  =====
+!bc cppcod
+/*    
+    Euler's method for the Eart-Sun system, simplest possible code
+*/ 
+#include <cmath>
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+using namespace  std;
+// output file as global variable
+ofstream ofile;
+// function declarations
+void output( double, double, double, double, double);
+
+int main(int argc, char* argv[])
+{
+//  declarations of variables
+  char *outfilename;
+  // Read in output file, abort if there are too few command-line arguments
+  if( argc <= 1 ){
+    cout << "Bad Usage: " << argv[0] <<
+      " read also output file on same line" << endl;
+    //    exit(1);
+  }
+  else{
+    outfilename=argv[1];
+  }
+  ofile.open(outfilename);
+
+  int NumberofSteps = 1000;
+  double FinalTime = 1.0;
+  double Step = FinalTime/((double) NumberofSteps);
+  double time = 0.0;
+  // Initial values  x = 1.0 AU and vy = 2*pi
+  double pi = acos(-1.0);
+  double FourPi2 = 4*pi*pi;
+  double x =  1.0; double y =  0.0; double vx = 0.0; double vy = 2.0*pi;
+  double r = sqrt(x*x+y*y);
+
+// now we start solving the differential equations using Euler's method
+  while (time <= FinalTime){
+    x += Step*vx;
+    y += Step*vy;
+    vx -= Step*FourPi2*x/(r*r*r);
+    vy -= Step*FourPi2*y/(r*r*r);
+    r = sqrt(x*x+y*y);
+    time += Step;
+    output(time, x, y, vx, vy);   // write to file 
+  }
+  ofile.close();  // close output file
+  return 0;
+}   //  End of main function 
+
+//    function to write out the final results
+void output(double time, double x, double y, double vx, double vy)
+{
+  ofile << setiosflags(ios::showpoint | ios::uppercase);
+  ofile << setw(15) << setprecision(8) << time;
+  ofile << setw(15) << setprecision(8) << x;
+  ofile << setw(15) << setprecision(8) << y;
+  ofile << setw(15) << setprecision(8) << vx;
+  ofile << setw(15) << setprecision(8) << vy << endl;
+}  // end of function output
+
+
+!ec
+
+
+
+!split
+===== Adaptive methods =====
+!bblock
+In case the function to integrate varies slowly or fast in different integration domains, adaptive methods are normally used. One strategy is always to decrease the step size. As we have seen earlier, this leads to more CPU cycles and may lead to loss or numerical precision. An alternative is to use higher-order RK methods for example. However, this leads again to more cycles, furthermore, there is no guarantee that higher-order leads to an improved error.
+!eblock
+
+
+!split
+===== Adaptive methods =====
+!bblock
+Assume the exact result is $\tilde{x}$ and that we are using an RKM method. Suppose we run two calculations, one with $h$ (called $x_1$) and one with $h/2$ (called $x_2$). Then
+!bt
+\[
+\tilde{x}=x_1+Ch^{M+1}+O(h^{M+2}),
+\] 
+!et
+and
+!bt 
+\[
+\tilde{x}=x_2+2C(h/2)^{M+1}+O(h^{M+2}),
+\] 
+!et
+with $C$ a constant. Note that we calculate two halves in the last equation. We get then
+!bt
+\[
+|x_1-x_2| = Ch^{M+1}(1-\frac{1}{2^M}).
+\]
+!et
+yielding
+!bt 
+\[
+C=\frac{|x_1-x_2|}{(1-2^{-M})h^{M+1}}.
+\]
+!et
+We rewrite
+!bt 
+\[
+\tilde{x}=x_2+\epsilon+O((h)^{M+2}),
+\] 
+!et
+with 
+!bt
+\[
+\epsilon = \frac{|x_1-x_2|}{2^M-1}.
+\]
+!et
+!eblock
+
+!split
+===== Adaptive methods =====
+!bblock
+With RK4 the expressions become
+!bt
+\[
+\tilde{x}=x_2+\epsilon+O((h)^{6}),
+\] 
+!et
+with
+!bt 
+\[
+\epsilon = \frac{|x_1-x_2|}{15}.
+\]
+!et
+The estimate is one order higher than the original RK4. But this method is normally rather inefficient since it requires a lot of computations. We solve typically the equation three times at each time step. 
+However, we can compare the estimate $\epsilon$ with some by us given accuracy $\xi$. 
+We can then ask the question: what is, with a given $x_j$ and $t_j$, the largest possible step size $\tilde{h}$ that leads to a truncation error below $\xi$?
+We want
+!bt
+\[
+C\tilde{h} \le \xi,
+\]
+!et
+which leads to 
+!bt
+\[
+\left(\frac{\tilde{h}}{h}\right)^{M+1}\frac{|x_1-x_2|}{(1-2^{-M})}\le \xi, 
+\]
+!et
+meaning that
+!bt
+\[
+\tilde{h}=h\left(\frac{\xi}{\epsilon}\right)^{1+1/M}. 
+\]
+!et
+!eblock
+
+
+!split
+===== Adaptive methods =====
+!bblock
+With 
+!bt
+\[
+\tilde{h}=h\left(\frac{\xi}{\epsilon}\right)^{1+1/M}. 
+\]
+!et
+we can design the following algorithm:
+ * If the two answers are close, keep the approximation to $h$.
+ * If $\epsilon > \xi$ we need to decrease the step size in the next time step.
+ * If $\epsilon < \xi$ we need to increase the step size in the next time step.
+
+
+!eblock
+
+
+
+
+
+
+
+
 
