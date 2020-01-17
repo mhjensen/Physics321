@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="PHY321: Classical Mechanics 1">
+
+<title>PHY321: Classical Mechanics 1</title>
+
+
+
+
+
+
+
+<!-- reveal.js: http://lab.hakim.se/reveal-js/ -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<!--
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/beigesmall.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/solarized.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/serif.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/moon.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/darkgray.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/cbc.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simula.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/league.css" id="theme">
+-->
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+<!-- Printing and PDF exports -->
+<script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+
+<style type="text/css">
+    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    p.caption { width: 80%; font-size: 60%; font-style: italic; text-align: left; }
+    hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    .reveal .alert-text-small   { font-size: 80%;  }
+    .reveal .alert-text-large   { font-size: 130%; }
+    .reveal .alert-text-normal  { font-size: 90%;  }
+    .reveal .alert {
+             padding:8px 35px 8px 14px; margin-bottom:18px;
+             text-shadow:0 1px 0 rgba(255,255,255,0.5);
+             border:5px solid #bababa;
+             -webkit-border-radius: 14px; -moz-border-radius: 14px;
+             border-radius:14px;
+             background-position: 10px 10px;
+             background-repeat: no-repeat;
+             background-size: 38px;
+             padding-left: 30px; /* 55px; if icon */
+     }
+     .reveal .alert-block {padding-top:14px; padding-bottom:14px}
+     .reveal .alert-block > p, .alert-block > ul {margin-bottom:1em}
+     /*.reveal .alert li {margin-top: 1em}*/
+     .reveal .alert-block p+p {margin-top:5px}
+     /*.reveal .alert-notice { background-image: url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_notice.png); }
+     .reveal .alert-summary  { background-image:url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_summary.png); }
+     .reveal .alert-warning { background-image: url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_warning.png); }
+     .reveal .alert-question {background-image:url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_question.png); } */
+
+</style>
+
+
+
+<!-- Styles for table layout of slides -->
+<style type="text/css">
+td.padding {
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-right:50px;
+  padding-left:50px;
+}
+</style>
+
+</head>
+
+<body>
+<div class="reveal">
+
+<!-- Any section element inside the <div class="slides"> container
+     is displayed as a slide -->
+
+<div class="slides">
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+
+
+
+<section>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1 style="text-align: center;">PHY321: Classical Mechanics 1</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Homework 2, due Friday January 24 -->
+
+<center>
+<b>Homework 2, due Friday January 24</b> 
+</center>
+
+<p>&nbsp;<br>
+<!-- institution(s) -->
+
+<br>
+<p>&nbsp;<br>
+<center><h4>Jan 17, 2020</h4></center> <!-- date -->
+<br>
+
+<h3 id="___sec0">Practicalities about  homeworks and projects </h3>
+
+<ol>
+<p><li> You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. <b>Remember to write your name(s)</b>!</li>
+<p><li> Homeworks are available Wednesday/Thursday the week before the deadline. The deadline is at the Friday lecture.</li>
+<p><li> How do I(we)  hand in?  You can hand in the paper and pencil exercises as a hand-written document. For this homework this applies to exercises 1-5. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise(s) (exercise 6 here) should always be handed in as a jupyter notebook by the deadline at D2L.</li> 
+</ol>
+
+<h3 id="___sec1">Exercise 1 (10 pt), Forces, discussion questions, test your intuition  </h3>
+
+<ul>
+<p><li> 1a (2pt) Single force. Can an object affected only by a single force have zero acceleration?</li>
+<p><li> 1b (2pt) Zero velocity. If you throw a ball vertically it has zero velocity at its maximum point. Does it also have zero acceleration at this point?</li>
+<p><li> 1c (3pt) Acceleration of gravity. You measure the acceleration of gravity in an elevator moving at a velocity of 9.8m/s downwards. What will you measure?</li>
+<p><li> 1d (3pt) Air resistance. You throw a ball straight up and measure the velocity as it passes you on its way down. Will the velocity be larger, the same, or smaller if you did the same experiment in vacuum?</li>
+</ul>
+
+<h3 id="___sec2">Exercise 2 (10 pt), setting up forces, Newton's second law  </h3>
+
+<p>
+Useful material here to read is
+
+<ol>
+<p><li> Taylor chapters 1.3 and 1.4 and</li>
+<p><li> Malthe-S&#248;renssen chapters 5.1, 5.2 and 5.3</li>
+</ol>
+<p>
+
+A person jumps from an airplane, falling freely for several seconds before she pulls the cord of her parachute and the parachute unfolds.
+
+<ul>
+<p><li> 2a (3pt)  Identify the forces acting on the parachuter and draw a free-body diagram of the parachuter before she has pulled the cord.</li>
+<p><li> 2b (3pt)  Identify the forces acting on the parachuter and draw a free-body diagram of the parachuter after she has pulled the cord.</li>
+<p><li> 2c (4pt)  Sketch the net force acting on the parachuter as a function of time, F(t).</li>
+</ul>
+
+<h3 id="___sec3">Exercise 3 (10 pt), Space shuttle with air resistance </h3>
+
+<p>
+Useful material here to read is
+
+<ol>
+<p><li> Malthe-S&#248;renssen chapters 5.1, 5.2 and 5.3</li>
+</ol>
+<p>
+
+During lift-off of the space shuttle the engines provide a force of \( 35\times 10^{6} \) N. The mass of the shuttle is approximately
+\( 2\times 10^6 \) kg.
+
+<ul>
+<p><li> 3a (3pt) Draw a free-body diagram of the space shuttle immediately after lift-off.</li>
+<p><li> 3b (3pt)  Find an expression for the acceleration of the space shuttle immediately after lift-off.</li>
+</ul>
+<p>
+
+Let us assume that the force from the engines is constant, and that the mass of the
+space shuttle does not change significantly over the first 20 s.
+
+<ul>
+<p><li> 3c (4pt) Find the velocity and position of the space shuttle after 20 s if you ignore air resistance.</li>
+</ul>
+
+<h3 id="___sec4">Exercise 4 (15 pt), now hitting a golf ball  </h3>
+
+<p>
+Useful material here to read is
+
+<ol>
+<p><li> Taylor chapters 1.3-1.6 and</li>
+<p><li> Malthe-S&#248;renssen chapter 6.3-6.4 and 7.1-7.3</li>
+</ol>
+<p>
+
+<b>Taylor exercise 1.35</b>. The formulae you obtain here will be useful for the numerical exercises below (see exercise 6 below).
+
+<h3 id="___sec5">Exercise 5 (15 pt), hitting a puck instead  </h3>
+
+<p>
+Taylor exercise 1.38.
+
+<h3 id="___sec6">Exercise 6 (40pt), Numerical elements, moving to more than one dimension </h3>
+
+<p>
+<b>This exercise should be handed in as a jupyter-notebook</b> at D2L. Remember to write your name(s).
+
+<p>
+Last week we:
+
+<ol>
+<p><li> Analytically mapped 1D motion over some time</li>
+<p><li> Gained practice with functions</li>
+<p><li> Reviewed vectors and matrices in Python</li>
+</ol>
+<p>
+
+This week we will:
+
+<ol>
+<p><li> Practice using Python syntax and variable manipulation</li>
+<p><li> Utilize analytical solutions to create more refined functions</li>
+<p><li> Work in two, three or even higher dimensions</li>
+</ol>
+<p>
+
+This material will then serve as background for the numerical part of homework 3. The first part is a simple warm-up, with hints and suggestions you can use for the code to write below.
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #228B22"># As usual, here are some useful packages we will be using. Feel free to use more and experiment as you wish.</span>
+
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
+<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">mpl_toolkits</span> <span style="color: #8B008B; font-weight: bold">import</span> mplot3d
+%matplotlib inline
+</pre></div>
+<p>
+In class (the falling baseball example) we used an  analytical expression for the height of a falling ball.
+In the first homework we used instead the position from experiment (Usain Bolt's 100m record run) and stored this
+information with one-dimensional arrays in Python.
+
+<p>
+Let us get some practice with this. The cell below creates two arrays,
+one containing the times to be analyzed and the other containing the \( x \)
+and \( y \) components of the position vector at each point in time.  This is a two-dimensional object. The
+second array is initially empty. Then we define  the initial
+position to be \( x=2 \) and \( y=1 \). Take a look at the code and comments
+to get an understanding of what is happening. Feel free to play around with it.
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span>tf = <span style="color: #B452CD">4</span> <span style="color: #228B22">#length of value to be analyzed</span>
+dt = .<span style="color: #B452CD">001</span> <span style="color: #228B22"># step sizes</span>
+t = np.arange(<span style="color: #B452CD">0.0</span>,tf,dt) <span style="color: #228B22"># Creates an evenly spaced time array going from 0 to 3.999, with step sizes .001</span>
+r = np.zeros((<span style="color: #658b00">len</span>(t), <span style="color: #B452CD">2</span>)) <span style="color: #228B22"># Creates an empty array of [x,y] arrays (our vectors). Array size is same as the one for time.</span>
+p[<span style="color: #B452CD">0</span>] = [<span style="color: #B452CD">2.0</span>,<span style="color: #B452CD">1.0</span>] <span style="color: #228B22"># This sets the inital position to be x = 2 and y = 1</span>
+</pre></div>
+<p>
+Below we are printing specific values of our array to see what is being
+stored where. The first number in the array \( r[] \) represents which array
+iteration we are looking at, while the number after the  represents
+which listed number in the array iteration we are getting back.
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">print</span>(r[<span style="color: #B452CD">0</span>]) <span style="color: #228B22"># Prints the first array</span>
+<span style="color: #8B008B; font-weight: bold">print</span>(r[<span style="color: #B452CD">0</span>,:]) <span style="color: #228B22"># Same as above, these commands are interchangeable </span>
+</pre></div>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">print</span>(r[<span style="color: #B452CD">3999</span>]) <span style="color: #228B22"># Prints the 4000th array</span>
+</pre></div>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">print</span>(r[<span style="color: #B452CD">0</span>,<span style="color: #B452CD">0</span>]) <span style="color: #228B22"># Prints the first value of the first array</span>
+</pre></div>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">print</span>(r[<span style="color: #B452CD">0</span>,<span style="color: #B452CD">1</span>]) <span style="color: #228B22"># Prints the second value of first array</span>
+<span style="color: #8B008B; font-weight: bold">print</span>(p[:,<span style="color: #B452CD">0</span>]) <span style="color: #228B22"># Prints the first value of all the arrays</span>
+</pre></div>
+<p>
+Then try running this cell. Notice how it gives an error since we did not implement a third dimension into our arrays
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">print</span>(p[:,<span style="color: #B452CD">2</span>])
+</pre></div>
+<p>
+In the cell below we want to manipulate the arrays.
+In this example we make each vector's \( x \) component valued the same as their respective vector's position in the iteration and the \( y \) value will be twice that value, except for  the first vector, which we have already set. 
+That is we have \( p[0] = [2,1], p[1] = [1,2], p[2] = [2,4], p[3] = [3,6], ... \)
+
+<p>
+Here we set up an array for \( x \) and \( y \) values. 
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">1</span>,<span style="color: #B452CD">3999</span>):
+    p[i] = [i,<span style="color: #B452CD">2</span>*i]
+<span style="color: #228B22"># Checker cell to make sure your code is performing correctly</span>
+c = <span style="color: #B452CD">0</span>
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">0</span>,<span style="color: #B452CD">3999</span>):
+    <span style="color: #8B008B; font-weight: bold">if</span> i == <span style="color: #B452CD">0</span>:
+        <span style="color: #8B008B; font-weight: bold">if</span> p[i,<span style="color: #B452CD">0</span>] != <span style="color: #B452CD">2.0</span>:
+            c += <span style="color: #B452CD">1</span>
+        <span style="color: #8B008B; font-weight: bold">if</span> p[i,<span style="color: #B452CD">1</span>] != <span style="color: #B452CD">1.0</span>:
+            c += <span style="color: #B452CD">1</span>
+    <span style="color: #8B008B; font-weight: bold">else</span>:
+        <span style="color: #8B008B; font-weight: bold">if</span> p[i,<span style="color: #B452CD">0</span>] != <span style="color: #B452CD">1.0</span>*i:
+            c += <span style="color: #B452CD">1</span>
+        <span style="color: #8B008B; font-weight: bold">if</span> p[i,<span style="color: #B452CD">1</span>] != <span style="color: #B452CD">2.0</span>*i:
+            c += <span style="color: #B452CD">1</span>
+
+<span style="color: #8B008B; font-weight: bold">if</span> c == <span style="color: #B452CD">0</span>:
+    <span style="color: #8B008B; font-weight: bold">print</span>(<span style="color: #CD5555">&quot;Success!&quot;</span>)
+<span style="color: #8B008B; font-weight: bold">else</span>:
+    <span style="color: #8B008B; font-weight: bold">print</span>(<span style="color: #CD5555">&quot;There is an error in your code&quot;</span>)
+</pre></div>
+<p>
+You could also think of an alternative way of storing the above information. Feel free to explore how to store
+multidimensional objects.
+
+<p>
+Last week we studied Usain Bolt's 100m run and in class we studied a falling baseball. We made basic plots of the baseball
+moving in one dimension. This week we will be working with a three-dimensional variant. This will be useful for our next homeworks and numerical projects.
+
+<p>
+Assume we have a soccer ball moving in three dimensions with the following trajectory:
+
+<ol>
+<p><li> \( x(t) = 10t\cos{45^{\circ}}  \)</li>
+<p><li> \( y(t) = 10t\sin{45^{\circ}}  \)</li>
+<p><li> \( z(t) = 10t - \dfrac{9.81}{2}t^2 \)</li>
+</ol>
+<p>
+
+Now let us create a three-dimensional (3D) plot using these equations. In the cell below
+we write the equations into their respective labels. We fix a final time in the code below.
+
+<p>
+Important Concept: Numpy comes with many mathematical packages, some
+of them being the trigonometric functions sine, cosine, tangent. We
+are going to utilize these this week. Additionally, these functions
+work with radians, so we will also be using a function from Numpy that
+converts degrees to radians.
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span>tf = <span style="color: #B452CD">2.04</span>  <span style="color: #228B22"># The final time to be evaluated</span>
+dt = <span style="color: #B452CD">0.1</span>  <span style="color: #228B22"># The time step size</span>
+t = np.arange(<span style="color: #B452CD">0</span>,tf,dt) <span style="color: #228B22"># The time array</span>
+theta_deg = <span style="color: #B452CD">45</span> <span style="color: #228B22"># Degrees</span>
+theta_rad = np.radians(theta_deg) <span style="color: #228B22"># Converts degrees to their radian counterparts</span>
+x = <span style="color: #B452CD">10</span>*t*np.cos(theta_rad) <span style="color: #228B22"># Equation for our x component, utilizing np.cos() and our calculated radians</span>
+y = <span style="color: #B452CD">10</span>*t*np.sin(theta_rad) <span style="color: #228B22"># Put the y equation here</span>
+z = <span style="color: #B452CD">10</span>*t-<span style="color: #B452CD">9.81</span>/<span style="color: #B452CD">2</span>*t**<span style="color: #B452CD">2</span><span style="color: #228B22"># Put the z equation here</span>
+</pre></div>
+<p>
+Then we plot it
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #228B22">## Once you have entered the proper equations in the cell above, run this cell to plot in 3D</span>
+fig = plt.axes(projection=<span style="color: #CD5555">&#39;3d&#39;</span>)
+fig.set_xlabel(<span style="color: #CD5555">&#39;x&#39;</span>)
+fig.set_ylabel(<span style="color: #CD5555">&#39;y&#39;</span>)
+fig.set_zlabel(<span style="color: #CD5555">&#39;z&#39;</span>)
+fig.scatter(x,y,z)
+</pre></div>
+<ul>
+<p><li> 6a (8pt) How would you express \( x(t) \), \( y(t) \), \( z(t) \) for this problem as a single vector, \( \boldsymbol{r}(t) \)?</li>
+</ul>
+<p>
+
+Then run the code and plot using the array \( r \)
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #228B22">## Run this code to plot using our r array </span>
+fig = plt.axes(projection=<span style="color: #CD5555">&#39;3d&#39;</span>)
+fig.set_xlabel(<span style="color: #CD5555">&#39;x&#39;</span>)
+fig.set_ylabel(<span style="color: #CD5555">&#39;y&#39;</span>)
+fig.set_zlabel(<span style="color: #CD5555">&#39;z&#39;</span>)
+fig.scatter(r[<span style="color: #B452CD">0</span>],r[<span style="color: #B452CD">1</span>],r[<span style="color: #B452CD">2</span>])
+</pre></div>
+<ul>
+<p><li> 6b (8pt) What do you think the benefits and/or disadvantages are from expressing our three equations as a single array/vector? This can be both from a computational and physics stand point. Use the <b>Numpy</b> package to also print the maximum \( x \), \( y \) and \( z \) components from \( \boldsymbol{r} \).</li>
+</ul>
+<p>
+
+Complete Exercise 4 above (Taylor exercise 1.35) before moving further. (Recall that the golf ball was hit due east at an angle \( \theta \) with respect to the horizontal, and the coordinate directions are \( x \) measured east, \( y \) north, and \( z \) vertically up.)
+
+<ul>
+<p><li> 6c (8pt) What is the analytical solution for our theoretical golf ball's position \( \boldsymbol{r}(t) \) over time from Exercise 4?  Also what is the formula for the time \( t_f \) when the golf ball hits the ground? Use this to develop a program with a function called for example Golfball that utilizes our analytical solutions. This program should take in an initial velocity and the angle \( \theta \) that the golfball was hit with in degrees. It should also produce  a 3D graph of the motion. You need also to find the maximum values for \( x \), \( y \) and \( z \).</li>
+<p><li> 6d (8pt) Given initial values of \( v_i = 90 m/s \), \( \theta = 30^{\circ} \), what would our maximum x, y and z components be?</li> 
+<p><li> 6e (8pt) Given initial values of \( v_i = 45 m/s \), \( \theta = 45^{\circ} \), what would our maximum x, y and z components be?</li> 
+</ul>
+</section>
+
+
+
+</div> <!-- class="slides" -->
+</div> <!-- class="reveal" -->
+
+<script src="reveal.js/lib/js/head.min.js"></script>
+<script src="reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+    // Display navigation controls in the bottom right corner
+    controls: true,
+
+    // Display progress bar (below the horiz. slider)
+    progress: true,
+
+    // Display the page number of the current slide
+    slideNumber: true,
+
+    // Push each slide change to the browser history
+    history: false,
+
+    // Enable keyboard shortcuts for navigation
+    keyboard: true,
+
+    // Enable the slide overview mode
+    overview: true,
+
+    // Vertical centering of slides
+    //center: true,
+    center: false,
+
+    // Enables touch navigation on devices with touch input
+    touch: true,
+
+    // Loop the presentation
+    loop: false,
+
+    // Change the presentation direction to be RTL
+    rtl: false,
+
+    // Turns fragments on and off globally
+    fragments: true,
+
+    // Flags if the presentation is running in an embedded mode,
+    // i.e. contained within a limited portion of the screen
+    embedded: false,
+
+    // Number of milliseconds between automatically proceeding to the
+    // next slide, disabled when set to 0, this value can be overwritten
+    // by using a data-autoslide attribute on your slides
+    autoSlide: 0,
+
+    // Stop auto-sliding after user input
+    autoSlideStoppable: true,
+
+    // Enable slide navigation via mouse wheel
+    mouseWheel: false,
+
+    // Hides the address bar on mobile devices
+    hideAddressBar: true,
+
+    // Opens links in an iframe preview overlay
+    previewLinks: false,
+
+    // Transition style
+    transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+    // Transition speed
+    transitionSpeed: 'default', // default/fast/slow
+
+    // Transition style for full page slide backgrounds
+    backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
+
+    // Number of slides away from the current that are visible
+    viewDistance: 3,
+
+    // Parallax background image
+    //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+    // Parallax background size
+    //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+
+    theme: Reveal.getQueryHash().theme, // available themes are in reveal.js/css/theme
+    transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+});
+
+Reveal.initialize({
+    dependencies: [
+        // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+        { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+        // Interpret Markdown in <section> elements
+        { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+        // Syntax highlight for <code> elements
+        { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+        // Zoom in and out with Alt+click
+        { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // Speaker notes
+        { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // Remote control your reveal.js presentation using a touch device
+        //{ src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // MathJax
+        //{ src: 'reveal.js/plugin/math/math.js', async: true }
+    ]
+});
+
+Reveal.initialize({
+
+    // The "normal" size of the presentation, aspect ratio will be preserved
+    // when the presentation is scaled to fit different resolutions. Can be
+    // specified using percentage units.
+    width: 1170,  // original: 960,
+    height: 700,
+
+    // Factor of the display size that should remain empty around the content
+    margin: 0.1,
+
+    // Bounds for smallest/largest possible scale to apply to content
+    minScale: 0.2,
+    maxScale: 1.0
+
+});
+</script>
+
+<!-- begin footer logo
+<div style="position: absolute; bottom: 0px; left: 0; margin-left: 0px">
+<img src="somelogo.png">
+</div>
+     end footer logo -->
+
+
+
+</body>
+</html>

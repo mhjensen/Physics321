@@ -1,0 +1,448 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="PHY321: Classical Mechanics 1">
+
+<title>PHY321: Classical Mechanics 1</title>
+
+<!-- Bootstrap style: bootstrap -->
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+
+<style type="text/css">
+
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 3,
+ 'sections': [('Practicalities about  homeworks and projects',
+               3,
+               None,
+               '___sec0'),
+              ('Exercise 1 (10 pt), Forces, discussion questions, test your '
+               'intuition',
+               3,
+               None,
+               '___sec1'),
+              ("Exercise 2 (10 pt), setting up forces, Newton's second law",
+               3,
+               None,
+               '___sec2'),
+              ('Exercise 3 (10 pt), Space shuttle with air resistance',
+               3,
+               None,
+               '___sec3'),
+              ('Exercise 4 (15 pt), now hitting a golf ball',
+               3,
+               None,
+               '___sec4'),
+              ('Exercise 5 (15 pt), hitting a puck instead',
+               3,
+               None,
+               '___sec5'),
+              ('Exercise 6 (40pt), Numerical elements, moving to more than one '
+               'dimension',
+               3,
+               None,
+               '___sec6')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="hw2-bs.html">PHY321: Classical Mechanics 1</a>
+  </div>
+
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;">Practicalities about  homeworks and projects</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec1" style="font-size: 80%;">Exercise 1 (10 pt), Forces, discussion questions, test your intuition</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec2" style="font-size: 80%;">Exercise 2 (10 pt), setting up forces, Newton's second law</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec3" style="font-size: 80%;">Exercise 3 (10 pt), Space shuttle with air resistance</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec4" style="font-size: 80%;">Exercise 4 (15 pt), now hitting a golf ball</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec5" style="font-size: 80%;">Exercise 5 (15 pt), hitting a puck instead</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec6" style="font-size: 80%;">Exercise 6 (40pt), Numerical elements, moving to more than one dimension</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+
+<div class="container">
+
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<div class="jumbotron">
+<center><h1>PHY321: Classical Mechanics 1</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Homework 2, due Friday January 24 -->
+
+<center>
+<b>Homework 2, due Friday January 24</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Jan 17, 2020</h4></center> <!-- date -->
+<br>
+<p>
+</div> <!-- end jumbotron -->
+
+<h3 id="___sec0" class="anchor">Practicalities about  homeworks and projects </h3>
+
+<ol>
+<li> You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. <b>Remember to write your name(s)</b>!</li>
+<li> Homeworks are available Wednesday/Thursday the week before the deadline. The deadline is at the Friday lecture.</li>
+<li> How do I(we)  hand in?  You can hand in the paper and pencil exercises as a hand-written document. For this homework this applies to exercises 1-5. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise(s) (exercise 6 here) should always be handed in as a jupyter notebook by the deadline at D2L.</li> 
+</ol>
+
+<h3 id="___sec1" class="anchor">Exercise 1 (10 pt), Forces, discussion questions, test your intuition  </h3>
+
+<ul>
+<li> 1a (2pt) Single force. Can an object affected only by a single force have zero acceleration?</li>
+<li> 1b (2pt) Zero velocity. If you throw a ball vertically it has zero velocity at its maximum point. Does it also have zero acceleration at this point?</li>
+<li> 1c (3pt) Acceleration of gravity. You measure the acceleration of gravity in an elevator moving at a velocity of 9.8m/s downwards. What will you measure?</li>
+<li> 1d (3pt) Air resistance. You throw a ball straight up and measure the velocity as it passes you on its way down. Will the velocity be larger, the same, or smaller if you did the same experiment in vacuum?</li>
+</ul>
+
+<h3 id="___sec2" class="anchor">Exercise 2 (10 pt), setting up forces, Newton's second law  </h3>
+
+<p>
+Useful material here to read is
+
+<ol>
+<li> Taylor chapters 1.3 and 1.4 and</li>
+<li> Malthe-S&#248;renssen chapters 5.1, 5.2 and 5.3</li>
+</ol>
+
+A person jumps from an airplane, falling freely for several seconds before she pulls the cord of her parachute and the parachute unfolds.
+
+<ul>
+<li> 2a (3pt)  Identify the forces acting on the parachuter and draw a free-body diagram of the parachuter before she has pulled the cord.</li>
+<li> 2b (3pt)  Identify the forces acting on the parachuter and draw a free-body diagram of the parachuter after she has pulled the cord.</li>
+<li> 2c (4pt)  Sketch the net force acting on the parachuter as a function of time, F(t).</li>
+</ul>
+
+<h3 id="___sec3" class="anchor">Exercise 3 (10 pt), Space shuttle with air resistance </h3>
+
+<p>
+Useful material here to read is
+
+<ol>
+<li> Malthe-S&#248;renssen chapters 5.1, 5.2 and 5.3</li>
+</ol>
+
+During lift-off of the space shuttle the engines provide a force of \( 35\times 10^{6} \) N. The mass of the shuttle is approximately
+\( 2\times 10^6 \) kg.
+
+<ul>
+<li> 3a (3pt) Draw a free-body diagram of the space shuttle immediately after lift-off.</li>
+<li> 3b (3pt)  Find an expression for the acceleration of the space shuttle immediately after lift-off.</li>
+</ul>
+
+Let us assume that the force from the engines is constant, and that the mass of the
+space shuttle does not change significantly over the first 20 s.
+
+<ul>
+<li> 3c (4pt) Find the velocity and position of the space shuttle after 20 s if you ignore air resistance.</li>
+</ul>
+
+<h3 id="___sec4" class="anchor">Exercise 4 (15 pt), now hitting a golf ball  </h3>
+
+<p>
+Useful material here to read is
+
+<ol>
+<li> Taylor chapters 1.3-1.6 and</li>
+<li> Malthe-S&#248;renssen chapter 6.3-6.4 and 7.1-7.3</li>
+</ol>
+
+<b>Taylor exercise 1.35</b>. The formulae you obtain here will be useful for the numerical exercises below (see exercise 6 below).
+
+<h3 id="___sec5" class="anchor">Exercise 5 (15 pt), hitting a puck instead  </h3>
+
+<p>
+Taylor exercise 1.38.
+
+<h3 id="___sec6" class="anchor">Exercise 6 (40pt), Numerical elements, moving to more than one dimension </h3>
+
+<p>
+<b>This exercise should be handed in as a jupyter-notebook</b> at D2L. Remember to write your name(s).
+
+<p>
+Last week we:
+
+<ol>
+<li> Analytically mapped 1D motion over some time</li>
+<li> Gained practice with functions</li>
+<li> Reviewed vectors and matrices in Python</li>
+</ol>
+
+This week we will:
+
+<ol>
+<li> Practice using Python syntax and variable manipulation</li>
+<li> Utilize analytical solutions to create more refined functions</li>
+<li> Work in two, three or even higher dimensions</li>
+</ol>
+
+This material will then serve as background for the numerical part of homework 3. The first part is a simple warm-up, with hints and suggestions you can use for the code to write below.
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic"># As usual, here are some useful packages we will be using. Feel free to use more and experiment as you wish.</span>
+
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">mpl_toolkits</span> <span style="color: #008000; font-weight: bold">import</span> mplot3d
+<span style="color: #666666">%</span>matplotlib inline
+</pre></div>
+<p>
+In class (the falling baseball example) we used an  analytical expression for the height of a falling ball.
+In the first homework we used instead the position from experiment (Usain Bolt's 100m record run) and stored this
+information with one-dimensional arrays in Python.
+
+<p>
+Let us get some practice with this. The cell below creates two arrays,
+one containing the times to be analyzed and the other containing the \( x \)
+and \( y \) components of the position vector at each point in time.  This is a two-dimensional object. The
+second array is initially empty. Then we define  the initial
+position to be \( x=2 \) and \( y=1 \). Take a look at the code and comments
+to get an understanding of what is happening. Feel free to play around with it.
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>tf <span style="color: #666666">=</span> <span style="color: #666666">4</span> <span style="color: #408080; font-style: italic">#length of value to be analyzed</span>
+dt <span style="color: #666666">=</span> <span style="color: #666666">.001</span> <span style="color: #408080; font-style: italic"># step sizes</span>
+t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>arange(<span style="color: #666666">0.0</span>,tf,dt) <span style="color: #408080; font-style: italic"># Creates an evenly spaced time array going from 0 to 3.999, with step sizes .001</span>
+r <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((<span style="color: #008000">len</span>(t), <span style="color: #666666">2</span>)) <span style="color: #408080; font-style: italic"># Creates an empty array of [x,y] arrays (our vectors). Array size is same as the one for time.</span>
+p[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> [<span style="color: #666666">2.0</span>,<span style="color: #666666">1.0</span>] <span style="color: #408080; font-style: italic"># This sets the inital position to be x = 2 and y = 1</span>
+</pre></div>
+<p>
+Below we are printing specific values of our array to see what is being
+stored where. The first number in the array \( r[] \) represents which array
+iteration we are looking at, while the number after the  represents
+which listed number in the array iteration we are getting back.
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">print</span>(r[<span style="color: #666666">0</span>]) <span style="color: #408080; font-style: italic"># Prints the first array</span>
+<span style="color: #008000; font-weight: bold">print</span>(r[<span style="color: #666666">0</span>,:]) <span style="color: #408080; font-style: italic"># Same as above, these commands are interchangeable </span>
+</pre></div>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">print</span>(r[<span style="color: #666666">3999</span>]) <span style="color: #408080; font-style: italic"># Prints the 4000th array</span>
+</pre></div>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">print</span>(r[<span style="color: #666666">0</span>,<span style="color: #666666">0</span>]) <span style="color: #408080; font-style: italic"># Prints the first value of the first array</span>
+</pre></div>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">print</span>(r[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>]) <span style="color: #408080; font-style: italic"># Prints the second value of first array</span>
+<span style="color: #008000; font-weight: bold">print</span>(p[:,<span style="color: #666666">0</span>]) <span style="color: #408080; font-style: italic"># Prints the first value of all the arrays</span>
+</pre></div>
+<p>
+Then try running this cell. Notice how it gives an error since we did not implement a third dimension into our arrays
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">print</span>(p[:,<span style="color: #666666">2</span>])
+</pre></div>
+<p>
+In the cell below we want to manipulate the arrays.
+In this example we make each vector's \( x \) component valued the same as their respective vector's position in the iteration and the \( y \) value will be twice that value, except for  the first vector, which we have already set. 
+That is we have \( p[0] = [2,1], p[1] = [1,2], p[2] = [2,4], p[3] = [3,6], ... \)
+
+<p>
+Here we set up an array for \( x \) and \( y \) values. 
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">1</span>,<span style="color: #666666">3999</span>):
+    p[i] <span style="color: #666666">=</span> [i,<span style="color: #666666">2*</span>i]
+<span style="color: #408080; font-style: italic"># Checker cell to make sure your code is performing correctly</span>
+c <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">0</span>,<span style="color: #666666">3999</span>):
+    <span style="color: #008000; font-weight: bold">if</span> i <span style="color: #666666">==</span> <span style="color: #666666">0</span>:
+        <span style="color: #008000; font-weight: bold">if</span> p[i,<span style="color: #666666">0</span>] <span style="color: #666666">!=</span> <span style="color: #666666">2.0</span>:
+            c <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+        <span style="color: #008000; font-weight: bold">if</span> p[i,<span style="color: #666666">1</span>] <span style="color: #666666">!=</span> <span style="color: #666666">1.0</span>:
+            c <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+    <span style="color: #008000; font-weight: bold">else</span>:
+        <span style="color: #008000; font-weight: bold">if</span> p[i,<span style="color: #666666">0</span>] <span style="color: #666666">!=</span> <span style="color: #666666">1.0*</span>i:
+            c <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+        <span style="color: #008000; font-weight: bold">if</span> p[i,<span style="color: #666666">1</span>] <span style="color: #666666">!=</span> <span style="color: #666666">2.0*</span>i:
+            c <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+
+<span style="color: #008000; font-weight: bold">if</span> c <span style="color: #666666">==</span> <span style="color: #666666">0</span>:
+    <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;Success!&quot;</span>)
+<span style="color: #008000; font-weight: bold">else</span>:
+    <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;There is an error in your code&quot;</span>)
+</pre></div>
+<p>
+You could also think of an alternative way of storing the above information. Feel free to explore how to store
+multidimensional objects.
+
+<p>
+Last week we studied Usain Bolt's 100m run and in class we studied a falling baseball. We made basic plots of the baseball
+moving in one dimension. This week we will be working with a three-dimensional variant. This will be useful for our next homeworks and numerical projects.
+
+<p>
+Assume we have a soccer ball moving in three dimensions with the following trajectory:
+
+<ol>
+<li> \( x(t) = 10t\cos{45^{\circ}}  \)</li>
+<li> \( y(t) = 10t\sin{45^{\circ}}  \)</li>
+<li> \( z(t) = 10t - \dfrac{9.81}{2}t^2 \)</li>
+</ol>
+
+Now let us create a three-dimensional (3D) plot using these equations. In the cell below
+we write the equations into their respective labels. We fix a final time in the code below.
+
+<p>
+Important Concept: Numpy comes with many mathematical packages, some
+of them being the trigonometric functions sine, cosine, tangent. We
+are going to utilize these this week. Additionally, these functions
+work with radians, so we will also be using a function from Numpy that
+converts degrees to radians.
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>tf <span style="color: #666666">=</span> <span style="color: #666666">2.04</span>  <span style="color: #408080; font-style: italic"># The final time to be evaluated</span>
+dt <span style="color: #666666">=</span> <span style="color: #666666">0.1</span>  <span style="color: #408080; font-style: italic"># The time step size</span>
+t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>arange(<span style="color: #666666">0</span>,tf,dt) <span style="color: #408080; font-style: italic"># The time array</span>
+theta_deg <span style="color: #666666">=</span> <span style="color: #666666">45</span> <span style="color: #408080; font-style: italic"># Degrees</span>
+theta_rad <span style="color: #666666">=</span> np<span style="color: #666666">.</span>radians(theta_deg) <span style="color: #408080; font-style: italic"># Converts degrees to their radian counterparts</span>
+x <span style="color: #666666">=</span> <span style="color: #666666">10*</span>t<span style="color: #666666">*</span>np<span style="color: #666666">.</span>cos(theta_rad) <span style="color: #408080; font-style: italic"># Equation for our x component, utilizing np.cos() and our calculated radians</span>
+y <span style="color: #666666">=</span> <span style="color: #666666">10*</span>t<span style="color: #666666">*</span>np<span style="color: #666666">.</span>sin(theta_rad) <span style="color: #408080; font-style: italic"># Put the y equation here</span>
+z <span style="color: #666666">=</span> <span style="color: #666666">10*</span>t<span style="color: #666666">-9.81/2*</span>t<span style="color: #666666">**2</span><span style="color: #408080; font-style: italic"># Put the z equation here</span>
+</pre></div>
+<p>
+Then we plot it
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic">## Once you have entered the proper equations in the cell above, run this cell to plot in 3D</span>
+fig <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>axes(projection<span style="color: #666666">=</span><span style="color: #BA2121">&#39;3d&#39;</span>)
+fig<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;x&#39;</span>)
+fig<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;y&#39;</span>)
+fig<span style="color: #666666">.</span>set_zlabel(<span style="color: #BA2121">&#39;z&#39;</span>)
+fig<span style="color: #666666">.</span>scatter(x,y,z)
+</pre></div>
+<ul>
+<li> 6a (8pt) How would you express \( x(t) \), \( y(t) \), \( z(t) \) for this problem as a single vector, \( \boldsymbol{r}(t) \)?</li>
+</ul>
+
+Then run the code and plot using the array \( r \)
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic">## Run this code to plot using our r array </span>
+fig <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>axes(projection<span style="color: #666666">=</span><span style="color: #BA2121">&#39;3d&#39;</span>)
+fig<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;x&#39;</span>)
+fig<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;y&#39;</span>)
+fig<span style="color: #666666">.</span>set_zlabel(<span style="color: #BA2121">&#39;z&#39;</span>)
+fig<span style="color: #666666">.</span>scatter(r[<span style="color: #666666">0</span>],r[<span style="color: #666666">1</span>],r[<span style="color: #666666">2</span>])
+</pre></div>
+<ul>
+<li> 6b (8pt) What do you think the benefits and/or disadvantages are from expressing our three equations as a single array/vector? This can be both from a computational and physics stand point. Use the <b>Numpy</b> package to also print the maximum \( x \), \( y \) and \( z \) components from \( \boldsymbol{r} \).</li>
+</ul>
+
+Complete Exercise 4 above (Taylor exercise 1.35) before moving further. (Recall that the golf ball was hit due east at an angle \( \theta \) with respect to the horizontal, and the coordinate directions are \( x \) measured east, \( y \) north, and \( z \) vertically up.)
+
+<ul>
+<li> 6c (8pt) What is the analytical solution for our theoretical golf ball's position \( \boldsymbol{r}(t) \) over time from Exercise 4?  Also what is the formula for the time \( t_f \) when the golf ball hits the ground? Use this to develop a program with a function called for example Golfball that utilizes our analytical solutions. This program should take in an initial velocity and the angle \( \theta \) that the golfball was hit with in degrees. It should also produce  a 3D graph of the motion. You need also to find the maximum values for \( x \), \( y \) and \( z \).</li>
+<li> 6d (8pt) Given initial values of \( v_i = 90 m/s \), \( \theta = 30^{\circ} \), what would our maximum x, y and z components be?</li> 
+<li> 6e (8pt) Given initial values of \( v_i = 45 m/s \), \( \theta = 45^{\circ} \), what would our maximum x, y and z components be?</li> 
+</ul>
+
+
+<!-- ------------------- end of main content --------------- -->
+
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap footer
+<footer>
+<a href="http://..."><img width="250" align=right src="http://..."></a>
+</footer>
+-->
+
+
+</body>
+</html>
+    
+
