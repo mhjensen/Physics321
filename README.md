@@ -59,8 +59,7 @@ _Recommended textbook_:
 _Additional textbooks_:
 - AMS: Anders Malthe-Sørenssen, Elementary Mechanics using Python (Springer 2015), https://www.springer.com/gp/book/9783319195957 and https://github.com/mhjensen/Physics321/tree/master/doc/Literature
 - AB: Alessandro Bettini, A Course in Classical Physics 1 -- Mechanics (Springer 2017), https://github.com/mhjensen/Physics321/tree/master/doc/Literature and https://www.springer.com/gp/book/9783319292564 
--_Lecture notes_:
-Posted lecture notes are in the doc/pub folder here or at https://mhjensen.github.io/Physics321/doc/web/course.html for easier viewing. They are not meant to be a replacement for textbook. These notes are updated on a weekly basis and a _git pull_ should thus always give you the latest update. 
+- _Lecture notes_: Posted lecture notes are in the doc/pub folder here or at https://mhjensen.github.io/Physics321/doc/web/course.html for easier viewing. They are not meant to be a replacement for textbook. These notes are updated on a weekly basis and a _git pull_ should thus always give you the latest update. 
 
 ##  Teaching schedule with links to material (This will be updated asap)
 Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will sent to everybody. We use also Piazza as a discussion forum. Please use this sign-up link piazza.com/msu/spring2020/phy321. The class link is piazza.com/msu/spring2020/phy321/home
