@@ -209,7 +209,7 @@ Here we can ask questions like
 
 <p>
 With our eventual data and observations we would now like to develop a
-model for the system. At the we want obviously to be able to
+model for the system. In the end we want obviously to be able to
 understand which forces are at play and how they influence our
 specific system. That is, can we extract some deeper insights about a
 system?
@@ -230,11 +230,11 @@ We need then to
 <h2 id="___sec3">Solving the Equations </h2>
 
 <p>
-With the model at hand, we can then solve the equations. In classical mechanics this often ends with solving sets of coupled ordinary differential equations or partial differential equations.
+With the model at hand, we can then solve the equations. In classical mechanics we normally end up  with solving sets of coupled ordinary differential equations or partial differential equations.
 
 <ol>
 <p><li> Using Newton's second law we have equations of the type \( \boldsymbol{F}=m\boldsymbol{a}=md\boldsymbol{v}/dt \)</li>
-<p><li> We need to have defined the initial conditions (typically the initial velocity and position as functions of time) and/or initial conditions and boundary conditions</li>
+<p><li> We need to  define the initial conditions (typically the initial velocity and position as functions of time) and/or initial conditions and boundary conditions</li>
 <p><li> The solution of the equations give us then the position, the velocity and other time-dependent quantities which may specify the motion of a given object.</li>
 </ol>
 <p>
@@ -583,18 +583,17 @@ $$
 \begin{eqnarray}
 \frac{dv_x}{v_x}&=&-\gamma dt,\\
 \nonumber
-\int_{v_{0x}}^{v_{fx}}\frac{dv_x}{v_x}&=&-\gamma\int_0^{t_f}dt,\\
+\int_{v_{0x}}^{v_{x}}\frac{dv_x}{v_x}&=&-\gamma\int_0^{t}dt,\\
 \nonumber
-\ln\left(\frac{v_{fx}}{v_{0x}}\right)&=&-\gamma t_f,\\
+\ln\left(\frac{v_{x}}{v_{0x}}\right)&=&-\gamma t,\\
 \nonumber
-v_{fx}&=&v_{0x}e^{-\gamma t}.
+v_{x}(t)&=&v_{0x}e^{-\gamma t}.
 \end{eqnarray}
 $$
 <p>&nbsp;<br>
 
 <p>
-Here, we leave the subscript off the final time in the last
-expression. This is very much the result you would have written down
+This is very much the result you would have written down
 by inspection. For the \( y \)-component of the velocity,
 
 <p>&nbsp;<br>
@@ -602,7 +601,7 @@ $$
 \begin{eqnarray}
 \frac{dv_y}{v_y+g/\gamma}&=&-\gamma dt\\
 \nonumber
-\ln\left(\frac{v_{fy}+g/\gamma}{v_{0y}+g/\gamma}\right)&=&-\gamma t_f,\\
+\ln\left(\frac{v_{y}+g/\gamma}{v_{0y}-g/\gamma}\right)&=&-\gamma t_f,\\
 \nonumber
 v_{fy}&=&-\frac{g}{\gamma}+\left(v_{0y}+\frac{g}{\gamma}\right)e^{-\gamma t}.
 \end{eqnarray}
