@@ -700,7 +700,7 @@ solution and the development of a program for more complicated cases which canno
 
 !split
 ===== Simple Example, Block tied to a Wall =====
-!bblock
+
 With the position $x(t)$ and the velocity  $v(t)=dx/dt$ we can reformulate Newton's equation in the following way
 !bt
   \[
@@ -713,13 +713,12 @@ With the position $x(t)$ and the velocity  $v(t)=dx/dt$ we can reformulate Newto
       \frac{dv(t)}{dt}=-\omega_0^2x(t).
   \]
 !et
-  We are now going to solve these equations using the Runge-Kutta method
-  to fourth order discussed previously. 
-!eblock
+  We are now going to solve these equations using first the standard forward Euler  method. Later we will try to improve upon this.
+
 
 !split
 ===== Simple Example, Block tied to a Wall =====
-!bblock
+
 Before proceeding however, it is important to note that in addition to the exact solution, we have at least two further tests which can be used to check our solution. 
 
 Since functions like $cos$ are periodic with a period $2\pi$, then the solution $x(t)$ has also to be periodic. This means that
@@ -735,11 +734,11 @@ with $T$ the period defined as
 \]
 !et
 Observe that $T$ depends only on $k/m$ and not on the amplitude of the solution. 
-!eblock
+
 
 !split
 ===== Simple Example, Block tied to a Wall =====
-!bblock
+
 In addition to the periodicity test, the total energy has also to be conserved. 
 
 Suppose we choose the initial conditions 
@@ -760,11 +759,11 @@ The total energy at any time $t$ has however to be conserved, meaning that our s
     E_0=\frac{1}{2}kx(t)^2+\frac{1}{2}mv(t)^2.
 \]
 !et
-!eblock
+
 
 !split
 ===== Simple Example, Block tied to a Wall =====
-!bblock
+
 An algorithm which implements these equations is included below.
  * Choose the initial position and speed, with the most common choice $v(t=0)=0$ and some fixed value for the position. 
  * Choose the method you wish to employ in solving the problem.
@@ -785,11 +784,11 @@ where $N$ is the number of mesh points.
  * When we have computed $x(v)_{i+1}$ we upgrade  $t_{i+1}=t_i+h$.
  * This iterative  process continues till we reach the maximum time $t_f$.
  * The results are checked against the exact solution. Furthermore, one has to check the stability of the numerical solution against the chosen number of mesh points $N$.      
-!eblock
+
 
 !split
 ===== Simple Example, Block tied to a Wall, python code =====
-!bblock
+
 The following python program performs essentially the same calculations as the previous c++ code.
 !bc pycod
 #
@@ -877,13 +876,12 @@ sim(x_0,v_0,N)
 ofile.close() 
 
 !ec
-!eblock
 
 
 
 !split
 ===== The classical pendulum and scaling the equations =====
-!bblock
+
 The angular equation of motion of the pendulum is given by
 Newton's equation and with no external force it reads 
 !bt
@@ -903,11 +901,11 @@ and
      a=l\frac{d^2\theta}{dt^2}.
 \end{equation}
 !et
-!eblock
+
 
 !split
 ===== More on the Pendulum =====
-!bblock 
+
 We do however expect that the motion will gradually come to an end due a viscous drag torque acting on the pendulum. 
 In the presence of the drag, the above equation becomes
 !bt
@@ -926,13 +924,13 @@ We choose here a periodic driving force. The last equation becomes then
 !et
 with $A$ and $\omega$ two constants representing the amplitude and 
 the angular frequency respectively. The latter is called the driving frequency.
-!eblock
+
 
 
 
 !split
 ===== More on the Pendulum =====
-!bblock
+
 We define 
 !bt
   \[
@@ -963,11 +961,11 @@ and introducing the quantity $Q$, called the *quality factor*,
 \hat{A}=\frac{A}{mg}
   \]
 !et
-!eblock
+
 
 !split
 ===== More on the Pendulum =====
-!bblock
+
 We have 
 !bt
 \[
@@ -988,13 +986,13 @@ and
 \]
 !et
 These are the equations to be solved.  The factor $Q$ represents the number of oscillations of the undriven system that must occur before  its energy is significantly reduced due to the viscous drag. The  amplitude $\hat{A}$ is measured in units of the maximum possible  gravitational torque while $\hat{\omega}$ is the angular frequency of the external torque measured in units of the pendulum's natural frequency.  
-!eblock
+
 
 
 
 !split
 ===== Gravitational Force =====
-!bblock
+
 We start with a simpler case first, the Earth-Sun system  in two dimensions only.  The gravitational force $F_G$ is  
 !bt
   \[
@@ -1033,12 +1031,12 @@ and
   \]
 !et 
 for the $y$ direction.
-!eblock
+
 
 
 !split
 ===== Building a code for the solar system, force equations =====
-!bblock
+
 Introducing $x=r\cos{(\theta)}$, $y=r\sin{(\theta)}$ and
 !bt
 \[
@@ -1058,12 +1056,12 @@ and
   \]
 !et 
 for the $y$ direction.
-!eblock
+
 
 
 !split
 ===== Building a code for the solar system, coupled equations =====
-!bblock
+
 We can rewrite these two equations
 !bt
   \[
@@ -1097,12 +1095,12 @@ as four first-order coupled differential equations
    \frac{dy}{dt}=v_y.
 \]
 !et
-!eblock
+
 
 
 !split
 ===== Building a code for the solar system, final coupled equations =====
-!bblock
+
 The four coupled differential equations
 !bt
 \[
@@ -1145,12 +1143,12 @@ $v = 2\pi r/\mathrm{yr}=2\pi\mathrm{AU}/\mathrm{yr}$, we have
 GM_{\odot}= v^2r = 4\pi^2 \frac{(\mathrm{AU})^3}{\mathrm{yr}^2}.
 \]
 !et 
-!eblock
+
 
 
 !split
 ===== Building a code for the solar system, discretized equations =====
-!bblock
+
 The four coupled differential equations can then be discretized using Euler's method as (with step length $h$)
 !bt
 \[
@@ -1173,12 +1171,11 @@ The four coupled differential equations can then be discretized using Euler's me
 \]
 !et
 
-!eblock
 
 
 !split
 ===== Building a code for the solar system, adding Jupiter =====
-!bblock
+
 It is rather straightforward to add a new planet, say Jupiter.
 Jupiter has mass
 !bt
@@ -1207,12 +1204,12 @@ The $x$-component of the velocity of Earth changes thus to
    \frac{dv_x^E}{dt}=-\frac{GM_{\odot}}{r^3}x_E-\frac{GM_J}{r_{EJ}^3}(x_E-x_J).
 \]
 !et
-!eblock
+
 
 
 !split
 ===== Building a code for the solar system, adding Jupiter =====
-!bblock
+
 We can rewrite 
 !bt
 \[
@@ -1239,7 +1236,7 @@ Similarly, for the velocity in $y$-direction we have
 !et
 Similar expressions apply for Jupiter. The equations for $x$ and $y$ 
 derivatives are unchanged. This equations are similar for all other planets and as we will see later, it will be convenient to object orient this part when we program the full solar system.
-!eblock
+
 
 
 !split
@@ -1256,7 +1253,7 @@ and $y=0$ AU.
 !eblock
 
 !split
-===== How do we develop a larger numerical project  =====
+===== How do we develop a numerical project  =====
 
 When building up a numerical project there are several elements you should think of, amongst these we take the liberty of mentioning the following.
  o  How to structure a code in terms of functions and modules
@@ -1272,13 +1269,12 @@ The conventions and techniques outlined here will save you a lot of time when yo
  o Scale your equations in order to simplify, make for example the equations dimensionless or scale them in convenient units
  o New code is added in a modular fashion to a library (modules)
  o Programs are run through convenient user interfaces
- o Tedious manual work with running programs is automated,
+ o Tedious manual work with running programs is automated and we can focus on insights.
  o Your scientific investigations are reproducible, scientific reports with top quality typesetting are produced both for paper and electronic devices.
 
 
 !split
 ===== How to start our solar system project  =====
-!bblock
 
 The simplest possible step is to code the Earth-Sun system using Euler's method in two dimensions.
 The four coupled differential equations can then be discretized using Euler's method as (with step length $h$) are
@@ -1303,6 +1299,5 @@ The four coupled differential equations can then be discretized using Euler's me
 \]
 !et
 
-!eblock
 
 
