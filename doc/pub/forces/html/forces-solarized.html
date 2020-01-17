@@ -139,16 +139,7 @@ div { text-align: justify; text-justify: inter-word; }
                None,
                '___sec38'),
               ('More on large numerical projects', 2, None, '___sec39'),
-              ('How to start our solar system project', 2, None, '___sec40'),
-              ('How to start our solar system project, the simple Euler '
-               'equations',
-               2,
-               None,
-               '___sec41'),
-              ('Adaptive methods', 2, None, '___sec42'),
-              ('Adaptive methods', 2, None, '___sec43'),
-              ('Adaptive methods', 2, None, '___sec44'),
-              ('Adaptive methods', 2, None, '___sec45')]}
+              ('How to start our solar system project', 2, None, '___sec40')]}
 end of tocinfo -->
 
 <body>
@@ -878,13 +869,17 @@ $$
 
 <p>
 The differential equations are
+
 $$
 \begin{eqnarray}
-\dot{v}_x&=&\omega_c v_y,\omega_c\equiv qB/m\\
+\dot{v}_x&=&\omega_c v_y,\omega_c= qB/m\\
 \nonumber
 \dot{v}_y&=&-\omega_c v_x.
 \end{eqnarray}
+$$
+
 One can solve the equations by taking time derivatives of either equation, then substituting into the other equation,
+$$
 \begin{eqnarray}
 \ddot{v}_x=\omega_c\dot{v_y}=-\omega_c^2v_x,\\
 \nonumber
@@ -1663,185 +1658,6 @@ $$
 $$
 
 
-</div>
-
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec41">How to start our solar system project, the simple Euler equations  </h2>
-<p>
-
-<!-- code=c++ (!bc cppcod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span><span style="color: #228B22">/*    </span>
-<span style="color: #228B22">    Euler&#39;s method for the Eart-Sun system, simplest possible code</span>
-<span style="color: #228B22">*/</span> 
-<span style="color: #1e889b">#include</span> <span style="color: #228B22">&lt;cmath&gt;</span><span style="color: #1e889b"></span>
-<span style="color: #1e889b">#include</span> <span style="color: #228B22">&lt;iostream&gt;</span><span style="color: #1e889b"></span>
-<span style="color: #1e889b">#include</span> <span style="color: #228B22">&lt;fstream&gt;</span><span style="color: #1e889b"></span>
-<span style="color: #1e889b">#include</span> <span style="color: #228B22">&lt;iomanip&gt;</span><span style="color: #1e889b"></span>
-<span style="color: #8B008B; font-weight: bold">using</span> <span style="color: #8B008B; font-weight: bold">namespace</span>  std;
-<span style="color: #228B22">// output file as global variable</span>
-ofstream ofile;
-<span style="color: #228B22">// function declarations</span>
-<span style="color: #00688B; font-weight: bold">void</span> <span style="color: #008b45">output</span>( <span style="color: #00688B; font-weight: bold">double</span>, <span style="color: #00688B; font-weight: bold">double</span>, <span style="color: #00688B; font-weight: bold">double</span>, <span style="color: #00688B; font-weight: bold">double</span>, <span style="color: #00688B; font-weight: bold">double</span>);
-
-<span style="color: #00688B; font-weight: bold">int</span> <span style="color: #008b45">main</span>(<span style="color: #00688B; font-weight: bold">int</span> argc, <span style="color: #00688B; font-weight: bold">char</span>* argv[])
-{
-<span style="color: #228B22">//  declarations of variables</span>
-  <span style="color: #00688B; font-weight: bold">char</span> *outfilename;
-  <span style="color: #228B22">// Read in output file, abort if there are too few command-line arguments</span>
-  <span style="color: #8B008B; font-weight: bold">if</span>( argc &lt;= <span style="color: #B452CD">1</span> ){
-    cout &lt;&lt; <span style="color: #CD5555">&quot;Bad Usage: &quot;</span> &lt;&lt; argv[<span style="color: #B452CD">0</span>] &lt;&lt;
-      <span style="color: #CD5555">&quot; read also output file on same line&quot;</span> &lt;&lt; endl;
-    <span style="color: #228B22">//    exit(1);</span>
-  }
-  <span style="color: #8B008B; font-weight: bold">else</span>{
-    outfilename=argv[<span style="color: #B452CD">1</span>];
-  }
-  ofile.open(outfilename);
-
-  <span style="color: #00688B; font-weight: bold">int</span> NumberofSteps = <span style="color: #B452CD">1000</span>;
-  <span style="color: #00688B; font-weight: bold">double</span> FinalTime = <span style="color: #B452CD">1.0</span>;
-  <span style="color: #00688B; font-weight: bold">double</span> Step = FinalTime/((<span style="color: #00688B; font-weight: bold">double</span>) NumberofSteps);
-  <span style="color: #00688B; font-weight: bold">double</span> time = <span style="color: #B452CD">0.0</span>;
-  <span style="color: #228B22">// Initial values  x = 1.0 AU and vy = 2*pi</span>
-  <span style="color: #00688B; font-weight: bold">double</span> pi = acos(-<span style="color: #B452CD">1.0</span>);
-  <span style="color: #00688B; font-weight: bold">double</span> FourPi2 = <span style="color: #B452CD">4</span>*pi*pi;
-  <span style="color: #00688B; font-weight: bold">double</span> x =  <span style="color: #B452CD">1.0</span>; <span style="color: #00688B; font-weight: bold">double</span> y =  <span style="color: #B452CD">0.0</span>; <span style="color: #00688B; font-weight: bold">double</span> vx = <span style="color: #B452CD">0.0</span>; <span style="color: #00688B; font-weight: bold">double</span> vy = <span style="color: #B452CD">2.0</span>*pi;
-  <span style="color: #00688B; font-weight: bold">double</span> r = sqrt(x*x+y*y);
-
-<span style="color: #228B22">// now we start solving the differential equations using Euler&#39;s method</span>
-  <span style="color: #8B008B; font-weight: bold">while</span> (time &lt;= FinalTime){
-    x += Step*vx;
-    y += Step*vy;
-    vx -= Step*FourPi2*x/(r*r*r);
-    vy -= Step*FourPi2*y/(r*r*r);
-    r = sqrt(x*x+y*y);
-    time += Step;
-    output(time, x, y, vx, vy);   <span style="color: #228B22">// write to file </span>
-  }
-  ofile.close();  <span style="color: #228B22">// close output file</span>
-  <span style="color: #8B008B; font-weight: bold">return</span> <span style="color: #B452CD">0</span>;
-}   <span style="color: #228B22">//  End of main function </span>
-
-<span style="color: #228B22">//    function to write out the final results</span>
-<span style="color: #00688B; font-weight: bold">void</span> <span style="color: #008b45">output</span>(<span style="color: #00688B; font-weight: bold">double</span> time, <span style="color: #00688B; font-weight: bold">double</span> x, <span style="color: #00688B; font-weight: bold">double</span> y, <span style="color: #00688B; font-weight: bold">double</span> vx, <span style="color: #00688B; font-weight: bold">double</span> vy)
-{
-  ofile &lt;&lt; setiosflags(ios::showpoint | ios::uppercase);
-  ofile &lt;&lt; setw(<span style="color: #B452CD">15</span>) &lt;&lt; setprecision(<span style="color: #B452CD">8</span>) &lt;&lt; time;
-  ofile &lt;&lt; setw(<span style="color: #B452CD">15</span>) &lt;&lt; setprecision(<span style="color: #B452CD">8</span>) &lt;&lt; x;
-  ofile &lt;&lt; setw(<span style="color: #B452CD">15</span>) &lt;&lt; setprecision(<span style="color: #B452CD">8</span>) &lt;&lt; y;
-  ofile &lt;&lt; setw(<span style="color: #B452CD">15</span>) &lt;&lt; setprecision(<span style="color: #B452CD">8</span>) &lt;&lt; vx;
-  ofile &lt;&lt; setw(<span style="color: #B452CD">15</span>) &lt;&lt; setprecision(<span style="color: #B452CD">8</span>) &lt;&lt; vy &lt;&lt; endl;
-}  <span style="color: #228B22">// end of function output</span>
-</pre></div>
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec42">Adaptive methods </h2>
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-In case the function to integrate varies slowly or fast in different integration domains, adaptive methods are normally used. One strategy is always to decrease the step size. As we have seen earlier, this leads to more CPU cycles and may lead to loss or numerical precision. An alternative is to use higher-order RK methods for example. However, this leads again to more cycles, furthermore, there is no guarantee that higher-order leads to an improved error.
-</div>
-
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec43">Adaptive methods </h2>
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-Assume the exact result is \( \tilde{x} \) and that we are using an RKM method. Suppose we run two calculations, one with \( h \) (called \( x_1 \)) and one with \( h/2 \) (called \( x_2 \)). Then
-$$
-\tilde{x}=x_1+Ch^{M+1}+O(h^{M+2}),
-$$
-
-and
-$$
-\tilde{x}=x_2+2C(h/2)^{M+1}+O(h^{M+2}),
-$$
-
-with \( C \) a constant. Note that we calculate two halves in the last equation. We get then
-$$
-|x_1-x_2| = Ch^{M+1}(1-\frac{1}{2^M}).
-$$
-
-yielding
-$$
-C=\frac{|x_1-x_2|}{(1-2^{-M})h^{M+1}}.
-$$
-
-We rewrite
-$$
-\tilde{x}=x_2+\epsilon+O((h)^{M+2}),
-$$
-
-with 
-$$
-\epsilon = \frac{|x_1-x_2|}{2^M-1}.
-$$
-</div>
-
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec44">Adaptive methods </h2>
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-With RK4 the expressions become
-$$
-\tilde{x}=x_2+\epsilon+O((h)^{6}),
-$$
-
-with
-$$
-\epsilon = \frac{|x_1-x_2|}{15}.
-$$
-
-The estimate is one order higher than the original RK4. But this method is normally rather inefficient since it requires a lot of computations. We solve typically the equation three times at each time step. 
-However, we can compare the estimate \( \epsilon \) with some by us given accuracy \( \xi \). 
-We can then ask the question: what is, with a given \( x_j \) and \( t_j \), the largest possible step size \( \tilde{h} \) that leads to a truncation error below \( \xi \)?
-We want
-$$
-C\tilde{h} \le \xi,
-$$
-
-which leads to 
-$$
-\left(\frac{\tilde{h}}{h}\right)^{M+1}\frac{|x_1-x_2|}{(1-2^{-M})}\le \xi, 
-$$
-
-meaning that
-$$
-\tilde{h}=h\left(\frac{\xi}{\epsilon}\right)^{1+1/M}. 
-$$
-</div>
-
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec45">Adaptive methods </h2>
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-With 
-$$
-\tilde{h}=h\left(\frac{\xi}{\epsilon}\right)^{1+1/M}. 
-$$
-
-we can design the following algorithm:
-
-<ul>
- <li> If the two answers are close, keep the approximation to \( h \).</li>
- <li> If \( \epsilon > \xi \) we need to decrease the step size in the next time step.</li>
- <li> If \( \epsilon < \xi \) we need to increase the step size in the next time step.</li>
-</ul>
 </div>
 
 

@@ -576,13 +576,16 @@ F_y&=&-qBv_x.
 !et
 
 The differential equations are
+
 !bt
 \begin{eqnarray}
-\dot{v}_x&=&\omega_c v_y,\omega_c\equiv qB/m\\
+\dot{v}_x&=&\omega_c v_y,\omega_c= qB/m\\
 \nonumber
 \dot{v}_y&=&-\omega_c v_x.
 \end{eqnarray}
+!et
 One can solve the equations by taking time derivatives of either equation, then substituting into the other equation,
+!bt
 \begin{eqnarray}
 \ddot{v}_x=\omega_c\dot{v_y}=-\omega_c^2v_x,\\
 \nonumber
@@ -1301,191 +1304,5 @@ The four coupled differential equations can then be discretized using Euler's me
 !et
 
 !eblock
-
-
-
-
-
-!split
-===== How to start our solar system project, the simple Euler equations  =====
-!bc cppcod
-/*    
-    Euler's method for the Eart-Sun system, simplest possible code
-*/ 
-#include <cmath>
-#include <iostream>
-#include <fstream>
-#include <iomanip>
-using namespace  std;
-// output file as global variable
-ofstream ofile;
-// function declarations
-void output( double, double, double, double, double);
-
-int main(int argc, char* argv[])
-{
-//  declarations of variables
-  char *outfilename;
-  // Read in output file, abort if there are too few command-line arguments
-  if( argc <= 1 ){
-    cout << "Bad Usage: " << argv[0] <<
-      " read also output file on same line" << endl;
-    //    exit(1);
-  }
-  else{
-    outfilename=argv[1];
-  }
-  ofile.open(outfilename);
-
-  int NumberofSteps = 1000;
-  double FinalTime = 1.0;
-  double Step = FinalTime/((double) NumberofSteps);
-  double time = 0.0;
-  // Initial values  x = 1.0 AU and vy = 2*pi
-  double pi = acos(-1.0);
-  double FourPi2 = 4*pi*pi;
-  double x =  1.0; double y =  0.0; double vx = 0.0; double vy = 2.0*pi;
-  double r = sqrt(x*x+y*y);
-
-// now we start solving the differential equations using Euler's method
-  while (time <= FinalTime){
-    x += Step*vx;
-    y += Step*vy;
-    vx -= Step*FourPi2*x/(r*r*r);
-    vy -= Step*FourPi2*y/(r*r*r);
-    r = sqrt(x*x+y*y);
-    time += Step;
-    output(time, x, y, vx, vy);   // write to file 
-  }
-  ofile.close();  // close output file
-  return 0;
-}   //  End of main function 
-
-//    function to write out the final results
-void output(double time, double x, double y, double vx, double vy)
-{
-  ofile << setiosflags(ios::showpoint | ios::uppercase);
-  ofile << setw(15) << setprecision(8) << time;
-  ofile << setw(15) << setprecision(8) << x;
-  ofile << setw(15) << setprecision(8) << y;
-  ofile << setw(15) << setprecision(8) << vx;
-  ofile << setw(15) << setprecision(8) << vy << endl;
-}  // end of function output
-
-
-!ec
-
-
-
-!split
-===== Adaptive methods =====
-!bblock
-In case the function to integrate varies slowly or fast in different integration domains, adaptive methods are normally used. One strategy is always to decrease the step size. As we have seen earlier, this leads to more CPU cycles and may lead to loss or numerical precision. An alternative is to use higher-order RK methods for example. However, this leads again to more cycles, furthermore, there is no guarantee that higher-order leads to an improved error.
-!eblock
-
-
-!split
-===== Adaptive methods =====
-!bblock
-Assume the exact result is $\tilde{x}$ and that we are using an RKM method. Suppose we run two calculations, one with $h$ (called $x_1$) and one with $h/2$ (called $x_2$). Then
-!bt
-\[
-\tilde{x}=x_1+Ch^{M+1}+O(h^{M+2}),
-\] 
-!et
-and
-!bt 
-\[
-\tilde{x}=x_2+2C(h/2)^{M+1}+O(h^{M+2}),
-\] 
-!et
-with $C$ a constant. Note that we calculate two halves in the last equation. We get then
-!bt
-\[
-|x_1-x_2| = Ch^{M+1}(1-\frac{1}{2^M}).
-\]
-!et
-yielding
-!bt 
-\[
-C=\frac{|x_1-x_2|}{(1-2^{-M})h^{M+1}}.
-\]
-!et
-We rewrite
-!bt 
-\[
-\tilde{x}=x_2+\epsilon+O((h)^{M+2}),
-\] 
-!et
-with 
-!bt
-\[
-\epsilon = \frac{|x_1-x_2|}{2^M-1}.
-\]
-!et
-!eblock
-
-!split
-===== Adaptive methods =====
-!bblock
-With RK4 the expressions become
-!bt
-\[
-\tilde{x}=x_2+\epsilon+O((h)^{6}),
-\] 
-!et
-with
-!bt 
-\[
-\epsilon = \frac{|x_1-x_2|}{15}.
-\]
-!et
-The estimate is one order higher than the original RK4. But this method is normally rather inefficient since it requires a lot of computations. We solve typically the equation three times at each time step. 
-However, we can compare the estimate $\epsilon$ with some by us given accuracy $\xi$. 
-We can then ask the question: what is, with a given $x_j$ and $t_j$, the largest possible step size $\tilde{h}$ that leads to a truncation error below $\xi$?
-We want
-!bt
-\[
-C\tilde{h} \le \xi,
-\]
-!et
-which leads to 
-!bt
-\[
-\left(\frac{\tilde{h}}{h}\right)^{M+1}\frac{|x_1-x_2|}{(1-2^{-M})}\le \xi, 
-\]
-!et
-meaning that
-!bt
-\[
-\tilde{h}=h\left(\frac{\xi}{\epsilon}\right)^{1+1/M}. 
-\]
-!et
-!eblock
-
-
-!split
-===== Adaptive methods =====
-!bblock
-With 
-!bt
-\[
-\tilde{h}=h\left(\frac{\xi}{\epsilon}\right)^{1+1/M}. 
-\]
-!et
-we can design the following algorithm:
- * If the two answers are close, keep the approximation to $h$.
- * If $\epsilon > \xi$ we need to decrease the step size in the next time step.
- * If $\epsilon < \xi$ we need to increase the step size in the next time step.
-
-
-!eblock
-
-
-
-
-
-
-
 
 
