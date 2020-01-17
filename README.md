@@ -32,6 +32,12 @@ Here you will find a general overview of the course, with learning outcomes, tea
 | Tuesday/Thursday 1-2:00pm, Physics Help Room BPS 1248 | or immediately after class on Friday |
 
 
+| Additional Class |    Location |
+|---|----|
+| Wednesday 5:00-6pm | Room 1300 BPS |
+
+
+
 ### Grading and dates
 
 | Activity | Percentage of total score |
