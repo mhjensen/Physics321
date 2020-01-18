@@ -1,4 +1,4 @@
-TITLE: Energy and Energy Conservation
+TITLE: Energy, Momentum and Conservation Laws
 AUTHOR: "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/" {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA & Department of Physics, University of Oslo, Norway
 AUTHOR: "Scott Pratt":"https://pa.msu.edu/profile/pratts/"  at Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA
 AUTHOR: "Carl Schmidt":"https://pa.msu.edu/profile/schmidt/" at Department of Physics and Astronomy, Michigan State University, USA
@@ -6,276 +6,448 @@ DATE: today
 
 
 
-===== Introduction =====
+!split
+===== Energy and Energy Conservation =====
 
-\subsection{Conservation of Momentum}
-\label{sec:momentum}
+Energy conservation is most convenient as a strategy for addressing
+problems where time does not appear. For example, a particle goes
+from position $x_0$ with speed $v_0$, to position $x_f$; what is its
+new speed? However, it can also be applied to problems where time
+does appear, such as in solving for the trajectory $x(t)$, or
+equivalently $t(x)$. This is the focus of this sub-section.
 
-Newton's third law, "For every action there is an equal and opposite reaction", is more accurately stated in the text,
-\begin{quote}
-{\it If two bodies exert forces on each other, these forces are equal in magnitude and opposite in direction.}
-\end{quote}
-This means that for two bodies $i$ and $j$, if the force on $i$ due to $j$ is called $\vec{F}_{ij}$, then 
+Energy is conserved in the case where the potential energy, $V(\bm{r})$, depends only on position, and not on time. The force is determined by $V$,
+!bt
 \begin{equation}
-\vec{F}_{ij}=-\vec{F}_{ji}. 
+\bm{F}(\bm{r})=-\nabla V(\bm{r}).
 \end{equation}
-Newton's second law, $\vec{F}=m\vec{a}$, can be written for a particle $i$ as
-\begin{equation}
-\vec{F}_i=\sum_{j\ne i} \vec{F}_{ij}=m_i\vec{a}_i,
-\end{equation}
-where $\vec{F}_i$ (a single subscript) denotes the net force acting on $i$. Because the mass of $i$ is fixed, one can see that
-\begin{equation}
-\vec{F}_i=\frac{d}{dt}m_i\vec{v}_i=\sum_{j\ne i}\vec{F}_{ij}.
-\end{equation}
-Now, one can sum over all the particles and obtain
+!et
+
+The net energy, $E=V+K$ where $K$ is the kinetic energy, is then conserved,
+
+!bt
 \begin{eqnarray}
-\frac{d}{dt}\sum_i m_iv_i&=&\sum_{ij, i\ne j}\vec{F}_{ij}\\
+\frac{d}{dt}(T+U)&=&\frac{d}{dt}\left(\frac{m}{2}(v_x^2+v_y^2+v_z^2)+V(\bm{r})\right)\\
+\nonumber
+&=&m\left(v_x\frac{dv_x}{dt}+v_y\frac{dv_y}{dt}+v_z\frac{dv_z}{dt}\right)
++\partial_xU\frac{dx}{dt}+\partial_yU\frac{dy}{dt}+\partial_zU\frac{dz}{dt}\\
+\nonumber
+&=&v_xF_x+v_yF_y+v_zF_z-F_xv_x-F_yv_y-F_zv_z=0.
+\end{eqnarray}
+!et
+
+The same proof can be written more compactly with vector notation,
+
+!bt
+\begin{eqnarray}
+\frac{d}{dt}\left(\frac{m}{2}v^2+V(\bm{r})\right)
+&=&m\bm{v}\cdot\dot{\bm{v}}+\nabla V(\bm{r})\cdot\dot{\bm{r}}\\
+\nonumber
+&=&\bm{v}\cdot\bm{F}-\bm{F}\cdot\bm{v}=0.
+\end{eqnarray}
+!et
+
+Inverting the expression for kinetic energy,
+!bt
+\begin{equation}
+v=\sqrt{2K/m}=\sqrt{2(E-V)/m},
+\end{equation}
+!et
+
+allows one to solve for the one-dimensional trajectory $x(t)$, by finding $t(x)$,
+
+!bt
+\begin{equation}
+t=\int_{x_0}^x \frac{dx'}{v(x')}=\int_{x_0}^x\frac{dx'}{\sqrt{2(E-V(x'))/m}}.
+\end{equation}
+!et
+
+Note this would be much more difficult in higher dimensions, because
+you would have to determine which points, $x,y,z$, the particles might
+reach in the trajectory, whereas in one dimension you can typically
+tell by simply seeing whether the kinetic energy is positive at every
+point between the old position and the new position.
+
+
+Consider a simple harmonic oscillator potential, $V(x)=kx^2/2$, with a particle emitted from $x=0$ with velocity $v_0$. Solve for the trajectory $t(x)$,
+
+!bt
+\begin{eqnarray}
+t&=&\int_{0}^x \frac{dx'}{\sqrt{2(E-kx^2/2)/m}}\\
+\nonumber
+&=&\sqrt{m/k}\int_0^x~\frac{dx'}{\sqrt{x_{\rm max}^2-x^{\prime 2}}},~~~x_{\rm max}^2=2E/k.
+\end{eqnarray}
+!et
+
+Here $E=mv_0^2/2$ and $x_{\rm max}$ is defined as the maximum
+displacement before the particle turns around. This integral is done
+by the substitution $\sin\theta=x/x_{\rm max}$.
+
+!bt
+\begin{eqnarray}
+(k/m)^{1/2}t&=&\sin^{-1}(x/x_{\rm max}),\\
+\nonumber
+x&=&x_{\rm max}\sin\omega t,~~~\omega=\sqrt{k/m}.
+\end{eqnarray}
+!et
+
+As an example of an integral to solve numerically, consider the following integral. First, rewrite the integral as a sum,
+
+!bt
+\begin{equation}
+t=\sum_{n=1}^N \Delta x [2(E-V(x_n)/m]^{-1/2}, ~~~
+\end{equation}
+!et
+
+where $\Delta x=(x-x_0)/N$ and $x_n=x_0+(n-1/2)\Delta x$. Note that
+for best accuracy the value of $x_n$ has been placed in the center of
+the $n^{\rm th}$ interval. The accuracy will improve for higher values
+of $N$, or equivalently, smaller step size $\Delta x$.
+
+Add numerical evaluation of integrals.
+
+
+
+
+!split
+===== Conservation of Momentum =====
+
+
+Newton's third law which met earlier states that _For every action there is an equal and opposite reaction_, is more accurately stated as
+_If two bodies exert forces on each other, these forces are equal in magnitude and opposite in direction_.
+
+This means that for two bodies $i$ and $j$, if the force on $i$ due to $j$ is called $\bm{F}_{ij}$, then 
+
+!bt
+\begin{equation}
+\bm{F}_{ij}=-\bm{F}_{ji}. 
+\end{equation}
+!et
+Newton's second law, $\bm{F}=m\bm{a}$, can be written for a particle $i$ as
+
+!bt
+\begin{equation}
+\bm{F}_i=\sum_{j\ne i} \bm{F}_{ij}=m_i\bm{a}_i,
+\end{equation}
+!et
+
+where $\bm{F}_i$ (a single subscript) denotes the net force acting on $i$. Because the mass of $i$ is fixed, one can see that
+
+!bt
+\begin{equation}
+\bm{F}_i=\frac{d}{dt}m_i\bm{v}_i=\sum_{j\ne i}\bm{F}_{ij}.
+\end{equation}
+!et
+
+Now, one can sum over all the particles and obtain
+
+!bt
+\begin{eqnarray}
+\frac{d}{dt}\sum_i m_iv_i&=&\sum_{ij, i\ne j}\bm{F}_{ij}\\
 \nonumber
 &=&0.
 \end{eqnarray}
-The last step made use of the fact that for every term $ij$, there is an equivalent term $ji$ with opposite force. Because the momentum is defined as $m\vec{v}$, for a system of particles,
+!et
+
+The last step made use of the fact that for every term $ij$, there is
+an equivalent term $ji$ with opposite force. Because the momentum is
+defined as $m\bm{v}$, for a system of particles,
+
+!bt
 \begin{equation}
-\frac{d}{dt}\sum_im_i\vec{v}_i=0,~~{\rm for~isolated~particles}.
+\frac{d}{dt}\sum_im_i\bm{v}_i=0,~~{\rm for~isolated~particles}.
 \end{equation}
-By "isolated" one means that the only force acting on any particle $i$ are those originating from other particles in the sum, i.e. ``no external'' forces. Thus, Newton's third law leads to the conservation of total momentum,
+!et
+
+By "isolated" one means that the only force acting on any particle $i$
+are those originating from other particles in the sum, i.e. ``no
+external'' forces. Thus, Newton's third law leads to the conservation
+of total momentum,
+
+!bt
 \begin{eqnarray}
-\vec{P}&=&\sum_i m_i\vec{v}_i,\\
+\bm{P}&=&\sum_i m_i\bm{v}_i,\\
 \nonumber
-\frac{d}{dt}\vec{P}&=&0.
+\frac{d}{dt}\bm{P}&=&0.
 \end{eqnarray}
+!et
+
+Consider the rocket of mass $M$ moving with velocity $v$. After a
+brief instant, the velocity of the rocket is $v+\Delta v$ and the mass
+is $M-\Delta M$. Momentum conservation gives
 
 
-\example
-(Note that in the textbook, the rocket problem is discussed much later, along with collisions) Consider a rocket of mass $M_0$ that ejects gas from the bottom of the rocket with a speed $v_e$ relative to the rocket. The rocket's mass reduces as the fuel is ejected by a rate $\alpha=-dM/dt$. Find the speed of the rocket as a function of time in terms of the initial mass and $\alpha$. Neglect gravity.
-
-Consider the rocket of mass $M$ moving with velocity $v$. After a brief instant, the velocity of the rocket is $v+\Delta v$ and the mass is $M-\Delta M$. Momentum conservation gives
+!bt
 \begin{eqnarray*}
 Mv&=&(M-\Delta M)(v+\Delta v)+\Delta M(v-v_e)\\
 0&=&-\Delta Mv+M\Delta v+\Delta M(v-v_e),\\
 0&=&M\Delta v-\Delta Mv_e.
 \end{eqnarray*}
+!et
+
 In the second step we ignored the term $\Delta M\Delta v$ because it is doubly small. The last equation gives
+
+!bt
 \begin{eqnarray}
 \Delta v&=&\frac{v_e}{M}\Delta M,\\
 \nonumber
 \frac{dv}{dt}&=&\frac{v_e}{M}\frac{dM}{dt}.
 \end{eqnarray}
+!et
+
 Integrating the expression with lower limits $v_0=0$ and $M_0$, one finds
+
+!bt
 \begin{eqnarray*}
 v&=&v_e\int_{M_0}^M \frac{dM'}{M'}\\
 v&=&-v_e\ln(M/M_0)\\
 &=&-v_e\ln[(M_0-\alpha t)/M_0].
 \end{eqnarray*}
-\exampleend
+!et
 
-Because the total momentum of an isolated system is constant, one can also quickly see that the center of mass of an isolated system is also constant. The center of mass is the average position of a set of masses weighted by the mass,
+Because the total momentum of an isolated system is constant, one can
+also quickly see that the center of mass of an isolated system is also
+constant. The center of mass is the average position of a set of
+masses weighted by the mass,
+
+!bt
 \begin{equation}
 \bar{x}=\frac{\sum_im_ix_i}{\sum_i m_i}.
 \end{equation}
+!et
+
 The rate of change of $\bar{x}$ is
+
+!bt
 \begin{eqnarray}
 \dot{\bar{x}}&=&\frac{1}{M}\sum_i m_i\dot{x}_i=\frac{1}{M}P_x.
 \end{eqnarray}
-Thus if the total momentum is constant the center of mass moves at a constant velocity, and if the total momentum is zero the center of mass is fixed.
+!et
 
-\subsection{Conservation of Angular Momentum}
-\label{sec:angmomentum}
+Thus if the total momentum is constant the center of mass moves at a
+constant velocity, and if the total momentum is zero the center of
+mass is fixed.
+
+
+!split
+===== Conservation of Angular Momentum =====
+
 
 Consider a case where the force always points radially,
-\begin{equation}
-\vec{F}(\vec{r})=F(r)\hat{r},
-\end{equation}
-where $\hat{r}$ is a unit vector pointing outward from the origin. The angular momentum is defined as
-\begin{equation}
-\vec{L}=\vec{r}\times\vec{p}=m\vec{r}\times\vec{v}.
-\end{equation}
-The rate of change of the angular momentum is
-\begin{eqnarray}
-\label{eq:dLdt}
-\frac{d\vec{L}}{dt}&=&m\vec{v}\times\vec{v}+m\vec{r}\times\dot{\vec{v}}\\
-\nonumber
-&=&m\vec{v}\times\vec{v}+\vec{r}\times{\vec{F}}=0.
-\end{eqnarray}
-The first term is zero because $\vec{v}$ is parallel to itself, and the second term is zero because $\vec{F}$ is parallel to $\vec{r}$.
 
-As an aside, one can see from the Levi-Civita symbol that the cross product of a vector with itself is zero. Here, we consider a vector
+!bt
+\begin{equation}
+\bm{F}(\bm{r})=F(r)\hat{r},
+\end{equation}
+!et
+
+where $\hat{r}$ is a unit vector pointing outward from the origin. The angular momentum is defined as
+
+!bt
+\begin{equation}
+\bm{L}=\bm{r}\times\bm{p}=m\bm{r}\times\bm{v}.
+\end{equation}
+!et
+
+The rate of change of the angular momentum is
+
+!bt
 \begin{eqnarray}
-\vec{V}&=&\vec{A}\times\vec{A},\\
+\frac{d\bm{L}}{dt}&=&m\bm{v}\times\bm{v}+m\bm{r}\times\dot{\bm{v}}\\
 \nonumber
-V_i&=&(\vec{A}\times\vec{A})_i=\sum_{jk}\epsilon_{ijk}A_jA_k.
+&=&m\bm{v}\times\bm{v}+\bm{r}\times{\bm{F}}=0.
 \end{eqnarray}
-For any term $i$, there are two contributions. For example, for $i$ denoting the $x$ direction, either $j$ denotes the $y$ direction and $k$ denotes the $z$ direction, or vice versa, so
+!et
+
+
+The first term is zero because $\bm{v}$ is parallel to itself, and the
+second term is zero because $\bm{F}$ is parallel to $\bm{r}$.
+
+As an aside, one can see from the Levi-Civita symbol that the cross
+product of a vector with itself is zero. Here, we consider a vector
+
+!bt
+\begin{eqnarray}
+\bm{V}&=&\bm{A}\times\bm{A},\\
+\nonumber
+V_i&=&(\bm{A}\times\bm{A})_i=\sum_{jk}\epsilon_{ijk}A_jA_k.
+\end{eqnarray}
+!et
+
+For any term $i$, there are two contributions. For example, for $i$
+denoting the $x$ direction, either $j$ denotes the $y$ direction and
+$k$ denotes the $z$ direction, or vice versa, so
+
+!bt
 \begin{equation}
 V_1=\epsilon_{123}A_2A_3+\epsilon_{132}A_3A_2.
 \end{equation}
+!et
+
 This is zero by the antisymmetry of $\epsilon$ under permutations.
 
-If the force is not radial, $\vec{r}\times\vec{F}\ne 0$ in Eq. (\ref{eq:dLdt}), and angular momentum is no longer conserved,
+If the force is not radial, $\bm{r}\times\bm{F}\ne 0$ as above, and angular momentum is no longer conserved,
+
+!bt
 \begin{equation}
-\frac{d\vec{L}}{dt}=\vec{r}\times\vec{F}\equiv\vec{\tau},
+\frac{d\bm{L}}{dt}=\bm{r}\times\bm{F}\equiv\bm{\tau},
 \end{equation}
-where $\vec{\tau}$ is the torque.
+!et
+
+where $\bm{\tau}$ is the torque.
 
 For a system of isolated particles, one can write
+
+
+!bt
 \begin{eqnarray}
-\frac{d}{dt}\sum_i\vec{L}_i&=&\sum_{i\ne j}\vec{r}_i\times \vec{F}_{ij}\\
+\frac{d}{dt}\sum_i\bm{L}_i&=&\sum_{i\ne j}\bm{r}_i\times \bm{F}_{ij}\\
 \nonumber
-&=&\frac{1}{2}\sum_{i\ne j} \vec{r}_i\times \vec{F}_{ij}+\vec{r}_j\times\vec{F}_{ji}\\
+&=&\frac{1}{2}\sum_{i\ne j} \bm{r}_i\times \bm{F}_{ij}+\bm{r}_j\times\bm{F}_{ji}\\
 \nonumber
-&=&\frac{1}{2}\sum_{i\ne j} (\vec{r}_i-\vec{r}_j)\times\vec{F}_{ij}=0,
+&=&\frac{1}{2}\sum_{i\ne j} (\bm{r}_i-\bm{r}_j)\times\bm{F}_{ij}=0,
 \end{eqnarray}
-where the last step used Newton's third law, $\vec{F}_{ij}=-\vec{F}_{ji}$. If the forces between the particles are radial, i.e. $\vec{F}_{ij} ~||~ (\vec{r}_i-\vec{r}_j)$, then each term in the sum is zero and the net angular momentum is fixed. Otherwise, you could imagine an isolated system that would start spinning spontaneously. 
+!et
+
+where the last step used Newton's third law,
+$\bm{F}_{ij}=-\bm{F}_{ji}$. If the forces between the particles are
+radial, i.e. $\bm{F}_{ij} ~||~ (\bm{r}_i-\bm{r}_j)$, then each term in
+the sum is zero and the net angular momentum is fixed. Otherwise, you
+could imagine an isolated system that would start spinning
+spontaneously.
 
 One can write the torque about a given axis, which we will denote as $\hat{z}$, in polar coordinates, where
+
+!bt
 \begin{eqnarray}
 x&=&r\sin\theta\cos\phi,~~y=r\sin\theta\cos\phi,~~z=r\cos\theta,
 \end{eqnarray}
+!et
 to find the $z$ component of the torque,
+
+!bt
 \begin{eqnarray}
 \tau_z&=&xF_y-yF_x\\
 \nonumber
 &=&-r\sin\theta\left\{\cos\phi \partial_y-\sin\phi \partial_x\right\}V(x,y,z).
 \end{eqnarray}
+!et
+
 One can use the chain rule to write the partial derivative w.r.t. $\phi$ (keeping $r$ and $\theta$ fixed),
+
+!bt
 \begin{eqnarray}
 \partial_\phi&=&\frac{\partial x}{\partial\phi}\partial_x+\frac{\partial_y}{\partial\phi}\partial_y
 +\frac{\partial z}{\partial\phi}\partial_z\\
 \nonumber
 &=&-r\sin\theta\sin\phi\partial_x+\sin\theta\cos\phi\partial_y.
 \end{eqnarray}
+!et
+
 Combining the two equations,
+
+!bt
 \begin{eqnarray}
 \tau_z&=&-\partial_\phi V(r,\theta,\phi).
 \end{eqnarray}
-Thus, if the potential is independent of the azimuthal angle $\phi$, there is no torque about the $z$ axis and $L_z$ is conserved.
+!et
 
-\subsection{Symmetries and Conservation Laws}
+Thus, if the potential is independent of the azimuthal angle $\phi$,
+there is no torque about the $z$ axis and $L_z$ is conserved.
 
-When we derived the conservation of energy, we assumed that the potential depended only on position, not on time. If it depended explicitly on time, one can quickly see that the energy would have changed at a rate $\partial_tV(x,y,z,t)$. Note that if there is no explicit dependence on time, i.e. $V(x,y,z)$, the potential energy can depend on time through the variations of $x,y,z$ with time. However, that variation does not lead to energy non-conservation. Further, we just saw that if a potential does not depend on the azimuthal angle about some axis, $\phi$, that the angular momentum about that axis is conserved.
 
-Now, we relate momentum conservation to translational invariance. Considering a system of particles with positions, $\vec{r}_i$, if one changed the coordinate system by a translation by a differential distance $\vec{\epsilon}$, the net potential would change by
+!split
+===== Symmetries and Conservation Laws =====
+
+When we derived the conservation of energy, we assumed that the
+potential depended only on position, not on time. If it depended
+explicitly on time, one can quickly see that the energy would have
+changed at a rate $\partial_tV(x,y,z,t)$. Note that if there is no
+explicit dependence on time, i.e. $V(x,y,z)$, the potential energy can
+depend on time through the variations of $x,y,z$ with time. However,
+that variation does not lead to energy non-conservation. Further, we
+just saw that if a potential does not depend on the azimuthal angle
+about some axis, $\phi$, that the angular momentum about that axis is
+conserved.
+
+Now, we relate momentum conservation to translational
+invariance. Considering a system of particles with positions,
+$\bm{r}_i$, if one changed the coordinate system by a translation by a
+differential distance $\bm{\epsilon}$, the net potential would change
+by
+
+!bt
 \begin{eqnarray}
-\label{eq:epsexp}
-\delta V(\vec{r}_1,\vec{r}_2\cdots)&=&\sum_i \vec{\epsilon}\cdot\nabla_i V(\vec{r}_1,\vec{r}_2,\cdots)\\
+\delta V(\bm{r}_1,\bm{r}_2\cdots)&=&\sum_i \bm{\epsilon}\cdot\nabla_i V(\bm{r}_1,\bm{r}_2,\cdots)\\
 \nonumber
-&=&-\sum_i \vec{\epsilon}\cdot\vec{F}_i\\
+&=&-\sum_i \bm{\epsilon}\cdot\bm{F}_i\\
 \nonumber
-&=&-\frac{d}{dt}\sum_i \vec{\epsilon}\cdot\vec{p}_i.
+&=&-\frac{d}{dt}\sum_i \bm{\epsilon}\cdot\bm{p}_i.
 \end{eqnarray}
-Thus, if the potential is unchanged by a translation of the coordinate system, the total momentum is conserved. If the potential is translationally invariant in a given direction, defined by a unit vector, $\hat{\epsilon}$ in the $\vec{\epsilon}$ direction, one can see that
+!et
+
+
+Thus, if the potential is unchanged by a translation of the coordinate
+system, the total momentum is conserved. If the potential is
+translationally invariant in a given direction, defined by a unit
+vector, $\hat{\epsilon}$ in the $\bm{\epsilon}$ direction, one can see
+that
+
+!bt
 \begin{eqnarray}
-\hat{\epsilon}\cdot\nabla_i V(\vec{r}_i)&=&0.
+\hat{\epsilon}\cdot\nabla_i V(\bm{r}_i)&=&0.
 \end{eqnarray}
-The component of the total momentum along that axis is conserved. This is rather obvious for a single particle. If $V(\vec{r})$ does not depend on some coordinate $x$, then the force in the $x$ direction is $F_x=-\partial_xV=0$, and momentum along the $x$ direction is constant. 
+!et
+
+The component of the total momentum along that axis is conserved. This
+is rather obvious for a single particle. If $V(\bm{r})$ does not
+depend on some coordinate $x$, then the force in the $x$ direction is
+$F_x=-\partial_xV=0$, and momentum along the $x$ direction is
+constant.
 
 We showed how the total momentum of an isolated system of particle was conserved, even if the particles feel internal forces in all directions. In that case the potential energy could be written 
+
+!bt
 \begin{eqnarray}
-V=\sum_{i,j\le i}V_{ij}(\vec{r}_i-\vec{r}_j).
+V=\sum_{i,j\le i}V_{ij}(\bm{r}_i-\bm{r}_j).
 \end{eqnarray}
-In this case, a translation leads to $\vec{r}_i\rightarrow \vec{r}_i+\vec{\epsilon}$, with the translation equally affecting the coordinates of each particle. Because the potential depends only on the relative coordinates, $\delta V$ is manifestly zero. If one were to go through the exercise of calculating $\delta V$ for small $\vec{\epsilon}$ in Eq. (\ref{eq:epsexp}), one would find that the term $\nabla_i V(\vec{r}_i-\vec{r}_j)$ would be canceled by the term $\nabla_jV(\vec{r}_i-\vec{r}_j)$.
+!et
 
-The relation between symmetries of the potential and conserved quantities (also called constants of motion) is one of the most profound concepts one should gain from this course. It plays a critical role in all fields of physics. This is especially true in quantum mechanics, where a quantity $A$ is conserved if its operator commutes with the Hamiltonian. For example if the momentum operator $-i\hbar\partial_x$ commutes with the Hamiltonian, momentum is conserved, and clearly this operator commutes if the Hamiltonian (which represents the total energy, not just the potential) does not depend on $x$. Also in quantum mechanics the angular momentum operator is $L_z=-i\hbar\partial_\phi$. In fact, if the potential is unchanged by rotations about some axis, angular momentum about that axis is conserved. We return to this concept, from a more formal perspective, later in the course when Lagrangian mechanics is presented.
+In this case, a translation leads to $\bm{r}_i\rightarrow
+\bm{r}_i+\bm{\epsilon}$, with the translation equally affecting the
+coordinates of each particle. Because the potential depends only on
+the relative coordinates, $\delta V$ is manifestly zero. If one were
+to go through the exercise of calculating $\delta V$ for small
+$\bm{\epsilon}$, one would find that the term
+$\nabla_i V(\bm{r}_i-\bm{r}_j)$ would be canceled by the term
+$\nabla_jV(\bm{r}_i-\bm{r}_j)$.
 
-\example
+The relation between symmetries of the potential and conserved
+quantities (also called constants of motion) is one of the most
+profound concepts one should gain from this course. It plays a
+critical role in all fields of physics. This is especially true in
+quantum mechanics, where a quantity $A$ is conserved if its operator
+commutes with the Hamiltonian. For example if the momentum operator
+$-i\hbar\partial_x$ commutes with the Hamiltonian, momentum is
+conserved, and clearly this operator commutes if the Hamiltonian
+(which represents the total energy, not just the potential) does not
+depend on $x$. Also in quantum mechanics the angular momentum operator
+is $L_z=-i\hbar\partial_\phi$. In fact, if the potential is unchanged
+by rotations about some axis, angular momentum about that axis is
+conserved. We return to this concept, from a more formal perspective,
+later in the course when Lagrangian mechanics is presented.
+
+
 Consider a particle of mass $m$ moving according to the potential
+!bt
 \[
 V(x,y,z)=A\exp\left\{-\frac{x^2+z^2}{2a^2}\right\}.
 \]
+!et
+
 Of the quantities, $E,p_x,p_y,p_z,L_x,L_y,L_z$ are conserved?
 
-Solution:\\
+Solution:
 One has both rotational and translational invariance about the $y$ axis, so $L_y$ and $p_y$ are conserved. Because the potential does not depend explicitly on time, energy is also conserved. 
 
-\exampleend
-
-
-\subsection{Exercises}
-
-\begin{enumerate}
-\item Consider a bicyclist with air resistance proportional to $v^2$ and rolling resistance proportional to $v$, so that
-\[
-\frac{dv}{dt}=-Bv^2-Cv.
-\]
-If the cyclist has initial velocity $v_0$ and is coasting on a flat course, a) find her velocity as a function of time, and b) find her position as a function of time.
-\item For Eq. (\ref{eq:yzero}) show that in the limit where $\gamma\rightarrow 0$ one finds $t=2v_{0y}/g$.
-
-\item The motion of a charged particle in an electromagnetic field can be obtained from the {\bf Lorentz equation}. If the electric field vector is ${\bf E}$ and the magnetic field is ${\bf B}$, the force on a particle of mass $m$ that carries a charge $q$ and has a velocity ${\bf v}$
-\[
-\vec{F}=q\vec{E}+q\vec{v}\times\vec{B}
-\]
-where we assume $v<<c$ (speed of light).
-\begin{itemize}\itemsep=0pt
-\item[(a)] If there is no electric field and if the particle enters the magnetic field in a direction perpendicular to the lines of magnetic flux, show that the trajectory is a circle with radius
-\[
-r=\frac{mv}{qB}=\frac{v}{\omega_c},
-\]
-where $\omega_c\equiv qB/m$ is the {\it cyclotron frequency}.
-\item[(b)] Choose the $z$-axis to lie in the direction of ${\bf B}$ and let the plane containing ${\bf E}$ and ${\bf B}$ be the $yz-$plane. Thus
-\[
-{\bf B}=B\hat{k},~~~{\bf E}=E_y\hat{j}+E_z\hat{k}.
-\]
-Show that the $z$ component of the motion is given by
-\[
-z(t)=z_0+\dot{z}_0t+\frac{qE_z}{2m}t^2,
-\]
-where
-\[
-z(0)\equiv z_0~~~{\rm and}~~~\dot{z}(0)\equiv \dot{z}_0.
-\]
-\item[(c)] Continue the calculation and obtain expressions for $\dot{x}(t)$ and $\dot{y}(t)$. Show that the time averages of these velocity components are
-\[
-\langle\dot{x}\rangle=\frac{E_y}{B},~~~\langle\dot{y}\rangle=0.
-\]
-I.e. show that the motion is periodic and then average over one complete period. Hint: write equations of motion for $v_y$ and for $\tilde{v}_x\equiv v_x-E_y/B$.
-\item[(d)] Integrate the velocity equations found in (c) and show (with the initial conditions $x(0)=-A/\omega_c,~\dot{x}(0)=E_y/B,~y(0)=0,~\dot{y}(0)=A~$ that
-\[
-x(t)=\frac{-A}{\omega_c}\cos\omega_ct+\frac{E_y}{B}t,~~~y(t)=\frac{A}{\omega_c}\sin\omega_ct.
-\]
-These are the parametric equations of a trochoid. Sketch the projections of the trajectory on the $xy$-plane for the cases (i) $A>|E_y/B|$, (ii) $A<|E_y/B|$, and (iii) $A=|E_y/B|$. (The last case yields a cycloid.)
-
-\end{itemize}
-
-\item A particle of mass $m$ has velocity $v=\alpha/x$, where $x$ is its displacement. Find the force $F(x)$ responsible for the motion.
-
-\item A particle is under the influence of a force $F=-kx+kx^3/\alpha^2$, where $k$ and $\alpha$ are constants and $k$ is positive. Determine $U(x)$ and discuss the motion. What happens when $E=(1/4)k\alpha^2$?
-
-\item Using Eq. (\ref{eq:tfromenergy}) find the position as a function of a time by numerical integration for the case where a particle of mass $m$ moves under the potential $U(x)=U_0\sqrt{x/L}$ and for an initial velocity $v_0$. Use the following values: $m=2.5 kg$, $v_0=75.0$, $L=10 m$, $U_0$=15 J. Solve for time until the particle returns to the origin given that it started at the origin moving with velocity $v_0$. Make a graph of $x$ vs $t$ for the entire trajectory from your computer output. Turn in the graph and a printout of your program.
-
-\item Consider a rocket with initial mass $M_0$ at rest in deep space. It fires its engines which eject mass with an exhaust speed $v_e$ relative to the rocket. The rocket loses mass at a constant rate $\alpha=dM/dt$. Find the speed of the rocket as a function of time.
-
-\item Imagine that a rocket can be built so that the best percentage of fuel to overall mass is 0.9. Explain the advantage of having stages.
-
-\item Ted and his iceboat have a combined mass of 200 kg. Ted's boat slides without friction on the top of a frozen lake. Ted's boat has a winch and he wishes to wind up a long heavy rope of mass 300  kg and length 100 m that is laid out in a straight line on the ice. Ted's boat starts at rest at one end of the rope, then brings the rope on board the ice boat at a constant rate of 0.25 m/s. After 400 seconds the rope is all aboard the iceboat.
-\begin{enumerate}
-\item Before Ted turns on the winch, what is the position of the center of mass relative to the boat?
-\item Immediately after Ted starts the winch, what is his speed?
-\item Immediately after the rope is entirely on the boat, what is Ted's speed?
-\item Immediately after the rope is entirely on board, what is Ted's displacement relative to his original position?
-\item Immediately after the rope is entirely on board, where is the center of mass compared to Ted's original position?
-\item Find Ted's velocity as a function of time.
-\end{enumerate}
-
-\item Two disks are initially at rest, each of mass $M$, connected by a string between their centers. The disks slide on low-friction ice as the center of the string is pulled by a string with a constant force $F$ through a distance $d$. The disks collide and stick together, having moved a distance $b$ horizontally. Determine the final speed of the disks just after they collide. You may want to use the proof from No. (\ref{Wcmproof}).
-
-\includegraphics[width=0.6\textwidth]{figs/sliding_dumbells}
-
-\item Santa Claus is skating on the magic ice near the North Pole, which is frictionless. A massless rope sticks out from the pole horizontally along a straight line. The rope's original length is $L_0$. Santa approaches the rope moving perpendicular to the direction of the rope and grabs the end of the rope. The diameter of the North Pole is $2a$. The rope then winds around the thin pole, $a<<L_0$, until Santa is half the original distance, $L_0/2$, from the pole. If Santa's original speed was $v_0$, what is his new speed? Assume there is no energy wasted in curving the rope around the pole. 
-
-\item \label{Wcmproof}Prove that the work on the center of mass of a system of particles during a small time interval $\delta t$, which is defined by 
-\[
-\delta W_{\rm cm}\equiv \vec{F}_{\rm tot}\cdot \delta\vec{r}_{\rm cm},
-\]
-is equal to the change of the kinetic energy of the center of mass,
-\[
-T_{\rm cm}\equiv \frac{1}{2}M_{\rm tot}v_{\rm cm}^2, ~~~~~\delta T_{\rm cm}=M_{\rm tot}\vec{v}_{\rm cm}\cdot\delta\vec{v}_{\rm cm}.
-\]
-Use the following definitions:
-\begin{eqnarray*}
-\vec{F}_{\rm tot}&=&\sum_i \vec{F}_i,\\
-M_{\rm tot}&=&\sum_i m_i,\\
-\vec{r}_{cm}&=&\frac{1}{M_{\rm tot}}\sum_i m_i\vec{r}_i,\\
-\vec{v}_{cm}&=&\frac{1}{M_{\rm tot}}\sum_i m_i\vec{v}_i.
-\end{eqnarray*}
-
-\end{enumerate} 
 
