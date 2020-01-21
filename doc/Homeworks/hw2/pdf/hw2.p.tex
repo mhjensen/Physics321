@@ -131,7 +131,7 @@ PHY321: Classical Mechanics 1
 
 % --- begin date ---
 \begin{center}
-Jan 17, 2020
+Jan 21, 2020
 \end{center}
 % --- end date ---
 
@@ -266,7 +266,7 @@ to get an understanding of what is happening. Feel free to play around with it.
 tf = 4 #length of value to be analyzed
 dt = .001 # step sizes
 t = np.arange(0.0,tf,dt) # Creates an evenly spaced time array going from 0 to 3.999, with step sizes .001
-r = np.zeros((len(t), 2)) # Creates an empty array of [x,y] arrays (our vectors). Array size is same as the one for time.
+p = np.zeros((len(t), 2)) # Creates an empty array of [x,y] arrays (our vectors). Array size is same as the one for time.
 p[0] = [2.0,1.0] # This sets the inital position to be x = 2 and y = 1
 \epycod
 
@@ -277,18 +277,18 @@ which listed number in the array iteration we are getting back.
 
 
 \bpycod
-print(r[0]) # Prints the first array
-print(r[0,:]) # Same as above, these commands are interchangeable 
+print(p[0]) # Prints the first array
+print(p[0,:]) # Same as above, these commands are interchangeable 
 \epycod
 \bpycod
-print(r[3999]) # Prints the 4000th array
+print(p[3999]) # Prints the 4000th array
 \epycod
 
 \bpycod
-print(r[0,0]) # Prints the first value of the first array
+print(p[0,0]) # Prints the first value of the first array
 \epycod
 \bpycod
-print(r[0,1]) # Prints the second value of first array
+print(p[0,1]) # Prints the second value of first array
 print(p[:,0]) # Prints the first value of all the arrays
 \epycod
 Then try running this cell. Notice how it gives an error since we did not implement a third dimension into our arrays

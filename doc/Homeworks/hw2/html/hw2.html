@@ -109,7 +109,7 @@ MathJax.Hub.Config({
 
 <br>
 <p>
-<center><h4>Jan 17, 2020</h4></center> <!-- date -->
+<center><h4>Jan 21, 2020</h4></center> <!-- date -->
 <br>
 
 <h3 id="___sec0">Practicalities about  homeworks and projects </h3>
@@ -241,7 +241,7 @@ to get an understanding of what is happening. Feel free to play around with it.
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>tf <span style="color: #666666">=</span> <span style="color: #666666">4</span> <span style="color: #408080; font-style: italic">#length of value to be analyzed</span>
 dt <span style="color: #666666">=</span> <span style="color: #666666">.001</span> <span style="color: #408080; font-style: italic"># step sizes</span>
 t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>arange(<span style="color: #666666">0.0</span>,tf,dt) <span style="color: #408080; font-style: italic"># Creates an evenly spaced time array going from 0 to 3.999, with step sizes .001</span>
-r <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((<span style="color: #008000">len</span>(t), <span style="color: #666666">2</span>)) <span style="color: #408080; font-style: italic"># Creates an empty array of [x,y] arrays (our vectors). Array size is same as the one for time.</span>
+p <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((<span style="color: #008000">len</span>(t), <span style="color: #666666">2</span>)) <span style="color: #408080; font-style: italic"># Creates an empty array of [x,y] arrays (our vectors). Array size is same as the one for time.</span>
 p[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> [<span style="color: #666666">2.0</span>,<span style="color: #666666">1.0</span>] <span style="color: #408080; font-style: italic"># This sets the inital position to be x = 2 and y = 1</span>
 </pre></div>
 <p>
@@ -253,23 +253,23 @@ which listed number in the array iteration we are getting back.
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">print</span>(r[<span style="color: #666666">0</span>]) <span style="color: #408080; font-style: italic"># Prints the first array</span>
-<span style="color: #008000; font-weight: bold">print</span>(r[<span style="color: #666666">0</span>,:]) <span style="color: #408080; font-style: italic"># Same as above, these commands are interchangeable </span>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">print</span>(p[<span style="color: #666666">0</span>]) <span style="color: #408080; font-style: italic"># Prints the first array</span>
+<span style="color: #008000; font-weight: bold">print</span>(p[<span style="color: #666666">0</span>,:]) <span style="color: #408080; font-style: italic"># Same as above, these commands are interchangeable </span>
 </pre></div>
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">print</span>(r[<span style="color: #666666">3999</span>]) <span style="color: #408080; font-style: italic"># Prints the 4000th array</span>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">print</span>(p[<span style="color: #666666">3999</span>]) <span style="color: #408080; font-style: italic"># Prints the 4000th array</span>
 </pre></div>
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">print</span>(r[<span style="color: #666666">0</span>,<span style="color: #666666">0</span>]) <span style="color: #408080; font-style: italic"># Prints the first value of the first array</span>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">print</span>(p[<span style="color: #666666">0</span>,<span style="color: #666666">0</span>]) <span style="color: #408080; font-style: italic"># Prints the first value of the first array</span>
 </pre></div>
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">print</span>(r[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>]) <span style="color: #408080; font-style: italic"># Prints the second value of first array</span>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">print</span>(p[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>]) <span style="color: #408080; font-style: italic"># Prints the second value of first array</span>
 <span style="color: #008000; font-weight: bold">print</span>(p[:,<span style="color: #666666">0</span>]) <span style="color: #408080; font-style: italic"># Prints the first value of all the arrays</span>
 </pre></div>
 <p>
