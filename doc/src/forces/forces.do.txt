@@ -318,7 +318,7 @@ $\bm{a}=\bm{F}/m$, becomes
 and $\gamma$ has dimensions of inverse time. 
 
 If you on the other hand have a falling raindrop, how do these equations change? See for example Figure 2.1 in Taylor.
-Let us stay
+Let us stay with a ball which is thrown up in the air at $t=0$. 
 
 !split
 ===== Ways of solving these equations =====
@@ -550,7 +550,7 @@ If the $F(t)$ were perfectly linear in $t$, one would find $t$ in one
 step. Instead, one typically finds a value of $t$ that is closer to
 the final answer than $t_{\rm guess}$. One breaks the loop once one
 finds $F$ within some acceptable tolerance of zero. A program to do
-this might look like:
+this will be added shortly.
 
 !split
 ===== Motion in a Magnetic Field =====
@@ -602,7 +602,7 @@ v_y&=&A\cos(\omega_ct+\phi).
 \end{eqnarray}
 !et
 
-One can integrate the equations to find the positions\ as a function of time,
+One can integrate the equations to find the positions as a function of time,
 !bt
 \begin{eqnarray}
 x-x_0&=&\int_{x_0}^x dx=\int_0^t dt v(t)\\
@@ -665,7 +665,7 @@ considered in this course.
 
 !split
 ===== Sliding Block tied to a Wall =====
-!bblock
+
 Another classical case is that of simple harmonic oscillations, here represented by a block sliding on a horizontal frictionless surface. The block is tied to a wall with a spring. If the spring is not compressed or stretched too far, the force on the block at a given position $x$ is 
 !bt
   \[
@@ -695,7 +695,7 @@ The above differential equation has the advantage that it can be solved  analyti
 !et
 where $A$ is the amplitude and $\nu$ the phase constant.   This provides in turn an important test for the numerical
 solution and the development of a program for more complicated cases which cannot be solved analytically. 
-!eblock
+
 
 
 !split
@@ -759,7 +759,7 @@ The total energy at any time $t$ has however to be conserved, meaning that our s
     E_0=\frac{1}{2}kx(t)^2+\frac{1}{2}mv(t)^2.
 \]
 !et
-
+We will derive this equation in our discussion on "energy conservation":"https://mhjensen.github.io/Physics321/doc/pub/energyconserv/html/energyconserv.html".
 
 !split
 ===== Simple Example, Block tied to a Wall =====
@@ -789,7 +789,7 @@ where $N$ is the number of mesh points.
 !split
 ===== Simple Example, Block tied to a Wall, python code =====
 
-The following python program performs essentially the same calculations as the previous c++ code.
+The following python program ( code will be added shortly)
 !bc pycod
 #
 # This program solves Newtons equation for a block sliding on
@@ -808,72 +808,6 @@ The following python program performs essentially the same calculations as the p
 # and the number of steps. The time interval is fixed to
 # t \in [0, 4\pi) (two periods)
 #
-# Note that this is a highly simplifyed rk4 code, intended
-# for conceptual understanding and experimentation.
-
-import sys
-import numpy, math
-
-#Global variables
-ofile = None;
-E0    = 0.0
-
-def sim(x_0, v_0, N):
-    ts = 0.0
-    te = 4*math.pi
-    h = (te-ts)/float(N)
-
-    t = ts;
-    x = x_0
-    v = v_0
-    while (t < te):
-        kv1 = -h*x
-        kx1 = h*v
-
-        kv2 = -h*(x+kx1/2)
-        kx2 =  h*(v+kv1/2)
-
-        kv3 = -h*(x+kx2/2)
-        kx3 =  h*(v+kv2/2)
-
-        kv4 = -h*(x+kx3/2)
-        kx4 =  h*(v+kv3/2)
-
-        #Write the old values to file
-        output(t,x,v)
-
-        #Update
-        x = x + (kx1 + 2*(kx2+kx3) + kx4)/6
-        v = v + (kv1 + 2*(kv2+kv3) + kv4)/6
-        t = t+h
-        
-def output(t,x,v):
-    de = 0.5*x**2+0.5*v**2 - E0;
-    ofile.write("%15.8E %15.8E %15.8E %15.8E %15.8E\n"\
-                %(t, x, v, math.cos(t),de));
-
-
-#MAIN PROGRAM:
-
-#Get input
-if len(sys.argv) == 5:
-    ofilename =       sys.argv[1];
-    x_0       = float(sys.argv[2])
-    v_0       = float(sys.argv[3])
-    N         =   int(sys.argv[4])
-else:
-    print "Usage:", sys.argv[0], "ofilename x0 v0 N"
-    sys.exit(0)
-
-#Setup
-ofile = open(ofilename, 'w')
-E0    = 0.5*x_0**2+0.5*v_0**2
-
-#Run simulation
-sim(x_0,v_0,N)
-
-#Cleanup
-ofile.close() 
 
 !ec
 
@@ -1272,32 +1206,6 @@ The conventions and techniques outlined here will save you a lot of time when yo
  o Tedious manual work with running programs is automated and we can focus on insights.
  o Your scientific investigations are reproducible, scientific reports with top quality typesetting are produced both for paper and electronic devices.
 
-
-!split
-===== How to start our solar system project  =====
-
-The simplest possible step is to code the Earth-Sun system using Euler's method in two dimensions.
-The four coupled differential equations can then be discretized using Euler's method as (with step length $h$) are
-!bt
-\[
-   v_{x,i+1}=v_{x,i}-h\frac{4\pi^2}{r_i^3}x_i,
-\]
-!et
-!bt
-\[
-   x_{i+1}=x_i+hv_{x,i},
-\]
-!et
-!bt
-\[
-   v_{y,i+1}=v_{y,i}-h\frac{4\pi^2}{r_i^3}y_i,
-\]
-!et
-!bt
-\[
-   y_{i+1}=y_i+hv_{y,i},
-\]
-!et
 
 
 

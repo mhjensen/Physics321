@@ -41,9 +41,12 @@ div { text-align: justify; text-justify: inter-word; }
 <!-- tocinfo
 {'highest level': 2,
  'sections': [('Energy and Energy Conservation', 2, None, '___sec0'),
-              ('Conservation of Momentum', 2, None, '___sec1'),
-              ('Conservation of Angular Momentum', 2, None, '___sec2'),
-              ('Symmetries and Conservation Laws', 2, None, '___sec3')]}
+              ('Work and Energy', 2, None, '___sec1'),
+              ('Energy Conservation', 2, None, '___sec2'),
+              ('Numerical Integration', 2, None, '___sec3'),
+              ('Conservation of Momentum', 2, None, '___sec4'),
+              ('Conservation of Angular Momentum', 2, None, '___sec5'),
+              ('Symmetries and Conservation Laws', 2, None, '___sec6')]}
 end of tocinfo -->
 
 <body>
@@ -94,7 +97,7 @@ MathJax.Hub.Config({
 <center>[3] <b>Department of Physics and Astronomy, Michigan State University, USA</b></center>
 <br>
 <p>
-<center><h4>Jan 18, 2020</h4></center> <!-- date -->
+<center><h4>Jan 22, 2020</h4></center> <!-- date -->
 <br>
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -107,9 +110,28 @@ problems where time does not appear. For example, a particle goes
 from position \( x_0 \) with speed \( v_0 \), to position \( x_f \); what is its
 new speed? However, it can also be applied to problems where time
 does appear, such as in solving for the trajectory \( x(t) \), or
-equivalently \( t(x) \). This is the focus of this sub-section.
+equivalently \( t(x) \).
 
 <p>
+Before we start formulating a strategy for energy conservation, we need to discuss integration methods and the concept of work and how it relates
+to energy.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec1">Work and Energy </h2>
+
+<p>
+Till our own material is placed here, we recommend reading chapters 10 and 11 of <a href="https://www.springer.com/gp/book/9783319195957" target="_blank">Malthe-S&#248;renssen</a>
+and "Taylor chapters 4.1-4.3":" <a href="https://www.uscibooks.com/taylor2.htm" target="_blank"><tt>https://www.uscibooks.com/taylor2.htm</tt></a>."
+
+<p>
+On work, chapter 10 of Malthe-S&#248;renssen is a good read.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec2">Energy Conservation </h2>
 Energy is conserved in the case where the potential energy, \( V(\boldsymbol{r}) \), depends only on position, and not on time. The force is determined by \( V \),
 $$
 \begin{equation}
@@ -123,10 +145,10 @@ The net energy, \( E=V+K \) where \( K \) is the kinetic energy, is then conserv
 
 $$
 \begin{eqnarray}
-\frac{d}{dt}(T+U)&=&\frac{d}{dt}\left(\frac{m}{2}(v_x^2+v_y^2+v_z^2)+V(\boldsymbol{r})\right)\\
+\frac{d}{dt}(K+V)&=&\frac{d}{dt}\left(\frac{m}{2}(v_x^2+v_y^2+v_z^2)+V(\boldsymbol{r})\right)\\
 \nonumber
 &=&m\left(v_x\frac{dv_x}{dt}+v_y\frac{dv_y}{dt}+v_z\frac{dv_z}{dt}\right)
-+\partial_xU\frac{dx}{dt}+\partial_yU\frac{dy}{dt}+\partial_zU\frac{dz}{dt}\\
++\partial_xV\frac{dx}{dt}+\partial_yV\frac{dy}{dt}+\partial_zV\frac{dz}{dt}\\
 \nonumber
 &=&v_xF_x+v_yF_y+v_zF_z-F_xv_x-F_yv_y-F_zv_z=0.
 \end{eqnarray}
@@ -195,11 +217,16 @@ x&=&x_{\rm max}\sin\omega t,~~~\omega=\sqrt{k/m}.
 $$
 
 <p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec3">Numerical Integration </h2>
+
+<p>
 As an example of an integral to solve numerically, consider the following integral. First, rewrite the integral as a sum,
 
 $$
 \begin{equation}
-t=\sum_{n=1}^N \Delta x [2(E-V(x_n)/m]^{-1/2}, ~~~
+t=\sum_{n=1}^N \Delta x [2(E-V(x_n)/m]^{-1/2},
 \label{_auto4}
 \end{equation}
 $$
@@ -211,15 +238,15 @@ the \( n^{\rm th} \) interval. The accuracy will improve for higher values
 of \( N \), or equivalently, smaller step size \( \Delta x \).
 
 <p>
-Add numerical evaluation of integrals.
+More material weill be added shortly.
 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec1">Conservation of Momentum </h2>
+<h2 id="___sec4">Conservation of Momentum </h2>
 
 <p>
-Newton's third law which met earlier states that <b>For every action there is an equal and opposite reaction</b>, is more accurately stated as
+Newton's third law which we met earlier states that <b>For every action there is an equal and opposite reaction</b>, is more accurately stated as
 <b>If two bodies exert forces on each other, these forces are equal in magnitude and opposite in direction</b>.
 
 <p>
@@ -353,7 +380,7 @@ mass is fixed.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec2">Conservation of Angular Momentum </h2>
+<h2 id="___sec5">Conservation of Angular Momentum </h2>
 
 <p>
 Consider a case where the force always points radially,
@@ -498,7 +525,7 @@ there is no torque about the \( z \) axis and \( L_z \) is conserved.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec3">Symmetries and Conservation Laws </h2>
+<h2 id="___sec6">Symmetries and Conservation Laws </h2>
 
 <p>
 When we derived the conservation of energy, we assumed that the

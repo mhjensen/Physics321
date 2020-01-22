@@ -5,7 +5,6 @@ AUTHOR: "Carl Schmidt":"https://pa.msu.edu/profile/schmidt/" at Department of Ph
 DATE: today
 
 
-
 !split
 ===== Energy and Energy Conservation =====
 
@@ -14,8 +13,23 @@ problems where time does not appear. For example, a particle goes
 from position $x_0$ with speed $v_0$, to position $x_f$; what is its
 new speed? However, it can also be applied to problems where time
 does appear, such as in solving for the trajectory $x(t)$, or
-equivalently $t(x)$. This is the focus of this sub-section.
+equivalently $t(x)$.
 
+Before we start formulating a strategy for energy conservation, we need to discuss integration methods and the concept of work and how it relates
+to energy.
+
+!split
+===== Work and Energy =====
+
+Till our own material is placed here, we recommend reading chapters 10 and 11 of "Malthe-Sørenssen":"https://www.springer.com/gp/book/9783319195957"
+and "Taylor chapters 4.1-4.3":" https://www.uscibooks.com/taylor2.htm". 
+
+On work, chapter 10 of Malthe-Sørenssen is a good read.
+
+
+
+!split
+===== Energy Conservation =====
 Energy is conserved in the case where the potential energy, $V(\bm{r})$, depends only on position, and not on time. The force is determined by $V$,
 !bt
 \begin{equation}
@@ -27,10 +41,10 @@ The net energy, $E=V+K$ where $K$ is the kinetic energy, is then conserved,
 
 !bt
 \begin{eqnarray}
-\frac{d}{dt}(T+U)&=&\frac{d}{dt}\left(\frac{m}{2}(v_x^2+v_y^2+v_z^2)+V(\bm{r})\right)\\
+\frac{d}{dt}(K+V)&=&\frac{d}{dt}\left(\frac{m}{2}(v_x^2+v_y^2+v_z^2)+V(\bm{r})\right)\\
 \nonumber
 &=&m\left(v_x\frac{dv_x}{dt}+v_y\frac{dv_y}{dt}+v_z\frac{dv_z}{dt}\right)
-+\partial_xU\frac{dx}{dt}+\partial_yU\frac{dy}{dt}+\partial_zU\frac{dz}{dt}\\
++\partial_xV\frac{dx}{dt}+\partial_yV\frac{dy}{dt}+\partial_zV\frac{dz}{dt}\\
 \nonumber
 &=&v_xF_x+v_yF_y+v_zF_z-F_xv_x-F_yv_y-F_zv_z=0.
 \end{eqnarray}
@@ -91,11 +105,15 @@ x&=&x_{\rm max}\sin\omega t,~~~\omega=\sqrt{k/m}.
 \end{eqnarray}
 !et
 
+
+!split
+===== Numerical Integration =====
+
 As an example of an integral to solve numerically, consider the following integral. First, rewrite the integral as a sum,
 
 !bt
 \begin{equation}
-t=\sum_{n=1}^N \Delta x [2(E-V(x_n)/m]^{-1/2}, ~~~
+t=\sum_{n=1}^N \Delta x [2(E-V(x_n)/m]^{-1/2},
 \end{equation}
 !et
 
@@ -104,7 +122,7 @@ for best accuracy the value of $x_n$ has been placed in the center of
 the $n^{\rm th}$ interval. The accuracy will improve for higher values
 of $N$, or equivalently, smaller step size $\Delta x$.
 
-Add numerical evaluation of integrals.
+More material weill be added shortly.
 
 
 
@@ -113,7 +131,7 @@ Add numerical evaluation of integrals.
 ===== Conservation of Momentum =====
 
 
-Newton's third law which met earlier states that _For every action there is an equal and opposite reaction_, is more accurately stated as
+Newton's third law which we met earlier states that _For every action there is an equal and opposite reaction_, is more accurately stated as
 _If two bodies exert forces on each other, these forces are equal in magnitude and opposite in direction_.
 
 This means that for two bodies $i$ and $j$, if the force on $i$ due to $j$ is called $\bm{F}_{ij}$, then 
