@@ -74,12 +74,13 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 - Good reads are Taylor chapters 1.4, 1.5, 1.6, 2.1-2.4 and AMS chapters 4.2 and  5
 ### Week 4, January 20-24, 2020
 - Monday: MLK day, no lectures
-- Wednesday: 
-- Friday:  3rd homework, due January 31
+- Wednesday: Work and energy conservation
+- Friday:  Momentum Conservation and symmetries, 3rd homework, due January 31
+- Good reads are Taylor chapters 4.1-.4.3 and AMS chapters 10-12.
 ### Week 5, January 27-31, 2020
-- Monday:
-- Wednesday: 
-- Friday:  4th homework, due February 7
+- Monday: More on Conservation laws, wrapping simple motion problems
+- Wednesday: Oscillations
+- Friday:  Oscillations, 4th homework, due February 7
 ### Week 6, February 3-7, 2020
 - Monday:
 - Wednesday: 
