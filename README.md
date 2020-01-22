@@ -78,7 +78,7 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 - Friday:  Momentum Conservation and symmetries, 3rd homework, due January 31
 - Good reads are Taylor chapters 4.1-.4.3 and AMS chapters 10-12.
 ### Week 5, January 27-31, 2020
-- Monday: More on Conservation laws, wrapping simple motion problems
+- Monday: More on Conservation laws, wrapping up simple motion problems
 - Wednesday: Oscillations
 - Friday:  Oscillations, 4th homework, due February 7
 ### Week 6, February 3-7, 2020
