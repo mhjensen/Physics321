@@ -1,0 +1,15 @@
+import numpy as np
+import matplotlib.pyplot as plt
+#We define a  3 dimensional vector with random numbers
+n = 10
+# we just initialize time and position
+x = np.array([ 10.0,20.,30.,40.,50.,60.,70.,80.,90.,100.])
+t = np.array([1.85,2.87,3.78,4.65,5.50,6.32,7.14,7.96,8.79,9.69])
+print(t)
+print(x)
+plt.plot(t,x, color='black')
+plt.xlabel("Time t[s]")
+plt.ylabel("Position x[m]")
+plt.title("Usain Bolt's world record run")
+plt.legend()
+plt.show()
