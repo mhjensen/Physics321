@@ -1,0 +1,431 @@
+%%
+%% Automatically generated file from DocOnce source
+%% (https://github.com/hplgit/doconce/)
+%%
+%%
+% #ifdef PTEX2TEX_EXPLANATION
+%%
+%% The file follows the ptex2tex extended LaTeX format, see
+%% ptex2tex: http://code.google.com/p/ptex2tex/
+%%
+%% Run
+%%      ptex2tex myfile
+%% or
+%%      doconce ptex2tex myfile
+%%
+%% to turn myfile.p.tex into an ordinary LaTeX file myfile.tex.
+%% (The ptex2tex program: http://code.google.com/p/ptex2tex)
+%% Many preprocess options can be added to ptex2tex or doconce ptex2tex
+%%
+%%      ptex2tex -DMINTED myfile
+%%      doconce ptex2tex myfile envir=minted
+%%
+%% ptex2tex will typeset code environments according to a global or local
+%% .ptex2tex.cfg configure file. doconce ptex2tex will typeset code
+%% according to options on the command line (just type doconce ptex2tex to
+%% see examples). If doconce ptex2tex has envir=minted, it enables the
+%% minted style without needing -DMINTED.
+% #endif
+
+% #define PREAMBLE
+
+% #ifdef PREAMBLE
+%-------------------- begin preamble ----------------------
+
+\documentclass[%
+oneside,                 % oneside: electronic viewing, twoside: printing
+final,                   % draft: marks overfull hboxes, figures with paths
+10pt]{article}
+
+\listfiles               %  print all files needed to compile this document
+
+\usepackage{relsize,makeidx,color,setspace,amsmath,amsfonts,amssymb}
+\usepackage[table]{xcolor}
+\usepackage{bm,ltablex,microtype}
+
+\usepackage[pdftex]{graphicx}
+
+\usepackage{ptex2tex}
+% #ifdef MINTED
+\usepackage{minted}
+\usemintedstyle{default}
+% #endif
+
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{lmodern}         % Latin Modern fonts derived from Computer Modern
+
+% Hyperlinks in PDF:
+\definecolor{linkcolor}{rgb}{0,0,0.4}
+\usepackage{hyperref}
+\hypersetup{
+    breaklinks=true,
+    colorlinks=true,
+    linkcolor=linkcolor,
+    urlcolor=linkcolor,
+    citecolor=black,
+    filecolor=black,
+    %filecolor=blue,
+    pdfmenubar=true,
+    pdftoolbar=true,
+    bookmarksdepth=3   % Uncomment (and tweak) for PDF bookmarks with more levels than the TOC
+    }
+%\hyperbaseurl{}   % hyperlinks are relative to this root
+
+\setcounter{tocdepth}{2}  % levels in table of contents
+
+% prevent orhpans and widows
+\clubpenalty = 10000
+\widowpenalty = 10000
+
+% --- end of standard preamble for documents ---
+
+
+% insert custom LaTeX commands...
+
+\raggedbottom
+\makeindex
+\usepackage[totoc]{idxlayout}   % for index in the toc
+\usepackage[nottoc]{tocbibind}  % for references/bibliography in the toc
+
+%-------------------- end preamble ----------------------
+
+\begin{document}
+
+% matching end for #ifdef PREAMBLE
+% #endif
+
+\newcommand{\exercisesection}[1]{\subsection*{#1}}
+
+
+% ------------------- main content ----------------------
+
+
+
+% ----------------- title -------------------------
+
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE\bf
+\begin{spacing}{1.25}
+PHY321: Classical Mechanics 1
+\end{spacing}
+}
+\end{center}
+
+% ----------------- author(s) -------------------------
+
+\begin{center}
+{\bf Homework 3, due Friday January 31${}^{}$} \\ [0mm]
+\end{center}
+
+\begin{center}
+% List of all institutions:
+\end{center}
+    
+% ----------------- end author(s) -------------------------
+
+% --- begin date ---
+\begin{center}
+Jan 24, 2020
+\end{center}
+% --- end date ---
+
+\vspace{1cm}
+
+
+\paragraph{Practicalities about  homeworks and projects.}
+\begin{enumerate}
+\item You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. \textbf{Remember to write your name(s)}!
+
+\item Homeworks are available Wednesday/Thursday the week before the deadline. The deadline is at the Friday lecture.
+
+\item How do I(we)  hand in?  You can hand in the paper and pencil exercises as a hand-written document. For this homework this applies to exercises 1-5. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise(s) (exercise 6 here) should always be handed in as a jupyter notebook by the deadline at D2L. 
+\end{enumerate}
+
+\noindent
+\paragraph{Introduction to homework 3.}
+This week's sets of classical pen and paper and computational
+exercises deal with the motion of different objects under the
+influence of various forces. The relevant reading background is
+\begin{enumerate}
+\item chapter 2 of Taylor (there are many good examples there) and
+
+\item chapters 5-7 of Malthe-Sørenssen.
+\end{enumerate}
+
+\noindent
+In both textbooks there are many nice worked out examples. Malthe-Sørenssen's text contains also several coding examples you may find useful. 
+
+There are several pedagogical aims we have in mind with these exercises:
+\begin{enumerate}
+\item Get practice in setting up and analyzing a physical problem, finding the forces and the relevant equations to solve;
+
+\item Analyze the results and ask yourself whether they make sense or not;
+
+\item Finding analytical solutions to problems if possible and compare these with numerical results. This teaches us also how to understand errors in numerical calculations;
+
+\item Being able to solve (in mechanics these are the most common types of equations) numerically ordinary differential equations and compare the solutions where possible with analytical solutions;
+
+\item Getting used to studying physical problems using all possible tools, from paper and pencil to numerical solutions;
+
+\item Then analyze the results and ask yourself whether they make sense or not.
+\end{enumerate}
+
+\noindent
+The above steps outline important elements of our understanding of the
+scientific method. Furthermore, there are also explicit coding skills
+we aim at such as setting up arrays, solving differential equations
+numerically and plotting your results.  Coding practice is also an
+important aspect. The more we practice the better we get (hopefully).
+From a numerical mathematics point of view, we will solve the differential
+equations using Euler's method (forward Euler).
+
+The code we will develop can be reused as a basis for coming homeworks. We can
+also extend the numerical solver we write here to include other methods (later) like
+the modified Euler method (Euler-Cromer, midpoint Euler) and more
+advanced methods like the family of Runge-Kutta methods and the Velocity-Verlet method.
+
+At the end of this course, we will thus have developed a larger code
+(or set of codes) which will allow us to study different numerical
+methods (integration and differential equations) as well as being able
+to study different physical systems. Combined with analytical skills,
+the hope is that this can allow us to explore interesting and
+realistic physics problems. By doing so, the hope is that can lead to
+deeper insights about the laws of motion which govern a system.
+
+And hopefully you can reuse many of the above solvers in other courses (our ideal).
+
+Enough talk!  Here we go and best wishes.
+
+\paragraph{Exercise 1 (20 pt), Electron moving into an electric field.}
+An electron is sent through a varying electrical
+field. Initially, the electron is moving in the $x$-direction with a velocity
+$v_x = 100$ m/s. The electron enters the field when it passes the origin. The field
+varies with time, causing an acceleration of the electron that varies in time
+\[
+\bm{a}(t)=\left(−20 \mathrm{m/s}^2 −10\mathrm{m/s}^3t\right) \bm{e}_y
+\]
+\begin{itemize}
+\item 1a (4pt) Find the velocity as a function of time for the electron.
+
+\item 1b (4pt)  Find the position as a function of time for the electron.
+\end{itemize}
+
+\noindent
+The field is only acting inside a box of length $L = 2m$.
+\begin{itemize}
+\item 1c (4pt)  How long time is the electron inside the field?
+
+\item 1d (4pt)  What is the displacement in the $y$-direction when the electron leaves the box. (We call this the deflection of the electron).
+
+\item 1e (4pt)  Find the angle the velocity vector forms with the horizontal axis as the electron leaves the box.
+\end{itemize}
+
+\noindent
+\paragraph{Exercise 2 (10 pt), Drag force.}
+Taylor exercise 2.3
+
+\paragraph{Exercise 3 (10 pt), Falling object.}
+Taylor exercise 2.6
+
+\paragraph{Exercise 4 (10 pt), and then a cyclist.}
+Taylor exercise 2.26
+
+
+\paragraph{Exercise 5 (10 pt), back to a falling ball and preparing for the numerical exercise.}
+\textbf{Useful material: Malthe-Sørenssen chapter 7.5.}
+
+In this example we study the motion of an object subject to a constant force, a velocity dependent
+force, and for the numerical part a position-dependent force.
+Without the position dependent force, we can solve the problem analytically. This is what we will do in this exercise.
+The position dependent force requires numerical efforts (exercise 7).
+In addition to the  falling ball case, we will include the effect of the ball bouncing back from the floor in exercises 7.
+
+
+Here we limit ourselves to a ball that is thrown from a height $h$
+above the ground with an initial velocity
+$\bm{v}_0$ at time $t=t_0$.
+We assume we have only a gravitational force and a force due to the air resistance.
+The position of the ball as function of time is  $\bm{r}(t)$ where $t$ is time.
+ The position is measured with respect to a coordinate system with origin at the floor.
+
+We assume we have an initial position $\bm{r}(t_0)=h\bm{e}_y$ and an initial velocity $\bm{v}_0=v_{x,0}\bm{e}_x+v_{y,0}\bm{e}_y$.
+
+In this exercise we assume the system is influenced by the gravitational force
+\[
+\bm{G}=-mg\bm{e}_y
+\]
+and an air resistance given by a square law
+\[
+-Dv\bm{v}.
+\]
+
+The analytical expressions for velocity and position as functions of
+time will be used to compare with the numerical results in exercise 6.
+
+\begin{itemize}
+\item 5a (3pt) Identify the forces acting on the ball and set up a diagram with the forces acting on the ball. Find the acceleration of the falling ball. 
+
+\item 5b (4pt) Integrate the acceleration from an initial time $t_0$ to a final time $t$ and find the velocity.
+
+\item 5c (4pt) Find thereafter the position as function of time starting with an initial time $t_0$. Find the time it takes to hit the floor.
+\end{itemize}
+
+\noindent
+We will use the above analytical results in our numerical calculations in exercise 6.
+
+
+
+
+\paragraph{Exercise 6 (40pt), Numerical elements, solving exercise 5 numerically and adding the bouncing from the floor.}
+\textbf{This exercise should be handed in as a jupyter-notebook} at D2L. Remember to write your name(s). 
+
+Last week we:
+\begin{enumerate}
+\item Gained more practice with plotting in Python
+
+\item Became familiar with arrays and representing vectors with such objects
+\end{enumerate}
+
+\noindent
+This week we will:
+\begin{enumerate}
+\item Learn and utilize Euler's Method to find the position and the velocity
+
+\item Compare analytical and computational solutions 
+
+\item Add additional forces to our model
+\end{enumerate}
+
+\noindent
+\bpycod
+# let's start by importing useful packages we are familiar with
+import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
+\epycod
+
+We will choose the following values
+\begin{enumerate}
+\item mass $m=0,2$ kg
+
+\item accelleration (gravity) $g=9.81$ m/s$^{2}$.
+
+\item initial position is the height $h=2$ m
+
+\item initial velocities $v_{x,0}=v_{y,0}=10$ m/s
+\end{enumerate}
+
+\noindent
+Can you find a reasonable value for the drag coefficient $D$?
+You need also to define an initial time and 
+the step size $\Delta t$. We can define the step size $\Delta t$ as the difference between any
+two neighboring values in time (time steps) that we analyze within
+some range. It can be determined by dividing the interval we are
+analyzing, which in our case is time $t_{\mathrm{final}}-t_0$, by the number of steps we
+are taking $(N)$. This gives us a step size $\Delta t = \dfrac{t_{\mathrm{final}}-t_0}{N}$.
+
+With these preliminaries we are now ready to plot our results from exercise 5.
+
+\begin{itemize}
+\item 6a (10pt) Set up arrays for time, velocity, acceleration and positions for the results from exercise 5. Define an initial and final time. Choose the final time to be the time when the ball hits the ground for the first time. Make a plot of the position and velocity as functions of time. 
+\end{itemize}
+
+\noindent
+We move now to the numerical solution of the differential equations as discussed in the \href{{https://mhjensen.github.io/Physics321/doc/pub/motion/html/motion.html}}{lecture notes} or Malthe-Sørenssen chapter 7.5.
+Let us remind ourselves about  Euler's Method.
+
+Suppose we know $f(t)$ and its derivative $f'(t)$. To find $f(t+\Delta t)$ at the next step, $t+\Delta t$,
+we can consider the Taylor expansion:
+
+$f(t+\Delta t) = f(t) + \dfrac{(\Delta t)f'(t)}{1!} + \dfrac{(\Delta t)^2f''(t)}{2!} + ...$
+
+If we ignore the $f''$ term and higher derivatives, we obtain
+
+$f(t+\Delta t) \approx f(t) + (\Delta t)f'(t)$.
+
+This approximation is the basis of Euler's method, and the Taylor
+expansion suggests that it will have errors of $O(\Delta t^2)$.  Thus, one
+would expect it to work better, the smaller the step size $h$ that you
+use. In our case the step size is $\Delta t$. 
+
+In setting up our code we need to
+
+\begin{enumerate}
+\item Define and obtain all initial values, constants, and time to be analyzed with step sizes as done above (you can use the same values)
+
+\item Calculate the velocity using $v_{i+1} = v_{i} + (\Delta t)*a_{i}$
+
+\item Calculate the position using $pos_{i+1} = r_{i} + (\Delta t)*v_{i}$
+
+\item Calculate the new acceleration $a_{i+1}$.
+
+\item Repeat steps 2-4 for all time steps within a loop.
+
+\end{enumerate}
+
+\noindent
+\item 6b (20 pt) Write a code which implements Euler's method and compute numerically and plot the position and velocity as functions of time for various values of $\Delta t$. Comment your results.
+
+
+
+\item 6c (10pt) Compare your numerically obtained positions and velocities with the analytical results from exercise 5. Comment again your results.
+
+
+\paragraph{Exercise 7, gives an additional bonus score of 30 points.}
+You don't need to do this exercise, but it gives you a bonus score of 30 points. It shows also how we can include more complicated forces with no pain! And the force we include here is an example of a case where analytical solutions may either be difficult to find or we cannot find an analytical solution. 
+
+
+Till now we have only introduced gravity and air resistance and studied
+their effects via a constant acceleration due to gravity and the force
+arising from air resistance. But what happens when the ball hits the
+floor? What if we would like to simulate the normal force from the floor acting on the ball?
+
+We need then to include a force model for the normal force from
+the floor on the ball. The simplest approach to such a system is to introduce a contact force
+model represented by a spring model.  We model the interaction between the floor
+and the ball as a single spring. But the normal force is zero when
+there is no contact. Here  we define a simple model that allows us to include
+such effects in our models.
+
+The normal force from the floor on the ball is represented by a spring force. This
+is a strong simplification of the actual deformation process occurring at the contact
+between the ball and the floor due to the deformation of both the ball and the floor.
+
+The deformed region corresponds roughly to the region of \textbf{overlap} between the
+ball and the floor. The depth of this region is $\Delta y = R − y(t)$, where $R$
+is the radius of the ball. This is supposed to represent the compression of the spring.
+Our model for the normal force acting on the ball is then
+\[
+\bm{N} = −k (R − y(t)) \bm{e}_y. 
+\]
+The normal force must act upward when $y < R$,
+hence the sign must be negative.
+However, we must also ensure that the normal force only acts when the ball is in
+contact with the floor, otherwise the normal force is zero. The full formation of the
+normal force is therefore
+\[
+\bm{N} = −k (R − y(t)) \bm{e}_y, 
+\]
+when $y(t) < R$ and zero when $y(t) \le R$.
+In the numerical calculations you can choose $R=0.1$ m and the spring constant $k=1000$ N/m.
+
+\begin{itemize}
+\item 7a (10pt) Identify the forces acting on the ball and set up a diagram with the forces acting on the ball. Find the acceleration of the falling ball now with the normal force as well.
+
+\item 7b (20pt) Choose a large enough final time so you can study the ball bouncing up and down several times. Add the normal force and compute the height of the ball as function of time with and without air resistance. Comment your results.
+\end{itemize}
+
+\noindent
+
+% ------------------- end of main content ---------------
+
+% #ifdef PREAMBLE
+\end{document}
+% #endif
+

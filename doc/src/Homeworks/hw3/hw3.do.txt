@@ -15,8 +15,7 @@ exercises deal with the motion of different objects under the
 influence of various forces. The relevant reading background is
 o chapter 2 of Taylor (there are many good examples there) and
 o chapters 5-7 of Malthe-Sørenssen.
-In both textbooks there are many good
-examples. Malthe-Sørenssen's text contains also several coding examples you may find useful. 
+In both textbooks there are many nice worked out examples. Malthe-Sørenssen's text contains also several coding examples you may find useful. 
 
 There are several pedagogical aims we have in mind with these exercises:
 o Get practice in setting up and analyzing a physical problem, finding the forces and the relevant equations to solve;
@@ -51,394 +50,202 @@ And hopefully you can reuse many of the above solvers in other courses (our idea
 
 Enough talk!  Here we go and best wishes.
 
-=== Exercise 1 (10 pt), Electron moving into an electric field  ===
+=== Exercise 1 (20 pt), Electron moving into an electric field  ===
 
-Controlling the electron beam. An electron is sent through a varying electrical
-field. Initially, the electron is moving in the x-direction with a velocity
-vx = 100 m/s. The electron enters the field when it passes the origin. The field
-varies with time, causing an acceleration of the electron that varies in time:
-a(t) = 	−20 m/s2 − 10 m/s3 t
- j . (6.118)
-(a) Find the velocity as a function of time for the electron.
-(b) Find the position as a function of time for the electron.
-The field is only acting inside a box of length L = 2m.
-(c) How long time is the electron inside the field?
-(d) What is the displacement in the y-direction when the electron leaves the box.
-(We call this the deflection of the electron).
-(e) Find the angle the velocity vector forms with the horizontal as the electron leaves
-the box.
+An electron is sent through a varying electrical
+field. Initially, the electron is moving in the $x$-direction with a velocity
+$v_x = 100$ m/s. The electron enters the field when it passes the origin. The field
+varies with time, causing an acceleration of the electron that varies in time
+!bt
+\[
+\bm{a}(t)=\left(−20 \mathrm{m/s}^2 −10\mathrm{m/s}^3t\right) \bm{e}_y
+\]
+!et
+* 1a (4pt) Find the velocity as a function of time for the electron.
+* 1b (4pt)  Find the position as a function of time for the electron.
 
-
-=== Exercise 2 (10 pt), setting up forces, Newton's second law  ===
-
-Useful material here to read is
-o Taylor chapters 1.3 and 1.4 and
-o Malthe-Sørenssen chapters 5.1, 5.2 and 5.3
+The field is only acting inside a box of length $L = 2m$.
+* 1c (4pt)  How long time is the electron inside the field?
+* 1d (4pt)  What is the displacement in the $y$-direction when the electron leaves the box. (We call this the deflection of the electron).
+* 1e (4pt)  Find the angle the velocity vector forms with the horizontal axis as the electron leaves the box.
 
 
-=== Exercise 3 (10 pt), Space shuttle with air resistance ===
+=== Exercise 2 (10 pt), Drag force ===
 
-Useful material here to read is
-o Malthe-Sørenssen chapters 5.1, 5.2 and 5.3
+Taylor exercise 2.3
 
+=== Exercise 3 (10 pt), Falling object  ===
 
+Taylor exercise 2.6
 
-=== Exercise 4 (15 pt), now hitting a golf ball  ===
+=== Exercise 4 (10 pt), and then a cyclist  ===
 
-Useful material here to read is
-o Taylor chapters 1.3-1.6 and
-o Malthe-Sørenssen chapter 6.3-6.4 and 7.1-7.3
-
-
-=== Exercise 5 (15 pt), hitting a puck instead  ===
+Taylor exercise 2.26
 
 
-===  Exercise 6 (40pt), Numerical elements, moving to more than one dimension ===
+=== Exercise 5 (10 pt), back to a falling ball and preparing for the numerical exercise  ===
+
+_Useful material: Malthe-Sørenssen chapter 7.5._
+
+In this example we study the motion of an object subject to a constant force, a velocity dependent
+force, and for the numerical part a position-dependent force.
+Without the position dependent force, we can solve the problem analytically. This is what we will do in this exercise.
+The position dependent force requires numerical efforts (exercise 7).
+In addition to the  falling ball case, we will include the effect of the ball bouncing back from the floor in exercises 7.
+
+
+Here we limit ourselves to a ball that is thrown from a height $h$
+above the ground with an initial velocity
+$\bm{v}_0$ at time $t=t_0$.
+We assume we have only a gravitational force and a force due to the air resistance.
+The position of the ball as function of time is  $\bm{r}(t)$ where $t$ is time.
+ The position is measured with respect to a coordinate system with origin at the floor.
+
+We assume we have an initial position $\bm{r}(t_0)=h\bm{e}_y$ and an initial velocity $\bm{v}_0=v_{x,0}\bm{e}_x+v_{y,0}\bm{e}_y$.
+
+In this exercise we assume the system is influenced by the gravitational force
+!bt
+\[
+\bm{G}=-mg\bm{e}_y
+\]
+!et
+and an air resistance given by a square law
+!bt
+\[
+-Dv\bm{v}.
+\]
+!et
+
+The analytical expressions for velocity and position as functions of
+time will be used to compare with the numerical results in exercise 6.
+
+* 5a (3pt) Identify the forces acting on the ball and set up a diagram with the forces acting on the ball. Find the acceleration of the falling ball. 
+* 5b (4pt) Integrate the acceleration from an initial time $t_0$ to a final time $t$ and find the velocity.
+* 5c (4pt) Find thereafter the position as function of time starting with an initial time $t_0$. Find the time it takes to hit the floor.
+
+
+We will use the above analytical results in our numerical calculations in exercise 6.
+
+
+
+
+===  Exercise 6 (40pt), Numerical elements, solving exercise 5 numerically and adding the bouncing from the floor ===
 
 _This exercise should be handed in as a jupyter-notebook_ at D2L. Remember to write your name(s). 
 
-
-### Last week we:
-- Gained more practice with plotting in Python
-- Became familiar with arrays and representing vectors with such objects
-- Utilized more complex analytical solutions in functions
+Last week we:
+o Gained more practice with plotting in Python
+o Became familiar with arrays and representing vectors with such objects
  
-### This week we will:
-- Introduce drag into our analytical solutions
-- Learn and utilize Euler's Method to computationally solve for motion
-- Compare analytical and computational solutions 
+This week we will:
+o Learn and utilize Euler's Method to find the position and the velocity
+o Compare analytical and computational solutions 
+o Add additional forces to our model
 
-
-```python
-## let's start by importing useful packages we are familiar with
+!bc pycod
+# let's start by importing useful packages we are familiar with
 import numpy as np
 import matplotlib.pyplot as plt
 %matplotlib inline
-```
+!ec
 
-# More practice with arrays:
+We will choose the following values
+o mass $m=0,2$ kg
+o accelleration (gravity) $g=9.81$ m/s$^{2}$.
+o initial position is the height $h=2$ m
+o initial velocities $v_{x,0}=v_{y,0}=10$ m/s
 
-Last week we learned about arrays and saw their potential usefulness. Please set up the following variables:
-- $v_0 = 150\ m/s$
-- $\theta = 80^{\circ}$
-- $v_{0z} = v_0\sin(\theta)$
-- $v_{0x} = v_0\cos(\theta)$
-- Calculate $t_f$ with the same equation used last week: $t_f =\dfrac{2v_{0z}}{g}$
-    
+Can you find a reasonable value for the drag coefficient $D$?
+You need also to define an initial time and 
+the step size $\Delta t$. We can define the step size $\Delta t$ as the difference between any
+two neighboring values in time (time steps) that we analyze within
+some range. It can be determined by dividing the interval we are
+analyzing, which in our case is time $t_{\mathrm{final}}-t_0$, by the number of steps we
+are taking $(N)$. This gives us a step size $\Delta t = \dfrac{t_{\mathrm{final}}-t_0}{N}$.
 
-Then set up four arrays: 
+With these preliminaries we are now ready to plot our results from exercise 5.
 
-- Time array $t$ going from 0 to $t_f$ with step sizes of 0.01
-
-- Acceleration vector $\vec{a} = <0,0,-g>$ 
-
-- Initial velocity vector $\vec{v_i} = <v_{0x} , 0 , v_{0z}>$ 
-
-- Initial position vector $\vec{r_i} = <0, 0, 0>$
-
-We have given you a skeleton along with the set up for the $\vec{v_i}$ vector as an example of how to set up your arrays. **REMEMBER to convert your theta from degrees to radians!**
+* 6a (10pt) Set up arrays for time, velocity, acceleration and positions for the results from exercise 5. Define an initial and final time. Choose the final time to be the time when the ball hits the ground for the first time. Make a plot of the position and velocity as functions of time. 
 
 
-```python
-v0 = 150# m/s
-theta_deg = 30# degrees
-theta_rad = np.radians(theta_deg)# radians
-v0_z = v0*np.sin(theta_rad)# Initial velocity in z direction
-v0_x = v0*np.cos(theta_rad)# Initial velocity in x direction
-g = 9.8# m/s^2
-tf = 2*v0_z/g# s
-t = np.arange(0,tf,0.01)# time array
+We move now to the numerical solution of the differential equations as discussed in the "lecture notes":"https://mhjensen.github.io/Physics321/doc/pub/motion/html/motion.html" or Malthe-Sørenssen chapter 7.5.
+Let us remind ourselves about  Euler's Method.
 
-a = np.array([np.zeros(len(t)),np.zeros(len(t)),-g*np.ones(len(t))])# Create acceleration array 
-v_i = np.array([np.ones(len(t))*v0_x, np.zeros(len(t)), np.ones(len(t))*v0_z]) # Initial velocity array 
-r_i = np.array([np.zeros(len(t)),np.zeros(len(t)),np.zeros(len(t))])# Create initial position array
-```
-
-
-```python
-# Run this cell after you have the above completed 
-r = r_i + v_i*t + 0.5*a*t**2 # Calculates position over time
-
-# The following makes a plot of the trajectory of z vs x.
-%matplotlib inline
-import matplotlib.patches as mpatches
-
-plt.style.use('ggplot')
-plt.figure(figsize=(8,8))
-plt.scatter(r[0], r[2], color = 'b')
-blue_patch = mpatches.Patch(color = 'b', label = 'Trajectory (z vs x)')
-plt.legend(handles=[blue_patch])
-plt.xlabel("x (m)")
-plt.ylabel("z (m)")   
-
-# As we learned through class / text books
-#### With air resistance factored in (assuming linear drag), the acceleration for vertical motion is:
-eq 1) $a_y = - v_y/\tau - g$
-
-where $\tau$ is the time constant (in seconds) for the decay of the velocity.  (Here, $y$ is the vertical direction with upward positive.)
-
-#### Performing an integration, we get the vertical velocity at time t with linear drag air resistance:
-eq 2) $v_{y}(t) =  -v_\mathrm{ter}+ (v_{0y} + v_\mathrm{ter})e^{- t/\tau}\,,$
-
-where $v_\mathrm{ter}=g\tau$ is the terminal speed.
-
-
-# Let's see how the velocity and acceleration affect each other when drag is factored in! 
-Let's throw a ball upwards with initial speed $v_i = 20\ m/s$. We will assume linear drag with a time constant of $\tau=10\ $ seconds. (Note that this is enough information to determine the terminal speed of the ball.) Insert the given value for the time constant, tau, and obtain the equation for the initial acceleration in the y direction, ay, below. Then run the cell below to see what the y acceleration would be immediately after throwing the ball. 
-
-
-```python
-## Initalized variables
-vi = 20# m/s
-g = 9.8# m/s^2
-tau = 10 # s, time constant
-
-## Using eq 1 to calculate the acceleration with drag factored in
-ay = -g-vi/tau# m/s^2
-
-print("ay = ", ay, "m/s^2")
-```
-
-    ay =  -11.8 m/s^2
-
-
-# Q1.) What did you get for the initial acceleration? Does this make sense?
-
-
-
-### But first, we need to discuss "step size" and "time steps":
-Step size $h$ is defined as the difference between any two neighboring values in time (time steps) that we analyze within some range. It can be determined by dividing the interval we are analyzing, which in our case is time $(t)$, by the number of steps we are taking $(N)$. Thus step size $h = \dfrac{t}{N}$. However, do notice that in the example below we define our range $t$, and step size $h$, making $N = \dfrac{t}{h}$ the dependent variable in our case.
-
-### Short reminder on Euler's Method:
-[To be precise, this is Euler's "Forward" method, because we solve forward in steps from $f(x)$ to $f(x+h)$.]
-
-Suppose we know $f(x)$ and its derivative $f'(x)$. To find $f(x+h)$ at the next step, $x+h$,
+Suppose we know $f(t)$ and its derivative $f'(t)$. To find $f(t+\Delta t)$ at the next step, $t+\Delta t$,
 we can consider the Taylor expansion:
 
-$f(x+h) = f(x) + \dfrac{hf'(x)}{1!} + \dfrac{h^2f''(x)}{2!} + ...$
+$f(t+\Delta t) = f(t) + \dfrac{(\Delta t)f'(t)}{1!} + \dfrac{(\Delta t)^2f''(t)}{2!} + ...$
 
 If we ignore the $f''$ term and higher derivatives, we obtain
 
-$f(x+h) \approx f(x) + hf'(x)$.
+$f(t+\Delta t) \approx f(t) + (\Delta t)f'(t)$.
 
-This approximation is the basis of Euler's method, and the Taylor expansion suggests that it will have errors of $O(h^2)$.  Thus, one would expect it to work better, the smaller the step size $h$ that you use.
+This approximation is the basis of Euler's method, and the Taylor
+expansion suggests that it will have errors of $O(\Delta t^2)$.  Thus, one
+would expect it to work better, the smaller the step size $h$ that you
+use. In our case the step size is $\Delta t$. 
 
-We shall calculate with different values of $h$ and compare to the analytical solutions.  (In general, there
-may not be analytical solutions to compare with, so one will need to consider other methods to make sure the
-numerical solution is correct.)
+In setting up our code we need to
 
-## Specifics of Euler's Forward Method for motion:
-With Euler's method we will be updating the velocity $(v[i+1])$ starting with our previous velocity $(v[i])$ and adding the previous acceleration multiplied by the time step $(a[i]*dt)$. (Convince yourself that this is exactly the approximate formula presented above.)
+o  Define and obtain all initial values, constants, and time to be analyzed with step sizes as done above (you can use the same values)
 
-The updated position is obtained by the same method. Below is a more detailed outline.
+o  Calculate the velocity using $v_{i+1} = v_{i} + (\Delta t)*a_{i}$
 
+o  Calculate the position using $pos_{i+1} = r_{i} + (\Delta t)*v_{i}$
 
-#### Performing Euler's Method for this problem we will do the following steps:
+o  Calculate the new acceleration $a_{i+1}$.
 
-1.) Define and obtain all initial values, constants, and time to be analyzed with step sizes
+o  Repeat steps 2-4 for all time steps within a loop.
 
-2.) Calculate the velocity using $v_{i+1} = v_{i} + h*a_{i}$
 
-3.) Calculate the position using $pos_{i+1} = pos_{i} + h*v_{i}$
+* 6b (20 pt) Write a code which implements Euler's method and compute numerically and plot the position and velocity as functions of time for various values of $\Delta t$. Comment your results.
 
-2.) Calculate the new acceleration $a_{i+1}$ using eq 1 with $v_{i+1}$. 
 
-5.) Repeat steps 2-4 for all time steps within a loop.
+* 6c (10pt) Compare your numerically obtained positions and velocities with the analytical results from exercise 5. Comment again your results.
 
-# Q2.) If we wanted to analyze a time interval, $t$, of 20 seconds with step sizes, $h$, of 0.1 what would the number of steps, $N$, be?
 
-&#9989; Double click this cell, erase its content, and put your answer to the above question here.
+===  Exercise 7, gives an additional bonus score of 30 points. ===
 
+You don't need to do this exercise, but it gives you a bonus score of 30 points. It shows also how we can include more complicated forces with no pain! And the force we include here is an example of a case where analytical solutions may either be difficult to find or we cannot find an analytical solution. 
 
-Let's look at a thrown ball and see how Euler's Method compares to the analytical solution. Our initial conditions will be as follows:
 
-- $v_i = 20\ m/s$ upwards
-- $g = 9.8\ m/s$ 
-- $\tau = 10\ s$
+Till now we have only introduced gravity and air resistance and studied
+their effects via a constant acceleration due to gravity and the force
+arising from air resistance. But what happens when the ball hits the
+floor? What if we would like to simulate the normal force from the floor acting on the ball?
 
+We need then to include a force model for the normal force from
+the floor on the ball. The simplest approach to such a system is to introduce a contact force
+model represented by a spring model.  We model the interaction between the floor
+and the ball as a single spring. But the normal force is zero when
+there is no contact. Here  we define a simple model that allows us to include
+such effects in our models.
 
-We already provide you with an outline of Euler-implemented code.  Complete the code, following the comments. Make sure to follow the procedures given by our explanations above, and then run the three cells below to see the outcome. (Only the first 2 cells need to be modified by you.)
+The normal force from the floor on the ball is represented by a spring force. This
+is a strong simplification of the actual deformation process occurring at the contact
+between the ball and the floor due to the deformation of both the ball and the floor.
 
+The deformed region corresponds roughly to the region of _overlap_ between the
+ball and the floor. The depth of this region is $\Delta y = R − y(t)$, where $R$
+is the radius of the ball. This is supposed to represent the compression of the spring.
+Our model for the normal force acting on the ball is then
+!bt
+\[
+\bm{N} = −k (R − y(t)) \bm{e}_y. 
+\]
+!et
+The normal force must act upward when $y < R$,
+hence the sign must be negative.
+However, we must also ensure that the normal force only acts when the ball is in
+contact with the floor, otherwise the normal force is zero. The full formation of the
+normal force is therefore
+!bt
+\[
+\bm{N} = −k (R − y(t)) \bm{e}_y, 
+\]
+!et
+when $y(t) < R$ and zero when $y(t) \le R$.
+In the numerical calculations you can choose $R=0.1$ m and the spring constant $k=1000$ N/m.
 
-```python
-# Initial values and constants
-
-vi = 20# m/s
-g = 9.8# m/s^2
-tau = 10# s
-
-ay = -vi/tau-g# m/s^2
-
-tf = 5 #The final time
-dt = .3 # time step size
-
-t = np.arange(0.0,tf,dt) # Creates an evenly spaced time array going from 0 to 3, with step sizes .1
-a = np.zeros(len(t))# Create an array of zeros for [ay] values. Storage same as number of steps, N
-v = np.zeros(len(t))# Create an array of zeros for [vy] values. Storage size is N
-r = np.zeros(len(t))# Create an array of zeros for [y] values. Storage size is N
-
-v[0] = vi # Sets initial velocities
-a[0] = ay # Sets initial accleration
-```
-
-
-```python
-# Performing Euler's method
-for i in range(0,len(t)-1):
-    v[i+1] = v[i]+dt*a[i]# Insert Euler's method formula for updating velocity
-    r[i+1] = r[i]+dt*v[i]# Insert Euler's method formula for updating position
-    a[i+1] = -v[i+1]/tau-g# Update acceleration using eq. 1 and inserting v[i+1] for v
-    
-```
-
-
-```python
-# Plotting the results
-plt.scatter(t,r,s=15, c='r') # Plots the individual points instead of making lines like plt.plot() does
-plt.grid() # Adds a grid to our plot
-plt.show() # Shows our plot. This comman is neseccary if you are using python ourside Jupyter Notebook.
-```
-
-
-
-## Compare the computational analysis versus expected values
-
-You will need to input the analytical formula for $y(t)$, analogous to eqs. 1) and 2) above, with $y(0)=0$.
-
-
-```python
-# We re-create the time array for our analytical solution, 
-# since it shouldn't depend on the step size for the Euler solution.
-ta = np.arange(0.0,tf,.01) 
-vter=g*tau
-y = (vi+vter)*tau*(1-np.exp(-ta/tau))-vter*ta# Insert the analytical equation for our motion y(ta), obtained from integrating eq. 2).
-```
-
-
-```python
-### Plot our analytical and computational solutions 
-plt.scatter(ta,y, s = .1)
-plt.scatter(t,r,s=15, c='r')
-plt.grid()
-plt.show()
-```
-
-
-![png](output_18_0.png)
-
-
-# Let's perform the analysis for different values of h to see how our computation changes.
-Create a function that implements Euler's method for a tossed ball and plots the computationally calculated solution against the analytical solution. Use it to plot three different graphs of $y$ versus $t$, each with a different $h$ size, but with the same initial values.
-
-(Recall that you implemented a similar function for the ball toss in Notebook 1, but without air resistance.
-You may find it useful to look back at that if you need guidance.)
-
-
-```python
-def EulerBallToss(vi, tau, tf, dt):
-    # Initial values and constants
-
-    g = 9.8# m/s^2
-
-    ay = -vi/tau-g# m/s^2
-
-    t = np.arange(0.0,tf,dt) # Creates an evenly spaced time array going from 0 to 3, with step sizes .1
-    a = np.zeros(len(t))# Create an array of zeros for [ay] values. Storage same as number of steps, N
-    v = np.zeros(len(t))# Create an array of zeros for [vy] values. Storage size is N
-    r = np.zeros(len(t))# Create an array of zeros for [y] values. Storage size is N
-
-    v[0] = vi # Sets initial velocities
-    a[0] = ay # Sets initial accleration
-    
-    # Performing Euler's method
-    for i in range(0,len(t)-1):
-        v[i+1] = v[i]+dt*a[i]# Insert Euler's method formula for updating velocity
-        r[i+1] = r[i]+dt*v[i]# Insert Euler's method formula for updating position
-        a[i+1] = -v[i+1]/tau-g# Update acceleration using eq. 1 and inserting v[i+1] for v
-    
-    # We re-create the time array for our analytical solution, 
-    # since it shouldn't depend on the step size for the Euler solution.
-    ta = np.arange(0.0,tf,.01) 
-    vter=g*tau
-    y = (vi+vter)*tau*(1-np.exp(-ta/tau))-vter*ta# Insert the analytical equation for our motion y(ta), obtained from integrating eq. 2).   
-    
-    ### Plot our analytical and computational solutions 
-    plt.scatter(ta,y, s = .1)
-    plt.scatter(t,r,s=15, c='r')
-    plt.grid()
-    plt.show()
-    
-```
-
-
-```python
-EulerBallToss(20,10,5,.3)
-```
-
-
-![png](output_21_0.png)
-
-
-
-```python
-EulerBallToss(20,10,5,.1)
-```
-
-
-![png](output_22_0.png)
-
-
-
-```python
-EulerBallToss(20,10,5,.03)
-```
-
-
-![png](output_23_0.png)
-
-
-# Q3.) Play around with different values of dt and comment how it affects our graph.
-
-&#9989; Double click this cell, erase its content, and put your answer to the above question here.
-
-# Notebook Wrap-up. 
-Run the cell below and copy-paste your answers into their corresponding cells.
-
-
-```python
-from IPython.display import HTML
-HTML(
-"""
-<iframe 
-	src="https://forms.gle/cS1Ciz9geXKBFns76" 
-	width="100%" 
-	height="1200px" 
-	frameborder="0" 
-	marginheight="0" 
-	marginwidth="0">
-	Loading...
-</iframe>
-"""
-)
-```
-
-
-
-
-
-<iframe 
-	src="https://forms.gle/cS1Ciz9geXKBFns76" 
-	width="100%" 
-	height="1200px" 
-	frameborder="0" 
-	marginheight="0" 
-	marginwidth="0">
-	Loading...
-</iframe>
-
-
-
-
-# Another week, another completed Notebook!
-We are now beginning to take a dive into computational methods. They have many benefitg, proving to be very powerful tools in research. Hopefully arrays are starting to make more sense now, also. [Here is a link to a funny video dealing with projectile motion and quadratic drag](https://www.youtube.com/watch?v=-5Ilq3kFxek). 
-
+* 7a (10pt) Identify the forces acting on the ball and set up a diagram with the forces acting on the ball. Find the acceleration of the falling ball now with the normal force as well.
+* 7b (20pt) Choose a large enough final time so you can study the ball bouncing up and down several times. Add the normal force and compute the height of the ball as function of time with and without air resistance. Comment your results.
