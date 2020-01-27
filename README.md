@@ -34,7 +34,7 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Additional Class |    Location |
 |---|----|
-| Wednesday 5:00-6pm | Room 1300 BPS |
+| Wednesday 5:00-6pm | Room 1400 BPS |
 
 
 
@@ -75,16 +75,16 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 ### Week 4, January 20-24, 2020
 - Monday: MLK day, no lectures
 - Wednesday: Work and energy conservation
-- Friday:  Momentum Conservation and symmetries, 3rd homework, due January 31
+- Friday:  Example of conservation laws and single-particle motion, 3rd homework, due January 31
 - Good reads are Taylor chapters 4.1-.4.3 and AMS chapters 10-12.
 ### Week 5, January 27-31, 2020
-- Monday: More on Conservation laws, wrapping up simple motion problems
-- Wednesday: Oscillations
-- Friday:  Oscillations, 4th homework, due February 7
+- Monday: More on Conservation laws, momentum conservation
+- Wednesday: Examples of applications of conservation laws, angular momentum conservation 
+- Friday:  Wrapping up conservation laws and further examples, 4th homework, due February 7
 ### Week 6, February 3-7, 2020
-- Monday:
-- Wednesday: 
-- Friday:  5th homework, due February 14
+- Monday: Oscillations
+- Wednesday: Oscillations
+- Friday: Oscillations 5th homework, due February 14
 ### Week 7, February 10-14, 2020
 - Monday:
 - Wednesday: 
