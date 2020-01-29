@@ -71,10 +71,12 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 - Monday: Introduction to the course and start discussion of vectors, space, time and motion, JRT chapter 1.2 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/Introduction/html/Introduction.html)
 - Wednesday: More on time,space, vectors and motion, JRT 1.2 and 1.3, AMS chapters 2 and 4  and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/Introduction/html/Introduction.html), first homework available
 - Friday: Forces and Newton's laws of motion. JRT chapter 1.4 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/Introduction/html/Introduction.html). Introduction to Git and GitHub and getting started with numerical exercises. Installing software (anaconda) and first homework due January 17. For solving exercise 7 in the first homework, AMS chapters 2 and 4 are very useful
+- Solution to homeworks are in https://d2l.msu.edu/
 ### Week 3, January 13-17, 2020
 - Monday: Motion and forces, Newton's laws, examples
 - Wednesday: Motion and forces, Newton's laws, examples
 - Friday:  Motion and forces, Newton's laws, examples,2nd homework, due January 24
+- Solution to homeworks are in https://d2l.msu.edu/
 - Good reads are Taylor chapters 1.4, 1.5, 1.6, 2.1-2.4 and AMS chapters 4.2 and  5
 ### Week 4, January 20-24, 2020
 - Monday: MLK day, no lectures
