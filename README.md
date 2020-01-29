@@ -82,16 +82,17 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 - Monday: MLK day, no lectures
 - Wednesday: Work and energy conservation
 - Friday:  Example of conservation laws and single-particle motion, 3rd homework, due January 31
-- Good reads are Taylor chapters 4.1-.4.3 and AMS chapters 10-12.
+- Good reads are Taylor chapters 4.1-4.3 and AMS chapters 10-12.
 ### Week 5, January 27-31, 2020
 - Monday: More on Conservation laws, momentum conservation
 - Wednesday: Examples of applications of conservation laws, angular momentum conservation 
 - Friday:  Wrapping up conservation laws and further examples, 4th homework, due February 7
-- Good reads are Taylor chapters 4.1-.4.3 and AMS chapters 10-12.
+- Good reads are Taylor chapters 3-4 and AMS chapters 10-13.
 ### Week 6, February 3-7, 2020
 - Monday: Oscillations
 - Wednesday: Oscillations
 - Friday: Oscillations 5th homework, due February 14
+- Good reads are Taylor chapter 5. The lecture notes on oscillations contain what is presented in class.
 ### Week 7, February 10-14, 2020
 - Monday:
 - Wednesday: 
