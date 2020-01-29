@@ -25,7 +25,7 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Office Hours Kasun Senanayaka |    
 |------------------|
-| Monday/Wednesday 11am-12:30pm, Physics Help Room BPS 1248 | 
+| Wednesday 11am-12:30pm, Physics Help Room BPS 1248 | 
 
 | Learning Assistant | Email |
 |--------------|------| 
