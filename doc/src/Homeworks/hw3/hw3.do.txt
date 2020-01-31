@@ -85,7 +85,7 @@ Taylor exercise 2.26
 
 === Exercise 5 (10 pt), back to a falling ball and preparing for the numerical exercise  ===
 
-_Useful material: Malthe-Sørenssen chapter 7.5._
+_Useful material: Malthe-Sørenssen chapter 7.5 and Taylor chapter 2.4._
 
 In this example we study the motion of an object subject to a constant force, a velocity dependent
 force, and for the numerical part a position-dependent force.
@@ -121,7 +121,7 @@ time will be used to compare with the numerical results in exercise 6.
 
 * 5a (3pt) Identify the forces acting on the ball and set up a diagram with the forces acting on the ball. Find the acceleration of the falling ball. 
 * 5b (4pt) Integrate the acceleration from an initial time $t_0$ to a final time $t$ and find the velocity.
-* 5c (4pt) Find thereafter the position as function of time starting with an initial time $t_0$. Find the time it takes to hit the floor.
+* 5c (4pt) Find thereafter the position as function of time starting with an initial time $t_0$. Find the time it takes to hit the floor.  Here you will find it convenient to set the initial velocity in the $y$-direction to zero.
 
 
 We will use the above analytical results in our numerical calculations in exercise 6.
@@ -165,7 +165,7 @@ are taking $(N)$. This gives us a step size $\Delta t = \dfrac{t_{\mathrm{final}
 
 With these preliminaries we are now ready to plot our results from exercise 5.
 
-* 6a (10pt) Set up arrays for time, velocity, acceleration and positions for the results from exercise 5. Define an initial and final time. Choose the final time to be the time when the ball hits the ground for the first time. Make a plot of the position and velocity as functions of time. 
+* 6a (10pt) Set up arrays for time, velocity, acceleration and positions for the results from exercise 5. Define an initial and final time. Choose the final time to be the time when the ball hits the ground for the first time. Make a plot of the position and velocity as functions of time.  Here you could set the initial velocity in the $y$-direction to zero and use the result from exercise 5. Else you need to try different initial times using the result from exercise 5 as a starting guess.  It is not critical if you don't reach the ground when the initial velocity in the $y$-direction is not zero.
 
 
 We move now to the numerical solution of the differential equations as discussed in the "lecture notes":"https://mhjensen.github.io/Physics321/doc/pub/motion/html/motion.html" or Malthe-Sørenssen chapter 7.5.
