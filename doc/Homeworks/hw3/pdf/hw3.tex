@@ -21,8 +21,8 @@ final,                   % draft: marks overfull hboxes, figures with paths
 \usepackage[pdftex]{graphicx}
 
 \usepackage{fancyvrb} % packages needed for verbatim environments
-\usepackage{minted}
-\usemintedstyle{default}
+\usepackage{verbatim}
+%\usemintedstyle{default}
 
 \usepackage[T1]{fontenc}
 %\usepackage[latin1]{inputenc}
@@ -274,13 +274,12 @@ This week we will:
 \item Add additional forces to our model
 \end{enumerate}
 
-\noindent
-\begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
+\begin{verbatim}
 # let's start by importing useful packages we are familiar with
 import numpy as np
 import matplotlib.pyplot as plt
 %matplotlib inline
-\end{minted}
+\end{verbatim}
 
 We will choose the following values
 \begin{enumerate}
@@ -342,12 +341,13 @@ In setting up our code we need to
 \end{enumerate}
 
 \noindent
+\begin{itemize}
 \item 6b (20 pt) Write a code which implements Euler's method and compute numerically and plot the position and velocity as functions of time for various values of $\Delta t$. Comment your results.
 
 
 
 \item 6c (10pt) Compare your numerically obtained positions and velocities with the analytical results from exercise 5. Comment again your results.
-
+\end{itemize}
 
 \paragraph{Exercise 7, gives an additional bonus score of 30 points.}
 You don't need to do this exercise, but it gives you a bonus score of 30 points. It shows also how we can include more complicated forces with no pain! And the force we include here is an example of a case where analytical solutions may either be difficult to find or we cannot find an analytical solution. 
