@@ -34,32 +34,35 @@ from pylab import plt, mpl
 plt.style.use('seaborn')
 mpl.rcParams['font.family'] = 'serif'
 
-g = 9.80655 #m/s^2
+g = 9.80655 #m/s^2 g to 6 leading digits after decimal point
 D = 0.00245 #m/s
 m = 0.2 # kg
-# Define Gravitational force as a vector in x and y
+# Define Gravitational force as a vector in x and y. It is a constant
 G = -m*g*np.array([0.0,1])
 DeltaT = 0.01
 #set up arrays 
-tfinal = 1.4
+tfinal = 1.3
 n = ceil(tfinal/DeltaT)
 # set up arrays for t, a, v, and x
 t = np.zeros(n)
 v = np.zeros((n,2))
 r = np.zeros((n,2))
-# Initial conditions
+# Initial conditions as compact 2-dimensional arrays
 r0 = np.array([0.0,10.0])
 v0 = np.array([10.0,0.0])
 r[0] = r0
 v[0] = v0
 # Start integrating using Euler's method
 for i in range(n-1):
-    # Set up forces, air resistance FD
+    # Set up forces, air resistance FD, not now that we need the norm of the vector
+    # Here you could have defined your own function for this
     vabs = sqrt(sum(v[i]*v[i]))
     FD = -D*v[i]*vabs
+    # Final net forces acting on falling object
     Fnet = FD+G
+    # The accelration at a given time t_i
     a = Fnet/m
-    # update velocity, time and position
+    # update velocity, time and position using Euler's method
     v[i+1] = v[i] + DeltaT*a
     r[i+1] = r[i] + DeltaT*v[i]
     t[i+1] = t[i] + DeltaT
