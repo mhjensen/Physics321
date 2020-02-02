@@ -70,10 +70,10 @@ for i in range(n-1):
     ax = -D*vx[i]*abs(vx[i])/m
     ay = -g - D*vy[i]*abs(vy[i])/m
     # update velocity and position
-    x[i+1] = x[i] + DeltaT*vx[i]
     vx[i+1] = vx[i] + DeltaT*ax
-    y[i+1] = y[i] + DeltaT*vy[i]
+    x[i+1] = x[i] + DeltaT*vx[i]
     vy[i+1] = vy[i] + DeltaT*ay
+    y[i+1] = y[i] + DeltaT*vy[i]
     # update time to next time step and compute analytical answer
     t[i+1] = t[i] + DeltaT
     yanalytic[i+1] = y[0]-(vT*vT/g)*log(cosh(g*t[i+1]/vT))+vy[0]*t[i+1]
