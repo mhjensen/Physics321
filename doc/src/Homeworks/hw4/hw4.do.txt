@@ -1,0 +1,124 @@
+TITLE: PHY321: Classical Mechanics 1
+AUTHOR: Homework 4, due Friday February 7
+DATE: today
+
+===  Practicalities about  homeworks and projects ===
+
+o You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. _Remember to write your name(s)_!
+o Homeworks are available Wednesday/Thursday the week before the deadline. The deadline is at the Friday lecture.
+o How do I(we)  hand in?  You can hand in the paper and pencil exercises as a hand-written document. For this homework this applies to exercises 1-5. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise(s) (exercise 6 here) should always be handed in as a jupyter notebook by the deadline at D2L. 
+
+=== Introduction to homework 4 ===
+
+This week's sets of classical pen and paper and computational
+exercises deal with simple motion problems and conservation laws; energy, momentum and angular momentum. These conservation laws are central in Physics and understanding them properly lays the foundation for understanding and analyzing more complicated physics problems.
+The relevant reading background is
+o chapters 3, 4.1, 4.2 and 4.3 of Taylor (there are many good examples there) and
+o chapters 10-12 of Malthe-Sørenssen.
+In both textbooks there are many nice worked out examples. Malthe-Sørenssen's text contains also several coding examples you may find useful. 
+
+The numerical homework focuses on another motion problem where you can
+use the code you developed in homework 3, almost entirely. Please take
+a look at the posted solution (jupyter-notebook) for homework 3. You
+need only to change the forces at play. The problem at hand is a
+classic, the gravitational force acting between the sun and the
+earth. Here you will notice also that the standard Euler-integration
+algorithm is not the best choice and we will introduce the so-called
+Euler-Cromer method and the Velocity-Verlet method. These methods will
+give much more stable numerical results with only few additions to
+your code.
+
+The code you develop here will also be reused when we analyze energy
+conservation in homework set 5.
+
+=== Exercise 1 (20 pt),  ===
+
+
+* 1a (4pt) Find the velocity as a function of time for the electron.
+* 1b (4pt)  Find the position as a function of time for the electron.
+
+The field is only acting inside a box of length $L = 2m$.
+* 1c (4pt)  How long time is the electron inside the field?
+* 1d (4pt)  What is the displacement in the $y$-direction when the electron leaves the box. (We call this the deflection of the electron).
+* 1e (4pt)  Find the angle the velocity vector forms with the horizontal axis as the electron leaves the box.
+
+
+=== Exercise 2 (10 pt), Drag force ===
+
+Taylor exercise 2.3
+
+=== Exercise 3 (10 pt), Falling object  ===
+
+Taylor exercise 2.6
+
+=== Exercise 4 (10 pt), and then a cyclist  ===
+
+Taylor exercise 2.26
+
+
+=== Exercise 5 (10 pt), back to a falling ball and preparing for the numerical exercise  ===
+
+_Useful material: Malthe-Sørenssen chapter 7.5 and Taylor chapter 2.4._
+
+In this example we study the motion of an object subject to a constant force, a velocity dependent
+force, and for the numerical part a position-dependent force.
+Without the position dependent force, we can solve the problem analytically. This is what we will do in this exercise.
+The position dependent force requires numerical efforts (exercise 7).
+In addition to the  falling ball case, we will include the effect of the ball bouncing back from the floor in exercises 7.
+
+
+Here we limit ourselves to a ball that is thrown from a height $h$
+above the ground with an initial velocity
+$\bm{v}_0$ at time $t=t_0$.
+We assume we have only a gravitational force and a force due to the air resistance.
+The position of the ball as function of time is  $\bm{r}(t)$ where $t$ is time.
+ The position is measured with respect to a coordinate system with origin at the floor.
+
+We assume we have an initial position $\bm{r}(t_0)=h\bm{e}_y$ and an initial velocity $\bm{v}_0=v_{x,0}\bm{e}_x+v_{y,0}\bm{e}_y$.
+
+In this exercise we assume the system is influenced by the gravitational force
+!bt
+\[
+\bm{G}=-mg\bm{e}_y
+\]
+!et
+and an air resistance given by a square law
+!bt
+\[
+-Dv\bm{v}.
+\]
+!et
+
+The analytical expressions for velocity and position as functions of
+time will be used to compare with the numerical results in exercise 6.
+
+* 5a (3pt) Identify the forces acting on the ball and set up a diagram with the forces acting on the ball. Find the acceleration of the falling ball. 
+* 5b (4pt) Integrate the acceleration from an initial time $t_0$ to a final time $t$ and find the velocity.
+* 5c (4pt) Find thereafter the position as function of time starting with an initial time $t_0$. Find the time it takes to hit the floor.  Here you will find it convenient to set the initial velocity in the $y$-direction to zero.
+
+
+We will use the above analytical results in our numerical calculations in exercise 6.
+
+
+
+
+===  Exercise 6 (40pt), Numerical elements, solving exercise 5 numerically and adding the bouncing from the floor ===
+
+_This exercise should be handed in as a jupyter-notebook_ at D2L. Remember to write your name(s). 
+
+Last week we:
+o Gained more practice with plotting in Python
+o Became familiar with arrays and representing vectors with such objects
+ 
+This week we will:
+o Learn and utilize Euler's Method to find the position and the velocity
+o Compare analytical and computational solutions 
+o Add additional forces to our model
+
+!bc pycod
+# let's start by importing useful packages we are familiar with
+import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
+!ec
+
