@@ -14,22 +14,22 @@ This week's sets of classical pen and paper and computational
 exercises deal with simple motion problems and conservation laws; energy, momentum and angular momentum. These conservation laws are central in Physics and understanding them properly lays the foundation for understanding and analyzing more complicated physics problems.
 The relevant reading background is
 o chapters 3, 4.1, 4.2 and 4.3 of Taylor (there are many good examples there) and
-o chapters 10-12 of Malthe-Sørenssen.
+o chapters 10-13 of Malthe-Sørenssen.
 In both textbooks there are many nice worked out examples. Malthe-Sørenssen's text contains also several coding examples you may find useful. 
 
 The numerical homework focuses on another motion problem where you can
 use the code you developed in homework 3, almost entirely. Please take
 a look at the posted solution (jupyter-notebook) for homework 3. You
 need only to change the forces at play. The problem at hand is a
-classic, the gravitational force acting between the sun and the
-earth. Here you will notice also that the standard Euler-integration
+classic, the gravitational force acting between the Sun and the
+Earth. Here you will notice also that the standard Euler-integration
 algorithm is not the best choice and we will introduce the so-called
 Euler-Cromer method and the Velocity-Verlet method. These methods will
 give much more stable numerical results with only few additions to
 your code.
 
 The code you develop here will also be reused when we analyze energy
-conservation in homework set 5.
+conservation in homework set 5. And for those of you doing the honors project, it serves as a starting point for the solar system variant.
 
 === Exercise 1 (10 pt), Conservation laws, Energy and momentum ===
 
@@ -52,7 +52,7 @@ V(x,y,z)=A\exp\left\{-\frac{x^2+z^2}{2a^2}\right\}.
 \]
 !et
 
-* 3a (2pt) Is energy conserved? If so, why?
+* 3a (2pt) Is energy conserved? If so, why? 
 * 3b (4pt) Which of  the quantities, $p_x,p_y,p_z$ are conserved?
 * 3c (4pt) Which of  the quantities, $L_x,L_y,L_z$ are conserved?
 
@@ -82,62 +82,60 @@ A particle is thereafter under the influence of a force $F=-kx+kx^3/\alpha^2$, w
 
 ===  Exercise 6 (10pt), Warming up for the Earth-Sun system, Scaling the Equations  ===
 
+The aim of this exercise (as well as the next) is to study the motion
+of objects under the influence of the gravitational force.  We will
+limit ourselves to the Earth-Sun system. Here we will scale the
+equations and sketch our first algorithm for solving the equations,
+namely using Euler's method again, as we did in homework 3.  This part
+together with the numerical part forms also the entry point for the
+solar system honors project. Furthermore, we will reuse parts of these
+results when analyzing energy conservation in homework 5.
 
+We will limit ourselves (in order to test the algorithm) to a
+hypothetical solar system with the Earth only orbiting around the sun.
+The only force in the problem is gravity. Newton's law of gravitation
+is given by a force $F_G$
 
-===  Exercise 7 (40pt), Numerical elements, solving exercise 6 numerically  ===
-
-_This exercise should be handed in as a jupyter-notebook_ at D2L. Remember to write your name(s). 
-
-Last week we:
-o Gained more practice with plotting in Python
-o Became familiar with arrays and representing vectors with such objects
- 
-This week we will:
-o Learn and utilize Euler's Method to find the position and the velocity
-o Compare analytical and computational solutions 
-o Add additional forces to our model
-
-
-!bc pycod
-# let's start by importing useful packages we are familiar with
-import numpy as np
-import matplotlib.pyplot as plt
-%matplotlib inline
-!ec
-
-
-
-
-
-In the first part however, we will limit ourselves (in order to test the algorithm)to a hypothetical solar system
-with the Earth only orbiting around the sun.
-The only force in the problem is gravity. Newton's law of gravitation  is given by a force $F_G$
+!bt
 \[
 F_G=\frac{GM_{\odot}M_{\mathrm{Earth}}}{r^2},
 \]
-where $M_{\odot}$ is the mass of the Sun and $M_{\mathrm{Earth}}$ is the mass of the Earth. The gravitational constant is $G$ and $r$ is the distance between the Earth and the Sun.
-We assume that the Sun has a mass which is much larger 
-than that of the Earth. We can therefore safely neglect the 
-motion of the Sun in this problem.  In the first part of this project, your aim is to compute the motion
-of the the Earth using different methods for solving ordinary differential equations.
+!et
+
+where $M_{\odot}$ is the mass of the Sun and $M_{\mathrm{Earth}}$ is
+the mass of the Earth. The gravitational constant is $G$ and $r$ is
+the distance between the Earth and the Sun.  We assume that the Sun
+has a mass which is much larger than that of the Earth. We can
+therefore safely neglect the motion of the Sun in this problem.
+
 
 We assume that the orbit of the Earth around the Sun 
 is co-planar, and we take this to be the $xy$-plane.
 Using Newton's second law of motion we get the following equations
+!bt
 \[
 \frac{d^2x}{dt^2}=\frac{F_{G,x}}{M_{\mathrm{Earth}}},
 \]
-and 
+!et
+and
+!bt
 \[
 \frac{d^2y}{dt^2}=\frac{F_{G,y}}{M_{\mathrm{Earth}}},
 \]
-where $F_{G,x}$ and $F_{G,y}$ are the $x$ and $y$ components of the gravitational force. 
+!et
 
-We will use so-called astronomical units when rewriting our equations. 
-Using astronomical units (AU as abbreviation)it means that 
-one astronomical unit of length, known as 1 AU, is the average distance between the Sun and Earth, that is
-$1$ AU = $1.5\times 10^{11}$ m.  It can also be convenient to use years instead of seconds since years match
-better the time evolution of the solar system. The mass of the Sun is $M_{\mathrm{sun}}=M_{\odot}=2\times 10^{30}$ kg. The masses of all relevant planets and their distances from the sun are listed in the table here in kg and AU.
+where $F_{G,x}$ and $F_{G,y}$ are the $x$ and $y$ components of the
+gravitational force.
+
+We will use so-called astronomical units when rewriting our equations.
+Using astronomical units (AU as abbreviation)it means that one
+astronomical unit of length, known as 1 AU, is the average distance
+between the Sun and Earth, that is $1$ AU = $1.5\times 10^{11}$ m.  It
+can also be convenient to use years instead of seconds since years
+match better the time evolution of the solar system. The mass of the
+Sun is $M_{\mathrm{sun}}=M_{\odot}=2\times 10^{30}$ kg. The masses of
+all relevant planets and their distances from the sun are listed in
+the table here in kg and AU.
 
 |----------------------------------------------------|
 | Planet |  Mass in kg |  Distance to  sun in AU     |
@@ -154,7 +152,10 @@ better the time evolution of the solar system. The mass of the Sun is $M_{\mathr
 |----------------------------------------------------|
 
 
-In setting up the equations we can limit ourselves to a co-planar motion and use only the $x$ and $y$ coordinates. But you should feel free to extend your equations to three dimensions, it is not very difficult and the data from NASA are all in three dimensions.
+In setting up the equations we can limit ourselves to a co-planar
+motion and use only the $x$ and $y$ coordinates. But you should feel
+free to extend your equations to three dimensions, it is not very
+difficult and the data from NASA are all in three dimensions.
 
 "NASA":"http://www.nasa.gov/index.html" has an excellent site at URL:"http://ssd.jpl.nasa.gov/horizons.cgi#top".
 From there you can extract initial conditions in order to start your differential equation solver.
@@ -162,56 +163,106 @@ At the above website you need to change from _OBSERVER_ to _VECTOR_ and then wri
 The generated data contain the $x$, $y$ and $z$ values as well as their corresponding velocities. The velocities are in units of AU per day.
 Alternatively they can be obtained in terms of km and km/s. 
 
-For the first system below involving only the Earth and the Sun, you could just initialize the position with say $x=1$ AU
-and $y=0$ AU. 
+For the first system below involving only the Earth and the Sun, you
+could just initialize the position with say $x=1$ AU and $y=0$ AU.
 
 
-=== Project 3a): The Earth-Sun system  ===
 
 We assume that mass units can be obtained by using the fact that Earth's orbit is almost circular around the Sun.
+
 For circular motion we know that the force must obey the following relation
+!bt
 \[
 F_G= \frac{M_{\mathrm{Earth}}v^2}{r}=\frac{GM_{\odot}M_{\mathrm{Earth}}}{r^2},
 \]
+!et
 where $v$ is the velocity of Earth. 
 The latter equation can be used to show that
+!bt
 \[
 v^2r=GM_{\odot}=4\pi^2\mathrm{AU}^3/\mathrm{yr}^2.
 \]
-Discretize the above differential equations and set up an algorithm for solving these equations using Euler's forward algorithm and the so-called velocity Verlet method discussed in the lecture notes and lecture slides (see for example chapter 8 of the lecture notes).
+!et
+* 6a (5pt) Show how to derive the last equation and use this to scale the differential equations, getting thus rid of the constant $G$ and the two masses. Split the differential equations for the motion in the $x$ and $y$ directions in terms of four coupled differential equations.
+
+* 6b (5pt)  Discretize the above differential equations and set up an algorithm for solving these equations using Euler's forward algorithm and the so-called velocity Verlet method "discussed in the lecture notes":"https://mhjensen.github.io/Physics321/doc/pub/energyconserv/html/energyconserv.html". Here you can reuse what you did in homework 3, exercises 6 and 7. 
 
 
 
-Write then a program which solves the above differential equations for the Earth-Sun system
-using Euler's  method and the velocity Verlet method.  Write these codes without object orientation first in order to make sure everything is running correctly. Thereafter you should start planning to object orient your code.
-Try to figure out which parts and operations could be written as classes
-and generalized.  
-Your task here is to think of the program flow and figure out which parts can be abstracted and reused for many types of operations. 
+===  Exercise 7 (40pt), Numerical elements, solving exercise 6 numerically  ===
+
+_This exercise should be handed in as a jupyter-notebook_ at D2L. Remember to write your name(s). 
+
+Last week we:
+o Studied  Euler's Method to find the position and the velocity of a falling object, including air resistance and gravity
+o Compare analytical and computational solutions 
+o Add additional forces to our model
+
+This week we will reuse our code from homework 3 (exercises 6 and 7,
+"see also the code examples at the course
+homepage":"https://github.com/mhjensen/Physics321/tree/master/doc/src/motion/Programs")
+and replace the air resistance and force from the ground with the
+gravitational force. Then we will study the stability of system as function of initial conditions and the time step length.
+
+We start by importing some standard packages
+!bc pycod
+# let's start by importing useful packages we are familiar with
+import numpy as np
+from math import *
+import matplotlib.pyplot as plt
+%matplotlib inline
+!ec
+
+* 7a (5 pt)  Write then a program which solves the above differential equations for the Earth-Sun system using Euler's  method and the velocity Verlet method.  Find out which initial value for the velocity that gives a circular orbit and test the stability of your algorithm as function of different time steps $\Delta t$.  Make a plot of the results you obtain for the position of the Earth (plot the $x$ and $y$ values and/or if you prefer to use three dimensions the $z$-value as well) orbiting  the Sun. Discuss eventual differences between the Verlet algorithm and the Euler algorithm. 
 
 
+* 7b (5pt) Consider then a planet which begins at a distance of 1 AU from the sun. Find out by trial and error what the initial velocity must be in order for the planet to escape from the sun.  Can you find an exact answer?  How does that match your numerical results?
 
-Find out which initial value for the velocity that gives a circular orbit
-and test the stability of your algorithm as function of different time steps $\Delta t$. 
-Make a plot of the results you obtain for the position of the Earth (plot the $x$ and $y$ values and/or if you prefer to use three dimensions the $z$-value as well) orbiting  the Sun.
+Here we add a code-example which may aid in the above studies using Euler's forward method.
+!bc pycod
+DeltaT = 0.001
+#set up arrays 
+tfinal = 10 # in years
+n = ceil(tfinal/DeltaT)
+# set up arrays for time t, velocity v, and position r
+t = np.zeros(n)
+v = np.zeros((n,2))
+r = np.zeros((n,2))
+# Initial conditions as compact 2-dimensional arrays
+r0 = np.array([1.0,0.0])
+v0 = np.array([0.0,2*pi])
+r[0] = r0
+v[0] = v0
+Fourpi2 = 4*pi*pi
+# Start integrating using Euler's method
+for i in range(n-1):
+    # Set up the acceleration
+    # Here you could have defined your own function for this
+    rabs = sqrt(sum(r[i]*r[i]))
+    a =  -Fourpi2*r[i]/(rabs**3)
+    # update velocity, time and position using Euler's forward method
+    v[i+1] = v[i] + DeltaT*a
+    r[i+1] = r[i] + DeltaT*v[i]
+    t[i+1] = t[i] + DeltaT
+!ec
 
-Check also for the case of a circular orbit that both the kinetic and the potential energies are conserved.
-Check also if the  angular momentum is conserved. Explain why these quantities
-should be conserved.
 
-Discuss eventual differences between the Verlet algorithm and the Euler algorithm. Consider also the number of FLOPs involved and perform a timing of the
-two algorithms for equal final times.
+===  Exercise 8 (30pt), Bonus exercise ===
 
+You don't need to do this exercise, but it gives you a bonus score of 30 points.
 
-Consider then a planet which begins at a distance of 1 AU from the sun. Find out by trial and error
-what the initial velocity must be in order for the planet to escape from the sun.  Can you find an exact answer?  How does that match your numerical results?
+This time the bonus exercise is a simple survey. We are now moving
+into our fifth week and we would very much have your feedback on how
+things are working. In particular, since this is (together with fall
+2019) the first time we have numerical exercises every week, we need
+to see if the pace is ok, if there is a good link between lectures and
+the homework etc etc.
 
-Try also to change the gravitional force, by replacing 
-\[
-F_G=\frac{GM_{\odot}M_{\mathrm{Earth}}}{r^2},
-\]
-with
-\[
-F_G=\frac{GM_{\odot}M_{\mathrm{Earth}}}{r^{\beta}},
-\]
-where you let $\beta\in [2,3]$. What happens to the earth-sun system when $\beta$ creeps towards $3$? Comment your results.
+* Is the weekly load with paper and pencil exercises and the numerical exercises reasonable?
+* Is there enough material (lectures and lecture material) to get you started with the exercises?  We are thinking of both the paper and pencil and the numerical exercises?
+* Is the pace during the lectures reasonable? And do the lectures link well with the exercises?
+* In the beginning there will always be some elements of repetition of material many of you have seen before. Do you find the choice of material the first weeks adequate? Too easy? Too difficult?
+* For those of you who have taken CMSE 201 Introduction to Computational Modeling, do you feel the material taught there links well with the exercises you have done in this course? Is there is something we are missing?
+* Any other topic you would like to comment on?
+
 
