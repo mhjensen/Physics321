@@ -21,8 +21,8 @@ to energy.
 !split
 ===== Work and Energy =====
 
-Till our own material is placed here, we recommend reading chapters 10 and 11 of "Malthe-Sørenssen":"https://www.springer.com/gp/book/9783319195957"
-and "Taylor chapters 4.1-4.3":" https://www.uscibooks.com/taylor2.htm". 
+Till our own material is placed here, we recommend reading chapters 10-14 of "Malthe-Sørenssen":"https://www.springer.com/gp/book/9783319195957"
+and "Taylor chapters 3 and 4":" https://www.uscibooks.com/taylor2.htm". 
 
 On work, chapter 10 of Malthe-Sørenssen is a good read.
 
@@ -790,7 +790,7 @@ Let us stay with $x$ (position) and $v$ (velocity) as the quantities we are inte
 We have the Taylor expansion for the position given by
 !bt
 \[
-x_{i+1} = x_i+(\Delta t)x^{(1)}_i+\frac{(\Delta t)^2}{2}x^{(2)}_i+O((\Delta t)^3).
+x_{i+1} = x_i+(\Delta t)v_i+\frac{(\Delta t)^2}{2}a_i+O((\Delta t)^3).
 \]
 !et
 The corresponding expansion for the velocity is 
@@ -896,3 +896,4 @@ which takes in as input the various variables. We leave this as a challenge to y
 !split
 ===== Studying Energy Conservation =====
 
+In order to study the conservation of energy, we will need to perform a numerical integration, unless we can integrate analytically. Here we present the Trapezoidal rule as a the simplest possible approximation. 
