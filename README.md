@@ -86,16 +86,18 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 ### Week 5, January 27-31, 2020
 - Monday: More on Conservation laws, momentum conservation
 - Wednesday: Examples of applications of conservation laws, angular momentum conservation 
-- Friday:  Wrapping up conservation laws and further examples, 4th homework, due February 7
-- Good reads are Taylor chapters 4.1-.4.3 and AMS chapters 10-12.
+- Friday:  Conservation aws and further examples, 4th homework, due February 7
+- Good reads are Taylor chapter 4 and AMS chapters 10-14.
 ### Week 6, February 3-7, 2020
-- Monday: Oscillations
-- Wednesday: Oscillations
-- Friday: Oscillations 5th homework, due February 14
+- Monday: Conservation laws and discussion of 4th homework (exercises 6 and 7). Introducing the Velocity Verlet algorithm and the Earth Sun problem
+- Wednesday: Examples of application of conservations laws (see chapter 4 of Taylor). 
+- Friday: Begin discussion of oscillations, and  5th homework, due February 14
+- Good reads are Taylor chapter 4 and AMS chapters 10-14 for the conservation laws and the first sections of chapter 5 of Taylor on oscillations. 
 ### Week 7, February 10-14, 2020
-- Monday:
-- Wednesday: 
-- Friday:  6th homework, due February 21
+- Monday: Oscillations, the sliding block and energy conservation
+- Wednesday:  Oscillations, the classical pendulum
+- Friday: Oscillations,  6th homework, due February 21
+- Good reads are chapter 5 of Taylor on oscillations. 
 ### Week 8, February 17-21, 2020
 - Monday:
 - Wednesday: 
