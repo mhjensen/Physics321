@@ -41,32 +41,33 @@ tfinal = 10
 n = ceil(tfinal/DeltaT)
 # set up arrays for t, a, v, and x
 t = np.zeros(n)
-rt = np.zeros(n)
-vt = np.zeros(n)
 v = np.zeros((n,2))
 r = np.zeros((n,2))
 # Initial conditions as compact 2-dimensional arrays
 r0 = np.array([1.0,0.0])
-v0 = np.array([2*pi,0.0])
+v0 = np.array([0.0,2*pi])
 r[0] = r0
 v[0] = v0
+Fourpi2 = 4*pi*pi
 # Start integrating using Euler's method
 for i in range(n-1):
-    # Set up forces, air resistance FD, not now that we need the norm of the vector
+    # Set up forces, air resistance FD, note now that we need the norm of the vector
     # Here you could have defined your own function for this
     rabs = sqrt(sum(r[i]*r[i]))
-    a =  -4*(pi**2)*r[i]/(rabs**(3.0/2.0))
-    # update velocity, time and position using Euler's method
-    r[i+1] = r[i] + DeltaT*v[i]+0.5*(DeltaT**2)*a
-    rabs = sqrt(sum(r[i+1]*r[i+1]))
-    anew = -4*(pi**2)*r[i+1]/(rabs**(3.0/2.0))
-    v[i+1] = v[i] + 0.5*DeltaT*(a+anew)
+    a =  -Fourpi2*r[i]/(rabs**3)
+    # update velocity, time and position using the Velocity-Verlet method
+    v[i+1] = v[i] + DeltaT*a#0.5*DeltaT*(a+anew)
+    r[i+1] = r[i] + DeltaT*v[i+1]#+0.5*(DeltaT**2)*a
+#    rabs = sqrt(sum(r[i+1]*r[i+1]))
+#    anew = -4*(pi**2)*r[i+1]/(rabs**3)
+
     t[i+1] = t[i] + DeltaT
+# Plot position as function of time    
 fig, ax = plt.subplots()
-ax.set_xlim(0, tfinal)
-ax.set_ylabel('r[m]')
-ax.set_xlabel('t[s]')
-ax.plot(t,r[:,0])
+#ax.set_xlim(0, tfinal)
+ax.set_ylabel('x[m]')
+ax.set_xlabel('y[m]')
+ax.plot(r[:,0], r[:,1])
 fig.tight_layout()
 save_fig("EarthSunEuler")
 plt.show()
