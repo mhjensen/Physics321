@@ -896,4 +896,373 @@ which takes in as input the various variables. We leave this as a challenge to y
 !split
 ===== Studying Energy Conservation =====
 
-In order to study the conservation of energy, we will need to perform a numerical integration, unless we can integrate analytically. Here we present the Trapezoidal rule as a the simplest possible approximation. 
+In order to study the conservation of energy, we will need to perform
+a numerical integration, unless we can integrate analytically. Here we
+present the Trapezoidal rule as a the simplest possible approximation.
+
+
+The integral 
+!bt
+\begin{equation}
+   I=\int_a^bf(x) dx
+   label{eq:integraldef}
+\end{equation}
+!et
+has a very simple meaning. The integral is the
+area enscribed by the function $f(x)$ starting from $x=a$ to  $x=b$. It is subdivided in several smaller areas whose evaluation is to  be approximated by different techniques. The areas under the curve can for example  be approximated by rectangular boxes or trapezoids. 
+
+In considering equal step  methods, our basic approach is that of approximating
+a function $f(x)$ with a polynomial of at most 
+degree $N-1$, given $N$ integration points. If our polynomial is of degree $1$,
+the function will be approximated with $f(x)\approx a_0+a_1x$. 
+
+The algorithm for these integration methods  is rather simple, and the number of approximations perhaps  unlimited!
+
+* Choose a step size $h=(b-a)/N$  where $N$ is the number of steps and $a$ and $b$ the lower and upper limits of integration.
+
+* With a given step length we rewrite the integral as  
+!bt 
+\begin{equation*}     
+\int_a^bf(x) dx= \int_a^{a+h}f(x)dx + \int_{a+h}^{a+2h}f(x)dx+\dots \int_{b-h}^{b}f(x)dx.
+\end{equation*}
+!et
+* The strategy then is to find a reliable polynomial approximation   for $f(x)$ in the various intervals.  Choosing a given approximation for  $f(x)$, we obtain a specific approximation to the  integral.
+
+* With this approximation to $f(x)$ we perform the integration by computing the integrals over all subintervals.
+
+One possible strategy then is to find a reliable polynomial expansion for $f(x)$ in the smaller
+subintervals. Consider for example evaluating
+!bt
+\begin{equation*}
+   \int_a^{a+2h}f(x)dx, 
+\end{equation*}
+!et
+which we rewrite as
+!bt
+\begin{equation}
+   \int_a^{a+2h}f(x)dx=
+ \int_{x_0-h}^{x_0+h}f(x)dx.
+     label{eq:hhint}
+\end{equation}
+!et
+We have chosen a midpoint $x_0$ and have defined $x_0=a+h$.
+
+Using Lagrange's interpolation formula
+!bt
+\begin{equation*}
+   P_N(x)=\sum_{i=0}^{N}\prod_{k\ne i} \frac{x-x_k}{x_i-x_k}y_i,
+\end{equation*}
+!et
+we could attempt to approximate the function $f(x)$ with a first-order polynomial in $x$ in the two
+sub-intervals $x\in[x_0-h,x_0]$ and $x\in[x_0,x_0+h]$. A first order polynomial means simply that 
+we have for say the interval  $x\in[x_0,x_0+h]$
+!bt
+\begin{equation*}
+   f(x)\approx P_1(x)=\frac{x-x_0}{(x_0+h)-x_0}f(x_0+h)+\frac{x-(x_0+h)}{x_0-(x_0+h)}f(x_0),
+\end{equation*}
+!et
+and for the interval  $x\in[x_0-h,x_0]$
+!bt
+\begin{equation*}
+   f(x)\approx P_1(x)=\frac{x-(x_0-h)}{x_0-(x_0-h)}f(x_0)+\frac{x-x_0}{(x_0-h)-x_0}f(x_0-h).
+\end{equation*}
+!et
+
+Having performed this subdivision and polynomial approximation,
+one from $x_0-h$ to $x_0$ and the other from $x_0$ to $x_0+h$,
+!bt
+\begin{equation*}
+   \int_a^{a+2h}f(x)dx=\int_{x_0-h}^{x_0}f(x)dx+\int_{x_0}^{x_0+h}f(x)dx,
+\end{equation*}
+!et
+we can easily calculate for example the second integral as
+!bt
+\begin{equation*}
+\int_{x_0}^{x_0+h}f(x)dx\approx \int_{x_0}^{x_0+h}\left(\frac{x-x_0}{(x_0+h)-x_0}f(x_0+h)+\frac{x-(x_0+h)}{x_0-(x_0+h)}f(x_0)\right)dx.
+\end{equation*}
+!et
+
+This integral can be simplified to
+!bt
+\begin{equation*}
+\int_{x_0}^{x_0+h}f(x)dx\approx \int_{x_0}^{x_0+h}\left(\frac{x-x_0}{h}f(x_0+h)-\frac{x-(x_0+h)}{h}f(x_0)\right)dx,
+\end{equation*}
+!et
+resulting in
+!bt
+\begin{equation*}
+\int_{x_0}^{x_0+h}f(x)dx=\frac{h}{2}\left(f(x_0+h) + f(x_0)\right)+O(h^3).
+\end{equation*}
+!et
+Here we added the error made in approximating our integral 
+with a polynomial of degree $1$.
+
+The other integral gives
+!bt
+\begin{equation*}
+\int_{x_0-h}^{x_0}f(x)dx=\frac{h}{2}\left(f(x_0) + f(x_0-h)\right)+O(h^3),
+\end{equation*}
+!et
+and adding up we obtain
+!bt
+\begin{equation}
+   \int_{x_0-h}^{x_0+h}f(x)dx=\frac{h}{2}\left(f(x_0+h) + 2f(x_0) + f(x_0-h)\right)+O(h^3),
+   label{eq:trapez}
+\end{equation}
+!et
+which is the well-known trapezoidal rule.  Concerning the error in the approximation made,
+$O(h^3)=O((b-a)^3/N^3)$, you should  note 
+that this is the local error.  Since we are splitting the integral from
+$a$ to $b$ in $N$ pieces, we will have to perform approximately $N$ 
+such operations.
+
+This means that the *global error* goes like $\approx O(h^2)$. 
+The trapezoidal reads then
+!bt
+\begin{equation}
+   I=\int_a^bf(x) dx=h\left(f(a)/2 + f(a+h) +f(a+2h)+
+                          \dots +f(b-h)+ f_{b}/2\right),
+   label{eq:trapez1}
+\end{equation}
+!et
+with a global error which goes like $O(h^2)$. 
+
+Hereafter we use the shorthand notations $f_{-h}=f(x_0-h)$, $f_{0}=f(x_0)$
+and $f_{h}=f(x_0+h)$.
+
+The correct mathematical expression for the local error for the trapezoidal rule is
+!bt
+\begin{equation*}
+\int_a^bf(x)dx -\frac{b-a}{2}\left[f(a)+f(b)\right]=-\frac{h^3}{12}f^{(2)}(\xi),
+\end{equation*}
+!et
+and the global error reads
+!bt
+\begin{equation*}
+\int_a^bf(x)dx -T_h(f)=-\frac{b-a}{12}h^2f^{(2)}(\xi),
+\end{equation*}
+!et
+where $T_h$ is the trapezoidal result and $\xi \in [a,b]$.
+
+The trapezoidal rule is easy to  implement numerically 
+through the following simple algorithm
+
+  * Choose the number of mesh points and fix the step length.
+
+  * calculate $f(a)$ and $f(b)$ and multiply with $h/2$.
+
+  * Perform a loop over $n=1$ to $n-1$ ($f(a)$ and $f(b)$ are known) and sum up  the terms $f(a+h) +f(a+2h)+f(a+3h)+\dots +f(b-h)$. Each step in the loop  corresponds to a given value $a+nh$.
+
+  * Multiply the final result by $h$ and add $hf(a)/2$ and $hf(b)/2$.
+
+
+Python offers an  extremely versatile programming  environment, allowing for 
+the inclusion of analytical studies in a numerical program. Here we show an
+example code with the _trapezoidal rule_ using _SymPy_ to evaluate an integral and compute the absolute error
+with respect to the numerically evaluated one of the integral
+$4\int_0^1 dx/(1+x^2) = \pi$:
+!bc pyscpro
+from math import *
+from sympy import *
+def Trapez(a,b,f,n):
+   h = (b-a)/float(n)
+   s = 0
+   x = a
+   for i in range(1,n,1):
+       x = x+h
+       s = s+ f(x)
+   s = 0.5*(f(a)+f(b)) +s
+   return h*s
+
+#  function to compute pi
+def function(x):
+    return 4.0/(1+x*x)
+
+a = 0.0;  b = 1.0; n = 100
+result = Trapez(a,b,function,n)
+print "Trapezoidal rule=", result
+# define x as a symbol to be used by sympy
+x = Symbol('x')
+exact = integrate(function(x), (x, 0.0, 1.0))
+print "Sympy integration=", exact
+# Find relative error
+print "Relative error", abs((exact-result)/exact)
+!ec
+
+The following extended version of the trapezoidal rule allows you  to plot the relative error by comparing with the exact result. By increasing to $10^8$ points one arrives at a region where numerical errors start to accumulate.
+!bc pyscpro
+from math import log10
+import numpy as np
+from sympy import Symbol, integrate
+import matplotlib.pyplot as plt
+# function for the trapezoidal rule
+def Trapez(a,b,f,n):
+   h = (b-a)/float(n)
+   s = 0
+   x = a
+   for i in range(1,n,1):
+       x = x+h
+       s = s+ f(x)
+   s = 0.5*(f(a)+f(b)) +s
+   return h*s
+#  function to compute pi
+def function(x):
+    return 4.0/(1+x*x)
+# define integration limits
+a = 0.0;  b = 1.0;
+# find result from sympy
+# define x as a symbol to be used by sympy
+x = Symbol('x')
+exact = integrate(function(x), (x, a, b))
+# set up the arrays for plotting the relative error
+n = np.zeros(9); y = np.zeros(9);
+# find the relative error as function of integration points
+for i in range(1, 8, 1):
+    npts = 10**i
+    result = Trapez(a,b,function,npts)
+    RelativeError = abs((exact-result)/exact)
+    n[i] = log10(npts); y[i] = log10(RelativeError);
+plt.plot(n,y, 'ro')
+plt.xlabel('n')
+plt.ylabel('Relative error')
+plt.show()
+!ec
+
+The last example shows the potential of combining numerical algorithms with 
+symbolic calculations, allowing us thereby to
+
+* Validate and verify  our  algorithms.
+* Including concepts like unit testing, one has the possibility to test and  validate several or all parts of the code.
+* Validation and verification are then included *naturally*.
+* The above example allows you to test the mathematical error of the algorithm for the trapezoidal rule by changing the number of integration points. You get trained from day one to think error analysis.
+
+Another very simple approach is the so-called midpoint or rectangle method.
+In this case the integration area is split in a given number of rectangles with length $h$ and height given by the mid-point value of the function.  This gives the following simple rule for approximating an integral
+!bt
+\begin{equation}
+   I=\int_a^bf(x) dx \approx  h\sum_{i=1}^N f(x_{i-1/2}), 
+   label{eq:rectangle}
+\end{equation}
+!et
+where $f(x_{i-1/2})$ is the midpoint value of $f$ for a given rectangle. We will discuss its truncation 
+error below.  
+
+The correct mathematical expression for the local error for the rectangular rule $R_i(h)$ for element $i$ is
+
+!bt
+\begin{equation*}
+\int_{-h}^hf(x)dx - R_i(h)=-\frac{h^3}{24}f^{(2)}(\xi),
+\end{equation*}
+!et
+and the global error reads
+!bt
+\begin{equation*}
+\int_a^bf(x)dx -R_h(f)=-\frac{b-a}{24}h^2f^{(2)}(\xi),
+\end{equation*}
+!et
+where $R_h$ is the result obtained with rectangular rule and $\xi \in [a,b]$.
+
+Instead of using the above first-order polynomials 
+approximations for $f$, we attempt at using a second-order polynomials.
+In this case we need three points in order to define a second-order 
+polynomial approximation
+!bt
+\begin{equation*}
+f(x) \approx P_2(x)=a_0+a_1x+a_2x^2.
+\end{equation*}
+!et
+Using again Lagrange's interpolation formula we have
+!bt
+\begin{equation*}
+     P_2(x)=\frac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2-x_1)}y_2+
+            \frac{(x-x_0)(x-x_2)}{(x_1-x_0)(x_1-x_2)}y_1+
+            \frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}y_0.
+\end{equation*}
+!et
+Inserting this formula in the integral of Eq.  (ref{eq:hhint}) we obtain
+!bt
+\begin{equation*}
+   \int_{-h}^{+h}f(x)dx=\frac{h}{3}\left(f_h + 4f_0 + f_{-h}\right)+O(h^5),
+\end{equation*}
+!et
+which is Simpson's rule. 
+
+Note that the improved accuracy in the evaluation of
+the derivatives gives a better error approximation, $O(h^5)$ vs.\ $O(h^3)$ .
+But this is again the *local error approximation*. 
+Using Simpson's rule we can easily compute
+the integral     of Eq.  (ref{eq:integraldef}) to be
+!bt
+\begin{equation}
+   I=\int_a^bf(x) dx=\frac{h}{3}\left(f(a) + 4f(a+h) +2f(a+2h)+
+                          \dots +4f(b-h)+ f_{b}\right),
+   label{eq:simpson}
+\end{equation}
+!et
+with a global error which goes like $O(h^4)$. 
+
+More formal expressions for the local and global errors are for the local error
+!bt
+\begin{equation*}
+\int_a^bf(x)dx -\frac{b-a}{6}\left[f(a)+4f((a+b)/2)+f(b)\right]=-\frac{h^5}{90}f^{(4)}(\xi),
+\end{equation*}
+!et
+and for the global error
+!bt
+\begin{equation*}
+\int_a^bf(x)dx -S_h(f)=-\frac{b-a}{180}h^4f^{(4)}(\xi).
+\end{equation*}
+!et
+with $\xi\in[a,b]$ and $S_h$ the results obtained with Simpson's method.
+
+!split 
+===== Algorithm for Simpson's rule =====
+
+The method 
+can easily be implemented numerically through the following simple algorithm
+
+  * Choose the number of mesh points and fix the step.
+
+  * calculate $f(a)$ and $f(b)$
+
+  * Perform a loop over $n=1$ to $n-1$ ($f(a)$ and $f(b)$ are known) and sum up   the terms $4f(a+h) +2f(a+2h)+4f(a+3h)+\dots +4f(b-h)$. Each step in the loop  corresponds to a given value $a+nh$. Odd values of $n$ give $4$ as factor  while even values yield $2$ as factor.
+
+  * Multiply the final result by $\frac{h}{3}$.
+
+!split 
+===== Summary for equal-step methods =====
+
+In more general terms, what we have done here is to approximate a given function $f(x)$ with a polynomial
+of a certain degree. One can show that 
+given $n+1$ distinct points $x_0,\dots, x_n\in[a,b]$ and $n+1$ values $y_0,\dots,y_n$ there exists a 
+unique polynomial $P_n(x)$ with the property
+!bt
+\begin{equation*}
+   P_n(x_j) = y_j\hspace{0.5cm} j=0,\dots,n
+\end{equation*}
+!et
+
+In the Lagrange representation the interpolating polynomial is given by
+!bt
+\begin{equation*}
+P_n = \sum_{k=0}^nl_ky_k,
+\end{equation*}
+!et
+with the Lagrange factors
+!bt
+\begin{equation*}
+   l_k(x) = \prod_{\begin{array}{c}i=0 \\ i\ne k\end{array}}^n\frac{x-x_i}{x_k-x_i}\hspace{0.2cm} k=0,\dots,n.
+\end{equation*}
+!et
+
+If we for example set $n=1$, we obtain
+!bt
+\begin{equation*}
+P_1(x) = y_0\frac{x-x_1}{x_0-x_1}+y_1\frac{x-x_0}{x_1-x_0}=\frac{y_1-y_0}{x_1-x_0}x-\frac{y_1x_0+y_0x_1}{x_1-x_0},
+\end{equation*}
+!et
+which we recognize as the equation for a straight line.
+
+The polynomial interpolatory quadrature of order $n$ with equidistant quadrature points $x_k=a+kh$
+and step $h=(b-a)/n$ is called the Newton-Cotes quadrature formula of order $n$.
+

@@ -43,9 +43,9 @@ R = 0.1 # in meters
 k = 1000.0 # in mass/time^2
 # Define Gravitational force as a vector in x and y, zero x component
 G = -m*g*np.array([0.0,1])
-DeltaT = 0.0001
+DeltaT = 0.01
 #set up arrays 
-tfinal = 160.0
+tfinal = 15.0
 n = ceil(tfinal/DeltaT)
 # set up arrays for t, v, and r, the latter contain the x and y comps
 t = np.zeros(n)
