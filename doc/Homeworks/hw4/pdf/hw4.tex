@@ -21,8 +21,8 @@ final,                   % draft: marks overfull hboxes, figures with paths
 \usepackage[pdftex]{graphicx}
 
 \usepackage{fancyvrb} % packages needed for verbatim environments
-\usepackage{verbatim}
-%\usemintedstyle{default}
+\usepackage{minted}
+\usemintedstyle{default}
 
 \usepackage[T1]{fontenc}
 %\usepackage[latin1]{inputenc}
@@ -92,7 +92,7 @@ PHY321: Classical Mechanics 1
 % ----------------- author(s) -------------------------
 
 \begin{center}
-{\bf Homework 4, due Friday February 7${}^{}$} \\ [0mm]
+{\bf Homework 4, due Monday  February 10${}^{}$} \\ [0mm]
 \end{center}
 
 \begin{center}
@@ -103,7 +103,7 @@ PHY321: Classical Mechanics 1
 
 % --- begin date ---
 \begin{center}
-Feb 3, 2020
+Feb 5, 2020
 \end{center}
 % --- end date ---
 
@@ -339,13 +339,13 @@ and replace the air resistance and force from the ground with the
 gravitational force. Then we will study the stability of the system as function of initial conditions and the time step length.
 
 We start by importing some standard packages
-\begin{verbatim}
+\begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 # let's start by importing useful packages we are familiar with
 import numpy as np
 from math import *
 import matplotlib.pyplot as plt
 %matplotlib inline
-\end{verbatim}
+\end{minted}
 
 \begin{itemize}
 \item 7a (5 pt)  Write then a program which solves the above differential equations for the Earth-Sun system using Euler's  method and the velocity Verlet method.  Find out which initial value for the velocity that gives a circular orbit and test the stability of your algorithm as function of different time steps $\Delta t$.  Make a plot of the results you obtain for the position of the Earth (plot the $x$ and $y$ values and/or if you prefer to use three dimensions the $z$-value as well) orbiting  the Sun. Discuss eventual differences between the Verlet algorithm and the Euler algorithm. 
@@ -355,7 +355,7 @@ import matplotlib.pyplot as plt
 
 \noindent
 Here we add a code-example which may aid in the above studies using Euler's forward method.
-\begin{verbatim}
+\begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 DeltaT = 0.001
 #set up arrays 
 tfinal = 10 # in years
@@ -380,7 +380,7 @@ for i in range(n-1):
     v[i+1] = v[i] + DeltaT*a
     r[i+1] = r[i] + DeltaT*v[i]
     t[i+1] = t[i] + DeltaT
-\end{verbatim}
+\end{minted}
 
 
 \paragraph{Exercise 8 (30pt), Bonus exercise.}
