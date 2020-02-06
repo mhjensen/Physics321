@@ -1,5 +1,5 @@
 TITLE: PHY321: Classical Mechanics 1
-AUTHOR: Homework 3, due Friday January 31
+AUTHOR: Homework 3, Solution
 DATE: today
 
 ===  Practicalities about  homeworks and projects ===
@@ -62,12 +62,74 @@ varies with time, causing an acceleration of the electron that varies in time
 \]
 !et
 * 1a (4pt) Find the velocity as a function of time for the electron.
+
+_Answer 1a:_
+
+!bt
+\[
+v_x(t) = 100\mathrm{m/s},
+\]
+!et
+
+!bt
+\[
+v_y(t) = -20\mathrm{m/s^2}t-50\mathrm{m/s^3}t^2.
+\]
+!et
+
+
 * 1b (4pt)  Find the position as a function of time for the electron.
+
+_Answer 1b:_
+
+!bt
+\[
+x(t) = 100\mathrm{m/s}t,
+\]
+!et
+
+
+!bt
+\[
+y(t) = -10\mathrm{m/s^2}t^2-\frac{50}{3}\mathrm{m/s^3}t^3.
+\]
+!et
+
+
 
 The field is only acting inside a box of length $L = 2m$.
 * 1c (4pt)  How long time is the electron inside the field?
+
+_Answer 1c:_
+
+!bt
+\[
+t=\frac{1}{50}\mathrm{s}.
+\]
+!et
+
+
 * 1d (4pt)  What is the displacement in the $y$-direction when the electron leaves the box. (We call this the deflection of the electron).
+
+_Answer 1d:_
+
+!bt
+\[
+y = -4.01\times 10^{-3} \mathrm{m/s}.
+\]
+!et
+
+
 * 1e (4pt)  Find the angle the velocity vector forms with the horizontal axis as the electron leaves the box.
+
+_Answer 1e:_
+
+
+!bt
+\[
+\alpha = -0.23
+\]
+!et
 
 
 === Exercise 2 (10 pt), Drag force ===
@@ -204,6 +266,211 @@ o  Repeat steps 2-4 for all time steps within a loop.
 * 6c (10pt) Compare your numerically obtained positions and velocities with the analytical results from exercise 5. Comment again your results.
 
 
+_Answer 6b and 6c:_
+
+
+!bc pycod
+# Exercise 6, hw3, brute force way with declaration of vx, vy, x and y
+# Common imports
+import numpy as np
+import pandas as pd
+from math import *
+import matplotlib.pyplot as plt
+import os
+
+# Where to save the figures and data files
+PROJECT_ROOT_DIR = "Results"
+FIGURE_ID = "Results/FigureFiles"
+DATA_ID = "DataFiles/"
+
+if not os.path.exists(PROJECT_ROOT_DIR):
+    os.mkdir(PROJECT_ROOT_DIR)
+
+if not os.path.exists(FIGURE_ID):
+    os.makedirs(FIGURE_ID)
+
+if not os.path.exists(DATA_ID):
+    os.makedirs(DATA_ID)
+
+def image_path(fig_id):
+    return os.path.join(FIGURE_ID, fig_id)
+
+def data_path(dat_id):
+    return os.path.join(DATA_ID, dat_id)
+
+def save_fig(fig_id):
+    plt.savefig(image_path(fig_id) + ".png", format='png')
+
+# Output file
+outfile = open(data_path("Eulerresults.dat"),'w')
+
+from pylab import plt, mpl
+plt.style.use('seaborn')
+mpl.rcParams['font.family'] = 'serif'
+
+
+g = 9.80655 #m/s^2
+# The mass and the drag constant D
+D = 0.00245 #mass/length   kg/m
+m = 0.2 #kg, mass of falling object
+DeltaT = 0.01
+#set up arrays 
+tfinal = 1.4
+# set up number of points for all variables
+n = ceil(tfinal/DeltaT)
+# define scaling constant vT used in analytical solution
+vT = sqrt(m*g/D)
+# set up arrays for t, a, v, and y and arrays for analytical results
+#brute force setting up of arrays for x and y, vx, vy, ax and ay
+t = np.zeros(n)
+vy = np.zeros(n)
+y = np.zeros(n)
+vx = np.zeros(n)
+x = np.zeros(n)
+xanalytic = np.zeros(n)
+yanalytic = np.zeros(n)
+# Initial conditions
+vx[0] = 10.0 #m/s
+vy[0] = 0.0  #m/s
+y[0] = 10.0 #m
+x[0] = 0.0 #m
+yanalytic[0] = y[0]
+xanalytic[0] = x[0]
+# Start integrating using Euler's method
+for i in range(n-1):
+    # expression for acceleration, note the absolute value and division by mass
+    ax = -D*vx[i]*abs(vx[i])/m
+    ay = -g - D*vy[i]*abs(vy[i])/m
+    # update velocity and position
+    vx[i+1] = vx[i] + DeltaT*ax
+    x[i+1] = x[i] + DeltaT*vx[i]
+    vy[i+1] = vy[i] + DeltaT*ay
+    y[i+1] = y[i] + DeltaT*vy[i]
+    # update time to next time step and compute analytical answer
+    t[i+1] = t[i] + DeltaT
+    yanalytic[i+1] = y[0]-(vT*vT/g)*log(cosh(g*t[i+1]/vT))+vy[0]*t[i+1]
+    xanalytic[i+1] = log(1.+t[i+1]*vx[0]*D)/D
+    if ( y[i+1] < 0.0):
+        break
+data = {'t[s]': t,
+        'Relative error in y': abs((y-yanalytic)/yanalytic),
+        'vy[m/s]': vy,
+        'Relative error in x': abs((x-xanalytic)/xanalytic),
+        'vx[m/s]': vx
+}
+NewData = pd.DataFrame(data)
+display(NewData)
+# save to file
+NewData.to_csv(outfile, index=False)
+#then plot
+fig, axs = plt.subplots(4, 1)
+axs[0].plot(t, y)
+axs[0].set_xlim(0, tfinal)
+axs[0].set_ylabel('y')
+axs[1].plot(t, vy)
+axs[1].set_ylabel('vy[m/s]')
+axs[1].set_xlabel('time[s]')
+axs[2].plot(t, x)
+axs[2].set_xlim(0, tfinal)
+axs[2].set_ylabel('x')
+axs[3].plot(t, vx)
+axs[3].set_ylabel('vx[m/s]')
+axs[3].set_xlabel('time[s]')
+fig.tight_layout()
+save_fig("EulerIntegration")
+plt.show()
+
+
+
+!ec
+
+
+!bc pycod
+# Exercise 6, hw3, smarter way with declaration of vx, vy, x and y
+# Common imports
+import numpy as np
+import pandas as pd
+from math import *
+import matplotlib.pyplot as plt
+import os
+
+# Where to save the figures and data files
+PROJECT_ROOT_DIR = "Results"
+FIGURE_ID = "Results/FigureFiles"
+DATA_ID = "DataFiles/"
+
+if not os.path.exists(PROJECT_ROOT_DIR):
+    os.mkdir(PROJECT_ROOT_DIR)
+
+if not os.path.exists(FIGURE_ID):
+    os.makedirs(FIGURE_ID)
+
+if not os.path.exists(DATA_ID):
+    os.makedirs(DATA_ID)
+
+def image_path(fig_id):
+    return os.path.join(FIGURE_ID, fig_id)
+
+def data_path(dat_id):
+    return os.path.join(DATA_ID, dat_id)
+
+def save_fig(fig_id):
+    plt.savefig(image_path(fig_id) + ".png", format='png')
+
+
+from pylab import plt, mpl
+plt.style.use('seaborn')
+mpl.rcParams['font.family'] = 'serif'
+
+g = 9.80655 #m/s^2 g to 6 leading digits after decimal point
+D = 0.00245 #m/s
+m = 0.2 # kg
+# Define Gravitational force as a vector in x and y. It is a constant
+G = -m*g*np.array([0.0,1])
+DeltaT = 0.01
+#set up arrays 
+tfinal = 1.3
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, a, v, and x
+t = np.zeros(n)
+v = np.zeros((n,2))
+r = np.zeros((n,2))
+# Initial conditions as compact 2-dimensional arrays
+r0 = np.array([0.0,10.0])
+v0 = np.array([10.0,0.0])
+r[0] = r0
+v[0] = v0
+# Start integrating using Euler's method
+for i in range(n-1):
+    # Set up forces, air resistance FD, not now that we need the norm of the vector
+    # Here you could have defined your own function for this
+    vabs = sqrt(sum(v[i]*v[i]))
+    FD = -D*v[i]*vabs
+    # Final net forces acting on falling object
+    Fnet = FD+G
+    # The accelration at a given time t_i
+    a = Fnet/m
+    # update velocity, time and position using Euler's method
+    v[i+1] = v[i] + DeltaT*a
+    r[i+1] = r[i] + DeltaT*v[i]
+    t[i+1] = t[i] + DeltaT
+
+fig, axs = plt.subplots(2, 1)
+axs[0].plot(t, r[:,1])
+axs[0].set_xlim(0, tfinal)
+axs[0].set_ylabel('y')
+axs[1].plot(t, v[:,1])
+axs[1].set_ylabel('vy[m/s]')
+axs[1].set_xlabel('time[s]')
+fig.tight_layout()
+save_fig("YEulerIntegration")
+plt.show()
+
+
+
+!ec
+
+
 ===  Exercise 7, gives an additional bonus score of 30 points. ===
 
 You don't need to do this exercise, but it gives you a bonus score of 30 points. It shows also how we can include more complicated forces with no pain! And the force we include here is an example of a case where analytical solutions may either be difficult to find or we cannot find an analytical solution. 
@@ -249,3 +516,99 @@ In the numerical calculations you can choose $R=0.1$ m and the spring constant $
 
 * 7a (10pt) Identify the forces acting on the ball and set up a diagram with the forces acting on the ball. Find the acceleration of the falling ball now with the normal force as well.
 * 7b (20pt) Choose a large enough final time so you can study the ball bouncing up and down several times. Add the normal force and compute the height of the ball as function of time with and without air resistance. Comment your results.
+
+
+For 7a, see Malthe-Sørenssen chapter 7.5.1, in particular figure
+7.10. The forces are in equation (7.10).  The following code shows how
+to set up the problem with gravitation, a drag force and a normal
+force from the ground. The normal force makes the ball bounce up
+again.
+
+
+!bc pycod
+# Exercise 7, hw3, smarter way with declaration of vx, vy, x and y
+# Here we have added a normal force from the ground
+# Common imports
+import numpy as np
+import pandas as pd
+from math import *
+import matplotlib.pyplot as plt
+import os
+
+# Where to save the figures and data files
+PROJECT_ROOT_DIR = "Results"
+FIGURE_ID = "Results/FigureFiles"
+DATA_ID = "DataFiles/"
+
+if not os.path.exists(PROJECT_ROOT_DIR):
+    os.mkdir(PROJECT_ROOT_DIR)
+
+if not os.path.exists(FIGURE_ID):
+    os.makedirs(FIGURE_ID)
+
+if not os.path.exists(DATA_ID):
+    os.makedirs(DATA_ID)
+
+def image_path(fig_id):
+    return os.path.join(FIGURE_ID, fig_id)
+
+def data_path(dat_id):
+    return os.path.join(DATA_ID, dat_id)
+
+def save_fig(fig_id):
+    plt.savefig(image_path(fig_id) + ".png", format='png')
+
+
+from pylab import plt, mpl
+plt.style.use('seaborn')
+mpl.rcParams['font.family'] = 'serif'
+
+# Define constants
+g = 9.80655 #in m/s^2
+D = 0.0245 # in mass/length, kg/m
+m = 0.2 # in kg
+R = 0.1 # in meters
+k = 1000.0 # in mass/time^2
+# Define Gravitational force as a vector in x and y, zero x component
+G = -m*g*np.array([0.0,1])
+DeltaT = 0.01
+#set up arrays 
+tfinal = 15.0
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, v, and r, the latter contain the x and y comps
+t = np.zeros(n)
+v = np.zeros((n,2))
+r = np.zeros((n,2))
+# Initial conditions
+r0 = np.array([0.0,2.0])
+v0 = np.array([10.0,10.0])
+r[0] = r0
+v[0] = v0
+# Start integrating using Euler's method
+for i in range(n-1):
+    # Set up forces, air resistance FD
+    if ( r[i,1] < R):
+        N = k*(R-r[i,1])*np.array([0,1])
+    else:
+        N = np.array([0,0])
+    vabs = sqrt(sum(v[i]*v[i]))
+    FD = -D*v[i]*vabs
+    Fnet = FD+G+N
+    a = Fnet/m
+    # update velocity, time and position
+    v[i+1] = v[i] + DeltaT*a
+    r[i+1] = r[i] + DeltaT*v[i+1]
+    t[i+1] = t[i] + DeltaT
+
+fig, ax = plt.subplots()
+ax.set_xlim(0, tfinal)
+ax.set_ylabel('y[m]')
+ax.set_xlabel('x[m]')
+ax.plot(r[:,0], r[:,1])
+fig.tight_layout()
+save_fig("BouncingBallEuler")
+plt.show()
+!ec
+
+
+
