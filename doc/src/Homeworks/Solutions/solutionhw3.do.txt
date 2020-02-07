@@ -132,17 +132,57 @@ _Answer 1e:_
 !et
 
 
-=== Exercise 2 (10 pt), Drag force ===
+=== Exercise 2 (10 pt), Drag force, Taylor exercise 2.3 ===
 
-Taylor exercise 2.3
+* 2a (5pt) Using equations (2.84) and (2.82) in Taylor, we have that $f_{\mathrm{quad}}/f_{\mathrm{lin}}=(\kappa\rho Av^2)/(3\pi\eta Dv)$. With $\kappa =1/4$ and $A=\pi D^2/4$ we obtain $f_{\mathrm{quad}}/f_{\mathrm{lin}}=(\rho Dv)/(48\eta)$ or $R/48$ with $R$ given by equation (2.83) of Taylor.
 
-=== Exercise 3 (10 pt), Falling object  ===
+* 2b (5pt) With these numbers $R=1.1\times 10^{-2}$ and it is safe to neglect the quadratic drag.
 
-Taylor exercise 2.6
+=== Exercise 3 (10 pt), Falling object, Taylor exercise 2.6  ===
 
-=== Exercise 4 (10 pt), and then a cyclist  ===
+* 3a (5pt) If we insert Taylor series for $\exp{-(t/\tau)}$ into equation (2.33) of Taylor, we have
+!bt
+\[
+v_y(t) = v_{\mathrm{ter}}\left[1-\exp{-(t/\tau)}\right] = v_{\mathrm{ter}}\left[1-(1-\frac{t}{\tau}+\frac{t^2}{2\tau^2}+\dots   )\right].
+\]
+!et
+The first two terms on the right cancel and, if $t$ is sufficiently small, we can neglect terms with higher powers than two in $t$.  This gives us
+!bt
+\[
+v_y(t) \approx v_{\mathrm{ter}}\frac{t}{\tau}=gt,
+\]
+!et
+where we used that $v_{\mathrm{ter}}=g\tau$ from equation (2.34) in Taylor.
+* 3b (5pt) Setting $v_y(t_0)=0$ in equation (2.35) of Taylor and using the Taylor series for the exponential we find that
+!bt
+\[
+y(t) = v_{\mathrm{ter}}t-v_{\mathrm{ter}}\tau\left[1-\exp{-(t/\tau)}\right] = v_{\mathrm{ter}}t-v_{\mathrm{ter}}\tau\left[1-(1-\frac{t}{\tau}+\frac{t^2}{2\tau^2}+\dots   )\right].
+\]
+!et
+On the rhs the second and third terms cancel, as do the first and fourth. If we neglect all terms beyond $t^2$, this leaves us with
+!bt
+\[
+y(t) \approx v_{\mathrm{ter}}\frac{t^2}{2\tau}=\frac{1}{2}gt^2.
+\]
+!et
 
-Taylor exercise 2.26
+
+=== Exercise 4 (10 pt), and then a cyclist, Taylor exercise 2.26  ===
+
+Putting in the numbers for the characteristic time we find
+!bt
+\[
+\tau = \frac{m}{Dv_0} = \frac{80}{0.20\times 20}=20\mathrm{s}.
+\]
+!et
+From an initial velocity of 20m/s we will slow down to half the initial speed, 10m/s in 20s.  From Taylor equation (2.45) we have then that the time to slow down to any speed $v$ is 
+!bt
+\[
+t = \frac{M}{D}\left(\frac{1}{v}-\frac{1}{v_0}\right).
+\]
+!et
+This gives a time of 6.7s for a velocity of 15m/s, 20s for a velocity of 10m/s and 60s for a velocity of 5m/s.  We see that this approximation leads to an infinite time before we come to rest. To ignore ordinary friction at low speeds is indeed a bad approximation.
+
 
 
 === Exercise 5 (10 pt), back to a falling ball and preparing for the numerical exercise  ===
@@ -181,10 +221,128 @@ and an air resistance given by a square law
 The analytical expressions for velocity and position as functions of
 time will be used to compare with the numerical results in exercise 6.
 
-* 5a (3pt) Identify the forces acting on the ball and set up a diagram with the forces acting on the ball. Find the acceleration of the falling ball. 
+* 5a (3pt) Identify the forces acting on the ball and set up a diagram with the forces acting on the ball. Find the acceleration of the falling ball.
+
+The forces acting on the ball are the gravitational force $\bm{G}=-mg\bm{e}_y$ and the air resistance $\bm{F}_D=-D\bm{v}v$ with $v$ the absolute value of the velocity. The accelaration in the $x$-direction is
+!bt
+\[
+a_x = -\frac{Dv_x\vert v_x\vert}{m},
+\]
+!et
+and in the $y$-direction
+!bt
+\[
+a_y = -g-\frac{Dv_y\vert v_y\vert}{m}.
+\]
+!et
+
+In the code below we would write this as
+!bc pycod
+    ax = -D*vx[i]*abs(vx[i])/m
+    ay = -g - D*vy[i]*abs(vy[i])/m
+!ec
+
+
 * 5b (4pt) Integrate the acceleration from an initial time $t_0$ to a final time $t$ and find the velocity.
+
+We have for the $y$-direction
+!bt
+\[
+\frac{dv_y}{dt}= -g +Dv_y^2(t). 
+\]
+!et
+
+We can solve this using the technique of separation of variables. We
+isolate on the left all terms that involve $v$ and on the right all
+terms that involve time. We get then
+!bt
+\[
+\frac{dv_y}{g -Dv_y^2(t) }= -dt,
+\]
+!et
+
+We scale now the equation to the left by introducing a constant
+$v_T=\sqrt{g/D}$. This constant has dimension length/time. Can you
+show this?
+
+Next we integrate the left-hand side (lhs) from $v_{y0}=0$ m/s to $v$ and
+the right-hand side (rhs) from $t_0=0$ to $t$ and obtain
+
+!bt
+\[
+\int_{0}^{v_y}\frac{dv_y}{g -Dv_y^2(t) }= \frac{v_T}{g}\mathrm{arctanh}(\frac{v_y}{v_T})  =-\int_0^tdt = -t. 
+\]
+!et
+We can reorganize these equations as
+!bt
+\[
+v_T\mathrm{arctanh}(\frac{v_y}{v_T})  =-gt,
+\]
+!et
+which gives us $v_y$ as function of time
+!bt
+\[
+v_y(t)=v_T\tanh{-(\frac{gt}{v_T})}.
+\]
+!et
+
+With a finite initial velocity we need simply to add $v_{y0}$.
+
+Similarly, for the $x$-direction we have
+!bt
+\[
+v_x(t)= \frac{v_{x0}}{1+Dv_{x0}t/m}. 
+\]
+!et
+
 * 5c (4pt) Find thereafter the position as function of time starting with an initial time $t_0$. Find the time it takes to hit the floor.  Here you will find it convenient to set the initial velocity in the $y$-direction to zero.
 
+
+With the velocity we can then find the height $y(t)$ by integrating yet another time, that is
+!bt
+\[
+y(t)=y(t_0)+\int_{t_0}^t dt v_y(t)=\int_{0}^t dt[v_T\tanh{-(\frac{gt}{v_T})}]. 
+\]
+!et
+This integral is a little bit trickier but we can look it up in a table over 
+known integrals and we get
+!bt
+\[
+y(t)=y(t_0)-\frac{v_T^2}{g}\log{[\cosh{(\frac{gt}{v_T})}]}.
+\]
+!et
+Here we have assumed that we set the initial velocity in the $y$-direction to zero, that is $v_y(t_0)=0$m/s. Adding a non-zero velocity gives us an additional term of $v_{y0}t$.  
+Using a zero initial velocity and setting 
+!bt
+\[
+y(t)=0=y(t_0)-\frac{v_T^2}{g}\log{[\cosh{(\frac{gt}{v_T})}]},
+\]
+!et
+allows us to find the final time by solving
+!bt
+\[
+y(t_0)=\frac{v_T^2}{g}\log{[\cosh{(\frac{gt}{v_T})}]},
+\]
+!et
+which gives
+!bt
+\[
+t = \frac{v_T}{g}\mathrm{arccosh}(\exp{(gy_0/v_T^2)}).
+\]
+!et
+
+The position in $x$-direction is
+!bt
+\[
+x(t) = \frac{m}{D}\log{(1+\frac{tDv_{x0}}{m})}.
+\]
+!et
+
+In the code below we would code these analytical expressions (with zero initial velocity in the $y$-direction) as
+!bc pycod
+    yanalytic[i+1] = y[0]-(vT*vT/g)*log(cosh(g*t[i+1]/vT))+vy[0]*t[i+1]
+    xanalytic[i+1] = m*log(1.+t[i+1]*vx[0]*D/m)/D
+!ec
 
 We will use the above analytical results in our numerical calculations in exercise 6.
 
@@ -262,11 +420,15 @@ o  Repeat steps 2-4 for all time steps within a loop.
 
 * 6b (20 pt) Write a code which implements Euler's method and compute numerically and plot the position and velocity as functions of time for various values of $\Delta t$. Comment your results.
 
+Below you will find two codes, one which uses explicit expressions for the $x$- and $y$-directions and one which rewrites the expressions as compact vectors, as done in homework 2. Running the codes shows a sensitivity to the chosen step size $\Delta t$. You will clearly notice that when comparing with the analytical results, that larger values of the step size in time result in a poorer agreement with the analytical solutions.
 
 * 6c (10pt) Compare your numerically obtained positions and velocities with the analytical results from exercise 5. Comment again your results.
 
 
-_Answer 6b and 6c:_
+_Answers 6a, 6b and 6c:_
+
+The codes follow here. Running them allows you to probe the various parameters and compare with analytical solutions as well. 
+
 
 
 !bc pycod
@@ -313,7 +475,7 @@ g = 9.80655 #m/s^2
 # The mass and the drag constant D
 D = 0.00245 #mass/length   kg/m
 m = 0.2 #kg, mass of falling object
-DeltaT = 0.01
+DeltaT = 0.001
 #set up arrays 
 tfinal = 1.4
 # set up number of points for all variables
@@ -349,7 +511,7 @@ for i in range(n-1):
     # update time to next time step and compute analytical answer
     t[i+1] = t[i] + DeltaT
     yanalytic[i+1] = y[0]-(vT*vT/g)*log(cosh(g*t[i+1]/vT))+vy[0]*t[i+1]
-    xanalytic[i+1] = log(1.+t[i+1]*vx[0]*D)/D
+    xanalytic[i+1] = m*log(1.+t[i+1]*vx[0]*D/m)/D
     if ( y[i+1] < 0.0):
         break
 data = {'t[s]': t,
@@ -525,6 +687,9 @@ force from the ground. The normal force makes the ball bounce up
 again.
 
 
+The code here includes all forces. Commenting out the air resistance will result in a ball which bounces up and down to the same height.
+Furthermore, you will note that for larger values of $\Delta t$ the results will not be physically meaningful. This points to the introduction of better methods, like the Euler-Cromer method. 
+
 !bc pycod
 # Exercise 7, hw3, smarter way with declaration of vx, vy, x and y
 # Here we have added a normal force from the ground
@@ -571,7 +736,7 @@ R = 0.1 # in meters
 k = 1000.0 # in mass/time^2
 # Define Gravitational force as a vector in x and y, zero x component
 G = -m*g*np.array([0.0,1])
-DeltaT = 0.01
+DeltaT = 0.001
 #set up arrays 
 tfinal = 15.0
 n = ceil(tfinal/DeltaT)
@@ -597,7 +762,7 @@ for i in range(n-1):
     a = Fnet/m
     # update velocity, time and position
     v[i+1] = v[i] + DeltaT*a
-    r[i+1] = r[i] + DeltaT*v[i+1]
+    r[i+1] = r[i] + DeltaT*v[i]
     t[i+1] = t[i] + DeltaT
 
 fig, ax = plt.subplots()
@@ -609,6 +774,8 @@ fig.tight_layout()
 save_fig("BouncingBallEuler")
 plt.show()
 !ec
+
+
 
 
 
