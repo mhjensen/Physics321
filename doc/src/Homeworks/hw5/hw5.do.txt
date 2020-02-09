@@ -52,10 +52,9 @@ Thus the velocity forms the same angle with the wall after the
 collision. The ball is in contact with the wall during a time interval
 $\Delta t$.
 
-* 2a (2pt) What is the change in momentum of the ball?
-* 2b (2pt) (b) What is the impulse on the wall?  (c)
-* 2c (3pt) What is the average force on the ball from the wall?
-* 2d (3pt) For what angle $\theta$ is the average force on the ball largest? 
+* 2a (3pt) What is the change in momentum of the ball?
+* 2b (3pt) What is the average force on the ball from the wall?
+* 2c (4pt) For what angle $\theta$ is the average force on the ball largest? 
 
 
 === Exsercise 3 (10pt), Rocket, Momentum and mass ===
@@ -96,7 +95,7 @@ where $k$ is a material specific constant and $b$ is the equilibrium position. T
 and
 !bt
 \[
-\frac{dx}{d\tau} = -v.
+\frac{dx}{d\tau} = v.
 \]
 !et
 What are the dimensionalities of these two equations?
@@ -120,21 +119,13 @@ limit motion only to the $x$-direction we can simplify our code to
 only that degree of freedom.
 The advantage with the block sliding back and forth is that we have analytical solutions for the velocity and the position. 
 
-We start by importing some standard packages
-!bc pycod
-# let's start by importing useful packages we are familiar with
-import numpy as np
-from math import *
-import matplotlib.pyplot as plt
-%matplotlib inline
-!ec
 
-
-* 7a (10pt) Find the analytical solutions for the velocity and position as function of the initial condistions. 
+* 7a (10pt) Find the analytical solutions for the velocity and position as function of the initial conditions. 
 
 * 7b (20 pt)  Write then a program which solves the above differential equations for the sliding blook using the Euler-Cromer  method and the velocity Verlet method. Study the results for the position, velocity and energy conservation as function of time and the step size in time. Compare the numerical results with the analytical ones. Check that your results for position and velocity obey periodicity. 
 Is energy properly conserved? Discuss your results. 
 
+Here follows a simple code example which could be used to study the sliding block.
 !bc pycod
 DeltaT = 0.001
 #set up arrays 
@@ -154,7 +145,7 @@ for i in range(n-1):
     # Set up the acceleration
     # Here you could have defined your own function for this
     a = -x[i]
-    # update velocity, time and position using Euler's forward method
+    # update velocity, time and position using the Euler-Cromer method
     v[i+1] = v[i] + DeltaT*a
     x[i+1] = x[i] + DeltaT*v[i+1]
     t[i+1] = t[i] + DeltaT
@@ -165,8 +156,36 @@ for i in range(n-1):
 
 You don't need to do this exercise, but it gives you a bonus score of 30 points.
 
+In this exercise we will add to our program a first derivative of position (the velocity) which is meant to mimick the role of friction.
+Our differential equation is now
+!bt
+\[
+m\frac{d^2x(t)}{dt^2}+\beta\frac{dx}{dt}+kx=ma(t)+\beta v(t)+kx(t)=0,
+\]
+!et
+
+where $k$ is a material specific constant and $\beta$ is a constant
+representing the resitance from the plane on which the block slides.
+We have thus assumed that friction depends on velocity in a linear
+way.
+
+We introduce again the dimensionless time $\tau = t\omega_$ with
+$\omega_0=\sqrt{k/m}$.
+
+* 8a (10pt) Divide by $m$ and show that you can rewrite your equation as two first-order coupled differential equations
+!bt
+\[
+\frac{dv}{d\tau} = -2v(t)\gamma-x(t),
+\]
+!et
+and
+!bt
+\[
+\frac{dx}{d\tau} = v(t).
+\]
+!et
+What are the dimensionalities of these two equations? We have defined $\gamma = \beta/2m$.  
 
 
-* 8a (10pt)  
-* 8a (20pt)  
+* 8b (20pt)  Add the role of friction to your code from exercise 7 and study the cases where (i) $\gamma < w_0$ (underdamping), (ii) $\gamma = w_0$ ( critical damping) and (iii) $\gamma > w_0$ (overdamping). Plot your resulting positions as functions of time and discuss the physical meaning of your results.
 
