@@ -252,8 +252,8 @@ choice for designing shock absorbers or swinging doors.
 
 !bt
 \begin{eqnarray}
-x&=&A_1e^{-(\beta+\sqrt{\beta^2-\omega_0^2})t}+A_2e^{-(\beta-\sqrt{\beta^2-\omega_0^2})t}
-\end{eqnarray
+x&=&A_1\exp{-(\beta+\sqrt{\beta^2-\omega_0^2})t}+A_2\exp{-(\beta-\sqrt{\beta^2-\omega_0^2})t}
+\end{eqnarray}
 !et
 
 This solution will also never pass the origin more than once, and then
@@ -283,6 +283,124 @@ From the initial conditions, $A_1=0$ because $x(0)=0$ and $\omega'A_2=v_0$. So
 x=\frac{v_0}{\omega'}e^{-\beta t}\sin\omega't.
 \]
 !et
+
+!split
+===== Our Sliding Block Code =====
+Here we study first the case without additional friction term and scale our equation
+in terms of a dimensionless time $\tau$.
+
+Let us remind ourselves about the differential equation we want to solve (the general case with damping due to friction)
+!bt
+\[
+m\frac{d^2x}{dt^2} + b\frac{dx}{dt}+kx(t) =0.
+\]
+!et
+We divide by $m$ and introduce $\omega_0^2=\sqrt{k/m}$ and obtain
+!bt
+\[
+\frac{d^2x}{dt^2} + \frac{b}{m}\frac{dx}{dt}+\omega_0^2x(t) =0.
+\]
+!et
+
+Thereafter we introduce a dimensionless time $\tau = t\omega_0$ (check
+that the dimensionality is correct) and rewrite our equation as
+
+!bt
+\[
+\frac{d^2x}{d\tau^2} + \frac{b}{m\omega_0^2}\frac{dx}{d\tau}+x(\tau) =0,
+\]
+!et
+which gives us
+!bt
+\[
+\frac{d^2x}{d\tau^2} + \frac{b}{k}\frac{dx}{d\tau}+x(\tau) =0.
+\]
+!et
+
+
+
+We then define $\gamma = b/2k$ and rewrite our equations as
+!bt
+\[
+\frac{d^2x}{d\tau^2} + 2\gamma\frac{dx}{d\tau}+x(\tau) =0.
+\]
+!et
+This is the equation we will code below. The first version employs the Euler-Cromer method.
+!bc pycod
+# Common imports
+import numpy as np
+import pandas as pd
+from math import *
+import matplotlib.pyplot as plt
+import os
+
+# Where to save the figures and data files
+PROJECT_ROOT_DIR = "Results"
+FIGURE_ID = "Results/FigureFiles"
+DATA_ID = "DataFiles/"
+
+if not os.path.exists(PROJECT_ROOT_DIR):
+    os.mkdir(PROJECT_ROOT_DIR)
+
+if not os.path.exists(FIGURE_ID):
+    os.makedirs(FIGURE_ID)
+
+if not os.path.exists(DATA_ID):
+    os.makedirs(DATA_ID)
+
+def image_path(fig_id):
+    return os.path.join(FIGURE_ID, fig_id)
+
+def data_path(dat_id):
+    return os.path.join(DATA_ID, dat_id)
+
+def save_fig(fig_id):
+    plt.savefig(image_path(fig_id) + ".png", format='png')
+
+
+from pylab import plt, mpl
+plt.style.use('seaborn')
+mpl.rcParams['font.family'] = 'serif'
+
+DeltaT = 0.001
+#set up arrays 
+tfinal = 20 # in years
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, v, and x
+t = np.zeros(n)
+v = np.zeros(n)
+x = np.zeros(n)
+# Initial conditions as compact 2-dimensional arrays
+x0 =  1.0 
+v0 = 0.0
+x[0] = x0
+v[0] = v0
+gamma = 0.0
+# Start integrating using Euler's method
+for i in range(n-1):
+    # Set up the acceleration
+    # Here you could have defined your own function for this
+    a =  -2*gamma*v[i]-x[i]
+    # update velocity, time and position using Euler's forward method
+    v[i+1] = v[i] + DeltaT*a
+    x[i+1] = x[i] + DeltaT*v[i+1]
+    t[i+1] = t[i] + DeltaT
+# Plot position as function of time    
+fig, ax = plt.subplots()
+#ax.set_xlim(0, tfinal)
+ax.set_ylabel('x[m]')
+ax.set_xlabel('t[s]')
+ax.plot(t, x)
+fig.tight_layout()
+save_fig("BlockEulerCromer")
+plt.show()
+!ec
+
+When setting up the value of $\gamma$ we see that for $\gamma=0$ we get the simple oscillatory motion with no damping.
+Choosing $\gamma < 1/2$ leads to the classical underdamped case with oscillatory motion, but where the motion comes to an end.
+
+Choosing $\gamma =1/2$ leads to what normally is called critical damping and $\gamma> 1/2$ leads to critical overdamping.
+Try it out and try also to change the initial position and velocity.
 
 !split
 ===== Sinusoidally Driven Oscillators =====
@@ -350,7 +468,7 @@ One can now use angle addition formulas to get
 
 !bt
 \begin{eqnarray}
-D\left\{(-\omega^2\cos\delta+2\beta\omega\sin\delta+\omega_0^2\cos\delta)\cos(\omega t)\right.\hspace*{36pt}&&\\
+D\left\{(-\omega^2\cos\delta+2\beta\omega\sin\delta+\omega_0^2\cos\delta)\cos(\omega t)\right.&&\\
 \nonumber
 \left.+(-\omega^2\sin\delta-2\beta\omega\cos\delta+\omega_0^2\sin\delta)\sin(\omega t)\right\}
 &=&\frac{F_0}{m}\cos(\omega t).
