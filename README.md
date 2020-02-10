@@ -94,18 +94,20 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 - Friday: Begin discussion of oscillations, and  5th homework, due February 17
 - Good reads are Taylor chapter 4 and AMS chapters 10-14 for the conservation laws and the first sections of chapter 5 of Taylor on oscillations. 
 ### Week 7, February 10-14, 2020
-- Monday: Oscillations, the sliding block and energy conservation
-- Wednesday:  Oscillations, the classical pendulum
-- Friday: Oscillations,  6th homework, due February 24
+- Monday: Oscillations, mathematical detials, the sliding block and energy conservation
+- Wednesday:  Oscillations, damped motion and more mathematical details
+- Friday: Oscillations, resonances and more on damped motion,  6th homework, due February 24
 - Good reads are chapter 5 of Taylor on oscillations. 
 ### Week 8, February 17-21, 2020
-- Monday:
-- Wednesday: 
-- Friday:  _First midterm project, due February 28, 2020_ 
+- Monday: Oscillations, Fourier series
+- Wednesday:  Wrapping up oscillations
+- Friday:  Start discussion of gravity and more on two-body problems, _First midterm project, due February 28, 2020_ 
+- Good reads are chapter 5 of Taylor on oscillations. 
 ### Week 9, February 24-28, 2020
-- Monday:
-- Wednesday: 
-- Friday:  
+- Monday: Gravity and central force problems
+- Wednesday: Gravity and central force problems
+- Friday:  Tentatively no lecture!
+- Good reads are chapter 8 of Taylor and Lecture notes 
 ### Week 10, March 2-6, 2020, Spring break
 - Monday:  No lectures
 - Wednesday: No lectures
