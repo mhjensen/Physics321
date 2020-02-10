@@ -481,11 +481,11 @@ $$
 
 which gives us
 $$
-\frac{d^2x}{d\tau^2} + \frac{b}{k}\frac{dx}{d\tau}+x(\tau) =0.
+\frac{d^2x}{d\tau^2} + \frac{b}{m\omega_0}\frac{dx}{d\tau}+x(\tau) =0.
 $$
 
 <p>
-We then define \( \gamma = b/2k \) and rewrite our equations as
+We then define \( \gamma = b/(2m\omega_0) \) and rewrite our equations as
 $$
 \frac{d^2x}{d\tau^2} + 2\gamma\frac{dx}{d\tau}+x(\tau) =0.
 $$
@@ -564,11 +564,12 @@ plt<span style="color: #666666">.</span>show()
 </pre></div>
 <p>
 When setting up the value of \( \gamma \) we see that for \( \gamma=0 \) we get the simple oscillatory motion with no damping.
-Choosing \( \gamma < 1/2 \) leads to the classical underdamped case with oscillatory motion, but where the motion comes to an end.
+Choosing \( \gamma < 1 \) leads to the classical underdamped case with oscillatory motion, but where the motion comes to an end.
 
 <p>
-Choosing \( \gamma =1/2 \) leads to what normally is called critical damping and \( \gamma> 1/2 \) leads to critical overdamping.
-Try it out and try also to change the initial position and velocity.
+Choosing \( \gamma =1 \) leads to what normally is called critical damping and \( \gamma> 1 \) leads to critical overdamping.
+Try it out and try also to change the initial position and velocity. Setting \( \gamma=1 \)
+yields a situation, as discussed above, where the solution approaches quickly zero and does not oscillate. With zero initial velocity it will never cross zero.
 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
