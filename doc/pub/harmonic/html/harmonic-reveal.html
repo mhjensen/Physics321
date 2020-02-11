@@ -598,7 +598,7 @@ n = ceil(tfinal/DeltaT)
 t = np.zeros(n)
 v = np.zeros(n)
 x = np.zeros(n)
-<span style="color: #228B22"># Initial conditions as compact 2-dimensional arrays</span>
+<span style="color: #228B22"># Initial conditions as simple one-dimensional arrays of time</span>
 x0 =  <span style="color: #B452CD">1.0</span> 
 v0 = <span style="color: #B452CD">0.0</span>
 x[<span style="color: #B452CD">0</span>] = x0
@@ -609,7 +609,7 @@ gamma = <span style="color: #B452CD">0.0</span>
     <span style="color: #228B22"># Set up the acceleration</span>
     <span style="color: #228B22"># Here you could have defined your own function for this</span>
     a =  -<span style="color: #B452CD">2</span>*gamma*v[i]-x[i]
-    <span style="color: #228B22"># update velocity, time and position using Euler&#39;s forward method</span>
+    <span style="color: #228B22"># update velocity, time and position</span>
     v[i+<span style="color: #B452CD">1</span>] = v[i] + DeltaT*a
     x[i+<span style="color: #B452CD">1</span>] = x[i] + DeltaT*v[i+<span style="color: #B452CD">1</span>]
     t[i+<span style="color: #B452CD">1</span>] = t[i] + DeltaT
@@ -1086,7 +1086,7 @@ n = ceil(tfinal/DeltaT)
 t = np.zeros(n)
 v = np.zeros(n)
 x = np.zeros(n)
-<span style="color: #228B22"># Initial conditions as compact 2-dimensional arrays</span>
+<span style="color: #228B22"># Initial conditions as one-dimensional arrays of time</span>
 x0 =  <span style="color: #B452CD">1.0</span> 
 v0 = <span style="color: #B452CD">0.0</span>
 x[<span style="color: #B452CD">0</span>] = x0
@@ -1099,7 +1099,7 @@ Foverline = <span style="color: #B452CD">1.0</span>
     <span style="color: #228B22"># Set up the acceleration</span>
     <span style="color: #228B22"># Here you could have defined your own function for this</span>
     a =  -<span style="color: #B452CD">2</span>*gamma*v[i]-x[i]+Foverline*cos(t[i]*omegabar)
-    <span style="color: #228B22"># update velocity, time and position using Euler-Cromer&#39;s forward method</span>
+    <span style="color: #228B22"># update velocity, time and position</span>
     v[i+<span style="color: #B452CD">1</span>] = v[i] + DeltaT*a
     x[i+<span style="color: #B452CD">1</span>] = x[i] + DeltaT*v[i+<span style="color: #B452CD">1</span>]
     t[i+<span style="color: #B452CD">1</span>] = t[i] + DeltaT

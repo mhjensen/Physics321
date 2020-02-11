@@ -370,7 +370,7 @@ n = ceil(tfinal/DeltaT)
 t = np.zeros(n)
 v = np.zeros(n)
 x = np.zeros(n)
-# Initial conditions as compact 2-dimensional arrays
+# Initial conditions as simple one-dimensional arrays of time
 x0 =  1.0 
 v0 = 0.0
 x[0] = x0
@@ -381,7 +381,7 @@ for i in range(n-1):
     # Set up the acceleration
     # Here you could have defined your own function for this
     a =  -2*gamma*v[i]-x[i]
-    # update velocity, time and position using Euler's forward method
+    # update velocity, time and position
     v[i+1] = v[i] + DeltaT*a
     x[i+1] = x[i] + DeltaT*v[i+1]
     t[i+1] = t[i] + DeltaT
@@ -758,7 +758,7 @@ n = ceil(tfinal/DeltaT)
 t = np.zeros(n)
 v = np.zeros(n)
 x = np.zeros(n)
-# Initial conditions as compact 2-dimensional arrays
+# Initial conditions as one-dimensional arrays of time
 x0 =  1.0 
 v0 = 0.0
 x[0] = x0
@@ -771,7 +771,7 @@ for i in range(n-1):
     # Set up the acceleration
     # Here you could have defined your own function for this
     a =  -2*gamma*v[i]-x[i]+Foverline*cos(t[i]*omegabar)
-    # update velocity, time and position using Euler-Cromer's forward method
+    # update velocity, time and position
     v[i+1] = v[i] + DeltaT*a
     x[i+1] = x[i] + DeltaT*v[i+1]
     t[i+1] = t[i] + DeltaT
@@ -784,6 +784,8 @@ fig.tight_layout()
 save_fig("ForcedBlockEulerCromer")
 plt.show()
 !ec
+
+
 
 
 
