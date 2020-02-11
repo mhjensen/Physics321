@@ -1,0 +1,384 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="PHY321: Classical Mechanics 1">
+
+<title>PHY321: Classical Mechanics 1</title>
+
+<!-- Bootstrap style: bootstrap -->
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+
+<style type="text/css">
+
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 3,
+ 'sections': [('Practicalities about  homeworks and projects',
+               3,
+               None,
+               '___sec0'),
+              ('Introduction to homework 5', 3, None, '___sec1'),
+              ('Exercise 1 (15 pt), Work-energy theorem and conservation laws',
+               3,
+               None,
+               '___sec2'),
+              ('Exercise 2 (10 pt), Conservation of  momentum',
+               3,
+               None,
+               '___sec3'),
+              ('Exsercise 3 (10pt), Rocket, Momentum and mass',
+               3,
+               None,
+               '___sec4'),
+              ('Exercise 4 (10pt), More Rockets', 3, None, '___sec5'),
+              ('Exercise 5 (10pt), Center of mass', 3, None, '___sec6'),
+              ('Exercise 6 (10pt), Sliding Block  and Spring (please not '
+               'again), Scaling the Equations and getting started with '
+               'numerical project',
+               3,
+               None,
+               '___sec7'),
+              ('Exercise 7 (30pt), Sliding Block  and Spring, now the code',
+               3,
+               None,
+               '___sec8'),
+              ('Exercise 8 (30pt), Bonus exercise', 3, None, '___sec9')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="hw5-bs.html">PHY321: Classical Mechanics 1</a>
+  </div>
+
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;">Practicalities about  homeworks and projects</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec1" style="font-size: 80%;">Introduction to homework 5</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec2" style="font-size: 80%;">Exercise 1 (15 pt), Work-energy theorem and conservation laws</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec3" style="font-size: 80%;">Exercise 2 (10 pt), Conservation of  momentum</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec4" style="font-size: 80%;">Exsercise 3 (10pt), Rocket, Momentum and mass</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec5" style="font-size: 80%;">Exercise 4 (10pt), More Rockets</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec6" style="font-size: 80%;">Exercise 5 (10pt), Center of mass</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec7" style="font-size: 80%;">Exercise 6 (10pt), Sliding Block  and Spring (please not again), Scaling the Equations and getting started with numerical project</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec8" style="font-size: 80%;">Exercise 7 (30pt), Sliding Block  and Spring, now the code</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec9" style="font-size: 80%;">Exercise 8 (30pt), Bonus exercise</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+
+<div class="container">
+
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<div class="jumbotron">
+<center><h1>PHY321: Classical Mechanics 1</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Homework 5, due Monday  February 17 -->
+
+<center>
+<b>Homework 5, due Monday  February 17</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Feb 9, 2020</h4></center> <!-- date -->
+<br>
+<p>
+</div> <!-- end jumbotron -->
+
+<h3 id="___sec0" class="anchor">Practicalities about  homeworks and projects </h3>
+
+<ol>
+<li> You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. <b>Remember to write your name(s)</b>!</li>
+<li> Homeworks are available Wednesday/Thursday the week before the deadline. The deadline is at the Friday lecture.</li>
+<li> How do I(we)  hand in?  You can hand in the paper and pencil exercises as a hand-written document. For this homework this applies to exercises 1-5. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise(s) (exercise 6 here) should always be handed in as a jupyter notebook by the deadline at D2L.</li> 
+</ol>
+
+<h3 id="___sec1" class="anchor">Introduction to homework 5 </h3>
+
+<p>
+This week's sets of classical pen and paper and computational
+exercises are a continuation of the topics from the previous homework set. We keep dealing with simple motion problems and conservation laws; energy, momentum and angular momentum. These conservation laws are central in Physics and understanding them properly lays the foundation for understanding and analyzing more complicated physics problems.
+The relevant reading background is
+
+<ol>
+<li> chapters 3 and 4 of Taylor (there are many good examples there) and</li>
+<li> chapters 10-14 of Malthe-S&#248;renssen.</li>
+</ol>
+
+In both textbooks there are many nice worked out examples. Malthe-S&#248;renssen's text contains also several coding examples you may find useful.
+
+<p>
+The numerical homework focuses on another motion problem where you can
+use the code you developed in homework 4, almost entirely. Please take
+a look at the posted solution (jupyter-notebook) for homework 4. You
+need only to change the forces at play. The problem at hand is again a
+classic one, a block fastened to a spring moving back and forth along the \( x \)-axis. It is a simpler problem compared to the previous homework. It allows us however to introduce damping (friction) and study more realistic situations.
+
+<h3 id="___sec2" class="anchor">Exercise 1 (15 pt), Work-energy theorem and conservation laws </h3>
+
+<p>
+We will study a classical electron which moves in the \( x \)-direction along a surface. The force from the surface is
+$$
+\boldsymbol{F}(x)=-F_0\sin{(\frac{2\pi x}{b})}\boldsymbol{e}_x.
+$$
+
+The constant \( b \) represents the distance between atoms at the surface of the material, \( F_0 \) is a constant and \( x \) is the position of the electron.
+
+<ul>
+<li> 1a (2pt) Is this a conservative force? And if so, what does that imply?</li>
+<li> 1b (4pt) Use the work-energy theorem to find the velocity \( v(x) \).</li> 
+<li> 1c (4pt) With the above expression for the force, find the potential energy.</li>
+<li> 1d (5pt) Make a plot of the potential energy and discuss the equilibrium points where the force on the electron is zero. Discuss the physical interpretation of stable and unstable equilibrium points. Use energy conservation. Recommended read here  is Malthe-S&#248;renssen chapter 11.3.2.</li>
+</ul>
+
+<h3 id="___sec3" class="anchor">Exercise 2 (10 pt), Conservation of  momentum </h3>
+
+<p>
+A ball of mass \( m \) hits a wall with a velocity \( \boldsymbol{v}_0 \) and bounces
+back. The ball hits the wall with an inclination, so that the velocity
+forms an angle \( \theta \) with the wall surface. When the ball leaves
+the wall after the collision, the magnitude of the velocity is the
+same, but its direction has changed. However, only the component of
+the velocity that is normal to the wall changes during the collision.
+Thus the velocity forms the same angle with the wall after the
+collision. The ball is in contact with the wall during a time interval
+\( \Delta t \).
+
+<ul>
+<li> 2a (3pt) What is the change in momentum of the ball?</li>
+<li> 2b (3pt) What is the average force on the ball from the wall?</li>
+<li> 2c (4pt) For what angle \( \theta \) is the average force on the ball largest?</li> 
+</ul>
+
+<h3 id="___sec4" class="anchor">Exsercise 3 (10pt), Rocket, Momentum and mass </h3>
+
+<p>
+Taylor exercise 3.11.
+
+<h3 id="___sec5" class="anchor">Exercise 4 (10pt), More Rockets </h3>
+
+<p>
+Taylor exercises 3.13 (5pt) and 3.14 (5pt).
+
+<h3 id="___sec6" class="anchor">Exercise 5 (10pt), Center of mass  </h3>
+
+<p>
+Taylor exercise 3.20.
+
+<h3 id="___sec7" class="anchor">Exercise 6 (10pt), Sliding Block  and Spring (please not again), Scaling the Equations and getting started with numerical project </h3>
+
+<p>
+We start now with our next numerical application with simple rewrites of our equations. The system we will look at is that of a block fastened to a spring (which in turn is tied to a wall).
+The force acting on the block from the spring in the \( x \)-drection only is
+$$
+m\frac{d^2x(t)}{dt^2}=F(x) = -k(x-b),
+$$
+
+where \( k \) is a material specific constant and \( b \) is the equilibrium position. The block has mass \( m \) and \( t \) is time. Define the initial time as \( t_0 \). We will for simplicity set the equilibrium position to zero, that is \( b=0 \).
+
+<ul>
+<li> 6a (3pt) Does this force conserve energy? If so, with given initial position and velocity \( x_0 \) and \( v_0 \), respectively, find the expression for energy conservation in terms of the potential and kinetic energies.</li>  
+<li> 6b (3pt) Define a constant \( \omega_0=\sqrt{k/m} \) and show that you can write the acceleration as \( a(t) = -\omega_0^2 x(t) \). What is the dimentionality of \( \omega_0 \)? (it is normally called a natural frequency).</li>  
+<li> 6c (4pt) Introduce now a dimensionless time \( \tau = t\omega_0 \). Show that you can rewrite the  equation for the acceleration in terms of two first-order differential equations</li>
+</ul>
+
+$$
+\frac{dv}{d\tau} = -x,
+$$
+
+and
+$$
+\frac{dx}{d\tau} = v.
+$$
+
+What are the dimensionalities of these two equations?
+
+<p>
+These are the equations which we will code in the next exercise.
+
+<h3 id="___sec8" class="anchor">Exercise 7 (30pt), Sliding Block  and Spring, now the code  </h3>
+
+<p>
+<b>This exercise should be handed in as a jupyter-notebook</b> at D2L. Remember to write your name(s).
+
+<p>
+Last week we:
+
+<ol>
+<li> Studied  the Euler-Cromer and Velocity Verlet  to find the position and the velocity of  Earth orbiting around the sun.</li>
+<li> We added the Euler-Cromer and Velocity-Verlet methods to our toolbag for solving ordinary differential equations.</li>
+<li> We compared and analyzed the stability of the  computational solutions.</li>
+</ol>
+
+This week we will reuse our code from homework 4 and study a block
+which slides back and forth without friction in the \( x \)-direction.
+The only thing we need to is to change the forces at play and since we
+limit motion only to the \( x \)-direction we can simplify our code to
+only that degree of freedom.
+The advantage with the block sliding back and forth is that we have analytical solutions for the velocity and the position. 
+
+<ul>
+<li> 7a (10pt) Find the analytical solutions for the velocity and position as function of the initial conditions.</li> 
+<li> 7b (20 pt)  Write then a program which solves the above differential equations for the sliding blook using the Euler-Cromer  method and the velocity Verlet method. Study the results for the position, velocity and energy conservation as function of time and the step size in time. Compare the numerical results with the analytical ones. Check that your results for position and velocity obey periodicity.</li> 
+</ul>
+
+Is energy properly conserved? Discuss your results.
+
+<p>
+Here follows a simple code example which could be used to study the sliding block.
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.001</span>
+<span style="color: #408080; font-style: italic">#set up arrays </span>
+tfinal <span style="color: #666666">=</span> <span style="color: #666666">10</span> <span style="color: #408080; font-style: italic"># in seconds</span>
+n <span style="color: #666666">=</span> ceil(tfinal<span style="color: #666666">/</span>DeltaT)
+<span style="color: #408080; font-style: italic"># set up arrays for time t, velocity v, and position r</span>
+t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+v <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+<span style="color: #408080; font-style: italic"># Example of Initial conditions</span>
+x0 <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>
+v0 <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
+r[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> r0
+v[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> v0
+<span style="color: #408080; font-style: italic"># Start integrating using Euler&#39;s method</span>
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
+    <span style="color: #408080; font-style: italic"># Set up the acceleration</span>
+    <span style="color: #408080; font-style: italic"># Here you could have defined your own function for this</span>
+    a <span style="color: #666666">=</span> <span style="color: #666666">-</span>x[i]
+    <span style="color: #408080; font-style: italic"># update velocity, time and position using the Euler-Cromer method</span>
+    v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>a
+    x[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> x[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>v[i<span style="color: #666666">+1</span>]
+    t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i] <span style="color: #666666">+</span> DeltaT
+</pre></div>
+
+<h3 id="___sec9" class="anchor">Exercise 8 (30pt), Bonus exercise </h3>
+
+<p>
+You don't need to do this exercise, but it gives you a bonus score of 30 points.
+
+<p>
+In this exercise we will add to our program a first derivative of position (the velocity) which is meant to mimick the role of friction.
+Our differential equation is now
+$$
+m\frac{d^2x(t)}{dt^2}+\beta\frac{dx}{dt}+kx=ma(t)+\beta v(t)+kx(t)=0,
+$$
+
+<p>
+where \( k \) is a material specific constant and \( \beta \) is a constant
+representing the resitance from the plane on which the block slides.
+We have thus assumed that friction depends on velocity in a linear
+way.
+
+<p>
+We introduce again the dimensionless time \( \tau = t\omega_0 \) with
+\( \omega_0=\sqrt{k/m} \).
+
+<ul>
+<li> 8a (10pt) Divide by \( m \) and show that you can rewrite your equation as two first-order coupled differential equations</li>
+</ul>
+
+$$
+\frac{dv}{d\tau} = -2v(t)\gamma-x(t),
+$$
+
+and
+$$
+\frac{dx}{d\tau} = v(t).
+$$
+
+What are the dimensionalities of these two equations? We have defined \( \gamma = \beta/2m \).  
+
+<ul>
+<li> 8b (20pt)  Add the role of friction to your code from exercise 7 and study the cases where (i) \( \gamma < \omega_0 \) (underdamping), (ii) \( \gamma = omega_0 \) ( critical damping) and (iii) \( \gamma > omega_0 \) (overdamping). Plot your resulting positions as functions of time and discuss the physical meaning of your results.</li>
+</ul>
+
+
+<!-- ------------------- end of main content --------------- -->
+
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap footer
+<footer>
+<a href="http://..."><img width="250" align=right src="http://..."></a>
+</footer>
+-->
+
+
+</body>
+</html>
+    
+
