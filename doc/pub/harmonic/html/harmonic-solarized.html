@@ -48,18 +48,21 @@ div { text-align: justify; text-justify: inter-word; }
                '___sec7'),
               ('Resonance Widths; the $Q$ factor', 2, None, '___sec8'),
               ('Numerical Studies of Driven Oscillations', 2, None, '___sec9'),
+              ('The Runge-Kutta Family of Methods', 2, None, '___sec10'),
+              ('Differential Equations, Runge-Kutta methods',
+               2,
+               None,
+               '___sec11'),
               ('Principle of Superposition and Periodic Forces (Fourier '
                'Transforms)',
                2,
                None,
-               '___sec10'),
-              ('Response to Transient Force', 2, None, '___sec11'),
+               '___sec12'),
+              ('Response to Transient Force', 2, None, '___sec13'),
               ('The classical pendulum and scaling the equations',
                2,
                None,
-               '___sec12'),
-              ('More on the Pendulum', 2, None, '___sec13'),
-              ('More on the Pendulum', 2, None, '___sec14'),
+               '___sec14'),
               ('More on the Pendulum', 2, None, '___sec15')]}
 end of tocinfo -->
 
@@ -867,20 +870,27 @@ $$
 <h2 id="___sec9">Numerical Studies of Driven Oscillations </h2>
 
 <p>
-Solving the problem of driven oscillations numerically gives us much more flexibility to study different types of
-driven forces. We can reuse our earlier code by simply adding a driving force. If we stay in the \( x \)-direction only this can be easily done
-by adding a term \( F_{\mathrm{ext}}(x,t) \). Note that we have kept it rather general here, allowing for both a spatial and a temporal dependence.
+Solving the problem of driven oscillations numerically gives us much
+more flexibility to study different types of driving forces. We can
+reuse our earlier code by simply adding a driving force. If we stay in
+the \( x \)-direction only this can be easily done by adding a term
+\( F_{\mathrm{ext}}(x,t) \). Note that we have kept it rather general
+here, allowing for both a spatial and a temporal dependence.
 
 <p>
-Before we dive into the code, we need to briefly remind ourselves about the equations we started with for the case with damping, namely
+Before we dive into the code, we need to briefly remind ourselves
+about the equations we started with for the case with damping, namely
+
 $$
 m\frac{d^2x}{dt^2} + b\frac{dx}{dt}+kx(t) =0,
 $$
 
+<p>
 with no external force applied to the system.
 
 <p>
 Let us now for simplicty assume that our external force is given by
+
 $$
 F_{\mathrm{ext}}(t) = F_0\cos{(\omega t)},
 $$
@@ -889,7 +899,7 @@ where \( F_0 \) is a constant (what is its dimension?) and \( \omega \) is the f
 <b>Small question:</b> would you expect energy to be conserved now?
 
 <p>
-Introducing the external force into lovely differential equation
+Introducing the external force into our lovely differential equation
 and dividing by \( m \) and introducing \( \omega_0^2=\sqrt{k/m} \) we have
 $$
 \frac{d^2x}{dt^2} + \frac{b}{m}\frac{dx}{dt}+\omega_0^2x(t) =\frac{F_0}{m}\cos{(\omega t)},
@@ -897,21 +907,21 @@ $$
 
 <p>
 Thereafter we introduce a dimensionless time \( \tau = t\omega_0 \)
-and a dimensionless frequency \( \overline{\omega}=\omega/\omega_0 \). We have then
+and a dimensionless frequency \( \tilde{\omega}=\omega/\omega_0 \). We have then
 $$
-\frac{d^2x}{d\tau^2} + \frac{b}{m\omega_0}\frac{dx}{d\tau}+x(\tau) =\frac{F_0}{m\omega_0^2}\cos{(\overline{\omega}\tau)},
+\frac{d^2x}{d\tau^2} + \frac{b}{m\omega_0}\frac{dx}{d\tau}+x(\tau) =\frac{F_0}{m\omega_0^2}\cos{(\tilde{\omega}\tau)},
 $$
 
-Introducing a new amplitude \( \overline{F} =F_0/(m\omega_0^2) \) (check dimensionality again) we have
+Introducing a new amplitude \( \tilde{F} =F_0/(m\omega_0^2) \) (check dimensionality again) we have
 $$
-\frac{d^2x}{d\tau^2} + \frac{b}{m\omega_0}\frac{dx}{d\tau}+x(\tau) =\overline{F}\cos{(\overline{\omega}\tau)}.
+\frac{d^2x}{d\tau^2} + \frac{b}{m\omega_0}\frac{dx}{d\tau}+x(\tau) =\tilde{F}\cos{(\tilde{\omega}\tau)}.
 $$
 
 <p>
 Our final step, as we did in the case of various types of damping, is
 to define \( \gamma = b/(2m\omega_0) \) and rewrite our equations as
 $$
-\frac{d^2x}{d\tau^2} + 2\gamma\frac{dx}{d\tau}+x(\tau) =\overline{F}\cos{(\overline{\omega}\tau)}.
+\frac{d^2x}{d\tau^2} + 2\gamma\frac{dx}{d\tau}+x(\tau) =\tilde{F}\cos{(\tilde{\omega}\tau)}.
 $$
 
 This is the equation we will code below using the Euler-Cromer method.
@@ -933,13 +943,13 @@ v0 = <span style="color: #B452CD">0.0</span>
 x[<span style="color: #B452CD">0</span>] = x0
 v[<span style="color: #B452CD">0</span>] = v0
 gamma = <span style="color: #B452CD">0.2</span>
-omegabar = <span style="color: #B452CD">0.5</span>
-Foverline = <span style="color: #B452CD">1.0</span>
+Omegatilde = <span style="color: #B452CD">0.5</span>
+Ftilde = <span style="color: #B452CD">1.0</span>
 <span style="color: #228B22"># Start integrating using Euler-Cromer&#39;s method</span>
 <span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
     <span style="color: #228B22"># Set up the acceleration</span>
     <span style="color: #228B22"># Here you could have defined your own function for this</span>
-    a =  -<span style="color: #B452CD">2</span>*gamma*v[i]-x[i]+Foverline*cos(t[i]*omegabar)
+    a =  -<span style="color: #B452CD">2</span>*gamma*v[i]-x[i]+Ftilde*cos(t[i]*Omegatilde)
     <span style="color: #228B22"># update velocity, time and position</span>
     v[i+<span style="color: #B452CD">1</span>] = v[i] + DeltaT*a
     x[i+<span style="color: #B452CD">1</span>] = x[i] + DeltaT*v[i+<span style="color: #B452CD">1</span>]
@@ -954,9 +964,165 @@ save_fig(<span style="color: #CD5555">&quot;ForcedBlockEulerCromer&quot;</span>)
 plt.show()
 </pre></div>
 <p>
+In the above example we have focused on the Euler-Cromer method. This
+method has a local truncation error which is proportional to \( \Delta t^2 \)
+and thereby a global error which is proportional to \( \Delta t \).
+We can improve this by using the Runge-Kutta family of
+methods. The widely popular Runge-Kutta to fourth order or just <b>RK4</b>
+has indeed a much better truncation error. The RK4 method has a global
+error which is proportional to \( \Delta t \).
+
+<p>
+Let us revisit this method and see how we can implement it for the above example.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec10">The Runge-Kutta Family of Methods </h2>
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec11">Differential Equations, Runge-Kutta methods </h2>
+
+<p>
+Runge-Kutta (RK) methods are based on Taylor expansion formulae, but yield
+in general better algorithms for solutions of an ordinary differential equation.
+The basic philosophy is that it provides an intermediate step in the computation of \( y_{i+1} \).
+
+<p>
+To see this, consider first the following definitions
+$$
+\begin{equation}
+   \frac{dy}{dt}=f(t,y),  
+\label{_auto16}
+\end{equation} 
+$$
+
+and 
+$$
+\begin{equation}
+   y(t)=\int f(t,y) dt,  
+\label{_auto17}
+\end{equation} 
+$$
+
+and 
+$$
+\begin{equation}
+  y_{i+1}=y_i+ \int_{t_i}^{t_{i+1}} f(t,y) dt.
+\label{_auto18}
+\end{equation}
+$$
+
+<p>
+To demonstrate the philosophy behind RK methods, let us consider
+the second-order RK method, RK2.
+The first approximation consists in Taylor expanding \( f(t,y) \)
+around the center of the integration interval \( t_i \) to \( t_{i+1} \),
+that is, at \( t_i+h/2 \), \( h \) being the step.
+Using the midpoint formula for an integral, 
+defining \( y(t_i+h/2) = y_{i+1/2} \) and   
+\( t_i+h/2 = t_{i+1/2} \), we obtain
+$$
+\begin{equation}
+    \int_{t_i}^{t_{i+1}} f(t,y) dt \approx hf(t_{i+1/2},y_{i+1/2}) +O(h^3).
+\label{_auto19}
+\end{equation} 
+$$
+
+This means in turn that we have
+$$
+\begin{equation}
+     y_{i+1}=y_i + hf(t_{i+1/2},y_{i+1/2}) +O(h^3).
+\label{_auto20}
+\end{equation}
+$$
+
+<p>
+However, we do not know the value of   \( y_{i+1/2} \). Here comes thus the next approximation, namely, we use Euler's
+method to approximate \( y_{i+1/2} \). We have then
+$$
+\begin{equation}
+   y_{(i+1/2)}=y_i + \frac{h}{2}\frac{dy}{dt} =
+   y(t_i) + \frac{h}{2}f(t_i,y_i).
+\label{_auto21}
+\end{equation}
+$$
+
+This means that we can define the following algorithm for 
+the second-order Runge-Kutta method, RK2.
+$$
+\begin{equation} 
+  k_1=hf(t_i,y_i),
+\label{_auto22}
+\end{equation} 
+$$
+
+$$
+\begin{equation}
+  k_2=hf(t_{i+1/2},y_i+k_1/2),
+\label{_auto23}
+\end{equation}
+$$
+
+with the final value
+$$
+\begin{equation} 
+  y_{i+i}\approx y_i + k_2 +O(h^3). 
+\label{_auto24}
+\end{equation}
+$$
+
+<p>
+The difference between the previous one-step methods 
+is that we now need an intermediate step in our evaluation,
+namely \( t_i+h/2 = t_{(i+1/2)} \) where we evaluate the derivative \( f \). 
+This involves more operations, but the gain is a better stability
+in the solution.
+
+<p>
+The fourth-order Runge-Kutta, RK4, has the following algorithm
+$$
+  k_1=hf(t_i,y_i) \hspace{0.5cm}   k_2=hf(t_i+h/2,y_i+k_1/2)
+$$
+
+$$
+  k_3=hf(t_i+h/2,y_i+k_2/2)\hspace{0.5cm}   k_4=hf(t_i+h,y_i+k_3)
+$$
+
+with the final result
+$$
+  y_{i+1}=y_i +\frac{1}{6}\left( k_1 +2k_2+2k_3+k_4\right).
+$$
+
+Thus, the algorithm consists in first calculating \( k_1 \) 
+with \( t_i \), \( y_1 \) and \( f \) as inputs. Thereafter, we increase the step
+size by \( h/2 \) and calculate \( k_2 \), then \( k_3 \) and finally \( k_4 \). The global error goes as \( O(h^4) \).
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span>        kv1 = -DeltaT*x[i]
+        kx1 = DeltaT*v[i]
+
+        kv2 = -DeltaT*(x[i]+kx1/<span style="color: #B452CD">2</span>)
+        kx2 =  DeltaT*(v[i]+kv1/<span style="color: #B452CD">2</span>)
+
+        kv3 = -DeltaT*(x[i]+kx2/<span style="color: #B452CD">2</span>)
+        kx3 =  DeltaT*(v[i]+kv2/<span style="color: #B452CD">2</span>)
+
+        kv4 = -DeltaT*(x[i]+kx3/<span style="color: #B452CD">2</span>)
+        kx4 =  DeltaT*(v[i]+kv3/<span style="color: #B452CD">2</span>)
+
+        x[i+<span style="color: #B452CD">1</span>] = x[i] + (kx1 + <span style="color: #B452CD">2</span>*(kx2+kx3) + kx4)/<span style="color: #B452CD">6</span>
+        v[i+<span style="color: #B452CD">1</span>] = v[i] + (kv1 + <span style="color: #B452CD">2</span>*(kv2+kv3) + kv4)/<span style="color: #B452CD">6</span>
+        t[i+<span style="color: #B452CD">1</span>] = t[i]+DeltaT
+</pre></div>
+<p>
 <!-- !split  -->
 
-<h2 id="___sec10">Principle of Superposition and Periodic Forces (Fourier Transforms) </h2>
+<h2 id="___sec12">Principle of Superposition and Periodic Forces (Fourier Transforms) </h2>
 
 <p>
 If one has several driving forces, \( F(t)=\sum_n F_n(t) \), one can find
@@ -966,7 +1132,7 @@ solution for the entire driving force is
 $$
 \begin{equation}
 x_p(t)=\sum_nx_{pn}(t).
-\label{_auto16}
+\label{_auto25}
 \end{equation}
 $$
 
@@ -1006,7 +1172,7 @@ harmonics,
 $$
 \begin{equation}
 F(t)=\frac{f_0}{2}+\sum_{n>0} f_n\cos(2n\pi t/\tau)+g_n\sin(2n\pi t/\tau).
-\label{_auto17}
+\label{_auto26}
 \end{equation}
 $$
 
@@ -1088,7 +1254,7 @@ to zero unless \( m=n \). In that case the \( m=n \) term gives
 $$
 \begin{equation}
 \int_{-\tau/2}^{\tau/2}dt~\cos^2(m\omega t)=\frac{\tau}{2},
-\label{_auto18}
+\label{_auto27}
 \end{equation}
 $$
 
@@ -1112,7 +1278,7 @@ Consider the driving force:
 $$
 \begin{equation}
 F(t)=At/\tau,~~-\tau/2 < t < \tau/2,~~~F(t+\tau)=F(t).
-\label{_auto19}
+\label{_auto28}
 \end{equation}
 $$
 
@@ -1152,7 +1318,7 @@ $$
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec11">Response to Transient Force </h2>
+<h2 id="___sec13">Response to Transient Force </h2>
 
 <p>
 Consider a particle at rest in the bottom of an underdamped harmonic
@@ -1165,7 +1331,7 @@ conditions \( v_0=I/m \) and \( x_0=0 \). This gives
 $$
 \begin{equation}
 x(t)=\frac{I}{m\omega'}e^{-\beta t}\sin\omega't, ~~t>0.
-\label{_auto20}
+\label{_auto29}
 \end{equation}
 $$
 
@@ -1176,7 +1342,7 @@ occurs at time \( t_i \) the trajectory would be
 $$
 \begin{equation}
 x(t)=\frac{I_i}{m\omega'}e^{-\beta (t-t_i)}\sin[\omega'(t-t_i)] \Theta(t-t_i),
-\label{_auto21}
+\label{_auto30}
 \end{equation}
 $$
 
@@ -1188,7 +1354,7 @@ superposition tells us that we can sum over each contribution,
 $$
 \begin{equation}
 x(t)=\sum_i\frac{I_i}{m\omega'}e^{-\beta(t-t_i)}\sin[\omega'(t-t_i)]\Theta(t-t_i)
-\label{_auto22}
+\label{_auto31}
 \end{equation} 
 $$
 
@@ -1296,7 +1462,7 @@ $$
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec12">The classical pendulum and scaling the equations </h2>
+<h2 id="___sec14">The classical pendulum and scaling the equations </h2>
 
 <p>
 Let us end our discussion of oscillations with another classical case, the pendulum.
@@ -1307,7 +1473,7 @@ Newton's equation and with no external force it reads
 $$
 \begin{equation}
   ml\frac{d^2\theta}{dt^2}+mgsin(\theta)=0,
-\label{_auto23}
+\label{_auto32}
 \end{equation}
 $$
 
@@ -1315,7 +1481,7 @@ with an angular velocity and acceleration given by
 $$
 \begin{equation}
      v=l\frac{d\theta}{dt},
-\label{_auto24}
+\label{_auto33}
 \end{equation}
 $$
 
@@ -1323,14 +1489,9 @@ and
 $$
 \begin{equation}
      a=l\frac{d^2\theta}{dt^2}.
-\label{_auto25}
+\label{_auto34}
 \end{equation}
 $$
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec13">More on the Pendulum </h2>
 
 <p>
 We do however expect that the motion will gradually come to an end due a viscous drag torque acting on the pendulum. 
@@ -1353,11 +1514,6 @@ $$
 
 with \( A \) and \( \omega \) two constants representing the amplitude and 
 the angular frequency respectively. The latter is called the driving frequency.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec14">More on the Pendulum </h2>
 
 <p>
 We define 
@@ -1407,7 +1563,14 @@ $$
      \frac{d\hat{v}}{d\hat{t}}=-\frac{\hat{v}}{Q}-sin(\theta)+\hat{A}cos(\hat{\omega}\hat{t}).
 $$
 
-These are the equations to be solved.  The factor \( Q \) represents the number of oscillations of the undriven system that must occur before  its energy is significantly reduced due to the viscous drag. The  amplitude \( \hat{A} \) is measured in units of the maximum possible  gravitational torque while \( \hat{\omega} \) is the angular frequency of the external torque measured in units of the pendulum's natural frequency.
+<p>
+These are the equations to be solved.  The factor \( Q \) represents the
+number of oscillations of the undriven system that must occur before
+its energy is significantly reduced due to the viscous drag. The
+amplitude \( \hat{A} \) is measured in units of the maximum possible
+gravitational torque while \( \hat{\omega} \) is the angular frequency of
+the external torque measured in units of the pendulum's natural
+frequency.
 
 <p>
 
