@@ -307,7 +307,7 @@ that the dimensionality is correct) and rewrite our equation as
 
 !bt
 \[
-\frac{d^2x}{d\tau^2} + \frac{b}{m\omega_0^2}\frac{dx}{d\tau}+x(\tau) =0,
+\frac{d^2x}{d\tau^2} + \frac{b}{m\omega_0}\frac{dx}{d\tau}+x(\tau) =0,
 \]
 !et
 which gives us
@@ -376,7 +376,7 @@ v0 = 0.0
 x[0] = x0
 v[0] = v0
 gamma = 0.0
-# Start integrating using Euler's method
+# Start integrating using Euler-Cromer's method
 for i in range(n-1):
     # Set up the acceleration
     # Here you could have defined your own function for this
@@ -690,6 +690,102 @@ For small damping this occurs when $\omega=\omega_0\pm \beta$, so the $FWHM\appr
 Q\equiv \frac{\omega_0}{2\beta}.
 \end{equation}
 !et
+
+
+!split
+===== Numerical Studies of Driven Oscillations =====
+
+Solving the problem of driven oscillations numerically gives us much more flexibility to study different types of
+driven forces. We can reuse our earlier code by simply adding a driving force. If we stay in the $x$-direction only this can be easily done
+by adding a term $F_{\mathrm{ext}}(x,t)$. Note that we have kept it rather general here, allowing for both a spatial and a temporal dependence.
+
+Before we dive into the code, we need to briefly remind ourselves about the equations we started with for the case with damping, namely
+!bt
+\[
+m\frac{d^2x}{dt^2} + b\frac{dx}{dt}+kx(t) =0,
+\]
+!et
+with no external force applied to the system.
+
+Let us now for simplicty assume that our external force is given by
+!bt
+\[
+F_{\mathrm{ext}}(t) = F_0\cos{(\omega t)},
+\]
+!et
+where $F_0$ is a constant (what is its dimension?) and $\omega$ is the frequency of the applied external driving force.
+_Small question:_ would you expect energy to be conserved now?
+
+
+Introducing the external force into lovely differential equation
+and dividing by $m$ and introducing $\omega_0^2=\sqrt{k/m}$ we have
+!bt
+\[
+\frac{d^2x}{dt^2} + \frac{b}{m}\frac{dx}{dt}+\omega_0^2x(t) =\frac{F_0}{m}\cos{(\omega t)},
+\]
+!et
+
+Thereafter we introduce a dimensionless time $\tau = t\omega_0$
+and a dimensionless frequency $\overline{\omega}=\omega/\omega_0$. We have then
+!bt
+\[
+\frac{d^2x}{d\tau^2} + \frac{b}{m\omega_0}\frac{dx}{d\tau}+x(\tau) =\frac{F_0}{m\omega_0^2}\cos{(\overline{\omega}\tau)},
+\]
+!et
+Introducing a new amplitude $\overline{F} =F_0/(m\omega_0^2)$ (check dimensionality again) we have
+!bt
+\[
+\frac{d^2x}{d\tau^2} + \frac{b}{m\omega_0}\frac{dx}{d\tau}+x(\tau) =\overline{F}\cos{(\overline{\omega}\tau)}.
+\]
+!et
+
+Our final step, as we did in the case of various types of damping, is
+to define $\gamma = b/(2m\omega_0)$ and rewrite our equations as
+!bt
+\[
+\frac{d^2x}{d\tau^2} + 2\gamma\frac{dx}{d\tau}+x(\tau) =\overline{F}\cos{(\overline{\omega}\tau)}.
+\]
+!et
+This is the equation we will code below using the Euler-Cromer method. 
+
+
+!bc pycod
+DeltaT = 0.001
+#set up arrays 
+tfinal = 20 # in years
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, v, and x
+t = np.zeros(n)
+v = np.zeros(n)
+x = np.zeros(n)
+# Initial conditions as compact 2-dimensional arrays
+x0 =  1.0 
+v0 = 0.0
+x[0] = x0
+v[0] = v0
+gamma = 0.2
+omegabar = 0.5
+Foverline = 1.0
+# Start integrating using Euler-Cromer's method
+for i in range(n-1):
+    # Set up the acceleration
+    # Here you could have defined your own function for this
+    a =  -2*gamma*v[i]-x[i]+Foverline*cos(t[i]*omegabar)
+    # update velocity, time and position using Euler-Cromer's forward method
+    v[i+1] = v[i] + DeltaT*a
+    x[i+1] = x[i] + DeltaT*v[i+1]
+    t[i+1] = t[i] + DeltaT
+# Plot position as function of time    
+fig, ax = plt.subplots()
+ax.set_ylabel('x[m]')
+ax.set_xlabel('t[s]')
+ax.plot(t, x)
+fig.tight_layout()
+save_fig("ForcedBlockEulerCromer")
+plt.show()
+!ec
+
+
 
 !split 
 ===== Principle of Superposition and Periodic Forces (Fourier Transforms) =====
