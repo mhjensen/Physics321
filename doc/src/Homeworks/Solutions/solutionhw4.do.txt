@@ -34,14 +34,149 @@ conservation in homework set 5. And for those of you doing the honors project, i
 === Exercise 1 (10 pt), Conservation laws, Energy and momentum ===
 
 * 1a (2pt) How do we define a conservative force?
+A conservative force leads to a path-independent work. This means that the work on an object under the influence of a conservative force, is independent on the path of the object 
+which moves from a position $\bm{r}_0$ to a new position $\bm{r}_1$.
+
 * 1b (4pt) Use the work-energy theorem to show that energy is conserved with a conservative force.
-* 1c (4pt) Assume that you have only internal two-body forces acting on $N$ objects in an isolated system. The force from object $i$ on object $j$ is $\bm{F}_{ij}$. Show that the linear momentum is conserved.
+The work-energy theorem states that the work done $W$ by a force $\bm{F}$ that moves an object from a position $\bm{r}_0$ to a new position $\bm{r}_1$
+!bt
+\[
+W=\int_{\bm{r}_0{\bm{r}_1}\bm{F}\bm{dr}=\frac{1}{2}mv_1^2-\frac{1}{2}mv_0^2,
+\]
+!et
+where $v_1^2$ is the velocity squared at a time $t_1$ and $v_0^2$ the corresponding quantity at a time $t_0$.
+The work done is thus the difference in kinetic energies. We can rewrite the above equation as
+!bt
+\[
+\frac{1}{2}mv_1^2=\int_{\bm{r}_0{\bm{r}_1}\bm{F}\bm{dr}+\frac{1}{2}mv_0^2,
+\]
+!et
+that is the final kinetic energy is equal to the initial kinetic energy plus the work done by the force over a given path from a  position $\bm{r}_0$ at time $t_0$ to a final position position $\bm{r}_1$ at a later time $t_1$.
+
+
+
+* 1c (4pt) Assume that you have only internal two-body forces acting on $N$ objects in an isolated system. The force from object $i$ on object $j$ is $\bm{f}_{ij}$. Show that the linear momentum is conserved.
+
+Here we use Newton's third law and assume that our system is only
+affected by so-called internal forces.  This means that the force
+$\bm{f}_{ij}$ from object $i$ acting on object $j$ is equal to the
+force acting on object $j$ from object $i$ but with opposite sign,
+that is $\bm{f}_{ij}=-\bm{f}_{ji}$.
+
+The total linear momentum is defined as
+!bt
+\[
+\bm{P}=\sum_{i=1}^N\bm{p}_i=\sum_{i=1}^Nm_i\bm{v}_i,
+\]
+!et
+where $i$ runs over all objects, $m_i$ is the mass of object $i$ and $\bm{v}_i$ its corresponding velocity.
+
+The force acting on object $i$ from all the other objects is (lower
+case letters for individual objects and upper case letters for total
+quantities)
+
+!bt
+\[
+\bm{f}_i=\sum_{j=1}^N\bm{f}_{ji}.
+\]
+!et
+Summing over all objects the net force is
+!bt
+\[
+\sum_{i=1}^N\bm{f}_i=\sum_{i=1}^N\sum_{j=1;j\ne i}^N\bm{f}_{ji}.
+\]
+!et
+We are summing freely over all objects with the constraint that $i\ne j$ (no self-interactions). 
+We can now manipulate the double sum as 
+!bt
+\[
+\sum_{i=1}^N\sum_{j=1;j\ne i}^N\bm{f}_{ji}=\sum_{i=1}^N\sum_{j>i}^N(\bm{f}_{ji}+\bm{f}_{ij}).
+\]
+!et
+Convince yourself about this by setting $N=2$ and $N=3$. Nweton's third law says
+$\bm{f}_{ij}=-\bm{f}_{ji}$, which means we have
+!bt
+\[
+\sum_{i=1}^N\sum_{j=1;j\ne i}^N\bm{f}_{ji}=\sum_{i=1}^N\sum_{j>i}^N(\bm{f}_{ji}-\bm{f}_{ji})=0.
+\]
+!et
+The total force due to internal degrees of freedom only is thus $0$.
+If we then use the definition that
+!bt
+\[
+\sum_{i=1}^N\bm{f}_i=\sum_{i=1}^Nm_i\frac{\bm{v}_i}{dt}=\sum_{i=1}^N\frac{\bm{p}_i}{dt}=frac{d\bm{P}}{dt}=0,
+\]
+!et
+where we assumed that $m_i$ is independent of time, we see that time derivative of the total momentum is zero.
+We say then the linear momentum is a constant of the motion. It is conserved.
+
+
+
+
+
 
 === Exercise 2 (10 pt), Conservation of angular momentum ===
 
 * 2a (2pt) Define angular momentum and the torque for a single object with external forces only. 
+The angular moment $\bm{l}_i$ for a given object $i$ is defined as
+!bt
+\[
+\bm{l}_i = \bm{r}_i \times \bm{p}_i,
+\]
+!et
+where $\bm{p}_i=m_i\bm{v}_i$. With external forces only defining the acceleration and the mass being time independent, the momentum is the integral over the external force as function of time, that is
+!bt
+\[
+\bm{p}_i(t)=\bm{p}_i(t_0)+\int_{t_0}^t \bm{f}_i^{\mathrm{ext}}(t')dt'. 
+\]
+!et
 * 2b (4pt) Define angular momentum and the torque for a system with $N$ objects/particles  with external and internal forces. The force from object $i$ on object $j$ is $\bm{F}_{ij}$.
+The total angular momentum $\bm{L}$ is defined as
+!bt
+\[
+\bm{L}=\sum_{i=1}^N\bm{l}_i = \sum_{i=1}^N\bm{r}_i \times \bm{p}_i.
+\]
+!et
+The torque for one object is 
+!bt
+\[
+\bm{\tau}_i=\frac{\bm{l}_i}{dt} = \frac{dt(\bm{r}_i \times \bm{p}_i)}{dt}=\bm{r}_i \times \frac{\bm{p}_i)}{dt}=\bm{r}_i \times \bm{f}_i,
+\]
+!et
+and the total torque is 
+!bt
+\[
+\bm{\tau}=\sum_{i=1}^N\frac{\bm{l}_i}{dt} = \sum_{i=1}^N\bm{r}_i \times \bm{f}_i.
+\]
+!et
+The force is $\bm{f}_i=\bm{f}_i^{\mathrm{ext}}+\sum_{j=1}^N\bm{f}_{ji}$.
+
 * 2c (4pt) With internal forces only, what is the mathematical form of the forces that allows for angular momentum to be conserved? 
+Using the results from 1c, we can rewrite without external forces our torque as
+!bt
+\[
+\bm{\tau}=\sum_{i=1}^N\frac{\bm{l}_i}{dt} = \sum_{i=1}^N\bm{r}_i \times \bm{f}_i=\sum_{i=1}^N(\bm{r}_i \times \sum_{j=1}^N\bm{f}_{ji}),
+\]
+!et
+which gives
+!bt
+\[
+\bm{\tau}=\sum_{i=1}^N\sum_{j=1;j\ne i}^N(\bm{r}_i \times \bm{f}_{ji}).
+\]
+!et
+We can rewrite this as (convince yourself again about this)
+!bt
+\[
+\bm{\tau}=\sum_{i=1}^N\sum_{j>i}^N(\bm{r}_i \times \bm{f}_{ji}+\bm{r}_j \times \bm{f}_{ij}),
+\]
+!et
+and using Newton's third law we have 
+!bt
+\[
+\bm{\tau}=\sum_{i=1}^N\sum_{j>i}^N(\bm{r}_i -\bm{r}_j) \times \bm{f}_{ji}).
+\]
+!et
+If the force is proportional to $\bm{r}_i -\bm{r}_j$ then angular momentum is conserved since the cross-product of a vector with itself is zero. We say thus that angular momentum is a constant of the motion.
 
 === Exsercise 3 (10pt), Example of potential ===
 
@@ -53,8 +188,16 @@ V(x,y,z)=A\exp\left\{-\frac{x^2+z^2}{2a^2}\right\}.
 !et
 
 * 3a (2pt) Is energy conserved? If so, why? 
+In this exercise $A$ and $a$ are constants. The force is given by the derivative of $V$ with respect to the spatial degrees of freedom and since the potential depends only of these degrees of freedom force is conservative and energy is conserved.
+
 * 3b (4pt) Which of  the quantities, $p_x,p_y,p_z$ are conserved?
+
+Taking the derivatives with respect to time shows that only $p_y$ is conserved.
+
 * 3c (4pt) Which of  the quantities, $L_x,L_y,L_z$ are conserved?
+
+Only $L_y$ is conserved. 
+
 
 ===  Exercise 4 (10pt), Angular momentum case ===
 
@@ -69,6 +212,26 @@ At $t=0$ we have a single object with position $\bm{r}_0=x_0\bm{e}_x+y_0\bm{e}_y
 * 4b (3pt) Find also the position at a time $t$. 
 * 4c (4pt) Use the position and the momentum to find the angular momentum and the torque. Is angular momentum conserved?
 
+I will assume that $F$ (which I wrote as $C$ for ease of reading) is constant.
+
+The acceleration will be $a=\frac{F}{m}=(\frac{C}{m},0, 0)$.  The momentum will be\
+ $p=m\frac{da}{dt}=m(\frac{C}{m}t,0, 0)=(Ct,0, 0)$, if we start at rest at $t=0$.
+
+* 4b (3pt) Find also the position at a time $t$.
+
+The position will be $r=\frac{dp}{dt}\frac{1}{m}=(\frac{C}{2m}t^2+x_0,y_0, 0)$.
+
+* 4c (4pt) Use the position and the momentum to find the angular momentum and the \
+torque. Is angular momentum conserved?
+
+$L=r\times p=(\frac{C}{2m}t^2+x_0,y_0, 0)\times(Ct,0, 0)=(0,0,-Cty_0)$
+
+$\Gamma=r\times F=(\frac{C}{2m}t^2+x_0,y_0, 0)\times(C,0,0)=(0,0,-Cy_0)$.
+
+As expected, $\frac{dL}{dt}=\Gamma$.  But because $\Gamma\neq 0$, angular momentum\
+ is not conserved
+
+
 === Exercise 5 (10pt), forces  and potentials  ===
 
 A particle of mass $m$ has velocity $v=\alpha/x$, where $x$ is its displacement.
@@ -79,6 +242,47 @@ A particle is thereafter under the influence of a force $F=-kx+kx^3/\alpha^2$, w
 
 * 5b (3pt) Determine $U(x)$  and discuss the motion. It can be convenient here to make a sketch/plot of the potential as function of $x$.
 * 5c (4pt)  What happens when the energy of the particle is $E=(1/4)k\alpha^2$? Hint: what is the maximum value of the potential energy?
+
+I will assume that we are dealing with a 1-dimensional system, and that I don't ha\
+ve to worry about threespace or the like.  I will also assume $\alpha$ is a consta\
+nt.
+
+If $v=\frac{\alpha}{x}$, then $KE=\frac{m\alpha^2}{x^2}$, so the force necessary t\
+o obtain this velocity is $F(x)=\frac{m\alpha^2}{x^2}$.
+
+A particle is thereafter under the influence of a force $F=-kx+kx^3/\alpha^2$, whe\
+re $k$ and $\alpha$ are constants and $k$ is positive
+
+* 5b (3pt) Determine $U(x)$  and discuss the motion. It can be convenient here to \
+make a sketch/plot of the potential as function of $x$.
+
+Given that there needs to be some $x$ where $U(x)=0$. I will define this to be at \
+$x=0$.  Therefore, $U(x)=-\int_0^xF(x)dx=-\int_0^x-kx+kx^3/\alpha^2dx=k\int_0^xx-x\
+^3/\alpha^2dx=\frac{kx^2}{2}-\frac{kx^4}{4\alpha^2}$.
+
+The motion will be one of four things:
+
+1: The initial velocity will be able to overcome the potential energy barrier and \
+thus go over the edge and accelerate off to infinity.
+
+2: The initial velocity will not be able to overcome the potential energy barrier \
+and will thus reciprocate back and forth within the trough.
+
+3: The initial velocity will balance perfectly on the edge of the trough.
+
+4: The initial velocity and position will both be zero and so the particle will si\
+t in the middle doing nothing.
+
+Let's find the maximum value that the potential energy reaches.   $U(x)=\frac{kx^2\
+}{2}-\frac{kx^4}{4\alpha^2}$, so the critical points happen at $U'(x)=0=kx-\frac{k\
+x^3}{\alpha^2}$, so when $x=0$ or $1=\frac{x^2}{\alpha^2}$, so when $x=\pm\alpha$.\
+  $U(0)=0$ and $U(\pm\alpha)=\frac{k\alpha^2}{2}-\frac{k\alpha^2}{4}=\frac{k\alpha\
+^2}{4}$.  So if the energy of the particle is $E=(1/4)k\alpha^2$, and if its start\
+ing position is in $[-\alpha,\alpha]$, it will travel to one of the two maxima and\
+ balance there perfectly.  This is a type 3 scenerio.
+
+
+
 
 ===  Exercise 6 (10pt), Warming up for the Earth-Sun system, Scaling the Equations  ===
 
@@ -213,56 +417,8 @@ import matplotlib.pyplot as plt
 %matplotlib inline
 !ec
 
-* 7a (5 pt)  Write then a program which solves the above differential equations for the Earth-Sun system using Euler's  method and the velocity Verlet method.  Find out which initial value for the velocity that gives a circular orbit and test the stability of your algorithm as function of different time steps $\Delta t$.  Make a plot of the results you obtain for the position of the Earth (plot the $x$ and $y$ values and/or if you prefer to use three dimensions the $z$-value as well) orbiting  the Sun. Discuss eventual differences between the Verlet algorithm and the Euler algorithm. 
+* 7a (20pt)  Write then a program which solves the above differential equations for the Earth-Sun system using Euler's  method and the velocity Verlet method.  Find out which initial value for the velocity that gives a circular orbit and test the stability of your algorithm as function of different time steps $\Delta t$.  Make a plot of the results you obtain for the position of the Earth (plot the $x$ and $y$ values and/or if you prefer to use three dimensions the $z$-value as well) orbiting  the Sun. Discuss eventual differences between the Verlet algorithm and the Euler algorithm. 
 
 
-* 7b (5pt) Consider then a planet which begins at a distance of 1 AU from the sun. Find out by trial and error what the initial velocity must be in order for the planet to escape from the sun.  Can you find an exact answer?  How does that match your numerical results?
-
-Here we add a code-example which may aid in the above studies using Euler's forward method.
-!bc pycod
-DeltaT = 0.001
-#set up arrays 
-tfinal = 10 # in years
-n = ceil(tfinal/DeltaT)
-# set up arrays for time t, velocity v, and position r
-t = np.zeros(n)
-v = np.zeros((n,2))
-r = np.zeros((n,2))
-# Initial conditions as compact 2-dimensional arrays
-r0 = np.array([1.0,0.0])
-v0 = np.array([0.0,2*pi])
-r[0] = r0
-v[0] = v0
-Fourpi2 = 4*pi*pi
-# Start integrating using Euler's method
-for i in range(n-1):
-    # Set up the acceleration
-    # Here you could have defined your own function for this
-    rabs = sqrt(sum(r[i]*r[i]))
-    a =  -Fourpi2*r[i]/(rabs**3)
-    # update velocity, time and position using Euler's forward method
-    v[i+1] = v[i] + DeltaT*a
-    r[i+1] = r[i] + DeltaT*v[i]
-    t[i+1] = t[i] + DeltaT
-!ec
-
-
-===  Exercise 8 (30pt), Bonus exercise ===
-
-You don't need to do this exercise, but it gives you a bonus score of 30 points.
-
-This time the bonus exercise is a simple survey. We are now moving
-into our fifth week and we would very much have your feedback on how
-things are functioning. In particular, since this is (together with fall
-2019) the first time we have numerical exercises every week, we need
-to see if the pace is ok, if there is a good link between lectures and
-the homework exrcises etc etc.
-
-* Is the weekly load with paper and pencil exercises and the numerical exercises reasonable?
-* Is there enough material (lectures and lecture material) to get you started with the exercises?  We are thinking of both the paper and pencil and the numerical exercises?
-* Is the pace during the lectures reasonable? And do the lectures link well with the exercises?
-* In the beginning there will always be some elements of repetition of material many of you have seen before. Do you find the choice of material the first weeks adequate? Too easy? Too difficult?
-* For those of you who have taken CMSE 201 Introduction to Computational Modeling, do you feel the material taught there links well with the exercises you have done in this course? Is there is something we are missing?
-* Any other topic you would like to comment on?
-
+* 7b (20pt) Consider then a planet which begins at a distance of 1 AU from the sun. Find out by trial and error what the initial velocity must be in order for the planet to escape from the sun.  Can you find an exact answer?  How does that match your numerical results?
 
