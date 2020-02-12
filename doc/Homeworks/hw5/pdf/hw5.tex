@@ -21,8 +21,8 @@ final,                   % draft: marks overfull hboxes, figures with paths
 \usepackage[pdftex]{graphicx}
 
 \usepackage{fancyvrb} % packages needed for verbatim environments
-\usepackage{minted}
-\usemintedstyle{default}
+\usepackage{verbatim}
+%\usemintedstyle{default}
 
 \usepackage[T1]{fontenc}
 %\usepackage[latin1]{inputenc}
@@ -232,7 +232,7 @@ The advantage with the block sliding back and forth is that we have analytical s
 Is energy properly conserved? Discuss your results. 
 
 Here follows a simple code example which could be used to study the sliding block.
-\begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
+\begin{verbatim}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 DeltaT = 0.001
 #set up arrays 
 tfinal = 10 # in seconds
@@ -255,7 +255,7 @@ for i in range(n-1):
     v[i+1] = v[i] + DeltaT*a
     x[i+1] = x[i] + DeltaT*v[i+1]
     t[i+1] = t[i] + DeltaT
-\end{minted}
+\end{verbatim}
 
 
 \paragraph{Exercise 8 (30pt), Bonus exercise.}
