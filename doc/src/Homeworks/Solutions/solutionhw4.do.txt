@@ -308,7 +308,8 @@ xn = 2.0
 Deltax = 0.1
 alpha = 1.0
 k = 1.0
-#set up arrays                                                                                                            x = np.arange(x0,xn,Deltax)
+#set up arrays
+x = np.arange(x0,xn,Deltax)
 n = np.size(x)
 V = np.zeros(n)
 V = 0.5*k*x*x-0.25*k*(x**4)/(alpha*alpha)
