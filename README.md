@@ -101,7 +101,7 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 ### Week 8, February 17-21, 2020
 - Monday: Oscillations, driven oscillations and resonances
 - Wednesday:  Oscillation examples and  numerical integration
-- Friday: Fourier series and end of oscillation chapter  _First midterm project, due March 11, 2020_ 
+- Friday: Fourier series and end of oscillation chapter  _First midterm project, available Friday Feb 21 and due March 11, 2020_ 
 - Good reads are sections 5.5-5.8 of Taylor on oscillations. 
 ### Week 9, February 24-28, 2020
 - Monday: Gravity and central force problems
@@ -114,7 +114,7 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 - Friday:  No lectures 
 ### Week 11, March  9-13, 2020
 - Monday:  More on central force problems
-- Wednesday: 
+- Wednesday: First midterm due
 - Friday:  7th homework, due March 20
 ### Week 12, March 16-20, 2020
 - Monday:
