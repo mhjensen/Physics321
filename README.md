@@ -91,7 +91,7 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 ### Week 6, February 3-7, 2020
 - Monday: Conservation laws and discussion of 4th homework (exercises 6 and 7). Introducing the Velocity Verlet algorithm and the Earth Sun problem
 - Wednesday: Examples of application of conservations laws (see chapter 4 of Taylor). 
-- Friday: Begin discussion of oscillations, and  5th homework, due February 17
+- Friday: Begin discussion of oscillations, and  5th homework, due February 17, paper and pencil can be handed in Friday the 21st at latest.
 - Good reads are Taylor chapter 4 and AMS chapters 10-14 for the conservation laws and the first sections of chapter 5 of Taylor on oscillations. 
 ### Week 7, February 10-14, 2020
 - Monday: Oscillations, mathematical detials, the sliding block and energy conservation
@@ -99,10 +99,10 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 - Friday: Oscillations, resonances and more on damped motion,  6th homework, due February 24
 - Good reads are chapter 5 of Taylor on oscillations. 
 ### Week 8, February 17-21, 2020
-- Monday: Oscillations, Fourier series
-- Wednesday:  Wrapping up oscillations
-- Friday:  Start discussion of gravity and more on two-body problems, _First midterm project, due February 28, 2020_ 
-- Good reads are chapter 5 of Taylor on oscillations. 
+- Monday: Oscillations, driven oscillations and resonances
+- Wednesday:  Oscillation examples and  numerical integration
+- Friday: Fourier series and end of oscillation chapter  _First midterm project, due March 11, 2020_ 
+- Good reads are sections 5.5-5.8 of Taylor on oscillations. 
 ### Week 9, February 24-28, 2020
 - Monday: Gravity and central force problems
 - Wednesday: Gravity and central force problems
@@ -113,7 +113,7 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 - Wednesday: No lectures
 - Friday:  No lectures 
 ### Week 11, March  9-13, 2020
-- Monday:
+- Monday:  More on central force problems
 - Wednesday: 
 - Friday:  7th homework, due March 20
 ### Week 12, March 16-20, 2020
