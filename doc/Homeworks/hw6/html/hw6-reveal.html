@@ -174,7 +174,7 @@ The relevant reading background is
 In both textbooks there are many nice worked out examples. Malthe-S&#248;renssen's text contains also several coding examples you may find useful. For the first three exercises here
 
 <p>
-The numerical homework is based on what you did in homework 5, but includes now an added driving force. In your code this implies a simple extension. In exercise 5, you will need to set up the analytical solutions for this case as well.
+The numerical homework is based on what you did in homework 5, but includes now an added driving force. In your code this implies a simple extension. In exercise 4, you will need to set up the analytical solutions for this case as well.
 
 <h3 id="___sec2">Exercise 1 (6 pt), Conservative forces </h3>
 
@@ -242,21 +242,15 @@ $$
 
 
 <ul>
-<p><li> 4a (3pt) Plot the potential and discuss equilibrium points. Find the minimum value(s) of the potential.  Is this a conservative force?</li>
-<p><li> 4b (3pt) Compute the second derivative of the potential (see Taylor 5.1 and 5.2) and use this to define a spring constant \( k \). Use the spring constant to find the natural (angular) frequency \( \omega_0=\sqrt{k/m} \). We call the new spring constant for  an effective spring constant.</li> 
-<p><li> 4c (4pt) We ignore the second term in the potential energy and keep only the term proportional to the spring constant, that is a force \( F\propto kx \). Find the acceleration and set up the differential equation.  Find the general analytical solution for these harmonic oscillations.  You don't need to find the constants in the general solution.</li>
-<p><li> 4d (5pt) Assume we have no friction. If you add a small force \( F=F_0\cos{(\omega t-\delta)} \), and if the particle</li> 
+<p><li> 4a (3pt) Plot the potential and discuss eventual equilibrium points. Is this a conservative force?</li>
+<p><li> 4b (3pt) Compute the second derivative of the potential and find its miminum position(s). Using the Taylor expansion of the potential around its minimum (see Taylor section 5.1) to define a spring constant \( k \). Use the spring constant to find the natural (angular) frequency \( \omega_0=\sqrt{k/m} \). We call the new spring constant for  an effective spring constant.</li> 
+<p><li> 4c (4pt) We ignore the second term in the potential energy and keep only the term proportional to the effective spring constant, that is a force \( F\propto kx \). Find the acceleration and set up the differential equation.  Find the general analytical solution for these harmonic oscillations.  You don't need to find the constants in the general solution.</li>
+<p><li> 4d (5pt) Assume we have no friction. If you add a small force \( F=F_0\cos{(\omega t-\delta)} \), and if the particle is initially at the minimum with zero initial velocity, find its position as a function of time. Note that here you need to add the particular solution.</li> 
+<p><li> 4e (5pt) We add now  a small drag force \( -bv \) to the previous exercise (4d). Find the forces acting on the particle and the acceleration. Find also the analytical solutions with the same initial conditions as in the previous exercise.</li>
 </ul>
 <p>
 
-is initially at the minimum with zero initial velocity, find its position as a function of time. Note that here you need to add the particular solution. 
-
-<ul>
-<p><li> 4e (5pt) We add now  a small drag force \( -bv \) to the previous exercise (4d). Find the forces acting on the particle and the acceleration. Find also the analytical solution with the same initial conditions as in the previous exercise.</li>
-</ul>
-<p>
-
-We will use this analytical solution in the numerical part.
+We will use this analytical solutions in the numerical part.
 
 <h3 id="___sec6">Exercise 5 (40pt), Sliding Block with driving force  </h3>
 
@@ -271,7 +265,7 @@ Last week we developed a code for the sliding block including a friction term. T
 
 <ul>
 <p><li> 5a (20pt) Add the force from exercise 4d to your code from last week. If you have not done the bonus exercise from hw5, add also the friction term \( -bv \) from the previous exercise. Scale your equations and study the solution as function of different values of \( F_0 \), \( b \), \( k \) and \( \omega \) and \( \omega_0 \). Keep the initial conditions as in exercise 4d. Discuss your results. Is energy conserved? If not, why?</li> 
-<p><li> 5b (20 pt)  Compare your numerical results with the analytical ones from exercise 4. You can focus on either the results from 4e or 4d.  Discuss your results.</li> 
+<p><li> 5b (20 pt)  Compare your numerical results with the analytical ones from exercise 4. You can focus on either the results from 4d or 4e or both.  Discuss your results.</li> 
 </ul>
 
 <h3 id="___sec7">Exercise 6 (30pt), Bonus exercise </h3>
@@ -280,7 +274,13 @@ Last week we developed a code for the sliding block including a friction term. T
 You don't need to do this exercise, but it gives you a bonus score of 30 points. Taylor's section 5.4 and the lecture notes on damped oscillations cover most of the theoretical background.
 
 <p>
-Here we will explore resonances, using the full solution from exercise 4e.  We recommend reading section 5.6 of Taylor before starting analyzing your results.   This exercise means that you will use your code from previous exercise and study the choice of physical parameters which will lead to a resonant behavior. As such, this bonus exercises is meant as an example where you use your numerical code to explore interesting physics. 
+Here we will explore resonances, using the full solution from exercise
+4e.  We recommend reading section 5.6 of Taylor before starting
+analyzing your results.  This exercise means that you will use your
+code from the previous exercise (5) and study the choice of physical
+parameters which will lead to a resonant behavior. As such, this bonus
+exercises is meant as an example where you use your numerical code to
+explore interesting physics.
 
 <ul>
 <p><li> 6a (30pt)  Find the value of \( \omega \) which results in a resonant behavior and study the numerical and analytical solutions for the resonant case. Discuss your results.</li> 
