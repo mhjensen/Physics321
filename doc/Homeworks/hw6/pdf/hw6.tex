@@ -1,0 +1,241 @@
+%%
+%% Automatically generated file from DocOnce source
+%% (https://github.com/hplgit/doconce/)
+%%
+%%
+
+
+%-------------------- begin preamble ----------------------
+
+\documentclass[%
+oneside,                 % oneside: electronic viewing, twoside: printing
+final,                   % draft: marks overfull hboxes, figures with paths
+10pt]{article}
+
+\listfiles               %  print all files needed to compile this document
+
+\usepackage{relsize,makeidx,color,setspace,amsmath,amsfonts,amssymb}
+\usepackage[table]{xcolor}
+\usepackage{bm,ltablex,microtype}
+
+\usepackage[pdftex]{graphicx}
+
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{lmodern}         % Latin Modern fonts derived from Computer Modern
+
+% Hyperlinks in PDF:
+\definecolor{linkcolor}{rgb}{0,0,0.4}
+\usepackage{hyperref}
+\hypersetup{
+    breaklinks=true,
+    colorlinks=true,
+    linkcolor=linkcolor,
+    urlcolor=linkcolor,
+    citecolor=black,
+    filecolor=black,
+    %filecolor=blue,
+    pdfmenubar=true,
+    pdftoolbar=true,
+    bookmarksdepth=3   % Uncomment (and tweak) for PDF bookmarks with more levels than the TOC
+    }
+%\hyperbaseurl{}   % hyperlinks are relative to this root
+
+\setcounter{tocdepth}{2}  % levels in table of contents
+
+% prevent orhpans and widows
+\clubpenalty = 10000
+\widowpenalty = 10000
+
+% --- end of standard preamble for documents ---
+
+
+% insert custom LaTeX commands...
+
+\raggedbottom
+\makeindex
+\usepackage[totoc]{idxlayout}   % for index in the toc
+\usepackage[nottoc]{tocbibind}  % for references/bibliography in the toc
+
+%-------------------- end preamble ----------------------
+
+\begin{document}
+
+% matching end for #ifdef PREAMBLE
+
+\newcommand{\exercisesection}[1]{\subsection*{#1}}
+
+
+% ------------------- main content ----------------------
+
+
+
+% ----------------- title -------------------------
+
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE\bf
+\begin{spacing}{1.25}
+PHY321: Classical Mechanics 1
+\end{spacing}
+}
+\end{center}
+
+% ----------------- author(s) -------------------------
+
+\begin{center}
+{\bf Homework 6, due Monday  February 24${}^{}$} \\ [0mm]
+\end{center}
+
+\begin{center}
+% List of all institutions:
+\end{center}
+    
+% ----------------- end author(s) -------------------------
+
+% --- begin date ---
+\begin{center}
+Feb 18, 2020
+\end{center}
+% --- end date ---
+
+\vspace{1cm}
+
+
+\paragraph{Practicalities about  homeworks and projects.}
+\begin{enumerate}
+\item You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. \textbf{Remember to write your name(s)}!
+
+\item Homeworks are available Wednesday/Thursday the week before the deadline. The deadline is at the Friday lecture.
+
+\item How do I(we)  hand in?  You can hand in the paper and pencil exercises as a hand-written document. For this homework this applies to exercises 1-5. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise(s) (exercise 6 here) should always be handed in as a jupyter notebook by the deadline at D2L. 
+\end{enumerate}
+
+\noindent
+\paragraph{Introduction to homework 6.}
+This week's sets of classical pen and paper and computational
+exercises are again a continuation of the topics from the previous homework sets. We keep
+discussing conservation laws, conservative forces, energy, momentum and angular momentum. These conservation laws are central in Physics and understanding them properly lays the foundation for understanding and analyzing more complicated physics problems.
+The relevant reading background is
+\begin{enumerate}
+\item chapters 3 and 4 of Taylor (there are many good examples there) and
+
+\item chapters 10-14 of Malthe-Sørenssen.
+\end{enumerate}
+
+\noindent
+In both textbooks there are many nice worked out examples. Malthe-Sørenssen's text contains also several coding examples you may find useful. For the first three exercises here 
+
+
+The numerical homework is based on what you did in homework 5, but includes now an added driving force. In your code this implies a simple extension. In exercise 5, you will need to set up the analytical solutions for this case as well. 
+
+
+\paragraph{Exercise 1 (6 pt), Conservative forces.}
+An additional requirement for a force to be conservative is that its \textbf{curl} is equal to zero (see Taylor section 4.5), that is
+\[
+\bm{\nabla}\times \bm{F} =0.
+\]
+Find the curl of the following forces
+\begin{itemize}
+\item 1a (2pt) $\bm{F}=k\bm{r}$ where $k$ is a constant and $\bm{r}=x\bm{i}+y\bm{j}+z\bm{k}$ where $\bm{i},\bm{j}$ and $\bm{k}$ are the unit vectors in the $x$, $y$ and $z$ directions respectively. Previously we used $\bm{e}_x$ etc for these unit vector. We will stick with the notation in Taylor.
+
+\item 1b (2pt) $\bm{F}=Ax\bm{i}+By^2\bm{j}+Cz^2\bm{k}$ where $A$, $B$ and $C$ are constants.
+
+\item 1c (2pt) $\bm{F}=Ay\bm{i}+Bx\bm{j}+Cz\bm{k}$ where $A$, $B$ and $C$ are constants.
+\end{itemize}
+
+\noindent
+\paragraph{Exercise 2 (10 pt), More on conservative forces.}
+Which of the following force are conservative?
+\begin{itemize}
+\item 2a (2pt) $\bm{F}=k(x\bm{i}+2y\bm{j}+3z\bm{k})$ where $k$ is a constant.
+
+\item 2b (2pt) $\bm{F}=y\bm{i}+x\bm{j}+0\bm{k}$.
+
+\item 2c (2pt) $\bm{F}=k(-y\bm{i}+x\bm{j}+0\bm{k})$ where $k$ is a constant.
+
+\item 2d (4pt) For those which are conservative, find the corresponding potential energy $V$ and verify that direct differentiation that $\bm{F}=-\bm{\nabla} V$.
+\end{itemize}
+
+\noindent
+\paragraph{Exercise 3 (10 pt), The Lennard-Jones potential.}
+\href{{https://en.wikipedia.org/wiki/Lennard-Jones_potential}}{The Lennard-Jones potential} is often used to describe
+the interaction between two atoms or ions or molecules. If you end up doing materals science and molecular dynamics calculations, it is very likely that you will encounter this potential model.
+The expression for the potential energy is
+of the molecule is:
+\[
+V(r) = V_0\left((\frac{a}{r})^{12}-(\frac{b}{r})^{6}\right),
+\]
+where $V_0$, $a$ and $b$ are constants and the potential depends only on the relative distance between two objects
+$i$ and $j$, that is $r=\vert\bm{r}_i-\bm{r}_j\vert=\sqrt{(x_i-x_j)^2+(y_i-y_j)^2+(z_i-z_j)^2}$.
+
+\begin{itemize}
+\item 3a (3pt) Sketch/plot the potential (choose some values for the constants in doing so).
+
+\item 3b (3pt) Find and classify the equilibrium points.
+
+\item 3c (4pt) What is the force acting on one of the objects (an atom for example) from the other object? Is this a conservative force?
+\end{itemize}
+
+\noindent
+\paragraph{Exercise 4 (20 pt), particle in a new potential.}
+Relevant reading here is Taylor chapter 5 and the lecture notes on oscilaltions. In particular, you will find useful  sections 5.1, 5.2, 5.4-5.6. They contain all material needed to solve this exercise.
+
+Consider a particle of mass $m$ moving in a one-dimensional potential,
+\[
+V(x)=-\alpha\frac{x^2}{2}+\beta\frac{x^4}{4}.
+\]
+
+\begin{itemize}
+\item 4a (3pt) Plot the potential and discuss equilibrium points. Find the minimum value(s) of the potential.  Is this a conservative force?
+
+\item 4b (3pt) Compute the second derivative of the potential (see Taylor 5.1 and 5.2) and use this to define a spring constant $k$. Use the spring constant to find the natural (angular) frequency $\omega_0=\sqrt{k/m}$. We call the new spring constant for  an effective spring constant. 
+
+\item 4c (4pt) We ignore the second term in the potential energy and keep only the term proportional to the spring constant, that is a force $F\propto kx$. Find the acceleration and set up the differential equation.  Find the general analytical solution for these harmonic oscillations.  You don't need to find the constants in the general solution.
+
+\item 4d (5pt) Assume we have no friction. If you add a small force $F=F_0\cos{(\omega t-\delta)}$, and if the particle 
+\end{itemize}
+
+\noindent
+is initially at the minimum with zero initial velocity, find its position as a function of time. Note that here you need to add the particular solution. 
+\begin{itemize}
+\item 4e (5pt) We add now  a small drag force $-bv$ to the previous exercise (4d). Find the forces acting on the particle and the acceleration. Find also the analytical solution with the same initial conditions as in the previous exercise.
+\end{itemize}
+
+\noindent
+We will use this analytical solution in the numerical part.
+
+
+\paragraph{Exercise 5 (40pt), Sliding Block with driving force.}
+\textbf{This exercise should be handed in as a jupyter-notebook} at D2L. Remember to write your name(s). 
+
+Last week we developed a code for the sliding block including a friction term. This week we will simply reuse this code and add a force to it. The only thing we need to do is simply to add an expression for the force we want to study.
+
+\textbf{We will use the Euler-Cromer method only here}.
+
+\begin{itemize}
+\item 5a (20pt) Add the force from exercise 4d to your code from last week. If you have not done the bonus exercise from hw5, add also the friction term $-bv$ from the previous exercise. Scale your equations and study the solution as function of different values of $F_0$, $b$, $k$ and $\omega$ and $\omega_0$. Keep the initial conditions as in exercise 4d. Discuss your results. Is energy conserved? If not, why? 
+
+\item 5b (20 pt)  Compare your numerical results with the analytical ones from exercise 4. You can focus on either the results from 4e or 4d.  Discuss your results. 
+\end{itemize}
+
+\noindent
+\paragraph{Exercise 6 (30pt), Bonus exercise.}
+You don't need to do this exercise, but it gives you a bonus score of 30 points. Taylor's section 5.4 and the lecture notes on damped oscillations cover most of the theoretical background.
+
+Here we will explore resonances, using the full solution from exercise 4e.  We recommend reading section 5.6 of Taylor before starting analyzing your results.   This exercise means that you will use your code from previous exercise and study the choice of physical parameters which will lead to a resonant behavior. As such, this bonus exercises is meant as an example where you use your numerical code to explore interesting physics. 
+
+\begin{itemize}
+\item 6a (30pt)  Find the value of $\omega$ which results in a resonant behavior and study the numerical and analytical solutions for the resonant case. Discuss your results. 
+\end{itemize}
+
+\noindent
+
+% ------------------- end of main content ---------------
+
+\end{document}
+

@@ -1,0 +1,243 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="PHY321: Classical Mechanics 1">
+
+<title>PHY321: Classical Mechanics 1</title>
+
+
+<style type="text/css">
+/* bloodish style */
+
+body {
+  font-family: Helvetica, Verdana, Arial, Sans-serif;
+  color: #404040;
+  background: #ffffff;
+}
+h1 { font-size: 1.8em;  color: #8A0808; }
+h2 { font-size: 1.6em;  color: #8A0808; }
+h3 { font-size: 1.4em;  color: #8A0808; }
+h4 { color: #8A0808; }
+a { color: #8A0808; text-decoration:none; }
+tt { font-family: "Courier New", Courier; }
+/* pre style removed because it will interfer with pygments */
+p { text-indent: 0px; }
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-style: normal; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+
+div { text-align: justify; text-justify: inter-word; }
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 3,
+ 'sections': [('Practicalities about  homeworks and projects',
+               3,
+               None,
+               '___sec0'),
+              ('Introduction to homework 6', 3, None, '___sec1'),
+              ('Exercise 1 (6 pt), Conservative forces', 3, None, '___sec2'),
+              ('Exercise 2 (10 pt), More on conservative forces',
+               3,
+               None,
+               '___sec3'),
+              ('Exercise 3 (10 pt), The Lennard-Jones potential',
+               3,
+               None,
+               '___sec4'),
+              ('Exercise 4 (20 pt), particle in a new potential',
+               3,
+               None,
+               '___sec5'),
+              ('Exercise 5 (40pt), Sliding Block with driving force',
+               3,
+               None,
+               '___sec6'),
+              ('Exercise 6 (30pt), Bonus exercise', 3, None, '___sec7')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1>PHY321: Classical Mechanics 1</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Homework 6, due Monday  February 24 -->
+
+<center>
+<b>Homework 6, due Monday  February 24</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Feb 18, 2020</h4></center> <!-- date -->
+<br>
+
+<h3 id="___sec0">Practicalities about  homeworks and projects </h3>
+
+<ol>
+<li> You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. <b>Remember to write your name(s)</b>!</li>
+<li> Homeworks are available Wednesday/Thursday the week before the deadline. The deadline is at the Friday lecture.</li>
+<li> How do I(we)  hand in?  You can hand in the paper and pencil exercises as a hand-written document. For this homework this applies to exercises 1-5. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise(s) (exercise 6 here) should always be handed in as a jupyter notebook by the deadline at D2L.</li> 
+</ol>
+
+<h3 id="___sec1">Introduction to homework 6 </h3>
+
+<p>
+This week's sets of classical pen and paper and computational
+exercises are again a continuation of the topics from the previous homework sets. We keep
+discussing conservation laws, conservative forces, energy, momentum and angular momentum. These conservation laws are central in Physics and understanding them properly lays the foundation for understanding and analyzing more complicated physics problems.
+The relevant reading background is
+
+<ol>
+<li> chapters 3 and 4 of Taylor (there are many good examples there) and</li>
+<li> chapters 10-14 of Malthe-S&#248;renssen.</li>
+</ol>
+
+In both textbooks there are many nice worked out examples. Malthe-S&#248;renssen's text contains also several coding examples you may find useful. For the first three exercises here
+
+<p>
+The numerical homework is based on what you did in homework 5, but includes now an added driving force. In your code this implies a simple extension. In exercise 5, you will need to set up the analytical solutions for this case as well.
+
+<h3 id="___sec2">Exercise 1 (6 pt), Conservative forces </h3>
+
+<p>
+An additional requirement for a force to be conservative is that its <b>curl</b> is equal to zero (see Taylor section 4.5), that is
+$$
+\boldsymbol{\nabla}\times \boldsymbol{F} =0.
+$$
+
+Find the curl of the following forces
+
+<ul>
+<li> 1a (2pt) \( \boldsymbol{F}=k\boldsymbol{r} \) where \( k \) is a constant and \( \boldsymbol{r}=x\boldsymbol{i}+y\boldsymbol{j}+z\boldsymbol{k} \) where \( \boldsymbol{i},\boldsymbol{j} \) and \( \boldsymbol{k} \) are the unit vectors in the \( x \), \( y \) and \( z \) directions respectively. Previously we used \( \boldsymbol{e}_x \) etc for these unit vector. We will stick with the notation in Taylor.</li>
+<li> 1b (2pt) \( \boldsymbol{F}=Ax\boldsymbol{i}+By^2\boldsymbol{j}+Cz^2\boldsymbol{k} \) where \( A \), \( B \) and \( C \) are constants.</li>
+<li> 1c (2pt) \( \boldsymbol{F}=Ay\boldsymbol{i}+Bx\boldsymbol{j}+Cz\boldsymbol{k} \) where \( A \), \( B \) and \( C \) are constants.</li>
+</ul>
+
+<h3 id="___sec3">Exercise 2 (10 pt), More on conservative forces </h3>
+
+Which of the following force are conservative?
+
+<ul>
+<li> 2a (2pt) \( \boldsymbol{F}=k(x\boldsymbol{i}+2y\boldsymbol{j}+3z\boldsymbol{k}) \) where \( k \) is a constant.</li>
+<li> 2b (2pt) \( \boldsymbol{F}=y\boldsymbol{i}+x\boldsymbol{j}+0\boldsymbol{k} \).</li>
+<li> 2c (2pt) \( \boldsymbol{F}=k(-y\boldsymbol{i}+x\boldsymbol{j}+0\boldsymbol{k}) \) where \( k \) is a constant.</li>
+<li> 2d (4pt) For those which are conservative, find the corresponding potential energy \( V \) and verify that direct differentiation that \( \boldsymbol{F}=-\boldsymbol{\nabla} V \).</li>
+</ul>
+
+<h3 id="___sec4">Exercise 3 (10 pt), The Lennard-Jones potential </h3>
+
+<p>
+<a href="https://en.wikipedia.org/wiki/Lennard-Jones_potential" target="_blank">The Lennard-Jones potential</a> is often used to describe
+the interaction between two atoms or ions or molecules. If you end up doing materals science and molecular dynamics calculations, it is very likely that you will encounter this potential model.
+The expression for the potential energy is
+of the molecule is:
+$$
+V(r) = V_0\left((\frac{a}{r})^{12}-(\frac{b}{r})^{6}\right),
+$$
+
+where \( V_0 \), \( a \) and \( b \) are constants and the potential depends only on the relative distance between two objects
+\( i \) and \( j \), that is \( r=\vert\boldsymbol{r}_i-\boldsymbol{r}_j\vert=\sqrt{(x_i-x_j)^2+(y_i-y_j)^2+(z_i-z_j)^2} \).
+
+<ul>
+<li> 3a (3pt) Sketch/plot the potential (choose some values for the constants in doing so).</li>
+<li> 3b (3pt) Find and classify the equilibrium points.</li>
+<li> 3c (4pt) What is the force acting on one of the objects (an atom for example) from the other object? Is this a conservative force?</li>
+</ul>
+
+<h3 id="___sec5">Exercise 4 (20 pt), particle in a new potential </h3>
+
+<p>
+Relevant reading here is Taylor chapter 5 and the lecture notes on oscilaltions. In particular, you will find useful  sections 5.1, 5.2, 5.4-5.6. They contain all material needed to solve this exercise.
+
+<p>
+Consider a particle of mass \( m \) moving in a one-dimensional potential,
+$$
+V(x)=-\alpha\frac{x^2}{2}+\beta\frac{x^4}{4}.
+$$
+
+
+<ul>
+<li> 4a (3pt) Plot the potential and discuss equilibrium points. Find the minimum value(s) of the potential.  Is this a conservative force?</li>
+<li> 4b (3pt) Compute the second derivative of the potential (see Taylor 5.1 and 5.2) and use this to define a spring constant \( k \). Use the spring constant to find the natural (angular) frequency \( \omega_0=\sqrt{k/m} \). We call the new spring constant for  an effective spring constant.</li> 
+<li> 4c (4pt) We ignore the second term in the potential energy and keep only the term proportional to the spring constant, that is a force \( F\propto kx \). Find the acceleration and set up the differential equation.  Find the general analytical solution for these harmonic oscillations.  You don't need to find the constants in the general solution.</li>
+<li> 4d (5pt) Assume we have no friction. If you add a small force \( F=F_0\cos{(\omega t-\delta)} \), and if the particle</li> 
+</ul>
+
+is initially at the minimum with zero initial velocity, find its position as a function of time. Note that here you need to add the particular solution. 
+
+<ul>
+<li> 4e (5pt) We add now  a small drag force \( -bv \) to the previous exercise (4d). Find the forces acting on the particle and the acceleration. Find also the analytical solution with the same initial conditions as in the previous exercise.</li>
+</ul>
+
+We will use this analytical solution in the numerical part.
+
+<h3 id="___sec6">Exercise 5 (40pt), Sliding Block with driving force  </h3>
+
+<p>
+<b>This exercise should be handed in as a jupyter-notebook</b> at D2L. Remember to write your name(s).
+
+<p>
+Last week we developed a code for the sliding block including a friction term. This week we will simply reuse this code and add a force to it. The only thing we need to do is simply to add an expression for the force we want to study.
+
+<p>
+<b>We will use the Euler-Cromer method only here</b>.
+
+<ul>
+<li> 5a (20pt) Add the force from exercise 4d to your code from last week. If you have not done the bonus exercise from hw5, add also the friction term \( -bv \) from the previous exercise. Scale your equations and study the solution as function of different values of \( F_0 \), \( b \), \( k \) and \( \omega \) and \( \omega_0 \). Keep the initial conditions as in exercise 4d. Discuss your results. Is energy conserved? If not, why?</li> 
+<li> 5b (20 pt)  Compare your numerical results with the analytical ones from exercise 4. You can focus on either the results from 4e or 4d.  Discuss your results.</li> 
+</ul>
+
+<h3 id="___sec7">Exercise 6 (30pt), Bonus exercise </h3>
+
+<p>
+You don't need to do this exercise, but it gives you a bonus score of 30 points. Taylor's section 5.4 and the lecture notes on damped oscillations cover most of the theoretical background.
+
+<p>
+Here we will explore resonances, using the full solution from exercise 4e.  We recommend reading section 5.6 of Taylor before starting analyzing your results.   This exercise means that you will use your code from previous exercise and study the choice of physical parameters which will lead to a resonant behavior. As such, this bonus exercises is meant as an example where you use your numerical code to explore interesting physics. 
+
+<ul>
+<li> 6a (30pt)  Find the value of \( \omega \) which results in a resonant behavior and study the numerical and analytical solutions for the resonant case. Discuss your results.</li> 
+</ul>
+
+
+<!-- ------------------- end of main content --------------- -->
+
+
+</body>
+</html>
+    
+

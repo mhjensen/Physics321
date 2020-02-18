@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="PHY321: Classical Mechanics 1">
+
+<title>PHY321: Classical Mechanics 1</title>
+
+
+
+
+
+
+
+<!-- reveal.js: http://lab.hakim.se/reveal-js/ -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<!--
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/beigesmall.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/solarized.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/serif.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/moon.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/darkgray.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/cbc.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simula.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/league.css" id="theme">
+-->
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+<!-- Printing and PDF exports -->
+<script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+
+<style type="text/css">
+    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    p.caption { width: 80%; font-size: 60%; font-style: italic; text-align: left; }
+    hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    .reveal .alert-text-small   { font-size: 80%;  }
+    .reveal .alert-text-large   { font-size: 130%; }
+    .reveal .alert-text-normal  { font-size: 90%;  }
+    .reveal .alert {
+             padding:8px 35px 8px 14px; margin-bottom:18px;
+             text-shadow:0 1px 0 rgba(255,255,255,0.5);
+             border:5px solid #bababa;
+             -webkit-border-radius: 14px; -moz-border-radius: 14px;
+             border-radius:14px;
+             background-position: 10px 10px;
+             background-repeat: no-repeat;
+             background-size: 38px;
+             padding-left: 30px; /* 55px; if icon */
+     }
+     .reveal .alert-block {padding-top:14px; padding-bottom:14px}
+     .reveal .alert-block > p, .alert-block > ul {margin-bottom:1em}
+     /*.reveal .alert li {margin-top: 1em}*/
+     .reveal .alert-block p+p {margin-top:5px}
+     /*.reveal .alert-notice { background-image: url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_notice.png); }
+     .reveal .alert-summary  { background-image:url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_summary.png); }
+     .reveal .alert-warning { background-image: url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_warning.png); }
+     .reveal .alert-question {background-image:url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_question.png); } */
+
+</style>
+
+
+
+<!-- Styles for table layout of slides -->
+<style type="text/css">
+td.padding {
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-right:50px;
+  padding-left:50px;
+}
+</style>
+
+</head>
+
+<body>
+<div class="reveal">
+
+<!-- Any section element inside the <div class="slides"> container
+     is displayed as a slide -->
+
+<div class="slides">
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+
+
+
+<section>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1 style="text-align: center;">PHY321: Classical Mechanics 1</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Homework 6, due Monday  February 24 -->
+
+<center>
+<b>Homework 6, due Monday  February 24</b> 
+</center>
+
+<p>&nbsp;<br>
+<!-- institution(s) -->
+
+<br>
+<p>&nbsp;<br>
+<center><h4>Feb 18, 2020</h4></center> <!-- date -->
+<br>
+
+<h3 id="___sec0">Practicalities about  homeworks and projects </h3>
+
+<ol>
+<p><li> You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. <b>Remember to write your name(s)</b>!</li>
+<p><li> Homeworks are available Wednesday/Thursday the week before the deadline. The deadline is at the Friday lecture.</li>
+<p><li> How do I(we)  hand in?  You can hand in the paper and pencil exercises as a hand-written document. For this homework this applies to exercises 1-5. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise(s) (exercise 6 here) should always be handed in as a jupyter notebook by the deadline at D2L.</li> 
+</ol>
+
+<h3 id="___sec1">Introduction to homework 6 </h3>
+
+<p>
+This week's sets of classical pen and paper and computational
+exercises are again a continuation of the topics from the previous homework sets. We keep
+discussing conservation laws, conservative forces, energy, momentum and angular momentum. These conservation laws are central in Physics and understanding them properly lays the foundation for understanding and analyzing more complicated physics problems.
+The relevant reading background is
+
+<ol>
+<p><li> chapters 3 and 4 of Taylor (there are many good examples there) and</li>
+<p><li> chapters 10-14 of Malthe-S&#248;renssen.</li>
+</ol>
+<p>
+
+In both textbooks there are many nice worked out examples. Malthe-S&#248;renssen's text contains also several coding examples you may find useful. For the first three exercises here
+
+<p>
+The numerical homework is based on what you did in homework 5, but includes now an added driving force. In your code this implies a simple extension. In exercise 5, you will need to set up the analytical solutions for this case as well.
+
+<h3 id="___sec2">Exercise 1 (6 pt), Conservative forces </h3>
+
+<p>
+An additional requirement for a force to be conservative is that its <b>curl</b> is equal to zero (see Taylor section 4.5), that is
+<p>&nbsp;<br>
+$$
+\boldsymbol{\nabla}\times \boldsymbol{F} =0.
+$$
+<p>&nbsp;<br>
+
+Find the curl of the following forces
+
+<ul>
+<p><li> 1a (2pt) \( \boldsymbol{F}=k\boldsymbol{r} \) where \( k \) is a constant and \( \boldsymbol{r}=x\boldsymbol{i}+y\boldsymbol{j}+z\boldsymbol{k} \) where \( \boldsymbol{i},\boldsymbol{j} \) and \( \boldsymbol{k} \) are the unit vectors in the \( x \), \( y \) and \( z \) directions respectively. Previously we used \( \boldsymbol{e}_x \) etc for these unit vector. We will stick with the notation in Taylor.</li>
+<p><li> 1b (2pt) \( \boldsymbol{F}=Ax\boldsymbol{i}+By^2\boldsymbol{j}+Cz^2\boldsymbol{k} \) where \( A \), \( B \) and \( C \) are constants.</li>
+<p><li> 1c (2pt) \( \boldsymbol{F}=Ay\boldsymbol{i}+Bx\boldsymbol{j}+Cz\boldsymbol{k} \) where \( A \), \( B \) and \( C \) are constants.</li>
+</ul>
+
+<h3 id="___sec3">Exercise 2 (10 pt), More on conservative forces </h3>
+
+Which of the following force are conservative?
+
+<ul>
+<p><li> 2a (2pt) \( \boldsymbol{F}=k(x\boldsymbol{i}+2y\boldsymbol{j}+3z\boldsymbol{k}) \) where \( k \) is a constant.</li>
+<p><li> 2b (2pt) \( \boldsymbol{F}=y\boldsymbol{i}+x\boldsymbol{j}+0\boldsymbol{k} \).</li>
+<p><li> 2c (2pt) \( \boldsymbol{F}=k(-y\boldsymbol{i}+x\boldsymbol{j}+0\boldsymbol{k}) \) where \( k \) is a constant.</li>
+<p><li> 2d (4pt) For those which are conservative, find the corresponding potential energy \( V \) and verify that direct differentiation that \( \boldsymbol{F}=-\boldsymbol{\nabla} V \).</li>
+</ul>
+
+<h3 id="___sec4">Exercise 3 (10 pt), The Lennard-Jones potential </h3>
+
+<p>
+<a href="https://en.wikipedia.org/wiki/Lennard-Jones_potential" target="_blank">The Lennard-Jones potential</a> is often used to describe
+the interaction between two atoms or ions or molecules. If you end up doing materals science and molecular dynamics calculations, it is very likely that you will encounter this potential model.
+The expression for the potential energy is
+of the molecule is:
+<p>&nbsp;<br>
+$$
+V(r) = V_0\left((\frac{a}{r})^{12}-(\frac{b}{r})^{6}\right),
+$$
+<p>&nbsp;<br>
+
+where \( V_0 \), \( a \) and \( b \) are constants and the potential depends only on the relative distance between two objects
+\( i \) and \( j \), that is \( r=\vert\boldsymbol{r}_i-\boldsymbol{r}_j\vert=\sqrt{(x_i-x_j)^2+(y_i-y_j)^2+(z_i-z_j)^2} \).
+
+<ul>
+<p><li> 3a (3pt) Sketch/plot the potential (choose some values for the constants in doing so).</li>
+<p><li> 3b (3pt) Find and classify the equilibrium points.</li>
+<p><li> 3c (4pt) What is the force acting on one of the objects (an atom for example) from the other object? Is this a conservative force?</li>
+</ul>
+
+<h3 id="___sec5">Exercise 4 (20 pt), particle in a new potential </h3>
+
+<p>
+Relevant reading here is Taylor chapter 5 and the lecture notes on oscilaltions. In particular, you will find useful  sections 5.1, 5.2, 5.4-5.6. They contain all material needed to solve this exercise.
+
+<p>
+Consider a particle of mass \( m \) moving in a one-dimensional potential,
+<p>&nbsp;<br>
+$$
+V(x)=-\alpha\frac{x^2}{2}+\beta\frac{x^4}{4}.
+$$
+<p>&nbsp;<br>
+
+
+<ul>
+<p><li> 4a (3pt) Plot the potential and discuss equilibrium points. Find the minimum value(s) of the potential.  Is this a conservative force?</li>
+<p><li> 4b (3pt) Compute the second derivative of the potential (see Taylor 5.1 and 5.2) and use this to define a spring constant \( k \). Use the spring constant to find the natural (angular) frequency \( \omega_0=\sqrt{k/m} \). We call the new spring constant for  an effective spring constant.</li> 
+<p><li> 4c (4pt) We ignore the second term in the potential energy and keep only the term proportional to the spring constant, that is a force \( F\propto kx \). Find the acceleration and set up the differential equation.  Find the general analytical solution for these harmonic oscillations.  You don't need to find the constants in the general solution.</li>
+<p><li> 4d (5pt) Assume we have no friction. If you add a small force \( F=F_0\cos{(\omega t-\delta)} \), and if the particle</li> 
+</ul>
+<p>
+
+is initially at the minimum with zero initial velocity, find its position as a function of time. Note that here you need to add the particular solution. 
+
+<ul>
+<p><li> 4e (5pt) We add now  a small drag force \( -bv \) to the previous exercise (4d). Find the forces acting on the particle and the acceleration. Find also the analytical solution with the same initial conditions as in the previous exercise.</li>
+</ul>
+<p>
+
+We will use this analytical solution in the numerical part.
+
+<h3 id="___sec6">Exercise 5 (40pt), Sliding Block with driving force  </h3>
+
+<p>
+<b>This exercise should be handed in as a jupyter-notebook</b> at D2L. Remember to write your name(s).
+
+<p>
+Last week we developed a code for the sliding block including a friction term. This week we will simply reuse this code and add a force to it. The only thing we need to do is simply to add an expression for the force we want to study.
+
+<p>
+<b>We will use the Euler-Cromer method only here</b>.
+
+<ul>
+<p><li> 5a (20pt) Add the force from exercise 4d to your code from last week. If you have not done the bonus exercise from hw5, add also the friction term \( -bv \) from the previous exercise. Scale your equations and study the solution as function of different values of \( F_0 \), \( b \), \( k \) and \( \omega \) and \( \omega_0 \). Keep the initial conditions as in exercise 4d. Discuss your results. Is energy conserved? If not, why?</li> 
+<p><li> 5b (20 pt)  Compare your numerical results with the analytical ones from exercise 4. You can focus on either the results from 4e or 4d.  Discuss your results.</li> 
+</ul>
+
+<h3 id="___sec7">Exercise 6 (30pt), Bonus exercise </h3>
+
+<p>
+You don't need to do this exercise, but it gives you a bonus score of 30 points. Taylor's section 5.4 and the lecture notes on damped oscillations cover most of the theoretical background.
+
+<p>
+Here we will explore resonances, using the full solution from exercise 4e.  We recommend reading section 5.6 of Taylor before starting analyzing your results.   This exercise means that you will use your code from previous exercise and study the choice of physical parameters which will lead to a resonant behavior. As such, this bonus exercises is meant as an example where you use your numerical code to explore interesting physics. 
+
+<ul>
+<p><li> 6a (30pt)  Find the value of \( \omega \) which results in a resonant behavior and study the numerical and analytical solutions for the resonant case. Discuss your results.</li> 
+</ul>
+</section>
+
+
+
+</div> <!-- class="slides" -->
+</div> <!-- class="reveal" -->
+
+<script src="reveal.js/lib/js/head.min.js"></script>
+<script src="reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+    // Display navigation controls in the bottom right corner
+    controls: true,
+
+    // Display progress bar (below the horiz. slider)
+    progress: true,
+
+    // Display the page number of the current slide
+    slideNumber: true,
+
+    // Push each slide change to the browser history
+    history: false,
+
+    // Enable keyboard shortcuts for navigation
+    keyboard: true,
+
+    // Enable the slide overview mode
+    overview: true,
+
+    // Vertical centering of slides
+    //center: true,
+    center: false,
+
+    // Enables touch navigation on devices with touch input
+    touch: true,
+
+    // Loop the presentation
+    loop: false,
+
+    // Change the presentation direction to be RTL
+    rtl: false,
+
+    // Turns fragments on and off globally
+    fragments: true,
+
+    // Flags if the presentation is running in an embedded mode,
+    // i.e. contained within a limited portion of the screen
+    embedded: false,
+
+    // Number of milliseconds between automatically proceeding to the
+    // next slide, disabled when set to 0, this value can be overwritten
+    // by using a data-autoslide attribute on your slides
+    autoSlide: 0,
+
+    // Stop auto-sliding after user input
+    autoSlideStoppable: true,
+
+    // Enable slide navigation via mouse wheel
+    mouseWheel: false,
+
+    // Hides the address bar on mobile devices
+    hideAddressBar: true,
+
+    // Opens links in an iframe preview overlay
+    previewLinks: false,
+
+    // Transition style
+    transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+    // Transition speed
+    transitionSpeed: 'default', // default/fast/slow
+
+    // Transition style for full page slide backgrounds
+    backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
+
+    // Number of slides away from the current that are visible
+    viewDistance: 3,
+
+    // Parallax background image
+    //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+    // Parallax background size
+    //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+
+    theme: Reveal.getQueryHash().theme, // available themes are in reveal.js/css/theme
+    transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+});
+
+Reveal.initialize({
+    dependencies: [
+        // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+        { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+        // Interpret Markdown in <section> elements
+        { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+        // Syntax highlight for <code> elements
+        { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+        // Zoom in and out with Alt+click
+        { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // Speaker notes
+        { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // Remote control your reveal.js presentation using a touch device
+        //{ src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // MathJax
+        //{ src: 'reveal.js/plugin/math/math.js', async: true }
+    ]
+});
+
+Reveal.initialize({
+
+    // The "normal" size of the presentation, aspect ratio will be preserved
+    // when the presentation is scaled to fit different resolutions. Can be
+    // specified using percentage units.
+    width: 1170,  // original: 960,
+    height: 700,
+
+    // Factor of the display size that should remain empty around the content
+    margin: 0.1,
+
+    // Bounds for smallest/largest possible scale to apply to content
+    minScale: 0.2,
+    maxScale: 1.0
+
+});
+</script>
+
+<!-- begin footer logo
+<div style="position: absolute; bottom: 0px; left: 0; margin-left: 0px">
+<img src="somelogo.png">
+</div>
+     end footer logo -->
+
+
+
+</body>
+</html>
