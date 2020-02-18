@@ -21,8 +21,6 @@ final,                   % draft: marks overfull hboxes, figures with paths
 \usepackage[pdftex]{graphicx}
 
 \usepackage{fancyvrb} % packages needed for verbatim environments
-\usepackage{verbatim}
-%\usemintedstyle{default}
 
 \usepackage[T1]{fontenc}
 %\usepackage[latin1]{inputenc}
@@ -103,7 +101,7 @@ PHY321: Classical Mechanics 1
 
 % --- begin date ---
 \begin{center}
-Feb 12, 2020
+Feb 18, 2020
 \end{center}
 % --- end date ---
 
@@ -182,20 +180,20 @@ m\frac{d^2x(t)}{dt^2}=F(x) = -k(x-b),
 where $k$ is a material specific constant and $b$ is the equilibrium position. The block has mass $m$ and $t$ is time. Define the initial time as $t_0$. We will for simplicity set the equilibrium position to zero, that is $b=0$.
 
 \begin{itemize}
-\item 6a (3pt) Does this force conserve energy? If so, with given initial position and velocity $x_0$ and $v_0$, respectively, find the expression for energy conservation in terms of the potential and kinetic energies.  
+\item 5a (3pt) Does this force conserve energy? If so, with given initial position and velocity $x_0$ and $v_0$, respectively, find the expression for energy conservation in terms of the potential and kinetic energies.  
 
-\item 6b (3pt) Define a constant $\omega_0=\sqrt{k/m}$ and show that you can write the acceleration as $a(t) = -\omega_0^2 x(t)$. What is the dimentionality of $\omega_0$? (it is normally called a natural frequency).  
+\item 5b (3pt) Define a constant $\omega_0=\sqrt{k/m}$ and show that you can write the acceleration as $a(t) = -\omega_0^2 x(t)$. What is the dimentionality of $\omega_0$? (it is normally called a natural frequency).  
 
-\item 6c (4pt) Introduce now a dimensionless time $\tau = t\omega_0$. Show that you can rewrite the  equation for the acceleration in terms of two first-order differential equations
+\item 5c (4pt) Introduce now a dimensionless time $\tau = t\omega_0$. Show that you can rewrite the  equation for the acceleration in terms of two first-order differential equations
 \end{itemize}
 
 \noindent
 \[
-\frac{dv}{d\tau} = -x,
+\frac{dv}{d\tau} = -x(\tau),
 \]
 and
 \[
-\frac{dx}{d\tau} = v.
+\frac{dx}{d\tau} = v(\tau).
 \]
 What are the dimensionalities of these two equations?
 
@@ -223,16 +221,16 @@ The advantage with the block sliding back and forth is that we have analytical s
 
 
 \begin{itemize}
-\item 7a (20pt) Find the analytical solutions for the velocity and position as function of the initial conditions. 
+\item 6a (20pt) Find the analytical solutions for the velocity and position as function of the initial conditions. 
 
-\item 7b (20 pt)  Write then a program which solves the above differential equations for the sliding blook using the Euler-Cromer  method and the velocity Verlet method. Study the results for the position, velocity and energy conservation as function of time and the step size in time. Compare the numerical results with the analytical ones. Check that your results for position and velocity obey periodicity. 
+\item 6b (20 pt)  Write then a program which solves the above differential equations for the sliding blook using the Euler-Cromer  method and the velocity Verlet method. Study the results for the position, velocity and energy conservation as function of time and the step size in time. Compare the numerical results with the analytical ones. Check that your results for position and velocity obey periodicity. 
 \end{itemize}
 
 \noindent
 Is energy properly conserved? Discuss your results. 
 
 Here follows a simple code example which could be used to study the sliding block.
-\begin{verbatim}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
+\begin{verbatim}
 DeltaT = 0.001
 #set up arrays 
 tfinal = 10 # in seconds
@@ -258,7 +256,7 @@ for i in range(n-1):
 \end{verbatim}
 
 
-\paragraph{Exercise 8 (30pt), Bonus exercise.}
+\paragraph{Exercise 7 (30pt), Bonus exercise.}
 You don't need to do this exercise, but it gives you a bonus score of 30 points. Taylor's section 5.4 and the lecture notes on damped oscillations cover most of the theoretical background.
 
 In this exercise we will add to our program a first derivative of position (the velocity) which is meant to mimick the role of friction.
@@ -273,28 +271,30 @@ We have thus assumed that friction depends on velocity in a linear
 way.
 
 We introduce again the dimensionless time $\tau = t\omega_0$ with
-$\omega_0=\sqrt{k/m}$.
+$\omega_0=\sqrt{k/(m\omega_0)}$.
 
 \begin{itemize}
-\item 8a (10pt) Divide by $m$ and show that you can rewrite your equation as two first-order coupled differential equations
+\item 7a (10pt) Divide by $m$ and show that you can rewrite your equation as two first-order coupled differential equations
 \end{itemize}
 
 \noindent
 \[
-\frac{dv}{d\tau} = -2v(t)\gamma-x(t),
+\frac{dv}{d\tau} = -2v(t)\gamma-x(\tau),
 \]
 and
 \[
-\frac{dx}{d\tau} = v(t).
+\frac{dx}{d\tau} = v(\tau).
 \]
 What are the dimensionalities of these two equations? We have defined $\gamma = \beta/2m$.  
 
 
 \begin{itemize}
-\item 8b (20pt)  Add the role of friction to your code from exercise 7 and study the cases where (i) $\gamma < \omega_0$ (underdamping), (ii) $\gamma = omega_0$ ( critical damping) and (iii) $\gamma > omega_0$ (overdamping). Plot your resulting positions as functions of time and discuss the physical meaning of your results.
+\item 7b (20pt)  Add the role of friction to your code from exercise 7 and study the cases where (i) $\gamma < 1$ (underdamping), (ii) $\gamma = 1$ ( critical damping) and (iii) $\gamma > \omega_0$ (overdamping). Plot your resulting positions as functions of time and discuss the physical meaning of your results. Note that in the definition of $\gamma$ we have used the dimensionless form of it. If you do not use that, then you would have $\gamma < \omega_0$, $\gamma =\omega_0$ or
 \end{itemize}
 
 \noindent
+$\gamma > \omega_0$, depending on whether you have underdamping, critical damping or overdamping, respectively.
+
 
 % ------------------- end of main content ---------------
 

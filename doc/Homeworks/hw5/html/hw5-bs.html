@@ -66,7 +66,7 @@ Automatically generated HTML file from DocOnce source
                3,
                None,
                '___sec7'),
-              ('Exercise 8 (30pt), Bonus exercise', 3, None, '___sec8')]}
+              ('Exercise 7 (30pt), Bonus exercise', 3, None, '___sec8')]}
 end of tocinfo -->
 
 <body>
@@ -112,7 +112,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="#___sec5" style="font-size: 80%;">Exercise 4 (10pt), Center of mass</a></li>
      <!-- navigation toc: --> <li><a href="#___sec6" style="font-size: 80%;">Exercise 5 (10pt), Sliding Block  and Spring (please not again), Scaling the Equations and getting started with numerical project</a></li>
      <!-- navigation toc: --> <li><a href="#___sec7" style="font-size: 80%;">Exercise 6 (40pt), Sliding Block  and Spring, now the code</a></li>
-     <!-- navigation toc: --> <li><a href="#___sec8" style="font-size: 80%;">Exercise 8 (30pt), Bonus exercise</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec8" style="font-size: 80%;">Exercise 7 (30pt), Bonus exercise</a></li>
 
         </ul>
       </li>
@@ -144,7 +144,7 @@ MathJax.Hub.Config({
 
 <br>
 <p>
-<center><h4>Feb 12, 2020</h4></center> <!-- date -->
+<center><h4>Feb 18, 2020</h4></center> <!-- date -->
 <br>
 <p>
 </div> <!-- end jumbotron -->
@@ -224,18 +224,18 @@ $$
 where \( k \) is a material specific constant and \( b \) is the equilibrium position. The block has mass \( m \) and \( t \) is time. Define the initial time as \( t_0 \). We will for simplicity set the equilibrium position to zero, that is \( b=0 \).
 
 <ul>
-<li> 6a (3pt) Does this force conserve energy? If so, with given initial position and velocity \( x_0 \) and \( v_0 \), respectively, find the expression for energy conservation in terms of the potential and kinetic energies.</li>  
-<li> 6b (3pt) Define a constant \( \omega_0=\sqrt{k/m} \) and show that you can write the acceleration as \( a(t) = -\omega_0^2 x(t) \). What is the dimentionality of \( \omega_0 \)? (it is normally called a natural frequency).</li>  
-<li> 6c (4pt) Introduce now a dimensionless time \( \tau = t\omega_0 \). Show that you can rewrite the  equation for the acceleration in terms of two first-order differential equations</li>
+<li> 5a (3pt) Does this force conserve energy? If so, with given initial position and velocity \( x_0 \) and \( v_0 \), respectively, find the expression for energy conservation in terms of the potential and kinetic energies.</li>  
+<li> 5b (3pt) Define a constant \( \omega_0=\sqrt{k/m} \) and show that you can write the acceleration as \( a(t) = -\omega_0^2 x(t) \). What is the dimentionality of \( \omega_0 \)? (it is normally called a natural frequency).</li>  
+<li> 5c (4pt) Introduce now a dimensionless time \( \tau = t\omega_0 \). Show that you can rewrite the  equation for the acceleration in terms of two first-order differential equations</li>
 </ul>
 
 $$
-\frac{dv}{d\tau} = -x,
+\frac{dv}{d\tau} = -x(\tau),
 $$
 
 and
 $$
-\frac{dx}{d\tau} = v.
+\frac{dx}{d\tau} = v(\tau).
 $$
 
 What are the dimensionalities of these two equations?
@@ -265,8 +265,8 @@ only that degree of freedom.
 The advantage with the block sliding back and forth is that we have analytical solutions for the velocity and the position. 
 
 <ul>
-<li> 7a (20pt) Find the analytical solutions for the velocity and position as function of the initial conditions.</li> 
-<li> 7b (20 pt)  Write then a program which solves the above differential equations for the sliding blook using the Euler-Cromer  method and the velocity Verlet method. Study the results for the position, velocity and energy conservation as function of time and the step size in time. Compare the numerical results with the analytical ones. Check that your results for position and velocity obey periodicity.</li> 
+<li> 6a (20pt) Find the analytical solutions for the velocity and position as function of the initial conditions.</li> 
+<li> 6b (20 pt)  Write then a program which solves the above differential equations for the sliding blook using the Euler-Cromer  method and the velocity Verlet method. Study the results for the position, velocity and energy conservation as function of time and the step size in time. Compare the numerical results with the analytical ones. Check that your results for position and velocity obey periodicity.</li> 
 </ul>
 
 Is energy properly conserved? Discuss your results.
@@ -300,7 +300,7 @@ v[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> v
     t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i] <span style="color: #666666">+</span> DeltaT
 </pre></div>
 
-<h3 id="___sec8" class="anchor">Exercise 8 (30pt), Bonus exercise </h3>
+<h3 id="___sec8" class="anchor">Exercise 7 (30pt), Bonus exercise </h3>
 
 <p>
 You don't need to do this exercise, but it gives you a bonus score of 30 points. Taylor's section 5.4 and the lecture notes on damped oscillations cover most of the theoretical background.
@@ -320,27 +320,28 @@ way.
 
 <p>
 We introduce again the dimensionless time \( \tau = t\omega_0 \) with
-\( \omega_0=\sqrt{k/m} \).
+\( \omega_0=\sqrt{k/(m\omega_0)} \).
 
 <ul>
-<li> 8a (10pt) Divide by \( m \) and show that you can rewrite your equation as two first-order coupled differential equations</li>
+<li> 7a (10pt) Divide by \( m \) and show that you can rewrite your equation as two first-order coupled differential equations</li>
 </ul>
 
 $$
-\frac{dv}{d\tau} = -2v(t)\gamma-x(t),
+\frac{dv}{d\tau} = -2v(t)\gamma-x(\tau),
 $$
 
 and
 $$
-\frac{dx}{d\tau} = v(t).
+\frac{dx}{d\tau} = v(\tau).
 $$
 
 What are the dimensionalities of these two equations? We have defined \( \gamma = \beta/2m \).  
 
 <ul>
-<li> 8b (20pt)  Add the role of friction to your code from exercise 7 and study the cases where (i) \( \gamma < \omega_0 \) (underdamping), (ii) \( \gamma = omega_0 \) ( critical damping) and (iii) \( \gamma > omega_0 \) (overdamping). Plot your resulting positions as functions of time and discuss the physical meaning of your results.</li>
+<li> 7b (20pt)  Add the role of friction to your code from exercise 7 and study the cases where (i) \( \gamma < 1 \) (underdamping), (ii) \( \gamma = 1 \) ( critical damping) and (iii) \( \gamma > \omega_0 \) (overdamping). Plot your resulting positions as functions of time and discuss the physical meaning of your results. Note that in the definition of \( \gamma \) we have used the dimensionless form of it. If you do not use that, then you would have \( \gamma < \omega_0 \), \( \gamma =\omega_0 \) or</li>
 </ul>
 
+\( \gamma > \omega_0 \), depending on whether you have underdamping, critical damping or overdamping, respectively.
 
 <!-- ------------------- end of main content --------------- -->
 
