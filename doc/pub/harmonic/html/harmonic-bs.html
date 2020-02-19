@@ -54,22 +54,26 @@ Automatically generated HTML file from DocOnce source
                '___sec7'),
               ('Resonance Widths; the $Q$ factor', 2, None, '___sec8'),
               ('Numerical Studies of Driven Oscillations', 2, None, '___sec9'),
-              ('The Runge-Kutta Family of Methods', 2, None, '___sec10'),
               ('Differential Equations, Runge-Kutta methods',
                2,
                None,
-               '___sec11'),
+               '___sec10'),
               ('Principle of Superposition and Periodic Forces (Fourier '
                'Transforms)',
                2,
                None,
-               '___sec12'),
-              ('Response to Transient Force', 2, None, '___sec13'),
+               '___sec11'),
+              ('Fourier Series', 2, None, '___sec12'),
+              ('Solving differential equations with Fouries series',
+               2,
+               None,
+               '___sec13'),
+              ('Response to Transient Force', 2, None, '___sec14'),
               ('The classical pendulum and scaling the equations',
                2,
                None,
-               '___sec14'),
-              ('More on the Pendulum', 2, None, '___sec15')]}
+               '___sec15'),
+              ('More on the Pendulum', 2, None, '___sec16')]}
 end of tocinfo -->
 
 <body>
@@ -117,12 +121,13 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="#___sec7" style="font-size: 80%;"><b>Alternative Derivation for Driven Oscillators</b></a></li>
      <!-- navigation toc: --> <li><a href="#___sec8" style="font-size: 80%;"><b>Resonance Widths; the \( Q \) factor</b></a></li>
      <!-- navigation toc: --> <li><a href="#___sec9" style="font-size: 80%;"><b>Numerical Studies of Driven Oscillations</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec10" style="font-size: 80%;"><b>The Runge-Kutta Family of Methods</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec11" style="font-size: 80%;"><b>Differential Equations, Runge-Kutta methods</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec12" style="font-size: 80%;"><b>Principle of Superposition and Periodic Forces (Fourier Transforms)</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec13" style="font-size: 80%;"><b>Response to Transient Force</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec14" style="font-size: 80%;"><b>The classical pendulum and scaling the equations</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec15" style="font-size: 80%;"><b>More on the Pendulum</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec10" style="font-size: 80%;"><b>Differential Equations, Runge-Kutta methods</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec11" style="font-size: 80%;"><b>Principle of Superposition and Periodic Forces (Fourier Transforms)</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec12" style="font-size: 80%;"><b>Fourier Series</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec13" style="font-size: 80%;"><b>Solving differential equations with Fouries series</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec14" style="font-size: 80%;"><b>Response to Transient Force</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec15" style="font-size: 80%;"><b>The classical pendulum and scaling the equations</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec16" style="font-size: 80%;"><b>More on the Pendulum</b></a></li>
 
         </ul>
       </li>
@@ -165,7 +170,7 @@ MathJax.Hub.Config({
 <center>[3] <b>Department of Physics and Astronomy, Michigan State University, USA</b></center>
 <br>
 <p>
-<center><h4>Feb 11, 2020</h4></center> <!-- date -->
+<center><h4>Feb 19, 2020</h4></center> <!-- date -->
 <br>
 <p>
 </div> <!-- end jumbotron -->
@@ -692,7 +697,7 @@ $$
 $$
 
 <p>
-Using the identities \( \tan^2+1=\csc^2 \) and \( \sin^2+\cos\^2=1 \), one can also express \( \sin\delta \) and \( \cos\delta \),
+Using the identities \( \tan^2+1=\csc^2 \) and \( \sin^2+\cos^2=1 \), one can also express \( \sin\delta \) and \( \cos\delta \),
 
 $$
 \begin{eqnarray}
@@ -1031,12 +1036,7 @@ Let us revisit this method and see how we can implement it for the above example
 <p>
 <!-- !split -->
 
-<h2 id="___sec10" class="anchor">The Runge-Kutta Family of Methods </h2>
-
-<p>
-<!-- !split -->
-
-<h2 id="___sec11" class="anchor">Differential Equations, Runge-Kutta methods </h2>
+<h2 id="___sec10" class="anchor">Differential Equations, Runge-Kutta methods </h2>
 
 <p>
 Runge-Kutta (RK) methods are based on Taylor expansion formulae, but yield
@@ -1175,7 +1175,7 @@ size by \( h/2 \) and calculate \( k_2 \), then \( k_3 \) and finally \( k_4 \).
 <p>
 <!-- !split  -->
 
-<h2 id="___sec12" class="anchor">Principle of Superposition and Periodic Forces (Fourier Transforms) </h2>
+<h2 id="___sec11" class="anchor">Principle of Superposition and Periodic Forces (Fourier Transforms) </h2>
 
 <p>
 If one has several driving forces, \( F(t)=\sum_n F_n(t) \), one can find
@@ -1371,7 +1371,62 @@ $$
 <p>
 <!-- !split -->
 
-<h2 id="___sec13" class="anchor">Response to Transient Force </h2>
+<h2 id="___sec12" class="anchor">Fourier Series </h2>
+
+<p>
+More text will come here, chpater 5.7-5.8 of Taylor are discussed
+during the lectures. The code here uses the Fourier series discussed
+in chapter 5.7 for a square wave signal. The equations for the
+coefficients are are discussed in Taylor section 5.7, see Example
+5.4. The code here visualizes the various approximations given by
+Fourier series compared with a square wave with period \( T=0.2 \), witth
+\( 0.1 \) and max value \( F=2 \). We see that when we increase the number of
+components in the Fourier series, the Fourier series approximation gets closes and closes to the square wave signal.
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">math</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">scipy</span> <span style="color: #008000; font-weight: bold">import</span> signal
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+
+<span style="color: #408080; font-style: italic"># number of points                                                                                       </span>
+n <span style="color: #666666">=</span> <span style="color: #666666">500</span>
+<span style="color: #408080; font-style: italic"># start and final times                                                                                  </span>
+t0 <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
+tn <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>
+<span style="color: #408080; font-style: italic"># Period                                                                                                 </span>
+T <span style="color: #666666">=0.2</span>
+<span style="color: #408080; font-style: italic"># Max value of square signal                                                                             </span>
+Fmax<span style="color: #666666">=</span> <span style="color: #666666">2.0</span>
+<span style="color: #408080; font-style: italic"># Width of signal                                                                                        </span>
+Width <span style="color: #666666">=</span> <span style="color: #666666">0.1</span>
+t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linspace(t0, tn, n, endpoint<span style="color: #666666">=</span><span style="color: #008000">False</span>)
+SqrSignal <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+FourierSeriesSignal <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+SqrSignal <span style="color: #666666">=</span> <span style="color: #666666">1.0+</span>signal<span style="color: #666666">.</span>square(<span style="color: #666666">2*</span>np<span style="color: #666666">.</span>pi<span style="color: #666666">*5*</span>t<span style="color: #666666">+</span>np<span style="color: #666666">.</span>pi<span style="color: #666666">*</span>Width<span style="color: #666666">/</span>T)
+a0 <span style="color: #666666">=</span> Fmax<span style="color: #666666">*</span>Width<span style="color: #666666">/</span>T
+FourierSeriesSignal <span style="color: #666666">=</span> a0
+Factor <span style="color: #666666">=</span> <span style="color: #666666">2.0*</span>Fmax<span style="color: #666666">/</span>np<span style="color: #666666">.</span>pi
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">1</span>,<span style="color: #666666">500</span>):
+    FourierSeriesSignal <span style="color: #666666">+=</span> Factor<span style="color: #666666">/</span>(i)<span style="color: #666666">*</span>np<span style="color: #666666">.</span>sin(np<span style="color: #666666">.</span>pi<span style="color: #666666">*</span>i<span style="color: #666666">*</span>Width<span style="color: #666666">/</span>T)<span style="color: #666666">*</span>np<span style="color: #666666">.</span>cos(i<span style="color: #666666">*</span>t<span style="color: #666666">*2*</span>np<span style="color: #666666">.</span>pi<span style="color: #666666">/</span>T)
+plt<span style="color: #666666">.</span>plot(t, SqrSignal)
+plt<span style="color: #666666">.</span>plot(t, FourierSeriesSignal)
+plt<span style="color: #666666">.</span>ylim(<span style="color: #666666">-0.5</span>, <span style="color: #666666">2.5</span>)
+plt<span style="color: #666666">.</span>show()
+</pre></div>
+<p>
+<!-- !split -->
+
+<h2 id="___sec13" class="anchor">Solving differential equations with Fouries series </h2>
+The material here was discussed during the lecture of February 19 and 21.
+It is also covered by Taylor in section 5.8.
+
+<p>
+<!-- !split -->
+
+<h2 id="___sec14" class="anchor">Response to Transient Force </h2>
 
 <p>
 Consider a particle at rest in the bottom of an underdamped harmonic
@@ -1515,7 +1570,7 @@ $$
 <p>
 <!-- !split -->
 
-<h2 id="___sec14" class="anchor">The classical pendulum and scaling the equations </h2>
+<h2 id="___sec15" class="anchor">The classical pendulum and scaling the equations </h2>
 
 <p>
 Let us end our discussion of oscillations with another classical case, the pendulum.
@@ -1597,7 +1652,7 @@ $$
 <p>
 <!-- !split -->
 
-<h2 id="___sec15" class="anchor">More on the Pendulum </h2>
+<h2 id="___sec16" class="anchor">More on the Pendulum </h2>
 
 <p>
 We have 
