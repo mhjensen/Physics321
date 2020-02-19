@@ -53,7 +53,6 @@ system doconce format ipynb $name $opt
 
 # Ordinary plain LaTeX document
 rm -f *.aux  # important after beamer
-#system doconce format pdflatex $name --minted_latex_style=trac --latex_admon=paragraph $opt
 system doconce format pdflatex $name $opt
 system doconce ptex2tex $name envir=verbatim
 # Add special packages
@@ -61,13 +60,13 @@ doconce subst "% Add user's preamble" "\g<1>\n\\usepackage{simplewick}" $name.te
 doconce replace 'section{' 'section*{' $name.tex
 pdflatex -shell-escape $name
 pdflatex -shell-escape $name
-mv -f $name.pdf ${name}.pdf
-cp $name.tex ${name}.tex
+mv -f $name.pdf ${name}-minted.pdf
+cp $name.tex ${name}-plain-minted.tex
 
 
 
 # Publish
-dest=../../../Homeworks/
+dest=../../pub
 if [ ! -d $dest/$name ]; then
 mkdir $dest/$name
 mkdir $dest/$name/pdf
@@ -76,7 +75,6 @@ mkdir $dest/$name/ipynb
 fi
 cp ${name}*.pdf $dest/$name/pdf
 cp -r ${name}*.html ._${name}*.html reveal.js $dest/$name/html
-cp ${name}*.tex $dest/$name/pdf
 
 # Figures: cannot just copy link, need to physically copy the files
 if [ -d fig-${name} ]; then
