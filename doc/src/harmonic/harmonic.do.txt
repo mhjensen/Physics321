@@ -935,6 +935,74 @@ def SpringForce(v,x,t):
     return  -2*gamma*v-x+Ftilde*cos(t*Omegatilde)
 !ec
 
+It is easy to add a new method like the Euler-Cromer
+!bc pycod
+def ForwardEulerCromer(v,x,t,n,Force):
+    for i in range(n-1):
+        a = Force(v[i],x[i],t[i])
+        v[i+1] = v[i] + DeltaT*a
+        x[i+1] = x[i] + DeltaT*v[i+1]
+        t[i+1] = t[i] + DeltaT
+!ec
+and the Velocity Verlet method (be careful with time-dependence here, it is not an ideal method for non-conservative forces))
+!bc pycod
+def VelocityVerlet(v,x,t,n,Force):
+    for i in range(n-1):
+        a = Force(v[i],x[i],t[i])
+        x[i+1] = x[i] + DeltaT*v[i]+0.5*a
+        anew = Force(v[i],x[i+1],t[i+1])
+        v[i+1] = v[i] + 0.5*DeltaT*(a+anew)
+        t[i+1] = t[i] + DeltaT
+!ec
+
+Finally, we can now add the Runge-Kutta2 method via a new function
+!bc pycod
+def RK2(v,x,t,n,Force):
+    for i in range(n-1):
+# Setting up k1
+        k1x = DeltaT*v[i]
+        k1v = DeltaT*Force(v[i],x[i],t[i])
+# Setting up k2
+        v[i] += k1v*0.5
+        x[i] += k1x*0.5
+        k2x = DeltaT*v[i]
+        k2v = DeltaT*Force(v[i],x[i],t[i]+DeltaT*0.5)
+# Final result
+        x[i+1] = x[i]+k2x
+        v[i+1] = v[i]+k2v
+!ec
+
+and the Runge-Kutta4 method
+Finally, we can now add the Runge-Kutta2 method via a new function
+!bc pycod
+def RK4(v,x,t,n,Force):
+    for i in range(n-1):
+# Setting up k1
+        k1x = DeltaT*v[i]
+        k1v = DeltaT*Force(v[i],x[i],t[i])
+# Setting up k2	
+        v[i] += k1v*0.5
+	x[i] += k1x*0.5
+        k2x = DeltaT*v[i]
+        k2v = DeltaT*Force(v[i],x[i],t[i]+DeltaT*0.5)
+# Setting up k3	
+        v[i] += k2v*0.5
+	x[i] += k2x*0.5
+        k3x = DeltaT*v[i]
+        k3v = DeltaT*Force(v[i],x[i],t[i]+DeltaT*0.5)
+# Setting up k4
+        v[i] += k3v
+	x[i] += k3x
+        k4x = DeltaT*v[i]
+        k4v = DeltaT*Force(v[i],x[i],t[i]+DeltaT)
+# Final result
+	x[i+1] = x[i]+(k1x+k2x+k3x+k4x)/6.0
+	v[i+1] = v[i]+(k1v+k2v+k3v+k4v)/6.0
+!ec
+
+
+
+
 
 !bc pycod
 DeltaT = 0.001
@@ -965,71 +1033,6 @@ ax.plot(t, x)
 fig.tight_layout()
 save_fig("ForcedBlockEuler")
 plt.show()
-!ec
-
-We could also have used our original and generic plotting function. It is easy to add a new method like the Euler-Cromer
-!bc pycod
-def ForwardEulerCromer(v,x,t,n,Force):
-    for i in range(n-1):
-        a = Force(v[i],x[i],t[i])
-        v[i+1] = v[i] + DeltaT*a
-        x[i+1] = x[i] + DeltaT*v[i+1]
-        t[i+1] = t[i] + DeltaT
-!ec
-and the Velocity Verlet method (be careful with time-dependence here, it is not an ideal method for non-conservative forces))
-!bc pycod
-def VelocityVerlet(v,x,t,n,Force):
-    for i in range(n-1):
-        a = Force(v[i],x[i],t[i])
-        x[i+1] = x[i] + DeltaT*v[i]+0.5*a
-        anew = Force(v[i],x[i+1],t[i+1])
-        v[i+1] = v[i] + 0.5*DeltaT*(a+anew)
-        t[i+1] = t[i] + DeltaT
-!ec
-
-Finally, we can now add the Runge-Kutta2 method via a new function
-!bc pycod
-def RK2(v,x,t,n,Force):
-    for i in range(n-1):
-# Setting up k1
-        k1x = DeltaT*v[i]
-        k1v = DeltaT*Force(v[i],x[i],t[i])
-# Setting up k2
-        v[i] += k1v*0.5
-	x[i] += k1x*0.5
-        k2x = DeltaT*v[i]
-        k2v = DeltaT*Force(v[i],x[i],t[i]+DeltaT*0.5)
-# Final result
-        x[i+1] = x[i]+k2x
-	v[i+1] = v[i]+k2v
-!ec
-
-and the Runge-Kutta4 method
-Finally, we can now add the Runge-Kutta2 method via a new function
-!bc pycod
-def RK4(v,x,t,n,Force):
-    for i in range(n-1):
-# Setting up k1
-        k1x = DeltaT*v[i]
-        k1v = DeltaT*Force(v[i],x[i],t[i])
-# Setting up k2	
-        v[i] += k1v*0.5
-	x[i] += k1x*0.5
-        k2x = DeltaT*v[i]
-        k2v = DeltaT*Force(v[i],x[i],t[i]+DeltaT*0.5)
-# Setting up k3	
-        v[i] += k2v*0.5
-	x[i] += k2x*0.5
-        k3x = DeltaT*v[i]
-        k3v = DeltaT*Force(v[i],x[i],t[i]+DeltaT*0.5)
-# Setting up k4
-        v[i] += k3v
-	x[i] += k3x
-        k4x = DeltaT*v[i]
-        k4v = DeltaT*Force(v[i],x[i],t[i]+DeltaT)
-# Final result
-	x[i+1] = x[i]+(k1x+k2x+k3x+k4x)/6.0
-	v[i+1] = v[i]+(k1v+k2v+k3v+k4v)/6.0
 !ec
 
 

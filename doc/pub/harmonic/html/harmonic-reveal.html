@@ -1308,39 +1308,7 @@ It receives just an input the name. We can easily change the force by adding ano
     <span style="color: #8B008B; font-weight: bold">return</span>  -<span style="color: #B452CD">2</span>*gamma*v-x+Ftilde*cos(t*Omegatilde)
 </pre></div>
 <p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span>DeltaT = <span style="color: #B452CD">0.001</span>
-<span style="color: #228B22">#set up arrays </span>
-tfinal = <span style="color: #B452CD">20</span> <span style="color: #228B22"># in years</span>
-n = ceil(tfinal/DeltaT)
-<span style="color: #228B22"># set up arrays for t, v, and x</span>
-t = np.zeros(n)
-v = np.zeros(n)
-x = np.zeros(n)
-<span style="color: #228B22"># Initial conditions (can change to more than one dim)</span>
-x0 =  <span style="color: #B452CD">1.0</span> 
-v0 = <span style="color: #B452CD">0.0</span>
-x[<span style="color: #B452CD">0</span>] = x0
-v[<span style="color: #B452CD">0</span>] = v0
-gamma = <span style="color: #B452CD">0.2</span>
-Omegatilde = <span style="color: #B452CD">0.5</span>
-Ftilde = <span style="color: #B452CD">1.0</span>
-<span style="color: #228B22"># Start integrating using Euler&#39;s method</span>
-<span style="color: #228B22"># Note that we define the force function as a SpringForce</span>
-ForwardEuler(v,x,t,n,SpringForce)
-
-<span style="color: #228B22"># Plot position as function of time    </span>
-fig, ax = plt.subplots()
-ax.set_ylabel(<span style="color: #CD5555">&#39;x[m]&#39;</span>)
-ax.set_xlabel(<span style="color: #CD5555">&#39;t[s]&#39;</span>)
-ax.plot(t, x)
-fig.tight_layout()
-save_fig(<span style="color: #CD5555">&quot;ForcedBlockEuler&quot;</span>)
-plt.show()
-</pre></div>
-<p>
-We could also have used our original and generic plotting function. It is easy to add a new method like the Euler-Cromer
+It is easy to add a new method like the Euler-Cromer
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
@@ -1376,12 +1344,12 @@ Finally, we can now add the Runge-Kutta2 method via a new function
         k1v = DeltaT*Force(v[i],x[i],t[i])
 <span style="color: #228B22"># Setting up k2</span>
         v[i] += k1v*<span style="color: #B452CD">0.5</span>
-	x[i] += k1x*<span style="color: #B452CD">0.5</span>
+        x[i] += k1x*<span style="color: #B452CD">0.5</span>
         k2x = DeltaT*v[i]
         k2v = DeltaT*Force(v[i],x[i],t[i]+DeltaT*<span style="color: #B452CD">0.5</span>)
 <span style="color: #228B22"># Final result</span>
         x[i+<span style="color: #B452CD">1</span>] = x[i]+k2x
-	v[i+<span style="color: #B452CD">1</span>] = v[i]+k2v
+        v[i+<span style="color: #B452CD">1</span>] = v[i]+k2v
 </pre></div>
 <p>
 and the Runge-Kutta4 method
@@ -1412,6 +1380,38 @@ Finally, we can now add the Runge-Kutta2 method via a new function
 <span style="color: #228B22"># Final result</span>
 	x[i+<span style="color: #B452CD">1</span>] = x[i]+(k1x+k2x+k3x+k4x)/<span style="color: #B452CD">6.0</span>
 	v[i+<span style="color: #B452CD">1</span>] = v[i]+(k1v+k2v+k3v+k4v)/<span style="color: #B452CD">6.0</span>
+</pre></div>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span>DeltaT = <span style="color: #B452CD">0.001</span>
+<span style="color: #228B22">#set up arrays </span>
+tfinal = <span style="color: #B452CD">20</span> <span style="color: #228B22"># in years</span>
+n = ceil(tfinal/DeltaT)
+<span style="color: #228B22"># set up arrays for t, v, and x</span>
+t = np.zeros(n)
+v = np.zeros(n)
+x = np.zeros(n)
+<span style="color: #228B22"># Initial conditions (can change to more than one dim)</span>
+x0 =  <span style="color: #B452CD">1.0</span> 
+v0 = <span style="color: #B452CD">0.0</span>
+x[<span style="color: #B452CD">0</span>] = x0
+v[<span style="color: #B452CD">0</span>] = v0
+gamma = <span style="color: #B452CD">0.2</span>
+Omegatilde = <span style="color: #B452CD">0.5</span>
+Ftilde = <span style="color: #B452CD">1.0</span>
+<span style="color: #228B22"># Start integrating using Euler&#39;s method</span>
+<span style="color: #228B22"># Note that we define the force function as a SpringForce</span>
+ForwardEuler(v,x,t,n,SpringForce)
+
+<span style="color: #228B22"># Plot position as function of time    </span>
+fig, ax = plt.subplots()
+ax.set_ylabel(<span style="color: #CD5555">&#39;x[m]&#39;</span>)
+ax.set_xlabel(<span style="color: #CD5555">&#39;t[s]&#39;</span>)
+ax.plot(t, x)
+fig.tight_layout()
+save_fig(<span style="color: #CD5555">&quot;ForcedBlockEuler&quot;</span>)
+plt.show()
 </pre></div>
 </section>
 
