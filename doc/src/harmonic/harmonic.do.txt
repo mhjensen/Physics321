@@ -991,13 +991,48 @@ Finally, we can now add the Runge-Kutta2 method via a new function
 !bc pycod
 def RK2(v,x,t,n,Force):
     for i in range(n-1):
+# Setting up k1		    
         k1x = DeltaT*v[i]
-        k1v = DeltaT*Force[v[i],x[i],t[i])
+        k1v = DeltaT*Force(v[i],x[i],t[i])
+# Setting up k2		
         v[i] += k1v*0.5
 	x[i] += k1x*0.5
         k2x = DeltaT*v[i]
-        k2v = DeltaT*Force[v[i],x[i],t[i]+DeltaT*0.5)
+        k2v = DeltaT*Force(v[i],x[i],t[i]+DeltaT*0.5)
+# Final result	
+	x[i+1] = x[i]+k2x
+	v[i+1] = v[i]+k2v
 !ec
+
+and the Runge-Kutta4 method
+Finally, we can now add the Runge-Kutta2 method via a new function
+!bc pycod
+def RK2(v,x,t,n,Force):
+    for i in range(n-1):
+# Setting up k1
+        k1x = DeltaT*v[i]
+        k1v = DeltaT*Force(v[i],x[i],t[i])
+# Setting up k2	
+        v[i] += k1v*0.5
+	x[i] += k1x*0.5
+        k2x = DeltaT*v[i]
+        k2v = DeltaT*Force(v[i],x[i],t[i]+DeltaT*0.5)
+# Setting up k3	
+        v[i] += k2v*0.5
+	x[i] += k2x*0.5
+        k3x = DeltaT*v[i]
+        k3v = DeltaT*Force(v[i],x[i],t[i]+DeltaT*0.5)
+# Setting up k4
+        v[i] += k3v
+	x[i] += k3x
+        k4x = DeltaT*v[i]
+        k4v = DeltaT*Force(v[i],x[i],t[i]+DeltaT)
+# Final result
+	x[i+1] = x[i]+(k1x+k2x+k3x+k4x)/6.0
+	v[i+1] = v[i]+(k1v+k2v+k3v+k4v)/6.0
+!ec
+
+
 
 !split 
 ===== Principle of Superposition and Periodic Forces (Fourier Transforms) =====

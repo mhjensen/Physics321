@@ -1371,12 +1371,47 @@ Finally, we can now add the Runge-Kutta2 method via a new function
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
 <div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">RK2</span>(v,x,t,n,Force):
     <span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
+<span style="color: #228B22"># Setting up k1		    </span>
         k1x = DeltaT*v[i]
-        k1v = DeltaT*Force[v[i],x[i],t[i])
+        k1v = DeltaT*Force(v[i],x[i],t[i])
+<span style="color: #228B22"># Setting up k2		</span>
         v[i] += k1v*<span style="color: #B452CD">0.5</span>
 	x[i] += k1x*<span style="color: #B452CD">0.5</span>
         k2x = DeltaT*v[i]
-        k2v = DeltaT*Force[v[i],x[i],t[i]+DeltaT*<span style="color: #B452CD">0.5</span>)
+        k2v = DeltaT*Force(v[i],x[i],t[i]+DeltaT*<span style="color: #B452CD">0.5</span>)
+<span style="color: #228B22"># Final result	</span>
+	x[i+<span style="color: #B452CD">1</span>] = x[i]+k2x
+	v[i+<span style="color: #B452CD">1</span>] = v[i]+k2v
+</pre></div>
+<p>
+and the Runge-Kutta4 method
+Finally, we can now add the Runge-Kutta2 method via a new function
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">RK2</span>(v,x,t,n,Force):
+    <span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
+<span style="color: #228B22"># Setting up k1</span>
+        k1x = DeltaT*v[i]
+        k1v = DeltaT*Force(v[i],x[i],t[i])
+<span style="color: #228B22"># Setting up k2	</span>
+        v[i] += k1v*<span style="color: #B452CD">0.5</span>
+	x[i] += k1x*<span style="color: #B452CD">0.5</span>
+        k2x = DeltaT*v[i]
+        k2v = DeltaT*Force(v[i],x[i],t[i]+DeltaT*<span style="color: #B452CD">0.5</span>)
+<span style="color: #228B22"># Setting up k3	</span>
+        v[i] += k2v*<span style="color: #B452CD">0.5</span>
+	x[i] += k2x*<span style="color: #B452CD">0.5</span>
+        k3x = DeltaT*v[i]
+        k3v = DeltaT*Force(v[i],x[i],t[i]+DeltaT*<span style="color: #B452CD">0.5</span>)
+<span style="color: #228B22"># Setting up k4</span>
+        v[i] += k3v
+	x[i] += k3x
+        k4x = DeltaT*v[i]
+        k4v = DeltaT*Force(v[i],x[i],t[i]+DeltaT)
+<span style="color: #228B22"># Final result</span>
+	x[i+<span style="color: #B452CD">1</span>] = x[i]+(k1x+k2x+k3x+k4x)/<span style="color: #B452CD">6.0</span>
+	v[i+<span style="color: #B452CD">1</span>] = v[i]+(k1v+k2v+k3v+k4v)/<span style="color: #B452CD">6.0</span>
 </pre></div>
 </section>
 
