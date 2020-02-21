@@ -1146,7 +1146,7 @@ To see this, consider first the following definitions
 <p>&nbsp;<br>
 $$
 \begin{equation}
-   \frac{dy}{dt}=f(t,y),  
+\frac{dy}{dt}=f(t,y),  
 \tag{25}
 \end{equation} 
 $$
@@ -1156,7 +1156,7 @@ and
 <p>&nbsp;<br>
 $$
 \begin{equation}
-   y(t)=\int f(t,y) dt,  
+y(t)=\int f(t,y) dt,  
 \tag{26}
 \end{equation} 
 $$
@@ -1166,7 +1166,7 @@ and
 <p>&nbsp;<br>
 $$
 \begin{equation}
-  y_{i+1}=y_i+ \int_{t_i}^{t_{i+1}} f(t,y) dt.
+y_{i+1}=y_i+ \int_{t_i}^{t_{i+1}} f(t,y) dt.
 \tag{27}
 \end{equation}
 $$
@@ -1184,7 +1184,7 @@ defining \( y(t_i+h/2) = y_{i+1/2} \) and
 <p>&nbsp;<br>
 $$
 \begin{equation}
-    \int_{t_i}^{t_{i+1}} f(t,y) dt \approx hf(t_{i+1/2},y_{i+1/2}) +O(h^3).
+\int_{t_i}^{t_{i+1}} f(t,y) dt \approx hf(t_{i+1/2},y_{i+1/2}) +O(h^3).
 \tag{28}
 \end{equation} 
 $$
@@ -1194,7 +1194,7 @@ This means in turn that we have
 <p>&nbsp;<br>
 $$
 \begin{equation}
-     y_{i+1}=y_i + hf(t_{i+1/2},y_{i+1/2}) +O(h^3).
+y_{i+1}=y_i + hf(t_{i+1/2},y_{i+1/2}) +O(h^3).
 \tag{29}
 \end{equation}
 $$
@@ -1206,8 +1206,7 @@ method to approximate \( y_{i+1/2} \). We have then
 <p>&nbsp;<br>
 $$
 \begin{equation}
-   y_{(i+1/2)}=y_i + \frac{h}{2}\frac{dy}{dt} =
-   y(t_i) + \frac{h}{2}f(t_i,y_i).
+y_{(i+1/2)}=y_i + \frac{h}{2}\frac{dy}{dt}=y(t_i) + \frac{h}{2}f(t_i,y_i).
 \tag{30}
 \end{equation}
 $$
@@ -1218,7 +1217,7 @@ the second-order Runge-Kutta method, RK2.
 <p>&nbsp;<br>
 $$
 \begin{equation} 
-  k_1=hf(t_i,y_i),
+k_1=hf(t_i,y_i),
 \tag{31}
 \end{equation} 
 $$
@@ -1227,7 +1226,7 @@ $$
 <p>&nbsp;<br>
 $$
 \begin{equation}
-  k_2=hf(t_{i+1/2},y_i+k_1/2),
+k_2=hf(t_{i+1/2},y_i+k_1/2),
 \tag{32}
 \end{equation}
 $$
@@ -1237,7 +1236,7 @@ with the final value
 <p>&nbsp;<br>
 $$
 \begin{equation} 
-  y_{i+i}\approx y_i + k_2 +O(h^3). 
+y_{i+i}\approx y_i + k_2 +O(h^3). 
 \tag{33}
 \end{equation}
 $$
@@ -1254,20 +1253,20 @@ in the solution.
 The fourth-order Runge-Kutta, RK4, has the following algorithm
 <p>&nbsp;<br>
 $$
-  k_1=hf(t_i,y_i) \hspace{0.5cm}   k_2=hf(t_i+h/2,y_i+k_1/2)
+k_1=hf(t_i,y_i) \hspace{0.5cm}   k_2=hf(t_i+h/2,y_i+k_1/2)
 $$
 <p>&nbsp;<br>
 
 <p>&nbsp;<br>
 $$
-  k_3=hf(t_i+h/2,y_i+k_2/2)\hspace{0.5cm}   k_4=hf(t_i+h,y_i+k_3)
+k_3=hf(t_i+h/2,y_i+k_2/2)\hspace{0.5cm}   k_4=hf(t_i+h,y_i+k_3)
 $$
 <p>&nbsp;<br>
 
 with the final result
 <p>&nbsp;<br>
 $$
-  y_{i+1}=y_i +\frac{1}{6}\left( k_1 +2k_2+2k_3+k_4\right).
+y_{i+1}=y_i +\frac{1}{6}\left( k_1 +2k_2+2k_3+k_4\right).
 $$
 <p>&nbsp;<br>
 

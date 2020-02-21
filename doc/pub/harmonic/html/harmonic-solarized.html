@@ -993,7 +993,7 @@ The basic philosophy is that it provides an intermediate step in the computation
 To see this, consider first the following definitions
 $$
 \begin{equation}
-   \frac{dy}{dt}=f(t,y),  
+\frac{dy}{dt}=f(t,y),  
 \label{_auto16}
 \end{equation} 
 $$
@@ -1001,7 +1001,7 @@ $$
 and 
 $$
 \begin{equation}
-   y(t)=\int f(t,y) dt,  
+y(t)=\int f(t,y) dt,  
 \label{_auto17}
 \end{equation} 
 $$
@@ -1009,7 +1009,7 @@ $$
 and 
 $$
 \begin{equation}
-  y_{i+1}=y_i+ \int_{t_i}^{t_{i+1}} f(t,y) dt.
+y_{i+1}=y_i+ \int_{t_i}^{t_{i+1}} f(t,y) dt.
 \label{_auto18}
 \end{equation}
 $$
@@ -1025,7 +1025,7 @@ defining \( y(t_i+h/2) = y_{i+1/2} \) and
 \( t_i+h/2 = t_{i+1/2} \), we obtain
 $$
 \begin{equation}
-    \int_{t_i}^{t_{i+1}} f(t,y) dt \approx hf(t_{i+1/2},y_{i+1/2}) +O(h^3).
+\int_{t_i}^{t_{i+1}} f(t,y) dt \approx hf(t_{i+1/2},y_{i+1/2}) +O(h^3).
 \label{_auto19}
 \end{equation} 
 $$
@@ -1033,7 +1033,7 @@ $$
 This means in turn that we have
 $$
 \begin{equation}
-     y_{i+1}=y_i + hf(t_{i+1/2},y_{i+1/2}) +O(h^3).
+y_{i+1}=y_i + hf(t_{i+1/2},y_{i+1/2}) +O(h^3).
 \label{_auto20}
 \end{equation}
 $$
@@ -1043,8 +1043,7 @@ However, we do not know the value of   \( y_{i+1/2} \). Here comes thus the next
 method to approximate \( y_{i+1/2} \). We have then
 $$
 \begin{equation}
-   y_{(i+1/2)}=y_i + \frac{h}{2}\frac{dy}{dt} =
-   y(t_i) + \frac{h}{2}f(t_i,y_i).
+y_{(i+1/2)}=y_i + \frac{h}{2}\frac{dy}{dt}=y(t_i) + \frac{h}{2}f(t_i,y_i).
 \label{_auto21}
 \end{equation}
 $$
@@ -1053,14 +1052,14 @@ This means that we can define the following algorithm for
 the second-order Runge-Kutta method, RK2.
 $$
 \begin{equation} 
-  k_1=hf(t_i,y_i),
+k_1=hf(t_i,y_i),
 \label{_auto22}
 \end{equation} 
 $$
 
 $$
 \begin{equation}
-  k_2=hf(t_{i+1/2},y_i+k_1/2),
+k_2=hf(t_{i+1/2},y_i+k_1/2),
 \label{_auto23}
 \end{equation}
 $$
@@ -1068,7 +1067,7 @@ $$
 with the final value
 $$
 \begin{equation} 
-  y_{i+i}\approx y_i + k_2 +O(h^3). 
+y_{i+i}\approx y_i + k_2 +O(h^3). 
 \label{_auto24}
 \end{equation}
 $$
@@ -1083,16 +1082,16 @@ in the solution.
 <p>
 The fourth-order Runge-Kutta, RK4, has the following algorithm
 $$
-  k_1=hf(t_i,y_i) \hspace{0.5cm}   k_2=hf(t_i+h/2,y_i+k_1/2)
+k_1=hf(t_i,y_i) \hspace{0.5cm}   k_2=hf(t_i+h/2,y_i+k_1/2)
 $$
 
 $$
-  k_3=hf(t_i+h/2,y_i+k_2/2)\hspace{0.5cm}   k_4=hf(t_i+h,y_i+k_3)
+k_3=hf(t_i+h/2,y_i+k_2/2)\hspace{0.5cm}   k_4=hf(t_i+h,y_i+k_3)
 $$
 
 with the final result
 $$
-  y_{i+1}=y_i +\frac{1}{6}\left( k_1 +2k_2+2k_3+k_4\right).
+y_{i+1}=y_i +\frac{1}{6}\left( k_1 +2k_2+2k_3+k_4\right).
 $$
 
 Thus, the algorithm consists in first calculating \( k_1 \) 
