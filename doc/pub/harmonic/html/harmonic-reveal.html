@@ -1383,7 +1383,7 @@ Omegatilde = <span style="color: #B452CD">0.5</span>
 Ftilde = <span style="color: #B452CD">1.0</span>
 <span style="color: #228B22"># Start integrating using Euler&#39;s method</span>
 <span style="color: #228B22"># Note that we define the force function as a SpringForce</span>
-ForwardEuler(v,x,t,n,SpringForce)
+RK2(v,x,t,n,SpringForce)
 
 <span style="color: #228B22"># Plot position as function of time    </span>
 fig, ax = plt.subplots()
@@ -1391,7 +1391,7 @@ ax.set_ylabel(<span style="color: #CD5555">&#39;x[m]&#39;</span>)
 ax.set_xlabel(<span style="color: #CD5555">&#39;t[s]&#39;</span>)
 ax.plot(t, x)
 fig.tight_layout()
-save_fig(<span style="color: #CD5555">&quot;ForcedBlockEuler&quot;</span>)
+save_fig(<span style="color: #CD5555">&quot;ForcedBlockRK2&quot;</span>)
 plt.show()
 </pre></div>
 </section>
@@ -1460,7 +1460,7 @@ tn = <span style="color: #B452CD">1.0</span>
 <span style="color: #228B22"># Period                                                                                                 </span>
 t = np.linspace(t0, tn, n, endpoint=<span style="color: #658b00">False</span>)
 SqrSignal = np.zeros(n)
-SqrSignal = signal.square(<span style="color: #B452CD">2</span>*np.pi*<span style="color: #B452CD">5</span>*t)
+SqrSignal = <span style="color: #B452CD">1.0</span>+signal.square(<span style="color: #B452CD">2</span>*np.pi*<span style="color: #B452CD">5</span>*t)
 plt.plot(t, SqrSignal)
 plt.ylim(-<span style="color: #B452CD">0.5</span>, <span style="color: #B452CD">2.5</span>)
 plt.show()

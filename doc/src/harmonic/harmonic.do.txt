@@ -1005,7 +1005,7 @@ Omegatilde = 0.5
 Ftilde = 1.0
 # Start integrating using Euler's method
 # Note that we define the force function as a SpringForce
-ForwardEuler(v,x,t,n,SpringForce)
+RK2(v,x,t,n,SpringForce)
 
 # Plot position as function of time    
 fig, ax = plt.subplots()
@@ -1013,7 +1013,7 @@ ax.set_ylabel('x[m]')
 ax.set_xlabel('t[s]')
 ax.plot(t, x)
 fig.tight_layout()
-save_fig("ForcedBlockEuler")
+save_fig("ForcedBlockRK2")
 plt.show()
 !ec
 
@@ -1070,7 +1070,7 @@ tn = 1.0
 # Period                                                                                                 
 t = np.linspace(t0, tn, n, endpoint=False)
 SqrSignal = np.zeros(n)
-SqrSignal = signal.square(2*np.pi*5*t)
+SqrSignal = 1.0+signal.square(2*np.pi*5*t)
 plt.plot(t, SqrSignal)
 plt.ylim(-0.5, 2.5)
 plt.show()

@@ -1261,7 +1261,7 @@ Omegatilde <span style="color: #666666">=</span> <span style="color: #666666">0.
 Ftilde <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>
 <span style="color: #408080; font-style: italic"># Start integrating using Euler&#39;s method</span>
 <span style="color: #408080; font-style: italic"># Note that we define the force function as a SpringForce</span>
-ForwardEuler(v,x,t,n,SpringForce)
+RK2(v,x,t,n,SpringForce)
 
 <span style="color: #408080; font-style: italic"># Plot position as function of time    </span>
 fig, ax <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots()
@@ -1269,7 +1269,7 @@ ax<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&
 ax<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;t[s]&#39;</span>)
 ax<span style="color: #666666">.</span>plot(t, x)
 fig<span style="color: #666666">.</span>tight_layout()
-save_fig(<span style="color: #BA2121">&quot;ForcedBlockEuler&quot;</span>)
+save_fig(<span style="color: #BA2121">&quot;ForcedBlockRK2&quot;</span>)
 plt<span style="color: #666666">.</span>show()
 </pre></div>
 <p>
@@ -1333,7 +1333,7 @@ tn <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>
 <span style="color: #408080; font-style: italic"># Period                                                                                                 </span>
 t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linspace(t0, tn, n, endpoint<span style="color: #666666">=</span><span style="color: #008000">False</span>)
 SqrSignal <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
-SqrSignal <span style="color: #666666">=</span> signal<span style="color: #666666">.</span>square(<span style="color: #666666">2*</span>np<span style="color: #666666">.</span>pi<span style="color: #666666">*5*</span>t)
+SqrSignal <span style="color: #666666">=</span> <span style="color: #666666">1.0+</span>signal<span style="color: #666666">.</span>square(<span style="color: #666666">2*</span>np<span style="color: #666666">.</span>pi<span style="color: #666666">*5*</span>t)
 plt<span style="color: #666666">.</span>plot(t, SqrSignal)
 plt<span style="color: #666666">.</span>ylim(<span style="color: #666666">-0.5</span>, <span style="color: #666666">2.5</span>)
 plt<span style="color: #666666">.</span>show()
