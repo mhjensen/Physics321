@@ -1276,28 +1276,6 @@ with \( t_i \), \( y_1 \) and \( f \) as inputs. Thereafter, we increase the ste
 size by \( h/2 \) and calculate \( k_2 \), then \( k_3 \) and finally \( k_4 \). The global error goes as \( O(h^4) \).
 
 <p>
-This means that we could have encoded our differential equation solver by adding the following lines to our code above
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #228B22">#   The k1 term for the velocity and the position</span>
-    kv1 = -DeltaT*x[i]
-    kx1 = DeltaT*v[i
-<span style="color: #228B22">#   The k2 term for the velocity and the position</span>
-    kv2 = -DeltaT*(x[i]+kx1/<span style="color: #B452CD">2</span>)
-    kx2 =  DeltaT*(v[i]+kv1/<span style="color: #B452CD">2</span>)
-<span style="color: #228B22">#   The k3 term for the velocity and the position</span>
-    kv3 = -DeltaT*(x[i]+kx2/<span style="color: #B452CD">2</span>)
-    kx3 =  DeltaT*(v[i]+kv2/<span style="color: #B452CD">2</span>)
-<span style="color: #228B22">#   The k4 term for the velocity and the position</span>
-    kv4 = -DeltaT*(x[i]+kx3/<span style="color: #B452CD">2</span>)
-    kx4 =  DeltaT*(v[i]+kv3/<span style="color: #B452CD">2</span>)
-<span style="color: #228B22">#   adding it all up and updating time</span>
-    x[i+<span style="color: #B452CD">1</span>] = x[i] + (kx1 + <span style="color: #B452CD">2</span>*(kx2+kx3) + kx4)/<span style="color: #B452CD">6</span>
-    v[i+<span style="color: #B452CD">1</span>] = v[i] + (kv1 + <span style="color: #B452CD">2</span>*(kv2+kv3) + kv4)/<span style="color: #B452CD">6</span>
-    t[i+<span style="color: #B452CD">1</span>] = t[i]+DeltaT
-</pre></div>
-<p>
 However, at this stage, if we keep adding different methods in our
 main program, the code will quickly become messy and ugly. Before we
 proceed thus, we will now introduce functions that enbody the various
@@ -1311,12 +1289,15 @@ two functions, one for the simple Euler method and one for the
 force.
 
 <p>
+Note that here the forward Euler method does not know the specific force function to be called.
+It receives just an input the name. We can easily change the force by adding another function.
+<p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">ForwardEuler</span>(v,x,t,n):
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">ForwardEuler</span>(v,x,t,n,Force):
     <span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
         v[i+<span style="color: #B452CD">1</span>] = v[i] + DeltaT*Force(v[i],x[i],t[i])
-        x[i+<span style="color: #B452CD">1</span>] = x[i] + DeltaT*v[i+<span style="color: #B452CD">1</span>]
+        x[i+<span style="color: #B452CD">1</span>] = x[i] + DeltaT*v[i]
         t[i+<span style="color: #B452CD">1</span>] = t[i] + DeltaT
 </pre></div>
 <p>
@@ -1337,7 +1318,7 @@ n = ceil(tfinal/DeltaT)
 t = np.zeros(n)
 v = np.zeros(n)
 x = np.zeros(n)
-<span style="color: #228B22"># Initial conditions as one-dimensional arrays of time</span>
+<span style="color: #228B22"># Initial conditions (can change to more than one dim)</span>
 x0 =  <span style="color: #B452CD">1.0</span> 
 v0 = <span style="color: #B452CD">0.0</span>
 x[<span style="color: #B452CD">0</span>] = x0
@@ -1346,15 +1327,56 @@ gamma = <span style="color: #B452CD">0.2</span>
 Omegatilde = <span style="color: #B452CD">0.5</span>
 Ftilde = <span style="color: #B452CD">1.0</span>
 <span style="color: #228B22"># Start integrating using Euler&#39;s method</span>
-ForwardEuler(v,x,t)
+<span style="color: #228B22"># Note that we define the force function as a SpringForce</span>
+ForwardEuler(v,x,t,n,SpringForce)
+
 <span style="color: #228B22"># Plot position as function of time    </span>
 fig, ax = plt.subplots()
 ax.set_ylabel(<span style="color: #CD5555">&#39;x[m]&#39;</span>)
 ax.set_xlabel(<span style="color: #CD5555">&#39;t[s]&#39;</span>)
 ax.plot(t, x)
 fig.tight_layout()
-save_fig(<span style="color: #CD5555">&quot;ForcedBlockEulerCromer&quot;</span>)
+save_fig(<span style="color: #CD5555">&quot;ForcedBlockEuler&quot;</span>)
 plt.show()
+</pre></div>
+<p>
+We could also have used our original and generic plotting function. It is easy to add a new method like the Euler-Cromer
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">ForwardEulerCromer</span>(v,x,t,n,Force):
+    <span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
+        a = Force(v[i],x[i],t[i])
+        v[i+<span style="color: #B452CD">1</span>] = v[i] + DeltaT*a
+        x[i+<span style="color: #B452CD">1</span>] = x[i] + DeltaT*v[i+<span style="color: #B452CD">1</span>]
+        t[i+<span style="color: #B452CD">1</span>] = t[i] + DeltaT
+</pre></div>
+<p>
+and the Velocity Verlet method (be careful with time-dependence here, it is not an ideal method for non-conservative forces))
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">VelocityVerlet</span>(v,x,t,n,Force):
+    <span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
+        a = Force(v[i],x[i],t[i])
+        x[i+<span style="color: #B452CD">1</span>] = x[i] + DeltaT*v[i]+<span style="color: #B452CD">0.5</span>*a
+        anew = Force(v[i],x[i+<span style="color: #B452CD">1</span>],t[i+<span style="color: #B452CD">1</span>])
+        v[i+<span style="color: #B452CD">1</span>] = v[i] + <span style="color: #B452CD">0.5</span>*DeltaT*(a+anew)
+        t[i+<span style="color: #B452CD">1</span>] = t[i] + DeltaT
+</pre></div>
+<p>
+Finally, we can now add the Runge-Kutta2 method via a new function
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">RK2</span>(v,x,t,n,Force):
+    <span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
+        k1x = DeltaT*v[i]
+        k1v = DeltaT*Force[v[i],x[i],t[i])
+        v[i] += k1v*<span style="color: #B452CD">0.5</span>
+	x[i] += k1x*<span style="color: #B452CD">0.5</span>
+        k2x = DeltaT*v[i]
+        k2v = DeltaT*Force[v[i],x[i],t[i]+DeltaT*<span style="color: #B452CD">0.5</span>)
 </pre></div>
 </section>
 

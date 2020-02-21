@@ -1154,28 +1154,6 @@ with \( t_i \), \( y_1 \) and \( f \) as inputs. Thereafter, we increase the ste
 size by \( h/2 \) and calculate \( k_2 \), then \( k_3 \) and finally \( k_4 \). The global error goes as \( O(h^4) \).
 
 <p>
-This means that we could have encoded our differential equation solver by adding the following lines to our code above
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic">#   The k1 term for the velocity and the position</span>
-    kv1 <span style="color: #666666">=</span> <span style="color: #666666">-</span>DeltaT<span style="color: #666666">*</span>x[i]
-    kx1 <span style="color: #666666">=</span> DeltaT<span style="color: #666666">*</span>v[i
-<span style="color: #408080; font-style: italic">#   The k2 term for the velocity and the position</span>
-    kv2 <span style="color: #666666">=</span> <span style="color: #666666">-</span>DeltaT<span style="color: #666666">*</span>(x[i]<span style="color: #666666">+</span>kx1<span style="color: #666666">/2</span>)
-    kx2 <span style="color: #666666">=</span>  DeltaT<span style="color: #666666">*</span>(v[i]<span style="color: #666666">+</span>kv1<span style="color: #666666">/2</span>)
-<span style="color: #408080; font-style: italic">#   The k3 term for the velocity and the position</span>
-    kv3 <span style="color: #666666">=</span> <span style="color: #666666">-</span>DeltaT<span style="color: #666666">*</span>(x[i]<span style="color: #666666">+</span>kx2<span style="color: #666666">/2</span>)
-    kx3 <span style="color: #666666">=</span>  DeltaT<span style="color: #666666">*</span>(v[i]<span style="color: #666666">+</span>kv2<span style="color: #666666">/2</span>)
-<span style="color: #408080; font-style: italic">#   The k4 term for the velocity and the position</span>
-    kv4 <span style="color: #666666">=</span> <span style="color: #666666">-</span>DeltaT<span style="color: #666666">*</span>(x[i]<span style="color: #666666">+</span>kx3<span style="color: #666666">/2</span>)
-    kx4 <span style="color: #666666">=</span>  DeltaT<span style="color: #666666">*</span>(v[i]<span style="color: #666666">+</span>kv3<span style="color: #666666">/2</span>)
-<span style="color: #408080; font-style: italic">#   adding it all up and updating time</span>
-    x[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> x[i] <span style="color: #666666">+</span> (kx1 <span style="color: #666666">+</span> <span style="color: #666666">2*</span>(kx2<span style="color: #666666">+</span>kx3) <span style="color: #666666">+</span> kx4)<span style="color: #666666">/6</span>
-    v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i] <span style="color: #666666">+</span> (kv1 <span style="color: #666666">+</span> <span style="color: #666666">2*</span>(kv2<span style="color: #666666">+</span>kv3) <span style="color: #666666">+</span> kv4)<span style="color: #666666">/6</span>
-    t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i]<span style="color: #666666">+</span>DeltaT
-</pre></div>
-<p>
 However, at this stage, if we keep adding different methods in our
 main program, the code will quickly become messy and ugly. Before we
 proceed thus, we will now introduce functions that enbody the various
@@ -1189,12 +1167,15 @@ two functions, one for the simple Euler method and one for the
 force.
 
 <p>
+Note that here the forward Euler method does not know the specific force function to be called.
+It receives just an input the name. We can easily change the force by adding another function.
+<p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">ForwardEuler</span>(v,x,t,n):
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">ForwardEuler</span>(v,x,t,n,Force):
     <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
         v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>Force(v[i],x[i],t[i])
-        x[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> x[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>v[i<span style="color: #666666">+1</span>]
+        x[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> x[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>v[i]
         t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i] <span style="color: #666666">+</span> DeltaT
 </pre></div>
 <p>
@@ -1215,7 +1196,7 @@ n <span style="color: #666666">=</span> ceil(tfinal<span style="color: #666666">
 t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
 v <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
 x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
-<span style="color: #408080; font-style: italic"># Initial conditions as one-dimensional arrays of time</span>
+<span style="color: #408080; font-style: italic"># Initial conditions (can change to more than one dim)</span>
 x0 <span style="color: #666666">=</span>  <span style="color: #666666">1.0</span> 
 v0 <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
 x[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> x0
@@ -1224,15 +1205,56 @@ gamma <span style="color: #666666">=</span> <span style="color: #666666">0.2</sp
 Omegatilde <span style="color: #666666">=</span> <span style="color: #666666">0.5</span>
 Ftilde <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>
 <span style="color: #408080; font-style: italic"># Start integrating using Euler&#39;s method</span>
-ForwardEuler(v,x,t)
+<span style="color: #408080; font-style: italic"># Note that we define the force function as a SpringForce</span>
+ForwardEuler(v,x,t,n,SpringForce)
+
 <span style="color: #408080; font-style: italic"># Plot position as function of time    </span>
 fig, ax <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots()
 ax<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;x[m]&#39;</span>)
 ax<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;t[s]&#39;</span>)
 ax<span style="color: #666666">.</span>plot(t, x)
 fig<span style="color: #666666">.</span>tight_layout()
-save_fig(<span style="color: #BA2121">&quot;ForcedBlockEulerCromer&quot;</span>)
+save_fig(<span style="color: #BA2121">&quot;ForcedBlockEuler&quot;</span>)
 plt<span style="color: #666666">.</span>show()
+</pre></div>
+<p>
+We could also have used our original and generic plotting function. It is easy to add a new method like the Euler-Cromer
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">ForwardEulerCromer</span>(v,x,t,n,Force):
+    <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
+        a <span style="color: #666666">=</span> Force(v[i],x[i],t[i])
+        v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>a
+        x[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> x[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>v[i<span style="color: #666666">+1</span>]
+        t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i] <span style="color: #666666">+</span> DeltaT
+</pre></div>
+<p>
+and the Velocity Verlet method (be careful with time-dependence here, it is not an ideal method for non-conservative forces))
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">VelocityVerlet</span>(v,x,t,n,Force):
+    <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
+        a <span style="color: #666666">=</span> Force(v[i],x[i],t[i])
+        x[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> x[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>v[i]<span style="color: #666666">+0.5*</span>a
+        anew <span style="color: #666666">=</span> Force(v[i],x[i<span style="color: #666666">+1</span>],t[i<span style="color: #666666">+1</span>])
+        v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i] <span style="color: #666666">+</span> <span style="color: #666666">0.5*</span>DeltaT<span style="color: #666666">*</span>(a<span style="color: #666666">+</span>anew)
+        t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i] <span style="color: #666666">+</span> DeltaT
+</pre></div>
+<p>
+Finally, we can now add the Runge-Kutta2 method via a new function
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">RK2</span>(v,x,t,n,Force):
+    <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
+        k1x <span style="color: #666666">=</span> DeltaT<span style="color: #666666">*</span>v[i]
+        k1v <span style="color: #666666">=</span> DeltaT<span style="color: #666666">*</span>Force[v[i],x[i],t[i])
+        v[i] <span style="color: #666666">+=</span> k1v<span style="color: #666666">*0.5</span>
+	x[i] <span style="color: #666666">+=</span> k1x<span style="color: #666666">*0.5</span>
+        k2x <span style="color: #666666">=</span> DeltaT<span style="color: #666666">*</span>v[i]
+        k2v <span style="color: #666666">=</span> DeltaT<span style="color: #666666">*</span>Force[v[i],x[i],t[i]<span style="color: #666666">+</span>DeltaT<span style="color: #666666">*0.5</span>)
 </pre></div>
 <p>
 <!-- !split  -->
