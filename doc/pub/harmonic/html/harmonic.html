@@ -1172,13 +1172,14 @@ Finally, we can now add the Runge-Kutta2 method via a new function
         k1x <span style="color: #666666">=</span> DeltaT<span style="color: #666666">*</span>v[i]
         k1v <span style="color: #666666">=</span> DeltaT<span style="color: #666666">*</span>Force(v[i],x[i],t[i])
 <span style="color: #408080; font-style: italic"># Setting up k2</span>
-        v[i] <span style="color: #666666">+=</span> k1v<span style="color: #666666">*0.5</span>
-        x[i] <span style="color: #666666">+=</span> k1x<span style="color: #666666">*0.5</span>
-        k2x <span style="color: #666666">=</span> DeltaT<span style="color: #666666">*</span>v[i]
-        k2v <span style="color: #666666">=</span> DeltaT<span style="color: #666666">*</span>Force(v[i],x[i],t[i]<span style="color: #666666">+</span>DeltaT<span style="color: #666666">*0.5</span>)
+        vv <span style="color: #666666">=</span> v[i]<span style="color: #666666">+</span>k1v<span style="color: #666666">*0.5</span>
+        xx <span style="color: #666666">=</span> x[i]<span style="color: #666666">+</span>k1x<span style="color: #666666">*0.5</span>
+        k2x <span style="color: #666666">=</span> DeltaT<span style="color: #666666">*</span>vv
+        k2v <span style="color: #666666">=</span> DeltaT<span style="color: #666666">*</span>Force(vv,xx,t[i]<span style="color: #666666">+</span>DeltaT<span style="color: #666666">*0.5</span>)
 <span style="color: #408080; font-style: italic"># Final result</span>
         x[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> x[i]<span style="color: #666666">+</span>k2x
         v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i]<span style="color: #666666">+</span>k2v
+	t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i]<span style="color: #666666">+</span>DeltaT
 </pre></div>
 <p>
 and the Runge-Kutta4 method
@@ -1188,27 +1189,7 @@ Finally, we can now add the Runge-Kutta2 method via a new function
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">RK4</span>(v,x,t,n,Force):
     <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
-<span style="color: #408080; font-style: italic"># Setting up k1</span>
-        k1x <span style="color: #666666">=</span> DeltaT<span style="color: #666666">*</span>v[i]
-        k1v <span style="color: #666666">=</span> DeltaT<span style="color: #666666">*</span>Force(v[i],x[i],t[i])
-<span style="color: #408080; font-style: italic"># Setting up k2	</span>
-        v[i] <span style="color: #666666">+=</span> k1v<span style="color: #666666">*0.5</span>
-	x[i] <span style="color: #666666">+=</span> k1x<span style="color: #666666">*0.5</span>
-        k2x <span style="color: #666666">=</span> DeltaT<span style="color: #666666">*</span>v[i]
-        k2v <span style="color: #666666">=</span> DeltaT<span style="color: #666666">*</span>Force(v[i],x[i],t[i]<span style="color: #666666">+</span>DeltaT<span style="color: #666666">*0.5</span>)
-<span style="color: #408080; font-style: italic"># Setting up k3	</span>
-        v[i] <span style="color: #666666">+=</span> k2v<span style="color: #666666">*0.5</span>
-	x[i] <span style="color: #666666">+=</span> k2x<span style="color: #666666">*0.5</span>
-        k3x <span style="color: #666666">=</span> DeltaT<span style="color: #666666">*</span>v[i]
-        k3v <span style="color: #666666">=</span> DeltaT<span style="color: #666666">*</span>Force(v[i],x[i],t[i]<span style="color: #666666">+</span>DeltaT<span style="color: #666666">*0.5</span>)
-<span style="color: #408080; font-style: italic"># Setting up k4</span>
-        v[i] <span style="color: #666666">+=</span> k3v
-	x[i] <span style="color: #666666">+=</span> k3x
-        k4x <span style="color: #666666">=</span> DeltaT<span style="color: #666666">*</span>v[i]
-        k4v <span style="color: #666666">=</span> DeltaT<span style="color: #666666">*</span>Force(v[i],x[i],t[i]<span style="color: #666666">+</span>DeltaT)
-<span style="color: #408080; font-style: italic"># Final result</span>
-	x[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> x[i]<span style="color: #666666">+</span>(k1x<span style="color: #666666">+</span>k2x<span style="color: #666666">+</span>k3x<span style="color: #666666">+</span>k4x)<span style="color: #666666">/6.0</span>
-	v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i]<span style="color: #666666">+</span>(k1v<span style="color: #666666">+</span>k2v<span style="color: #666666">+</span>k3v<span style="color: #666666">+</span>k4v)<span style="color: #666666">/6.0</span>
+<span style="color: #408080; font-style: italic"># to fill in</span>
 </pre></div>
 <p>
 
