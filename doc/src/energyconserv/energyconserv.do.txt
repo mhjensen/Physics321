@@ -122,10 +122,53 @@ for best accuracy the value of $x_n$ has been placed in the center of
 the $n^{\rm th}$ interval. The accuracy will improve for higher values
 of $N$, or equivalently, smaller step size $\Delta x$.
 
-More material weill be added shortly.
+!split
+===== Rectangular Rule =====
+
+!split
+===== Trapezoidal Rule =====
+
+!bc pycod
+from math import log10
+import numpy as np
+from sympy import Symbol, integrate
+import matplotlib.pyplot as plt
+# function for the trapezoidal rule
+def Trapez(a,b,f,n):
+   h = (b-a)/float(n)
+   s = 0
+   x = a
+   for i in range(1,n,1):
+       x = x+h
+       s = s+ f(x)
+   s = 0.5*(f(a)+f(b)) +s
+   return h*s
+#  function to compute pi
+def function(x):
+    return x*x
+# define integration limits
+a = 0.0;  b = 1.0;
+# find result from sympy
+# define x as a symbol to be used by sympy
+x = Symbol('x')
+exact = integrate(function(x), (x, a, b))
+# set up the arrays for plotting the relative error
+n = np.zeros(9); y = np.zeros(9);
+# find the relative error as function of integration points
+for i in range(1, 8, 1):
+    npts = 10**i
+    result = Trapez(a,b,function,npts)
+    RelativeError = abs((exact-result)/exact)
+    n[i] = log10(npts); y[i] = log10(RelativeError);
+plt.plot(n,y, 'ro')
+plt.xlabel('n')
+plt.ylabel('Relative error')
+plt.show()
+!ec
 
 
-
+!split
+===== Simpsons' rule =====
 
 !split
 ===== Conservation of Momentum =====
