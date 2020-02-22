@@ -123,7 +123,7 @@ MathJax.Hub.Config({
 <center>[3] <b>Department of Physics and Astronomy, Michigan State University, USA</b></center>
 <br>
 <p>
-<center><h4>Feb 21, 2020</h4></center> <!-- date -->
+<center><h4>Feb 22, 2020</h4></center> <!-- date -->
 <br>
 
 <h2 id="___sec0">Harmonic Oscillator </h2>
@@ -1181,8 +1181,8 @@ Finally, we can now add the Runge-Kutta2 method via a new function
 	t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i]<span style="color: #666666">+</span>DeltaT
 </pre></div>
 <p>
-and the Runge-Kutta4 method
 Finally, we can now add the Runge-Kutta2 method via a new function
+
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
@@ -1211,6 +1211,11 @@ Finally, we can now add the Runge-Kutta2 method via a new function
         v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i]<span style="color: #666666">+</span>(k1v<span style="color: #666666">+2*</span>k2v<span style="color: #666666">+2*</span>k3v<span style="color: #666666">+</span>k4v)<span style="color: #666666">/6.</span>
         t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i] <span style="color: #666666">+</span> DeltaT
 </pre></div>
+<p>
+The Runge-Kutta family of methods are particularly useful when we have a time-dependent acceleration.
+If we have forces which depend only the spatial degrees of freedom (no velocity and/or time-dependence), then energy conserving methods like the Velocity Verlet or the Euler-Cromer method are preferred. As soon as we introduce an explicit time-dependence and/or add dissipitave forces like friction or air resistance, then methods like the family of Runge-Kutta methods are well suited for this. 
+The code below uses the Runge-Kutta4 methods.
+
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
