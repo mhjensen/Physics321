@@ -95,8 +95,8 @@ def RK4(v,x,t,n,Force):
         k4x = DeltaT*vv
         k4v = DeltaT*Force(vv,xx,t[i]+DeltaT)
 # Final result
-        x[i+1] = x[i]+(k1x+k2x+k3x+k4x)/6.
-        v[i+1] = v[i]+(k1v+k2v+k3v+k4v)/6.
+        x[i+1] = x[i]+(k1x+2*k2x+2*k3x+k4x)/6.
+        v[i+1] = v[i]+(k1v+2*k2v+2*k3v+k4v)/6.
         t[i+1] = t[i] + DeltaT
 
 DeltaT = 0.001
@@ -117,7 +117,7 @@ Omegatilde = 0.5
 Ftilde = 1.0
 # Start integrating using Euler's method
 # Note that we define the force function as a SpringForce
-ForwardEuler(v,x,t,n,SpringForce)
+RK4(v,x,t,n,SpringForce)
 # Plot position as function of time    
 t = np.zeros(n)
 ve = np.zeros(n)
