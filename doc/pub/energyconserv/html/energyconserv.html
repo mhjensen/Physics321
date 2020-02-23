@@ -136,7 +136,7 @@ MathJax.Hub.Config({
 <center>[3] <b>Department of Physics and Astronomy, Michigan State University, USA</b></center>
 <br>
 <p>
-<center><h4>Feb 22, 2020</h4></center> <!-- date -->
+<center><h4>Feb 23, 2020</h4></center> <!-- date -->
 <br>
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -282,6 +282,54 @@ of \( N \), or equivalently, smaller step size \( \Delta x \).
 <h2 id="___sec4">Rectangular Rule </h2>
 
 <p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> log10
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">sympy</span> <span style="color: #008000; font-weight: bold">import</span> Symbol, integrate
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+<span style="color: #408080; font-style: italic"># function for the Rectangular rule</span>
+
+<span style="color: #008000; font-weight: bold">for</span> (j <span style="color: #666666">=</span> <span style="color: #666666">0</span>; j <span style="color: #666666">&lt;=</span> n; j<span style="color: #666666">++</span>){
+         x <span style="color: #666666">=</span> (j<span style="color: #666666">+0.5</span>)<span style="color: #666666">*</span>step<span style="color: #666666">+</span>;   <span style="color: #666666">//</span> midpoint of a given rectangle
+         RectangleSum<span style="color: #666666">+=</span>(<span style="color: #666666">*</span>func)(x);   <span style="color: #666666">//</span>  add value of function<span style="color: #666666">.</span>
+      }
+      RectangleSum <span style="color: #666666">*=</span> step;  <span style="color: #666666">//</span>  multiply <span style="color: #008000; font-weight: bold">with</span> step length<span style="color: #666666">.</span>
+      <span style="color: #008000; font-weight: bold">return</span> RectangleSum;
+
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">Rectangular</span>(a,b,f,n):
+   h <span style="color: #666666">=</span> (b<span style="color: #666666">-</span>a)<span style="color: #666666">/</span><span style="color: #008000">float</span>(n)
+   s <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+   x <span style="color: #666666">=</span> a<span style="color: #666666">+</span>h<span style="color: #666666">*0.5</span>
+   <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">1</span>,n,<span style="color: #666666">1</span>):
+       x <span style="color: #666666">=</span> x<span style="color: #666666">+</span>h
+       s <span style="color: #666666">=</span> s<span style="color: #666666">+</span> f(x)
+   s <span style="color: #666666">=</span> h<span style="color: #666666">*</span>s
+   <span style="color: #008000; font-weight: bold">return</span> h<span style="color: #666666">*</span>s
+<span style="color: #408080; font-style: italic">#  function to compute pi</span>
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">function</span>(x):
+    <span style="color: #008000; font-weight: bold">return</span> x<span style="color: #666666">*</span>x
+<span style="color: #408080; font-style: italic"># define integration limits</span>
+a <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>;  b <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>;
+<span style="color: #408080; font-style: italic"># find result from sympy</span>
+<span style="color: #408080; font-style: italic"># define x as a symbol to be used by sympy</span>
+x <span style="color: #666666">=</span> Symbol(<span style="color: #BA2121">&#39;x&#39;</span>)
+exact <span style="color: #666666">=</span> integrate(function(x), (x, a, b))
+<span style="color: #408080; font-style: italic"># set up the arrays for plotting the relative error</span>
+n <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(<span style="color: #666666">9</span>); y <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(<span style="color: #666666">9</span>);
+<span style="color: #408080; font-style: italic"># find the relative error as function of integration points</span>
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">1</span>, <span style="color: #666666">8</span>, <span style="color: #666666">1</span>):
+    npts <span style="color: #666666">=</span> <span style="color: #666666">10**</span>i
+    result <span style="color: #666666">=</span> Rectangular(a,b,function,npts)
+    RelativeError <span style="color: #666666">=</span> <span style="color: #008000">abs</span>((exact<span style="color: #666666">-</span>result)<span style="color: #666666">/</span>exact)
+    n[i] <span style="color: #666666">=</span> log10(npts); y[i] <span style="color: #666666">=</span> log10(RelativeError);
+plt<span style="color: #666666">.</span>plot(n,y, <span style="color: #BA2121">&#39;ro&#39;</span>)
+plt<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">&#39;n&#39;</span>)
+plt<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">&#39;Relative error&#39;</span>)
+plt<span style="color: #666666">.</span>show()
+</pre></div>
+<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
 <h2 id="___sec5">Trapezoidal Rule </h2>
@@ -330,6 +378,72 @@ plt<span style="color: #666666">.</span>show()
 
 <h2 id="___sec6">Simpsons' rule </h2>
 
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">trapezoidal</span>(<span style="color: #008000">self</span>, a,b, n, func):
+        <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;</span>
+<span style="color: #BA2121; font-style: italic">        Integrate the function func</span>
+<span style="color: #BA2121; font-style: italic">        using the trapezoidal rule from a to b,</span>
+<span style="color: #BA2121; font-style: italic">        with n points. Returns value from numerical integration</span>
+<span style="color: #BA2121; font-style: italic">        &quot;&quot;&quot;</span>
+        step <span style="color: #666666">=</span> (b<span style="color: #666666">-</span>a)<span style="color: #666666">/</span><span style="color: #008000">float</span>(n)
+        
+        <span style="color: #008000">sum</span> <span style="color: #666666">=</span> func(a)<span style="color: #666666">/</span><span style="color: #008000">float</span>(<span style="color: #666666">2</span>);
+        <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">xrange</span>(<span style="color: #666666">1</span>,n):
+            <span style="color: #008000">sum</span> <span style="color: #666666">=</span> <span style="color: #008000">sum</span> <span style="color: #666666">+</span> func(a<span style="color: #666666">+</span>i<span style="color: #666666">*</span>step)
+        <span style="color: #008000">sum</span> <span style="color: #666666">=</span> <span style="color: #008000">sum</span> <span style="color: #666666">+</span> func(b)<span style="color: #666666">/</span><span style="color: #008000">float</span>(<span style="color: #666666">2</span>)
+        
+        <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000">sum</span><span style="color: #666666">*</span>step
+
+    <span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">simpson</span>(<span style="color: #008000">self</span>,a,b,n,func):
+        <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;Same as trapezoidal, but use simpsons rule&quot;&quot;&quot;</span>
+        step <span style="color: #666666">=</span> (b<span style="color: #666666">-</span>a)<span style="color: #666666">/</span><span style="color: #008000">float</span>(n)
+        
+        <span style="color: #008000">sum</span> <span style="color: #666666">=</span> func(a)<span style="color: #666666">/</span><span style="color: #008000">float</span>(<span style="color: #666666">2</span>);
+        <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">xrange</span>(<span style="color: #666666">1</span>,n):
+            <span style="color: #008000">sum</span> <span style="color: #666666">=</span> <span style="color: #008000">sum</span> <span style="color: #666666">+</span> func(a<span style="color: #666666">+</span>i<span style="color: #666666">*</span>step)<span style="color: #666666">*</span>(<span style="color: #666666">3+</span>(<span style="color: #666666">-1</span>)<span style="color: #666666">**</span>(i<span style="color: #666666">+1</span>))
+        <span style="color: #008000">sum</span> <span style="color: #666666">=</span> <span style="color: #008000">sum</span> <span style="color: #666666">+</span> func(b)<span style="color: #666666">/</span><span style="color: #008000">float</span>(<span style="color: #666666">2</span>)
+        
+        <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000">sum</span><span style="color: #666666">*</span>step<span style="color: #666666">/3.0</span>
+
+
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> log10
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">sympy</span> <span style="color: #008000; font-weight: bold">import</span> Symbol, integrate
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+<span style="color: #408080; font-style: italic"># function for the Rectangular rule</span>
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">Simpson</span>(a,b,f,n):
+   h <span style="color: #666666">=</span> (b<span style="color: #666666">-</span>a)<span style="color: #666666">/</span><span style="color: #008000">float</span>(n)
+   s <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+   x <span style="color: #666666">=</span> a<span style="color: #666666">+</span>h<span style="color: #666666">*0.5</span>
+   <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">1</span>,n,<span style="color: #666666">1</span>):
+       x <span style="color: #666666">=</span> x<span style="color: #666666">+</span>h
+       s <span style="color: #666666">=</span> s<span style="color: #666666">+</span> f(x)
+   s <span style="color: #666666">=</span> h<span style="color: #666666">*</span>s
+   <span style="color: #008000; font-weight: bold">return</span> h<span style="color: #666666">*</span>s
+<span style="color: #408080; font-style: italic">#  function to compute pi</span>
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">function</span>(x):
+    <span style="color: #008000; font-weight: bold">return</span> x<span style="color: #666666">*</span>x
+<span style="color: #408080; font-style: italic"># define integration limits</span>
+a <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>;  b <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>;
+<span style="color: #408080; font-style: italic"># find result from sympy</span>
+<span style="color: #408080; font-style: italic"># define x as a symbol to be used by sympy</span>
+x <span style="color: #666666">=</span> Symbol(<span style="color: #BA2121">&#39;x&#39;</span>)
+exact <span style="color: #666666">=</span> integrate(function(x), (x, a, b))
+<span style="color: #408080; font-style: italic"># set up the arrays for plotting the relative error</span>
+n <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(<span style="color: #666666">9</span>); y <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(<span style="color: #666666">9</span>);
+<span style="color: #408080; font-style: italic"># find the relative error as function of integration points</span>
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">1</span>, <span style="color: #666666">8</span>, <span style="color: #666666">1</span>):
+    npts <span style="color: #666666">=</span> <span style="color: #666666">10**</span>i
+    result <span style="color: #666666">=</span> Simpson(a,b,function,npts)
+    RelativeError <span style="color: #666666">=</span> <span style="color: #008000">abs</span>((exact<span style="color: #666666">-</span>result)<span style="color: #666666">/</span>exact)
+    n[i] <span style="color: #666666">=</span> log10(npts); y[i] <span style="color: #666666">=</span> log10(RelativeError);
+plt<span style="color: #666666">.</span>plot(n,y, <span style="color: #BA2121">&#39;ro&#39;</span>)
+plt<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">&#39;n&#39;</span>)
+plt<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">&#39;Relative error&#39;</span>)
+plt<span style="color: #666666">.</span>show()
+</pre></div>
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 

@@ -125,6 +125,56 @@ of $N$, or equivalently, smaller step size $\Delta x$.
 !split
 ===== Rectangular Rule =====
 
+!bc pycod
+from math import log10
+import numpy as np
+from sympy import Symbol, integrate
+import matplotlib.pyplot as plt
+# function for the Rectangular rule
+
+for (j = 0; j <= n; j++){
+         x = (j+0.5)*step+;   // midpoint of a given rectangle
+         RectangleSum+=(*func)(x);   //  add value of function.
+      }
+      RectangleSum *= step;  //  multiply with step length.
+      return RectangleSum;
+
+
+def Rectangular(a,b,f,n):
+   h = (b-a)/float(n)
+   s = 0
+   x = a+h*0.5
+   for i in range(1,n,1):
+       x = x+h
+       s = s+ f(x)
+   s = h*s
+   return h*s
+#  function to compute pi
+def function(x):
+    return x*x
+# define integration limits
+a = 0.0;  b = 1.0;
+# find result from sympy
+# define x as a symbol to be used by sympy
+x = Symbol('x')
+exact = integrate(function(x), (x, a, b))
+# set up the arrays for plotting the relative error
+n = np.zeros(9); y = np.zeros(9);
+# find the relative error as function of integration points
+for i in range(1, 8, 1):
+    npts = 10**i
+    result = Rectangular(a,b,function,npts)
+    RelativeError = abs((exact-result)/exact)
+    n[i] = log10(npts); y[i] = log10(RelativeError);
+plt.plot(n,y, 'ro')
+plt.xlabel('n')
+plt.ylabel('Relative error')
+plt.show()
+!ec
+
+
+
+
 !split
 ===== Trapezoidal Rule =====
 
@@ -169,6 +219,82 @@ plt.show()
 
 !split
 ===== Simpsons' rule =====
+
+
+
+
+
+
+
+!bc pycod
+
+
+def trapezoidal(self, a,b, n, func):
+        """
+        Integrate the function func
+        using the trapezoidal rule from a to b,
+        with n points. Returns value from numerical integration
+        """
+        step = (b-a)/float(n)
+        
+        sum = func(a)/float(2);
+        for i in xrange(1,n):
+            sum = sum + func(a+i*step)
+        sum = sum + func(b)/float(2)
+        
+        return sum*step
+
+    def simpson(self,a,b,n,func):
+        """Same as trapezoidal, but use simpsons rule"""
+        step = (b-a)/float(n)
+        
+        sum = func(a)/float(2);
+        for i in xrange(1,n):
+            sum = sum + func(a+i*step)*(3+(-1)**(i+1))
+        sum = sum + func(b)/float(2)
+        
+        return sum*step/3.0
+
+
+from math import log10
+import numpy as np
+from sympy import Symbol, integrate
+import matplotlib.pyplot as plt
+# function for the Rectangular rule
+def Simpson(a,b,f,n):
+   h = (b-a)/float(n)
+   s = 0
+   x = a+h*0.5
+   for i in range(1,n,1):
+       x = x+h
+       s = s+ f(x)
+   s = h*s
+   return h*s
+#  function to compute pi
+def function(x):
+    return x*x
+# define integration limits
+a = 0.0;  b = 1.0;
+# find result from sympy
+# define x as a symbol to be used by sympy
+x = Symbol('x')
+exact = integrate(function(x), (x, a, b))
+# set up the arrays for plotting the relative error
+n = np.zeros(9); y = np.zeros(9);
+# find the relative error as function of integration points
+for i in range(1, 8, 1):
+    npts = 10**i
+    result = Simpson(a,b,function,npts)
+    RelativeError = abs((exact-result)/exact)
+    n[i] = log10(npts); y[i] = log10(RelativeError);
+plt.plot(n,y, 'ro')
+plt.xlabel('n')
+plt.ylabel('Relative error')
+plt.show()
+!ec
+
+
+
 
 !split
 ===== Conservation of Momentum =====
