@@ -1,4 +1,3 @@
-# Exercise 6, hw3, smarter way with declaration of vx, vy, x and y
 # Common imports
 import numpy as np
 import pandas as pd
@@ -36,33 +35,37 @@ mpl.rcParams['font.family'] = 'serif'
 
 DeltaT = 0.001
 #set up arrays 
-tfinal = 20 # in years
+tfinal = 1.0
 n = ceil(tfinal/DeltaT)
 # set up arrays for t, v, and x
 t = np.zeros(n)
 v = np.zeros(n)
 x = np.zeros(n)
+E = np.zeros(n)
+alpha = 0.81
+beta = 1.0
+mass = 1.0
 # Initial conditions as compact 2-dimensional arrays
-x0 =  1.0 
-v0 = 0.0
+x0 =  sqrt(alpha/beta)
+v0 = 0.5
 x[0] = x0
 v[0] = v0
-gamma = 0.1
+E[0] = 0.5*mass*v0*v0
 # Start integrating using Euler's method
 for i in range(n-1):
-    # Set up the acceleration
-    # Here you could have defined your own function for this
-    a =  -2*gamma*v[i]-x[i]
+    a =  -alpha*x[i]/mass+beta*(x[i]**3)/mass
     # update velocity, time and position using Euler's forward method
     v[i+1] = v[i] + DeltaT*a
     x[i+1] = x[i] + DeltaT*v[i+1]
+#    E[i+1] = 0.5*mass*v[i+1]*v[i+1]+
     t[i+1] = t[i] + DeltaT
 # Plot position as function of time    
 fig, ax = plt.subplots()
 #ax.set_xlim(0, tfinal)
-ax.set_ylabel('x[m]')
-ax.set_xlabel('t[s]')
-ax.plot(t, x)
+ax.set_ylabel('v[m/s]')
+ax.set_xlabel('x[m]')
+#ax.plot(t, x)
+ax.plot(x, v)
 fig.tight_layout()
 save_fig("BlockEulerCromer")
 plt.show()
