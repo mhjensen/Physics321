@@ -35,37 +35,38 @@ mpl.rcParams['font.family'] = 'serif'
 
 DeltaT = 0.001
 #set up arrays 
-tfinal = 1.0
+tfinal = 30.0
 n = ceil(tfinal/DeltaT)
 # set up arrays for t, v, and x
 t = np.zeros(n)
 v = np.zeros(n)
 x = np.zeros(n)
 E = np.zeros(n)
-alpha = 0.81
-beta = 1.0
+d = 0.1
 mass = 1.0
-# Initial conditions as compact 2-dimensional arrays
-x0 =  sqrt(alpha/beta)
-v0 = 0.5
+V0 = 0.1
+c1 = 4*V0/(d**4)/mass
+c2 = 4*V0/(d**2)/mass
+# Initial conditions 
+x0 =  d
+v0 = 1.5
 x[0] = x0
 v[0] = v0
-E[0] = 0.5*mass*v0*v0
+gamma = 0.1
 # Start integrating using Euler's method
 for i in range(n-1):
-    a =  -alpha*x[i]/mass+beta*(x[i]**3)/mass
+    a =  c2*x[i]-c1*(x[i]**3)-gamma*v[i]
     # update velocity, time and position using Euler's forward method
     v[i+1] = v[i] + DeltaT*a
     x[i+1] = x[i] + DeltaT*v[i+1]
-#    E[i+1] = 0.5*mass*v[i+1]*v[i+1]+
     t[i+1] = t[i] + DeltaT
 # Plot position as function of time    
 fig, ax = plt.subplots()
 #ax.set_xlim(0, tfinal)
-ax.set_ylabel('v[m/s]')
+ax.set_ylabel('t[s]')
 ax.set_xlabel('x[m]')
-#ax.plot(t, x)
-ax.plot(x, v)
+ax.plot(t, x)
+#ax.plot(t, v)
 fig.tight_layout()
 save_fig("BlockEulerCromer")
 plt.show()
