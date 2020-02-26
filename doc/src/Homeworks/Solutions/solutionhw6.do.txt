@@ -1,5 +1,5 @@
 TITLE: PHY321: Classical Mechanics 1
-AUTHOR: Homework 6, due Monday  February 24
+AUTHOR: Solution Homework 6, due Monday  February 24
 DATE: today
 
 ===  Practicalities about  homeworks and projects ===
@@ -32,15 +32,26 @@ An additional requirement for a force to be conservative is that its _curl_ is e
 !et
 Find the curl of the following forces
 * 1a (2pt) $\bm{F}=k\bm{r}$ where $k$ is a constant and $\bm{r}=x\bm{i}+y\bm{j}+z\bm{k}$ where $\bm{i},\bm{j}$ and $\bm{k}$ are the unit vectors in the $x$, $y$ and $z$ directions respectively. Previously we used $\bm{e}_x$ etc for these unit vector. We will stick with the notation in Taylor.
+Here the _curl_ is just zero.
 * 1b (2pt) $\bm{F}=Ax\bm{i}+By^2\bm{j}+Cz^2\bm{k}$ where $A$, $B$ and $C$ are constants.
+Here the _curl_ is just zero.
 * 1c (2pt) $\bm{F}=Ay\bm{i}+Bx\bm{j}+Cz\bm{k}$ where $A$, $B$ and $C$ are constants.
+!bt
+\[
+\bm{\nabla}\times \bm{F} =(0,0,B-2Ay).
+\]
+!et
 
 
 === Exercise 2 (10 pt), More on conservative forces ===
-Which of the following force are conservative?
+Which of the following force are conservative?  All three forces depend only on $\bm{r}$ and satisfy the first condition for being conservative.
 * 2a (2pt) $\bm{F}=k(x\bm{i}+2y\bm{j}+3z\bm{k})$ where $k$ is a constant.
+The _curl_ is zero and the force is conservative.  The potential energy is upon integration $V(x)=-k(1/2x^2+y^2+3/2z^2)$. Taking the derivative shows that this is indeed the case since it gives back the force.
+
 * 2b (2pt) $\bm{F}=y\bm{i}+x\bm{j}+0\bm{k}$.
 * 2c (2pt) $\bm{F}=k(-y\bm{i}+x\bm{j}+0\bm{k})$ where $k$ is a constant.
+Here the _curl_ is $(0,0,2)$ and the force is not conservative.
+
 * 2d (4pt) For those which are conservative, find the corresponding potential energy $V$ and verify that direct differentiation that $\bm{F}=-\bm{\nabla} V$.
 
 === Exercise 3 (10 pt), The Lennard-Jones potential ===
