@@ -37,21 +37,106 @@ We will study a classical electron which moves in the $x$-direction along a surf
 The constant $b$ represents the distance between atoms at the surface of the material, $F_0$ is a constant and $x$ is the position of the electron.
 
 * 1a (2pt) Is this a conservative force? And if so, what does that imply?
+This is indeed a conservative force since it depends only on position and its _curl_ is zero. This means that energy is conserved and the integral over the work done by the force is independent of the path taken. 
 * 1b (4pt) Use the work-energy theorem to find the velocity $v(x)$. 
+
+Using the work-energy theorem we can find the work $W$ done when moving an electron from a position $x_\
+0$ to a final position $x$ through the
+ integral
+!bt
+\[
+W=-\int_{x_0}^x \bm{F}(x')dx' =  \int_{x_0}^x F_0\sin{(\frac{2\pi x'}{b})} dx',
+\]
+!et
+which results in
+!bt
+\[
+W=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right].
+\]
+!et
+Since this is related to the change in kinetic energy we have, with $v_0$ being the initial velocity at a  time $t_0$,
+!bt
+\[
+v  = \pm\sqrt{\frac{2}{m}\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right]+v_0^2}.
+\]
+!et
 * 1c (4pt) With the above expression for the force, find the potential energy.
+The potential energy, due to energy conservation is
+!bt
+\[
+V(x)=V(x_0)+\frac{1}{2}mv_0^2-\frac{1}{2}mv^2,
+\]
+!et
+with $v$ given by the previous answer. 
 * 1d (5pt) Make a plot of the potential energy and discuss the equilibrium points where the force on the electron is zero. Discuss the physical interpretation of stable and unstable equilibrium points. Use energy conservation. Recommended read here  is Malthe-Sørenssen chapter 11.3.2.
 
-
+The following Python code
 
 === Exsercise 2 (15pt), Rocket, Momentum and mass ===
 
 Taylor exercise 3.11.   It is an exercise meant to illustrate momentum conservation or not. 
 This exercise was partly discussed during the lectures, see the notes on "Energy and Momentum etc, see the part on Momentum conservation ":"https://mhjensen.github.io/Physics321/doc/pub/energyconserv/html/energyconserv.html". Taylor's chapter 3.2 covers also this example.
 
+* 3.11 a and b
+
+Consider the rocket of mass $M$ moving with velocity $v$. After a
+brief instant, the velocity of the rocket is $v+\Delta v$ and the mass
+is $M-\Delta M$. Momentum conservation gives
+
+
+!bt
+\begin{eqnarray*}
+Mv&=&(M-\Delta M)(v+\Delta v)+\Delta M(v-v_e)\\
+0&=&-\Delta Mv+M\Delta v+\Delta M(v-v_e),\\
+0&=&M\Delta v-\Delta Mv_e.
+\end{eqnarray*}
+!et
+
+In the second step we ignored the term $\Delta M\Delta v$ because it is doubly small. The last equation \
+gives
+!bt
+\begin{eqnarray}
+\Delta v&=&\frac{v_e}{M}\Delta M,\\
+\nonumber
+\frac{dv}{dt}&=&\frac{v_e}{M}\frac{dM}{dt}.
+\end{eqnarray}
+!et
+
+Integrating the expression with lower limits $v_0=0$ and $M_0$, one finds
+
+!bt
+\begin{eqnarray*}
+v&=&v_e\int_{M_0}^M \frac{dM'}{M'}\\
+v&=&-v_e\ln(M/M_0)\\
+&=&-v_e\ln[(M_0-\alpha t)/M_0].
+\end{eqnarray*}
+!et
+We have ignored gravity here. If we add gravity as the external force, we get when integrating an additional terms $-gt$, that is
+!bt
+\[
+v=-v_e\ln[(M_0-\alpha t)/M_0]-gt.
+\]
+!et
+
+* 3.11c
+Inserting numbers $v_e=3000$ m/s, $M_0/M=2$ and $g=9.8$ m/s$^{2}$, we find $v=900$ m/s. With $g=0$ the corresponding number is $2100$ m/s, so gravity reduces the speed acquired in the first two minutes to a little less than half its weight-free value.
+
+* 3.11d
+
+If the thrust $kv_e$ is less than the weight $mg$, the rocket will just sit on the ground until it has shed enough mass that the thrust can overcome the weight, definitely not a good design. 
+
 
 ===  Exercise 3 (10pt), More Rockets ===
 
 Taylor exercises 3.13 (5pt) and 3.14 (5pt). This is a continuation of the previous exercise and most of the relevant background material can be found in Taylor chapter 3.2. 
+
+Taking the velocity from the previous exercise and integrating over time we find the height
+!bt
+\[
+y(t) = y(t_0=0)+\int_0^tv(t')dt'
+\]
+!et
+
 
 === Exercise 4 (10pt), Center of mass  ===
 
