@@ -7,7 +7,7 @@ DATE: today
 o You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. _Remember to write your name(s)_!
 o How do I(we)  hand in?  You can hand in the paper and pencil exercises as a hand-written document. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical part should always be handed in as a jupyter notebook by the deadline at D2L. 
 
-=== Introduction to the first midterm project, total score 100 (pt) ===
+=== Introduction to the first midterm project, total score 100 points ===
 
 The relevant reading background is
 o chapters 2-5 of Taylor.
@@ -43,11 +43,11 @@ o (5pt) If the particle  starts at rest at $x=d$ with velocity $v_0$, how large 
 
 o (5pt) Use the above potential to set up the total forces acting on the particle.  Find the acceleration acting on the particle. Is this a conservative force? Calculate also the _curl_ of the force  $\bm{\nabla}\times \bm{F}$ in order to validate your conclusion. 
 
-o (5pt) Are linear momentum and angular momentum conserved? 
+o (5pt) Are linear momentum and angular momentum conserved? You need to show this by calculating the quantities.
 
-o g (5pt) Write a numerical algorithm to find the position and velocity of the particle at a time $t+\Delta t$ given the position and velocity at a time $t$. Here we aim at the _Euler-Cromer and the Velocity Verlet algorithms_.   
+o (5pt) Write a numerical algorithm to find the position and velocity of the particle at a time $t+\Delta t$ given the position and velocity at a time $t$. Here we aim at the _Euler-Cromer and the Velocity Verlet algorithms_.   
 
-o (10pt) Implement the numerical algorithms in a program to find the position of the particle as function of time from $t=0$ to $t=30$ s using a mass  $m=1.0$ kg, the parameter $V_0=1$ J and $d=0.1$ m. Make a plot of two distinct positions with initial conditions $x_0=d$ and $v_0=0.5$ m/s, $x_0=d$ and $v_0=1.5$ m/s, and $x_0=d$ and $v_0=2.5$ m/s. Plot also the velocity.  Perform calculations with and without the term $x^4$ in the potential. Do you see a difference? Compare and discuss the results obtained with the Velocity Verlet algorithm and the Euler-Cromer algorithm. 
+o (10pt) Implement the numerical algorithms in a program to find the position of the particle as function of time from $t=0$ to $t=30$ s using a mass  $m=1.0$ kg, the parameter $V_0=1$ J and $d=0.1$ m. Make a plot of three distinct positions with initial conditions $x_0=d$ and $v_0=0.5$ m/s, $x_0=d$ and $v_0=1.5$ m/s, and $x_0=d$ and $v_0=2.5$ m/s. Plot also the velocity.  Perform calculations with and without the term $x^4$ in the potential. Do you see a difference? Compare and discuss the results obtained with the Velocity Verlet algorithm and the Euler-Cromer algorithm. 
 
 o (5pt) Describe the behavior of the particle for the three initial conditions  and sketch the motion in an energy diagram. Is energy conserved in your simulations?
 
@@ -73,4 +73,20 @@ o (10pt) Plot the motion of a particle starting in $\bm{r}_0=(d,0)$ from $t=0$ s
 o (10pt) Is energy conserved? 
 
 o (10pt) Can you choose initial conditions $r_0$ and $v_0$ in such a manner that the particle moves in a circular orbit with a constant radius? If so, what initial conditions are those? Plot the motion for these conditions.
+
+=== Part 3, Bonus part (30pt)  ===
+
+This part requires that you implement the Runge-Kutta to fourth-order algorithm for solving the differential equations.
+This is discussed in detail in the "lecture notes on harmonic oscillations":"https://mhjensen.github.io/Physics321/doc/pub/harmonic/html/harmonic.html".
+
+We will focus only on the one-dimensional problem from part 1. That is we use the potential for motion in one dimension only.
+
+We use the same initial conditions and parameter values to find the position and velocity of the particle as function of time from $t=0$ to $t=30$ s using a mass  $m=1.0$ kg, the parameter $V_0=1$ J and $d=0.1$ m.  The  initial conditions are $x_0=d$ and $v_0=0.5$ m/s, $x_0=d$ and $v_0=1.5$ m/s, and $x_0=d$ and $v_0=2.5$ m/s. We include a damping term
+$-\beta v$ using $\beta/m=0.1$.
+
+Add a periodic driving force $F(t)=F_0\cos{(\omega t)}$  to your equation and find the new acceleration. Can you tune
+$\omega$ and $F_0$ so that the particle exhibits stable oscillations in one well only and in both wells as well?
+
+Study the stability of your differential equations as function of the Runge-Kutta 4 method compared with the Euler-Cromer method. Vary also the step size and study the differences between the two methods. Comment your results.
+
 

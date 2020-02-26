@@ -99,7 +99,7 @@ PHY321: Classical Mechanics 1
 
 % --- begin date ---
 \begin{center}
-Feb 25, 2020
+Feb 26, 2020
 \end{center}
 % --- end date ---
 
@@ -114,7 +114,7 @@ Feb 25, 2020
 \end{enumerate}
 
 \noindent
-\paragraph{Introduction to the first midterm project, total score 100 (pt).}
+\paragraph{Introduction to the first midterm project, total score 100 points.}
 The relevant reading background is
 \begin{enumerate}
 \item chapters 2-5 of Taylor.
@@ -149,11 +149,11 @@ We will assume all other forces on the particle are small in comparison, and neg
 
 \item (5pt) Use the above potential to set up the total forces acting on the particle.  Find the acceleration acting on the particle. Is this a conservative force? Calculate also the \textbf{curl} of the force  $\bm{\nabla}\times \bm{F}$ in order to validate your conclusion. 
 
-\item (5pt) Are linear momentum and angular momentum conserved? 
+\item (5pt) Are linear momentum and angular momentum conserved? You need to show this by calculating the quantities.
 
-\item g (5pt) Write a numerical algorithm to find the position and velocity of the particle at a time $t+\Delta t$ given the position and velocity at a time $t$. Here we aim at the \textbf{Euler-Cromer and the Velocity Verlet algorithms}.   
+\item (5pt) Write a numerical algorithm to find the position and velocity of the particle at a time $t+\Delta t$ given the position and velocity at a time $t$. Here we aim at the \textbf{Euler-Cromer and the Velocity Verlet algorithms}.   
 
-\item (10pt) Implement the numerical algorithms in a program to find the position of the particle as function of time from $t=0$ to $t=30$ s using a mass  $m=1.0$ kg, the parameter $V_0=1$ J and $d=0.1$ m. Make a plot of two distinct positions with initial conditions $x_0=d$ and $v_0=0.5$ m/s, $x_0=d$ and $v_0=1.5$ m/s, and $x_0=d$ and $v_0=2.5$ m/s. Plot also the velocity.  Perform calculations with and without the term $x^4$ in the potential. Do you see a difference? Compare and discuss the results obtained with the Velocity Verlet algorithm and the Euler-Cromer algorithm. 
+\item (10pt) Implement the numerical algorithms in a program to find the position of the particle as function of time from $t=0$ to $t=30$ s using a mass  $m=1.0$ kg, the parameter $V_0=1$ J and $d=0.1$ m. Make a plot of three distinct positions with initial conditions $x_0=d$ and $v_0=0.5$ m/s, $x_0=d$ and $v_0=1.5$ m/s, and $x_0=d$ and $v_0=2.5$ m/s. Plot also the velocity.  Perform calculations with and without the term $x^4$ in the potential. Do you see a difference? Compare and discuss the results obtained with the Velocity Verlet algorithm and the Euler-Cromer algorithm. 
 
 \item (5pt) Describe the behavior of the particle for the three initial conditions  and sketch the motion in an energy diagram. Is energy conserved in your simulations?
 
@@ -181,6 +181,21 @@ where $r=\sqrt{x^2+y^2}$ is the distance to the origin.
 \end{enumerate}
 
 \noindent
+\paragraph{Part 3, Bonus part (30pt).}
+This part requires that you implement the Runge-Kutta to fourth-order algorithm for solving the differential equations.
+This is discussed in detail in the \href{{https://mhjensen.github.io/Physics321/doc/pub/harmonic/html/harmonic.html}}{lecture notes on harmonic oscillations}.
+
+We will focus only on the one-dimensional problem from part 1. That is we use the potential for motion in one dimension only.
+
+We use the same initial conditions and parameter values to find the position and velocity of the particle as function of time from $t=0$ to $t=30$ s using a mass  $m=1.0$ kg, the parameter $V_0=1$ J and $d=0.1$ m.  The  initial conditions are $x_0=d$ and $v_0=0.5$ m/s, $x_0=d$ and $v_0=1.5$ m/s, and $x_0=d$ and $v_0=2.5$ m/s. We include a damping term
+$-\beta v$ using $\beta/m=0.1$.
+
+Add a periodic driving force $F(t)=F_0\cos{(\omega t)}$  to your equation and find the new acceleration. Can you tune
+$\omega$ and $F_0$ so that the particle exhibits stable oscillations in one well only and in both wells as well?
+
+Study the stability of your differential equations as function of the Runge-Kutta 4 method compared with the Euler-Cromer method. Vary also the step size and study the differences between the two methods. Comment your results.
+
+
 
 % ------------------- end of main content ---------------
 
