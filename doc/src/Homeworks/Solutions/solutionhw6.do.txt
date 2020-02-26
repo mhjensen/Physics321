@@ -1,0 +1,112 @@
+TITLE: PHY321: Classical Mechanics 1
+AUTHOR: Homework 6, due Monday  February 24
+DATE: today
+
+===  Practicalities about  homeworks and projects ===
+
+o You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. _Remember to write your name(s)_!
+o Homeworks are available Wednesday/Thursday the week before the deadline. The deadline is at the Friday lecture.
+o How do I(we)  hand in?  You can hand in the paper and pencil exercises as a hand-written document. For this homework this applies to exercises 1-5. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise(s) (exercise 6 here) should always be handed in as a jupyter notebook by the deadline at D2L. 
+
+=== Introduction to homework 6 ===
+
+This week's sets of classical pen and paper and computational
+exercises are again a continuation of the topics from the previous homework sets. We keep
+discussing conservation laws, conservative forces, energy, momentum and angular momentum. These conservation laws are central in Physics and understanding them properly lays the foundation for understanding and analyzing more complicated physics problems.
+The relevant reading background is
+o chapters 3 and 4 of Taylor (there are many good examples there) and
+o chapters 10-14 of Malthe-Sørenssen.
+In both textbooks there are many nice worked out examples. Malthe-Sørenssen's text contains also several coding examples you may find useful. For the first three exercises here 
+
+
+The numerical homework is based on what you did in homework 5, but includes now an added driving force. In your code this implies a simple extension. In exercise 4, you will need to set up the analytical solutions for this case as well. 
+
+
+=== Exercise 1 (6 pt), Conservative forces ===
+
+An additional requirement for a force to be conservative is that its _curl_ is equal to zero (see Taylor section 4.5), that is
+!bt
+\[
+\bm{\nabla}\times \bm{F} =0.
+\]
+!et
+Find the curl of the following forces
+* 1a (2pt) $\bm{F}=k\bm{r}$ where $k$ is a constant and $\bm{r}=x\bm{i}+y\bm{j}+z\bm{k}$ where $\bm{i},\bm{j}$ and $\bm{k}$ are the unit vectors in the $x$, $y$ and $z$ directions respectively. Previously we used $\bm{e}_x$ etc for these unit vector. We will stick with the notation in Taylor.
+* 1b (2pt) $\bm{F}=Ax\bm{i}+By^2\bm{j}+Cz^2\bm{k}$ where $A$, $B$ and $C$ are constants.
+* 1c (2pt) $\bm{F}=Ay\bm{i}+Bx\bm{j}+Cz\bm{k}$ where $A$, $B$ and $C$ are constants.
+
+
+=== Exercise 2 (10 pt), More on conservative forces ===
+Which of the following force are conservative?
+* 2a (2pt) $\bm{F}=k(x\bm{i}+2y\bm{j}+3z\bm{k})$ where $k$ is a constant.
+* 2b (2pt) $\bm{F}=y\bm{i}+x\bm{j}+0\bm{k}$.
+* 2c (2pt) $\bm{F}=k(-y\bm{i}+x\bm{j}+0\bm{k})$ where $k$ is a constant.
+* 2d (4pt) For those which are conservative, find the corresponding potential energy $V$ and verify that direct differentiation that $\bm{F}=-\bm{\nabla} V$.
+
+=== Exercise 3 (10 pt), The Lennard-Jones potential ===
+
+"The Lennard-Jones potential":"https://en.wikipedia.org/wiki/Lennard-Jones_potential" is often used to describe
+the interaction between two atoms or ions or molecules. If you end up doing materals science and molecular dynamics calculations, it is very likely that you will encounter this potential model.
+The expression for the potential energy is
+of the molecule is:
+!bt
+\[
+V(r) = V_0\left((\frac{a}{r})^{12}-(\frac{b}{r})^{6}\right),
+\]
+!et
+where $V_0$, $a$ and $b$ are constants and the potential depends only on the relative distance between two objects
+$i$ and $j$, that is $r=\vert\bm{r}_i-\bm{r}_j\vert=\sqrt{(x_i-x_j)^2+(y_i-y_j)^2+(z_i-z_j)^2}$.
+
+* 3a (3pt) Sketch/plot the potential (choose some values for the constants in doing so).
+* 3b (3pt) Find and classify the equilibrium points.
+* 3c (4pt) What is the force acting on one of the objects (an atom for example) from the other object? Is this a conservative force?
+
+
+=== Exercise 4 (20 pt), particle in a new potential ===
+
+Relevant reading here is Taylor chapter 5 and the lecture notes on oscilaltions. In particular, you will find useful  sections 5.1, 5.2, 5.4-5.6. They contain all material needed to solve this exercise.
+
+Consider a particle of mass $m$ moving in a one-dimensional potential,
+!bt
+\[
+V(x)=-\alpha\frac{x^2}{2}+\beta\frac{x^4}{4}.
+\]
+!et
+
+* 4a (3pt) Plot the potential and discuss eventual equilibrium points. Is this a conservative force?
+* 4b (3pt) Compute the second derivative of the potential and find its miminum position(s). Using the Taylor expansion of the potential around its minimum (see Taylor section 5.1) to define a spring constant $k$. Use the spring constant to find the natural (angular) frequency $\omega_0=\sqrt{k/m}$. We call the new spring constant for  an effective spring constant. 
+* 4c (4pt) We ignore the second term in the potential energy and keep only the term proportional to the effective spring constant, that is a force $F\propto kx$. Find the acceleration and set up the differential equation.  Find the general analytical solution for these harmonic oscillations.  You don't need to find the constants in the general solution.
+* 4d (5pt) Assume we have no friction. If you add a small force $F=F_0\cos{(\omega t-\delta)}$, and if the particle is initially at the minimum with zero initial velocity, find its position as a function of time. Note that here you need to add the particular solution. 
+* 4e (5pt) We add now  a small drag force $-bv$ to the previous exercise (4d). Find the forces acting on the particle and the acceleration. Find also the analytical solutions with the same initial conditions as in the previous exercise.
+
+We will use this analytical solutions in the numerical part.
+
+
+===  Exercise 5 (40pt), Sliding Block with driving force  ===
+
+
+_This exercise should be handed in as a jupyter-notebook_ at D2L. Remember to write your name(s). 
+
+Last week we developed a code for the sliding block including a friction term. This week we will simply reuse this code and add a force to it. The only thing we need to do is simply to add an expression for the force we want to study.
+
+_We will use the Euler-Cromer method only here_.
+
+* 5a (20pt) Add the force from exercise 4d to your code from last week. If you have not done the bonus exercise from hw5, add also the friction term $-bv$ from the previous exercise. Scale your equations and study the solution as function of different values of $F_0$, $b$, $k$ and $\omega$ and $\omega_0$. Keep the initial conditions as in exercise 4d. Discuss your results. Is energy conserved? If not, why? 
+
+* 5b (20 pt)  Compare your numerical results with the analytical ones from exercise 4. You can focus on either the results from 4d or 4e or both.  Discuss your results. 
+
+===  Exercise 6 (30pt), Bonus exercise ===
+
+You don't need to do this exercise, but it gives you a bonus score of 30 points. Taylor's section 5.4 and the lecture notes on damped oscillations cover most of the theoretical background.
+
+Here we will explore resonances, using the full solution from exercise
+4e.  We recommend reading section 5.6 of Taylor before starting
+analyzing your results.  This exercise means that you will use your
+code from the previous exercise (5) and study the choice of physical
+parameters which will lead to a resonant behavior. As such, this bonus
+exercises is meant as an example where you use your numerical code to
+explore interesting physics.
+
+* 6a (30pt)  Find the value of $\omega$ which results in a resonant behavior and study the numerical and analytical solutions for the resonant case. Discuss your results. 
+
+
