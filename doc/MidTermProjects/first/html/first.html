@@ -54,7 +54,12 @@ div { text-align: justify; text-justify: inter-word; }
                None,
                '___sec2'),
               ('Part 2, two dimensions', 3, None, '___sec3'),
-              ('Part 3, Bonus part (30pt)', 3, None, '___sec4')]}
+              ('Part 3, Bonus part (30pt)', 3, None, '___sec4'),
+              ('Part 4, Additional Bonus part, Analytical solution of '
+               'anharmonic oscillator (60pt)',
+               3,
+               None,
+               '___sec5')]}
 end of tocinfo -->
 
 <body>
@@ -183,7 +188,51 @@ Add a periodic driving force \( F(t)=F_0\cos{(\omega t)} \)  to your equation an
 <p>
 Study the stability of your differential equations as function of the Runge-Kutta 4 method compared with the Euler-Cromer method. Vary also the step size and study the differences between the two methods. Comment your results.
 
+<h3 id="___sec5">Part 4, Additional Bonus part, Analytical solution of anharmonic oscillator (60pt) </h3>
+
 <p>
+The anharmonic-oscillator equation with dissipation has been widely used in various areas of science,
+and surprisingly little has been known about its analytical solutions.
+
+<p>
+The differential equation (in one dimension) is similar to the one we have studied in part 1.
+The potential we started with
+$$
+V(x)=\frac{V_0}{d^4}\left(x^4-2x^2d^2+d^4\right),
+$$
+
+results in a force
+$$
+F(x)=-\frac{dV}{dx}=\frac{4V_0}{d^4}\left(x^3-xd^2\right).
+$$
+
+We could write this force in a more general way adding an \( x^2 \) term as
+$$
+F(x)=Ax+Bx^2+Cx^3.
+$$
+
+Our specific force does not have the \( x^2 \) term, which means we can set \( B=0 \).
+The general differential equation with a drift/dissipation term is then
+$$
+m\frac{d^2x}{dt^2}+b\frac{dx}{dt}=Ax+Bx^2+Cx^3.
+$$
+
+Dividing by \( m \) and introducing new constants we have a differential equation
+$$
+\frac{d^2x}{dt^2}+\gamma\frac{dx}{dt}=\alpha x+\beta x^2+\delta x^3,
+$$
+
+with \( \gamma=b/m \), \( \alpha=A/m \), \( \beta=B/m \) and \( \delta=C/m \).
+Numerically, as we have seen, it is almost trivial to solve these equations by simply adding different terms to the definition of the acceleration.
+
+<p>
+This part is meant more as a mathematical challenge if you feel tempted. It is a very interesting field, with connections to chaotic motion and much more. It requires some research from your side to find the analytical solution.  Your task here is to find the analytical solution and if time allows, compare with numerical studies. 
+The following reference can help here
+
+<ol>
+<li> <a href="https://journals.aps.org/pra/pdf/10.1103/PhysRevA.44.3484" target="_blank">Dixon et al, Physical Review A 44, 3484 (1991)</a></li>
+</ol>
+
 
 <!-- ------------------- end of main content --------------- -->
 

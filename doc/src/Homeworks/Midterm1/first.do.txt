@@ -89,4 +89,46 @@ $\omega$ and $F_0$ so that the particle exhibits stable oscillations in one well
 
 Study the stability of your differential equations as function of the Runge-Kutta 4 method compared with the Euler-Cromer method. Vary also the step size and study the differences between the two methods. Comment your results.
 
+=== Part 4, Additional Bonus part, Analytical solution of anharmonic oscillator (60pt) ===
 
+The anharmonic-oscillator equation with dissipation has been widely used in various areas of science,
+and surprisingly little has been known about its analytical solutions.
+
+The differential equation (in one dimension) is similar to the one we have studied in part 1.
+The potential we started with
+!bt
+\[
+V(x)=\frac{V_0}{d^4}\left(x^4-2x^2d^2+d^4\right),
+\]
+!et
+results in a force
+!bt
+\[
+F(x)=-\frac{dV}{dx}=\frac{4V_0}{d^4}\left(x^3-xd^2\right).
+\]
+!et
+We could write this force in a more general way adding an $x^2$ term as
+!bt
+\[
+F(x)=Ax+Bx^2+Cx^3.
+\]
+!et
+Our specific force does not have the $x^2$ term, which means we can set $B=0$.
+The general differential equation with a drift/dissipation term is then
+!bt
+\[
+m\frac{d^2x}{dt^2}+b\frac{dx}{dt}=Ax+Bx^2+Cx^3.
+\]
+!et
+Dividing by $m$ and introducing new constants we have a differential equation
+!bt
+\[
+\frac{d^2x}{dt^2}+\gamma\frac{dx}{dt}=\alpha x+\beta x^2+\delta x^3,
+\]
+!et
+with $\gamma=b/m$, $\alpha=A/m$, $\beta=B/m$ and $\delta=C/m$.
+Numerically, as we have seen, it is almost trivial to solve these equations by simply adding different terms to the definition of the acceleration.
+
+This part is meant more as a mathematical challenge if you feel tempted. It is a very interesting field, with connections to chaotic motion and much more. It requires some research from your side to find the analytical solution.  Your task here is to find the analytical solution and if time allows, compare with numerical studies. 
+The following reference can help here
+o "Dixon et al, Physical Review A 44, 3484 (1991)":"https://journals.aps.org/pra/pdf/10.1103/PhysRevA.44.3484"
