@@ -114,7 +114,7 @@ Feb 25, 2020
 \end{enumerate}
 
 \noindent
-\paragraph{Introduction to the first midterm project.}
+\paragraph{Introduction to the first midterm project, total score 100 (pt).}
 The relevant reading background is
 \begin{enumerate}
 \item chapters 2-5 of Taylor.
@@ -131,7 +131,7 @@ We start with a one-dimensional potential and motion.  Thereafter we
 extend this potential model to a two-dimensional model and study the
 numerical solution of the corresponding problem.
 
-\paragraph{Particle in a  potential, total score 100pt.}
+\paragraph{Part 1, Particle in a one-dimensional  potential.}
 We consider a particle of mass $m$ moving in a one-dimensional potential,
 \[
 V(x)=\frac{V_0}{d^4}\left(x^4-2x^2d^2+d^4\right).
@@ -153,7 +153,7 @@ We will assume all other forces on the particle are small in comparison, and neg
 
 \item g (5pt) Write a numerical algorithm to find the position and velocity of the particle at a time $t+\Delta t$ given the position and velocity at a time $t$. Here we aim at the \textbf{Euler-Cromer and the Velocity Verlet algorithms}.   
 
-\item (10pt) Implement the numerical algorithms in a program to find the position of the particle as function of time from $t=0$ to $t=30$ s using a mass  $m=1.0$ kg, the parameter $V_0=1$ J and $d=0.1$ m. Make a plot of two distinct positions with initial conditions $x_0=d$ and $v_0=0.5$ m/s, $x_0=d$ and $v_0=1.5$ m/s, and $x_0=d$ and $v_0=2.5$ m/s. Plot also the velocity.  Perform calculations with and without the term $x^4$ in the potential. Do you see a difference? Compare and discuss the results obtained with the Velocity Verlet algorithm and the Euler-Cromer algorithm. This problem does not have an analytical solution. 
+\item (10pt) Implement the numerical algorithms in a program to find the position of the particle as function of time from $t=0$ to $t=30$ s using a mass  $m=1.0$ kg, the parameter $V_0=1$ J and $d=0.1$ m. Make a plot of two distinct positions with initial conditions $x_0=d$ and $v_0=0.5$ m/s, $x_0=d$ and $v_0=1.5$ m/s, and $x_0=d$ and $v_0=2.5$ m/s. Plot also the velocity.  Perform calculations with and without the term $x^4$ in the potential. Do you see a difference? Compare and discuss the results obtained with the Velocity Verlet algorithm and the Euler-Cromer algorithm. 
 
 \item (5pt) Describe the behavior of the particle for the three initial conditions  and sketch the motion in an energy diagram. Is energy conserved in your simulations?
 
@@ -161,6 +161,7 @@ We will assume all other forces on the particle are small in comparison, and neg
 \end{enumerate}
 
 \noindent
+\paragraph{Part 2, two dimensions.}
 We move then to two dimensions. Our particle/object interacts with a surface potential given by
 \[
 V(r)=\frac{V_0}{d^4}\left(r^4-2r^2d^2+d^4\right),
@@ -168,18 +169,11 @@ V(r)=\frac{V_0}{d^4}\left(r^4-2r^2d^2+d^4\right),
 where $r=\sqrt{x^2+y^2}$ is the distance to the origin.
 
 \begin{enumerate}
-\item (5pt) Show that the acceleration is now
-\end{enumerate}
+\item (5pt) Show that the acceleration is now $\bm{a}=-\frac{4V_0}{md^4}\left(r^3-rd^2\right)\frac{\bm{r}}{r}$.
 
-\noindent
-\[
-\bm{a}=-\frac{4V_0}{md^4}\left(r^3-rd^2\right)\frac{\bm{r}}{r}.
-\]
-
-\begin{enumerate}
 \item (10pt) Rewrite your program to find the velocity and position of the atom using the new expression for the force $\bm{F}$. Use vectorized expressions in your code as you did in homework 4 for the Earth-Sun system. See eventually the code from the \href{{https://mhjensen.github.io/Physics321/doc/pub/energyconserv/html/energyconserv.html}}{lectures}.  We recommend to revisit the Earth-Sun problem from homework 4 since it has several similarities with the problem here.
 
-\item (10pt) Plot the motion of a particle starting in $\bm{r}_0=(d,0)$ from $t=0$s to $t=20$s for the initial velocities $\bm{v}_0= (0,0.5)$ m/s, $\bm{v}_0= (0,1)$ m/s, and $\bm{v}_0= (0,1.5)$ m/s. The parameters $d$ and $V_0$ are as before.
+\item (10pt) Plot the motion of a particle starting in $\bm{r}_0=(d,0)$ from $t=0$ s to $t=20$ s for the initial velocities $\bm{v}_0=(0,0.5)$ m/s, $\bm{v}_0=(0,1)$ m/s, and $\bm{v}_0=(0,1.5)$ m/s. The parameters $d$ and $V_0$ are as before.
 
 \item (10pt) Is energy conserved? 
 

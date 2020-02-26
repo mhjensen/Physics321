@@ -39,11 +39,16 @@ div { text-align: justify; text-justify: inter-word; }
                3,
                None,
                '___sec0'),
-              ('Introduction to the first midterm project', 3, None, '___sec1'),
-              ('Particle in a  potential, total score 100pt',
+              ('Introduction to the first midterm project, total score 100 '
+               '(pt)',
                3,
                None,
-               '___sec2')]}
+               '___sec1'),
+              ('Part 1, Particle in a one-dimensional  potential',
+               3,
+               None,
+               '___sec2'),
+              ('Part 2, two dimensions', 3, None, '___sec3')]}
 end of tocinfo -->
 
 <body>
@@ -93,7 +98,7 @@ MathJax.Hub.Config({
 <li> How do I(we)  hand in?  You can hand in the paper and pencil exercises as a hand-written document. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical part should always be handed in as a jupyter notebook by the deadline at D2L.</li> 
 </ol>
 
-<h3 id="___sec1">Introduction to the first midterm project </h3>
+<h3 id="___sec1">Introduction to the first midterm project, total score 100 (pt) </h3>
 
 <p>
 The relevant reading background is
@@ -111,7 +116,7 @@ We start with a one-dimensional potential and motion.  Thereafter we
 extend this potential model to a two-dimensional model and study the
 numerical solution of the corresponding problem.
 
-<h3 id="___sec2">Particle in a  potential, total score 100pt </h3>
+<h3 id="___sec2">Part 1, Particle in a one-dimensional  potential </h3>
 
 <p>
 We consider a particle of mass \( m \) moving in a one-dimensional potential,
@@ -129,11 +134,14 @@ We will assume all other forces on the particle are small in comparison, and neg
 <li> (5pt) Use the above potential to set up the total forces acting on the particle.  Find the acceleration acting on the particle. Is this a conservative force? Calculate also the <b>curl</b> of the force  \( \boldsymbol{\nabla}\times \boldsymbol{F} \) in order to validate your conclusion.</li> 
 <li> (5pt) Are linear momentum and angular momentum conserved?</li> 
 <li> g (5pt) Write a numerical algorithm to find the position and velocity of the particle at a time \( t+\Delta t \) given the position and velocity at a time \( t \). Here we aim at the <b>Euler-Cromer and the Velocity Verlet algorithms</b>.</li>   
-<li> (10pt) Implement the numerical algorithms in a program to find the position of the particle as function of time from \( t=0 \) to \( t=30 \) s using a mass  \( m=1.0 \) kg, the parameter \( V_0=1 \) J and \( d=0.1 \) m. Make a plot of two distinct positions with initial conditions \( x_0=d \) and \( v_0=0.5 \) m/s, \( x_0=d \) and \( v_0=1.5 \) m/s, and \( x_0=d \) and \( v_0=2.5 \) m/s. Plot also the velocity.  Perform calculations with and without the term \( x^4 \) in the potential. Do you see a difference? Compare and discuss the results obtained with the Velocity Verlet algorithm and the Euler-Cromer algorithm. This problem does not have an analytical solution.</li> 
+<li> (10pt) Implement the numerical algorithms in a program to find the position of the particle as function of time from \( t=0 \) to \( t=30 \) s using a mass  \( m=1.0 \) kg, the parameter \( V_0=1 \) J and \( d=0.1 \) m. Make a plot of two distinct positions with initial conditions \( x_0=d \) and \( v_0=0.5 \) m/s, \( x_0=d \) and \( v_0=1.5 \) m/s, and \( x_0=d \) and \( v_0=2.5 \) m/s. Plot also the velocity.  Perform calculations with and without the term \( x^4 \) in the potential. Do you see a difference? Compare and discuss the results obtained with the Velocity Verlet algorithm and the Euler-Cromer algorithm.</li> 
 <li> (5pt) Describe the behavior of the particle for the three initial conditions  and sketch the motion in an energy diagram. Is energy conserved in your simulations?</li>
 <li> (5pt) Repeat the calculations from 1h with the full potential and all three initial conditions but now with a damping force \( -\beta v \). Find the modified acceleration using \( \beta/m=0.1 \). Discuss your results and sketch again the motion in an energy diagram.</li>
 </ol>
 
+<h3 id="___sec3">Part 2, two dimensions </h3>
+
+<p>
 We move then to two dimensions. Our particle/object interacts with a surface potential given by
 $$
 V(r)=\frac{V_0}{d^4}\left(r^4-2r^2d^2+d^4\right),
@@ -142,17 +150,9 @@ $$
 where \( r=\sqrt{x^2+y^2} \) is the distance to the origin.
 
 <ol>
-<li> (5pt) Show that the acceleration is now</li>
-</ol>
-
-$$
-\boldsymbol{a}=-\frac{4V_0}{md^4}\left(r^3-rd^2\right)\frac{\boldsymbol{r}}{r}.
-$$
-
-
-<ol>
+<li> (5pt) Show that the acceleration is now \( \boldsymbol{a}=-\frac{4V_0}{md^4}\left(r^3-rd^2\right)\frac{\boldsymbol{r}}{r} \).</li>
 <li> (10pt) Rewrite your program to find the velocity and position of the atom using the new expression for the force \( \boldsymbol{F} \). Use vectorized expressions in your code as you did in homework 4 for the Earth-Sun system. See eventually the code from the <a href="https://mhjensen.github.io/Physics321/doc/pub/energyconserv/html/energyconserv.html" target="_blank">lectures</a>.  We recommend to revisit the Earth-Sun problem from homework 4 since it has several similarities with the problem here.</li>
-<li> (10pt) Plot the motion of a particle starting in \( \boldsymbol{r}_0=(d,0) \) from $t=0$s to $t=20$s for the initial velocities \( \boldsymbol{v}_0= (0,0.5) \) m/s, \( \boldsymbol{v}_0= (0,1) \) m/s, and \( \boldsymbol{v}_0= (0,1.5) \) m/s. The parameters \( d \) and \( V_0 \) are as before.</li>
+<li> (10pt) Plot the motion of a particle starting in \( \boldsymbol{r}_0=(d,0) \) from \( t=0 \) s to \( t=20 \) s for the initial velocities \( \boldsymbol{v}_0=(0,0.5) \) m/s, \( \boldsymbol{v}_0=(0,1) \) m/s, and \( \boldsymbol{v}_0=(0,1.5) \) m/s. The parameters \( d \) and \( V_0 \) are as before.</li>
 <li> (10pt) Is energy conserved?</li> 
 <li> (10pt) Can you choose initial conditions \( r_0 \) and \( v_0 \) in such a manner that the particle moves in a circular orbit with a constant radius? If so, what initial conditions are those? Plot the motion for these conditions.</li>
 </ol>
