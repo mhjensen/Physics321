@@ -35,7 +35,7 @@ mpl.rcParams['font.family'] = 'serif'
 
 DeltaT = 0.001
 #set up arrays 
-tfinal = 30.0
+tfinal = 50.0
 n = ceil(tfinal/DeltaT)
 # set up arrays for t, v, and x
 t = np.zeros(n)
