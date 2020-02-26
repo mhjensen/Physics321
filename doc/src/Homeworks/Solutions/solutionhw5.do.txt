@@ -41,8 +41,7 @@ This is indeed a conservative force since it depends only on position and its _c
 * 1b (4pt) Use the work-energy theorem to find the velocity $v(x)$. 
 
 Using the work-energy theorem we can find the work $W$ done when moving an electron from a position $x_\
-0$ to a final position $x$ through the
- integral
+0$ to a final position $x$ through the integral
 !bt
 \[
 W=-\int_{x_0}^x \bm{F}(x')dx' =  \int_{x_0}^x F_0\sin{(\frac{2\pi x'}{b})} dx',
@@ -68,14 +67,79 @@ V(x)=V(x_0)+\frac{1}{2}mv_0^2-\frac{1}{2}mv^2,
 \]
 !et
 with $v$ given by the previous answer. 
-* 1d (5pt) Make a plot of the potential energy and discuss the equilibrium points where the force on the electron is zero. Discuss the physical interpretation of stable and unstable equilibrium points. Use energy conservation. Recommended read here  is Malthe-Sørenssen chapter 11.3.2.
+We can now, in order to find a more explicit expression for the potential energy at a given value $x$, define a zero level value for the potential. The potential is defined , using the work-energy theorem , as
+!bt
+\[
+V(x)=V(x_0)+\int_{x_0}^x (-F(x'))dx',
+\]
+!et
+and if you recall the definition of the indefinite integral, we can rewrite this as
+!bt
+\[
+V(x)=\int (-F(x'))dx'+C,
+\]
+!et
+where $C$ is an undefined constant. The force is defined as the gradient of the potential, and in that case the undefined constant vanishes. The constant does not affect the force we derive from the potential.
 
-The following Python code
+We have then
+!bt
+\[
+V(x)=V(x_0)-\int_{x_0}^x \bm{F}(x')dx',
+\]
+!et
+which results in
+!bt
+\[
+V(x)=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right]+V(x_0).
+\]
+!et
+We can now define
+!bt
+\[
+\frac{F_0b}{2\pi}\cos{(\frac{2\pi x_0}{b})}=V(x_0),
+\]
+!et
+which gives 
+!bt
+\[
+V(x)=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}\right].
+\]
+!et
 
+* 1d (5pt) Make a plot of the potential energy and discuss the equilibrium points where the force on the electron is zero. Discuss the physical interpretation of stable and unstable equilibrium points. Use energy conservation. 
+
+The following Python code plots the potential
+!bc pycod
+import numpy as np
+import pandas as pd
+from math import *
+import matplotlib.pyplot as plt
+Deltax = 0.01
+#set up arrays
+xinitial = -2.0
+xfinal = 2.0 
+n = ceil((xfinal-xinitial)/Deltax)
+x = np.zeros(n)
+for i in range(n):
+    x[i] = xinitial+i*Deltax
+V = np.zeros(n)
+# Setting values for the constants. 
+F0 = 1.0; b = 1.0; 
+# Defining the potential
+V = F0*b/(2*pi)*np.cos(2*pi*x/b)
+# Plot position as function of time    
+fig, ax = plt.subplots()
+ax.set_ylabel('x')
+ax.set_xlabel('V')
+ax.plot(x, V)
+fig.tight_layout()
+plt.show()
+!ec
+
+We have stable equilibrium  points for every minimum of the $\cos$ function and unstable equilibrium points where it has its maximimum values. At the minimum the particle has the lowest potential energy and the largest kinetic energy whereas at the maxima it has the largest potential energy and lowest kinetic energy. 
 === Exsercise 2 (15pt), Rocket, Momentum and mass ===
 
-Taylor exercise 3.11.   It is an exercise meant to illustrate momentum conservation or not. 
-This exercise was partly discussed during the lectures, see the notes on "Energy and Momentum etc, see the part on Momentum conservation ":"https://mhjensen.github.io/Physics321/doc/pub/energyconserv/html/energyconserv.html". Taylor's chapter 3.2 covers also this example.
+Taylor exercise 3.11.    This exercise was partly discussed during the lectures, see the notes on "Energy and Momentum etc, see the part on Momentum conservation ":"https://mhjensen.github.io/Physics321/doc/pub/energyconserv/html/energyconserv.html". Taylor's chapter 3.2 covers also this example.
 
 * 3.11 a and b
 
@@ -92,8 +156,11 @@ Mv&=&(M-\Delta M)(v+\Delta v)+\Delta M(v-v_e)\\
 \end{eqnarray*}
 !et
 
-In the second step we ignored the term $\Delta M\Delta v$ because it is doubly small. The last equation \
-gives
+
+In the second step we ignored the term $\Delta M\Delta v$ since we
+assume it is small. The last equation gives
+
+
 !bt
 \begin{eqnarray}
 \Delta v&=&\frac{v_e}{M}\Delta M,\\
@@ -123,7 +190,7 @@ Inserting numbers $v_e=3000$ m/s, $M_0/M=2$ and $g=9.8$ m/s$^{2}$, we find $v=90
 
 * 3.11d
 
-If the thrust $kv_e$ is less than the weight $mg$, the rocket will just sit on the ground until it has shed enough mass that the thrust can overcome the weight, definitely not a good design. 
+If the thrust $\Delta Mv_e$ is less than the weight $mg$, the rocket will just sit on the ground until it has shed enough mass that the thrust can overcome the weight, definitely not a good design. 
 
 
 ===  Exercise 3 (10pt), More Rockets ===
@@ -133,15 +200,72 @@ Taylor exercises 3.13 (5pt) and 3.14 (5pt). This is a continuation of the previo
 Taking the velocity from the previous exercise and integrating over time we find the height
 !bt
 \[
-y(t) = y(t_0=0)+\int_0^tv(t')dt'
+y(t) = y(t_0=0)+\int_0^tv(t')dt',
 \]
 !et
+which gives
+!bt
+\[
+y(t) = v_et\ln{M_0}-v_e\int_0^t \ln{M(t')}dt'-\frac{1}{2}gt^2.
+\]
+!et
+To do the integral over time we recall that $M(t')=M_0-\Delta M t'$. We assumed that $\Delta M=k$ is a constant. We obtain then that the integral gives
+!bt
+\[
+\int_0^t \ln{M(t')}dt' = \frac{1}{k}\left(M_0\ln{M_0}-M\ln{M}\right)-t,
+\]
+!et
+where we used that $M_0-M=kt$. We have assumed that mass decreases by a constant $k$ times time $t$.
+Inserting into $y(t)$ we obtain then
+!bt
+\[
+y(t) = v_et-\frac{1}{2}gt^2-\frac{mv_e}{k}\ln{(\frac{M_0}{M})}.
+\]
+!et
+Using the numbers from the previous exercise with $t=2$ min we obtain that $y\approx 40$ km.
 
+For exercise 3.14 (5pt) we have the equation of motion which reads $Ma=kv_e-bv$ or
+!bt
+\[
+\frac{Mdv}{kv_e-bv}=dt.
+\]
+!et
+We have that $dM/dt =-k$ (assumed a constant rate for mass change). We can then replace $dt$ by $-dM/k$ and we have
+!bt
+\[
+\frac{kdv}{kv_e-bv}=-\frac{dM}{M}.
+\]
+!et
+Integrating gives
+!bt
+\[
+v = \frac{kv_e}{b}\left[1-(\frac{M}{M_0})^{b/k}\right].
+\]
+!et
 
 === Exercise 4 (10pt), Center of mass  ===
 
 Taylor exercise 3.20. Here Taylor's chapter 3.3 can be of use. This relation will turn out to be very useful when we discuss systems of many classical particles.
 
+The definition of the center of mass for $N$ objects can be written as
+!bt
+\[
+M\bm{R}=\sum{i=1}^Nm_i\bm{r}_i,
+\]
+!et
+where $m_i$ and $\bm{r}_i$ are the masses and positions of object $i$, respectively.
+
+Assume now that we have a collection of $N_1$ objects with masses $m_{1i}$ and positions $\bm{r}_{1i}$
+with $i=1,\dots,N_1$ and  a collection of $N_2$ objects with masses $m_{2j}$ and positions $\bm{r}_{2j}$
+with $j=1,\dots,N_2$.
+
+The total mass of the two-body system is $M=M_1+M_2=\sum{i=1}^{N_1}m_{1i}+\sum{j=1}^{N_2}m_{2j}$. The center of mass position $\bm{R}$ of the whole system satisfies then
+!bt
+\[
+M\bm{R}=\sum{i=1}^{N_1}m_{1i}\bm{r}_{1i}+\sum{j=1}^{N_2}m_{2j}\bm{r}_{2j}=M_1\bm{R}_1+M_2\bm{R}_2,
+\]
+!et
+where $\bm{R}_1$ and $\bm{R}_2$ are the the center of mass positions of the two separate bodies and the second equality follows from our rewritten definition of the center of mass applied to each body separately. This is the required result.
 
 ===  Exercise 5 (10pt), Sliding Block  and Spring (please not again), Scaling the Equations and getting started with numerical project ===
 The relevant material with codes etc is covered by the "Lecture Notes on Oscillations":"https://mhjensen.github.io/Physics321/doc/pub/harmonic/html/harmonic.html". Taylor's chapter 5, in particular sections 5.1 amd 5.2. 5.4 is relevant for the bonus exercise.
