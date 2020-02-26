@@ -1,73 +1,3 @@
-TITLE: Using Neural networks to solve Ordinary Differential Equations (ODEs)
-AUTHOR: Morten Hjorth-Jensen, MSU
-DATE: today
-
-!split
-===== Solving eigenvalue problems as ODEs with Neural Networks  =====
-
-The eigenvalues and eigenvectors of a matrix A is defined by
-!bt
-\[
-\bm{A}\bm{v} = \lambda\bm{v},
-\]
-!et
-where $\lambda$ is the eigenvalue and $\bm{v}$,
-is the eigenvector. The problem of finding eigenvalues is important
-and many physical problems can be transformed to an eigenvalue problem.
-
-Here we use neural networks and _tensorflow_ for solving an eigenvalue problem rewritten as
-an ordinary differential equation.
-
-The eigenvalue problem
-is transformed into a differential equation. The equation we will use to solve the problem is
-!bt
-\[
-\frac{dx(t)}{dt}= −x(t) + f(x(t))
-\]
-!et
-where $f$ is a function that contains the matrix $\bm{A}$, defined as 
-!bt
-\[
-f(\bm{x}) = [\bm{x}^T \bm{x}\bm{A} + (\bm{1} − \bm{x}^T\bm{A}\bm{x})]\bm{x}. 
-\]
-!et
-The matrix $\bm{A}$ is a symmetric $n\times n$ matrix.
-
-This is a non-linear differential equation. The quantity $\bm{x} is
-one of eigenvectors with entries $\bm{x}=[x_n1, x_2,\dots,x_n]^T$ and it is an output
-from the neural network.
-
-It can be shown that any stationary point of the equation
-is an eigenvector of the matrix $\bm{A}$.
-We can therefore disregard the time-dependency in $\bm{x}$. The
-stationary state is reached when the derivative of $bm{x}$ wrt time is zero.
-This means that the problem is now simplified to solve
-$\bm{x}(t)=f(\bm{x}(t))$.
-
-
-The cost-function can then be set up as follows,
-!bt
-\[
-C(\bm{x}(t)) = \mathrm{MSE}[\bm{x}(t)−f(\bm{x}(t))]=0,
-\]
-!et
-
-where $bm{x}$ is the output of the network given some input. When the neural network trains, it will try
-to minimize the difference between $bm{x}(t)$ and $f(\bm{x}(t))$ by
-tweaking the weights and biases. Starting
-from any non-zero input vector, the network will converge to the eigenvector corresponding to the
-largest eigenvalue.
-
-We can also make the network converge to other eigenvectors not corresponding to the largest
-eigenvalue. The easiest one to obtain is the one corresponding to the smallest eigenvalue. By using
-$-\bm{A}$ instead of $\bm{A}$ in $\bm{f}$,
-we will converge to the eigenvector corresponding to the smallest eigenvalue
-of $\bm{A}$.
-It is also possible to find the eigenvectors for the remaining eigenvalues. It can be shown
-that if the input vector, lets call it $\bm{x}_0$, is orthogonal to the a set of $k$ eigenvectors, then the solution
-converges to an eigenvector that is orthogonal to the $k$ eigenvectors.
-
-!bc pycod
 # # Finding eigenvalues of matrices with neural networks. 
 # Script for finding the eigenvectors corresponding to the largest eigenvalue of a matrix with a neural network.
 
@@ -173,4 +103,4 @@ print("Eigenvalue NN = \n", eigen_val_nn, "\n \n")
 print("Eigenvector analytic = \n", eigen_vecs)
 print("\n")
 print("Eigenvalues analytic = \n",eigen_vals)
-!ec
+
