@@ -71,6 +71,37 @@ where $V_0$, $a$ and $b$ are constants and the potential depends only on the rel
 $i$ and $j$, that is $r=\vert\bm{r}_i-\bm{r}_j\vert=\sqrt{(x_i-x_j)^2+(y_i-y_j)^2+(z_i-z_j)^2}$.
 
 * 3a (3pt) Sketch/plot the potential (choose some values for the constants in doing so).
+The following Python code plots the potential
+!bc pycod
+# Common imports
+import numpy as np
+from math import *
+import matplotlib.pyplot as plt
+
+Deltax = 0.01
+#set up arrays
+xinitial = -2.0
+xfinal = 2.0 
+n = ceil((xfinal-xinitial)/Deltax)
+x = np.zeros(n)
+for i in range(n):
+    x[i] = xinitial+i*Deltax
+V = np.zeros(n)
+# Initial conditions as compact 2-dimensional arrays
+alpha = 0.81
+beta = 0.5
+print(sqrt(alpha/beta))
+V = -alpha*x*x*0.5 + beta*(x**4)*0.25
+# Plot position as function of time    
+fig, ax = plt.subplots()
+#ax.set_xlim(0, tfinal)
+ax.set_ylabel('x[m]')
+ax.set_xlabel('V[s]')
+ax.plot(x, V)
+fig.tight_layout()
+plt.show()
+!ec
+
 * 3b (3pt) Find and classify the equilibrium points.
 Here we have only one equilibrium point when we take the derivative of the potential with respect to the relative distance.
 
@@ -89,7 +120,60 @@ V(x)=-\alpha\frac{x^2}{2}+\beta\frac{x^4}{4}.
 !et
 
 * 4a (3pt) Plot the potential and discuss eventual equilibrium points. Is this a conservative force?
-* 4b (3pt) Compute the second derivative of the potential and find its miminum position(s). Using the Taylor expansion of the potential around its minimum (see Taylor section 5.1) to define a spring constant $k$. Use the spring constant to find the natural (angular) frequency $\omega_0=\sqrt{k/m}$. We call the new spring constant for  an effective spring constant. 
+The following Python code gives a plot of potential
+!bc pycod
+# Common imports
+import numpy as np
+from math import *
+import matplotlib.pyplot as plt
+
+Deltax = 0.01
+#set up arrays
+xinitial = -2.0
+xfinal = 2.0 
+n = ceil((xfinal-xinitial)/Deltax)
+x = np.zeros(n)
+for i in range(n):
+    x[i] = xinitial+i*Deltax
+V = np.zeros(n)
+# Initial conditions as compact 2-dimensional arrays
+alpha = 0.81
+beta = 0.5
+print(sqrt(alpha/beta))
+V = -alpha*x*x*0.5 + beta*(x**4)*0.25
+# Plot position as function of time    
+fig, ax = plt.subplots()
+#ax.set_xlim(0, tfinal)
+ax.set_ylabel('x[m]')
+ax.set_xlabel('V[s]')
+ax.plot(x, V)
+fig.tight_layout()
+plt.show()
+!ec
+Here we have chosen $\alpha=0.81$ and $\beta=0.5$. Taking the derivative of $V$ with respect to $x$ gives two minima (and it is easy to see here that second derivative is positive) at $x\pm\sqrt{\alpha/\beta}$ and a maximum at $x=0$. The derivative is
+!bt
+\[
+\frac{dV}{dx} = -\alpha x + \beta x^3,
+\]
+!et
+which gives when we require that it should equal zero the above values. As we can see from the plot (run the above Python code), we have two so-called stable equilibrium points (where the potential has its minima) and an unstable equilibrium point.
+
+The force is conservative since it depends only on $x$ and has a _curl_ which is zero.
+
+* 4b (3pt) Compute the second derivative of the potential and find its miminum position(s). Using the Taylor expansion of the potential around its minimum (see Taylor section 5.1) to define a spring constant $k$. Use the spring constant to find the natural (angular) frequency $\omega_0=\sqrt{k/m}$. We call the new spring constant for  an effective spring constant.
+
+In the solution to the previous exercise we listed the values where the derivatives of the potential are zero.
+Taking the second derivatives we have that
+
+!bt
+\[
+\frac{d^2V}{dx^} = -\alpha  + 2\beta x^2,
+\]
+!et
+and for $\alpha > 0$ (we assume it is a positive constant) we see that when $x=0$ that the 
+the second derivative is negative, which means this is a maximum. For $x=\pm\sqrt{\alpha/beta}$ we see that the second derivative is positive. Thus these points correspond to two minima.
+
+
 * 4c (4pt) We ignore the second term in the potential energy and keep only the term proportional to the effective spring constant, that is a force $F\propto kx$. Find the acceleration and set up the differential equation.  Find the general analytical solution for these harmonic oscillations.  You don't need to find the constants in the general solution.
 * 4d (5pt) Assume we have no friction. If you add a small force $F=F_0\cos{(\omega t-\delta)}$, and if the particle is initially at the minimum with zero initial velocity, find its position as a function of time. Note that here you need to add the particular solution. 
 * 4e (5pt) We add now  a small drag force $-bv$ to the previous exercise (4d). Find the forces acting on the particle and the acceleration. Find also the analytical solutions with the same initial conditions as in the previous exercise.
