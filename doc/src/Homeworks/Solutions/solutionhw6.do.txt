@@ -117,7 +117,7 @@ r = 2^{1/6}\frac{a^2}{b}.
 \]
 !et
 
-If we choose $a=2$ and $b=2$ then $r=2\times 2^{1/6}$. Since the second derivative is positive for all $r$ (convince yourself about  this), then this value of $r$ has to correspond to a minimum of the potential. This agrees with our graph from the figure above (run the code to produce the figure). 
+If we choose $a=2$ and $b=2$ then $r=2\times 2^{1/6}$. Since the second derivative is positive for all $r$ for our choices of $a$ and $b$  (convince yourself about  this), then this value of $r$ has to correspond to a minimum of the potential. This agrees with our graph from the figure above (run the code to produce the figure). 
 
 * 3c (4pt) What is the force acting on one of the objects (an atom for example) from the other object? Is this a conservative force?
 
@@ -187,7 +187,7 @@ ax.plot(x, V)
 fig.tight_layout()
 plt.show()
 !ec
-Here we have chosen $\alpha=0.81$ and $\beta=0.5$. Taking the derivative of $V$ with respect to $x$ gives two minima (and it is easy to see here that second derivative is positive) at $x\pm\sqrt{\alpha/\beta}$ and a maximum at $x=0$. The derivative is
+Here we have chosen $\alpha=0.81$ and $\beta=0.5$. Taking the derivative of $V$ with respect to $x$ gives two minima (and it is easy to see here that the second derivative is positive) at $x\pm\sqrt{\alpha/\beta}$ and a maximum at $x=0$. The derivative is
 !bt
 \[
 \frac{dV}{dx} = -\alpha x + \beta x^3,
@@ -204,16 +204,147 @@ Taking the second derivatives we have that
 
 !bt
 \[
-\frac{d^2V}{dx^} = -\alpha  + 2\beta x^2,
+\frac{d^2V}{dx^2} = -\alpha  + 3\beta x^2,
 \]
 !et
 and for $\alpha > 0$ (we assume it is a positive constant) we see that when $x=0$ that the 
-the second derivative is negative, which means this is a maximum. For $x=\pm\sqrt{\alpha/beta}$ we see that the second derivative is positive. Thus these points correspond to two minima.
+the second derivative is negative, which means this is a maximum. For $x=\pm\sqrt{\alpha/\beta}$ we see that the second derivative is positive. Thus these points correspond to two minima.
 
+Assume now we Taylor expand the potential around one of these minima, say $x_{\mathrm{min}}=\sqrt{\alpha/\beta}$. We have thus
+!bt
+\[
+V(x) = V(x_{\mathrm{min}})+(x-x_{\mathrm{min}})\frac{dV}{dx}\vert_x_{{\mathrm{min}}}+\frac{1}{2}(x-x_{\mathrm{min}})^2\frac{d^2V}{dx^2}\vert_x_{{\mathrm{min}}}+\dots
+\]
+!et
+
+Since we are at point where the first derivative is zero and inserting the value for the second derivative of $V$, keeping only terms up to the second derivative and finally taking the derivative with respect to $x$, we find the expression for the force
+!bt
+\[
+F(x) = -(x-x_{\mathrm{min}})\frac{d^2V}{dx^2}\vert_x_{{\mathrm{min}}},
+\]
+!et
+and setting in the expression for the second derivative at the minimum we find 
+!bt
+\[
+F(x) = -2\alpha(x-\sqrt{\frac{\alpha}{\beta}}).
+\]
+!et
+Thus our effective spring constant $k=2\alpha$.
 
 * 4c (4pt) We ignore the second term in the potential energy and keep only the term proportional to the effective spring constant, that is a force $F\propto kx$. Find the acceleration and set up the differential equation.  Find the general analytical solution for these harmonic oscillations.  You don't need to find the constants in the general solution.
+
+Here we simplify our force by rescaling our zeroth point so that we have a force (setting $x_{\mathrm{min}}=0$)
+!bt
+\[
+F(x) = -kx,
+\]
+!et
+with $k=2\alpha$. Defining a natural frequency $\omega_0 = \sqrt{k/m}$, where $m$ is the mass of our particle, we have the following equation of motion
+!bt
+\[
+\frac{d^2x}{dt^2}=-\omega_0^2x,
+\]
+!et
+which has as analytical solution $x(t)=A\cos{(\omega_0t)}+B\sin{(\omega_0t)}$ and velocity
+$x(t)=-\omega_0A\sin{(\omega_0t)}+\omega_0B\cos{(\omega_0t)}$. The initial conditions are used to define $A$ and $B$.
+
+
+
+
+
+
 * 4d (5pt) Assume we have no friction. If you add a small force $F=F_0\cos{(\omega t-\delta)}$, and if the particle is initially at the minimum with zero initial velocity, find its position as a function of time. Note that here you need to add the particular solution. 
+
+Let us simplify the force by setting the phase shift $\delta=0$. The equation of motion is then
+!bt
+\[
+\frac{d^2x}{dt^2}+\omega_0^2x=\frac{F_0}{m}\cos{(\omega t)}.
+\]
+!et
+
+The particular solution is then
+!bt
+\[
+x_p(t)=D\cos{(\omega t)}=\frac{F_0}{m}\frac{1}{\omega_0^2-\omega^2}\cos{(\omega t)},
+\]
+!et
+resulting in
+!bt
+\[
+x(t)=A\cos{(\omega_0t)}+B\sin{(\omega_0t)}+\frac{F_0}{m}\frac{1}{\omega_0^2-\omega^2}\cos{(\omega t)},
+\]
+!et
+and 
+!bt
+\[
+v(t)=-\omega_0A\sin{(\omega_0t)}+\omega_0B\cos{(\omega_0t)}-\frac{F_0}{m}\frac{\omega}{\omega_0^2-\omega^2}\sin{(\omega t)}.
+\]
+!et
+Again, the constants $A$ and $B$ are determined by the initial conditions. 
+
+If we choose $x(t_0)=x_0$ and $v(t_0)=v_0$ we have
+!bt
+\[
+x_0=A+\frac{F_0}{m}\frac{1}{\omega_0^2-\omega^2},
+\]
+!et
+resulting in
+!bt
+\[
+A=x_0-\frac{F_0}{m}\frac{1}{\omega_0^2-\omega^2},
+\]
+!et
+
+and 
+!bt
+\[
+B=v_0.
+\]
+!et
+
+For numerical work it is useful to scale our equations by introducing a dimensionless time $\tau = \omega_0 t$.
+Our equation of motion becomes then
+!bt
+\[
+\frac{d^2x}{d\tau^2}+x=\frac{F_0}{m\omega_0^2}\cos{(\tilde{\omega} \tau)},
+\]
+!et
+where we have defined $\tilde{\omega}=\omega/\omega_0$.
+Our general solution is then, introducing $\tilde{F}_0=F_0/(m\omega_0^2)$,
+!bt
+\[
+x(\tau)=A\cos{(\tau)}+B\sin{(\tau)}+\frac{\tilde{F}_0}{1-\tilde{\omega}^2}\cos{(\tilde{\omega}\tau)}.
+\]
+!et
+
+
 * 4e (5pt) We add now  a small drag force $-bv$ to the previous exercise (4d). Find the forces acting on the particle and the acceleration. Find also the analytical solutions with the same initial conditions as in the previous exercise.
+
+The equation of motion reads now
+!bt
+\[
+\frac{d^2x}{dt^2}+\frac{b}{m}\frac{dx}{dt}+\omega_0^2x=\frac{F_0}{m}\cos{(\omega t)}.
+\]
+!et
+
+We scale now the equations as we did in the previous exercise and have (see Taylor chapter 5) with the definition
+$\gamma = b/(2m\omega_0)$ 
+
+!bt
+\[
+\frac{d^2x}{d\tau^2}+2\gamma\frac{dx}{d\tau}+x=\frac{F_0}{m\omega_0^2}\cos{(\tilde{\omega} \tau)},
+\]
+!et
+
+The analytical solution is then
+
+!bt
+\[
+x(\tau)=A\cos{(\tau)}+B\sin{(\tau)}+\frac{\tilde{F}_0}{(1-\tilde{\omega}^2)^2+4\gamma^2\tilde{\omega}^2}\cos{(\tilde{\omega}\tau)-\delta}.
+\]
+!et
+
+
 
 We will use this analytical solutions in the numerical part.
 
