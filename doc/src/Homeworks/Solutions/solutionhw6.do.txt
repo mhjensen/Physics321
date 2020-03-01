@@ -79,8 +79,8 @@ import matplotlib.pyplot as plt
 
 Deltar = 0.01
 #set up arrays
-rinitial = 0.001
-rfinal = 4.0
+rinitial = 1.8
+rfinal = 3.
 n = ceil((rfinal-rinitial)/Deltar)
 r = np.zeros(n)
 for i in range(n):
@@ -88,15 +88,15 @@ for i in range(n):
 V = np.zeros(n)
 # Initial conditions as compact 2-dimensional arrays
 a = 2.0
-b = 1.0
-V0 = 1.0
-V = v0*((a/r)**12-(b/r)**6)
+b = 2.0
+V0 = 10.0
+V = V0*((a/r)**(12)-(b/r)**6)
 # Plot position as function of time    
 fig, ax = plt.subplots()
 #ax.set_xlim(0, tfinal)
 ax.set_ylabel('r')
 ax.set_xlabel('V')
-ax.plot(x, V)
+ax.plot(r, V)
 fig.tight_layout()
 plt.show()
 !ec
@@ -117,7 +117,7 @@ r = 2^{1/6}\frac{a^2}{b}.
 \]
 !et
 
-If we choose $a=8$ and $b=1$ then $r=2$. Since the second derivative is positive for all $r$ (convince yourself about  this), then this value of $r$ has to correspond to a minimum of the potential. This agrees with our graph from the figure above (run the code to produce the figure). 
+If we choose $a=2$ and $b=2$ then $r=2\times 2^{1/6}$. Since the second derivative is positive for all $r$ (convince yourself about  this), then this value of $r$ has to correspond to a minimum of the potential. This agrees with our graph from the figure above (run the code to produce the figure). 
 
 * 3c (4pt) What is the force acting on one of the objects (an atom for example) from the other object? Is this a conservative force?
 
@@ -134,12 +134,12 @@ We need the gradient and since the force on particle $i$ is given by $\bm{F}_i=\
 \bm{F}_i=6V_0\left(2(\frac{a}{\vert\vert\bm{r}_i-\bm{r}_j\vert\vert})^{12}-(\frac{b}{\vert\vert\bm{r}_i-\bm{r}_j\vert\vert})^6\right)\frac{\bm{r}_i-\bm{r}_j}{\vert\vert\bm{r}_i-\bm{r}_j\vert\vert^2}.
 \]
 !et
-Here $r = \vert\vert \bm{r}_i-\bm{r}_j\vert \vert=\sqrt{$
-If we have more than two particles, we need to sum over all other particles $j$. We have thus to introduce a sum. 
+Here $r = \vert\vert \bm{r}_i-\bm{r}_j\vert \vert$.
+If we have more than two particles, we need to sum over all other particles $j$. We have thus to introduce a sum over all particles $N$. 
 The force on particle $i$ at position $\bm{r}_i$ from all particles  $j$ at their positions $\bm{r}_j$ results in the equation of motion (note that we have divided by the mass $m$ here)
 !bt
 \[
-\bm{a}_i=\frac{d^2\bm{r}_i}{dt^2} = \frac{6V_0}{m} \sum_{j \neq i}\left(2(\frac{a}{\vert\vert\bm{r}_i-\bm{r}_j\vert\vert})^{12}-(\frac{b}{\vert\vert\bm{r}_i-\bm{r}_j\vert\vert})^6\right)\frac{\bm{r}_i-\bm{r}_j}{\vert\vert\bm{r}_i-\bm{r}_j\vert\vert^2}.
+\bm{a}_i=\frac{d^2\bm{r}_i}{dt^2} = \frac{6V_0}{m} \sum_{j \neq i}^{N}\left(2(\frac{a}{\vert\vert\bm{r}_i-\bm{r}_j\vert\vert})^{12}-(\frac{b}{\vert\vert\bm{r}_i-\bm{r}_j\vert\vert})^6\right)\frac{\bm{r}_i-\bm{r}_j}{\vert\vert\bm{r}_i-\bm{r}_j\vert\vert^2}.
 \]
 !et
 
