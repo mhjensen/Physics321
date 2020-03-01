@@ -213,14 +213,14 @@ the second derivative is negative, which means this is a maximum. For $x=\pm\sqr
 Assume now we Taylor expand the potential around one of these minima, say $x_{\mathrm{min}}=\sqrt{\alpha/\beta}$. We have thus
 !bt
 \[
-V(x) = V(x_{\mathrm{min}})+(x-x_{\mathrm{min}})\frac{dV}{dx}\vert_{x_{{\mathrm{min}}}+\frac{1}{2}(x-x_{\mathrm{min}})^2\frac{d^2V}{dx^2}\vert_{x_{{\mathrm{min}}}+\dots
+V(x) = V(x_{\mathrm{min}})+(x-x_{\mathrm{min}})\frac{dV}{dx}\vert_{x_{\mathrm{min}}}+\frac{1}{2}(x-x_{\mathrm{min}})^2\frac{d^2V}{dx^2}\vert_{x_{\mathrm{min}}}+\dots
 \]
 !et
 
 Since we are at point where the first derivative is zero and inserting the value for the second derivative of $V$, keeping only terms up to the second derivative and finally taking the derivative with respect to $x$, we find the expression for the force
 !bt
 \[
-F(x) = -(x-x_{\mathrm{min}})\frac{d^2V}{dx^2}\vert_{x_{{\mathrm{min}}},
+F(x) = -(x-x_{\mathrm{min}})\frac{d^2V}{dx^2}\vert_{x_{\mathrm{min}}},
 \]
 !et
 and setting in the expression for the second derivative at the minimum we find 
@@ -340,10 +340,10 @@ The analytical solution is then
 
 !bt
 \[
-x(\tau)=A\cos{(\tau)}+B\sin{(\tau)}+\frac{\tilde{F}_0}{(1-\tilde{\omega}^2)^2+4\gamma^2\tilde{\omega}^2}\cos{(\tilde{\omega}\tau-\delta)},
+x(\tau)=A\cos{(\tau)}+B\sin{(\tau)}+\frac{\tilde{F}_0}{\sqrt{(1-\tilde{\omega}^2)^2+4\gamma^2\tilde{\omega}^2}}\cos{(\tilde{\omega}\tau-\delta)},
 \]
 !et
-with (see "Lecture notes":"https://mhjensen.github.io/Physics321/doc/pub/harmonic/html/harmonic.html, equations 17-25)
+with (see "Lecture notes":"https://mhjensen.github.io/Physics321/doc/pub/harmonic/html/harmonic.html", equations 17-25)
 !bt
 \[
 \delta = \tan^{-1}{(\frac{2\gamma\tilde{\omega}}{1-\tilde{\omega}^2})}.
@@ -363,6 +363,8 @@ Last week we developed a code for the sliding block including a friction term. T
 _We will use the Euler-Cromer method only here_.
 
 * 5a (20pt) Add the force from exercise 4d to your code from last week. If you have not done the bonus exercise from hw5, add also the friction term $-bv$ from the previous exercise. Scale your equations and study the solution as function of different values of $F_0$, $b$, $k$ and $\omega$ and $\omega_0$. Keep the initial conditions as in exercise 4d. Discuss your results. Is energy conserved? If not, why? 
+
+
 
 * 5b (20 pt)  Compare your numerical results with the analytical ones from exercise 4. You can focus on either the results from 4d or 4e or both.  Discuss your results. 
 
