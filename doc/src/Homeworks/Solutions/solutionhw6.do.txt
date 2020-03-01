@@ -61,14 +61,13 @@ See the answers to each exercise above.
 "The Lennard-Jones potential":"https://en.wikipedia.org/wiki/Lennard-Jones_potential" is often used to describe
 the interaction between two atoms or ions or molecules. If you end up doing materals science and molecular dynamics calculations, it is very likely that you will encounter this potential model.
 The expression for the potential energy is
-of the molecule is:
 !bt
 \[
 V(r) = V_0\left((\frac{a}{r})^{12}-(\frac{b}{r})^{6}\right),
 \]
 !et
 where $V_0$, $a$ and $b$ are constants and the potential depends only on the relative distance between two objects
-$i$ and $j$, that is $r=\vert\bm{r}_i-\bm{r}_j\vert=\sqrt{(x_i-x_j)^2+(y_i-y_j)^2+(z_i-z_j)^2}$.
+$i$ and $j$, that is $r=\vert\vert\bm{r}_i-\bm{r}_j\vert\vert=\sqrt{(x_i-x_j)^2+(y_i-y_j)^2+(z_i-z_j)^2}$.
 
 * 3a (3pt) Sketch/plot the potential (choose some values for the constants in doing so).
 The following Python code plots the potential
@@ -78,38 +77,69 @@ import numpy as np
 from math import *
 import matplotlib.pyplot as plt
 
-Deltax = 0.01
+Deltar = 0.01
 #set up arrays
-xinitial = -2.0
-xfinal = 2.0 
-n = ceil((xfinal-xinitial)/Deltax)
-x = np.zeros(n)
+rinitial = 0.001
+rfinal = 4.0
+n = ceil((rfinal-rinitial)/Deltar)
+r = np.zeros(n)
 for i in range(n):
-    x[i] = xinitial+i*Deltax
+    r[i] = rinitial+i*Deltar
 V = np.zeros(n)
 # Initial conditions as compact 2-dimensional arrays
-alpha = 0.81
-beta = 0.5
-print(sqrt(alpha/beta))
-V = -alpha*x*x*0.5 + beta*(x**4)*0.25
+a = 2.0
+b = 1.0
+V0 = 1.0
+V = v0*((a/r)**12-(b/r)**6)
 # Plot position as function of time    
 fig, ax = plt.subplots()
 #ax.set_xlim(0, tfinal)
-ax.set_ylabel('x[m]')
-ax.set_xlabel('V[s]')
+ax.set_ylabel('r')
+ax.set_xlabel('V')
 ax.plot(x, V)
 fig.tight_layout()
 plt.show()
 !ec
 
 * 3b (3pt) Find and classify the equilibrium points.
-Here we have only one equilibrium point when we take the derivative of the potential with respect to the relative distance.
+Here there is  only one equilibrium point when we take the derivative of the potential with respect to the relative distance.
 
-* 3c (4pt) What is the force acting on one of the objects (an atom for example) from the other object? Is this a conservative force?
-The force on atom $i$ at position $\bm{r}_i$ from atom $j$ at position $\bm{r}_j$ results in the equation of motion (note that we have divided by the mass $m$ here
+The derivative with respect to $r$, the relative distance, is
 !bt
 \[
-\bm{a}_i=\frac{d^2\bm{r}_i}{dt^2} = \frac{24\varepsilon}{m} \sum_{j \neq i} \qty(2\qty(\frac{\sigma}{\norm{\bm{r}_i-\bm{r}_j}})^{12}-\qty(\frac{\sigma}{\norm{\bm{r}_i-\bm{r}_j}})^6)\frac{\bm{r}_i-\bm{r}_j}{\norm{\bm{r}_i-\bm{r}_j}^2}.
+\frac{dV}{dr} = -6V_0\left(2\frac{a^{12}}{r^{13}}-\frac{b^6}{r^7}\right),
+\]
+!et
+and this is zero when
+!bt
+\[
+r = 2^{1/6}\frac{a^2}{b}.
+\]
+!et
+
+If we choose $a=8$ and $b=1$ then $r=2$. Since the second derivative is positive for all $r$ (convince yourself about  this), then this value of $r$ has to correspond to a minimum of the potential. This agrees with our graph from the figure above (run the code to produce the figure). 
+
+* 3c (4pt) What is the force acting on one of the objects (an atom for example) from the other object? Is this a conservative force?
+
+From the previous exercise we have
+!bt
+\[
+\frac{dV}{dr} = -6V_0\left(2\frac{a^{12}}{r^{13}}-\frac{b^6}{r^7}\right).
+\]
+!et
+
+We need the gradient and since the force on particle $i$ is given by $\bm{F}_i=\bm{\nabla}_i V(\bm{r}_i-\bm{r}_j)$, we obtain
+!bt
+\[
+\bm{F}_i=6V_0\left(2(\frac{a}{\vert\vert\bm{r}_i-\bm{r}_j\vert\vert})^{12}-(\frac{b}{\vert\vert\bm{r}_i-\bm{r}_j\vert\vert})^6\right)\frac{\bm{r}_i-\bm{r}_j}{\vert\vert\bm{r}_i-\bm{r}_j\vert\vert^2}.
+\]
+!et
+Here $r = \vert\vert \bm{r}_i-\bm{r}_j\vert \vert=\sqrt{$
+If we have more than two particles, we need to sum over all other particles $j$. We have thus to introduce a sum. 
+The force on particle $i$ at position $\bm{r}_i$ from all particles  $j$ at their positions $\bm{r}_j$ results in the equation of motion (note that we have divided by the mass $m$ here)
+!bt
+\[
+\bm{a}_i=\frac{d^2\bm{r}_i}{dt^2} = \frac{6V_0}{m} \sum_{j \neq i}\left(2(\frac{a}{\vert\vert\bm{r}_i-\bm{r}_j\vert\vert})^{12}-(\frac{b}{\vert\vert\bm{r}_i-\bm{r}_j\vert\vert})^6\right)\frac{\bm{r}_i-\bm{r}_j}{\vert\vert\bm{r}_i-\bm{r}_j\vert\vert^2}.
 \]
 !et
 
