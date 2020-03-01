@@ -106,7 +106,14 @@ plt.show()
 Here we have only one equilibrium point when we take the derivative of the potential with respect to the relative distance.
 
 * 3c (4pt) What is the force acting on one of the objects (an atom for example) from the other object? Is this a conservative force?
+The force on atom $i$ at position $\bm{r}_i$ from atom $j$ at position $\bm{r}_j$ results in the equation of motion (note that we have divided by the mass $m$ here
+!bt
+\[
+\bm{a}_i=\frac{d^2\bm{r}_i}{dt^2} = \frac{24\varepsilon}{m} \sum_{j \neq i} \qty(2\qty(\frac{\sigma}{\norm{\bm{r}_i-\bm{r}_j}})^{12}-\qty(\frac{\sigma}{\norm{\bm{r}_i-\bm{r}_j}})^6)\frac{\bm{r}_i-\bm{r}_j}{\norm{\bm{r}_i-\bm{r}_j}^2}.
+\]
+!et
 
+This is also a conservative force, with zero _curl_ as well. 
 
 === Exercise 4 (20 pt), particle in a new potential ===
 
@@ -207,5 +214,7 @@ exercises is meant as an example where you use your numerical code to
 explore interesting physics.
 
 * 6a (30pt)  Find the value of $\omega$ which results in a resonant behavior and study the numerical and analytical solutions for the resonant case. Discuss your results. 
+
+
 
 
