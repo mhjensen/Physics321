@@ -332,7 +332,7 @@ $\gamma = b/(2m\omega_0)$
 
 !bt
 \[
-\frac{d^2x}{d\tau^2}+2\gamma\frac{dx}{d\tau}+x=\frac{F_0}{m\omega_0^2}\cos{(\tilde{\omega} \tau)},
+\frac{d^2x}{d\tau^2}+2\gamma\frac{dx}{d\tau}+x=\frac{F_0}{m\omega_0^2}\cos{(\tilde{\omega} \tau)}.
 \]
 !et
 
@@ -364,9 +364,146 @@ _We will use the Euler-Cromer method only here_.
 
 * 5a (20pt) Add the force from exercise 4d to your code from last week. If you have not done the bonus exercise from hw5, add also the friction term $-bv$ from the previous exercise. Scale your equations and study the solution as function of different values of $F_0$, $b$, $k$ and $\omega$ and $\omega_0$. Keep the initial conditions as in exercise 4d. Discuss your results. Is energy conserved? If not, why? 
 
-
-
 * 5b (20 pt)  Compare your numerical results with the analytical ones from exercise 4. You can focus on either the results from 4d or 4e or both.  Discuss your results. 
+
+
+
+The scaling of the equations was done in the previous exercise and we need to solve the following equation numerically
+
+!bt
+\[
+\frac{d^2x}{d\tau^2}+2\gamma\frac{dx}{d\tau}+x=\frac{F_0}{m\omega_0^2}\cos{(\tilde{\omega} \tau)},
+\]
+!et
+which we rewrite as
+!bt
+\[
+\frac{d^2x}{d\tau^2}+2\gamma\frac{dx}{d\tau}+x=\tilde{F}_0\cos{(\tilde{\omega} \tau)}.
+\]
+!et
+
+!bc pycod
+# Common imports
+import numpy as np
+import pandas as pd
+from math import *
+import matplotlib.pyplot as plt
+import os
+
+# Where to save the figures and data files
+PROJECT_ROOT_DIR = "Results"
+FIGURE_ID = "Results/FigureFiles"
+DATA_ID = "DataFiles/"
+
+if not os.path.exists(PROJECT_ROOT_DIR):
+    os.mkdir(PROJECT_ROOT_DIR)
+
+if not os.path.exists(FIGURE_ID):
+    os.makedirs(FIGURE_ID)
+
+if not os.path.exists(DATA_ID):
+    os.makedirs(DATA_ID)
+
+def image_path(fig_id):
+    return os.path.join(FIGURE_ID, fig_id)
+
+def data_path(dat_id):
+    return os.path.join(DATA_ID, dat_id)
+
+def save_fig(fig_id):
+    plt.savefig(image_path(fig_id) + ".png", format='png')
+
+
+from pylab import plt, mpl
+plt.style.use('seaborn')
+mpl.rcParams['font.family'] = 'serif'
+
+
+#  We define here a function for the forces acting on the object and
+#  functions to solve the ordinary differential equations. Here we use either
+#  the Euler-Cromer method or the Runge-Kutta to fourth order.
+
+def SpringForce(v,x,t):
+#   note here that we have divided by mass and we return the acceleration
+    return  -2*gamma*v-x+Ftilde*cos(t*Omegatilde)
+
+def ForwardEulerCromer(v,x,t,n,Force):
+    for i in range(n-1):
+        a = Force(v[i],x[i],t[i])
+        v[i+1] = v[i] + DeltaT*a
+        x[i+1] = x[i] + DeltaT*v[i+1]
+        t[i+1] = t[i] + DeltaT
+
+def RK4(v,x,t,n,Force):
+    for i in range(n-1):
+# Setting up k1
+        k1x = DeltaT*v[i]
+        k1v = DeltaT*Force(v[i],x[i],t[i])
+# Setting up k2
+        vv = v[i]+k1v*0.5
+        xx = x[i]+k1x*0.5
+        k2x = DeltaT*vv
+        k2v = DeltaT*Force(vv,xx,t[i]+DeltaT*0.5)
+# Setting up k3
+        vv = v[i]+k2v*0.5
+        xx = x[i]+k2x*0.5
+        k3x = DeltaT*vv
+        k3v = DeltaT*Force(vv,xx,t[i]+DeltaT*0.5)
+# Setting up k4
+        vv = v[i]+k3v
+        xx = x[i]+k3x
+        k4x = DeltaT*vv
+        k4v = DeltaT*Force(vv,xx,t[i]+DeltaT)
+# Final result
+        x[i+1] = x[i]+(k1x+2*k2x+2*k3x+k4x)/6.
+        v[i+1] = v[i]+(k1v+2*k2v+2*k3v+k4v)/6.
+        t[i+1] = t[i] + DeltaT
+
+
+DeltaT = 0.001
+#set up arrays 
+tfinal = 20 # in years
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, v, and x
+t = np.zeros(n)
+v = np.zeros(n)
+x = np.zeros(n)
+# Initial conditions as one-dimensional arrays of time
+x0 =  1.0 
+v0 = 0.0
+x[0] = x0
+v[0] = v0
+# Define parameters
+mass = 0.1  # mass of the object
+b = 0.08  # friction constant
+omega0 = 2.0  # natural frequency 
+omega = 1.0  #  driving frequency
+F0 = 0.4   # driven force amplitude 
+# define scaled parameters
+gamma = b*0.5/(omega0*mass)
+Omegatilde = omega/omeag0
+Ftilde = F0/(mass*omega0*omega0)
+print(Ftilde,Omegatilde,gamma)
+# Start integrating using the RK4 method
+RK4(v,x,t,n,SpringForce)
+
+# Plot position as function of time    
+fig, ax = plt.subplots()
+ax.set_ylabel('x[m]')
+ax.set_xlabel('t[s]')
+ax.plot(t, x)
+fig.tight_layout()
+save_fig("ForcedBlockEulerCromer")
+plt.show()
+!ec
+
+
+
+The code here shows an example of how easy it is to extend our orginal code in order to include a driving force. We have also rewritten the code in terms of functions that now include two different integration methods and an own code for the force which returns the acceleration.
+The code here is general and we have sinply included a version where we allow for different values of the parameters mentioned above. The code here includes also a plot of the energy and the velocity. In each graph we include the analytical solutions for the problem discussed in 4d. As expected, due to the friction term, energy is not conserved.
+
+
+
 
 ===  Exercise 6 (30pt), Bonus exercise ===
 
@@ -381,6 +518,17 @@ exercises is meant as an example where you use your numerical code to
 explore interesting physics.
 
 * 6a (30pt)  Find the value of $\omega$ which results in a resonant behavior and study the numerical and analytical solutions for the resonant case. Discuss your results. 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
