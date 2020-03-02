@@ -533,6 +533,8 @@ we allow for different values of the parameters mentioned above. The
 code here includes also plots of the energy and the velocity. As
 expected, due to the friction term, energy is not conserved. This would also be the case if we don't include the friction term but keep the driving force. For the latter case, the energy difference between the initial and final energies will oscillate with the frequency of the driving force.
 
+We note also that after some time, the information about the initial conditions (it depends on the values of the initial conditions) is lost and the motion is governed by the particular solution and the driving frequency of the force.
+
 
 Finally, we revert back to exercise 4d and compare our numerically calculated position with the analytical solution
 !bt
@@ -650,9 +652,15 @@ explore interesting physics.
 
 * 6a (30pt)  Find the value of $\omega$ which results in a resonant behavior and study the numerical and analytical solutions for the resonant case. Discuss your results. 
 
-The resonant behavior occurs when $\omega_0=\omega$ or with our scale results when $\tilde{\omega}=1$.
-This can be done easily with the above codes by setting $\tilde{\omega}=1$. Running the code for the position here
-shows an amplitude for $x$ which increases with time. We can play around with values near $1$ and we note that, running again the code that our results approach an amplitude which diverges over time.
+The resonant behavior occurs when $\omega_0=\omega$ or with our scaled equations, it results when $\tilde{\omega}=1$.
+This can be done easily with the above codes by setting $\tilde{\omega}=1$. Running the code for the position here, 
+shows an amplitude for $x$ which increases with time. We can play around with values near $1$ and we note that, running again the code that our results approach an amplitude which diverges over time. In the code here we have chosen to set the friction term equal zero since then the amplitude for the position is governed by the amplitude of the particular solution, namely
+!bt
+\[
+\frac{F_0}{m}\frac{1}{\omega_0^2-\omega^2}.
+\]
+!et
+In the code here we have made $\omega$ almost equal $\omega_0$. Try out different values of $\omega$. What do you see?
 
 !bc pycod
 DeltaT = 0.001
@@ -671,9 +679,9 @@ x[0] = x0
 v[0] = v0
 # Define parameters
 mass = 0.1  # mass of the object
-b = 0.08  # friction constant
+b = 0  # No friction 
 omega0 = 2.0  # natural frequency 
-omega = 2.0  #  driving frequency
+omega = 2.0001  #  driving frequency
 F0 = 0.4   # driven force amplitude 
 # define scaled parameters
 gamma = b*0.5/(omega0*mass)
