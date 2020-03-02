@@ -427,14 +427,15 @@ def SpringForce(v,x,t):
 #   note here that we have divided by mass and we return the acceleration
     return  -2*gamma*v-x+Ftilde*cos(t*Omegatilde)
 
-def ForwardEulerCromer(v,x,t,n,Force):
+def ForwardEulerCromer(v,x,E,t,n,Force):
     for i in range(n-1):
         a = Force(v[i],x[i],t[i])
         v[i+1] = v[i] + DeltaT*a
         x[i+1] = x[i] + DeltaT*v[i+1]
         t[i+1] = t[i] + DeltaT
-
-def RK4(v,x,t,n,Force):
+	# Scaled energy
+        E[i+1] = 0.5*x[i+1]*x[i+1]+0.5*v[i+1]*v[i+1]
+def RK4(v,x,E,t,n,Force):
     for i in range(n-1):
 # Setting up k1
         k1x = DeltaT*v[i]
@@ -458,17 +459,19 @@ def RK4(v,x,t,n,Force):
         x[i+1] = x[i]+(k1x+2*k2x+2*k3x+k4x)/6.
         v[i+1] = v[i]+(k1v+2*k2v+2*k3v+k4v)/6.
         t[i+1] = t[i] + DeltaT
-
+	# Scaled energy
+        E[i+1] = 0.5*x[i+1]*x[i+1]+0.5*v[i+1]*v[i+1]
 
 DeltaT = 0.001
 #set up arrays 
-tfinal = 20 # in years
+tfinal = 20 
 n = ceil(tfinal/DeltaT)
 # set up arrays for t, v, and x
 t = np.zeros(n)
 v = np.zeros(n)
 x = np.zeros(n)
-# Initial conditions as one-dimensional arrays of time
+E  = np.zeros(n)
+# Initial conditions
 x0 =  1.0 
 v0 = 0.0
 x[0] = x0
@@ -481,11 +484,13 @@ omega = 1.0  #  driving frequency
 F0 = 0.4   # driven force amplitude 
 # define scaled parameters
 gamma = b*0.5/(omega0*mass)
-Omegatilde = omega/omeag0
+Omegatilde = omega/omega0
 Ftilde = F0/(mass*omega0*omega0)
-print(Ftilde,Omegatilde,gamma)
+# Scaled initial energy
+E0 = 0.5*x0*x0+0.5*v0*v0
+E[0] = E0
 # Start integrating using the RK4 method
-RK4(v,x,t,n,SpringForce)
+RK4(v,x,E,t,n,SpringForce)
 
 # Plot position as function of time    
 fig, ax = plt.subplots()
@@ -493,16 +498,142 @@ ax.set_ylabel('x[m]')
 ax.set_xlabel('t[s]')
 ax.plot(t, x)
 fig.tight_layout()
-save_fig("ForcedBlockEulerCromer")
+save_fig("ForcedBlockRK4Position")
+plt.show()
+!ec
+Thereafter we plot the velocity
+!bc pycod
+# Plot velocity as function of time    
+fig, ax = plt.subplots()
+ax.set_ylabel('v[m]')
+ax.set_xlabel('t[s]')
+ax.plot(t, v)
+fig.tight_layout()
+save_fig("ForcedBlockRK4Velocity")
+plt.show()
+!ec
+and finally the energy
+!bc pycod
+# Plot energy conservation as function of time    
+fig, ax = plt.subplots()
+ax.set_ylabel('E[m*m]')
+ax.set_xlabel('t[s]')
+ax.plot(t, abs(E0-E))
+fig.tight_layout()
+save_fig("ForcedBlockRK4Energy")
 plt.show()
 !ec
 
+The code here shows an example of how easy it is to extend our orginal
+code in order to include a driving force. We have also rewritten the
+code in terms of functions that now include two different integration
+methods and an own code for the force which returns the acceleration.
+The code here is general and we have sinply included a version where
+we allow for different values of the parameters mentioned above. The
+code here includes also plots of the energy and the velocity. As
+expected, due to the friction term, energy is not conserved. This would also be the case if we don't include the friction term but keep the driving force. For the latter case, the energy difference between the initial and final energies will oscillate with the frequency of the driving force.
 
 
-The code here shows an example of how easy it is to extend our orginal code in order to include a driving force. We have also rewritten the code in terms of functions that now include two different integration methods and an own code for the force which returns the acceleration.
-The code here is general and we have sinply included a version where we allow for different values of the parameters mentioned above. The code here includes also a plot of the energy and the velocity. In each graph we include the analytical solutions for the problem discussed in 4d. As expected, due to the friction term, energy is not conserved.
+Finally, we revert back to exercise 4d and compare our numerically calculated position with the analytical solution
+!bt
+\[
+x(t)=A\cos{(\omega_0t)}+B\sin{(\omega_0t)}+\frac{F_0}{m}\frac{1}{\omega_0^2-\omega^2}\cos{(\omega t)}.
+\]
+!et
+If we choose $x(t_0)=x_0$ and $v(t_0)=v_0$ we have
+!bt
+\[
+x_0=A+\frac{F_0}{m}\frac{1}{\omega_0^2-\omega^2},
+\]
+!et
+resulting in
+!bt
+\[
+A=x_0-\frac{F_0}{m}\frac{1}{\omega_0^2-\omega^2},
+\]
+!et
 
+and 
+!bt
+\[
+B=v_0.
+\]
+!et
 
+If we scale these equations we have 
+!bt
+\[
+x(\tau)=A\cos{(\tau)}+B\sin{(\tau)}+\tilde{F}_0\frac{1}{1-\tilde{\omega}^2}\cos{(\tilde{\omega} \tau)}.
+\]
+!et
+with
+!bt
+\[
+x_0=A+\tilde{F}_0\frac{1}{1-\tilde{\omega}^2},
+\]
+!et
+resulting in
+!bt
+\[
+A=x_0-\tilde{F}_0\frac{1}{1-\tilde{\omega}^2},
+\]
+!et
+
+and 
+!bt
+\[
+B=v_0.
+\]
+!et
+
+!bc pycod
+DeltaT = 0.001
+#set up arrays 
+tfinal = 20 
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, v, and x
+t = np.zeros(n)
+v = np.zeros(n)
+x = np.zeros(n)
+xanalytic = np.zeros(n)
+E  = np.zeros(n)
+# Initial conditions
+x0 =  1.0 
+v0 = 0.0
+x[0] = x0
+v[0] = v0
+# Define parameters
+mass = 0.1  # mass of the object
+b = 0.0  # friction constant
+omega0 = 2.0  # natural frequency 
+omega = 1.0  #  driving frequency
+F0 = 0.4   # driven force amplitude 
+# define scaled parameters
+gamma = b*0.5/(omega0*mass)
+Omegatilde = omega/omega0
+Ftilde = F0/(mass*omega0*omega0)
+# Scaled initial energy
+E0 = 0.5*x0*x0+0.5*v0*v0
+E[0] = E0
+# Start integrating using the RK4 method
+RK4(v,x,E,t,n,SpringForce)
+# setting up analytical solution
+
+D = Ftilde/(1-Omegatilde*Omegatilde)
+A = x0-D
+xanalytic = A*np.cos(t)+B*np.sin(t)+D*np.cos(Omegatilde*t)
+# Plot numerical and analytical positions as function of time    
+fig, ax = plt.subplots()
+ax.set_ylabel('x[m]')
+ax.set_xlabel('t[s]')
+ax.plot(t, x)
+ax.plot(t, xanalytic)
+fig.tight_layout()
+save_fig("ForcedBlockRK4analyticPosition")
+plt.show()
+!ec
+
+We see that the results agree excellently.
 
 
 ===  Exercise 6 (30pt), Bonus exercise ===
@@ -519,7 +650,50 @@ explore interesting physics.
 
 * 6a (30pt)  Find the value of $\omega$ which results in a resonant behavior and study the numerical and analytical solutions for the resonant case. Discuss your results. 
 
+The resonant behavior occurs when $\omega_0=\omega$ or with our scale results when $\tilde{\omega}=1$.
+This can be done easily with the above codes by setting $\tilde{\omega}=1$. Running the code for the position here
+shows an amplitude for $x$ which increases with time. We can play around with values near $1$ and we note that, running again the code that our results approach an amplitude which diverges over time.
 
+!bc pycod
+DeltaT = 0.001
+#set up arrays 
+tfinal = 100 
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, v, and x
+t = np.zeros(n)
+v = np.zeros(n)
+x = np.zeros(n)
+E  = np.zeros(n)
+# Initial conditions
+x0 =  1.0 
+v0 = 0.0
+x[0] = x0
+v[0] = v0
+# Define parameters
+mass = 0.1  # mass of the object
+b = 0.08  # friction constant
+omega0 = 2.0  # natural frequency 
+omega = 2.0  #  driving frequency
+F0 = 0.4   # driven force amplitude 
+# define scaled parameters
+gamma = b*0.5/(omega0*mass)
+Omegatilde = omega/omega0
+Ftilde = F0/(mass*omega0*omega0)
+# Scaled initial energy
+E0 = 0.5*x0*x0+0.5*v0*v0
+E[0] = E0
+# Start integrating using the RK4 method
+RK4(v,x,E,t,n,SpringForce)
+
+# Plot position as function of time    
+fig, ax = plt.subplots()
+ax.set_ylabel('x[m]')
+ax.set_xlabel('t[s]')
+ax.plot(t, x)
+fig.tight_layout()
+save_fig("ForcedBlockRK4Resonance")
+plt.show()
+!ec
 
 
 

@@ -43,3 +43,86 @@ translating doconce text in solutionhw6.do.txt to ipynb
 Failed to remove ans_at_end environment
 Failed to remove sol_at_end environment
 output in solutionhw6.ipynb
+translating doconce text in solutionhw6.do.txt to ipynb
+*** replacing \bm{...} by \boldsymbol{...} (\bm is not supported by MathJax)
+Failed to remove ans_at_end environment
+Failed to remove sol_at_end environment
+output in solutionhw6.ipynb
+translating doconce text in solutionhw6.do.txt to ipynb
+*** replacing \bm{...} by \boldsymbol{...} (\bm is not supported by MathJax)
+Failed to remove ans_at_end environment
+Failed to remove sol_at_end environment
+output in solutionhw6.ipynb
+translating doconce text in solutionhw6.do.txt to ipynb
+ERROR: 6 !bc do not match 7 !ec directives
+
+
+Two !ec after each other!
+
+!ec
+
+We see that the results agree excellently.
+
+
+===  Exercise 6 (30pt), Bonus exercise ===
+
+You don't need to do this exercise, but it gives you a bonus score of 30 points. Taylor's section 5.4 and the lecture notes on damped oscillations cover most of the theoretical background.
+
+Here we will explore resonances, using the full solution from exercise
+4e.  We recommend reading section 5.6 of Taylor before starting
+analyzing your results.  This exercise means that you will use your
+code from the previous exercise (5) and study the choice of physical
+parameters which will lead to a resonant behavior. As such, this bonus
+exercises is meant as an example where you use your numerical code to
+explore interesting physics.
+
+* 6a (30pt)  Find the value of $\omega$ which results in a resonant behavior and study the numerical and analytical solutions for the resonant case. Discuss your results. 
+
+The resonant behavior occurs when $\omega_0=\omega$ or with our scale results when $\tilde{\omega}=1$.
+This can be done easily with the above codes by setting $\tilde{\omega}=1$. Running the code for the position here
+shows an amplitude for $x$ which increases with time. We can play around with values near $1$ and we note that, running again the code that our results approach an amplitude which diverges over time.
+
+DeltaT = 0.001
+#set up arrays 
+tfinal = 20 
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, v, and x
+t = np.zeros(n)
+v = np.zeros(n)
+x = np.zeros(n)
+E  = np.zeros(n)
+# Initial conditions
+x0 =  1.0 
+v0 = 0.0
+x[0] = x0
+v[0] = v0
+# Define parameters
+mass = 0.1  # mass of the object
+b = 0.08  # friction constant
+omega0 = 2.0  # natural frequency 
+omega = 2.0  #  driving frequency
+F0 = 0.4   # driven force amplitude 
+# define scaled parameters
+gamma = b*0.5/(omega0*mass)
+Omegatilde = omega/omega0
+Ftilde = F0/(mass*omega0*omega0)
+# Scaled initial energy
+E0 = 0.5*x0*x0+0.5*v0*v0
+E[0] = E0
+# Start integrating using the RK4 method
+RK4(v,x,E,t,n,SpringForce)
+
+# Plot position as function of time    
+fig, ax = plt.subplots()
+ax.set_ylabel('x[m]')
+ax.set_xlabel('t[s]')
+ax.plot(t, x)
+fig.tight_layout()
+save_fig("ForcedBlockRK4Resonance")
+plt.show()
+!ec
+translating doconce text in solutionhw6.do.txt to ipynb
+*** replacing \bm{...} by \boldsymbol{...} (\bm is not supported by MathJax)
+Failed to remove ans_at_end environment
+Failed to remove sol_at_end environment
+output in solutionhw6.ipynb
