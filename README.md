@@ -104,33 +104,33 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 - Friday: Fourier series and end of oscillation chapter  _First midterm project, available Friday Feb 21 and due March 11, 2020_ 
 - Good reads are sections 5.5-5.8 of Taylor on oscillations. 
 ### Week 9, February 24-28, 2020
-- Monday: Gravity and central force problems
-- Wednesday: Gravity and central force problems
-- Friday:  Tentatively no lecture!
+- Monday: Fourier series and oscillations 
+- Wednesday: Discussiom of first midterm and wrap up of oscillations part
+- Friday:  No lecture!
 - Good reads are chapter 8 of Taylor and Lecture notes 
 ### Week 10, March 2-6, 2020, Spring break
 - Monday:  No lectures
 - Wednesday: No lectures
 - Friday:  No lectures 
 ### Week 11, March  9-13, 2020
-- Monday:  More on central force problems
-- Wednesday: First midterm due
+- Monday:  Gravity and central force problems
+- Wednesday: Gravity and central force problems. First midterm due Wednesday 11
 - Friday:  7th homework, due March 20
 ### Week 12, March 16-20, 2020
-- Monday:
-- Wednesday: 
+- Monday: Gravity and central force problems
+- Wednesday: Scattering problems
 - Friday:  8th homework, due March 27
 ### Week 13, March 23-27, 2020
 - Monday:
 - Wednesday: 
 - Friday:  9th homework, due April 3
 ### Week 14, March 30-April 3, 2020
-- Monday:
-- Wednesday: 
+- Monday: Variational calculus and Lagrangian formalism 
+- Wednesday: Variational calculus and Lagrangian formalism
 - Friday:  _Second midterm project, due  April 10, 2020_
 ### Week 15, April  13-17, 2020
-- Monday:
-- Wednesday: 
+- Monday: Lagrangian formalism  
+- Wednesday: Lagrangian formalism
 - Friday:  10th homework and extra assignments, due April 26 
 ### Week 16, April 20-24, 2020
 - Monday:
