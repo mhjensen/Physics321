@@ -113,30 +113,34 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 - Wednesday: No lectures
 - Friday:  No lectures 
 ### Week 11, March  9-13, 2020
-- Monday:  Gravity and central force problems
-- Wednesday: Gravity and central force problems. First midterm due Wednesday 11
-- Friday:  7th homework, due March 20
+- Monday:  Gravity and central force problems. Tidal waves and Kepler's laws, lecture notes and Taylor chapter 8
+- Wednesday: Gravity and central force problems, Kepler's laws and centrifugal potentials. First midterm due Wednesday 11
+- Friday:  Gravity and central force problems, stability of orbits and scattering problems. 7th homework, due March 20
 ### Week 12, March 16-20, 2020
-- Monday: Gravity and central force problems
-- Wednesday: Scattering problems
-- Friday:  8th homework, due March 27
+- Monday: Gravity and central force problems, scattering, center of mass coordinates
+- Wednesday: Gravity and central force problems, center of mass coordinates and scattering examples
+- Friday:  Rotating coordinate systems, accelerating and rotating frames. 8th homework, due March 27
 ### Week 13, March 23-27, 2020
+- Monday: Rotating Coordinate systems, Coriolis forces
+- Wednesday: Rotating Coordinate systems, Foucalt's pendulum
+- Friday:  Rotating Coordinate systems and rigid bodies, 9th homework, due April 3
+### Week 14, March 30-April 3, 2020
+- Monday: Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes
+- Wednesday: Euler-Lagrange equations, examples. Chapters 6 and 7.1-7.2 Taylor
+- Friday:  Lagrangian formalism, chapter 7.3-7.5 of Taylor and lecture notes. _Second midterm project, due  April 10, 2020_
+### Week 15, April  6-10, 2020
+- Monday: Lagrangian formalism, examples  
+- Wednesday: Lagrangian formalism, examples
+- Friday: Lagrangian formalism. 10th homework and extra assignments, due April 26 
+### Week 16, April 13-17, 2020
 - Monday:
 - Wednesday: 
-- Friday:  9th homework, due April 3
-### Week 14, March 30-April 3, 2020
-- Monday: Variational calculus and Lagrangian formalism 
-- Wednesday: Variational calculus and Lagrangian formalism
-- Friday:  _Second midterm project, due  April 10, 2020_
-### Week 15, April  13-17, 2020
-- Monday: Lagrangian formalism  
-- Wednesday: Lagrangian formalism
-- Friday:  10th homework and extra assignments, due April 26 
-### Week 16, April 20-24, 2020
+- Friday:  
+### Week 17, April 20-24, 2020
 - Monday:
 - Wednesday: 
 - Friday:  Summary and discussions of finals exams 
-### Week 17, April 27- May 1, 2020, Finals week
+### Week 18, April 27- May 1, 2020, Finals week
 - Final Exam:  April 29, 5:45pm - 7:45pm in 1420 Biomedical & Physical Sciences
 
 
