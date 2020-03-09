@@ -1,4 +1,4 @@
-TITLE: Gravity
+TITLE: Gravity and Central Forces
 AUTHOR: "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/" {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA & Department of Physics, University of Oslo, Norway
 AUTHOR: "Scott Pratt":"https://pa.msu.edu/profile/pratts/"  at Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA
 AUTHOR: "Carl Schmidt":"https://pa.msu.edu/profile/schmidt/" at Department of Physics and Astronomy, Michigan State University, USA
@@ -23,9 +23,13 @@ F_{ba}&=&-\frac{Gm_am_b}{|\vec{r}_a-\vec{r}_b|^2}\hat{r}_{ab},\\
 Here $G=6.67\times 10^{-11}$ Nm$^2$/kg$^2$, and $F_{ba}$ is the force
 on $b$ due to $a$. By inspection, one can see that the force on $b$
 due to $a$ and the force on $a$ due to $b$ are equal and opposite. The
-net potential energy for a large number of masses would be !bt
-\begin{equation} U=\sum_{a<b}U_{ab}=\frac{1}{2}\sum_{a\ne b}U_{ab}.
-\end{equation} !et
+net potential energy for a large number of masses would be
+
+!bt
+\begin{equation}
+U=\sum_{a<b}U_{ab}=\frac{1}{2}\sum_{a\ne b}U_{ab}.
+\end{equation}
+!et
 
 Just like electrodynamics, one can define "fields", which for a small
 additional mass $m$ are the force per mass and the additional
@@ -42,7 +46,7 @@ gravitational field also satisfies a version of Gauss's law,
 
 !bt
 \begin{equation}
-\label{eq:GravGauss}
+label{eq:GravGauss}
 \oint d\vec{A}\cdot\vec{g}=-4\pi GM_{\rm inside}.
 \end{equation}
 !et
@@ -68,7 +72,7 @@ surrounds the nozzle, not necessarily a sphere, one can state that
 
 !bt
 \begin{eqnarray}
-\label{eq:paint}
+label{eq:paint}
 \oint \vec{dA}\cdot\vec{F}&=&B,
 \end{eqnarray}
 !et
@@ -79,9 +83,9 @@ which it leaves the nozzle. The dot product ensures that only the
 component of $\vec{F}$ into the surface contributes to the deposition
 of paint. Similarly, if $\vec{F}$ is any radial inverse-square forces,
 that falls as $B/(4\pi r^2)$, then one can apply
-Eq. (\ref{eq:paint}). For gravitational fields, $B/(4\pi)$ is replaced
+Eq. (ref{eq:paint}). For gravitational fields, $B/(4\pi)$ is replaced
 by $GM$, and one quickly ``derives'' Gauss's law for gravity,
-Eq. (\ref{eq:GravGauss}).
+Eq. (ref{eq:GravGauss}).
 
 
 Consider Earth to have its mass $M$ uniformly distributed in a sphere
@@ -89,7 +93,7 @@ of radius $R$. Find the magnitude of the gravitational acceleration as
 a function of the radius $r$ in terms of the acceleration of gravity
 at the surface $g(R)$. Assume $r<R$, i.e. you are inside the surface.
 
-{\bf Solution}: Take the ratio of Eq. (\ref{eq:GravGauss}) for two radii, $R$ and $r<R$,
+{\bf Solution}: Take the ratio of Eq. (ref{eq:GravGauss}) for two radii, $R$ and $r<R$,
 
 !bt
 \begin{eqnarray*}
@@ -236,7 +240,7 @@ The equations of motion give
 
 !bt
 \begin{eqnarray}
-\label{eq:radialeqofmotion}
+label{eq:radialeqofmotion}
 \frac{d}{dt}r^2&=&\frac{d}{dt}(x^2+y^2)=2x\dot{x}+2y\dot{y}=2r\dot{r},\\
 \nonumber
 \dot{r}&=&\frac{x}{r}\dot{x}+\frac{y}{r}\dot{y},\\
@@ -259,7 +263,7 @@ one can write $\ddot{r}$ as
 
 !bt
 \begin{eqnarray}
-\label{eq:radialeqofmotion2}
+label{eq:radialeqofmotion2}
 \ddot{r}&=&\frac{F_x\cos\theta+F_y\sin\theta}{m}+\frac{\dot{r}^2+r^2\dot{\theta}^2}{r}-\frac{\dot{r}^2}{r}\\
 \nonumber
 &=&\frac{F}{m}+\frac{r^2\dot{\theta}^2}{r}\\
@@ -284,7 +288,7 @@ momentum conservation, $\dot{\theta}=L/mr^2$.
 
 !bt
 \begin{eqnarray}
-\label{eq:rtotheta}
+label{eq:rtotheta}
 \dot{r}&=&\frac{dr}{d\theta}\dot{\theta}=\frac{dr}{d\theta}\frac{L}{mr^2},\\
 \nonumber
 \ddot{r}&=&\frac{d^2r}{d\theta^2}\dot{\theta}^2
@@ -299,11 +303,11 @@ momentum conservation, $\dot{\theta}=L/mr^2$.
 !et
 
 
-Equating the two expressions for $\ddot{r}$ in Eq.s (\ref{eq:radialeqofmotion2}) and (\ref{eq:rtotheta}) eliminates all the derivatives w.r.t. time, and provides a differential equation with only derivatives w.r.t. $\theta$,
+Equating the two expressions for $\ddot{r}$ in Eq.s (ref{eq:radialeqofmotion2}) and (ref{eq:rtotheta}) eliminates all the derivatives w.r.t. time, and provides a differential equation with only derivatives w.r.t. $\theta$,
 
 !bt
 \begin{equation}
-\label{eq:rdotdot}
+label{eq:rdotdot}
 \frac{d^2r}{d\theta^2}\left(\frac{L}{mr^2}\right)^2
 -\frac{2}{r}\left(\frac{dr}{d\theta}\right)^2\left(\frac{L}{mr^2}\right)^2
 =\frac{F}{m}+\frac{L^2}{m^2r^3},
@@ -330,7 +334,7 @@ r&=&1/u,\\
 \end{eqnarray}
 !et
 
-Plugging these expressions into Eq. (\ref{eq:rdotdot}) gives an
+Plugging these expressions into Eq. (ref{eq:rdotdot}) gives an
 expression in terms of $u$, $du/d\theta$, and $d^2u/d\theta^2$. After
 some tedious algebra,
 
@@ -352,7 +356,7 @@ The solution has two arbitrary constants, $A$ and $\theta_0$,
 
 !bt
 \begin{eqnarray}
-\label{eq:Ctrajectory}
+label{eq:Ctrajectory}
 u&=&\frac{m\alpha}{L^2}+A\cos(\theta-\theta_0),\\
 \nonumber
 r&=&\frac{1}{(m\alpha/L^2)+A\cos(\theta-\theta_0)}.
@@ -368,7 +372,7 @@ substitution $v=L/(mr)$, one would reproduce the expression
 $r=L^2/(m\alpha)$.
 
 The form describing the elliptical trajectory in
-Eq. (\ref{eq:Ctrajectory}) can be identified as an ellipse with one
+Eq. (ref{eq:Ctrajectory}) can be identified as an ellipse with one
 focus being the center of the ellipse by considering the definition of
 an ellipse as being the points such that the sum of the two distances
 between the two foci are a constant. Making that distance $2D$, the
@@ -385,7 +389,7 @@ r&=&\frac{D^2-a^2}{D+a\cos\theta}=\frac{1}{D/(D^2-a^2)-a\cos\theta/(D^2-a^2)}.
 \end{eqnarray}
 !et
 
-By inspection, this is the same form as Eq. (\ref{eq:Ctrajectory}) with $D/(D^2-a^2)=m\alpha/L^2$ and $a/(D^2-a^2)=A$.
+By inspection, this is the same form as Eq. (ref{eq:Ctrajectory}) with $D/(D^2-a^2)=m\alpha/L^2$ and $a/(D^2-a^2)=A$.
 
 ===== Effective or Centrifugal Potential =====
 
@@ -424,7 +428,7 @@ F_{\rm eff}&=&-\frac{d}{dr}U(r) -\frac{d}{dr}\frac{L^2}{2mr^2}\\
 !et
 
 
-which is indeed matches the form for $m\ddot{r}$ in Eq. (\ref{eq:radialeqofmotion2}), which included the ``centrifugal'' force.
+which is indeed matches the form for $m\ddot{r}$ in Eq. (ref{eq:radialeqofmotion2}), which included the ``centrifugal'' force.
 
 
 Consider a particle of mass $m$ in a 2-dimensional harmonic oscillator with potential
@@ -519,14 +523,14 @@ r^2&=&\alpha+(\beta^2+\gamma^2)^{1/2}\cos(2\omega_0 t-\delta),~~~\delta=\arctan(
 \end{eqnarray*}
 !et
 
-and see that the radius oscillates with frequency $2\omega_0$. The
+and see that radius oscillates with frequency $2\omega_0$. The
 factor of two comes because the oscillation $x=A\cos\omega_0t$ has two
 maxima for $x^2$, one at $t=0$ and one a half period later.
 
 
 ===== Stability of Orbits =====
 
-The effective force can be extracted from the effective potential, $U_{\rm eff}$. Beginning from the equations of motion, Eq. (\ref{eq:radialeqofmotion}), for $r$,
+The effective force can be extracted from the effective potential, $U_{\rm eff}$. Beginning from the equations of motion, Eq. (ref{eq:radialeqofmotion}), for $r$,
 
 !bt
 \begin{eqnarray}
@@ -552,22 +556,28 @@ somewhere with negative potential. The circular orbits are then stable
 to perturbation.
 
 
-The effective potential is sketched for two cases, a $1/r$ attractive potential and a $1/r^3$ attractive potential. The $1/r$ case has a stable minimum, whereas the circular orbit in the $1/r^3$ case is unstable. 
+The effective potential is sketched for two cases, a $1/r$ attractive
+potential and a $1/r^3$ attractive potential. The $1/r$ case has a
+stable minimum, whereas the circular orbit in the $1/r^3$ case is
+unstable.
 
 
 If one considers a potential that falls as $1/r^3$, the situation is
 reversed and the point where $\partial_rU$ disappears will be a local
-maximum rather than a local minimum -- see Fig. \ref{fig:Veff}. The
-repulsive centrifugal piece dominates at large $r$ and the attractive
+maximum rather than a local minimum. _Fig to come here with code_
+
+The repulsive centrifugal piece dominates at large $r$ and the attractive
 Coulomb piece wins out at small $r$. The circular orbit is then at a
 maximum of the effective potential and the orbits are unstable. It is
 the clear that for potentials that fall as $r^n$, that one must have
 $n>-2$ for the orbits to be stable.
 
 
-Consider a potential $U(r)=\beta r$. For a particle of mass $m$ with angular momentum $L$, find the angular frequency of a circular orbit. Then find the angular frequency for small radial perturbations.
+Consider a potential $U(r)=\beta r$. For a particle of mass $m$ with
+angular momentum $L$, find the angular frequency of a circular
+orbit. Then find the angular frequency for small radial perturbations.
 
-{\bf Solution}:\\
+
 For the circular orbit you search for the position $r_{\rm min}$ where the effective potential is minimized,
 
 
@@ -642,10 +652,11 @@ independently of the target, experimentalists measure scattering
 probabilities, then divide by the areal density to obtain
 cross-sections,
 
-
+!bt
 \begin{eqnarray}
 \sigma=\frac{P_{\rm scatt}}{dN/dA}.
 \end{eqnarray}
+!et
 
 Instead of merely stating that a particle collided, one can measure
 the probability the particle scattered by a given angle. The
@@ -658,17 +669,19 @@ under the influence of fixed potentials $U(\vec{r})$. Because the
 distribution of scattering angles can be measured, one expresses the
 differential cross section,
 
-
+!bt
 \begin{equation}
 \frac{d^2\sigma}{d\cos\theta_s~d\phi}.
 \end{equation}
+!et
 
-Usually, the literatures expresses differential cross sections as
+Usually, the literature expresses differential cross sections as
 
-
+!bt
 \begin{equation}
 d\sigma/d\Omega=\frac{d\sigma}{d\cos\theta d\phi}=\frac{1}{2\pi}\frac{d\sigma}{d\cos\theta},
 \end{equation}
+!et
 
 where the last equivalency is true when the scattering does not depend
 on the azimuthal angle $\phi$, as is the case for spherically
@@ -678,10 +691,11 @@ The differential solid angle $d\Omega$ can be thought of as the area
 subtended by a measurement, $dA_d$, divided by $r^2$, where $r$ is the
 distance to the detector,
 
-
+!bt
 \begin{eqnarray}
 dA_d=r^2 d\Omega.
 \end{eqnarray}
+!et
 
 With this definition $d\sigma/d\Omega$ is independent of the distance
 from which one places the detector, or the size of the detector (as
@@ -697,11 +711,11 @@ trajectory when it is still far away from the scattering center and
 has not yet passed it. The differential cross section can be expressed
 in terms of the impact parameter,
 
-
+!bt
 \begin{equation}
 d\sigma=2\pi bdb,
 \end{equation}
-
+!et
 
 which is the area of a thin ring of radius $b$ and thickness $db$. In
 classical physics, one can calculate the trajectory given the incoming
@@ -709,10 +723,11 @@ kinetic energy $E$ and the impact parameter if one knows the mass and
 potential. From the trajectory, one then finds the scattering angle
 $\theta_s(b)$. The differential cross section is then
 
-
+!bt
 \begin{equation}
 \frac{d\sigma}{d\Omega}=\frac{1}{2\pi}\frac{d\sigma}{d\cos\theta_s}=b\frac{db}{d\cos\theta_s}=\frac{b}{(d/db)\cos\theta_s(b)}.
 \end{equation}
+!et
 
 Typically, one would calculate $\cos\theta_s$ and $(d/db)\cos\theta_s$
 as functions of $b$. This is sufficient to plot the differential cross
@@ -720,49 +735,68 @@ section as a function of $\theta_s$.
 
 The total cross section is 
 
+!bt
 \begin{equation}
 \sigma_{\rm tot}=\int d\Omega\frac{d\sigma}{d\Omega}=2\pi\int d\cos\theta_s~\frac{d\sigma}{d\Omega}. 
 \end{equation}
+!et
 
 Even if the total cross section is infinite, e.g. Coulomb forces, one
 can still have a finite differential cross section as we will see
 later on.
 
 
-An asteroid of mass $m$ and kinetic energy $E$ approaches a planet of radius $R$ and mass $M$. What is the cross section for the asteroid to impact the planet?
+An asteroid of mass $m$ and kinetic energy $E$ approaches a planet of
+radius $R$ and mass $M$. What is the cross section for the asteroid to
+impact the planet?
 
-{\bf Solution}:\\
+=== Solution ===
 Calculate the maximum impact parameter, $b_{\rm max}$, for which the asteroid will hit the planet. The total cross  section for impact is $\sigma_{\rm impact}=\pi b_{\rm max}^2$. The maximum cross-section can be found with the help of angular momentum conservation. The asteroid's incoming momentum is $p_0=\sqrt{2mE}$ and the angular momentum is $L=p_0b$. If the asteroid just grazes the planet, it is moving with zero radial kinetic energy at impact. Combining energy and angular momentum conservation and having $p_f$ refer to the momentum of the asteroid at a distance $R$,
 
-
+!bt
 \begin{eqnarray*}
 \frac{p_f^2}{2m}-\frac{GMm}{R}&=&E,\\
 p_fR&=&p_0b_{\rm max},
 \end{eqnarray*}
+!et
+
 allows one to solve for $b_{\rm max}$,
+
+!bt
 \begin{eqnarray*}
 b_{\rm max}&=&R\frac{p_f}{p_0}\\
 &=&R\frac{\sqrt{2m(E+GMm/R)}}{\sqrt{2mE}}\\
 \sigma_{\rm impact}&=&\pi R^2\frac{E+GMm/R}{E}.
 \end{eqnarray*}
-
+!et
 
 
 
 ===== Center-of-Mass Coordinates =====
 
-Thus far, we have considered the trajectory as if the force is centered around a fixed point. For two bodies interacting only with one another, both masses circulate around the center of mass. One might think that solutions would become more complex when both particles move, but we will see here that the problem can be reduced to one with a single body moving according to a fixed force by expressing the trajectories for $\vec{r}_1$ and $\vec{r}_2$ into the center-of-mass coordinate $\vec{R}_{\rm cm}$ and the relative coordinate $\vec{r}$,
+Thus far, we have considered the trajectory as if the force is
+centered around a fixed point. For two bodies interacting only with
+one another, both masses circulate around the center of mass. One
+might think that solutions would become more complex when both
+particles move, but we will see here that the problem can be reduced
+to one with a single body moving according to a fixed force by
+expressing the trajectories for $\vec{r}_1$ and $\vec{r}_2$ into the
+center-of-mass coordinate $\vec{R}_{\rm cm}$ and the relative
+coordinate $\vec{r}$,
 
-
+!bt
 \begin{eqnarray}
 \vec{R}_{\rm cm}&\equiv&\frac{m_1\vec{r}_1+m_2\vec{r}_2}{m_1+m_2},\\
 \nonumber
 \vec{r}&\equiv&\vec{r}_1-\vec{r_2}.
 \end{eqnarray}
+!et
 
-Here, we assume the two particles interact only with one another, so $\vec{F}_{12}=-\vec{F}_{21}$ (where $\vec{F}_{ij}$ is the force on $i$ due to $j$. The equations of motion then become
+Here, we assume the two particles interact only with one another, so
+$\vec{F}_{12}=-\vec{F}_{21}$ (where $\vec{F}_{ij}$ is the force on $i$
+due to $j$. The equations of motion then become
 
-
+!bt
 \begin{eqnarray}
 \ddot{\vec{R}}_{\rm cm}&=&\frac{1}{m_1+m_2}\left\{m_1\ddot{\vec{r}}_1+m_2\ddot{\vec{r}}_2\right\}\\
 \nonumber
@@ -771,36 +805,50 @@ Here, we assume the two particles interact only with one another, so $\vec{F}_{1
 \nonumber
 &=&\left(\frac{1}{m_1}+\frac{1}{m_2}\right)\vec{F}_{12}.
 \end{eqnarray}
+!et
 
+The first expression simply states that the center of mass coordinate
+$\vec{R}_{\rm cm}$ moves at a fixed velocity. The second expression
+can be rewritten in terms of the reduced mass $\mu$.
 
-The first expression simply states that the center of mass coordinate $\vec{R}_{\rm cm}$ moves at a fixed velocity. The second expression can be rewritten in terms of the reduced mass $\mu$.
-
+!bt
 \begin{eqnarray}
 \mu \ddot{\vec{r}}&=&\vec{F}_{12},\\
 \frac{1}{\mu}&=&\frac{1}{m_1}+\frac{1}{m_2},~~~~\mu=\frac{m_1m_2}{m_1+m_2}.
 \end{eqnarray}
+!et
 
-Thus, one can treat the trajectory as a one-body problem where the reduced mass is $\mu$, and a second trivial problem for the center of mass. The reduced mass is especially convenient when one is considering gravitational problems because then
+Thus, one can treat the trajectory as a one-body problem where the
+reduced mass is $\mu$, and a second trivial problem for the center of
+mass. The reduced mass is especially convenient when one is
+considering gravitational problems because then
 
+!bt
 \begin{eqnarray}
 \mu \ddot{r}&=&-\frac{Gm_1m_2}{r^2}\hat{r}\\
 \nonumber
 &=&-\frac{GM\mu}{r^2}\hat{r},~~~M\equiv m_1+m_2.
 \end{eqnarray}
+!et
 
-For the gravitational problem, the reduced mass then falls out and the trajectory depends only on the total mass $M$.
+For the gravitational problem, the reduced mass then falls out and the
+trajectory depends only on the total mass $M$.
 
-The kinetic energy and momenta also have analogues in center-of-mass coordinates. The total and relative momenta are
+The kinetic energy and momenta also have analogues in center-of-mass
+coordinates. The total and relative momenta are
 
+!bt
 \begin{eqnarray}
 \vec{P}&\equiv&\vec{p}_1+\vec{p}_2=M\dot{\vec{R}}_{\rm cm},\\
 \nonumber
 \vec{q}&\equiv&\mu\dot{\vec{r}}.
 \end{eqnarray}
+!et
 
 With these definitions, a little algebra shows that the kinetic energy becomes
 
 
+!bt
 \begin{eqnarray}
 T&=&\frac{1}{2}m_1|\vec{v}_1|^2+\frac{1}{2}m_2|\vec{v}_2|^2\\
 \nonumber
@@ -809,7 +857,7 @@ T&=&\frac{1}{2}m_1|\vec{v}_1|^2+\frac{1}{2}m_2|\vec{v}_2|^2\\
 \nonumber
 &=&\frac{P^2}{2M}+\frac{q^2}{2\mu}.
 \end{eqnarray}
-
+!et
 
 The standard strategy is to transform into the center of mass frame,
 then treat the problem as one of a single particle of mass $\mu$
@@ -837,25 +885,29 @@ to Spartan Stadium.
 
 
 
-The incoming and outgoing angles of the trajectory are at $\pm\theta'$. They are related to the scattering angle by $2\theta'=\pi+\theta_s$.
+The incoming and outgoing angles of the trajectory are at
+$\pm\theta'$. They are related to the scattering angle by
+$2\theta'=\pi+\theta_s$.
 
 In order to calculate differential cross section, we must find how the
 impact parameter is related to the scattering angle. This requires
 analysis of the trajectory. We consider our previous expression for
 the trajectory where we derived the elliptic form for the trajectory,
-Eq. (\ref{eq:Ctrajectory}). For that case we considered an attractive
+Eq. (ref{eq:Ctrajectory}). For that case we considered an attractive
 force with the particle's energy being negative, i.e. it was
 bound. However, the same form will work for positive energy, and
 repulsive forces can be considered by simple flipping the sign of
 $\alpha$. For positive energies, the trajectories will be hyperbolas,
 rather than ellipses, with the asymptotes of the trajectories
 representing the directions of the incoming and outgoing
-tracks. Rewriting Eq. (\ref{eq:Ctrajectory}),
+tracks. Rewriting Eq. (ref{eq:Ctrajectory}),
 
 
-\begin{equation}\label{eq:ruthtraj}
+!bt
+\begin{equation}label{eq:ruthtraj}
 r=\frac{1}{\frac{m\alpha}{L^2}+A\cos\theta}.
 \end{equation}
+!et
 
 Once $A$ is large enough, which will happen when the energy is
 positive, the denominator will become negative for a range of
@@ -863,28 +915,28 @@ $\theta$. This is because the scattered particle will never reach
 certain angles. The asymptotic angles $\theta'$ are those for which
 the denominator goes to zero,
 
-
+!bt
 \begin{equation}
 \cos\theta'=-\frac{m\alpha}{AL^2}.
 \end{equation}
-
+!et
 
 The trajectory's point of closest approach is at $\theta=0$ and the
 two angles $\theta'$, which have this value of $\cos\theta'$, are the
 angles of the incoming and outgoing particles. From
-Fig. \ref{fig:rutherford}, one can see that the scattering angle
+Fig (_to come_), one can see that the scattering angle
 $\theta_s$ is given by,
 
-
+!bt
 \begin{eqnarray}
-\label{eq:sthetover2}
+label{eq:sthetover2}
 2\theta'-\pi&=&\theta_s,~~~\theta'=\frac{\pi}{2}+\frac{\theta_s}{2},\\
 \nonumber
 \sin(\theta_s/2)&=&-\cos\theta'\\
 \nonumber
 &=&\frac{m\alpha}{AL^2}.
 \end{eqnarray}
-
+!et
 
 Now that we have $\theta_s$ in terms of $m,\alpha,L$ and $A$, we wish
 to re-express $L$ and $A$ in terms of the impact parameter $b$ and the
@@ -892,57 +944,69 @@ energy $E$. This will set us up to calculate the differential cross
 section, which requires knowing $db/d\theta_s$. It is easy to write
 the angular momentum as
 
-
+!bt
 \begin{equation}
 L^2=p_0^2b^2=2mEb^2.
 \end{equation}
+!et
 
 Finding $A$ is more complicated. To accomplish this we realize that
 the point of closest approach occurs at $\theta=0$, so from
-Eq. (\ref{eq:ruthtraj})
+Eq. (ref{eq:ruthtraj})
 
+!bt
 \begin{eqnarray}
-\label{eq:rminofA}
+label{eq:rminofA}
 \frac{1}{r_{\rm min}}&=&\frac{m\alpha}{L^2}+A,\\
 \nonumber
 A&=&\frac{1}{r_{\rm min}}-\frac{m\alpha}{L^2}.
 \end{eqnarray}
-
+!et
 
 Next, $r_{\rm min}$ can be found in terms of the energy because at the
 point of closest approach the kinetic energy is due purely to the
 motion perpendicular to $\hat{r}$ and
 
-
+!bt
 \begin{equation}
 E=-\frac{\alpha}{r_{\rm min}}+\frac{L^2}{2mr_{\rm min}^2}.
 \end{equation}
+!et
 
 One can solve the quadratic equation for $1/r_{\rm min}$,
 
+!bt
 \begin{equation}
 \frac{1}{r_{\rm min}}=\frac{m\alpha}{L^2}+\sqrt{(m\alpha/L^2)^2+2mE/L^2}.
 \end{equation}
+!et
 
-We can plug the expression for $r_{\rm min}$ into the expression for $A$, Eq. (\ref{eq:rminofA}),
+We can plug the expression for $r_{\rm min}$ into the expression for $A$, Eq. (ref{eq:rminofA}),
 
+!bt
 \begin{equation}
 A=\sqrt{(m\alpha/L^2)^2+2mE/L^2}=\sqrt{(\alpha^2/(4E^2b^4)+1/b^2}
 \end{equation}
+!et
 
-Finally, we insert the expression for $A$ into that for the scattering angle, Eq. (\ref{eq:sthetover2}),
+Finally, we insert the expression for $A$ into that for the scattering angle, Eq. (ref{eq:sthetover2}),
 
+!bt
 \begin{eqnarray}
-\label{eq:scattangle}
+label{eq:scattangle}
 \sin(\theta_s/2)&=&\frac{m\alpha}{AL^2}\\
 \nonumber
 &=&\frac{a}{\sqrt{a^2+b^2}}, ~~a\equiv \frac{\alpha}{2E}
 \end{eqnarray}
+!et
 
-The differential cross section can now be found by differentiating the expression for $\theta_s$ with $b$,
 
+The differential cross section can now be found by differentiating the
+expression for $\theta_s$ with $b$,
+
+!bt
 \begin{eqnarray}
-\label{eq:rutherford}
+label{eq:rutherford}
 \frac{1}{2}\cos(\theta_s/2)d\theta_s&=&\frac{ab~db}{(a^2+b^2)^{3/2}}=\frac{bdb}{a^2}\sin^3(\theta_s/2),\\
 \nonumber
 d\sigma&=&2\pi bdb=\frac{\pi a^2}{\sin^3(\theta_s/2)}\cos(\theta_s/2)d\theta_s\\
@@ -953,6 +1017,7 @@ d\sigma&=&2\pi bdb=\frac{\pi a^2}{\sin^3(\theta_s/2)}\cos(\theta_s/2)d\theta_s\\
 \nonumber
 \frac{d\sigma}{d\Omega}&=&\frac{a^2}{4\sin^4(\theta_s/2)}.
 \end{eqnarray}
+!et
 
 where $a= \alpha/2E$. This the Rutherford formula for the differential
 cross section. It diverges as $\theta_s\rightarrow 0$ because
@@ -962,115 +1027,45 @@ $d\sigma/d\Omega$ is the same whether the interaction is positive or
 negative.
 
 
-Consider a particle of mass $m$ and charge $z$ with kinetic energy $E$ (Let it be the center-of-mass energy) incident on a heavy nucleus of mass $M$ and charge $Z$ and radius $R$. Find the angle at which the Rutherford scattering formula breaks down.
+Consider a particle of mass $m$ and charge $z$ with kinetic energy $E$
+(Let it be the center-of-mass energy) incident on a heavy nucleus of
+mass $M$ and charge $Z$ and radius $R$. Find the angle at which the
+Rutherford scattering formula breaks down.
 
-{\bf Solution}:\\
-Let $\alpha=Zze^2/(4\pi\epsilon_0)$. The scattering angle in Eq. (\ref{eq:scattangle}) is 
+=== Solution ===
 
+Let $\alpha=Zze^2/(4\pi\epsilon_0)$. The scattering angle in Eq. (ref{eq:scattangle}) is 
+
+!bt
 \[
 \sin(\theta_s/2)=\frac{a}{\sqrt{a^2+b^2}}, ~~a\equiv \frac{\alpha}{2E}.
 \]
+!et
 
-The impact parameter $b$ for which the point of closest approach equals $R$ can be found by using angular momentum conservation,
+The impact parameter $b$ for which the point of closest approach
+equals $R$ can be found by using angular momentum conservation,
 
+!bt
 \begin{eqnarray*}
 p_0b&=&b\sqrt{2mE}=Rp_f=R\sqrt{2m(E-\alpha/R)},\\
 b&=&R\frac{\sqrt{2m(E-\alpha/R)}}{\sqrt{2mE}}\\
 &=&R\sqrt{1-\frac{\alpha}{ER}}.
 \end{eqnarray*}
-
+!et
 
 Putting these together
 
+!bt
 \[
 \theta_s=2\sin^{-1}\left\{
 \frac{a}{\sqrt{a^2+R^2(1-\alpha/(RE))}}
 \right\},~~~a=\frac{\alpha}{2E}.
 \]
+!et
 
-It was from this departure of the experimentally measured $d\sigma/d\Omega$ from the Rutherford formula that allowed Rutherford to infer the radius of the gold nucleus, $R$.
+It was from this departure of the experimentally measured
+$d\sigma/d\Omega$ from the Rutherford formula that allowed Rutherford
+to infer the radius of the gold nucleus, $R$.
 
 
-
-\item Approximate Earth as a solid sphere of uniform density and radius $R=6360$ km. Suppose you drill a tunnel from the north pole directly to another point on the surface described by a polar angle $\theta$ relative to the north pole. Drop a mass into the hole and let it slide through tunnel without friction. Find the frequency $f$ with which the mass oscillates back and forth. Ignore Earth's rotation. Compare this to the frequency of a low-lying circular orbit.
-
-\item Consider the gravitational field of the moon acting on the Earth.
-\begin{enumerate}
-\item Calculate the term $k$ in the expansion
-\[
-g_{\rm moon}=g_0+kz+\cdots,
-\]
-where $z$ is measured relative to Earth's center and is measured along the axis connecting the Earth and moon. Give your answer in terms of the distance between the moon and the earth, $R_{m}$ and the mass of the moon $M_m$. 
-\item Calculate the difference between the height of the oceans at maximum and minimum tides. Express your answer in terms of the quantities above, plus Earth's radius, $R_e$. Then give you answer in meters.
-\end{enumerate}
-
-\item Consider an ellipse defined by the sum of the distances from the two foci being $2D$, which expressed in a Cartesian coordinates with the middle of the ellipse being at the origin becomes
-\[
-\sqrt{(x-a)^2+y^2}+\sqrt{(x+a)^2+y^2}=2D.
-\]
-Here the two foci are at $(a,0)$ and $(-a,0)$. Show that this form is can be written as
-\[
-\frac{x^2}{D^2}+\frac{y^2}{D^2-a^2}=1.
-\]
-
-\item Consider a particle in an attractive inverse-square potential, $U(r)=-\alpha/r$, where the point of closest approach is $r_{\rm min}$ and the total energy of the particle is $E$. Find the parameter $A$ describing the trajectory in Eq. (\ref{eq:Ctrajectory}). Hint: Use the fact that at $r_{\rm min}$ there is no radial kinetic energy and $E=-\alpha/r_{\rm min}+L^2/2mr_{\rm min}^2$.
-
-\item Consider the effective potential for an attractive inverse-square-law force, $F=-\alpha/r^2$. Consider a particle of mass $m$ with angular momentum $L$.
-\begin{enumerate}
-\item Find the radius of a circular orbit by solving for the position of the minimum of the effective potential. 
-\item What is the angular frequency, $\dot{\theta}$, of the orbit? Solve this by setting $F=m\dot{\theta}^2r$.
-\item Find the effective spring constant for the particle at the minimum.
-\item What is the angular frequency for small vibrations about the minimum? How does this compare with the answer to (b)?
-\end{enumerate}
-
-\item Consider a particle of mass $m$ moving in a potential
-\[
-U=\alpha\ln(r/a).
-\]
-\begin{enumerate}
-\item If the particle is moving in a circular orbit of radius $R$, find the angular frequency $\dot{\theta}$. Solve this by setting $F=-m\dot{\theta}^2r$ (force and acceleration point inward).
-\item Express the angular momentum $L$ in terms of $\alpha$, $m$ and $R$. Also express $R$ in terms of $L$, $\alpha$ and $m$.
-\item Sketch the effective radial potential, $V_{\rm eff}(r)$, for a particle with angular momentum $L$. (No longer necessarily moving in a circular orbit.)
-\item Find the position of the minimum of $V_{\rm eff}$ in terms of $L$, $\alpha$ and $m$, then compare to the result of (b).
-\item What is the effective spring constant for a particle at the minimum of $V_{\rm eff}$? Express your answer in terms of $L$, $m$ and $\alpha$. 
-\item What is the angular frequency, $\omega$, for small oscillations of $r$ about the $R_{\rm min}$?  Express your answer in terms of $\dot{\theta}$ from part (a).
-\end{enumerate}
-
-\item Consider a particle of mass $m$ in an attractive potential, $U(r)=-\alpha/r$, with angular momentum $L$ with just the right energy so that
-\[
-A=m\alpha/L^2
-\]
-where $A$ comes from the expression
-\[
-r=\frac{1}{(m\alpha/L^2)+A\cos\theta}.
-\]
-The trajectory can then be rewritten as
-\[
-r=\frac{2r_0}{1+\cos\theta},~~~r_0=\frac{L^2}{2m\alpha}.
-\]
-\begin{enumerate}
-\item Show that for this case the total energy $E$ approaches zero.
-\item Write this trajectory in a more recognizable parabolic form,
-\[
-x=x_0-\frac{y^2}{R}.
-\]
-I.e., express $x_0$ and $R$ in terms of $r_0$.
-\item Explain how a particle with zero energy can have its trajectory not go through the origin.
-\item What is the scattering angle for this trajectory?
-\end{enumerate}
-
-\item Show that if one transforms to a reference frame where the total momentum is zero, $\vec{p}_1=-\vec{p}_2$, that the relative momentum $\vec{q}$ corresponds to either $\vec{p}_1$ or $-\vec{p}_2$. This means that in this frame the magnitude of $\vec{q}$ is one half the magnitude of $\vec{p}_1-\vec{p}_2$.
-
-\item Given the center of mass coordinates $\vec{R}$ and $\vec{r}$ for particles of mass $m_1$ and $m_2$, find the coordinates $\vec{r}_1$ and $\vec{r}_2$ in terms of the masses, $\vec{R}$ and $\vec{r}$.
-
-\item Consider two particles of identical mass scattering at an angle $\theta_{\rm cm}$ in the center of mass.
-\begin{enumerate}
-\item In a frame where one is the target (initially at rest) and one is the projectile, find the scattering angle in the lab frame, $\theta$, in terms of $\theta_{\rm cm}$.
-\item Express $d\sigma/d\cos\theta$ in terms of $d\sigma/d\cos\theta_{\rm cm}$. I.e., find the Jacobian, $d\cos\theta_{\rm cm}/d\cos\theta$.
-\end{enumerate}
-
-\item Assume you are scattering alpha particles (He-4 nuclei $Z=2, A=4$) off of a gold target ($Z=79, A=197$). If the radius of the nucleus is $7.5\times 10^{-15}$ meters, and if the energy of the beam is 38 MeV,
-\begin{enumerate}
-\item What is the total cross section for having a nuclear collision? Give the answer in millibarns, 1 mb$=10^{-31}$ m$^2$.
-\item Find the scattering angle (in degrees) at which the Rutherford differential cross section formula breaks down?
 
