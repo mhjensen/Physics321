@@ -12,11 +12,11 @@ DATE: today
 The gravitational potential energy and forces involving two masses $a$ and $b$ are
 !bt
 \begin{eqnarray}
-U_{ab}&=&-\frac{Gm_am_b}{|\vec{r}_a-\vec{r}_b|},\\
+U_{ab}&=&-\frac{Gm_am_b}{|\bm{r}_a-\bm{r}_b|},\\
 \nonumber
-F_{ba}&=&-\frac{Gm_am_b}{|\vec{r}_a-\vec{r}_b|^2}\hat{r}_{ab},\\
+F_{ba}&=&-\frac{Gm_am_b}{|\bm{r}_a-\bm{r}_b|^2}\hat{r}_{ab},\\
 \nonumber
-\hat{r}_{ab}&=&\frac{\vec{r}_b-\vec{r}_a}{|\vec{r}_a-\vec{r}_b|}.
+\hat{r}_{ab}&=&\frac{\bm{r}_b-\bm{r}_a}{|\bm{r}_a-\bm{r}_b|}.
 \end{eqnarray}
 !et
 
@@ -35,19 +35,19 @@ Just like electrodynamics, one can define "fields", which for a small
 additional mass $m$ are the force per mass and the additional
 potential energy per mass. The {\it gravitational field} related to
 the force has dimensions of force per mass, or acceleration, and can
-be labeled $\vec{g}(\vec{r})$. The potential energy per mass has
+be labeled $\bm{g}(\bm{r})$. The potential energy per mass has
 dimensions of energy per mass. This is analogous to the
 electromagnetic potential, which is the potential energy per charge,
 and the electric field which is the force per charge.
 
-Because the field $\vec{g}$ obeys the same inverse square law for a
+Because the field $\bm{g}$ obeys the same inverse square law for a
 point mass as the electric field does for a point charge, the
 gravitational field also satisfies a version of Gauss's law,
 
 !bt
 \begin{equation}
 label{eq:GravGauss}
-\oint d\vec{A}\cdot\vec{g}=-4\pi GM_{\rm inside}.
+\oint d\bm{A}\cdot\bm{g}=-4\pi GM_{\rm inside}.
 \end{equation}
 !et
 
@@ -73,15 +73,15 @@ surrounds the nozzle, not necessarily a sphere, one can state that
 !bt
 \begin{eqnarray}
 label{eq:paint}
-\oint \vec{dA}\cdot\vec{F}&=&B,
+\oint \bm{dA}\cdot\bm{F}&=&B,
 \end{eqnarray}
 !et
 
 regardless of the shape of the surface. This follows because the rate
 at which paint is deposited on the surface should equal the rate at
 which it leaves the nozzle. The dot product ensures that only the
-component of $\vec{F}$ into the surface contributes to the deposition
-of paint. Similarly, if $\vec{F}$ is any radial inverse-square forces,
+component of $\bm{F}$ into the surface contributes to the deposition
+of paint. Similarly, if $\bm{F}$ is any radial inverse-square forces,
 that falls as $B/(4\pi r^2)$, then one can apply
 Eq. (ref{eq:paint}). For gravitational fields, $B/(4\pi)$ is replaced
 by $GM$, and one quickly ``derives'' Gauss's law for gravity,
@@ -104,7 +104,7 @@ at the surface $g(R)$. Assume $r<R$, i.e. you are inside the surface.
 g(r)&=&g(R)\frac{r}{R}~.
 \end{eqnarray*}
 !et
-The potential energy per mass is similar conceptually to the voltage, or electric potential energy per charge, that was studied in electromagnetism, if $V\equiv U/m$, $\vec{g}=-\nabla V$.
+The potential energy per mass is similar conceptually to the voltage, or electric potential energy per charge, that was studied in electromagnetism, if $V\equiv U/m$, $\bm{g}=-\nabla V$.
 
 ===== Tidal Forces =====
 
@@ -158,14 +158,14 @@ This first force is the "tidal" force. It pulls objects outward from the center 
 Consider the Earth to be a sphere of radius $R$ covered with water,
 with the gravitational acceleration at the surface noted by $g$. Now
 assume that a distant body provides an additional constant
-gravitational acceleration $\vec{a}$ pointed along the $z$ axis. Find
+gravitational acceleration $\bm{a}$ pointed along the $z$ axis. Find
 the distortion of the radius as a function of $\theta$. Ignore
 planetary rotation and assume $a<<g$.
 
 {\bf Solution}: Because Earth would then accelerate with $a$, the
 field $a$ would seem invisible in the accelerating frame. A tidal
 force would only appear if $a$ depended on position, i.e. $\nabla
-\vec{a}\ne 0$.
+\bm{a}\ne 0$.
 
 
 
@@ -623,7 +623,7 @@ individual target atom or nucleus. Cross section measurements form the
 basis for MANY fields of physics. BThe cross section, and the
 differential cross section, encapsulates everything measurable for a
 collision where all that is measured is the final state, e.g. the
-outgoing particle had momentum $\vec{p}_f$. y studying cross sections,
+outgoing particle had momentum $\bm{p}_f$. y studying cross sections,
 one can infer information about the potential interaction between the
 two particles. Inferring, or constraining, the potential from the
 cross section is a classic {\it inverse} problem. Collisions are
@@ -665,7 +665,7 @@ unscattered and at $\theta_s=\pi$ the particle is scattered directly
 backward. Scattering angles are often described in the center-of-mass
 frame, but that is a detail we will neglect for this first discussion,
 where we will consider the scattering of particles moving classically
-under the influence of fixed potentials $U(\vec{r})$. Because the
+under the influence of fixed potentials $U(\bm{r})$. Because the
 distribution of scattering angles can be measured, one expresses the
 differential cross section,
 
@@ -780,40 +780,40 @@ one another, both masses circulate around the center of mass. One
 might think that solutions would become more complex when both
 particles move, but we will see here that the problem can be reduced
 to one with a single body moving according to a fixed force by
-expressing the trajectories for $\vec{r}_1$ and $\vec{r}_2$ into the
-center-of-mass coordinate $\vec{R}_{\rm cm}$ and the relative
-coordinate $\vec{r}$,
+expressing the trajectories for $\bm{r}_1$ and $\bm{r}_2$ into the
+center-of-mass coordinate $\bm{R}_{\rm cm}$ and the relative
+coordinate $\bm{r}$,
 
 !bt
 \begin{eqnarray}
-\vec{R}_{\rm cm}&\equiv&\frac{m_1\vec{r}_1+m_2\vec{r}_2}{m_1+m_2},\\
+\bm{R}_{\rm cm}&\equiv&\frac{m_1\bm{r}_1+m_2\bm{r}_2}{m_1+m_2},\\
 \nonumber
-\vec{r}&\equiv&\vec{r}_1-\vec{r_2}.
+\bm{r}&\equiv&\bm{r}_1-\bm{r_2}.
 \end{eqnarray}
 !et
 
 Here, we assume the two particles interact only with one another, so
-$\vec{F}_{12}=-\vec{F}_{21}$ (where $\vec{F}_{ij}$ is the force on $i$
+$\bm{F}_{12}=-\bm{F}_{21}$ (where $\bm{F}_{ij}$ is the force on $i$
 due to $j$. The equations of motion then become
 
 !bt
 \begin{eqnarray}
-\ddot{\vec{R}}_{\rm cm}&=&\frac{1}{m_1+m_2}\left\{m_1\ddot{\vec{r}}_1+m_2\ddot{\vec{r}}_2\right\}\\
+\ddot{\bm{R}}_{\rm cm}&=&\frac{1}{m_1+m_2}\left\{m_1\ddot{\bm{r}}_1+m_2\ddot{\bm{r}}_2\right\}\\
 \nonumber
-&=&\frac{1}{m_1+m_2}\left\{\vec{F}_{12}+\vec{F}_{21}\right\}=0.\\
-\ddot{\vec{r}}&=&\ddot{\vec{r}}_1-\ddot{\vec{r}}_2=\left(\frac{\vec{F}_{12}}{m_1}-\frac{\vec{F}_{21}}{m_2}\right)\\
+&=&\frac{1}{m_1+m_2}\left\{\bm{F}_{12}+\bm{F}_{21}\right\}=0.\\
+\ddot{\bm{r}}&=&\ddot{\bm{r}}_1-\ddot{\bm{r}}_2=\left(\frac{\bm{F}_{12}}{m_1}-\frac{\bm{F}_{21}}{m_2}\right)\\
 \nonumber
-&=&\left(\frac{1}{m_1}+\frac{1}{m_2}\right)\vec{F}_{12}.
+&=&\left(\frac{1}{m_1}+\frac{1}{m_2}\right)\bm{F}_{12}.
 \end{eqnarray}
 !et
 
 The first expression simply states that the center of mass coordinate
-$\vec{R}_{\rm cm}$ moves at a fixed velocity. The second expression
+$\bm{R}_{\rm cm}$ moves at a fixed velocity. The second expression
 can be rewritten in terms of the reduced mass $\mu$.
 
 !bt
 \begin{eqnarray}
-\mu \ddot{\vec{r}}&=&\vec{F}_{12},\\
+\mu \ddot{\bm{r}}&=&\bm{F}_{12},\\
 \frac{1}{\mu}&=&\frac{1}{m_1}+\frac{1}{m_2},~~~~\mu=\frac{m_1m_2}{m_1+m_2}.
 \end{eqnarray}
 !et
@@ -839,9 +839,9 @@ coordinates. The total and relative momenta are
 
 !bt
 \begin{eqnarray}
-\vec{P}&\equiv&\vec{p}_1+\vec{p}_2=M\dot{\vec{R}}_{\rm cm},\\
+\bm{P}&\equiv&\bm{p}_1+\bm{p}_2=M\dot{\bm{R}}_{\rm cm},\\
 \nonumber
-\vec{q}&\equiv&\mu\dot{\vec{r}}.
+\bm{q}&\equiv&\mu\dot{\bm{r}}.
 \end{eqnarray}
 !et
 
@@ -850,10 +850,10 @@ With these definitions, a little algebra shows that the kinetic energy becomes
 
 !bt
 \begin{eqnarray}
-T&=&\frac{1}{2}m_1|\vec{v}_1|^2+\frac{1}{2}m_2|\vec{v}_2|^2\\
+T&=&\frac{1}{2}m_1|\bm{v}_1|^2+\frac{1}{2}m_2|\bm{v}_2|^2\\
 \nonumber
-&=&\frac{1}{2}M|\dot{\vec{R}}_{\rm cm}|^2
-+\frac{1}{2}\mu|\dot{\vec{r}}|^2\\
+&=&\frac{1}{2}M|\dot{\bm{R}}_{\rm cm}|^2
++\frac{1}{2}\mu|\dot{\bm{r}}|^2\\
 \nonumber
 &=&\frac{P^2}{2M}+\frac{q^2}{2\mu}.
 \end{eqnarray}
@@ -861,7 +861,7 @@ T&=&\frac{1}{2}m_1|\vec{v}_1|^2+\frac{1}{2}m_2|\vec{v}_2|^2\\
 
 The standard strategy is to transform into the center of mass frame,
 then treat the problem as one of a single particle of mass $\mu$
-undergoing a force $\vec{F}_{12}$. Scattering angles can also be
+undergoing a force $\bm{F}_{12}$. Scattering angles can also be
 expressed in this frame, then transformed into the lab frame. In
 practice, one sees examples in the literature where $d\sigma/d\Omega$
 expressed in both the ``center-of-mass'' and in the ``laboratory''
