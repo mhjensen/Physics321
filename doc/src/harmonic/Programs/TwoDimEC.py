@@ -49,8 +49,8 @@ c1 = 4*V0/(d**4)/mass
 c2 = 4*V0/(d**2)/mass
 gamma = 0.1
 # Initial conditions as compact 2-dimensional arrays, here r =(d,0) and v =(0,0.5)
-r0 = np.array([d,0.0])
-v0 = np.array([0.0,0.5])
+r0 = np.array([d*np.sqrt(2.0),0.0])
+v0 = np.array([0,2*np.sqrt(2)])
 r[0] = r0
 v[0] = v0
 # Start integrating using the Euler-Cromer method
