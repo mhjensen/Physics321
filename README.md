@@ -113,19 +113,19 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 - Wednesday: No lectures
 - Friday:  No lectures 
 ### Week 11, March  9-13, 2020
-- Monday:  Gravity and central force problems. Tidal waves and Kepler's laws, lecture notes and Taylor chapter 8
-- Wednesday: Gravity and central force problems, Kepler's laws and centrifugal potentials. First midterm due Wednesday 11
-- Friday:  Gravity and central force problems, stability of orbits and scattering problems. 7th homework, due March 20
+- Monday:  Gravity and central force problems, center of mass coordinates. Lecture notes and Taylor chapter 8
+- Wednesday: Discussion of first midterm. First midterm due Friday 13
+- Friday:  Gravity and central force problems, centrifugal barriers. 
 ### Week 12, March 16-20, 2020
-- Monday: Gravity and central force problems, scattering, center of mass coordinates
+- Monday: Gravity and central force problems, elliptical orbits and Kepler's laws, 7th homework, due March 23
 - Wednesday: Gravity and central force problems, center of mass coordinates and scattering examples
-- Friday:  Rotating coordinate systems, accelerating and rotating frames. 8th homework, due March 27
+- Friday:  Rotating coordinate systems, accelerating and rotating frames. 
 ### Week 13, March 23-27, 2020
-- Monday: Rotating Coordinate systems, Coriolis forces
+- Monday: Rotating Coordinate systems, Coriolis forces. 8th homework, due March 30
 - Wednesday: Rotating Coordinate systems, Foucalt's pendulum
-- Friday:  Rotating Coordinate systems and rigid bodies, 9th homework, due April 3
+- Friday:  Rotating Coordinate systems and rigid bodies.
 ### Week 14, March 30-April 3, 2020
-- Monday: Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes
+- Monday: Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. 9th homework, due April 6
 - Wednesday: Euler-Lagrange equations, examples. Chapters 6 and 7.1-7.2 Taylor
 - Friday:  Lagrangian formalism, chapter 7.3-7.5 of Taylor and lecture notes. _Second midterm project, due  April 10, 2020_
 ### Week 15, April  6-10, 2020
