@@ -31,194 +31,10 @@ U=\sum_{a<b}U_{ab}=\frac{1}{2}\sum_{a\ne b}U_{ab}.
 \end{equation}
 !et
 
-Just like electrodynamics, one can define "fields", which for a small
-additional mass $m$ are the force per mass and the additional
-potential energy per mass. The {\it gravitational field} related to
-the force has dimensions of force per mass, or acceleration, and can
-be labeled $\bm{g}(\bm{r})$. The potential energy per mass has
-dimensions of energy per mass. This is analogous to the
-electromagnetic potential, which is the potential energy per charge,
-and the electric field which is the force per charge.
-
-Because the field $\bm{g}$ obeys the same inverse square law for a
-point mass as the electric field does for a point charge, the
-gravitational field also satisfies a version of Gauss's law,
-
-!bt
-\begin{equation}
-label{eq:GravGauss}
-\oint d\bm{A}\cdot\bm{g}=-4\pi GM_{\rm inside}.
-\end{equation}
-!et
-
-Here, $M_{\rm inside}$ is the net mass inside a closed area.
-
-Gauss's law can be understood by considering a nozzle that sprays
-paint in all directions uniformly from a point source. Let $B$ be the
-number of gallons per minute of paint leaving the nozzle. If the
-nozzle is at the center of a sphere of radius $r$, the paint per
-square meter per minute that is deposited on some part of the sphere
-is
-
-!bt
-\begin{eqnarray}
-F(r)&=&\frac{B}{4\pi r^2}.
-\end{eqnarray}
-!et
-
-Now, let $F$ also be assigned a direction, so that it becomes a vector
-pointing along the direction of the flying paint. For any surface that
-surrounds the nozzle, not necessarily a sphere, one can state that
-
-!bt
-\begin{eqnarray}
-label{eq:paint}
-\oint \bm{dA}\cdot\bm{F}&=&B,
-\end{eqnarray}
-!et
-
-regardless of the shape of the surface. This follows because the rate
-at which paint is deposited on the surface should equal the rate at
-which it leaves the nozzle. The dot product ensures that only the
-component of $\bm{F}$ into the surface contributes to the deposition
-of paint. Similarly, if $\bm{F}$ is any radial inverse-square forces,
-that falls as $B/(4\pi r^2)$, then one can apply
-Eq. (ref{eq:paint}). For gravitational fields, $B/(4\pi)$ is replaced
-by $GM$, and one quickly ``derives'' Gauss's law for gravity,
-Eq. (ref{eq:GravGauss}).
-
-
-Consider Earth to have its mass $M$ uniformly distributed in a sphere
-of radius $R$. Find the magnitude of the gravitational acceleration as
-a function of the radius $r$ in terms of the acceleration of gravity
-at the surface $g(R)$. Assume $r<R$, i.e. you are inside the surface.
-
-{\bf Solution}: Take the ratio of Eq. (ref{eq:GravGauss}) for two radii, $R$ and $r<R$,
-
-!bt
-\begin{eqnarray*}
-\frac{4\pi r^2 g(r)}{4\pi R^2 g(R)}&=&\frac{4\pi GM_{\rm inside~r}}{4\pi GM_{\rm inside~R}}\\
-\nonumber
-&=&\frac{r^3}{R^3}\\
-\nonumber
-g(r)&=&g(R)\frac{r}{R}~.
-\end{eqnarray*}
-!et
-The potential energy per mass is similar conceptually to the voltage, or electric potential energy per charge, that was studied in electromagnetism, if $V\equiv U/m$, $\bm{g}=-\nabla V$.
-
-===== Tidal Forces =====
-
-
-Consider a spherical planet of radius $r$ a distance $D$ from another
-body of mass $M$. The magnitude of the force due to $M$ on an small
-object of mass $\delta m$ on surface of the planet can be calculated
-by performing a Taylor expansion about the center of the spherical
-planet.
-
-!bt
-\begin{equation}
-F=-\frac{GM\delta m}{D^2}+2\frac{GM\delta m}{D^3}\Delta D+\cdots
-\end{equation}
-!et
-
-If the $z$ direction points toward the large object, $\Delta D$ can be
-referred to as $z$. In the accelerating frame of an observer at the
-center of the planet,
-
-!bt
-\begin{equation}
-\delta m\frac{d^2 z}{dt^2}=F-\delta ma'+{\rm other~forces~acting~on~} \delta m,
-\end{equation}
-!et
-
-where $a'$ is the acceleration of the observer. Because $\delta ma'$
-equals the gravitational force on $\delta m$ if it were located at the
-planet's center, one can write
-
-!bt
-\begin{equation}
-m\frac{d^2z}{dt^2}=2\frac{GM\delta m}{D^3}z+{\rm other~forces~acting~on~}\delta m.
-\end{equation}
-!et
-
-Here the other forces could represent the forces acting on $\delta m$
-from the spherical planet such as the gravitational force or the
-contact force with the surface. If $\theta$ is the angle w.r.t. the
-$z$ axis, the effective force acting on $\delta m$ is
-
-!bt
-\begin{equation}
-F_{\rm eff}\approx 2\frac{GM\delta m}{D^3}r\cos\theta\hat{z}+{\rm other~forces~acting~on~}\delta m.
-\end{equation}
-!et
-
-This first force is the "tidal" force. It pulls objects outward from the center of the object. If the object were covered with water, it would distort the objects shape so that the shape would be elliptical, stretched out along the axis pointing toward the large mass $M$. The force is always along (either parallel or antiparallel to) the $\hat{z}$ direction.
-
-
-Consider the Earth to be a sphere of radius $R$ covered with water,
-with the gravitational acceleration at the surface noted by $g$. Now
-assume that a distant body provides an additional constant
-gravitational acceleration $\bm{a}$ pointed along the $z$ axis. Find
-the distortion of the radius as a function of $\theta$. Ignore
-planetary rotation and assume $a<<g$.
-
-{\bf Solution}: Because Earth would then accelerate with $a$, the
-field $a$ would seem invisible in the accelerating frame. A tidal
-force would only appear if $a$ depended on position, i.e. $\nabla
-\bm{a}\ne 0$.
+===== Relative and Center of Mass Motion =====
 
 
 
-Now consider that the field is no longer constant, but that instead $a=-kz$ with $|kR|<<g$.
-
-{\bf Solution}: The surface of the planet needs to be at constant
-potential (if the planet is not accelerating). The force per mass,
-$-kz$ is like a spring, and the potential per mass is
-$kz^2/2$. Otherwise water would move to a point of lower
-potential. Thus, the potential energy for a sample mass $\delta m$ is
-
-!bt
-\begin{eqnarray*}
-V(R)+\delta m gh(\theta)-\frac{\delta m}{2}kr^2\cos^2\theta={\rm Constant}\\
-V(R)+\delta mgh(\theta)-\frac{\delta m}{2}kR^2\cos^2\theta-\delta m kRh(\theta)\cos^2\theta-\frac{\delta m}{2}kh^2(\theta)\cos^2\theta={\rm Constant}.
-\end{eqnarray*}
-!et
-
-
-Here, the potential due to the external field is $(1/2)kz^2$ so that $-\nabla U=-kz$. One now needs to solve for $h(\theta)$. Absorbing all the constant terms from both sides of the equation into one constant $C$, and because both $h$ and $kR$ are small, we can through away terms of order $h^2$ or $kRh$. This gives
-
-!bt
-\begin{eqnarray*}
-gh(\theta)-\frac{1}{2}kR^2\cos^2\theta&=&C,\\
-h(\theta)&=&\frac{C}{g}+\frac{1}{2g}kR^2\cos^2\theta,\\
-h(\theta)&=&\frac{1}{2g}kR^2(\cos^2\theta-1/3).
-\end{eqnarray*}
-!et
-
-The term with the factor of $1/3$ replaced the constant and was chosen so that the average height of the water would be zero.
-
-The Sun's mass is $27\times 10^6$ the Moon's mass, but the Sun is 390 times further away from Earth as the Sun. What is ratio of the tidal force of the Sun to that of the Moon.
-
-{\bf Solution}: The gravitational force due to an object $M$ a distance $D$ away goes as $M/D^2$, but the tidal force is only the difference of that force over a distance $R$,
-
-!bt
-\[
-F_{\rm tidal}\propto \frac{M}{D^3}R. 
-\]
-!et
-
-
-Therefore the ratio of force is
-
-!bt
-\begin{eqnarray*}
-\frac{F_{\rm Sun's~tidal~force}}{F_{\rm Moon's~tidal~force}}
-&=&\frac{M_{\rm sun}/D_{\rm sun}^3}{M_{\rm moon}/D_{\rm moon}^3}\\
-&=&\frac{27\times 10^6}{390^3}=0.46.
-\end{eqnarray*}
-!et
-
-The Moon more strongly affects tides than the Sun.
 
 ===== Deriving Elliptical Orbits =====
 
@@ -1069,3 +885,191 @@ to infer the radius of the gold nucleus, $R$.
 
 
 
+Just like electrodynamics, one can define "fields", which for a small
+additional mass $m$ are the force per mass and the additional
+potential energy per mass. The {\it gravitational field} related to
+the force has dimensions of force per mass, or acceleration, and can
+be labeled $\bm{g}(\bm{r})$. The potential energy per mass has
+dimensions of energy per mass. This is analogous to the
+electromagnetic potential, which is the potential energy per charge,
+and the electric field which is the force per charge.
+
+Because the field $\bm{g}$ obeys the same inverse square law for a
+point mass as the electric field does for a point charge, the
+gravitational field also satisfies a version of Gauss's law,
+
+!bt
+\begin{equation}
+label{eq:GravGauss}
+\oint d\bm{A}\cdot\bm{g}=-4\pi GM_{\rm inside}.
+\end{equation}
+!et
+
+Here, $M_{\rm inside}$ is the net mass inside a closed area.
+
+Gauss's law can be understood by considering a nozzle that sprays
+paint in all directions uniformly from a point source. Let $B$ be the
+number of gallons per minute of paint leaving the nozzle. If the
+nozzle is at the center of a sphere of radius $r$, the paint per
+square meter per minute that is deposited on some part of the sphere
+is
+
+!bt
+\begin{eqnarray}
+F(r)&=&\frac{B}{4\pi r^2}.
+\end{eqnarray}
+!et
+
+Now, let $F$ also be assigned a direction, so that it becomes a vector
+pointing along the direction of the flying paint. For any surface that
+surrounds the nozzle, not necessarily a sphere, one can state that
+
+!bt
+\begin{eqnarray}
+label{eq:paint}
+\oint \bm{dA}\cdot\bm{F}&=&B,
+\end{eqnarray}
+!et
+
+regardless of the shape of the surface. This follows because the rate
+at which paint is deposited on the surface should equal the rate at
+which it leaves the nozzle. The dot product ensures that only the
+component of $\bm{F}$ into the surface contributes to the deposition
+of paint. Similarly, if $\bm{F}$ is any radial inverse-square forces,
+that falls as $B/(4\pi r^2)$, then one can apply
+Eq. (ref{eq:paint}). For gravitational fields, $B/(4\pi)$ is replaced
+by $GM$, and one quickly ``derives'' Gauss's law for gravity,
+Eq. (ref{eq:GravGauss}).
+
+
+Consider Earth to have its mass $M$ uniformly distributed in a sphere
+of radius $R$. Find the magnitude of the gravitational acceleration as
+a function of the radius $r$ in terms of the acceleration of gravity
+at the surface $g(R)$. Assume $r<R$, i.e. you are inside the surface.
+
+{\bf Solution}: Take the ratio of Eq. (ref{eq:GravGauss}) for two radii, $R$ and $r<R$,
+
+!bt
+\begin{eqnarray*}
+\frac{4\pi r^2 g(r)}{4\pi R^2 g(R)}&=&\frac{4\pi GM_{\rm inside~r}}{4\pi GM_{\rm inside~R}}\\
+\nonumber
+&=&\frac{r^3}{R^3}\\
+\nonumber
+g(r)&=&g(R)\frac{r}{R}~.
+\end{eqnarray*}
+!et
+The potential energy per mass is similar conceptually to the voltage, or electric potential energy per charge, that was studied in electromagnetism, if $V\equiv U/m$, $\bm{g}=-\nabla V$.
+
+===== Tidal Forces =====
+
+
+Consider a spherical planet of radius $r$ a distance $D$ from another
+body of mass $M$. The magnitude of the force due to $M$ on an small
+object of mass $\delta m$ on surface of the planet can be calculated
+by performing a Taylor expansion about the center of the spherical
+planet.
+
+!bt
+\begin{equation}
+F=-\frac{GM\delta m}{D^2}+2\frac{GM\delta m}{D^3}\Delta D+\cdots
+\end{equation}
+!et
+
+If the $z$ direction points toward the large object, $\Delta D$ can be
+referred to as $z$. In the accelerating frame of an observer at the
+center of the planet,
+
+!bt
+\begin{equation}
+\delta m\frac{d^2 z}{dt^2}=F-\delta ma'+{\rm other~forces~acting~on~} \delta m,
+\end{equation}
+!et
+
+where $a'$ is the acceleration of the observer. Because $\delta ma'$
+equals the gravitational force on $\delta m$ if it were located at the
+planet's center, one can write
+
+!bt
+\begin{equation}
+m\frac{d^2z}{dt^2}=2\frac{GM\delta m}{D^3}z+{\rm other~forces~acting~on~}\delta m.
+\end{equation}
+!et
+
+Here the other forces could represent the forces acting on $\delta m$
+from the spherical planet such as the gravitational force or the
+contact force with the surface. If $\theta$ is the angle w.r.t. the
+$z$ axis, the effective force acting on $\delta m$ is
+
+!bt
+\begin{equation}
+F_{\rm eff}\approx 2\frac{GM\delta m}{D^3}r\cos\theta\hat{z}+{\rm other~forces~acting~on~}\delta m.
+\end{equation}
+!et
+
+This first force is the "tidal" force. It pulls objects outward from the center of the object. If the object were covered with water, it would distort the objects shape so that the shape would be elliptical, stretched out along the axis pointing toward the large mass $M$. The force is always along (either parallel or antiparallel to) the $\hat{z}$ direction.
+
+
+Consider the Earth to be a sphere of radius $R$ covered with water,
+with the gravitational acceleration at the surface noted by $g$. Now
+assume that a distant body provides an additional constant
+gravitational acceleration $\bm{a}$ pointed along the $z$ axis. Find
+the distortion of the radius as a function of $\theta$. Ignore
+planetary rotation and assume $a<<g$.
+
+{\bf Solution}: Because Earth would then accelerate with $a$, the
+field $a$ would seem invisible in the accelerating frame. A tidal
+force would only appear if $a$ depended on position, i.e. $\nabla
+\bm{a}\ne 0$.
+
+
+
+Now consider that the field is no longer constant, but that instead $a=-kz$ with $|kR|<<g$.
+
+{\bf Solution}: The surface of the planet needs to be at constant
+potential (if the planet is not accelerating). The force per mass,
+$-kz$ is like a spring, and the potential per mass is
+$kz^2/2$. Otherwise water would move to a point of lower
+potential. Thus, the potential energy for a sample mass $\delta m$ is
+
+!bt
+\begin{eqnarray*}
+V(R)+\delta m gh(\theta)-\frac{\delta m}{2}kr^2\cos^2\theta={\rm Constant}\\
+V(R)+\delta mgh(\theta)-\frac{\delta m}{2}kR^2\cos^2\theta-\delta m kRh(\theta)\cos^2\theta-\frac{\delta m}{2}kh^2(\theta)\cos^2\theta={\rm Constant}.
+\end{eqnarray*}
+!et
+
+
+Here, the potential due to the external field is $(1/2)kz^2$ so that $-\nabla U=-kz$. One now needs to solve for $h(\theta)$. Absorbing all the constant terms from both sides of the equation into one constant $C$, and because both $h$ and $kR$ are small, we can through away terms of order $h^2$ or $kRh$. This gives
+
+!bt
+\begin{eqnarray*}
+gh(\theta)-\frac{1}{2}kR^2\cos^2\theta&=&C,\\
+h(\theta)&=&\frac{C}{g}+\frac{1}{2g}kR^2\cos^2\theta,\\
+h(\theta)&=&\frac{1}{2g}kR^2(\cos^2\theta-1/3).
+\end{eqnarray*}
+!et
+
+The term with the factor of $1/3$ replaced the constant and was chosen so that the average height of the water would be zero.
+
+The Sun's mass is $27\times 10^6$ the Moon's mass, but the Sun is 390 times further away from Earth as the Sun. What is ratio of the tidal force of the Sun to that of the Moon.
+
+{\bf Solution}: The gravitational force due to an object $M$ a distance $D$ away goes as $M/D^2$, but the tidal force is only the difference of that force over a distance $R$,
+
+!bt
+\[
+F_{\rm tidal}\propto \frac{M}{D^3}R. 
+\]
+!et
+
+
+Therefore the ratio of force is
+
+!bt
+\begin{eqnarray*}
+\frac{F_{\rm Sun's~tidal~force}}{F_{\rm Moon's~tidal~force}}
+&=&\frac{M_{\rm sun}/D_{\rm sun}^3}{M_{\rm moon}/D_{\rm moon}^3}\\
+&=&\frac{27\times 10^6}{390^3}=0.46.
+\end{eqnarray*}
+!et
+
+The Moon more strongly affects tides than the Sun.
