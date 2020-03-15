@@ -141,7 +141,15 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 - Wednesday: 
 - Friday:  Summary and discussions of finals exams 
 ### Week 18, April 27- May 1, 2020, Finals week
-- Final Exam:  April 29, 5:45pm - 7:45pm in 1420 Biomedical & Physical Sciences
+- Final Exam:  Due to the Corona virus the final exam will be a project similar to the two midterm projects. More details to come.
 
 
 ## Learning outcomes (more material to come)
+
+After the course you should:
+
+- be able to analyze forces that act on objects, apply Newton’s laws to determine the equations of motion, and solve these both analytically and numerically,
+- be able to describe the rotational motion of rigid bodies using torque, moment of inertia, and angular momentum, and apply Newton’s second law for rotational motion to solve the equations of motion,
+- be able to apply conservation laws for mechanical energy, momentum, and angular momentum to solve static and dynamic problems and to analyze collisions between bodies,
+know the definitions that are relevant for elasticity theory,
+- be able to apply different strategies to solve specific problems, introduce approximations if necessary, and interpret results and discuss these in a wider context.
