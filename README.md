@@ -47,8 +47,8 @@ Here you will find a general overview of the course, with learning outcomes, tea
 | Activity | Percentage of total score |
 |------|-----|
 |Homeworks, 10 in total and due Wednesdays the week after | 20% |
-| First Midterm Project, due Friday February 28 | 25% |
-| Second  Midterm Project, due Friday April 10 | 25% |
+| First Midterm Project, due Wednesday March  11 | 25% |
+| Second  Midterm Project, due Monday April 13 | 25% |
 | Final Exam, April 29, 5:45-7:45pm |  30%  |
 | Extra Credit Assignment (Due Friday April 24)| 10% |
 
@@ -127,13 +127,13 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 ### Week 14, March 30-April 3, 2020
 - Monday: Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. 9th homework, due April 6
 - Wednesday: Euler-Lagrange equations, examples. Chapters 6 and 7.1-7.2 Taylor
-- Friday:  Lagrangian formalism, chapter 7.3-7.5 of Taylor and lecture notes. _Second midterm project, due  April 10, 2020_
+- Friday:  Lagrangian formalism, chapter 7.3-7.5 of Taylor and lecture notes. _Second midterm project, due  April 13, 2020_
 ### Week 15, April  6-10, 2020
 - Monday: Lagrangian formalism, examples  
 - Wednesday: Lagrangian formalism, examples
-- Friday: Lagrangian formalism. 10th homework and extra assignments, due April 26 
+- Friday: Lagrangian formalism. 
 ### Week 16, April 13-17, 2020
-- Monday:
+- Monday:  10th homework and extra assignments, due April 24 
 - Wednesday: 
 - Friday:  
 ### Week 17, April 20-24, 2020
