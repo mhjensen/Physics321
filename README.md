@@ -118,8 +118,8 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 - Friday:  Gravity and central force problems, centrifugal barriers. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch13.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_wk9trq9k
 ### Week 12, March 16-20, 2020
 - Monday: Gravity and central force problems, elliptical orbits and Kepler's laws, 7th homework, due March 23. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch16.pdf and video of lecture
-- Wednesday: Gravity and central force problems, center of mass coordinates and scattering examples
-- Friday:  Rotating coordinate systems, accelerating and rotating frames. 
+- Wednesday: Gravity and central force problems, elliptical orbits  and two-body scattering examples
+- Friday:  Two-body scattering problems
 ### Week 13, March 23-27, 2020
 - Monday: Rotating Coordinate systems, Coriolis forces. 8th homework, due March 30
 - Wednesday: Rotating Coordinate systems, Foucalt's pendulum
