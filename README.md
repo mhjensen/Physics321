@@ -115,7 +115,7 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 ### Week 11, March  9-13, 2020
 - Monday:  Gravity and central force problems, center of mass coordinates. Lecture notes and Taylor chapter 8. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch9.pdf
 - Wednesday: Discussion of first midterm. First midterm due Friday 13
-- Friday:  Gravity and central force problems, centrifugal barriers. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch13.pdf
+- Friday:  Gravity and central force problems, centrifugal barriers. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch13.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_wk9trq9k
 ### Week 12, March 16-20, 2020
 - Monday: Gravity and central force problems, elliptical orbits and Kepler's laws, 7th homework, due March 23
 - Wednesday: Gravity and central force problems, center of mass coordinates and scattering examples
