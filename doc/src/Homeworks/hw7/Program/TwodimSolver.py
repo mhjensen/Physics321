@@ -36,14 +36,18 @@ n = ceil(tfinal/DeltaT)
 t = np.zeros(n)
 v = np.zeros((n,2))
 r = np.zeros((n,2))
+# Constants of the model
+k = 0.1   # spring constant
+m = 0.1   # mass, you can change these
+omega02 = sqrt(k/m)  # Frequency
+AngMom = 1.0  #  The angular momentum
+rmin = (AngMom*AngMom/k/m)**0.25
 # Initial conditions as compact 2-dimensional arrays
-r0 = np.array([1.0,0.5])  # You must change these to fit rmin
+x0 =rmin*0.5; y0 = sqrt(rmin*rmin-x0*x0)
+r0 = np.array([x0,y0])  # You must change these to fit rmin
 v0 = np.array([0.0,0.0]) # You must change these to fit rmin
 r[0] = r0
 v[0] = v0
-k = 0.1   # spring constant
-m = 0.1   # mass, you can change these
-omega02 = sqrt(k/m)
 # Start integrating using the Velocity-Verlet  method
 for i in range(n-1):
     # Set up forces, define rabs first
@@ -53,12 +57,12 @@ for i in range(n-1):
     anew = -r[i+1]*omega02  
     v[i+1] = v[i] + 0.5*DeltaT*(a+anew)
     t[i+1] = t[i] + DeltaT
-# Plot position as function of time    
+# Plot position as function of time
+radius = np.sqrt(r[:,0]**2+r[:,1]**2)
 fig, ax = plt.subplots()
 ax.set_xlabel('t[s]')
-ax.set_ylabel('x[m] and y[m]')
-ax.plot(t,r[:,0])
-ax.plot(t,r[:,1])
+ax.set_ylabel('r*r[m2]')
+ax.plot(t,r[:,0]**2+r[:,1]**2)
 fig.tight_layout()
 save_fig("2DimHOVV")
 plt.show()
