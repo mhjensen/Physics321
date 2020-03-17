@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="PHY321: Classical Mechanics 1">
+
+<title>PHY321: Classical Mechanics 1</title>
+
+
+
+
+
+
+
+<!-- reveal.js: http://lab.hakim.se/reveal-js/ -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<!--
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/beigesmall.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/solarized.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/serif.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/moon.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/darkgray.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/cbc.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simula.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/league.css" id="theme">
+-->
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+<!-- Printing and PDF exports -->
+<script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+
+<style type="text/css">
+    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    p.caption { width: 80%; font-size: 60%; font-style: italic; text-align: left; }
+    hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    .reveal .alert-text-small   { font-size: 80%;  }
+    .reveal .alert-text-large   { font-size: 130%; }
+    .reveal .alert-text-normal  { font-size: 90%;  }
+    .reveal .alert {
+             padding:8px 35px 8px 14px; margin-bottom:18px;
+             text-shadow:0 1px 0 rgba(255,255,255,0.5);
+             border:5px solid #bababa;
+             -webkit-border-radius: 14px; -moz-border-radius: 14px;
+             border-radius:14px;
+             background-position: 10px 10px;
+             background-repeat: no-repeat;
+             background-size: 38px;
+             padding-left: 30px; /* 55px; if icon */
+     }
+     .reveal .alert-block {padding-top:14px; padding-bottom:14px}
+     .reveal .alert-block > p, .alert-block > ul {margin-bottom:1em}
+     /*.reveal .alert li {margin-top: 1em}*/
+     .reveal .alert-block p+p {margin-top:5px}
+     /*.reveal .alert-notice { background-image: url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_notice.png); }
+     .reveal .alert-summary  { background-image:url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_summary.png); }
+     .reveal .alert-warning { background-image: url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_warning.png); }
+     .reveal .alert-question {background-image:url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_question.png); } */
+
+</style>
+
+
+
+<!-- Styles for table layout of slides -->
+<style type="text/css">
+td.padding {
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-right:50px;
+  padding-left:50px;
+}
+</style>
+
+</head>
+
+<body>
+<div class="reveal">
+
+<!-- Any section element inside the <div class="slides"> container
+     is displayed as a slide -->
+
+<div class="slides">
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+
+
+
+<section>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1 style="text-align: center;">PHY321: Classical Mechanics 1</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Homework 7, due Monday  March 23 -->
+
+<center>
+<b>Homework 7, due Monday  March 23</b> 
+</center>
+
+<p>&nbsp;<br>
+<!-- institution(s) -->
+
+<br>
+<p>&nbsp;<br>
+<center><h4>Mar 17, 2020</h4></center> <!-- date -->
+<br>
+
+<h3 id="___sec0">Practicalities about  homeworks and projects </h3>
+
+<ol>
+<p><li> You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. <b>Remember to write your name(s)</b>!</li>
+<p><li> Homeworks are available  the week before the deadline.</li> 
+<p><li> How do I(we)  hand in?  Due to the corona virus and many of you not being on campus, we recommend that you scan your handwritten notes and upload them to D2L. If you are ok with typing mathematical formulae using say Latex, you can hand in everything as a single jupyter notebook at D2L. The numerical exercise(s) should always be handed in as a jupyter notebook by the deadline at D2L.</li> 
+</ol>
+
+<h3 id="___sec1">Introduction to homework 7 </h3>
+
+<p>
+This week's sets of classical pen and paper and computational
+exercises are tailored to the topic of two-body problems and central
+forces, following what was discussed during the lectures during week
+11 (March 9-13) and week 12 (March 16-20). Some of the exercise are
+simple derivations of the equations we discussed during lectures while
+other are applications to specific forces. Plotting the energy-diagram
+is again a very useful exercise. And you will see that many of the
+classical topics like conservation laws, conservative forces, central
+forces, energy, momentum and angular momentum conservation pop up
+again. These are indeed overarching features which allow us to develop
+our intuition about a given physical system.
+
+<p>
+The relevant reading background is
+
+<ol>
+<p><li> Sections 8.1-8.7 of Taylor.</li>
+</ol>
+<p>
+
+The numerical homework is based on what you did in homework 4 on the Earth-Sun system, but we will add to this the numerical solution of elliptical orbits.
+
+<h3 id="___sec2">Exercise 1 (20pt), Center-of-Mass and Relative Coordinates and Reference Frames  </h3>
+
+<p>
+We define the two-body center-of-mass coordinate and relative coordinate by expressing the trajectories for
+\( \boldsymbol{r}_1 \) and \( \boldsymbol{r}_2 \) into the center-of-mass coordinate
+\( \boldsymbol{R}_{\rm cm} \) 
+<p>&nbsp;<br>
+$$
+\boldsymbol{R}_{\rm cm}\equiv\frac{m_1\boldsymbol{r}_1+m_2\boldsymbol{r}_2}{m_1+m_2},
+$$
+<p>&nbsp;<br>
+
+and the relative coordinate 
+<p>&nbsp;<br>
+$$
+\boldsymbol{r}\equiv\boldsymbol{r}_1-\boldsymbol{r_2}.
+$$
+<p>&nbsp;<br>
+
+Here, we assume the two particles interact only with one another, so \( \boldsymbol{F}_{12}=-\boldsymbol{F}_{21} \) (where \( \boldsymbol{F}_{ij} \) is the force on \( i \) due to \( j \).
+
+<ul>
+<p><li> 1a (5pt) Show that the equations of motion then become \( \ddot{\boldsymbol{R}}_{\rm cm}=0 \) and \( \ddot{\boldsymbol{r}}=\mu\boldsymbol{F}_{12} \), with the reduced mass \( \mu=m_1m_2/(m_1+m_2) \).</li>
+</ul>
+<p>
+
+The first expression simply states that the center of mass coordinate \( \boldsymbol{R}_{\rm cm} \) moves at a fixed velocity. The second expression can be rewritten in terms of the reduced mass \( \mu \).
+
+<ul>
+<p><li> 1b (5pt) Show that the linear momenta for the center-of-mass \( \boldsymbol{P} \) motion and the relative motion \( \boldsymbol{q} \) are given by \( \boldsymbol{P}=M\dot{\boldsymbol{R}}_{\rm cm} \) with \( M=m_1+m_2 \) and \( \boldsymbol{q}=\mu\dot{\boldsymbol{r}} \).</li>
+<p><li> 1c (5pt) Show then the kinetic energy for two objects can then be written as</li>
+</ul>
+<p>&nbsp;<br>
+$$
+K=\frac{P^2}{2M}+\frac{q^2}{2\mu}.
+$$
+<p>&nbsp;<br>
+
+
+<ul>
+<p><li> 1d (5pt) Show that the total angular momentum for two-particles in the center-of-mass frame \( \boldsymbol{R}=0 \), is given by</li>
+</ul>
+<p>&nbsp;<br>
+$$
+\boldsymbol{L}=\boldsymbol{r}\times \mu\dot{\boldsymbol{r}}.
+$$
+<p>&nbsp;<br>
+
+<h3 id="___sec3">Exercise 2 (10pt), Conservation of Energy   </h3>
+
+<p>
+The equations of motion in the center-of-mass frame in two dimension with \( x=r\cos{(\phi)} \) and \( y=r\sin{(\phi)} \) and
+\( r\in [0,\infty) \), \( \phi\in [0,2\pi] \) and \( r=\sqrt{x^2+y^2} \) are given by
+<p>&nbsp;<br>
+$$
+\mu \ddot{r}=-\frac{dV(r)}{dr}+\mu\dot{\phi}^2,
+$$
+<p>&nbsp;<br>
+
+and
+<p>&nbsp;<br>
+$$
+\dot{\phi}=\frac{L}{\mu r^2}.
+$$
+<p>&nbsp;<br>
+
+Here \( V(r) \) is any central force which depends only on the relative coordinate.
+
+<ul>
+<p><li> 2a (5pt) Show that you can rewrite the radial equation in terms of an effective potential \( V_{\mathrm{eff}}(r)=V(r)+L^2/(2\mu r^2) \).</li> 
+<p><li> 2b (5pt) Write out the final differential equation for the radial degrees of freedom when we specify that \( V(r)=-\alpha/r \).  Plot the effective potential (choose values for \( \alpha \) and \( L \) and discuss (see Taylor section 8.4 and example 8.2) the physics of the system for two energies, one larger than zero and one smaller than zero. This is similar to what you did in the first midterm, except that the potential is different.</li>
+</ul>
+
+<h3 id="___sec4">Exercise 3 (40pt), Harmonic oscillator again  </h3>
+
+<p>
+See the lecture notes on central forces for a discussion of this problem. It is given as an example in the text.
+
+<p>
+Consider a particle of mass \( m \) in a \( 2 \)-dimensional harmonic oscillator with potential
+<p>&nbsp;<br>
+$$
+V(r)=\frac{1}{2}kr^2=\frac{1}{2}k(x^2+y^2).
+$$
+<p>&nbsp;<br>
+
+<p>
+We assume the orbit has a final non-zero angular momentum \( L \).  The
+effective potential looks like that of a harmonic oscillator for large
+\( r \), but for small \( r \), the centrifugal potential repels the particle
+from the origin. The combination of the two potentials has a minimum
+for at some radius \( r_{\rm min} \).
+
+<ul>
+<p><li> 3a (10pt) Set up the effective potential and plot it. Find \( r_{\rm min} \) and \( \dot{\phi} \). Show that the latter is given by \( \dot{\phi}=\sqrt{k/m} \).  At \( r_{\rm min} \) the particle does not accelerate and \( r \) stays constant and the motion is circular. With fixed \( k \) and \( m \), which parameter can we adjust to change the value of \( r \) at \( r_{\rm min} \)?</li>
+<p><li> 3b (10pt) Now consider small vibrations about \( r_{\rm min} \). The effective spring constant is the curvature of the effective potential.  Use the curvature at \( r_{\rm min} \) to find the effective spring constant (hint, look at  exercise 4 in homework 6) \( k_{\mathrm{eff}} \). Show also that \( \omega=\sqrt{k_{\mathrm{eff}}/m}=2\dot{\phi} \)</li>
+
+<p><li> 3c (10pt) The solution to the equations of motion in Cartesian coordinates is simple. The \( x \) and \( y \) equations of motion separate, and we have \( \ddot{x}=-kx \) and \( \ddot{y}=-ky \). The harmonic oscillator is indeed a system where the degrees of freedom separate and we can find analytical solutions. Define a natural frequency \( \omega_0=\sqrt{k/m} \) and show that (where \( A \), \( B \), \( C \) and \( D \) are arbitrary constants defined by the initial conditions)</li>
+</ul>
+<p>&nbsp;<br>
+$$
+\begin{eqnarray*}
+x&=&A\cos\omega_0 t+B\sin\omega_0 t,\\
+y&=&C\cos\omega_0 t+D\sin\omega_0 t.
+\end{eqnarray*}
+$$
+<p>&nbsp;<br>
+
+
+<ul>
+<p><li> 3d (10pt) With the solutions for \( x \) and \( y \), and \( r^2=x^2+y^2 \) and the definitions \( \alpha=\frac{A^2+B^2+C^2+D^2}{2} \), \( \beta=\frac{A^2-B^2+C^2-D^2}{2} \) and \( \gamma=AB+CD \), show that</li>
+</ul>
+<p>&nbsp;<br>
+$$
+r^2=\alpha+(\beta^2+\gamma^2)^{1/2}\cos(2\omega_0 t-\delta),
+$$
+<p>&nbsp;<br>
+
+with
+<p>&nbsp;<br>
+$$
+\delta=\arctan(\gamma/\beta),
+$$
+<p>&nbsp;<br>
+
+<h3 id="___sec5">Exercise 4 (30pt), Numerical Solution of the Harmonic Oscillator  </h3>
+
+<p>
+Using the code we developed in homework 4 for the Earth-Sun system, we can solve the above harmonic oscillator problem in two dimensions using our code from this homework. We need however to change the acceleration from the gravitational force to the one given by the harmonic oscillator potential.
+
+<p>
+The code is given here for the Velocity-Verlet algorithm, with obvious elements to fill in.
+</section>
+
+
+<section>
+<h2 id="___sec6">Code Example with Euler's Method </h2>
+
+<p>
+The code here implements Euler's method for the Earth-Sun system using a more compact way of representing the vectors. Alternatively, you could have spelled out all the variables \( v_x \), \( v_y \), \( x \) and \( y \) as one-dimensional arrays. Note that we have not specified the acceleration and the initial conditions. These need to be added by you.
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #228B22"># Common imports</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">pandas</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">pd</span>
+<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> *
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">os</span>
+
+<span style="color: #228B22"># Where to save the figures and data files</span>
+PROJECT_ROOT_DIR = <span style="color: #CD5555">&quot;Results&quot;</span>
+FIGURE_ID = <span style="color: #CD5555">&quot;Results/FigureFiles&quot;</span>
+DATA_ID = <span style="color: #CD5555">&quot;DataFiles/&quot;</span>
+
+<span style="color: #8B008B; font-weight: bold">if</span> <span style="color: #8B008B">not</span> os.path.exists(PROJECT_ROOT_DIR):
+    os.mkdir(PROJECT_ROOT_DIR)
+
+<span style="color: #8B008B; font-weight: bold">if</span> <span style="color: #8B008B">not</span> os.path.exists(FIGURE_ID):
+    os.makedirs(FIGURE_ID)
+
+<span style="color: #8B008B; font-weight: bold">if</span> <span style="color: #8B008B">not</span> os.path.exists(DATA_ID):
+    os.makedirs(DATA_ID)
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">image_path</span>(fig_id):
+    <span style="color: #8B008B; font-weight: bold">return</span> os.path.join(FIGURE_ID, fig_id)
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">data_path</span>(dat_id):
+    <span style="color: #8B008B; font-weight: bold">return</span> os.path.join(DATA_ID, dat_id)
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">save_fig</span>(fig_id):
+    plt.savefig(image_path(fig_id) + <span style="color: #CD5555">&quot;.png&quot;</span>, format=<span style="color: #CD5555">&#39;png&#39;</span>)
+
+DeltaT = <span style="color: #B452CD">0.01</span>
+<span style="color: #228B22">#set up arrays </span>
+tfinal = <span style="color: #B452CD">10.0</span>
+n = ceil(tfinal/DeltaT)
+<span style="color: #228B22"># set up arrays for t, a, v, and x</span>
+t = np.zeros(n)
+v = np.zeros((n,<span style="color: #B452CD">2</span>))
+r = np.zeros((n,<span style="color: #B452CD">2</span>))
+<span style="color: #228B22"># Initial conditions as compact 2-dimensional arrays</span>
+r0 = np.array([<span style="color: #B452CD">1.0</span>,<span style="color: #B452CD">0.5</span>])  <span style="color: #228B22"># You must change these to fit rmin</span>
+v0 = np.array([<span style="color: #B452CD">0.0</span>,<span style="color: #B452CD">0.0</span>]) <span style="color: #228B22"># You must change these to fit rmin</span>
+r[<span style="color: #B452CD">0</span>] = r0
+v[<span style="color: #B452CD">0</span>] = v0
+k = <span style="color: #B452CD">0.1</span>   <span style="color: #228B22"># spring constant</span>
+m = <span style="color: #B452CD">0.1</span>   <span style="color: #228B22"># mass, you can change these</span>
+omega02 = sqrt(k/m)
+<span style="color: #228B22"># Start integrating using the Velocity-Verlet  method</span>
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
+    <span style="color: #228B22"># Set up forces, define acceleration first</span>
+    a =  -r[i]*omega02  <span style="color: #228B22"># you may need to change this</span>
+    <span style="color: #228B22"># update velocity, time and position using the Velocity-Verlet method</span>
+    r[i+<span style="color: #B452CD">1</span>] = r[i] + DeltaT*v[i]+<span style="color: #B452CD">0.5</span>*(DeltaT**<span style="color: #B452CD">2</span>)*a
+    <span style="color: #228B22"># new accelerationfor the Verlet method</span>
+    anew = -r[i+<span style="color: #B452CD">1</span>]*omega02  
+    v[i+<span style="color: #B452CD">1</span>] = v[i] + <span style="color: #B452CD">0.5</span>*DeltaT*(a+anew)
+    t[i+<span style="color: #B452CD">1</span>] = t[i] + DeltaT
+<span style="color: #228B22"># Plot position as function of time    </span>
+fig, ax = plt.subplots()
+ax.set_xlabel(<span style="color: #CD5555">&#39;t[s]&#39;</span>)
+ax.set_ylabel(<span style="color: #CD5555">&#39;x[m] and y[m]&#39;</span>)
+ax.plot(t,r[:,<span style="color: #B452CD">0</span>])
+ax.plot(t,r[:,<span style="color: #B452CD">1</span>])
+fig.tight_layout()
+save_fig(<span style="color: #CD5555">&quot;2DimHOVV&quot;</span>)
+plt.show()
+</pre></div>
+<ul>
+<p><li> 4a (15pt) Use for example the above code to set up the acceleration and use the inital conditions fixed by for example \( r_{\rm min} \) from exercise 3. Which value does the initial velocity take if you place yourself at \( r_{\rm min} \)?  Check the solutions as function of  different initial conditions (one set suffices) and compare with the analytical solutions for \( x \) and \( y \). Check also that energy is conserved.</li>
+</ul>
+<p>
+
+Instead of solving the equations in the cartesian frame we will now rewrite the above code in terms of the radial degrees of freedom only. Our differential equation is now
+<p>&nbsp;<br>
+$$
+\mu \ddot{r}=-\frac{dV(r)}{dr}+\mu\dot{\phi}^2,
+$$
+<p>&nbsp;<br>
+
+and
+<p>&nbsp;<br>
+$$
+\dot{\phi}=\frac{L}{\mu r^2}.
+$$
+<p>&nbsp;<br>
+
+
+<ul>
+<p><li> 4b (15pt) We will use \( r_{\rm min} \) to fix a value of \( L \), as seen in exercise 3. This fixes also \( \dot{\phi} \). Write a code which now implements the radial equation for \( r \) using the same \( r_{\rm min} \) as you did in 4a. Compare the results with those from 4a with the same initial conditions. Do they agree? Use only one set of initial conditions.</li>
+</ul>
+
+<h3 id="___sec7">Exercise 5, the Bonus Exercise (30pt) </h3>
+
+<p>
+As in previous sets, this exercise is not compulsory but gives you a bonus of 30 points.
+The aim here is to compare the numerical result from 4b with the analytical ones  listed in 3d. Do your numerical results agree with the analytical ones?  And is energy conserved?  For this you need to set up the expression for the energy in terms of the effective potential and the kinetic energy in terms of \( r \).
+</section>
+
+
+
+</div> <!-- class="slides" -->
+</div> <!-- class="reveal" -->
+
+<script src="reveal.js/lib/js/head.min.js"></script>
+<script src="reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+    // Display navigation controls in the bottom right corner
+    controls: true,
+
+    // Display progress bar (below the horiz. slider)
+    progress: true,
+
+    // Display the page number of the current slide
+    slideNumber: true,
+
+    // Push each slide change to the browser history
+    history: false,
+
+    // Enable keyboard shortcuts for navigation
+    keyboard: true,
+
+    // Enable the slide overview mode
+    overview: true,
+
+    // Vertical centering of slides
+    //center: true,
+    center: false,
+
+    // Enables touch navigation on devices with touch input
+    touch: true,
+
+    // Loop the presentation
+    loop: false,
+
+    // Change the presentation direction to be RTL
+    rtl: false,
+
+    // Turns fragments on and off globally
+    fragments: true,
+
+    // Flags if the presentation is running in an embedded mode,
+    // i.e. contained within a limited portion of the screen
+    embedded: false,
+
+    // Number of milliseconds between automatically proceeding to the
+    // next slide, disabled when set to 0, this value can be overwritten
+    // by using a data-autoslide attribute on your slides
+    autoSlide: 0,
+
+    // Stop auto-sliding after user input
+    autoSlideStoppable: true,
+
+    // Enable slide navigation via mouse wheel
+    mouseWheel: false,
+
+    // Hides the address bar on mobile devices
+    hideAddressBar: true,
+
+    // Opens links in an iframe preview overlay
+    previewLinks: false,
+
+    // Transition style
+    transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+    // Transition speed
+    transitionSpeed: 'default', // default/fast/slow
+
+    // Transition style for full page slide backgrounds
+    backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
+
+    // Number of slides away from the current that are visible
+    viewDistance: 3,
+
+    // Parallax background image
+    //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+    // Parallax background size
+    //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+
+    theme: Reveal.getQueryHash().theme, // available themes are in reveal.js/css/theme
+    transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+});
+
+Reveal.initialize({
+    dependencies: [
+        // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+        { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+        // Interpret Markdown in <section> elements
+        { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+        // Syntax highlight for <code> elements
+        { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+        // Zoom in and out with Alt+click
+        { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // Speaker notes
+        { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // Remote control your reveal.js presentation using a touch device
+        //{ src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // MathJax
+        //{ src: 'reveal.js/plugin/math/math.js', async: true }
+    ]
+});
+
+Reveal.initialize({
+
+    // The "normal" size of the presentation, aspect ratio will be preserved
+    // when the presentation is scaled to fit different resolutions. Can be
+    // specified using percentage units.
+    width: 1170,  // original: 960,
+    height: 700,
+
+    // Factor of the display size that should remain empty around the content
+    margin: 0.1,
+
+    // Bounds for smallest/largest possible scale to apply to content
+    minScale: 0.2,
+    maxScale: 1.0
+
+});
+</script>
+
+<!-- begin footer logo
+<div style="position: absolute; bottom: 0px; left: 0; margin-left: 0px">
+<img src="somelogo.png">
+</div>
+     end footer logo -->
+
+
+
+</body>
+</html>
