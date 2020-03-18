@@ -118,22 +118,22 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 - Friday:  Gravity and central force problems, centrifugal barriers. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch13.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_wk9trq9k
 ### Week 12, March 16-20, 2020
 - Monday: Gravity and central force problems, elliptical orbits and Kepler's laws, 7th homework, due March 23. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch16.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_t1pocrww
-- Wednesday: Gravity and central force problems, elliptical orbits  and two-body scattering examples
-- Friday:  Two-body scattering problems
+- Wednesday: Gravity and central force problems, elliptical orbits  and two-body scattering examples. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch18.pdf and video of lecture https://mediaspace.msu.edu/media/t/
+- Friday:  Elliptical orbits, examples and two-body scattering problems
 ### Week 13, March 23-27, 2020
-- Monday: Rotating Coordinate systems, Coriolis forces. 8th homework, due March 30
-- Wednesday: Rotating Coordinate systems, Foucalt's pendulum
-- Friday:  Rotating Coordinate systems and rigid bodies.
+- Monday: Two-body scattering problems. 8th homework, due March 30
+- Wednesday: Rotating Coordinate systems, Coriolis force
+- Friday:  Rotating Coordinate systems, Foucalt's pendulum and rigid bodies.
 ### Week 14, March 30-April 3, 2020
-- Monday: Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. 9th homework, due April 6
-- Wednesday: Euler-Lagrange equations, examples. Chapters 6 and 7.1-7.2 Taylor
-- Friday:  Lagrangian formalism, chapter 7.3-7.5 of Taylor and lecture notes. _Second midterm project, due  April 13, 2020_
+- Monday: Rotating Coordinate systems. 9th homework, due April 6
+- Wednesday: Variational Calculus, examples. Chapters 6 and 7.1-7.2 Taylor
+- Friday:  Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. _Second midterm project, due  April 13, 2020_
 ### Week 15, April  6-10, 2020
-- Monday: Lagrangian formalism, examples  
+- Monday: Lagrangian formalism
 - Wednesday: Lagrangian formalism, examples
 - Friday: Lagrangian formalism. 
 ### Week 16, April 13-17, 2020
-- Monday:  10th homework and extra assignments, due April 24 
+- Monday:  Langrangian formalism. 10th homework and extra assignments, due April 24 
 - Wednesday: 
 - Friday:  
 ### Week 17, April 20-24, 2020
