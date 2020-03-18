@@ -36,32 +36,42 @@ n = ceil(tfinal/DeltaT)
 t = np.zeros(n)
 v = np.zeros(n)
 r = np.zeros(n)
+E = np.zeros(n)
 # Constants of the model
-k = 0.1   # spring constant
-m = 0.1   # mass, you can change these
-omega02 = k/m  # Frequency
 AngMom = 1.0  #  The angular momentum
-c = AngMom*AngMom/(m*m)
+m = 0.1
+k = 0.1
+omega02 = k/m
+c1 = AngMom*AngMom/(m*m)
+c2 = AngMom*AngMom/m
+rmin = (AngMom*AngMom/k/m)**0.25
 # Initial conditions
-r0 = (AngMom*AngMom/k/m)**0.25
+r0 = rmin
 v0 = 0.0
 r[0] = r0
 v[0] = v0
-
+E[0] = 0.5*m*v0*v0+0.5*k*r0*r0+0.5*c2/(r0*r0)
 # Start integrating using the Velocity-Verlet  method
 for i in range(n-1):
-    # Set up forces, define rabs first
-    a =  -r[i]*omega02+c/(r[i]**3)  # you may need to change this
+    # Set up acceleration
+    a = -r[i]*omega02+c1/(r[i]**3)    
     # update velocity, time and position using the Velocity-Verlet method
     r[i+1] = r[i] + DeltaT*v[i]+0.5*(DeltaT**2)*a
-    anew = -r[i+1]*omega02+c/(r[i+1]**3)  
+    anew = -r[i+1]*omega02+c1/(r[i+1]**3)
     v[i+1] = v[i] + 0.5*DeltaT*(a+anew)
     t[i+1] = t[i] + DeltaT
-# Plot position as function of time
-fig, ax = plt.subplots()
-ax.set_xlabel('t[s]')
-ax.set_ylabel('r[m]')
-ax.plot(t,r)
-fig.tight_layout()
+    E[i+1] = 0.5*m*v[i+1]*v[i+1]+0.5*k*r[i+1]*r[i+1]+0.5*c2/(r[i+1]*r[i+1])
+    # Plot position as function of time
+fig, ax = plt.subplots(2,1)
+ax[0].set_xlabel('time')
+ax[0].set_ylabel('radius')
+ax[0].plot(t,r)
+ax[1].set_xlabel('time')
+ax[1].set_ylabel('Energy')
+ax[1].plot(t,E)
 save_fig("RadialHOVV")
 plt.show()
+
+
+
+
