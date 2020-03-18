@@ -137,7 +137,7 @@ MathJax.Hub.Config({
 
 <br>
 <p>
-<center><h4>Mar 17, 2020</h4></center> <!-- date -->
+<center><h4>Mar 18, 2020</h4></center> <!-- date -->
 <br>
 <p>
 </div> <!-- end jumbotron -->
@@ -330,13 +330,13 @@ t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>z
 v <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((n,<span style="color: #666666">2</span>))
 r <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((n,<span style="color: #666666">2</span>))
 <span style="color: #408080; font-style: italic"># Initial conditions as compact 2-dimensional arrays</span>
-r0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">1.0</span>,<span style="color: #666666">0.5</span>])  <span style="color: #408080; font-style: italic"># You must change these to fit rmin</span>
-v0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">0.0</span>,<span style="color: #666666">0.0</span>]) <span style="color: #408080; font-style: italic"># You must change these to fit rmin</span>
+r0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">1.0</span>,<span style="color: #666666">0.5</span>])  <span style="color: #408080; font-style: italic"># You need to  change these to fit rmin</span>
+v0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">0.0</span>,<span style="color: #666666">0.0</span>]) <span style="color: #408080; font-style: italic"># You need to change these to fit rmin</span>
 r[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> r0
 v[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> v0
 k <span style="color: #666666">=</span> <span style="color: #666666">0.1</span>   <span style="color: #408080; font-style: italic"># spring constant</span>
 m <span style="color: #666666">=</span> <span style="color: #666666">0.1</span>   <span style="color: #408080; font-style: italic"># mass, you can change these</span>
-omega02 <span style="color: #666666">=</span> sqrt(k<span style="color: #666666">/</span>m)
+omega02 <span style="color: #666666">=</span> k<span style="color: #666666">/</span>m
 <span style="color: #408080; font-style: italic"># Start integrating using the Velocity-Verlet  method</span>
 <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
     <span style="color: #408080; font-style: italic"># Set up forces, define acceleration first</span>

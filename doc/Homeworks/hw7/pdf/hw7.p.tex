@@ -131,7 +131,7 @@ PHY321: Classical Mechanics 1
 
 % --- begin date ---
 \begin{center}
-Mar 17, 2020
+Mar 18, 2020
 \end{center}
 % --- end date ---
 
@@ -315,13 +315,13 @@ t = np.zeros(n)
 v = np.zeros((n,2))
 r = np.zeros((n,2))
 # Initial conditions as compact 2-dimensional arrays
-r0 = np.array([1.0,0.5])  # You must change these to fit rmin
-v0 = np.array([0.0,0.0]) # You must change these to fit rmin
+r0 = np.array([1.0,0.5])  # You need to  change these to fit rmin
+v0 = np.array([0.0,0.0]) # You need to change these to fit rmin
 r[0] = r0
 v[0] = v0
 k = 0.1   # spring constant
 m = 0.1   # mass, you can change these
-omega02 = sqrt(k/m)
+omega02 = k/m
 # Start integrating using the Velocity-Verlet  method
 for i in range(n-1):
     # Set up forces, define acceleration first

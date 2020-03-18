@@ -39,19 +39,19 @@ r = np.zeros((n,2))
 # Constants of the model
 k = 0.1   # spring constant
 m = 0.1   # mass, you can change these
-omega02 = sqrt(k/m)  # Frequency
+omega02 = k/m  # Frequency
 AngMom = 1.0  #  The angular momentum
 rmin = (AngMom*AngMom/k/m)**0.25
 # Initial conditions as compact 2-dimensional arrays
 x0 =rmin*0.5; y0 = sqrt(rmin*rmin-x0*x0)
-r0 = np.array([x0,y0])  # You must change these to fit rmin
-v0 = np.array([0.0,0.0]) # You must change these to fit rmin
+r0 = np.array([x0,y0]) 
+v0 = np.array([0.0,0.0])
 r[0] = r0
 v[0] = v0
 # Start integrating using the Velocity-Verlet  method
 for i in range(n-1):
     # Set up forces, define rabs first
-    a =  -r[i]*omega02  # you may need to change this
+    a =  -r[i]*omega02
     # update velocity, time and position using the Velocity-Verlet method
     r[i+1] = r[i] + DeltaT*v[i]+0.5*(DeltaT**2)*a
     anew = -r[i+1]*omega02  
