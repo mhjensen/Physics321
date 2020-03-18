@@ -47,8 +47,8 @@ c1 = AngMom*AngMom/(m*m)
 c2 = AngMom*AngMom/m
 rmin = (AngMom*AngMom/m/alpha)
 # Initial conditions
-r0 = rmin
-v0 = 0.0
+r0 = 0.8
+v0 = 0.5
 r[0] = r0
 v[0] = v0
 # Start integrating using the Velocity-Verlet  method
