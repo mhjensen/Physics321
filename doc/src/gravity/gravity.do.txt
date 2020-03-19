@@ -207,6 +207,26 @@ r&=&\frac{D^2-a^2}{D+a\cos\theta}=\frac{1}{D/(D^2-a^2)-a\cos\theta/(D^2-a^2)}.
 
 By inspection, this is the same form as Eq. (ref{eq:Ctrajectory}) with $D/(D^2-a^2)=m\alpha/L^2$ and $a/(D^2-a^2)=A$.
 
+
+Let us remind ourselves about what an ellipse is before we proceed.
+!bc pycod
+import numpy as np
+from matplotlib import pyplot as plt
+from math import pi
+
+u=1.     #x-position of the center
+v=0.5    #y-position of the center
+a=2.     #radius on the x-axis
+b=1.5    #radius on the y-axis
+
+t = np.linspace(0, 2*pi, 100)
+plt.plot( u+a*np.cos(t) , v+b*np.sin(t) )
+plt.grid(color='lightgray',linestyle='--')
+plt.show()
+
+!ec
+
+
 ===== Effective or Centrifugal Potential =====
 
 The total energy of a particle is
