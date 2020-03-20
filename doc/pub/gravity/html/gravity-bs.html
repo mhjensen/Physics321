@@ -146,7 +146,7 @@ MathJax.Hub.Config({
 <center>[3] <b>Department of Physics and Astronomy, Michigan State University, USA</b></center>
 <br>
 <p>
-<center><h4>Mar 18, 2020</h4></center> <!-- date -->
+<center><h4>Mar 20, 2020</h4></center> <!-- date -->
 <br>
 <p>
 </div> <!-- end jumbotron -->
@@ -364,6 +364,26 @@ $$
 
 <p>
 By inspection, this is the same form as Eq. \eqref{eq:Ctrajectory} with \( D/(D^2-a^2)=m\alpha/L^2 \) and \( a/(D^2-a^2)=A \).
+
+<p>
+Let us remind ourselves about what an ellipse is before we proceed.
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">matplotlib</span> <span style="color: #008000; font-weight: bold">import</span> pyplot <span style="color: #008000; font-weight: bold">as</span> plt
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> pi
+
+u<span style="color: #666666">=1.</span>     <span style="color: #408080; font-style: italic">#x-position of the center</span>
+v<span style="color: #666666">=0.5</span>    <span style="color: #408080; font-style: italic">#y-position of the center</span>
+a<span style="color: #666666">=2.</span>     <span style="color: #408080; font-style: italic">#radius on the x-axis</span>
+b<span style="color: #666666">=1.5</span>    <span style="color: #408080; font-style: italic">#radius on the y-axis</span>
+
+t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linspace(<span style="color: #666666">0</span>, <span style="color: #666666">2*</span>pi, <span style="color: #666666">100</span>)
+plt<span style="color: #666666">.</span>plot( u<span style="color: #666666">+</span>a<span style="color: #666666">*</span>np<span style="color: #666666">.</span>cos(t) , v<span style="color: #666666">+</span>b<span style="color: #666666">*</span>np<span style="color: #666666">.</span>sin(t) )
+plt<span style="color: #666666">.</span>grid(color<span style="color: #666666">=</span><span style="color: #BA2121">&#39;lightgray&#39;</span>,linestyle<span style="color: #666666">=</span><span style="color: #BA2121">&#39;--&#39;</span>)
+plt<span style="color: #666666">.</span>show()
+</pre></div>
 
 <h2 id="___sec3" class="anchor">Effective or Centrifugal Potential </h2>
 

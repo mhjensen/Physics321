@@ -157,7 +157,7 @@ MathJax.Hub.Config({
 <center>[3] <b>Department of Physics and Astronomy, Michigan State University, USA</b></center>
 <br>
 <p>&nbsp;<br>
-<center><h4>Mar 18, 2020</h4></center> <!-- date -->
+<center><h4>Mar 20, 2020</h4></center> <!-- date -->
 <br>
 
 <h2 id="___sec0">Introduction </h2>
@@ -398,6 +398,26 @@ $$
 
 <p>
 By inspection, this is the same form as Eq. <a href="#mjx-eqn-9">(9)</a> with \( D/(D^2-a^2)=m\alpha/L^2 \) and \( a/(D^2-a^2)=A \).
+
+<p>
+Let us remind ourselves about what an ellipse is before we proceed.
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
+<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">matplotlib</span> <span style="color: #8B008B; font-weight: bold">import</span> pyplot <span style="color: #8B008B; font-weight: bold">as</span> plt
+<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> pi
+
+u=<span style="color: #B452CD">1.</span>     <span style="color: #228B22">#x-position of the center</span>
+v=<span style="color: #B452CD">0.5</span>    <span style="color: #228B22">#y-position of the center</span>
+a=<span style="color: #B452CD">2.</span>     <span style="color: #228B22">#radius on the x-axis</span>
+b=<span style="color: #B452CD">1.5</span>    <span style="color: #228B22">#radius on the y-axis</span>
+
+t = np.linspace(<span style="color: #B452CD">0</span>, <span style="color: #B452CD">2</span>*pi, <span style="color: #B452CD">100</span>)
+plt.plot( u+a*np.cos(t) , v+b*np.sin(t) )
+plt.grid(color=<span style="color: #CD5555">&#39;lightgray&#39;</span>,linestyle=<span style="color: #CD5555">&#39;--&#39;</span>)
+plt.show()
+</pre></div>
 
 <h2 id="___sec3">Effective or Centrifugal Potential </h2>
 
