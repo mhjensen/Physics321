@@ -1,5 +1,8 @@
 # PHY321, Classical Mechanics I, Michigan State University, Spring 2020
 
+_Due to the corona virus, all lectures from March 13 are done remotely via zoom. All videos and handwritten notes are in D2L and below here. The videos are posted immediately after the lecture. Feel free to comment on the material. This is a rather unique situation and your feedback is essential for improving the quality of the teaching material.
+Stay well._
+
 Here you will find a general overview of the course, with learning outcomes, teaching schedule etc.
 
 ## Teaching team, grading and other practicalities
