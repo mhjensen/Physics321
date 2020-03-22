@@ -1,0 +1,249 @@
+%%
+%% Automatically generated file from DocOnce source
+%% (https://github.com/hplgit/doconce/)
+%%
+%%
+% #ifdef PTEX2TEX_EXPLANATION
+%%
+%% The file follows the ptex2tex extended LaTeX format, see
+%% ptex2tex: http://code.google.com/p/ptex2tex/
+%%
+%% Run
+%%      ptex2tex myfile
+%% or
+%%      doconce ptex2tex myfile
+%%
+%% to turn myfile.p.tex into an ordinary LaTeX file myfile.tex.
+%% (The ptex2tex program: http://code.google.com/p/ptex2tex)
+%% Many preprocess options can be added to ptex2tex or doconce ptex2tex
+%%
+%%      ptex2tex -DMINTED myfile
+%%      doconce ptex2tex myfile envir=minted
+%%
+%% ptex2tex will typeset code environments according to a global or local
+%% .ptex2tex.cfg configure file. doconce ptex2tex will typeset code
+%% according to options on the command line (just type doconce ptex2tex to
+%% see examples). If doconce ptex2tex has envir=minted, it enables the
+%% minted style without needing -DMINTED.
+% #endif
+
+% #define PREAMBLE
+
+% #ifdef PREAMBLE
+%-------------------- begin preamble ----------------------
+
+\documentclass[%
+oneside,                 % oneside: electronic viewing, twoside: printing
+final,                   % draft: marks overfull hboxes, figures with paths
+10pt]{article}
+
+\listfiles               %  print all files needed to compile this document
+
+\usepackage{relsize,makeidx,color,setspace,amsmath,amsfonts,amssymb}
+\usepackage[table]{xcolor}
+\usepackage{bm,ltablex,microtype}
+
+\usepackage[pdftex]{graphicx}
+
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{lmodern}         % Latin Modern fonts derived from Computer Modern
+
+% Hyperlinks in PDF:
+\definecolor{linkcolor}{rgb}{0,0,0.4}
+\usepackage{hyperref}
+\hypersetup{
+    breaklinks=true,
+    colorlinks=true,
+    linkcolor=linkcolor,
+    urlcolor=linkcolor,
+    citecolor=black,
+    filecolor=black,
+    %filecolor=blue,
+    pdfmenubar=true,
+    pdftoolbar=true,
+    bookmarksdepth=3   % Uncomment (and tweak) for PDF bookmarks with more levels than the TOC
+    }
+%\hyperbaseurl{}   % hyperlinks are relative to this root
+
+\setcounter{tocdepth}{2}  % levels in table of contents
+
+% prevent orhpans and widows
+\clubpenalty = 10000
+\widowpenalty = 10000
+
+% --- end of standard preamble for documents ---
+
+
+% insert custom LaTeX commands...
+
+\raggedbottom
+\makeindex
+\usepackage[totoc]{idxlayout}   % for index in the toc
+\usepackage[nottoc]{tocbibind}  % for references/bibliography in the toc
+
+%-------------------- end preamble ----------------------
+
+\begin{document}
+
+% matching end for #ifdef PREAMBLE
+% #endif
+
+\newcommand{\exercisesection}[1]{\subsection*{#1}}
+
+
+% ------------------- main content ----------------------
+
+
+
+% ----------------- title -------------------------
+
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE\bf
+\begin{spacing}{1.25}
+PHY321: Classical Mechanics 1
+\end{spacing}
+}
+\end{center}
+
+% ----------------- author(s) -------------------------
+
+\begin{center}
+{\bf Homework 8, due Monday  March 30${}^{}$} \\ [0mm]
+\end{center}
+
+\begin{center}
+% List of all institutions:
+\end{center}
+    
+% ----------------- end author(s) -------------------------
+
+% --- begin date ---
+\begin{center}
+Mar 22, 2020
+\end{center}
+% --- end date ---
+
+\vspace{1cm}
+
+
+\paragraph{Practicalities about  homeworks and projects.}
+\begin{enumerate}
+\item You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. \textbf{Remember to write your name(s)}!
+
+\item Homeworks are available  the week before the deadline. 
+
+\item How do I(we)  hand in?  Due to the corona virus and many of you not being on campus, we recommend that you scan your handwritten notes and upload them to D2L. If you are ok with typing mathematical formulae using say Latex, you can hand in everything as a single jupyter notebook at D2L. The numerical exercise(s) should always be handed in as a jupyter notebook by the deadline at D2L. 
+\end{enumerate}
+
+\noindent
+\paragraph{Introduction to homework 8.}
+This week's sets of classical pen and paper and computational
+exercises are tailored to the topic of two-body problems and central
+forces, as in hw7. It follows what was discussed during the lectures during week
+11 (March 9-13), week 12 (March 16-20) and March 23. 
+
+The relevant reading background is
+\begin{enumerate}
+\item Sections 8.1-8.7 of Taylor.
+
+\item Lecture notes on two-body problems, central forces and gravity.
+\end{enumerate}
+
+\noindent
+The numerical homework is based on what you did in homework 7.
+In this homework we will study the perihelion of Mercury.
+
+
+
+\paragraph{Exercise 1, equations for an ellipse (10pt).}
+Consider an ellipse defined by the sum of the distances from the two foci being $2D$, which expressed in a Cartesian coordinates with the middle of the ellipse being at the origin becomes
+\[
+\sqrt{(x-a)^2+y^2}+\sqrt{(x+a)^2+y^2}=2D.
+\]
+Here the two foci are at $(a,0)$ and $(-a,0)$. Show that this form is can be written as
+\[
+\frac{x^2}{D^2}+\frac{y^2}{D^2-a^2}=1.
+\]
+
+\paragraph{Exercise 2: Attractive Potential (10pt).}
+Consider a particle in an attractive potential
+\[
+U(r)=-\alpha/r.
+\]
+
+The quantity $r$ is the absolute value of the relative position. We
+will use the reduced mass $\mu$ and the angular momentum $L$, as
+discussed during the lectures. With the transformation of a two-body problem to the center-of-mass frame, the actual equations look like an \emph{effective} one-body problem. The energy of the system is $E$ and the minimum of the effective potential is $r_{\rm min}$. 
+
+
+The analytical solution to the radial equation of motion is
+\[
+r(\phi) = \frac{1}{\frac{\mu\alpha}{L^2}+A\cos{(\phi)}}.
+\]
+
+Find the value of $A$. Hint: Use the fact that at $r_{\rm min}$
+there is no radial kinetic energy and $E=-\alpha/r_{\rm min}+L^2/2mr_{\rm min}^2$.
+
+
+\paragraph{Exercise 3 (20pt) Inverse-square force.}
+Consider the effective potential for an attractive inverse-square-law force, $F=-\alpha/r^2$. Consider a particle of mass $m$ with angular momentum $L$.
+
+\begin{itemize}
+\item 3a (5pt)  Find the radius of a circular orbit by solving for the position of the minimum of the effective potential. 
+
+\item 3b (5pt) What is the angular frequency, $\dot{\theta}$, of the orbit? Solve this by setting $F=m\dot{\theta}^2r$.
+
+\item 3c (5pt) Find the effective spring constant for the particle at the minimum.
+
+\item 3d (5pt) What is the angular frequency for small vibrations about the minimum? How does this compare with the answer to (3b)?
+\end{itemize}
+
+\noindent
+\paragraph{Exercise 4, Inverse-square force again (20pt).}
+Consider a particle of mass $m$ in an attractive potential, $U(r)=-\alpha/r$, with angular momentum $L$ with just the right energy so that
+
+\[
+A=m\alpha/L^2
+\]
+where $A$ comes from the expression
+\[
+r=\frac{1}{(m\alpha/L^2)+A\cos{(\phi)}}.
+\]
+The trajectory can then be rewritten as
+\[
+r=\frac{2r_0}{1+\cos\theta},~~~r_0=\frac{L^2}{2m\alpha}.
+\]
+\begin{itemize}
+\item 4a (5pt) Show that for this case the total energy $E$ approaches zero.
+
+\item 4b (5pt) Write this trajectory in a more recognizable parabolic form, that is express $x_0$ and $R$ in terms of $r_0$ using 
+\end{itemize}
+
+\noindent
+\[
+x=x_0-\frac{y^2}{R}.
+\]
+
+\begin{itemize}
+\item 4c (5pt) Explain how a particle with zero energy can have its trajectory not go through the origin.
+
+\item 4d (5pt) What is the scattering angle for this trajectory?
+
+\item Exercise 5, parabolic and hyperbolic orbits (10pt) ===
+\end{itemize}
+
+\noindent
+\paragraph{Exercise 6, The Perihelion of Mercury (30 pt).}
+
+% ------------------- end of main content ---------------
+
+% #ifdef PREAMBLE
+\end{document}
+% #endif
+

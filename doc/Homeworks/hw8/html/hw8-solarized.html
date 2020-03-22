@@ -1,0 +1,217 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="PHY321: Classical Mechanics 1">
+
+<title>PHY321: Classical Mechanics 1</title>
+
+
+<link href="https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_styles/style_solarized_box/css/solarized_light_code.css" rel="stylesheet" type="text/css" title="light"/>
+<script src="https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_styles/style_solarized_box/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://thomasf.github.io/solarized-css/solarized-light.min.css" rel="stylesheet">
+<style type="text/css">
+h1 {color: #b58900;}  /* yellow */
+/* h1 {color: #cb4b16;}  orange */
+/* h1 {color: #d33682;}  magenta, the original choice of thomasf */
+code { padding: 0px; background-color: inherit; }
+pre {
+  border: 0pt solid #93a1a1;
+  box-shadow: none;
+}
+
+div { text-align: justify; text-justify: inter-word; }
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 3,
+ 'sections': [('Practicalities about  homeworks and projects',
+               3,
+               None,
+               '___sec0'),
+              ('Introduction to homework 8', 3, None, '___sec1'),
+              ('Exercise 1, equations for an ellipse (10pt)',
+               3,
+               None,
+               '___sec2'),
+              ('Exercise 2: Attractive Potential (10pt)', 3, None, '___sec3'),
+              ('Exercise 3 (20pt) Inverse-square force', 3, None, '___sec4'),
+              ('Exercise 4, Inverse-square force again (20pt)',
+               3,
+               None,
+               '___sec5'),
+              ('Exercise 6, The Perihelion of Mercury (30 pt)',
+               3,
+               None,
+               '___sec6')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1>PHY321: Classical Mechanics 1</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Homework 8, due Monday  March 30 -->
+
+<center>
+<b>Homework 8, due Monday  March 30</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Mar 22, 2020</h4></center> <!-- date -->
+<br>
+
+<h3 id="___sec0">Practicalities about  homeworks and projects </h3>
+
+<ol>
+<li> You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. <b>Remember to write your name(s)</b>!</li>
+<li> Homeworks are available  the week before the deadline.</li> 
+<li> How do I(we)  hand in?  Due to the corona virus and many of you not being on campus, we recommend that you scan your handwritten notes and upload them to D2L. If you are ok with typing mathematical formulae using say Latex, you can hand in everything as a single jupyter notebook at D2L. The numerical exercise(s) should always be handed in as a jupyter notebook by the deadline at D2L.</li> 
+</ol>
+
+<h3 id="___sec1">Introduction to homework 8 </h3>
+
+<p>
+This week's sets of classical pen and paper and computational
+exercises are tailored to the topic of two-body problems and central
+forces, as in hw7. It follows what was discussed during the lectures during week
+11 (March 9-13), week 12 (March 16-20) and March 23.
+
+<p>
+The relevant reading background is
+
+<ol>
+<li> Sections 8.1-8.7 of Taylor.</li>
+<li> Lecture notes on two-body problems, central forces and gravity.</li>
+</ol>
+
+The numerical homework is based on what you did in homework 7.
+In this homework we will study the perihelion of Mercury.
+
+<h3 id="___sec2">Exercise 1, equations for an ellipse (10pt)  </h3>
+
+<p>
+Consider an ellipse defined by the sum of the distances from the two foci being \( 2D \), which expressed in a Cartesian coordinates with the middle of the ellipse being at the origin becomes
+$$
+\sqrt{(x-a)^2+y^2}+\sqrt{(x+a)^2+y^2}=2D.
+$$
+
+Here the two foci are at \( (a,0) \) and \( (-a,0) \). Show that this form is can be written as
+$$
+\frac{x^2}{D^2}+\frac{y^2}{D^2-a^2}=1.
+$$
+
+<h3 id="___sec3">Exercise 2: Attractive Potential (10pt) </h3>
+
+<p>
+Consider a particle in an attractive potential
+$$
+U(r)=-\alpha/r.
+$$
+
+<p>
+The quantity \( r \) is the absolute value of the relative position. We
+will use the reduced mass \( \mu \) and the angular momentum \( L \), as
+discussed during the lectures. With the transformation of a two-body problem to the center-of-mass frame, the actual equations look like an <em>effective</em> one-body problem. The energy of the system is \( E \) and the minimum of the effective potential is \( r_{\rm min} \).
+
+<p>
+The analytical solution to the radial equation of motion is
+$$
+r(\phi) = \frac{1}{\frac{\mu\alpha}{L^2}+A\cos{(\phi)}}.
+$$
+
+<p>
+Find the value of \( A \). Hint: Use the fact that at \( r_{\rm min} \)
+there is no radial kinetic energy and \( E=-\alpha/r_{\rm min}+L^2/2mr_{\rm min}^2 \).
+
+<h3 id="___sec4">Exercise 3 (20pt) Inverse-square force </h3>
+
+<p>
+Consider the effective potential for an attractive inverse-square-law force, \( F=-\alpha/r^2 \). Consider a particle of mass \( m \) with angular momentum \( L \).
+
+<ul>
+<li> 3a (5pt)  Find the radius of a circular orbit by solving for the position of the minimum of the effective potential.</li> 
+<li> 3b (5pt) What is the angular frequency, \( \dot{\theta} \), of the orbit? Solve this by setting \( F=m\dot{\theta}^2r \).</li>
+<li> 3c (5pt) Find the effective spring constant for the particle at the minimum.</li>
+<li> 3d (5pt) What is the angular frequency for small vibrations about the minimum? How does this compare with the answer to (3b)?</li>
+</ul>
+
+<h3 id="___sec5">Exercise 4, Inverse-square force again (20pt) </h3>
+
+Consider a particle of mass \( m \) in an attractive potential, \( U(r)=-\alpha/r \), with angular momentum \( L \) with just the right energy so that
+
+$$
+A=m\alpha/L^2
+$$
+
+where \( A \) comes from the expression
+$$
+r=\frac{1}{(m\alpha/L^2)+A\cos{(\phi)}}.
+$$
+
+The trajectory can then be rewritten as
+$$
+r=\frac{2r_0}{1+\cos\theta},~~~r_0=\frac{L^2}{2m\alpha}.
+$$
+
+
+<ul>
+<li> 4a (5pt) Show that for this case the total energy \( E \) approaches zero.</li>
+<li> 4b (5pt) Write this trajectory in a more recognizable parabolic form, that is express \( x_0 \) and \( R \) in terms of \( r_0 \) using</li> 
+</ul>
+
+$$
+x=x_0-\frac{y^2}{R}.
+$$
+
+
+<ul>
+<li> 4c (5pt) Explain how a particle with zero energy can have its trajectory not go through the origin.</li>
+<li> 4d (5pt) What is the scattering angle for this trajectory?</li>
+<li> Exercise 5, parabolic and hyperbolic orbits (10pt) ===</li>
+</ul>
+
+<h3 id="___sec6">Exercise 6, The Perihelion of Mercury (30 pt) </h3>
+
+<!-- ------------------- end of main content --------------- -->
+
+
+</body>
+</html>
+    
+
