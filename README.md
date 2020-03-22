@@ -1,5 +1,8 @@
 # PHY321, Classical Mechanics I, Michigan State University, Spring 2020
 
+_Due to the corona virus, all lectures from March 13 are done remotely via zoom. All videos and handwritten notes are in D2L and below here. The videos are posted immediately after the lecture. Feel free to comment on the material. This is a rather unique situation and your feedback is essential for improving the quality of the teaching material.
+Stay well._
+
 Here you will find a general overview of the course, with learning outcomes, teaching schedule etc.
 
 ## Teaching team, grading and other practicalities
@@ -119,7 +122,7 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 ### Week 12, March 16-20, 2020
 - Monday: Gravity and central force problems, elliptical orbits and Kepler's laws, 7th homework, due March 23. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch16.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_t1pocrww
 - Wednesday: Gravity and central force problems, elliptical orbits  and two-body scattering examples. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch18.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_i9hczn21
-- Friday:  Elliptical orbits, examples and two-body scattering problems. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch20.pdf and video of lecture https://mediaspace.msu.edu/media/to come soon
+- Friday:  Elliptical orbits, examples and two-body scattering problems. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch20.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_w9xc8az7
 ### Week 13, March 23-27, 2020
 - Monday: Two-body scattering problems. 8th homework, due March 30
 - Wednesday: Rotating Coordinate systems, Coriolis force
