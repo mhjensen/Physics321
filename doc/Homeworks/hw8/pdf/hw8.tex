@@ -20,6 +20,8 @@ final,                   % draft: marks overfull hboxes, figures with paths
 
 \usepackage[pdftex]{graphicx}
 
+\usepackage{fancyvrb} % packages needed for verbatim environments
+
 \usepackage[T1]{fontenc}
 %\usepackage[latin1]{inputenc}
 \usepackage{ucs}
@@ -99,7 +101,7 @@ PHY321: Classical Mechanics 1
 
 % --- begin date ---
 \begin{center}
-Mar 22, 2020
+Mar 23, 2020
 \end{center}
 % --- end date ---
 
@@ -120,7 +122,7 @@ Mar 22, 2020
 This week's sets of classical pen and paper and computational
 exercises are tailored to the topic of two-body problems and central
 forces, as in hw7. It follows what was discussed during the lectures during week
-11 (March 9-13), week 12 (March 16-20) and March 23. 
+11 (March 9-13), week 12 (March 16-20) and March 23. It can also be seen as a continuation of hw7. 
 
 The relevant reading background is
 \begin{enumerate}
@@ -130,8 +132,10 @@ The relevant reading background is
 \end{enumerate}
 
 \noindent
-The numerical homework is based on what you did in homework 7.
-In this homework we will study the perihelion of Mercury.
+Exercises 2, 3, 4 and 5 all deal with an inverse-square-law and deal with various types of orbits, whether they are ellipses, parabolae or hyperbolae. 
+The numerical homework is based on what you did in homework 7, but now of an inverse-square-law force as discussed here.  The numerical exercise is a study of the situations you have analyzed in exercises 2, 3, 4 and 5.
+
+This homework has no bonus exercise.
 
 
 
@@ -153,7 +157,10 @@ U(r)=-\alpha/r.
 
 The quantity $r$ is the absolute value of the relative position. We
 will use the reduced mass $\mu$ and the angular momentum $L$, as
-discussed during the lectures. With the transformation of a two-body problem to the center-of-mass frame, the actual equations look like an \emph{effective} one-body problem. The energy of the system is $E$ and the minimum of the effective potential is $r_{\rm min}$. 
+discussed during the lectures. With the transformation of a two-body
+problem to the center-of-mass frame, the actual equations look like an
+\emph{effective} one-body problem. The energy of the system is $E$ and the
+minimum of the effective potential is $r_{\rm min}$.
 
 
 The analytical solution to the radial equation of motion is
@@ -166,7 +173,7 @@ there is no radial kinetic energy and $E=-\alpha/r_{\rm min}+L^2/2mr_{\rm min}^2
 
 
 \paragraph{Exercise 3 (20pt) Inverse-square force.}
-Consider the effective potential for an attractive inverse-square-law force, $F=-\alpha/r^2$. Consider a particle of mass $m$ with angular momentum $L$.
+Consider again the same effective potential as in 2. This leads to an attractive inverse-square-law force, $F=-\alpha/r^2$. Consider a particle of mass $m$ with angular momentum $L$. Taylor sections 8.4-8.7 are relevant background material.  See also the harmonic oscillator potential from hw7. 
 
 \begin{itemize}
 \item 3a (5pt)  Find the radius of a circular orbit by solving for the position of the minimum of the effective potential. 
@@ -179,8 +186,8 @@ Consider the effective potential for an attractive inverse-square-law force, $F=
 \end{itemize}
 
 \noindent
-\paragraph{Exercise 4, Inverse-square force again (20pt).}
-Consider a particle of mass $m$ in an attractive potential, $U(r)=-\alpha/r$, with angular momentum $L$ with just the right energy so that
+\paragraph{Exercise 4, Inverse-square force again (10pt).}
+Consider again a  particle of mass $m$ in the same attractive potential, $U(r)=-\alpha/r$, with angular momentum $L$ with just the right energy so that
 
 \[
 A=m\alpha/L^2
@@ -193,10 +200,12 @@ The trajectory can then be rewritten as
 \[
 r=\frac{2r_0}{1+\cos\theta},~~~r_0=\frac{L^2}{2m\alpha}.
 \]
+
+
 \begin{itemize}
 \item 4a (5pt) Show that for this case the total energy $E$ approaches zero.
 
-\item 4b (5pt) Write this trajectory in a more recognizable parabolic form, that is express $x_0$ and $R$ in terms of $r_0$ using 
+\item 4b (5pt) With zero energy $E=0$, write this trajectory in a more recognizable parabolic form, that is express $x_0$ and $R$ in terms of $r_0$ using 
 \end{itemize}
 
 \noindent
@@ -204,15 +213,75 @@ r=\frac{2r_0}{1+\cos\theta},~~~r_0=\frac{L^2}{2m\alpha}.
 x=x_0-\frac{y^2}{R}.
 \]
 
-\begin{itemize}
-\item 4c (5pt) Explain how a particle with zero energy can have its trajectory not go through the origin.
-
-\item 4d (5pt) What is the scattering angle for this trajectory?
-\end{itemize}
-
-\noindent
 \paragraph{Exercise 5, parabolic and hyperbolic orbits (10pt).}
-\paragraph{Exercise 6, The Perihelion of Mercury (30 pt).}
+The solution to the radial function for an inverse-square-law force, see for example Taylor equation (8.59) or the equation above, is
+\[
+r(\phi) = \frac{c}{1+\epsilon\cos{(\phi)}}.
+\]
+
+For $\epsilon=1$ (or the energy $E=0$) the orbit reduces to a parabola as we saw in the previous exercise,
+while for $\epsilon > 1$ (or energy positive) the orbit becomes a hyperbola. The equation for a hyperbola in Cartesian coordinates is
+\[
+\frac{(x-\delta)^2}{\alpha^2}-\frac{y^2}{\beta^2}=1.
+\]
+For a hyperbola, identify the constants $\alpha$, $\beta$ and $\delta$ in terms of the constants $c$ and $\epsilon$ for $r(\phi)$. 
+
+\paragraph{Exercise 6, Testing orbit types (40 pt).}
+In this exercise we can use the program for $r(\phi)$ we developed in hw7. We will use an inverse-square-law force as in exercises 2, 3, 4 and 5. The aim is to see that the orbits we get for $E<0$ become ellipses (or circles), parabola for $E=0$ and hyperbola for $E>0$.  An example code is shown here.
+
+Here we have defined the constants $L=m=\alpha=1$. Feel free to set new values. \textbf{You need also to set the initial conditions} in order to study the different types of orbits. It may be useful to plot the potential here and find the values for the initial conditions that fit $E<0$, $E=0$ and $E>0$. 
+
+\begin{verbatim}
+# Common imports
+import numpy as np
+import pandas as pd
+from math import *
+import matplotlib.pyplot as plt
+# Simple Gravitational Force   -alpha/r
+    
+DeltaT = 0.01
+#set up arrays 
+tfinal = 100.0
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, v and r
+t = np.zeros(n)
+v = np.zeros(n)
+r = np.zeros(n)
+# Constants of the model, setting all variables to one for simplicity
+alpha = 1.0
+AngMom = 1.0  #  The angular momentum
+m = 1.0  # scale mass to one
+c1 = AngMom*AngMom/(m*m)
+c2 = AngMom*AngMom/m
+# You need to specify the initial conditions
+r0 = 0.0
+v0 = 0.0
+r[0] = r0
+v[0] = v0
+# Start integrating using the Velocity-Verlet  method
+for i in range(n-1):
+    # Set up acceleration
+    a = -alpha/(r[i]**2)+c1/(r[i]**3)
+    # update velocity, time and position using the Velocity-Verlet method
+    r[i+1] = r[i] + DeltaT*v[i]+0.5*(DeltaT**2)*a
+    anew = -alpha/(r[i+1]**2)+c1/(r[i+1]**3)
+    v[i+1] = v[i] + 0.5*DeltaT*(a+anew)
+    t[i+1] = t[i] + DeltaT
+    # Plot position as function of time
+fig, ax = plt.subplots(2,1)
+ax[0].set_xlabel('time')
+ax[0].set_ylabel('radius')
+ax[0].plot(t,r)
+ax[1].set_xlabel('time')
+ax[1].set_ylabel('Velocity')
+ax[1].plot(t,v)
+
+plt.show()
+
+\end{verbatim}
+
+
+Run your code and study and discuss the situations where you have elliptical, parabolic and hyperbolic orbits. Discuss the physics of these cases. The results from exercises 2, 3, 4 and 5 may be useful here. 
 
 % ------------------- end of main content ---------------
 
