@@ -28,7 +28,7 @@ def data_path(dat_id):
 def save_fig(fig_id):
     plt.savefig(image_path(fig_id) + ".png", format='png')
 
-DeltaT = 0.01
+DeltaT = 0.0001
 #set up arrays 
 tfinal = 10.0
 n = ceil(tfinal/DeltaT)
@@ -44,7 +44,7 @@ k = 0.1
 omega02 = k/m
 c1 = AngMom*AngMom/(m*m)
 c2 = AngMom*AngMom/m
-rmin = (AngMom*AngMom/k/m)**0.25
+rmin = 2.5 #(AngMom*AngMom/k/m)**0.25
 # Initial conditions
 r0 = rmin
 v0 = 0.0
