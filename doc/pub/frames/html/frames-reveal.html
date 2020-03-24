@@ -313,7 +313,6 @@ frame, might be changing as a function of time,
 <p>&nbsp;<br>
 $$
 \begin{eqnarray}
-\tag{6}
 \Delta\boldsymbol{A}'&=&\Delta\boldsymbol{A}+\boldsymbol{\omega}\times\boldsymbol{A}\Delta t,\\
 \nonumber
 \frac{d}{dt}\boldsymbol{A}'&=&\frac{d}{dt}\boldsymbol{A}+\boldsymbol{\omega}\times\boldsymbol{A}.
@@ -336,14 +335,14 @@ $$
 Here, the first term on the r.h.s. corresponds to the vector \( \boldsymbol{r} \)
 not being fixed, but changing with time, \( \dot{\boldsymbol{r}}=\boldsymbol{v} \). One
 can now use \( \boldsymbol{v}'=\boldsymbol{v}+\boldsymbol{\omega}\times\boldsymbol{r} \) in place of
-\( \boldsymbol{A} \) in Eq. <a href="#mjx-eqn-6">(6)</a>, and see
+\( \boldsymbol{A} \), and see
 
 <p>&nbsp;<br>
 $$
 \begin{eqnarray}
 \dot{\boldsymbol{v}}'&=&\frac{d}{dt}(\boldsymbol{v}+\boldsymbol{\omega}\times\boldsymbol{r})+\boldsymbol{\omega}\times(\boldsymbol{v}+\boldsymbol{\omega}\times\boldsymbol{r})\\
 \nonumber
-&=&\dot{\boldsymbol{v}}+\boldsymbol{\omega}\times\dot\boldsymbol{r}+\boldsymbol{\omega}\times\left(\boldsymbol{v}+\boldsymbol{\omega}\times\boldsymbol{r}\right)\\
+&=&\dot{\boldsymbol{v}}+\boldsymbol{\omega}\times\dot{\boldsymbol{r}}+\boldsymbol{\omega}\times\left(\boldsymbol{v}+\boldsymbol{\omega}\times\boldsymbol{r}\right)\\
 \nonumber
 &=&\dot{\boldsymbol{v}}+2\boldsymbol{\omega}\times\boldsymbol{v}+\boldsymbol{\omega}\times(\boldsymbol{\omega}\times\boldsymbol{r}).
 \end{eqnarray}
@@ -356,7 +355,7 @@ Because \( \dot{\boldsymbol{v}}' \) is \( \boldsymbol{F}/m \),
 <p>&nbsp;<br>
 $$
 \begin{eqnarray}
-\tag{7}
+\tag{6}
 \boldsymbol{F}&=&m\left\{\boldsymbol{a}+2\boldsymbol{\omega}\times\boldsymbol{v}+\boldsymbol{\omega}\times(\boldsymbol{\omega}\times\boldsymbol{r})\right\},\\
 \nonumber
 m\boldsymbol{a}&=&\boldsymbol{F}-2m\boldsymbol{\omega}\times\boldsymbol{v}-m\boldsymbol{\omega}\times(\boldsymbol{\omega}\times\boldsymbol{r}).
@@ -378,7 +377,7 @@ represents the centrifugal force. Using the vector identity,
 $$
 \begin{equation}
 -\boldsymbol{\omega}\times(\boldsymbol{\omega}\times\boldsymbol{r})=\omega^2\boldsymbol{r}+(\omega\cdot\boldsymbol{r})\boldsymbol{\omega}.
-\tag{8}
+\tag{7}
 \end{equation}
 $$
 <p>&nbsp;<br>
@@ -390,7 +389,7 @@ If \( \boldsymbol{\omega} \) is in the \( z \) direction,
 $$
 \begin{equation}
 -\boldsymbol{\omega}\times(\boldsymbol{\omega}\times\boldsymbol{r})=\omega^2(x\hat{x}+y\hat{y}).
-\tag{9}
+\tag{8}
 \end{equation}
 $$
 <p>&nbsp;<br>
@@ -401,7 +400,7 @@ magnitude is \( m\omega^2r_{\rm\perp} \), where
 \( r_{\rm\perp}=\sqrt{x^2+y^2} \).
 
 <p>
-The second term is Eq. <a href="#mjx-eqn-7">(7)</a> represents the
+The second term is Eq. <a href="#mjx-eqn-6">(6)</a> represents the
 Coriolis force. It does not enter problems like the shape of the Earth
 above because in that case the water was not moving relative to the
 rotating frame. Once an object is moving in a rotating frame, the
@@ -582,7 +581,7 @@ expression as
 <p>&nbsp;<br>
 $$
 \begin{eqnarray*}
-\tag{10}
+\tag{9}
 \eta&=&e^{-i\Omega_zt}\left[A\cos(\omega_0t+\phi_A)+iB\cos(\omega_0t+\phi_B)\right].
 \end{eqnarray*}
 $$
@@ -629,7 +628,7 @@ the motion would switch from the \( x \)-direction to the \( y \) direction
 every 6 hours. Away from the north pole, \( \Omega_z\ne|\boldsymbol{\Omega}| \)
 and the precession frequency is less.  At the equator it does not
 precess at all. If one were to repeat for the solutions where \( A=0 \)
-and \( B\ne 0 \) in Eq. <a href="#mjx-eqn-10">(10)</a>, one would look at motions
+and \( B\ne 0 \) in Eq. <a href="#mjx-eqn-9">(9)</a>, one would look at motions
 that started in the \( y \)-direction, then precessed toward the \( -x \)
 direction. Linear combinations of the two sets of solutions give
 pendulum motions that resemble ellipses rather than simple

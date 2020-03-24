@@ -271,7 +271,6 @@ frame, might be changing as a function of time,
 
 $$
 \begin{eqnarray}
-\label{eq:dAdtrot}
 \Delta\boldsymbol{A}'&=&\Delta\boldsymbol{A}+\boldsymbol{\omega}\times\boldsymbol{A}\Delta t,\\
 \nonumber
 \frac{d}{dt}\boldsymbol{A}'&=&\frac{d}{dt}\boldsymbol{A}+\boldsymbol{\omega}\times\boldsymbol{A}.
@@ -291,13 +290,13 @@ $$
 Here, the first term on the r.h.s. corresponds to the vector \( \boldsymbol{r} \)
 not being fixed, but changing with time, \( \dot{\boldsymbol{r}}=\boldsymbol{v} \). One
 can now use \( \boldsymbol{v}'=\boldsymbol{v}+\boldsymbol{\omega}\times\boldsymbol{r} \) in place of
-\( \boldsymbol{A} \) in Eq. \eqref{eq:dAdtrot}, and see
+\( \boldsymbol{A} \), and see
 
 $$
 \begin{eqnarray}
 \dot{\boldsymbol{v}}'&=&\frac{d}{dt}(\boldsymbol{v}+\boldsymbol{\omega}\times\boldsymbol{r})+\boldsymbol{\omega}\times(\boldsymbol{v}+\boldsymbol{\omega}\times\boldsymbol{r})\\
 \nonumber
-&=&\dot{\boldsymbol{v}}+\boldsymbol{\omega}\times\dot\boldsymbol{r}+\boldsymbol{\omega}\times\left(\boldsymbol{v}+\boldsymbol{\omega}\times\boldsymbol{r}\right)\\
+&=&\dot{\boldsymbol{v}}+\boldsymbol{\omega}\times\dot{\boldsymbol{r}}+\boldsymbol{\omega}\times\left(\boldsymbol{v}+\boldsymbol{\omega}\times\boldsymbol{r}\right)\\
 \nonumber
 &=&\dot{\boldsymbol{v}}+2\boldsymbol{\omega}\times\boldsymbol{v}+\boldsymbol{\omega}\times(\boldsymbol{\omega}\times\boldsymbol{r}).
 \end{eqnarray}
