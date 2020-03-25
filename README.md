@@ -125,7 +125,7 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 - Friday:  Elliptical orbits, examples and two-body scattering problems. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch20.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_w9xc8az7
 ### Week 13, March 23-27, 2020
 - Monday: Central force problems, summary and discussion of two-body scattering problems. 8th homework, due March 30. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch23.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_t2l86862
-- Wednesday: Two-body scattering. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch25.pdf and video of lecture https://mediaspace.msu.edu/media/t/to come
+- Wednesday: Two-body scattering. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch25.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_d70czgce
 - Friday:  Two-body scattering. Start discussion of Rotating Coordinate systems.
 ### Week 14, March 30-April 3, 2020
 - Monday: Rotating Coordinate systems, CoriolisFoucalt's pendulum and rigid bodies. 9th homework, due April 6
