@@ -126,25 +126,26 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 ### Week 13, March 23-27, 2020
 - Monday: Central force problems, summary and discussion of two-body scattering problems. 8th homework, due March 30. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch23.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_t2l86862
 - Wednesday: Two-body scattering. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch25.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_d70czgce
-- Friday:  Two-body scattering. Start discussion of Rotating Coordinate systems.
+- Friday:  Two-body scattering. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch27.pdf and video of lecture https://mediaspace.msu.edu/media/t/tocome
 ### Week 14, March 30-April 3, 2020
-- Monday: Rotating Coordinate systems, CoriolisFoucalt's pendulum and rigid bodies. 9th homework, due April 6
-- Wednesday: Variational Calculus, examples. Chapters 6 and 7.1-7.2 Taylor
-- Friday:  Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. _Second midterm project, due  April 13, 2020_
+- Monday: Wrapping up two-body scattering and begin Rotating Coordinate systems.  9th homework, due April 6
+- Wednesday: Coriolis and Foucalt's pendulum and rigid bodies. _Second midterm project, due April 13_
+- Friday: Coriolis and Foucalt's pendulum and rigid bodies.
 ### Week 15, April  6-10, 2020
-- Monday: Lagrangian formalism
+- Monday: Variational Calculus, examples. Chapters 6 and 7.1-7.2 Taylor
+- Friday:  Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes.
 - Wednesday: Lagrangian formalism, examples
 - Friday: Lagrangian formalism. 
 ### Week 16, April 13-17, 2020
 - Monday:  Langrangian formalism. 10th homework and extra assignments, due April 24 
-- Wednesday: 
-- Friday:  
+- Wednesday: Lagrangian formalism
+- Friday:  Lagrangian Formalism
 ### Week 17, April 20-24, 2020
-- Monday:
-- Wednesday: 
-- Friday:  Summary and discussions of finals exams 
+- Monday:  Lagrangian formalism., examples. _Final exam project project, due May 1_
+- Wednesday: Lagrangian formalim, examples. Discussion of final examp project.
+- Friday:  Summary and discussions of final exam project 
 ### Week 18, April 27- May 1, 2020, Finals week
-- Final Exam:  Due to the Corona virus the final exam will be a project similar to the two midterm projects. More details to come.
+- Final Exam:  Due to the Corona virus the final exam will be a project similar to the two midterm projects. Deadline May 1.
 
 
 ## Learning outcomes (more material to come)
