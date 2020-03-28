@@ -52,7 +52,7 @@ Here you will find a general overview of the course, with learning outcomes, tea
 |Homeworks, 10 in total and due Wednesdays the week after | 20% |
 | First Midterm Project, due Wednesday March  11 | 25% |
 | Second  Midterm Project, due Monday April 13 | 25% |
-| Final Exam, April 29, 5:45-7:45pm |  30%  |
+| Final Exam project, due May 1 |  30%  |
 | Extra Credit Assignment (Due Friday April 24)| 10% |
 
 | Grading scale | | | | | | | 
