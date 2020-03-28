@@ -132,7 +132,7 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 - Wednesday: Coriolis and Foucalt's pendulum and rigid bodies. _Second midterm project, due April 13_
 - Friday: Coriolis and Foucalt's pendulum and rigid bodies.
 ### Week 15, April  6-10, 2020
-- Monday: Variational Calculus, examples. Chapters 6 and 7.1-7.2 Taylor
+- Monday: Variational Calculus, examples. Chapters 6 of Taylor
 - Friday:  Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes.
 - Wednesday: Lagrangian formalism, examples
 - Friday: Lagrangian formalism. 
