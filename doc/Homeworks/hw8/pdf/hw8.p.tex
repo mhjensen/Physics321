@@ -131,7 +131,7 @@ PHY321: Classical Mechanics 1
 
 % --- begin date ---
 \begin{center}
-Mar 23, 2020
+Mar 29, 2020
 \end{center}
 % --- end date ---
 
@@ -203,12 +203,22 @@ there is no radial kinetic energy and $E=-\alpha/r_{\rm min}+L^2/2mr_{\rm min}^2
 
 
 \paragraph{Exercise 3 (20pt) Inverse-square force.}
-Consider again the same effective potential as in 2. This leads to an attractive inverse-square-law force, $F=-\alpha/r^2$. Consider a particle of mass $m$ with angular momentum $L$. Taylor sections 8.4-8.7 are relevant background material.  See also the harmonic oscillator potential from hw7. 
+Consider again the same effective potential as in 2. This leads to an attractive inverse-square-law force, $F=-\alpha/r^2$. Consider a particle of mass $m$ with angular momentum $L$. Taylor sections 8.4-8.7 are relevant background material.  See also the harmonic oscillator potential from hw7. The equation of motion for the radial degrees of freedom is (see also hw7) in the center-of-mass frame in two dimensions with $x=r\cos{(\phi)}$ and $y=r\sin{(\phi)}$ and
+$r\in [0,\infty)$, $\phi\in [0,2\pi]$ and $r=\sqrt{x^2+y^2}$ are given by
+\[
+\ddot{r}=-\frac{1}{m}\frac{dV(r)}{dr}+r\dot{\phi}^2,
+\]
+and
+\[
+\dot{\phi}=\frac{L}{m r^2}.
+\]
+Here $V(r)$ is any central force which depends only on the relative coordinate.
+
 
 \begin{itemize}
 \item 3a (5pt)  Find the radius of a circular orbit by solving for the position of the minimum of the effective potential. 
 
-\item 3b (5pt) What is the angular frequency, $\dot{\theta}$, of the orbit? Solve this by setting $F=m\dot{\theta}^2r$.
+\item 3b (5pt) At the minimum, the radial velocity is zero and it is only the \href{{https://en.wikipedia.org/wiki/Centripetal_force}}{centripetal velocity} which is nonzero. This implies that $\ddot{r}=$.  What is the angular frequency, $\dot{\theta}$, of the orbit? Solve this by setting $\ddot{r}=0=F/m+\dot{\theta}^2r$.
 
 \item 3c (5pt) Find the effective spring constant for the particle at the minimum.
 
@@ -312,6 +322,7 @@ plt.show()
 
 
 Run your code and study and discuss the situations where you have elliptical, parabolic and hyperbolic orbits. Discuss the physics of these cases. The results from exercises 2, 3, 4 and 5 may be useful here. 
+
 
 % ------------------- end of main content ---------------
 
