@@ -157,7 +157,7 @@ MathJax.Hub.Config({
 <center>[3] <b>Department of Physics and Astronomy, Michigan State University, USA</b></center>
 <br>
 <p>&nbsp;<br>
-<center><h4>Mar 20, 2020</h4></center> <!-- date -->
+<center><h4>Mar 30, 2020</h4></center> <!-- date -->
 <br>
 
 <h2 id="___sec0">Introduction </h2>
@@ -192,6 +192,118 @@ $$
 <p>&nbsp;<br>
 
 <h2 id="___sec1">Relative and Center of Mass Motion </h2>
+
+<p>
+Thus far, we have considered the trajectory as if the force is
+centered around a fixed point. For two bodies interacting only with
+one another, both masses circulate around the center of mass. One
+might think that solutions would become more complex when both
+particles move, but we will see here that the problem can be reduced
+to one with a single body moving according to a fixed force by
+expressing the trajectories for \( \boldsymbol{r}_1 \) and \( \boldsymbol{r}_2 \) into the
+center-of-mass coordinate \( \boldsymbol{R}_{\rm cm} \) and the relative
+coordinate \( \boldsymbol{r} \),
+
+<p>&nbsp;<br>
+$$
+\begin{eqnarray}
+\boldsymbol{R}_{\rm cm}&\equiv&\frac{m_1\boldsymbol{r}_1+m_2\boldsymbol{r}_2}{m_1+m_2},\\
+\nonumber
+\boldsymbol{r}&\equiv&\boldsymbol{r}_1-\boldsymbol{r_2}.
+\end{eqnarray}
+$$
+<p>&nbsp;<br>
+
+<p>
+Here, we assume the two particles interact only with one another, so
+\( \boldsymbol{F}_{12}=-\boldsymbol{F}_{21} \) (where \( \boldsymbol{F}_{ij} \) is the force on \( i \)
+due to \( j \). The equations of motion then become
+
+<p>&nbsp;<br>
+$$
+\begin{eqnarray}
+\ddot{\boldsymbol{R}}_{\rm cm}&=&\frac{1}{m_1+m_2}\left\{m_1\ddot{\boldsymbol{r}}_1+m_2\ddot{\boldsymbol{r}}_2\right\}\\
+\nonumber
+&=&\frac{1}{m_1+m_2}\left\{\boldsymbol{F}_{12}+\boldsymbol{F}_{21}\right\}=0.\\
+\ddot{\boldsymbol{r}}&=&\ddot{\boldsymbol{r}}_1-\ddot{\boldsymbol{r}}_2=\left(\frac{\boldsymbol{F}_{12}}{m_1}-\frac{\boldsymbol{F}_{21}}{m_2}\right)\\
+\nonumber
+&=&\left(\frac{1}{m_1}+\frac{1}{m_2}\right)\boldsymbol{F}_{12}.
+\end{eqnarray}
+$$
+<p>&nbsp;<br>
+
+<p>
+The first expression simply states that the center of mass coordinate
+\( \boldsymbol{R}_{\rm cm} \) moves at a fixed velocity. The second expression
+can be rewritten in terms of the reduced mass \( \mu \).
+
+<p>&nbsp;<br>
+$$
+\begin{eqnarray}
+\mu \ddot{\boldsymbol{r}}&=&\boldsymbol{F}_{12},\\
+\frac{1}{\mu}&=&\frac{1}{m_1}+\frac{1}{m_2},~~~~\mu=\frac{m_1m_2}{m_1+m_2}.
+\end{eqnarray}
+$$
+<p>&nbsp;<br>
+
+<p>
+Thus, one can treat the trajectory as a one-body problem where the
+reduced mass is \( \mu \), and a second trivial problem for the center of
+mass. The reduced mass is especially convenient when one is
+considering gravitational problems because then
+
+<p>&nbsp;<br>
+$$
+\begin{eqnarray}
+\mu \ddot{r}&=&-\frac{Gm_1m_2}{r^2}\hat{r}\\
+\nonumber
+&=&-\frac{GM\mu}{r^2}\hat{r},~~~M\equiv m_1+m_2.
+\end{eqnarray}
+$$
+<p>&nbsp;<br>
+
+<p>
+For the gravitational problem, the reduced mass then falls out and the
+trajectory depends only on the total mass \( M \).
+
+<p>
+The kinetic energy and momenta also have analogues in center-of-mass
+coordinates. The total and relative momenta are
+
+<p>&nbsp;<br>
+$$
+\begin{eqnarray}
+\boldsymbol{P}&\equiv&\boldsymbol{p}_1+\boldsymbol{p}_2=M\dot{\boldsymbol{R}}_{\rm cm},\\
+\nonumber
+\boldsymbol{q}&\equiv&\mu\dot{\boldsymbol{r}}.
+\end{eqnarray}
+$$
+<p>&nbsp;<br>
+
+<p>
+With these definitions, a little algebra shows that the kinetic energy becomes
+
+<p>&nbsp;<br>
+$$
+\begin{eqnarray}
+T&=&\frac{1}{2}m_1|\boldsymbol{v}_1|^2+\frac{1}{2}m_2|\boldsymbol{v}_2|^2\\
+\nonumber
+&=&\frac{1}{2}M|\dot{\boldsymbol{R}}_{\rm cm}|^2
++\frac{1}{2}\mu|\dot{\boldsymbol{r}}|^2\\
+\nonumber
+&=&\frac{P^2}{2M}+\frac{q^2}{2\mu}.
+\end{eqnarray}
+$$
+<p>&nbsp;<br>
+
+<p>
+The standard strategy is to transform into the center of mass frame,
+then treat the problem as one of a single particle of mass \( \mu \)
+undergoing a force \( \boldsymbol{F}_{12} \). Scattering angles can also be
+expressed in this frame, then transformed into the lab frame. In
+practice, one sees examples in the literature where \( d\sigma/d\Omega \)
+expressed in both the &quot;center-of-mass&quot; and in the &quot;laboratory&quot;
+frame.
 
 <h2 id="___sec2">Deriving Elliptical Orbits </h2>
 
@@ -924,7 +1036,72 @@ around. This is the case for the inverse-square force,
 and the angles at which the maxima and minima occur change with each
 orbit.
 
-<h2 id="___sec7">Scattering and Cross Sections </h2>
+<h3 id="___sec7">Code example with gravitional force </h3>
+
+<p>
+The code example here is meant to illustrate how we can make a plot of the final orbit. We solve the equations in polar coordinates (the example here uses the minimum of the potential as initial value) and then we transform back to cartesian coordinates and plot \( x \) versus \( y \). We see that we get a perfect circle when we place ourselves at the minimum of the potential energy, as expected.
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #228B22"># Simple Gravitational Force   -alpha/r</span>
+    
+DeltaT = <span style="color: #B452CD">0.01</span>
+<span style="color: #228B22">#set up arrays </span>
+tfinal = <span style="color: #B452CD">8.0</span>
+n = ceil(tfinal/DeltaT)
+<span style="color: #228B22"># set up arrays for t, v and r</span>
+t = np.zeros(n)
+v = np.zeros(n)
+r = np.zeros(n)
+phi = np.zeros(n)
+x = np.zeros(n)
+y = np.zeros(n)
+<span style="color: #228B22"># Constants of the model, setting all variables to one for simplicity</span>
+alpha = <span style="color: #B452CD">1.0</span>
+AngMom = <span style="color: #B452CD">1.0</span>  <span style="color: #228B22">#  The angular momentum</span>
+m = <span style="color: #B452CD">1.0</span>  <span style="color: #228B22"># scale mass to one</span>
+c1 = AngMom*AngMom/(m*m)
+c2 = AngMom*AngMom/m
+rmin = (AngMom*AngMom/m/alpha)
+<span style="color: #228B22"># Initial conditions, place yourself at the potential min</span>
+r0 = rmin
+v0 = <span style="color: #B452CD">0.0</span>  <span style="color: #228B22"># starts at rest</span>
+r[<span style="color: #B452CD">0</span>] = r0
+v[<span style="color: #B452CD">0</span>] = v0
+phi[<span style="color: #B452CD">0</span>] = <span style="color: #B452CD">0.0</span>
+<span style="color: #228B22"># Start integrating using the Velocity-Verlet  method</span>
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
+    <span style="color: #228B22"># Set up acceleration</span>
+    a = -alpha/(r[i]**<span style="color: #B452CD">2</span>)+c1/(r[i]**<span style="color: #B452CD">3</span>)
+    <span style="color: #228B22"># update velocity, time and position using the Velocity-Verlet method</span>
+    r[i+<span style="color: #B452CD">1</span>] = r[i] + DeltaT*v[i]+<span style="color: #B452CD">0.5</span>*(DeltaT**<span style="color: #B452CD">2</span>)*a
+    anew = -alpha/(r[i+<span style="color: #B452CD">1</span>]**<span style="color: #B452CD">2</span>)+c1/(r[i+<span style="color: #B452CD">1</span>]**<span style="color: #B452CD">3</span>)
+    v[i+<span style="color: #B452CD">1</span>] = v[i] + <span style="color: #B452CD">0.5</span>*DeltaT*(a+anew)
+    t[i+<span style="color: #B452CD">1</span>] = t[i] + DeltaT
+    phi[i+<span style="color: #B452CD">1</span>] = t[i+<span style="color: #B452CD">1</span>]*c2/(r0**<span style="color: #B452CD">2</span>)
+<span style="color: #228B22"># Find cartesian coordinates for easy plot    </span>
+x = r*np.cos(phi)
+y = r*np.sin(phi)
+fig, ax = plt.subplots(<span style="color: #B452CD">3</span>,<span style="color: #B452CD">1</span>)
+ax[<span style="color: #B452CD">0</span>].set_xlabel(<span style="color: #CD5555">&#39;time&#39;</span>)
+ax[<span style="color: #B452CD">0</span>].set_ylabel(<span style="color: #CD5555">&#39;radius&#39;</span>)
+ax[<span style="color: #B452CD">0</span>].plot(t,r)
+ax[<span style="color: #B452CD">1</span>].set_xlabel(<span style="color: #CD5555">&#39;time&#39;</span>)
+ax[<span style="color: #B452CD">1</span>].set_ylabel(<span style="color: #CD5555">&#39;Angle $\cos{\phi}$&#39;</span>)
+ax[<span style="color: #B452CD">1</span>].plot(t,np.cos(phi))
+ax[<span style="color: #B452CD">2</span>].set_ylabel(<span style="color: #CD5555">&#39;y&#39;</span>)
+ax[<span style="color: #B452CD">2</span>].set_xlabel(<span style="color: #CD5555">&#39;x&#39;</span>)
+ax[<span style="color: #B452CD">2</span>].plot(x,y)
+
+save_fig(<span style="color: #CD5555">&quot;Phasespace&quot;</span>)
+plt.show()
+</pre></div>
+<p>
+Try to change the initial value for \( r \) and see what kind of orbits you get.
+In order to test different energies, it can be useful to look at the plot of the effective potential discussed above.
+
+<h2 id="___sec8">Scattering and Cross Sections </h2>
 
 <p>
 Scattering experiments don't measure entire trajectories. For elastic
@@ -1094,7 +1271,7 @@ An asteroid of mass \( m \) and kinetic energy \( E \) approaches a planet of
 radius \( R \) and mass \( M \). What is the cross section for the asteroid to
 impact the planet?
 
-<h3 id="___sec8">Solution </h3>
+<h3 id="___sec9">Solution </h3>
 
 Calculate the maximum impact parameter, \( b_{\rm max} \), for which the asteroid will hit the planet. The total cross  section for impact is \( \sigma_{\rm impact}=\pi b_{\rm max}^2 \). The maximum cross-section can be found with the help of angular momentum conservation. The asteroid's incoming momentum is \( p_0=\sqrt{2mE} \) and the angular momentum is \( L=p_0b \). If the asteroid just grazes the planet, it is moving with zero radial kinetic energy at impact. Combining energy and angular momentum conservation and having \( p_f \) refer to the momentum of the asteroid at a distance \( R \),
 
@@ -1119,120 +1296,6 @@ b_{\rm max}&=&R\frac{p_f}{p_0}\\
 \end{eqnarray*}
 $$
 <p>&nbsp;<br>
-
-<h2 id="___sec9">Center-of-Mass Coordinates </h2>
-
-<p>
-Thus far, we have considered the trajectory as if the force is
-centered around a fixed point. For two bodies interacting only with
-one another, both masses circulate around the center of mass. One
-might think that solutions would become more complex when both
-particles move, but we will see here that the problem can be reduced
-to one with a single body moving according to a fixed force by
-expressing the trajectories for \( \boldsymbol{r}_1 \) and \( \boldsymbol{r}_2 \) into the
-center-of-mass coordinate \( \boldsymbol{R}_{\rm cm} \) and the relative
-coordinate \( \boldsymbol{r} \),
-
-<p>&nbsp;<br>
-$$
-\begin{eqnarray}
-\boldsymbol{R}_{\rm cm}&\equiv&\frac{m_1\boldsymbol{r}_1+m_2\boldsymbol{r}_2}{m_1+m_2},\\
-\nonumber
-\boldsymbol{r}&\equiv&\boldsymbol{r}_1-\boldsymbol{r_2}.
-\end{eqnarray}
-$$
-<p>&nbsp;<br>
-
-<p>
-Here, we assume the two particles interact only with one another, so
-\( \boldsymbol{F}_{12}=-\boldsymbol{F}_{21} \) (where \( \boldsymbol{F}_{ij} \) is the force on \( i \)
-due to \( j \). The equations of motion then become
-
-<p>&nbsp;<br>
-$$
-\begin{eqnarray}
-\ddot{\boldsymbol{R}}_{\rm cm}&=&\frac{1}{m_1+m_2}\left\{m_1\ddot{\boldsymbol{r}}_1+m_2\ddot{\boldsymbol{r}}_2\right\}\\
-\nonumber
-&=&\frac{1}{m_1+m_2}\left\{\boldsymbol{F}_{12}+\boldsymbol{F}_{21}\right\}=0.\\
-\ddot{\boldsymbol{r}}&=&\ddot{\boldsymbol{r}}_1-\ddot{\boldsymbol{r}}_2=\left(\frac{\boldsymbol{F}_{12}}{m_1}-\frac{\boldsymbol{F}_{21}}{m_2}\right)\\
-\nonumber
-&=&\left(\frac{1}{m_1}+\frac{1}{m_2}\right)\boldsymbol{F}_{12}.
-\end{eqnarray}
-$$
-<p>&nbsp;<br>
-
-<p>
-The first expression simply states that the center of mass coordinate
-\( \boldsymbol{R}_{\rm cm} \) moves at a fixed velocity. The second expression
-can be rewritten in terms of the reduced mass \( \mu \).
-
-<p>&nbsp;<br>
-$$
-\begin{eqnarray}
-\mu \ddot{\boldsymbol{r}}&=&\boldsymbol{F}_{12},\\
-\frac{1}{\mu}&=&\frac{1}{m_1}+\frac{1}{m_2},~~~~\mu=\frac{m_1m_2}{m_1+m_2}.
-\end{eqnarray}
-$$
-<p>&nbsp;<br>
-
-<p>
-Thus, one can treat the trajectory as a one-body problem where the
-reduced mass is \( \mu \), and a second trivial problem for the center of
-mass. The reduced mass is especially convenient when one is
-considering gravitational problems because then
-
-<p>&nbsp;<br>
-$$
-\begin{eqnarray}
-\mu \ddot{r}&=&-\frac{Gm_1m_2}{r^2}\hat{r}\\
-\nonumber
-&=&-\frac{GM\mu}{r^2}\hat{r},~~~M\equiv m_1+m_2.
-\end{eqnarray}
-$$
-<p>&nbsp;<br>
-
-<p>
-For the gravitational problem, the reduced mass then falls out and the
-trajectory depends only on the total mass \( M \).
-
-<p>
-The kinetic energy and momenta also have analogues in center-of-mass
-coordinates. The total and relative momenta are
-
-<p>&nbsp;<br>
-$$
-\begin{eqnarray}
-\boldsymbol{P}&\equiv&\boldsymbol{p}_1+\boldsymbol{p}_2=M\dot{\boldsymbol{R}}_{\rm cm},\\
-\nonumber
-\boldsymbol{q}&\equiv&\mu\dot{\boldsymbol{r}}.
-\end{eqnarray}
-$$
-<p>&nbsp;<br>
-
-<p>
-With these definitions, a little algebra shows that the kinetic energy becomes
-
-<p>&nbsp;<br>
-$$
-\begin{eqnarray}
-T&=&\frac{1}{2}m_1|\boldsymbol{v}_1|^2+\frac{1}{2}m_2|\boldsymbol{v}_2|^2\\
-\nonumber
-&=&\frac{1}{2}M|\dot{\boldsymbol{R}}_{\rm cm}|^2
-+\frac{1}{2}\mu|\dot{\boldsymbol{r}}|^2\\
-\nonumber
-&=&\frac{P^2}{2M}+\frac{q^2}{2\mu}.
-\end{eqnarray}
-$$
-<p>&nbsp;<br>
-
-<p>
-The standard strategy is to transform into the center of mass frame,
-then treat the problem as one of a single particle of mass \( \mu \)
-undergoing a force \( \boldsymbol{F}_{12} \). Scattering angles can also be
-expressed in this frame, then transformed into the lab frame. In
-practice, one sees examples in the literature where \( d\sigma/d\Omega \)
-expressed in both the &quot;center-of-mass&quot; and in the &quot;laboratory&quot;
-frame.
 
 <h2 id="___sec10">Rutherford Scattering </h2>
 
