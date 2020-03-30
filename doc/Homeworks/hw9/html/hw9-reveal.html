@@ -179,11 +179,11 @@ calculations without this relativistic correction.
 In homework 4 we limited ourselves (in order to test the algorithm) to
 a hypothetical solar system with the Earth only orbiting around the
 Sun. We assumed that the only force in the problem is
-gravity. Newton's law of gravitation is given by a force \( F_G \)
+gravity. Newton's law of gravitation is given by a force \( F_G \) (we assume this is the force acting on Earth from the Sun)
 
 <p>&nbsp;<br>
 $$
-F_G=\frac{GM_{\odot}M_{\mathrm{Earth}}}{r^2},
+F_G=-\frac{GM_{\odot}M_{\mathrm{Earth}}}{r^2},
 $$
 <p>&nbsp;<br>
 
@@ -201,7 +201,7 @@ Using Newton's second law of motion we got the following equations
 
 <p>&nbsp;<br>
 $$
-\frac{d^2x}{dt^2}=\frac{F_{G,x}}{M_{\mathrm{Earth}}},
+\frac{d^2x}{dt^2}=-\frac{F_{G,x}}{M_{\mathrm{Earth}}},
 $$
 <p>&nbsp;<br>
 
@@ -209,7 +209,7 @@ and
 
 <p>&nbsp;<br>
 $$
-\frac{d^2y}{dt^2}=\frac{F_{G,y}}{M_{\mathrm{Earth}}},
+\frac{d^2y}{dt^2}=-\frac{F_{G,y}}{M_{\mathrm{Earth}}},
 $$
 <p>&nbsp;<br>
 
@@ -290,7 +290,7 @@ This force is given again by
 
 <p>&nbsp;<br>
 $$
-F_{\mathrm{Earth-Jupiter}}=\frac{GM_{\mathrm{Jupiter}}M_{\mathrm{Earth}}}{r_{\mathrm{Earth-Jupiter}}^2},
+F_{\mathrm{Earth-Jupiter}}=-\frac{GM_{\mathrm{Jupiter}}M_{\mathrm{Earth}}}{r_{\mathrm{Earth-Jupiter}}^2},
 $$
 <p>&nbsp;<br>
 
