@@ -31,9 +31,9 @@ def save_fig(fig_id):
 
 # Simple Gravitational Force   -alpha/r
     
-DeltaT = 0.01
+DeltaT = 0.001
 #set up arrays 
-tfinal = 8.0
+tfinal = 100.0
 n = ceil(tfinal/DeltaT)
 # set up arrays for t, v and r
 t = np.zeros(n)
