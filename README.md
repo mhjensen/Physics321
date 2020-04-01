@@ -129,7 +129,7 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 - Friday:  Two-body scattering. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch27.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_e1cs5784
 ### Week 14, March 30-April 3, 2020
 - Monday: Wrapping up two-body scattering and begin Rotating Coordinate systems.  9th homework, due April 6. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch30.pdf and video of lecture https://mediaspace.msu.edu/media/t/0_tlsccwai
-- Wednesday: Coriolis and Foucalt's pendulum and rigid bodies. _Second midterm project, due April 13_
+- Wednesday: Coriolis and Foucalt's pendulum and rigid bodies. _Second midterm project, due April 13_. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril1.pdf and video of lecture https://mediaspace.msu.edu/media/t/0_utc9il9y
 - Friday: Coriolis and Foucalt's pendulum and rigid bodies.
 ### Week 15, April  6-10, 2020
 - Monday: Variational Calculus, examples. Chapters 6 of Taylor
