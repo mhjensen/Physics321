@@ -7,9 +7,9 @@ Automatically generated HTML file from DocOnce source
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Rotating Coordinate Systems">
+<meta name="description" content="Non-inertial Frames, Translation and Rotating Coordinate Systems">
 
-<title>Rotating Coordinate Systems</title>
+<title>Non-inertial Frames, Translation and Rotating Coordinate Systems</title>
 
 <!-- Bootstrap style: bootstrap -->
 <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
@@ -41,11 +41,13 @@ Automatically generated HTML file from DocOnce source
 
 <!-- tocinfo
 {'highest level': 2,
- 'sections': [('Accelerating Frames', 2, None, '___sec0'),
-              ('Rotating Frames', 2, None, '___sec1'),
-              ('Coriolis Force', 2, None, '___sec2'),
-              ('Coriolis and falling Objects', 3, None, '___sec3'),
-              ('The Foucault Pendulum', 2, None, '___sec4')]}
+ 'sections': [('Introduction', 2, None, '___sec0'),
+              ('Galilean Transformations', 2, None, '___sec1'),
+              ('Accelerating Frames', 2, None, '___sec2'),
+              ('Rotating Frames', 2, None, '___sec3'),
+              ('Coriolis Force', 2, None, '___sec4'),
+              ('Coriolis and falling Objects', 3, None, '___sec5'),
+              ('The Foucault Pendulum', 2, None, '___sec6')]}
 end of tocinfo -->
 
 <body>
@@ -75,7 +77,7 @@ MathJax.Hub.Config({
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="frames-bs.html">Rotating Coordinate Systems</a>
+    <a class="navbar-brand" href="frames-bs.html">Non-inertial Frames, Translation and Rotating Coordinate Systems</a>
   </div>
 
   <div class="navbar-collapse collapse navbar-responsive-collapse">
@@ -83,11 +85,13 @@ MathJax.Hub.Config({
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
         <ul class="dropdown-menu">
-     <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;"><b>Accelerating Frames</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec1" style="font-size: 80%;"><b>Rotating Frames</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec2" style="font-size: 80%;"><b>Coriolis Force</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec3" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Coriolis and falling Objects</a></li>
-     <!-- navigation toc: --> <li><a href="#___sec4" style="font-size: 80%;"><b>The Foucault Pendulum</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;"><b>Introduction</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec1" style="font-size: 80%;"><b>Galilean Transformations</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec2" style="font-size: 80%;"><b>Accelerating Frames</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec3" style="font-size: 80%;"><b>Rotating Frames</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec4" style="font-size: 80%;"><b>Coriolis Force</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec5" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Coriolis and falling Objects</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec6" style="font-size: 80%;"><b>The Foucault Pendulum</b></a></li>
 
         </ul>
       </li>
@@ -105,7 +109,7 @@ MathJax.Hub.Config({
 
 
 <div class="jumbotron">
-<center><h1>Rotating Coordinate Systems</h1></center>  <!-- document title -->
+<center><h1>Non-inertial Frames, Translation and Rotating Coordinate Systems</h1></center>  <!-- document title -->
 
 <p>
 <!-- author(s): <a href="http://mhjgit.github.io/info/doc/web/" target="_self">Morten Hjorth-Jensen</a>, <a href="https://pa.msu.edu/profile/pratts/" target="_self">Scott Pratt</a>, and <a href="https://pa.msu.edu/profile/schmidt/" target="_self">Carl Schmidt</a> -->
@@ -130,17 +134,104 @@ MathJax.Hub.Config({
 <center>[3] <b>Department of Physics and Astronomy, Michigan State University, USA</b></center>
 <br>
 <p>
-<center><h4>Mar 24, 2020</h4></center> <!-- date -->
+<center><h4>Apr 1, 2020</h4></center> <!-- date -->
 <br>
 <p>
 </div> <!-- end jumbotron -->
 
-<h2 id="___sec0" class="anchor">Accelerating Frames </h2>
+<h2 id="___sec0" class="anchor">Introduction </h2>
 
 <p>
-Here we again consider the effect of uniformly accelerating reference
+Let us quickly remind ourselves about the definition of a so-called <b>inertial frame of reference</b>.
+An inertial frame of reference in classical physics (and in special
+relativity as well) possesses the property that in this frame of reference a
+body with zero net force acting upon it does not accelerate; that is,
+such a body is at rest or moving at a constant velocity.  If we recall the definition of Newton's first law, this is essentially its description.
+
+<p>
+An
+inertial frame of reference can be defined in analytical terms as a
+frame of reference that describes time and space homogeneously,
+isotropically, and in a time-independent manner.
+
+<p>
+Conceptually, the
+physics of a system in an inertial frame has no causes external to
+the system. An inertial frame of reference may also be called an
+inertial reference frame, inertial frame, Galilean reference frame, or
+inertial space.
+
+<p>
+All inertial frames are in a state of constant, rectilinear motion
+with respect to one another; an accelerometer moving with any of them
+would detect zero acceleration. Measurements in one inertial frame can
+be converted to measurements in another by a simple transformation
+(the Galilean transformation in Newtonian physics and the Lorentz
+transformation in special relativity).
+In general relativity, in any
+region small enough for the curvature of spacetime and tidal forces
+to be negligible, one can find a set of inertial frames that
+approximately describe that region.
+
+<p>
+In a non-inertial reference frame in classical physics and special
+relativity, the physics of a system vary depending on the acceleration
+of that frame with respect to an inertial frame, and the usual
+physical forces must be supplemented by fictitious forces. In
+contrast, systems in general relativity don't have external causes,
+because of the principle of geodesic motion.
+
+<p>
+In classical physics, for example, a ball dropped towards the ground
+does not go exactly straight down because the Earth is rotating, which
+means the frame of reference of an observer on Earth is not
+inertial. The physics must account for the Coriolis effect&#8212;in this
+case thought of as a force&#8212;to predict the horizontal motion. Another
+example of such a fictitious force associated with rotating reference
+frames is the centrifugal effect, or centrifugal force. We will here,
+in addition to the abovementioned example of the Coriolis effect study
+a classic case in classical mechanics, namely Focoault's pendulum.
+
+<h2 id="___sec1" class="anchor">Galilean Transformations </h2>
+
+<p>
+In many of our cases till now we have restricted our attention to studying the motion of a
+particle (or a system of particles) as seen from an inertial frame of
+reference. An inertial reference frames moves
+at constant velocity with respect to one another. We can formalize
+this relationship as a coordinate transformation (known as a Galilean
+transformation) between the two frames as
+$$
+\boldsymbol{r} = \boldsymbol{r}' + \boldsymbol{v}t,
+$$
+
+the origin of the primed coordinate system is moving with constant
+velocity \( \boldsymbol{v} \)  within the unprimed coordinate system.
+
+<p>
+In an inertial frame, a particle moves with constant velocity (i.e.,
+has zero acceleration) if there are no forces acting on it. When we
+are not in an inertial frame, there will be spurious (or fictitious)
+accelerations arising from the acceleration of the reference
+frame. These effects can be seen in simple every-day situations such
+as sitting in a vehicle that is accelerating or rounding a corner. In
+these situations, loose objects will appear to accelerate relative to
+the observer or vehicle.
+
+<p>
+a Galilean transformation is used to transform between the coordinates
+of two reference frames which differ only by constant relative motion
+within the constructs of Newtonian physics. These transformations
+together with spatial rotations and translations in space and time
+form the inhomogeneous Galilean group. Without the translations in
+space and time the group is the homogeneous Galilean group.
+
+<h2 id="___sec2" class="anchor">Accelerating Frames </h2>
+
+<p>
+We consider thereafter the effect of uniformly accelerating reference
 frames. If a particle is observed in an inertial reference frame,
-which we will denote with a prime, Newton's third law applies
+which we will denote with a prime, Newton's second law applies
 
 $$
 \begin{equation}
@@ -175,7 +266,7 @@ last term acts like an additional apparent force. In fact, it acts
 like a contribution to the gravitational force which alters the
 acceleration of gravity by \( \delta\boldsymbol{g}=-\boldsymbol{a}_0 \).
 
-<h2 id="___sec1" class="anchor">Rotating Frames </h2>
+<h2 id="___sec3" class="anchor">Rotating Frames </h2>
 
 <p>
 If you are on Earth's surface and if your reference frame is fixed
@@ -248,7 +339,7 @@ which is one degree in latitude below the Equator. Chimborazo is about
 8500 ft lower than Everest when measured relative to sea level, but is
 7700 feet further from the center of the Earth.
 
-<h2 id="___sec2" class="anchor">Coriolis Force </h2>
+<h2 id="___sec4" class="anchor">Coriolis Force </h2>
 
 <p>
 Consider some vector \( \boldsymbol{A} \) according to an observer in a frame
@@ -354,7 +445,7 @@ rotating frame. Once an object is moving in a rotating frame, the
 particle is no longer being described in a single accelerating frame
 because at each point the acceleration is \( -\omega^2\boldsymbol{r} \).
 
-<h3 id="___sec3" class="anchor">Coriolis and falling Objects </h3>
+<h3 id="___sec5" class="anchor">Coriolis and falling Objects </h3>
 
 <p>
 A ball is dropped from a height $h=500$m above Minneapolis. Due to the
@@ -414,7 +505,7 @@ t&=&\sqrt{2h/g}=10.1~{\rm s},\\
 \end{eqnarray*}
 $$
 
-<h2 id="___sec4" class="anchor">The Foucault Pendulum </h2>
+<h2 id="___sec6" class="anchor">The Foucault Pendulum </h2>
 
 <p>
 The Foucault Pendulum is simply a regular pendulum moving in both

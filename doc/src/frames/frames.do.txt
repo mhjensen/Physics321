@@ -1,4 +1,4 @@
-TITLE: Rotating Coordinate Systems
+TITLE: Non-inertial Frames, Translation and Rotating Coordinate Systems
 AUTHOR: "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/" {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA & Department of Physics, University of Oslo, Norway
 AUTHOR: "Scott Pratt":"https://pa.msu.edu/profile/pratts/"  at Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA
 AUTHOR: "Carl Schmidt":"https://pa.msu.edu/profile/schmidt/" at Department of Physics and Astronomy, Michigan State University, USA
@@ -44,21 +44,57 @@ physical forces must be supplemented by fictitious forces. In
 contrast, systems in general relativity don't have external causes,
 because of the principle of geodesic motion.
 
-In classical physics,
-for example, a ball dropped towards the ground does not go exactly
-straight down because the Earth is rotating, which means the frame of
-reference of an observer on Earth is not inertial. The physics must
-account for the Coriolis effect—in this case thought of as a force—to
-predict the horizontal motion. Another example of such a fictitious
-force associated with rotating reference frames is the centrifugal
-effect, or centrifugal force. We will here, in addition to the abovementioned example of the Coriolis effect study a classic case in classical mechanics, namely Focoault's pendulum. 
+In classical physics, for example, a ball dropped towards the ground
+does not go exactly straight down because the Earth is rotating, which
+means the frame of reference of an observer on Earth is not
+inertial. The physics must account for the Coriolis effect—in this
+case thought of as a force—to predict the horizontal motion. Another
+example of such a fictitious force associated with rotating reference
+frames is the centrifugal effect, or centrifugal force. We will here,
+in addition to the abovementioned example of the Coriolis effect study
+a classic case in classical mechanics, namely Focoault's pendulum.
+
+
+===== Galilean Transformations =====
+
+In many of our cases till now we have restricted our attention to studying the motion of a
+particle (or a system of particles) as seen from an inertial frame of
+reference. An inertial reference frames moves
+at constant velocity with respect to one another. We can formalize
+this relationship as a coordinate transformation (known as a Galilean
+transformation) between the two frames as
+!bt
+\[
+\bm{r} = \bm{r}' + \bm{v}t,
+\]
+!et
+the origin of the primed coordinate system is moving with constant
+velocity $\bm{v}$  within the unprimed coordinate system. 
+
+
+In an inertial frame, a particle moves with constant velocity (i.e.,
+has zero acceleration) if there are no forces acting on it. When we
+are not in an inertial frame, there will be spurious (or fictitious)
+accelerations arising from the acceleration of the reference
+frame. These effects can be seen in simple every-day situations such
+as sitting in a vehicle that is accelerating or rounding a corner. In
+these situations, loose objects will appear to accelerate relative to
+the observer or vehicle.  
+
+a Galilean transformation is used to transform between the coordinates
+of two reference frames which differ only by constant relative motion
+within the constructs of Newtonian physics. These transformations
+together with spatial rotations and translations in space and time
+form the inhomogeneous Galilean group. Without the translations in
+space and time the group is the homogeneous Galilean group.
+
 
 
 ===== Accelerating Frames =====
 
-Here we again consider the effect of uniformly accelerating reference
+We consider thereafter the effect of uniformly accelerating reference
 frames. If a particle is observed in an inertial reference frame,
-which we will denote with a prime, Newton's third law applies
+which we will denote with a prime, Newton's second law applies
 
 !bt
 \begin{equation}
