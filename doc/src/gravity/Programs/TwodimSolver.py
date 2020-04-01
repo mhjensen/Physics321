@@ -36,15 +36,18 @@ n = ceil(tfinal/DeltaT)
 t = np.zeros(n)
 v = np.zeros((n,2))
 r = np.zeros((n,2))
+E = np.zeros(n)
 # Constants of the model
 m = 1.0   # mass, you can change these
 alpha = 1.0
 # Initial conditions as compact 2-dimensional arrays
-x0 = 0.1; y0= 0.1
+x0 = 0.5; y0= 0.
 r0 = np.array([x0,y0]) 
-v0 = np.array([0.0,0.5])
+v0 = np.array([0.0,1.0])
 r[0] = r0
 v[0] = v0
+rabs = sqrt(sum(r[0]*r[0]))
+E[0] = 0.5*m*(v[0,0]**2+v[0,1]**2)-alpha/rabs
 # Start integrating using the Velocity-Verlet  method
 for i in range(n-1):
     # Set up the acceleration
@@ -55,11 +58,12 @@ for i in range(n-1):
     rabs = sqrt(sum(r[i+1]*r[i+1]))
     anew = -alpha*r[i+1]/(rabs**3)
     v[i+1] = v[i] + 0.5*DeltaT*(a+anew)
+    E[i+1] = 0.5*m*(v[i+1,0]**2+v[i+1,1]**2)-alpha/rabs
     t[i+1] = t[i] + DeltaT
 # Plot position as function of time
 fig, ax = plt.subplots(3,1)
-ax[0].set_xlabel('time')
-ax[0].set_ylabel('x')
+ax[0].set_ylabel('y')
+ax[0].set_xlabel('x')
 ax[0].plot(r[:,0],r[:,1])
 ax[1].set_xlabel('time')
 ax[1].set_ylabel('y position')
@@ -71,4 +75,4 @@ ax[2].plot(t,r[:,1])
 fig.tight_layout()
 save_fig("2DimHOVV")
 plt.show()
-
+print(E)
