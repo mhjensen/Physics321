@@ -103,7 +103,7 @@ MathJax.Hub.Config({
 <center>[3] <b>Department of Physics and Astronomy, Michigan State University, USA</b></center>
 <br>
 <p>
-<center><h4>Mar 30, 2020</h4></center> <!-- date -->
+<center><h4>Apr 1, 2020</h4></center> <!-- date -->
 <br>
 
 <h2 id="___sec0">Introduction </h2>
@@ -983,6 +983,68 @@ plt<span style="color: #666666">.</span>show()
 <p>
 Try to change the initial value for \( r \) and see what kind of orbits you get.
 In order to test different energies, it can be useful to look at the plot of the effective potential discussed above.
+
+<p>
+However, for orbits different from a circle the above code would need modifications in order to allow us to display say an ellipse. For the latter, it is much easier to run our code in cartesian coordinates, as done here. In this code we test also energy conservation and see that it is conserved to numerical precision. The code here is a simple extension of the code we developed for homework 4.
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic"># Common imports</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">pandas</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">pd</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #666666">*</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+
+DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.01</span>
+<span style="color: #408080; font-style: italic">#set up arrays </span>
+tfinal <span style="color: #666666">=</span> <span style="color: #666666">10.0</span>
+n <span style="color: #666666">=</span> ceil(tfinal<span style="color: #666666">/</span>DeltaT)
+<span style="color: #408080; font-style: italic"># set up arrays</span>
+t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+v <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((n,<span style="color: #666666">2</span>))
+r <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((n,<span style="color: #666666">2</span>))
+E <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+<span style="color: #408080; font-style: italic"># Constants of the model</span>
+m <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>   <span style="color: #408080; font-style: italic"># mass, you can change these</span>
+alpha <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>
+<span style="color: #408080; font-style: italic"># Initial conditions as compact 2-dimensional arrays</span>
+x0 <span style="color: #666666">=</span> <span style="color: #666666">0.5</span>; y0<span style="color: #666666">=</span> <span style="color: #666666">0.</span>
+r0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([x0,y0]) 
+v0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">0.0</span>,<span style="color: #666666">1.0</span>])
+r[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> r0
+v[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> v0
+rabs <span style="color: #666666">=</span> sqrt(<span style="color: #008000">sum</span>(r[<span style="color: #666666">0</span>]<span style="color: #666666">*</span>r[<span style="color: #666666">0</span>]))
+E[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> <span style="color: #666666">0.5*</span>m<span style="color: #666666">*</span>(v[<span style="color: #666666">0</span>,<span style="color: #666666">0</span>]<span style="color: #666666">**2+</span>v[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>]<span style="color: #666666">**2</span>)<span style="color: #666666">-</span>alpha<span style="color: #666666">/</span>rabs
+<span style="color: #408080; font-style: italic"># Start integrating using the Velocity-Verlet  method</span>
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
+    <span style="color: #408080; font-style: italic"># Set up the acceleration</span>
+    rabs <span style="color: #666666">=</span> sqrt(<span style="color: #008000">sum</span>(r[i]<span style="color: #666666">*</span>r[i]))
+    a <span style="color: #666666">=</span>  <span style="color: #666666">-</span>alpha<span style="color: #666666">*</span>r[i]<span style="color: #666666">/</span>(rabs<span style="color: #666666">**3</span>)
+    <span style="color: #408080; font-style: italic"># update velocity, time and position using the Velocity-Verlet method</span>
+    r[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> r[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>v[i]<span style="color: #666666">+0.5*</span>(DeltaT<span style="color: #666666">**2</span>)<span style="color: #666666">*</span>a
+    rabs <span style="color: #666666">=</span> sqrt(<span style="color: #008000">sum</span>(r[i<span style="color: #666666">+1</span>]<span style="color: #666666">*</span>r[i<span style="color: #666666">+1</span>]))
+    anew <span style="color: #666666">=</span> <span style="color: #666666">-</span>alpha<span style="color: #666666">*</span>r[i<span style="color: #666666">+1</span>]<span style="color: #666666">/</span>(rabs<span style="color: #666666">**3</span>)
+    v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i] <span style="color: #666666">+</span> <span style="color: #666666">0.5*</span>DeltaT<span style="color: #666666">*</span>(a<span style="color: #666666">+</span>anew)
+    E[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> <span style="color: #666666">0.5*</span>m<span style="color: #666666">*</span>(v[i<span style="color: #666666">+1</span>,<span style="color: #666666">0</span>]<span style="color: #666666">**2+</span>v[i<span style="color: #666666">+1</span>,<span style="color: #666666">1</span>]<span style="color: #666666">**2</span>)<span style="color: #666666">-</span>alpha<span style="color: #666666">/</span>rabs
+    t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i] <span style="color: #666666">+</span> DeltaT
+<span style="color: #408080; font-style: italic"># Plot position as function of time</span>
+fig, ax <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots(<span style="color: #666666">3</span>,<span style="color: #666666">1</span>)
+ax[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;y&#39;</span>)
+ax[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;x&#39;</span>)
+ax[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>plot(r[:,<span style="color: #666666">0</span>],r[:,<span style="color: #666666">1</span>])
+ax[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;time&#39;</span>)
+ax[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;y position&#39;</span>)
+ax[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>plot(t,r[:,<span style="color: #666666">0</span>])
+ax[<span style="color: #666666">2</span>]<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;time&#39;</span>)
+ax[<span style="color: #666666">2</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;y position&#39;</span>)
+ax[<span style="color: #666666">2</span>]<span style="color: #666666">.</span>plot(t,r[:,<span style="color: #666666">1</span>])
+
+fig<span style="color: #666666">.</span>tight_layout()
+save_fig(<span style="color: #BA2121">&quot;2DimGravity&quot;</span>)
+plt<span style="color: #666666">.</span>show()
+<span style="color: #008000; font-weight: bold">print</span>(E)
+</pre></div>
 
 <h2 id="___sec8">Scattering and Cross Sections </h2>
 
