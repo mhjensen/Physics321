@@ -130,7 +130,7 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 ### Week 14, March 30-April 3, 2020
 - Monday: Wrapping up two-body scattering and begin non-inertial frames.  9th homework, due April 6. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch30.pdf and video of lecture https://mediaspace.msu.edu/media/t/0_tlsccwai
 - Wednesday: Non-inertial frames, accelerating frames (Taylor sections 9.1-9.2).  PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril1.pdf and video of lecture https://mediaspace.msu.edu/media/t/0_utc9il9y
-- Friday: Rotating non-inertial frames and Coriolis force (Taylor sections 9.3-9.6). PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril3.pdf and video of lecture https://mediaspace.msu.edu/media/t/tocome
+- Friday: Rotating non-inertial frames and Coriolis force (Taylor sections 9.3-9.6). PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril3.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_2v439nza
 ### Week 15, April  6-10, 2020
 - Monday: Rotating non-inertial frames, Coriolis force and Foucalt's pendulum (Taylor sections 9.7-9.9). Second midterm available.
 - Friday:  Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes.
