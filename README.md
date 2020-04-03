@@ -125,14 +125,14 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 - Friday:  Elliptical orbits, examples and two-body scattering problems. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch20.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_w9xc8az7
 ### Week 13, March 23-27, 2020
 - Monday: Central force problems, summary and discussion of two-body scattering problems. 8th homework, due March 30. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch23.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_t2l86862
-- Wednesday: Two-body scattering. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch25.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_d70czgce
-- Friday:  Two-body scattering. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch27.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_e1cs5784
+- Wednesday: Two-body scattering. Taylor chapter 14 covers parts of the material. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch25.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_d70czgce
+- Friday:  Two-body scattering (Taylor chapter 14). PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch27.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_e1cs5784
 ### Week 14, March 30-April 3, 2020
-- Monday: Wrapping up two-body scattering and begin Rotating Coordinate systems.  9th homework, due April 6. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch30.pdf and video of lecture https://mediaspace.msu.edu/media/t/0_tlsccwai
-- Wednesday: Coriolis and Foucalt's pendulum and rigid bodies. _Second midterm project, due April 13_. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril1.pdf and video of lecture https://mediaspace.msu.edu/media/t/0_utc9il9y
-- Friday: Coriolis and Foucalt's pendulum and rigid bodies.
+- Monday: Wrapping up two-body scattering and begin non-inertial frames.  9th homework, due April 6. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch30.pdf and video of lecture https://mediaspace.msu.edu/media/t/0_tlsccwai
+- Wednesday: Non-inertial frames, accelerating frames (Taylor sections 9.1-9.2).  PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril1.pdf and video of lecture https://mediaspace.msu.edu/media/t/0_utc9il9y
+- Friday: Rotating non-inertial frames and Coriolis force (Taylor sections 9.3-9.6). PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril3.pdf and video of lecture https://mediaspace.msu.edu/media/t/tocome
 ### Week 15, April  6-10, 2020
-- Monday: Variational Calculus, examples. Chapters 6 of Taylor
+- Monday: Rotating non-inertial frames, Coriolis force and Foucalt's pendulum (Taylor sections 9.7-9.9). Second midterm available.
 - Friday:  Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes.
 - Wednesday: Lagrangian formalism, examples
 - Friday: Lagrangian formalism. 
