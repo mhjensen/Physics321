@@ -229,10 +229,60 @@ Let us derive these terms, following much of the same procedure as we
 did for an accelerating reference frame. The figure here (to come) shows the two reference systems $S$ and $S_0$. 
 
 
+We define a general vector $\bm{A}$. It could represent the position,
+a given force, the velocity and other quantities of interest for
+studies of the equations of motion.
 
+We let this vector to be defined by three orthogonal (we assume motion in three dimensions) unit vectors $\bm{e}_i$, that is we have
+!bt
+\[
+\bm{A}=A_1\bm{e}_1+A_2\bm{e}_2+A_3\bm{e}_3=\sum_iA_i\bm{e}_i.
+\]
+!et
 
+These unit vectors are fixed in the rotating frame, that is their time
+derivatives are zero. However, for an observer in the inertial frame
+$S_0$, however these unit vectors are rotating and may thus have an
+explicit time dependence.
 
+Since we want to find an expression for the equations of motion in the inertial frame and the rotating frame, we need expressions for the time derivative of a vector $\bm{A}$ in these two frames. Since the unit vectors are assumed to be fixed in $S$, we have 
 
+!bt
+\[
+\dot{\bm{A}}_S=\sum_i\frac{dA_i}{dt}\bm{e}_i=\sum_i\dot{dA_i}\bm{e}_i.
+\]
+!et
+
+In the inertial frame $S_0$ we have
+
+!bt
+\[
+\dot{\bm{A}}_{S_0}=\sum_i\dot{dA_i}\bm{e}_i+\sum_i A_i\left(\dot{\bm{e}}_i\right)_{S_0}.
+\]
+!et
+
+We will show below that
+
+!bt
+\[
+\left(\dot{\bm{e}}_i\right)_{S_0}=\Omega\times\bm{e}_i,
+\]
+!et
+
+where $\Omega$ is the angular velocity (to be derived below).
+This means we can write the derivative of an arbitrary vector $\bm{A}$ in the inertial frame $S_0$ as (the vector is defined in the rotating frame),  
+
+!bt
+\[
+\dot{\bm{A}}_{S_0}=\sum_i\dot{dA_i}\bm{e}_i+\sum_i A_i\left(\dot{\bm{e}}_i\right)_{S_0}=\dot{\bm{A}}_S+\sum_i A_i(\Omega\times\bm{e}_i)=\dot{\bm{A}}_S+\bm{\Omega}\times\bm{A}. 
+\]
+!et
+
+This is a very useful relation which relates the derivative of any
+vector $\bm{A}$ measured in the inertial frame $S_0$ to the
+correspoding derivative in a rotating frame $S$.
+
+If we now let $\bm{A}$ be the position and the velocity vectors, we can derive the equations of motion in the rotating frame in terms of the same equations of motion in the inertial frame $S_0$. 
 
 
 
