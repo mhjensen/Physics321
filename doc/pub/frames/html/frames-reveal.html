@@ -336,20 +336,77 @@ Newton's law in the accelerating frame provided we correct the
 equation of motion with what is often called a fictitious force. This
 often also called an inertial force or an effective force.
 
-<h2 id="___sec3">Rotating Frames </h2>
-
 <p>
-<b>Euler's theorem:</b> text to come here. Add proof as well.
+<b>Add example about pendulum in train car</b>
+
+<h2 id="___sec3">Rotating Frames </h2>
 
 <p>
 If you are on Earth's surface and if your reference frame is fixed
 with the surface, this is an example of an accelerating frame, where
-the acceleration is \( \omega^2 r_{\perp} \), where
+the acceleration, as we will show below,  is \( \omega^2 r_{\perp} \), where
 \( r_{\perp}\equiv\sqrt{x^2+y^2} \), and \( \omega \) is the angular velocity
 of Earth's rotation. The acceleration is inward toward the axis of
 rotation, so the additional contribution to the apparent acceleration
 of gravity is outward in the \( x-y \) plane. In contrast the usual
 \( \boldsymbol{g} \) is radially inward pointing toward the origin.
+
+<p>
+We will now deal with motion in a rotating fram and relate this to an
+inertial frame. The outcome of our derivations will be effective
+forces (or inertial forces) like the abovementioned centrifugal and
+Coriolis forces.
+
+<p>
+For a reference frame that rotates with respect to an inertial frame,
+<b>Euler's theorem</b> is central here. It states that the most general
+displacement (motion) of a rigid body with a one point fixed (we
+normally approximate a rigid body with a mass center) is a rotation
+about some fixed axis. In different words, the most general motion of
+any body relative to a fixed point \( O \) is a rotation abotu some axis
+through the same point \( O \). This means that for a specific rotation
+about a given point \( O \) we only to specify the direction of the axis
+about which the rotation occurs with the corresponding angle of
+rotation. As we will see below, the direction of the angle of rotation
+can be specified by a unit vector \( \boldsymbol{e} \) in the rotating frame and
+the rate of rotation per unit time. The latter defines the angular
+velocity \( \Omega \). We will define these quantities more rigorously below.
+At the end of this section we will also prove Euler's theorem.
+
+<p>
+What we will show here is that Newton's laws for an object in the rotating fram is given by
+
+<p>&nbsp;<br>
+$$
+m\ddot{\boldsymbol{r}}_{S}=\boldsymbol{F}+m\boldsymbol{r}\times\dot{\boldsymbol{\Omega}}+2m\boldsymbol{v}_S\times\boldsymbol{\Omega}+m\left(\boldsymbol{\Omega}\times\boldsymbol{r}\right)\times\boldsymbol{\Omega}.
+$$
+<p>&nbsp;<br>
+
+<p>
+The first term to the right is the force we defined in the inertial
+system, that is \( m\ddot{\boldsymbol{r}}_{S_0}=\boldsymbol{F} \). The second term is the
+angular acceleration of the rotating reference frame, a quantity which
+in many cases is set to zero since we assume that the angular velocity
+is constant as function of time. The third terms is the Coriolis force, that
+is
+
+<p>&nbsp;<br>
+$$
+\boldsymbol{F}_{\mathrm{Coriolis}}=2m\boldsymbol{v}_S\times\boldsymbol{\Omega},
+$$
+<p>&nbsp;<br>
+
+while the last term is going to give us the standard centrifugal force
+
+<p>&nbsp;<br>
+$$
+\boldsymbol{F}_{\mathrm{Centrifugal}}=m\left(\boldsymbol{\Omega}\times\boldsymbol{r}\right)\times\boldsymbol{\Omega}.
+$$
+<p>&nbsp;<br>
+
+<p>
+Let us derive these terms, following much of the same procedure as we
+did for an accelerating reference frame.
 
 <p>
 In the rotating coordinate system (not an inertial frame), motion is
