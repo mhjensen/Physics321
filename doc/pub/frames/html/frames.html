@@ -305,7 +305,7 @@ velocity \( \Omega \). We will define these quantities more rigorously below.
 At the end of this section we will also prove Euler's theorem.
 
 <p>
-What we will show here is that Newton's laws for an object in the rotating fram is given by
+What we will show here is that Newton's laws for an object in the rotating frame is given by
 
 $$
 m\ddot{\boldsymbol{r}}_{S}=\boldsymbol{F}+m\boldsymbol{r}\times\dot{\boldsymbol{\Omega}}+2m\boldsymbol{v}_S\times\boldsymbol{\Omega}+m\left(\boldsymbol{\Omega}\times\boldsymbol{r}\right)\times\boldsymbol{\Omega}.
@@ -331,7 +331,8 @@ $$
 
 <p>
 Let us derive these terms, following much of the same procedure as we
-did for an accelerating reference frame. The figure here (to come) shows the two reference systems \( S \) and \( S_0 \).
+did for an accelerating reference frame. The figure here (to come)
+shows the two reference systems \( S \) and \( S_0 \).
 
 <p>
 We define a general vector \( \boldsymbol{A} \). It could represent the position,
@@ -339,7 +340,9 @@ a given force, the velocity and other quantities of interest for
 studies of the equations of motion.
 
 <p>
-We let this vector to be defined by three orthogonal (we assume motion in three dimensions) unit vectors \( \boldsymbol{e}_i \), that is we have
+We let this vector to be defined by three orthogonal (we assume motion
+in three dimensions) unit vectors \( \boldsymbol{e}_i \), that is we have
+
 $$
 \boldsymbol{A}=A_1\boldsymbol{e}_1+A_2\boldsymbol{e}_2+A_3\boldsymbol{e}_3=\sum_iA_i\boldsymbol{e}_i.
 $$
@@ -351,7 +354,10 @@ derivatives are zero. However, for an observer in the inertial frame
 explicit time dependence.
 
 <p>
-Since we want to find an expression for the equations of motion in the inertial frame and the rotating frame, we need expressions for the time derivative of a vector \( \boldsymbol{A} \) in these two frames. Since the unit vectors are assumed to be fixed in \( S \), we have 
+Since we want to find an expression for the equations of motion in the
+inertial frame and the rotating frame, we need expressions for the
+time derivative of a vector \( \boldsymbol{A} \) in these two frames. Since the
+unit vectors are assumed to be fixed in \( S \), we have
 
 $$
 \dot{\boldsymbol{A}}_S=\sum_i\frac{dA_i}{dt}\boldsymbol{e}_i=\sum_i\dot{dA_i}\boldsymbol{e}_i.
@@ -372,8 +378,10 @@ $$
 $$
 
 <p>
-where \( \Omega \) is the angular velocity (to be derived below).
-This means we can write the derivative of an arbitrary vector \( \boldsymbol{A} \) in the inertial frame \( S_0 \) as (the vector is defined in the rotating frame),  
+where \( \Omega \) is the angular velocity (to be derived below).  This
+means we can write the derivative of an arbitrary vector \( \boldsymbol{A} \) in
+the inertial frame \( S_0 \) as (the vector is defined in the rotating
+frame),
 
 $$
 \dot{\boldsymbol{A}}_{S_0}=\sum_i\dot{dA_i}\boldsymbol{e}_i+\sum_i A_i\left(\dot{\boldsymbol{e}}_i\right)_{S_0}=\dot{\boldsymbol{A}}_S+\sum_i A_i(\Omega\times\boldsymbol{e}_i)=\dot{\boldsymbol{A}}_S+\boldsymbol{\Omega}\times\boldsymbol{A}. 
@@ -385,7 +393,56 @@ vector \( \boldsymbol{A} \) measured in the inertial frame \( S_0 \) to the
 correspoding derivative in a rotating frame \( S \).
 
 <p>
-If we now let \( \boldsymbol{A} \) be the position and the velocity vectors, we can derive the equations of motion in the rotating frame in terms of the same equations of motion in the inertial frame \( S_0 \).
+If we now let \( \boldsymbol{A} \) be the position and the velocity vectors, we
+can derive the equations of motion in the rotating frame in terms of
+the same equations of motion in the inertial frame \( S_0 \).
+
+<p>
+Let us start with the position \( \boldsymbol{r} \).
+
+<p>
+We have
+$$
+\dot{\boldsymbol{r}}_{S_0}=\dot{\boldsymbol{r}}_S+\boldsymbol{\Omega}\times\boldsymbol{r}. 
+$$
+
+<p>
+If we define the velocities in the two  frames as 
+$$
+\boldsymbol{v}_{S_0}=\dot{\boldsymbol{r}}_{S_0},
+$$
+
+and
+$$
+\boldsymbol{v}_{S}=\dot{\boldsymbol{r}}_{S},
+$$
+
+we have then
+
+$$
+\dot{\boldsymbol{r}}_{S_0}=\boldsymbol{v}_{S_0}=\boldsymbol{v}_{S}+\boldsymbol{\Omega}\times\boldsymbol{r}. 
+$$
+
+<p>
+In order to find the equations of motion, we need the acceleration and
+thereby the time derivative of the last equation. The derivative of
+the angular velocity \( \Omega \) will turn in handy in these derivations
+(repeated applications of the chain rule again).
+The latter derivative is
+
+$$
+\dot{\boldsymbol{\Omega}}_{S_0}=\dot{\boldsymbol{\Omega}}_S+\boldsymbol{\Omega}\times\boldsymbol{\Omega}, 
+$$
+
+<p>
+which leads to (an expected result, why?) 
+
+$$
+\dot{\boldsymbol{\Omega}}_{S_0}=\dot{\boldsymbol{\Omega}}_S,
+$$
+
+<p>
+since \( +\boldsymbol{\Omega}\times\boldsymbol{\Omega}=0 \).
 
 <p>
 In the rotating coordinate system (not an inertial frame), motion is
