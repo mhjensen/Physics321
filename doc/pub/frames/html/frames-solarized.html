@@ -37,11 +37,12 @@ div { text-align: justify; text-justify: inter-word; }
 {'highest level': 2,
  'sections': [('Introduction', 2, None, '___sec0'),
               ('Galilean Transformations', 2, None, '___sec1'),
-              ('Accelerating Frames', 2, None, '___sec2'),
+              ('Accelerating Frames (No Rotation)', 2, None, '___sec2'),
               ('Rotating Frames', 2, None, '___sec3'),
               ('Coriolis Force', 2, None, '___sec4'),
               ('Coriolis and falling Objects', 3, None, '___sec5'),
-              ('The Foucault Pendulum', 2, None, '___sec6')]}
+              ('Accelerating and Rotating Frames', 2, None, '___sec6'),
+              ('The Foucault Pendulum', 3, None, '___sec7')]}
 end of tocinfo -->
 
 <body>
@@ -92,7 +93,7 @@ MathJax.Hub.Config({
 <center>[3] <b>Department of Physics and Astronomy, Michigan State University, USA</b></center>
 <br>
 <p>
-<center><h4>Apr 1, 2020</h4></center> <!-- date -->
+<center><h4>Apr 5, 2020</h4></center> <!-- date -->
 <br>
 
 <h2 id="___sec0">Introduction </h2>
@@ -151,12 +152,13 @@ a classic case in classical mechanics, namely Focoault's pendulum.
 <h2 id="___sec1">Galilean Transformations </h2>
 
 <p>
-In many of our cases till now we have restricted our attention to studying the motion of a
-particle (or a system of particles) as seen from an inertial frame of
-reference. An inertial reference frames moves
-at constant velocity with respect to one another. We can formalize
-this relationship as a coordinate transformation (known as a Galilean
-transformation) between the two frames as
+In many of our cases till now we have restricted our attention to
+studying the motion of a particle (or a system of particles) as seen
+from an inertial frame of reference. An inertial reference frames
+moves at constant velocity with respect to one another. We can
+formalize this relationship as a coordinate transformation (known as a
+Galilean transformation) between the two frames as
+
 $$
 \boldsymbol{r} = \boldsymbol{r}' + \boldsymbol{v}t,
 $$
@@ -170,7 +172,10 @@ has zero acceleration) if there are no forces acting on it. When we
 are not in an inertial frame, there will be spurious (or fictitious)
 accelerations arising from the acceleration of the reference
 frame. These effects can be seen in simple every-day situations such
-as sitting in a vehicle that is accelerating or rounding a corner. In
+as sitting in a vehicle that is accelerating or rounding a corner. Or think of yourself sitting in a seat of an aircraft that accelerates rapidly during takeoff. You feel a force which pushes you back in the seat. Similarly, if you stand in a bus which suddenly brakes (negative acceleration), you feel a force which may make you fall forward unless you hold yourself.
+
+<p>
+In
 these situations, loose objects will appear to accelerate relative to
 the observer or vehicle.
 
@@ -182,47 +187,85 @@ together with spatial rotations and translations in space and time
 form the inhomogeneous Galilean group. Without the translations in
 space and time the group is the homogeneous Galilean group.
 
-<h2 id="___sec2">Accelerating Frames </h2>
+<p>
+Our next step is thus to study an accelerating frame. Thereafter we will study reference frames that are rotating. This will introduce forces like the Coriolis force and the well-known centrifugal force. We will use these to study again an object which falls towards the Earth (the Earth rotates around its axis). This will lead to a correction to the object's  acceleration twoards the Earth.
 
 <p>
-We consider thereafter the effect of uniformly accelerating reference
-frames. If a particle is observed in an inertial reference frame,
-which we will denote with a prime, Newton's second law applies
+Finally, we bring together acceleration and rotation and end the discussion here with a classic in classical mechanics, namely Focault's pendulum.
+
+<h2 id="___sec2">Accelerating Frames (No Rotation) </h2>
+
+<p>
+We consider first the effect of uniformly accelerating reference
+frames.  We will hereafter label this frame with a subscript
+\( S \). Assume now that this reference systems accelerates with an
+acceleration \( \boldsymbol{a}_{S_0} \) relative to an inertial reference frame, which
+we will label with a subscript \( S_0 \).  The accelerating frame has a
+velocity \( \boldsymbol{v}_{S_0} \) with respect to the inertial frame.
+
+<p>
+The figure here (to be added) shows the relation between the two
+frames. The position of an object in frame \( S \) relative to \( S_0 \) is
+labeled as \( \boldsymbol{r}_{S_0} \). Seen from this inertial frame, an object in
+the accelerating frame obeys Newton's second law
 
 $$
 \begin{equation}
-m\frac{d^2\boldsymbol{r}'}{dt^2}=\boldsymbol{F}.
+m\frac{d^2\boldsymbol{r}_{S_)}}{dt^2}=\boldsymbol{F}.
 \label{_auto1}
 \end{equation}
 $$
 
 <p>
-Now, if we have a second coordinate system,
+Here \( \boldsymbol{F} \) is the net force on an object in the accelerating frame seen from the inertial frame.
+
+<p>
+If we on the other hand wish to study the motion of this object (say a
+ball in an accelerating car) relative to the accelerating frame, we
+need to define its position relative to this frame. We label this
+position as \( \boldsymbol{r}_{S} \).
+
+<p>
+Using the definition of velocity as the time derivative of position
+and the standard vector addition of velocities, we can define the
+velocity relative to \( S_0 \) as
 
 $$
-\begin{equation}
-\boldsymbol{r}=\boldsymbol{r}'-\boldsymbol{r}_0,~~~~\boldsymbol{r_0}=\frac{1}{2}\boldsymbol{a}_0t^2.
-\label{_auto2}
-\end{equation}
+\dot{\boldsymbol{r}}_{S_0}=\dot{\boldsymbol{r}}_{S}+\boldsymbol{v}_{S_0}.
 $$
 
 <p>
-We would see that
+The left hand side in the last equation defines the object's velocity
+relative to the inertial frame. The right hand side says this is the
+object's velocity relative to the accelerating frame plus the velocity
+of the accelerating frame with respect to the inertial frame. If we
+now take the second derivative of the above equation,
+we have the corresponding accelerations
 
 $$
-\begin{equation}
-m\frac{d^2\boldsymbol{r}}{dt^2}=\boldsymbol{F}-m\boldsymbol{a}_0.
-\label{_auto3}
-\end{equation}
+\ddot{\boldsymbol{r}}_{S_0}=\ddot{\boldsymbol{r}}_{S}+\boldsymbol{a}_{S_0}.
 $$
 
 <p>
-Here \( \boldsymbol{a}_0 \) is the acceleration of the coordinate system. The
-last term acts like an additional apparent force. In fact, it acts
-like a contribution to the gravitational force which alters the
-acceleration of gravity by \( \delta\boldsymbol{g}=-\boldsymbol{a}_0 \).
+Multiplying with the mass of a given object, we can rewrite Newton's
+law in the accelerating frame as
+
+$$
+m\ddot{\boldsymbol{r}}_{S}=\boldsymbol{F}-\boldsymbol{a}_{S_0}.
+$$
+
+<p>
+We see that we have again Netwon's law except that we added a
+correction which defines an effective acceleration compared to the
+equation seen in the inertial frame. We can thus continue to use
+Newton's law in the accelerating frame provided we correct the
+equation of motion with what is often called a fictitious force. This
+often also called an inertial force or an effective force.
 
 <h2 id="___sec3">Rotating Frames </h2>
+
+<p>
+<b>Euler's theorem:</b> text to come here. Add proof as well.
 
 <p>
 If you are on Earth's surface and if your reference frame is fixed
@@ -243,7 +286,7 @@ there is a contribution to the effective potential,
 $$
 \begin{equation}
 \delta U_{\rm eff}=-\frac{m}{2}\omega^2r_\perp^2=-\frac{m}{2}r^2\omega^2\sin^2\theta,
-\label{_auto4}
+\label{_auto2}
 \end{equation}
 $$
 
@@ -253,7 +296,7 @@ where \( \theta \) is the polar angle, measured from the north pole. If the true
 $$
 \begin{equation}
 U_{\rm eff}=mgh-m\frac{1}{2}\omega^2(R+h)^2\sin^2\theta.
-\label{_auto5}
+\label{_auto3}
 \end{equation}
 $$
 
@@ -374,7 +417,7 @@ represents the centrifugal force. Using the vector identity,
 $$
 \begin{equation}
 -\boldsymbol{\omega}\times(\boldsymbol{\omega}\times\boldsymbol{r})=\omega^2\boldsymbol{r}+(\omega\cdot\boldsymbol{r})\boldsymbol{\omega}.
-\label{_auto6}
+\label{_auto4}
 \end{equation}
 $$
 
@@ -384,7 +427,7 @@ If \( \boldsymbol{\omega} \) is in the \( z \) direction,
 $$
 \begin{equation}
 -\boldsymbol{\omega}\times(\boldsymbol{\omega}\times\boldsymbol{r})=\omega^2(x\hat{x}+y\hat{y}).
-\label{_auto7}
+\label{_auto5}
 \end{equation}
 $$
 
@@ -461,7 +504,12 @@ t&=&\sqrt{2h/g}=10.1~{\rm s},\\
 \end{eqnarray*}
 $$
 
-<h2 id="___sec6">The Foucault Pendulum </h2>
+<h2 id="___sec6">Accelerating and Rotating Frames </h2>
+
+<p>
+We can now bring together an accelerating frame with a rotational frame.
+
+<h3 id="___sec7">The Foucault Pendulum </h3>
 
 <p>
 The Foucault Pendulum is simply a regular pendulum moving in both
