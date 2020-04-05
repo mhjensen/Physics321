@@ -1,0 +1,182 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="PHY321: Classical Mechanics 1">
+
+<title>PHY321: Classical Mechanics 1</title>
+
+
+<link href="https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_styles/style_solarized_box/css/solarized_light_code.css" rel="stylesheet" type="text/css" title="light"/>
+<script src="https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_styles/style_solarized_box/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://thomasf.github.io/solarized-css/solarized-light.min.css" rel="stylesheet">
+<style type="text/css">
+h1 {color: #b58900;}  /* yellow */
+/* h1 {color: #cb4b16;}  orange */
+/* h1 {color: #d33682;}  magenta, the original choice of thomasf */
+code { padding: 0px; background-color: inherit; }
+pre {
+  border: 0pt solid #93a1a1;
+  box-shadow: none;
+}
+
+div { text-align: justify; text-justify: inter-word; }
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 3,
+ 'sections': [('Practicalities about  homeworks and projects',
+               3,
+               None,
+               '___sec0'),
+              ('Introduction to the second midterm project, total score 100 '
+               'points',
+               3,
+               None,
+               '___sec1'),
+              ('Part 1, a paper and pencil exercise with another type of '
+               'potential',
+               3,
+               None,
+               '___sec2'),
+              ('Part 2, making a program for the solar system',
+               3,
+               None,
+               '___sec3'),
+              ('Part 3, Bonus part (30pt), testing conservation of angular '
+               'momentum',
+               3,
+               None,
+               '___sec4')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1>PHY321: Classical Mechanics 1</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Second midterm project, due Friday April 17 -->
+
+<center>
+<b>Second midterm project, due Friday April 17</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Apr 5, 2020</h4></center> <!-- date -->
+<br>
+
+<h3 id="___sec0">Practicalities about  homeworks and projects </h3>
+
+<ol>
+<li> You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. <b>Remember to write your name(s)</b>!</li>
+<li> How do I(we)  hand in?  Due to the extraordinary situation we are in now, the midterm should be handed in fully via D2L. You can scan your handwritten notes and upload to D2L or you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical part should always be handed in as a jupyter notebook.</li>
+</ol>
+
+<h3 id="___sec1">Introduction to the second midterm project, total score 100 points </h3>
+
+<p>
+The relevant reading background is
+
+<ol>
+<li> chapter 8 of  Taylor.</li>
+<li> Lecture notes on central forces and two-body problems</li>
+<li> Homeworks 4, 7, 8 and 9</li>
+</ol>
+
+<h3 id="___sec2">Part 1, a paper and pencil exercise with another type of potential </h3>
+
+<h3 id="___sec3">Part 2, making a program for the solar system </h3>
+
+<p>
+We will use so-called astronomical units when rewriting our equations. 
+Using astronomical units (AU as abbreviation)it means that 
+one astronomical unit of length, known as 1 AU, is the average distance between the Sun and Earth, that is
+\( 1 \) AU = \( 1.5\times 10^{11} \) m.  It can also be convenient to use years instead of seconds since years match
+better the time evolution of the solar system. The mass of the Sun is \( M_{\mathrm{sun}}=M_{\odot}=2\times 10^{30} \) kg. The masses of all relevant planets and their distances from the sun are listed in the table here in kg and AU.
+
+<p>
+<table border="1">
+<thead>
+<tr><th align="center"> Planet</th> <th align="center">                   Mass in kg                  </th> <th align="center">Distance to  sun in AU</th> </tr>
+</thead>
+<tbody>
+<tr><td align="center">   Earth      </td> <td align="center">   \( M_{\mathrm{Earth}}=6\times 10^{24} \) kg        </td> <td align="center">   1AU                       </td> </tr>
+<tr><td align="center">   Jupiter    </td> <td align="center">   \( M_{\mathrm{Jupiter}}=1.9\times 10^{27} \) kg    </td> <td align="center">   5.20 AU                   </td> </tr>
+<tr><td align="center">   Mars       </td> <td align="center">   \( M_{\mathrm{Mars}}=6.6\times 10^{23} \) kg       </td> <td align="center">   1.52 AU                   </td> </tr>
+<tr><td align="center">   Venus      </td> <td align="center">   \( M_{\mathrm{Venus}}=4.9\times 10^{24} \) kg      </td> <td align="center">   0.72 AU                   </td> </tr>
+<tr><td align="center">   Saturn     </td> <td align="center">   \( M_{\mathrm{Saturn}}=5.5\times 10^{26} \) kg     </td> <td align="center">   9.54 AU                   </td> </tr>
+<tr><td align="center">   Mercury    </td> <td align="center">   \( M_{\mathrm{Mercury}}=3.3\times 10^{23} \) kg    </td> <td align="center">   0.39 AU                   </td> </tr>
+<tr><td align="center">   Uranus     </td> <td align="center">   \( M_{\mathrm{Uranus}}=8.8\times 10^{25} \) kg     </td> <td align="center">   19.19 AU                  </td> </tr>
+<tr><td align="center">   Neptun     </td> <td align="center">   \( M_{\mathrm{Neptun}}=1.03\times 10^{26} \) kg    </td> <td align="center">   30.06 AU                  </td> </tr>
+<tr><td align="center">   Pluto      </td> <td align="center">   \( M_{\mathrm{Pluto}}=1.31\times 10^{22} \) kg     </td> <td align="center">   39.53 AU                  </td> </tr>
+</tbody>
+</table>
+<p>
+Pluto is no longer considered  a planet, but we add it here for historical reasons. It is optional in this project to include Pluto and eventual moons.
+
+<p>
+In setting up the equations we can limit ourselves to a co-planar motion and use only the \( x \) and \( y \) coordinates. But you should feel free to extend your equations to three dimensions, it is not very difficult and the data from NASA are all in three dimensions.
+
+<p>
+<a href="http://www.nasa.gov/index.html" target="_blank">NASA</a> has an excellent site at <a href="http://ssd.jpl.nasa.gov/horizons.cgi#top" target="_blank"><tt>http://ssd.jpl.nasa.gov/horizons.cgi#top</tt></a>.
+From there you can extract initial conditions in order to start your differential equation solver.
+At the above website you need to change from <b>OBSERVER</b> to <b>VECTOR</b> and then write in the planet you are interested in.
+The generated data contain the \( x \), \( y \) and \( z \) values as well as their corresponding velocities. The velocities are in units of AU per day.
+Alternatively they can be obtained in terms of km and km/s.
+
+<p>
+Finally, using our Verlet solver, we carry out a real three-body calculation where all three systems, 
+the Earth, Jupiter and the Sun are in motion. To do this, choose the center-of-mass position of the three-body system as 
+the origin rather than the position of the sun. Give the Sun an initial velocity which makes the total momentum of the system exactly zero (the center-of-mass will remain fixed). Compare these results with those from the previous exercise and comment your results. Extend your program to include all planets in the solar system (if you have time, you can also include the various moons, but it is not required) and discuss your results. Use the above NASA link  to set up the initial positions and velocities for all planets.
+
+<h3 id="___sec4">Part 3, Bonus part (30pt), testing conservation of angular momentum  </h3>
+
+<p>
+Check also for the case of a circular orbit that both the kinetic and the potential energies are conserved.
+Check also if the  angular momentum is conserved. Explain why these quantities
+should be conserved.
+
+<p>
+
+<!-- ------------------- end of main content --------------- -->
+
+
+</body>
+</html>
+    
+
