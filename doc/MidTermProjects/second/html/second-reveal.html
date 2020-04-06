@@ -146,7 +146,7 @@ MathJax.Hub.Config({
 
 <br>
 <p>&nbsp;<br>
-<center><h4>Apr 5, 2020</h4></center> <!-- date -->
+<center><h4>Apr 6, 2020</h4></center> <!-- date -->
 <br>
 
 <h3 id="___sec0">Practicalities about  homeworks and projects </h3>
@@ -159,6 +159,19 @@ MathJax.Hub.Config({
 <h3 id="___sec1">Introduction to the second midterm project, total score 100 points </h3>
 
 <p>
+In this midterm we will attempt at writing a program that simulates
+the solar system. We start with the Earth-Sun system we studied in
+homework 4 and study elliptical orbits and their properties. We test
+also elliptical orbits and their dependence on powers \( \beta \) of
+\( r^{\beta} \). We will test other aspects of the Earth-Sun system and
+link these to the theoretical discussion on two-body problems with
+central forces. Here we will need the results from homeworks 7 and 8.
+
+<p>
+Thereafter, based on the three-body problem studied in homework 9, we
+attempt at making a code which simulates the solar system.
+
+<p>
 The relevant reading background is
 
 <ol>
@@ -167,7 +180,68 @@ The relevant reading background is
 <p><li> Homeworks 4, 7, 8 and 9</li>
 </ol>
 
-<h3 id="___sec2">Part 1, a paper and pencil exercise with another type of potential </h3>
+<h3 id="___sec2">Part 1, the inverse-square law and the stability of planetary orbits </h3>
+
+<p>
+In homework 8 (exercises 2 and 3) we studied an attractive potential
+<p>&nbsp;<br>
+$$
+V(r)=-\alpha/r,
+$$
+<p>&nbsp;<br>
+
+<p>
+where the quantity \( r \) is the absolute value of the relative position and \( \alpha \) is a constant.
+
+<p>
+When we rewrote the equations of motion in polar coordinates, the analytical solution to the radial equation of motion was
+<p>&nbsp;<br>
+$$
+r(\phi) = \frac{c}{1+\epsilon\cos{(\phi)}},
+$$
+<p>&nbsp;<br>
+
+where \( c=L^2/\mu\alpha \), with
+the reduced mass \( \mu \) and the angular momentum \( L \), as
+discussed during the lectures. With the transformation of a two-body
+problem to the center-of-mass frame, the actual equations look like an
+<em>effective</em> one-body problem. The energy of the system is \( E \) and the
+minimum of the effective potential is \( r_{\rm min} \).
+
+<p>
+The quantity \( \epsilon \) is what we called the eccentricity. Since we will mainly study bounded orbits,
+we have \( 0 \le \epsilon < 1 \).
+
+<p>
+In this part we will limit ourselves to the Earth-Sun system we studied in homework 4. You can reuse your code with either the Velocity-Verlet or the Euler-Cromer algorithms from homework 4.
+
+<p>
+This means also that \( \alpha=GM_{\odot}M_{\mathrm{Earth}} \). We will use \( \alpha \) as a shorthand in the equations here. Keep in mind that in homework 4 you scaled \( GM_{\odot}=4\pi^2 \) in our ycode. When comparing your numerical results with your analytical results here, you need to keep track of this.
+
+<ul>
+<p><li> 1a (10pt) Show that the semimajor axis of the ellipse is \( a=L^2/(\mu\alpha(1-\epsilon^2) \). Make a drawing of an ellipse with the semi-major and semi-minor axes and the foci of the ellipse. We would place the sun in one of the foci.</li>
+
+<p><li> 1b (10pt) Show that the closest point to the Sun (the perihelion) is \( r_{\mathrm{min}}=a(1-\epsilon) \) and the farthest point (aphelion) is \( r_{\mathrm{min}}=a(1+\epsilon) \). Here \( a \) is the semi-major axis.</li>
+<p><li> 1c (10pt) Angular momentum is conserved for a central and symmetric force.  From the expression of the semi-major axis we have that \( L=\sqrt{a\mu\alpha(1-\epsilon^2)} \). Use conservation of angular momentum with \( \mu r_{\mathrm{min}}v_{\mathrm{max}} \) and \( \mu r_{\mathrm{max}}v_{\mathrm{min}} \) to show that</li>
+</ul>
+<p>&nbsp;<br>
+$$
+v_{\mathrm{min}}=\sqrt{GM_{\odot}}\sqrt{\frac{(1+\epsilon)}{a(1-\epsilon)}(1+\frac{M_{\mathrm{Earth}}}{M_{\odot}})},
+$$
+<p>&nbsp;<br>
+
+and 
+<p>&nbsp;<br>
+$$
+v_{\mathrm{max}}=\sqrt{GM_{\odot}}\sqrt{\frac{(1-\epsilon)}{a(1+\epsilon)}(1+\frac{M_{\mathrm{Earth}}}{M_{\odot}})},
+$$
+<p>&nbsp;<br>
+
+
+<ul>
+<p><li> 1d (10pt) Use now your code from homework 4 (in cartesian coordinates) and play around with 2-3 different values of \( \epsilon \) and \( L \) and set the initial conditions for velocity and position using the above min and max positions and velocities. Plot \( x \) versus \( y \) as function of time and discuss the orbits you get. Try to extract the perihelion from your numerical results. You could start with a circular orbit setting \( \epsilon=0 \). For the Earth, the orbit is close to circular and at perihelion, the Earth's center is about 0.98329 astronomical units (AU) or 147,098,070 km from the Sun's center. The outer planets have more elliptical orbits. For example, Mars has its perihelion at 206,655,215 km and its apehelion at 249,232,432 km. For Earth, the orbital eccentricity is \( \epsilon\approx 0.0167 \).</li> 
+<p><li> 1e (10pt) Till now we have assumed that we have an inverse-square force \( F(r) = -\alpha/r^2 \). Let us rewrite this force as \( F(r) = -\alpha/r^{\beta} \) with \( \beta=[2,2.01,2.10,2.5,3.0,3.5] \). Run your Sun-Earth code from homework 4 with these values of \( \beta \) and plot \( x \) versus \( y \). Discuss your results. Could you use observations of planetary motion to determine by what amount Nature deviates from a perfect inverse-square law? Here you run with just one set of initial values.</li> 
+</ul>
 
 <h3 id="___sec3">Part 2, making a program for the solar system </h3>
 
@@ -219,6 +293,33 @@ the origin rather than the position of the sun. Give the Sun an initial velocity
 Check also for the case of a circular orbit that both the kinetic and the potential energies are conserved.
 Check also if the  angular momentum is conserved. Explain why these quantities
 should be conserved.
+
+<h3 id="___sec5">Exercise 3 (20pt) Inverse-square force </h3>
+
+<p>
+Consider again the same effective potential as in 2. This leads to an attractive inverse-square-law force, \( F=-\alpha/r^2 \). Consider a particle of mass \( m \) with angular momentum \( L \). Taylor sections 8.4-8.7 are relevant background material.  See also the harmonic oscillator potential from hw7. The equation of motion for the radial degrees of freedom is (see also hw7) in the center-of-mass frame in two dimensions with \( x=r\cos{(\phi)} \) and \( y=r\sin{(\phi)} \) and
+\( r\in [0,\infty) \), \( \phi\in [0,2\pi] \) and \( r=\sqrt{x^2+y^2} \) are given by
+<p>&nbsp;<br>
+$$
+\ddot{r}=-\frac{1}{m}\frac{dV(r)}{dr}+r\dot{\phi}^2,
+$$
+<p>&nbsp;<br>
+
+and
+<p>&nbsp;<br>
+$$
+\dot{\phi}=\frac{L}{m r^2}.
+$$
+<p>&nbsp;<br>
+
+Here \( V(r) \) is any central force which depends only on the relative coordinate.
+
+<ul>
+<p><li> 3a (5pt)  Find the radius of a circular orbit by solving for the position of the minimum of the effective potential.</li> 
+<p><li> 3b (5pt) At the minimum, the radial velocity is zero and it is only the <a href="https://en.wikipedia.org/wiki/Centripetal_force" target="_blank">centripetal velocity</a> which is nonzero. This implies that \( \ddot{r}=0 \).  What is the angular frequency, \( \dot{\theta} \), of the orbit? Solve this by setting \( \ddot{r}=0=F/m+\dot{\theta}^2r \).</li>
+<p><li> 3c (5pt) Find the effective spring constant for the particle at the minimum.</li>
+<p><li> 3d (5pt) What is the angular frequency for small vibrations about the minimum? How does this compare with the answer to (3b)?</li>
+</ul>
 </section>
 
 
