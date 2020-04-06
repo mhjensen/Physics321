@@ -51,7 +51,7 @@ Here you will find a general overview of the course, with learning outcomes, tea
 |------|-----|
 |Homeworks, 10 in total and due Wednesdays the week after | 20% |
 | First Midterm Project, due Wednesday March  11 | 25% |
-| Second  Midterm Project, due Monday April 13 | 25% |
+| Second  Midterm Project, due Friday 17| 25% |
 | Final Exam project, due May 1 |  30%  |
 | Extra Credit Assignment (Due Friday April 24)| 10% |
 
@@ -132,7 +132,7 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 - Wednesday: Non-inertial frames, accelerating frames (Taylor sections 9.1-9.2).  PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril1.pdf and video of lecture https://mediaspace.msu.edu/media/t/0_utc9il9y
 - Friday: Rotating non-inertial frames and Coriolis force (Taylor sections 9.3-9.6). PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril3.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_2v439nza
 ### Week 15, April  6-10, 2020
-- Monday: Rotating non-inertial frames, Coriolis force and Foucalt's pendulum (Taylor sections 9.7-9.9). Second midterm available.
+- Monday: Rotating non-inertial frames, Coriolis force and Foucalt's pendulum (Taylor sections 9.7-9.9). Second midterm available, due Fryday April 17
 - Friday:  Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes.
 - Wednesday: Lagrangian formalism, examples
 - Friday: Lagrangian formalism. 
