@@ -57,21 +57,25 @@ a classic case in classical mechanics, namely Focoault's pendulum.
 
 ===== Galilean Transformations =====
 
-In many of our cases till now we have restricted our attention to
-studying the motion of a particle (or a system of particles) as seen
-from an inertial frame of reference. An inertial reference frames
-moves at constant velocity with respect to one another. We can
-formalize this relationship as a coordinate transformation (known as a
-Galilean transformation) between the two frames, one labeled $S_0$ and the other one labeled $S$.
+In many of the examples studied till now we have restricted our
+attention to the motion of a particle (or a system of particles) as
+seen from an inertial frame of reference. An inertial reference frame
+moves at constant velocity with respect to other reference frames. We
+can formalize this relationship as a coordinate transformation (known
+as a Galilean transformation) between say two given frames, one
+labeled $S_0$ and the other one labeled $S$. In our discussions here we will refer to the frame $S_0$ as the reference frame. 
 
-We could consider for example an object in a car which moves with a
+We could consider for example an object in a car, where the car  moves with a
 constant velocity with respect to the system $S_0$. We then throw this
-object up in the air.  We denote the position of this object in the
-car relative to the car's frame as $\bm{r}_S(t)$. We have included the
+object up in the air and study it's motion with respect to the two chosen frames.
+We denote the position of this object in the
+car relative to the car's frame as $\bm{r}_S(t)$. We have included an explicit 
 time dependence here. The position of the car relative to the
 reference frame $S_0$ is $\bm{R}(t)$ and the position of the object in
-the car relative to $S_0$ is $\bm{r}_{S_0}(t)$. The following relations
-links the various variables that describe the object in the two frames
+the car relative to $S_0$ is $\bm{r}_{S_0}(t)$.
+
+The following relations between the positions
+link the various variables that describe the object in the two frames
 
 !bt
 \[
@@ -80,10 +84,10 @@ links the various variables that describe the object in the two frames
 !et
 
 We will stay with Newtonian mechanics, meaning that we do not consider
-relastici effects. This means also that the time we measure in $S_0$
+relatistic effects. This means also that the time we measure in $S_0$
 is the same as the time we measure in $S$. This approximation is
 reasonable as long as the two frames do not move very fast relative to
-each other.  It means that the
+each other. 
 
 We can then compute the time derivatives and obtain the corresponding velocities
 
@@ -103,7 +107,7 @@ or
 
 with $\bm{u}=\dot{\bm{R}}$. 
 
-If our system $S$ moves at constant velocity, we have that the accelerations in two systems equal eqch other since $\ddot{\bm{R}}=0$ and we have 
+If our system $S$ moves at constant velocity, we have that the accelerations in the two systems equal each other since $\ddot{\bm{R}}=0$ and we have 
 
 !bt
 \[
@@ -111,11 +115,8 @@ If our system $S$ moves at constant velocity, we have that the accelerations in 
 \]
 !et
 
-=== Throwing a ball in a moving car ===
-
-_Example_ to come with code as well.
-
-In an inertial frame, a particle moves with constant velocity (i.e.,
+The above equations are examples of what we call a homogeneous Galilean transformation.
+In an inertial frame, an object  moves with constant velocity (i.e.,
 has zero acceleration) if there are no forces acting on it. When we
 are not in an inertial frame, there will be spurious (or fictitious)
 accelerations arising from the acceleration of the reference
@@ -129,12 +130,6 @@ you hold yourself.
 In these situations, loose objects will appear to accelerate relative
 to the observer or vehicle.
 
-A Galilean transformation is used to transform between the coordinates
-of two reference frames which differ only by constant relative motion
-within the constructs of Newtonian physics. These transformations
-together with spatial rotations and translations in space and time
-form the inhomogeneous Galilean group. Without the translations in
-space and time the group is the homogeneous Galilean group.
 
 Our next step is thus to study an accelerating frame. Thereafter we
 will study reference frames that are rotating. This will introduce
@@ -207,7 +202,7 @@ m\ddot{\bm{r}}_{S}=\bm{F}-\bm{a}_{S_0}.
 \]
 !et
 
-We see that we have again Netwon's law except that we added a
+We see that we have again Newton's second law except that we added a
 correction which defines an effective acceleration compared to the
 equation seen in the inertial frame. We can thus continue to use
 Newton's law in the accelerating frame provided we correct the
@@ -221,17 +216,17 @@ _Add example about pendulum in train car_
 
 If you are on Earth's surface and if your reference frame is fixed
 with the surface, this is an example of an accelerating frame, where
-the acceleration, as we will show below,  is $\omega^2 r_{\perp}$, where
-$r_{\perp}\equiv\sqrt{x^2+y^2}$, and $\omega$ is the angular velocity
+the acceleration, as we will show below,  is $\Omega^2 r$, where
+$r\equiv\sqrt{x^2+y^2}$, and $\Omega$ is the angular velocity
 of Earth's rotation. The acceleration is inward toward the axis of
 rotation, so the additional contribution to the apparent acceleration
 of gravity is outward in the $x-y$ plane. In contrast the usual
-$\bm{g}$ is radially inward pointing toward the origin.
+acceleration $\bm{g}$ is radially inward pointing toward the origin.
 
 We will now deal with motion in a rotating fram and relate this to an
 inertial frame. The outcome of our derivations will be effective
-forces (or inertial forces) like the abovementioned centrifugal and
-Coriolis forces.
+forces (or inertial forces) like the abovementioned acceleration (from the centrifugal force) and
+the Coriolis force term.
 
 For a reference frame that rotates with respect to an inertial frame,
 _Euler's theorem_ is central here. It states that the most general
@@ -396,7 +391,71 @@ which leads to (an expected result, why?)
 \]
 !et
 
-since $+\bm{\Omega}\times\bm{\Omega}=0$. 
+since $\bm{\Omega}\times\bm{\Omega}=0$. 
+
+Let us now take the second derivative with respect to time.
+
+Using
+!bt
+\[
+\[\frac{d^2\bm{r}}{dt^2}\]_{S_0}=\ddot{\bm{r}}_{S_0}=\[\frac{d}{dt}\]_{S_0}\[\frac{d\bm{r}}{dt}\]_{S_0},
+\]
+!et
+
+we have
+
+!bt
+\[
+\ddot{\bm{r}}_{S_0}=\[\frac{d}{dt}\]_{S_0}\[\bm{v}_{S}+\bm{\Omega}\times\bm{r}\]= \[\frac{d}{dt}\]_{S_0}\bm{v}_{S_0},
+\]
+!et
+
+which gives 
+
+!bt
+\[
+\ddot{\bm{r}}_{S_0}=\[\frac{d\bm{v}_S}{dt}\]_{S}+\dot{\bm{\Omega}}\times \bm{r}+2\bm{\Omega}\times\bm{v}_S+\bm{\Omega}\times(\bm{\Omega}\times\bm{r}).
+\]
+!et
+
+Defining the accelerations $\bm{a}_{S_0}=\ddot{\bm{r}}_{S_0}=\dot{\bm{v}}_{S_0}$ and $\bm{a}_{S}=\dot{\bm{v}}_{S}$, we have
+
+!bt
+\[
+\bm{a}_{S_0}=\bm{a}_{S}+\dot{\bm{\Omega}}\times \bm{r}+2\bm{\Omega}\times\bm{v}_S+\bm{\Omega}\times(\bm{\Omega}\times\bm{r}).
+\]
+!et
+
+If we now use Newton's law in the inertial frame $\bm{F}=m\bm{a}_{S_0}$, we get the effective force in the rotating frame (multiplying by the mass $m$)
+
+!bt
+\[
+\bm{a}_{S}=\bm{F}+m\dot{\bm{r}\times\bm{\Omega}}+2\bm{v}_S\times\bm{\Omega}+m(\bm{\Omega}\times\bm{r})\times\bm{\Omega},
+\]
+!et
+which is what we wanted to demostrate. We have the Coriolis force
+!bt
+\[
+\bm{F}_{\mathrm{Coriolis}}=2m\bm{v}_S\times\bm{\Omega},
+\]
+!et
+while the last term is the standard centrifugal force
+
+!bt
+\[
+\bm{F}_{\mathrm{Centrifugal}}=m\left(\bm{\Omega}\times\bm{r}\right)\times\bm{\Omega}.
+\]
+!et
+
+In our discussions below we will assume that the angular acceleration of the rotating frame is zero and focus only on the Coriolis force and the centrifugal force.
+
+
+
+=== Effective potential and Centrifugal force ===
+
+Suppose we can ignore the Coriolis force. If we focus only on the centrifugal force we have an additional force
+
+
 
 In the rotating coordinate system (not an inertial frame), motion is
 determined by the apparent force and one can define effective

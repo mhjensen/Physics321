@@ -43,9 +43,9 @@ Automatically generated HTML file from DocOnce source
 {'highest level': 2,
  'sections': [('Introduction', 2, None, '___sec0'),
               ('Galilean Transformations', 2, None, '___sec1'),
-              ('Throwing a ball in a moving car', 3, None, '___sec2'),
-              ('Accelerating Frames (No Rotation)', 2, None, '___sec3'),
-              ('Rotating Frames', 2, None, '___sec4'),
+              ('Accelerating Frames (No Rotation)', 2, None, '___sec2'),
+              ('Rotating Frames', 2, None, '___sec3'),
+              ('Effective potential and Centrifugal force', 3, None, '___sec4'),
               ('Coriolis Force', 2, None, '___sec5'),
               ('Coriolis and falling Objects', 3, None, '___sec6'),
               ('Accelerating and Rotating Frames', 2, None, '___sec7'),
@@ -89,9 +89,9 @@ MathJax.Hub.Config({
         <ul class="dropdown-menu">
      <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;"><b>Introduction</b></a></li>
      <!-- navigation toc: --> <li><a href="#___sec1" style="font-size: 80%;"><b>Galilean Transformations</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec2" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Throwing a ball in a moving car</a></li>
-     <!-- navigation toc: --> <li><a href="#___sec3" style="font-size: 80%;"><b>Accelerating Frames (No Rotation)</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec4" style="font-size: 80%;"><b>Rotating Frames</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec2" style="font-size: 80%;"><b>Accelerating Frames (No Rotation)</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec3" style="font-size: 80%;"><b>Rotating Frames</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec4" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Effective potential and Centrifugal force</a></li>
      <!-- navigation toc: --> <li><a href="#___sec5" style="font-size: 80%;"><b>Coriolis Force</b></a></li>
      <!-- navigation toc: --> <li><a href="#___sec6" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Coriolis and falling Objects</a></li>
      <!-- navigation toc: --> <li><a href="#___sec7" style="font-size: 80%;"><b>Accelerating and Rotating Frames</b></a></li>
@@ -138,7 +138,7 @@ MathJax.Hub.Config({
 <center>[3] <b>Department of Physics and Astronomy, Michigan State University, USA</b></center>
 <br>
 <p>
-<center><h4>Apr 7, 2020</h4></center> <!-- date -->
+<center><h4>Apr 8, 2020</h4></center> <!-- date -->
 <br>
 <p>
 </div> <!-- end jumbotron -->
@@ -199,22 +199,27 @@ a classic case in classical mechanics, namely Focoault's pendulum.
 <h2 id="___sec1" class="anchor">Galilean Transformations </h2>
 
 <p>
-In many of our cases till now we have restricted our attention to
-studying the motion of a particle (or a system of particles) as seen
-from an inertial frame of reference. An inertial reference frames
-moves at constant velocity with respect to one another. We can
-formalize this relationship as a coordinate transformation (known as a
-Galilean transformation) between the two frames, one labeled \( S_0 \) and the other one labeled \( S \).
+In many of the examples studied till now we have restricted our
+attention to the motion of a particle (or a system of particles) as
+seen from an inertial frame of reference. An inertial reference frame
+moves at constant velocity with respect to other reference frames. We
+can formalize this relationship as a coordinate transformation (known
+as a Galilean transformation) between say two given frames, one
+labeled \( S_0 \) and the other one labeled \( S \). In our discussions here we will refer to the frame \( S_0 \) as the reference frame.
 
 <p>
-We could consider for example an object in a car which moves with a
+We could consider for example an object in a car, where the car  moves with a
 constant velocity with respect to the system \( S_0 \). We then throw this
-object up in the air.  We denote the position of this object in the
-car relative to the car's frame as \( \boldsymbol{r}_S(t) \). We have included the
+object up in the air and study it's motion with respect to the two chosen frames.
+We denote the position of this object in the
+car relative to the car's frame as \( \boldsymbol{r}_S(t) \). We have included an explicit 
 time dependence here. The position of the car relative to the
 reference frame \( S_0 \) is \( \boldsymbol{R}(t) \) and the position of the object in
-the car relative to \( S_0 \) is \( \boldsymbol{r}_{S_0}(t) \). The following relations
-links the various variables that describe the object in the two frames
+the car relative to \( S_0 \) is \( \boldsymbol{r}_{S_0}(t) \).
+
+<p>
+The following relations between the positions
+link the various variables that describe the object in the two frames
 
 $$
 \boldsymbol{r}_{S_0}(t) = \boldsymbol{r}_{S}(t) + \boldsymbol{R}(t).
@@ -222,10 +227,10 @@ $$
 
 <p>
 We will stay with Newtonian mechanics, meaning that we do not consider
-relastici effects. This means also that the time we measure in \( S_0 \)
+relatistic effects. This means also that the time we measure in \( S_0 \)
 is the same as the time we measure in \( S \). This approximation is
 reasonable as long as the two frames do not move very fast relative to
-each other.  It means that the
+each other.
 
 <p>
 We can then compute the time derivatives and obtain the corresponding velocities
@@ -245,19 +250,15 @@ $$
 with \( \boldsymbol{u}=\dot{\boldsymbol{R}} \).
 
 <p>
-If our system \( S \) moves at constant velocity, we have that the accelerations in two systems equal eqch other since \( \ddot{\boldsymbol{R}}=0 \) and we have 
+If our system \( S \) moves at constant velocity, we have that the accelerations in the two systems equal each other since \( \ddot{\boldsymbol{R}}=0 \) and we have 
 
 $$
 \boldsymbol{a}_{S_0}=\boldsymbol{a}_{S}.
 $$
 
-<h3 id="___sec2" class="anchor">Throwing a ball in a moving car </h3>
-
 <p>
-<b>Example</b> to come with code as well.
-
-<p>
-In an inertial frame, a particle moves with constant velocity (i.e.,
+The above equations are examples of what we call a homogeneous Galilean transformation.
+In an inertial frame, an object  moves with constant velocity (i.e.,
 has zero acceleration) if there are no forces acting on it. When we
 are not in an inertial frame, there will be spurious (or fictitious)
 accelerations arising from the acceleration of the reference
@@ -272,14 +273,6 @@ In these situations, loose objects will appear to accelerate relative
 to the observer or vehicle.
 
 <p>
-A Galilean transformation is used to transform between the coordinates
-of two reference frames which differ only by constant relative motion
-within the constructs of Newtonian physics. These transformations
-together with spatial rotations and translations in space and time
-form the inhomogeneous Galilean group. Without the translations in
-space and time the group is the homogeneous Galilean group.
-
-<p>
 Our next step is thus to study an accelerating frame. Thereafter we
 will study reference frames that are rotating. This will introduce
 forces like the Coriolis force and the well-known centrifugal
@@ -292,7 +285,7 @@ Finally, we bring together acceleration and rotation and end the
 discussion here with a classic in classical mechanics, namely
 Focault's pendulum.
 
-<h2 id="___sec3" class="anchor">Accelerating Frames (No Rotation) </h2>
+<h2 id="___sec2" class="anchor">Accelerating Frames (No Rotation) </h2>
 
 <p>
 We consider first the effect of uniformly accelerating reference
@@ -354,7 +347,7 @@ m\ddot{\boldsymbol{r}}_{S}=\boldsymbol{F}-\boldsymbol{a}_{S_0}.
 $$
 
 <p>
-We see that we have again Netwon's law except that we added a
+We see that we have again Newton's second law except that we added a
 correction which defines an effective acceleration compared to the
 equation seen in the inertial frame. We can thus continue to use
 Newton's law in the accelerating frame provided we correct the
@@ -364,23 +357,23 @@ often also called an inertial force or an effective force.
 <p>
 <b>Add example about pendulum in train car</b>
 
-<h2 id="___sec4" class="anchor">Rotating Frames </h2>
+<h2 id="___sec3" class="anchor">Rotating Frames </h2>
 
 <p>
 If you are on Earth's surface and if your reference frame is fixed
 with the surface, this is an example of an accelerating frame, where
-the acceleration, as we will show below,  is \( \omega^2 r_{\perp} \), where
-\( r_{\perp}\equiv\sqrt{x^2+y^2} \), and \( \omega \) is the angular velocity
+the acceleration, as we will show below,  is \( \Omega^2 r \), where
+\( r\equiv\sqrt{x^2+y^2} \), and \( \Omega \) is the angular velocity
 of Earth's rotation. The acceleration is inward toward the axis of
 rotation, so the additional contribution to the apparent acceleration
 of gravity is outward in the \( x-y \) plane. In contrast the usual
-\( \boldsymbol{g} \) is radially inward pointing toward the origin.
+acceleration \( \boldsymbol{g} \) is radially inward pointing toward the origin.
 
 <p>
 We will now deal with motion in a rotating fram and relate this to an
 inertial frame. The outcome of our derivations will be effective
-forces (or inertial forces) like the abovementioned centrifugal and
-Coriolis forces.
+forces (or inertial forces) like the abovementioned acceleration (from the centrifugal force) and
+the Coriolis force term.
 
 <p>
 For a reference frame that rotates with respect to an inertial frame,
@@ -536,7 +529,63 @@ $$
 $$
 
 <p>
-since \( +\boldsymbol{\Omega}\times\boldsymbol{\Omega}=0 \).
+since \( \boldsymbol{\Omega}\times\boldsymbol{\Omega}=0 \).
+
+<p>
+Let us now take the second derivative with respect to time.
+
+<p>
+Using
+$$
+\[\frac{d^2\boldsymbol{r}}{dt^2}\]_{S_0}=\ddot{\boldsymbol{r}}_{S_0}=\[\frac{d}{dt}\]_{S_0}\[\frac{d\boldsymbol{r}}{dt}\]_{S_0},
+$$
+
+<p>
+we have
+
+$$
+\ddot{\boldsymbol{r}}_{S_0}=\[\frac{d}{dt}\]_{S_0}\[\boldsymbol{v}_{S}+\boldsymbol{\Omega}\times\boldsymbol{r}\]= \[\frac{d}{dt}\]_{S_0}\boldsymbol{v}_{S_0},
+$$
+
+<p>
+which gives 
+
+$$
+\ddot{\boldsymbol{r}}_{S_0}=\[\frac{d\boldsymbol{v}_S}{dt}\]_{S}+\dot{\boldsymbol{\Omega}}\times \boldsymbol{r}+2\boldsymbol{\Omega}\times\boldsymbol{v}_S+\boldsymbol{\Omega}\times(\boldsymbol{\Omega}\times\boldsymbol{r}).
+$$
+
+<p>
+Defining the accelerations \( \boldsymbol{a}_{S_0}=\ddot{\boldsymbol{r}}_{S_0}=\dot{\boldsymbol{v}}_{S_0} \) and \( \boldsymbol{a}_{S}=\dot{\boldsymbol{v}}_{S} \), we have
+
+$$
+\boldsymbol{a}_{S_0}=\boldsymbol{a}_{S}+\dot{\boldsymbol{\Omega}}\times \boldsymbol{r}+2\boldsymbol{\Omega}\times\boldsymbol{v}_S+\boldsymbol{\Omega}\times(\boldsymbol{\Omega}\times\boldsymbol{r}).
+$$
+
+<p>
+If we now use Newton's law in the inertial frame \( \boldsymbol{F}=m\boldsymbol{a}_{S_0} \), we get the effective force in the rotating frame (multiplying by the mass \( m \))
+
+$$
+\boldsymbol{a}_{S}=\boldsymbol{F}+m\dot{\boldsymbol{r}\times\boldsymbol{\Omega}}+2\boldsymbol{v}_S\times\boldsymbol{\Omega}+m(\boldsymbol{\Omega}\times\boldsymbol{r})\times\boldsymbol{\Omega},
+$$
+
+which is what we wanted to demostrate. We have the Coriolis force
+$$
+\boldsymbol{F}_{\mathrm{Coriolis}}=2m\boldsymbol{v}_S\times\boldsymbol{\Omega},
+$$
+
+while the last term is the standard centrifugal force
+
+$$
+\boldsymbol{F}_{\mathrm{Centrifugal}}=m\left(\boldsymbol{\Omega}\times\boldsymbol{r}\right)\times\boldsymbol{\Omega}.
+$$
+
+<p>
+In our discussions below we will assume that the angular acceleration of the rotating frame is zero and focus only on the Coriolis force and the centrifugal force.
+
+<h3 id="___sec4" class="anchor">Effective potential and Centrifugal force </h3>
+
+<p>
+Suppose we can ignore the Coriolis force. If we focus only on the centrifugal force we have an additional force
 
 <p>
 In the rotating coordinate system (not an inertial frame), motion is
