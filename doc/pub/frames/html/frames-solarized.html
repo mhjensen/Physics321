@@ -42,7 +42,11 @@ div { text-align: justify; text-justify: inter-word; }
               ('Effective potential and Centrifugal force', 3, None, '___sec4'),
               ('Coriolis Force and Falling Objects', 2, None, '___sec5'),
               ('Accelerating and Rotating Frames', 2, None, '___sec6'),
-              ('The Foucault Pendulum', 2, None, '___sec7')]}
+              ('The Foucault Pendulum', 2, None, '___sec7'),
+              ("Euler's Theorem from a Linear Algebra Perspective",
+               2,
+               None,
+               '___sec8')]}
 end of tocinfo -->
 
 <body>
@@ -723,8 +727,8 @@ the air currents away from their straight line paths. Since the
 projection of \( \Omega \) perpendicular to the local tangent plane
 changes sign as one crosses the equator, the direction of the cyclonic
 motion (either counter-clockwise or clockwise) is different in the
-Northern and Southern hemispheres.  FIGURE: [figslides/coriolis.png,
-width=600 frac=0.6]
+Northern and Southern hemispheres.
+<br /><br /><center><p><img src="figslides/coriolis.png" align="bottom" width=600></p></center><br /><br />
 
 <p>
 As an example, assume  a ball is dropped from a height $h=500$m above Minneapolis. Due to the
@@ -797,9 +801,33 @@ where the last term is the acceleration of the accelerating frame seen from the 
 <h2 id="___sec7">The Foucault Pendulum </h2>
 
 <p>
-The Foucault Pendulum is simply a regular pendulum moving in both
-horizontal directions, and with the Coriolis force included. In this
-case,
+The <a href="https://en.wikipedia.org/wiki/Foucault_pendulum" target="_blank">Foucault
+Pendulum</a> is simply
+a regular pendulum moving in both horizontal directions, and with the
+Coriolis force included. It is explained at its simplest if we
+consider a pendulum positioned at the North pole. Foucault's
+experiment was actually the first laboratory demonstration that the
+Earth is rotating. The experiment is rather simple and many physics
+department worldwide have their own pendulum.
+
+<p>
+In the original experiment done in Paris in 1851, Foucault used a
+massive pendulum of 28kg and 67m long.
+
+<p>
+If use an inertial frame with the North pole as its origin, the Earth
+below pendulum rotates with a period of 24h (actually 23h and
+56min). Seen with respect to the surface of the Earth, the plane of
+pendulum moves in the opposite direction of the rotation of the Earth.
+
+<p>
+If we were to perform the experiment in other places, the setup is slightly more complicated since the pendulum will then rotate with the Earth. The net effect is a slower rotation compared to North pole.
+
+<p>
+<br /><br /><center><p><img src="figslides/foucault.png" align="bottom" width=600></p></center><br /><br />
+
+<p>
+Let us look at the equations we need to solve.
 
 $$
 \begin{eqnarray*}
@@ -932,6 +960,11 @@ that started in the \( y \)-direction, then precessed toward the \( -x \)
 direction. Linear combinations of the two sets of solutions give
 pendulum motions that resemble ellipses rather than simple
 back-and-forth motion.
+
+<h2 id="___sec8">Euler's Theorem from a Linear Algebra Perspective </h2>
+
+<p>
+<b>this material will be added soon</b>
 
 <!-- ------------------- end of main content --------------- -->
 
