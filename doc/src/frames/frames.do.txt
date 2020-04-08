@@ -154,7 +154,10 @@ acceleration $\bm{a}_{S_0}$ relative to an inertial reference frame,
 which we will label with a subscript $S_0$.  The accelerating frame
 has a velocity $\bm{v}_{S_0}$ with respect to the inertial frame.
 
-The figure here (to be added) shows the relation between the two
+The figure here
+FIGURE: [figslides/rotation.png, width=600 frac=0.6] 
+
+shows the relation between the two
 frames. The position of an object in frame $S$ relative to $S_0$ is
 labeled as $\bm{r}_{S_0}$. Seen from this inertial frame, an object in
 the accelerating frame obeys Newton's second law
@@ -433,7 +436,7 @@ If we now use Newton's law in the inertial frame $\bm{F}=m\bm{a}_{S_0}$, we get 
 
 !bt
 \[
-\bm{a}_{S}=\bm{F}+m\dot{\bm{r}\times\bm{\Omega}}+2\bm{v}_S\times\bm{\Omega}+m(\bm{\Omega}\times\bm{r})\times\bm{\Omega},
+m\bm{a}_{S}=\bm{F}+m\dot{\bm{r}\times\bm{\Omega}}+2\bm{v}_S\times\bm{\Omega}+m(\bm{\Omega}\times\bm{r})\times\bm{\Omega},
 \]
 !et
 which is what we wanted to demostrate. We have the Coriolis force
@@ -456,26 +459,88 @@ In our discussions below we will assume that the angular acceleration of the rot
 
 === Effective potential and Centrifugal force ===
 
-Suppose we can ignore the Coriolis force. If we focus only on the centrifugal force we have an additional force
+Suppose we can ignore the Coriolis force. If we focus only on the
+centrifugal force we have an additional force
 
+!bt
+\[
+\bm{F}_{\mathrm{Centrifugal}}=m\left(\bm{\Omega}\times\bm{r}\right)\times\bm{\Omega},
+\]
+!et
+
+where the term $\bm{\Omega}\times\bm{r}$ is the radial velocity.
+If we define a rotating frame which makes an angle $\theta$ with the inertial frame and define the distance to an object in this frame from the origin as $\bm{r}$, then the centrifugal force (which points outward) has as magnitude $\Omega^2r\sin{\theta}$. Defining $\rho=r\sin{\theta}$ and the unit vector $\hat{\bm{\rho}}$ (see figure here)
+FIGURE: [figslides/centrifugal.png, width=600 frac=0.6]
+we have the wellknown expression for the centrifugal force
+
+!bt
+\[
+\bm{F}_{\mathrm{Centrifugal}}=m\Omega^2\rho\hat{\bm{\rho}},
+\]
+!et
+and with the velocity given by its magnitude $v=\Omega\rho$ we obtain the well-known expression for the centrifugal force
+!bt
+\[
+\bm{F}_{\mathrm{Centrifugal}}=m\frac{v^2}{\rho}{\bm{\rho}}.
+\]
+!et
+
+If we now go back again to our falling object discussed in the
+beginning of these lectures, we need to modify for the fact that Earth
+is rotating with respect to the falling object.
+
+Seen from a a rotating coordinate system we have now that the forces acting on the falling object are
+!bt
+\[
+m\ddot{\bm{r}}=\bm{F}_{\mathrm{gravity}}+\bm{F}_{\mathrm{Centrifugal}}.
+\]
+!et
+
+If we define the mass of Earth as $M$ and its radius as $R$ and assuming that the object is close to the Earth, the gravitational force takes then well-known expression
+!bt
+\[
+\bm{F}_{\mathrm{gravity}}=-\frac{GMm}{R^2}\hat{\bm{r}}=m\bm{g}_0.
+\]
+!et
+Inserting the expression for the centrifugal force, we can then define an effective force
+!bt
+\[
+\bm{F}_{\mathrm{eff}}=\bm{F}_{\mathrm{gravity}}+\bm{F}_{\mathrm{Centrifugal}}=m\bm{g}_0+m\Omega^2R\sin{(\theta)}\hat{\bm{\rho}},
+\]
+!et
+and with 
+!bt
+\[
+\bm{g}_{\mathrm{eff}}=\bm{g}_0+\Omega^2R\sin{(\theta)}\hat{\bm{\rho}},
+\]
+!et
+we have
+!bt
+\[
+\bm{F}_{\mathrm{eff}}=m\bm{g}_{\mathrm{eff}}. 
+\]
+!et
 
 
 In the rotating coordinate system (not an inertial frame), motion is
-determined by the apparent force and one can define effective
+thus determined by an apparent force and one can define effective
 potentials. In addition to the normal gravitational potential energy,
 there is a contribution to the effective potential,
 
 !bt
 \begin{equation}
-\delta U_{\rm eff}=-\frac{m}{2}\omega^2r_\perp^2=-\frac{m}{2}r^2\omega^2\sin^2\theta,
+\delta V_{\rm eff}(r)=-\frac{m}{2}\omega^2r_\perp^2=-\frac{m}{2}r^2\omega^2\sin^2\theta,
 \end{equation}
 !et
 
-where $\theta$ is the polar angle, measured from the north pole. If the true gravitational force can be considered as originating from a point in Earth's center, the net effective potential for a mass $m$ near Earth's surface could be 
+where $\theta$ is the polar angle, measured from say the north
+pole. If the true gravitational force can be considered as originating
+from a point in Earth's center, the net effective potential for a mass
+$m$ near Earth's surface could be
 
 !bt
 \begin{equation}
-U_{\rm eff}=mgh-m\frac{1}{2}\omega^2(R+h)^2\sin^2\theta.
+V_{\rm eff}=mgh-m\frac{1}{2}\omega^2(R+h)^2\sin^2\theta.
 \end{equation}
 !et
 
