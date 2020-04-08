@@ -47,7 +47,7 @@ div { text-align: justify; text-justify: inter-word; }
               ('Effective potential and Centrifugal force', 3, None, '___sec4'),
               ('Coriolis Force and Falling Objects', 2, None, '___sec5'),
               ('Accelerating and Rotating Frames', 2, None, '___sec6'),
-              ('The Foucault Pendulum', 3, None, '___sec7')]}
+              ('The Foucault Pendulum', 2, None, '___sec7')]}
 end of tocinfo -->
 
 <body>
@@ -335,7 +335,7 @@ of gravity is outward in the \( x-y \) plane. In contrast the usual
 acceleration \( \boldsymbol{g} \) is radially inward pointing toward the origin.
 
 <p>
-We will now deal with motion in a rotating fram and relate this to an
+We will now deal with motion in a rotating frame and relate this to an
 inertial frame. The outcome of our derivations will be effective
 forces (or inertial forces) like the abovementioned acceleration (from
 the centrifugal force) and the Coriolis force term.
@@ -530,7 +530,7 @@ $$
 If we now use Newton's law in the inertial frame \( \boldsymbol{F}=m\boldsymbol{a}_{S_0} \), we get the effective force in the rotating frame (multiplying by the mass \( m \))
 
 $$
-m\boldsymbol{a}_{S}=\boldsymbol{F}+m\dot{\boldsymbol{r}\times\boldsymbol{\Omega}}+2\boldsymbol{v}_S\times\boldsymbol{\Omega}+m(\boldsymbol{\Omega}\times\boldsymbol{r})\times\boldsymbol{\Omega},
+m\boldsymbol{a}_{S}=\boldsymbol{F}+m\dot{\boldsymbol{r}\times\boldsymbol{\Omega}}+2m\boldsymbol{v}_S\times\boldsymbol{\Omega}+m(\boldsymbol{\Omega}\times\boldsymbol{r})\times\boldsymbol{\Omega},
 $$
 
 which is what we wanted to demostrate. We have the Coriolis force
@@ -637,7 +637,7 @@ there is a contribution to the effective potential,
 
 $$
 \begin{equation}
-\delta V_{\rm eff}(r)=-\frac{m}{2}\Omega^2r2=-\frac{m}{2}r^2\Omega^2\sin^2\theta,
+\delta V_{\rm eff}(r)=-\frac{m}{2}\Omega^2r^2=-\frac{m}{2}r^2\Omega^2\sin^2\theta,
 \label{_auto3}
 \end{equation}
 $$
@@ -710,6 +710,28 @@ object is no longer being described in a single accelerating frame
 because at each point the acceleration is \( -\Omega^2\boldsymbol{r} \).
 
 <p>
+The Coriolis force is non-zero only if \( \boldsymbol{v}_S\ne 0 \) and is directed
+perpendicular to both \( bm{v}_S \) and \( \Omega \). Viewed along the
+direction of \( \boldsymbol{v}_S \), the Coriolis force associated with
+counter-clockwise rotational motion produces a deflection to the
+right. For clockwise rotational motion, it produces a deflection to
+the left.
+
+<p>
+The Coriolis force associated with Earth&#8217;s rotational motion is
+responsible for the circulating or cyclonic weather patterns
+associated with hurricanes and cyclones, as illustrated in the figure
+here. Basically, a pressure gradient gives rise to air currents that
+tend to flow from high pressure to low pressure regions. But as the
+air flows toward the low pressure region, the Coriolis force deflects
+the air currents away from their straight line paths. Since the
+projection of \( \Omega \) perpendicular to the local tangent plane
+changes sign as one crosses the equator, the direction of the cyclonic
+motion (either counter-clockwise or clockwise) is different in the
+Northern and Southern hemispheres.  FIGURE: [figslides/coriolis.png,
+width=600 frac=0.6]
+
+<p>
 As an example, assume  a ball is dropped from a height $h=500$m above Minneapolis. Due to the
 Coriolis force, it is deflected by an amount \( \delta x \) and \( \delta
 y \). We want to find the deflection due to the Coriolis force. Here we ignore the centrifugal terms.
@@ -727,7 +749,7 @@ $$
 $$
 
 <p>
-Here the coordinate system is \( \hat{x} \) points east, \( \hat{y} \) points
+Here the coordinate system is \( \hat{x} \) and  points east, \( \hat{y} \) points
 north and \( \hat{z} \) points upward.
 
 <p>
@@ -770,9 +792,14 @@ $$
 <h2 id="___sec6">Accelerating and Rotating Frames </h2>
 
 <p>
-We can now bring together an accelerating frame with a rotational frame.
+It is now simple to bring together the equations for an accelerating and rotating frame. Using our results we have the equations of motion for an object in an accelerating and rotating frame with respect to an inertial frame
+$$
+m\ddot{\boldsymbol{r}}_{S}=\boldsymbol{F}+m\boldsymbol{r}\times\dot{\boldsymbol{\Omega}}+2m\boldsymbol{v}_S\times\boldsymbol{\Omega}+m\left(\boldsymbol{\Omega}\times\boldsymbol{r}\right)\times\boldsymbol{\Omega}-\boldsymbol{a}_{S_0},
+$$
 
-<h3 id="___sec7">The Foucault Pendulum </h3>
+where the last term is the acceleration of the accelerating frame seen from the  inertial frame.
+
+<h2 id="___sec7">The Foucault Pendulum </h2>
 
 <p>
 The Foucault Pendulum is simply a regular pendulum moving in both
