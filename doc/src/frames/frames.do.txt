@@ -469,9 +469,30 @@ centrifugal force we have an additional force
 !et
 
 where the term $\bm{\Omega}\times\bm{r}$ is the radial velocity.
-If we define a rotating frame which makes an angle $\theta$ with the inertial frame and define the distance to an object in this frame from the origin as $\bm{r}$, then the centrifugal force (which points outward) has as magnitude $\Omega^2r\sin{\theta}$. Defining $\rho=r\sin{\theta}$ and the unit vector $\hat{\bm{\rho}}$ (see figure here)
+
+Consider now an object with position  $\bm{r}$ according to an observer in a frame
+rotating about the $z$ axis with angular velocity
+$\bm{\Omega}=\Omega\hat{z}$. To an observer in the inertial frame
+the vector will change even if the vector appears
+fixed to the rotating observer.
+
+
+If $\bm{\Omega}$ is in the $z$ direction,
+the centrifugal force becomes 
+!bt
+\begin{equation}
+\bm{F}_{\mathrm{Centrifugal}}=m\Omega^2(x\hat{x}+y\hat{y}).
+\end{equation}
+!et
+
+The centrifugal force points outward in the $x-y$ plane, and its
+magnitude is $m\Omega^2r$, where
+$r=\sqrt{x^2+y^2}$.
+
+Continuing along these lines, 
+if we define a rotating frame which makes an angle $\theta$ with the inertial frame and define the distance to an object in this frame from the origin as $\bm{r}$, then the centrifugal force (which points outward) has as magnitude $\Omega^2r\sin{\theta}$. Defining $\rho=r\sin{\theta}$ and the unit vector $\hat{\bm{\rho}}$ (see figure here)
 FIGURE: [figslides/centrifugal.png, width=600 frac=0.6]
-we have the wellknown expression for the centrifugal force
+we have the well-known expression for the centrifugal force
 
 !bt
 \[
@@ -486,10 +507,10 @@ and with the velocity given by its magnitude $v=\Omega\rho$ we obtain the well-k
 !et
 
 If we now go back again to our falling object discussed in the
-beginning of these lectures, we need to modify for the fact that Earth
+beginning of these lectures, we need to modify for the fact that the Earth
 is rotating with respect to the falling object.
 
-Seen from a a rotating coordinate system we have now that the forces acting on the falling object are
+Seen from a rotating coordinate system we have now that the forces acting on the falling object are
 !bt
 \[
 m\ddot{\bm{r}}=\bm{F}_{\mathrm{gravity}}+\bm{F}_{\mathrm{Centrifugal}}.
@@ -505,13 +526,13 @@ If we define the mass of Earth as $M$ and its radius as $R$ and assuming that th
 Inserting the expression for the centrifugal force, we can then define an effective force
 !bt
 \[
-\bm{F}_{\mathrm{eff}}=\bm{F}_{\mathrm{gravity}}+\bm{F}_{\mathrm{Centrifugal}}=m\bm{g}_0+m\Omega^2R\sin{(\theta)}\hat{\bm{\rho}},
+\bm{F}_{\mathrm{eff}}=\bm{F}_{\mathrm{gravity}}+\bm{F}_{\mathrm{Centrifugal}}=m\bm{g}_0-m\Omega^2R\sin{(\theta)}\hat{\bm{\rho}},
 \]
 !et
 and with 
 !bt
 \[
-\bm{g}_{\mathrm{eff}}=\bm{g}_0+\Omega^2R\sin{(\theta)}\hat{\bm{\rho}},
+\bm{g}_{\mathrm{eff}}=\bm{g}_0-\Omega^2R\sin{(\theta)}\hat{\bm{\rho}},
 \]
 !et
 we have
@@ -529,18 +550,18 @@ there is a contribution to the effective potential,
 
 !bt
 \begin{equation}
-\delta V_{\rm eff}(r)=-\frac{m}{2}\omega^2r_\perp^2=-\frac{m}{2}r^2\omega^2\sin^2\theta,
+\delta V_{\rm eff}(r)=-\frac{m}{2}\Omega^2r2=-\frac{m}{2}r^2\Omega^2\sin^2\theta,
 \end{equation}
 !et
 
 where $\theta$ is the polar angle, measured from say the north
 pole. If the true gravitational force can be considered as originating
 from a point in Earth's center, the net effective potential for a mass
-$m$ near Earth's surface could be
+$m$ near Earth's surface could be (a distance $h$)
 
 !bt
 \begin{equation}
-V_{\rm eff}=mgh-m\frac{1}{2}\omega^2(R+h)^2\sin^2\theta.
+V_{\rm eff}=mgh-m\frac{1}{2}\Omega^2(R+h)^2\sin^2\theta.
 \end{equation}
 !et
 
@@ -557,7 +578,7 @@ the water
 
 !bt
 \[
-m g[h(\theta=\pi/2)-h(\theta=0)]=\frac{m}{2}\omega^2(R+h)^2.
+m g[h(\theta=\pi/2)-h(\theta=0)]=\frac{m}{2}\Omega^2(R+h)^2.
 \]
 !et
 
@@ -565,7 +586,7 @@ Because $R>>h$, one can approximate $R+h\rightarrow R$ on the right-hand side, t
 
 !bt
 \[
-h(\theta=\pi)-h(\theta=0)=\frac{\omega^2R^2}{2g}.
+h(\theta=\pi)-h(\theta=0)=\frac{\Omega^2R^2}{2g}.
 \]
 !et
 
@@ -588,115 +609,35 @@ which is one degree in latitude below the Equator. Chimborazo is about
 
 
 
-===== Coriolis Force =====
+===== Coriolis Force and Falling Objects =====
 
-Consider some vector $\bm{A}$ according to an observer in a frame
-rotating about the $z$ axis with angular velocity
-$\bm{\omega}=\omega\hat{z}$. To an observer in the laboratory frame
-(the primed frame) the vector will change even if the vector appears
-fixed to the rotating observer. For a rotation of
-$\Delta\theta=\omega\Delta t$, the change of the vector due to the
-rotation is
+The Coriolis force is given by
 
 !bt
-\begin{eqnarray}
-\Delta\bm{A}'=\bm{\omega}\times\bm{A}\Delta t.
-\end{eqnarray}
+\[
+\bm{F}_{\mathrm{Coriolis}}=2m\bm{v}_S\times\bm{\Omega},
+\]
 !et
 
-If one includes the fact that $A$, the vector measured in the rotating
-frame, might be changing as a function of time,
-
-!bt
-\begin{eqnarray}
-\Delta\bm{A}'&=&\Delta\bm{A}+\bm{\omega}\times\bm{A}\Delta t,\\
-\nonumber
-\frac{d}{dt}\bm{A}'&=&\frac{d}{dt}\bm{A}+\bm{\omega}\times\bm{A}.
-\end{eqnarray}
-!et
-
-
-If the vector happens to be the position $\bm{r}$,
-
-!bt
-\begin{eqnarray}
-\dot{\bm{r}}'&=&\bm{v}'=\bm{v}+\bm{\omega}\times\bm{r}.
-\end{eqnarray}
-!et
-
-Here, the first term on the r.h.s. corresponds to the vector $\bm{r}$
-not being fixed, but changing with time, $\dot{\bm{r}}=\bm{v}$. One
-can now use $\bm{v}'=\bm{v}+\bm{\omega}\times\bm{r}$ in place of
-$\bm{A}$, and see
-
-!bt
-\begin{eqnarray}
-\dot{\bm{v}}'&=&\frac{d}{dt}(\bm{v}+\bm{\omega}\times\bm{r})+\bm{\omega}\times(\bm{v}+\bm{\omega}\times\bm{r})\\
-\nonumber
-&=&\dot{\bm{v}}+\bm{\omega}\times\dot{\bm{r}}+\bm{\omega}\times\left(\bm{v}+\bm{\omega}\times\bm{r}\right)\\
-\nonumber
-&=&\dot{\bm{v}}+2\bm{\omega}\times\bm{v}+\bm{\omega}\times(\bm{\omega}\times\bm{r}).
-\end{eqnarray}
-!et
-
-Because $\dot{\bm{v}}'$ is $\bm{F}/m$,
-
-!bt
-\begin{eqnarray}
-label{eq:FmaRotatingFrame}
-\bm{F}&=&m\left\{\bm{a}+2\bm{\omega}\times\bm{v}+\bm{\omega}\times(\bm{\omega}\times\bm{r})\right\},\\
-\nonumber
-m\bm{a}&=&\bm{F}-2m\bm{\omega}\times\bm{v}-m\bm{\omega}\times(\bm{\omega}\times\bm{r}).
-\end{eqnarray}
-!et
-
-The extra terms on the right behave like additional forces. Like
-gravitational forces, they are proportional to the mass, so the mass
-cancels for many problems.
-
-The last term, $-m\bm{\omega}\times(\bm{\omega}\times\bm{r})$,
-represents the centrifugal force. Using the vector identity,
-$\bm{A}\times(\bm{B}\times\bm{C})=\bm{B}(\bm{A}\cdot{\bm{C}})-\bm{C}(\bm{A}\cdot\bm{B})$,
-
-!bt
-\begin{equation}
--\bm{\omega}\times(\bm{\omega}\times\bm{r})=\omega^2\bm{r}+(\omega\cdot\bm{r})\bm{\omega}.
-\end{equation}
-!et
-
-If $\bm{\omega}$ is in the $z$ direction,
-
-!bt
-\begin{equation}
--\bm{\omega}\times(\bm{\omega}\times\bm{r})=\omega^2(x\hat{x}+y\hat{y}).
-\end{equation}
-!et
-
-The centrifugal force points outward in the $x-y$ plane, and its
-magnitude is $m\omega^2r_{\rm\perp}$, where
-$r_{\rm\perp}=\sqrt{x^2+y^2}$.
-
-The second term is Eq. (ref{eq:FmaRotatingFrame}) represents the
-Coriolis force. It does not enter problems like the shape of the Earth
+It does not enter problems like the shape of the Earth
 above because in that case the water was not moving relative to the
 rotating frame. Once an object is moving in a rotating frame, the
-particle is no longer being described in a single accelerating frame
-because at each point the acceleration is $-\omega^2\bm{r}$.
+object is no longer being described in a single accelerating frame
+because at each point the acceleration is $-\Omega^2\bm{r}$.
 
-=== Coriolis and falling Objects ===
 
-A ball is dropped from a height $h=500$m above Minneapolis. Due to the
+As an example, assume  a ball is dropped from a height $h=500$m above Minneapolis. Due to the
 Coriolis force, it is deflected by an amount $\delta x$ and $\delta
-y$. Find the deflection. Ignore the centrifugal terms.
+y$. We want to find the deflection due to the Coriolis force. Here we ignore the centrifugal terms.
 
 The equations of motion are:
 
 !bt
 \begin{eqnarray*}
-\frac{dv_x}{dt}&=&-2(\omega_yv_z-\omega_zv_y),\\
-\frac{dv_y}{dt}&=&-2(\omega_zv_x-\omega_xv_z),\\
-\frac{dv_z}{dt}&=&-g-2(\omega_xv_y-\omega_yv_x),\\
-\omega_z&=&\omega\cos\theta,~~~\omega_y=\omega\sin\theta,~~~\omega_x=0.
+\frac{dv_x}{dt}&=&-2(\Omega_yv_z-\Omega_zv_y),\\
+\frac{dv_y}{dt}&=&-2(\Omega_zv_x-\Omega_xv_z),\\
+\frac{dv_z}{dt}&=&-g-2(\Omega_xv_y-\Omega_yv_x),\\
+\Omega_z&=&\Omega\cos\theta,~~~\Omega_y=\Omega\sin\theta,~~~\Omega_x=0.
 \end{eqnarray*}
 !et
 
@@ -705,11 +646,11 @@ north and $\hat{z}$ points upward.
 
 One can now ignore all the Coriolis terms on the right-hand sides
 except for those with $v_z$. The other terms will all be doubly
-small. One can also throw out terms with $\omega_x$. This gives
+small. One can also throw out terms with $\Omega_x$. This gives
 
 !bt
 \begin{eqnarray*}
-\frac{dv_x}{dt}&\approx& -2\omega v_z\sin\theta,\\
+\frac{dv_x}{dt}&\approx& -2\Omega v_z\sin\theta,\\
 \frac{dv_y}{dt}&\approx& 0,\\
 \frac{dv_z}{dt}&\approx& -g.
 \end{eqnarray*}
@@ -720,8 +661,8 @@ y=0$, but in the $x$ direction one can substitute $v_z=-gt$ above,
 
 !bt
 \begin{eqnarray*}
-v_x&\approx&\int_0^t dt'~2\omega gt'\sin\theta=\omega gt^2\sin\theta,\\
-\delta x&\approx& \int_0^t dt'~v_x(t')=\frac{g\omega\sin\theta t^3}{3}.
+v_x&\approx&\int_0^t dt'~2\Omega gt'\sin\theta=\Omega gt^2\sin\theta,\\
+\delta x&\approx& \int_0^t dt'~v_x(t')=\frac{g\Omega\sin\theta t^3}{3}.
 \end{eqnarray*}
 !et
 
@@ -732,7 +673,7 @@ Minneapolis is $44.6^\circ$ or $\theta=45.4^\circ$.
 !bt
 \begin{eqnarray*}
 t&=&\sqrt{2h/g}=10.1~{\rm s},\\
-\omega&=&\frac{2\pi}{3600\cdot 24~{\rm s}}=7.27\times 10^{-5}~{\rm s}^{-1},\\
+\Omega&=&\frac{2\pi}{3600\cdot 24~{\rm s}}=7.27\times 10^{-5}~{\rm s}^{-1},\\
 \delta x&=&17.4~{\rm cm}~~{\rm(east)}.
 \end{eqnarray*}
 !et
@@ -775,12 +716,12 @@ If $\Omega$ is the rotation of the earth, and if $\theta$ is the polar angle, $\
 !et
 
 Here we have used the fact that the oscillations are sufficiently
-small so we can ignore $v_z$. Using $\omega_0\equiv\sqrt{k/m}$,
+small so we can ignore $v_z$. Using $\Omega_0\equiv\sqrt{k/m}$,
 
 !bt
 \begin{eqnarray*}
-\ddot{x}-2\Omega_z\dot{y}+\omega_0^2x&=&0\\
-\ddot{y}+2\Omega_z\dot{x}+\omega_0^2y&=&0,
+\ddot{x}-2\Omega_z\dot{y}+\Omega_0^2x&=&0\\
+\ddot{y}+2\Omega_z\dot{x}+\Omega_0^2y&=&0,
 \end{eqnarray*}
 !et
 
@@ -793,7 +734,7 @@ complex equation where the first/second are the real/imaginary parts.
 !bt
 \begin{eqnarray*}
 \eta\equiv x+iy,\\
-\ddot{\eta}+2i\Omega_z\dot{\eta}+\omega_0^2\eta&=&0. 
+\ddot{\eta}+2i\Omega_z\dot{\eta}+\Omega_0^2\eta&=&0. 
 \end{eqnarray*}
 !et
 
@@ -802,9 +743,9 @@ which turns the differential equation into
 
 !bt
 \begin{eqnarray*}
--\alpha^2+2\Omega_z\alpha+\omega_0^2&=&0,\\
-\alpha&=&\Omega_z\pm \sqrt{\Omega_z^2+\omega_0^2},\\
-&\approx&\Omega_z\pm \omega_0.
+-\alpha^2+2\Omega_z\alpha+\Omega_0^2&=&0,\\
+\alpha&=&\Omega_z\pm \sqrt{\Omega_z^2+\Omega_0^2},\\
+&\approx&\Omega_z\pm \Omega_0.
 \end{eqnarray*}
 !et
 
@@ -812,7 +753,7 @@ The solution with two arbitrary constants is then
 
 !bt
 \begin{eqnarray*}
-\eta&=&e^{-i\Omega_zt}\left[C_1e^{i\omega_0t}+C_2e^{-i\omega_0t}\right].
+\eta&=&e^{-i\Omega_zt}\left[C_1e^{i\Omega_0t}+C_2e^{-i\Omega_0t}\right].
 \end{eqnarray*}
 !et
 
@@ -825,7 +766,7 @@ expression as
 !bt
 \begin{eqnarray*}
 label{eq:precmess}
-\eta&=&e^{-i\Omega_zt}\left[A\cos(\omega_0t+\phi_A)+iB\cos(\omega_0t+\phi_B)\right].
+\eta&=&e^{-i\Omega_zt}\left[A\cos(\Omega_0t+\phi_A)+iB\cos(\Omega_0t+\phi_B)\right].
 \end{eqnarray*}
 !et
 
@@ -836,9 +777,9 @@ that $B=0$. This then gives
 
 !bt
 \begin{eqnarray*}
-\eta(t)&=&Ae^{-i\Omega_zt}\cos(\omega_0t+\gamma)\\
+\eta(t)&=&Ae^{-i\Omega_zt}\cos(\Omega_0t+\gamma)\\
 \nonumber
-&=&A\cos\Omega_zt\cos(\omega_0t+\gamma)+iA\sin\Omega_zt\cos(\omega_0t+\gamma).
+&=&A\cos\Omega_zt\cos(\Omega_0t+\gamma)+iA\sin\Omega_zt\cos(\Omega_0t+\gamma).
 \end{eqnarray*}
 !et
 
@@ -846,14 +787,14 @@ Translating into $x$ and $y$,
 
 !bt
 \begin{eqnarray}
-x&=&A\cos\Omega_zt\cos(\omega_0t+\gamma),\\
+x&=&A\cos\Omega_zt\cos(\Omega_0t+\gamma),\\
 \nonumber
-y&=&A\sin\Omega_zt\cos(\omega_0t+\gamma).
+y&=&A\sin\Omega_zt\cos(\Omega_0t+\gamma).
 \end{eqnarray}
 !et
 
 Assuming the pendulum's frequency is much higher than Earth's
-rotational frequency, $\omega_0>>\Omega_z$, one can see that the plane
+rotational frequency, $\Omega_0>>\Omega_z$, one can see that the plane
 of the pendulum simply precesses with angular velocity
 $\Omega_z$. This means that in this limit the pendulum oscillates only
 in the $x$-direction with frequency many times before the phase
