@@ -1,4 +1,4 @@
-TITLE: Variational Calculus
+TITLE: Variational Calculus and Lagrangian Formalism
 AUTHOR: "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/" {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA & Department of Physics, University of Oslo, Norway
 AUTHOR: "Scott Pratt":"https://pa.msu.edu/profile/pratts/"  at Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA
 AUTHOR: "Carl Schmidt":"https://pa.msu.edu/profile/schmidt/" at Department of Physics and Astronomy, Michigan State University, USA
@@ -13,36 +13,36 @@ problems where the quantity to be minimized or maximized is an integral.
 
 
 The usual minimization problem one faces involves taking a function
-$J(y)$, then finding the single value $y$ for which $J$ is either a
+${\cal L}(x)$, then finding the single value $x$ for which ${\cal L}$ is either a
 maximum or minimum. In multivariate calculus one also learns to solve
-problems where you minimize for multiple variables, $J(y_1,y_2,\cdots
-y_n)$, and finding the point $(y_1\cdots y_n)$ in $n-$dimensional
-space that maximizes or minimizes the function. Here, we consider what
+problems where you minimize for multiple variables, ${\cal L}(x_1,x_2,\cdots
+yx_n)$, and finding the points $(x_1\cdots y_n)$ in an $n-$dimensional
+space that maximize or minimize the function. Here, we consider what
 seems to be a much more ambitious problem. Imagine you have a function
-$J(y(x),y'(x);x)$, and you wish to find the extrema for an infinite
-number of values of $y$, i.e. $y$ at each point $x$. The function $J$
-will not only depend on $y$ at each point $x$, but also on the slope
-at each point, plus an additional dependence on $x$. Note we are NOT
-finding an optimum value of $x$, we are finding the set of optimum
-values of $y$ at each point $x$, or equivalently, finding the function
-$y(x)$.
+${\cal L}(x(t),x'(t);t)$, and you wish to find the extrema for an infinite
+number of values of $x$, i.e. $x$ at each point $t$. The function ${\cal L}$
+will not only depend on $x$ at each point $t$, but also on the slope
+at each point, plus an additional dependence on $t$. Note we are NOT
+finding an optimum value of $t$, we are finding the set of optimum
+values of $x$ at each point $t$, or equivalently, finding the function
+$yx(t)$.
 
-One treats the function $y(x)$ as being unknown while minimizing
+One treats the function $x(t)$ as being unknown while minimizing
 
 !bt
 \[
-J=\int_{x_1}^{x_2}dx~f\{y(x),y'(x);x\}.
+S=\int_{t_1}^{t_2}dt~{\cal L}(x(t),x'(t),t).
 \]
 !et
 
-Thus, we are minimizing $J$ with respect to an infinite number of
-values of $y(x_i)$ at points $x_i$. As an additional criteria, we will
-assume that $y(x_1)$ and $y(x_2)$ are fixed, and that that we will
-only consider variations of $y$ between the boundaries. The dependence
-on the derivative, $y'=dy/dx$, is crucial because otherwise the
-solution would involve simply finding the one value of $y$ that
-minimized $f$, and $y(x)$ would equal a constant if there were no
-explicit $x$ dependence. Furthermore, $y$ wouldn't need to be
+Thus, we are minimizing $S$ with respect to an infinite number of
+values of $x(t_i)$ at points $t_i$. As an additional criteria, we will
+assume that $x(t_1)$ and $x(t_2)$ are fixed, and that that we will
+only consider variations of $x$ between the boundaries. The dependence
+on the derivative, $x'=dx/dt$, is crucial because otherwise the
+solution would involve simply finding the one value of $x$ that
+minimized ${\cal L}$, and $x(t)$ would equal a constant if there were no
+explicit $t$ dependence. Furthermore, $x$ wouldn't need to be
 continuous at the boundary.
 
 
@@ -51,7 +51,7 @@ continuous at the boundary.
 In the general case we have an integral of the type
 !bt
 \[ 
-E[\Phi]= \int_a^b f(\Phi(x),\frac{\partial \Phi}{\partial x},x)dx,
+S[\Phi]= \int_a^b f(\Phi(x),\frac{\partial \Phi}{\partial x},x)dx,
 \]
 !et
 where $E$ is the quantity which is sought minimized or maximized.
