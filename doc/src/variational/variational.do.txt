@@ -11,6 +11,43 @@ DATE: today
 The calculus of variations involves 
 problems where the quantity to be minimized or maximized is an integral. 
 
+
+The usual minimization problem one faces involves taking a function
+$J(y)$, then finding the single value $y$ for which $J$ is either a
+maximum or minimum. In multivariate calculus one also learns to solve
+problems where you minimize for multiple variables, $J(y_1,y_2,\cdots
+y_n)$, and finding the point $(y_1\cdots y_n)$ in $n-$dimensional
+space that maximizes or minimizes the function. Here, we consider what
+seems to be a much more ambitious problem. Imagine you have a function
+$J(y(x),y'(x);x)$, and you wish to find the extrema for an infinite
+number of values of $y$, i.e. $y$ at each point $x$. The function $J$
+will not only depend on $y$ at each point $x$, but also on the slope
+at each point, plus an additional dependence on $x$. Note we are NOT
+finding an optimum value of $x$, we are finding the set of optimum
+values of $y$ at each point $x$, or equivalently, finding the function
+$y(x)$.
+
+One treats the function $y(x)$ as being unknown while minimizing
+
+!bt
+\[
+J=\int_{x_1}^{x_2}dx~f\{y(x),y'(x);x\}.
+\]
+!et
+
+Thus, we are minimizing $J$ with respect to an infinite number of
+values of $y(x_i)$ at points $x_i$. As an additional criteria, we will
+assume that $y(x_1)$ and $y(x_2)$ are fixed, and that that we will
+only consider variations of $y$ between the boundaries. The dependence
+on the derivative, $y'=dy/dx$, is crucial because otherwise the
+solution would involve simply finding the one value of $y$ that
+minimized $f$, and $y(x)$ would equal a constant if there were no
+explicit $x$ dependence. Furthermore, $y$ wouldn't need to be
+continuous at the boundary.
+
+
+
+
 In the general case we have an integral of the type
 !bt
 \[ 
@@ -28,46 +65,187 @@ The constraints can be treated via the technique of Lagrangian multipliers
 
 
 
-\subsection{Calculus of Variations and the Euler-Lagrange Equation}
 
-The usual minimization problem one faces involves taking a function $J(y)$, then finding the single value $y$ for which $J$ is either a maximum or minimum. In multivariate calculus one also learns to solve problems where you minimize for multiple variables, $J(y_1,y_2,\cdots y_n)$, and finding the point $(y_1\cdots y_n)$ in $n-$dimensional space that maximizes or minimizes the function. Here, we consider what seems to be a much more ambitious problem. Imagine you have a function $J(y(x),y'(x);x)$, and you wish to find the extrema for an infinite number of values of $y$, i.e. $y$ at each point $x$. The function $J$ will not only depend on $y$ at each point $x$, but also on the slope at each point, plus an additional dependence on $x$. Note we are NOT finding an optimum value of $x$, we are finding the set of optimum values of $y$ at each point $x$, or equivalently, finding the function $y(x)$.
+We assume the existence of an optimum path, that is a path for which $E[\Phi]$ is stationary. There are infinitely many such paths.
+The difference between two paths $\delta\Phi$ is called the variation of $\Phi$.
 
-One treats the function $y(x)$ as being unknown while minimizing
+We call the variation $\eta(x)$  and it is scaled by a factor $\alpha$.  The function $\eta(x)$ is arbitrary except
+for
 \[
-J=\int_{x_1}^{x_2}dx~f\{y(x),y'(x);x\}.
+\eta(a)=\eta(b)=0,
 \]
-Thus, we are minimizing $J$ with respect to an infinite number of values of $y(x_i)$ at points $x_i$. As an additional criteria, we will assume that $y(x_1)$ and $y(x_2)$ are fixed, and that that we will only consider variations of $y$ between the boundaries. The dependence on the derivative, $y'=dy/dx$, is crucial because otherwise the solution would involve simply finding the one value of $y$ that minimized $f$, and $y(x)$ would equal a constant if there were no explicit $x$ dependence. Furthermore, $y$ wouldn't need to be continuous at the boundary.
+and we assume that we can model the change in $\Phi$ as
+\[
+\Phi(x,\alpha) = \Phi(x,0)+\alpha\eta(x),
+\]
+and
+\[
+\delta\Phi = \Phi(x,\alpha) -\Phi(x,0)=\alpha\eta(x).
+\]
 
-The Euler equation is a differential equation for $y(x)$, that when solved, provides the required solution. For an extrema
-\begin{eqnarray}
-\delta J&=&\int_{x_1}^{x_2}dx~\left\{
-\frac{\partial f}{\partial y}\delta y(x)+\frac{\partial f}{\partial y'}\delta y'(x)\right\}=0.
-\end{eqnarray}
-For ANY small $\delta y(x)$ at any point $x$, the change should be zero if one is at an optimum function $y(x)$. Integrating the second term by parts,
-\begin{eqnarray}
-\delta J&=&\int_{x_1}^{x_2}dx~\left\{
-\frac{\partial f}{\partial y}-\frac{d}{dx}\left(\frac{\partial f}{\partial y'}\right)\right\}\delta y(x)\\
-\nonumber
-&&+\left.\frac{\partial f}{\partial y'}\delta y\right|_{x_2}-\left.\frac{\partial f}{\partial y'}\delta y\right|_{x_1}\\
-\nonumber
-&=&0.
-\end{eqnarray}
-Because $y$ is not allowed to vary at the endpoints, $\delta y(x_1)=\delta y(x_2)=0$, so the middle line can be ignored.
-Also, this relation must hold for ANY $\delta y$, so one can write the Euler equations (or sometimes called the Euler Lagrange equations)
-\begin{equation}
-\label{eq:el}
-\frac{\partial f}{\partial y}=\frac{d}{dx}\frac{\partial f}{\partial y'}.
-\end{equation}
-This will yield a differential equations for $y$. Combined with the boundary conditions,
-\begin{equation}
-y(x_1)=y_1, ~~~y(x_2)=y_2,
-\end{equation}
-one can now solve the differential equations for $y$. Because $f$ is only a function of $f'$, not $f''$ or $f'''$, the $d/dx$ in Euler Lagrange equation can lead to terms involving $f''$, but not $f'''$. Thus, the equation will be a second-order differential equation (not a linear equation usually), and the two boundary conditions are sufficient to determine the entire equation.
 
-\example\label{ex:brachiostone}\noindent
+We choose $\Phi(x,\alpha=0)$ as the unkonwn path  that will minimize $E$.  The value
+$\Phi(x,\alpha\ne 0)$  describes a neighbouring path.
+
+We have
+\[ E[\Phi(\alpha)]= \int_a^b f(\Phi(x,\alpha),\frac{\partial \Phi(x,\alpha)}{\partial x},x)dx.\]
+In the slides I will use  the shorthand
+\[
+\Phi_x(x,\alpha) = \frac{\partial \Phi(x,\alpha)}{\partial x}.
+\]
+In our case $a=0$ and $b=\infty$ and we know the value of the wave function.
+
+The condition for an extreme of
+\[ E[\Phi(\alpha)]= \int_a^b f(\Phi(x,\alpha),\Phi_x(x,\alpha),x)dx,\]
+is
+\[
+\left[\frac{\partial  E[\Phi(\alpha)]}{\partial x}\right]_{\alpha=0} =0.\]
+The $\alpha$ dependence is contained in $\Phi(x,\alpha)$ and $\Phi_x(x,\alpha)$ meaning that
+\[
+\left[\frac{\partial  E[\Phi(\alpha)]}{\partial \alpha}\right]=\int_a^b \left( \frac{\partial f}{\partial \Phi}\frac{\partial \Phi}{\parti\
+al \alpha}+\frac{\partial f}{\partial \Phi_x}\frac{\partial \Phi_x}{\partial \alpha}        \right)dx.\]
+We have defined
+\[
+\frac{\partial \Phi(x,\alpha)}{\partial \alpha}=\eta(x)
+\]
+and thereby
+\[
+\frac{\partial \Phi_x(x,\alpha)}{\partial \alpha}=\frac{d(\eta(x))}{dx}.
+\]
+
+
+
+Using
+\[
+\frac{\partial \Phi(x,\alpha)}{\partial \alpha}=\eta(x),
+\]
+and
+\[
+\frac{\partial \Phi_x(x,\alpha)}{\partial \alpha}=\frac{d(\eta(x))}{dx},
+\]
+in the integral gives
+\[
+\left[\frac{\partial  E[\Phi(\alpha)]}{\partial \alpha}\right]=\int_a^b \left( \frac{\partial f}{\partial \Phi}\eta(x)+\frac{\partial f}{\\
+partial \Phi_x}\frac{d(\eta(x))}{dx}        \right)dx.\]
+Integrate the second term by parts
+
+\[
+\int_a^b \frac{\partial f}{\partial \Phi_x}\frac{d(\eta(x))}{dx}dx =\eta(x)\frac{\partial f}{\partial \Phi_x}|_a^b-
+\int_a^b \eta(x)\frac{d}{dx}\frac{\partial f}{\partial \Phi_x}dx,
+\]
+and since the first term dissappears due to $\eta(a)=\eta(b)=0$, we obtain
+\[
+\left[\frac{\partial  E[\Phi(\alpha)]}{\partial \alpha}\right]=\int_a^b \left( \frac{\partial f}{\partial \Phi}-\frac{d}{dx}\frac{\partial\
+ f}{\partial \Phi_x}
+\right)\eta(x)dx=0.\]
+
+
+\[
+\left[\frac{\partial  E[\Phi(\alpha)]}{\partial \alpha}\right]=\int_a^b \left( \frac{\partial f}{\partial \Phi}-\frac{d}{dx}\frac{\partial\
+ f}{\partial \Phi_x}
+\right)\eta(x)dx=0,\]
+can also be written as
+\[
+\alpha\left[\frac{\partial  E[\Phi(\alpha)]}{\partial \alpha}\right]_{\alpha=0}=\int_a^b \left( \frac{\partial f}{\partial \Phi}-\frac{d}{\
+dx}\frac{\partial f}{\partial \Phi_x}
+\right)\delta\Phi(x)dx=\delta E = 0.\]
+
+The condition for a stationary value is thus a partial differential equation
+\[
+\frac{\partial f}{\partial \Phi}-\frac{d}{dx}\frac{\partial f}{\partial \Phi_x}=0,\]
+known as Euler's equation.
+Can easily be generalized to more variables.
+
+
+===== Constrained motion =====
+
+
+Consider a function of three independent variables $f(x,y,z)$ . For the function $f$ to be an
+extreme we have
+\[
+df=0.
+\]
+A necessary and sufficient condition is
+\[
+\frac{\partial f}{\partial x} =\frac{\partial f}{\partial y}=\frac{\partial f}{\partial z}=0,
+\]
+due to
+\[
+df = \frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy+\frac{\partial f}{\partial z}dz.
+\]
+In physical problems the variables $x,y,z$ are often subject to constraints (in our case $\Phi$ and the orthogonality constraint)
+so that they are no longer all independent. It is possible at least in principle to use each constraint to eliminate one variable
+and to proceed with a new and smaller set of independent varables.
+
+The use of so-called Lagrangian  multipliers is an alternative technique  when the elimination of
+of variables is incovenient or undesirable.  Assume that we have an equation of constraint on the variables $x,y,z$
+\[
+\phi(x,y,z) = 0,
+\]
+ resulting in
+\[
+d\phi = \frac{\partial \phi}{\partial x}dx+\frac{\partial \phi}{\partial y}dy+\frac{\partial \phi}{\partial z}dz =0.
+\]
+Now we cannot set anymore
+\[
+\frac{\partial f}{\partial x} =\frac{\partial f}{\partial y}=\frac{\partial f}{\partial z}=0,
+\]
+if $df=0$ is wanted
+because there are now only two independent variables!  Assume $x$ and $y$ are the independent variables.
+Then $dz$ is no longer arbitrary.
+
+
+
+However, we can add to
+\[
+df = \frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy+\frac{\partial f}{\partial z}dz,
+\]
+a multiplum of $d\phi$, viz. $\lambda d\phi$, resulting  in
+
+\[
+df+\lambda d\phi = (\frac{\partial f}{\partial z}+\lambda\frac{\partial \phi}{\partial x})dx+(\frac{\partial f}{\partial y}+\lambda\frac{\\
+partial \phi}{\partial y})dy+
+(\frac{\partial f}{\partial z}+\lambda\frac{\partial \phi}{\partial z})dz =0.
+\]
+Our multiplier is chosen so that
+\[
+\frac{\partial f}{\partial z}+\lambda\frac{\partial \phi}{\partial z} =0.
+\]
+
+
+However, we took $dx$ and $dy$ as to be arbitrary and thus we must have
+\[
+\frac{\partial f}{\partial x}+\lambda\frac{\partial \phi}{\partial x} =0,
+\]
+and
+\[
+\frac{\partial f}{\partial y}+\lambda\frac{\partial \phi}{\partial y} =0.
+\]
+When all these equations are satisfied, $df=0$.  We have four unknowns, $x,y,z$ and
+$\lambda$. Actually we want only $x,y,z$, $\lambda$ need not to be determined, it is therefore often called
+Lagrange's undetermined multiplier.
+If we have a set of constraints $\phi_k$ we have the equations
+\[
+\frac{\partial f}{\partial x_i}+\sum_k\lambda_k\frac{\partial \phi_k}{\partial x_i} =0.
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+=== brachiostone ===
+
 Consider a particle constrained to move along a path (like a bead moving without friction on a wire) and you need to design a path from $x=y=0$ to some final point $x_f,y_f$. Assume there is a constant force in the $x$ direction, $F_x=mg$. Design the path so that the time the bead travels is a minimum.
 
-{\bf Solution:} The net time is
+
+The net time is
 \[
 T=\int \frac{d\ell}{v}=\int_0^{x_f} dx~\frac{\sqrt{1+y'^2}}{\sqrt{2gx}}={\rm minimum}.
 \]
@@ -98,9 +276,8 @@ y(x)&=&\int_0^x dx'~\frac{\sqrt{x'}dx'}{\sqrt{2a-x'}}=\int_0^x dx'~\frac{x'dx'}{
 \end{eqnarray*}
 This turns out to be the equation for a {\it cycloid} or a {\it brachiostone}. If you rolled a wheel of radius $a$ down the $y$ axis and followed a point on the rim, it would trace out a cycloid. Here, the constant $a$ must be chosen to match the boundary condition, $y_2=y(x_2)$. You can see the textbook for more details, plus you get a chance to work with cycloids in the exercises at the end of this chapter.
 
-\exampleend
 
-\subsection{Auxiliary Constraints}
+===== Auxiliary Constraints =====
 
 Sometimes an auxiliary constraint is added to the problem (beyond fixing the end poits $y_1$ and $y_2$). Just ahead, we will work on the example of a hanging chain. The shape of the curve minimizes the potential energy, under the constraint of a fixed length of chain. Before presenting such an example we first review the method of Lagrange multipliers as a method for finding minima or maxima under constraints.
 
@@ -135,7 +312,7 @@ Here, $\lambda$ is known as a Lagrange multiplier. Satisfying Eq. (\ref{eq:lagra
 
 The method of Lagrange multipliers is counter-intuitive to one's intuition to use the constraint to reduce the dimensionality of the problem. Normally, minimizing a function of $n$ variables, leads to $n$ equations and $n$ unknowns. A constraint could be used, by substitution, to replace the $n$ variables with $n-1$ variables. Instead, we add an unknown parameter, $\lambda$, and change the equation to $n+1$ equations with $n+1$ unknowns, with the extra unknown being the Lagrange multiplier $\lambda$. Often, it is rather easy to solve for $x_1\cdots x_n$. Then one is left with the usually difficult problem of finding $\lambda$, often requiring the solution of a transcendental equation.
 
-\example
+=== Example ===
 As an example of using Lagrange multipliers for a standard optimization formula we attempt to maximize the following function,
 \[
 F(x_1\cdots x_n)=-\sum_{i=1}^n x_i\ln(x_i), 
@@ -162,7 +339,6 @@ x_j&=&\exp\left\{-1-\alpha-\beta\epsilon_j\right\}.
 \end{eqnarray*}
 For any given $\alpha$ and $\beta$ this provides a solution for constraining $\sum_i x_i$ and $\sum_i\epsilon_ix_i$ to some values, just not the values of unity and $E$ that you wish. One would then have to search for the correct values by adjusting $\alpha$ and $\beta$ until the constraint are actually matched by solving a transcendental equation. Although this can be complicated, it is certainly less expensive than searching over all $N$ values of $x_i$. This particular example corresponds to maximizing the entropy for a system, $S=-\sum_i x_i\ln(x_i)$, where $x_i$ is the probability of the system being in a particular discrete level $i$ that has energy $\epsilon_i$. One wishes to maximize the entropy subject to the constraints that the probabilities sum to unity and the average energy has some given value. The result that $x_i\sim e^{-\beta\epsilon_i}$ demonstrates the origin of the Boltzmann factor, with the inverse temperature $\beta=1/T$.
 
-\exampleend
 
 Lagrange multipliers also assist with the Euler-Lagrange equation. If one breaks an interval $x_1<x<x_2$ into a large number $n\rightarrow\infty$ points separated by $dx$, the Euler-Lagrange equation involves finding the $n$ values $y_i$ at each point so that  $\sum_i dx f\left\{y_i,y'_i=(y_{i+1}-y_{i-1})/(2dx)\right\}$ is maximized for some given function $f$. If an additional auxiliary constraint is added, also some function of the $n$ values $y_i$, one can use the method of Lagrange multipliers. In the constraint can also be written as some function of $C(y_i,y'_i)$, then one simply adds a term $\lambda C(y,y')$ to the function $f$ and uses the Euler-Lagrange equation to find the extrema of. 
 \begin{eqnarray}
@@ -174,10 +350,10 @@ f\left\{y(x),y'(x),x\right\}\rightarrow f\left\{y(x),y'(x),x\right\}-\lambda C\l
 \end{equation}
 in Eq. (\ref{eq:el}).
 
-\example
+=== Example ===
 Consider a chain of length $L$ and mass per unit length $\kappa$ that hangs from point $x=0,y=0$ to point $x_f,y_f$. The shape must minimize the potential energy. Find general expressions for the shape in terms of three constants which must be chosen to match $y(0)=0, y(x_f)=y_f$ and the fixed length. Equivalently, one finds the function $y(x)$ that provides an extrema for the integral,
 
-{\bf Solution:} One must minimize
+One must minimize
 \[
 \int d\ell~\kappa gy-\lambda\int d\ell=
 \int_0^{x_f} dx~\sqrt{1+y'^2}\kappa gy-\lambda \int_0^{x_f} dx\sqrt{1+y'^2}.
@@ -215,13 +391,22 @@ y=\tilde{\lambda}+a\cosh[(x-x_0)/a].
 One must find $\tilde{\lambda}$, $x_0$ and $a$ to satisfy three conditions, $y(x=0)=0$, $y(x=x_f)=y_f$ and that the length is $L$. For a hanging chain $a$ is positive. A solution with negative $a$ would represent a maximum of the potential energy. A remarkable property of the solution is that once you define the length and the end-point positions $y_1$ and $y_2$, the solution does not depend on $\kappa$ or $g$. Thus, the shape of the chain would be the same if you took it to the moon. These solutions are known as {\it catenaries},\\
 \href{http://en.wikipedia.org/wiki/Catenary}{http://en.wikipedia.org/wiki/Catenary}.
 
-\exampleend
 
-\subsection{Lagrangians}
 
-Lagrangians represent a powerful method for solving problems that would be nearly impossible by direct application of Newton's third law, $\vec{F}=m\vec{a}$. The method works well for problems where a system is well described by a few \textit{generalized coordinates}. A generalized coordinate might be the angle describing the position of a pendulum. This one angle takes the place of using $x$ and $y$ to describe the position of the pendulum, then applying a clumsy constraint. 
+====== Lagrangians =====
+
+Lagrangians represent a powerful method for solving problems that
+would be nearly impossible by direct application of Newton's third
+law, $\vec{F}=m\vec{a}$. The method works well for problems where a
+system is well described by a few \textit{generalized coordinates}. A
+generalized coordinate might be the angle describing the position of a
+pendulum. This one angle takes the place of using $x$ and $y$ to
+describe the position of the pendulum, then applying a clumsy
+constraint.
 
 The Lagrangian equations of motion can be derived from a principle of least action, where the action $S$ is defined as
+
+
 \begin{equation}
 S=\int dt~ L(q,\dot{q},t),
 \end{equation}
@@ -255,7 +440,7 @@ m\ell^2\ddot{\theta}&=&-mg\ell\sin\theta,\\
 \end{eqnarray*}
 \exampleend
 
-\subsection{Proving Lagrange's Equations of Motion from Newton's Laws}
+=== Proving Lagrange's Equations of Motion from Newton's Laws ===
 
 Lagrange's equations of motion can only be applied for the following conditions:
 \begin{enumerate}
@@ -303,11 +488,11 @@ Using the fact that $m\ddot{x}_i=-(\partial/\partial x_i)U$, one can see that th
 \frac{d}{dt}\frac{\partial}{\partial\dot{q}_i}(T-U)=\frac{\partial}{\partial q_i}(T-U).
 \end{equation}
 
-\subsection{Lagrangian Examples}
+=== Lagrangian Examples ===
 
 Two examples are presented here. In the first, there are two generalized coordinates, but the two equations of motion can be reduced to one through conservation laws (angular momentum in this case). In the second, there is a time-dependent constraint. 
 
-\example
+
 Consider a cone of half angle $\alpha$ standing on its tip at the origin. The surface of the cone is defined as
 \[
 r=\sqrt{x^2+y^2}=z\tan \alpha.
@@ -336,14 +521,14 @@ The first equation is a statement of the conservation of angular momentum with $
 \ddot{r}=\frac{L^2\sin^2\alpha}{m^2r^3}-g\sin\alpha\cos\alpha.
 \]
 
-\example
+
 A bead slides along a wire bent in the shape of a parabola, 
 \[
 z=\frac{1}{2}kr^2,~~r^2=x^2+y^2.
 \]
 Also, the parabolic wire is rotating about the $z$ axis with angular velocity $\omega$. Derive the equations of motion. Are there any stable configurations?
 
-{\bf Solution:}\\
+
 Using the fact that
 \[
 \dot{z}=\dot{r}\frac{\partial z}{\partial r}=kr\dot{r},
@@ -361,19 +546,49 @@ The equations of motion are then
 \end{eqnarray*}
 For a stable configuration, there needs to be a solution with $\dot{r}=0$ and $\ddot{r}=0$. This can only happen at $r=0$, and then for the acceleration to be inward for small deviations of $r$ one needs to have $gk>\omega^2$. If $\omega^2>gk$ the bead will move outward indefinitely.
 
-\subsection{Small Vibrations and Normal Modes}
 
-Two examples are provided for solving for normal modes. These are solutions with multiple generalized coordinates, where the motion is that of simple harmonic motion. However, the motion is only simple for a particular set of coordinates $q_1$ and $q_2$, 
+
+===== Small Vibrations and Normal Modes =====
+
+Two examples are provided for solving for normal modes. These are
+solutions with multiple generalized coordinates, where the motion is
+that of simple harmonic motion. However, the motion is only simple for
+a particular set of coordinates $q_1$ and $q_2$,
+
+
 \begin{eqnarray}
 q_1&=&A\cos(\omega_1 t),\\
 \nonumber
 q_2&=&B\cos(\omega_2 t),
 \end{eqnarray}
-while it is not necessarily simple in other coordinates. For example if $x=q_1+q_2$, and $y=q_1-q_2$, the $x$ and $y$ motions will contain mixtures of multiple frequencies. For many problems, or in the limit of small vibrations about a minimum, there is some coordinate system where the motion is simple. These are normal modes. Characterizing the normal modes involves finding the frequencies, $\omega_i$, and the coordinate system where the motion is simple for each coordinate. This involves finding the direction, or the linear combination of $x_i$ that form the coordinates $q_i$ in which the motion is that of a single oscillator in each coordinate. 
 
-For a first example, we consider a system of springs, where we write the Lagrangian, then find the normal modes. For the second example, a double pendulum is considered. In this case, one must first make a small angle expansion before finding the modes. In principle, problems could have the same number of normal modes a degrees of freedom. For example, a system of 7 particles moving in three dimensions has 21 degrees of freedom. However, some of the degrees of freedom do not have oscillatory behavior. For example, for a rigid body in free space, the angles describing the orientation evolve, but do not oscillate. Also, the center-of-mass coordinates of a system of particles isolated from outside particles moves at constant velocity. One can also describe these as normal modes, but acknowledge that their characteristic frequency is zero, as there are no restoring forces.
+while it is not necessarily simple in other coordinates. For example
+if $x=q_1+q_2$, and $y=q_1-q_2$, the $x$ and $y$ motions will contain
+mixtures of multiple frequencies. For many problems, or in the limit
+of small vibrations about a minimum, there is some coordinate system
+where the motion is simple. These are normal modes. Characterizing the
+normal modes involves finding the frequencies, $\omega_i$, and the
+coordinate system where the motion is simple for each coordinate. This
+involves finding the direction, or the linear combination of $x_i$
+that form the coordinates $q_i$ in which the motion is that of a
+single oscillator in each coordinate.
 
-\example
+For a first example, we consider a system of springs, where we write
+the Lagrangian, then find the normal modes. For the second example, a
+double pendulum is considered. In this case, one must first make a
+small angle expansion before finding the modes. In principle, problems
+could have the same number of normal modes a degrees of freedom. For
+example, a system of 7 particles moving in three dimensions has 21
+degrees of freedom. However, some of the degrees of freedom do not
+have oscillatory behavior. For example, for a rigid body in free
+space, the angles describing the orientation evolve, but do not
+oscillate. Also, the center-of-mass coordinates of a system of
+particles isolated from outside particles moves at constant
+velocity. One can also describe these as normal modes, but acknowledge
+that their characteristic frequency is zero, as there are no restoring
+forces.
+
+
 \begin{figure}
 \centerline{\includegraphics[width=0.5\textwidth]{figs/springs}}
 \caption{\label{fig:springs}
@@ -445,10 +660,10 @@ The two solutions are
 \end{eqnarray*}
 The first solution corresponds to the two outer masses moving in opposite directions, in sync, with the middle mass fixed. The second solution has both outer masses moving in the same direction, but with the center mass moving opposite. These two solutions are referred to as normal modes, and are characterized by their frequency and by the linear combinations of coordinates that oscillate together. In general, the solution is a linear combination of normal modes, which usually results in a chaotic looking motion. However, once the solution is expressed in terms of the normal modes, each of which oscillates independently in a simple manner, one can better understand the motion. Further, the frequencies of these modes represent the natural resonant frequencies of the system. This is important in the construction of many structures, such as bridges or vehicles. 
 
-\example
+
 Consider a double pendulum confined to the $x-y$ plane, where $y$ is vertical. A mass $m$ is connected to the ceiling with a massless string of length $\ell$. A second mass $m$ hangs from the first mass with an identical massless string of the same length. Using $\theta_1$ and $\theta_2$ to describe the orientations of the strings relative to the vertical axis, find the Lagrangian and derive the equations of motion, both for arbitrary angles and in the small-angle approximation. Finally, express the equations of motion in the limit of small oscillations.
 
-{\bf Solution:}\\
+
 The kinetic and potential energies are:
 \begin{eqnarray*}
 T&=&\frac{1}{2}m\ell^2\dot{\theta}_1^2
@@ -514,9 +729,9 @@ One can also express the solution in vector notation, with the vectors having ar
 \end{eqnarray*}
 Here, the upper/lower components of the vector describe $\theta_1/\theta_2$ respectively.
 
-\exampleend
 
-{\bf Aside:} (not applied in this course)\\
+
+
 These problems can be treated as linear algebra exercises. Linear algebra is not used in this course, but nonetheless we describe how this works for the curious student. In the limit of small vibrations, the equations of motion can be expressed in the form,
 \begin{eqnarray*}
 M\ddot{q}&=&-Kq,
