@@ -134,7 +134,7 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 ### Week 15, April  6-10, 2020
 - Monday: Rotating non-inertial frames, Coriolis force and Foucalt's pendulum (Taylor sections 9.7-9.9). Second midterm available, due Fryday April 17.  PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril6.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_utivxb87
 - Wednesday: Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril8.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_rz8vr2ht
-- Friday: Euler-Lagrange equations and Lagrangian formalism. Taylor chapter 6 and lecture notes. 
+- Friday: Euler-Lagrange equations and Lagrangian formalism. Taylor chapter 6 and lecture notes. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril10.pdf and video of lecture https://mediaspace.msu.edu/media/t/
 ### Week 16, April 13-17, 2020
 - Monday:  Langrangian formalism. 10th homework and extra assignments, due April 24 
 - Wednesday: Lagrangian formalism
