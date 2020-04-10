@@ -19,19 +19,19 @@ problems where you minimize for multiple variables, ${\cal L}(x_1,x_2,\cdots
 yx_n)$, and finding the points $(x_1\cdots y_n)$ in an $n-$dimensional
 space that maximize or minimize the function. Here, we consider what
 seems to be a much more ambitious problem. Imagine you have a function
-${\cal L}(x(t),x'(t);t)$, and you wish to find the extrema for an infinite
+${\cal L}(x(t),\dot{x}(t),t)$, and you wish to find the extrema for an infinite
 number of values of $x$, i.e. $x$ at each point $t$. The function ${\cal L}$
 will not only depend on $x$ at each point $t$, but also on the slope
 at each point, plus an additional dependence on $t$. Note we are NOT
 finding an optimum value of $t$, we are finding the set of optimum
 values of $x$ at each point $t$, or equivalently, finding the function
-$yx(t)$.
+$x(t)$.
 
 One treats the function $x(t)$ as being unknown while minimizing
 
 !bt
 \[
-S=\int_{t_1}^{t_2}dt~{\cal L}(x(t),x'(t),t).
+S=\int_{t_1}^{t_2}dt~{\cal L}(x(t),\dot{x}(t),t).
 \]
 !et
 
@@ -39,7 +39,7 @@ Thus, we are minimizing $S$ with respect to an infinite number of
 values of $x(t_i)$ at points $t_i$. As an additional criteria, we will
 assume that $x(t_1)$ and $x(t_2)$ are fixed, and that that we will
 only consider variations of $x$ between the boundaries. The dependence
-on the derivative, $x'=dx/dt$, is crucial because otherwise the
+on the derivative, $\dot{x}=dx/dt$, is crucial because otherwise the
 solution would involve simply finding the one value of $x$ that
 minimized ${\cal L}$, and $x(t)$ would equal a constant if there were no
 explicit $t$ dependence. Furthermore, $x$ wouldn't need to be
@@ -51,44 +51,59 @@ continuous at the boundary.
 In the general case we have an integral of the type
 !bt
 \[ 
-S[\Phi]= \int_a^b f(\Phi(x),\frac{\partial \Phi}{\partial x},x)dx,
+S[q]= \int_a^b f(q(t),\dot{q}(t),t)dt,
 \]
 !et
-where $E$ is the quantity which is sought minimized or maximized.
-The problem is that although $f$ is a function of the variables $\Phi$, $\partial \Phi/\partial x$ and $x$, the exact dependence of
-$\Phi$ on $x$ is not known.  This means again that even though the integral has fixed limits $a$ and $b$, the path of integration is
-not known. In our case the unknown quantities are the single-particle wave functions and we wish to choose an integration path which makes
-the functional $E[\Phi]$ stationary. This means that we want to find minima, or maxima or saddle points. In physics we search normally for minima.
-Our task is therefore to find the minimum of $E[\Phi]$ so that its variation $\delta E$ is zero  subject to specific
-constraints. In our case the constraints appear as the integral which expresses the orthogonality of the  single-particle wave functions.
-The constraints can be treated via the technique of Lagrangian multipliers
+where $S$ is the quantity which is sought minimized or maximized.
+The problem is that although $f$ is a function of the variables $q(t),\dot{q}(t),t$, the exact dependence of
+$q$ on $t$ is not known.  This means again that even though the integral has fixed limits $a$ and $b$, the path of integration is
+not known. In our case the unknown quantities are the positions and general velocities of a given number of objects and we wish to choose an integration path which makes
+the functional $S[q]$ stationary. This means that we want to find minima, or maxima or saddle points. In physics we search normally for minima.
+Our task is therefore to find the minimum of $S[q]$ so that its variation $\delta S$ is zero  subject to specific
+constraints. 
+The constraints can be treated via the technique of Lagrangian multipliers as we will see below.
 
 
 
 
-We assume the existence of an optimum path, that is a path for which $E[\Phi]$ is stationary. There are infinitely many such paths.
-The difference between two paths $\delta\Phi$ is called the variation of $\Phi$.
+We assume the existence of an optimum path, that is a path for which $S[q]$ is stationary. There are infinitely many such paths.
+The difference between two paths $\delta q$ is called the variation of $q$.
 
-We call the variation $\eta(x)$  and it is scaled by a factor $\alpha$.  The function $\eta(x)$ is arbitrary except
+We call the variation $\eta(t)$  and it is scaled by a factor $\alpha$.  The function $\eta(t)$ is arbitrary except
 for
+
+!bt
 \[
 \eta(a)=\eta(b)=0,
 \]
-and we assume that we can model the change in $\Phi$ as
+!et
+
+and we assume that we can model the change in $q$ as
+
+!bt
 \[
-\Phi(x,\alpha) = \Phi(x,0)+\alpha\eta(x),
+q(t,\alpha) = q(t)+\alpha\eta(t),
 \]
+!et
+
 and
+
+!bt
 \[
-\delta\Phi = \Phi(x,\alpha) -\Phi(x,0)=\alpha\eta(x).
+\delta q = q(t,\alpha) -q(t,0)=\alpha\eta(t).
 \]
+!et
 
-
-We choose $\Phi(x,\alpha=0)$ as the unkonwn path  that will minimize $E$.  The value
-$\Phi(x,\alpha\ne 0)$  describes a neighbouring path.
+We choose $q(t,\alpha=0)$ as the unkonwn path  that will minimize $S$.  The value
+$q(t,\alpha\ne 0)$  describes a neighbouring path.
 
 We have
-\[ E[\Phi(\alpha)]= \int_a^b f(\Phi(x,\alpha),\frac{\partial \Phi(x,\alpha)}{\partial x},x)dx.\]
+
+!bt
+\[
+E[\Phi(\alpha)]= \int_a^b f(\Phi(x,\alpha),\frac{\partial \Phi(x,\alpha)}{\partial x},x)dx.\]
+
+
 In the slides I will use  the shorthand
 \[
 \Phi_x(x,\alpha) = \frac{\partial \Phi(x,\alpha)}{\partial x}.
