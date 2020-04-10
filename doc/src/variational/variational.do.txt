@@ -101,75 +101,125 @@ We have
 
 !bt
 \[
-E[\Phi(\alpha)]= \int_a^b f(\Phi(x,\alpha),\frac{\partial \Phi(x,\alpha)}{\partial x},x)dx.\]
-
-
-In the slides I will use  the shorthand
-\[
-\Phi_x(x,\alpha) = \frac{\partial \Phi(x,\alpha)}{\partial x}.
+S[q(\alpha)]= \int_a^b f(q(t,\alpha),\frac{\dot()(x,\alpha),t)dt.
 \]
-In our case $a=0$ and $b=\infty$ and we know the value of the wave function.
+!et
+
 
 The condition for an extreme of
-\[ E[\Phi(\alpha)]= \int_a^b f(\Phi(x,\alpha),\Phi_x(x,\alpha),x)dx,\]
-is
-\[
-\left[\frac{\partial  E[\Phi(\alpha)]}{\partial x}\right]_{\alpha=0} =0.\]
-The $\alpha$ dependence is contained in $\Phi(x,\alpha)$ and $\Phi_x(x,\alpha)$ meaning that
-\[
-\left[\frac{\partial  E[\Phi(\alpha)]}{\partial \alpha}\right]=\int_a^b \left( \frac{\partial f}{\partial \Phi}\frac{\partial \Phi}{\parti\
-al \alpha}+\frac{\partial f}{\partial \Phi_x}\frac{\partial \Phi_x}{\partial \alpha}        \right)dx.\]
-We have defined
-\[
-\frac{\partial \Phi(x,\alpha)}{\partial \alpha}=\eta(x)
-\]
-and thereby
-\[
-\frac{\partial \Phi_x(x,\alpha)}{\partial \alpha}=\frac{d(\eta(x))}{dx}.
-\]
 
+!bt
+\[
+S[q(\alpha)]= \int_a^b f(q(t,\alpha),\dot{q}(t,\alpha),t)dt,
+\]
+!et
+
+is
+
+!bt
+\[
+\left[\frac{\partial  S[q(\alpha)]}{\partial t}\right]_{\alpha=0} =0.
+\]
+!et
+
+The $\alpha$ dependence is contained in $q(t,\alpha)$ and $\dot{q}(t,\alpha)$ meaning that
+
+!bt
+\[
+\left[\frac{\partial  E[q(\alpha)]}{\partial \alpha}\right]=\int_a^b \left( \frac{\partial f}{\partial q}\frac{\partial q}{\partial \alpha}+\frac{\partial f}{\partial \dot{q}}\frac{\partial \dot{q}}{\partial \alpha}\right)dt.
+\]
+!et
+We have defined
+
+!bt
+\[
+\frac{\partial q(x,\alpha)}{\partial \alpha}=\eta(x)
+\]
+!et
+and thereby
+
+!bt
+\[
+\frac{\partial \dot{q}(t,\alpha)}{\partial \alpha}=\frac{d(\eta(t))}{dt}.
+\]
+!et
 
 
 Using
+
+!bt
 \[
-\frac{\partial \Phi(x,\alpha)}{\partial \alpha}=\eta(x),
+\frac{\partial q(t,\alpha)}{\partial \alpha}=\eta(t),
 \]
+!et
+
 and
+
+!bt
 \[
-\frac{\partial \Phi_x(x,\alpha)}{\partial \alpha}=\frac{d(\eta(x))}{dx},
+\frac{\partial \dot{q}(t,\alpha)}{\partial \alpha}=\frac{d(\eta(t))}{dt},
 \]
+!et
+
 in the integral gives
+
+!bt
 \[
-\left[\frac{\partial  E[\Phi(\alpha)]}{\partial \alpha}\right]=\int_a^b \left( \frac{\partial f}{\partial \Phi}\eta(x)+\frac{\partial f}{\\
-partial \Phi_x}\frac{d(\eta(x))}{dx}        \right)dx.\]
+\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]=\int_a^b \left( \frac{\partial f}{\partial q}\eta(t)+\frac{\partial f}{\\
+partial \dot{q}}\frac{d(\eta(t))}{dt}\right)dt.
+\]
+!et
+
 Integrate the second term by parts
 
+!bt
 \[
-\int_a^b \frac{\partial f}{\partial \Phi_x}\frac{d(\eta(x))}{dx}dx =\eta(x)\frac{\partial f}{\partial \Phi_x}|_a^b-
-\int_a^b \eta(x)\frac{d}{dx}\frac{\partial f}{\partial \Phi_x}dx,
+\int_a^b \frac{\partial f}{\partial \dot{q}}\frac{d(\eta(t))}{dt}dt =\eta(t)\frac{\partial f}{\partial \dot{q}}|_a^b-
+\int_a^b \eta(t)\frac{d}{dx}\frac{\partial f}{\partial \dot{q}}dt,
 \]
+!et
+
+
 and since the first term dissappears due to $\eta(a)=\eta(b)=0$, we obtain
+
+!bt
 \[
-\left[\frac{\partial  E[\Phi(\alpha)]}{\partial \alpha}\right]=\int_a^b \left( \frac{\partial f}{\partial \Phi}-\frac{d}{dx}\frac{\partial\
- f}{\partial \Phi_x}
-\right)\eta(x)dx=0.\]
+\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]=\int_a^b \left( \frac{\partial f}{\partial q}-\frac{d}{dt}\frac{\partial\
+ f}{\partial \dot{q}}
+\right)\eta(t)dx=0.
+\]
+!et
+
+!bt
+\[
+\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]=\int_a^b \left( \frac{\partial f}{\partial q}-\frac{d}{dx}\frac{\partial\
+ f}{\partial \dot{q}}
+\right)\eta(t)dt=0,
+\]
+!et
 
 
-\[
-\left[\frac{\partial  E[\Phi(\alpha)]}{\partial \alpha}\right]=\int_a^b \left( \frac{\partial f}{\partial \Phi}-\frac{d}{dx}\frac{\partial\
- f}{\partial \Phi_x}
-\right)\eta(x)dx=0,\]
 can also be written as
+
+!bt
 \[
-\alpha\left[\frac{\partial  E[\Phi(\alpha)]}{\partial \alpha}\right]_{\alpha=0}=\int_a^b \left( \frac{\partial f}{\partial \Phi}-\frac{d}{\
-dx}\frac{\partial f}{\partial \Phi_x}
-\right)\delta\Phi(x)dx=\delta E = 0.\]
+\alpha\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]_{\alpha=0}=\int_a^b \left( \frac{\partial f}{\partial q}-\frac{d}{\
+dx}\frac{\partial f}{\partial \dot{q}}
+\right)\deltaq(t)dt=\delta S = 0.
+\]
+!et
+
 
 The condition for a stationary value is thus a partial differential equation
+
+!bt
 \[
-\frac{\partial f}{\partial \Phi}-\frac{d}{dx}\frac{\partial f}{\partial \Phi_x}=0,\]
-known as Euler's equation.
-Can easily be generalized to more variables.
+\frac{\partial f}{\partial q}-\frac{d}{dx}\frac{\partial f}{\partial \dot{q}}=0,
+\]
+!et
+
+known as Euler-Lagrange equation.
+
 
 
 ===== Constrained motion =====
@@ -177,34 +227,60 @@ Can easily be generalized to more variables.
 
 Consider a function of three independent variables $f(x,y,z)$ . For the function $f$ to be an
 extreme we have
+
+!bt
 \[
 df=0.
 \]
+!et
+
 A necessary and sufficient condition is
+
+!bt
 \[
 \frac{\partial f}{\partial x} =\frac{\partial f}{\partial y}=\frac{\partial f}{\partial z}=0,
 \]
+!et
+
 due to
+
+!bt
 \[
 df = \frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy+\frac{\partial f}{\partial z}dz.
 \]
-In physical problems the variables $x,y,z$ are often subject to constraints (in our case $\Phi$ and the orthogonality constraint)
+!et
+
+
+In physical problems the variables $x,y,z$ are often subject to constraints (in our case $q$ and the orthogonality constraint)
 so that they are no longer all independent. It is possible at least in principle to use each constraint to eliminate one variable
 and to proceed with a new and smaller set of independent varables.
 
 The use of so-called Lagrangian  multipliers is an alternative technique  when the elimination of
 of variables is incovenient or undesirable.  Assume that we have an equation of constraint on the variables $x,y,z$
+
+
+!bt
 \[
 \phi(x,y,z) = 0,
 \]
+!et
+
  resulting in
+
+!bt
 \[
 d\phi = \frac{\partial \phi}{\partial x}dx+\frac{\partial \phi}{\partial y}dy+\frac{\partial \phi}{\partial z}dz =0.
 \]
+!et
+
 Now we cannot set anymore
+
+!bt
 \[
 \frac{\partial f}{\partial x} =\frac{\partial f}{\partial y}=\frac{\partial f}{\partial z}=0,
 \]
+!et
+
 if $df=0$ is wanted
 because there are now only two independent variables!  Assume $x$ and $y$ are the independent variables.
 Then $dz$ is no longer arbitrary.
@@ -212,84 +288,128 @@ Then $dz$ is no longer arbitrary.
 
 
 However, we can add to
+
+!bt
 \[
 df = \frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy+\frac{\partial f}{\partial z}dz,
 \]
+!et
+
 a multiplum of $d\phi$, viz. $\lambda d\phi$, resulting  in
 
+!bt
 \[
-df+\lambda d\phi = (\frac{\partial f}{\partial z}+\lambda\frac{\partial \phi}{\partial x})dx+(\frac{\partial f}{\partial y}+\lambda\frac{\\
-partial \phi}{\partial y})dy+
-(\frac{\partial f}{\partial z}+\lambda\frac{\partial \phi}{\partial z})dz =0.
+df+\lambda d\phi = (\frac{\partial f}{\partial z}+\lambda\frac{\partial \phi}{\partial x})dx+(\frac{\partial f}{\partial y}+\lambda\frac{\partial \phi}{\partial y})dy+(\frac{\partial f}{\partial z}+\lambda\frac{\partial \phi}{\partial z})dz =0.
 \]
+!et
+
 Our multiplier is chosen so that
+
+!bt
 \[
 \frac{\partial f}{\partial z}+\lambda\frac{\partial \phi}{\partial z} =0.
 \]
-
+!et
 
 However, we took $dx$ and $dy$ as to be arbitrary and thus we must have
+
+!bt
 \[
 \frac{\partial f}{\partial x}+\lambda\frac{\partial \phi}{\partial x} =0,
 \]
+!et
+
 and
+
+!bt
 \[
 \frac{\partial f}{\partial y}+\lambda\frac{\partial \phi}{\partial y} =0.
 \]
+!et
+
 When all these equations are satisfied, $df=0$.  We have four unknowns, $x,y,z$ and
 $\lambda$. Actually we want only $x,y,z$, $\lambda$ need not to be determined, it is therefore often called
 Lagrange's undetermined multiplier.
 If we have a set of constraints $\phi_k$ we have the equations
+
+
+!bt
 \[
 \frac{\partial f}{\partial x_i}+\sum_k\lambda_k\frac{\partial \phi_k}{\partial x_i} =0.
 \]
-
-
-
-
-
-
-
-
-
-
+!et
 
 
 === brachiostone ===
 
-Consider a particle constrained to move along a path (like a bead moving without friction on a wire) and you need to design a path from $x=y=0$ to some final point $x_f,y_f$. Assume there is a constant force in the $x$ direction, $F_x=mg$. Design the path so that the time the bead travels is a minimum.
+Consider a particle constrained to move along a path (like a bead
+moving without friction on a wire) and you need to design a path from
+$x=y=0$ to some final point $x_f,y_f$. Assume there is a constant
+force in the $x$ direction, $F_x=mg$. Design the path so that the time
+the bead travels is a minimum.
 
 
 The net time is
+
+!bt
 \[
 T=\int \frac{d\ell}{v}=\int_0^{x_f} dx~\frac{\sqrt{1+y'^2}}{\sqrt{2gx}}={\rm minimum}.
 \]
-Here we made use of the fact that $d\ell=\sqrt{dx^2+dy^2}$ and that the velocity is determined by $KE=mv^2/2=mgx$. The Euler equations can be applied if you first define the function as
+!et
+
+Here we made use of the fact that $d\ell=\sqrt{dx^2+dy^2}$ and that
+the velocity is determined by $KE=mv^2/2=mgx$. The Euler equations can
+be applied if you first define the function as
+
+!bt
 \begin{eqnarray*}
 f(y,y';x)&=&\frac{\sqrt{1+y'^2}}{\sqrt{x}}.
 \end{eqnarray*}
+!et
+
+
 The equations are then
+
+!bt
 \begin{eqnarray*}
 \frac{d}{dx}\frac{\partial f}{\partial y'}&=&0.
 \end{eqnarray*}
+!et
+
+
 The simplification ensued from $f$ not having any dependence on $y$. This yields the differential equation
+
+!bt
 \begin{eqnarray}
 \frac{y'}{x^{1/2}(1+y'^2)^{1/2}}&=&(2a)^{-1/2},
 \end{eqnarray}
-because $\partial f/\partial y'$ must be a constant, which with some foresight we label $(2a)^{-1/2}$. One can now solve for $y'$,
+!et
+
+because $\partial f/\partial y'$ must be a constant, which with some
+foresight we label $(2a)^{-1/2}$. One can now solve for $y'$,
+
+!bt
 \begin{eqnarray*}
 (y')^2&=&2ax(1+y'^2)\\
 \nonumber
 y'&=&\sqrt{\frac{x}{2a-x}},\\
 \nonumber
-y(x)&=&\int_0^x dx'~\frac{\sqrt{x'}dx'}{\sqrt{2a-x'}}=\int_0^x dx'~\frac{x'dx'}{\sqrt{2ax'-x'^2}}\\
+y(t)&=&\int_0^x dx'~\frac{\sqrt{x'}dx'}{\sqrt{2a-x'}}=\int_0^x dx'~\frac{x'dx'}{\sqrt{2ax'-x'^2}}\\
 \nonumber
 &=&\frac{1}{2}\int_0^x\frac{(2x'-2a)dx'}{(2ax'-x'^2)^{1/2}}+a\int_0^x\frac{dx'}{\sqrt{2ax'-x'^2}}\\
 \nonumber
 &=&\frac{-1}{2}\int_0^{2ax-x^2}\frac{du}{\sqrt{u}}+a\int_0^x\frac{dx'}{\sqrt{a^2-(x'-a)^2}}\\
 &=&-\sqrt{2ax-x^2}+a\cos^{-1}(1-x/a).
 \end{eqnarray*}
-This turns out to be the equation for a {\it cycloid} or a {\it brachiostone}. If you rolled a wheel of radius $a$ down the $y$ axis and followed a point on the rim, it would trace out a cycloid. Here, the constant $a$ must be chosen to match the boundary condition, $y_2=y(x_2)$. You can see the textbook for more details, plus you get a chance to work with cycloids in the exercises at the end of this chapter.
+!et
+
+This turns out to be the equation for a {\it cycloid} or a {\it
+brachiostone}. If you rolled a wheel of radius $a$ down the $y$ axis
+and followed a point on the rim, it would trace out a cycloid. Here,
+the constant $a$ must be chosen to match the boundary condition,
+$y_2=y(x_2)$. You can see the textbook for more details, plus you get
+a chance to work with cycloids in the exercises at the end of this
+chapter.
 
 
 ===== Auxiliary Constraints =====
@@ -357,16 +477,16 @@ For any given $\alpha$ and $\beta$ this provides a solution for constraining $\s
 
 Lagrange multipliers also assist with the Euler-Lagrange equation. If one breaks an interval $x_1<x<x_2$ into a large number $n\rightarrow\infty$ points separated by $dx$, the Euler-Lagrange equation involves finding the $n$ values $y_i$ at each point so that  $\sum_i dx f\left\{y_i,y'_i=(y_{i+1}-y_{i-1})/(2dx)\right\}$ is maximized for some given function $f$. If an additional auxiliary constraint is added, also some function of the $n$ values $y_i$, one can use the method of Lagrange multipliers. In the constraint can also be written as some function of $C(y_i,y'_i)$, then one simply adds a term $\lambda C(y,y')$ to the function $f$ and uses the Euler-Lagrange equation to find the extrema of. 
 \begin{eqnarray}
-J&=&\int_{x_1}^{x_2}dx~f\left\{y(x),y'(x),x\right\}-\lambda C\left\{y(x),y'(x),x\right\},
+J&=&\int_{x_1}^{x_2}dx~f\left\{y(t),y'(t),x\right\}-\lambda C\left\{y(t),y'(t),x\right\},
 \end{eqnarray}
 the one difference being that
 \begin{equation}
-f\left\{y(x),y'(x),x\right\}\rightarrow f\left\{y(x),y'(x),x\right\}-\lambda C\left\{y(x),y'(x),x\right\}
+f\left\{y(t),y'(t),x\right\}\rightarrow f\left\{y(t),y'(t),x\right\}-\lambda C\left\{y(t),y'(t),x\right\}
 \end{equation}
 in Eq. (\ref{eq:el}).
 
 === Example ===
-Consider a chain of length $L$ and mass per unit length $\kappa$ that hangs from point $x=0,y=0$ to point $x_f,y_f$. The shape must minimize the potential energy. Find general expressions for the shape in terms of three constants which must be chosen to match $y(0)=0, y(x_f)=y_f$ and the fixed length. Equivalently, one finds the function $y(x)$ that provides an extrema for the integral,
+Consider a chain of length $L$ and mass per unit length $\kappa$ that hangs from point $x=0,y=0$ to point $x_f,y_f$. The shape must minimize the potential energy. Find general expressions for the shape in terms of three constants which must be chosen to match $y(0)=0, y(x_f)=y_f$ and the fixed length. Equivalently, one finds the function $y(t)$ that provides an extrema for the integral,
 
 One must minimize
 \[
