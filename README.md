@@ -49,7 +49,7 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Activity | Percentage of total score |
 |------|-----|
-|Homeworks, 10 in total and due Wednesdays the week after | 20% |
+|Homeworks, 10 in total and due Mondays the week after | 20% |
 | First Midterm Project, due Wednesday March  11 | 25% |
 | Second  Midterm Project, due Friday April 17| 25% |
 | Final Exam project, due May 1 |  30%  |
