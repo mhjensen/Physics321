@@ -136,7 +136,7 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 - Wednesday: Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril8.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_rz8vr2ht
 - Friday: Euler-Lagrange equations and Lagrangian formalism. Taylor chapter 6 and lecture notes. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril10.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_j5ugthfg
 ### Week 16, April 13-17, 2020
-- Monday:  Langrangian formalism, discussion of examples. Taylor chapters 6 and 7. 10th homework and extra assignments, due April 24 
+- Monday:  Langrangian formalism, discussion of examples. Taylor chapters 6 and 7. 10th homework and extra assignments, due April 24. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril13.pdf and video of lecture https://mediaspace.msu.edu/media/t/
 - Wednesday: Lagrangian formalism, constraints and Lagrangian multipliers and examples
 - Friday:  Lagrangian Formalism, conservation laws and examples, from the classical pendulum to Foucault's pendulum. Taylor chapters 6 and 7 and lecture notes.
 ### Week 17, April 20-24, 2020
