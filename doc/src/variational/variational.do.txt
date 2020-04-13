@@ -13,19 +13,19 @@ problems where the quantity to be minimized or maximized is an integral.
 
 
 The usual minimization problem one faces involves taking a function
-${\cal L}(x)$, then finding the single value $x$ for which ${\cal L}$ is either a
-maximum or minimum. In multivariate calculus one also learns to solve
-problems where you minimize for multiple variables, ${\cal L}(x_1,x_2,\cdots
-yx_n)$, and finding the points $(x_1\cdots y_n)$ in an $n-$dimensional
-space that maximize or minimize the function. Here, we consider what
-seems to be a much more ambitious problem. Imagine you have a function
-${\cal L}(x(t),\dot{x}(t),t)$, and you wish to find the extrema for an infinite
-number of values of $x$, i.e. $x$ at each point $t$. The function ${\cal L}$
-will not only depend on $x$ at each point $t$, but also on the slope
-at each point, plus an additional dependence on $t$. Note we are NOT
-finding an optimum value of $t$, we are finding the set of optimum
-values of $x$ at each point $t$, or equivalently, finding the function
-$x(t)$.
+${\cal L}(x)$, then finding the single value $x$ for which ${\cal L}$
+is either a maximum or minimum. In multivariate calculus one also
+learns to solve problems where you minimize for multiple variables,
+${\cal L}(x_1,x_2,\cdots x_n)$, and finding the points $(x_1\cdots
+y_n)$ in an $n$-dimensional space that maximize or minimize the
+function. Here, we consider what seems to be a much more ambitious
+problem. Imagine you have a function ${\cal L}(x(t),\dot{x}(t),t)$,
+and you wish to find the extrema for an infinite number of values of
+$x$, i.e. $x$ at each point $t$. The function ${\cal L}$ will not only
+depend on $x$ at each point $t$, but also on the slope at each point,
+plus an additional dependence on $t$. Note we are NOT finding an
+optimum value of $t$, we are finding the set of optimum values of $x$
+at each point $t$, or equivalently, finding the function $x(t)$.
 
 One treats the function $x(t)$ as being unknown while minimizing
 
@@ -51,30 +51,38 @@ continuous at the boundary.
 In the general case we have an integral of the type
 !bt
 \[ 
-S[q]= \int_a^b f(q(t),\dot{q}(t),t)dt,
+S[q]= \int_{t_1}^{t_2} {\cal L}(q(t),\dot{q}(t),t)dt,
 \]
 !et
-where $S$ is the quantity which is sought minimized or maximized.
-The problem is that although $f$ is a function of the variables $q(t),\dot{q}(t),t$, the exact dependence of
-$q$ on $t$ is not known.  This means again that even though the integral has fixed limits $a$ and $b$, the path of integration is
-not known. In our case the unknown quantities are the positions and general velocities of a given number of objects and we wish to choose an integration path which makes
-the functional $S[q]$ stationary. This means that we want to find minima, or maxima or saddle points. In physics we search normally for minima.
-Our task is therefore to find the minimum of $S[q]$ so that its variation $\delta S$ is zero  subject to specific
-constraints. 
-The constraints can be treated via the technique of Lagrangian multipliers as we will see below.
+
+where $S$ is the quantity which is sought minimized or maximized.  The
+problem is that although ${\cal L}$  is a function of the general variables
+$q(t),\dot{q}(t),t$ (note our change of variables), the exact dependence of $q$ on $t$ is not known.
+This means again that even though the integral has fixed limits $t_1$
+and $t_2$, the path of integration is not known. In our case the unknown
+quantities are the positions and general velocities of a given number
+of objects and we wish to choose an integration path which makes the
+functional $S[q]$ stationary. This means that we want to find minima,
+or maxima or saddle points. In physics we search normally for minima.
+Our task is therefore to find the minimum of $S[q]$ so that its
+variation $\delta S$ is zero subject to specific constraints.  The
+constraints can be treated via the technique of Lagrangian multipliers
+as we will see below.
 
 
 
 
-We assume the existence of an optimum path, that is a path for which $S[q]$ is stationary. There are infinitely many such paths.
-The difference between two paths $\delta q$ is called the variation of $q$.
+We assume the existence of an optimum path, that is a path for which
+$S[q]$ is stationary. There are infinitely many such paths.  The
+difference between two paths $\delta q$ is called the variation of
+$q$.
 
-We call the variation $\eta(t)$  and it is scaled by a factor $\alpha$.  The function $\eta(t)$ is arbitrary except
-for
+We call the variation $\eta(t)$ and it is scaled by a factor $\alpha$.
+The function $\eta(t)$ is arbitrary except for
 
 !bt
 \[
-\eta(a)=\eta(b)=0,
+\eta(t_1)=\eta(t_2)=0,
 \]
 !et
 
@@ -101,7 +109,7 @@ We have
 
 !bt
 \[
-S[q(\alpha)]= \int_a^b f(q(t,\alpha),\dot{q}(t,\alpha),t)dt.
+S[q(\alpha)]= \int_{t_1}^{t_2} {\cal L}(q(t,\alpha),\dot{q}(t,\alpha),t)dt.
 \]
 !et
 
@@ -110,7 +118,7 @@ The condition for an extreme of
 
 !bt
 \[
-S[q(\alpha)]= \int_a^b f(q(t,\alpha),\dot{q}(t,\alpha),t)dt,
+S[q(\alpha)]= \int_{t_1}^{t_2} {\cal L}(q(t,\alpha),\dot{q}(t,\alpha),t)dt,
 \]
 !et
 
@@ -126,7 +134,7 @@ The $\alpha$ dependence is contained in $q(t,\alpha)$ and $\dot{q}(t,\alpha)$ me
 
 !bt
 \[
-\left[\frac{\partial  E[q(\alpha)]}{\partial \alpha}\right]=\int_a^b \left( \frac{\partial f}{\partial q}\frac{\partial q}{\partial \alpha}+\frac{\partial f}{\partial \dot{q}}\frac{\partial \dot{q}}{\partial \alpha}\right)dt.
+\left[\frac{\partial  E[q(\alpha)]}{\partial \alpha}\right]=\int_{t_1}^{t_2} \left( \frac{\partial {\cal l}}{\partial q}\frac{\partial q}{\partial \alpha}+\frac{\partial {\cal L}}{\partial \dot{q}}\frac{\partial \dot{q}}{\partial \alpha}\right)dt.
 \]
 !et
 We have defined
@@ -165,47 +173,36 @@ in the integral gives
 
 !bt
 \[
-\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]=\int_a^b \left( \frac{\partial f}{\partial q}\eta(t)+\frac{\partial f}{\\
-partial \dot{q}}\frac{d(\eta(t))}{dt}\right)dt.
+\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]=\int_{t_1}^{t_2} \left( \frac{\partial {\cal L}}{\partial q}\eta(t)+\frac{\partial {\cal L}}{\partial \dot{q}}\frac{d(\eta(t))}{dt}\right)dt.
 \]
 !et
 
-Integrate the second term by parts
+Integrating the second term by parts
 
 !bt
 \[
-\int_a^b \frac{\partial f}{\partial \dot{q}}\frac{d(\eta(t))}{dt}dt =\eta(t)\frac{\partial f}{\partial \dot{q}}|_a^b-
-\int_a^b \eta(t)\frac{d}{dx}\frac{\partial f}{\partial \dot{q}}dt,
+\int_{t_1}^{t_2} \frac{\partial {\cal L}}{\partial \dot{q}}\frac{d(\eta(t))}{dt}dt =\eta(t)\frac{\partial {\cal L}}{\partial \dot{q}}|_{t_1}^{t_2}-
+\int_a^b \eta(t)\frac{d}{dx}\frac{\partial {\cal L}}{\partial \dot{q}}dt,
 \]
 !et
 
 
 and since the first term dissappears due to $\eta(a)=\eta(b)=0$, we obtain
 
-!bt
-\[
-\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]=\int_a^b \left( \frac{\partial f}{\partial q}-\frac{d}{dt}\frac{\partial\
- f}{\partial \dot{q}}
-\right)\eta(t)dx=0.
-\]
-!et
 
 !bt
 \[
-\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]=\int_a^b \left( \frac{\partial f}{\partial q}-\frac{d}{dx}\frac{\partial\
- f}{\partial \dot{q}}
+\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]=\int_{t_1}^{t_2} \left( \frac{\partial {\cal L}}{\partial q}-\frac{d}{dx}\frac{\partial {\cal L}}{\partial \dot{q}}
 \right)\eta(t)dt=0,
 \]
 !et
 
-
-can also be written as
+which can also be written as
 
 !bt
 \[
-\alpha\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]_{\alpha=0}=\int_a^b \left( \frac{\partial f}{\partial q}-\frac{d}{\
-dx}\frac{\partial f}{\partial \dot{q}}
-\right)\delta q(t)dt=\delta S = 0.
+\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]_{\alpha=0}=\int_{t_1}^{t_2} \left( \frac{\partial {\cal L}}{\partial q}-\frac{d}{\
+dx}\frac{\partial {\cal L}}{\partial \dot{q}}\right)\delta q(t)dt=\delta S = 0.
 \]
 !et
 
@@ -214,19 +211,26 @@ The condition for a stationary value is thus a partial differential equation
 
 !bt
 \[
-\frac{\partial f}{\partial q}-\frac{d}{dx}\frac{\partial f}{\partial \dot{q}}=0,
+\frac{\partial {\cal L}}{\partial q}-\frac{d}{dx}\frac{\partial {\cal L}}{\partial \dot{q}}=0,
 \]
 !et
 
-known as Euler-Lagrange equation.
+known as the _Euler-Lagrange_ equation.
 
 
 
 ===== Constrained motion =====
 
-Sometimes an auxiliary constraint is added to the problem (beyond fixing the end poits $y_1$ and $y_2$). Just ahead, we will work on the example of a hanging chain. The shape of the curve minimizes the potential energy, under the constraint of a fixed length of chain. Before presenting such an example we first review the method of Lagrange multipliers as a method for finding minima or maxima under constraints.
+Sometimes an auxiliary constraint is added to the problem (beyond
+fixing the end poits $y_1$ and $y_2$). Just ahead, we will work on the
+example of a hanging chain. The shape of the curve minimizes the
+potential energy, under the constraint of a fixed length of
+chain. Before presenting such an example we first review the method of
+Lagrange multipliers as a method for finding minima or maxima under
+constraints.
 
-Imagine a function $f(x_1,x_2\cdots x_n)$ for which you wish to find the minima. Additionally, you are given a constraint
+Imagine a function $f(x_1,x_2\cdots x_n)$ for which you wish to find
+the minima. Additionally, you are given a constraint
 
 !bt
 \begin{eqnarray}
@@ -310,8 +314,7 @@ easy to solve for $x_1\cdots x_n$. Then one is left with the usually
 difficult problem of finding $\lambda$, often requiring the solution
 of a transcendental equation.
 
-
-Consider a function of three independent variables $f(x,y,z)$ . For
+Let us try to formalize this. We consider a function of three independent variables $f(x,y,z)$ . For
 the function $f$ to be an extreme we have
 
 !bt
@@ -427,7 +430,7 @@ $\phi_k$ we have the equations
 !et
 
 
-=== brachiostone ===
+=== Example: brachiostone ===
 
 Consider a particle constrained to move along a path (like a bead
 moving without friction on a wire) and you need to design a path from
