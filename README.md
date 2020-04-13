@@ -136,12 +136,12 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 - Wednesday: Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril8.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_rz8vr2ht
 - Friday: Euler-Lagrange equations and Lagrangian formalism. Taylor chapter 6 and lecture notes. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril10.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_j5ugthfg
 ### Week 16, April 13-17, 2020
-- Monday:  Langrangian formalism. 10th homework and extra assignments, due April 24 
-- Wednesday: Lagrangian formalism
-- Friday:  Lagrangian Formalism
+- Monday:  Langrangian formalism, discussion of examples. Taylor chapters 6 and 7. 10th homework and extra assignments, due April 24 
+- Wednesday: Lagrangian formalism, constraints and Lagrangian multipliers and examples
+- Friday:  Lagrangian Formalism, conservation laws and examples, from the classical pendulum to Foucault's pendulum. Taylor chapters 6 and 7 and lecture notes.
 ### Week 17, April 20-24, 2020
-- Monday:  Lagrangian formalism., examples. _Final exam project project, due May 1_
-- Wednesday: Lagrangian formalim, examples. Discussion of final examp project.
+- Monday:  Lagrangian formalism. Foucault's pendulum and earthquake model. _Final exam project project, due May 1_
+- Wednesday: Lagrangian formalim, examples such as the earthquake model. Discussion of final examp project.
 - Friday:  Summary and discussions of final exam project 
 ### Week 18, April 27- May 1, 2020, Finals week
 - Final Exam:  Due to the Corona virus the final exam will be a project similar to the two midterm projects. Deadline May 1.
