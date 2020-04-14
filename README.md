@@ -1,6 +1,8 @@
 # PHY321, Classical Mechanics I, Michigan State University, Spring 2020
 
-_Due to the corona virus, all lectures from March 13 are done remotely via zoom. All videos and handwritten notes are in D2L and below here. The videos are posted immediately after the lecture. Feel free to comment on the material. This is a rather unique situation and your feedback is essential for improving the quality of the teaching material.
+_Due to the corona virus, all lectures from March 13 are done remotely via zoom. All videos and handwritten notes are in D2L and below here. The videos are posted immediately after the lecture. Feel free to comment on the material. As you will see from the schedule below, the final written exam is replaced by a one week-long project, with start date April 24 and to be handed in not later than May 1._ 
+
+_This is a rather unique situation and your feedback is essential for improving the quality of the teaching material.
 Stay well._
 
 Here you will find a general overview of the course, with learning outcomes, teaching schedule etc.
@@ -14,7 +16,7 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 |  Instructor  | Email | Office  | Office phone/cellphone  |
 |--------------|------|-----|----| 
-| _Morten Hjorth-Jensen_ https://github.com/mhjensen | hjensen@msu.edu | Office: NSCL/FRIB 2131 | 5179087290/5172491375 |
+| _Morten Hjorth-Jensen_ https://github.com/mhjensen | hjensen@msu.edu | Office: NSCL/FRIB 2131 | 5179087290/5172491375/+47-48257387 |
 
 
 
