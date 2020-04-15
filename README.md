@@ -139,8 +139,8 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 - Friday: Euler-Lagrange equations and Lagrangian formalism. Taylor chapter 6 and lecture notes. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril10.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_j5ugthfg
 ### Week 16, April 13-17, 2020
 - Monday:  Langrangian formalism, discussion of examples. Taylor chapters 6 and 7. 10th homework and extra assignments, due April 24. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril13.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_hxxec3uc
-- Wednesday: Lagrangian formalism, constraints and Lagrangian multipliers and examples. Taylor chapter 7 and lecture notes.
-- Friday:  Lagrangian Formalism, conservation laws and examples, from the classical pendulum to Foucault's pendulum. Taylor chapters 6 and 7 and lecture notes.
+- Wednesday: Lagrangian formalism, constraints and Lagrangian multipliers and examples. These topics are covered by Taylor's sections 7.1,7.2, 7.3, 7.4. Sections 7.5-7.7 contain several nice examples while section 7.8 goes through conservation laws. The lecture notes cover many of these topics as well.
+- Friday:  Lagrangian Formalism, conservation laws and examples, from the classical pendulum to Foucault's pendulum. Taylor chapter 7 and lecture notes.
 ### Week 17, April 20-24, 2020
 - Monday:  Lagrangian formalism. Foucault's pendulum and earthquake model. _Final exam project project, due May 1_
 - Wednesday: Lagrangian formalim, examples such as the earthquake model. Discussion of final examp project.
