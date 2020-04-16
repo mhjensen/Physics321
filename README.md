@@ -114,9 +114,9 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 - Friday:  No lecture!
 - Good reads are chapter 8 of Taylor and Lecture notes 
 ### Week 10, March 2-6, 2020, Spring break
-- Monday:  No lectures
-- Wednesday: No lectures
-- Friday:  No lectures 
+- Monday:  No lectures, spring break
+- Wednesday: No lectures, spring break
+- Friday:  No lectures, spring break
 ### Week 11, March  9-13, 2020
 - Monday:  Gravity and central force problems, center of mass coordinates. Lecture notes and Taylor chapter 8. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch9.pdf
 - Wednesday: Discussion of first midterm. First midterm due Friday 13
