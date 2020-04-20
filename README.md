@@ -1,6 +1,8 @@
 # PHY321, Classical Mechanics I, Michigan State University, Spring 2020
 
-_Due to the corona virus, all lectures from March 13 are done remotely via zoom. All videos and handwritten notes are in D2L and below here. The videos are posted immediately after the lecture. Feel free to comment on the material. This is a rather unique situation and your feedback is essential for improving the quality of the teaching material.
+_Due to the corona virus, all lectures from March 13 are done remotely via zoom. All videos and handwritten notes are in D2L and below here. The videos are posted immediately after the lecture. Feel free to comment on the material. As you will see from the schedule below, the final written exam is replaced by a one week-long project, with start date April 24 and to be handed in not later than May 1._ 
+
+_This is a rather unique situation and your feedback is essential for improving the quality of the teaching material.
 Stay well._
 
 Here you will find a general overview of the course, with learning outcomes, teaching schedule etc.
@@ -14,7 +16,7 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 |  Instructor  | Email | Office  | Office phone/cellphone  |
 |--------------|------|-----|----| 
-| _Morten Hjorth-Jensen_ https://github.com/mhjensen | hjensen@msu.edu | Office: NSCL/FRIB 2131 | 5179087290/5172491375 |
+| _Morten Hjorth-Jensen_ https://github.com/mhjensen | hjensen@msu.edu | Office: NSCL/FRIB 2131 | 5179087290/5172491375/+47-48257387 |
 
 
 
@@ -112,9 +114,9 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 - Friday:  No lecture!
 - Good reads are chapter 8 of Taylor and Lecture notes 
 ### Week 10, March 2-6, 2020, Spring break
-- Monday:  No lectures
-- Wednesday: No lectures
-- Friday:  No lectures 
+- Monday:  No lectures, spring break
+- Wednesday: No lectures, spring break
+- Friday:  No lectures, spring break
 ### Week 11, March  9-13, 2020
 - Monday:  Gravity and central force problems, center of mass coordinates. Lecture notes and Taylor chapter 8. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch9.pdf
 - Wednesday: Discussion of first midterm. First midterm due Friday 13
@@ -136,9 +138,9 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 - Wednesday: Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril8.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_rz8vr2ht
 - Friday: Euler-Lagrange equations and Lagrangian formalism. Taylor chapter 6 and lecture notes. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril10.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_j5ugthfg
 ### Week 16, April 13-17, 2020
-- Monday:  Langrangian formalism, discussion of examples. Taylor chapters 6 and 7. 10th homework and extra assignments, due April 24 
-- Wednesday: Lagrangian formalism, constraints and Lagrangian multipliers and examples
-- Friday:  Lagrangian Formalism, conservation laws and examples, from the classical pendulum to Foucault's pendulum. Taylor chapters 6 and 7 and lecture notes.
+- Monday:  Langrangian formalism, discussion of examples. Taylor chapters 6 and 7. 10th homework and extra assignments, due April 24. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril13.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_hxxec3uc
+- Wednesday: Lagrangian formalism, constraints and Lagrangian multipliers and examples. These topics are covered by Taylor's sections 7.1,7.2, 7.3, 7.4. Sections 7.5-7.7 contain several nice examples while section 7.8 goes through conservation laws. The lecture notes cover many of these topics as well.  PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril15.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_2v2se359
+- Friday:  Lagrangian Formalism, conservation laws and examples, from the classical pendulum to Foucault's pendulum. Taylor chapter 7 and lecture notes. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril17.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_ftgzt035
 ### Week 17, April 20-24, 2020
 - Monday:  Lagrangian formalism. Foucault's pendulum and earthquake model. _Final exam project project, due May 1_
 - Wednesday: Lagrangian formalim, examples such as the earthquake model. Discussion of final examp project.
