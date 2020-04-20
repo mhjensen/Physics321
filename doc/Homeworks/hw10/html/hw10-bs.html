@@ -1,0 +1,267 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="PHY321: Classical Mechanics 1">
+
+<title>PHY321: Classical Mechanics 1</title>
+
+<!-- Bootstrap style: bootstrap -->
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+
+<style type="text/css">
+
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 3,
+ 'sections': [('Practicalities about  homeworks and projects',
+               3,
+               None,
+               '___sec0'),
+              ('Introduction to homework 10', 3, None, '___sec1'),
+              ('Exercise 1 (10pt), new reference frame', 3, None, '___sec2'),
+              ('Exercise 2 (10pt) Center of mass and relative coordinates',
+               3,
+               None,
+               '___sec3'),
+              ('Exercise 3 (30pt),  Two-body problems', 3, None, '___sec4'),
+              ('Exercise 4 (10pt) Non-inertial frames', 3, None, '___sec5'),
+              ('Exercise 5 (10pt), Lagrangian formalism', 3, None, '___sec6'),
+              ('Exercise 6 (30pt), Pendulum and Lagrangians',
+               3,
+               None,
+               '___sec7')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="hw10-bs.html">PHY321: Classical Mechanics 1</a>
+  </div>
+
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;">Practicalities about  homeworks and projects</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec1" style="font-size: 80%;">Introduction to homework 10</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec2" style="font-size: 80%;">Exercise 1 (10pt), new reference frame</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec3" style="font-size: 80%;">Exercise 2 (10pt) Center of mass and relative coordinates</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec4" style="font-size: 80%;">Exercise 3 (30pt),  Two-body problems</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec5" style="font-size: 80%;">Exercise 4 (10pt) Non-inertial frames</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec6" style="font-size: 80%;">Exercise 5 (10pt), Lagrangian formalism</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec7" style="font-size: 80%;">Exercise 6 (30pt), Pendulum and Lagrangians</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+
+<div class="container">
+
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<div class="jumbotron">
+<center><h1>PHY321: Classical Mechanics 1</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Homework 10, due Friday  April 24 -->
+
+<center>
+<b>Homework 10, due Friday  April 24</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Apr 20, 2020</h4></center> <!-- date -->
+<br>
+<p>
+</div> <!-- end jumbotron -->
+
+<h3 id="___sec0" class="anchor">Practicalities about  homeworks and projects </h3>
+
+<ol>
+<li> You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. <b>Remember to write your name(s)</b>!</li>
+<li> Homeworks are available  the week before the deadline.</li> 
+<li> How do I(we)  hand in?  Due to the corona virus and many of you not being on campus, we recommend that you scan your handwritten notes and upload them to D2L. If you are ok with typing mathematical formulae using say Latex, you can hand in everything as a single jupyter notebook at D2L. The numerical exercise(s) should always be handed in as a jupyter notebook by the deadline at D2L.</li> 
+</ol>
+
+<h3 id="___sec1" class="anchor">Introduction to homework 10 </h3>
+
+<p>
+This homework is optional but gives an extra score of 10% on top of
+all you have done throughout the semester. The exercises are
+essentially good old fashioned paper and pencil exercises and each
+covers different aspects of what has been done after spring break.
+
+<h3 id="___sec2" class="anchor">Exercise 1 (10pt), new reference frame </h3>
+
+<p>
+Show that if one transforms to a reference frame where the total
+momentum is zero, \( \boldsymbol{p}_1=-\boldsymbol{p}_2 \), that the relative momentum
+\( \boldsymbol{q} \) corresponds to either \( \boldsymbol{p}_1 \) or \( -\boldsymbol{p}_2 \). This
+means that in this frame the magnitude of \( \boldsymbol{q} \) is one half the
+magnitude of \( \boldsymbol{p}_1-\boldsymbol{p}_2 \).
+
+<h3 id="___sec3" class="anchor">Exercise 2 (10pt) Center of mass and relative coordinates </h3>
+
+<p>
+Given the center of mass and relative coordinates \( \boldsymbol{R} \) and \( \boldsymbol{r} \), respectively, for
+particles of mass \( m_1 \) and \( m_2 \), find the coordinates \( \boldsymbol{r}_1 \)
+and \( \boldsymbol{r}_2 \) in terms of the masses, \( \boldsymbol{R} \) and \( \boldsymbol{r} \).
+
+<h3 id="___sec4" class="anchor">Exercise 3 (30pt),  Two-body problems </h3>
+
+<p>
+Consider a particle of mass \( m \) moving in a potential
+$$
+V(r)=\alpha\ln(r/a),
+$$
+
+where \( a \) is a constant.
+
+<ul>
+<li> 3a (5pt)  If the particle is moving in a circular orbit of radius \( R \), find the angular frequency \( \dot{\theta} \). Solve this by setting \( F=-m\dot{\theta}^2r \) (force and acceleration point inward).</li>
+<li> 3b (5pt) Express the angular momentum \( L \) in terms of \( \alpha \), \( m \) and \( R \). Also express \( R \) in terms of \( L \), \( \alpha \) and \( m \).</li>
+<li> 3c (5pt) Sketch the effective radial potential, \( V_{\rm eff}(r) \), for a particle with angular momentum \( L \). (No longer necessarily moving in a circular orbit.)</li>
+<li> 3d (5pt)  Find the position of the minimum of \( V_{\rm eff} \) in terms of \( L \), \( \alpha \) and \( m \), then compare to the result of (3b).</li>
+<li> 3e (5pt)  What is the effective spring constant for a particle at the minimum of \( V_{\rm eff} \)? Express your answer in terms of \( L \), \( m \) and \( \alpha \).</li> 
+<li> 3f (5pt)  What is the angular frequency, \( \omega \), for small oscillations of \( r \) about the \( R_{\rm min} \)?  Express your answer in terms of \( \dot{\theta} \) from part (3a).</li>
+</ul>
+
+<h3 id="___sec5" class="anchor">Exercise 4 (10pt) Non-inertial frames </h3>
+
+<p>
+A high-speed cannon shoots a projectile with an initial velocity of
+1000 m/s in the east direction. The cannon is situated in
+Minneapolis (latitude of 45 degrees) The projectile velocity is
+nearly horizontal and it hits the ground after a distance \( x=3000 \)
+  m. Find the alteration of the point of impact in the north-south
+  (\( y \)) direction due to the Coriolis force. Assume the effect is
+  small so that you can approximate the eastward (\( x \)) component of
+  the velocity as being constant. Be sure to indicate whether the
+  deflection is north or south.
+
+<p>
+As a hint, if you let \( y \) be the north-south direction the equation of motions with the Coriolis force reads
+
+$$
+\frac{dv_y}{dt}= -2\Omega_zv_x + 2\Omega_xv_z,
+$$
+
+with the angular velocity \( \Omega_z=\Omega_{\mathrm{Earth}}/\sqrt{2} \) and \( \Omega_x=0 \).
+Integrate up and the find the velocity in the \( y \)-direction and the corresponding displacement.
+
+<h3 id="___sec6" class="anchor">Exercise 5 (10pt), Lagrangian formalism   </h3>
+
+<p>
+Consider a mass \( m \) connected to a spring with spring constant
+  \( k \). Rather than being fixed, the other end of the spring oscillates
+  with frequency \( \omega \) and amplitude \( A \). For a generalized
+  coordinate, use the displacement of the mass from its relaxed
+  position and call it \( y=x-\ell-A\cos\omega t \). In this system the
+  potential energy of the spring is \( ky^2/2 \).
+
+<p>
+<li> 5a (5pt)  Write the kinetic energy in terms of the generalized coordinate.</li>
+<li> 5b (5pt) Write down the Lagrangian and find the equations of motion for \( y \).
+
+<h3 id="___sec7" class="anchor">Exercise 6 (30pt), Pendulum and Lagrangians </h3>
+
+<p>
+Consider a pendulum of length \( \ell \) with all the mass \( m \) at
+  its end. The pendulum is allowed to swing freely in both
+  directions. Using \( \phi \) to describe the azimuthal angle about the
+  \( z \) axis and \( \theta \) to measure the angular deviation of the
+  pendulum from the downward direction, address the following
+  questions:
+
+<p></li>
+<li> 6a (5pt) If the pendulum is initially moving horizontally with velocity \( v_0 \) and angle \( \theta_0=90^\circ \) (horizontal), use energy and angular momentum conservation to find the minimum angles of \( \theta_{\rm min} \) subtended by the pendulum. (Note that the angle  will oscillate between \( 90^\circ \) and the minimum angle.</li>
+<li> 6b (5pt) Write the Lagrangian using \( \theta \) and \( \phi \) as generalized coordinates.</li>
+<li> 6c (5pt) Write the equations of motion for \( \theta \) and \( \phi \).</li>
+<li> 6d (5pt) Rewrite the equations of motion for \( \theta \) using angular momentum conservation to eliminate and reference to \( \phi \).</li>
+<li> 6e (5pt) Find the value of \( L \) required for the stable orbit to be at \( \theta=45^\circ \).</li>
+<li> 6f (5pt)  For the steady orbit found in (e) consider small perturbations of the orbit. Find the frequency with which the pendulum oscillates around \( \theta=45^\circ \).
+
+<p>
+
+<!-- ------------------- end of main content --------------- -->
+
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap footer
+<footer>
+<a href="http://..."><img width="250" align=right src="http://..."></a>
+</footer>
+-->
+
+
+</body>
+</html>
+    
+
