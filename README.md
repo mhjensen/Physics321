@@ -143,7 +143,7 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 - Friday:  Lagrangian Formalism, conservation laws and examples, from the classical pendulum to Foucault's pendulum. Taylor chapter 7 and lecture notes. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril17.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_ftgzt035
 ### Week 17, April 20-24, 2020
 - Monday:  Lagrangian formalism, conservation laws. Examples. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril20.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_b81t0tta 
-- Wednesday: Lagrangian formalim, examples such as the earthquake model. 
+- Wednesday: Lagrangian formalim, examples such as the linear chain and double pendulum. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril22.pdf and video of lecture https://mediaspace.msu.edu/media/t/
 - Friday:  Summary and discussions of final exam project. _Final exam project project, due May 1_ 
 ### Week 18, April 27- May 1, 2020, Finals week
 - Final Exam:  Due to the Corona virus the final exam will be a project similar to the two midterm projects. Deadline May 1.
