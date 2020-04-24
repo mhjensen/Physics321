@@ -151,7 +151,7 @@ Apr 24, 2020
 \begin{enumerate}
 \item You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. \textbf{Remember to write your name(s)}!
 
-\item How do I(we)  hand in?  Due to the extraordinary situation we are in now, the midterm should be handed in fully via D2L. You can scan your handwritten notes and upload to D2L or you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical part should always be handed in as a jupyter notebook.
+\item How do I(we)  hand in?  Due to the extraordinary situation we are in now, the final projec should be handed in fully via D2L. You can scan your handwritten notes and upload to D2L or you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical part should always be handed in as a jupyter notebook.
 \end{enumerate}
 
 \noindent
@@ -164,9 +164,9 @@ The relevant reading background is
 \end{enumerate}
 
 \noindent
-The final project aims at covering most of the topics we have discussed during the semester. As a physical system to discuss what has been, we will use what in the literature is called the \textbf{mathematical pendulum} and variants thereof. 
+The final project aims at covering most of the topics we have discussed during the semester. As a physical system to discuss many of the principles we have discussed during the semester, we will use what in the literature is called the \textbf{mathematical pendulum} and variants thereof. 
 
-\paragraph{Exercise 1: Mathematical pendulum in two dimensions.}
+\paragraph{Exercise 1: Mathematical pendulum.}
 A mathematical pendulum consists of a point mass $m$ suspended by a massless thread/rod of length $l$ in a gravitational field, as shown in the figure here. The constraining force is labeled by $\bm{T}$
 and the gravitational force is labeled $\bm{F}_g$.
 
@@ -180,9 +180,9 @@ We assume that the length $l$ is constant and we define the coordinates involved
 where $\bm{\hat{x}}$ and $\bm{\hat{y}}$ are the unit vectors in the $x$ and $y$ directions, respectively.
 
 \begin{itemize}
-\item 1a (5pt): Set up the forces acting on the system and show that the equation of motion is $m\ddot{\bm{r}}=\bm{F}_g+\bm{T}$.
+\item \textbf{1a (5pt):} Set up the forces acting on the system and show that the equation of motion is $m\ddot{\bm{r}}=\bm{F}_g+\bm{T}$.
 
-\item 1b (10pt): Show that you can rewrite the above equation of motion as two independent equations of motion, on for $\phi$ and one for the constraining force. Show that these equations are $\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}$ with $\omega_0^2=g/l$ and $-ml\dot{\phi}^2=mg\cos{(\phi)}-T$.
+\item \textbf{1b (10pt):} Show that you can rewrite the above equation of motion as two independent equations of motion, one for $\phi$ and one for the constraining force. Show that these equations are $\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}$ with $\omega_0^2=g/l$ and $T=ml\dot{\phi}^2+mg\cos{(\phi)}$.
 \end{itemize}
 
 \noindent
@@ -198,13 +198,13 @@ This equation can be solved analytically if we assume that the angle $\phi$ is v
 \]
 
 \begin{itemize}
-\item 1c (10pt): Find the analytical solution for the last equation. Hint, look back at the solutions for the simple harmonic oscillator problem in one dimension in for example homework 6.
+\item \textbf{1c (10pt):} Find the analytical solution for the last equation. Hint, look back at the solutions for the simple harmonic oscillator problem in one dimension in for example homework 6.
 \end{itemize}
 
 \noindent
 For our numerical treatment of the full second-order differential  equation, we can proceed as we have done before and split the second-order differential in two first-order differential equations
+as shown here
 
-The equation for $\phi$ is a second-order differential equation
 \[
 \frac{d\dot{\phi}}{dt}=-\omega_0^2\sin{(\phi)}.
 \]
@@ -217,17 +217,60 @@ and
 
 
 \begin{itemize}
-\item 1d (10pt): Scale the equations in terms of a dimensionless time $\hat{t}=\omega_0t$. Choose between the Euler-Cromer, the Velocity-Verlet or the Runge-Kutta to fourth order and \textbf{write} the algorithm for solving the last two equations numerically. Explain briefly your choice of numerical algorithm. Hint, look back at what you did in homework 6.
+\item \textbf{1d (10pt):} Scale the equations in terms of a dimensionless time $\hat{t}=\omega_0t$. Choose between the Euler-Cromer, the Velocity-Verlet or the Runge-Kutta to fourth order and \textbf{write down} the algorithm for solving the last two equations numerically. Explain briefly your choice of numerical algorithm. Hint, look back at what you did in homework 6.
 
-\item 1e (10pt): Choose initial conditions and compare your numerical solution with the analytical one. For which range of angles $\phi$ (determined by your initial conditions) are the analytical solutions comparable to your numerical results? Discuss the implications of your results.
+\item \textbf{1e (10pt):} Choose initial conditions and compare your numerical solution with the analytical one. For which range of angles $\phi$ (determined by your initial conditions) are the analytical solutions comparable to your numerical results? Discuss the implications of your results.
 
-\item 1f (10pt): Find the expressions for the kinetic and potential energies in terms of the variables $r$ (remember that $r=l$ and is a constant throughout the calculations). In your code, check then that energy is conserved by calculating the total energy, the kinetic and potential energies ad functions of time. Discuss your results.
+\item \textbf{1f (10pt):} Find the expressions for the kinetic and potential energies in terms of the variables $r$ and $\phi$. Remember that $r=l$ and is a constant throughout the calculations. In your code, check then whether energy is conserved by calculating the total energy, the kinetic and potential energies ad functions of time. Discuss your results.
 
-\item 1g (10pt) With the potential $V$  and kinetic $T$ energies, define the Lagrangian for the mathematical pendulum discussed here. Add the constraint $r=l$ via a Lagrange multiplier $\lambda$ and derive the equations of motion. Show that these result in 
+\item \textbf{1g (10pt):} With the potential $V$  and kinetic $T$ energies, define the Lagrangian for the mathematical pendulum discussed here. Add the constraint $r=l$ via a Lagrange multiplier $\lambda$ and derive the equations of motion. Show that these result in  $\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}$ with $\omega_0^2=g/l$ and $\lambda=ml\dot{\phi}^2+mg\cos{(\phi)}$.  How would you interpret $\lambda$? 
 \end{itemize}
 
 \noindent
-$\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}$ with $\omega_0^2=g/l$ and $-ml\dot{\phi}^2=mg\cos{(\phi)}-\lambda$.  How would you interpret $\lambda$? 
+\paragraph{Exercise 2: Rotating Pendulum in a Gravitational Field.}
+Assume now that the same pendulum is rotating in the gravitational field with a constant angular velocity $\Omega$ as shown in the figure here, with a constant angle $\phi$.
+% FIGURE: [figslides/rotatingpendulum.png, width=600 frac=0.6]
+
+From our discussions on rotating frames, the acceleration for an object in the rotating fram $S$  is given by
+\[
+m\bm{a}_{S}=\bm{F}+m\dot{\bm{r}\times\bm{\Omega}}+2m\bm{v}_S\times\bm{\Omega}+m(\bm{\Omega}\times\bm{r})\times\bm{\Omega}.
+\]
+
+We have the Coriolis force
+\[
+\bm{F}_{\mathrm{Coriolis}}=2m\bm{v}_S\times\bm{\Omega},
+\]
+while the last term is the standard centrifugal force
+
+\[
+\bm{F}_{\mathrm{Centrifugal}}=m\left(\bm{\Omega}\times\bm{r}_S\right)\times\bm{\Omega}.
+\]
+
+In this exercise  we will assume that the angular acceleration of the rotating frame and the velocity $\bm{v}_S$ are  constant quantities, that is their time derivatives are zero.
+
+\begin{itemize}
+\item \textbf{2a (5pt):} Set up the forces acting on the mass and show that, since $\Omega$ and $\bm{v}_S$ are constants that you get 
+\end{itemize}
+
+\noindent
+\[
+m\bm{a}_{S}=0=\bm{T}+m\bm{g}+m(\bm{\Omega}\times\bm{r}_S)\times\bm{\Omega}.
+\]
+
+\begin{itemize}
+\item \textbf{2b (10pt):} Use the last equation to show that, for $\Omega^2 \le g/l$  the angle $\phi$ is given by
+\end{itemize}
+
+\noindent
+\[
+\phi=\mathrm{arccos}\left(\frac{g}{l\Omega^2}\right).
+\]
+
+\begin{itemize}
+\item \textbf{2c (10pt):} Plot $\phi$ as function of $g/l\Omega^2$ and study the limits $\Omega\rightarrow \infty$ and $\Omega\rightarrow 0$. Discuss  the possibility that $\Omega^2 < g/l$. Discuss the implications of your results. 
+\end{itemize}
+
+\noindent
 
 % ------------------- end of main content ---------------
 
