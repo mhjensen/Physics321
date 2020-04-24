@@ -1,0 +1,176 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Summary of course">
+
+<title>Summary of course</title>
+
+
+<link href="https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_styles/style_solarized_box/css/solarized_light_code.css" rel="stylesheet" type="text/css" title="light"/>
+<script src="https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_styles/style_solarized_box/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://thomasf.github.io/solarized-css/solarized-light.min.css" rel="stylesheet">
+<style type="text/css">
+h1 {color: #b58900;}  /* yellow */
+/* h1 {color: #cb4b16;}  orange */
+/* h1 {color: #d33682;}  magenta, the original choice of thomasf */
+code { padding: 0px; background-color: inherit; }
+pre {
+  border: 0pt solid #93a1a1;
+  box-shadow: none;
+}
+
+div { text-align: justify; text-justify: inter-word; }
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('What? Me worry? No final traditional exam in this course!',
+               2,
+               None,
+               '___sec0'),
+              ('What did I learn in school this year?', 2, None, '___sec1'),
+              ('Topics we have covered this year', 2, None, '___sec2'),
+              ('And how to solve these problems', 2, None, '___sec3'),
+              ('One program to rule them all?', 2, None, '___sec4'),
+              ('Best wishes to you all and thanks so much for your heroic '
+               'efforts this semester',
+               2,
+               None,
+               '___sec5')]}
+end of tocinfo -->
+
+<body>
+
+    
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1>Summary of course</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Morten Hjorth-Jensen   Email morten.hjorth-jensen@fys.uio.no -->
+
+<center>
+<b>Morten Hjorth-Jensen   Email morten.hjorth-jensen@fys.uio.no</b> 
+</center>
+
+<p>
+<!-- institution -->
+
+<center><b>Department of Physics and Astronomy and Facility for Rare Ion Beams and National Superconducting Cyclotron Laboratory, Michigan State University</b></center>
+<br>
+<p>
+<center><h4>Apr 24, 2020</h4></center> <!-- date -->
+<br>
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec0">What? Me worry? No final traditional exam in this course! </h2>
+<br /><br /><center><p><img src="figures/exam1.jpeg" align="bottom" width=500></p></center><br /><br />
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec1">What did I learn in school this year? </h2>
+
+<p>
+Does this figure that match the experiences you have made this semester?
+<br /><br /><center><p><img src="figures/exam2.jpg" align="bottom" width=500></p></center><br /><br />
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec2">Topics we have covered this year </h2>
+
+<ul>
+<li> How to derive equations of motion based on forces</li>
+<li> Inertial frames and their relation to accelerating and rotating frames (non-intertial frames)</li>
+<li> Forces, work, energy, angular momentum, linear momentum and conservation laws</li>
+<li> Various types of motions, falling objects, objects moving in various fields</li>
+<li> Analysing energy diagrams and defining effective potential</li>
+<li> Small oscillations, Harmonic oscillator potential and equations of motion</li>
+<li> Transformation of variables that allow for analytical solutions, example two-body problems</li>
+<li> Central forces and two-body problems, center-of-mass and relative coordinates as reference frame</li>
+<li> Two-body scattering problems, classical scattering cross section</li>
+<li> Variational calculus and Lagrangian formalism</li>
+<li> Deriving equations of motion from Lagrangian formalism only</li>
+<li> Lagrangian formalism with constraints</li>
+</ul>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec3">And how to solve these problems </h2>
+
+<p>
+We have studied many systems numerically, from falling objects with and without friction/air resistance, small oscillations (harmonic oscillator), gravitational problems and other central force problems, rotations and the classical pendulum.
+
+<ul>
+<li> Euler-Cromer and Velocity-Verlet as energy conserving algorithms (time-independent forces)</li>
+<li> Runge-Kutta family of algorithms for time-dependent forces</li>
+<li> Numerical integration using the Trapezoidal, midpoint and Simpson's rule.</li>
+</ul>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec4">One program to rule them all? </h2>
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span>DeltaT = <span style="color: #B452CD">0.001</span>
+<span style="color: #228B22">#set up arrays </span>
+tfinal = <span style="color: #B452CD">10</span> <span style="color: #228B22"># in years</span>
+n = ceil(tfinal/DeltaT)
+<span style="color: #228B22"># set up arrays for t, a, v, and x</span>
+t = np.zeros(n)
+v = np.zeros((n,<span style="color: #B452CD">3</span>))
+r = np.zeros((n,<span style="color: #B452CD">3</span>))
+<span style="color: #228B22"># Initial conditions as compact 3-dimensional arrays</span>
+r0 = np.array([<span style="color: #B452CD">1.0</span>,<span style="color: #B452CD">0.0</span>,<span style="color: #B452CD">0.0</span>])
+v0 = np.array([<span style="color: #B452CD">0.0</span>,<span style="color: #B452CD">2</span>*pi,<span style="color: #B452CD">0.0</span>])
+r[<span style="color: #B452CD">0</span>] = r0
+v[<span style="color: #B452CD">0</span>] = v0
+<span style="color: #228B22"># Start integrating using Euler&#39;s method</span>
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
+    <span style="color: #228B22"># Set up the acceleration for force that depends only on position</span>
+    a =  Force(r)/mass
+    <span style="color: #228B22"># update velocity, time and position using the Euler-Cromer forward</span>
+    v[i+<span style="color: #B452CD">1</span>] = v[i] + DeltaT*a
+    r[i+<span style="color: #B452CD">1</span>] = r[i] + DeltaT*v[i]
+    t[i+<span style="color: #B452CD">1</span>] = t[i] + DeltaT
+</pre></div>
+<p>
+The overarching idea is that as soon as we have analyzed the forces at play, we can reuse our programs (algorithms) with new forces, without having to recur to the few analytical cases we can solve.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec5">Best wishes to you all and thanks so much for your heroic efforts this semester </h2>
+
+<p>
+<br /><br /><center><p><img src="figures/Nebbdyr2.png" align="bottom" width=500></p></center><br /><br />
+
+<!-- ------------------- end of main content --------------- -->
+
+
+<center style="font-size:80%">
+<!-- copyright --> &copy; 1999-2020, Morten Hjorth-Jensen   Email morten.hjorth-jensen@fys.uio.no. Released under CC Attribution-NonCommercial 4.0 license
+</center>
+
+
+</body>
+</html>
+    
+
