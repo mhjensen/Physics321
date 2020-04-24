@@ -8,7 +8,7 @@ o You can work in groups (optimal groups are often 2-3 people) or by yourself. I
 o How do I(we)  hand in?  Due to the extraordinary situation we are in now, the final projec should be handed in fully via D2L. You can scan your handwritten notes and upload to D2L or you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical part should always be handed in as a jupyter notebook.
 
 
-=== Introduction to the final project, total score: 100  points ===
+=== Introduction to the final project, total score: 160  points ===
 
 The relevant reading background is
 o chapters 2-9 and 14 of Taylor
@@ -75,7 +75,7 @@ and
 
 * _1e (10pt):_ Choose initial conditions and compare your numerical solution with the analytical one. For which range of angles $\phi$ (determined by your initial conditions) are the analytical solutions comparable to your numerical results? Discuss the implications of your results.
 
-* _1f (10pt):_ Find the expressions for the kinetic and potential energies in terms of the variables $r$ and $\phi$. Remember that $r=l$ and is a constant throughout the calculations. In your code, check then whether energy is conserved by calculating the total energy, the kinetic and potential energies ad functions of time. Discuss your results.
+* _1f (10pt):_ Find the expressions for the kinetic and potential energies in terms of the variables $r$ and $\phi$. Remember that $r=l$ and is a constant throughout the calculations. In your code, check then whether energy is conserved by calculating the total energy, the kinetic and potential energies ad functions of time. Discuss your results. Do you expect energy to be conserved? 
 
 * _1g (10pt):_ With the potential $V$  and kinetic $T$ energies, define the Lagrangian for the mathematical pendulum discussed here. Add the constraint $r=l$ via a Lagrange multiplier $\lambda$ and derive the equations of motion. Show that these result in  $\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}$ with $\omega_0^2=g/l$ and $\lambda=ml\dot{\phi}^2+mg\cos{(\phi)}$.  How would you interpret $\lambda$? 
 
@@ -133,4 +133,21 @@ Discuss why you don't include the Coriolis term and only the centrifugal force.
 
 * _2c (10pt):_ Plot $\phi$ as function of $g/l\Omega^2$ and study the limits $\Omega\rightarrow \infty$ and $\Omega\rightarrow 0$. Discuss  the possibility that $\Omega^2 < g/l$. Discuss the implications of your results. 
 
+=== Exercise 3, Coupled Harmonic Oscillators ===
 
+Consider a mass $m$ that is connected to a wall by a spring with
+spring constant $k$. A second identical mass $m$ is connected to the
+first mass by an identical spring. Motion is confined to the $x$ direction only.
+
+* _3a (10pt):_ Make a drawing of the system, set up forces and define variables $x_1$ and $x_2$ for the two masses.
+* _3b (10pt):_ Write the Lagrangian in terms of the positions of the two masses $x_1$ and $x_2$.
+* _3c (10pt):_ Use the Euler-Lagrane equations to find the  equations of motion.
+* _3d (10pt):_ Find the analytical  solutions of the type
+!bt
+\begin{eqnarray*}
+x_1&=&Ae^{i\omega t},~~~x_2=Be^{i\omega t}.
+\end{eqnarray*}
+!et
+Solve for $A/B$ and $\omega$. Express your answers in terms of $\omega_0^2=k/m$.
+
+* _3e (20pt):_ Write now a program which solves these two coupled differential equations for $x_1$ and $x_2$. Compute the positions $x_1$ and $x_2$ by choosing your initial conditions and compare with the analytical answers from 3d.   

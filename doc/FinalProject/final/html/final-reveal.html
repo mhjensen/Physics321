@@ -156,7 +156,7 @@ MathJax.Hub.Config({
 <p><li> How do I(we)  hand in?  Due to the extraordinary situation we are in now, the final projec should be handed in fully via D2L. You can scan your handwritten notes and upload to D2L or you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical part should always be handed in as a jupyter notebook.</li>
 </ol>
 
-<h3 id="___sec1">Introduction to the final project, total score: 100  points </h3>
+<h3 id="___sec1">Introduction to the final project, total score: 160  points </h3>
 
 <p>
 The relevant reading background is
@@ -239,7 +239,7 @@ $$
 <ul>
 <p><li> <b>1d (10pt):</b> Scale the equations in terms of a dimensionless time \( \hat{t}=\omega_0t \). Choose between the Euler-Cromer, the Velocity-Verlet or the Runge-Kutta to fourth order and <b>write down</b> the algorithm for solving the last two equations numerically. Explain briefly your choice of numerical algorithm. Hint, look back at what you did in homework 6 and the two midterms.</li>
 <p><li> <b>1e (10pt):</b> Choose initial conditions and compare your numerical solution with the analytical one. For which range of angles \( \phi \) (determined by your initial conditions) are the analytical solutions comparable to your numerical results? Discuss the implications of your results.</li>
-<p><li> <b>1f (10pt):</b> Find the expressions for the kinetic and potential energies in terms of the variables \( r \) and \( \phi \). Remember that \( r=l \) and is a constant throughout the calculations. In your code, check then whether energy is conserved by calculating the total energy, the kinetic and potential energies ad functions of time. Discuss your results.</li>
+<p><li> <b>1f (10pt):</b> Find the expressions for the kinetic and potential energies in terms of the variables \( r \) and \( \phi \). Remember that \( r=l \) and is a constant throughout the calculations. In your code, check then whether energy is conserved by calculating the total energy, the kinetic and potential energies ad functions of time. Discuss your results. Do you expect energy to be conserved?</li> 
 <p><li> <b>1g (10pt):</b> With the potential \( V \)  and kinetic \( T \) energies, define the Lagrangian for the mathematical pendulum discussed here. Add the constraint \( r=l \) via a Lagrange multiplier \( \lambda \) and derive the equations of motion. Show that these result in  \( \ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))} \) with \( \omega_0^2=g/l \) and \( \lambda=ml\dot{\phi}^2+mg\cos{(\phi)} \).  How would you interpret \( \lambda \)?</li> 
 </ul>
 
@@ -303,6 +303,33 @@ $$
 
 <ul>
 <p><li> <b>2c (10pt):</b> Plot \( \phi \) as function of \( g/l\Omega^2 \) and study the limits \( \Omega\rightarrow \infty \) and \( \Omega\rightarrow 0 \). Discuss  the possibility that \( \Omega^2 < g/l \). Discuss the implications of your results.</li> 
+</ul>
+
+<h3 id="___sec4">Exercise 3, Coupled Harmonic Oscillators </h3>
+
+<p>
+Consider a mass \( m \) that is connected to a wall by a spring with
+spring constant \( k \). A second identical mass \( m \) is connected to the
+first mass by an identical spring. Motion is confined to the \( x \) direction only.
+
+<ul>
+<p><li> <b>3a (10pt):</b> Make a drawing of the system, set up forces and define variables \( x_1 \) and \( x_2 \) for the two masses.</li>
+<p><li> <b>3b (10pt):</b> Write the Lagrangian in terms of the positions of the two masses \( x_1 \) and \( x_2 \).</li>
+<p><li> <b>3c (10pt):</b> Use the Euler-Lagrane equations to find the  equations of motion.</li>
+<p><li> <b>3d (10pt):</b> Find the analytical  solutions of the type</li>
+</ul>
+<p>&nbsp;<br>
+$$
+\begin{eqnarray*}
+x_1&=&Ae^{i\omega t},~~~x_2=Be^{i\omega t}.
+\end{eqnarray*}
+$$
+<p>&nbsp;<br>
+
+Solve for \( A/B \) and \( \omega \). Express your answers in terms of \( \omega_0^2=k/m \).
+
+<ul>
+<p><li> <b>3e (20pt):</b> Write now a program which solves these two coupled differential equations for \( x_1 \) and \( x_2 \). Compute the positions \( x_1 \) and \( x_2 \) by choosing your initial conditions and compare with the analytical answers from 3d.</li>   
 </ul>
 </section>
 
