@@ -155,7 +155,7 @@ Apr 24, 2020
 \end{enumerate}
 
 \noindent
-\paragraph{Introduction to the final project, total score  points.}
+\paragraph{Introduction to the final project, total score: 100  points.}
 The relevant reading background is
 \begin{enumerate}
 \item chapters 2-9 and 14 of Taylor
@@ -180,7 +180,7 @@ We assume that the length $l$ is constant and we define the coordinates involved
 where $\bm{\hat{x}}$ and $\bm{\hat{y}}$ are the unit vectors in the $x$ and $y$ directions, respectively.
 
 \begin{itemize}
-\item \textbf{1a (5pt):} Set up the forces acting on the system and show that the equation of motion is $m\ddot{\bm{r}}=\bm{F}_g+\bm{T}$.
+\item \textbf{1a (10pt):} Set up the forces acting on the system and show that the equation of motion is $m\ddot{\bm{r}}=\bm{F}_g+\bm{T}$.
 
 \item \textbf{1b (10pt):} Show that you can rewrite the above equation of motion as two independent equations of motion, one for $\phi$ and one for the constraining force. Show that these equations are $\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}$ with $\omega_0^2=g/l$ and $T=ml\dot{\phi}^2+mg\cos{(\phi)}$.
 \end{itemize}
@@ -233,7 +233,7 @@ Assume now that the same pendulum is rotating in the gravitational field with a 
 
 From our discussions on rotating frames, the acceleration for an object in the rotating fram $S$  is given by
 \[
-m\bm{a}_{S}=\bm{F}+m\dot{\bm{r}\times\bm{\Omega}}+2m\bm{v}_S\times\bm{\Omega}+m(\bm{\Omega}\times\bm{r}_s)\times\bm{\Omega}.
+m\bm{a}_{S}=\bm{F}+m\bm{r}\times\dot{\bm{\Omega}}+2m\bm{v}_S\times\bm{\Omega}+m(\bm{\Omega}\times\bm{r}_s)\times\bm{\Omega}.
 \]
 
 The position the mass of the pendulum is $\bm{r}_S$. Recall also that the length $l$ is constant.
@@ -248,7 +248,7 @@ while the last term is the standard centrifugal force
 \bm{F}_{\mathrm{Centrifugal}}=m\left(\bm{\Omega}\times\bm{r}_S\right)\times\bm{\Omega}.
 \]
 
-In this exercise  we will assume that the angular acceleration of the rotating frame and the velocity $\bm{v}_S$ are  constant quantities, that is their time derivatives are zero.
+In this exercise  we will assume that the angular acceleration of the rotating frame and the position $\bm{r}_S$ are  constant quantities, that is their time derivatives are zero. Moreover, we assume the angle $\phi$ does not change as function of time.
 
 \begin{itemize}
 \item \textbf{2a (10pt):} Set up the forces acting on the mass and show that, since $\Omega$ and $\bm{v}_S$ are constants that you get 
@@ -270,36 +270,6 @@ m\bm{a}_{S}=0=\bm{T}+m\bm{g}+m(\bm{\Omega}\times\bm{r}_S)\times\bm{\Omega}.
 
 \begin{itemize}
 \item \textbf{2c (10pt):} Plot $\phi$ as function of $g/l\Omega^2$ and study the limits $\Omega\rightarrow \infty$ and $\Omega\rightarrow 0$. Discuss  the possibility that $\Omega^2 < g/l$. Discuss the implications of your results. 
-\end{itemize}
-
-\noindent
-\paragraph{Exercise 3: Planar double  pendulum.}
-The final exercise deals with a planar double pendulum as shown in the figure here
-% FIGURE: [figslides/doublependulum.png,width=600 frac=0.6]
-
-We will set the masses equal $m_1=m_2=m$ and the lengths $l_1=l_2=l$.
-
-We define the variables (see the figure)
-
-\[
-\bm{r}_1=l(\sin(\phi_1)\bm{\hat{x}}+\cos(\phi_1)\bm{\hat{y}},
-\]
-
-and
-
-\[
-\bm{r}_2=l(\sin(\phi_1)+\sin(\phi_2))\bm{\hat{x}}+   l(\cos(\phi_1)+\cos(\phi_2)  )\bm{\hat{y}}.
-\]
-
-
-\begin{itemize}
-\item \textbf{3a (10pt):} Set up the forces acting on the two pendula. Use the above equations to define $x_1$, $x_2$, $y_1$ and $y_2$.
-
-\item \textbf{3b (10pt):} Use the expressions for $x_1$, $x_2$, $y_1$ and $y_2$  to find the equation for the kinetic energy in terms of the angles $\phi_1$ and $\phi_2$, the length $l$ and the mass $m$.
-
-\item \textbf{3c (10pt):} Use the expressions for $x_1$, $x_2$, $y_1$ and $y_2$  to find the equation for the potential energy.
-
-\item \textbf{3d (20pt):} Define the Lagrangian ${\cal L}=T-V$ and use the Euler-Lagrange equations to find the equations of motion for $\phi_1$ and $\phi_2$. 
 \end{itemize}
 
 \noindent

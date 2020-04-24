@@ -39,7 +39,7 @@ div { text-align: justify; text-justify: inter-word; }
                3,
                None,
                '___sec0'),
-              ('Introduction to the final project, total score  points',
+              ('Introduction to the final project, total score: 100  points',
                3,
                None,
                '___sec1'),
@@ -47,8 +47,7 @@ div { text-align: justify; text-justify: inter-word; }
               ('Exercise 2: Rotating Pendulum in a Gravitational Field',
                3,
                None,
-               '___sec3'),
-              ('Exercise 3: Planar double  pendulum', 3, None, '___sec4')]}
+               '___sec3')]}
 end of tocinfo -->
 
 <body>
@@ -98,7 +97,7 @@ MathJax.Hub.Config({
 <li> How do I(we)  hand in?  Due to the extraordinary situation we are in now, the final projec should be handed in fully via D2L. You can scan your handwritten notes and upload to D2L or you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical part should always be handed in as a jupyter notebook.</li>
 </ol>
 
-<h3 id="___sec1">Introduction to the final project, total score  points </h3>
+<h3 id="___sec1">Introduction to the final project, total score: 100  points </h3>
 
 <p>
 The relevant reading background is
@@ -129,7 +128,7 @@ $$
 where \( \boldsymbol{\hat{x}} \) and \( \boldsymbol{\hat{y}} \) are the unit vectors in the \( x \) and \( y \) directions, respectively.
 
 <ul>
-<li> <b>1a (5pt):</b> Set up the forces acting on the system and show that the equation of motion is \( m\ddot{\boldsymbol{r}}=\boldsymbol{F}_g+\boldsymbol{T} \).</li>
+<li> <b>1a (10pt):</b> Set up the forces acting on the system and show that the equation of motion is \( m\ddot{\boldsymbol{r}}=\boldsymbol{F}_g+\boldsymbol{T} \).</li>
 <li> <b>1b (10pt):</b> Show that you can rewrite the above equation of motion as two independent equations of motion, one for \( \phi \) and one for the constraining force. Show that these equations are \( \ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))} \) with \( \omega_0^2=g/l \) and \( T=ml\dot{\phi}^2+mg\cos{(\phi)} \).</li>
 </ul>
 
@@ -181,7 +180,7 @@ Assume now that the same pendulum is rotating in the gravitational field with a 
 <p>
 From our discussions on rotating frames, the acceleration for an object in the rotating fram \( S \)  is given by
 $$
-m\boldsymbol{a}_{S}=\boldsymbol{F}+m\dot{\boldsymbol{r}\times\boldsymbol{\Omega}}+2m\boldsymbol{v}_S\times\boldsymbol{\Omega}+m(\boldsymbol{\Omega}\times\boldsymbol{r}_s)\times\boldsymbol{\Omega}.
+m\boldsymbol{a}_{S}=\boldsymbol{F}+m\boldsymbol{r}\times\dot{\boldsymbol{\Omega}}+2m\boldsymbol{v}_S\times\boldsymbol{\Omega}+m(\boldsymbol{\Omega}\times\boldsymbol{r}_s)\times\boldsymbol{\Omega}.
 $$
 
 <p>
@@ -200,7 +199,7 @@ $$
 $$
 
 <p>
-In this exercise  we will assume that the angular acceleration of the rotating frame and the velocity \( \boldsymbol{v}_S \) are  constant quantities, that is their time derivatives are zero.
+In this exercise  we will assume that the angular acceleration of the rotating frame and the position \( \boldsymbol{r}_S \) are  constant quantities, that is their time derivatives are zero. Moreover, we assume the angle \( \phi \) does not change as function of time.
 
 <ul>
 <li> <b>2a (10pt):</b> Set up the forces acting on the mass and show that, since \( \Omega \) and \( \boldsymbol{v}_S \) are constants that you get</li> 
@@ -222,37 +221,6 @@ $$
 
 <ul>
 <li> <b>2c (10pt):</b> Plot \( \phi \) as function of \( g/l\Omega^2 \) and study the limits \( \Omega\rightarrow \infty \) and \( \Omega\rightarrow 0 \). Discuss  the possibility that \( \Omega^2 < g/l \). Discuss the implications of your results.</li> 
-</ul>
-
-<h3 id="___sec4">Exercise 3: Planar double  pendulum  </h3>
-
-<p>
-The final exercise deals with a planar double pendulum as shown in the figure here
-<!-- FIGURE: [figslides/doublependulum.png,width=600 frac=0.6] -->
-
-<p>
-We will set the masses equal \( m_1=m_2=m \) and the lengths \( l_1=l_2=l \).
-
-<p>
-We define the variables (see the figure)
-
-$$
-\boldsymbol{r}_1=l(\sin(\phi_1)\boldsymbol{\hat{x}}+\cos(\phi_1)\boldsymbol{\hat{y}},
-$$
-
-<p>
-and
-
-$$
-\boldsymbol{r}_2=l(\sin(\phi_1)+\sin(\phi_2))\boldsymbol{\hat{x}}+   l(\cos(\phi_1)+\cos(\phi_2)  )\boldsymbol{\hat{y}}.
-$$
-
-
-<ul>
-<li> <b>3a (10pt):</b> Set up the forces acting on the two pendula. Use the above equations to define \( x_1 \), \( x_2 \), \( y_1 \) and \( y_2 \).</li>
-<li> <b>3b (10pt):</b> Use the expressions for \( x_1 \), \( x_2 \), \( y_1 \) and \( y_2 \)  to find the equation for the kinetic energy in terms of the angles \( \phi_1 \) and \( \phi_2 \), the length \( l \) and the mass \( m \).</li>
-<li> <b>3c (10pt):</b> Use the expressions for \( x_1 \), \( x_2 \), \( y_1 \) and \( y_2 \)  to find the equation for the potential energy.</li>
-<li> <b>3d (20pt):</b> Define the Lagrangian \( {\cal L}=T-V \) and use the Euler-Lagrange equations to find the equations of motion for \( \phi_1 \) and \( \phi_2 \).</li> 
 </ul>
 
 
