@@ -39,7 +39,7 @@ div { text-align: justify; text-justify: inter-word; }
                3,
                None,
                '___sec0'),
-              ('Introduction to the final project, total score 100 points',
+              ('Introduction to the final project, total score  points',
                3,
                None,
                '___sec1'),
@@ -47,7 +47,8 @@ div { text-align: justify; text-justify: inter-word; }
               ('Exercise 2: Rotating Pendulum in a Gravitational Field',
                3,
                None,
-               '___sec3')]}
+               '___sec3'),
+              ('Exercise 3: Planar double  pendulum', 3, None, '___sec4')]}
 end of tocinfo -->
 
 <body>
@@ -97,7 +98,7 @@ MathJax.Hub.Config({
 <li> How do I(we)  hand in?  Due to the extraordinary situation we are in now, the final projec should be handed in fully via D2L. You can scan your handwritten notes and upload to D2L or you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical part should always be handed in as a jupyter notebook.</li>
 </ol>
 
-<h3 id="___sec1">Introduction to the final project, total score 100 points </h3>
+<h3 id="___sec1">Introduction to the final project, total score  points </h3>
 
 <p>
 The relevant reading background is
@@ -165,7 +166,7 @@ $$
 
 
 <ul>
-<li> <b>1d (10pt):</b> Scale the equations in terms of a dimensionless time \( \hat{t}=\omega_0t \). Choose between the Euler-Cromer, the Velocity-Verlet or the Runge-Kutta to fourth order and <b>write down</b> the algorithm for solving the last two equations numerically. Explain briefly your choice of numerical algorithm. Hint, look back at what you did in homework 6.</li>
+<li> <b>1d (10pt):</b> Scale the equations in terms of a dimensionless time \( \hat{t}=\omega_0t \). Choose between the Euler-Cromer, the Velocity-Verlet or the Runge-Kutta to fourth order and <b>write down</b> the algorithm for solving the last two equations numerically. Explain briefly your choice of numerical algorithm. Hint, look back at what you did in homework 6 and the two midterms.</li>
 <li> <b>1e (10pt):</b> Choose initial conditions and compare your numerical solution with the analytical one. For which range of angles \( \phi \) (determined by your initial conditions) are the analytical solutions comparable to your numerical results? Discuss the implications of your results.</li>
 <li> <b>1f (10pt):</b> Find the expressions for the kinetic and potential energies in terms of the variables \( r \) and \( \phi \). Remember that \( r=l \) and is a constant throughout the calculations. In your code, check then whether energy is conserved by calculating the total energy, the kinetic and potential energies ad functions of time. Discuss your results.</li>
 <li> <b>1g (10pt):</b> With the potential \( V \)  and kinetic \( T \) energies, define the Lagrangian for the mathematical pendulum discussed here. Add the constraint \( r=l \) via a Lagrange multiplier \( \lambda \) and derive the equations of motion. Show that these result in  \( \ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))} \) with \( \omega_0^2=g/l \) and \( \lambda=ml\dot{\phi}^2+mg\cos{(\phi)} \).  How would you interpret \( \lambda \)?</li> 
@@ -180,8 +181,11 @@ Assume now that the same pendulum is rotating in the gravitational field with a 
 <p>
 From our discussions on rotating frames, the acceleration for an object in the rotating fram \( S \)  is given by
 $$
-m\boldsymbol{a}_{S}=\boldsymbol{F}+m\dot{\boldsymbol{r}\times\boldsymbol{\Omega}}+2m\boldsymbol{v}_S\times\boldsymbol{\Omega}+m(\boldsymbol{\Omega}\times\boldsymbol{r})\times\boldsymbol{\Omega}.
+m\boldsymbol{a}_{S}=\boldsymbol{F}+m\dot{\boldsymbol{r}\times\boldsymbol{\Omega}}+2m\boldsymbol{v}_S\times\boldsymbol{\Omega}+m(\boldsymbol{\Omega}\times\boldsymbol{r}_s)\times\boldsymbol{\Omega}.
 $$
+
+<p>
+The position the mass of the pendulum is \( \boldsymbol{r}_S \). Recall also that the length \( l \) is constant.
 
 <p>
 We have the Coriolis force
@@ -199,7 +203,7 @@ $$
 In this exercise  we will assume that the angular acceleration of the rotating frame and the velocity \( \boldsymbol{v}_S \) are  constant quantities, that is their time derivatives are zero.
 
 <ul>
-<li> <b>2a (5pt):</b> Set up the forces acting on the mass and show that, since \( \Omega \) and \( \boldsymbol{v}_S \) are constants that you get</li> 
+<li> <b>2a (10pt):</b> Set up the forces acting on the mass and show that, since \( \Omega \) and \( \boldsymbol{v}_S \) are constants that you get</li> 
 </ul>
 
 $$
@@ -208,7 +212,7 @@ $$
 
 
 <ul>
-<li> <b>2b (10pt):</b> Use the last equation to show that, for \( \Omega^2 \le g/l \)  the angle \( \phi \) is given by</li>
+<li> <b>2b (10pt):</b> Use the last equation to show that, for \( \Omega^2 \lg g/l \)  the angle \( \phi \) is given by</li>
 </ul>
 
 $$
@@ -218,6 +222,37 @@ $$
 
 <ul>
 <li> <b>2c (10pt):</b> Plot \( \phi \) as function of \( g/l\Omega^2 \) and study the limits \( \Omega\rightarrow \infty \) and \( \Omega\rightarrow 0 \). Discuss  the possibility that \( \Omega^2 < g/l \). Discuss the implications of your results.</li> 
+</ul>
+
+<h3 id="___sec4">Exercise 3: Planar double  pendulum  </h3>
+
+<p>
+The final exercise deals with a planar double pendulum as shown in the figure here
+<!-- FIGURE: [figslides/doublependulum.png,width=600 frac=0.6] -->
+
+<p>
+We will set the masses equal \( m_1=m_2=m \) and the lengths \( l_1=l_2=l \).
+
+<p>
+We define the variables (see the figure)
+
+$$
+\boldsymbol{r}_1=l(\sin(\phi_1)\boldsymbol{\hat{x}}+\cos(\phi_1)\boldsymbol{\hat{y}},
+$$
+
+<p>
+and
+
+$$
+\boldsymbol{r}_2=l(\sin(\phi_1)+\sin(\phi_2))\boldsymbol{\hat{x}}+   l(\cos(\phi_1)+\cos(\phi_2)  )\boldsymbol{\hat{y}}.
+$$
+
+
+<ul>
+<li> <b>3a (10pt):</b> Set up the forces acting on the two pendula. Use the above equations to define \( x_1 \), \( x_2 \), \( y_1 \) and \( y_2 \).</li>
+<li> <b>3b (10pt):</b> Use the expressions for \( x_1 \), \( x_2 \), \( y_1 \) and \( y_2 \)  to find the equation for the kinetic energy in terms of the angles \( \phi_1 \) and \( \phi_2 \), the length \( l \) and the mass \( m \).</li>
+<li> <b>3c (10pt):</b> Use the expressions for \( x_1 \), \( x_2 \), \( y_1 \) and \( y_2 \)  to find the equation for the potential energy.</li>
+<li> <b>3d (20pt):</b> Define the Lagrangian \( {\cal L}=T-V \) and use the Euler-Lagrange equations to find the equations of motion for \( \phi_1 \) and \( \phi_2 \).</li> 
 </ul>
 
 

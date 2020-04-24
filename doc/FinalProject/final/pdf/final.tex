@@ -129,7 +129,7 @@ Apr 24, 2020
 \end{enumerate}
 
 \noindent
-\paragraph{Introduction to the final project, total score 100 points.}
+\paragraph{Introduction to the final project, total score  points.}
 The relevant reading background is
 \begin{enumerate}
 \item chapters 2-9 and 14 of Taylor
@@ -191,7 +191,7 @@ and
 
 
 \begin{itemize}
-\item \textbf{1d (10pt):} Scale the equations in terms of a dimensionless time $\hat{t}=\omega_0t$. Choose between the Euler-Cromer, the Velocity-Verlet or the Runge-Kutta to fourth order and \textbf{write down} the algorithm for solving the last two equations numerically. Explain briefly your choice of numerical algorithm. Hint, look back at what you did in homework 6.
+\item \textbf{1d (10pt):} Scale the equations in terms of a dimensionless time $\hat{t}=\omega_0t$. Choose between the Euler-Cromer, the Velocity-Verlet or the Runge-Kutta to fourth order and \textbf{write down} the algorithm for solving the last two equations numerically. Explain briefly your choice of numerical algorithm. Hint, look back at what you did in homework 6 and the two midterms.
 
 \item \textbf{1e (10pt):} Choose initial conditions and compare your numerical solution with the analytical one. For which range of angles $\phi$ (determined by your initial conditions) are the analytical solutions comparable to your numerical results? Discuss the implications of your results.
 
@@ -207,8 +207,10 @@ Assume now that the same pendulum is rotating in the gravitational field with a 
 
 From our discussions on rotating frames, the acceleration for an object in the rotating fram $S$  is given by
 \[
-m\bm{a}_{S}=\bm{F}+m\dot{\bm{r}\times\bm{\Omega}}+2m\bm{v}_S\times\bm{\Omega}+m(\bm{\Omega}\times\bm{r})\times\bm{\Omega}.
+m\bm{a}_{S}=\bm{F}+m\dot{\bm{r}\times\bm{\Omega}}+2m\bm{v}_S\times\bm{\Omega}+m(\bm{\Omega}\times\bm{r}_s)\times\bm{\Omega}.
 \]
+
+The position the mass of the pendulum is $\bm{r}_S$. Recall also that the length $l$ is constant.
 
 We have the Coriolis force
 \[
@@ -223,7 +225,7 @@ while the last term is the standard centrifugal force
 In this exercise  we will assume that the angular acceleration of the rotating frame and the velocity $\bm{v}_S$ are  constant quantities, that is their time derivatives are zero.
 
 \begin{itemize}
-\item \textbf{2a (5pt):} Set up the forces acting on the mass and show that, since $\Omega$ and $\bm{v}_S$ are constants that you get 
+\item \textbf{2a (10pt):} Set up the forces acting on the mass and show that, since $\Omega$ and $\bm{v}_S$ are constants that you get 
 \end{itemize}
 
 \noindent
@@ -232,7 +234,7 @@ m\bm{a}_{S}=0=\bm{T}+m\bm{g}+m(\bm{\Omega}\times\bm{r}_S)\times\bm{\Omega}.
 \]
 
 \begin{itemize}
-\item \textbf{2b (10pt):} Use the last equation to show that, for $\Omega^2 \le g/l$  the angle $\phi$ is given by
+\item \textbf{2b (10pt):} Use the last equation to show that, for $\Omega^2 \lg g/l$  the angle $\phi$ is given by
 \end{itemize}
 
 \noindent
@@ -242,6 +244,36 @@ m\bm{a}_{S}=0=\bm{T}+m\bm{g}+m(\bm{\Omega}\times\bm{r}_S)\times\bm{\Omega}.
 
 \begin{itemize}
 \item \textbf{2c (10pt):} Plot $\phi$ as function of $g/l\Omega^2$ and study the limits $\Omega\rightarrow \infty$ and $\Omega\rightarrow 0$. Discuss  the possibility that $\Omega^2 < g/l$. Discuss the implications of your results. 
+\end{itemize}
+
+\noindent
+\paragraph{Exercise 3: Planar double  pendulum.}
+The final exercise deals with a planar double pendulum as shown in the figure here
+% FIGURE: [figslides/doublependulum.png,width=600 frac=0.6]
+
+We will set the masses equal $m_1=m_2=m$ and the lengths $l_1=l_2=l$.
+
+We define the variables (see the figure)
+
+\[
+\bm{r}_1=l(\sin(\phi_1)\bm{\hat{x}}+\cos(\phi_1)\bm{\hat{y}},
+\]
+
+and
+
+\[
+\bm{r}_2=l(\sin(\phi_1)+\sin(\phi_2))\bm{\hat{x}}+   l(\cos(\phi_1)+\cos(\phi_2)  )\bm{\hat{y}}.
+\]
+
+
+\begin{itemize}
+\item \textbf{3a (10pt):} Set up the forces acting on the two pendula. Use the above equations to define $x_1$, $x_2$, $y_1$ and $y_2$.
+
+\item \textbf{3b (10pt):} Use the expressions for $x_1$, $x_2$, $y_1$ and $y_2$  to find the equation for the kinetic energy in terms of the angles $\phi_1$ and $\phi_2$, the length $l$ and the mass $m$.
+
+\item \textbf{3c (10pt):} Use the expressions for $x_1$, $x_2$, $y_1$ and $y_2$  to find the equation for the potential energy.
+
+\item \textbf{3d (20pt):} Define the Lagrangian ${\cal L}=T-V$ and use the Euler-Lagrange equations to find the equations of motion for $\phi_1$ and $\phi_2$. 
 \end{itemize}
 
 \noindent
