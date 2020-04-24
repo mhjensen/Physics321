@@ -140,7 +140,7 @@ The relevant reading background is
 \noindent
 The final project aims at covering most of the topics we have discussed during the semester. As a physical system to discuss what has been, we will use what in the literature is called the \textbf{mathematical pendulum} and variants thereof. 
 
-\paragraph{Exercise 1: Mathematical pendulum.}
+\paragraph{Exercise 1: Mathematical pendulum in two dimensions.}
 A mathematical pendulum consists of a point mass $m$ suspended by a massless thread/rod of length $l$ in a gravitational field, as shown in the figure here. The constraining force is labeled by $\bm{T}$
 and the gravitational force is labeled $\bm{F}_g$.
 
@@ -176,6 +176,32 @@ This equation can be solved analytically if we assume that the angle $\phi$ is v
 \end{itemize}
 
 \noindent
+For our numerical treatment of the full second-order differential  equation, we can proceed as we have done before and split the second-order differential in two first-order differential equations
+
+The equation for $\phi$ is a second-order differential equation
+\[
+\frac{d\dot{\phi}}{dt}=-\omega_0^2\sin{(\phi)}.
+\]
+
+and
+
+\[
+\frac{d\phi}{dt}=\dot{\phi}.
+\]
+
+
+\begin{itemize}
+\item 1d (10pt): Scale the equations in terms of a dimensionless time $\hat{t}=\omega_0t$. Choose between the Euler-Cromer, the Velocity-Verlet or the Runge-Kutta to fourth order and \textbf{write} the algorithm for solving the last two equations numerically. Explain briefly your choice of numerical algorithm. Hint, look back at what you did in homework 6.
+
+\item 1e (10pt): Choose initial conditions and compare your numerical solution with the analytical one. For which range of angles $\phi$ (determined by your initial conditions) are the analytical solutions comparable to your numerical results? Discuss the implications of your results.
+
+\item 1f (10pt): Find the expressions for the kinetic and potential energies in terms of the variables $r$ (remember that $r=l$ and is a constant throughout the calculations). In your code, check then that energy is conserved by calculating the total energy, the kinetic and potential energies ad functions of time. Discuss your results.
+
+\item 1g (10pt) With the potential $V$  and kinetic $T$ energies, define the Lagrangian for the mathematical pendulum discussed here. Add the constraint $r=l$ via a Lagrange multiplier $\lambda$ and derive the equations of motion. Show that these result in 
+\end{itemize}
+
+\noindent
+$\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}$ with $\omega_0^2=g/l$ and $-ml\dot{\phi}^2=mg\cos{(\phi)}-\lambda$.  How would you interpret $\lambda$? 
 
 % ------------------- end of main content ---------------
 

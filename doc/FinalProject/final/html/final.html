@@ -48,7 +48,10 @@ div { text-align: justify; text-justify: inter-word; }
                3,
                None,
                '___sec1'),
-              ('Exercise 1: Mathematical pendulum', 3, None, '___sec2')]}
+              ('Exercise 1: Mathematical pendulum in two dimensions',
+               3,
+               None,
+               '___sec2')]}
 end of tocinfo -->
 
 <body>
@@ -110,7 +113,7 @@ The relevant reading background is
 
 The final project aims at covering most of the topics we have discussed during the semester. As a physical system to discuss what has been, we will use what in the literature is called the <b>mathematical pendulum</b> and variants thereof.
 
-<h3 id="___sec2">Exercise 1: Mathematical pendulum  </h3>
+<h3 id="___sec2">Exercise 1: Mathematical pendulum in two dimensions </h3>
 
 <p>
 A mathematical pendulum consists of a point mass \( m \) suspended by a massless thread/rod of length \( l \) in a gravitational field, as shown in the figure here. The constraining force is labeled by \( \boldsymbol{T} \)
@@ -150,6 +153,30 @@ $$
 <li> 1c (10pt): Find the analytical solution for the last equation. Hint, look back at the solutions for the simple harmonic oscillator problem in one dimension in for example homework 6.</li>
 </ul>
 
+For our numerical treatment of the full second-order differential  equation, we can proceed as we have done before and split the second-order differential in two first-order differential equations
+
+<p>
+The equation for \( \phi \) is a second-order differential equation
+$$
+\frac{d\dot{\phi}}{dt}=-\omega_0^2\sin{(\phi)}.
+$$
+
+<p>
+and
+
+$$
+\frac{d\phi}{dt}=\dot{\phi}.
+$$
+
+
+<ul>
+<li> 1d (10pt): Scale the equations in terms of a dimensionless time \( \hat{t}=\omega_0t \). Choose between the Euler-Cromer, the Velocity-Verlet or the Runge-Kutta to fourth order and <b>write</b> the algorithm for solving the last two equations numerically. Explain briefly your choice of numerical algorithm. Hint, look back at what you did in homework 6.</li>
+<li> 1e (10pt): Choose initial conditions and compare your numerical solution with the analytical one. For which range of angles \( \phi \) (determined by your initial conditions) are the analytical solutions comparable to your numerical results? Discuss the implications of your results.</li>
+<li> 1f (10pt): Find the expressions for the kinetic and potential energies in terms of the variables \( r \) (remember that \( r=l \) and is a constant throughout the calculations). In your code, check then that energy is conserved by calculating the total energy, the kinetic and potential energies ad functions of time. Discuss your results.</li>
+<li> 1g (10pt) With the potential \( V \)  and kinetic \( T \) energies, define the Lagrangian for the mathematical pendulum discussed here. Add the constraint \( r=l \) via a Lagrange multiplier \( \lambda \) and derive the equations of motion. Show that these result in</li> 
+</ul>
+
+\( \ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))} \) with \( \omega_0^2=g/l \) and \( -ml\dot{\phi}^2=mg\cos{(\phi)}-\lambda \).  How would you interpret \( \lambda \)? 
 
 <!-- ------------------- end of main content --------------- -->
 
