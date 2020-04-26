@@ -146,7 +146,7 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 - Wednesday: Lagrangian formalim, examples such as the linear chain and double pendulum. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril22.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_sp7p28vk
 - Friday:  Summary and discussions of final exam project. _Final exam project project, due May 1_   PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril24.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_azwo1s2r
 ### Week 18, April 27- May 1, 2020, Finals week
-- Final Exam:  Due to the Corona virus the final exam will be a project similar to the two midterm projects. Deadline May 1.
+- Final Exam:  Due to the Corona virus the final exam will be a project similar to the two midterm projects. Deadline May 1. We will have questions sessions Monday 27 and Wednesday 29 at 2.30pm to 4pm. Other sessions can always be arranged.
 
 
 ## Learning outcomes (more material to come)
