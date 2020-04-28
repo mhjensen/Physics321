@@ -149,12 +149,28 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 - Final Exam:  Due to the Corona virus the final exam will be a project similar to the two midterm projects. Deadline May 1. We will have questions sessions Monday 27 and Wednesday 29 at 2.30pm to 4pm. Other sessions can always be arranged. Just send Morten an email or a text.
 
 
-## Learning outcomes (more material to come)
+## Learning outcomes
 
 After the course you should:
 
-- be able to analyze forces that act on objects, apply Newton’s laws to determine the equations of motion, and solve these both analytically and numerically,
-- be able to describe the rotational motion of rigid bodies using torque, moment of inertia, and angular momentum, and apply Newton’s second law for rotational motion to solve the equations of motion,
-- be able to apply conservation laws for mechanical energy, momentum, and angular momentum to solve static and dynamic problems and to analyze collisions between bodies,
-know the definitions that are relevant for elasticity theory,
-- be able to apply different strategies to solve specific problems, introduce approximations if necessary, and interpret results and discuss these in a wider context.
+- be able to analyze forces that act on objects, apply Newton’s laws to determine the equations of motion, and solve these analytically and numerically,
+- Know about  inertial frames and their relation to accelerating and rotating frames (non-intertial frames)
+- Know about forces, work, energy, angular momentum, linear momentum and conservation laws
+- Know about  various types of motions, falling objects, objects moving in various fields
+- Know how to analyze energy diagrams and defining effective potential
+- Have knowledge about small oscillations, Harmonic oscillator potential and equations of motion
+- Have knowledge about transformation of variables that allow for analytical solutions, example two-body problems
+- Have knowledge about central forces and two-body problems, center-of-mass and relative coordinates as reference frame
+- Have knowledge about two-body scattering problems, classical scattering cross section
+- Have knowledge about Variational calculus and Lagrangian formalism
+- Know how to derive the equations of motion from Lagrangian formalism only
+- Have knowledge about Lagrangian formalism with constraints
+
+And how to solve these problems:
+
+We have studied many systems numerically, from falling objects with and without friction/air resistance, small oscillations (harmonic oscillator), gravitational problems and other central force problems, rotations and the classical pendulum.
+- Euler-Cromer and Velocity-Verlet as energy conserving algorithms (time-independent forces)
+- Runge-Kutta family of algorithms for time-dependent forces
+- Numerical integration using the Trapezoidal, midpoint and Simpson's rule.
+
+
