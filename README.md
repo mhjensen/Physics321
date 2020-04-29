@@ -1,6 +1,6 @@
 # PHY321, Classical Mechanics I, Michigan State University, Spring 2020
 
-_Due to the corona virus, all lectures from March 13 are done remotely via zoom. All videos and handwritten notes are in D2L and below here. The videos are posted immediately after the lecture. Feel free to comment on the material. As you will see from the schedule below, the final written exam is replaced by a one week-long project, with start date April 24 and to be handed in not later than May 1._ 
+_Due to the corona virus, all lectures from March 11 are done remotely via zoom. All videos and handwritten notes are in D2L and below here. The videos are posted immediately after the lecture. Feel free to comment on the material. As you will see from the schedule below, the final written exam is replaced by a one week-long project, with start date April 24 and to be handed in not later than May 1._ 
 
 _This is a rather unique situation and your feedback is essential for improving the quality of the teaching material.
 Stay well._
