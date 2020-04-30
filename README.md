@@ -163,8 +163,7 @@ After the course you should:
 - Have knowledge about central forces and two-body problems, center-of-mass and relative coordinates as reference frame
 - Have knowledge about two-body scattering problems, classical scattering cross section
 - Have knowledge about Variational calculus and Lagrangian formalism
-- Know how to derive the equations of motion from Lagrangian formalism only
-- Have knowledge about Lagrangian formalism with constraints
+- Know how to derive the equations of motion from the Lagrangian formalism with and without constraints (Lagrangian multipliers)
 
 And how to solve these problems:
 
