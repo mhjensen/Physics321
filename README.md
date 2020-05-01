@@ -167,9 +167,10 @@ After the course you should:
 
 And how to solve these problems:
 
-We have studied many systems numerically, from falling objects with and without friction/air resistance, small oscillations (harmonic oscillator), gravitational problems and other central force problems, rotations and the classical pendulum.
+We have studied many systems numerically, from falling objects with and without friction/air resistance, small oscillations (harmonic oscillator), gravitational problems and other central force problems, rotations and the classical pendulum. To solve these systems we have applied different algorithms for solving differential equations. These are
 - Euler-Cromer and Velocity-Verlet as energy conserving algorithms (time-independent forces)
 - Runge-Kutta family of algorithms for time-dependent forces
+We have also, in connection with for example the work-energy theorem studied methods for evaluating integrals. These are
 - Numerical integration using the Trapezoidal, midpoint and Simpson's rule.
 
 
