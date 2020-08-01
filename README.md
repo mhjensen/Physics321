@@ -153,7 +153,7 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 After the course you should:
 
 - be able to analyze forces that act on objects, apply Newton’s laws to determine the equations of motion, and solve these analytically and numerically,
-- Know about  inertial frames and their relation to accelerating and rotating frames (non-intertial frames)
+- Know about  inertial frames and their relation to accelerating and rotating frames (non-inertial frames)
 - Know about forces, work, energy, angular momentum, linear momentum and conservation laws
 - Know about  various types of motions, falling objects, objects moving in various fields
 - Know how to analyze energy diagrams and defining effective potential
