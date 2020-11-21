@@ -26,19 +26,19 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Homework Grader | Email | 
 |--------------|------| 
-| _Kasun Senanayaka_ | senanaya@msu.edu |
+| _Julie Butler_ | butler@frib.msu.edu |
 
-| Office Hours Kasun Senanayaka |    
+| Office Hours Julie Butler |    
 |------------------|
-| Wednesday 11am-12:30pm, Physics Help Room BPS 1248 | 
+| TBA |  | 
 
 | Learning Assistant | Email |
 |--------------|------| 
-| _Dylan R. Smith_ | smithdy6@msu.edu | 
+| _TBA_ |  | 
 
-| Office Hours Dylan Smith|   |  
+| Office Hours TBA |   |  
 |----------|----------|
-| Tuesday/Thursday 1-2:00pm, Physics Help Room BPS 1248 | or immediately after class on Friday |
+|  |  |
 
 
 | Additional Class |    Location |
