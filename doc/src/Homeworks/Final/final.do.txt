@@ -1,0 +1,153 @@
+TITLE: PHY321: Classical Mechanics 1
+AUTHOR: Final  project, due Friday May 1
+DATE: today
+
+===  Practicalities about  homeworks and projects ===
+
+o You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. _Remember to write your name(s)_!
+o How do I(we)  hand in?  Due to the extraordinary situation we are in now, the final projec should be handed in fully via D2L. You can scan your handwritten notes and upload to D2L or you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical part should always be handed in as a jupyter notebook.
+
+
+=== Introduction to the final project, total score: 160  points ===
+
+The relevant reading background is
+o chapters 2-9 and 14 of Taylor
+o lecture notes throughout the semester and previous homework and midterm projects.
+
+The final project aims at covering most of the topics we have discussed during the semester. As a physical system to discuss many of the principles we have discussed during the semester, we will use what in the literature is called the _mathematical pendulum_ and variants thereof. 
+
+=== Exercise 1: Mathematical pendulum  ===
+
+A mathematical pendulum consists of a point mass $m$ suspended by a massless thread/rod of length $l$ in a gravitational field, as shown in the figure here. The constraining force is labeled by $\bm{T}$
+and the gravitational force is labeled $\bm{F}_g$.
+
+FIGURE: [figures/Simplependulum.png, width=600 frac=0.6] 
+
+We assume that the length $l$ is constant and we define the coordinates involved as
+
+!bt
+\[
+\bm{r} = l\sin(\phi)\bm{\hat{x}}+l\cos(\phi)\bm{\hat{y}},
+\]
+!et
+where $\bm{\hat{x}}$ and $\bm{\hat{y}}$ are the unit vectors in the $x$ and $y$ directions, respectively.
+
+* _1a (10pt):_ Set up the forces acting on the system and show that the equation of motion is $m\ddot{\bm{r}}=\bm{F}_g+\bm{T}$.
+
+* _1b (10pt):_ Show that you can rewrite the above equation of motion as two independent equations of motion, one for $\phi$ and one for the constraining force. Show that these equations are $\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}$ with $\omega_0^2=g/l$ and $T=ml\dot{\phi}^2+mg\cos{(\phi)}$.
+
+The equation for $\phi$ is a second-order differential equation
+!bt
+\[
+\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}.
+\]
+!et
+
+This equation can be solved analytically if we assume that the angle $\phi$ is very small. Then we can approximate our equation as
+
+!bt
+\[
+\ddot{\phi}(t)=-\omega_0^2\phi(t).
+\]
+!et
+
+* _1c (10pt):_ Find the analytical solution for the last equation. Hint, look back at the solutions for the simple harmonic oscillator problem in one dimension in for example homework 6.
+
+For our numerical treatment of the full second-order differential  equation, we can proceed as we have done before and split the second-order differential in two first-order differential equations
+as shown here
+
+!bt
+\[
+\frac{d\dot{\phi}}{dt}=-\omega_0^2\sin{(\phi)}.
+\]
+!et
+
+and
+
+!bt
+\[
+\frac{d\phi}{dt}=\dot{\phi}.
+\]
+!et
+
+
+* _1d (10pt):_ Scale the equations in terms of a dimensionless time $\hat{t}=\omega_0t$. Choose between the Euler-Cromer, the Velocity-Verlet or the Runge-Kutta to fourth order and _write down_ the algorithm for solving the last two equations numerically. Explain briefly your choice of numerical algorithm. Hint, look back at what you did in homework 6 and the two midterms.
+
+* _1e (10pt):_ Choose initial conditions and compare your numerical solution with the analytical one. For which range of angles $\phi$ (determined by your initial conditions) are the analytical solutions comparable to your numerical results? Discuss the implications of your results.
+
+* _1f (10pt):_ Find the expressions for the kinetic and potential energies in terms of the variables $r$ and $\phi$. Remember that $r=l$ and is a constant throughout the calculations. In your code, check then whether energy is conserved by calculating the total energy, the kinetic and potential energies ad functions of time. Discuss your results. Do you expect energy to be conserved? 
+
+* _1g (10pt):_ With the potential $V$  and kinetic $T$ energies, define the Lagrangian for the mathematical pendulum discussed here. Add the constraint $r=l$ via a Lagrange multiplier $\lambda$ and derive the equations of motion. Show that these result in  $\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}$ with $\omega_0^2=g/l$ and $\lambda=ml\dot{\phi}^2+mg\cos{(\phi)}$.  How would you interpret $\lambda$? 
+
+
+
+
+=== Exercise 2: Rotating Pendulum in a Gravitational Field ===
+
+Assume now that the same pendulum is rotating in the gravitational field with a constant angular velocity $\Omega$ as shown in the figure here, with a constant angle $\phi$.
+FIGURE: [figures/Rotatingpendulum.png, width=600 frac=0.6] 
+
+From our discussions on rotating frames, the acceleration for an object in the rotating fram $S$  is given by
+!bt
+\[
+m\bm{a}_{S}=\bm{F}+m\bm{r}\times\dot{\bm{\Omega}}+2m\bm{v}_S\times\bm{\Omega}+m(\bm{\Omega}\times\bm{r}_s)\times\bm{\Omega}.
+\]
+!et
+
+The position the mass of the pendulum is $\bm{r}_S$. Recall also that the length $l$ is constant.
+
+We have the Coriolis force
+!bt
+\[
+\bm{F}_{\mathrm{Coriolis}}=2m\bm{v}_S\times\bm{\Omega},
+\]
+!et
+while the last term is the standard centrifugal force
+
+!bt
+\[
+\bm{F}_{\mathrm{Centrifugal}}=m\left(\bm{\Omega}\times\bm{r}_S\right)\times\bm{\Omega}.
+\]
+!et
+
+In this exercise  we will assume that the angular acceleration of the rotating frame and the position $\bm{r}_S$ are  constant quantities, that is their time derivatives are zero. Moreover, we assume the angle $\phi$ does not change as function of time.
+
+* _2a (10pt):_ Set up the forces acting on the mass and show that, since $\Omega$ is constant
+
+!bt
+\[
+m\bm{a}_{S}=0=\bm{T}+m\bm{g}+m(\bm{\Omega}\times\bm{r}_S)\times\bm{\Omega}.
+\]
+!et
+
+Discuss why you don't include the Coriolis term and only the centrifugal force.
+
+
+* _2b (10pt):_ Use the last equation to show that, for $\Omega^2 \ge g/l$  the angle $\phi$ is given by
+
+!bt
+\[
+\phi=\mathrm{arccos}\left(\frac{g}{l\Omega^2}\right).
+\]
+!et
+
+* _2c (10pt):_ Plot $\phi$ as function of $g/l\Omega^2$ and study the limits $\Omega\rightarrow \infty$ and $\Omega\rightarrow 0$. Discuss  the possibility that $\Omega^2 < g/l$. Discuss the implications of your results. 
+
+=== Exercise 3, Coupled Harmonic Oscillators ===
+
+Consider a mass $m$ that is connected to a wall by a spring with
+spring constant $k$. A second identical mass $m$ is connected to the
+first mass by an identical spring. Motion is confined to the $x$ direction only.
+
+* _3a (10pt):_ Make a drawing of the system, set up forces and define variables $x_1$ and $x_2$ for the two masses.
+* _3b (10pt):_ Write the Lagrangian in terms of the positions of the two masses $x_1$ and $x_2$.
+* _3c (10pt):_ Use the Euler-Lagrange equations to find the  equations of motion.
+* _3d (10pt):_ Find the analytical  solutions of the type
+!bt
+\begin{eqnarray*}
+x_1&=&Ae^{i\omega t},~~~x_2=Be^{i\omega t}.
+\end{eqnarray*}
+!et
+Solve for $A/B$ and $\omega$. Express your answers in terms of $\omega_0^2=k/m$.
+
+* _3e (20pt):_ Write now a program which solves these two coupled differential equations for $x_1$ and $x_2$. Compute the positions $x_1$ and $x_2$ by choosing your initial conditions and compare with the analytical answers from 3d.   

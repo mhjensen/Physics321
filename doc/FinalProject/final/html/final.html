@@ -1,0 +1,267 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="PHY321: Classical Mechanics 1">
+
+<title>PHY321: Classical Mechanics 1</title>
+
+
+<style type="text/css">
+/* bloodish style */
+
+body {
+  font-family: Helvetica, Verdana, Arial, Sans-serif;
+  color: #404040;
+  background: #ffffff;
+}
+h1 { font-size: 1.8em;  color: #8A0808; }
+h2 { font-size: 1.6em;  color: #8A0808; }
+h3 { font-size: 1.4em;  color: #8A0808; }
+h4 { color: #8A0808; }
+a { color: #8A0808; text-decoration:none; }
+tt { font-family: "Courier New", Courier; }
+/* pre style removed because it will interfer with pygments */
+p { text-indent: 0px; }
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-style: normal; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+
+div { text-align: justify; text-justify: inter-word; }
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 3,
+ 'sections': [('Practicalities about  homeworks and projects',
+               3,
+               None,
+               '___sec0'),
+              ('Introduction to the final project, total score: 160  points',
+               3,
+               None,
+               '___sec1'),
+              ('Exercise 1: Mathematical pendulum', 3, None, '___sec2'),
+              ('Exercise 2: Rotating Pendulum in a Gravitational Field',
+               3,
+               None,
+               '___sec3'),
+              ('Exercise 3, Coupled Harmonic Oscillators', 3, None, '___sec4')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1>PHY321: Classical Mechanics 1</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Final  project, due Friday May 1 -->
+
+<center>
+<b>Final  project, due Friday May 1</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Apr 24, 2020</h4></center> <!-- date -->
+<br>
+
+<h3 id="___sec0">Practicalities about  homeworks and projects </h3>
+
+<ol>
+<li> You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. <b>Remember to write your name(s)</b>!</li>
+<li> How do I(we)  hand in?  Due to the extraordinary situation we are in now, the final projec should be handed in fully via D2L. You can scan your handwritten notes and upload to D2L or you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical part should always be handed in as a jupyter notebook.</li>
+</ol>
+
+<h3 id="___sec1">Introduction to the final project, total score: 160  points </h3>
+
+<p>
+The relevant reading background is
+
+<ol>
+<li> chapters 2-9 and 14 of Taylor</li>
+<li> lecture notes throughout the semester and previous homework and midterm projects.</li>
+</ol>
+
+The final project aims at covering most of the topics we have discussed during the semester. As a physical system to discuss many of the principles we have discussed during the semester, we will use what in the literature is called the <b>mathematical pendulum</b> and variants thereof.
+
+<h3 id="___sec2">Exercise 1: Mathematical pendulum  </h3>
+
+<p>
+A mathematical pendulum consists of a point mass \( m \) suspended by a massless thread/rod of length \( l \) in a gravitational field, as shown in the figure here. The constraining force is labeled by \( \boldsymbol{T} \)
+and the gravitational force is labeled \( \boldsymbol{F}_g \).
+
+<p>
+<br /><br /><center><p><img src="figures/Simplependulum.png" align="bottom" width=600></p></center><br /><br />
+
+<p>
+We assume that the length \( l \) is constant and we define the coordinates involved as
+
+$$
+\boldsymbol{r} = l\sin(\phi)\boldsymbol{\hat{x}}+l\cos(\phi)\boldsymbol{\hat{y}},
+$$
+
+where \( \boldsymbol{\hat{x}} \) and \( \boldsymbol{\hat{y}} \) are the unit vectors in the \( x \) and \( y \) directions, respectively.
+
+<ul>
+<li> <b>1a (10pt):</b> Set up the forces acting on the system and show that the equation of motion is \( m\ddot{\boldsymbol{r}}=\boldsymbol{F}_g+\boldsymbol{T} \).</li>
+<li> <b>1b (10pt):</b> Show that you can rewrite the above equation of motion as two independent equations of motion, one for \( \phi \) and one for the constraining force. Show that these equations are \( \ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))} \) with \( \omega_0^2=g/l \) and \( T=ml\dot{\phi}^2+mg\cos{(\phi)} \).</li>
+</ul>
+
+The equation for \( \phi \) is a second-order differential equation
+$$
+\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}.
+$$
+
+<p>
+This equation can be solved analytically if we assume that the angle \( \phi \) is very small. Then we can approximate our equation as
+
+$$
+\ddot{\phi}(t)=-\omega_0^2\phi(t).
+$$
+
+
+<ul>
+<li> <b>1c (10pt):</b> Find the analytical solution for the last equation. Hint, look back at the solutions for the simple harmonic oscillator problem in one dimension in for example homework 6.</li>
+</ul>
+
+For our numerical treatment of the full second-order differential  equation, we can proceed as we have done before and split the second-order differential in two first-order differential equations
+as shown here
+
+$$
+\frac{d\dot{\phi}}{dt}=-\omega_0^2\sin{(\phi)}.
+$$
+
+<p>
+and
+
+$$
+\frac{d\phi}{dt}=\dot{\phi}.
+$$
+
+
+<ul>
+<li> <b>1d (10pt):</b> Scale the equations in terms of a dimensionless time \( \hat{t}=\omega_0t \). Choose between the Euler-Cromer, the Velocity-Verlet or the Runge-Kutta to fourth order and <b>write down</b> the algorithm for solving the last two equations numerically. Explain briefly your choice of numerical algorithm. Hint, look back at what you did in homework 6 and the two midterms.</li>
+<li> <b>1e (10pt):</b> Choose initial conditions and compare your numerical solution with the analytical one. For which range of angles \( \phi \) (determined by your initial conditions) are the analytical solutions comparable to your numerical results? Discuss the implications of your results.</li>
+<li> <b>1f (10pt):</b> Find the expressions for the kinetic and potential energies in terms of the variables \( r \) and \( \phi \). Remember that \( r=l \) and is a constant throughout the calculations. In your code, check then whether energy is conserved by calculating the total energy, the kinetic and potential energies ad functions of time. Discuss your results. Do you expect energy to be conserved?</li> 
+<li> <b>1g (10pt):</b> With the potential \( V \)  and kinetic \( T \) energies, define the Lagrangian for the mathematical pendulum discussed here. Add the constraint \( r=l \) via a Lagrange multiplier \( \lambda \) and derive the equations of motion. Show that these result in  \( \ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))} \) with \( \omega_0^2=g/l \) and \( \lambda=ml\dot{\phi}^2+mg\cos{(\phi)} \).  How would you interpret \( \lambda \)?</li> 
+</ul>
+
+<h3 id="___sec3">Exercise 2: Rotating Pendulum in a Gravitational Field </h3>
+
+<p>
+Assume now that the same pendulum is rotating in the gravitational field with a constant angular velocity \( \Omega \) as shown in the figure here, with a constant angle \( \phi \).
+<br /><br /><center><p><img src="figures/Rotatingpendulum.png" align="bottom" width=600></p></center><br /><br />
+
+<p>
+From our discussions on rotating frames, the acceleration for an object in the rotating fram \( S \)  is given by
+$$
+m\boldsymbol{a}_{S}=\boldsymbol{F}+m\boldsymbol{r}\times\dot{\boldsymbol{\Omega}}+2m\boldsymbol{v}_S\times\boldsymbol{\Omega}+m(\boldsymbol{\Omega}\times\boldsymbol{r}_s)\times\boldsymbol{\Omega}.
+$$
+
+<p>
+The position the mass of the pendulum is \( \boldsymbol{r}_S \). Recall also that the length \( l \) is constant.
+
+<p>
+We have the Coriolis force
+$$
+\boldsymbol{F}_{\mathrm{Coriolis}}=2m\boldsymbol{v}_S\times\boldsymbol{\Omega},
+$$
+
+while the last term is the standard centrifugal force
+
+$$
+\boldsymbol{F}_{\mathrm{Centrifugal}}=m\left(\boldsymbol{\Omega}\times\boldsymbol{r}_S\right)\times\boldsymbol{\Omega}.
+$$
+
+<p>
+In this exercise  we will assume that the angular acceleration of the rotating frame and the position \( \boldsymbol{r}_S \) are  constant quantities, that is their time derivatives are zero. Moreover, we assume the angle \( \phi \) does not change as function of time.
+
+<ul>
+<li> <b>2a (10pt):</b> Set up the forces acting on the mass and show that, since \( \Omega \) is constant</li>
+</ul>
+
+$$
+m\boldsymbol{a}_{S}=0=\boldsymbol{T}+m\boldsymbol{g}+m(\boldsymbol{\Omega}\times\boldsymbol{r}_S)\times\boldsymbol{\Omega}.
+$$
+
+<p>
+Discuss why you don't include the Coriolis term and only the centrifugal force.
+
+<ul>
+<li> <b>2b (10pt):</b> Use the last equation to show that, for \( \Omega^2 \ge g/l \)  the angle \( \phi \) is given by</li>
+</ul>
+
+$$
+\phi=\mathrm{arccos}\left(\frac{g}{l\Omega^2}\right).
+$$
+
+
+<ul>
+<li> <b>2c (10pt):</b> Plot \( \phi \) as function of \( g/l\Omega^2 \) and study the limits \( \Omega\rightarrow \infty \) and \( \Omega\rightarrow 0 \). Discuss  the possibility that \( \Omega^2 < g/l \). Discuss the implications of your results.</li> 
+</ul>
+
+<h3 id="___sec4">Exercise 3, Coupled Harmonic Oscillators </h3>
+
+<p>
+Consider a mass \( m \) that is connected to a wall by a spring with
+spring constant \( k \). A second identical mass \( m \) is connected to the
+first mass by an identical spring. Motion is confined to the \( x \) direction only.
+
+<ul>
+<li> <b>3a (10pt):</b> Make a drawing of the system, set up forces and define variables \( x_1 \) and \( x_2 \) for the two masses.</li>
+<li> <b>3b (10pt):</b> Write the Lagrangian in terms of the positions of the two masses \( x_1 \) and \( x_2 \).</li>
+<li> <b>3c (10pt):</b> Use the Euler-Lagrange equations to find the  equations of motion.</li>
+<li> <b>3d (10pt):</b> Find the analytical  solutions of the type</li>
+</ul>
+
+$$
+\begin{eqnarray*}
+x_1&=&Ae^{i\omega t},~~~x_2=Be^{i\omega t}.
+\end{eqnarray*}
+$$
+
+Solve for \( A/B \) and \( \omega \). Express your answers in terms of \( \omega_0^2=k/m \).
+
+<ul>
+<li> <b>3e (20pt):</b> Write now a program which solves these two coupled differential equations for \( x_1 \) and \( x_2 \). Compute the positions \( x_1 \) and \( x_2 \) by choosing your initial conditions and compare with the analytical answers from 3d.</li>   
+</ul>
+
+
+<!-- ------------------- end of main content --------------- -->
+
+
+</body>
+</html>
+    
+
