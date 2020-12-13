@@ -1,6 +1,6 @@
-# PHY321, Classical Mechanics I, Michigan State University, Spring 2020
+# PHY321, Classical Mechanics I, Michigan State University, Spring 2021 (to be modified, new material ready by December 30)
 
-_Due to the corona virus, all lectures from March 13 are done remotely via zoom. All videos and handwritten notes are in D2L and below here. The videos are posted immediately after the lecture. Feel free to comment on the material. As you will see from the schedule below, the final written exam is replaced by a one week-long project, with start date April 24 and to be handed in not later than May 1._ 
+_Due to the corona virus, all lectures are done remotely via zoom. All videos and handwritten notes are in D2L and below here. The videos are posted immediately after the lecture. Feel free to comment on the material. As you will see from the schedule below, the final written exam is replaced by a one week-long project, with start date April 24 and to be handed in not later than May 1._ 
 
 _This is a rather unique situation and your feedback is essential for improving the quality of the teaching material.
 Stay well._
@@ -26,19 +26,19 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Homework Grader | Email | 
 |--------------|------| 
-| _Kasun Senanayaka_ | senanaya@msu.edu |
+| _Julie Butler_ | butler@frib.msu.edu |
 
-| Office Hours Kasun Senanayaka |    
+| Office Hours Julie Butler |    
 |------------------|
-| Wednesday 11am-12:30pm, Physics Help Room BPS 1248 | 
+| TBA |  | 
 
 | Learning Assistant | Email |
 |--------------|------| 
-| _Dylan R. Smith_ | smithdy6@msu.edu | 
+| _Jeremy Rebenstock_ |  | 
 
-| Office Hours Dylan Smith|   |  
+| Office Hours TBA |   |  
 |----------|----------|
-| Tuesday/Thursday 1-2:00pm, Physics Help Room BPS 1248 | or immediately after class on Friday |
+|  |  |
 
 
 | Additional Class |    Location |
@@ -67,7 +67,6 @@ _Recommended textbook_:
 - JRT: John R. Taylor, Classical Mechanics (Univ. Sci. Books 2005), https://www.uscibooks.com/taylor2.htm, see also https://github.com/mhjensen/Physics321/tree/master/doc/Literature
 _Additional textbooks_:
 - AMS: Anders Malthe-Sørenssen, Elementary Mechanics using Python (Springer 2015), https://www.springer.com/gp/book/9783319195957 and https://github.com/mhjensen/Physics321/tree/master/doc/Literature
-- AB: Alessandro Bettini, A Course in Classical Physics 1 -- Mechanics (Springer 2017), https://github.com/mhjensen/Physics321/tree/master/doc/Literature and https://www.springer.com/gp/book/9783319292564 
 - _Lecture notes_: Posted lecture notes are in the doc/pub folder here or at https://mhjensen.github.io/Physics321/doc/web/course.html for easier viewing. They are not meant to be a replacement for textbook. These notes are updated on a weekly basis and a _git pull_ should thus always give you the latest update. 
 
 ##  Teaching schedule with links to material (This will be updated asap)
@@ -144,17 +143,43 @@ Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will
 ### Week 17, April 20-24, 2020
 - Monday:  Lagrangian formalism, conservation laws. Examples. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril20.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_b81t0tta 
 - Wednesday: Lagrangian formalim, examples such as the linear chain and double pendulum. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril22.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_sp7p28vk
-- Friday:  Summary and discussions of final exam project. _Final exam project project, due May 1_ 
+- Friday:  Summary and discussions of final exam project. _Final exam project project, due May 1_   PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril24.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_azwo1s2r
 ### Week 18, April 27- May 1, 2020, Finals week
-- Final Exam:  Due to the Corona virus the final exam will be a project similar to the two midterm projects. Deadline May 1.
+- Final Exam:  Due to the Corona virus the final exam will be a project similar to the two midterm projects. Deadline May 1. We will have questions sessions Monday 27 and Wednesday 29 at 2.30pm to 4pm. Other sessions can always be arranged. Just send Morten an email or a text.
 
 
-## Learning outcomes (more material to come)
+## Learning outcomes
 
 After the course you should:
 
-- be able to analyze forces that act on objects, apply Newton’s laws to determine the equations of motion, and solve these both analytically and numerically,
-- be able to describe the rotational motion of rigid bodies using torque, moment of inertia, and angular momentum, and apply Newton’s second law for rotational motion to solve the equations of motion,
-- be able to apply conservation laws for mechanical energy, momentum, and angular momentum to solve static and dynamic problems and to analyze collisions between bodies,
-know the definitions that are relevant for elasticity theory,
-- be able to apply different strategies to solve specific problems, introduce approximations if necessary, and interpret results and discuss these in a wider context.
+- be able to analyze forces that act on objects, apply Newton’s laws to determine the equations of motion, and solve these analytically and numerically,
+- Know about  inertial frames and their relation to accelerating and rotating frames (non-inertial frames)
+- Know about forces, work, energy, angular momentum, linear momentum and conservation laws
+- Know about  various types of motions, falling objects, objects moving in various fields
+- Know how to analyze energy diagrams and defining effective potential
+- Have knowledge about small oscillations, Harmonic oscillator potential and equations of motion
+- Have knowledge about transformation of variables that allow for analytical solutions, example two-body problems
+- Have knowledge about central forces and two-body problems, center-of-mass and relative coordinates as reference frame
+- Have knowledge about two-body scattering problems, classical scattering cross section
+- Have knowledge about Variational calculus and Lagrangian formalism
+- Know how to derive the equations of motion from the Lagrangian formalism with and without constraints (Lagrangian multipliers)
+
+To solve many of these problems, we have through different projects and weekly exercises studied many systems numerically, from falling objects with and without friction/air resistance, small oscillations (harmonic oscillator), gravitational problems and other central force problems, rotations and the classical pendulum. To solve these systems, we have applied different algorithms for solving differential equations. These are
+- Euler-Cromer and Velocity-Verlet as energy conserving algorithms (time-independent forces)
+- Runge-Kutta family of algorithms for time-dependent forces
+We have also, in connection with for example the work-energy theorem studied methods for evaluating integrals. These are
+- Numerical integration using the Trapezoidal, midpoint and Simpson's rule.
+
+You should also have acquired skills in structuring a numerical project, as well as having developed a critical understanding of the pros and cons of the methods and an understanding of their limits and what can go wrong.  Computing means solving scientific problems using computers. It covers numerical as well as symbolic computing. Computing is also about developing an understanding of the scientific process by enhancing algorithmic thinking when solving problems.  Computing competence has
+always been a central part of the science and engineering education.
+In particular, some of the competences that are important in the development of your own understanding of
+computations, we would like to emphasize
+- derivation, verification, and implementation of algorithms
+- understanding what can go wrong with algorithms
+- overview of important, known algorithms for solving mechanics problems (To a extent large differential equations and integration)
+- understanding how algorithms are used to solve mathematical problems
+- Making science (your results) reproducible
+- algorithmic thinking for gaining deeper insights about scientific problems
+
+
+
