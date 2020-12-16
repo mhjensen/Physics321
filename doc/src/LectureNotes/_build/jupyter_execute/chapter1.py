@@ -8,14 +8,14 @@
 <!-- dom:AUTHOR: [Carl Schmidt](https://pa.msu.edu/profile/schmidt/) at Department of Physics and Astronomy, Michigan State University, USA -->
 <!-- Author: --> **[Carl Schmidt](https://pa.msu.edu/profile/schmidt/)**, Department of Physics and Astronomy, Michigan State University, USA
 
-Date: **Jan 22, 2020**
+Date: **Dec 16, 2020**
 
 Copyright 1999-2020, [Morten Hjorth-Jensen](http://mhjgit.github.io/info/doc/web/). Released under CC Attribution-NonCommercial 4.0 license
 
 
 
 
-## Introduction
+# Introduction
 
 Classical mechanics is a topic which has been taught intensively over
 several centuries. It is, with its many variants and ways of
@@ -37,7 +37,7 @@ when teaching mechanics, it implies that we can seldomly venture beyond an ideal
 in order to develop our understandings and insights about the
 underlying forces and laws of motion.
 
-## Numerical Elements
+
 On the other hand, numerical algorithms call for approximate discrete
 models and much of the development of methods for continuous models
 are nowadays being replaced by methods for discrete models in science and
@@ -66,7 +66,6 @@ symbolic computing, computers and numerical algorithms, and analytical
 paper and pencil solutions**. 
 Computing provides us with the tools to develope our own understanding of the scientific method by enhancing algorithmic thinking.
 
-## Computations and the Scientific Method
 
 The way we will teach this course reflects
 this definition of computing. The course contains both classical paper
@@ -104,6 +103,7 @@ understanding how to apply available, generic software to solve a
 particular problem.
 
 *However, verification of algorithms and understanding their limitations requires much of the classical knowledge about continuous models.*
+
 
 
 ## A well-known examples to illustrate many of the above concepts
@@ -163,7 +163,6 @@ plt.xlabel('n')
 plt.ylabel('Relative error')
 plt.show()
 
-## Analyzing the above example
 This example shows the potential of combining numerical algorithms with symbolic calculations, allowing us to 
 
 * Validate and verify  their  algorithms. 
@@ -204,99 +203,6 @@ The conventions and techniques outlined here will save you a lot of time when yo
 
 5. Your scientific investigations are reproducible, scientific reports with top quality typesetting are produced both for paper and electronic devices.
 
-## Teaching team, grading and other practicalities
-
-
-
-<table border="1">
-<thead>
-<tr><th align="center">     Lectures     </th> <th align="center">                     </th> <th align="center">                  </th> <th align="center">   Location  </th> </tr>
-</thead>
-<tbody>
-<tr><td align="left">   Monday 3:00-3:50pm    </td> <td align="left">   Wednesday 3:00-3:50pm    </td> <td align="left">   Friday 3:00-3:50pm    </td> <td align="left">   Room 1420 BPS    </td> </tr>
-</tbody>
-</table>
-<table border="1">
-<thead>
-<tr><th align="center">                     Instructor                    </th> <th align="center">     Email     </th> <th align="center">        Office        </th> <th align="center">Office phone/cellphone</th> </tr>
-</thead>
-<tbody>
-<tr><td align="left">   [Morten Hjorth-Jensen](https://github.com/mhjensen)    </td> <td align="left">   hjensen@msu.edu    </td> <td align="left">   Office: NSCL/FRIB 2131    </td> <td align="left">   5179087290/5172491375     </td> </tr>
-</tbody>
-</table>
-<table border="1">
-<thead>
-<tr><th align="center">                 Office Hours                 </th> <th align="center">                          </th> </tr>
-</thead>
-<tbody>
-<tr><td align="left">   Monday/Wednesday 4-5:00pm, Room 2131 NSCL/FRIB    </td> <td align="left">   or immediately after class    </td> </tr>
-</tbody>
-</table>
-<table border="1">
-<thead>
-<tr><th align="center">Homework Grader </th> <th align="center">     Email      </th> </tr>
-</thead>
-<tbody>
-<tr><td align="left">   Kasun Senanayaka    </td> <td align="left">   senanaya@msu.edu    </td> </tr>
-</tbody>
-</table>
-
-<table border="1">
-<thead>
-<tr><th align="center">Learning Assistant</th> <th align="center">     Email      </th> </tr>
-</thead>
-<tbody>
-<tr><td align="left">   Dylan R. Smith        </td> <td align="left">   smithdy6@msu.edu    </td> </tr>
-</tbody>
-</table>
-<table border="1">
-<thead>
-<tr><th align="center">               Office Hours Dylan Smith              </th> <th align="center">                                    </th> </tr>
-</thead>
-<tbody>
-<tr><td align="center">   Tuesday/Thursday 1-2:00pm, Physics Help Room BPS 1248    </td> <td align="center">   or immediately after class on Friday    </td> </tr>
-</tbody>
-</table>
-
-## Grading and dates
-
-<table border="1">
-<thead>
-<tr><th align="center">                        Activity                        </th> <th align="center">Percentage of total score</th> </tr>
-</thead>
-<tbody>
-<tr><td align="left">   Homeworks, 10 in total and due Wednesdays the week after    </td> <td align="left">   20%                          </td> </tr>
-<tr><td align="left">   First Midterm Project, due Friday February 28               </td> <td align="left">   25%                          </td> </tr>
-<tr><td align="left">   Second  Midterm Project, due Friday April 10                </td> <td align="left">   25%                          </td> </tr>
-<tr><td align="left">   Final Exam, April 29, 5:45-7:45pm                           </td> <td align="left">   30%                          </td> </tr>
-<tr><td align="left">   Extra Credit Assignment (Due Friday April 24)               </td> <td align="left">   10%                          </td> </tr>
-</tbody>
-</table>
-
-<table border="1">
-<thead>
-<tr><th align="center">Grading scale</th> <th align="center">        </th> <th align="center">        </th> <th align="center">        </th> <th align="center">        </th> <th align="center">        </th> <th align="center">        </th> </tr>
-</thead>
-<tbody>
-<tr><td align="left">   4.0(90%)         </td> <td align="left">   3.5(80%)    </td> <td align="left">   3.0(70%)    </td> <td align="left">   2.5(60%)    </td> <td align="left">   2.0(50%)    </td> <td align="left">   1.5(40%)    </td> <td align="left">   1.0(30%)    </td> </tr>
-</tbody>
-</table>
-
-## Possible textbooks and lecture notes
-
-**Recommended textbook**:
-* [John R. Taylor, Classical Mechanics (Univ. Sci. Books 2005)](https://www.uscibooks.com/taylor2.htm), see also [the GitHub link of the course](https://github.com/mhjensen/Physics321/tree/master/doc/Literature)
-
-**Additional textbooks**:
-* [Anders Malthe-Sørenssen, Elementary Mechanics using Python (Springer 2015)](https://www.springer.com/gp/book/9783319195957) and [the GitHub link of the course](https://github.com/mhjensen/Physics321/tree/master/doc/Literature)
-
-* [Alessandro Bettini, A Course in Classical Physics 1, Mechanics (Springer 2017)](https://www.springer.com/gp/book/9783319292564) and the [GitHub link of the course](https://github.com/mhjensen/Physics321/tree/master/doc/Literature).
-
-The books from Springer can be downloaded for free (pdf or ebook format) from any MSU IP address. 
-
-**Lecture notes**:
-Posted lecture notes are in the doc/pub folder here or at <https://mhjensen.github.io/Physics321/doc/web/course.html> for easier viewing. They are not meant to be a replacement for textbook. These notes are updated on a weekly basis and a **git pull** should thus always give you the latest update.
-
 
 ```{toctree}
 :hidden:
@@ -305,5 +211,4 @@ Posted lecture notes are in the doc/pub folder here or at <https://mhjensen.gith
 
 chapter2
 chapter3
-chapter4
 ```
