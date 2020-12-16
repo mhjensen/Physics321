@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1. PHY321: Review of Vectors, Math and first Numerical Examples for simple Motion Problems &#8212; Classical mechanics</title>
+    <title>1. Space, Time, Motion, Reference Frames and Reminder on vectors and other mathematical quantities &#8212; Classical mechanics</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -38,8 +38,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. PHY321: Forces, Newton’s Laws and Motion Example" href="chapter3.html" />
-    <link rel="prev" title="PHY321, Classical Mechanics I, Michigan State University, Spring 2021 (to be modified, new material ready by December 30)" href="intro.html" />
+    <link rel="next" title="1. Basic Steps of Scientific Investigations" href="chapter3.html" />
+    <link rel="prev" title="PHY321, Classical Mechanics I, Michigan State University, Spring 2021" href="intro.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -75,7 +75,7 @@
   <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
-   PHY321, Classical Mechanics I, Michigan State University, Spring 2021 (to be modified, new material ready by December 30)
+   PHY321, Classical Mechanics I, Michigan State University, Spring 2021
   </a>
  </li>
 </ul>
@@ -87,12 +87,7 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   1. PHY321: Review of Vectors, Math and first Numerical Examples for simple Motion Problems
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#space-time-motion-reference-frames-and-reminder-on-vectors-and-other-mathematical-quantities">
-   2. Space, Time, Motion, Reference Frames  and Reminder on vectors and other mathematical quantities
+   1. Space, Time, Motion, Reference Frames  and Reminder on vectors and other mathematical quantities
   </a>
  </li>
 </ul>
@@ -104,12 +99,7 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter3.html">
-   1. PHY321: Forces, Newton’s Laws and Motion Example
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter3.html#basic-steps-of-scientific-investigations">
-   2. Basic Steps of Scientific Investigations
+   1. Basic Steps of Scientific Investigations
   </a>
  </li>
 </ul>
@@ -181,7 +171,146 @@
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dimension-units-and-labels">
+   1.1. Dimension, units and labels
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#elements-of-vector-algebra">
+   1.2. Elements of Vector Algebra
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#falling-baseball-in-one-dimension">
+   1.3. Falling baseball in one dimension
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#our-python-encounter">
+   1.4. Our Python Encounter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#average-quantities">
+   1.5. Average quantities
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compact-equations">
+   1.6. Compact equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-differential-equation">
+   1.7. A differential equation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integrating-our-equations">
+   1.8. Integrating our equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constant-acceleration-case-the-velocity">
+   1.9. Constant acceleration case, the velocity
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#computing-the-averages">
+   1.10. Computing the averages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#including-air-resistance-in-our-model">
+   1.11. Including Air Resistance in our model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analytical-solutions">
+   1.12. Analytical solutions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#finding-the-final-height">
+   1.13. Finding the final height
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#our-first-attempt-at-solving-differential-equations">
+   1.14. Our first attempt at solving differential equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discretizing-our-equations">
+   1.15. Discretizing our equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-for-implementing-euler-s-method">
+   1.16. Code for implementing Euler’s method
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-extension-the-euler-cromer-method">
+   1.17. Simple extension, the Euler-Cromer method
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-practicalities-software-and-needed-installations">
+   1.18. Python practicalities, Software and needed installations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-installers">
+   1.19. Python installers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#useful-python-libraries">
+   1.20. Useful Python libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numpy-examples-and-important-matrix-and-vector-handling-packages">
+   1.21. Numpy examples and Important Matrix and vector handling packages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-matrix-features">
+   1.22. Basic Matrix Features
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-famous-matrices">
+     1.22.1. Some famous Matrices
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-basic-matrix-features">
+     1.22.2. More Basic Matrix Features
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numpy-and-arrays">
+   1.23. Numpy and arrays
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matrices-in-python">
+   1.24. Matrices in Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#meet-the-pandas">
+   1.25. Meet the Pandas
+  </a>
+ </li>
+</ul>
+
         </nav>
     </div>
 </div>
@@ -190,21 +319,8 @@
         
               <div>
                 
-  <!-- dom:TITLE: PHY321: Review of Vectors, Math and first Numerical Examples for simple Motion Problems -->
-<div class="section" id="phy321-review-of-vectors-math-and-first-numerical-examples-for-simple-motion-problems">
-<h1><span class="section-number">1. </span>PHY321: Review of Vectors, Math and first Numerical Examples for simple Motion Problems<a class="headerlink" href="#phy321-review-of-vectors-math-and-first-numerical-examples-for-simple-motion-problems" title="Permalink to this headline">¶</a></h1>
-<!-- dom:AUTHOR: [Morten Hjorth-Jensen](http://mhjgit.github.io/info/doc/web/) at Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA & Department of Physics, University of Oslo, Norway -->
-<!-- Author: -->  
-<p><strong><a class="reference external" href="http://mhjgit.github.io/info/doc/web/">Morten Hjorth-Jensen</a></strong>, Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA and Department of Physics, University of Oslo, Norway</p>
-<!-- dom:AUTHOR: [Scott Pratt](https://pa.msu.edu/profile/pratts/) at Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA -->
-<!-- Author: --> **[Scott Pratt](https://pa.msu.edu/profile/pratts/)**, Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA  
-<!-- dom:AUTHOR: [Carl Schmidt](https://pa.msu.edu/profile/schmidt/) at Department of Physics and Astronomy, Michigan State University, USA -->
-<!-- Author: --> **[Carl Schmidt](https://pa.msu.edu/profile/schmidt/)**, Department of Physics and Astronomy, Michigan State University, USA
-<p>Date: <strong>Dec 16, 2020</strong></p>
-<p>Copyright 1999-2020, <a class="reference external" href="http://mhjgit.github.io/info/doc/web/">Morten Hjorth-Jensen</a>. Released under CC Attribution-NonCommercial 4.0 license</p>
-</div>
-<div class="section" id="space-time-motion-reference-frames-and-reminder-on-vectors-and-other-mathematical-quantities">
-<h1><span class="section-number">2. </span>Space, Time, Motion, Reference Frames  and Reminder on vectors and other mathematical quantities<a class="headerlink" href="#space-time-motion-reference-frames-and-reminder-on-vectors-and-other-mathematical-quantities" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="space-time-motion-reference-frames-and-reminder-on-vectors-and-other-mathematical-quantities">
+<h1><span class="section-number">1. </span>Space, Time, Motion, Reference Frames  and Reminder on vectors and other mathematical quantities<a class="headerlink" href="#space-time-motion-reference-frames-and-reminder-on-vectors-and-other-mathematical-quantities" title="Permalink to this headline">¶</a></h1>
 <p>Our studies will start with the motion of different types of objects
 such as a falling ball, a runner, a bicycle etc etc. It means that an
 object’s position in space varies with time.
@@ -223,7 +339,7 @@ In order to study such systems we need to define</p>
 <li><p>is the physics independent of the scale of the length?</p></li>
 </ul>
 <div class="section" id="dimension-units-and-labels">
-<h2><span class="section-number">2.1. </span>Dimension, units and labels<a class="headerlink" href="#dimension-units-and-labels" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.1. </span>Dimension, units and labels<a class="headerlink" href="#dimension-units-and-labels" title="Permalink to this headline">¶</a></h2>
 <p>Throughout this course we will use the standardized SI units. The standard unit for length is thus one meter 1m, for mass
 one kilogram 1kg, for time one second 1s, for force one Newton 1kgm/s<span class="math notranslate nohighlight">\(^2\)</span> and for energy 1 Joule 1kgm<span class="math notranslate nohighlight">\(^2\)</span>s<span class="math notranslate nohighlight">\(^{-2}\)</span>.</p>
 <p>We will use the following notations for various variables (vectors are always boldfaced in these lecture notes):</p>
@@ -252,7 +368,7 @@ one kilogram 1kg, for time one second 1s, for force one Newton 1kgm/s<span class
 </ul>
 </div>
 <div class="section" id="elements-of-vector-algebra">
-<h2><span class="section-number">2.2. </span>Elements of Vector Algebra<a class="headerlink" href="#elements-of-vector-algebra" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.2. </span>Elements of Vector Algebra<a class="headerlink" href="#elements-of-vector-algebra" title="Permalink to this headline">¶</a></h2>
 <p><strong>Note</strong>: This section is under revision</p>
 <p>In these lectures we will use boldfaced lower-case letters to label a vector. A vector <span class="math notranslate nohighlight">\(\boldsymbol{a}\)</span> in three dimensions is thus defined as</p>
 <div class="math notranslate nohighlight">
@@ -297,7 +413,7 @@ one kilogram 1kg, for time one second 1s, for force one Newton 1kgm/s<span class
 \end{split}\]</div>
 </div>
 <div class="section" id="falling-baseball-in-one-dimension">
-<h2><span class="section-number">2.3. </span>Falling baseball in one dimension<a class="headerlink" href="#falling-baseball-in-one-dimension" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.3. </span>Falling baseball in one dimension<a class="headerlink" href="#falling-baseball-in-one-dimension" title="Permalink to this headline">¶</a></h2>
 <p>We anticipate the mathematical model to come and assume that we have a
 model for the motion of a falling baseball without air resistance.
 Our system (the baseball) is at an initial height <span class="math notranslate nohighlight">\(y_0\)</span> (which we will
@@ -307,7 +423,7 @@ The mathematical formula for the position <span class="math notranslate nohighli
 \[
 y(t) = y_0-\frac{1}{2}gt^2,
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(g=9.80665=0.980655\times 10^1\)</span>m/s<span class="math notranslate nohighlight">\({}^2\)</span> is a constant representing the standard acceleration due to gravity.
+<p>where <span class="math notranslate nohighlight">\(g=9.80665=0.980655\times 10^1\)</span>m/s<span class="math notranslate nohighlight">\(^2\)</span> is a constant representing the standard acceleration due to gravity.
 We have here adopted the conventional standard value. This does not take into account other effects, such as buoyancy or drag.
 Furthermore, we stop when the ball hits the ground, which takes place at</p>
 <div class="math notranslate nohighlight">
@@ -318,7 +434,7 @@ y(t) = 0= y_0-\frac{1}{2}gt^2,
 <p>As of now we simply assume that   we know the formula for the falling object. Afterwards, we will derive it.</p>
 </div>
 <div class="section" id="our-python-encounter">
-<h2><span class="section-number">2.4. </span>Our Python Encounter<a class="headerlink" href="#our-python-encounter" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.4. </span>Our Python Encounter<a class="headerlink" href="#our-python-encounter" title="Permalink to this headline">¶</a></h2>
 <p>We start with preparing folders for storing our calculations, figures and if needed, specific data files we use as input or output files.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -522,7 +638,7 @@ function.</p>
 <p>Here we used <strong>pandas</strong> (see below) to systemize the output of the position as function of time.</p>
 </div>
 <div class="section" id="average-quantities">
-<h2><span class="section-number">2.5. </span>Average quantities<a class="headerlink" href="#average-quantities" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.5. </span>Average quantities<a class="headerlink" href="#average-quantities" title="Permalink to this headline">¶</a></h2>
 <p>We define now the average velocity as</p>
 <div class="math notranslate nohighlight">
 \[
@@ -547,7 +663,7 @@ y_{i\pm 1} = y(t_i\pm \Delta t),\hspace{0.12cm} i=0,1,2,\dots,n.
 \]</div>
 </div>
 <div class="section" id="compact-equations">
-<h2><span class="section-number">2.6. </span>Compact equations<a class="headerlink" href="#compact-equations" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.6. </span>Compact equations<a class="headerlink" href="#compact-equations" title="Permalink to this headline">¶</a></h2>
 <p>We can then rewrite in a more compact form the average velocity as</p>
 <div class="math notranslate nohighlight">
 \[
@@ -574,7 +690,7 @@ a(t) = \frac{dv}{dt}=\lim_{\Delta t\rightarrow 0}\frac{v(t+\Delta t)-v(t)}{\Delt
 <span class="math notranslate nohighlight">\(v_i\)</span> refers always to the discretized values.</p>
 </div>
 <div class="section" id="a-differential-equation">
-<h2><span class="section-number">2.7. </span>A differential equation<a class="headerlink" href="#a-differential-equation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.7. </span>A differential equation<a class="headerlink" href="#a-differential-equation" title="Permalink to this headline">¶</a></h2>
 <p>We can rewrite the instantaneous acceleration as</p>
 <div class="math notranslate nohighlight">
 \[
@@ -598,7 +714,7 @@ F(y,v,t)=m\frac{d^2y}{dt^2}=ma(t,y(t),\frac{dy}{dt}),
 We will come back to this soon.</p>
 </div>
 <div class="section" id="integrating-our-equations">
-<h2><span class="section-number">2.8. </span>Integrating our equations<a class="headerlink" href="#integrating-our-equations" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.8. </span>Integrating our equations<a class="headerlink" href="#integrating-our-equations" title="Permalink to this headline">¶</a></h2>
 <p>Formally we can then, starting with the acceleration (suppose we have measured it, how could we do that?)
 compute say the height of a building.  To see this we perform the following integrations from an initial time <span class="math notranslate nohighlight">\(t_0\)</span>  to a given time <span class="math notranslate nohighlight">\(t\)</span></p>
 <div class="math notranslate nohighlight">
@@ -626,7 +742,7 @@ no loss of generality if we extend these equations to more than one
 spatial dimension.</p>
 </div>
 <div class="section" id="constant-acceleration-case-the-velocity">
-<h2><span class="section-number">2.9. </span>Constant acceleration case, the velocity<a class="headerlink" href="#constant-acceleration-case-the-velocity" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.9. </span>Constant acceleration case, the velocity<a class="headerlink" href="#constant-acceleration-case-the-velocity" title="Permalink to this headline">¶</a></h2>
 <p>Let us compute the velocity using the constant value for the acceleration given by <span class="math notranslate nohighlight">\(-g\)</span>. We have</p>
 <div class="math notranslate nohighlight">
 \[
@@ -654,7 +770,7 @@ y(t)=10-\frac{1}{2}gt^2.
 \]</div>
 </div>
 <div class="section" id="computing-the-averages">
-<h2><span class="section-number">2.10. </span>Computing the averages<a class="headerlink" href="#computing-the-averages" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.10. </span>Computing the averages<a class="headerlink" href="#computing-the-averages" title="Permalink to this headline">¶</a></h2>
 <p>After this mathematical background we are now ready to compute the mean velocity using our data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -805,7 +921,7 @@ y(t)=10-\frac{1}{2}gt^2.
 <p>Note that we don’t print the last values!</p>
 </div>
 <div class="section" id="including-air-resistance-in-our-model">
-<h2><span class="section-number">2.11. </span>Including Air Resistance in our model<a class="headerlink" href="#including-air-resistance-in-our-model" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.11. </span>Including Air Resistance in our model<a class="headerlink" href="#including-air-resistance-in-our-model" title="Permalink to this headline">¶</a></h2>
 <p>In our discussions till now of the falling baseball, we have ignored
 air resistance and simply assumed that our system is only influenced
 by the gravitational force.  We will postpone the derivation of air
@@ -836,7 +952,7 @@ compute the solutions analytically, thereafter we will derive Euler’s
 method for solving these differential equations numerically.</p>
 </div>
 <div class="section" id="analytical-solutions">
-<h2><span class="section-number">2.12. </span>Analytical solutions<a class="headerlink" href="#analytical-solutions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.12. </span>Analytical solutions<a class="headerlink" href="#analytical-solutions" title="Permalink to this headline">¶</a></h2>
 <p>For simplicity let us just write <span class="math notranslate nohighlight">\(v(t)\)</span> as <span class="math notranslate nohighlight">\(v\)</span>. We have</p>
 <div class="math notranslate nohighlight">
 \[
@@ -870,7 +986,7 @@ v(t)=v_T\tanh{-(\frac{gt}{v_T})}.
 \]</div>
 </div>
 <div class="section" id="finding-the-final-height">
-<h2><span class="section-number">2.13. </span>Finding the final height<a class="headerlink" href="#finding-the-final-height" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.13. </span>Finding the final height<a class="headerlink" href="#finding-the-final-height" title="Permalink to this headline">¶</a></h2>
 <p>With the velocity we can then find the height <span class="math notranslate nohighlight">\(y(t)\)</span> by integrating yet another time, that is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -886,7 +1002,7 @@ y(t)=y(t_0)-\frac{v_T^2}{g}\log{[\cosh{(\frac{gt}{v_T})}]}.
 <p>In most cases however, we need to revert to numerical solutions.</p>
 </div>
 <div class="section" id="our-first-attempt-at-solving-differential-equations">
-<h2><span class="section-number">2.14. </span>Our first attempt at solving differential equations<a class="headerlink" href="#our-first-attempt-at-solving-differential-equations" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.14. </span>Our first attempt at solving differential equations<a class="headerlink" href="#our-first-attempt-at-solving-differential-equations" title="Permalink to this headline">¶</a></h2>
 <p>Here we will try the simplest possible approach to solving the second-order differential
 equation</p>
 <div class="math notranslate nohighlight">
@@ -927,7 +1043,7 @@ v(t+\Delta t) = v(t)+\Delta t a(t)+O(\Delta t^2).
 \]</div>
 </div>
 <div class="section" id="discretizing-our-equations">
-<h2><span class="section-number">2.15. </span>Discretizing our equations<a class="headerlink" href="#discretizing-our-equations" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.15. </span>Discretizing our equations<a class="headerlink" href="#discretizing-our-equations" title="Permalink to this headline">¶</a></h2>
 <p>Using our discretized versions of the equations with for example
 <span class="math notranslate nohighlight">\(y_{i}=y(t_i)\)</span> and <span class="math notranslate nohighlight">\(y_{i\pm 1}=y(t_i+\Delta t)\)</span>, we can rewrite the
 above equations as (and truncating at <span class="math notranslate nohighlight">\(\Delta t\)</span>)</p>
@@ -1052,7 +1168,7 @@ by setting all elelements to zero, as done here</p>
 </div>
 </div>
 <div class="section" id="code-for-implementing-euler-s-method">
-<h2><span class="section-number">2.16. </span>Code for implementing Euler’s method<a class="headerlink" href="#code-for-implementing-euler-s-method" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.16. </span>Code for implementing Euler’s method<a class="headerlink" href="#code-for-implementing-euler-s-method" title="Permalink to this headline">¶</a></h2>
 <p>In the code here we implement this simple Eurler scheme choosing a value for <span class="math notranslate nohighlight">\(D=0.0245\)</span> m/s.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1210,7 +1326,7 @@ by setting all elelements to zero, as done here</p>
 <p>Try different values for <span class="math notranslate nohighlight">\(\Delta t\)</span> and study the difference between the exact solution and the numerical solution.</p>
 </div>
 <div class="section" id="simple-extension-the-euler-cromer-method">
-<h2><span class="section-number">2.17. </span>Simple extension, the Euler-Cromer method<a class="headerlink" href="#simple-extension-the-euler-cromer-method" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.17. </span>Simple extension, the Euler-Cromer method<a class="headerlink" href="#simple-extension-the-euler-cromer-method" title="Permalink to this headline">¶</a></h2>
 <p>The Euler-Cromer method is a simple variant of the standard Euler
 method. We use the newly updated velocity <span class="math notranslate nohighlight">\(v_{i+1}\)</span> as an input to the
 new position, that is, instead of</p>
@@ -1249,7 +1365,7 @@ steps</p>
 </div>
 </div>
 <div class="section" id="python-practicalities-software-and-needed-installations">
-<h2><span class="section-number">2.18. </span>Python practicalities, Software and needed installations<a class="headerlink" href="#python-practicalities-software-and-needed-installations" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.18. </span>Python practicalities, Software and needed installations<a class="headerlink" href="#python-practicalities-software-and-needed-installations" title="Permalink to this headline">¶</a></h2>
 <p>We will make extensive use of Python as programming language and its
 myriad of available libraries.  You will find
 Jupyter notebooks invaluable in your work.</p>
@@ -1274,7 +1390,7 @@ you can use <strong>pip</strong> as well and simply install Python as</p>
 <p>etc etc.</p>
 </div>
 <div class="section" id="python-installers">
-<h2><span class="section-number">2.19. </span>Python installers<a class="headerlink" href="#python-installers" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.19. </span>Python installers<a class="headerlink" href="#python-installers" title="Permalink to this headline">¶</a></h2>
 <p>If you don’t want to perform these operations separately and venture
 into the hassle of exploring how to set up dependencies and paths, we
 recommend two widely used distrubutions which set up all relevant
@@ -1298,7 +1414,7 @@ license.</p>
 no setup and runs entirely in the cloud. Try it out!</p>
 </div>
 <div class="section" id="useful-python-libraries">
-<h2><span class="section-number">2.20. </span>Useful Python libraries<a class="headerlink" href="#useful-python-libraries" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.20. </span>Useful Python libraries<a class="headerlink" href="#useful-python-libraries" title="Permalink to this headline">¶</a></h2>
 <p>Here we list several useful Python libraries we strongly recommend (if you use anaconda many of these are already there)</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.numpy.org/">NumPy</a> is a highly popular library for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays</p></li>
@@ -1322,7 +1438,7 @@ further processing. For example, convert to latex as</p>
 <p>And to add more versatility, the Python package <a class="reference external" href="http://www.sympy.org/en/index.html">SymPy</a> is a Python library for symbolic mathematics. It aims to become a full-featured computer algebra system (CAS)  and is entirely written in Python.</p>
 </div>
 <div class="section" id="numpy-examples-and-important-matrix-and-vector-handling-packages">
-<h2><span class="section-number">2.21. </span>Numpy examples and Important Matrix and vector handling packages<a class="headerlink" href="#numpy-examples-and-important-matrix-and-vector-handling-packages" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.21. </span>Numpy examples and Important Matrix and vector handling packages<a class="headerlink" href="#numpy-examples-and-important-matrix-and-vector-handling-packages" title="Permalink to this headline">¶</a></h2>
 <p>There are several central software libraries for linear algebra and eigenvalue problems. Several of the more
 popular ones have been wrapped into ofter software packages like those from the widely used text <strong>Numerical Recipes</strong>. The original source codes in many of the available packages are often taken from the widely used
 software package LAPACK, which follows two other popular packages
@@ -1334,7 +1450,7 @@ developed in the 1970s, namely EISPACK and LINPACK.  We describe them shortly he
 </ul>
 </div>
 <div class="section" id="basic-matrix-features">
-<h2><span class="section-number">2.22. </span>Basic Matrix Features<a class="headerlink" href="#basic-matrix-features" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.22. </span>Basic Matrix Features<a class="headerlink" href="#basic-matrix-features" title="Permalink to this headline">¶</a></h2>
 <p><strong>Matrix properties reminder.</strong></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1369,7 +1485,7 @@ developed in the 1970s, namely EISPACK and LINPACK.  We describe them shortly he
 </tbody>
 </table>
 <div class="section" id="some-famous-matrices">
-<h3><span class="section-number">2.22.1. </span>Some famous Matrices<a class="headerlink" href="#some-famous-matrices" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.22.1. </span>Some famous Matrices<a class="headerlink" href="#some-famous-matrices" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Diagonal if <span class="math notranslate nohighlight">\(a_{ij}=0\)</span> for <span class="math notranslate nohighlight">\(i\ne j\)</span></p></li>
 <li><p>Upper triangular if <span class="math notranslate nohighlight">\(a_{ij}=0\)</span> for <span class="math notranslate nohighlight">\(i &gt; j\)</span></p></li>
@@ -1383,7 +1499,7 @@ developed in the 1970s, namely EISPACK and LINPACK.  We describe them shortly he
 </ul>
 </div>
 <div class="section" id="more-basic-matrix-features">
-<h3><span class="section-number">2.22.2. </span>More Basic Matrix Features<a class="headerlink" href="#more-basic-matrix-features" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.22.2. </span>More Basic Matrix Features<a class="headerlink" href="#more-basic-matrix-features" title="Permalink to this headline">¶</a></h3>
 <p><strong>Some Equivalent Statements.</strong></p>
 <p>For an <span class="math notranslate nohighlight">\(N\times N\)</span> matrix  <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> the following properties are all equivalent</p>
 <ul class="simple">
@@ -1397,7 +1513,7 @@ developed in the 1970s, namely EISPACK and LINPACK.  We describe them shortly he
 </div>
 </div>
 <div class="section" id="numpy-and-arrays">
-<h2><span class="section-number">2.23. </span>Numpy and arrays<a class="headerlink" href="#numpy-and-arrays" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.23. </span>Numpy and arrays<a class="headerlink" href="#numpy-and-arrays" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="http://www.numpy.org/">Numpy</a> provides an easy way to handle arrays in Python. The standard way to import this library is as</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1416,8 +1532,8 @@ developed in the 1970s, namely EISPACK and LINPACK.  We describe them shortly he
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1.39688013 -0.36602375 -1.75037687 -1.9556547   0.90323709  1.05413521
-  1.29085481  0.20343079  0.51722121 -0.64335221]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.24458296  0.09660933  0.14096283  0.78239149  0.24124895  0.17707059
+  1.39560095  0.32286819 -0.66710001  0.71915941]
 </pre></div>
 </div>
 </div>
@@ -1524,7 +1640,7 @@ The attentive reader will also notice that the output is <span class="math notra
 </div>
 </div>
 <div class="section" id="matrices-in-python">
-<h2><span class="section-number">2.24. </span>Matrices in Python<a class="headerlink" href="#matrices-in-python" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.24. </span>Matrices in Python<a class="headerlink" href="#matrices-in-python" title="Permalink to this headline">¶</a></h2>
 <p>Having defined vectors, we are now ready to try out matrices. We can
 define a <span class="math notranslate nohighlight">\(3 \times 3 \)</span> real matrix <span class="math notranslate nohighlight">\(\hat{A}\)</span> as (recall that we user
 lowercase letters for vectors and uppercase letters for matrices)</p>
@@ -1597,7 +1713,7 @@ lowercase letters for vectors and uppercase letters for matrices)</p>
 </div>
 </div>
 <div class="section" id="meet-the-pandas">
-<h2><span class="section-number">2.25. </span>Meet the Pandas<a class="headerlink" href="#meet-the-pandas" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.25. </span>Meet the Pandas<a class="headerlink" href="#meet-the-pandas" title="Permalink to this headline">¶</a></h2>
 <!-- dom:FIGURE: [fig/pandas.jpg, width=600 frac=0.8] -->
 <!-- begin figure -->
 <p></p>
@@ -1754,8 +1870,8 @@ For multidimensional arrays, we recommend strongly <a class="reference external"
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">PHY321, Classical Mechanics I, Michigan State University, Spring 2021 (to be modified, new material ready by December 30)</a>
-    <a class='right-next' id="next-link" href="chapter3.html" title="next page"><span class="section-number">1. </span>PHY321: Forces, Newton’s Laws and Motion Example</a>
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">PHY321, Classical Mechanics I, Michigan State University, Spring 2021</a>
+    <a class='right-next' id="next-link" href="chapter3.html" title="next page"><span class="section-number">1. </span>Basic Steps of Scientific Investigations</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

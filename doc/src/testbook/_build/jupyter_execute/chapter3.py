@@ -1,21 +1,3 @@
-<!-- dom:TITLE: PHY321: Forces, Newton's Laws and Motion Example -->
-# PHY321: Forces, Newton's Laws and Motion Example
-<!-- dom:AUTHOR: [Morten Hjorth-Jensen](http://mhjgit.github.io/info/doc/web/) at Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA & Department of Physics, University of Oslo, Norway -->
-<!-- Author: -->  
-**[Morten Hjorth-Jensen](http://mhjgit.github.io/info/doc/web/)**, Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA and Department of Physics, University of Oslo, Norway  
-<!-- dom:AUTHOR: [Scott Pratt](https://pa.msu.edu/profile/pratts/) at Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA -->
-<!-- Author: --> **[Scott Pratt](https://pa.msu.edu/profile/pratts/)**, Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA  
-<!-- dom:AUTHOR: [Carl Schmidt](https://pa.msu.edu/profile/schmidt/) at Department of Physics and Astronomy, Michigan State University, USA -->
-<!-- Author: --> **[Carl Schmidt](https://pa.msu.edu/profile/schmidt/)**, Department of Physics and Astronomy, Michigan State University, USA
-
-Date: **Dec 16, 2020**
-
-Copyright 1999-2020, [Morten Hjorth-Jensen](http://mhjgit.github.io/info/doc/web/). Released under CC Attribution-NonCommercial 4.0 license
-
-
-
-
-
 # Basic Steps of Scientific Investigations
 
 An overarching aim in this course is to give you a deeper

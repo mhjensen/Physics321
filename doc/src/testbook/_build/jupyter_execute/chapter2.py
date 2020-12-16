@@ -1,22 +1,3 @@
-<!-- dom:TITLE: PHY321: Review of Vectors, Math and first Numerical Examples for simple Motion Problems -->
-# PHY321: Review of Vectors, Math and first Numerical Examples for simple Motion Problems
-<!-- dom:AUTHOR: [Morten Hjorth-Jensen](http://mhjgit.github.io/info/doc/web/) at Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA & Department of Physics, University of Oslo, Norway -->
-<!-- Author: -->  
-**[Morten Hjorth-Jensen](http://mhjgit.github.io/info/doc/web/)**, Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA and Department of Physics, University of Oslo, Norway  
-<!-- dom:AUTHOR: [Scott Pratt](https://pa.msu.edu/profile/pratts/) at Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA -->
-<!-- Author: --> **[Scott Pratt](https://pa.msu.edu/profile/pratts/)**, Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA  
-<!-- dom:AUTHOR: [Carl Schmidt](https://pa.msu.edu/profile/schmidt/) at Department of Physics and Astronomy, Michigan State University, USA -->
-<!-- Author: --> **[Carl Schmidt](https://pa.msu.edu/profile/schmidt/)**, Department of Physics and Astronomy, Michigan State University, USA
-
-Date: **Dec 16, 2020**
-
-Copyright 1999-2020, [Morten Hjorth-Jensen](http://mhjgit.github.io/info/doc/web/). Released under CC Attribution-NonCommercial 4.0 license
-
-
-
-
-
-
 # Space, Time, Motion, Reference Frames  and Reminder on vectors and other mathematical quantities
 
 Our studies will start with the motion of different types of objects
@@ -151,7 +132,7 @@ $$
 y(t) = y_0-\frac{1}{2}gt^2,
 $$
 
-where $g=9.80665=0.980655\times 10^1$m/s${}^2$ is a constant representing the standard acceleration due to gravity.
+where $g=9.80665=0.980655\times 10^1$m/s$^2$ is a constant representing the standard acceleration due to gravity.
 We have here adopted the conventional standard value. This does not take into account other effects, such as buoyancy or drag.
 Furthermore, we stop when the ball hits the ground, which takes place at
 
