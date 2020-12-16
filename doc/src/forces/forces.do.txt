@@ -5,8 +5,8 @@ AUTHOR: "Carl Schmidt":"https://pa.msu.edu/profile/schmidt/" at Department of Ph
 DATE: today
 
 
-!split
-===== Basic Steps of Scientific Investigations =====
+
+======= Basic Steps of Scientific Investigations =======
 
 An overarching aim in this course is to give you a deeper
 understanding of the scientific method. The problems we study will all
@@ -22,7 +22,7 @@ Our first step consists in identifying the problem. What we sketch
 here may include a mix of experiment and theoretical simulations, or
 just experiment or only theory.
 
-!split
+
 ===== Identifying our System =====
 
 Here we can ask questions like
@@ -32,7 +32,7 @@ o How do we measure position, velocity, acceleration etc
 o Which initial conditions influence our system
 o Other aspects which allow us to identify the system
 
-!split
+
 ===== Defining a Model =====
 
 With our eventual data and observations we would now like to develop a
@@ -47,7 +47,7 @@ o Introduce models for the forces
 o Identify the equations which can govern the system (Newton's second law for example)
 o More elements we deem important for defining our model
 
-!split
+
 ===== Solving the Equations =====
 
 With the model at hand, we can then solve the equations. In classical mechanics we normally end up  with solving sets of coupled ordinary differential equations or partial differential equations.
@@ -58,8 +58,6 @@ o The solution of the equations give us then the position, the velocity and othe
 
 We are not yet done. With our lovely solvers, we need to start thinking.
 
-!split
-===== Analyze =====
 
 Now it is time to ask the big questions. What do our results mean? Can we give a simple interpretation in terms of fundamental laws?  What do our results mean? Are they correct?
 Thus, typical questions we may ask are
@@ -80,7 +78,7 @@ physics of a specific system.
 
 Let us now remind ourselves of Newton's laws, since these are the laws of motion we will study in this course.
 
-!split
+
 ===== Newton's Laws =====
 
 When analyzing a physical system we normally start with distinguishing between the object we are studying (we will label this in more general terms as our _system_) and how this system interacts with the environment (which often means everything else!)
@@ -100,7 +98,7 @@ Contact forces, as evident from the name, are forces that occur at the contact b
 the system and the environment. Well-known long-range forces are the gravitional force and the electromagnetic force.
 
 
-!split
+
 ===== Setting up a model for forces acting on an object =====
 
 In order to set up the forces which act on an object, the following steps may be useful
@@ -114,7 +112,7 @@ o Make a drawing of the object. Draw the forces as arrows, vectors, starting fro
 o Draw in the axes of the coordinate system. It is often convenient to make one axis parallel to the direction of motion. When you choose the direction of the axis you also choose the positive direction for the axis.
 
 
-!split
+
 ===== Newton's Laws, the Second one first =====
 
 
@@ -142,7 +140,7 @@ inertial mass $m$. We determine the inertial mass of an object by measuring the
 acceleration for a given applied force.
 
 
-!split
+
 ===== Then the First Law =====
 
 
@@ -182,7 +180,7 @@ not an inertial system, because it ismoving in a curved path around the Sun. How
 even if the surface of the Earth is not strictly an inertial system, it may be considered
 to be approximately an inertial system for many laboratory-size experiments.
 
-!split
+
 ===== And finally the Third Law =====
 
 
@@ -193,7 +191,7 @@ third law is usually formulated as: For every action there is an equal and oppos
 reaction.
 
 
-!split
+
 ===== Motion of a Single Object =====
 
 Here we consider the motion of a single particle moving under
@@ -204,7 +202,7 @@ equation and one solves for $\bm{v}(t)$, then moves on to integrate
 $\bm{v}$ to get the position. In essentially all of these cases we cna find an analytical solution.
 
 
-!split
+
 ===== Air Resistance in One Dimension =====
 
 Air resistance tends to scale as the square of the velocity. This is
@@ -237,7 +235,7 @@ dV=Avdt,
 where $A$ is the cross-sectional area and $vdt$ is the distance the
 object moved in time $dt$.
 
-!split
+
 ===== Resulting Acceleration =====
 Plugging this into the expression above,
 
@@ -297,7 +295,7 @@ efficient at a chosen range of power output. Thus, some cars will get
 better mileage at higher speeds (They perform better at 50 mph than at
 5 mph) despite the considerations mentioned above.
 
-!split
+
 ===== Going Ballistic, Projectile Motion or a Softer Approach, Falling Raindrops =====
 
 
@@ -320,7 +318,7 @@ and $\gamma$ has dimensions of inverse time.
 If you on the other hand have a falling raindrop, how do these equations change? See for example Figure 2.1 in Taylor.
 Let us stay with a ball which is thrown up in the air at $t=0$. 
 
-!split
+
 ===== Ways of solving these equations =====
 
 We will go over two different ways to solve this equation. The first
@@ -359,7 +357,7 @@ Whereas $v_x$ starts at some value and decays
 exponentially to zero, $v_y$ decays exponentially to the terminal
 velocity, $v_t=-g/\gamma$.
 
-!split
+
 ===== Solving as differential equations =====
 
 Although this direct integration is simpler than the method we invoke
@@ -380,8 +378,9 @@ by the initial conditions, or more generally boundary conditions. By
 inspection $A=v_{0x}$, the initial $x$ component of the velocity.
 
 
-!split
+
 ===== Differential Equations, contn =====
+
 The differential equation for $v_y$ is a bit more complicated due to
 the presence of $g$. Differential equations where all the terms are
 linearly proportional to a function, in this case $v_y$, or to
@@ -403,7 +402,7 @@ linear terms on one side of the equal sign,
 \end{equation}
 !et
 
-!split
+
 ===== Splitting into two parts =====
 
 Now, the solution to the equation can be broken into two
@@ -456,7 +455,7 @@ that can be adjusted to fit any initial condition (like the homogneous
 solution). If the equation were not linear, e.g if there were a term
 such as $v_y^2$ or $v_y\dot{v}_y$, this technique would not work.
 
-!split
+
 ===== More details =====
 
 Returning to the example above, the homogenous solution is the same as
@@ -552,7 +551,7 @@ the final answer than $t_{\rm guess}$. One breaks the loop once one
 finds $F$ within some acceptable tolerance of zero. A program to do
 this will be added shortly.
 
-!split
+
 ===== Motion in a Magnetic Field =====
 
 
@@ -663,7 +662,7 @@ considered in this course.
 
 
 
-!split
+
 ===== Sliding Block tied to a Wall =====
 
 Another classical case is that of simple harmonic oscillations, here represented by a block sliding on a horizontal frictionless surface. The block is tied to a wall with a spring. If the spring is not compressed or stretched too far, the force on the block at a given position $x$ is 
@@ -697,10 +696,6 @@ where $A$ is the amplitude and $\nu$ the phase constant.   This provides in turn
 solution and the development of a program for more complicated cases which cannot be solved analytically. 
 
 
-
-!split
-===== Simple Example, Block tied to a Wall =====
-
 With the position $x(t)$ and the velocity  $v(t)=dx/dt$ we can reformulate Newton's equation in the following way
 !bt
   \[
@@ -715,9 +710,6 @@ With the position $x(t)$ and the velocity  $v(t)=dx/dt$ we can reformulate Newto
 !et
   We are now going to solve these equations using first the standard forward Euler  method. Later we will try to improve upon this.
 
-
-!split
-===== Simple Example, Block tied to a Wall =====
 
 Before proceeding however, it is important to note that in addition to the exact solution, we have at least two further tests which can be used to check our solution. 
 
@@ -735,9 +727,6 @@ with $T$ the period defined as
 !et
 Observe that $T$ depends only on $k/m$ and not on the amplitude of the solution. 
 
-
-!split
-===== Simple Example, Block tied to a Wall =====
 
 In addition to the periodicity test, the total energy has also to be conserved. 
 
@@ -761,8 +750,6 @@ The total energy at any time $t$ has however to be conserved, meaning that our s
 !et
 We will derive this equation in our discussion on "energy conservation":"https://mhjensen.github.io/Physics321/doc/pub/energyconserv/html/energyconserv.html".
 
-!split
-===== Simple Example, Block tied to a Wall =====
 
 An algorithm which implements these equations is included below.
  * Choose the initial position and speed, with the most common choice $v(t=0)=0$ and some fixed value for the position. 
@@ -786,8 +773,6 @@ where $N$ is the number of mesh points.
  * The results are checked against the exact solution. Furthermore, one has to check the stability of the numerical solution against the chosen number of mesh points $N$.      
 
 
-!split
-===== Simple Example, Block tied to a Wall, python code =====
 
 The following python program ( code will be added shortly)
 !bc pycod
@@ -813,7 +798,6 @@ The following python program ( code will be added shortly)
 
 
 
-!split
 ===== The classical pendulum and scaling the equations =====
 
 The angular equation of motion of the pendulum is given by
@@ -837,7 +821,7 @@ and
 !et
 
 
-!split
+
 ===== More on the Pendulum =====
 
 We do however expect that the motion will gradually come to an end due a viscous drag torque acting on the pendulum. 
@@ -862,7 +846,6 @@ the angular frequency respectively. The latter is called the driving frequency.
 
 
 
-!split
 ===== More on the Pendulum =====
 
 We define 
@@ -895,10 +878,6 @@ and introducing the quantity $Q$, called the *quality factor*,
 \hat{A}=\frac{A}{mg}
   \]
 !et
-
-
-!split
-===== More on the Pendulum =====
 
 We have 
 !bt

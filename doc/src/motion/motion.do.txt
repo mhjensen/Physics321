@@ -6,8 +6,8 @@ DATE: today
 
 
 
-!split
-===== Space, Time, Motion, Reference Frames  and Reminder on vectors and other mathematical quantities =====
+
+======= Space, Time, Motion, Reference Frames  and Reminder on vectors and other mathematical quantities =======
 
 Our studies will start with the motion of different types of objects
 such as a falling ball, a runner, a bicycle etc etc. It means that an
@@ -55,7 +55,6 @@ It is also important to keep track of dimensionalities. Don't mix this up with a
 * $[\omega]=$ 1/time
 
 
-!split
 ===== Elements of Vector Algebra =====
 
 _Note_: This section is under revision
@@ -113,7 +112,7 @@ We can write this in a more compact form as $\bm{b} = \bm{R}\bm{a}$, where the r
 !et
 
 
-!split
+
 ===== Falling baseball in one dimension =====
 
 We anticipate the mathematical model to come and assume that we have a
@@ -138,7 +137,7 @@ which gives us a final time $t_f=\sqrt{2y_0/g}$.
 
 As of now we simply assume that   we know the formula for the falling object. Afterwards, we will derive it.
 
-!split
+
 =====  Our Python Encounter =====
 
 We start with preparing folders for storing our calculations, figures and if needed, specific data files we use as input or output files.
@@ -236,7 +235,7 @@ plt.show()
 Here we used _pandas_ (see below) to systemize the output of the position as function of time.
 
 
-!split
+
 ===== Average quantities =====
 We define now the average velocity as
 !bt
@@ -266,7 +265,7 @@ y_{i\pm 1} = y(t_i\pm \Delta t),\hspace{0.12cm} i=0,1,2,\dots,n.
 \]
 !et
 
-!split
+
 ===== Compact equations =====
 We can then rewrite in a more compact form the average velocity as
 !bt
@@ -298,8 +297,9 @@ a(t) = \frac{dv}{dt}=\lim_{\Delta t\rightarrow 0}\frac{v(t+\Delta t)-v(t)}{\Delt
 _A note on notations_: When writing for example the velocity as $v(t)$ we are then referring to the continuous and instantaneous value. A subscript like
 $v_i$ refers always to the discretized values.
 
-!split
+
 ===== A differential equation =====
+
 We can rewrite the instantaneous acceleration as
 !bt
 \[
@@ -327,7 +327,7 @@ F(y,v,t)=m\frac{d^2y}{dt^2}=ma(t,y(t),\frac{dy}{dt}),
 where $F$ is the force acting on an object with mass $m$. We see that it also has the right dimension, mass times length divided by time squared.
 We will come back to this soon.
 
-!split
+
 ===== Integrating our equations =====
 
 Formally we can then, starting with the acceleration (suppose we have measured it, how could we do that?)
@@ -363,8 +363,9 @@ finding the position and the velocity as functions of time. There is
 no loss of generality if we extend these equations to more than one
 spatial dimension.
 
-!split
+
 ===== Constant acceleration case, the velocity =====
+
 Let us compute the velocity using the constant value for the acceleration given by $-g$. We have
 !bt
 \[
@@ -398,8 +399,9 @@ y(t)=10-\frac{1}{2}gt^2.
 
 
 
-!split
+
 ===== Computing the averages =====
+
 After this mathematical background we are now ready to compute the mean velocity using our data.
 !bc pycod
 # Now we can compute the mean velocity using our data
@@ -428,7 +430,7 @@ Note that we don't print the last values!
 
 
 
-!split
+
 ===== Including Air Resistance in our model =====
 
 In our discussions till now of the falling baseball, we have ignored
@@ -466,7 +468,7 @@ solution for the velocity and for the position. Here we will first
 compute the solutions analytically, thereafter we will derive Euler's
 method for solving these differential equations numerically.
 
-!split
+
 ===== Analytical solutions =====
 
 For simplicity let us just write $v(t)$ as $v$. We have
@@ -511,8 +513,9 @@ v(t)=v_T\tanh{-(\frac{gt}{v_T})}.
 !et
 
 
-!split
+
 ===== Finding the final height =====
+
 With the velocity we can then find the height $y(t)$ by integrating yet another time, that is
 !bt
 \[
@@ -531,7 +534,7 @@ Alternatively we could have used the symbolic Python package _Sympy_  (example w
 In most cases however, we need to revert to numerical solutions. 
 
 
-!split
+
 ===== Our first attempt at solving differential equations =====
 
 Here we will try the simplest possible approach to solving the second-order differential 
@@ -581,8 +584,9 @@ v(t+\Delta t) = v(t)+\Delta t a(t)+O(\Delta t^2).
 \]
 !et
 
-!split
+
 ===== Discretizing our equations =====
+
 Using our discretized versions of the equations with for example
 $y_{i}=y(t_i)$ and $y_{i\pm 1}=y(t_i+\Delta t)$, we can rewrite the
 above equations as (and truncating at $\Delta t$)
@@ -660,7 +664,7 @@ print(a)
 
 
 
-!split
+
 ===== Code for implementing Euler's method =====
 In the code here we implement this simple Eurler scheme choosing a value for $D=0.0245$ m/s. 
 
@@ -752,7 +756,7 @@ plt.show()
 
 Try different values for $\Delta t$ and study the difference between the exact solution and the numerical solution.
 
-!split
+
 ===== Simple extension, the Euler-Cromer method =====
 
 The Euler-Cromer method is a simple variant of the standard Euler
@@ -796,7 +800,7 @@ for i in range(n-1):
 
 
 
-!split
+
 ===== Python practicalities, Software and needed installations =====
 
 We will make extensive use of Python as programming language and its
