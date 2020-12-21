@@ -1,6 +1,6 @@
 # PHY321, Classical Mechanics I, Michigan State University, Spring 2021 (to be modified, new material ready by December 30)
 
-_Due to the corona virus, all lectures are done remotely via zoom. All videos and handwritten notes are in D2L and below here. The videos are posted immediately after the lecture. Feel free to comment on the material. As you will see from the schedule below, the final written exam is replaced by a one week-long project, with start date April 24 and to be handed in not later than May 1._ 
+_Due to the corona virus, all lectures are done remotely via zoom. All videos and handwritten notes are in D2L and below here. The videos are posted immediately after the lecture. Feel free to comment on the material. 
 
 _This is a rather unique situation and your feedback is essential for improving the quality of the teaching material.
 Stay well._
@@ -11,7 +11,7 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Lectures |   |    |   Location |
 |---------|----|----|----|
-| Monday 3:00-3:50pm| Wednesday 3:00-3:50pm | Friday 3:00-3:50pm | Room 1420 BPS |
+| Monday 3:00-3:50pm| Wednesday 3:00-3:50pm | Friday 3:00-3:50pm | Digital via zoom |
 
 
 |  Instructor  | Email | Office  | Office phone/cellphone  |
@@ -43,7 +43,7 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Additional Class |    Location |
 |---|----|
-| Wednesday 5:00-6pm | Room 1400 BPS |
+| Wednesday 5:00-6pm | Digital via zoom|
 
 
 
