@@ -22,7 +22,7 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Office Hours|   |  
 |----------|----------|
-| Monday/Wednesday 4-5:00pm, Room 2131 NSCL/FRIB | or immediately after class |
+| Monday/Wednesday 4-5:00pm | or immediately after class |
 
 | Homework Grader | Email | 
 |--------------|------| 
