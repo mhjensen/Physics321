@@ -1,9 +1,8 @@
 # PHY321, Classical Mechanics I, Michigan State University, Spring 2021 (to be modified, new material ready by December 30)
 
-_Due to the corona virus, all lectures are done remotely via zoom. All videos and handwritten notes are in D2L and below here. The videos are posted immediately after the lecture. Feel free to comment on the material. 
+_Due to the corona virus, all lectures are done remotely via zoom. All videos and handwritten notes are in D2L and below here. The videos are posted immediately after the lecture. Feel free to comment on the material. The first week (see mail to sent all via reg.msu.edu) starts on Monday January 11. This week is dedicated to a review of learning material and reminder on programming aspects, useful tools, where to find information and much more.
+Our first regular teaching day will Wednesday January 20 at 3pm. 
 
-_This is a rather unique situation and your feedback is essential for improving the quality of the teaching material.
-Stay well._
 
 Here you will find a general overview of the course, with learning outcomes, teaching schedule etc.
 
@@ -36,14 +35,14 @@ Here you will find a general overview of the course, with learning outcomes, tea
 |--------------|------| 
 | _Jeremy Rebenstock_ |  | 
 
-| Office Hours TBA |   |  
+| Office Hours Jeremy Rebenstock   |  
 |----------|----------|
 |  |  |
 
 
 | Additional Class |    Location |
 |---|----|
-| Wednesday 5:00-6pm | Digital via zoom|
+| TBA if wanted | Digital via zoom|
 
 
 
