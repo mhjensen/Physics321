@@ -34,7 +34,7 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Learning Assistant | Email |
 |--------------|------| 
-| _Jeremy Rebenstock_ |  | 
+| _Jeremy Rebenstock_ | rebensto@msu.edu | 
 
 | Office Hours Jeremy Rebenstock   |  
 |----------|----------|
