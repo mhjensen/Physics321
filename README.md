@@ -38,7 +38,7 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Office Hours Jeremy Rebenstock   |  
 |----------|----------|
-|  |  |
+| TBA |  |
 
 
 | Additional Class |    Location |
