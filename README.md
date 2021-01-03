@@ -37,7 +37,7 @@ Here you will find a general overview of the course, with learning outcomes, tea
 | _Jeremy Rebenstock_ | rebensto@msu.edu | 
 
 | Office Hours Jeremy Rebenstock   |  
-|----------|----------|
+|--------------------|
 | TBA |  |
 
 
