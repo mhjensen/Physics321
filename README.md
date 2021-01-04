@@ -1,7 +1,8 @@
 # PHY321, Classical Mechanics I, Michigan State University, Spring 2021
 
-_Due to the corona virus, all lectures are done remotely via zoom. All videos and handwritten notes are in D2L and below here. The videos are posted immediately after the lecture. Feel free to comment on the material. The first week (see mail to sent all via reg.msu.edu) starts on Monday January 11. This week is dedicated to a review of learning material and reminder on programming aspects, useful tools, where to find information and much more.
-Our first regular teaching day will Wednesday January 20 at 3pm.
+_Due to the corona virus, all lectures are digital via zoom. All videos and handwritten notes are in D2L and below here. The videos are posted immediately after the lecture. The learning material contains also videos you can watch before the regular lectures. Feel free to comment on the material. The first week (see mail to be sent all via reg.msu.edu) starts on Monday January 11. This week is dedicated to a review of learning material and reminder on programming aspects, useful tools, where to find information and much more.
+Our first regular teaching day will Wednesday January 20 at 3pm.  We look forward to meet you and hope you will enjoy the course.
+
 
 
 
