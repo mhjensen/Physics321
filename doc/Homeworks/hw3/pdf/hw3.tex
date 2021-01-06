@@ -21,8 +21,8 @@ final,                   % draft: marks overfull hboxes, figures with paths
 \usepackage[pdftex]{graphicx}
 
 \usepackage{fancyvrb} % packages needed for verbatim environments
-\usepackage{verbatim}
-%\usemintedstyle{default}
+\usepackage{minted}
+\usemintedstyle{default}
 
 \usepackage[T1]{fontenc}
 %\usepackage[latin1]{inputenc}
@@ -103,7 +103,7 @@ PHY321: Classical Mechanics 1
 
 % --- begin date ---
 \begin{center}
-Jan 31, 2020
+Jan 6, 2021
 \end{center}
 % --- end date ---
 
@@ -116,7 +116,7 @@ Jan 31, 2020
 
 \item Homeworks are available Wednesday/Thursday the week before the deadline. The deadline is at the Friday lecture.
 
-\item How do I(we)  hand in?  You can hand in the paper and pencil exercises as a hand-written document. For this homework this applies to exercises 1-5. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise(s) (exercise 6 here) should always be handed in as a jupyter notebook by the deadline at D2L. 
+\item How do I(we)  hand in?  You can hand in the paper and pencil exercises as a  scanned document. For this homework this applies to exercises 1-5. Alternatively, you can hand in everything (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise(s) (exercise 6 here) should always be handed in as a jupyter notebook by the deadline at D2L. 
 \end{enumerate}
 
 \noindent
@@ -131,7 +131,9 @@ influence of various forces. The relevant reading background is
 \end{enumerate}
 
 \noindent
-In both textbooks there are many nice worked out examples. Malthe-Sørenssen's text contains also several coding examples you may find useful. 
+In both textbooks there are many nice worked out
+examples. Malthe-Sørenssen's text contains also several coding
+examples you may find useful.
 
 There are several pedagogical aims we have in mind with these exercises:
 \begin{enumerate}
@@ -274,12 +276,13 @@ This week we will:
 \item Add additional forces to our model
 \end{enumerate}
 
-\begin{verbatim}
+\noindent
+\begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 # let's start by importing useful packages we are familiar with
 import numpy as np
 import matplotlib.pyplot as plt
 %matplotlib inline
-\end{verbatim}
+\end{minted}
 
 We will choose the following values
 \begin{enumerate}
@@ -341,13 +344,12 @@ In setting up our code we need to
 \end{enumerate}
 
 \noindent
-\begin{itemize}
 \item 6b (20 pt) Write a code which implements Euler's method and compute numerically and plot the position and velocity as functions of time for various values of $\Delta t$. Comment your results.
 
 
 
 \item 6c (10pt) Compare your numerically obtained positions and velocities with the analytical results from exercise 5. Comment again your results.
-\end{itemize}
+
 
 \paragraph{Exercise 7, gives an additional bonus score of 30 points.}
 You don't need to do this exercise, but it gives you a bonus score of 30 points. It shows also how we can include more complicated forces with no pain! And the force we include here is an example of a case where analytical solutions may either be difficult to find or we cannot find an analytical solution. 
