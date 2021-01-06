@@ -1,7 +1,18 @@
 # PHY321, Classical Mechanics I, Michigan State University, Spring 2021
 
-_Due to the corona virus, all lectures are digital via zoom_. All videos and handwritten notes are in D2L and below here. The videos are posted immediately after the lecture. The learning material contains also videos you can watch before the regular lectures. Feel free to comment on the material. The first week (see mail to be sent all via reg.msu.edu) starts on Monday January 11. This week is dedicated to a review of learning material and reminder on programming aspects, useful tools, where to find information and much more.
-Our first regular teaching day will Wednesday January 20 at 3pm.  We look forward to meet you and hope you will enjoy the course.
+_Due to the present COVID-19 situation, all lectures are digital via zoom_.
+All
+videos and handwritten notes are in D2L and linked to below here. The lecture videos are
+posted immediately after the lecture. The learning material contains
+also videos you can watch before the regular lectures. Feel free to
+comment on the material and send us feedback.
+
+The first week starts on Monday January 11. This week is dedicated to a
+review of learning material and reminder on programming aspects,
+useful tools, where to find information and much more.
+
+_Our first regular teaching day is  Wednesday January 20 at 3pm_.  We look
+forward to meet you all and hope you will enjoy the course.
 
 
 
@@ -23,7 +34,7 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Office Hours|   |  
 |----------|----------|
-| Monday/Wednesday 4-5:00pm | or immediately after class |
+| Monday/Wednesday/Friday 4-5:00pm | or immediately after class |
 
 | Homework Grader | Email | 
 |--------------|------| 
@@ -44,7 +55,7 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Additional Class |    Location |
 |---|----|
-| TBA if wanted | Digital via zoom|
+| TBA, if wanted | Digital via zoom|
 
 
 
@@ -53,10 +64,10 @@ Here you will find a general overview of the course, with learning outcomes, tea
 | Activity | Percentage of total score |
 |------|-----|
 |Homeworks, 9 in total and due Mondays the week after | 20% |
-| First Midterm Project, due Wednesday March  11 | 25% |
-| Second  Midterm Project, due Friday April 17| 25% |
-| Final Exam project, due May 1 |  30%  |
-| Extra Credit Assignment, hw10,  (Due Friday April 24)| 10% |
+| First Midterm Project, _due Monday March  12_ | 25% |
+| Second  Midterm Project, _due Monday April 16_ | 25% |
+| Final Exam project, _due April 30_ |  30%  |
+| Extra Credit Assignment, homework 10,  (Due Monday  April 26)| 10% |
 
 | Grading scale | | | | | | | 
 |-----|-----|-------|------|--------|--------|--------|
@@ -70,83 +81,90 @@ _Additional textbooks_:
 - AMS: Anders Malthe-Sørenssen, Elementary Mechanics using Python (Springer 2015), https://www.springer.com/gp/book/9783319195957 and https://github.com/mhjensen/Physics321/tree/master/doc/Literature
 - _Lecture notes_: Posted lecture notes are in the doc/pub folder here or at https://mhjensen.github.io/Physics321/doc/web/course.html for easier viewing. They are not meant to be a replacement for textbook. These notes are updated on a weekly basis and a _git pull_ should thus always give you the latest update. 
 
-##  Teaching schedule with links to material (This will be updated asap)
-Weekly mails (Wednesdays or Thursdays) with updates, plans for lectures etc will sent to everybody. We use also Piazza as a discussion forum. Please use this sign-up link piazza.com/msu/spring2020/phy321. The class link is piazza.com/msu/spring2020/phy321/home
-###  Week 2, January 6-10, 2020
-- Monday: Introduction to the course and start discussion of vectors, space, time and motion, JRT chapter 1.2 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/Introduction/html/Introduction.html)
-- Wednesday: More on time,space, vectors and motion, JRT 1.2 and 1.3, AMS chapters 2 and 4  and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/Introduction/html/Introduction.html), first homework available
-- Friday: Forces and Newton's laws of motion. JRT chapter 1.4 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/Introduction/html/Introduction.html). Introduction to Git and GitHub and getting started with numerical exercises. Installing software (anaconda) and first homework due January 17. For solving exercise 7 in the first homework, AMS chapters 2 and 4 are very useful
-- Solution to homeworks are in https://d2l.msu.edu/
-### Week 3, January 13-17, 2020
-- Monday: Motion and forces, Newton's laws, examples
-- Wednesday: Motion and forces, Newton's laws, examples
-- Friday:  Motion and forces, Newton's laws, examples,2nd homework, due January 24
+##  Teaching schedule with links to material
+Weekly mails (Monday) with updates, plans for lectures etc will sent to everybody. We use D2L as discussion forum as well.
+
+###  Week 2, January 11-14, 2021
+This week is meant as a review and reading week. There are no lectures but we have, in addition to videos to watch, some simple recommendations on material to review.
+
+- Monday: Introduction to the course and reminder  on vectors, space, time and motion, JRT chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). Watch the video at 
+- Wednesday: Python programming reminder, elements from CS201 and how they are used in this course. Installing software (anaconda). See slides at https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). Watch the video at 
+- Friday: Introduction to Git and GitHub and getting started with numerical exercises. Example exercise in
+https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html. Watch the video at.
+For solving this exercise, AMS chapters 2 and 4 are very useful as review material. First homework set is available and due Monday January 25. See https://mhjensen.github.io/Physics321/doc/web/course.html (scroll down to homework 1). Parts of the homework will be discussed next week. 
+
+
+###  Week 3, January 18-22, 2021
+
+- Monday 1/18: MLK day, no lecture
+- Wednesday 1/20: Forces and Newton's laws of motion. JRT chapter 1.4 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week3/html/week3.html). AMS chapters 2 and 4 are very useful. 1st homework due January 25.
+- Friday 1/22: Forces and Newton's laws of motion. JRT chapter 1.4 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week3/html/week3.html). AMS chapters 2 and 4 are very useful Homework 1 is due on January 25 (Monday). 
+- Solution to homeworks are in https://d2l.msu.edu/ and are posted here as well.
+
+### Week 4, January 25-29, 2021
+- Monday 1/25: Motion and forces, Newton's laws, examples, 2nd homework, due February 1 
+- Wednesday 1/27: Motion and forces, Newton's laws, examples
+- Friday 1/29: Motion and forces, Newton's laws, examples
 - Solution to homeworks are in https://d2l.msu.edu/
 - Good reads are Taylor chapters 1.4, 1.5, 1.6, 2.1-2.4 and AMS chapters 4.2 and  5
-### Week 4, January 20-24, 2020
-- Monday: MLK day, no lectures
-- Wednesday: Work and energy conservation
-- Friday:  Example of conservation laws and single-particle motion, 3rd homework, due January 31
+
+### Week 5, February 1-5, 2021
+- Monday 2/1: Work and energy conservation, 3rd homework, due February 8
+- Wednesday 2/3: Conservation laws, examples
+- Friday 2/5:  Example of conservation laws and single-particle motion
 - Good reads are Taylor chapters 4.1-.4.3 and AMS chapters 10-12.
-### Week 5, January 27-31, 2020
-- Monday: More on Conservation laws, momentum conservation
-- Wednesday: Examples of applications of conservation laws, angular momentum conservation 
-- Friday:  Conservation aws and further examples, 4th homework, due February 10
+
+### Week 6, February 8-12, 2021
+- Monday 2/8: More on Conservation laws, momentum conservation, 4th homework, due February 15
+- Wednesday 2/10: Examples of applications of conservation laws, angular momentum conservation 
+- Friday 2/12:  Conservation laws and further examples
 - Good reads are Taylor chapter 4 and AMS chapters 10-14.
-### Week 6, February 3-7, 2020
-- Monday: Conservation laws and discussion of 4th homework (exercises 6 and 7). Introducing the Velocity Verlet algorithm and the Earth Sun problem
-- Wednesday: Examples of application of conservations laws (see chapter 4 of Taylor). 
-- Friday: Begin discussion of oscillations, and  5th homework, due February 17, paper and pencil can be handed in Friday the 21st at latest.
+### Week 7, February 15-19, 2021
+- Monday 2/15: Conservation laws. Introducing the Velocity Verlet algorithm and the Earth Sun problem, 5th homework due February 22.
+- Wednesday 2/17: Examples of application of conservations laws (see chapter 4 of Taylor). 
+- Friday 2/19: Begin discussion of oscillations
 - Good reads are Taylor chapter 4 and AMS chapters 10-14 for the conservation laws and the first sections of chapter 5 of Taylor on oscillations. 
-### Week 7, February 10-14, 2020
-- Monday: Oscillations, mathematical detials, the sliding block and energy conservation
-- Wednesday:  Oscillations, damped motion and more mathematical details
-- Friday: Oscillations, resonances and more on damped motion,  6th homework, due February 24
+### Week 8, February 22-26, 2021
+- Monday 2/22: Oscillations, mathematical details, the sliding block and energy conservation,  6th homework, due March 1
+- Wednesday 2/24:  Oscillations, damped motion and more mathematical details
+- Friday 2/26: Oscillations, resonances and more on damped motion,   _First midterm project, available Friday Feb 26 and due March 12, 2021_ 
 - Good reads are chapter 5 of Taylor on oscillations. 
-### Week 8, February 17-21, 2020
-- Monday: Oscillations, driven oscillations and resonances
-- Wednesday:  Oscillation examples and  numerical integration
-- Friday: Fourier series and end of oscillation chapter  _First midterm project, available Friday Feb 21 and due March 11, 2020_ 
+### Week 9, March 1-5
+- Monday 3/1: Oscillations, driven oscillations and resonances
+- Wednesday 3/3:  Study day, no lectures
+- Friday 3/5: Fourier series and end of oscillation chapter
 - Good reads are sections 5.5-5.8 of Taylor on oscillations. 
-### Week 9, February 24-28, 2020
-- Monday: Fourier series and oscillations 
-- Wednesday: Discussiom of first midterm and wrap up of oscillations part
-- Friday:  No lecture!
+### Week 10, March 8-12, 2021
+- Monday 3/8: Fourier series and oscillations 
+- Wednesday 3/10: Discussiom of first midterm 
+- Friday 3/12:  More discussions of first midterm and wrap up of oscillations part. Deadline first midterm at midnight. 
 - Good reads are chapter 8 of Taylor and Lecture notes 
-### Week 10, March 2-6, 2020, Spring break
-- Monday:  No lectures, spring break
-- Wednesday: No lectures, spring break
-- Friday:  No lectures, spring break
-### Week 11, March  9-13, 2020
-- Monday:  Gravity and central force problems, center of mass coordinates. Lecture notes and Taylor chapter 8. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch9.pdf
-- Wednesday: Discussion of first midterm. First midterm due Friday 13
-- Friday:  Gravity and central force problems, centrifugal barriers. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch13.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_wk9trq9k
-### Week 12, March 16-20, 2020
-- Monday: Gravity and central force problems, elliptical orbits and Kepler's laws, 7th homework, due March 23. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch16.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_t1pocrww
-- Wednesday: Gravity and central force problems, elliptical orbits  and two-body scattering examples. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch18.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_i9hczn21
-- Friday:  Elliptical orbits, examples and two-body scattering problems. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch20.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_w9xc8az7
-### Week 13, March 23-27, 2020
-- Monday: Central force problems, summary and discussion of two-body scattering problems. 8th homework, due March 30. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch23.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_t2l86862
-- Wednesday: Two-body scattering. Taylor chapter 14 covers parts of the material. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch25.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_d70czgce
-- Friday:  Two-body scattering (Taylor chapter 14). PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch27.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_e1cs5784
-### Week 14, March 30-April 3, 2020
-- Monday: Wrapping up two-body scattering and begin non-inertial frames.  9th homework, due April 6. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesMarch30.pdf and video of lecture https://mediaspace.msu.edu/media/t/0_tlsccwai
-- Wednesday: Non-inertial frames, accelerating frames (Taylor sections 9.1-9.2).  PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril1.pdf and video of lecture https://mediaspace.msu.edu/media/t/0_utc9il9y
-- Friday: Rotating non-inertial frames and Coriolis force (Taylor sections 9.3-9.6). PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril3.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_2v439nza
-### Week 15, April  6-10, 2020
-- Monday: Rotating non-inertial frames, Coriolis force and Foucalt's pendulum (Taylor sections 9.7-9.9). Second midterm available, due Fryday April 17.  PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril6.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_utivxb87
-- Wednesday: Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril8.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_rz8vr2ht
-- Friday: Euler-Lagrange equations and Lagrangian formalism. Taylor chapter 6 and lecture notes. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril10.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_j5ugthfg
-### Week 16, April 13-17, 2020
-- Monday:  Langrangian formalism, discussion of examples. Taylor chapters 6 and 7. 10th homework and extra assignments, due April 24. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril13.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_hxxec3uc
-- Wednesday: Lagrangian formalism, constraints and Lagrangian multipliers and examples. These topics are covered by Taylor's sections 7.1,7.2, 7.3, 7.4. Sections 7.5-7.7 contain several nice examples while section 7.8 goes through conservation laws. The lecture notes cover many of these topics as well.  PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril15.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_2v2se359
-- Friday:  Lagrangian Formalism, conservation laws and examples, from the classical pendulum to Foucault's pendulum. Taylor chapter 7 and lecture notes. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril17.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_ftgzt035
-### Week 17, April 20-24, 2020
-- Monday:  Lagrangian formalism, conservation laws. Examples. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril20.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_b81t0tta 
-- Wednesday: Lagrangian formalim, examples such as the linear chain and double pendulum. PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril22.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_sp7p28vk
-- Friday:  Summary and discussions of final exam project. _Final exam project project, due May 1_   PDF file for notes https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/NotesApril24.pdf and video of lecture https://mediaspace.msu.edu/media/t/1_azwo1s2r
-### Week 18, April 27- May 1, 2020, Finals week
-- Final Exam:  Due to the Corona virus the final exam will be a project similar to the two midterm projects. Deadline May 1. We will have questions sessions Monday 27 and Wednesday 29 at 2.30pm to 4pm. Other sessions can always be arranged. Just send Morten an email or a text.
+### Week 11, March  15-19, 2021
+- Monday 3/15:  Gravity and central force problems, center of mass coordinates. Lecture notes and Taylor chapter 8. 7th homework due March 22
+- Wednesday 3/17: Gravity and central force problems
+- Friday 3/19:  Gravity and central force problems, centrifugal barriers. 
+### Week 12, March 22-26, 2021
+- Monday 3/22: Gravity and central force problems, elliptical orbits and Kepler's laws, 8th homework, due March 29. 
+- Wednesday 3/24: Gravity and central force problems, elliptical orbits  and two-body scattering examples. 
+- Friday 3/26:  Elliptical orbits, examples and two-body scattering problems. 
+### Week 13, March 29-April 2, 2020
+- Monday 3/29: Central force problems, summary and discussion of two-body scattering problems. 9th homework, due April  5.
+- Wednesday 3/31: Two-body scattering. Taylor chapter 14 covers parts of the material. 
+- Friday 4/2:  Two-body scattering (Taylor chapter 14). Second midterm available, due Friday April 16.  
+### Week 14, April 5-9, 2021
+- Monday 4/5: Wrapping up two-body scattering and begin non-inertial frames.  
+- Wednesday 4/7: Non-inertial frames, accelerating frames (Taylor sections 9.1-9.2).  
+- Friday 4/9: Rotating non-inertial frames and Coriolis force (Taylor sections 9.3-9.6). 
+### Week 15, April  12-16, 2021
+- Monday 4/12: Rotating non-inertial frames, Coriolis force and Foucalt's pendulum (Taylor sections 9.7-9.9). 
+- Wednesday 4/14: Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. 
+- Friday 4/16: Euler-Lagrange equations and Lagrangian formalism. Taylor chapter 6 and lecture notes. Deadline 2nd midterm at midnight.
+### Week 16, April 19-23, 2021
+- Monday 4/19:  Langrangian formalism, discussion of examples. Taylor chapters 6 and 7. 10th homework as extra assignments, due April 26. 
+- Wednesday 4/21: Lagrangian formalism, examples such as the linear chain and double pendulum. Summary and discussions of final exam project. _Final exam project project, due April 30_   
+- Friday 4/23:  Study day
+### Week 17, April 26- April 30, 2021, Finals week
+- Final Exam:  The final exam will be a project similar to the two midterm projects. Deadline April 30. We will have Q/A sessions Monday 26 and Wednesday 28 at 2.30pm to 4pm. Other sessions can always be arranged. 
 
 
 ## Learning outcomes
