@@ -98,10 +98,10 @@ MathJax.Hub.Config({
 <center><h1>PHY321: Classical Mechanics 1</h1></center>  <!-- document title -->
 
 <p>
-<!-- author(s): Homework 2, due Friday January 24 -->
+<!-- author(s): Homework 2, due Monday February 1 (Midnight) -->
 
 <center>
-<b>Homework 2, due Friday January 24</b> 
+<b>Homework 2, due Monday February 1 (Midnight)</b> 
 </center>
 
 <p>
@@ -109,7 +109,7 @@ MathJax.Hub.Config({
 
 <br>
 <p>
-<center><h4>Jan 21, 2020</h4></center> <!-- date -->
+<center><h4>Jan 6, 2021</h4></center> <!-- date -->
 <br>
 
 <h3 id="___sec0">Practicalities about  homeworks and projects </h3>
@@ -117,7 +117,7 @@ MathJax.Hub.Config({
 <ol>
 <li> You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. <b>Remember to write your name(s)</b>!</li>
 <li> Homeworks are available Wednesday/Thursday the week before the deadline. The deadline is at the Friday lecture.</li>
-<li> How do I(we)  hand in?  You can hand in the paper and pencil exercises as a hand-written document. For this homework this applies to exercises 1-5. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise(s) (exercise 6 here) should always be handed in as a jupyter notebook by the deadline at D2L.</li> 
+<li> How do I(we)  hand in?  You can hand in the paper and pencil exercises as a hand-written and scanned  document. For this homework this applies to exercises 1-5. The scanned document should be uploaded to D2L. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise(s) (exercise 6 here) should always be handed in as a jupyter notebook by the deadline at D2L.</li> 
 </ol>
 
 <h3 id="___sec1">Exercise 1 (10 pt), Forces, discussion questions, test your intuition  </h3>
@@ -253,31 +253,31 @@ which listed number in the array iteration we are getting back.
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">print</span>(p[<span style="color: #666666">0</span>]) <span style="color: #408080; font-style: italic"># Prints the first array</span>
-<span style="color: #008000; font-weight: bold">print</span>(p[<span style="color: #666666">0</span>,:]) <span style="color: #408080; font-style: italic"># Same as above, these commands are interchangeable </span>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000">print</span>(p[<span style="color: #666666">0</span>]) <span style="color: #408080; font-style: italic"># Prints the first array</span>
+<span style="color: #008000">print</span>(p[<span style="color: #666666">0</span>,:]) <span style="color: #408080; font-style: italic"># Same as above, these commands are interchangeable </span>
 </pre></div>
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">print</span>(p[<span style="color: #666666">3999</span>]) <span style="color: #408080; font-style: italic"># Prints the 4000th array</span>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000">print</span>(p[<span style="color: #666666">3999</span>]) <span style="color: #408080; font-style: italic"># Prints the 4000th array</span>
 </pre></div>
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">print</span>(p[<span style="color: #666666">0</span>,<span style="color: #666666">0</span>]) <span style="color: #408080; font-style: italic"># Prints the first value of the first array</span>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000">print</span>(p[<span style="color: #666666">0</span>,<span style="color: #666666">0</span>]) <span style="color: #408080; font-style: italic"># Prints the first value of the first array</span>
 </pre></div>
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">print</span>(p[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>]) <span style="color: #408080; font-style: italic"># Prints the second value of first array</span>
-<span style="color: #008000; font-weight: bold">print</span>(p[:,<span style="color: #666666">0</span>]) <span style="color: #408080; font-style: italic"># Prints the first value of all the arrays</span>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000">print</span>(p[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>]) <span style="color: #408080; font-style: italic"># Prints the second value of first array</span>
+<span style="color: #008000">print</span>(p[:,<span style="color: #666666">0</span>]) <span style="color: #408080; font-style: italic"># Prints the first value of all the arrays</span>
 </pre></div>
 <p>
 Then try running this cell. Notice how it gives an error since we did not implement a third dimension into our arrays
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">print</span>(p[:,<span style="color: #666666">2</span>])
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000">print</span>(p[:,<span style="color: #666666">2</span>])
 </pre></div>
 <p>
 In the cell below we want to manipulate the arrays.
@@ -306,9 +306,9 @@ c <span style="color: #666666">=</span> <span style="color: #666666">0</span>
             c <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
 
 <span style="color: #008000; font-weight: bold">if</span> c <span style="color: #666666">==</span> <span style="color: #666666">0</span>:
-    <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;Success!&quot;</span>)
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;Success!&quot;</span>)
 <span style="color: #008000; font-weight: bold">else</span>:
-    <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;There is an error in your code&quot;</span>)
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;There is an error in your code&quot;</span>)
 </pre></div>
 <p>
 You could also think of an alternative way of storing the above information. Feel free to explore how to store
