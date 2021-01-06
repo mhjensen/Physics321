@@ -99,10 +99,10 @@ MathJax.Hub.Config({
 <center><h1>PHY321: Classical Mechanics 1</h1></center>  <!-- document title -->
 
 <p>
-<!-- author(s): Homework 1, due Friday January 17 -->
+<!-- author(s): Homework 1, due Monday  January  25 (midnight) -->
 
 <center>
-<b>Homework 1, due Friday January 17</b> 
+<b>Homework 1, due Monday  January  25 (midnight)</b> 
 </center>
 
 <p>
@@ -110,15 +110,15 @@ MathJax.Hub.Config({
 
 <br>
 <p>
-<center><h4>Jan 8, 2020</h4></center> <!-- date -->
+<center><h4>Jan 6, 2021</h4></center> <!-- date -->
 <br>
 
 <h3 id="___sec0">Practicalities about  homeworks and projects </h3>
 
 <ol>
 <li> You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. <b>Remember to write your name(s)</b>!</li>
-<li> Homeworks are available Wednesday/Thursday the week before the deadline. The deadline is at the Friday lecture.</li>
-<li> How do I(we)  hand in?  You can hand in the paper and pencil exercises as a hand-written document. For this homework this applies to exercises 1-6. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise (exercise 7 here) should always be handed in as a jupyter notebook by the deadline at D2L.</li> 
+<li> Homeworks are available approximately ten days before the  deadline. The deadline is on Mondays at midnight.</li>
+<li> How do I(we)  hand in?  You can hand in the paper and pencil exercises as a hand-written document that is scanned. For this homework this applies to exercises 1-6. You should upload the scan to D2L. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise (exercise 7 here) should always be handed in as a jupyter notebook by the deadline at D2L.</li> 
 </ol>
 
 <h3 id="___sec1">Exercise 1 (10 pt), math reminder, properties of exponential function  </h3>
@@ -200,7 +200,7 @@ emphasis on
 <li> create plots for motion in 1D space</li>
 </ul>
 
-For more information, see the <a href="https://mhjensen.github.io/Physics321/doc/pub/Introduction/html/Introduction.html" target="_blank">introductory slides</a>.
+For more information, see the <a href="https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html" target="_blank">introductory slides</a>.
 Here are some of the basic packages we will be using this week
 <p>
 
@@ -227,11 +227,11 @@ We will be working with vectors and matrices to get you familiar with them
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>V1 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">1</span>,<span style="color: #666666">2</span>,<span style="color: #666666">3</span>])
 V2 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">4</span>,<span style="color: #666666">5</span>,<span style="color: #666666">6</span>])
-<span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;V1: &quot;</span>, V1)
-<span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;V2: &quot;</span>, V2)
+<span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;V1: &quot;</span>, V1)
+<span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;V2: &quot;</span>, V2)
 </pre></div>
 <p>
-If this is not too familiar, here's a useful link for creating vectors in python <a href="https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html" target="_blank"><tt>https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html</tt></a>. Alternatively, look up the <a href="https://mhjensen.github.io/Physics321/doc/pub/Introduction/html/Introduction.html" target="_blank">introductory slides</a>.
+If this is not too familiar, here's a useful link for creating vectors in python <a href="https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html" target="_blank"><tt>https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html</tt></a>. Alternatively, look up the <a href="https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html" target="_blank">introductory slides</a>.
 
 <p>
 Now lets do some basic mathematics with vectors.
@@ -253,15 +253,15 @@ The following code prints the first two exercises
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">print</span>(V1<span style="color: #666666">-</span>V2)
-<span style="color: #008000; font-weight: bold">print</span>(V2<span style="color: #666666">-</span>V2)
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000">print</span>(V1<span style="color: #666666">-</span>V2)
+<span style="color: #008000">print</span>(V2<span style="color: #666666">-</span>V2)
 </pre></div>
 <p>
 For the dot product of V1 and V2 below we can use the <b>dot</b> function of <b>numpy</b> as follows
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">print</span>(V1<span style="color: #666666">.</span>dot(V2))
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000">print</span>(V1<span style="color: #666666">.</span>dot(V2))
 </pre></div>
 <p>
 As a small challenge try to write your own function for the <b>dot</b> product of two vectors.
@@ -289,7 +289,7 @@ Matrices can be added in the same way vectors are added in python as shown here
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;M1+M3: &quot;</span>, M1<span style="color: #666666">+</span>M3)
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;M1+M3: &quot;</span>, M1<span style="color: #666666">+</span>M3)
 </pre></div>
 <p>
 What happens if we try to do \( M1+M2 \)?
@@ -309,11 +309,11 @@ a <span style="color: #666666">=</span> np<span style="color: #666666">.</span>r
 <span style="color: #408080; font-style: italic"># define a matrix of dimension 3 x 3 and set all elements to random numbers with x \in [0, 1]</span>
 R <span style="color: #666666">=</span> np<span style="color: #666666">.</span>random<span style="color: #666666">.</span>rand(n, n)
 <span style="color: #408080; font-style: italic">#print the vector and the matrix</span>
-<span style="color: #008000; font-weight: bold">print</span>(a)
-<span style="color: #008000; font-weight: bold">print</span>(R)
+<span style="color: #008000">print</span>(a)
+<span style="color: #008000">print</span>(R)
 <span style="color: #408080; font-style: italic"># perform a matrix-vector multiplication. Note that we need to transpose the vector and the odd way to indicate a multiplication with @</span>
-b <span style="color: #666666">=</span> R @ a<span style="color: #666666">.</span>T
-<span style="color: #008000; font-weight: bold">print</span>(b)
+b <span style="color: #666666">=</span> R <span style="color: #666666">@</span> a<span style="color: #666666">.</span>T
+<span style="color: #008000">print</span>(b)
 </pre></div>
 <p>
 That's enough vectors and matrices for now. Let's move on to some physics problems! Yes, the actual subject we are studying for.

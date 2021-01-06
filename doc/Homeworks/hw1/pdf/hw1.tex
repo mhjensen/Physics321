@@ -21,8 +21,8 @@ final,                   % draft: marks overfull hboxes, figures with paths
 \usepackage[pdftex]{graphicx}
 
 \usepackage{fancyvrb} % packages needed for verbatim environments
-%\usepackage{verbatim}
-%\usemintedstyle{default}
+\usepackage{minted}
+\usemintedstyle{default}
 
 \usepackage[T1]{fontenc}
 %\usepackage[latin1]{inputenc}
@@ -92,7 +92,7 @@ PHY321: Classical Mechanics 1
 % ----------------- author(s) -------------------------
 
 \begin{center}
-{\bf Homework 1, due Friday January 17${}^{}$} \\ [0mm]
+{\bf Homework 1, due Monday  January  25 (midnight)${}^{}$} \\ [0mm]
 \end{center}
 
 \begin{center}
@@ -103,7 +103,7 @@ PHY321: Classical Mechanics 1
 
 % --- begin date ---
 \begin{center}
-Jan 8, 2020
+Jan 6, 2021
 \end{center}
 % --- end date ---
 
@@ -114,9 +114,9 @@ Jan 8, 2020
 \begin{enumerate}
 \item You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. \textbf{Remember to write your name(s)}!
 
-\item Homeworks are available Wednesday/Thursday the week before the deadline. The deadline is at the Friday lecture.
+\item Homeworks are available approximately ten days before the  deadline. The deadline is on Mondays at midnight.
 
-\item How do I(we)  hand in?  You can hand in the paper and pencil exercises as a hand-written document. For this homework this applies to exercises 1-6. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise (exercise 7 here) should always be handed in as a jupyter notebook by the deadline at D2L. 
+\item How do I(we)  hand in?  You can hand in the paper and pencil exercises as a hand-written document that is scanned. For this homework this applies to exercises 1-6. You should upload the scan to D2L. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise (exercise 7 here) should always be handed in as a jupyter notebook by the deadline at D2L. 
 \end{enumerate}
 
 \noindent
@@ -204,13 +204,13 @@ emphasis on
 \end{itemize}
 
 \noindent
-For more information, see the \href{{https://mhjensen.github.io/Physics321/doc/pub/Introduction/html/Introduction.html}}{introductory slides}.
+For more information, see the \href{{https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html}}{introductory slides}.
 Here are some of the basic packages we will be using this week
-\begin{verbatim}%[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
+\begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 import numpy as np 
 import matplotlib.pyplot as plt
 %matplotlib inline
-\end{verbatim}
+\end{minted}
 
 
 The first exercise here deals with simply getting familiar with vectors and matrices.
@@ -228,14 +228,14 @@ We will be working with vectors and matrices to get you familiar with them
 \end{enumerate}
 
 \noindent
-\begin{verbatim}%[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
+\begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 V1 = np.array([1,2,3])
 V2 = np.array([4,5,6])
 print("V1: ", V1)
 print("V2: ", V2)
-\end{verbatim}
+\end{minted}
 
-If this is not too familiar, here's a useful link for creating vectors in python \href{{https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html}}{\nolinkurl{https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html}}. Alternatively, look up the \href{{https://mhjensen.github.io/Physics321/doc/pub/Introduction/html/Introduction.html}}{introductory slides}.
+If this is not too familiar, here's a useful link for creating vectors in python \href{{https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html}}{\nolinkurl{https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html}}. Alternatively, look up the \href{{https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html}}{introductory slides}.
 
 Now lets do some basic mathematics with vectors.
 
@@ -256,15 +256,15 @@ Compute and print the following, and double check with hand calculations:
 Here is some useful explanation on numpy array operations if you feel a bit confused by what is happening, see \href{{URL:}}{\nolinkurl{ URL:}}https://www.pluralsight.com/guides/overview-basic-numpy-operations""
 
 The following code prints the first two exercises
-\begin{verbatim}%[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
+\begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 print(V1-V2)
 print(V2-V2)
-\end{verbatim}
+\end{minted}
 
 For the dot product of V1 and V2 below we can use the \textbf{dot} function of \textbf{numpy} as follows
-\begin{verbatim}%[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
+\begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 print(V1.dot(V2))
-\end{verbatim}
+\end{minted}
 As a small challenge try to write your own function for the \textbf{dot} product of two vectors.
 
 Matrices can be created in a similar fashion in python.  In this
@@ -272,7 +272,7 @@ language we can work with them through the package numpy (which we
 have already imported)
 
 
-\begin{verbatim}%[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
+\begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 M1 = np.matrix([[1,2,3],
              [4,5,6],
              [7,8,9]])
@@ -282,12 +282,12 @@ M2 = np.matrix([[1,2],
 M3 = np.matrix([[9,8,7],
              [4,5,6],
              [7,6,9]])
-\end{verbatim}
+\end{minted}
 
 Matrices can be added in the same way vectors are added in python as shown here
-\begin{verbatim}%[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
+\begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 print("M1+M3: ", M1+M3)
-\end{verbatim}
+\end{minted}
 What happens if we try to do $M1+M2$?
 
 \begin{itemize}
@@ -296,7 +296,7 @@ What happens if we try to do $M1+M2$?
 
 \noindent
 To perform a matrix-vector multiplication of the above type, the following python code may be of use. Here we just define a random vector and a random $3\times 3$ matrix
-\begin{verbatim}%[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
+\begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 import numpy as np
 #We define a  3 dimensional vector with random numbers
 n = 3
@@ -309,7 +309,7 @@ print(R)
 # perform a matrix-vector multiplication. Note that we need to transpose the vector and the odd way to indicate a multiplication with @
 b = R @ a.T
 print(b)
-\end{verbatim}
+\end{minted}
 
 That's enough vectors and matrices for now. Let's move on to some physics problems! Yes, the actual subject we are studying for. 
 
@@ -335,7 +335,7 @@ t[s] & 1.85 & 2.87 & 3.78 & 4.65 & 5.50 & 6.32 & 7.14 & 7.96 & 8.79 & 9.69 \\
 
 \noindent
 The following example code may help here
-\begin{verbatim}%[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
+\begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 # we just initialize time and position
 x = np.array([10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0])
 t = np.array([1.85, 2.87, 3.78, 4.65, 5.50, 6.32, 7.14, 7.96, 8.79, 9.69])
@@ -344,7 +344,7 @@ plt.xlabel("Time t[s]")
 plt.ylabel("Position x[m]")
 plt.title("Usain Bolt's world record run")
 plt.show()
-\end{verbatim}
+\end{minted}
 
 \begin{itemize}
 \item 7g (4pt) Plot the position as function of time
