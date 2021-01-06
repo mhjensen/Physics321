@@ -84,7 +84,7 @@ _Additional textbooks_:
 ##  Teaching schedule with links to material
 Weekly mails (Monday) with updates, plans for lectures etc will sent to everybody. We use D2L as discussion forum as well.
 
-###  Week 2, January 11-14, 2021
+###  Week 2, January 11-15, 2021
 This week is meant as a review and reading week. There are no lectures but we have, in addition to videos to watch, some simple recommendations on material to review.
 
 - Monday: Introduction to the course and reminder  on vectors, space, time and motion, JRT chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). Watch the video at 
