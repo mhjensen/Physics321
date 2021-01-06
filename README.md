@@ -82,7 +82,7 @@ _Additional textbooks_:
 - _Lecture notes_: Posted lecture notes are in the doc/pub folder here or at https://mhjensen.github.io/Physics321/doc/web/course.html for easier viewing. They are not meant to be a replacement for textbook. These notes are updated on a weekly basis and a _git pull_ should thus always give you the latest update. 
 
 ##  Teaching schedule with links to material
-Weekly mails (Monday) with updates, plans for lectures etc will sent to everybody. We use D2L as discussion forum as well.
+Weekly mails (Fridays) with updates, plans for lectures etc will sent to everybody. We use D2L as discussion forum as well.
 
 ###  Week 2, January 11-15, 2021
 This week is meant as a review and reading week. There are no lectures but we have, in addition to videos to watch, some simple recommendations on material to review.
@@ -119,6 +119,7 @@ For solving this exercise, AMS chapters 2 and 4 are very useful as review materi
 - Wednesday 2/10: Examples of applications of conservation laws, angular momentum conservation 
 - Friday 2/12:  Conservation laws and further examples
 - Good reads are Taylor chapter 4 and AMS chapters 10-14.
+
 ### Week 7, February 15-19, 2021
 - Monday 2/15: Conservation laws. Introducing the Velocity Verlet algorithm and the Earth Sun problem, 5th homework due February 22.
 - Wednesday 2/17: Examples of application of conservations laws (see chapter 4 of Taylor). 
@@ -129,6 +130,7 @@ For solving this exercise, AMS chapters 2 and 4 are very useful as review materi
 - Wednesday 2/24:  Oscillations, damped motion and more mathematical details
 - Friday 2/26: Oscillations, resonances and more on damped motion,   _First midterm project, available Friday Feb 26 and due March 12, 2021_ 
 - Good reads are chapter 5 of Taylor on oscillations. 
+
 ### Week 9, March 1-5
 - Monday 3/1: Oscillations, driven oscillations and resonances
 - Wednesday 3/3:  Study day, no lectures
@@ -139,6 +141,7 @@ For solving this exercise, AMS chapters 2 and 4 are very useful as review materi
 - Wednesday 3/10: Discussiom of first midterm 
 - Friday 3/12:  More discussions of first midterm and wrap up of oscillations part. Deadline first midterm at midnight. 
 - Good reads are chapter 8 of Taylor and Lecture notes 
+
 ### Week 11, March  15-19, 2021
 - Monday 3/15:  Gravity and central force problems, center of mass coordinates. Lecture notes and Taylor chapter 8. 7th homework due March 22
 - Wednesday 3/17: Gravity and central force problems
