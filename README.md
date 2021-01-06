@@ -42,7 +42,7 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Office Hours Julie Butler |    
 |------------------|
-| TBA |  | 
+| Thursday 10am-12pm   | 
 
 | Learning Assistant | Email |
 |--------------|------| 
@@ -50,7 +50,7 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Office Hours Jeremy Rebenstock   |  
 |--------------------|
-| TBA |  |
+| Tuesday 1230pm-2pm  |
 
 
 | Additional Class |    Location |
