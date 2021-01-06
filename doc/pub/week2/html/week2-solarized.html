@@ -7,9 +7,9 @@ Automatically generated HTML file from DocOnce source
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="PHY321: Review of Vectors, Math and first Numerical Examples for simple Motion Problems">
+<meta name="description" content="PHY321: Introduction to Classical Mechanics and plans for Spring 2021">
 
-<title>PHY321: Review of Vectors, Math and first Numerical Examples for simple Motion Problems</title>
+<title>PHY321: Introduction to Classical Mechanics and plans for Spring 2021</title>
 
 
 <link href="https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_styles/style_solarized_box/css/solarized_light_code.css" rel="stylesheet" type="text/css" title="light"/>
@@ -61,51 +61,51 @@ div { text-align: justify; text-justify: inter-word; }
 
 <!-- tocinfo
 {'highest level': 2,
- 'sections': [('Space, Time, Motion, Reference Frames  and Reminder on vectors '
+ 'sections': [('Aims and Overview', 2, None, '___sec0'),
+              ('Monday', 2, None, '___sec1'),
+              ('Introduction', 2, None, '___sec2'),
+              ('Space, Time, Motion, Reference Frames  and Reminder on vectors '
                'and other mathematical quantities',
                2,
                None,
-               '___sec0'),
-              ('Dimension, units and labels', 3, None, '___sec1'),
-              ('Elements of Vector Algebra', 2, None, '___sec2'),
-              ('Falling baseball in one dimension', 2, None, '___sec3'),
-              ('Our Python Encounter', 2, None, '___sec4'),
-              ('Average quantities', 2, None, '___sec5'),
-              ('Compact equations', 2, None, '___sec6'),
-              ('A differential equation', 2, None, '___sec7'),
-              ('Integrating our equations', 2, None, '___sec8'),
-              ('Constant acceleration case, the velocity', 2, None, '___sec9'),
-              ('Computing the averages', 2, None, '___sec10'),
-              ('Including Air Resistance in our model', 2, None, '___sec11'),
-              ('Analytical solutions', 2, None, '___sec12'),
-              ('Finding the final height', 2, None, '___sec13'),
-              ('Our first attempt at solving differential equations',
+               '___sec3'),
+              ('Dimension, units and labels', 3, None, '___sec4'),
+              ('Elements of Vector Algebra', 2, None, '___sec5'),
+              ('Wednesday: Python programming reminder, elements from CS201 '
+               'and how they are used in this course',
                2,
                None,
-               '___sec14'),
-              ('Discretizing our equations', 2, None, '___sec15'),
-              ("Code for implementing Euler's method", 2, None, '___sec16'),
-              ('Simple extension, the Euler-Cromer method',
+               '___sec6'),
+              ('Numerical Elements', 2, None, '___sec7'),
+              ('Computations and the Scientific Method', 2, None, '___sec8'),
+              ('A well-known examples to illustrate many of the above concepts',
                2,
                None,
-               '___sec17'),
+               '___sec9'),
+              ('Analyzing the above example', 2, None, '___sec10'),
+              ('Elements of Vector Algebra', 2, None, '___sec11'),
               ('Python practicalities, Software and needed installations',
                2,
                None,
-               '___sec18'),
-              ('Python installers', 2, None, '___sec19'),
-              ('Useful Python libraries', 2, None, '___sec20'),
+               '___sec12'),
+              ('Python installers', 2, None, '___sec13'),
+              ('Useful Python libraries', 2, None, '___sec14'),
               ('Numpy examples and Important Matrix and vector handling '
                'packages',
                2,
                None,
-               '___sec21'),
-              ('Basic Matrix Features', 2, None, '___sec22'),
-              ('Some famous Matrices', 3, None, '___sec23'),
-              ('More Basic Matrix Features', 3, None, '___sec24'),
-              ('Numpy and arrays', 2, None, '___sec25'),
-              ('Matrices in Python', 2, None, '___sec26'),
-              ('Meet the Pandas', 2, None, '___sec27')]}
+               '___sec15'),
+              ('Basic Matrix Features', 2, None, '___sec16'),
+              ('Some famous Matrices', 3, None, '___sec17'),
+              ('More Basic Matrix Features', 3, None, '___sec18'),
+              ('Numpy and arrays', 2, None, '___sec19'),
+              ('Matrices in Python', 2, None, '___sec20'),
+              ('Meet the Pandas', 2, None, '___sec21'),
+              ('Friday: Introduction to Git and GitHub and getting started '
+               'with numerical exercises',
+               2,
+               None,
+               '___sec22')]}
 end of tocinfo -->
 
 <body>
@@ -131,37 +131,81 @@ MathJax.Hub.Config({
 
 
 
-<center><h1>PHY321: Review of Vectors, Math and first Numerical Examples for simple Motion Problems</h1></center>  <!-- document title -->
+<center><h1>PHY321: Introduction to Classical Mechanics and plans for Spring 2021</h1></center>  <!-- document title -->
 
 <p>
-<!-- author(s): <a href="http://mhjgit.github.io/info/doc/web/" target="_blank">Morten Hjorth-Jensen</a>, <a href="https://pa.msu.edu/profile/pratts/" target="_blank">Scott Pratt</a>, and <a href="https://pa.msu.edu/profile/schmidt/" target="_blank">Carl Schmidt</a> -->
+<!-- author(s): <a href="http://mhjgit.github.io/info/doc/web/" target="_blank">Morten Hjorth-Jensen</a> -->
 
 <center>
 <b><a href="http://mhjgit.github.io/info/doc/web/" target="_blank">Morten Hjorth-Jensen</a></b> [1, 2]
 </center>
 
-<center>
-<b><a href="https://pa.msu.edu/profile/pratts/" target="_blank">Scott Pratt</a></b> [1]
-</center>
-
-<center>
-<b><a href="https://pa.msu.edu/profile/schmidt/" target="_blank">Carl Schmidt</a></b> [3]
-</center>
-
 <p>
 <!-- institution(s) -->
 
-<center>[1] <b>Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA</b></center>
+<center>[1] <b>Department of Physics and Astronomy and Facility for Rare Ion Beams (FRIB), Michigan State University, USA</b></center>
 <center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
-<center>[3] <b>Department of Physics and Astronomy, Michigan State University, USA</b></center>
 <br>
 <p>
-<center><h4>Dec 15, 2020</h4></center> <!-- date -->
+<center><h4>Jan 6, 2021</h4></center> <!-- date -->
 <br>
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec0">Space, Time, Motion, Reference Frames  and Reminder on vectors and other mathematical quantities </h2>
+<h2 id="___sec0">Aims and Overview </h2>
+
+<p>
+The first week starts on Monday January 11. This week is dedicated to a
+review of learning material and reminder on programming aspects,
+useful tools, where to find information and much more.
+
+<ul>
+<li> Monday: Introduction to the course and reminder  on vectors, space, time and motion.</li>
+<li> Wednesday: Python programming reminder, elements from CS201 and how they are used in this course. Installing software (anaconda). See slides at <a href="https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html" target="_blank"><tt>https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html</tt></a>).</li> 
+<li> Friday: Introduction to Git and GitHub and getting started with numerical exercises.</li>
+</ul>
+
+Recommended reading: John R. Taylor, Classical Mechanics (Univ. Sci. Books 2005), <a href="https://www.uscibooks.com/taylor2.htm" target="_blank"><tt>https://www.uscibooks.com/taylor2.htm</tt></a>, see also <a href="https://github.com/mhjensen/Physics321/tree/master/doc/Literature" target="_blank"><tt>https://github.com/mhjensen/Physics321/tree/master/doc/Literature</tt></a>. Chapters 1.2 and 1.3
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec1">Monday </h2>
+
+<p>
+Overview video
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec2">Introduction </h2>
+
+<p>
+Classical mechanics is a topic which has been taught intensively over
+several centuries. It is, with its many variants and ways of
+presenting the educational material, normally the first <b>real</b> physics
+course many of us meet and it lays the foundation for further physics
+studies. Many of the equations and ways of reasoning about the
+underlying laws of motion and pertinent forces, shape our approaches and understanding
+of the scientific method and discourse, as well as the way we develop our insights
+and deeper understanding about physical systems.
+
+<p>
+There is a wealth of
+well-tested (from both a physics point of view and a pedagogical
+standpoint) exercises and problems which can be solved
+analytically. However, many of these problems represent idealized and
+less realistic situations.  The large majority of these problems are
+solved by paper and pencil and are traditionally aimed
+at what we normally refer to as continuous models from which we may find an analytical solution.  As a consequence,
+when teaching mechanics, it implies that we can seldomly venture beyond an idealized case
+in order to develop our understandings and insights about the
+underlying forces and laws of motion.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec3">Space, Time, Motion, Reference Frames  and Reminder on vectors and other mathematical quantities </h2>
 
 <p>
 Our studies will start with the motion of different types of objects
@@ -185,7 +229,7 @@ These choices lead to some important questions such as
 <li> is the physics independent of the scale of the length?</li>
 </ul>
 
-<h3 id="___sec1">Dimension, units and labels </h3>
+<h3 id="___sec4">Dimension, units and labels </h3>
 
 <p>
 Throughout this course we will use the standardized SI units. The standard unit for length is thus one meter 1m, for mass
@@ -224,7 +268,7 @@ It is also important to keep track of dimensionalities. Don't mix this up with a
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec2">Elements of Vector Algebra </h2>
+<h2 id="___sec5">Elements of Vector Algebra </h2>
 
 <p>
 <b>Note</b>: This section is under revision
@@ -277,695 +321,240 @@ $$
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec3">Falling baseball in one dimension </h2>
+<h2 id="___sec6">Wednesday: Python programming reminder, elements from CS201 and how they are used in this course </h2>
 
 <p>
-We anticipate the mathematical model to come and assume that we have a
-model for the motion of a falling baseball without air resistance.
-Our system (the baseball) is at an initial height \( y_0 \) (which we will
-specify in the program below) at the initial time \( t_0=0 \). In our program example here we will plot the position in steps of \( \Delta t \) up to a final time \( t_f \). 
-The mathematical formula for the position \( y(t) \) as function of time \( t \) is 
-$$
-y(t) = y_0-\frac{1}{2}gt^2,
-$$
-
-where $g=9.80665=0.980655\times 10^1$m/s${}^2$ is a constant representing the standard acceleration due to gravity.
-We have here adopted the conventional standard value. This does not take into account other effects, such as buoyancy or drag.
-Furthermore, we stop when the ball hits the ground, which takes place at
-$$
-y(t) = 0= y_0-\frac{1}{2}gt^2,
-$$
-
-which gives us a final time \( t_f=\sqrt{2y_0/g} \).
-
-<p>
-As of now we simply assume that   we know the formula for the falling object. Afterwards, we will derive it.
+Overview video
 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec4">Our Python Encounter </h2>
+<h2 id="___sec7">Numerical Elements </h2>
+On the other hand, numerical algorithms call for approximate discrete
+models and much of the development of methods for continuous models
+are nowadays being replaced by methods for discrete models in science and
+industry, simply because <b>much larger classes of problems can be addressed</b> with discrete models, often  by simpler and more
+generic methodologies.
 
 <p>
-We start with preparing folders for storing our calculations, figures and if needed, specific data files we use as input or output files.
+As we will see below, when properly scaling the equations at hand,
+discrete models open up for more advanced abstractions and the possibility to
+study  real life systems, with the added bonus that we can explore and
+deepen our basic understanding of various physical systems
 
+<p>
+Analytical solutions are as important as before. In addition, such
+solutions provide us with invaluable benchmarks and tests for our
+discrete models. Such benchmarks, as we will see below, allow us 
+to discuss possible sources of errors and their behaviors.  And
+finally, since most of our models are based on various algorithms from
+numerical mathematics, we have a unique oppotunity to gain a deeper
+understanding of the mathematical approaches we are using.
+
+<p>
+With computing and data science as important elements in essentially
+all aspects of a modern society, we could  then try to define Computing as
+<b>solving scientific problems using all possible tools, including
+symbolic computing, computers and numerical algorithms, and analytical
+paper and pencil solutions</b>. 
+Computing provides us with the tools to develope our own understanding of the scientific method by enhancing algorithmic thinking.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec8">Computations and the Scientific Method </h2>
+
+<p>
+The way we will teach this course reflects
+this definition of computing. The course contains both classical paper
+and pencil exercises as well as  computational projects and exercises. The
+hope is that this will allow you to explore the physics of systems
+governed by the degrees of freedom of classical mechanics at a deeper
+level, and that these insights about the scientific method will help
+you to develop a better understanding of how the underlying forces and
+equations of motion and how they impact a given system. Furthermore, by introducing various numerical methods
+via computational projects and exercises, we aim at developing your competences and skills about these topics.
+
+<p>
+These competences will enable you to
+
+<ul>
+<li> understand how algorithms are used to solve mathematical problems,</li>
+<li> derive, verify, and implement algorithms,</li>
+<li> understand what can go wrong with algorithms,</li>
+<li> use these algorithms to construct reproducible scientific outcomes and to engage in science in ethical ways, and</li>
+<li> think algorithmically for the purposes of gaining deeper insights about scientific problems.</li>
+</ul>
+
+All these elements are central for maturing and gaining a better understanding of the modern scientific process <em>per se</em>.
+
+<p>
+The power of the scientific method lies in identifying a given problem
+as a special case of an abstract class of problems, identifying
+general solution methods for this class of problems, and applying a
+general method to the specific problem (applying means, in the case of
+computing, calculations by pen and paper, symbolic computing, or
+numerical computing by ready-made and/or self-written software). This
+generic view on problems and methods is particularly important for
+understanding how to apply available, generic software to solve a
+particular problem.
+
+<p>
+<em>However, verification of algorithms and understanding their limitations requires much of the classical knowledge about continuous models.</em>
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec9">A well-known examples to illustrate many of the above concepts </h2>
+
+<p>
+Before we venture into a reminder on Python and mechanics relevant applications, let us briefly outline some of the
+abovementioned topics using an example many of you may have seen before in for example CMSE201. 
+A simple algorithm for integration is the Trapezoidal rule. 
+Integration of a function \( f(x) \) by the Trapezoidal Rule is given by following algorithm for an interval \( x \in [a,b] \)
+$$
+  \int_a^b(f(x) dx = \frac{1}{2}\left [f(a)+2f(a+h)+\dots+2f(b-h)+f(b)\right] +O(h^2),
+$$
+
+where \( h \) is the so-called stepsize defined by the number of integration points \( N \) as \( h=(b-a)/(n) \).
+Python offers an  extremely versatile programming  environment, allowing for
+the inclusion of analytical studies in a numerical program. Here we show an
+example code with the <b>trapezoidal rule</b>. We use also <b>SymPy</b> to evaluate the exact value of the integral and compute the absolute error
+with respect to the numerically evaluated one of the integral
+\( \int_0^1 dx x^2 = 1/3 \).
+The following code for  the trapezoidal rule allows you  to plot the relative error by comparing with the exact result. By increasing to \( 10^8 \) points one arrives at a region where numerical errors start to accumulate.
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span><span style="color: #228B22"># Common imports</span>
+<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> log10
 <span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
-<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">pandas</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">pd</span>
+<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">sympy</span> <span style="color: #8B008B; font-weight: bold">import</span> Symbol, integrate
 <span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
-<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">os</span>
-
-<span style="color: #228B22"># Where to save the figures and data files</span>
-PROJECT_ROOT_DIR = <span style="color: #CD5555">&quot;Results&quot;</span>
-FIGURE_ID = <span style="color: #CD5555">&quot;Results/FigureFiles&quot;</span>
-DATA_ID = <span style="color: #CD5555">&quot;DataFiles/&quot;</span>
-
-<span style="color: #8B008B; font-weight: bold">if</span> <span style="color: #8B008B">not</span> os.path.exists(PROJECT_ROOT_DIR):
-    os.mkdir(PROJECT_ROOT_DIR)
-
-<span style="color: #8B008B; font-weight: bold">if</span> <span style="color: #8B008B">not</span> os.path.exists(FIGURE_ID):
-    os.makedirs(FIGURE_ID)
-
-<span style="color: #8B008B; font-weight: bold">if</span> <span style="color: #8B008B">not</span> os.path.exists(DATA_ID):
-    os.makedirs(DATA_ID)
-
-<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">image_path</span>(fig_id):
-    <span style="color: #8B008B; font-weight: bold">return</span> os.path.join(FIGURE_ID, fig_id)
-
-<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">data_path</span>(dat_id):
-    <span style="color: #8B008B; font-weight: bold">return</span> os.path.join(DATA_ID, dat_id)
-
-<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">save_fig</span>(fig_id):
-    plt.savefig(image_path(fig_id) + <span style="color: #CD5555">&quot;.png&quot;</span>, <span style="color: #658b00">format</span>=<span style="color: #CD5555">&#39;png&#39;</span>)
-
-<span style="color: #228B22">#in case we have an input file we wish to read in</span>
-<span style="color: #228B22">#infile = open(data_path(&quot;MassEval2016.dat&quot;),&#39;r&#39;)</span>
-</pre></div>
-<p>
-You could also define a function for making our plots. You
-can obviously avoid this and simply set up various <b>matplotlib</b>
-commands every time you need them. You may however find it convenient
-to collect all such commands in one function and simply call this
-function.
-
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">pylab</span> <span style="color: #8B008B; font-weight: bold">import</span> plt, mpl
-plt.style.use(<span style="color: #CD5555">&#39;seaborn&#39;</span>)
-mpl.rcParams[<span style="color: #CD5555">&#39;font.family&#39;</span>] = <span style="color: #CD5555">&#39;serif&#39;</span>
-
-<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">MakePlot</span>(x,y, styles, labels, axlabels):
-    plt.figure(figsize=(<span style="color: #B452CD">10</span>,<span style="color: #B452CD">6</span>))
-    <span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #658b00">len</span>(x)):
-        plt.plot(x[i], y[i], styles[i], label = labels[i])
-        plt.xlabel(axlabels[<span style="color: #B452CD">0</span>])
-        plt.ylabel(axlabels[<span style="color: #B452CD">1</span>])
-    plt.legend(loc=<span style="color: #B452CD">0</span>)
-</pre></div>
-<p>
-Thereafter we start setting up the code for the falling object.
-
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span>%matplotlib inline
-<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.patches</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">mpatches</span>
-
-g = <span style="color: #B452CD">9.80655</span> <span style="color: #228B22">#m/s^2</span>
-y_0 = <span style="color: #B452CD">10.0</span> <span style="color: #228B22"># initial position in meters</span>
-DeltaT = <span style="color: #B452CD">0.1</span>  <span style="color: #228B22"># time step</span>
-<span style="color: #228B22"># final time when y = 0, t = sqrt(2*10/g)</span>
-tfinal = np.sqrt(<span style="color: #B452CD">2.0</span>*y_0/g)
-<span style="color: #228B22">#set up arrays </span>
-t = np.arange(<span style="color: #B452CD">0</span>,tfinal,DeltaT)
-y =y_0 -g*.<span style="color: #B452CD">5</span>*t**<span style="color: #B452CD">2</span>
-<span style="color: #228B22"># Then make a nice printout in table form using Pandas</span>
-<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">pandas</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">pd</span>
-<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">IPython.display</span> <span style="color: #8B008B; font-weight: bold">import</span> display
-data = {<span style="color: #CD5555">&#39;t[s]&#39;</span>: t,
-        <span style="color: #CD5555">&#39;y[m]&#39;</span>: y
-        }
-RawData = pd.DataFrame(data)
-display(RawData)
-plt.style.use(<span style="color: #CD5555">&#39;ggplot&#39;</span>)
-plt.figure(figsize=(<span style="color: #B452CD">8</span>,<span style="color: #B452CD">8</span>))
-plt.scatter(t, y, color = <span style="color: #CD5555">&#39;b&#39;</span>)
-blue_patch = mpatches.Patch(color = <span style="color: #CD5555">&#39;b&#39;</span>, label = <span style="color: #CD5555">&#39;Height y as function of  time t&#39;</span>)
-plt.legend(handles=[blue_patch])
-plt.xlabel(<span style="color: #CD5555">&quot;t[s]&quot;</span>)
-plt.ylabel(<span style="color: #CD5555">&quot;y[m]&quot;</span>)
-save_fig(<span style="color: #CD5555">&quot;FallingBaseball&quot;</span>)
+<span style="color: #228B22"># function for the trapezoidal rule</span>
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">Trapez</span>(a,b,f,n):
+   h = (b-a)/<span style="color: #658b00">float</span>(n)
+   s = <span style="color: #B452CD">0</span>
+   x = a
+   <span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">1</span>,n,<span style="color: #B452CD">1</span>):
+       x = x+h
+       s = s+ f(x)
+   s = <span style="color: #B452CD">0.5</span>*(f(a)+f(b)) +s
+   <span style="color: #8B008B; font-weight: bold">return</span> h*s
+<span style="color: #228B22">#  function to compute pi</span>
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">function</span>(x):
+    <span style="color: #8B008B; font-weight: bold">return</span> x*x
+<span style="color: #228B22"># define integration limits</span>
+a = <span style="color: #B452CD">0.0</span>;  b = <span style="color: #B452CD">1.0</span>;
+<span style="color: #228B22"># find result from sympy</span>
+<span style="color: #228B22"># define x as a symbol to be used by sympy</span>
+x = Symbol(<span style="color: #CD5555">&#39;x&#39;</span>)
+exact = integrate(function(x), (x, a, b))
+<span style="color: #228B22"># set up the arrays for plotting the relative error</span>
+n = np.zeros(<span style="color: #B452CD">9</span>); y = np.zeros(<span style="color: #B452CD">9</span>);
+<span style="color: #228B22"># find the relative error as function of integration points</span>
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">1</span>, <span style="color: #B452CD">8</span>, <span style="color: #B452CD">1</span>):
+    npts = <span style="color: #B452CD">10</span>**i
+    result = Trapez(a,b,function,npts)
+    RelativeError = <span style="color: #658b00">abs</span>((exact-result)/exact)
+    n[i] = log10(npts); y[i] = log10(RelativeError);
+plt.plot(n,y, <span style="color: #CD5555">&#39;ro&#39;</span>)
+plt.xlabel(<span style="color: #CD5555">&#39;n&#39;</span>)
+plt.ylabel(<span style="color: #CD5555">&#39;Relative error&#39;</span>)
 plt.show()
 </pre></div>
 <p>
-Here we used <b>pandas</b> (see below) to systemize the output of the position as function of time.
-
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec5">Average quantities </h2>
-We define now the average velocity as
-$$
-\overline{v}(t) = \frac{y(t+\Delta t)-y(t)}{\Delta t}.
-$$
+<h2 id="___sec10">Analyzing the above example </h2>
+This example shows the potential of combining numerical algorithms with symbolic calculations, allowing us to 
 
-In the code we have set the time step \( \Delta t \) to a given value. We could define it in terms of the number of points \( n \) as
-$$
-\Delta t = \frac{t_{\mathrm{final}-}t_{\mathrm{initial}}}{n+1}.
-$$
+<ul>
+<li> Validate and verify  their  algorithms.</li> 
+<li> Including concepts like unit testing, one has the possibility to test and test several or all parts of the code.</li>
+<li> Validation and verification are then included <em>naturally</em> and one can develop a better attitude to what is meant with an ethically sound scientific approach.</li>
+<li> The above example allows the student to also test the mathematical error of the algorithm for the trapezoidal rule by changing the number of integration points. The students get <b>trained from day one to think error analysis</b>.</li> 
+<li> With a Jupyter notebook you can keep exploring similar examples and turn them in as your own notebooks.</li> 
+</ul>
 
-<p>
-Since we have discretized the variables, we introduce the counter \( i \) and let \( y(t)\rightarrow y(t_i)=y_i \) and \( t\rightarrow t_i \)
-with \( i=0,1,\dots, n \). This gives us the following shorthand notations that we will use for the rest of this course. We define
-$$
-y_i = y(t_i),\hspace{0.2cm} i=0,1,2,\dots,n.
-$$
+In this process we can easily bake in
 
-This applies to other variables which depend on say time. Examples are the velocities, accelerations, momenta etc.
-Furthermore we use the shorthand
-$$
-y_{i\pm 1} = y(t_i\pm \Delta t),\hspace{0.12cm} i=0,1,2,\dots,n.
-$$
+<ol>
+  <li> How to structure a code in terms of functions</li>
+  <li> How to make a module</li>
+  <li> How to read input data flexibly from the command line</li>
+  <li> How to create graphical/web user interfaces</li>
+  <li> How to write unit tests (test functions or doctests)</li>
+  <li> How to refactor code in terms of classes (instead of functions only)</li>
+  <li> How to conduct and automate large-scale numerical experiments</li>
+  <li> How to write scientific reports in various formats (LaTeX, HTML)</li>
+</ol>
 
-<p>
+The conventions and techniques outlined here will save you a lot of time when you incrementally extend software over time from simpler to more complicated problems. In particular, you will benefit from many good habits:
+
+<ol>
+<li> New code is added in a modular fashion to a library (modules)</li>
+<li> Programs are run through convenient user interfaces</li>
+<li> It takes one quick command to let all your code undergo heavy testing</li> 
+<li> Tedious manual work with running programs is automated,</li>
+<li> Your scientific investigations are reproducible, scientific reports with top quality typesetting are produced both for paper and electronic devices.</li>
+</ol>
+
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec6">Compact equations </h2>
-We can then rewrite in a more compact form the average velocity as
+<h2 id="___sec11">Elements of Vector Algebra </h2>
+
+<p>
+<b>Note</b>: This section is under revision
+
+<p>
+In these lectures we will use boldfaced lower-case letters to label a vector. A vector \( \boldsymbol{a} \) in three dimensions is thus defined as
 $$
-\overline{v}_i = \frac{y_{i+1}-y_{i}}{\Delta t}.
+\boldsymbol{a} =(a_x,a_y, a_z),
 $$
 
-The velocity is defined as the change in position per unit time.
-In the limit \( \Delta t \rightarrow 0 \) this defines the instantaneous velocity, which is nothing but the slope of the position at a time \( t \).
-We have thus
+and using the unit vectors in a cartesian system we have
 $$
-v(t) = \frac{dy}{dt}=\lim_{\Delta t \rightarrow 0}\frac{y(t+\Delta t)-y(t)}{\Delta t}.
+\boldsymbol{a} = a_x\boldsymbol{e}_x+a_y\boldsymbol{e}_y+a_z\boldsymbol{e}_z,
 $$
 
-Similarly, we can define the average acceleration as the change in velocity per unit time as
+where the unit vectors have magnitude \( \vert\boldsymbol{e}_i\vert = 1 \) with \( i=x,y,z \).
+
+<p>
+Using the fact that multiplication of reals is distributive we can show that
 $$
-\overline{a}_i = \frac{v_{i+1}-v_{i}}{\Delta t},
+\boldsymbol{a}(\boldsymbol{b}+\boldsymbol{c})=\boldsymbol{a}\boldsymbol{b}+\boldsymbol{a}\boldsymbol{c},
 $$
 
-resulting in the instantaneous acceleration
+Similarly we can also show that (using product rule for differentiating reals)
 $$
-a(t) = \frac{dv}{dt}=\lim_{\Delta t\rightarrow 0}\frac{v(t+\Delta t)-v(t)}{\Delta t}.
+\frac{d}{dt}(\boldsymbol{a}\boldsymbol{b})=\boldsymbol{a}\frac{d\boldsymbol{b}}{dt}+\boldsymbol{b}\frac{d\boldsymbol{a}}{dt}.
 $$
 
 <p>
-<b>A note on notations</b>: When writing for example the velocity as \( v(t) \) we are then referring to the continuous and instantaneous value. A subscript like
-\( v_i \) refers always to the discretized values.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec7">A differential equation </h2>
-We can rewrite the instantaneous acceleration as
+We can repeat these operations for the cross products and show that they are distribuitive
 $$
-a(t) = \frac{dv}{dt}=\frac{d}{dt}\frac{dy}{dt}=\frac{d^2y}{dt^2}.
+\boldsymbol{a}\times(\boldsymbol{b}+\boldsymbol{c})=\boldsymbol{a}\times\boldsymbol{b}+\boldsymbol{a}\times\boldsymbol{c}.
 $$
 
-This forms the starting point for our definition of forces later. It is a famous second-order differential equation. If the acceleration is constant we can now recover the formula for the falling ball we started with.
-The acceleration can depend on the position and the velocity. To be more formal we should then write the above differential equation as
+We have also that
 $$
-\frac{d^2y}{dt^2}=a(t,y(t),\frac{dy}{dt}).
-$$
-
-<p>
-With given initial conditions for \( y(t_0) \) and \( v(t_0) \) we can then
-integrate the above equation and find the velocities and positions at
-a given time \( t \).
-
-<p>
-If we multiply with mass, we have one of the famous expressions for Newton's second law,
-$$
-F(y,v,t)=m\frac{d^2y}{dt^2}=ma(t,y(t),\frac{dy}{dt}),
+\frac{d}{dt}(\boldsymbol{a}\times\boldsymbol{b})=\boldsymbol{a}\times\frac{d\boldsymbol{b}}{dt}+\boldsymbol{b}\times\frac{d\boldsymbol{a}}{dt}.
 $$
 
-where \( F \) is the force acting on an object with mass \( m \). We see that it also has the right dimension, mass times length divided by time squared.
-We will come back to this soon.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec8">Integrating our equations </h2>
-
-<p>
-Formally we can then, starting with the acceleration (suppose we have measured it, how could we do that?)
-compute say the height of a building.  To see this we perform the following integrations from an initial time \( t_0 \)  to a given time \( t \)
+The rotation of a three-dimensional  vector \( \boldsymbol{a}=(a_x,a_y,a_z) \) in the \( xy \) plane around an angle \( \phi \) results in a new vector \( \boldsymbol{b}=(b_x,b_y,b_z) \).  This operation can be expressed in terms of linear algebra as a matrix (the rotation matrix) multiplied with a vector. We can write this as
 $$
-\int_{t_0}^t dt a(t) = \int_{t_0}^t dt \frac{dv}{dt} = v(t)-v(t_0),
+\begin{bmatrix} b_x \\ b_y \\ b_z \end{bmatrix} = \begin{bmatrix} \cos{\phi} & \sin{\phi} & 0 \\ -\sin{\phi} & \cos{\phi} & 0 \\ 0 & 0 & 1\end{bmatrix}\begin{bmatrix} a_x \\ a_y \\ a_z \end{bmatrix}.
 $$
 
-or as 
+We can write this in a more compact form as \( \boldsymbol{b} = \boldsymbol{R}\boldsymbol{a} \), where the rotation matrix is defined as
 $$
-v(t)=v(t_0)+\int_{t_0}^t dt a(t).
-$$
-
-<p>
-When we know the velocity as function of time, we can find the position as function of time starting from the defintion of velocity as the derivative with respect to time, that is we have
-$$
-\int_{t_0}^t dt v(t) = \int_{t_0}^t dt \frac{dy}{dt} = y(t)-y(t_0),
-$$
-
-or as 
-$$
-y(t)=y(t_0)+\int_{t_0}^t dt v(t).
-$$
-
-<p>
-These equations define what is called the integration method for
-finding the position and the velocity as functions of time. There is
-no loss of generality if we extend these equations to more than one
-spatial dimension.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec9">Constant acceleration case, the velocity </h2>
-Let us compute the velocity using the constant value for the acceleration given by \( -g \). We have
-$$
-v(t)=v(t_0)+\int_{t_0}^t dt a(t)=v(t_0)+\int_{t_0}^t dt (-g).
-$$
-
-Using our initial time as $t_0=0$s and setting the initial velocity $v(t_0)=v_0=0$m/s we get when integrating
-$$
-v(t)=-gt.
-$$
-
-The more general case is
-$$
-v(t)=v_0-g(t-t_0).
-$$
-
-We can then integrate the velocity and obtain the final formula for the position as function of time through
-$$
-y(t)=y(t_0)+\int_{t_0}^t dt v(t)=y_0+\int_{t_0}^t dt v(t)=y_0+\int_{t_0}^t dt (-gt),
-$$
-
-With $y_0=10$m and $t_0=0$s, we obtain the equation we started with
-$$
-y(t)=10-\frac{1}{2}gt^2.
+\boldsymbol{R} = \begin{bmatrix} \cos{\phi} & \sin{\phi} & 0 \\ -\sin{\phi} & \cos{\phi} & 0 \\ 0 & 0 & 1\end{bmatrix}.
 $$
 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec10">Computing the averages </h2>
-After this mathematical background we are now ready to compute the mean velocity using our data.
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span><span style="color: #228B22"># Now we can compute the mean velocity using our data</span>
-<span style="color: #228B22"># We define first an array Vaverage</span>
-n = np.size(t)
-Vaverage = np.zeros(n)
-<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">1</span>,n-<span style="color: #B452CD">1</span>):
-    Vaverage[i] = (y[i+<span style="color: #B452CD">1</span>]-y[i])/DeltaT
-<span style="color: #228B22"># Now we can compute the mean accelearatio using our data</span>
-<span style="color: #228B22"># We define first an array Aaverage</span>
-n = np.size(t)
-Aaverage = np.zeros(n)
-Aaverage[<span style="color: #B452CD">0</span>] = -g
-<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">1</span>,n-<span style="color: #B452CD">1</span>):
-    Aaverage[i] = (Vaverage[i+<span style="color: #B452CD">1</span>]-Vaverage[i])/DeltaT
-data = {<span style="color: #CD5555">&#39;t[s]&#39;</span>: t,
-        <span style="color: #CD5555">&#39;y[m]&#39;</span>: y,
-        <span style="color: #CD5555">&#39;v[m/s]&#39;</span>: Vaverage,
-        <span style="color: #CD5555">&#39;a[m/s^2]&#39;</span>: Aaverage
-        }
-NewData = pd.DataFrame(data)
-display(NewData[<span style="color: #B452CD">0</span>:n-<span style="color: #B452CD">2</span>])
-</pre></div>
-<p>
-Note that we don't print the last values!
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec11">Including Air Resistance in our model </h2>
-
-<p>
-In our discussions till now of the falling baseball, we have ignored
-air resistance and simply assumed that our system is only influenced
-by the gravitational force.  We will postpone the derivation of air
-resistance till later, after our discussion of Newton's laws and
-forces.
-
-<p>
-For our discussions here it suffices to state that the accelerations is now modified to
-$$
-\boldsymbol{a}(t) = -g +D\boldsymbol{v}(t)\vert v(t)\vert,
-$$
-
-where \( \vert v(t)\vert \) is the absolute value of the velocity and \( D \) is a constant which pertains to the specific object we are studying.
-Since we are dealing with motion in one dimension, we can simplify the above to
-$$
-a(t) = -g +Dv^2(t). 
-$$
-
-We can rewrite this as a differential equation
-$$
-a(t) = \frac{dv}{dt}=\frac{d^2y}{dt^2}= -g +Dv^2(t). 
-$$
-
-<p>
-Using the integral equations discussed above we can integrate twice
-and obtain first the velocity as function of time and thereafter the
-position as function of time.
-
-<p>
-For this particular case, we can actually obtain an analytical
-solution for the velocity and for the position. Here we will first
-compute the solutions analytically, thereafter we will derive Euler's
-method for solving these differential equations numerically.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec12">Analytical solutions </h2>
-
-<p>
-For simplicity let us just write \( v(t) \) as \( v \). We have
-$$
-\frac{dv}{dt}= -g +Dv^2(t). 
-$$
-
-<p>
-We can solve this using the technique of separation of variables. We
-isolate on the left all terms that involve \( v \) and on the right all
-terms that involve time. We get then
-$$
-\frac{dv}{g -Dv^2(t) }= -dt,
-$$
-
-<p>
-We scale now the equation to the left by introducing a constant
-\( v_T=\sqrt{g/D} \). This constant has dimension length/time. Can you
-show this?
-
-<p>
-Next we integrate the left-hand side (lhs) from \( v_0=0 \) m/s to \( v \) and
-the right-hand side (rhs) from \( t_0=0 \) to \( t \) and obtain
-
-$$
-\int_{0}^v\frac{dv}{g -Dv^2(t) }= \frac{v_T}{g}\mathrm{arctanh}(\frac{v}{v_T})  =-\int_0^tdt = -t. 
-$$
-
-We can reorganize these equations as
-$$
-v_T\mathrm{arctanh}(\frac{v}{v_T})  =-gt,
-$$
-
-which gives us \( v \) as function of time
-$$
-v(t)=v_T\tanh{-(\frac{gt}{v_T})}.
-$$
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec13">Finding the final height </h2>
-With the velocity we can then find the height \( y(t) \) by integrating yet another time, that is
-$$
-y(t)=y(t_0)+\int_{t_0}^t dt v(t)=\int_{0}^t dt[v_T\tanh{-(\frac{gt}{v_T})}]. 
-$$
-
-This integral is a little bit trickier but we can look it up in a table over 
-known integrals and we get
-$$
-y(t)=y(t_0)-\frac{v_T^2}{g}\log{[\cosh{(\frac{gt}{v_T})}]}.
-$$
-
-Alternatively we could have used the symbolic Python package <b>Sympy</b>  (example will be inserted later).
-
-<p>
-In most cases however, we need to revert to numerical solutions.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec14">Our first attempt at solving differential equations </h2>
-
-<p>
-Here we will try the simplest possible approach to solving the second-order differential 
-equation
-$$
-a(t) =\frac{d^2y}{dt^2}= -g +Dv^2(t). 
-$$
-
-We rewrite it as two coupled first-order equations (this is a standard approach)
-$$
-\frac{dy}{dt} = v(t),
-$$
-
-with initial condition \( y(t_0)=y_0 \) and 
-$$
-a(t) =\frac{dv}{dt}= -g +Dv^2(t),
-$$
-
-with initial condition \( v(t_0)=v_0 \).
-
-<p>
-Many of the algorithms for solving differential equations start with simple Taylor equations.
-If we now Taylor expand \( y \) and \( v \) around a value \( t+\Delta t \) we have
-$$
-y(t+\Delta t) = y(t)+\Delta t \frac{dy}{dt}+\frac{\Delta t^2}{2!} \frac{d^2y}{dt^2}+O(\Delta t^3),
-$$
-
-and
-$$
-v(t+\Delta t) = v(t)+\Delta t \frac{dv}{dt}+\frac{\Delta t^2}{2!} \frac{d^2v}{dt^2}+O(\Delta t^3).
-$$
-
-Using the fact that \( dy/dt = v \) and \( dv/dt=a \) and keeping only terms up to \( \Delta t \) we have
-$$
-y(t+\Delta t) = y(t)+\Delta t v(t)+O(\Delta t^2),
-$$
-
-and
-$$
-v(t+\Delta t) = v(t)+\Delta t a(t)+O(\Delta t^2).
-$$
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec15">Discretizing our equations </h2>
-Using our discretized versions of the equations with for example
-\( y_{i}=y(t_i) \) and \( y_{i\pm 1}=y(t_i+\Delta t) \), we can rewrite the
-above equations as (and truncating at \( \Delta t \))
-
-$$
-y_{i+1} = y_i+\Delta t v_i,
-$$
-
-and
-$$
-v_{i+1} = v_i+\Delta t a_i.
-$$
-
-These are the famous Euler equations (forward Euler).
-
-<p>
-To solve these equations numerically we start at a time \( t_0 \) and simply integrate up these equations to a final time \( t_f \),
-The step size \( \Delta t \) is an input  parameter in our code.
-You can define it directly in the code below as
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span>DeltaT = <span style="color: #B452CD">0.1</span>
-</pre></div>
-<p>
-With a given final time <b>tfinal</b>  we can then find the number of integration points via the <b>ceil</b> function included in the <b>math</b> package of Python
-as
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span><span style="color: #228B22">#define final time, assuming that initial time is zero</span>
-<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> ceil
-tfinal = <span style="color: #B452CD">0.5</span>
-n = ceil(tfinal/DeltaT)
-<span style="color: #658b00">print</span>(n)
-</pre></div>
-<p>
-The <b>ceil</b> function returns the smallest integer not less than the input in say
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span>x = <span style="color: #B452CD">21.15</span>
-<span style="color: #658b00">print</span>(ceil(x))
-</pre></div>
-<p>
-which in the case here is 22.
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span>x = <span style="color: #B452CD">21.75</span>
-<span style="color: #658b00">print</span>(ceil(x))
-</pre></div>
-<p>
-which also yields 22. The  <b>floor</b> function in the <b>math</b> package
-is used to return the closest integer value which is less than or equal to the specified expression or value.
-Compare the previous result to the usage of <b>floor</b>
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> floor
-x = <span style="color: #B452CD">21.75</span>
-<span style="color: #658b00">print</span>(floor(x))
-</pre></div>
-<p>
-Alternatively, we can define ourselves the number of integration(mesh) points. In this case we could have
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span>n = <span style="color: #B452CD">10</span>
-tinitial = <span style="color: #B452CD">0.0</span>
-tfinal = <span style="color: #B452CD">0.5</span>
-DeltaT = (tfinal-tinitial)/(n)
-<span style="color: #658b00">print</span>(DeltaT)
-</pre></div>
-<p>
-Since we will set up one-dimensional arrays that contain the values of
-various variables like time, position, velocity, acceleration etc, we
-need to know the value of \( n \), the number of data points (or
-integration or mesh points).  With \( n \) we can initialize a given array
-by setting all elelements to zero, as done here
-
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span><span style="color: #228B22"># define array a</span>
-a = np.zeros(n)
-<span style="color: #658b00">print</span>(a)
-</pre></div>
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec16">Code for implementing Euler's method </h2>
-In the code here we implement this simple Eurler scheme choosing a value for \( D=0.0245 \) m/s.
-
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span><span style="color: #228B22"># Common imports</span>
-<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
-<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">pandas</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">pd</span>
-<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> *
-<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
-<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">os</span>
-
-<span style="color: #228B22"># Where to save the figures and data files</span>
-PROJECT_ROOT_DIR = <span style="color: #CD5555">&quot;Results&quot;</span>
-FIGURE_ID = <span style="color: #CD5555">&quot;Results/FigureFiles&quot;</span>
-DATA_ID = <span style="color: #CD5555">&quot;DataFiles/&quot;</span>
-
-<span style="color: #8B008B; font-weight: bold">if</span> <span style="color: #8B008B">not</span> os.path.exists(PROJECT_ROOT_DIR):
-    os.mkdir(PROJECT_ROOT_DIR)
-
-<span style="color: #8B008B; font-weight: bold">if</span> <span style="color: #8B008B">not</span> os.path.exists(FIGURE_ID):
-    os.makedirs(FIGURE_ID)
-
-<span style="color: #8B008B; font-weight: bold">if</span> <span style="color: #8B008B">not</span> os.path.exists(DATA_ID):
-    os.makedirs(DATA_ID)
-
-<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">image_path</span>(fig_id):
-    <span style="color: #8B008B; font-weight: bold">return</span> os.path.join(FIGURE_ID, fig_id)
-
-<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">data_path</span>(dat_id):
-    <span style="color: #8B008B; font-weight: bold">return</span> os.path.join(DATA_ID, dat_id)
-
-<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">save_fig</span>(fig_id):
-    plt.savefig(image_path(fig_id) + <span style="color: #CD5555">&quot;.png&quot;</span>, <span style="color: #658b00">format</span>=<span style="color: #CD5555">&#39;png&#39;</span>)
-
-
-g = <span style="color: #B452CD">9.80655</span> <span style="color: #228B22">#m/s^2</span>
-D = <span style="color: #B452CD">0.00245</span> <span style="color: #228B22">#m/s</span>
-DeltaT = <span style="color: #B452CD">0.1</span>
-<span style="color: #228B22">#set up arrays </span>
-tfinal = <span style="color: #B452CD">0.5</span>
-n = ceil(tfinal/DeltaT)
-<span style="color: #228B22"># define scaling constant vT</span>
-vT = sqrt(g/D)
-<span style="color: #228B22"># set up arrays for t, a, v, and y and we can compare our results with analytical ones</span>
-t = np.zeros(n)
-a = np.zeros(n)
-v = np.zeros(n)
-y = np.zeros(n)
-yanalytic = np.zeros(n)
-<span style="color: #228B22"># Initial conditions</span>
-v[<span style="color: #B452CD">0</span>] = <span style="color: #B452CD">0.0</span>  <span style="color: #228B22">#m/s</span>
-y[<span style="color: #B452CD">0</span>] = <span style="color: #B452CD">10.0</span> <span style="color: #228B22">#m</span>
-yanalytic[<span style="color: #B452CD">0</span>] = y[<span style="color: #B452CD">0</span>]
-<span style="color: #228B22"># Start integrating using Euler&#39;s method</span>
-<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
-    <span style="color: #228B22"># expression for acceleration</span>
-    a[i] = -g + D*v[i]*v[i]
-    <span style="color: #228B22"># update velocity and position</span>
-    y[i+<span style="color: #B452CD">1</span>] = y[i] + DeltaT*v[i]
-    v[i+<span style="color: #B452CD">1</span>] = v[i] + DeltaT*a[i]
-    <span style="color: #228B22"># update time to next time step and compute analytical answer</span>
-    t[i+<span style="color: #B452CD">1</span>] = t[i] + DeltaT
-    yanalytic[i+<span style="color: #B452CD">1</span>] = y[<span style="color: #B452CD">0</span>]-(vT*vT/g)*log(cosh(g*t[i+<span style="color: #B452CD">1</span>]/vT))
-    <span style="color: #8B008B; font-weight: bold">if</span> ( y[i+<span style="color: #B452CD">1</span>] &lt; <span style="color: #B452CD">0.0</span>):
-        <span style="color: #8B008B; font-weight: bold">break</span>
-a[n-<span style="color: #B452CD">1</span>] = -g + D*v[n-<span style="color: #B452CD">1</span>]*v[n-<span style="color: #B452CD">1</span>]
-data = {<span style="color: #CD5555">&#39;t[s]&#39;</span>: t,
-        <span style="color: #CD5555">&#39;y[m]&#39;</span>: y-yanalytic,
-        <span style="color: #CD5555">&#39;v[m/s]&#39;</span>: v,
-        <span style="color: #CD5555">&#39;a[m/s^2]&#39;</span>: a
-        }
-NewData = pd.DataFrame(data)
-display(NewData)
-<span style="color: #228B22">#finally we plot the data</span>
-fig, axs = plt.subplots(<span style="color: #B452CD">3</span>, <span style="color: #B452CD">1</span>)
-axs[<span style="color: #B452CD">0</span>].plot(t, y, t, yanalytic)
-axs[<span style="color: #B452CD">0</span>].set_xlim(<span style="color: #B452CD">0</span>, tfinal)
-axs[<span style="color: #B452CD">0</span>].set_ylabel(<span style="color: #CD5555">&#39;y and exact&#39;</span>)
-axs[<span style="color: #B452CD">1</span>].plot(t, v)
-axs[<span style="color: #B452CD">1</span>].set_ylabel(<span style="color: #CD5555">&#39;v[m/s]&#39;</span>)
-axs[<span style="color: #B452CD">2</span>].plot(t, a)
-axs[<span style="color: #B452CD">2</span>].set_xlabel(<span style="color: #CD5555">&#39;time[s]&#39;</span>)
-axs[<span style="color: #B452CD">2</span>].set_ylabel(<span style="color: #CD5555">&#39;a[m/s^2]&#39;</span>)
-fig.tight_layout()
-save_fig(<span style="color: #CD5555">&quot;EulerIntegration&quot;</span>)
-plt.show()
-</pre></div>
-<p>
-Try different values for \( \Delta t \) and study the difference between the exact solution and the numerical solution.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec17">Simple extension, the Euler-Cromer method </h2>
-
-<p>
-The Euler-Cromer method is a simple variant of the standard Euler
-method. We use the newly updated velocity \( v_{i+1} \) as an input to the
-new position, that is, instead of
-
-$$
-y_{i+1} = y_i+\Delta t v_i,
-$$
-
-and
-$$
-v_{i+1} = v_i+\Delta t a_i,
-$$
-
-we use now the newly calculate for \( v_{i+1} \) as input to \( y_{i+1} \), that is 
-we compute first 
-$$
-v_{i+1} = v_i+\Delta t a_i,
-$$
-
-and then
-$$
-y_{i+1} = y_i+\Delta t v_{i+1},
-$$
-
-<p>
-Implementing the Euler-Cromer method yields a simple change to the previous code. We only need to change the following line in the loop over time
-steps
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
-    <span style="color: #228B22"># more codes in between here</span>
-    v[i+<span style="color: #B452CD">1</span>] = v[i] + DeltaT*a[i]
-    y[i+<span style="color: #B452CD">1</span>] = y[i] + DeltaT*v[i+<span style="color: #B452CD">1</span>]
-    <span style="color: #228B22"># more code</span>
-</pre></div>
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec18">Python practicalities, Software and needed installations </h2>
+<h2 id="___sec12">Python practicalities, Software and needed installations </h2>
 
 <p>
 We will make extensive use of Python as programming language and its
@@ -1001,7 +590,7 @@ you can use <b>pip</b> as well and simply install Python as
 
 etc etc.
 
-<h2 id="___sec19">Python installers </h2>
+<h2 id="___sec13">Python installers </h2>
 
 <p>
 If you don't want to perform these operations separately and venture
@@ -1032,7 +621,7 @@ license.
 Furthermore, <a href="https://colab.research.google.com/notebooks/welcome.ipynb" target="_blank">Google's Colab</a> is a free Jupyter notebook environment that requires 
 no setup and runs entirely in the cloud. Try it out!
 
-<h2 id="___sec20">Useful Python libraries </h2>
+<h2 id="___sec14">Useful Python libraries </h2>
 Here we list several useful Python libraries we strongly recommend (if you use anaconda many of these are already there)
 
 <ul>
@@ -1061,7 +650,7 @@ further processing. For example, convert to latex as
 <p>
 And to add more versatility, the Python package <a href="http://www.sympy.org/en/index.html" target="_blank">SymPy</a> is a Python library for symbolic mathematics. It aims to become a full-featured computer algebra system (CAS)  and is entirely written in Python.
 
-<h2 id="___sec21">Numpy examples and Important Matrix and vector handling packages </h2>
+<h2 id="___sec15">Numpy examples and Important Matrix and vector handling packages </h2>
 
 <p>
 There are several central software libraries for linear algebra and eigenvalue problems. Several of the more
@@ -1075,7 +664,7 @@ developed in the 1970s, namely EISPACK and LINPACK.  We describe them shortly he
   <li> BLAS (I, II and III): (Basic Linear Algebra Subprograms) are routines that provide standard building blocks for performing basic vector and matrix operations. Blas I is vector operations, II vector-matrix operations and III matrix-matrix operations. Highly parallelized and efficient codes, all available for download from <a href="http://www.netlib.org" target="_blank"><tt>http://www.netlib.org</tt></a>.</li>
 </ul>
 
-<h2 id="___sec22">Basic Matrix Features </h2>
+<h2 id="___sec16">Basic Matrix Features </h2>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -1120,7 +709,7 @@ $$
 </div>
 
 
-<h3 id="___sec23">Some famous Matrices </h3>
+<h3 id="___sec17">Some famous Matrices </h3>
 
 <ul>
   <li> Diagonal if \( a_{ij}=0 \) for \( i\ne j \)</li>
@@ -1134,7 +723,7 @@ $$
   <li> Banded, block upper triangular, block lower triangular....</li>
 </ul>
 
-<h3 id="___sec24">More Basic Matrix Features </h3>
+<h3 id="___sec18">More Basic Matrix Features </h3>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -1153,7 +742,7 @@ For an \( N\times N \) matrix  \( \mathbf{A} \) the following properties are all
 </div>
 
 
-<h2 id="___sec25">Numpy and arrays </h2>
+<h2 id="___sec19">Numpy and arrays </h2>
 <a href="http://www.numpy.org/" target="_blank">Numpy</a> provides an easy way to handle arrays in Python. The standard way to import this library is as
 
 <p>
@@ -1238,7 +827,7 @@ x = np.log(np.array([<span style="color: #B452CD">4.0</span>, <span style="color
 <span style="color: #658b00">print</span>(x.itemsize)
 </pre></div>
 
-<h2 id="___sec26">Matrices in Python </h2>
+<h2 id="___sec20">Matrices in Python </h2>
 
 <p>
 Having defined vectors, we are now ready to try out matrices. We can
@@ -1306,7 +895,7 @@ A = np.random.rand(n, n)
 <span style="color: #658b00">print</span>(A) 
 </pre></div>
 
-<h2 id="___sec27">Meet the Pandas </h2>
+<h2 id="___sec21">Meet the Pandas </h2>
 
 <p>
 <br /><br /><center><p><img src="fig/pandas.jpg" align="bottom" width=600></p></center><br /><br />
@@ -1432,12 +1021,17 @@ As we will see below it leads also to a very concice code close to the mathemati
 For multidimensional arrays, we recommend strongly <a href="http://xarray.pydata.org/en/stable/" target="_blank">xarray</a>. <b>xarray</b> has much of the same flexibility as <b>pandas</b>, but allows for the extension to higher dimensions than two.
 
 <p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec22">Friday: Introduction to Git and GitHub and getting started with numerical exercises </h2>
+
+<p>
 
 <!-- ------------------- end of main content --------------- -->
 
 
 <center style="font-size:80%">
-<!-- copyright --> &copy; 1999-2020, "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/". Released under CC Attribution-NonCommercial 4.0 license
+<!-- copyright --> &copy; 1999-2021, "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/". Released under CC Attribution-NonCommercial 4.0 license
 </center>
 
 
