@@ -21,8 +21,8 @@ final,                   % draft: marks overfull hboxes, figures with paths
 \usepackage[pdftex]{graphicx}
 
 \usepackage{fancyvrb} % packages needed for verbatim environments
-\usepackage{verbatim}
-%\usemintedstyle{default}
+\usepackage{minted}
+\usemintedstyle{default}
 
 \usepackage[T1]{fontenc}
 %\usepackage[latin1]{inputenc}
@@ -92,7 +92,7 @@ PHY321: Classical Mechanics 1
 % ----------------- author(s) -------------------------
 
 \begin{center}
-{\bf Homework 4, due Monday  February 10${}^{}$} \\ [0mm]
+{\bf Homework 4, due Monday  February 15${}^{}$} \\ [0mm]
 \end{center}
 
 \begin{center}
@@ -103,7 +103,7 @@ PHY321: Classical Mechanics 1
 
 % --- begin date ---
 \begin{center}
-Feb 5, 2020
+Jan 9, 2021
 \end{center}
 % --- end date ---
 
@@ -114,9 +114,9 @@ Feb 5, 2020
 \begin{enumerate}
 \item You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. \textbf{Remember to write your name(s)}!
 
-\item Homeworks are available Wednesday/Thursday the week before the deadline. The deadline is at the Friday lecture.
+\item Homeworks are available ten days before the deadline.
 
-\item How do I(we)  hand in?  You can hand in the paper and pencil exercises as a hand-written document. For this homework this applies to exercises 1-5. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise(s) (exercise 6 here) should always be handed in as a jupyter notebook by the deadline at D2L. 
+\item How do I(we)  hand in?  You can hand in the paper and pencil exercises as a scanned document. For this homework this applies to exercises 1-5. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise(s) (exercise 6 here) should always be handed in as a jupyter notebook by the deadline at D2L. 
 \end{enumerate}
 
 \noindent
@@ -339,13 +339,13 @@ and replace the air resistance and force from the ground with the
 gravitational force. Then we will study the stability of the system as function of initial conditions and the time step length.
 
 We start by importing some standard packages
-\begin{verbatim}
+\begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 # let's start by importing useful packages we are familiar with
 import numpy as np
 from math import *
 import matplotlib.pyplot as plt
 %matplotlib inline
-\end{verbatim}
+\end{minted}
 
 \begin{itemize}
 \item 7a (5 pt)  Write then a program which solves the above differential equations for the Earth-Sun system using Euler's  method and the velocity Verlet method.  Find out which initial value for the velocity that gives a circular orbit and test the stability of your algorithm as function of different time steps $\Delta t$.  Make a plot of the results you obtain for the position of the Earth (plot the $x$ and $y$ values and/or if you prefer to use three dimensions the $z$-value as well) orbiting  the Sun. Discuss eventual differences between the Verlet algorithm and the Euler algorithm. 
@@ -355,7 +355,7 @@ import matplotlib.pyplot as plt
 
 \noindent
 Here we add a code-example which may aid in the above studies using Euler's forward method.
-\begin{verbatim}
+\begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 DeltaT = 0.001
 #set up arrays 
 tfinal = 10 # in years
@@ -380,14 +380,14 @@ for i in range(n-1):
     v[i+1] = v[i] + DeltaT*a
     r[i+1] = r[i] + DeltaT*v[i]
     t[i+1] = t[i] + DeltaT
-\end{verbatim}
+\end{minted}
 
 
 \paragraph{Exercise 8 (30pt), Bonus exercise.}
 You don't need to do this exercise, but it gives you a bonus score of 30 points.
 
 This time the bonus exercise is a simple survey. We are now moving
-into our fifth week and we would very much have your feedback on how
+into our sixth week and we would very much have your feedback on how
 things are functioning. In particular, since this is (together with fall
 2019) the first time we have numerical exercises every week, we need
 to see if the pace is ok, if there is a good link between lectures and
