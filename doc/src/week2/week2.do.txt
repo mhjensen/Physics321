@@ -90,7 +90,13 @@ We will use the following notations for various variables (vectors are always bo
 
 More variables will be defined as we need them.
 
-It is also important to keep track of dimensionalities. Don't mix this up with a chosen unit for a given variable. We mark the dimensionality in these lectures as $[a]$, where $a$ is the quantity we are interested in. Thus
+!split
+====== Dimensions and Units =====
+
+It is also important to keep track of dimensionalities. Don't mix this
+up with a chosen unit for a given variable. We mark the dimensionality
+in these lectures as $[a]$, where $a$ is the quantity we are
+interested in. Thus
 
 * $[\bm{r}]=$ length
 * $[m]=$ mass
@@ -105,7 +111,6 @@ It is also important to keep track of dimensionalities. Don't mix this up with a
 !split
 ===== Elements of Vector Algebra =====
 
-_Note_: This section is under revision
 
 In these lectures we will use boldfaced lower-case letters to label a vector. A vector $\bm{a}$ in three dimensions is thus defined as
 !bt
@@ -159,6 +164,520 @@ We can write this in a more compact form as $\bm{b} = \bm{R}\bm{a}$, where the r
 \]
 !et
 
+!split
+===== Scalars, Vectors and Matrices =====
+
+A scalar is something with a value that is independent of coordinate
+system. Examples are mass, or the relative time between events. A
+vector has magnitude and direction. Under rotation, the magnitude
+stays the same but the direction changes. Scalars have no spatial
+index, whereas a three-dimensional vector has 3 indices, e.g. the
+position $\bm{r}$ has components $r_1,r_2,r_3$, which are often
+referred to as $x,y,z$.
+
+There are several categories of changes of coordinate system. The
+observer can translate the origin, might move with a different
+velocity, or might rotate her/his coordinate axes. For instance, a
+particle's position vector changes when the origin is translated, but
+its velocity does not. When you study relativity you will find that
+quantities you thought of as scalars, such as time or an electric
+potential, are actually parts of four-dimensional vectors and that
+changes of the velocity of the reference frame act in a similar way to
+rotations.
+
+In addition to vectors and scalars, there are matrices, which have two
+indices. One also has objects with 3 or four indices. These are called
+tensors of rank $n$, where $n$ is the number of indices. A matrix is a
+rank-two tensor. The Levi-Civita symbol, $\epsilon_{ijk}$ used for
+cross products of vectors, is a tensor of rank three.
+
+!split
+===== Unit Vectors =====
+
+Also known as basis vectors, unit vectors point in the direction of
+the coordinate axes, have unit norm, and are orthogonal to one
+another. Sometimes this is referred to as an orthonormal basis,
+
+!bt
+\begin{equation}
+\hat{e}_i\cdot\hat{e}_j=\delta_{ij}=\left(\begin{array}{ccc}
+1 & 0 & 0\\
+0& 1 & 0\\
+0 & 0 & 1
+\end{array}\right).
+\end{equation}
+!et
+
+Here, $\delta_{ij}$ is unity when $i=j$ and is zero otherwise. This is
+called the unit matrix, because you can multiply it with any other
+matrix and not change the matrix. The _dot_ denotes the dot product,
+$\bm{A}\cdot\bm{B}=A_1B_1+A_2B_2+A_3B_3=|A||B|\cos\theta_{AB}$. Sometimes
+the unit vectors are called $\hat{x}$, $\hat{y}$ and
+$\hat{z}$. Vectors can be decomposed in terms of unit vectors,
+
+!bt
+\begin{equation}
+\bm{r}=r_1\hat{e}_1+r_2\hat{e}_2+r_3\hat{e}_3.
+\end{equation}
+!et
+
+The vector components $r_1$, $r_2$ and $r_3$ might be
+called $x$, $y$ and $z$ for a displacement of $v_x$, $v_y$ and $v_z$
+for a velocity.
+
+From here on in, we may use bold face to denote vectors, e.g. ${\bf
+v}$ instead of $\bm{v}$. We also might use dots over quantities to
+represent time derivatives, e.g. $\dot{\bf v}=d{\bf v}/dt$. As
+mentioned above, repeated indices infer sums, e.g.,
+
+!bt
+\begin{eqnarray}
+x_iy_i&=&\sum_i x_iy_i=\bm{x}\cdot\bm{y},\\
+\nonumber
+x_iA_{ij}y_j&=&\sum_{ij}x_iA_{ij}y_j,
+\end{eqnarray}
+!et
+
+!split
+===== Vector Operations, Scalar Product (or dot product) =====
+
+For vectors $\bm{A}$ and $\bm{B}$,
+
+
+!bt
+\begin{eqnarray*}
+\bm{A}\cdot\bm{B}&=&A_iB_i=|A||B|\cos\theta_{AB},\\
+|A|&\equiv& \sqrt{\bm{A}\cdot\bm{A}}.
+\end{eqnarray*}
+!et
+
+Note that the summation sign is inferred any time there are repeated indices. For example, 
+
+!bt
+\begin{eqnarray}
+A_iB_i&=&\sum A_iB_i.
+\end{eqnarray}
+!et
+!eblock
+
+!split
+===== Vector Product (or cross product) of vectors $\bm{A}$ and $\bm{B}$ =====
+
+!bt
+\begin{eqnarray*}
+\bm{C}&=&\bm{A}\times\bm{B},\\
+C_i&=&\epsilon_{ijk}A_jB_k.
+\end{eqnarray*}
+!et
+
+Here $\epsilon$ is the third-rank anti-symmetric tensor, also known as
+the Levi-Civita symbol. It is $\pm 1$ only if all three indices are
+different, and is zero otherwise. The choice of $\pm 1$ depends on
+whether the indices are an even or odd permutation of the original
+symbols. The permutation $xyz$ or $123$ is considered to be $+1$. For
+the 27 elements,
+
+!bt
+\begin{eqnarray}
+\epsilon_{ijk}&=&-\epsilon_{ikj}=-\epsilon_{jik}=-\epsilon_{kji}\\
+\nonumber
+\epsilon_{123}&=&\epsilon_{231}=\epsilon_{312}=1,\\
+\nonumber
+\epsilon_{213}&=&\epsilon_{132}=\epsilon_{321}=-1,\\
+\nonumber
+\epsilon_{iij}&=&\epsilon_{iji}=\epsilon_{jii}=0.
+\end{eqnarray}
+!et
+
+
+You used cross products extensively when studying magnetic
+fields. Because the matrix is anti-symmetric, switching the $x$ and
+$y$ axes (or any two axes) flips the sign. If the coordinate system is
+right-handed, meaning the $xyz$ axes satisfy
+$\hat{x}\times\hat{y}=\hat{z}$, where you can point along the $x$ axis
+with your extended right index finger, the $y$ axis with your
+contracted middle finger and the $z$ axis with your extended
+thumb. Switching to a left-handed system flips the sign of the vector
+$\bm{C}=\bm{A}\times\bm{B}$. Note that
+$\bm{A}\times\bm{B}=-\bm{B}\times\bm{A}$. The vector $\bm{C}$ is
+perpendicular to both $\bm{A}$ and $\bm{B}$ and the magnitude of
+$\bm{C}$ is given by
+
+
+!bt
+\[
+|C|=|A||B|\sin\theta_{AB}.
+\]
+!et
+
+Vectors obtained by the cross product of two real vectors are called
+pseudo-vectors because the assignment of their direction can be
+arbitrarily flipped by defining the Levi-Civita symbol to be based on
+left-handed rules. Examples are the magnetic field and angular
+momentum. If the direction of a real vector prefers the right-handed
+over the left-handed direction, that constitutes a violation of
+parity. For instance, one can polarize the spins (angular momentum) of
+nuclei with a magnetic field so that the spins preferentially point
+along the direction of the magnetic field. This does not violate
+parity because both are pseudo-vectors. Now assume these polarized
+nuclei decay and that electrons are one of the products. If these
+electrons prefer to exit the decay parallel vs. antiparallel to the
+polarizing magnetic field, this constitutes parity violation because
+the direction of the outgoing electron momenta are a real vector. This
+is precisely what is observed in weak decays.
+
+!split
+===== Differentiation of a vector with respect to a scalar =====
+
+For example, the
+acceleration is $d\bm{v}/dt$:
+
+!bt
+\[
+(d\bm{v}/dt)_i=\frac{dv_i}{dt}.
+\]
+!et
+
+
+!split
+===== Angular velocity =====
+
+Choose the vector $\bm{\omega}$ so that the motion
+is like your fingers wrapping around your thumb on your right hand
+with $\bm{\omega}$ pointing along your thumb. The magnitude is
+$d|\phi|/dt$.
+
+
+!split
+===== Gradient operator $\nabla$ =====
+
+This is the derivative $\partial/\partial
+x$, $\partial/\partial y$ and $\partial/\partial z$, where $\partial
+_x$ means $\partial/\partial_x$. For taking the gradient of a scalar
+$\Phi$,
+
+!bt
+\[
+{\rm\bf grad}~\Phi, (\nabla\Phi(x,y,z,t))_i=\partial/\partial r_i\Phi(\bm{r},t)=\partial_i\Phi(\bm{r},t).
+\]
+!et
+
+For taking the dot product of the gradient with a vector, sometimes called a divergence,
+
+!bt
+\[
+div \bm{A}, \nabla\cdot\bm{A}=\partial_i A_i.
+\]
+!et
+
+For taking the vector product with another vector, sometimes called curl, $\nabla\times\bm{A}$,
+
+!bt
+\[
+{\rm\bf curl}~\bm{A}, (\nabla\times\bm{A})_i=\epsilon_{ijk}\partial_j A_k(\bm{r},t).
+\]
+!et
+
+The Laplacian is referred to as $\nabla^2$ and is defined as
+
+!bt
+\[
+\nabla^2=\nabla\cdot\nabla=\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2}.
+\]
+!et
+
+
+!split 
+===== Some identities =====
+
+Here we simply state these, but you may wish to prove a few. They are useful for this class and will be essential when you study E\&M.
+
+!bt
+\begin{eqnarray}
+\bm{A}\cdot(\bm{B}\times\bm{C})&=&\bm{B}\cdot(\bm{C}\times\bm{A})=\bm{C}\cdot(\bm{A}\times\bm{B})\\
+\nonumber
+\bm{A}\times(\bm{B}\times\bm{C})&=&(\bm{A}\cdot\bm{C})\bm{B}-(\bm{A}\cdot\bm{B})\bm{C}\\
+\nonumber
+(\bm{A}\times\bm{B})\cdot(\bm{C}\times\bm{D})&=&(\bm{A}\cdot\bm{C})(\bm{B}\cdot\bm{D})
+-(\bm{A}\cdot\bm{D})(\bm{B}\cdot\bm{C})
+\end{eqnarray}
+!et
+
+
+!split 
+===== Example The height of a hill is given by the formula  =====
+
+!bt
+\[
+z(x,y)=2xy-3x^2-4y^2-18x+28y+12.
+\]
+!et
+
+Here $z$ is the height in meters and $x$ and $y$ are the east-west and
+north-south coordinates. Find the position $x,y$ where the hill is the
+highest, and give its height.
+
+_Solution_: The maxima or minima, or inflection points, are given when $\partial_x z=0$ and $\partial_yz=0$.
+!bt
+\begin{eqnarray*}
+\partial_xz(x,y)&=&2y-6x-18=0,\\
+\partial_yz(x,y)&=&2x-8y+28=0.
+\end{eqnarray*}
+!et
+
+Solving for two equations and two unknowns gives one solution
+$x=-2,y=3$. This then gives $z=72$. Although this procedure could have
+given a minimum or an inflection point you can look at the form for
+$z$ and see that for $x=y=0$ the height is lower, therefore it is not
+a minimum. You can also look and see that the quadratic contributions
+are negative so the height falls off to $-\infty$ far away in any
+direction. Thus, there must be a maximum, and this must be
+it. Deciding between maximum or minimum or inflection point for a
+general problem would involve looking at the matrix
+$\partial_i\partial_j z$ at the specific point, then finding the
+eigenvalues of the matrix and seeing whether they were both positive
+(minimum) both negative (maximum) or one positive and one negative
+(saddle point).
+
+
+!split
+===== Gauss's Theorem  =====
+
+For an integral over a volume $V$ confined by a surface $S$, Gauss's theorem gives
+
+!bt
+\[
+\int_V dv~\nabla\cdot\bm{A}=\int_Sd\bm{S}\cdot\bm{A}.
+\]
+!et
+
+For a closed path $C$ which carves out some area $S$, 
+
+!bt
+\[
+\int_C d\bm{\ell}\cdot\bm{A}=\int_Sd\bm{s} \cdot(\nabla\times\bm{A})
+\]
+!et
+
+!split
+===== and Stokes's Theorem =====
+
+Stoke's law can be understood by considering a small rectangle,
+$-\Delta x<x<\Delta x$, $-\Delta y<y<\Delta y$. The path integral
+around the edges is
+
+!bt
+\begin{eqnarray}
+\int_C d\bm{\ell}\cdot\bm{A}&=&2\Delta y[A_y(\Delta x,0)-A_y(-\Delta x,0)]-2\Delta x[A_x(0,\Delta y)-A_x(0,-\Delta y)]\\
+\nonumber
+&=&4\Delta x\Delta y\left\{
+\frac{A_y(\Delta x,0)-A_y(-\Delta x,0)}{2\Delta x}-\frac{A_x(0,\Delta y)-A_x(0,-\Delta y)}{2\Delta y}\right\}\\
+\nonumber
+&=&4\Delta x\Delta y\left\{\frac{\partial A_y}{\partial x}-\frac{\partial A_x}{\partial y}\right\}\\
+&=&\Delta S \cdot \nabla\times\bm{A}.
+\end{eqnarray}
+!et
+
+Here $\Delta S$ is the area of the surface element.
+
+
+
+
+!split
+===== Rotations =====
+
+_Note_: The material on matrices is optional and will not be used much (except for illustrations at the very end on garmonic oscillations) since most of you have not yet taken a course on linear algebra. The material is however included here for the sake of completeness.
+
+Here, we use rotations as an example of matrices and their operations. One can consider a different orthonormal basis $\hat{e}'_1$, $\hat{e}'_2$ and $\hat{e}'_3$. The same vector $\bm{r}$ mentioned above can also be expressed in the new basis,
+
+!bt
+\begin{equation}
+\bm{r}=r'_1\hat{e}'_1+r'_2\hat{e}'_2+r'_3\hat{e}'_3.
+\end{equation}
+!et
+
+Even though it is the same vector, the components have changed. Each new unit vector $\hat{e}'_i$ can be expressed as a linear sum of the previous vectors,
+
+!bt
+\begin{equation}
+\hat{e}'_i=\sum_j U_{ij}\hat{e}_j,
+\end{equation}
+!et
+
+and the matrix $U$ can be found by taking the dot product of both sides with $\hat{e}_k$,
+
+!bt
+\begin{eqnarray}
+\nonumber
+\hat{e}_k\cdot\hat{e}'_i&=&\sum_jU_{ij}\hat{e}_k\cdot\hat{e}_j\\
+label{eq:lambda_angles}
+\hat{e}_k\cdot\hat{e}'_i&=&\sum_jU_{ij}\delta_{jk}=U_{ik}.
+\end{eqnarray}
+!et
+
+Thus, the matrix lambda has components $U_{ij}$ that are equal to the
+cosine of the angle between new unit vector $\hat{e}'_i$ and the old
+unit vector $\hat{e}_j$.
+
+
+!bt
+\begin{equation}
+U = \left(\begin{array}{ccc}
+\hat{e}'_1\cdot\hat{e}_1& \hat{e}'_1\cdot\hat{e}_2& \hat{e}'_1\cdot\hat{e}_3\\
+\hat{e}'_2\cdot\hat{e}_1& \hat{e}'_2\cdot\hat{e}_2& \hat{e}'_2\cdot\hat{e}_3\\
+\hat{e}'_3\cdot\hat{e}_1& \hat{e}'_3\cdot\hat{e}_2& \hat{e}'_3\cdot\hat{e}_3
+\end{array}\right),~~~~~U_{ij}=\hat{e}'_i\cdot\hat{e}_j=\cos\theta_{ij}.
+\end{equation}
+!et
+
+Note that the matrix is not symmetric, $U_{ij}\ne U_{ji}$. One can also look at the inverse transformation, by switching the primed and unprimed coordinates,
+
+!bt
+\begin{eqnarray}
+label{eq:inverseU}
+\hat{e}_i&=&\sum_jU^{-1}_{ij}\hat{e}'_j,\\
+\nonumber
+U^{-1}_{ij}&=&\hat{e}_i\cdot\hat{e}'_j=U_{ji}.
+\end{eqnarray}
+!et
+
+The definition of transpose of a matrix, $M^{t}_{ij}=M_{ji}$, allows one to state this as
+
+!bt
+\begin{eqnarray}
+label{eq:transposedef}
+U^{-1}&=&U^{t}.
+\end{eqnarray}
+!et
+
+A tensor obeying Eq. (ref{eq:transposedef}) defines what is known as
+a unitary, or orthogonal, transformation.
+
+The matrix $U$ can be used to transform any vector to the new basis. Consider a vector
+
+!bt
+\begin{eqnarray}
+\bm{r}&=&r_1\hat{e}_1+r_2\hat{e}_2+r_3\hat{e}_3\\
+\nonumber
+&=&r'_1\hat{e}'_1+r'_2\hat{e}'_2+r'_3\hat{e}'_3.
+\end{eqnarray}
+!et
+
+This is the same vector expressed as a sum over two different sets of
+basis vectors. The coefficients $r_i$ and $r'_i$ represent components
+of the same vector. The relation between them can be found by taking
+the dot product of each side with one of the unit vectors,
+$\hat{e}_i$, which gives
+
+!bt
+\begin{eqnarray}
+r_i&=&\sum_j \hat{e}_i\cdot\hat{e}'_j~r'_j.
+\end{eqnarray}
+!et
+
+Using Eq. (ref{eq:inverseU}) one can see that the transformation of $r$ can be also written in terms of $U$,
+
+!bt
+\begin{eqnarray}
+label{eq:rotateR}
+r_i&=&\sum_jU^{-1}_{ij}~r'_j.
+\end{eqnarray}
+!et
+
+Thus, the matrix that transforms the coordinates of the unit vectors,
+Eq. (ref{eq:inverseU}) is the same one that transforms the
+coordinates of a vector, Eq. (ref{eq:rotateR}).
+
+
+Find the rotation matrix $U$ for finding the components in the primed coordinate system given from those in the unprimed system, given that the unit vectors in the new system are found by rotating the coordinate system by and angle $\phi$ about the $z$ axis.
+
+In this case
+
+!bt
+\begin{eqnarray*}
+\hat{e}'_1&=&\cos\phi \hat{e}_1-\sin\phi\hat{e}_2,\\
+\hat{e}'_2&=&\sin\phi\hat{e}_1+\cos\phi\hat{e}_2,\\
+\hat{e}'_3&=&\hat{e}_3.
+\end{eqnarray*}
+!et
+By inspecting Eq. (ref{eq:lambda_angles}),
+
+!bt
+\[
+U=\left(\begin{array}{ccc}
+\cos\phi&-\sin\phi&0\\
+\sin\phi&\cos\phi&0\\
+0&0&1\end{array}\right).
+\]
+!et
+
+Under a unitary transformation $U$ (or basis transformation) scalars
+are unchanged, whereas vectors $\bm{r}$ and matrices $M$ change as
+
+!bt
+\begin{eqnarray}
+r'_i&=&U_{ij}~ r_j, ~~({\rm sum~inferred})\\
+\nonumber
+M'_{ij}&=&U_{ik}M_{km}U^{-1}_{mj}.
+\end{eqnarray}
+!et
+
+Physical quantities with no spatial indices are scalars (or
+pseudoscalars if they depend on right-handed vs. left-handed
+coordinate systems), and are unchanged by unitary
+transformations. This includes quantities like the trace of a matrix,
+the matrix itself had indices but none remain after performing the
+trace.
+
+!bt
+\begin{eqnarray}
+{\rm Tr} M&\equiv& M_{ii}.
+\end{eqnarray}
+!et
+
+Because there are no remaining indices, one expects it to be a scalar. Indeed one can see this,
+
+!bt
+\begin{eqnarray}
+{\rm Tr} M'&=&U_{ij}M_{jm}U^{-1}_{mi}\\
+\nonumber
+&=&M_{jm}U^{-1}_{mi}U_{ij}\\
+\nonumber
+&=&M_{jm}\delta_{mj}\\
+\nonumber
+&=&M_{jj}={\rm Tr} M.
+\end{eqnarray}
+!et
+
+A similar example is the determinant of a matrix, which is also a scalar.
+
+
+
+!split
+===== Multiplying a matrix $C$ times a vector $\bm{A}$ =====
+
+!bt
+\[
+(CA)_i=C_{ij}A_j.
+\]
+!et
+
+For the $i^{\rm th}$ element one takes the scalar product of the $i^{\rm th}$ row of $C$ with the vector $\bm{A}$.
+\item Mutiplying matrices $C$ and $D$:
+
+!bt
+\[
+(CD)_{ij}=C_{ik}D_{kj},
+\]
+!et
+
+This means the one obtains the $ij$ element by taking the scalar product of the $i^{\rm th}$ of $C$ with the $j^{\rm th}$ column of $D$.
+
+
+
+
+
+
 
 
 
@@ -169,13 +688,14 @@ Overview video
 
 !split
 ===== Numerical Elements =====
-On the other hand, numerical algorithms call for approximate discrete
-models and much of the development of methods for continuous models
-are nowadays being replaced by methods for discrete models in science and
-industry, simply because _much larger classes of problems can be addressed_ with discrete models, often  by simpler and more
-generic methodologies.
 
-As we will see below, when properly scaling the equations at hand,
+Numerical algorithms call for approximate discrete models and much of
+the development of methods for continuous models are nowadays being
+replaced by methods for discrete models in science and industry,
+simply because _much larger classes of problems can be addressed_ with
+discrete models, often by simpler and more generic methodologies.
+
+As we will see throughout this course, when properly scaling the equations at hand,
 discrete models open up for more advanced abstractions and the possibility to
 study  real life systems, with the added bonus that we can explore and
 deepen our basic understanding of various physical systems
@@ -200,16 +720,23 @@ Computing provides us with the tools to develope our own understanding of the sc
 !split
 =====  Computations and the Scientific Method =====
 
-The way we will teach this course reflects
-this definition of computing. The course contains both classical paper
-and pencil exercises as well as  computational projects and exercises. The
-hope is that this will allow you to explore the physics of systems
-governed by the degrees of freedom of classical mechanics at a deeper
-level, and that these insights about the scientific method will help
-you to develop a better understanding of how the underlying forces and
-equations of motion and how they impact a given system. Furthermore, by introducing various numerical methods
-via computational projects and exercises, we aim at developing your competences and skills about these topics.
+The way we will teach this course reflects this definition of
+computing. The course contains both classical paper and pencil
+exercises as well as computational projects and exercises. The hope is
+that this will allow you to explore the physics of systems governed by
+the degrees of freedom of classical mechanics at a deeper level, and
+that these insights about the scientific method will help you to
+develop a better understanding of how the underlying forces and
+equations of motion and how they impact a given system.
 
+Furthermore,
+by introducing various numerical methods via computational projects
+and exercises, we aim at developing your competences and skills about
+these topics.
+
+
+!split
+===== Computational Competences =====
 
 These competences will enable you to
 
@@ -294,35 +821,16 @@ plt.show()
 
 !split
 ===== Analyzing the above example =====
-This example shows the potential of combining numerical algorithms with symbolic calculations, allowing us to 
+
+
+This example shows the potential of combining numerical algorithms
+with symbolic calculations, allowing us to
 
 * Validate and verify  their  algorithms. 
 * Including concepts like unit testing, one has the possibility to test and test several or all parts of the code.
 * Validation and verification are then included *naturally* and one can develop a better attitude to what is meant with an ethically sound scientific approach.
 * The above example allows the student to also test the mathematical error of the algorithm for the trapezoidal rule by changing the number of integration points. The students get _trained from day one to think error analysis_. 
 * With a Jupyter notebook you can keep exploring similar examples and turn them in as your own notebooks. 
-
-
-In this process we can easily bake in
- o   How to structure a code in terms of functions
- o   How to make a module
- o   How to read input data flexibly from the command line
- o   How to create graphical/web user interfaces
- o   How to write unit tests (test functions or doctests)
- o   How to refactor code in terms of classes (instead of functions only)
- o   How to conduct and automate large-scale numerical experiments
- o   How to write scientific reports in various formats (LaTeX, HTML)
-
-
-The conventions and techniques outlined here will save you a lot of time when you incrementally extend software over time from simpler to more complicated problems. In particular, you will benefit from many good habits:
- o New code is added in a modular fashion to a library (modules)
- o Programs are run through convenient user interfaces
- o It takes one quick command to let all your code undergo heavy testing 
- o Tedious manual work with running programs is automated,
- o Your scientific investigations are reproducible, scientific reports with top quality typesetting are produced both for paper and electronic devices.
-
-
-
 
 !split
 ===== Python practicalities, Software and needed installations =====
@@ -379,6 +887,7 @@ license.
 Furthermore, "Google's Colab":"https://colab.research.google.com/notebooks/welcome.ipynb" is a free Jupyter notebook environment that requires 
 no setup and runs entirely in the cloud. Try it out!
 
+!split
 ===== Useful Python libraries =====
 Here we list several useful Python libraries we strongly recommend (if you use anaconda many of these are already there)
 
@@ -406,7 +915,7 @@ pycod jupyter nbconvert filename.ipynb --to latex
 And to add more versatility, the Python package "SymPy":"http://www.sympy.org/en/index.html" is a Python library for symbolic mathematics. It aims to become a full-featured computer algebra system (CAS)  and is entirely written in Python. 
 
 
-
+!split
 ===== Numpy examples and Important Matrix and vector handling packages =====
 
 There are several central software libraries for linear algebra and eigenvalue problems. Several of the more
@@ -418,7 +927,7 @@ developed in the 1970s, namely EISPACK and LINPACK.  We describe them shortly he
   * LAPACK:package for solving symmetric, unsymmetric and generalized eigenvalue problems. From LAPACK's website URL: "http://www.netlib.org" it is possible to download for free all source codes from this library. Both C/C++ and Fortran versions are available.
   * BLAS (I, II and III): (Basic Linear Algebra Subprograms) are routines that provide standard building blocks for performing basic vector and matrix operations. Blas I is vector operations, II vector-matrix operations and III matrix-matrix operations. Highly parallelized and efficient codes, all available for download from URL: "http://www.netlib.org".
 
-
+!spli
 ===== Basic Matrix Features =====
 
 !bblock Matrix properties reminder
@@ -718,754 +1227,3 @@ For multidimensional arrays, we recommend strongly "xarray":"http://xarray.pydat
 ===== Friday: Introduction to Git and GitHub and getting started with numerical exercises =====
 
 
-
-
-
-\section{Math Basics}
-
-\subsection{Scalars, Vectors and Matrices}
-
-A scalar is something with a value that is independent of coordinate
-system. Examples are mass, or the relative time between events. A
-vector has magnitude and direction. Under rotation, the magnitude
-stays the same but the direction changes. Scalars have no spatial
-index, whereas a three-dimensional vector has 3 indices, e.g. the
-position $\vec{r}$ has components $r_1,r_2,r_3$, which are often
-referred to as $x,y,z$.
-
-There are several categories of changes of coordinate system. The
-observer can translate the origin, might move with a different
-velocity, or might rotate her/his coordinate axes. For instance, a
-particle's position vector changes when the origin is translated, but
-its velocity does not. When you study relativity you will find that
-quantities you thought of as scalars, such as time or an electric
-potential, are actually parts of four-dimensional vectors and that
-changes of the velocity of the reference frame act in a similar way to
-rotations.
-
-In addition to vectors and scalars, there are matrices, which have two
-indices. One also has objects with 3 or four indices. These are called
-tensors of rank $n$, where $n$ is the number of indices. A matrix is a
-rank-two tensor. The Levi-Civita symbol, $\epsilon_{ijk}$ used for
-cross products of vectors, is a tensor of rank three.
-
-\subsubsection*{Unit Vectors}
-
-Also known as basis vectors, unit vectors point in the direction of
-the coordinate axes, have unit norm, and are orthogonal to one
-another. Sometimes this is referred to as an orthonormal basis,
-
-!bt
-\begin{equation}
-\hat{e}_i\cdot\hat{e}_j=\delta_{ij}=\left(\begin{array}{ccc}
-1 & 0 & 0\\
-0& 1 & 0\\
-0 & 0 & 1
-\end{array}\right).
-\end{equation}
-!et
-
-Here, $\delta_{ij}$ is unity when $i=j$ and is zero otherwise. This is
-called the unit matrix, because you can multiply it with any other
-matrix and not change the matrix. The _dot_ denotes the dot product,
-$\vec{A}\cdot\vec{B}=A_1B_1+A_2B_2+A_3B_3=|A||B|\cos\theta_{AB}$. Sometimes
-the unit vectors are called $\hat{x}$, $\hat{y}$ and
-$\hat{z}$. Vectors can be decomposed in terms of unit vectors,
-!bt
-\begin{equation}
-\vec{r}=r_1\hat{e}_1+r_2\hat{e}_2+r_3\hat{e}_3.
-\end{equation}
-!et
-
-The vector components $r_1$, $r_2$ and $r_3$ might be
-called $x$, $y$ and $z$ for a displacement of $v_x$, $v_y$ and $v_z$
-for a velocity.
-
-\subsubsection*{Rotations}
-
-Here, we use rotations as an example of matrices and their operations. One can consider a different orthonormal basis $\hat{e}'_1$, $\hat{e}'_2$ and $\hat{e}'_3$. The same vector $\vec{r}$ mentioned above can also be expressed in the new basis,
-
-!bt
-\begin{equation}
-\vec{r}=r'_1\hat{e}'_1+r'_2\hat{e}'_2+r'_3\hat{e}'_3.
-\end{equation}
-!et
-
-Even though it is the same vector, the components have changed. Each new unit vector $\hat{e}'_i$ can be expressed as a linear sum of the previous vectors,
-
-!bt
-\begin{equation}
-\hat{e}'_i=\sum_j U_{ij}\hat{e}_j,
-\end{equation}
-!et
-
-and the matrix $U$ can be found by taking the dot product of both sides with $\hat{e}_k$,
-
-!bt
-\begin{eqnarray}
-\nonumber
-\hat{e}_k\cdot\hat{e}'_i&=&\sum_jU_{ij}\hat{e}_k\cdot\hat{e}_j\\
-\label{eq:lambda_angles}
-\hat{e}_k\cdot\hat{e}'_i&=&\sum_jU_{ij}\delta_{jk}=U_{ik}.
-\end{eqnarray}
-!et
-
-Thus, the matrix lambda has components $U_{ij}$ that are equal to the
-cosine of the angle between new unit vector $\hat{e}'_i$ and the old
-unit vector $\hat{e}_j$.
-
-
-!bt
-\begin{equation}
-U = \left(\begin{array}{ccc}
-\hat{e}'_1\cdot\hat{e}_1& \hat{e}'_1\cdot\hat{e}_2& \hat{e}'_1\cdot\hat{e}_3\\
-\hat{e}'_2\cdot\hat{e}_1& \hat{e}'_2\cdot\hat{e}_2& \hat{e}'_2\cdot\hat{e}_3\\
-\hat{e}'_3\cdot\hat{e}_1& \hat{e}'_3\cdot\hat{e}_2& \hat{e}'_3\cdot\hat{e}_3
-\end{array}\right),~~~~~U_{ij}=\hat{e}'_i\cdot\hat{e}_j=\cos\theta_{ij}.
-\end{equation}
-!et
-
-Note that the matrix is not symmetric, $U_{ij}\ne U_{ji}$. One can also look at the inverse transformation, by switching the primed and unprimed coordinates,
-
-!bt
-\begin{eqnarray}
-\label{eq:inverseU}
-\hat{e}_i&=&\sum_jU^{-1}_{ij}\hat{e}'_j,\\
-\nonumber
-U^{-1}_{ij}&=&\hat{e}_i\cdot\hat{e}'_j=U_{ji}.
-\end{eqnarray}
-!et
-
-The definition of transpose of a matrix, $M^{t}_{ij}=M_{ji}$, allows one to state this as
-
-!bt
-\begin{eqnarray}
-\label{eq:transposedef}
-U^{-1}&=&U^{t}.
-\end{eqnarray}
-!et
-
-A tensor obeying Eq. (\ref{eq:transposedef}) defines what is known as
-a unitary, or orthogonal, transformation.
-
-The matrix $U$ can be used to transform any vector to the new basis. Consider a vector
-
-!bt
-\begin{eqnarray}
-\vec{r}&=&r_1\hat{e}_1+r_2\hat{e}_2+r_3\hat{e}_3\\
-\nonumber
-&=&r'_1\hat{e}'_1+r'_2\hat{e}'_2+r'_3\hat{e}'_3.
-\end{eqnarray}
-!et
-
-This is the same vector expressed as a sum over two different sets of
-basis vectors. The coefficients $r_i$ and $r'_i$ represent components
-of the same vector. The relation between them can be found by taking
-the dot product of each side with one of the unit vectors,
-$\hat{e}_i$, which gives
-
-!bt
-\begin{eqnarray}
-r_i&=&\sum_j \hat{e}_i\cdot\hat{e}'_j~r'_j.
-\end{eqnarray}
-!et
-
-Using Eq. (\ref{eq:inverseU}) one can see that the transformation of $r$ can be also written in terms of $U$,
-
-!bt
-\begin{eqnarray}
-\label{eq:rotateR}
-r_i&=&\sum_jU^{-1}_{ij}~r'_j.
-\end{eqnarray}
-!et
-
-Thus, the matrix that transforms the coordinates of the unit vectors,
-Eq. (\ref{eq:inverseU}) is the same one that transforms the
-coordinates of a vector, Eq. (\ref{eq:rotateR}).
-
-
-Find the rotation matrix $U$ for finding the components in the primed coordinate system given from those in the unprimed system, given that the unit vectors in the new system are found by rotating the coordinate system by and angle $\phi$ about the $z$ axis.
-
-In this case
-
-!bt
-\begin{eqnarray*}
-\hat{e}'_1&=&\cos\phi \hat{e}_1-\sin\phi\hat{e}_2,\\
-\hat{e}'_2&=&\sin\phi\hat{e}_1+\cos\phi\hat{e}_2,\\
-\hat{e}'_3&=&\hat{e}_3.
-\end{eqnarray*}
-!et
-By inspecting Eq. (\ref{eq:lambda_angles}),
-
-!bt
-\[
-U=\left(\begin{array}{ccc}
-\cos\phi&-\sin\phi&0\\
-\sin\phi&\cos\phi&0\\
-0&0&1\end{array}\right).
-\]
-!et
-
-Under a unitary transformation $U$ (or basis transformation) scalars
-are unchanged, whereas vectors $\vec{r}$ and matrices $M$ change as
-
-!bt
-\begin{eqnarray}
-r'_i&=&U_{ij}~ r_j, ~~({\rm sum~inferred})\\
-\nonumber
-M'_{ij}&=&U_{ik}M_{km}U^{-1}_{mj}.
-\end{eqnarray}
-!et
-
-Physical quantities with no spatial indices are scalars (or
-pseudoscalars if they depend on right-handed vs. left-handed
-coordinate systems), and are unchanged by unitary
-transformations. This includes quantities like the trace of a matrix,
-the matrix itself had indices but none remain after performing the
-trace.
-
-!bt
-\begin{eqnarray}
-{\rm Tr} M&\equiv& M_{ii}.
-\end{eqnarray}
-!et
-
-Because there are no remaining indices, one expects it to be a scalar. Indeed one can see this,
-
-!bt
-\begin{eqnarray}
-{\rm Tr} M'&=&U_{ij}M_{jm}U^{-1}_{mi}\\
-\nonumber
-&=&M_{jm}U^{-1}_{mi}U_{ij}\\
-\nonumber
-&=&M_{jm}\delta_{mj}\\
-\nonumber
-&=&M_{jj}={\rm Tr} M.
-\end{eqnarray}
-!et
-
-A similar example is the determinant of a matrix, which is also a scalar.
-
-\subsubsection*{Vector and Matrix Operations}
-
-
-\begin{itemize}\itemsep=0pt
-\item Scalar Product (or dot product): For vectors $\vec{A}$ and $\vec{B}$,
-
-
-!bt
-\begin{eqnarray*}
-\vec{A}\cdot\vec{B}&=&A_iB_i=|A||B|\cos\theta_{AB},\\
-|A|&\equiv& \sqrt{\vec{A}\cdot\vec{A}}.
-\end{eqnarray*}
-!et
-
-Note that the summation sign is inferred any time there are repeated indices. For example, 
-
-!bt
-\begin{eqnarray}
-A_iB_i&=&\sum A_iB_i.
-\end{eqnarray}
-!et
-
-\item Multiplying a matrix $C$ times a vector $\vec{A}$:
-
-!bt
-\[
-(CA)_i=C_{ij}A_j.
-\]
-!et
-
-For the $i^{\rm th}$ element one takes the scalar product of the $i^{\rm th}$ row of $C$ with the vector $\vec{A}$.
-\item Mutiplying matrices $C$ and $D$:
-
-!bt
-\[
-(CD)_{ij}=C_{ik}D_{kj},
-\]
-!et
-
-This means the one obtains the $ij$ element by taking the scalar product of the $i^{\rm th}$ of $C$ with the $j^{\rm th}$ column of $D$.
-\item Vector Product (or cross product) of vectors $\vec{A}$ and $\vec{B}$:
-
-!bt
-\begin{eqnarray*}
-\vec{C}&=&\vec{A}\times\vec{B},\\
-C_i&=&\epsilon_{ijk}A_jB_k.
-\end{eqnarray*}
-!et
-
-Here $\epsilon$ is the third-rank anti-symmetric tensor, also known as
-the Levi-Civita symbol. It is $\pm 1$ only if all three indices are
-different, and is zero otherwise. The choice of $\pm 1$ depends on
-whether the indices are an even or odd permutation of the original
-symbols. The permutation $xyz$ or $123$ is considered to be $+1$. For
-the 27 elements,
-
-!bt
-\begin{eqnarray}
-\epsilon_{ijk}&=&-\epsilon_{ikj}=-\epsilon_{jik}=-\epsilon_{kji}\\
-\nonumber
-\epsilon_{123}&=&\epsilon_{231}=\epsilon_{312}=1,\\
-\nonumber
-\epsilon_{213}&=&\epsilon_{132}=\epsilon_{321}=-1,\\
-\nonumber
-\epsilon_{iij}&=&\epsilon_{iji}=\epsilon_{jii}=0.
-\end{eqnarray}
-!et
-
-
-You used cross products extensively when studying magnetic
-fields. Because the matrix is anti-symmetric, switching the $x$ and
-$y$ axes (or any two axes) flips the sign. If the coordinate system is
-right-handed, meaning the $xyz$ axes satisfy
-$\hat{x}\times\hat{y}=\hat{z}$, where you can point along the $x$ axis
-with your extended right index finger, the $y$ axis with your
-contracted middle finger and the $z$ axis with your extended
-thumb. Switching to a left-handed system flips the sign of the vector
-$\vec{C}=\vec{A}\times\vec{B}$. Note that
-$\vec{A}\times\vec{B}=-\vec{B}\times\vec{A}$. The vector $\vec{C}$ is
-perpendicular to both $\vec{A}$ and $\vec{B}$ and the magnitude of
-$\vec{C}$ is given by
-
-
-!bt
-\[
-|C|=|A||B|\sin\theta_{AB}.
-\]
-!et
-
-Vectors obtained by the cross product of two real vectors are called
-pseudo-vectors because the assignment of their direction can be
-arbitrarily flipped by defining the Levi-Civita symbol to be based on
-left-handed rules. Examples are the magnetic field and angular
-momentum. If the direction of a real vector prefers the right-handed
-over the left-handed direction, that constitutes a violation of
-parity. For instance, one can polarize the spins (angular momentum) of
-nuclei with a magnetic field so that the spins preferentially point
-along the direction of the magnetic field. This does not violate
-parity because both are pseudo-vectors. Now assume these polarized
-nuclei decay and that electrons are one of the products. If these
-electrons prefer to exit the decay parallel vs. antiparallel to the
-polarizing magnetic field, this constitutes parity violation because
-the direction of the outgoing electron momenta are a real vector. This
-is precisely what is observed in weak decays.
-
-
-Differentiation of a vector with respect to a scalar: For example, the
-acceleration is $d\vec{v}/dt$:
-
-!bt
-\[
-(d\vec{v}/dt)_i=\frac{dv_i}{dt}.
-\]
-!et
-
-
-Angular velocity: Choose the vector $\vec{\omega}$ so that the motion
-is like your fingers wrapping around your thumb on your right hand
-with $\vec{\omega}$ pointing along your thumb. The magnitude is
-$d|\phi|/dt$.
-
-Gradient operator $\nabla$: This is the derivative $\partial/\partial
-x$, $\partial/\partial y$ and $\partial/\partial z$, where $\partial
-_x$ means $\partial/\partial_x$. For taking the gradient of a scalar
-$\Phi$,
-
-!bt
-\[
-{\rm\bf grad}~\Phi, (\nabla\Phi(x,y,z,t))_i=\partial/\partial r_i\Phi(\vec{r},t)=\partial_i\Phi(\vec{r},t).
-\]
-!et
-
-For taking the dot product of the gradient with a vector, sometimes called a divergence,
-
-!bt
-\[
-div \vec{A}, \nabla\cdot\vec{A}=\partial_i A_i.
-\]
-!et
-
-For taking the vector product with another vector, sometimes called curl, $\nabla\times\vec{A}$,
-
-!bt
-\[
-{\rm\bf curl}~\vec{A}, (\nabla\times\vec{A})_i=\epsilon_{ijk}\partial_j A_k(\vec{r},t).
-\]
-!et
-
-The Laplacian is referred to as $\nabla^2$ and is defined as
-
-!bt
-\[
-\nabla^2=\nabla\cdot\nabla=\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2}.
-\]
-!et
-
-
-
-\subsubsection*{Some identities}
-
-Here we simply state these, but you may wish to prove a few. They are useful for this class and will be essential when you study E\&M.
-
-!bt
-\begin{eqnarray}
-\vec{A}\cdot(\vec{B}\times\vec{C})&=&\vec{B}\cdot(\vec{C}\times\vec{A})=\vec{C}\cdot(\vec{A}\times\vec{B})\\
-\nonumber
-\vec{A}\times(\vec{B}\times\vec{C})&=&(\vec{A}\cdot\vec{C})\vec{B}-(\vec{A}\cdot\vec{B})\vec{C}\\
-\nonumber
-(\vec{A}\times\vec{B})\cdot(\vec{C}\times\vec{D})&=&(\vec{A}\cdot\vec{C})(\vec{B}\cdot\vec{D})
--(\vec{A}\cdot\vec{D})(\vec{B}\cdot\vec{C})
-\end{eqnarray}
-!et
-
-
-
-Example The height of a hill is given by the formula 
-
-!bt
-\[
-z(x,y)=2xy-3x^2-4y^2-18x+28y+12.
-\]
-!et
-
-Here $z$ is the height in meters and $x$ and $y$ are the east-west and
-north-south coordinates. Find the position $x,y$ where the hill is the
-highest, and give its height.
-
-_Solution_: The maxima or minima, or inflection points, are given when $\partial_x z=0$ and $\partial_yz=0$.
-!bt
-\begin{eqnarray*}
-\partial_xz(x,y)&=&2y-6x-18=0,\\
-\partial_yz(x,y)&=&2x-8y+28=0.
-\end{eqnarray*}
-!et
-
-Solving for two equations and two unknowns gives one solution
-$x=-2,y=3$. This then gives $z=72$. Although this procedure could have
-given a minimum or an inflection point you can look at the form for
-$z$ and see that for $x=y=0$ the height is lower, therefore it is not
-a minimum. You can also look and see that the quadratic contributions
-are negative so the height falls off to $-\infty$ far away in any
-direction. Thus, there must be a maximum, and this must be
-it. Deciding between maximum or minimum or inflection point for a
-general problem would involve looking at the matrix
-$\partial_i\partial_j z$ at the specific point, then finding the
-eigenvalues of the matrix and seeing whether they were both positive
-(minimum) both negative (maximum) or one positive and one negative
-(saddle point).
-
-
-=== Gauss's Theorem and Stokes's Theorem ===
-
-For an integral over a volume $V$ confined by a surface $S$, Gauss's theorem gives
-
-!bt
-\[
-\int_V dv~\nabla\cdot\vec{A}=\int_Sd\vec{S}\cdot\vec{A}.
-\]
-!et
-
-For a closed path $C$ which carves out some area $S$, 
-
-!bt
-\[
-\int_C d\vec{\ell}\cdot\vec{A}=\int_Sd\vec{s} \cdot(\nabla\times\vec{A})
-\]
-!et
-
-Stoke's law can be understood by considering a small rectangle, $-\Delta x<x<\Delta x$, $-\Delta y<y<\Delta y$. The path integral around the edges is
-
-!bt
-\begin{eqnarray}
-\int_C d\vec{\ell}\cdot\vec{A}&=&2\Delta y[A_y(\Delta x,0)-A_y(-\Delta x,0)]-2\Delta x[A_x(0,\Delta y)-A_x(0,-\Delta y)]\\
-\nonumber
-&=&4\Delta x\Delta y\left\{
-\frac{A_y(\Delta x,0)-A_y(-\Delta x,0)}{2\Delta x}-\frac{A_x(0,\Delta y)-A_x(0,-\Delta y)}{2\Delta y}\right\}\\
-\nonumber
-&=&4\Delta x\Delta y\left\{\frac{\partial A_y}{\partial x}-\frac{\partial A_x}{\partial y}\right\}\\
-&=&\Delta S \cdot \nabla\times\vec{A}.
-\end{eqnarray}
-!et
-
-Here $\Delta S$ is the area of the surface element.
-
-\subsubsection*{Some Notation}
-From here on in, we may use bold face to denote vectors, e.g. ${\bf v}$ instead of $\vec{v}$. We also might use dots over quantities to represent time derivatives, e.g. $\dot{\bf v}=d{\bf v}/dt$. As mentioned above, repeated indices infer sums, e.g.,
-\begin{eqnarray}
-x_iy_i&=&\sum_i x_iy_i=\vec{x}\cdot\vec{y},\\
-\nonumber
-x_iA_{ij}y_j&=&\sum_{ij}x_iA_{ij}y_j,
-\end{eqnarray}
-
-
-\subsection{Exercises}
-
-
-\item One of the many uses of the scalar product is to find the angle between two given vectors. Find the angle between the vectors $\vec{b}=(1,2,4)$ and $\vec{c}=(4,2,1)$ by evaluating their scalar product.
-
-\item Use the product rule to show that
-\[
-\frac{d}{dt}(\vec{r}\cdot\vec{s})=\frac{d\vec{r}}{dt}\cdot\vec{s}+\vec{r}\cdot\frac{d\vec{s}}{dt}.
-\]
-
-\item Multiply the rotation matrix in Example \ref{ex:rotmat} by its transpose to show that the matrix is unitary or orthogonal, i.e. you get the unit matrix.
-
-\item Find the matrix for rotating a coordinate system by 90 degrees about the $x$ axis.
-
-\begin{comment}
-
-\item Consider a rotation where in the new coordinate system the three axes are at angles $\alpha$, $\beta$ and $\gamma$ relative to the original $x$ axis. Show that
-\[
-\cos^2\alpha+\cos^2\beta+\cos^2\gamma=1.
-\]
-
-\item Find the rotation matrix for each of the three rotations, then find the matrix for the combined rotations.
-First rotate by 90$^\circ$ around the $y$ axis to get to the primed system. Then rotate the primed system 90$^\circ$ about the new $z$ axis to get to the doubly primed system. Then find the matrix that rotates the doubly primed coordinate system 90$^\circ$ about the new $x$ axis to get to the triply primed system. Finally, find the matrix that performs all three operations sequentially.
-
-
-\item Consider a parity transformation which reflects about the $x=0$ plane. Find the matrix that performs the transformation. Find the matrix that performs the inverse transformation.
-
-\item Show that the scalar product of two vectors is unchanged if both undergo the same rotation. Use the fact that the rotation matrix is unitary, $U_{ab}=U^{-1}_{ba}$.
-
-\item Show that the product of two unitary matrices is a unitary matrix. 
-
-\item Show that
-\[
-\sum_k\epsilon_{ijk}\epsilon_{klm}=\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl}.
-\]
-
-\item Consider a cubic volume $V=L^3$ defined by $0<x<L$, $0<y<L$ and $0<z<L$. Consider a vector $\vec{A}$ that depends arbitrarily on $x,y,z$. Show how Gauss's law,
-\[
-\int_V dv\nabla\cdot\vec{A}=\int_Sd\vec{S}\cdot\vec{A},
-\]
-is satisfied by direct integration. I.e., you should use the fact that $\int_a^b dx~(d/dx)f(x)=f(b)-f(a)$.
-
-\item Consider the function $z=3x^2-4y^2+12xy-6x+24$. Find any maxima or minima and determine whether it is a maximum or a minimum or an inflection point.
-
-\item A real $n-$dimensional symmetric matrix $\lambda$ can always be diagonalized by a unitary transformation, i.e. there exists some unitary matrix $U$ such that,
-\begin{eqnarray}
-U_{ij}\lambda_{jk}U^{-1}_{km}&=&\tilde{\lambda}_{im}=\left(\begin{array}{cccc}
-\tilde{\lambda}_{11}&0&\cdots&0\\
-0&\tilde{\lambda}_{22}&\cdots&0\\
-\vdots& & \ddots & \vdots\\
-0& \cdots &\cdots &\tilde{\lambda}_{nn}
-\end{array}\right).
-\end{eqnarray}
-The values $\tilde{\lambda}_{ii}$ are referred to as eigenvalues. The set of $n$ eigenvalues are unique, but their ordering is not -- there exists a unitary transformation that permutes the indices. 
-
-Consider a function $f(x_1,\cdots,x_n)$ that has the property,
-\begin{eqnarray}
-\left.\partial_i f(\vec{x})\right|_{\vec{x}=0}=0,
-\end{eqnarray}
-for all $i$. Show that if this function is a minimum, and not a maximum or an inflection point, that the $n$ eigenvalues of the matrix
-\begin{eqnarray}
-\lambda_{ij}&\equiv&\left.\partial_i\partial_j f(\vec{x})\right|_{\vec{x}=0},
-\end{eqnarray}
-must be positive.
-
-\item
-\begin{enumerate}
-\item For the unitary matrix $U$ that diagonalizes $\lambda$ as shown in the previous problem. Show that each row of the unitary matrix represents an orthogonal unit vector by using the definition of a unitary matrix.
-\item Show that the vector
-\begin{eqnarray}
-x_i^{(k)}&\equiv& U_{ki}=(U_{k1},U_{k2},\cdots,U_{kn}),
-\end{eqnarray}
-has the property that
-\begin{eqnarray}
-\lambda_{ij}x^{(k)}_j&=&\tilde{\lambda}_{kk}x^{(k)}_i.
-\end{eqnarray}
-These vectors are known as eigenvectors, as they have the property that when multiplied by $\lambda$ the resulting vector is proportional ( same direction) as the original vector. Because one can transform to a basis, using $U$, where $\lambda$ is diagonalized, in the new basis the eigenvectors are simply the unit vectors.
-\end{enumerate}
-\end{enumerate} 
-
-
-Our study begins with the study of the motion of bodies. Motion of a body means
-that its position in space varies in time. The notion of motion is relative: a passenger
-in a plane sitting in his chair has a fixed position relative to the plane, but moves at,
-say 800 km/h relative to a person standing on earth. The latter moves at 800 km/h
-relative to the passenger, in the opposite direction. To describe the motion we then
-need a reference frame.
-We normally live standing on earth and such are the laboratories in which we do
-our experiments. Let us then start by choosing a reference frame fixed on the earth.
-The possible choices are still infinite.
-The position of a body is defined when we know were it is. The simplest case is
-when we deal with a particle, a body that is so small that it can be considered
-point-like. It is called a material point. Let us see how we can define the position of
-a material point. For an extended body the positions of all its points should be
-similarly defined.
-To know the position of a point in space we need three numbers, one for each of
-its dimensions. To define its position on a given surface, two numbers are needed
-
- compulsory, they are just generally the
- most convenient). The position of P is given by its two co-ordinates, which is an
- ordered pair of real numbers (x, y).
- Consider now a point in space. The reference frame shown in Fig. 1.1c is called
- a Cartesian rectangular right-handed frame, after René Descartes (1596–1650). It
- is made of three co-ordinate axes, called x, y and z. They cross in a single point, the
- origin of the frame. All the angles between the (three) pairs of axes are right. The
- length units on the three axes are equal. Finally we must choose positive orientations
- of the axes. There are two basic possibilities. Let us assume that we have
- already defined the positive directions of x and y. We have two possible choices for
- the positive direction of z. Figure 1.1c shows one of them; an observer standing
- with his feet on the xy plane lying along the z axis and looking down, willing to
- move the x axis on the y axis by a 90° rotation, sees this rotation happening
- anticlockwise. The second possibility is the opposite sign of z. The two frames are
- called right-handed and left-handed respectively.
- Now consider the inversion of the axes. If we start from a right-handed frame
- and invert one axis, that is a mirror reflection and we get a left-ended frame. The
- same happens if we invert all three axes. The inversion of two axes gives, on the~
-
- direction and the
- sense. Differently from the oriented segment, it is not characterized by its position.
- The velocities of two cars moving at 100 km/h heading West, one near Paris, one
- near London are the same.
- Once a reference frame is chosen, we can represent a vector by an ordered triple
- of real numbers, which are its components in that reference. However, an ordered
- triple of real numbers is not necessarily a vector. To be so the following important
- property must be satisfied. Indeed, if we change the reference frame, for example
- rotating the axes, the components of the vector change, but the vector does not.
- Vector is a definite object; its components are the way to see it in one or another
- frame. To satisfy these properties, the vector components, namely the ordered
- triples in the two frames, must be connected by well-defined relations, which we
- shall now find.
- Figure 1.3 shows a reference frame and a point P of co-ordinates x, y, z. Consider
- the oriented segment from the origin O to P and the corresponding vector r (namely
- the class of equipollent oriented segments). It is called a position vector, and is, we
- can say, the prototype of all vectors. Its components in the (Cartesian) reference
- frame we are considering are simply the coordinates of P, i.e. the ordered triple
- (x, y, z). Let us now take another reference with the same origin and axes rotated by
- an angle θ. The point P does not move and r does not change. But its components~
-
-lly define the rotation of the axes.
-We now state that a vector is an ordered triple of real numbers that under
-rotations of the reference frame transforms (changes) in the same way as the triple
-representing the position vector, namely as co-ordinates.
-Figure 1.5a represents, in a plane for simplicity, a generic vector A, which we
-can think as of drawn starting from the origin, because all the equipollent segments
-are the same vector, and its components in the two frames.
-By definition, the relations amongst its components are equal to Eq. (1.9),
-
-
-A quantity represented by a number, like temperature or pressure, is called a scalar.
-Scalars are invariant under rotations of the axes. In two reference frames rotated one
-to the other a scalar has the same value. Notice that not every quantity is scalar. For
-example the x component of a vector is not, because it changes under rotations.
-We shall represent a vector with its components in a given frame with A = (Ax,
-Ay, Az).
-Given the vector A and the scalar k their product is the vector kA = (kAx, kAy,
-kAz). Namely the components of kA are k times those of A. To be sure, we must
-O
-O
-x
-y’ y
-y’
-x’
-x’
-θ x
-y
-A
-Ax
-Ay
-Ax
-,
-Ay
-, A
-Ax
-Ay
-Ax
-,
-Ay
-,
-O
-,
-(a) (b)
-Fig. 1.5 Components of the vector A in two frames different for a a rotation b a translation
-14 1 Space, Time and Motion
-verify that the just given definition agrees with the definition of vector. Indeed, it is
-immediate to check that the oriented triple (kAx, kAy, kAz) transforms like a vector.
-Geometrically, kA is the vector with the same direction as A, the magnitude |k|
-times the one of A and the sense of A or opposite depending on k being positive or
-negative respectively.
-The product of A times the reciprocal of its magnitude is a vector with the
-direction of A and unitary magnitude. A vector of unitary magnitude is called a unit
-vector or versor. We shall use the symbol uA for the unit vector of A.
-The product of the vector A and –1 is called the opposite of A. It has the same
-magnitude and direction of A and opposite sense.
-Consider now two vectors A and B, which in a given reference frame have the
-components (Ax, Ay, Az) and (Bx, By, Bz) respectively. Consider the triple of numbers
-that are the sums of the homologous components of A and B, namely (Ax + Bx,
-Ay + By, Az + Bz). Is it a vector? Let us check. Knowing that A are B vectors we
-
-
-We see that the answer is positive. We can then define as the vector sum of two
-vectors the vector with components equal to the sums of their homologous components.
-Notice that the just found properties are immediate consequences of the
-component transformations being linear operations.
-It is immediate to verify that the sum of vectors has the usual properties of the
-sum, namely commutative
-AþB ¼ BþA: ð1:12Þ
-and associative
-ðAþBÞþC ¼ AþðBþCÞ: ð1:13Þ
-Figure 1.6 shows the geometric meaning of the vector sum. In Fig. 1.6a the sum
-is made putting the tail of B on the head of A; the sum is the vector from the tail of
-A to the head of B, as one immediately understands thinking to the components.
-For the commutative property, we might have done vice versa, namely start from
-B and putting the tail of A on the head of B. We should have reached the same
-point.
-
-
-
-Add about velocity
-
-We shall now study the motion of the simplest body, the material point or particle.
-This is the case when its dimensions are small compared to the distances from other
-objects. This is clearly an idealization but it works often in practice. For example
-the planets are certainly not point-like, however in the mathematical description of
-
-their motions around the sun they can be considered as such in a good approximation,
-as long as we do not consider the rotations about their axes, or the variations
-of the directions of those axes, or the tides on their surfaces. A ship can be
-considered a point when she is far from shore, but when she enters a harbor her
-dimension must be precisely known.
-As we have already stated, the motion has to be studied in a given reference
-frame. The particle describes in its motion a curve, which is called the trajectory, as
-shown in Fig. 1.14a. The position vector is a function of time r(t) or, in other words,
-the co-ordinates are three functions of time x(t), y(t), z(t). If we know these functions
-we completely know the motion of the particle. We say that the system has
-
-Bettini page 26-27
-
-
-angular velocity
-
-acceleration
-
-their motions around the sun they can be considered as such in a good approximation,
-as long as we do not consider the rotations about their axes, or the variations
-of the directions of those axes, or the tides on their surfaces. A ship can be
-considered a point when she is far from shore, but when she enters a harbor her
-dimension must be precisely known.
-As we have already stated, the motion has to be studied in a given reference
-frame. The particle describes in its motion a curve, which is called the trajectory, as
-shown in Fig. 1.14a. The position vector is a function of time r(t) or, in other words,
-the co-ordinates are three functions of time x(t), y(t), z(t). If we know these functions
-we completely know the motion of the particle. We say that the system has
-
-
-1.15 From Acceleration to Motion
-Figure 1.21 represents the trajectory of a material point P in a given Cartesian
-reference frame, its position vector r(t), its velocity v(t) and its acceleration a(t), that
-are all functions of time.
-We recall their expressions
-
-In words, the velocity is the time derivative of the position vector and the
-acceleration is the time derivative of the velocity or the second time derivative of
-the position vector. We shall see in the next chapter that acceleration is proportional
-to the force.
-We consider now the inverse problem, namely to find the velocity and the law of
-motion once the acceleration a(t) is given. As the velocity is the time derivative of
-the position vector, the latter is given by the integral of the velocity on time from
-
-
-Motivate free fall motion
