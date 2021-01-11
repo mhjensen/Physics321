@@ -11,18 +11,16 @@ The first week starts on Monday January 11. This week is dedicated to a
 review of learning material and reminder on programming aspects,
 useful tools, where to find information and much more.
 
-* Monday: Introduction to the course and reminder  on vectors, space, time and motion.
-* Wednesday: Python programming reminder, elements from CS201 and how they are used in this course. Installing software (anaconda). See slides at https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). 
-* Friday: Introduction to Git and GitHub and getting started with numerical exercises.
+* Introduction to the course and reminder  on vectors, space, time and motion.
+* Python programming reminder, elements from "CMSE 201 INTRODUCTION TO COMPUTATIONAL MODELING":"https://cmse.msu.edu/academics/undergraduate-program/undergraduate-courses/cmse-201-introduction-to-computational-modeling/" and how they are used in this course. Installing software (anaconda). . 
+* Introduction to Git and GitHub.
 
 _Recommended reading_: John R. Taylor, Classical Mechanics (Univ. Sci. Books 2005), URL:"https://www.uscibooks.com/taylor2.htm", see also URL:"https://github.com/mhjensen/Physics321/tree/master/doc/Literature". Chapters 1.2 and 1.3 of Taylor.
-
-_Recommenended review_: Brush up your Python programming knowledge, in particular how you used _numpy_ to handle arrays. Look at some of the programs in the slides here for Wednesday and Friday.
 
 
 
 !split
-===== Monday =====
+===== Introduction to the course and where to find material =====
 
 Overview video
 
@@ -30,7 +28,7 @@ Overview video
 
 
 !split
-===== Introduction =====
+===== Classical mechanics =====
 
 Classical mechanics is a topic which has been taught intensively over
 several centuries. It is, with its many variants and ways of
@@ -331,7 +329,7 @@ is precisely what is observed in weak decays.
 ===== Differentiation of a vector with respect to a scalar =====
 
 For example, the
-acceleration is $d\bm{v}/dt$:
+acceleration is $d\bm{v}/dt$
 
 !bt
 \[
@@ -403,42 +401,6 @@ Here we simply state these, but you may wish to prove a few. They are useful for
 -(\bm{A}\cdot\bm{D})(\bm{B}\cdot\bm{C})
 \end{eqnarray}
 !et
-
-
-!split 
-===== Example The height of a hill is given by the formula  =====
-
-!bt
-\[
-z(x,y)=2xy-3x^2-4y^2-18x+28y+12.
-\]
-!et
-
-Here $z$ is the height in meters and $x$ and $y$ are the east-west and
-north-south coordinates. Find the position $x,y$ where the hill is the
-highest, and give its height.
-
-_Solution_: The maxima or minima, or inflection points, are given when $\partial_x z=0$ and $\partial_yz=0$.
-!bt
-\begin{eqnarray*}
-\partial_xz(x,y)&=&2y-6x-18=0,\\
-\partial_yz(x,y)&=&2x-8y+28=0.
-\end{eqnarray*}
-!et
-
-Solving for two equations and two unknowns gives one solution
-$x=-2,y=3$. This then gives $z=72$. Although this procedure could have
-given a minimum or an inflection point you can look at the form for
-$z$ and see that for $x=y=0$ the height is lower, therefore it is not
-a minimum. You can also look and see that the quadratic contributions
-are negative so the height falls off to $-\infty$ far away in any
-direction. Thus, there must be a maximum, and this must be
-it. Deciding between maximum or minimum or inflection point for a
-general problem would involve looking at the matrix
-$\partial_i\partial_j z$ at the specific point, then finding the
-eigenvalues of the matrix and seeing whether they were both positive
-(minimum) both negative (maximum) or one positive and one negative
-(saddle point).
 
 
 !split
@@ -679,7 +641,7 @@ This means the one obtains the $ij$ element by taking the scalar product of the 
 
 
 !split
-===== Wednesday: Python programming reminder, elements from CS201 and how they are used in this course =====
+===== Python programming reminder, elements from "CMSE 201 INTRODUCTION TO COMPUTATIONAL MODELING":"https://cmse.msu.edu/academics/undergraduate-program/undergraduate-courses/cmse-201-introduction-to-computational-modeling/" and how they are used in this course =====
 
 Overview video
 
@@ -1221,6 +1183,30 @@ For multidimensional arrays, we recommend strongly "xarray":"http://xarray.pydat
 
 
 !split
-===== Friday: Introduction to Git and GitHub and getting started with numerical exercises =====
+===== Introduction to Git and GitHub/GitLab and similar  =====
+
+"Git":"https://git-scm.com/" is a distributed version-control system
+for tracking changes in any set of files, originally designed for
+coordinating work among programmers cooperating on source code during
+software development.
+
+The "reference document and videos here":"https://git-scm.com/doc"
+give you an excellent introduction to the _git_.
+
+We believe you will find version-control software very useful in your work. 
+
+
+!split
+===== GitHub, GitLab and many other =====
+
+"GitHub":"https://github.com/", "GitLab":"https://about.gitlab.com/", "Bitbucket":"https://bitbucket.org/product?&aceid=&adposition=&adgroup=92266806717&campaign=1407243017&creative=414608923671&device=c&keyword=bitbucket&matchtype=e&network=g&placement=&ds_kids=p51241248597&ds_e=GOOGLE&ds_eid=700000001551985&ds_e1=GOOGLE&gclid=Cj0KCQiA6Or_BRC_ARIsAPzuer_yrxzs-R8KDVdF0-DduJR9hTBYcjdE8L9_CkA9eyz8XT7-3bFGOpQaAqe2EALw_wcB&gclsrc=aw.ds" and other are code hosting platforms for
+version control and collaboration. They let you and others work
+together on projects from anywhere.
+
+
+All teaching material related to this course is open and freely
+available via the GitHub site of the course. The video here gives a
+short intro to
+"GitHub":"https://www.youtube.com/watch/w3jLJU7DT5E?reload=9".
 
 
