@@ -42,38 +42,38 @@ Automatically generated HTML file from DocOnce source
 <!-- tocinfo
 {'highest level': 2,
  'sections': [('Aims and Overview', 2, None, '___sec0'),
-              ('Monday', 2, None, '___sec1'),
-              ('Introduction', 2, None, '___sec2'),
+              ('Introduction to the course and where to find material',
+               2,
+               None,
+               '___sec1'),
+              ('Classical mechanics', 2, None, '___sec2'),
+              ('From Continuous to Discretized Approaches', 2, None, '___sec3'),
               ('Space, Time, Motion, Reference Frames  and Reminder on vectors '
                'and other mathematical quantities',
                2,
                None,
-               '___sec3'),
-              ('Dimension, units and labels', 3, None, '___sec4'),
-              ('Dimensions and Units', 2, None, '___sec5'),
-              ('Elements of Vector Algebra', 2, None, '___sec6'),
-              ('Scalars, Vectors and Matrices', 2, None, '___sec7'),
-              ('Unit Vectors', 2, None, '___sec8'),
+               '___sec4'),
+              ('Dimension, units and labels', 3, None, '___sec5'),
+              ('Dimensions and Units', 2, None, '___sec6'),
+              ('Elements of Vector Algebra', 2, None, '___sec7'),
+              ('Scalars, Vectors and Matrices', 2, None, '___sec8'),
+              ('Unit Vectors', 2, None, '___sec9'),
               ('Vector Operations, Scalar Product (or dot product)',
                2,
                None,
-               '___sec9'),
+               '___sec10'),
               ('Vector Product (or cross product) of vectors $\\boldsymbol{A}$ '
                'and $\\boldsymbol{B}$',
                2,
                None,
-               '___sec10'),
+               '___sec11'),
               ('Differentiation of a vector with respect to a scalar',
                2,
                None,
-               '___sec11'),
-              ('Angular velocity', 2, None, '___sec12'),
-              ('Gradient operator $\\nabla$', 2, None, '___sec13'),
-              ('Some identities', 2, None, '___sec14'),
-              ('Example The height of a hill is given by the formula',
-               2,
-               None,
-               '___sec15'),
+               '___sec12'),
+              ('Angular velocity', 2, None, '___sec13'),
+              ('Gradient operator $\\nabla$', 2, None, '___sec14'),
+              ('Some identities', 2, None, '___sec15'),
               ("Gauss's Theorem", 2, None, '___sec16'),
               ("and Stokes's Theorem", 2, None, '___sec17'),
               ('Rotations', 2, None, '___sec18'),
@@ -82,7 +82,9 @@ Automatically generated HTML file from DocOnce source
                None,
                '___sec19'),
               ('Mutiplying matrices $C$ and $D$', 2, None, '___sec20'),
-              ('Wednesday: Python programming reminder, elements from CS201 '
+              ('Python programming reminder, elements from "CMSE 201 '
+               'INTRODUCTION TO COMPUTATIONAL '
+               'MODELING":"https://cmse.msu.edu/academics/undergraduate-program/undergraduate-courses/cmse-201-introduction-to-computational-modeling/" '
                'and how they are used in this course',
                2,
                None,
@@ -112,11 +114,11 @@ Automatically generated HTML file from DocOnce source
               ('Numpy and arrays', 2, None, '___sec34'),
               ('Matrices in Python', 2, None, '___sec35'),
               ('Meet the Pandas', 2, None, '___sec36'),
-              ('Friday: Introduction to Git and GitHub and getting started '
-               'with numerical exercises',
+              ('Introduction to Git and GitHub/GitLab and similar',
                2,
                None,
-               '___sec37')]}
+               '___sec37'),
+              ('GitHub, GitLab and many other', 2, None, '___sec38')]}
 end of tocinfo -->
 
 <body>
@@ -155,27 +157,27 @@ MathJax.Hub.Config({
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
         <ul class="dropdown-menu">
      <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;"><b>Aims and Overview</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec1" style="font-size: 80%;"><b>Monday</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec2" style="font-size: 80%;"><b>Introduction</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec3" style="font-size: 80%;"><b>Space, Time, Motion, Reference Frames  and Reminder on vectors and other mathematical quantities</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec4" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Dimension, units and labels</a></li>
-     <!-- navigation toc: --> <li><a href="#___sec5" style="font-size: 80%;"><b>Dimensions and Units</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec6" style="font-size: 80%;"><b>Elements of Vector Algebra</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec7" style="font-size: 80%;"><b>Scalars, Vectors and Matrices</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec8" style="font-size: 80%;"><b>Unit Vectors</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec9" style="font-size: 80%;"><b>Vector Operations, Scalar Product (or dot product)</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec10" style="font-size: 80%;"><b>Vector Product (or cross product) of vectors \( \boldsymbol{A} \) and \( \boldsymbol{B} \)</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec11" style="font-size: 80%;"><b>Differentiation of a vector with respect to a scalar</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec12" style="font-size: 80%;"><b>Angular velocity</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec13" style="font-size: 80%;"><b>Gradient operator \( \nabla \)</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec14" style="font-size: 80%;"><b>Some identities</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec15" style="font-size: 80%;"><b>Example The height of a hill is given by the formula</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec1" style="font-size: 80%;"><b>Introduction to the course and where to find material</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec2" style="font-size: 80%;"><b>Classical mechanics</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec3" style="font-size: 80%;"><b>From Continuous to Discretized Approaches</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec4" style="font-size: 80%;"><b>Space, Time, Motion, Reference Frames  and Reminder on vectors and other mathematical quantities</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec5" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Dimension, units and labels</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec6" style="font-size: 80%;"><b>Dimensions and Units</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec7" style="font-size: 80%;"><b>Elements of Vector Algebra</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec8" style="font-size: 80%;"><b>Scalars, Vectors and Matrices</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec9" style="font-size: 80%;"><b>Unit Vectors</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec10" style="font-size: 80%;"><b>Vector Operations, Scalar Product (or dot product)</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec11" style="font-size: 80%;"><b>Vector Product (or cross product) of vectors \( \boldsymbol{A} \) and \( \boldsymbol{B} \)</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec12" style="font-size: 80%;"><b>Differentiation of a vector with respect to a scalar</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec13" style="font-size: 80%;"><b>Angular velocity</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec14" style="font-size: 80%;"><b>Gradient operator \( \nabla \)</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec15" style="font-size: 80%;"><b>Some identities</b></a></li>
      <!-- navigation toc: --> <li><a href="#___sec16" style="font-size: 80%;"><b>Gauss's Theorem</b></a></li>
      <!-- navigation toc: --> <li><a href="#___sec17" style="font-size: 80%;"><b>and Stokes's Theorem</b></a></li>
      <!-- navigation toc: --> <li><a href="#___sec18" style="font-size: 80%;"><b>Rotations</b></a></li>
      <!-- navigation toc: --> <li><a href="#___sec19" style="font-size: 80%;"><b>Multiplying a matrix \( C \) times a vector \( \boldsymbol{A} \)</b></a></li>
      <!-- navigation toc: --> <li><a href="#___sec20" style="font-size: 80%;"><b>Mutiplying matrices \( C \) and \( D \)</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec21" style="font-size: 80%;"><b>Wednesday: Python programming reminder, elements from CS201 and how they are used in this course</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec21" style="font-size: 80%;"><b>Python programming reminder, elements from "CMSE 201 INTRODUCTION TO COMPUTATIONAL MODELING":"https://cmse.msu.edu/academics/undergraduate-program/undergraduate-courses/cmse-201-introduction-to-computational-modeling/" and how they are used in this course</b></a></li>
      <!-- navigation toc: --> <li><a href="#___sec22" style="font-size: 80%;"><b>Numerical Elements</b></a></li>
      <!-- navigation toc: --> <li><a href="#___sec23" style="font-size: 80%;"><b>Computations and the Scientific Method</b></a></li>
      <!-- navigation toc: --> <li><a href="#___sec24" style="font-size: 80%;"><b>Computational Competences</b></a></li>
@@ -191,7 +193,8 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="#___sec34" style="font-size: 80%;"><b>Numpy and arrays</b></a></li>
      <!-- navigation toc: --> <li><a href="#___sec35" style="font-size: 80%;"><b>Matrices in Python</b></a></li>
      <!-- navigation toc: --> <li><a href="#___sec36" style="font-size: 80%;"><b>Meet the Pandas</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec37" style="font-size: 80%;"><b>Friday: Introduction to Git and GitHub and getting started with numerical exercises</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec37" style="font-size: 80%;"><b>Introduction to Git and GitHub/GitLab and similar</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec38" style="font-size: 80%;"><b>GitHub, GitLab and many other</b></a></li>
 
         </ul>
       </li>
@@ -229,7 +232,7 @@ MathJax.Hub.Config({
 <center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
 <br>
 <p>
-<center><h4>Jan 10, 2021</h4></center> <!-- date -->
+<center><h4>Jan 12, 2021</h4></center> <!-- date -->
 <br>
 <p>
 <!-- potential-jumbotron-button -->
@@ -245,20 +248,17 @@ review of learning material and reminder on programming aspects,
 useful tools, where to find information and much more.
 
 <ul>
-<li> Monday: Introduction to the course and reminder  on vectors, space, time and motion.</li>
-<li> Wednesday: Python programming reminder, elements from CS201 and how they are used in this course. Installing software (anaconda). See slides at <a href="https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html" target="_self"><tt>https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html</tt></a>).</li> 
-<li> Friday: Introduction to Git and GitHub and getting started with numerical exercises.</li>
+<li> Introduction to the course and reminder  on vectors, space, time and motion.</li>
+<li> Python programming reminder, elements from <a href="https://cmse.msu.edu/academics/undergraduate-program/undergraduate-courses/cmse-201-introduction-to-computational-modeling/" target="_self">CMSE 201 INTRODUCTION TO COMPUTATIONAL MODELING</a> and how they are used in this course. Installing software (anaconda). .</li> 
+<li> Introduction to Git and GitHub.</li>
 </ul>
 
 <b>Recommended reading</b>: John R. Taylor, Classical Mechanics (Univ. Sci. Books 2005), <a href="https://www.uscibooks.com/taylor2.htm" target="_self"><tt>https://www.uscibooks.com/taylor2.htm</tt></a>, see also <a href="https://github.com/mhjensen/Physics321/tree/master/doc/Literature" target="_self"><tt>https://github.com/mhjensen/Physics321/tree/master/doc/Literature</tt></a>. Chapters 1.2 and 1.3 of Taylor.
 
 <p>
-<b>Recommenended review</b>: Brush up your Python programming knowledge, in particular how you used <b>numpy</b> to handle arrays. Look at some of the programs in the slides here for Wednesday and Friday.
-
-<p>
 <!-- !split -->
 
-<h2 id="___sec1" class="anchor">Monday </h2>
+<h2 id="___sec1" class="anchor">Introduction to the course and where to find material </h2>
 
 <p>
 Overview video
@@ -266,7 +266,7 @@ Overview video
 <p>
 <!-- !split -->
 
-<h2 id="___sec2" class="anchor">Introduction </h2>
+<h2 id="___sec2" class="anchor">Classical mechanics </h2>
 
 <p>
 Classical mechanics is a topic which has been taught intensively over
@@ -279,6 +279,9 @@ of the scientific method and discourse, as well as the way we develop our insigh
 and deeper understanding about physical systems.
 
 <p>
+<!-- !split -->
+
+<h2 id="___sec3" class="anchor">From Continuous to Discretized Approaches </h2>
 There is a wealth of
 well-tested (from both a physics point of view and a pedagogical
 standpoint) exercises and problems which can be solved
@@ -291,9 +294,16 @@ in order to develop our understandings and insights about the
 underlying forces and laws of motion.
 
 <p>
+We aim at changing this here by introducing throughout the course what
+we will call a <b>computational path</b>, where with computations we mean
+solving scientific problems with all possible tools and means, from
+plain paper an pencil exercises, via symbolic calculations to writing
+a code and running a program to solve a specific problem.
+
+<p>
 <!-- !split -->
 
-<h2 id="___sec3" class="anchor">Space, Time, Motion, Reference Frames  and Reminder on vectors and other mathematical quantities </h2>
+<h2 id="___sec4" class="anchor">Space, Time, Motion, Reference Frames  and Reminder on vectors and other mathematical quantities </h2>
 
 <p>
 Our studies will start with the motion of different types of objects
@@ -317,7 +327,7 @@ These choices lead to some important questions such as
 <li> is the physics independent of the scale of the length?</li>
 </ul>
 
-<h3 id="___sec4" class="anchor">Dimension, units and labels </h3>
+<h3 id="___sec5" class="anchor">Dimension, units and labels </h3>
 
 <p>
 Throughout this course we will use the standardized SI units. The standard unit for length is thus one meter 1m, for mass
@@ -343,7 +353,7 @@ More variables will be defined as we need them.
 <p>
 <!-- !split -->
 
-<h2 id="___sec5" class="anchor">Dimensions and Units </h2>
+<h2 id="___sec6" class="anchor">Dimensions and Units </h2>
 
 <p>
 It is also important to keep track of dimensionalities. Don't mix this
@@ -364,10 +374,11 @@ interested in. Thus
 
 <!-- !split -->
 
-<h2 id="___sec6" class="anchor">Elements of Vector Algebra </h2>
+<h2 id="___sec7" class="anchor">Elements of Vector Algebra </h2>
 
 <p>
 In these lectures we will use boldfaced lower-case letters to label a vector. A vector \( \boldsymbol{a} \) in three dimensions is thus defined as
+
 $$
 \boldsymbol{a} =(a_x,a_y, a_z),
 $$
@@ -414,7 +425,7 @@ $$
 <p>
 <!-- !split -->
 
-<h2 id="___sec7" class="anchor">Scalars, Vectors and Matrices </h2>
+<h2 id="___sec8" class="anchor">Scalars, Vectors and Matrices </h2>
 
 <p>
 A scalar is something with a value that is independent of coordinate
@@ -446,7 +457,7 @@ cross products of vectors, is a tensor of rank three.
 <p>
 <!-- !split -->
 
-<h2 id="___sec8" class="anchor">Unit Vectors </h2>
+<h2 id="___sec9" class="anchor">Unit Vectors </h2>
 
 <p>
 Also known as basis vectors, unit vectors point in the direction of
@@ -501,7 +512,7 @@ $$
 <p>
 <!-- !split -->
 
-<h2 id="___sec9" class="anchor">Vector Operations, Scalar Product (or dot product) </h2>
+<h2 id="___sec10" class="anchor">Vector Operations, Scalar Product (or dot product) </h2>
 
 <p>
 For vectors \( \boldsymbol{A} \) and \( \boldsymbol{B} \),
@@ -532,7 +543,7 @@ $$
 <p>
 <!-- !split -->
 
-<h2 id="___sec10" class="anchor">Vector Product (or cross product) of vectors \( \boldsymbol{A} \) and \( \boldsymbol{B} \) </h2>
+<h2 id="___sec11" class="anchor">Vector Product (or cross product) of vectors \( \boldsymbol{A} \) and \( \boldsymbol{B} \) </h2>
 
 $$
 \begin{eqnarray*}
@@ -599,11 +610,11 @@ is precisely what is observed in weak decays.
 <p>
 <!-- !split -->
 
-<h2 id="___sec11" class="anchor">Differentiation of a vector with respect to a scalar </h2>
+<h2 id="___sec12" class="anchor">Differentiation of a vector with respect to a scalar </h2>
 
 <p>
 For example, the
-acceleration is \( d\boldsymbol{v}/dt \):
+acceleration is \( d\boldsymbol{v}/dt \)
 
 $$
 (d\boldsymbol{v}/dt)_i=\frac{dv_i}{dt}.
@@ -612,7 +623,7 @@ $$
 <p>
 <!-- !split -->
 
-<h2 id="___sec12" class="anchor">Angular velocity </h2>
+<h2 id="___sec13" class="anchor">Angular velocity </h2>
 
 <p>
 Choose the vector \( \boldsymbol{\omega} \) so that the motion
@@ -623,7 +634,7 @@ with \( \boldsymbol{\omega} \) pointing along your thumb. The magnitude is
 <p>
 <!-- !split -->
 
-<h2 id="___sec13" class="anchor">Gradient operator \( \nabla \) </h2>
+<h2 id="___sec14" class="anchor">Gradient operator \( \nabla \) </h2>
 
 <p>
 This is the derivative \( \partial/\partial
@@ -659,7 +670,7 @@ $$
 <p>
 <!-- !split  -->
 
-<h2 id="___sec14" class="anchor">Some identities </h2>
+<h2 id="___sec15" class="anchor">Some identities </h2>
 
 <p>
 Here we simply state these, but you may wish to prove a few. They are useful for this class and will be essential when you study E\&M.
@@ -674,44 +685,6 @@ $$
 -(\boldsymbol{A}\cdot\boldsymbol{D})(\boldsymbol{B}\cdot\boldsymbol{C})
 \end{eqnarray}
 $$
-
-<p>
-<!-- !split  -->
-
-<h2 id="___sec15" class="anchor">Example The height of a hill is given by the formula  </h2>
-
-$$
-z(x,y)=2xy-3x^2-4y^2-18x+28y+12.
-$$
-
-<p>
-Here \( z \) is the height in meters and \( x \) and \( y \) are the east-west and
-north-south coordinates. Find the position \( x,y \) where the hill is the
-highest, and give its height.
-
-<p>
-<b>Solution</b>: The maxima or minima, or inflection points, are given when \( \partial_x z=0 \) and \( \partial_yz=0 \).
-$$
-\begin{eqnarray*}
-\partial_xz(x,y)&=&2y-6x-18=0,\\
-\partial_yz(x,y)&=&2x-8y+28=0.
-\end{eqnarray*}
-$$
-
-<p>
-Solving for two equations and two unknowns gives one solution
-\( x=-2,y=3 \). This then gives \( z=72 \). Although this procedure could have
-given a minimum or an inflection point you can look at the form for
-\( z \) and see that for \( x=y=0 \) the height is lower, therefore it is not
-a minimum. You can also look and see that the quadratic contributions
-are negative so the height falls off to \( -\infty \) far away in any
-direction. Thus, there must be a maximum, and this must be
-it. Deciding between maximum or minimum or inflection point for a
-general problem would involve looking at the matrix
-\( \partial_i\partial_j z \) at the specific point, then finding the
-eigenvalues of the matrix and seeing whether they were both positive
-(minimum) both negative (maximum) or one positive and one negative
-(saddle point).
 
 <p>
 <!-- !split -->
@@ -972,7 +945,7 @@ This means the one obtains the \( ij \) element by taking the scalar product of 
 <p>
 <!-- !split -->
 
-<h2 id="___sec21" class="anchor">Wednesday: Python programming reminder, elements from CS201 and how they are used in this course </h2>
+<h2 id="___sec21" class="anchor">Python programming reminder, elements from <a href="https://cmse.msu.edu/academics/undergraduate-program/undergraduate-courses/cmse-201-introduction-to-computational-modeling/" target="_self">CMSE 201 INTRODUCTION TO COMPUTATIONAL MODELING</a> and how they are used in this course </h2>
 
 <p>
 Overview video
@@ -1628,7 +1601,36 @@ For multidimensional arrays, we recommend strongly <a href="http://xarray.pydata
 <p>
 <!-- !split -->
 
-<h2 id="___sec37" class="anchor">Friday: Introduction to Git and GitHub and getting started with numerical exercises </h2>
+<h2 id="___sec37" class="anchor">Introduction to Git and GitHub/GitLab and similar  </h2>
+
+<p>
+<a href="https://git-scm.com/" target="_self">Git</a> is a distributed version-control system
+for tracking changes in any set of files, originally designed for
+coordinating work among programmers cooperating on source code during
+software development.
+
+<p>
+The <a href="https://git-scm.com/doc" target="_self">reference document and videos here</a>
+give you an excellent introduction to the <b>git</b>.
+
+<p>
+We believe you will find version-control software very useful in your work.
+
+<p>
+<!-- !split -->
+
+<h2 id="___sec38" class="anchor">GitHub, GitLab and many other </h2>
+
+<p>
+<a href="https://github.com/" target="_self">GitHub</a>, <a href="https://about.gitlab.com/" target="_self">GitLab</a>, <a href="https://bitbucket.org/product?&aceid=&adposition=&adgroup=92266806717&campaign=1407243017&creative=414608923671&device=c&keyword=bitbucket&matchtype=e&network=g&placement=&ds_kids=p51241248597&ds_e=GOOGLE&ds_eid=700000001551985&ds_e1=GOOGLE&gclid=Cj0KCQiA6Or_BRC_ARIsAPzuer_yrxzs-R8KDVdF0-DduJR9hTBYcjdE8L9_CkA9eyz8XT7-3bFGOpQaAqe2EALw_wcB&gclsrc=aw.ds" target="_self">Bitbucket</a> and other are code hosting platforms for
+version control and collaboration. They let you and others work
+together on projects from anywhere.
+
+<p>
+All teaching material related to this course is open and freely
+available via the GitHub site of the course. The video here gives a
+short intro to
+<a href="https://www.youtube.com/watch/w3jLJU7DT5E?reload=9" target="_self">GitHub</a>.
 
 <p>
 
