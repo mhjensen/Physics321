@@ -9,7 +9,7 @@ DATE: today
 
 The first week starts on Monday January 11. This week is dedicated to a
 review of learning material and reminder on programming aspects,
-useful tools, where to find information and much more.
+useful tools, where to find information and much more. There are no lectures during this week and the material here on vectors and Python programming will also be discussed during the week which begins with January 18. 
 
 * Introduction to the course and reminder  on vectors, space, time and motion.
 * Python programming reminder, elements from "CMSE 201 INTRODUCTION TO COMPUTATIONAL MODELING":"https://cmse.msu.edu/academics/undergraduate-program/undergraduate-courses/cmse-201-introduction-to-computational-modeling/" and how they are used in this course. Installing software (anaconda). . 
@@ -249,13 +249,14 @@ or with a norm-2 notation
 \[
 |a|\equiv \vert\vert \bm{a}\vert\vert_2=\sqrt{\sum_i a_i^2}.
 \]
+!et
 !eblock
 
-\bblock
+!bblock
 Note that the summation sign is inferred any time there are repeated indices. For example, 
 
 !bt
-\[\begin{eqnarray}
+\[
 a_ib_i=\sum_i a_ib_i.
 \]
 !et
@@ -495,7 +496,10 @@ Here, we use rotations as an example of matrices and their operations. One can c
 \end{equation}
 !et
 
-Even though it is the same vector, the components have changed. Each new unit vector $\hat{e}'_i$ can be expressed as a linear sum of the previous vectors,
+
+Even though it is the same vector, the components have changed. Each
+new unit vector $\hat{e}'_i$ can be expressed as a linear sum of the
+previous vectors,
 
 !bt
 \begin{equation}
@@ -514,6 +518,9 @@ label{eq:lambda_angles}
 \end{eqnarray}
 !et
 
+!split
+=====  More on the amtrix $U$ =====
+
 Thus, the matrix lambda has components $U_{ij}$ that are equal to the
 cosine of the angle between new unit vector $\hat{e}'_i$ and the old
 unit vector $\hat{e}_j$.
@@ -521,13 +528,16 @@ unit vector $\hat{e}_j$.
 
 !bt
 \begin{equation}
-U = \left(\begin{array}{ccc}
+U = \begin{bmatrix}
 \hat{e}'_1\cdot\hat{e}_1& \hat{e}'_1\cdot\hat{e}_2& \hat{e}'_1\cdot\hat{e}_3\\
 \hat{e}'_2\cdot\hat{e}_1& \hat{e}'_2\cdot\hat{e}_2& \hat{e}'_2\cdot\hat{e}_3\\
 \hat{e}'_3\cdot\hat{e}_1& \hat{e}'_3\cdot\hat{e}_2& \hat{e}'_3\cdot\hat{e}_3
-\end{array}\right),~~~~~U_{ij}=\hat{e}'_i\cdot\hat{e}_j=\cos\theta_{ij}.
+\end{bmatrix},~~~~~U_{ij}=\hat{e}'_i\cdot\hat{e}_j=\cos\theta_{ij}.
 \end{equation}
 !et
+
+!split
+===== Properties of the matrix $U$ =====
 
 Note that the matrix is not symmetric, $U_{ij}\ne U_{ji}$. One can also look at the inverse transformation, by switching the primed and unprimed coordinates,
 
@@ -548,6 +558,9 @@ label{eq:transposedef}
 U^{-1}&=&U^{t}.
 \end{eqnarray}
 !et
+
+!split
+=====  Tensors =====
 
 A tensor obeying Eq. (ref{eq:transposedef}) defines what is known as
 a unitary, or orthogonal, transformation.
@@ -588,7 +601,14 @@ Eq. (ref{eq:inverseU}) is the same one that transforms the
 coordinates of a vector, Eq. (ref{eq:rotateR}).
 
 
-Find the rotation matrix $U$ for finding the components in the primed coordinate system given from those in the unprimed system, given that the unit vectors in the new system are found by rotating the coordinate system by and angle $\phi$ about the $z$ axis.
+!split
+===== Rotation matrix =====
+
+As a small exercise, find the rotation matrix $U$ for finding the
+components in the primed coordinate system given from those in the
+unprimed system, given that the unit vectors in the new system are
+found by rotating the coordinate system by and angle $\phi$ about the
+$z$ axis.
 
 In this case
 
@@ -599,7 +619,7 @@ In this case
 \hat{e}'_3&=&\hat{e}_3.
 \end{eqnarray*}
 !et
-By inspecting Eq. (ref{eq:lambda_angles}),
+By inspecting Eq. (ref{eq:lambda_angles}), we get
 
 !bt
 \[
@@ -609,6 +629,9 @@ U=\left(\begin{array}{ccc}
 0&0&1\end{array}\right).
 \]
 !et
+
+!split
+===== Unitary Transformations =====
 
 Under a unitary transformation $U$ (or basis transformation) scalars
 are unchanged, whereas vectors $\bm{r}$ and matrices $M$ change as
@@ -651,35 +674,9 @@ Because there are no remaining indices, one expects it to be a scalar. Indeed on
 A similar example is the determinant of a matrix, which is also a scalar.
 
 
-
-!split
-===== Multiplying a matrix $C$ times a vector $\bm{A}$ =====
-
-!bt
-\[
-(CA)_i=C_{ij}A_j.
-\]
-!et
-
-For the $i^{\rm th}$ element one takes the scalar product of the $i^{\rm th}$ row of $C$ with the vector $\bm{A}$.
-
-!split
-===== Mutiplying matrices $C$ and $D$ =====
-
-!bt
-\[
-(CD)_{ij}=C_{ik}D_{kj},
-\]
-!et
-
-This means the one obtains the $ij$ element by taking the scalar product of the $i^{\rm th}$ of $C$ with the $j^{\rm th}$ column of $D$.
-
-
-
 !split
 ===== Python programming reminder, elements from "CMSE 201 INTRODUCTION TO COMPUTATIONAL MODELING":"https://cmse.msu.edu/academics/undergraduate-program/undergraduate-courses/cmse-201-introduction-to-computational-modeling/" and how they are used in this course =====
 
-Overview video
 
 !split
 ===== Numerical Elements =====
@@ -1218,12 +1215,19 @@ print(df1)
 !ec
 and many other operations. 
 
+
 The _Series_ class is another important class included in
 _pandas_. You can view it as a specialization of _DataFrame_ but where
-we have just a single column of data. It shares many of the same features as _DataFrame_. As with _DataFrame_,
-most operations are vectorized, achieving thereby a high performance when dealing with computations of arrays, in particular labeled arrays.
-As we will see below it leads also to a very concice code close to the mathematical operations we may be interested in.
-For multidimensional arrays, we recommend strongly "xarray":"http://xarray.pydata.org/en/stable/". _xarray_ has much of the same flexibility as _pandas_, but allows for the extension to higher dimensions than two.
+we have just a single column of data. It shares many of the same
+features as _DataFrame_. As with _DataFrame_, most operations are
+vectorized, achieving thereby a high performance when dealing with
+computations of arrays, in particular labeled arrays.  As we will see
+below it leads also to a very concice code close to the mathematical
+operations we may be interested in.  For multidimensional arrays, we
+recommend strongly
+"xarray":"http://xarray.pydata.org/en/stable/". _xarray_ has much of
+the same flexibility as _pandas_, but allows for the extension to
+higher dimensions than two.
 
 
 

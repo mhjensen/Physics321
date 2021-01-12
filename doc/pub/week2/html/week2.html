@@ -78,72 +78,78 @@ div { text-align: justify; text-justify: inter-word; }
                2,
                None,
                '___sec4'),
-              ('Dimension, units and labels', 3, None, '___sec5'),
+              ('Dimension, units and labels', 2, None, '___sec5'),
               ('Dimensions and Units', 2, None, '___sec6'),
               ('Elements of Vector Algebra', 2, None, '___sec7'),
               ('Scalars, Vectors and Matrices', 2, None, '___sec8'),
               ('Unit Vectors', 2, None, '___sec9'),
+              ('Our definition of unit vectors', 2, None, '___sec10'),
+              ('More definitions, repeated indices', 2, None, '___sec11'),
               ('Vector Operations, Scalar Product (or dot product)',
                2,
                None,
-               '___sec10'),
-              ('Vector Product (or cross product) of vectors $\\boldsymbol{A}$ '
-               'and $\\boldsymbol{B}$',
+               '___sec12'),
+              ('Vector Product (or cross product) of vectors $\\boldsymbol{a}$ '
+               'and $\\boldsymbol{b}$',
                2,
                None,
-               '___sec11'),
+               '___sec13'),
+              ('More on cross-products', 2, None, '___sec14'),
+              ('Pseudo-vectors', 2, None, '___sec15'),
               ('Differentiation of a vector with respect to a scalar',
                2,
                None,
-               '___sec12'),
-              ('Angular velocity', 2, None, '___sec13'),
-              ('Gradient operator $\\nabla$', 2, None, '___sec14'),
-              ('Some identities', 2, None, '___sec15'),
-              ("Gauss's Theorem", 2, None, '___sec16'),
-              ("and Stokes's Theorem", 2, None, '___sec17'),
-              ('Rotations', 2, None, '___sec18'),
-              ('Multiplying a matrix $C$ times a vector $\\boldsymbol{A}$',
-               2,
-               None,
-               '___sec19'),
-              ('Mutiplying matrices $C$ and $D$', 2, None, '___sec20'),
+               '___sec16'),
+              ('Gradient operator $\\nabla$', 2, None, '___sec17'),
+              ('The curl', 2, None, '___sec18'),
+              ('The Laplacian', 2, None, '___sec19'),
+              ('Some identities', 2, None, '___sec20'),
+              ('More useful relations', 2, None, '___sec21'),
+              ("Gauss's Theorem", 2, None, '___sec22'),
+              ("and Stokes's Theorem", 2, None, '___sec23'),
+              ('Rotations', 2, None, '___sec24'),
+              ('More on the amtrix $U$', 2, None, '___sec25'),
+              ('Properties of the matrix $U$', 2, None, '___sec26'),
+              ('Tensors', 2, None, '___sec27'),
+              ('Rotation matrix', 2, None, '___sec28'),
+              ('Unitary Transformations', 2, None, '___sec29'),
               ('Python programming reminder, elements from "CMSE 201 '
                'INTRODUCTION TO COMPUTATIONAL '
                'MODELING":"https://cmse.msu.edu/academics/undergraduate-program/undergraduate-courses/cmse-201-introduction-to-computational-modeling/" '
                'and how they are used in this course',
                2,
                None,
-               '___sec21'),
-              ('Numerical Elements', 2, None, '___sec22'),
-              ('Computations and the Scientific Method', 2, None, '___sec23'),
-              ('Computational Competences', 2, None, '___sec24'),
+               '___sec30'),
+              ('Numerical Elements', 2, None, '___sec31'),
+              ('Computations and the Scientific Method', 2, None, '___sec32'),
+              ('Computational Competences', 2, None, '___sec33'),
               ('A well-known examples to illustrate many of the above concepts',
                2,
                None,
-               '___sec25'),
-              ('Analyzing the above example', 2, None, '___sec26'),
+               '___sec34'),
+              ('Analyzing the above example', 2, None, '___sec35'),
               ('Python practicalities, Software and needed installations',
                2,
                None,
-               '___sec27'),
-              ('Python installers', 2, None, '___sec28'),
-              ('Useful Python libraries', 2, None, '___sec29'),
+               '___sec36'),
+              ('Python installers', 2, None, '___sec37'),
+              ('Useful Python libraries', 2, None, '___sec38'),
               ('Numpy examples and Important Matrix and vector handling '
                'packages',
                2,
                None,
-               '___sec30'),
-              ('Basic Matrix Features', 2, None, '___sec31'),
-              ('Some famous Matrices', 3, None, '___sec32'),
-              ('More Basic Matrix Features', 3, None, '___sec33'),
-              ('Numpy and arrays', 2, None, '___sec34'),
-              ('Matrices in Python', 2, None, '___sec35'),
-              ('Meet the Pandas', 2, None, '___sec36'),
+               '___sec39'),
+              ('Basic Matrix Features', 2, None, '___sec40'),
+              ('Some famous Matrices', 3, None, '___sec41'),
+              ('More Basic Matrix Features', 3, None, '___sec42'),
+              ('Numpy and arrays', 2, None, '___sec43'),
+              ('Matrices in Python', 2, None, '___sec44'),
+              ('Meet the Pandas', 2, None, '___sec45'),
               ('Introduction to Git and GitHub/GitLab and similar',
                2,
                None,
-               '___sec37'),
-              ('GitHub, GitLab and many other', 2, None, '___sec38')]}
+               '___sec46'),
+              ('GitHub, GitLab and many other', 2, None, '___sec47')]}
 end of tocinfo -->
 
 <body>
@@ -199,7 +205,7 @@ MathJax.Hub.Config({
 <p>
 The first week starts on Monday January 11. This week is dedicated to a
 review of learning material and reminder on programming aspects,
-useful tools, where to find information and much more.
+useful tools, where to find information and much more. There are no lectures during this week and the material here on vectors and Python programming will also be discussed during the week which begins with January 18. 
 
 <ul>
 <li> Introduction to the course and reminder  on vectors, space, time and motion.</li>
@@ -287,7 +293,9 @@ These choices lead to some important questions such as
 <li> is the physics independent of the scale of the length?</li>
 </ul>
 
-<h3 id="___sec5">Dimension, units and labels </h3>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec5">Dimension, units and labels </h2>
 
 <p>
 Throughout this course we will use the standardized SI units. The standard unit for length is thus one meter 1m, for mass
@@ -343,44 +351,18 @@ $$
 \boldsymbol{a} =(a_x,a_y, a_z),
 $$
 
-and using the unit vectors in a cartesian system we have
+and using the unit vectors (see below) in a cartesian system we have
 $$
-\boldsymbol{a} = a_x\boldsymbol{e}_x+a_y\boldsymbol{e}_y+a_z\boldsymbol{e}_z,
-$$
-
-where the unit vectors have magnitude \( \vert\boldsymbol{e}_i\vert = 1 \) with \( i=x,y,z \).
-
-<p>
-Using the fact that multiplication of reals is distributive we can show that
-$$
-\boldsymbol{a}(\boldsymbol{b}+\boldsymbol{c})=\boldsymbol{a}\boldsymbol{b}+\boldsymbol{a}\boldsymbol{c},
+\boldsymbol{a} = a_x\boldsymbol{e}_1+a_y\boldsymbol{e}_2+a_z\boldsymbol{e}_3,
 $$
 
-Similarly we can also show that (using product rule for differentiating reals)
-$$
-\frac{d}{dt}(\boldsymbol{a}\boldsymbol{b})=\boldsymbol{a}\frac{d\boldsymbol{b}}{dt}+\boldsymbol{b}\frac{d\boldsymbol{a}}{dt}.
-$$
+where the unit vectors have magnitude \( \vert\boldsymbol{e}_i\vert = 1 \) with \( i=1=x \), \( i=2=y \) and \( i=3=z \). Some authors use letters \( \boldsymbol{i}=\boldsymbol{e}_1 \), \( \boldsymbol{j}=\boldsymbol{e}_2 \) and \( \boldsymbol{k}=\boldsymbol{e}_3 \).
 
 <p>
-We can repeat these operations for the cross products and show that they are distribuitive
-$$
-\boldsymbol{a}\times(\boldsymbol{b}+\boldsymbol{c})=\boldsymbol{a}\times\boldsymbol{b}+\boldsymbol{a}\times\boldsymbol{c}.
-$$
+For a more general three-dimensional coordinate system, see our definition and labeling of unit vectors in the discussion that follows here.
 
-We have also that
-$$
-\frac{d}{dt}(\boldsymbol{a}\times\boldsymbol{b})=\boldsymbol{a}\times\frac{d\boldsymbol{b}}{dt}+\boldsymbol{b}\times\frac{d\boldsymbol{a}}{dt}.
-$$
-
-The rotation of a three-dimensional  vector \( \boldsymbol{a}=(a_x,a_y,a_z) \) in the \( xy \) plane around an angle \( \phi \) results in a new vector \( \boldsymbol{b}=(b_x,b_y,b_z) \).  This operation can be expressed in terms of linear algebra as a matrix (the rotation matrix) multiplied with a vector. We can write this as
-$$
-\begin{bmatrix} b_x \\ b_y \\ b_z \end{bmatrix} = \begin{bmatrix} \cos{\phi} & \sin{\phi} & 0 \\ -\sin{\phi} & \cos{\phi} & 0 \\ 0 & 0 & 1\end{bmatrix}\begin{bmatrix} a_x \\ a_y \\ a_z \end{bmatrix}.
-$$
-
-We can write this in a more compact form as \( \boldsymbol{b} = \boldsymbol{R}\boldsymbol{a} \), where the rotation matrix is defined as
-$$
-\boldsymbol{R} = \begin{bmatrix} \cos{\phi} & \sin{\phi} & 0 \\ -\sin{\phi} & \cos{\phi} & 0 \\ 0 & 0 & 1\end{bmatrix}.
-$$
+<p>
+We use lower-case letters for vectors and upper-case letters for matrices. Vectors and matrices are always boldfaced.
 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -426,11 +408,11 @@ another. Sometimes this is referred to as an orthonormal basis,
 
 $$
 \begin{equation}
-\hat{e}_i\cdot\hat{e}_j=\delta_{ij}=\left(\begin{array}{ccc}
+\hat{e}_i\cdot\hat{e}_j=\delta_{ij}=\begin{bmatrix}
 1 & 0 & 0\\
 0& 1 & 0\\
 0 & 0 & 1
-\end{array}\right).
+\end{bmatrix}.
 \label{_auto1}
 \end{equation}
 $$
@@ -439,9 +421,17 @@ $$
 Here, \( \delta_{ij} \) is unity when \( i=j \) and is zero otherwise. This is
 called the unit matrix, because you can multiply it with any other
 matrix and not change the matrix. The <b>dot</b> denotes the dot product,
-\( \boldsymbol{A}\cdot\boldsymbol{B}=A_1B_1+A_2B_2+A_3B_3=|A||B|\cos\theta_{AB} \). Sometimes
+\( \boldsymbol{a}\cdot\boldsymbol{b}=a_1b_1+a_2b_2+a_3b_3=|a||b|\cos\theta_{ab} \). Sometimes
 the unit vectors are called \( \hat{x} \), \( \hat{y} \) and
-\( \hat{z} \). Vectors can be decomposed in terms of unit vectors,
+\( \hat{z} \).
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec10">Our definition of unit vectors </h2>
+
+<p>
+Vectors can be decomposed in terms of unit vectors,
 
 $$
 \begin{equation}
@@ -452,30 +442,36 @@ $$
 
 <p>
 The vector components \( r_1 \), \( r_2 \) and \( r_3 \) might be
-called \( x \), \( y \) and \( z \) for a displacement of \( v_x \), \( v_y \) and \( v_z \)
+called \( x \), \( y \) and \( z \) for a displacement. Similarly we use  \( v_x \), \( v_y \) and \( v_z \)
 for a velocity.
 
 <p>
-From here on in, we may use bold face to denote vectors, e.g. \( {\bf
-v} \) instead of \( \boldsymbol{v} \). We also might use dots over quantities to
-represent time derivatives, e.g. \( \dot{\bf v}=d{\bf v}/dt \). As
-mentioned above, repeated indices infer sums, e.g.,
+The notation we will adopt from here and on is the same as in Taylor. This means we
+have
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec11">More definitions, repeated indices </h2>
+
+<p>
+As mentioned above, repeated indices infer sums. This means that when you encounter an expression like the one on the left-hand side here, it stands actually for a sum (right-hand side)
 
 $$
 \begin{eqnarray}
 x_iy_i&=&\sum_i x_iy_i=\boldsymbol{x}\cdot\boldsymbol{y},\\
 \nonumber
-x_iA_{ij}y_j&=&\sum_{ij}x_iA_{ij}y_j,
+x_ia_{ij}y_j&=&\sum_{ij}x_ia_{ij}y_j,
 \end{eqnarray}
 $$
 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec10">Vector Operations, Scalar Product (or dot product) </h2>
+<h2 id="___sec12">Vector Operations, Scalar Product (or dot product) </h2>
 
 <p>
-For vectors \( \boldsymbol{A} \) and \( \boldsymbol{B} \),
+For vectors \( \boldsymbol{a} \) and \( \boldsymbol{b} \) we have
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -483,31 +479,41 @@ For vectors \( \boldsymbol{A} \) and \( \boldsymbol{B} \),
 <p>
 $$
 \begin{eqnarray*}
-\boldsymbol{A}\cdot\boldsymbol{B}&=&A_iB_i=|A||B|\cos\theta_{AB},\\
-|A|&\equiv& \sqrt{\boldsymbol{A}\cdot\boldsymbol{A}}.
+\boldsymbol{a}\cdot\boldsymbol{b}&=&a_ib_i=|a||b|\cos\theta_{ab},\\
+|a|&\equiv& \sqrt{\boldsymbol{a}\cdot\boldsymbol{a}},
 \end{eqnarray*}
 $$
 
+or with a norm-2 notation
+$$
+|a|\equiv \vert\vert \boldsymbol{a}\vert\vert_2=\sqrt{\sum_i a_i^2}.
+$$
+</div>
+
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
 <p>
 Note that the summation sign is inferred any time there are repeated indices. For example, 
 
 $$
-\begin{eqnarray}
-A_iB_i&=&\sum A_iB_i.
-\end{eqnarray}
+a_ib_i=\sum_i a_ib_i.
 $$
+
+
 </div>
 
 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec11">Vector Product (or cross product) of vectors \( \boldsymbol{A} \) and \( \boldsymbol{B} \) </h2>
+<h2 id="___sec13">Vector Product (or cross product) of vectors \( \boldsymbol{a} \) and \( \boldsymbol{b} \) </h2>
 
 $$
 \begin{eqnarray*}
-\boldsymbol{C}&=&\boldsymbol{A}\times\boldsymbol{B},\\
-C_i&=&\epsilon_{ijk}A_jB_k.
+\boldsymbol{c}&=&\boldsymbol{a}\times\boldsymbol{b},\\
+c_i&=&\epsilon_{ijk}a_jb_k.
 \end{eqnarray*}
 $$
 
@@ -516,8 +522,7 @@ Here \( \epsilon \) is the third-rank anti-symmetric tensor, also known as
 the Levi-Civita symbol. It is \( \pm 1 \) only if all three indices are
 different, and is zero otherwise. The choice of \( \pm 1 \) depends on
 whether the indices are an even or odd permutation of the original
-symbols. The permutation \( xyz \) or \( 123 \) is considered to be \( +1 \). For
-the 27 elements,
+symbols. The permutation \( xyz \) or \( 123 \) is considered to be \( +1 \). Its elements are
 
 $$
 \begin{eqnarray}
@@ -532,7 +537,12 @@ $$
 $$
 
 <p>
-You used cross products extensively when studying magnetic
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec14">More on cross-products </h2>
+
+<p>
+You may have met cross-products when studying magnetic
 fields. Because the matrix is anti-symmetric, switching the \( x \) and
 \( y \) axes (or any two axes) flips the sign. If the coordinate system is
 right-handed, meaning the \( xyz \) axes satisfy
@@ -540,14 +550,19 @@ right-handed, meaning the \( xyz \) axes satisfy
 with your extended right index finger, the \( y \) axis with your
 contracted middle finger and the \( z \) axis with your extended
 thumb. Switching to a left-handed system flips the sign of the vector
-\( \boldsymbol{C}=\boldsymbol{A}\times\boldsymbol{B} \). Note that
-\( \boldsymbol{A}\times\boldsymbol{B}=-\boldsymbol{B}\times\boldsymbol{A} \). The vector \( \boldsymbol{C} \) is
-perpendicular to both \( \boldsymbol{A} \) and \( \boldsymbol{B} \) and the magnitude of
-\( \boldsymbol{C} \) is given by
+\( \boldsymbol{c}=\boldsymbol{a}\times\boldsymbol{b} \). Note that
+\( \boldsymbol{a}\times\boldsymbol{b}=-\boldsymbol{b}\times\boldsymbol{a} \). The vector \( \boldsymbol{c} \) is
+perpendicular to both \( \boldsymbol{a} \) and \( \boldsymbol{b} \) and the magnitude of
+\( \boldsymbol{c} \) is given by
 
 $$
-|C|=|A||B|\sin\theta_{AB}.
+|c|=|a||a|\sin\theta_{ab}.
 $$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec15">Pseudo-vectors </h2>
 
 <p>
 Vectors obtained by the cross product of two real vectors are called
@@ -569,31 +584,20 @@ is precisely what is observed in weak decays.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec12">Differentiation of a vector with respect to a scalar </h2>
+<h2 id="___sec16">Differentiation of a vector with respect to a scalar </h2>
 
 <p>
 For example, the
-acceleration is \( d\boldsymbol{v}/dt \)
-
+acceleration \( \boldsymbol{a} \) is given by the change in velocity per time unit, \( \bm {a}=d\boldsymbol{v}/dt \)
+with components
 $$
-(d\boldsymbol{v}/dt)_i=\frac{dv_i}{dt}.
+a_i = (d\boldsymbol{v}/dt)_i=\frac{dv_i}{dt}.
 $$
 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec13">Angular velocity </h2>
-
-<p>
-Choose the vector \( \boldsymbol{\omega} \) so that the motion
-is like your fingers wrapping around your thumb on your right hand
-with \( \boldsymbol{\omega} \) pointing along your thumb. The magnitude is
-\( d|\phi|/dt \).
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec14">Gradient operator \( \nabla \) </h2>
+<h2 id="___sec17">Gradient operator \( \nabla \) </h2>
 
 <p>
 This is the derivative \( \partial/\partial
@@ -609,15 +613,26 @@ $$
 For taking the dot product of the gradient with a vector, sometimes called a divergence,
 
 $$
-div \boldsymbol{A}, \nabla\cdot\boldsymbol{A}=\partial_i A_i.
+div \boldsymbol{a}, \nabla\cdot\boldsymbol{a}=\partial_i a_i.
 $$
 
 <p>
-For taking the vector product with another vector, sometimes called curl, \( \nabla\times\boldsymbol{A} \),
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec18">The curl </h2>
+
+<p>
+For taking the vector product with another vector, sometimes called <b>curl</b>,
+\( \nabla\times\boldsymbol{a} \),
 
 $$
-{\rm\bf curl}~\boldsymbol{A}, (\nabla\times\boldsymbol{A})_i=\epsilon_{ijk}\partial_j A_k(\boldsymbol{r},t).
+{\rm\bf curl}~\boldsymbol{a}, (\nabla\times\boldsymbol{a})_i=\epsilon_{ijk}\partial_j a_k(\boldsymbol{r},t).
 $$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec19">The Laplacian </h2>
 
 <p>
 The Laplacian is referred to as \( \nabla^2 \) and is defined as
@@ -629,26 +644,53 @@ $$
 <p>
 <!-- !split  -->
 
-<h2 id="___sec15">Some identities </h2>
+<h2 id="___sec20">Some identities </h2>
 
 <p>
-Here we simply state these, but you may wish to prove a few. They are useful for this class and will be essential when you study E\&M.
+Here we simply state these, but you may wish to prove a few. They are useful for this class and will be essential when you study electromagnetism.
 
 $$
 \begin{eqnarray}
-\boldsymbol{A}\cdot(\boldsymbol{B}\times\boldsymbol{C})&=&\boldsymbol{B}\cdot(\boldsymbol{C}\times\boldsymbol{A})=\boldsymbol{C}\cdot(\boldsymbol{A}\times\boldsymbol{B})\\
+\boldsymbol{a}\cdot(\boldsymbol{b}\times\boldsymbol{c})&=&\boldsymbol{b}\cdot(\boldsymbol{c}\times\boldsymbol{a})=\boldsymbol{c}\cdot(\boldsymbol{a}\times\boldsymbol{b})\\
 \nonumber
-\boldsymbol{A}\times(\boldsymbol{B}\times\boldsymbol{C})&=&(\boldsymbol{A}\cdot\boldsymbol{C})\boldsymbol{B}-(\boldsymbol{A}\cdot\boldsymbol{B})\boldsymbol{C}\\
+\boldsymbol{a}\times(\boldsymbol{b}\times\boldsymbol{c})&=&(\boldsymbol{a}\cdot\boldsymbol{c})\boldsymbol{b}-(\boldsymbol{a}\cdot\boldsymbol{b})\boldsymbol{c}\\
 \nonumber
-(\boldsymbol{A}\times\boldsymbol{B})\cdot(\boldsymbol{C}\times\boldsymbol{D})&=&(\boldsymbol{A}\cdot\boldsymbol{C})(\boldsymbol{B}\cdot\boldsymbol{D})
--(\boldsymbol{A}\cdot\boldsymbol{D})(\boldsymbol{B}\cdot\boldsymbol{C})
+(\boldsymbol{a}\times\boldsymbol{b})\cdot(\boldsymbol{c}\times\boldsymbol{d})&=&(\boldsymbol{a}\cdot\boldsymbol{c})(\boldsymbol{b}\cdot\boldsymbol{d})
+-(\boldsymbol{a}\cdot\boldsymbol{d})(\boldsymbol{b}\cdot\boldsymbol{c})
 \end{eqnarray}
 $$
 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec16">Gauss's Theorem  </h2>
+<h2 id="___sec21">More useful relations </h2>
+
+<p>
+Using the fact that multiplication of reals is distributive we can show that
+$$
+\boldsymbol{a}(\boldsymbol{b}+\boldsymbol{c})=\boldsymbol{a}\boldsymbol{b}+\boldsymbol{a}\boldsymbol{c},
+$$
+
+Similarly we can also show that (using product rule for differentiating reals)
+$$
+\frac{d}{dt}(\boldsymbol{a}\boldsymbol{b})=\boldsymbol{a}\frac{d\boldsymbol{b}}{dt}+\boldsymbol{b}\frac{d\boldsymbol{a}}{dt}.
+$$
+
+<p>
+We can repeat these operations for the cross products and show that they are distribuitive
+$$
+\boldsymbol{a}\times(\boldsymbol{b}+\boldsymbol{c})=\boldsymbol{a}\times\boldsymbol{b}+\boldsymbol{a}\times\boldsymbol{c}.
+$$
+
+We have also that
+$$
+\frac{d}{dt}(\boldsymbol{a}\times\boldsymbol{b})=\boldsymbol{a}\times\frac{d\boldsymbol{b}}{dt}+\boldsymbol{b}\times\frac{d\boldsymbol{a}}{dt}.
+$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec22">Gauss's Theorem  </h2>
 
 <p>
 For an integral over a volume \( V \) confined by a surface \( S \), Gauss's theorem gives
@@ -667,7 +709,7 @@ $$
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec17">and Stokes's Theorem </h2>
+<h2 id="___sec23">and Stokes's Theorem </h2>
 
 <p>
 Stoke's law can be understood by considering a small rectangle,
@@ -692,7 +734,7 @@ Here \( \Delta S \) is the area of the surface element.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec18">Rotations </h2>
+<h2 id="___sec24">Rotations </h2>
 
 <p>
 <b>Note</b>: The material on matrices is optional and will not be used much (except for illustrations at the very end on garmonic oscillations) since most of you have not yet taken a course on linear algebra. The material is however included here for the sake of completeness.
@@ -708,7 +750,9 @@ $$
 $$
 
 <p>
-Even though it is the same vector, the components have changed. Each new unit vector \( \hat{e}'_i \) can be expressed as a linear sum of the previous vectors,
+Even though it is the same vector, the components have changed. Each
+new unit vector \( \hat{e}'_i \) can be expressed as a linear sum of the
+previous vectors,
 
 $$
 \begin{equation}
@@ -730,20 +774,30 @@ $$
 $$
 
 <p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec25">More on the amtrix \( U \) </h2>
+
+<p>
 Thus, the matrix lambda has components \( U_{ij} \) that are equal to the
 cosine of the angle between new unit vector \( \hat{e}'_i \) and the old
 unit vector \( \hat{e}_j \).
 
 $$
 \begin{equation}
-U = \left(\begin{array}{ccc}
+U = \begin{bmatrix}
 \hat{e}'_1\cdot\hat{e}_1& \hat{e}'_1\cdot\hat{e}_2& \hat{e}'_1\cdot\hat{e}_3\\
 \hat{e}'_2\cdot\hat{e}_1& \hat{e}'_2\cdot\hat{e}_2& \hat{e}'_2\cdot\hat{e}_3\\
 \hat{e}'_3\cdot\hat{e}_1& \hat{e}'_3\cdot\hat{e}_2& \hat{e}'_3\cdot\hat{e}_3
-\end{array}\right),~~~~~U_{ij}=\hat{e}'_i\cdot\hat{e}_j=\cos\theta_{ij}.
+\end{bmatrix},~~~~~U_{ij}=\hat{e}'_i\cdot\hat{e}_j=\cos\theta_{ij}.
 \label{_auto5}
 \end{equation}
 $$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec26">Properties of the matrix \( U \) </h2>
 
 <p>
 Note that the matrix is not symmetric, \( U_{ij}\ne U_{ji} \). One can also look at the inverse transformation, by switching the primed and unprimed coordinates,
@@ -766,6 +820,11 @@ $$
 U^{-1}&=&U^{t}.
 \end{eqnarray}
 $$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec27">Tensors </h2>
 
 <p>
 A tensor obeying Eq. \eqref{eq:transposedef} defines what is known as
@@ -811,7 +870,16 @@ Eq. \eqref{eq:inverseU} is the same one that transforms the
 coordinates of a vector, Eq. \eqref{eq:rotateR}.
 
 <p>
-Find the rotation matrix \( U \) for finding the components in the primed coordinate system given from those in the unprimed system, given that the unit vectors in the new system are found by rotating the coordinate system by and angle \( \phi \) about the \( z \) axis.
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec28">Rotation matrix </h2>
+
+<p>
+As a small exercise, find the rotation matrix \( U \) for finding the
+components in the primed coordinate system given from those in the
+unprimed system, given that the unit vectors in the new system are
+found by rotating the coordinate system by and angle \( \phi \) about the
+\( z \) axis.
 
 <p>
 In this case
@@ -824,7 +892,7 @@ $$
 \end{eqnarray*}
 $$
 
-By inspecting Eq. \eqref{eq:lambda_angles},
+By inspecting Eq. \eqref{eq:lambda_angles}, we get
 
 $$
 U=\left(\begin{array}{ccc}
@@ -832,6 +900,11 @@ U=\left(\begin{array}{ccc}
 \sin\phi&\cos\phi&0\\
 0&0&1\end{array}\right).
 $$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec29">Unitary Transformations </h2>
 
 <p>
 Under a unitary transformation \( U \) (or basis transformation) scalars
@@ -880,39 +953,12 @@ A similar example is the determinant of a matrix, which is also a scalar.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec19">Multiplying a matrix \( C \) times a vector \( \boldsymbol{A} \) </h2>
-
-$$
-(CA)_i=C_{ij}A_j.
-$$
-
-<p>
-For the \( i^{\rm th} \) element one takes the scalar product of the \( i^{\rm th} \) row of \( C \) with the vector \( \boldsymbol{A} \).
+<h2 id="___sec30">Python programming reminder, elements from <a href="https://cmse.msu.edu/academics/undergraduate-program/undergraduate-courses/cmse-201-introduction-to-computational-modeling/" target="_blank">CMSE 201 INTRODUCTION TO COMPUTATIONAL MODELING</a> and how they are used in this course </h2>
 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec20">Mutiplying matrices \( C \) and \( D \) </h2>
-
-$$
-(CD)_{ij}=C_{ik}D_{kj},
-$$
-
-<p>
-This means the one obtains the \( ij \) element by taking the scalar product of the \( i^{\rm th} \) of \( C \) with the \( j^{\rm th} \) column of \( D \).
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec21">Python programming reminder, elements from <a href="https://cmse.msu.edu/academics/undergraduate-program/undergraduate-courses/cmse-201-introduction-to-computational-modeling/" target="_blank">CMSE 201 INTRODUCTION TO COMPUTATIONAL MODELING</a> and how they are used in this course </h2>
-
-<p>
-Overview video
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec22">Numerical Elements </h2>
+<h2 id="___sec31">Numerical Elements </h2>
 
 <p>
 Numerical algorithms call for approximate discrete models and much of
@@ -947,7 +993,7 @@ Computing provides us with the tools to develope our own understanding of the sc
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec23">Computations and the Scientific Method </h2>
+<h2 id="___sec32">Computations and the Scientific Method </h2>
 
 <p>
 The way we will teach this course reflects this definition of
@@ -968,7 +1014,7 @@ these topics.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec24">Computational Competences </h2>
+<h2 id="___sec33">Computational Competences </h2>
 
 <p>
 These competences will enable you to
@@ -1000,7 +1046,7 @@ particular problem.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec25">A well-known examples to illustrate many of the above concepts </h2>
+<h2 id="___sec34">A well-known examples to illustrate many of the above concepts </h2>
 
 <p>
 Before we venture into a reminder on Python and mechanics relevant applications, let us briefly outline some of the
@@ -1060,7 +1106,7 @@ plt<span style="color: #666666">.</span>show()
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec26">Analyzing the above example </h2>
+<h2 id="___sec35">Analyzing the above example </h2>
 
 <p>
 This example shows the potential of combining numerical algorithms
@@ -1076,7 +1122,7 @@ with symbolic calculations, allowing us to
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec27">Python practicalities, Software and needed installations </h2>
+<h2 id="___sec36">Python practicalities, Software and needed installations </h2>
 
 <p>
 We will make extensive use of Python as programming language and its
@@ -1112,7 +1158,7 @@ you can use <b>pip</b> as well and simply install Python as
 
 etc etc.
 
-<h2 id="___sec28">Python installers </h2>
+<h2 id="___sec37">Python installers </h2>
 
 <p>
 If you don't want to perform these operations separately and venture
@@ -1146,7 +1192,7 @@ no setup and runs entirely in the cloud. Try it out!
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec29">Useful Python libraries </h2>
+<h2 id="___sec38">Useful Python libraries </h2>
 Here we list several useful Python libraries we strongly recommend (if you use anaconda many of these are already there)
 
 <ul>
@@ -1178,7 +1224,7 @@ And to add more versatility, the Python package <a href="http://www.sympy.org/en
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec30">Numpy examples and Important Matrix and vector handling packages </h2>
+<h2 id="___sec39">Numpy examples and Important Matrix and vector handling packages </h2>
 
 <p>
 There are several central software libraries for linear algebra and eigenvalue problems. Several of the more
@@ -1194,7 +1240,7 @@ developed in the 1970s, namely EISPACK and LINPACK.  We describe them shortly he
 
 !spli
 
-<h2 id="___sec31">Basic Matrix Features </h2>
+<h2 id="___sec40">Basic Matrix Features </h2>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -1239,7 +1285,7 @@ $$
 </div>
 
 
-<h3 id="___sec32">Some famous Matrices </h3>
+<h3 id="___sec41">Some famous Matrices </h3>
 
 <ul>
   <li> Diagonal if \( a_{ij}=0 \) for \( i\ne j \)</li>
@@ -1253,7 +1299,7 @@ $$
   <li> Banded, block upper triangular, block lower triangular....</li>
 </ul>
 
-<h3 id="___sec33">More Basic Matrix Features </h3>
+<h3 id="___sec42">More Basic Matrix Features </h3>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -1272,7 +1318,7 @@ For an \( N\times N \) matrix  \( \mathbf{A} \) the following properties are all
 </div>
 
 
-<h2 id="___sec34">Numpy and arrays </h2>
+<h2 id="___sec43">Numpy and arrays </h2>
 <a href="http://www.numpy.org/" target="_blank">Numpy</a> provides an easy way to handle arrays in Python. The standard way to import this library is as
 
 <p>
@@ -1357,7 +1403,7 @@ x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>l
 <span style="color: #008000">print</span>(x<span style="color: #666666">.</span>itemsize)
 </pre></div>
 
-<h2 id="___sec35">Matrices in Python </h2>
+<h2 id="___sec44">Matrices in Python </h2>
 
 <p>
 Having defined vectors, we are now ready to try out matrices. We can
@@ -1425,7 +1471,7 @@ A <span style="color: #666666">=</span> np<span style="color: #666666">.</span>r
 <span style="color: #008000">print</span>(A) 
 </pre></div>
 
-<h2 id="___sec36">Meet the Pandas </h2>
+<h2 id="___sec45">Meet the Pandas </h2>
 
 <p>
 <br /><br /><center><p><img src="fig/pandas.jpg" align="bottom" width=600></p></center><br /><br />
@@ -1556,15 +1602,21 @@ and many other operations.
 <p>
 The <b>Series</b> class is another important class included in
 <b>pandas</b>. You can view it as a specialization of <b>DataFrame</b> but where
-we have just a single column of data. It shares many of the same features as <b>DataFrame</b>. As with <b>DataFrame</b>,
-most operations are vectorized, achieving thereby a high performance when dealing with computations of arrays, in particular labeled arrays.
-As we will see below it leads also to a very concice code close to the mathematical operations we may be interested in.
-For multidimensional arrays, we recommend strongly <a href="http://xarray.pydata.org/en/stable/" target="_blank">xarray</a>. <b>xarray</b> has much of the same flexibility as <b>pandas</b>, but allows for the extension to higher dimensions than two.
+we have just a single column of data. It shares many of the same
+features as <b>DataFrame</b>. As with <b>DataFrame</b>, most operations are
+vectorized, achieving thereby a high performance when dealing with
+computations of arrays, in particular labeled arrays.  As we will see
+below it leads also to a very concice code close to the mathematical
+operations we may be interested in.  For multidimensional arrays, we
+recommend strongly
+<a href="http://xarray.pydata.org/en/stable/" target="_blank">xarray</a>. <b>xarray</b> has much of
+the same flexibility as <b>pandas</b>, but allows for the extension to
+higher dimensions than two.
 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec37">Introduction to Git and GitHub/GitLab and similar  </h2>
+<h2 id="___sec46">Introduction to Git and GitHub/GitLab and similar  </h2>
 
 <p>
 <a href="https://git-scm.com/" target="_blank">Git</a> is a distributed version-control system
@@ -1582,7 +1634,7 @@ We believe you will find version-control software very useful in your work.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec38">GitHub, GitLab and many other </h2>
+<h2 id="___sec47">GitHub, GitLab and many other </h2>
 
 <p>
 <a href="https://github.com/" target="_blank">GitHub</a>, <a href="https://about.gitlab.com/" target="_blank">GitLab</a>, <a href="https://bitbucket.org/product?&aceid=&adposition=&adgroup=92266806717&campaign=1407243017&creative=414608923671&device=c&keyword=bitbucket&matchtype=e&network=g&placement=&ds_kids=p51241248597&ds_e=GOOGLE&ds_eid=700000001551985&ds_e1=GOOGLE&gclid=Cj0KCQiA6Or_BRC_ARIsAPzuer_yrxzs-R8KDVdF0-DduJR9hTBYcjdE8L9_CkA9eyz8XT7-3bFGOpQaAqe2EALw_wcB&gclsrc=aw.ds" target="_blank">Bitbucket</a> and other are code hosting platforms for
