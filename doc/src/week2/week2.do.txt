@@ -919,7 +919,7 @@ developed in the 1970s, namely EISPACK and LINPACK.  We describe them shortly he
   * LAPACK:package for solving symmetric, unsymmetric and generalized eigenvalue problems. From LAPACK's website URL: "http://www.netlib.org" it is possible to download for free all source codes from this library. Both C/C++ and Fortran versions are available.
   * BLAS (I, II and III): (Basic Linear Algebra Subprograms) are routines that provide standard building blocks for performing basic vector and matrix operations. Blas I is vector operations, II vector-matrix operations and III matrix-matrix operations. Highly parallelized and efficient codes, all available for download from URL: "http://www.netlib.org".
 
-!spli
+!split
 ===== Basic Matrix Features =====
 
 !bblock Matrix properties reminder
@@ -941,6 +941,8 @@ developed in the 1970s, namely EISPACK and LINPACK.  We describe them shortly he
 !et
 
 
+!split
+===== Inverse of a Matrix =====
 
 The inverse of a matrix is defined by
 
@@ -963,8 +965,8 @@ The inverse of a matrix is defined by
 
 !eblock
 
-
-=== Some famous Matrices ===
+!split
+===== Some famous Matrices =====
 
   * Diagonal if $a_{ij}=0$ for $i\ne j$
   * Upper triangular if $a_{ij}=0$ for $i > j$
@@ -976,8 +978,8 @@ The inverse of a matrix is defined by
   * Upper banded with bandwidth $p$: $a_{ij}=0$ for $i < j+p$
   * Banded, block upper triangular, block lower triangular....
 
-
-=== More Basic Matrix Features ===
+!split
+===== More Basic Matrix Features =====
 
 !bblock Some Equivalent Statements
 For an $N\times N$ matrix  $\mathbf{A}$ the following properties are all equivalent
@@ -990,8 +992,9 @@ For an $N\times N$ matrix  $\mathbf{A}$ the following properties are all equival
   * $0$ is not eigenvalue of $\mathbf{A}$.
 !eblock
 
-
+!split
 ===== Numpy and arrays =====
+
 "Numpy":"http://www.numpy.org/" provides an easy way to handle arrays in Python. The standard way to import this library is as
 
 !bc pycod
@@ -1054,7 +1057,7 @@ x = np.log(np.array([4.0, 7.0, 8.0])
 print(x.itemsize)
 !ec
 
-
+!split
 ===== Matrices in Python =====
 
 Having defined vectors, we are now ready to try out matrices. We can
@@ -1105,7 +1108,7 @@ A = np.random.rand(n, n)
 print(A) 
 !ec 
 
-
+!split
 ===== Meet the Pandas =====
 
 
