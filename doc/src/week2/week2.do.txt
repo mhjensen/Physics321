@@ -41,6 +41,7 @@ and deeper understanding about physical systems.
 
 !split
 ===== From Continuous to Discretized Approaches =====
+
 There is a wealth of
 well-tested (from both a physics point of view and a pedagogical
 standpoint) exercises and problems which can be solved
@@ -56,7 +57,13 @@ We aim at changing this here by introducing throughout the course what
 we will call a _computational path_, where with computations we mean
 solving scientific problems with all possible tools and means, from
 plain paper an pencil exercises, via symbolic calculations to writing
-a code and running a program to solve a specific problem.
+a code and running a program to solve a specific
+problem. Mathematically this normally means that we move from a
+continuous problem to a discretized one. This appproach enables us to
+solve a much broader class of problems.
+In mechanics this means, since we often rephrase the physical problems in terms of differential equations, that we can in most settings reuse the same program with some minimal changes. 
+
+
 
 
 
@@ -1093,10 +1100,20 @@ Another useful Python package is
 "pandas":"https://pandas.pydata.org/", which is an open source library
 providing high-performance, easy-to-use data structures and data
 analysis tools for Python. _pandas_ stands for panel data, a term borrowed from econometrics and is an efficient library for data analysis with an emphasis on tabular data.
-_pandas_ has two major classes, the _DataFrame_ class with two-dimensional data objects and tabular data organized in columns and the class _Series_ with a focus on one-dimensional data objects. Both classes allow you to index data easily as we will see in the examples below. 
-_pandas_ allows you also to perform mathematical operations on the data, spanning from simple reshapings of vectors and matrices to statistical operations. 
 
-The following simple example shows how we can, in an easy way make tables of our data. Here we define a data set which includes names, place of birth and date of birth, and displays the data in an easy to read way. We will see repeated use of _pandas_, in particular in connection with classification of data. 
+_pandas_ has two major classes, the _DataFrame_ class with
+two-dimensional data objects and tabular data organized in columns and
+the class _Series_ with a focus on one-dimensional data objects. Both
+classes allow you to index data easily as we will see in the examples
+below.  _pandas_ allows you also to perform mathematical operations on
+the data, spanning from simple reshapings of vectors and matrices to
+statistical operations.
+
+The following simple example shows how we can, in an easy way make
+tables of our data. Here we define a data set which includes names,
+place of birth and date of birth, and displays the data in an easy to
+read way. We will see repeated use of _pandas_, in particular in
+connection with classification of data.
 
 !bc pycod 
 import pandas as pd
@@ -1185,7 +1202,7 @@ and many other operations.
 
 The _Series_ class is another important class included in
 _pandas_. You can view it as a specialization of _DataFrame_ but where
-we have just a single column of data. It shares many of the same features as _DataFrame. As with _DataFrame_,
+we have just a single column of data. It shares many of the same features as _DataFrame_. As with _DataFrame_,
 most operations are vectorized, achieving thereby a high performance when dealing with computations of arrays, in particular labeled arrays.
 As we will see below it leads also to a very concice code close to the mathematical operations we may be interested in.
 For multidimensional arrays, we recommend strongly "xarray":"http://xarray.pydata.org/en/stable/". _xarray_ has much of the same flexibility as _pandas_, but allows for the extension to higher dimensions than two.

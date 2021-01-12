@@ -236,6 +236,8 @@ and deeper understanding about physical systems.
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
 <h2 id="___sec3">From Continuous to Discretized Approaches </h2>
+
+<p>
 There is a wealth of
 well-tested (from both a physics point of view and a pedagogical
 standpoint) exercises and problems which can be solved
@@ -252,7 +254,11 @@ We aim at changing this here by introducing throughout the course what
 we will call a <b>computational path</b>, where with computations we mean
 solving scientific problems with all possible tools and means, from
 plain paper an pencil exercises, via symbolic calculations to writing
-a code and running a program to solve a specific problem.
+a code and running a program to solve a specific
+problem. Mathematically this normally means that we move from a
+continuous problem to a discretized one. This appproach enables us to
+solve a much broader class of problems.
+In mechanics this means, since we often rephrase the physical problems in terms of differential equations, that we can in most settings reuse the same program with some minimal changes.
 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -1429,11 +1435,22 @@ Another useful Python package is
 <a href="https://pandas.pydata.org/" target="_blank">pandas</a>, which is an open source library
 providing high-performance, easy-to-use data structures and data
 analysis tools for Python. <b>pandas</b> stands for panel data, a term borrowed from econometrics and is an efficient library for data analysis with an emphasis on tabular data.
-<b>pandas</b> has two major classes, the <b>DataFrame</b> class with two-dimensional data objects and tabular data organized in columns and the class <b>Series</b> with a focus on one-dimensional data objects. Both classes allow you to index data easily as we will see in the examples below. 
-<b>pandas</b> allows you also to perform mathematical operations on the data, spanning from simple reshapings of vectors and matrices to statistical operations.
 
 <p>
-The following simple example shows how we can, in an easy way make tables of our data. Here we define a data set which includes names, place of birth and date of birth, and displays the data in an easy to read way. We will see repeated use of <b>pandas</b>, in particular in connection with classification of data.
+<b>pandas</b> has two major classes, the <b>DataFrame</b> class with
+two-dimensional data objects and tabular data organized in columns and
+the class <b>Series</b> with a focus on one-dimensional data objects. Both
+classes allow you to index data easily as we will see in the examples
+below.  <b>pandas</b> allows you also to perform mathematical operations on
+the data, spanning from simple reshapings of vectors and matrices to
+statistical operations.
+
+<p>
+The following simple example shows how we can, in an easy way make
+tables of our data. Here we define a data set which includes names,
+place of birth and date of birth, and displays the data in an easy to
+read way. We will see repeated use of <b>pandas</b>, in particular in
+connection with classification of data.
 
 <p>
 
@@ -1539,7 +1556,7 @@ and many other operations.
 <p>
 The <b>Series</b> class is another important class included in
 <b>pandas</b>. You can view it as a specialization of <b>DataFrame</b> but where
-we have just a single column of data. It shares many of the same features as _DataFrame. As with <b>DataFrame</b>,
+we have just a single column of data. It shares many of the same features as <b>DataFrame</b>. As with <b>DataFrame</b>,
 most operations are vectorized, achieving thereby a high performance when dealing with computations of arrays, in particular labeled arrays.
 As we will see below it leads also to a very concice code close to the mathematical operations we may be interested in.
 For multidimensional arrays, we recommend strongly <a href="http://xarray.pydata.org/en/stable/" target="_blank">xarray</a>. <b>xarray</b> has much of the same flexibility as <b>pandas</b>, but allows for the extension to higher dimensions than two.
