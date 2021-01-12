@@ -88,7 +88,8 @@ These choices lead to some important questions such as
 * is the physics independent of the orientation of system?
 * is the physics independent of the scale of the length?
 
-=== Dimension, units and labels ===
+!split
+===== Dimension, units and labels =====
 
 Throughout this course we will use the standardized SI units. The standard unit for length is thus one meter 1m, for mass
 one kilogram 1kg, for time one second 1s, for force one Newton 1kgm/s$^2$ and for energy 1 Joule 1kgm$^2$s$^{-2}$.
@@ -135,51 +136,17 @@ In these lectures we will use boldfaced lower-case letters to label a vector. A 
 \bm{a} =(a_x,a_y, a_z),
 \]
 !et
-and using the unit vectors in a cartesian system we have
+and using the unit vectors (see below) in a cartesian system we have
 !bt
 \[
-\bm{a} = a_x\bm{e}_x+a_y\bm{e}_y+a_z\bm{e}_z,
+\bm{a} = a_x\bm{e}_1+a_y\bm{e}_2+a_z\bm{e}_3,
 \]
 !et
-where the unit vectors have magnitude $\vert\bm{e}_i\vert = 1$ with $i=x,y,z$.
+where the unit vectors have magnitude $\vert\bm{e}_i\vert = 1$ with $i=1=x$, $i=2=y$ and $i=3=z$. Some authors use letters $\bm{i}=\bm{e}_1$, $\bm{j}=\bm{e}_2$ and $\bm{k}=\bm{e}_3$.
 
-Using the fact that multiplication of reals is distributive we can show that
-!bt
-\[
-\bm{a}(\bm{b}+\bm{c})=\bm{a}\bm{b}+\bm{a}\bm{c},
-\]
-!et
-Similarly we can also show that (using product rule for differentiating reals)
-!bt
-\[
-\frac{d}{dt}(\bm{a}\bm{b})=\bm{a}\frac{d\bm{b}}{dt}+\bm{b}\frac{d\bm{a}}{dt}.
-\]
-!et
+For a more general three-dimensional coordinate system, see our definition and labeling of unit vectors in the discussion that follows here.
 
-We can repeat these operations for the cross products and show that they are distribuitive
-!bt
-\[
-\bm{a}\times(\bm{b}+\bm{c})=\bm{a}\times\bm{b}+\bm{a}\times\bm{c}.
-\]
-!et
-We have also that
-!bt
-\[
-\frac{d}{dt}(\bm{a}\times\bm{b})=\bm{a}\times\frac{d\bm{b}}{dt}+\bm{b}\times\frac{d\bm{a}}{dt}.
-\]
-!et
-The rotation of a three-dimensional  vector $\bm{a}=(a_x,a_y,a_z)$ in the $xy$ plane around an angle $\phi$ results in a new vector $\bm{b}=(b_x,b_y,b_z)$.  This operation can be expressed in terms of linear algebra as a matrix (the rotation matrix) multiplied with a vector. We can write this as
-!bt
-\[
-\begin{bmatrix} b_x \\ b_y \\ b_z \end{bmatrix} = \begin{bmatrix} \cos{\phi} & \sin{\phi} & 0 \\ -\sin{\phi} & \cos{\phi} & 0 \\ 0 & 0 & 1\end{bmatrix}\begin{bmatrix} a_x \\ a_y \\ a_z \end{bmatrix}.
-\]
-!et
-We can write this in a more compact form as $\bm{b} = \bm{R}\bm{a}$, where the rotation matrix is defined as
-!bt
-\[
-\bm{R} = \begin{bmatrix} \cos{\phi} & \sin{\phi} & 0 \\ -\sin{\phi} & \cos{\phi} & 0 \\ 0 & 0 & 1\end{bmatrix}.
-\]
-!et
+We use lower-case letters for vectors and upper-case letters for matrices. Vectors and matrices are always boldfaced.
 
 !split
 ===== Scalars, Vectors and Matrices =====
@@ -217,20 +184,26 @@ another. Sometimes this is referred to as an orthonormal basis,
 
 !bt
 \begin{equation}
-\hat{e}_i\cdot\hat{e}_j=\delta_{ij}=\left(\begin{array}{ccc}
+\hat{e}_i\cdot\hat{e}_j=\delta_{ij}=\begin{bmatrix}
 1 & 0 & 0\\
 0& 1 & 0\\
 0 & 0 & 1
-\end{array}\right).
+\end{bmatrix}.
 \end{equation}
 !et
 
 Here, $\delta_{ij}$ is unity when $i=j$ and is zero otherwise. This is
 called the unit matrix, because you can multiply it with any other
 matrix and not change the matrix. The _dot_ denotes the dot product,
-$\bm{A}\cdot\bm{B}=A_1B_1+A_2B_2+A_3B_3=|A||B|\cos\theta_{AB}$. Sometimes
+$\bm{a}\cdot\bm{b}=a_1b_1+a_2b_2+a_3b_3=|a||b|\cos\theta_{ab}$. Sometimes
 the unit vectors are called $\hat{x}$, $\hat{y}$ and
-$\hat{z}$. Vectors can be decomposed in terms of unit vectors,
+$\hat{z}$.
+
+
+!split
+===== Our definition of unit vectors =====
+
+Vectors can be decomposed in terms of unit vectors,
 
 !bt
 \begin{equation}
@@ -239,51 +212,63 @@ $\hat{z}$. Vectors can be decomposed in terms of unit vectors,
 !et
 
 The vector components $r_1$, $r_2$ and $r_3$ might be
-called $x$, $y$ and $z$ for a displacement of $v_x$, $v_y$ and $v_z$
+called $x$, $y$ and $z$ for a displacement. Similarly we use  $v_x$, $v_y$ and $v_z$
 for a velocity.
 
-From here on in, we may use bold face to denote vectors, e.g. ${\bf
-v}$ instead of $\bm{v}$. We also might use dots over quantities to
-represent time derivatives, e.g. $\dot{\bf v}=d{\bf v}/dt$. As
-mentioned above, repeated indices infer sums, e.g.,
+The notation we will adopt from here and on is the same as in Taylor. This means we
+have
+
+
+!split
+===== More definitions, repeated indices =====
+
+As mentioned above, repeated indices infer sums. This means that when you encounter an expression like the one on the left-hand side here, it stands actually for a sum (right-hand side)
 
 !bt
 \begin{eqnarray}
 x_iy_i&=&\sum_i x_iy_i=\bm{x}\cdot\bm{y},\\
 \nonumber
-x_iA_{ij}y_j&=&\sum_{ij}x_iA_{ij}y_j,
+x_ia_{ij}y_j&=&\sum_{ij}x_ia_{ij}y_j,
 \end{eqnarray}
 !et
 
 !split
 ===== Vector Operations, Scalar Product (or dot product) =====
 
-For vectors $\bm{A}$ and $\bm{B}$,
+For vectors $\bm{a}$ and $\bm{b}$ we have
 
 !bblock
 !bt
 \begin{eqnarray*}
-\bm{A}\cdot\bm{B}&=&A_iB_i=|A||B|\cos\theta_{AB},\\
-|A|&\equiv& \sqrt{\bm{A}\cdot\bm{A}}.
+\bm{a}\cdot\bm{b}&=&a_ib_i=|a||b|\cos\theta_{ab},\\
+|a|&\equiv& \sqrt{\bm{a}\cdot\bm{a}},
 \end{eqnarray*}
 !et
+or with a norm-2 notation
+!bt
+\[
+|a|\equiv \vert\vert \bm{a}\vert\vert_2=\sqrt{\sum_i a_i^2}.
+\]
+!eblock
 
+\bblock
 Note that the summation sign is inferred any time there are repeated indices. For example, 
 
 !bt
-\begin{eqnarray}
-A_iB_i&=&\sum A_iB_i.
-\end{eqnarray}
+\[\begin{eqnarray}
+a_ib_i=\sum_i a_ib_i.
+\]
 !et
+
 !eblock
 
 !split
-===== Vector Product (or cross product) of vectors $\bm{A}$ and $\bm{B}$ =====
+===== Vector Product (or cross product) of vectors $\bm{a}$ and $\bm{b}$ =====
 
 !bt
 \begin{eqnarray*}
-\bm{C}&=&\bm{A}\times\bm{B},\\
-C_i&=&\epsilon_{ijk}A_jB_k.
+\bm{c}&=&\bm{a}\times\bm{b},\\
+c_i&=&\epsilon_{ijk}a_jb_k.
 \end{eqnarray*}
 !et
 
@@ -291,8 +276,7 @@ Here $\epsilon$ is the third-rank anti-symmetric tensor, also known as
 the Levi-Civita symbol. It is $\pm 1$ only if all three indices are
 different, and is zero otherwise. The choice of $\pm 1$ depends on
 whether the indices are an even or odd permutation of the original
-symbols. The permutation $xyz$ or $123$ is considered to be $+1$. For
-the 27 elements,
+symbols. The permutation $xyz$ or $123$ is considered to be $+1$. Its elements are
 
 !bt
 \begin{eqnarray}
@@ -306,8 +290,10 @@ the 27 elements,
 \end{eqnarray}
 !et
 
+!split
+===== More on cross-products =====
 
-You used cross products extensively when studying magnetic
+You may have met cross-products when studying magnetic
 fields. Because the matrix is anti-symmetric, switching the $x$ and
 $y$ axes (or any two axes) flips the sign. If the coordinate system is
 right-handed, meaning the $xyz$ axes satisfy
@@ -315,17 +301,20 @@ $\hat{x}\times\hat{y}=\hat{z}$, where you can point along the $x$ axis
 with your extended right index finger, the $y$ axis with your
 contracted middle finger and the $z$ axis with your extended
 thumb. Switching to a left-handed system flips the sign of the vector
-$\bm{C}=\bm{A}\times\bm{B}$. Note that
-$\bm{A}\times\bm{B}=-\bm{B}\times\bm{A}$. The vector $\bm{C}$ is
-perpendicular to both $\bm{A}$ and $\bm{B}$ and the magnitude of
-$\bm{C}$ is given by
+$\bm{c}=\bm{a}\times\bm{b}$. Note that
+$\bm{a}\times\bm{b}=-\bm{b}\times\bm{a}$. The vector $\bm{c}$ is
+perpendicular to both $\bm{a}$ and $\bm{b}$ and the magnitude of
+$\bm{c}$ is given by
 
 
 !bt
 \[
-|C|=|A||B|\sin\theta_{AB}.
+|c|=|a||a|\sin\theta_{ab}.
 \]
 !et
+
+!split
+===== Pseudo-vectors =====
 
 Vectors obtained by the cross product of two real vectors are called
 pseudo-vectors because the assignment of their direction can be
@@ -347,22 +336,14 @@ is precisely what is observed in weak decays.
 ===== Differentiation of a vector with respect to a scalar =====
 
 For example, the
-acceleration is $d\bm{v}/dt$
-
+acceleration $\bm{a}$ is given by the change in velocity per time unit, $\bm {a}=d\bm{v}/dt$
+with components
 !bt
 \[
-(d\bm{v}/dt)_i=\frac{dv_i}{dt}.
+a_i = (d\bm{v}/dt)_i=\frac{dv_i}{dt}.
 \]
 !et
 
-
-!split
-===== Angular velocity =====
-
-Choose the vector $\bm{\omega}$ so that the motion
-is like your fingers wrapping around your thumb on your right hand
-with $\bm{\omega}$ pointing along your thumb. The magnitude is
-$d|\phi|/dt$.
 
 
 !split
@@ -383,17 +364,24 @@ For taking the dot product of the gradient with a vector, sometimes called a div
 
 !bt
 \[
-div \bm{A}, \nabla\cdot\bm{A}=\partial_i A_i.
+div \bm{a}, \nabla\cdot\bm{a}=\partial_i a_i.
 \]
 !et
 
-For taking the vector product with another vector, sometimes called curl, $\nabla\times\bm{A}$,
+!split
+===== The curl =====
+
+For taking the vector product with another vector, sometimes called _curl_,
+$\nabla\times\bm{a}$,
 
 !bt
 \[
-{\rm\bf curl}~\bm{A}, (\nabla\times\bm{A})_i=\epsilon_{ijk}\partial_j A_k(\bm{r},t).
+{\rm\bf curl}~\bm{a}, (\nabla\times\bm{a})_i=\epsilon_{ijk}\partial_j a_k(\bm{r},t).
 \]
 !et
+
+!split
+===== The Laplacian =====
 
 The Laplacian is referred to as $\nabla^2$ and is defined as
 
@@ -407,17 +395,47 @@ The Laplacian is referred to as $\nabla^2$ and is defined as
 !split 
 ===== Some identities =====
 
-Here we simply state these, but you may wish to prove a few. They are useful for this class and will be essential when you study E\&M.
+Here we simply state these, but you may wish to prove a few. They are useful for this class and will be essential when you study electromagnetism.
 
 !bt
 \begin{eqnarray}
-\bm{A}\cdot(\bm{B}\times\bm{C})&=&\bm{B}\cdot(\bm{C}\times\bm{A})=\bm{C}\cdot(\bm{A}\times\bm{B})\\
+\bm{a}\cdot(\bm{b}\times\bm{c})&=&\bm{b}\cdot(\bm{c}\times\bm{a})=\bm{c}\cdot(\bm{a}\times\bm{b})\\
 \nonumber
-\bm{A}\times(\bm{B}\times\bm{C})&=&(\bm{A}\cdot\bm{C})\bm{B}-(\bm{A}\cdot\bm{B})\bm{C}\\
+\bm{a}\times(\bm{b}\times\bm{c})&=&(\bm{a}\cdot\bm{c})\bm{b}-(\bm{a}\cdot\bm{b})\bm{c}\\
 \nonumber
-(\bm{A}\times\bm{B})\cdot(\bm{C}\times\bm{D})&=&(\bm{A}\cdot\bm{C})(\bm{B}\cdot\bm{D})
--(\bm{A}\cdot\bm{D})(\bm{B}\cdot\bm{C})
+(\bm{a}\times\bm{b})\cdot(\bm{c}\times\bm{d})&=&(\bm{a}\cdot\bm{c})(\bm{b}\cdot\bm{d})
+-(\bm{a}\cdot\bm{d})(\bm{b}\cdot\bm{c})
 \end{eqnarray}
+!et
+
+
+!split
+===== More useful relations =====
+
+Using the fact that multiplication of reals is distributive we can show that
+!bt
+\[
+\bm{a}(\bm{b}+\bm{c})=\bm{a}\bm{b}+\bm{a}\bm{c},
+\]
+!et
+Similarly we can also show that (using product rule for differentiating reals)
+!bt
+\[
+\frac{d}{dt}(\bm{a}\bm{b})=\bm{a}\frac{d\bm{b}}{dt}+\bm{b}\frac{d\bm{a}}{dt}.
+\]
+!et
+
+We can repeat these operations for the cross products and show that they are distribuitive
+!bt
+\[
+\bm{a}\times(\bm{b}+\bm{c})=\bm{a}\times\bm{b}+\bm{a}\times\bm{c}.
+\]
+!et
+We have also that
+!bt
+\[
+\frac{d}{dt}(\bm{a}\times\bm{b})=\bm{a}\times\frac{d\bm{b}}{dt}+\bm{b}\times\frac{d\bm{a}}{dt}.
+\]
 !et
 
 
