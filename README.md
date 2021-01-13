@@ -82,23 +82,24 @@ _Additional textbooks_:
 - _Lecture notes_: Posted lecture notes are in the doc/pub folder here or at https://mhjensen.github.io/Physics321/doc/web/course.html for easier viewing. They are not meant to be a replacement for textbook. These notes are updated on a weekly basis and a _git pull_ should thus always give you the latest update. 
 
 ##  Teaching schedule with links to material
-Weekly mails (Fridays) with updates, plans for lectures etc will sent to everybody. We use D2L as discussion forum as well.
+Weekly mails (Fridays) with updates, plans for lectures etc will be sent to everybody. We use D2L as discussion forum as well.
 
 ###  Week 2, January 11-15, 2021
-This week is meant as a review and reading week. There are no lectures but we have, in addition to videos to watch, some simple recommendations on material to review.
+This week is meant as a review and reading week. There are no lectures but we have, in addition to videos to watch, some simple recommendations on material to review. Note that we will start with these topics on Wednesday the 20th. If you don't have the possibility to look this material prior to our first lecture, a good fraction of this material is discussed during the first lecture.
 
-- Monday: Introduction to the course and reminder  on vectors, space, time and motion, JRT chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). Watch the video at 
-- Wednesday: Python programming reminder, elements from CS201 and how they are used in this course. Installing software (anaconda). See slides at https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). Watch the video at 
-- Friday: Introduction to Git and GitHub and getting started with numerical exercises. Example exercise in
-https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html. Watch the video at.
-For solving this exercise, AMS chapters 2 and 4 are very useful as review material. First homework set is available and due Monday January 25. See https://mhjensen.github.io/Physics321/doc/web/course.html (scroll down to homework 1). Parts of the homework will be discussed next week. 
+
+- Introduction to the course and reminder  on vectors, space, time and motion, JRT chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). Watch the video at 
+- Python programming reminder, elements from CMSE 201 and how they are used in this course. Installing software (anaconda). See slides at https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). 
+- Introduction to Git and GitHub/GitLab.
+
+For solving this exercise, AMS chapters 2 and 4 are very useful as review material. First homework set is available and due Monday January 25. See https://mhjensen.github.io/Physics321/doc/web/course.html (scroll down to homework 1). Parts of the homework will be discussed next week (Friday 22). 
 
 
 ###  Week 3, January 18-22, 2021
 
 - Monday 1/18: MLK day, no lecture
-- Wednesday 1/20: Forces and Newton's laws of motion. JRT chapter 1.4 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week3/html/week3.html). AMS chapters 2 and 4 are very useful. 1st homework due January 25.
-- Friday 1/22: Forces and Newton's laws of motion. JRT chapter 1.4 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week3/html/week3.html). AMS chapters 2 and 4 are very useful Homework 1 is due on January 25 (Monday). 
+- Wednesday 1/20: Getting started and overview of course. JRT chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week3/html/week2.html). AMS chapters 2 and 4 are very useful. 1st homework due January 25.
+- Friday 1/22: Forces and Newton's laws of motion. Free fall problems. JRT chapter 1.4 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week3/html/week3.html). AMS chapters 2 and 4 are very useful Homework 1 is due on January 25 (Monday). 
 - Solution to homeworks are in https://d2l.msu.edu/ and are posted here as well.
 
 ### Week 4, January 25-29, 2021
