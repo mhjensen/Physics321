@@ -176,6 +176,10 @@ where the unit vectors have magnitude $\vert\bm{e}_i\vert = 1$ with
 $i=1=x$, $i=2=y$ and $i=3=z$. Some authors use letters
 $\bm{i}=\bm{e}_1$, $\bm{j}=\bm{e}_2$ and $\bm{k}=\bm{e}_3$.
 
+
+!split
+===== Other ways to define a Vector =====
+
 Alternatively, you may also encounter the above vector as
 !bt
 \[
@@ -183,7 +187,61 @@ Alternatively, you may also encounter the above vector as
 \]
 !et
 
+
+
+Here we have used that $a_1=a_x$, $a_2=a_y$ and $a_3=a_z$. Such a
+notation is sometimes more convenient if we wish to represent vector
+operations in a mathematically more compact way, see below here. We may also find this useful if  we want the different
+components to represent other coordinate systems that the Cartesian one. A typical example would be going from a Cartesian representation to a spherical basis. We will encounter such cases many times in this course. 
+
 We use lower-case letters for vectors and upper-case letters for matrices. Vectors and matrices are always boldfaced.
+
+
+!split
+===== Polar Coordinates =====
+
+As an example, consider a two-dimensional Cartesian system with a vector $\bm{r}=(x,y)$.
+Our vector is then written as
+!bt
+\[
+\bm{r} = x\bm{e}_1+y\bm{e}_2.
+\]
+!et
+
+Transforming to polar coordinates with the radius $\rho\in [0,\infty)$
+and the angle $\phi \in [0,2\pi]$ we have the familiar transformations
+
+!bt
+\[
+x = \rho \cos{\phi} \hspace{0.5cm}   y = \rho \sin{\phi},
+\]
+!et
+
+and the inverse relations 
+
+!bt
+\[
+\rho =\sqrt{x^2+y^2} \hspace{0.5cm}   \phi = \mathrm{arctan}(\frac{y}{x}).
+\]
+!et
+
+We can rewrite the vector $\bm{a}$ in terms of $\rho$ and $\phi$ as
+
+!bt
+\[
+\bm{a} = \rho \cos{\phi}\bm{e}_1+\rho \sin{\phi}\bm{e}_2,
+\]
+!et
+
+and we define the new unit vectors as $\bm{e}'_1=\cos{\phi}\bm{e}_1$ and $\bm{e}'_2=\cos{\phi}\bm{e}_2$, we have
+
+!bt
+\[
+\bm{a}' = \rho\bm{e}'_1+\rho \bm{e}'_2.
+\]
+!et
+
+Below we will show that the norm of this vector in a Cartesian basis and a Polar basis is equal.
 
 
 
@@ -224,11 +282,9 @@ Vectors can be decomposed in terms of unit vectors,
 !et
 
 The vector components $r_1$, $r_2$ and $r_3$ might be
-called $x$, $y$ and $z$ for a displacement. Similarly we use  $v_x$, $v_y$ and $v_z$
-for a velocity.
+called $x$, $y$ and $z$ for a displacement. Another way to write this is to define the vector $\bm{r}=(x,y,z)$.
 
-The notation we will adopt from here and on is the same as in Taylor. This means we
-have
+Similarly, for the velocity we will use in this course the components  $\bm{v}=(v_x, v_y,v_z$. The accelaration is then given by $\bm{a}=(a_x,a_y,a_z)$.
 
 
 !split
@@ -238,11 +294,9 @@ As mentioned above, repeated indices infer sums.
 This means that when you encounter an expression like the one on the left-hand side here, it stands actually for a sum (right-hand side)
 
 !bt
-\begin{eqnarray}
-x_iy_i&=&\sum_i x_iy_i=\bm{x}\cdot\bm{y},\\
-\nonumber
-x_ia_{ij}y_j&=&\sum_{ij}x_ia_{ij}y_j,
-\end{eqnarray}
+\[
+x_iy_i=\sum_i x_iy_i=\bm{x}\cdot\bm{y}.
+\]
 !et
 
 We will in our lectures seldom use this notation and rather spell out the summations.  This inferred summation over indices is normally called "Einstein summation convention":"https://en.wikipedia.org/wiki/Einstein_notation".
@@ -250,7 +304,7 @@ We will in our lectures seldom use this notation and rather spell out the summat
 !split
 ===== Vector Operations, Scalar Product (or dot product) =====
 
-For vectors $\bm{a}$ and $\bm{b}$ we have
+For two vectors $\bm{a}$ and $\bm{b}$ we have
 
 !bblock
 !bt
@@ -273,18 +327,86 @@ Not of all of you are familiar with linear algebra. Numerically we will always d
 \bm{a}^T\bm{b}=\sum_i a_ib_i=|a||b|\cos\theta_{ab}.
 \]
 !et
+The superscript $T$ represents the transposition operations. 
 
 
-!bblock
-Note that if the summation sign is inferred, there are repeated indices. For example, 
+!split
+===== Digression, Linear Algebra Notation for Vectors =====
 
+As an example, consider a three-dimensional velocity defined by a vector $\bm{v}=(v_x,v_y,v_z)$. For those of you familiar with linear algebra, we would write this quantity as
 !bt
 \[
-a_ib_i=\sum_i a_ib_i.
+\bm{v}=\begin{bmatrix} v_x\\ v_y \\ v_z \end{bmatrix},
 \]
 !et
 
-!eblock
+and the transpose as
+!bt
+\[
+\bm{v}^T=\begin{bmatrix} v_x & v_y &v_z \end{bmatrix}.
+\]
+!et
+
+The norm is
+!bt
+\[
+\bm{v}^T\bm{v}=v_x^2+v_y^2+v_z^2,
+\]
+!et
+as it should.
+
+Since we will use Python as a programming language throughout this course, the above vector, using the package _numpy_ (see discussions below), can be written as
+
+!bc pycod
+import numpy as np
+# Define the values of vx, vy and vz
+vx = 0.0
+vy = 1.0
+vz = 0.0
+v = np.array([vx, vy, vz])
+print(v)
+# The print the transpose of v
+print(v.T)
+!ec
+Try to figure out how to calculate the norm with _numpy_.
+We will come back to _numpy_ in the examples below.
+
+
+
+!split
+===== Norm of a transformed Vector =====
+
+As an example, consider our transformation of a two-dimensional Cartesian vector $\bm{r}$ to polar coordinates.
+We had
+!bt
+\[
+\bm{r} = x\bm{e}_1+y\bm{e}_2.
+\]
+!et
+
+Transforming to polar coordinates with the radius $\rho\in [0,\infty)$
+and the angle $\phi \in [0,2\pi]$ we have 
+
+!bt
+\[
+x = \rho \cos{\phi} \hspace{0.5cm}   y = \rho \sin{\phi}.
+\]
+!et
+We can write this 
+!bt
+\[
+\bm{r} = \begin{bmatrix} x \\ y \end{bmatrix}= \begin{bmatrix} \rho \cos{\phi}  \\ \rho \sin{\phi}  \end{bmatrix}.
+\]
+!et
+
+The norm in Cartesian coordinates is $\bm{r}\cdot\bm{r}=x^2+y^2$ and
+using Polar coordinates we have
+$\rho^2(\cos{\phi})^2+\rho^2(\cos{\phi})^2=\rho^2$, which shows that
+the norm is conserved since we have $\rho = \sqrt{x^2+y^2}$. A
+transformation to a new basis should not change the norm.
+
+
+
 
 !split
 ===== Vector Product (or cross product) of vectors $\bm{a}$ and $\bm{b}$ =====
@@ -362,7 +484,7 @@ is precisely what is observed in weak decays.
 ===== Differentiation of a vector with respect to a scalar =====
 
 For example, the
-acceleration $\bm{a}$ is given by the change in velocity per time unit, $\bm{a}=d\bm{v}/dt$
+acceleration $\bm{a}$ is given by the change in velocity per unit time, $\bm{a}=d\bm{v}/dt$
 with components
 !bt
 \[
@@ -370,47 +492,55 @@ a_i = (d\bm{v}/dt)_i=\frac{dv_i}{dt}.
 \]
 !et
 
-
+Here $i=x,y,z$ or $i=1,2,3$ if we are in three dimensions.
 
 !split
 ===== Gradient operator $\nabla$ =====
 
 This represents  the derivatives $\partial/\partial
-x$, $\partial/\partial y$ and $\partial/\partial z$.
+x$, $\partial/\partial y$ and $\partial/\partial z$. An often used shorthand is  $\partial_x=\partial/\partial_x$.
 
-A shorthand is for example $\partial_x$ means $\partial/\partial_x$.
-
-Taking the gradient of a scalar
-$\Phi$ we have
+The gradient of a scalar function
+$\Phi(x,y,z)$ is given by
 
 !bt
 \[
-{\rm\bf grad}~\Phi, 
+\bm{\nabla}~\Phi, 
 \]
 !et
+with components $i$
 !bt
 \[
 (\nabla\Phi(x,y,z,t))_i=\partial/\partial r_i\Phi(\bm{r},t)=\partial_i\Phi(\bm{r},t).
 \]
 !et
+Note that the gradient is a vector.
 
-For taking the dot product of the gradient with a vector, sometimes called a divergence,
-
+Taking the dot product of the gradient with a vector, normally called the divergence,
+we have
 !bt
 \[
-div \bm{a}, \nabla\cdot\bm{a}=\partial_i a_i.
+\mathrm{div} \bm{a}, \nabla\cdot\bm{a}=\sum_i \partial_i a_i.
 \]
 !et
+
+Note that the divergence is a scalar. 
 
 !split
 ===== The curl =====
 
-For taking the vector product with another vector, sometimes called _curl_,
+The _curl_ of a vector is defined as
 $\nabla\times\bm{a}$,
 
 !bt
 \[
-{\rm\bf curl}~\bm{a}, (\nabla\times\bm{a})_i=\epsilon_{ijk}\partial_j a_k(\bm{r},t).
+{\rm\bf curl}~\bm{a},
+\]
+!et
+with components
+!bt
+\[
+(\bm{\nabla}\times\bm{a})_i=\epsilon_{ijk}\partial_j a_k(\bm{r},t).
 \]
 !et
 
@@ -421,10 +551,11 @@ The Laplacian is referred to as $\nabla^2$ and is defined as
 
 !bt
 \[
-\nabla^2=\nabla\cdot\nabla=\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2}.
+\bm{\nabla}^2=\bm{\nabla}\cdot\bm{\nabla}=\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2}.
 \]
 !et
 
+Question: is the Laplacian a scalar or a vector?
 
 !split 
 ===== Some identities =====

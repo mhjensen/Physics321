@@ -365,6 +365,11 @@ $$
 where the unit vectors have magnitude \( \vert\boldsymbol{e}_i\vert = 1 \) with
 \( i=1=x \), \( i=2=y \) and \( i=3=z \). Some authors use letters
 \( \boldsymbol{i}=\boldsymbol{e}_1 \), \( \boldsymbol{j}=\boldsymbol{e}_2 \) and \( \boldsymbol{k}=\boldsymbol{e}_3 \).
+</section>
+
+
+<section>
+<h2 id="___sec9">Other ways to define a Vector </h2>
 
 <p>
 Alternatively, you may also encounter the above vector as
@@ -375,12 +380,72 @@ $$
 <p>&nbsp;<br>
 
 <p>
+Here we have used that \( a_1=a_x \), \( a_2=a_y \) and \( a_3=a_z \). Such a
+notation is sometimes more convenient if we wish to represent vector
+operations in a mathematically more compact way, see below here. We may also find this useful if  we want the different
+components to represent other coordinate systems that the Cartesian one. A typical example would be going from a Cartesian representation to a spherical basis. We will encounter such cases many times in this course.
+
+<p>
 We use lower-case letters for vectors and upper-case letters for matrices. Vectors and matrices are always boldfaced.
 </section>
 
 
 <section>
-<h2 id="___sec9">Unit Vectors </h2>
+<h2 id="___sec10">Polar Coordinates </h2>
+
+<p>
+As an example, consider a two-dimensional Cartesian system with a vector \( \boldsymbol{r}=(x,y) \).
+Our vector is then written as
+<p>&nbsp;<br>
+$$
+\boldsymbol{r} = x\boldsymbol{e}_1+y\boldsymbol{e}_2.
+$$
+<p>&nbsp;<br>
+
+<p>
+Transforming to polar coordinates with the radius \( \rho\in [0,\infty) \)
+and the angle \( \phi \in [0,2\pi] \) we have the familiar transformations
+
+<p>&nbsp;<br>
+$$
+x = \rho \cos{\phi} \hspace{0.5cm}   y = \rho \sin{\phi},
+$$
+<p>&nbsp;<br>
+
+<p>
+and the inverse relations
+
+<p>&nbsp;<br>
+$$
+\rho =\sqrt{x^2+y^2} \hspace{0.5cm}   \phi = \mathrm{arctan}(\frac{y}{x}).
+$$
+<p>&nbsp;<br>
+
+<p>
+We can rewrite the vector \( \boldsymbol{a} \) in terms of \( \rho \) and \( \phi \) as
+
+<p>&nbsp;<br>
+$$
+\boldsymbol{a} = \rho \cos{\phi}\boldsymbol{e}_1+\rho \sin{\phi}\boldsymbol{e}_2,
+$$
+<p>&nbsp;<br>
+
+<p>
+and we define the new unit vectors as \( \boldsymbol{e}'_1=\cos{\phi}\boldsymbol{e}_1 \) and \( \boldsymbol{e}'_2=\cos{\phi}\boldsymbol{e}_2 \), we have
+
+<p>&nbsp;<br>
+$$
+\boldsymbol{a}' = \rho\boldsymbol{e}'_1+\rho \boldsymbol{e}'_2.
+$$
+<p>&nbsp;<br>
+
+<p>
+Below we will show that the norm of this vector in a Cartesian basis and a Polar basis is equal.
+</section>
+
+
+<section>
+<h2 id="___sec11">Unit Vectors </h2>
 
 <p>
 Also known as basis vectors, unit vectors point in the direction of
@@ -411,7 +476,7 @@ the unit vectors are called \( \hat{x} \), \( \hat{y} \) and
 
 
 <section>
-<h2 id="___sec10">Our definition of unit vectors </h2>
+<h2 id="___sec12">Our definition of unit vectors </h2>
 
 <p>
 Vectors can be decomposed in terms of unit vectors,
@@ -427,17 +492,15 @@ $$
 
 <p>
 The vector components \( r_1 \), \( r_2 \) and \( r_3 \) might be
-called \( x \), \( y \) and \( z \) for a displacement. Similarly we use  \( v_x \), \( v_y \) and \( v_z \)
-for a velocity.
+called \( x \), \( y \) and \( z \) for a displacement. Another way to write this is to define the vector \( \boldsymbol{r}=(x,y,z) \).
 
 <p>
-The notation we will adopt from here and on is the same as in Taylor. This means we
-have
+Similarly, for the velocity we will use in this course the components  \( \boldsymbol{v}=(v_x, v_y,v_z \). The accelaration is then given by \( \boldsymbol{a}=(a_x,a_y,a_z) \).
 </section>
 
 
 <section>
-<h2 id="___sec11">More definitions, repeated indices </h2>
+<h2 id="___sec13">More definitions, repeated indices </h2>
 
 <p>
 As mentioned above, repeated indices infer sums.
@@ -445,11 +508,7 @@ This means that when you encounter an expression like the one on the left-hand s
 
 <p>&nbsp;<br>
 $$
-\begin{eqnarray}
-x_iy_i&=&\sum_i x_iy_i=\boldsymbol{x}\cdot\boldsymbol{y},\\
-\nonumber
-x_ia_{ij}y_j&=&\sum_{ij}x_ia_{ij}y_j,
-\end{eqnarray}
+x_iy_i=\sum_i x_iy_i=\boldsymbol{x}\cdot\boldsymbol{y}.
 $$
 <p>&nbsp;<br>
 
@@ -459,10 +518,10 @@ We will in our lectures seldom use this notation and rather spell out the summat
 
 
 <section>
-<h2 id="___sec12">Vector Operations, Scalar Product (or dot product) </h2>
+<h2 id="___sec14">Vector Operations, Scalar Product (or dot product) </h2>
 
 <p>
-For vectors \( \boldsymbol{a} \) and \( \boldsymbol{b} \) we have
+For two vectors \( \boldsymbol{a} \) and \( \boldsymbol{b} \) we have
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -492,25 +551,101 @@ $$
 $$
 <p>&nbsp;<br>
 
-<p>
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-Note that if the summation sign is inferred, there are repeated indices. For example,
-
-<p>&nbsp;<br>
-$$
-a_ib_i=\sum_i a_ib_i.
-$$
-<p>&nbsp;<br>
-
-
-</div>
+The superscript \( T \) represents the transposition operations.
 </section>
 
 
 <section>
-<h2 id="___sec13">Vector Product (or cross product) of vectors \( \boldsymbol{a} \) and \( \boldsymbol{b} \) </h2>
+<h2 id="___sec15">Digression, Linear Algebra Notation for Vectors </h2>
+
+<p>
+As an example, consider a three-dimensional velocity defined by a vector \( \boldsymbol{v}=(v_x,v_y,v_z) \). For those of you familiar with linear algebra, we would write this quantity as
+<p>&nbsp;<br>
+$$
+\boldsymbol{v}=\begin{bmatrix} v_x\\ v_y \\ v_z \end{bmatrix},
+$$
+<p>&nbsp;<br>
+
+<p>
+and the transpose as
+<p>&nbsp;<br>
+$$
+\boldsymbol{v}^T=\begin{bmatrix} v_x & v_y &v_z \end{bmatrix}.
+$$
+<p>&nbsp;<br>
+
+<p>
+The norm is
+<p>&nbsp;<br>
+$$
+\boldsymbol{v}^T\boldsymbol{v}=v_x^2+v_y^2+v_z^2,
+$$
+<p>&nbsp;<br>
+
+as it should.
+
+<p>
+Since we will use Python as a programming language throughout this course, the above vector, using the package <b>numpy</b> (see discussions below), can be written as
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
+<span style="color: #228B22"># Define the values of vx, vy and vz</span>
+vx = <span style="color: #B452CD">0.0</span>
+vy = <span style="color: #B452CD">1.0</span>
+vz = <span style="color: #B452CD">0.0</span>
+v = np.array([vx, vy, vz])
+<span style="color: #658b00">print</span>(v)
+<span style="color: #228B22"># The print the transpose of v</span>
+<span style="color: #658b00">print</span>(v.T)
+</pre></div>
+<p>
+Try to figure out how to calculate the norm with <b>numpy</b>.
+We will come back to <b>numpy</b> in the examples below.
+</section>
+
+
+<section>
+<h2 id="___sec16">Norm of a transformed Vector </h2>
+
+<p>
+As an example, consider our transformation of a two-dimensional Cartesian vector \( \boldsymbol{r} \) to polar coordinates.
+We had
+<p>&nbsp;<br>
+$$
+\boldsymbol{r} = x\boldsymbol{e}_1+y\boldsymbol{e}_2.
+$$
+<p>&nbsp;<br>
+
+<p>
+Transforming to polar coordinates with the radius \( \rho\in [0,\infty) \)
+and the angle \( \phi \in [0,2\pi] \) we have
+
+<p>&nbsp;<br>
+$$
+x = \rho \cos{\phi} \hspace{0.5cm}   y = \rho \sin{\phi}.
+$$
+<p>&nbsp;<br>
+
+We can write this 
+<p>&nbsp;<br>
+$$
+\boldsymbol{r} = \begin{bmatrix} x \\ y \end{bmatrix}= \begin{bmatrix} \rho \cos{\phi}  \\ \rho \sin{\phi}  \end{bmatrix}.
+$$
+<p>&nbsp;<br>
+
+<p>
+The norm in Cartesian coordinates is \( \boldsymbol{r}\cdot\boldsymbol{r}=x^2+y^2 \) and
+using Polar coordinates we have
+\( \rho^2(\cos{\phi})^2+\rho^2(\cos{\phi})^2=\rho^2 \), which shows that
+the norm is conserved since we have \( \rho = \sqrt{x^2+y^2} \). A
+transformation to a new basis should not change the norm.
+</section>
+
+
+<section>
+<h2 id="___sec17">Vector Product (or cross product) of vectors \( \boldsymbol{a} \) and \( \boldsymbol{b} \) </h2>
 
 <p>&nbsp;<br>
 $$
@@ -545,7 +680,7 @@ $$
 
 
 <section>
-<h2 id="___sec14">More on cross-products </h2>
+<h2 id="___sec18">More on cross-products </h2>
 
 <p>
 You may have met cross-products when studying magnetic
@@ -573,7 +708,7 @@ $$
 
 
 <section>
-<h2 id="___sec15">Pseudo-vectors </h2>
+<h2 id="___sec19">Pseudo-vectors </h2>
 
 <p>
 Vectors obtained by the cross product of two real vectors are called
@@ -595,88 +730,104 @@ is precisely what is observed in weak decays.
 
 
 <section>
-<h2 id="___sec16">Differentiation of a vector with respect to a scalar </h2>
+<h2 id="___sec20">Differentiation of a vector with respect to a scalar </h2>
 
 <p>
 For example, the
-acceleration \( \boldsymbol{a} \) is given by the change in velocity per time unit, \( \boldsymbol{a}=d\boldsymbol{v}/dt \)
+acceleration \( \boldsymbol{a} \) is given by the change in velocity per unit time, \( \boldsymbol{a}=d\boldsymbol{v}/dt \)
 with components
 <p>&nbsp;<br>
 $$
 a_i = (d\boldsymbol{v}/dt)_i=\frac{dv_i}{dt}.
 $$
 <p>&nbsp;<br>
+
+<p>
+Here \( i=x,y,z \) or \( i=1,2,3 \) if we are in three dimensions.
 </section>
 
 
 <section>
-<h2 id="___sec17">Gradient operator \( \nabla \) </h2>
+<h2 id="___sec21">Gradient operator \( \nabla \) </h2>
 
 <p>
 This represents  the derivatives \( \partial/\partial
-x \), \( \partial/\partial y \) and \( \partial/\partial z \).
+x \), \( \partial/\partial y \) and \( \partial/\partial z \). An often used shorthand is  \( \partial_x=\partial/\partial_x \).
 
 <p>
-A shorthand is for example \( \partial_x \) means \( \partial/\partial_x \).
-
-<p>
-Taking the gradient of a scalar
-\( \Phi \) we have
+The gradient of a scalar function
+\( \Phi(x,y,z) \) is given by
 
 <p>&nbsp;<br>
 $$
-{\rm\bf grad}~\Phi, 
+\boldsymbol{\nabla}~\Phi, 
 $$
 <p>&nbsp;<br>
 
+with components \( i \)
 <p>&nbsp;<br>
 $$
 (\nabla\Phi(x,y,z,t))_i=\partial/\partial r_i\Phi(\boldsymbol{r},t)=\partial_i\Phi(\boldsymbol{r},t).
 $$
 <p>&nbsp;<br>
 
-<p>
-For taking the dot product of the gradient with a vector, sometimes called a divergence,
+Note that the gradient is a vector.
 
+<p>
+Taking the dot product of the gradient with a vector, normally called the divergence,
+we have
 <p>&nbsp;<br>
 $$
-div \boldsymbol{a}, \nabla\cdot\boldsymbol{a}=\partial_i a_i.
+\mathrm{div} \boldsymbol{a}, \nabla\cdot\boldsymbol{a}=\sum_i \partial_i a_i.
 $$
 <p>&nbsp;<br>
+
+<p>
+Note that the divergence is a scalar.
 </section>
 
 
 <section>
-<h2 id="___sec18">The curl </h2>
+<h2 id="___sec22">The curl </h2>
 
 <p>
-For taking the vector product with another vector, sometimes called <b>curl</b>,
+The <b>curl</b> of a vector is defined as
 \( \nabla\times\boldsymbol{a} \),
 
 <p>&nbsp;<br>
 $$
-{\rm\bf curl}~\boldsymbol{a}, (\nabla\times\boldsymbol{a})_i=\epsilon_{ijk}\partial_j a_k(\boldsymbol{r},t).
+{\rm\bf curl}~\boldsymbol{a},
+$$
+<p>&nbsp;<br>
+
+with components
+<p>&nbsp;<br>
+$$
+(\boldsymbol{\nabla}\times\boldsymbol{a})_i=\epsilon_{ijk}\partial_j a_k(\boldsymbol{r},t).
 $$
 <p>&nbsp;<br>
 </section>
 
 
 <section>
-<h2 id="___sec19">The Laplacian </h2>
+<h2 id="___sec23">The Laplacian </h2>
 
 <p>
 The Laplacian is referred to as \( \nabla^2 \) and is defined as
 
 <p>&nbsp;<br>
 $$
-\nabla^2=\nabla\cdot\nabla=\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2}.
+\boldsymbol{\nabla}^2=\boldsymbol{\nabla}\cdot\boldsymbol{\nabla}=\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2}.
 $$
 <p>&nbsp;<br>
+
+<p>
+Question: is the Laplacian a scalar or a vector?
 </section>
 
 
 <section>
-<h2 id="___sec20">Some identities </h2>
+<h2 id="___sec24">Some identities </h2>
 
 <p>
 Here we simply state these, but you may wish to prove a few. They are useful for this class and will be essential when you study electromagnetism.
@@ -697,7 +848,7 @@ $$
 
 
 <section>
-<h2 id="___sec21">More useful relations </h2>
+<h2 id="___sec25">More useful relations </h2>
 
 <p>
 Using the fact that multiplication of reals is distributive we can show that
@@ -732,7 +883,7 @@ $$
 
 
 <section>
-<h2 id="___sec22">Gauss's Theorem  </h2>
+<h2 id="___sec26">Gauss's Theorem  </h2>
 
 <p>
 For an integral over a volume \( V \) confined by a surface \( S \), Gauss's theorem gives
@@ -755,7 +906,7 @@ $$
 
 
 <section>
-<h2 id="___sec23">and Stokes's Theorem </h2>
+<h2 id="___sec27">and Stokes's Theorem </h2>
 
 <p>
 Stoke's law can be understood by considering a small rectangle,
@@ -782,7 +933,7 @@ Here \( \Delta S \) is the area of the surface element.
 
 
 <section>
-<h2 id="___sec24">Basic Matrix Features </h2>
+<h2 id="___sec28">Basic Matrix Features </h2>
 
 <p>
 <b>Note</b>: The material on matrices is optional and will not be used much
@@ -813,7 +964,7 @@ $$
 
 
 <section>
-<h2 id="___sec25">Inverse of a Matrix </h2>
+<h2 id="___sec29">Inverse of a Matrix </h2>
 
 <p>
 The inverse of a matrix is defined by
@@ -843,7 +994,7 @@ $$
 
 
 <section>
-<h2 id="___sec26">Some famous Matrices </h2>
+<h2 id="___sec30">Some famous Matrices </h2>
 
 <ul>
 
@@ -869,7 +1020,7 @@ $$
 
 
 <section>
-<h2 id="___sec27">More Basic Matrix Features </h2>
+<h2 id="___sec31">More Basic Matrix Features </h2>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -896,7 +1047,7 @@ For an \( N\times N \) matrix  \( \mathbf{A} \) the following properties are all
 
 
 <section>
-<h2 id="___sec28">Rotations </h2>
+<h2 id="___sec32">Rotations </h2>
 
 <p>
 Here, we use rotations as an example of matrices and their operations. One can consider a different orthonormal basis \( \hat{e}'_1 \), \( \hat{e}'_2 \) and \( \hat{e}'_3 \). The same vector \( \boldsymbol{r} \) mentioned above can also be expressed in the new basis,
@@ -941,7 +1092,7 @@ $$
 
 
 <section>
-<h2 id="___sec29">More on the matrix \( U \) </h2>
+<h2 id="___sec33">More on the matrix \( U \) </h2>
 
 <p>
 Thus, the matrix lambda has components \( U_{ij} \) that are equal to the
@@ -964,7 +1115,7 @@ $$
 
 
 <section>
-<h2 id="___sec30">Properties of the matrix \( U \) </h2>
+<h2 id="___sec34">Properties of the matrix \( U \) </h2>
 
 <p>
 Note that the matrix is not symmetric, \( U_{ij}\ne U_{ji} \). One can also look at the inverse transformation, by switching the primed and unprimed coordinates,
@@ -995,7 +1146,7 @@ $$
 
 
 <section>
-<h2 id="___sec31">Tensors </h2>
+<h2 id="___sec35">Tensors </h2>
 
 <p>
 A tensor obeying Eq. <a href="#mjx-eqn-8">(8)</a> defines what is known as
@@ -1049,7 +1200,7 @@ coordinates of a vector, Eq. <a href="#mjx-eqn-9">(9)</a>.
 
 
 <section>
-<h2 id="___sec32">Rotation matrix </h2>
+<h2 id="___sec36">Rotation matrix </h2>
 
 <p>
 As a small exercise, find the rotation matrix \( U \) for finding the
@@ -1085,7 +1236,7 @@ $$
 
 
 <section>
-<h2 id="___sec33">Unitary Transformations </h2>
+<h2 id="___sec37">Unitary Transformations </h2>
 
 <p>
 Under a unitary transformation \( U \) (or basis transformation) scalars
@@ -1140,7 +1291,7 @@ A similar example is the determinant of a matrix, which is also a scalar.
 
 
 <section>
-<h2 id="___sec34">Numerical Elements </h2>
+<h2 id="___sec38">Numerical Elements </h2>
 
 <p>
 Numerical algorithms call for approximate discrete models and much of
@@ -1175,7 +1326,7 @@ Computing provides us with the tools to develope our own understanding of the sc
 
 
 <section>
-<h2 id="___sec35">Computations and the Scientific Method </h2>
+<h2 id="___sec39">Computations and the Scientific Method </h2>
 
 <p>
 The way we will teach this course reflects this definition of
@@ -1196,7 +1347,7 @@ these topics.
 
 
 <section>
-<h2 id="___sec36">Computational Competences </h2>
+<h2 id="___sec40">Computational Competences </h2>
 
 <p>
 These competences will enable you to
@@ -1229,7 +1380,7 @@ particular problem.
 
 
 <section>
-<h2 id="___sec37">A well-known examples to illustrate many of the above concepts </h2>
+<h2 id="___sec41">A well-known examples to illustrate many of the above concepts </h2>
 
 <p>
 Before we venture into a reminder on Python and mechanics relevant applications, let us briefly outline some of the
@@ -1292,7 +1443,7 @@ plt.show()
 
 
 <section>
-<h2 id="___sec38">Analyzing the above example </h2>
+<h2 id="___sec42">Analyzing the above example </h2>
 
 <p>
 This example shows the potential of combining numerical algorithms
@@ -1309,7 +1460,7 @@ with symbolic calculations, allowing us to
 
 
 <section>
-<h2 id="___sec39">Python practicalities, Software and needed installations </h2>
+<h2 id="___sec43">Python practicalities, Software and needed installations </h2>
 
 <p>
 We will make extensive use of Python as programming language and its
@@ -1348,7 +1499,7 @@ you can use <b>pip</b> as well and simply install Python as
 
 etc etc.
 
-<h2 id="___sec40">Python installers </h2>
+<h2 id="___sec44">Python installers </h2>
 
 <p>
 If you don't want to perform these operations separately and venture
@@ -1384,7 +1535,7 @@ no setup and runs entirely in the cloud. Try it out!
 
 
 <section>
-<h2 id="___sec41">Useful Python libraries </h2>
+<h2 id="___sec45">Useful Python libraries </h2>
 Here we list several useful Python libraries we strongly recommend (if you use anaconda many of these are already there)
 
 <ul>
@@ -1417,7 +1568,7 @@ And to add more versatility, the Python package <a href="http://www.sympy.org/en
 
 
 <section>
-<h2 id="___sec42">Numpy examples and Important Matrix and vector handling packages </h2>
+<h2 id="___sec46">Numpy examples and Important Matrix and vector handling packages </h2>
 
 <p>
 There are several central software libraries for linear algebra and eigenvalue problems. Several of the more
@@ -1437,7 +1588,7 @@ developed in the 1970s, namely EISPACK and LINPACK.  We describe them shortly he
 
 
 <section>
-<h2 id="___sec43">Numpy and arrays </h2>
+<h2 id="___sec47">Numpy and arrays </h2>
 
 <p>
 <a href="http://www.numpy.org/" target="_blank">Numpy</a> provides an easy way to handle arrays in Python. The standard way to import this library is as
@@ -1527,7 +1678,7 @@ x = np.log(np.array([<span style="color: #B452CD">4.0</span>, <span style="color
 
 
 <section>
-<h2 id="___sec44">Matrices in Python </h2>
+<h2 id="___sec48">Matrices in Python </h2>
 
 <p>
 Having defined vectors, we are now ready to try out matrices. We can
@@ -1598,7 +1749,7 @@ A = np.random.rand(n, n)
 
 
 <section>
-<h2 id="___sec45">Meet the Pandas </h2>
+<h2 id="___sec49">Meet the Pandas </h2>
 
 <p>
 <br /><br /><center><p><img src="fig/pandas.jpg" align="bottom" width=600></p></center><br /><br />
@@ -1743,7 +1894,7 @@ higher dimensions than two.
 
 
 <section>
-<h2 id="___sec46">Introduction to Git and GitHub/GitLab and similar  </h2>
+<h2 id="___sec50">Introduction to Git and GitHub/GitLab and similar  </h2>
 
 <p>
 <a href="https://git-scm.com/" target="_blank">Git</a> is a distributed version-control system
@@ -1761,7 +1912,7 @@ We believe you will find version-control software very useful in your work.
 
 
 <section>
-<h2 id="___sec47">GitHub, GitLab and many other </h2>
+<h2 id="___sec51">GitHub, GitLab and many other </h2>
 
 <p>
 <a href="https://github.com/" target="_blank">GitHub</a>, <a href="https://about.gitlab.com/" target="_blank">GitLab</a>, <a href="https://bitbucket.org/product?&aceid=&adposition=&adgroup=92266806717&campaign=1407243017&creative=414608923671&device=c&keyword=bitbucket&matchtype=e&network=g&placement=&ds_kids=p51241248597&ds_e=GOOGLE&ds_eid=700000001551985&ds_e1=GOOGLE&gclid=Cj0KCQiA6Or_BRC_ARIsAPzuer_yrxzs-R8KDVdF0-DduJR9hTBYcjdE8L9_CkA9eyz8XT7-3bFGOpQaAqe2EALw_wcB&gclsrc=aw.ds" target="_blank">Bitbucket</a> and other are code hosting platforms for
