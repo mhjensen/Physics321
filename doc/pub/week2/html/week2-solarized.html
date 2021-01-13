@@ -451,7 +451,8 @@ have
 <h2 id="___sec11">More definitions, repeated indices </h2>
 
 <p>
-As mentioned above, repeated indices infer sums. This means that when you encounter an expression like the one on the left-hand side here, it stands actually for a sum (right-hand side)
+As mentioned above, repeated indices infer sums.
+This means that when you encounter an expression like the one on the left-hand side here, it stands actually for a sum (right-hand side)
 
 $$
 \begin{eqnarray}
@@ -460,6 +461,9 @@ x_iy_i&=&\sum_i x_iy_i=\boldsymbol{x}\cdot\boldsymbol{y},\\
 x_ia_{ij}y_j&=&\sum_{ij}x_ia_{ij}y_j,
 \end{eqnarray}
 $$
+
+<p>
+We will in our lectures seldom use this notation and rather spell out the summations.  This inferred summation over indices is normally called <a href="https://en.wikipedia.org/wiki/Einstein_notation" target="_blank">Einstein summation convention</a>.
 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -475,7 +479,7 @@ For vectors \( \boldsymbol{a} \) and \( \boldsymbol{b} \) we have
 <p>
 $$
 \begin{eqnarray*}
-\boldsymbol{a}\cdot\boldsymbol{b}&=&a_ib_i=|a||b|\cos\theta_{ab},\\
+\boldsymbol{a}\cdot\boldsymbol{b}&=&\sum_ia_ib_i=|a||b|\cos\theta_{ab},\\
 |a|&\equiv& \sqrt{\boldsymbol{a}\cdot\boldsymbol{a}},
 \end{eqnarray*}
 $$
@@ -488,10 +492,16 @@ $$
 
 
 <p>
+Not of all of you are familiar with linear algebra. Numerically we will always deal with arrays and the dot product vector is given by the product of the transposed vector multiplied with the other vector, that is we have
+$$
+\boldsymbol{a}^T\boldsymbol{b}=\sum_i a_ib_i=|a||b|\cos\theta_{ab}.
+$$
+
+<p>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
-Note that the summation sign is inferred any time there are repeated indices. For example, 
+Note that if the summation sign is inferred, there are repeated indices. For example, 
 
 $$
 a_ib_i=\sum_i a_ib_i.
@@ -546,13 +556,16 @@ right-handed, meaning the \( xyz \) axes satisfy
 with your extended right index finger, the \( y \) axis with your
 contracted middle finger and the \( z \) axis with your extended
 thumb. Switching to a left-handed system flips the sign of the vector
-\( \boldsymbol{c}=\boldsymbol{a}\times\boldsymbol{b} \). Note that
+\( \boldsymbol{c}=\boldsymbol{a}\times\boldsymbol{b} \).
+
+<p>
+Note that
 \( \boldsymbol{a}\times\boldsymbol{b}=-\boldsymbol{b}\times\boldsymbol{a} \). The vector \( \boldsymbol{c} \) is
 perpendicular to both \( \boldsymbol{a} \) and \( \boldsymbol{b} \) and the magnitude of
 \( \boldsymbol{c} \) is given by
 
 $$
-|c|=|a||a|\sin\theta_{ab}.
+|c|=|a||b|\sin{\theta_{ab}}.
 $$
 
 <p>
@@ -584,7 +597,7 @@ is precisely what is observed in weak decays.
 
 <p>
 For example, the
-acceleration \( \boldsymbol{a} \) is given by the change in velocity per time unit, \( \bm {a}=d\boldsymbol{v}/dt \)
+acceleration \( \boldsymbol{a} \) is given by the change in velocity per time unit, \( \boldsymbol{a}=d\boldsymbol{v}/dt \)
 with components
 $$
 a_i = (d\boldsymbol{v}/dt)_i=\frac{dv_i}{dt}.
@@ -596,13 +609,22 @@ $$
 <h2 id="___sec17">Gradient operator \( \nabla \) </h2>
 
 <p>
-This is the derivative \( \partial/\partial
-x \), \( \partial/\partial y \) and \( \partial/\partial z \), where \( \partial
-_x \) means \( \partial/\partial_x \). For taking the gradient of a scalar
-\( \Phi \),
+This represents  the derivatives \( \partial/\partial
+x \), \( \partial/\partial y \) and \( \partial/\partial z \).
+
+<p>
+A shorthand is for example \( \partial_x \) means \( \partial/\partial_x \).
+
+<p>
+Taking the gradient of a scalar
+\( \Phi \) we have
 
 $$
-{\rm\bf grad}~\Phi, (\nabla\Phi(x,y,z,t))_i=\partial/\partial r_i\Phi(\boldsymbol{r},t)=\partial_i\Phi(\boldsymbol{r},t).
+{\rm\bf grad}~\Phi, 
+$$
+
+$$
+(\nabla\Phi(x,y,z,t))_i=\partial/\partial r_i\Phi(\boldsymbol{r},t)=\partial_i\Phi(\boldsymbol{r},t).
 $$
 
 <p>

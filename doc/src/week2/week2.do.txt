@@ -234,7 +234,8 @@ have
 !split
 ===== More definitions, repeated indices =====
 
-As mentioned above, repeated indices infer sums. This means that when you encounter an expression like the one on the left-hand side here, it stands actually for a sum (right-hand side)
+As mentioned above, repeated indices infer sums.
+This means that when you encounter an expression like the one on the left-hand side here, it stands actually for a sum (right-hand side)
 
 !bt
 \begin{eqnarray}
@@ -244,6 +245,8 @@ x_ia_{ij}y_j&=&\sum_{ij}x_ia_{ij}y_j,
 \end{eqnarray}
 !et
 
+We will in our lectures seldom use this notation and rather spell out the summations.  This inferred summation over indices is normally called "Einstein summation convention":"https://en.wikipedia.org/wiki/Einstein_notation".
+
 !split
 ===== Vector Operations, Scalar Product (or dot product) =====
 
@@ -252,7 +255,7 @@ For vectors $\bm{a}$ and $\bm{b}$ we have
 !bblock
 !bt
 \begin{eqnarray*}
-\bm{a}\cdot\bm{b}&=&a_ib_i=|a||b|\cos\theta_{ab},\\
+\bm{a}\cdot\bm{b}&=&\sum_ia_ib_i=|a||b|\cos\theta_{ab},\\
 |a|&\equiv& \sqrt{\bm{a}\cdot\bm{a}},
 \end{eqnarray*}
 !et
@@ -264,8 +267,16 @@ or with a norm-2 notation
 !et
 !eblock
 
+Not of all of you are familiar with linear algebra. Numerically we will always deal with arrays and the dot product vector is given by the product of the transposed vector multiplied with the other vector, that is we have
+!bt
+\[
+\bm{a}^T\bm{b}=\sum_i a_ib_i=|a||b|\cos\theta_{ab}.
+\]
+!et
+
+
 !bblock
-Note that the summation sign is inferred any time there are repeated indices. For example, 
+Note that if the summation sign is inferred, there are repeated indices. For example, 
 
 !bt
 \[
@@ -314,7 +325,9 @@ $\hat{x}\times\hat{y}=\hat{z}$, where you can point along the $x$ axis
 with your extended right index finger, the $y$ axis with your
 contracted middle finger and the $z$ axis with your extended
 thumb. Switching to a left-handed system flips the sign of the vector
-$\bm{c}=\bm{a}\times\bm{b}$. Note that
+$\bm{c}=\bm{a}\times\bm{b}$.
+
+Note that
 $\bm{a}\times\bm{b}=-\bm{b}\times\bm{a}$. The vector $\bm{c}$ is
 perpendicular to both $\bm{a}$ and $\bm{b}$ and the magnitude of
 $\bm{c}$ is given by
@@ -322,7 +335,7 @@ $\bm{c}$ is given by
 
 !bt
 \[
-|c|=|a||a|\sin\theta_{ab}.
+|c|=|a||b|\sin{\theta_{ab}}.
 \]
 !et
 
@@ -349,7 +362,7 @@ is precisely what is observed in weak decays.
 ===== Differentiation of a vector with respect to a scalar =====
 
 For example, the
-acceleration $\bm{a}$ is given by the change in velocity per time unit, $\bm {a}=d\bm{v}/dt$
+acceleration $\bm{a}$ is given by the change in velocity per time unit, $\bm{a}=d\bm{v}/dt$
 with components
 !bt
 \[
@@ -362,14 +375,22 @@ a_i = (d\bm{v}/dt)_i=\frac{dv_i}{dt}.
 !split
 ===== Gradient operator $\nabla$ =====
 
-This is the derivative $\partial/\partial
-x$, $\partial/\partial y$ and $\partial/\partial z$, where $\partial
-_x$ means $\partial/\partial_x$. For taking the gradient of a scalar
-$\Phi$,
+This represents  the derivatives $\partial/\partial
+x$, $\partial/\partial y$ and $\partial/\partial z$.
+
+A shorthand is for example $\partial_x$ means $\partial/\partial_x$.
+
+Taking the gradient of a scalar
+$\Phi$ we have
 
 !bt
 \[
-{\rm\bf grad}~\Phi, (\nabla\Phi(x,y,z,t))_i=\partial/\partial r_i\Phi(\bm{r},t)=\partial_i\Phi(\bm{r},t).
+{\rm\bf grad}~\Phi, 
+\]
+!et
+!bt
+\[
+(\nabla\Phi(x,y,z,t))_i=\partial/\partial r_i\Phi(\bm{r},t)=\partial_i\Phi(\bm{r},t).
 \]
 !et
 
