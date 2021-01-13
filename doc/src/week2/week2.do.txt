@@ -126,29 +126,6 @@ interested in. Thus
 
 
 !split
-===== Elements of Vector Algebra =====
-
-
-In these lectures we will use boldfaced lower-case letters to label a vector. A vector $\bm{a}$ in three dimensions is thus defined as
-
-!bt
-\[
-\bm{a} =(a_x,a_y, a_z),
-\]
-!et
-and using the unit vectors (see below) in a cartesian system we have
-!bt
-\[
-\bm{a} = a_x\bm{e}_1+a_y\bm{e}_2+a_z\bm{e}_3,
-\]
-!et
-where the unit vectors have magnitude $\vert\bm{e}_i\vert = 1$ with $i=1=x$, $i=2=y$ and $i=3=z$. Some authors use letters $\bm{i}=\bm{e}_1$, $\bm{j}=\bm{e}_2$ and $\bm{k}=\bm{e}_3$.
-
-For a more general three-dimensional coordinate system, see our definition and labeling of unit vectors in the discussion that follows here.
-
-We use lower-case letters for vectors and upper-case letters for matrices. Vectors and matrices are always boldfaced.
-
-!split
 ===== Scalars, Vectors and Matrices =====
 
 A scalar is something with a value that is independent of coordinate
@@ -174,6 +151,41 @@ indices. One also has objects with 3 or four indices. These are called
 tensors of rank $n$, where $n$ is the number of indices. A matrix is a
 rank-two tensor. The Levi-Civita symbol, $\epsilon_{ijk}$ used for
 cross products of vectors, is a tensor of rank three.
+
+
+!split
+===== Definitions  of Vectors =====
+
+
+In these lectures we will use boldfaced lower-case letters to label a
+vector. A vector $\bm{a}$ in three dimensions is thus defined as
+
+!bt
+\[
+\bm{a} =(a_x,a_y, a_z),
+\]
+!et
+and using the unit vectors (see below) in a cartesian system we have
+!bt
+\[
+\bm{a} = a_x\bm{e}_1+a_y\bm{e}_2+a_z\bm{e}_3,
+\]
+!et
+
+where the unit vectors have magnitude $\vert\bm{e}_i\vert = 1$ with
+$i=1=x$, $i=2=y$ and $i=3=z$. Some authors use letters
+$\bm{i}=\bm{e}_1$, $\bm{j}=\bm{e}_2$ and $\bm{k}=\bm{e}_3$.
+
+Alternatively, you may also encounter the above vector as
+!bt
+\[
+\bm{a} = a_1\bm{e}_1+a_2\bm{e}_2+a_3\bm{e}_3.
+\]
+!et
+
+We use lower-case letters for vectors and upper-case letters for matrices. Vectors and matrices are always boldfaced.
+
+
 
 !split
 ===== Unit Vectors =====
@@ -480,13 +492,91 @@ around the edges is
 
 Here $\Delta S$ is the area of the surface element.
 
+!split
+===== Basic Matrix Features =====
+
+_Note_: The material on matrices is optional and will not be used much
+(except for illustrations at the very end on garmonic oscillations)
+since most of you have not yet taken a course on linear algebra. The
+material is however included here for the sake of completeness.
+
+
+
+!bblock Matrix properties reminder
+!bt
+\[
+ \mathbf{A} =
+      \begin{bmatrix} a_{11} & a_{12} & a_{13} & a_{14} \\
+                                 a_{21} & a_{22} & a_{23} & a_{24} \\
+                                   a_{31} & a_{32} & a_{33} & a_{34} \\
+                                  a_{41} & a_{42} & a_{43} & a_{44}
+             \end{bmatrix}\qquad
+\mathbf{I} =
+      \begin{bmatrix} 1 & 0 & 0 & 0 \\
+                                 0 & 1 & 0 & 0 \\
+                                 0 & 0 & 1 & 0 \\
+                                 0 & 0 & 0 & 1
+             \end{bmatrix}
+\]
+!et
+
+
+!split
+===== Inverse of a Matrix =====
+
+The inverse of a matrix is defined by
+
+!bt
+\[
+\mathbf{A}^{-1} \cdot \mathbf{A} = I
+\]
+!et
+
+
+|----------------------------------------------------------------------|
+|       Relations      |       Name      | matrix elements             |
+|----------------------------------------------------------------------|
+| $A = A^{T}$         | symmetric       | $a_{ij} = a_{ji}$            |
+| $A = \left (A^{T} \right )^{-1}$ | real orthogonal | $\sum_k a_{ik} a_{jk} = \sum_k a_{ki} a_{kj} = \delta_{ij}$ |
+| $A = A^{ * }$          | real matrix     | $a_{ij} = a_{ij}^{ * }$       |
+| $A = A^{\dagger}$     |  hermitian      | $a_{ij} = a_{ji}^{ * }$       |
+| $A = \left (A^{\dagger} \right )^{-1}$ | unitary | $\sum_k a_{ik} a_{jk}^{ * } = \sum_k a_{ki}^{ * } a_{kj} = \delta_{ij}$ |
+|----------------------------------------------------------------------|
+
+!eblock
+
+!split
+===== Some famous Matrices =====
+
+  * Diagonal if $a_{ij}=0$ for $i\ne j$
+  * Upper triangular if $a_{ij}=0$ for $i > j$
+  * Lower triangular if $a_{ij}=0$ for $i < j$
+  * Upper Hessenberg if $a_{ij}=0$ for $i > j+1$
+  * Lower Hessenberg if $a_{ij}=0$ for $i < j+1$
+  * Tridiagonal if $a_{ij}=0$ for $|i -j| > 1$
+  * Lower banded with bandwidth $p$: $a_{ij}=0$ for $i > j+p$
+  * Upper banded with bandwidth $p$: $a_{ij}=0$ for $i < j+p$
+  * Banded, block upper triangular, block lower triangular....
+
+!split
+===== More Basic Matrix Features =====
+
+!bblock Some Equivalent Statements
+For an $N\times N$ matrix  $\mathbf{A}$ the following properties are all equivalent
+
+  * If the inverse of $\mathbf{A}$ exists, $\mathbf{A}$ is nonsingular.
+  * The equation $\mathbf{Ax}=0$ implies $\mathbf{x}=0$.
+  * The rows of $\mathbf{A}$ form a basis of $R^N$.
+  * The columns of $\mathbf{A}$ form a basis of $R^N$.
+  * $\mathbf{A}$ is a product of elementary matrices.
+  * $0$ is not eigenvalue of $\mathbf{A}$.
+!eblock
 
 
 
 !split
 ===== Rotations =====
 
-_Note_: The material on matrices is optional and will not be used much (except for illustrations at the very end on garmonic oscillations) since most of you have not yet taken a course on linear algebra. The material is however included here for the sake of completeness.
 
 Here, we use rotations as an example of matrices and their operations. One can consider a different orthonormal basis $\hat{e}'_1$, $\hat{e}'_2$ and $\hat{e}'_3$. The same vector $\bm{r}$ mentioned above can also be expressed in the new basis,
 
@@ -519,7 +609,7 @@ label{eq:lambda_angles}
 !et
 
 !split
-=====  More on the amtrix $U$ =====
+=====  More on the matrix $U$ =====
 
 Thus, the matrix lambda has components $U_{ij}$ that are equal to the
 cosine of the angle between new unit vector $\hat{e}'_i$ and the old
@@ -673,9 +763,6 @@ Because there are no remaining indices, one expects it to be a scalar. Indeed on
 
 A similar example is the determinant of a matrix, which is also a scalar.
 
-
-!split
-===== Python programming reminder, elements from "CMSE 201 INTRODUCTION TO COMPUTATIONAL MODELING":"https://cmse.msu.edu/academics/undergraduate-program/undergraduate-courses/cmse-201-introduction-to-computational-modeling/" and how they are used in this course =====
 
 
 !split
@@ -919,78 +1006,6 @@ developed in the 1970s, namely EISPACK and LINPACK.  We describe them shortly he
   * LAPACK:package for solving symmetric, unsymmetric and generalized eigenvalue problems. From LAPACK's website URL: "http://www.netlib.org" it is possible to download for free all source codes from this library. Both C/C++ and Fortran versions are available.
   * BLAS (I, II and III): (Basic Linear Algebra Subprograms) are routines that provide standard building blocks for performing basic vector and matrix operations. Blas I is vector operations, II vector-matrix operations and III matrix-matrix operations. Highly parallelized and efficient codes, all available for download from URL: "http://www.netlib.org".
 
-!split
-===== Basic Matrix Features =====
-
-!bblock Matrix properties reminder
-!bt
-\[
- \mathbf{A} =
-      \begin{bmatrix} a_{11} & a_{12} & a_{13} & a_{14} \\
-                                 a_{21} & a_{22} & a_{23} & a_{24} \\
-                                   a_{31} & a_{32} & a_{33} & a_{34} \\
-                                  a_{41} & a_{42} & a_{43} & a_{44}
-             \end{bmatrix}\qquad
-\mathbf{I} =
-      \begin{bmatrix} 1 & 0 & 0 & 0 \\
-                                 0 & 1 & 0 & 0 \\
-                                 0 & 0 & 1 & 0 \\
-                                 0 & 0 & 0 & 1
-             \end{bmatrix}
-\]
-!et
-
-
-!split
-===== Inverse of a Matrix =====
-
-The inverse of a matrix is defined by
-
-!bt
-\[
-\mathbf{A}^{-1} \cdot \mathbf{A} = I
-\]
-!et
-
-
-|----------------------------------------------------------------------|
-|       Relations      |       Name      | matrix elements             |
-|----------------------------------------------------------------------|
-| $A = A^{T}$         | symmetric       | $a_{ij} = a_{ji}$            |
-| $A = \left (A^{T} \right )^{-1}$ | real orthogonal | $\sum_k a_{ik} a_{jk} = \sum_k a_{ki} a_{kj} = \delta_{ij}$ |
-| $A = A^{ * }$          | real matrix     | $a_{ij} = a_{ij}^{ * }$       |
-| $A = A^{\dagger}$     |  hermitian      | $a_{ij} = a_{ji}^{ * }$       |
-| $A = \left (A^{\dagger} \right )^{-1}$ | unitary | $\sum_k a_{ik} a_{jk}^{ * } = \sum_k a_{ki}^{ * } a_{kj} = \delta_{ij}$ |
-|----------------------------------------------------------------------|
-
-!eblock
-
-!split
-===== Some famous Matrices =====
-
-  * Diagonal if $a_{ij}=0$ for $i\ne j$
-  * Upper triangular if $a_{ij}=0$ for $i > j$
-  * Lower triangular if $a_{ij}=0$ for $i < j$
-  * Upper Hessenberg if $a_{ij}=0$ for $i > j+1$
-  * Lower Hessenberg if $a_{ij}=0$ for $i < j+1$
-  * Tridiagonal if $a_{ij}=0$ for $|i -j| > 1$
-  * Lower banded with bandwidth $p$: $a_{ij}=0$ for $i > j+p$
-  * Upper banded with bandwidth $p$: $a_{ij}=0$ for $i < j+p$
-  * Banded, block upper triangular, block lower triangular....
-
-!split
-===== More Basic Matrix Features =====
-
-!bblock Some Equivalent Statements
-For an $N\times N$ matrix  $\mathbf{A}$ the following properties are all equivalent
-
-  * If the inverse of $\mathbf{A}$ exists, $\mathbf{A}$ is nonsingular.
-  * The equation $\mathbf{Ax}=0$ implies $\mathbf{x}=0$.
-  * The rows of $\mathbf{A}$ form a basis of $R^N$.
-  * The columns of $\mathbf{A}$ form a basis of $R^N$.
-  * $\mathbf{A}$ is a product of elementary matrices.
-  * $0$ is not eigenvalue of $\mathbf{A}$.
-!eblock
 
 !split
 ===== Numpy and arrays =====

@@ -80,8 +80,8 @@ div { text-align: justify; text-justify: inter-word; }
                '___sec4'),
               ('Dimension, units and labels', 2, None, '___sec5'),
               ('Dimensions and Units', 2, None, '___sec6'),
-              ('Elements of Vector Algebra', 2, None, '___sec7'),
-              ('Scalars, Vectors and Matrices', 2, None, '___sec8'),
+              ('Scalars, Vectors and Matrices', 2, None, '___sec7'),
+              ('Definitions  of Vectors', 2, None, '___sec8'),
               ('Unit Vectors', 2, None, '___sec9'),
               ('Our definition of unit vectors', 2, None, '___sec10'),
               ('More definitions, repeated indices', 2, None, '___sec11'),
@@ -107,50 +107,43 @@ div { text-align: justify; text-justify: inter-word; }
               ('More useful relations', 2, None, '___sec21'),
               ("Gauss's Theorem", 2, None, '___sec22'),
               ("and Stokes's Theorem", 2, None, '___sec23'),
-              ('Rotations', 2, None, '___sec24'),
-              ('More on the amtrix $U$', 2, None, '___sec25'),
-              ('Properties of the matrix $U$', 2, None, '___sec26'),
-              ('Tensors', 2, None, '___sec27'),
-              ('Rotation matrix', 2, None, '___sec28'),
-              ('Unitary Transformations', 2, None, '___sec29'),
-              ('Python programming reminder, elements from "CMSE 201 '
-               'INTRODUCTION TO COMPUTATIONAL '
-               'MODELING":"https://cmse.msu.edu/academics/undergraduate-program/undergraduate-courses/cmse-201-introduction-to-computational-modeling/" '
-               'and how they are used in this course',
-               2,
-               None,
-               '___sec30'),
-              ('Numerical Elements', 2, None, '___sec31'),
-              ('Computations and the Scientific Method', 2, None, '___sec32'),
-              ('Computational Competences', 2, None, '___sec33'),
+              ('Basic Matrix Features', 2, None, '___sec24'),
+              ('Inverse of a Matrix', 2, None, '___sec25'),
+              ('Some famous Matrices', 2, None, '___sec26'),
+              ('More Basic Matrix Features', 2, None, '___sec27'),
+              ('Rotations', 2, None, '___sec28'),
+              ('More on the matrix $U$', 2, None, '___sec29'),
+              ('Properties of the matrix $U$', 2, None, '___sec30'),
+              ('Tensors', 2, None, '___sec31'),
+              ('Rotation matrix', 2, None, '___sec32'),
+              ('Unitary Transformations', 2, None, '___sec33'),
+              ('Numerical Elements', 2, None, '___sec34'),
+              ('Computations and the Scientific Method', 2, None, '___sec35'),
+              ('Computational Competences', 2, None, '___sec36'),
               ('A well-known examples to illustrate many of the above concepts',
                2,
                None,
-               '___sec34'),
-              ('Analyzing the above example', 2, None, '___sec35'),
+               '___sec37'),
+              ('Analyzing the above example', 2, None, '___sec38'),
               ('Python practicalities, Software and needed installations',
                2,
                None,
-               '___sec36'),
-              ('Python installers', 2, None, '___sec37'),
-              ('Useful Python libraries', 2, None, '___sec38'),
+               '___sec39'),
+              ('Python installers', 2, None, '___sec40'),
+              ('Useful Python libraries', 2, None, '___sec41'),
               ('Numpy examples and Important Matrix and vector handling '
                'packages',
                2,
                None,
-               '___sec39'),
-              ('Basic Matrix Features', 2, None, '___sec40'),
-              ('Inverse of a Matrix', 2, None, '___sec41'),
-              ('Some famous Matrices', 2, None, '___sec42'),
-              ('More Basic Matrix Features', 2, None, '___sec43'),
-              ('Numpy and arrays', 2, None, '___sec44'),
-              ('Matrices in Python', 2, None, '___sec45'),
-              ('Meet the Pandas', 2, None, '___sec46'),
+               '___sec42'),
+              ('Numpy and arrays', 2, None, '___sec43'),
+              ('Matrices in Python', 2, None, '___sec44'),
+              ('Meet the Pandas', 2, None, '___sec45'),
               ('Introduction to Git and GitHub/GitLab and similar',
                2,
                None,
-               '___sec47'),
-              ('GitHub, GitLab and many other', 2, None, '___sec48')]}
+               '___sec46'),
+              ('GitHub, GitLab and many other', 2, None, '___sec47')]}
 end of tocinfo -->
 
 <body>
@@ -196,7 +189,7 @@ MathJax.Hub.Config({
 <center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
 <br>
 <p>
-<center><h4>Jan 12, 2021</h4></center> <!-- date -->
+<center><h4>Jan 13, 2021</h4></center> <!-- date -->
 <br>
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -343,32 +336,7 @@ interested in. Thus
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec7">Elements of Vector Algebra </h2>
-
-<p>
-In these lectures we will use boldfaced lower-case letters to label a vector. A vector \( \boldsymbol{a} \) in three dimensions is thus defined as
-
-$$
-\boldsymbol{a} =(a_x,a_y, a_z),
-$$
-
-and using the unit vectors (see below) in a cartesian system we have
-$$
-\boldsymbol{a} = a_x\boldsymbol{e}_1+a_y\boldsymbol{e}_2+a_z\boldsymbol{e}_3,
-$$
-
-where the unit vectors have magnitude \( \vert\boldsymbol{e}_i\vert = 1 \) with \( i=1=x \), \( i=2=y \) and \( i=3=z \). Some authors use letters \( \boldsymbol{i}=\boldsymbol{e}_1 \), \( \boldsymbol{j}=\boldsymbol{e}_2 \) and \( \boldsymbol{k}=\boldsymbol{e}_3 \).
-
-<p>
-For a more general three-dimensional coordinate system, see our definition and labeling of unit vectors in the discussion that follows here.
-
-<p>
-We use lower-case letters for vectors and upper-case letters for matrices. Vectors and matrices are always boldfaced.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec8">Scalars, Vectors and Matrices </h2>
+<h2 id="___sec7">Scalars, Vectors and Matrices </h2>
 
 <p>
 A scalar is something with a value that is independent of coordinate
@@ -396,6 +364,38 @@ indices. One also has objects with 3 or four indices. These are called
 tensors of rank \( n \), where \( n \) is the number of indices. A matrix is a
 rank-two tensor. The Levi-Civita symbol, \( \epsilon_{ijk} \) used for
 cross products of vectors, is a tensor of rank three.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec8">Definitions  of Vectors </h2>
+
+<p>
+In these lectures we will use boldfaced lower-case letters to label a
+vector. A vector \( \boldsymbol{a} \) in three dimensions is thus defined as
+
+$$
+\boldsymbol{a} =(a_x,a_y, a_z),
+$$
+
+and using the unit vectors (see below) in a cartesian system we have
+$$
+\boldsymbol{a} = a_x\boldsymbol{e}_1+a_y\boldsymbol{e}_2+a_z\boldsymbol{e}_3,
+$$
+
+<p>
+where the unit vectors have magnitude \( \vert\boldsymbol{e}_i\vert = 1 \) with
+\( i=1=x \), \( i=2=y \) and \( i=3=z \). Some authors use letters
+\( \boldsymbol{i}=\boldsymbol{e}_1 \), \( \boldsymbol{j}=\boldsymbol{e}_2 \) and \( \boldsymbol{k}=\boldsymbol{e}_3 \).
+
+<p>
+Alternatively, you may also encounter the above vector as
+$$
+\boldsymbol{a} = a_1\boldsymbol{e}_1+a_2\boldsymbol{e}_2+a_3\boldsymbol{e}_3.
+$$
+
+<p>
+We use lower-case letters for vectors and upper-case letters for matrices. Vectors and matrices are always boldfaced.
 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -735,10 +735,104 @@ Here \( \Delta S \) is the area of the surface element.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec24">Rotations </h2>
+<h2 id="___sec24">Basic Matrix Features </h2>
 
 <p>
-<b>Note</b>: The material on matrices is optional and will not be used much (except for illustrations at the very end on garmonic oscillations) since most of you have not yet taken a course on linear algebra. The material is however included here for the sake of completeness.
+<b>Note</b>: The material on matrices is optional and will not be used much
+(except for illustrations at the very end on garmonic oscillations)
+since most of you have not yet taken a course on linear algebra. The
+material is however included here for the sake of completeness.
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Matrix properties reminder.</b>
+<p>
+$$
+ \mathbf{A} =
+      \begin{bmatrix} a_{11} & a_{12} & a_{13} & a_{14} \\
+                                 a_{21} & a_{22} & a_{23} & a_{24} \\
+                                   a_{31} & a_{32} & a_{33} & a_{34} \\
+                                  a_{41} & a_{42} & a_{43} & a_{44}
+             \end{bmatrix}\qquad
+\mathbf{I} =
+      \begin{bmatrix} 1 & 0 & 0 & 0 \\
+                                 0 & 1 & 0 & 0 \\
+                                 0 & 0 & 1 & 0 \\
+                                 0 & 0 & 0 & 1
+             \end{bmatrix}
+$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec25">Inverse of a Matrix </h2>
+
+<p>
+The inverse of a matrix is defined by
+
+$$
+\mathbf{A}^{-1} \cdot \mathbf{A} = I
+$$
+
+<p>
+<table border="1">
+<thead>
+<tr><th align="center">                Relations                 </th> <th align="center">      Name     </th> <th align="center">                              matrix elements                              </th> </tr>
+</thead>
+<tbody>
+<tr><td align="center">   \( A = A^{T} \)                               </td> <td align="center">   symmetric          </td> <td align="center">   \( a_{ij} = a_{ji} \)                                                          </td> </tr>
+<tr><td align="center">   \( A = \left (A^{T} \right )^{-1} \)          </td> <td align="center">   real orthogonal    </td> <td align="center">   \( \sum_k a_{ik} a_{jk} = \sum_k a_{ki} a_{kj} = \delta_{ij} \)                </td> </tr>
+<tr><td align="center">   \( A = A^{ * } \)                             </td> <td align="center">   real matrix        </td> <td align="center">   \( a_{ij} = a_{ij}^{ * } \)                                                    </td> </tr>
+<tr><td align="center">   \( A = A^{\dagger} \)                         </td> <td align="center">   hermitian          </td> <td align="center">   \( a_{ij} = a_{ji}^{ * } \)                                                    </td> </tr>
+<tr><td align="center">   \( A = \left (A^{\dagger} \right )^{-1} \)    </td> <td align="center">   unitary            </td> <td align="center">   \( \sum_k a_{ik} a_{jk}^{ * } = \sum_k a_{ki}^{ * } a_{kj} = \delta_{ij} \)    </td> </tr>
+</tbody>
+</table>
+
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec26">Some famous Matrices </h2>
+
+<ul>
+  <li> Diagonal if \( a_{ij}=0 \) for \( i\ne j \)</li>
+  <li> Upper triangular if \( a_{ij}=0 \) for \( i > j \)</li>
+  <li> Lower triangular if \( a_{ij}=0 \) for \( i < j \)</li>
+  <li> Upper Hessenberg if \( a_{ij}=0 \) for \( i > j+1 \)</li>
+  <li> Lower Hessenberg if \( a_{ij}=0 \) for \( i < j+1 \)</li>
+  <li> Tridiagonal if \( a_{ij}=0 \) for \( |i -j| > 1 \)</li>
+  <li> Lower banded with bandwidth \( p \): \( a_{ij}=0 \) for \( i > j+p \)</li>
+  <li> Upper banded with bandwidth \( p \): \( a_{ij}=0 \) for \( i < j+p \)</li>
+  <li> Banded, block upper triangular, block lower triangular....</li>
+</ul>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec27">More Basic Matrix Features </h2>
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Some Equivalent Statements.</b>
+<p>
+For an \( N\times N \) matrix  \( \mathbf{A} \) the following properties are all equivalent
+
+<ul>
+  <li> If the inverse of \( \mathbf{A} \) exists, \( \mathbf{A} \) is nonsingular.</li>
+  <li> The equation \( \mathbf{Ax}=0 \) implies \( \mathbf{x}=0 \).</li>
+  <li> The rows of \( \mathbf{A} \) form a basis of \( R^N \).</li>
+  <li> The columns of \( \mathbf{A} \) form a basis of \( R^N \).</li>
+  <li> \( \mathbf{A} \) is a product of elementary matrices.</li>
+  <li> \( 0 \) is not eigenvalue of \( \mathbf{A} \).</li>
+</ul>
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec28">Rotations </h2>
 
 <p>
 Here, we use rotations as an example of matrices and their operations. One can consider a different orthonormal basis \( \hat{e}'_1 \), \( \hat{e}'_2 \) and \( \hat{e}'_3 \). The same vector \( \boldsymbol{r} \) mentioned above can also be expressed in the new basis,
@@ -777,7 +871,7 @@ $$
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec25">More on the amtrix \( U \) </h2>
+<h2 id="___sec29">More on the matrix \( U \) </h2>
 
 <p>
 Thus, the matrix lambda has components \( U_{ij} \) that are equal to the
@@ -798,7 +892,7 @@ $$
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec26">Properties of the matrix \( U \) </h2>
+<h2 id="___sec30">Properties of the matrix \( U \) </h2>
 
 <p>
 Note that the matrix is not symmetric, \( U_{ij}\ne U_{ji} \). One can also look at the inverse transformation, by switching the primed and unprimed coordinates,
@@ -825,7 +919,7 @@ $$
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec27">Tensors </h2>
+<h2 id="___sec31">Tensors </h2>
 
 <p>
 A tensor obeying Eq. \eqref{eq:transposedef} defines what is known as
@@ -873,7 +967,7 @@ coordinates of a vector, Eq. \eqref{eq:rotateR}.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec28">Rotation matrix </h2>
+<h2 id="___sec32">Rotation matrix </h2>
 
 <p>
 As a small exercise, find the rotation matrix \( U \) for finding the
@@ -905,7 +999,7 @@ $$
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec29">Unitary Transformations </h2>
+<h2 id="___sec33">Unitary Transformations </h2>
 
 <p>
 Under a unitary transformation \( U \) (or basis transformation) scalars
@@ -954,12 +1048,7 @@ A similar example is the determinant of a matrix, which is also a scalar.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec30">Python programming reminder, elements from <a href="https://cmse.msu.edu/academics/undergraduate-program/undergraduate-courses/cmse-201-introduction-to-computational-modeling/" target="_blank">CMSE 201 INTRODUCTION TO COMPUTATIONAL MODELING</a> and how they are used in this course </h2>
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec31">Numerical Elements </h2>
+<h2 id="___sec34">Numerical Elements </h2>
 
 <p>
 Numerical algorithms call for approximate discrete models and much of
@@ -994,7 +1083,7 @@ Computing provides us with the tools to develope our own understanding of the sc
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec32">Computations and the Scientific Method </h2>
+<h2 id="___sec35">Computations and the Scientific Method </h2>
 
 <p>
 The way we will teach this course reflects this definition of
@@ -1015,7 +1104,7 @@ these topics.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec33">Computational Competences </h2>
+<h2 id="___sec36">Computational Competences </h2>
 
 <p>
 These competences will enable you to
@@ -1047,7 +1136,7 @@ particular problem.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec34">A well-known examples to illustrate many of the above concepts </h2>
+<h2 id="___sec37">A well-known examples to illustrate many of the above concepts </h2>
 
 <p>
 Before we venture into a reminder on Python and mechanics relevant applications, let us briefly outline some of the
@@ -1107,7 +1196,7 @@ plt<span style="color: #666666">.</span>show()
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec35">Analyzing the above example </h2>
+<h2 id="___sec38">Analyzing the above example </h2>
 
 <p>
 This example shows the potential of combining numerical algorithms
@@ -1123,7 +1212,7 @@ with symbolic calculations, allowing us to
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec36">Python practicalities, Software and needed installations </h2>
+<h2 id="___sec39">Python practicalities, Software and needed installations </h2>
 
 <p>
 We will make extensive use of Python as programming language and its
@@ -1159,7 +1248,7 @@ you can use <b>pip</b> as well and simply install Python as
 
 etc etc.
 
-<h2 id="___sec37">Python installers </h2>
+<h2 id="___sec40">Python installers </h2>
 
 <p>
 If you don't want to perform these operations separately and venture
@@ -1193,7 +1282,7 @@ no setup and runs entirely in the cloud. Try it out!
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec38">Useful Python libraries </h2>
+<h2 id="___sec41">Useful Python libraries </h2>
 Here we list several useful Python libraries we strongly recommend (if you use anaconda many of these are already there)
 
 <ul>
@@ -1225,7 +1314,7 @@ And to add more versatility, the Python package <a href="http://www.sympy.org/en
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec39">Numpy examples and Important Matrix and vector handling packages </h2>
+<h2 id="___sec42">Numpy examples and Important Matrix and vector handling packages </h2>
 
 <p>
 There are several central software libraries for linear algebra and eigenvalue problems. Several of the more
@@ -1241,98 +1330,7 @@ developed in the 1970s, namely EISPACK and LINPACK.  We describe them shortly he
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec40">Basic Matrix Features </h2>
-
-<p>
-<div class="alert alert-block alert-block alert-text-normal">
-<b>Matrix properties reminder.</b>
-<p>
-$$
- \mathbf{A} =
-      \begin{bmatrix} a_{11} & a_{12} & a_{13} & a_{14} \\
-                                 a_{21} & a_{22} & a_{23} & a_{24} \\
-                                   a_{31} & a_{32} & a_{33} & a_{34} \\
-                                  a_{41} & a_{42} & a_{43} & a_{44}
-             \end{bmatrix}\qquad
-\mathbf{I} =
-      \begin{bmatrix} 1 & 0 & 0 & 0 \\
-                                 0 & 1 & 0 & 0 \\
-                                 0 & 0 & 1 & 0 \\
-                                 0 & 0 & 0 & 1
-             \end{bmatrix}
-$$
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec41">Inverse of a Matrix </h2>
-
-<p>
-The inverse of a matrix is defined by
-
-$$
-\mathbf{A}^{-1} \cdot \mathbf{A} = I
-$$
-
-<p>
-<table border="1">
-<thead>
-<tr><th align="center">                Relations                 </th> <th align="center">      Name     </th> <th align="center">                              matrix elements                              </th> </tr>
-</thead>
-<tbody>
-<tr><td align="center">   \( A = A^{T} \)                               </td> <td align="center">   symmetric          </td> <td align="center">   \( a_{ij} = a_{ji} \)                                                          </td> </tr>
-<tr><td align="center">   \( A = \left (A^{T} \right )^{-1} \)          </td> <td align="center">   real orthogonal    </td> <td align="center">   \( \sum_k a_{ik} a_{jk} = \sum_k a_{ki} a_{kj} = \delta_{ij} \)                </td> </tr>
-<tr><td align="center">   \( A = A^{ * } \)                             </td> <td align="center">   real matrix        </td> <td align="center">   \( a_{ij} = a_{ij}^{ * } \)                                                    </td> </tr>
-<tr><td align="center">   \( A = A^{\dagger} \)                         </td> <td align="center">   hermitian          </td> <td align="center">   \( a_{ij} = a_{ji}^{ * } \)                                                    </td> </tr>
-<tr><td align="center">   \( A = \left (A^{\dagger} \right )^{-1} \)    </td> <td align="center">   unitary            </td> <td align="center">   \( \sum_k a_{ik} a_{jk}^{ * } = \sum_k a_{ki}^{ * } a_{kj} = \delta_{ij} \)    </td> </tr>
-</tbody>
-</table>
-
-</div>
-
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec42">Some famous Matrices </h2>
-
-<ul>
-  <li> Diagonal if \( a_{ij}=0 \) for \( i\ne j \)</li>
-  <li> Upper triangular if \( a_{ij}=0 \) for \( i > j \)</li>
-  <li> Lower triangular if \( a_{ij}=0 \) for \( i < j \)</li>
-  <li> Upper Hessenberg if \( a_{ij}=0 \) for \( i > j+1 \)</li>
-  <li> Lower Hessenberg if \( a_{ij}=0 \) for \( i < j+1 \)</li>
-  <li> Tridiagonal if \( a_{ij}=0 \) for \( |i -j| > 1 \)</li>
-  <li> Lower banded with bandwidth \( p \): \( a_{ij}=0 \) for \( i > j+p \)</li>
-  <li> Upper banded with bandwidth \( p \): \( a_{ij}=0 \) for \( i < j+p \)</li>
-  <li> Banded, block upper triangular, block lower triangular....</li>
-</ul>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec43">More Basic Matrix Features </h2>
-
-<p>
-<div class="alert alert-block alert-block alert-text-normal">
-<b>Some Equivalent Statements.</b>
-<p>
-For an \( N\times N \) matrix  \( \mathbf{A} \) the following properties are all equivalent
-
-<ul>
-  <li> If the inverse of \( \mathbf{A} \) exists, \( \mathbf{A} \) is nonsingular.</li>
-  <li> The equation \( \mathbf{Ax}=0 \) implies \( \mathbf{x}=0 \).</li>
-  <li> The rows of \( \mathbf{A} \) form a basis of \( R^N \).</li>
-  <li> The columns of \( \mathbf{A} \) form a basis of \( R^N \).</li>
-  <li> \( \mathbf{A} \) is a product of elementary matrices.</li>
-  <li> \( 0 \) is not eigenvalue of \( \mathbf{A} \).</li>
-</ul>
-</div>
-
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec44">Numpy and arrays </h2>
+<h2 id="___sec43">Numpy and arrays </h2>
 
 <p>
 <a href="http://www.numpy.org/" target="_blank">Numpy</a> provides an easy way to handle arrays in Python. The standard way to import this library is as
@@ -1421,7 +1419,7 @@ x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>l
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec45">Matrices in Python </h2>
+<h2 id="___sec44">Matrices in Python </h2>
 
 <p>
 Having defined vectors, we are now ready to try out matrices. We can
@@ -1491,7 +1489,7 @@ A <span style="color: #666666">=</span> np<span style="color: #666666">.</span>r
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec46">Meet the Pandas </h2>
+<h2 id="___sec45">Meet the Pandas </h2>
 
 <p>
 <br /><br /><center><p><img src="fig/pandas.jpg" align="bottom" width=600></p></center><br /><br />
@@ -1636,7 +1634,7 @@ higher dimensions than two.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec47">Introduction to Git and GitHub/GitLab and similar  </h2>
+<h2 id="___sec46">Introduction to Git and GitHub/GitLab and similar  </h2>
 
 <p>
 <a href="https://git-scm.com/" target="_blank">Git</a> is a distributed version-control system
@@ -1654,7 +1652,7 @@ We believe you will find version-control software very useful in your work.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec48">GitHub, GitLab and many other </h2>
+<h2 id="___sec47">GitHub, GitLab and many other </h2>
 
 <p>
 <a href="https://github.com/" target="_blank">GitHub</a>, <a href="https://about.gitlab.com/" target="_blank">GitLab</a>, <a href="https://bitbucket.org/product?&aceid=&adposition=&adgroup=92266806717&campaign=1407243017&creative=414608923671&device=c&keyword=bitbucket&matchtype=e&network=g&placement=&ds_kids=p51241248597&ds_e=GOOGLE&ds_eid=700000001551985&ds_e1=GOOGLE&gclid=Cj0KCQiA6Or_BRC_ARIsAPzuer_yrxzs-R8KDVdF0-DduJR9hTBYcjdE8L9_CkA9eyz8XT7-3bFGOpQaAqe2EALw_wcB&gclsrc=aw.ds" target="_blank">Bitbucket</a> and other are code hosting platforms for
