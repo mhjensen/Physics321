@@ -88,7 +88,7 @@ Weekly mails (Fridays) with updates, plans for lectures etc will be sent to ever
 This week is meant as a review and reading week. There are no lectures but we have, in addition to videos to watch, some simple recommendations on material to review. Note that we will start with these topics on Wednesday the 20th. If you don't have the possibility to look this material prior to our first lecture, a good fraction of this material is discussed during the first lecture.
 
 
-- Introduction to the course and reminder  on vectors, space, time and motion, JRT chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). Watch the video at 
+- Introduction to the course and reminder  on vectors, space, time and motion, JRT chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). Watch the video at https://mediaspace.msu.edu/media/t/1_zzl90pfu
 - Python programming reminder, elements from CMSE 201 and how they are used in this course. Installing software (anaconda). See slides at https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). 
 - Introduction to Git and GitHub/GitLab.
 
@@ -98,7 +98,7 @@ For solving this exercise, AMS chapters 2 and 4 are very useful as review materi
 ###  Week 3, January 18-22, 2021
 
 - Monday 1/18: MLK day, no lecture
-- Wednesday 1/20: Getting started and overview of course. JRT chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week3/html/week2.html). AMS chapters 2 and 4 are very useful. 1st homework due January 25.
+- Wednesday 1/20: Getting started and overview of course. JRT chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). AMS chapters 2 and 4 are very useful. 1st homework due January 25.
 - Friday 1/22: Forces and Newton's laws of motion. Free fall problems. JRT chapter 1.4 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week3/html/week3.html). AMS chapters 2 and 4 are very useful Homework 1 is due on January 25 (Monday). 
 - Solution to homeworks are in https://d2l.msu.edu/ and are posted here as well.
 
