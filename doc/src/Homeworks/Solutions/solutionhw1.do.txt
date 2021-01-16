@@ -1,16 +1,8 @@
 TITLE: PHY321: Classical Mechanics 1
-AUTHOR: Homework 1, due Friday January 17
+AUTHOR: Solution Homework 1, Spring 2021
 DATE: today
 
-===  Practicalities about  homeworks and projects ===
-
-o You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. _Remember to write your name(s)_!
-o Homeworks are available Wednesday/Thursday the week before the deadline. The deadline is at the Friday lecture.
-o How do I(we)  hand in?  You can hand in the paper and pencil exercises as a hand-written document. For this homework this applies to exercises 1-6. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise (exercise 7 here) should always be handed in as a jupyter notebook by the deadline at D2L. 
-
-
-
-=== Exercise 1 (10 pt), math reminder, properties of exponential function  ===
+===== Exercise 1 (10 pt), math reminder, properties of exponential function  =====
 
 The first exercise is meant to remind ourselves about properties of
 the exponential function and imaginary numbers. This is highly
@@ -18,38 +10,219 @@ relevant later in this course when we start analyzing oscillatory
 motion and some wave mechanics. As physicists we should thus feel comfortable with expressions that
 include $\exp{(\imath\omega t)}$. Here $t$ could be interpreted as time and $\omega$ as a frequency and $\imath$ is the imaginary unit number.
 
-* 1a (2pt): Perform Taylor expansions in powers of $\omega t$ of the functions $\cos{(\omega t)}$ and $\sin{(\omega t)}$.
-* 1b (2pt): Perform a Taylor expansion of $\exp{(i\omega t)}$.
-* 1c (3pt): Using parts (a) and (b) here, show that $\exp{(\imath\omega t)}=\cos{(\omega t)}+\imath\sin{(\omega t)}$.
-* 1d (3pt): Show that $\ln{(−1)} = \imath\pi$.
+=== 1a (2pt), solution: ===
 
-=== Exercise 2 (10 pt), Vector algebra  ===
+Perform Taylor expansions in powers of $\omega t$ of the functions
+$\cos{(\omega t)}$ and $\sin{(\omega t)}$.
 
-* 2a (4pt) One of the many uses of the scalar product is to find the angle between two given vectors. Find the angle between the vectors $\bm{a}=(1,2,4)$ and $\bm{b}=(4,2,1)$ by evaluating their scalar product.
-* 2b (6pt) For a cube with sides of length 1, one vertex at the origin, and sides along the $x$, $y$, and $z$ axes, the vector of the body diagonal from the origin can be written $\bm{a}=(1, 1, 1)$ and the vector of the face diagonal in the $xy$ plane from the origin is $\bm{b}=(1,1,0)$. Find first the lengths of the body diagonal and the face diagonal. Use then part (2a) to find the angle between the body diagonal and the face diagonal.
-
-=== Exercise 3 (10 pt), More vector mathematics ===
-
-* 3a (5pt) Show (using the fact that multiplication of reals is distributive) that $\bm{a}(\bm{b}+\bm{c})=\bm{a}\bm{b}+\bm{a}\bm{c}$.
-* 3b (5pt) Show that (using product rule for differentiating reals)  $\frac{d}{dt}(\bm{a}\bm{b})=\bm{a}\frac{d\bm{b}}{dt}+\bm{b}\frac{d\bm{a}}{dt}$
-
-=== Exercise 4 (10 pt), Algebra of cross products  ===
-
-* 4a (5pt) Show that the cross products are distribuitive $\bm{a}\times(\bm{b}+\bm{c})=\bm{a}\times\bm{b}+\bm{a}\times\bm{c}$.
-* 4b (5pt) Show that $\frac{d}{dt}(\bm{a}\times\bm{b})=\bm{a}\times\frac{d\bm{b}}{dt}+\bm{b}\times\frac{d\bm{a}}{dt}$. Be careful with the order of factors 
+!bt
+\[
+\cos{(\omega t)} = \sum_{n=0}^{\infty}\left(-1\right)^n \frac{(\omega t)^{2n}}{(2n)!}=1-\frac{(\omega t)^{2}}{2!}+\frac{(\omega t)^{4}}{4!}-\dots,
+\]
+!et
+!bt
+\[
+\sin{(\omega t)} = \sum_{n=0}^{\infty}\left(-1\right)^n \frac{(\omega t)^{2n+1}}{(2n+1)!}=\omega t-\frac{(\omega t)^{3}}{3!}+\frac{(\omega t)^{5}}{5!}-\dots,
+\]
+!et
 
 
-=== Exercise 5 (10 pt), Area of triangle and law of sines ===
-Exercise 1.18 in the textbook of Taylor, Classical Mechanics. Part (1.18a) gives 5pt and part (1.18b) gives also 5pt.
 
-=== Exercise 6 (10pt), Matrices and rotations in the $xy$ plane ===
-The rotation of a three-dimensional  vector $\bm{a}=(a_x,a_y,a_z)$ in the $xy$ plane around an angle $\phi$ results in a new vector $\bm{b}=(b_x,b_y,b_z)$.  This operation can be expressed in terms of linear algebra as a matrix (the rotation matrix) multiplied with a vector. We can write this as
+
+
+=== 1b (2pt), solution: ===
+
+Perform a Taylor expansion of $\exp{(imath\omega t)}$.
+
+!bt
+\[
+\expt{(\imath\omega t)} = \sum_{n=0}^{\infty}\frac{(\imath\omega t)^{n}}{(n)!}=1+\omega t\frac{(\imath\omega t)^{2}}{2!}+\frac{(\imath\omega t)^{3}}{3!}+\frac{(\imath\omega t)^{4}}{4!}+\frac{(\imath\omega t)^{5}}{5!}+\dots.
+\]
+!et
+
+
+=== 1c (3pt), solution: ===
+
+Using parts (a) and (b) here, show that $\exp{(\imath\omega t)}=\cos{(\omega t)}+\imath\sin{(\omega t)}$.
+
+Using $\imath^2=-1$ we can rewrite the last results as
+
+!bt
+\begin{align*}
+\expt{(\omega t)} = & \sum_{n=0}^{\infty}\frac{(\omega t)^{n}}{(n)!}=1+\omega t\frac{(\omega t)^{2}}{2!}+\frac{(\omega t)^{3}}{3!}+\frac{(\omega t)^{4}}{4!}+\frac{(\omega t)^{5}}{5!}+\dots\\
+=& \left(1-\frac{(\omega t)^{2}}{2!}+\frac{(\omega t)^{4}}{4!}-\dots\right)+\left(\omega t-\frac{(\omega t)^{3}}{3!}+\frac{(\omega t)^{5}}{5!}-\dots\right)\\
+= & \cos{(\omega t)}+\imath\sin{(\omega t)}.
+\end{align*}
+!et
+
+
+
+=== 1d (3pt), solution: ===
+
+Show that $\ln{(−1)} = \imath\pi$.
+
+Let $\omega t = \pi$, we get
+!bt
+\[
+\exp{(\imath\pi)}=\cos{(\pi)}+\imath\sin{(\pi)}=-1.
+\]
+!et
+
+
+===== Exercise 2 (10 pt), Vector algebra  =====
+
+=== 2a (4pt), solution ===
+
+One of the many uses of the scalar product is to find the angle
+between two given vectors. Find the angle between the vectors
+$\bm{a}=(1,2,4)$ and $\bm{b}=(4,2,1)$ by evaluating their scalar
+product.
+
+The vector product is given by
+
+!bt
+\[
+\bm{a}\bm{b} = \vert \bm{a} \vert \vert \bm{b} \vert \cos{\theta_{ab}}.
+\]
+!et
+We have
+!bt
+\[
+\bm{a}^T\bm{b} = 1\dot 4 \bm{e}_1\bm{e}_1+ 2\dot 2\bm{e}_2\bm{e}_2+ 4\dot 1\bm{e}_3\bm{e}_3= 4+4+4=12,
+\]
+!et
+since $\bm{e}_i\bm{e}_i=1$ for our unit vectors, with $i=1,2,3$.
+The norm of $\vert \bm{a}\vert^2 = 1+4+ 16=21$. The norm of $\vert \bm{b}\vert^2 = 16+4+ 1=21$. This means we have 
+!bt
+\[
+12 = 21 \cos{\theta_{ab}}, 
+\]
+!et
+leading to $\cos{\theta_{ab}}=12/21$ and $\theta_{ab}=0.9625$ rad, with $1$ rad being equal to $180/pi$. Thus we have   $\theta_{ab}=55.15$ degrees.
+
+A small digression on linear algebra useful for python programming of vectors.
+We define the vectors as one-dimensional arrays meaning that we write
+$\bm{a}^T=\begin{bmatrix} 1 & 2 & 4\end{bmatrix}$ and  $\bm{b}^T=\begin{bmatrix} 4 & 2 & 1\end{bmatrix}$, where we use $T$ to indicate the transpose of a vector.
+
+We would then write the dot product as
+!bt
+\[
+\bm{a}^T\bm{b}=\begin{bmatrix} 1 & 2 & 4\end{bmatrix}\begin{bmatrix} 4 \\ 2 \\ 1\end{bmatrix}=12.
+\]
+!et
+
+In Python we would code this as
+!bc pycod
+# we import numpy and math functions
+import numpy as np
+from math import acos, sqrt, pi
+# Define a
+a =np.array([1,2,4])
+# Define b 
+b =np.array([4,2,1])
+# to compute the dot products we use the dot function or the multiplication sign @
+norm_a = sqrt(np.dot(a,a))  # we could write it as a.T @ a or just a @ a
+# We will stick with the @ operator hereafter when we multiply vector or matrices
+norm_b = sqrt(b.T @ b)
+dot_ab = a.T @ b
+theta_ab = acos(dot_ab/(norm_a*norm_b))
+# convert to degrees
+print(theta_ab*180/pi)
+!ec
+
+
+
+=== 2b (6pt), solution===
+
+For a cube with sides of length 1, one vertex at the origin, and sides
+along the $x$, $y$, and $z$ axes, the vector of the body diagonal from
+the origin can be written $\bm{a}=(1, 1, 1)$ and the vector of the
+face diagonal in the $xy$ plane from the origin is
+$\bm{b}=(1,1,0)$. Find first the lengths of the body diagonal and the
+face diagonal. Use then part (2a) to find the angle between the body
+diagonal and the face diagonal.
+
+The length of the body diagonal $\vert\bm{b}\vert = \sqrt{3}$ and the length of the face diagonal is $\vert \bm{f}\vert = \sqrt{2}$. From this we find
+!bt
+\[
+\bm{b}^T\bm{f} = 2 = \sqrt{2}\sqrt{3}\cos{\theta_{bf}$,
+\]
+!et
+
+leading to $\cos{\theta_{bf}}=\sqrt{2}/\sqrt{3}$ and $\theta_{bf}=0.615$ rad or
+$\theta_{bf}=35.3$ degrees.
+
+
+
+===== Exercise 3 (10 pt), More vector mathematics =====
+
+=== 3a (5pt), solution ===
+
+Show (using the fact that multiplication of reals is distributive)
+that $\bm{a}(\bm{b}+\bm{c})=\bm{a}\bm{b}+\bm{a}\bm{c}$.
+
+Writing out the equations and keeping in mind that the norm of unit vectors is one, we have
+
+!bt
+\begin{align*}
+\bm{a}(\bm{b}+\bm{c})=& a_1(b_1+c_1)+a_2(b_2+c_2)+a_3(b_3+c_3)\\
+=& (a_1b_1+a_1c_1)+(a_2b_2+a_2c_2)+(a_3b_3+a_3c_3)\\
+= & (a_1b_1+a_2b_2+a_3b_3)+(a_1c_1+a_2c_2+a_3c_3)\\
+= & \bm{a}\bm{b}+\bm{a}\bm{c}. 
+\end{align*}
+!et
+
+=== 3b (5pt), solution ===
+
+Show that (using product rule for differentiating reals)
+$\frac{d}{dt}(\bm{a}\bm{b})=\bm{a}\frac{d\bm{b}}{dt}+\bm{b}\frac{d\bm{a}}{dt}$.
+
+!bt
+\begin{align*}
+\frac{d}{dt}(\bm{a}\bm{b})=& a_1(b_1+c_1)+a_2(b_2+c_2)+a_3(b_3+c_3)\\
+=& (a_1b_1+a_1c_1)+(a_2b_2+a_2c_2)+(a_3b_3+a_3c_3)\\
+= & (a_1b_1+a_2b_2+a_3b_3)+(a_1c_1+a_2c_2+a_3c_3)\\
+= & \bm{a}\bm{b}+\bm{a}\bm{c}. 
+\end{align*}
+!et
+
+
+===== Exercise 4 (10 pt), Algebra of cross products  =====
+
+=== 4a (5pt) ===
+
+Show that the cross products are distribuitive
+$\bm{a}\times(\bm{b}+\bm{c})=\bm{a}\times\bm{b}+\bm{a}\times\bm{c}$.
+
+=== 4b (5pt) ===
+
+Show that
+$\frac{d}{dt}(\bm{a}\times\bm{b})=\bm{a}\times\frac{d\bm{b}}{dt}+\bm{b}\times\frac{d\bm{a}}{dt}$. Be
+careful with the order of factors
+
+
+===== Exercise 5 (10 pt), Area of triangle and law of sines =====
+
+Exercise 1.18 in the textbook of Taylor, Classical Mechanics. Part
+(1.18a) gives 5pt and part (1.18b) gives also 5pt.
+
+===== Exercise 6 (10pt), Matrices and rotations in the $xy$ plane =====
+
+The rotation of a three-dimensional vector $\bm{a}=(a_x,a_y,a_z)$ in
+the $xy$ plane around an angle $\phi$ results in a new vector
+$\bm{b}=(b_x,b_y,b_z)$.  This operation can be expressed in terms of
+linear algebra as a matrix (the rotation matrix) multiplied with a
+vector. We can write this as
+
 !bt
 \[
 \begin{bmatrix} b_x \\ b_y \\ b_z \end{bmatrix} = \begin{bmatrix} \cos{\phi} & \sin{\phi} & 0 \\ -\sin{\phi} & \cos{\phi} & 0 \\ 0 & 0 & 1\end{bmatrix}\begin{bmatrix} a_x \\ a_y \\ a_z \end{bmatrix}.
 \]
 !et
-We can write this in a more compact form as $\bm{b} = \bm{R}\bm{a}$, where the rotation matrix is defined as
+
+We can write this in a more compact form as $\bm{b} = \bm{R}\bm{a}$,
+where the rotation matrix is defined as
+
 !bt
 \[
 \bm{R} = \begin{bmatrix} \cos{\phi} & \sin{\phi} & 0 \\ -\sin{\phi} & \cos{\phi} & 0 \\ 0 & 0 & 1\end{bmatrix}.
@@ -60,9 +233,7 @@ We can write this in a more compact form as $\bm{b} = \bm{R}\bm{a}$, where the r
 * 6b (4pt)  This matrix is a so-called unitary/orthogonal matrix.  Show that $\bm{R}^T\bm{R}= \bm{I}$ where $\bm{I}$ is the so-called identity matrix with ones only along the diagonal. How would you interpret this result? For example, are scalar products changed under this transformations?
 * 6c (2pt) Find the matrix for rotating a coordinate system by $90$ degrees about the $x$-axis.
 
-===  Exercise 7 (40pt), Numerical elements, getting started with some simple data ===
-
-_This exercise should be handed in as a jupyter-notebook_ at D2L. Remember to write your name(s). 
+=====  Exercise 7 (40pt), Numerical elements, getting started with some simple data =====
 
 
 Our first numerical attempt will involve reading data from file or
