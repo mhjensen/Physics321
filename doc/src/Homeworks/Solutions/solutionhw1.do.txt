@@ -14,12 +14,13 @@ include $\exp{(\imath\omega t)}$. Here $t$ could be interpreted as time and $\om
 
 Perform Taylor expansions in powers of $\omega t$ of the functions
 $\cos{(\omega t)}$ and $\sin{(\omega t)}$.
-
+We have
 !bt
 \[
 \cos{(\omega t)} = \sum_{n=0}^{\infty}\left(-1\right)^n \frac{(\omega t)^{2n}}{(2n)!}=1-\frac{(\omega t)^{2}}{2!}+\frac{(\omega t)^{4}}{4!}-\dots,
 \]
 !et
+and 
 !bt
 \[
 \sin{(\omega t)} = \sum_{n=0}^{\infty}\left(-1\right)^n \frac{(\omega t)^{2n+1}}{(2n+1)!}=\omega t-\frac{(\omega t)^{3}}{3!}+\frac{(\omega t)^{5}}{5!}-\dots,
@@ -32,11 +33,12 @@ $\cos{(\omega t)}$ and $\sin{(\omega t)}$.
 
 === 1b (2pt), solution: ===
 
-Perform a Taylor expansion of $\exp{(imath\omega t)}$.
 
+Perform a Taylor expansion of $\exp{(\imath\omega t)}$.
+We have then
 !bt
 \[
-\expt{(\imath\omega t)} = \sum_{n=0}^{\infty}\frac{(\imath\omega t)^{n}}{(n)!}=1+\omega t\frac{(\imath\omega t)^{2}}{2!}+\frac{(\imath\omega t)^{3}}{3!}+\frac{(\imath\omega t)^{4}}{4!}+\frac{(\imath\omega t)^{5}}{5!}+\dots.
+\exp{(\imath\omega t)} = \sum_{n=0}^{\infty}\frac{(\imath\omega t)^{n}}{(n)!}=1+\omega t+\frac{(\imath\omega t)^{2}}{2!}+\frac{(\imath\omega t)^{3}}{3!}+\frac{(\imath\omega t)^{4}}{4!}+\frac{(\imath\omega t)^{5}}{5!}+\dots.
 \]
 !et
 
@@ -46,10 +48,9 @@ Perform a Taylor expansion of $\exp{(imath\omega t)}$.
 Using parts (a) and (b) here, show that $\exp{(\imath\omega t)}=\cos{(\omega t)}+\imath\sin{(\omega t)}$.
 
 Using $\imath^2=-1$ we can rewrite the last results as
-
 !bt
 \begin{align*}
-\expt{(\omega t)} = & \sum_{n=0}^{\infty}\frac{(\omega t)^{n}}{(n)!}=1+\omega t\frac{(\omega t)^{2}}{2!}+\frac{(\omega t)^{3}}{3!}+\frac{(\omega t)^{4}}{4!}+\frac{(\omega t)^{5}}{5!}+\dots\\
+\exp{(\omega t)} = & \sum_{n=0}^{\infty}\frac{(\omega t)^{n}}{(n)!}=1+\omega t\frac{(\omega t)^{2}}{2!}+\frac{(\omega t)^{3}}{3!}+\frac{(\omega t)^{4}}{4!}+\frac{(\omega t)^{5}}{5!}+\dots\\
 =& \left(1-\frac{(\omega t)^{2}}{2!}+\frac{(\omega t)^{4}}{4!}-\dots\right)+\left(\omega t-\frac{(\omega t)^{3}}{3!}+\frac{(\omega t)^{5}}{5!}-\dots\right)\\
 = & \cos{(\omega t)}+\imath\sin{(\omega t)}.
 \end{align*}
@@ -91,7 +92,7 @@ We have
 \bm{a}^T\bm{b} = 1\dot 4 \bm{e}_1\bm{e}_1+ 2\dot 2\bm{e}_2\bm{e}_2+ 4\dot 1\bm{e}_3\bm{e}_3= 4+4+4=12,
 \]
 !et
-since $\bm{e}_i\bm{e}_i=1$ for our unit vectors, with $i=1,2,3$.
+since $\bm{e}_i\bm{e}_i=1$ for our unit vectors, with $i=1,2,3$. Note also that the unit vectors are orthogonal, that is $\bm{e}_i\bm{e}_j=0$ if $i\ne j$.
 The norm of $\vert \bm{a}\vert^2 = 1+4+ 16=21$. The norm of $\vert \bm{b}\vert^2 = 16+4+ 1=21$. This means we have 
 !bt
 \[
@@ -132,7 +133,7 @@ print(theta_ab*180/pi)
 
 
 
-=== 2b (6pt), solution===
+=== 2b (6pt), solution ===
 
 For a cube with sides of length 1, one vertex at the origin, and sides
 along the $x$, $y$, and $z$ axes, the vector of the body diagonal from
@@ -142,10 +143,10 @@ $\bm{b}=(1,1,0)$. Find first the lengths of the body diagonal and the
 face diagonal. Use then part (2a) to find the angle between the body
 diagonal and the face diagonal.
 
-The length of the body diagonal $\vert\bm{b}\vert = \sqrt{3}$ and the length of the face diagonal is $\vert \bm{f}\vert = \sqrt{2}$. From this we find
+The length of the body diagonal $\vert\bm{b}\vert=\sqrt{3}$ and the length of the face diagonal is $\vert \bm{f}\vert = \sqrt{2}$. From this we find
 !bt
 \[
-\bm{b}^T\bm{f} = 2 = \sqrt{2}\sqrt{3}\cos{\theta_{bf}$,
+\bm{b}^T\bm{f}=2=\sqrt{2}\sqrt{3}\cos{\theta_{bf}},
 \]
 !et
 
