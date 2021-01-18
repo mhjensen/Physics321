@@ -90,7 +90,7 @@ This week is meant as a review and reading week. There are no lectures but we ha
 
 - Introduction to the course and reminder  on vectors, space, time and motion, JRT chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). Watch the video at https://mediaspace.msu.edu/media/t/1_zzl90pfu
 - Python programming reminder, elements from CMSE 201 and how they are used in this course. Installing software (anaconda). See slides at https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). 
-- Introduction to Git and GitHub/GitLab. Watch the video athttps://mediaspace.msu.edu/media/t/1_8mgx3cyf
+- Introduction to Git and GitHub/GitLab. Watch the video at https://mediaspace.msu.edu/media/t/1_8mgx3cyf
 
 For solving this exercise, AMS chapters 2 and 4 are very useful as review material. First homework set is available and due Monday January 25. See https://mhjensen.github.io/Physics321/doc/web/course.html (scroll down to homework 1). Parts of the homework will be discussed next week (Friday 22). 
 
