@@ -148,7 +148,7 @@ MathJax.Hub.Config({
 <center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
 <br>
 <p>&nbsp;<br>
-<center><h4>Jan 6, 2021</h4></center> <!-- date -->
+<center><h4>Jan 20, 2021</h4></center> <!-- date -->
 <br>
 <p>
 
@@ -163,147 +163,18 @@ MathJax.Hub.Config({
 
 <h3 id="___sec1">Wednesday </h3>
 
+<p>
+On Wednesday the 20th we will mainly go through the overview material from week 2, January 11-15.  See the learning material fro week 2 at for example <a href="https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2-bs.html" target="_blank"><tt>https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2-bs.html</tt></a>.
+
 <h3 id="___sec2">Friday </h3>
+
+<p>
+We start studying the problem of a  falling object and use this to introduce numerical aspects.
 </section>
 
 
 <section>
-<h2 id="___sec3">Space, Time, Motion, Reference Frames  and Reminder on vectors and other mathematical quantities </h2>
-
-<p>
-Our studies will start with the motion of different types of objects
-such as a falling ball, a runner, a bicycle etc etc. It means that an
-object's position in space varies with time.
-In order to study such systems we need to define
-
-<ul>
-<p><li> choice of origin</li>
-<p><li> choice of the direction of the axes</li>
-<p><li> choice of positive direction (left-handed or right-handed system of reference)</li>
-<p><li> choice of units and dimensions</li>
-</ul>
-<p>
-
-These choices lead to some important questions such as
-
-<ul>
-<p><li> is the  physics of a system independent of the origin of the axes?</li>
-<p><li> is the  physics independent of the directions of the axes, that is are there privileged axes?</li>
-<p><li> is the physics independent of the orientation of system?</li>
-<p><li> is the physics independent of the scale of the length?</li>
-</ul>
-
-<h3 id="___sec4">Dimension, units and labels </h3>
-
-<p>
-Throughout this course we will use the standardized SI units. The standard unit for length is thus one meter 1m, for mass
-one kilogram 1kg, for time one second 1s, for force one Newton 1kgm/s$^2$ and for energy 1 Joule 1kgm$^2$s$^{-2}$.
-
-<p>
-We will use the following notations for various variables (vectors are always boldfaced in these lecture notes):
-
-<ul>
-<p><li> position \( \boldsymbol{r} \), in one dimention we will normally just use \( x \),</li>
-<p><li> mass \( m \),</li>
-<p><li> time \( t \),</li>
-<p><li> velocity \( \boldsymbol{v} \) or just \( v \) in one dimension,</li>
-<p><li> acceleration \( \boldsymbol{a} \) or just \( a \) in one dimension,</li>
-<p><li> momentum \( \boldsymbol{p} \) or just \( p \) in one dimension,</li>
-<p><li> kinetic energy \( K \),</li>
-<p><li> potential energy \( V \) and</li>
-<p><li> frequency \( \omega \).</li>
-</ul>
-<p>
-
-More variables will be defined as we need them.
-
-<p>
-It is also important to keep track of dimensionalities. Don't mix this up with a chosen unit for a given variable. We mark the dimensionality in these lectures as \( [a] \), where \( a \) is the quantity we are interested in. Thus
-
-<ul>
-<p><li> \( [\boldsymbol{r}]= \) length</li>
-<p><li> \( [m]= \) mass</li>
-<p><li> \( [K]= \) energy</li>
-<p><li> \( [t]= \) time</li>
-<p><li> \( [\boldsymbol{v}]= \) length over time</li>
-<p><li> \( [\boldsymbol{a}]= \) length over time squared</li>
-<p><li> \( [\boldsymbol{p}]= \) mass times length over time</li>
-<p><li> \( [\omega]= \) 1/time</li>
-</ul>
-</section>
-
-
-<section>
-<h2 id="___sec5">Elements of Vector Algebra </h2>
-
-<p>
-<b>Note</b>: This section is under revision
-
-<p>
-In these lectures we will use boldfaced lower-case letters to label a vector. A vector \( \boldsymbol{a} \) in three dimensions is thus defined as
-<p>&nbsp;<br>
-$$
-\boldsymbol{a} =(a_x,a_y, a_z),
-$$
-<p>&nbsp;<br>
-
-and using the unit vectors in a cartesian system we have
-<p>&nbsp;<br>
-$$
-\boldsymbol{a} = a_x\boldsymbol{e}_x+a_y\boldsymbol{e}_y+a_z\boldsymbol{e}_z,
-$$
-<p>&nbsp;<br>
-
-where the unit vectors have magnitude \( \vert\boldsymbol{e}_i\vert = 1 \) with \( i=x,y,z \).
-
-<p>
-Using the fact that multiplication of reals is distributive we can show that
-<p>&nbsp;<br>
-$$
-\boldsymbol{a}(\boldsymbol{b}+\boldsymbol{c})=\boldsymbol{a}\boldsymbol{b}+\boldsymbol{a}\boldsymbol{c},
-$$
-<p>&nbsp;<br>
-
-Similarly we can also show that (using product rule for differentiating reals)
-<p>&nbsp;<br>
-$$
-\frac{d}{dt}(\boldsymbol{a}\boldsymbol{b})=\boldsymbol{a}\frac{d\boldsymbol{b}}{dt}+\boldsymbol{b}\frac{d\boldsymbol{a}}{dt}.
-$$
-<p>&nbsp;<br>
-
-<p>
-We can repeat these operations for the cross products and show that they are distribuitive
-<p>&nbsp;<br>
-$$
-\boldsymbol{a}\times(\boldsymbol{b}+\boldsymbol{c})=\boldsymbol{a}\times\boldsymbol{b}+\boldsymbol{a}\times\boldsymbol{c}.
-$$
-<p>&nbsp;<br>
-
-We have also that
-<p>&nbsp;<br>
-$$
-\frac{d}{dt}(\boldsymbol{a}\times\boldsymbol{b})=\boldsymbol{a}\times\frac{d\boldsymbol{b}}{dt}+\boldsymbol{b}\times\frac{d\boldsymbol{a}}{dt}.
-$$
-<p>&nbsp;<br>
-
-The rotation of a three-dimensional  vector \( \boldsymbol{a}=(a_x,a_y,a_z) \) in the \( xy \) plane around an angle \( \phi \) results in a new vector \( \boldsymbol{b}=(b_x,b_y,b_z) \).  This operation can be expressed in terms of linear algebra as a matrix (the rotation matrix) multiplied with a vector. We can write this as
-<p>&nbsp;<br>
-$$
-\begin{bmatrix} b_x \\ b_y \\ b_z \end{bmatrix} = \begin{bmatrix} \cos{\phi} & \sin{\phi} & 0 \\ -\sin{\phi} & \cos{\phi} & 0 \\ 0 & 0 & 1\end{bmatrix}\begin{bmatrix} a_x \\ a_y \\ a_z \end{bmatrix}.
-$$
-<p>&nbsp;<br>
-
-We can write this in a more compact form as \( \boldsymbol{b} = \boldsymbol{R}\boldsymbol{a} \), where the rotation matrix is defined as
-<p>&nbsp;<br>
-$$
-\boldsymbol{R} = \begin{bmatrix} \cos{\phi} & \sin{\phi} & 0 \\ -\sin{\phi} & \cos{\phi} & 0 \\ 0 & 0 & 1\end{bmatrix}.
-$$
-<p>&nbsp;<br>
-</section>
-
-
-<section>
-<h2 id="___sec6">Falling baseball in one dimension </h2>
+<h2 id="___sec3">Falling baseball in one dimension </h2>
 
 <p>
 We anticipate the mathematical model to come and assume that we have a
@@ -334,7 +205,7 @@ As of now we simply assume that   we know the formula for the falling object. Af
 
 
 <section>
-<h2 id="___sec7">Our Python Encounter </h2>
+<h2 id="___sec4">Our Python Encounter </h2>
 
 <p>
 We start with preparing folders for storing our calculations, figures and if needed, specific data files we use as input or output files.
@@ -437,7 +308,7 @@ Here we used <b>pandas</b> (see below) to systemize the output of the position a
 
 
 <section>
-<h2 id="___sec8">Average quantities </h2>
+<h2 id="___sec5">Average quantities </h2>
 We define now the average velocity as
 <p>&nbsp;<br>
 $$
@@ -472,7 +343,7 @@ $$
 
 
 <section>
-<h2 id="___sec9">Compact equations </h2>
+<h2 id="___sec6">Compact equations </h2>
 We can then rewrite in a more compact form the average velocity as
 <p>&nbsp;<br>
 $$
@@ -510,7 +381,7 @@ $$
 
 
 <section>
-<h2 id="___sec10">A differential equation </h2>
+<h2 id="___sec7">A differential equation </h2>
 We can rewrite the instantaneous acceleration as
 <p>&nbsp;<br>
 $$
@@ -545,7 +416,7 @@ We will come back to this soon.
 
 
 <section>
-<h2 id="___sec11">Integrating our equations </h2>
+<h2 id="___sec8">Integrating our equations </h2>
 
 <p>
 Formally we can then, starting with the acceleration (suppose we have measured it, how could we do that?)
@@ -587,7 +458,7 @@ spatial dimension.
 
 
 <section>
-<h2 id="___sec12">Constant acceleration case, the velocity </h2>
+<h2 id="___sec9">Constant acceleration case, the velocity </h2>
 Let us compute the velocity using the constant value for the acceleration given by \( -g \). We have
 <p>&nbsp;<br>
 $$
@@ -626,7 +497,7 @@ $$
 
 
 <section>
-<h2 id="___sec13">Computing the averages </h2>
+<h2 id="___sec10">Computing the averages </h2>
 After this mathematical background we are now ready to compute the mean velocity using our data.
 <p>
 
@@ -658,7 +529,7 @@ Note that we don't print the last values!
 
 
 <section>
-<h2 id="___sec14">Including Air Resistance in our model </h2>
+<h2 id="___sec11">Including Air Resistance in our model </h2>
 
 <p>
 In our discussions till now of the falling baseball, we have ignored
@@ -704,7 +575,7 @@ method for solving these differential equations numerically.
 
 
 <section>
-<h2 id="___sec15">Analytical solutions </h2>
+<h2 id="___sec12">Analytical solutions </h2>
 
 <p>
 For simplicity let us just write \( v(t) \) as \( v \). We have
@@ -756,7 +627,7 @@ $$
 
 
 <section>
-<h2 id="___sec16">Finding the final height </h2>
+<h2 id="___sec13">Finding the final height </h2>
 With the velocity we can then find the height \( y(t) \) by integrating yet another time, that is
 <p>&nbsp;<br>
 $$
@@ -780,7 +651,7 @@ In most cases however, we need to revert to numerical solutions.
 
 
 <section>
-<h2 id="___sec17">Our first attempt at solving differential equations </h2>
+<h2 id="___sec14">Our first attempt at solving differential equations </h2>
 
 <p>
 Here we will try the simplest possible approach to solving the second-order differential 
@@ -840,7 +711,9 @@ $$
 
 
 <section>
-<h2 id="___sec18">Discretizing our equations </h2>
+<h2 id="___sec15">Discretizing our equations </h2>
+
+<p>
 Using our discretized versions of the equations with for example
 \( y_{i}=y(t_i) \) and \( y_{i\pm 1}=y(t_i+\Delta t) \), we can rewrite the
 above equations as (and truncating at \( \Delta t \))
@@ -937,7 +810,7 @@ a = np.zeros(n)
 
 
 <section>
-<h2 id="___sec19">Code for implementing Euler's method </h2>
+<h2 id="___sec16">Code for implementing Euler's method </h2>
 In the code here we implement this simple Eurler scheme choosing a value for \( D=0.0245 \) m/s.
 
 <p>
@@ -1032,7 +905,7 @@ Try different values for \( \Delta t \) and study the difference between the exa
 
 
 <section>
-<h2 id="___sec20">Simple extension, the Euler-Cromer method </h2>
+<h2 id="___sec17">Simple extension, the Euler-Cromer method </h2>
 
 <p>
 The Euler-Cromer method is a simple variant of the standard Euler
