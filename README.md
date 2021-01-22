@@ -14,6 +14,11 @@ useful tools, where to find information and much more.
 _Our first regular teaching day is  Wednesday January 20 at 3pm_.  We look
 forward to meet you all and hope you will enjoy the course.
 
+We have also created a Slack channel, see 
+https://join.slack.com/t/physics321msu/shared_invite/zt-lkk1d8ow-TfGnTeH647zlonyHFOg~Dw
+
+Similarly, we would appreciate it if you could fill in the survey here
+https://docs.google.com/forms/d/1pBpu8spHQaRM0vsL0ljTI1_lwclUg3UBeNBhnDE97-Q/edit
 
 
 
