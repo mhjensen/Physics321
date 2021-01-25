@@ -1,10 +1,36 @@
-TITLE: PHY321: Forces, Newton's Laws and Motion Example
+TITLE: PHY321: Motion examples, Forces, Newton's Laws and Motion Example
 AUTHOR: "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/" {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and Facility for Rare Ion Beams (FRIB), Michigan State University, USA & Department of Physics, University of Oslo, Norway
 DATE: today
 
 
 !split
+=====   Aims and Overarching Motivation =====
+
+=== Monday ===
+
+We try to finalize the discussion we started last Friday on falling objects and numerical aspects thereof.
+If we get time, we start with a discussion of forces as well.
+
+Recommended reading: Taylor 1.3
+
+=== Wednesday ===
+
+We revisit Newton's laws and discuss how to analyze a problem.
+
+Recommended reading: Taylor 1.4 and 1.5
+
+===  Friday ===
+
+We discuss several examples and try to wrap up the discussions on Newton's laws.
+
+Recommended reading: Taylor 1.4-1.6 and 2.1-2.2 as examples of motion problems.
+
+
+
+!split
 ===== Basic Steps of Scientific Investigations =====
+
+Last week we discussed several basi elements of the scientific method. We repeat them here.
 
 An overarching aim in this course is to give you a deeper
 understanding of the scientific method. The problems we study will all
@@ -76,10 +102,705 @@ enquiry. Hopefully, through a mix of numerical simulations, analytical
 calculations and experiments we may gain a deeper insight about the
 physics of a specific system.
 
-Let us now remind ourselves of Newton's laws, since these are the laws of motion we will study in this course.
+
+!split
+===== Falling baseball in one dimension =====
+
+We anticipate the mathematical model to come and assume that we have a
+model for the motion of a falling baseball without air resistance.
+Our system (the baseball) is at an initial height $y_0$ (which we will
+specify in the program below) at the initial time $t_0=0$. In our program example here we will plot the position in steps of $\Delta t$ up to a final time $t_f$. 
+The mathematical formula for the position $y(t)$ as function of time $t$ is 
+!bt
+\[
+y(t) = y_0-\frac{1}{2}gt^2,
+\]
+!et
+where $g=9.80665=0.980655\times 10^1$m/s${}^2$ is a constant representing the standard acceleration due to gravity.
+We have here adopted the conventional standard value. This does not take into account other effects, such as buoyancy or drag.
+Furthermore, we stop when the ball hits the ground, which takes place at
+!bt
+\[
+y(t) = 0= y_0-\frac{1}{2}gt^2,
+\]
+!et
+which gives us a final time $t_f=\sqrt{2y_0/g}$. 
+
+As of now we simply assume that   we know the formula for the falling object. Afterwards, we will derive it.
+
+!split
+=====  Our Python Encounter =====
+
+We start with preparing folders for storing our calculations, figures and if needed, specific data files we use as input or output files.
+
+!bc pycod
+# Common imports
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import os
+
+# Where to save the figures and data files
+PROJECT_ROOT_DIR = "Results"
+FIGURE_ID = "Results/FigureFiles"
+DATA_ID = "DataFiles/"
+
+if not os.path.exists(PROJECT_ROOT_DIR):
+    os.mkdir(PROJECT_ROOT_DIR)
+
+if not os.path.exists(FIGURE_ID):
+    os.makedirs(FIGURE_ID)
+
+if not os.path.exists(DATA_ID):
+    os.makedirs(DATA_ID)
+
+def image_path(fig_id):
+    return os.path.join(FIGURE_ID, fig_id)
+
+def data_path(dat_id):
+    return os.path.join(DATA_ID, dat_id)
+
+def save_fig(fig_id):
+    plt.savefig(image_path(fig_id) + ".png", format='png')
+
+#in case we have an input file we wish to read in
+#infile = open(data_path("MassEval2016.dat"),'r')
+!ec
+
+
+You could also define a function for making our plots. You
+can obviously avoid this and simply set up various _matplotlib_
+commands every time you need them. You may however find it convenient
+to collect all such commands in one function and simply call this
+function.
+
+!bc pycod 
+from pylab import plt, mpl
+plt.style.use('seaborn')
+mpl.rcParams['font.family'] = 'serif'
+
+def MakePlot(x,y, styles, labels, axlabels):
+    plt.figure(figsize=(10,6))
+    for i in range(len(x)):
+        plt.plot(x[i], y[i], styles[i], label = labels[i])
+        plt.xlabel(axlabels[0])
+        plt.ylabel(axlabels[1])
+    plt.legend(loc=0)
+!ec
+
+
+
+Thereafter we start setting up the code for the falling object.
+
+!bc pycod
+%matplotlib inline
+import matplotlib.patches as mpatches
+
+g = 9.80655 #m/s^2
+y_0 = 10.0 # initial position in meters
+DeltaT = 0.1  # time step
+# final time when y = 0, t = sqrt(2*10/g)
+tfinal = np.sqrt(2.0*y_0/g)
+#set up arrays 
+t = np.arange(0,tfinal,DeltaT)
+y =y_0 -g*.5*t**2
+# Then make a nice printout in table form using Pandas
+import pandas as pd
+from IPython.display import display
+data = {'t[s]': t,
+        'y[m]': y
+        }
+RawData = pd.DataFrame(data)
+display(RawData)
+plt.style.use('ggplot')
+plt.figure(figsize=(8,8))
+plt.scatter(t, y, color = 'b')
+blue_patch = mpatches.Patch(color = 'b', label = 'Height y as function of  time t')
+plt.legend(handles=[blue_patch])
+plt.xlabel("t[s]")
+plt.ylabel("y[m]")
+save_fig("FallingBaseball")
+plt.show()
+!ec
+
+Here we used _pandas_ (see below) to systemize the output of the position as function of time.
+
+
+!split
+===== Average quantities =====
+We define now the average velocity as
+!bt
+\[
+\overline{v}(t) = \frac{y(t+\Delta t)-y(t)}{\Delta t}.
+\]
+!et
+In the code we have set the time step $\Delta t$ to a given value. We could define it in terms of the number of points $n$ as
+!bt
+\[
+\Delta t = \frac{t_{\mathrm{final}-}t_{\mathrm{initial}}}{n+1}.
+\]
+!et
+
+Since we have discretized the variables, we introduce the counter $i$ and let $y(t)\rightarrow y(t_i)=y_i$ and $t\rightarrow t_i$
+with $i=0,1,\dots, n$. This gives us the following shorthand notations that we will use for the rest of this course. We define
+!bt
+\[
+y_i = y(t_i),\hspace{0.2cm} i=0,1,2,\dots,n.
+\]
+!et
+This applies to other variables which depend on say time. Examples are the velocities, accelerations, momenta etc.
+Furthermore we use the shorthand
+!bt
+\[
+y_{i\pm 1} = y(t_i\pm \Delta t),\hspace{0.12cm} i=0,1,2,\dots,n.
+\]
+!et
+
+!split
+===== Compact equations =====
+We can then rewrite in a more compact form the average velocity as
+!bt
+\[
+\overline{v}_i = \frac{y_{i+1}-y_{i}}{\Delta t}.
+\]
+!et
+The velocity is defined as the change in position per unit time.
+In the limit $\Delta t \rightarrow 0$ this defines the instantaneous velocity, which is nothing but the slope of the position at a time $t$.
+We have thus
+!bt
+\[
+v(t) = \frac{dy}{dt}=\lim_{\Delta t \rightarrow 0}\frac{y(t+\Delta t)-y(t)}{\Delta t}.
+\]
+!et
+Similarly, we can define the average acceleration as the change in velocity per unit time as
+!bt
+\[
+\overline{a}_i = \frac{v_{i+1}-v_{i}}{\Delta t},
+\]
+!et
+resulting in the instantaneous acceleration
+!bt
+\[
+a(t) = \frac{dv}{dt}=\lim_{\Delta t\rightarrow 0}\frac{v(t+\Delta t)-v(t)}{\Delta t}.
+\]
+!et
+
+_A note on notations_: When writing for example the velocity as $v(t)$ we are then referring to the continuous and instantaneous value. A subscript like
+$v_i$ refers always to the discretized values.
+
+!split
+===== A differential equation =====
+We can rewrite the instantaneous acceleration as
+!bt
+\[
+a(t) = \frac{dv}{dt}=\frac{d}{dt}\frac{dy}{dt}=\frac{d^2y}{dt^2}.
+\]
+!et
+This forms the starting point for our definition of forces later. It is a famous second-order differential equation. If the acceleration is constant we can now recover the formula for the falling ball we started with.
+The acceleration can depend on the position and the velocity. To be more formal we should then write the above differential equation as
+!bt
+\[
+\frac{d^2y}{dt^2}=a(t,y(t),\frac{dy}{dt}).
+\]
+!et
+
+With given initial conditions for $y(t_0)$ and $v(t_0)$ we can then
+integrate the above equation and find the velocities and positions at
+a given time $t$.
+
+If we multiply with mass, we have one of the famous expressions for Newton's second law,
+!bt
+\[
+F(y,v,t)=m\frac{d^2y}{dt^2}=ma(t,y(t),\frac{dy}{dt}),
+\]
+!et
+where $F$ is the force acting on an object with mass $m$. We see that it also has the right dimension, mass times length divided by time squared.
+We will come back to this soon.
+
+!split
+===== Integrating our equations =====
+
+Formally we can then, starting with the acceleration (suppose we have measured it, how could we do that?)
+compute say the height of a building.  To see this we perform the following integrations from an initial time $t_0$  to a given time $t$
+!bt
+\[
+\int_{t_0}^t dt a(t) = \int_{t_0}^t dt \frac{dv}{dt} = v(t)-v(t_0),
+\]
+!et
+or as 
+!bt
+\[
+v(t)=v(t_0)+\int_{t_0}^t dt a(t).
+\]
+!et
+
+
+When we know the velocity as function of time, we can find the position as function of time starting from the defintion of velocity as the derivative with respect to time, that is we have
+!bt
+\[
+\int_{t_0}^t dt v(t) = \int_{t_0}^t dt \frac{dy}{dt} = y(t)-y(t_0),
+\]
+!et
+or as 
+!bt
+\[
+y(t)=y(t_0)+\int_{t_0}^t dt v(t).
+\]
+!et
+
+These equations define what is called the integration method for
+finding the position and the velocity as functions of time. There is
+no loss of generality if we extend these equations to more than one
+spatial dimension.
+
+!split
+===== Constant acceleration case, the velocity =====
+Let us compute the velocity using the constant value for the acceleration given by $-g$. We have
+!bt
+\[
+v(t)=v(t_0)+\int_{t_0}^t dt a(t)=v(t_0)+\int_{t_0}^t dt (-g).
+\]
+!et
+Using our initial time as $t_0=0$s and setting the initial velocity $v(t_0)=v_0=0$m/s we get when integrating
+!bt
+\[
+v(t)=-gt.
+\]
+!et
+The more general case is
+!bt
+\[
+v(t)=v_0-g(t-t_0).
+\]
+!et
+We can then integrate the velocity and obtain the final formula for the position as function of time through
+!bt
+\[
+y(t)=y(t_0)+\int_{t_0}^t dt v(t)=y_0+\int_{t_0}^t dt v(t)=y_0+\int_{t_0}^t dt (-gt),
+\]
+!et
+With $y_0=10$m and $t_0=0$s, we obtain the equation we started with
+!bt
+\[
+y(t)=10-\frac{1}{2}gt^2.
+\]
+!et
+
+
+
+!split
+===== Computing the averages =====
+After this mathematical background we are now ready to compute the mean velocity using our data.
+!bc pycod
+# Now we can compute the mean velocity using our data
+# We define first an array Vaverage
+n = np.size(t)
+Vaverage = np.zeros(n)
+for i in range(1,n-1):
+    Vaverage[i] = (y[i+1]-y[i])/DeltaT
+# Now we can compute the mean accelearatio using our data
+# We define first an array Aaverage
+n = np.size(t)
+Aaverage = np.zeros(n)
+Aaverage[0] = -g
+for i in range(1,n-1):
+    Aaverage[i] = (Vaverage[i+1]-Vaverage[i])/DeltaT
+data = {'t[s]': t,
+        'y[m]': y,
+        'v[m/s]': Vaverage,
+        'a[m/s^2]': Aaverage
+        }
+NewData = pd.DataFrame(data)
+display(NewData[0:n-2])
+!ec
+
+Note that we don't print the last values! 
+
+
+
+!split
+===== Including Air Resistance in our model =====
+
+In our discussions till now of the falling baseball, we have ignored
+air resistance and simply assumed that our system is only influenced
+by the gravitational force.  We will postpone the derivation of air
+resistance till later, after our discussion of Newton's laws and
+forces.
+
+For our discussions here it suffices to state that the accelerations is now modified to
+!bt
+\[
+\bm{a}(t) = -g +D\bm{v}(t)\vert v(t)\vert,
+\]
+!et
+where $\vert v(t)\vert$ is the absolute value of the velocity and $D$ is a constant which pertains to the specific object we are studying.
+Since we are dealing with motion in one dimension, we can simplify the above to
+!bt
+\[
+a(t) = -g +Dv^2(t). 
+\]
+!et
+We can rewrite this as a differential equation
+!bt
+\[
+a(t) = \frac{dv}{dt}=\frac{d^2y}{dt^2}= -g +Dv^2(t). 
+\]
+!et
+
+Using the integral equations discussed above we can integrate twice
+and obtain first the velocity as function of time and thereafter the
+position as function of time.
+
+For this particular case, we can actually obtain an analytical
+solution for the velocity and for the position. Here we will first
+compute the solutions analytically, thereafter we will derive Euler's
+method for solving these differential equations numerically.
+
+!split
+===== Analytical solutions =====
+
+For simplicity let us just write $v(t)$ as $v$. We have
+!bt
+\[
+\frac{dv}{dt}= -g +Dv^2(t). 
+\]
+!et
+
+We can solve this using the technique of separation of variables. We
+isolate on the left all terms that involve $v$ and on the right all
+terms that involve time. We get then
+!bt
+\[
+\frac{dv}{g -Dv^2(t) }= -dt,
+\]
+!et
+
+We scale now the equation to the left by introducing a constant
+$v_T=\sqrt{g/D}$. This constant has dimension length/time. Can you
+show this?
+
+Next we integrate the left-hand side (lhs) from $v_0=0$ m/s to $v$ and
+the right-hand side (rhs) from $t_0=0$ to $t$ and obtain
+
+!bt
+\[
+\int_{0}^v\frac{dv}{g -Dv^2(t) }= \frac{v_T}{g}\mathrm{arctanh}(\frac{v}{v_T})  =-\int_0^tdt = -t. 
+\]
+!et
+We can reorganize these equations as
+!bt
+\[
+v_T\mathrm{arctanh}(\frac{v}{v_T})  =-gt,
+\]
+!et
+which gives us $v$ as function of time
+!bt
+\[
+v(t)=v_T\tanh{-(\frac{gt}{v_T})}.
+\]
+!et
+
+
+!split
+===== Finding the final height =====
+With the velocity we can then find the height $y(t)$ by integrating yet another time, that is
+!bt
+\[
+y(t)=y(t_0)+\int_{t_0}^t dt v(t)=\int_{0}^t dt[v_T\tanh{-(\frac{gt}{v_T})}]. 
+\]
+!et
+This integral is a little bit trickier but we can look it up in a table over 
+known integrals and we get
+!bt
+\[
+y(t)=y(t_0)-\frac{v_T^2}{g}\log{[\cosh{(\frac{gt}{v_T})}]}.
+\]
+!et
+Alternatively we could have used the symbolic Python package _Sympy_  (example will be inserted later). 
+
+In most cases however, we need to revert to numerical solutions. 
+
+
+!split
+===== Our first attempt at solving differential equations =====
+
+Here we will try the simplest possible approach to solving the second-order differential 
+equation
+!bt
+\[
+a(t) =\frac{d^2y}{dt^2}= -g +Dv^2(t). 
+\]
+!et
+We rewrite it as two coupled first-order equations (this is a standard approach)
+!bt
+\[
+\frac{dy}{dt} = v(t),
+\]
+!et
+with initial condition $y(t_0)=y_0$ and 
+!bt
+\[
+a(t) =\frac{dv}{dt}= -g +Dv^2(t),
+\]
+!et
+with initial condition $v(t_0)=v_0$.
+
+Many of the algorithms for solving differential equations start with simple Taylor equations.
+If we now Taylor expand $y$ and $v$ around a value $t+\Delta t$ we have
+!bt
+\[
+y(t+\Delta t) = y(t)+\Delta t \frac{dy}{dt}+\frac{\Delta t^2}{2!} \frac{d^2y}{dt^2}+O(\Delta t^3),
+\]
+!et
+and
+!bt
+\[
+v(t+\Delta t) = v(t)+\Delta t \frac{dv}{dt}+\frac{\Delta t^2}{2!} \frac{d^2v}{dt^2}+O(\Delta t^3).
+\]
+!et
+Using the fact that $dy/dt = v$ and $dv/dt=a$ and keeping only terms up to $\Delta t$ we have
+!bt
+\[
+y(t+\Delta t) = y(t)+\Delta t v(t)+O(\Delta t^2),
+\]
+!et
+and
+!bt
+\[
+v(t+\Delta t) = v(t)+\Delta t a(t)+O(\Delta t^2).
+\]
+!et
+
+!split
+===== Discretizing our equations =====
+
+Using our discretized versions of the equations with for example
+$y_{i}=y(t_i)$ and $y_{i\pm 1}=y(t_i+\Delta t)$, we can rewrite the
+above equations as (and truncating at $\Delta t$)
+
+!bt
+\[
+y_{i+1} = y_i+\Delta t v_i,
+\]
+!et
+and
+!bt
+\[
+v_{i+1} = v_i+\Delta t a_i.
+\]
+!et
+These are the famous Euler equations (forward Euler).
+
+To solve these equations numerically we start at a time $t_0$ and simply integrate up these equations to a final time $t_f$,
+The step size $\Delta t$ is an input  parameter in our code.
+You can define it directly in the code below as
+!bc pycod
+DeltaT = 0.1
+!ec
+With a given final time _tfinal_  we can then find the number of integration points via the _ceil_ function included in the _math_ package of Python
+as
+!bc pycod
+#define final time, assuming that initial time is zero
+from math import ceil
+tfinal = 0.5
+n = ceil(tfinal/DeltaT)
+print(n)
+!ec
+The _ceil_ function returns the smallest integer not less than the input in say
+!bc pycod
+x = 21.15
+print(ceil(x))
+!ec
+which in the case here is 22.
+!bc pycod
+x = 21.75
+print(ceil(x))
+!ec
+which also yields 22. The  _floor_ function in the _math_ package
+is used to return the closest integer value which is less than or equal to the specified expression or value.
+Compare the previous result to the usage of _floor_
+!bc pycod
+from math import floor
+x = 21.75
+print(floor(x))
+!ec
+
+
+
+Alternatively, we can define ourselves the number of integration(mesh) points. In this case we could have
+!bc pycod
+n = 10
+tinitial = 0.0
+tfinal = 0.5
+DeltaT = (tfinal-tinitial)/(n)
+print(DeltaT)
+!ec
+
+Since we will set up one-dimensional arrays that contain the values of
+various variables like time, position, velocity, acceleration etc, we
+need to know the value of $n$, the number of data points (or
+integration or mesh points).  With $n$ we can initialize a given array
+by setting all elelements to zero, as done here
+
+!bc pycod
+# define array a
+a = np.zeros(n)
+print(a)
+!ec
+
+
+
+
+!split
+===== Code for implementing Euler's method =====
+In the code here we implement this simple Eurler scheme choosing a value for $D=0.0245$ m/s. 
+
+!bc pycod
+# Common imports
+import numpy as np
+import pandas as pd
+from math import *
+import matplotlib.pyplot as plt
+import os
+
+# Where to save the figures and data files
+PROJECT_ROOT_DIR = "Results"
+FIGURE_ID = "Results/FigureFiles"
+DATA_ID = "DataFiles/"
+
+if not os.path.exists(PROJECT_ROOT_DIR):
+    os.mkdir(PROJECT_ROOT_DIR)
+
+if not os.path.exists(FIGURE_ID):
+    os.makedirs(FIGURE_ID)
+
+if not os.path.exists(DATA_ID):
+    os.makedirs(DATA_ID)
+
+def image_path(fig_id):
+    return os.path.join(FIGURE_ID, fig_id)
+
+def data_path(dat_id):
+    return os.path.join(DATA_ID, dat_id)
+
+def save_fig(fig_id):
+    plt.savefig(image_path(fig_id) + ".png", format='png')
+
+
+g = 9.80655 #m/s^2
+D = 0.00245 #m/s
+DeltaT = 0.1
+#set up arrays 
+tfinal = 0.5
+n = ceil(tfinal/DeltaT)
+# define scaling constant vT
+vT = sqrt(g/D)
+# set up arrays for t, a, v, and y and we can compare our results with analytical ones
+t = np.zeros(n)
+a = np.zeros(n)
+v = np.zeros(n)
+y = np.zeros(n)
+yanalytic = np.zeros(n)
+# Initial conditions
+v[0] = 0.0  #m/s
+y[0] = 10.0 #m
+yanalytic[0] = y[0]
+# Start integrating using Euler's method
+for i in range(n-1):
+    # expression for acceleration
+    a[i] = -g + D*v[i]*v[i]
+    # update velocity and position
+    y[i+1] = y[i] + DeltaT*v[i]
+    v[i+1] = v[i] + DeltaT*a[i]
+    # update time to next time step and compute analytical answer
+    t[i+1] = t[i] + DeltaT
+    yanalytic[i+1] = y[0]-(vT*vT/g)*log(cosh(g*t[i+1]/vT))
+    if ( y[i+1] < 0.0):
+        break
+a[n-1] = -g + D*v[n-1]*v[n-1]
+data = {'t[s]': t,
+        'y[m]': y-yanalytic,
+        'v[m/s]': v,
+        'a[m/s^2]': a
+        }
+NewData = pd.DataFrame(data)
+display(NewData)
+#finally we plot the data
+fig, axs = plt.subplots(3, 1)
+axs[0].plot(t, y, t, yanalytic)
+axs[0].set_xlim(0, tfinal)
+axs[0].set_ylabel('y and exact')
+axs[1].plot(t, v)
+axs[1].set_ylabel('v[m/s]')
+axs[2].plot(t, a)
+axs[2].set_xlabel('time[s]')
+axs[2].set_ylabel('a[m/s^2]')
+fig.tight_layout()
+save_fig("EulerIntegration")
+plt.show()
+!ec
+
+
+Try different values for $\Delta t$ and study the difference between the exact solution and the numerical solution.
+
+!split
+===== Simple extension, the Euler-Cromer method =====
+
+The Euler-Cromer method is a simple variant of the standard Euler
+method. We use the newly updated velocity $v_{i+1}$ as an input to the
+new position, that is, instead of
+
+!bt
+\[
+y_{i+1} = y_i+\Delta t v_i,
+\]
+!et
+and
+!bt
+\[
+v_{i+1} = v_i+\Delta t a_i,
+\]
+!et
+we use now the newly calculate for $v_{i+1}$ as input to $y_{i+1}$, that is 
+we compute first 
+!bt
+\[
+v_{i+1} = v_i+\Delta t a_i,
+\]
+!et
+and then
+!bt
+\[
+y_{i+1} = y_i+\Delta t v_{i+1},
+\]
+!et
+
+Implementing the Euler-Cromer method yields a simple change to the previous code. We only need to change the following line in the loop over time
+steps
+!bc pycod
+for i in range(n-1):
+    # more codes in between here
+    v[i+1] = v[i] + DeltaT*a[i]
+    y[i+1] = y[i] + DeltaT*v[i+1]
+    # more code
+!ec
+
+
+
+
+
+
+
+
+
+
+
 
 !split
 ===== Newton's Laws =====
+
+Let us now remind ourselves of Newton's laws, since these are the laws of motion we will study in this course.
+
 
 When analyzing a physical system we normally start with distinguishing between the object we are studying (we will label this in more general terms as our _system_) and how this system interacts with the environment (which often means everything else!)
 
@@ -811,112 +1532,13 @@ The following python program ( code will be added shortly)
 
 
 
-!split
-===== The classical pendulum and scaling the equations =====
-
-The angular equation of motion of the pendulum is given by
-Newton's equation and with no external force it reads 
-!bt
-\begin{equation}
-  ml\frac{d^2\theta}{dt^2}+mgsin(\theta)=0,
-\end{equation}
-!et
-with an angular velocity and acceleration given by
-!bt
-\begin{equation}
-     v=l\frac{d\theta}{dt},
-\end{equation}
-!et
-and 
-!bt
-\begin{equation}
-     a=l\frac{d^2\theta}{dt^2}.
-\end{equation}
-!et
-
-
-!split
-===== More on the Pendulum =====
-
-We do however expect that the motion will gradually come to an end due a viscous drag torque acting on the pendulum. 
-In the presence of the drag, the above equation becomes
-!bt
-\begin{equation}
-   ml\frac{d^2\theta}{dt^2}+\nu\frac{d\theta}{dt}  +mgsin(\theta)=0, label{eq:pend1}
-\end{equation}
-!et
-where $\nu$ is now a positive constant parameterizing the viscosity
-of the medium in question. In order to maintain the motion against
-viscosity, it is necessary to add some external driving force. 
-We choose here a periodic driving force. The last equation becomes then
-!bt
-\begin{equation}
-   ml\frac{d^2\theta}{dt^2}+\nu\frac{d\theta}{dt}  +mgsin(\theta)=Asin(\omega t), label{eq:pend2}
-\end{equation}
-!et
-with $A$ and $\omega$ two constants representing the amplitude and 
-the angular frequency respectively. The latter is called the driving frequency.
 
 
 
 
-!split
-===== More on the Pendulum =====
-
-We define 
-!bt
-  \[
-      \omega_0=\sqrt{g/l},
-  \]
-!et
-the so-called natural frequency and the new dimensionless quantities
-!bt
-  \[
-      \hat{t}=\omega_0t,
-  \]
-!et
-with the dimensionless driving frequency
-!bt
-  \[
-     \hat{\omega}=\frac{\omega}{\omega_0},
-  \]
-!et
-and introducing the quantity $Q$, called the *quality factor*,
-!bt
-  \[
-     Q=\frac{mg}{\omega_0\nu},
-  \]
-!et
-  and the dimensionless amplitude 
-!bt
-\[
-\hat{A}=\frac{A}{mg}
-  \]
-!et
 
 
-!split
-===== More on the Pendulum =====
 
-We have 
-!bt
-\[
-    \frac{d^2\theta}{d\hat{t}^2}+\frac{1}{Q}\frac{d\theta}{d\hat{t}}  
-     +sin(\theta)=\hat{A}cos(\hat{\omega}\hat{t}).
-\]
-!et
-This equation can in turn be recast in terms of two coupled first-order differential equations as follows
-!bt
-\[
-     \frac{d\theta}{d\hat{t}}=\hat{v},
-\]
-!et
-and
-!bt
-\[
-     \frac{d\hat{v}}{d\hat{t}}=-\frac{\hat{v}}{Q}-sin(\theta)+\hat{A}cos(\hat{\omega}\hat{t}).
-\]
-!et
-These are the equations to be solved.  The factor $Q$ represents the number of oscillations of the undriven system that must occur before  its energy is significantly reduced due to the viscous drag. The  amplitude $\hat{A}$ is measured in units of the maximum possible  gravitational torque while $\hat{\omega}$ is the angular frequency of the external torque measured in units of the pendulum's natural frequency.  
+
 
 
