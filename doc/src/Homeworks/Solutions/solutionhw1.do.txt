@@ -180,9 +180,9 @@ $\frac{d}{dt}(\bm{a}\bm{b})=\bm{a}\frac{d\bm{b}}{dt}+\bm{b}\frac{d\bm{a}}{dt}$.
 
 !bt
 \begin{align*}
-\frac{d}{dt}(\bm{a}\bm{b})=& \frac{d}{dt}(a_1*b_1+a_2b_2+a_3b_3)\\
+\frac{d}{dt}(\bm{a}\bm{b})=& \frac{d}{dt}(a_1b_1+a_2b_2+a_3b_3)\\
 =& \left(a_1\frac{db_1}{dt}+\frac{da_1}{dt}b_1\right)+\left(a_2\frac{db_2}{dt}+\frac{da_2}{dt}b_2\right)+\left(a_3\frac{db_3}{dt}+\frac{da_3}{dt}b_3\right)\\
-= & \left(a_1\frac{db_1}{dt}+a_2\frac{db_2}{dt}+a_3\frac{db_3}{dt}+\left(\frac{da_1}{dt}b_1\right)+\frac{da_2}{dt}b_2+\frac{da_3}{dt}b_3\right)\\
+= & \left(a_1\frac{db_1}{dt}+a_2\frac{db_2}{dt}+a_3\frac{db_3}{dt}\right)+\left(\frac{da_1}{dt}b_1+\frac{da_2}{dt}b_2+\frac{da_3}{dt}b_3\right)\\
 = & \bm{a}\frac{d\bm{b}}{dt}+\frac{d\bm{a}}{dt}\bm{c}. 
 \end{align*}
 !et
@@ -286,7 +286,7 @@ This matrix is a so-called unitary/orthogonal matrix.  Show that $\bm{R}^T\bm{R}
 
 !bt
 \[
-\bm{R}^T\bm{R}=\begin{bmatrix} \cos^2{\phi}+\sin^2{\phi} & 0 & 0 \\ 0 & \cos^2{\phi}+\sin^2{\phi} & 0 \\ 0 & 0 & 1\end{bmatrix}==\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{bmatrix}.
+\bm{R}^T\bm{R}=\begin{bmatrix} \cos^2{\phi}+\sin^2{\phi} & 0 & 0 \\ 0 & \cos^2{\phi}+\sin^2{\phi} & 0 \\ 0 & 0 & 1\end{bmatrix}=\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{bmatrix}.
 \]
 !et
 
@@ -309,7 +309,7 @@ Under such an orthorgonal transformation we have
 \bm{b}^T\bm{b}=(\bm{R}\bm{a})^T\bm{R}\bm{a}=\bm{a}^T\bm{R}^T\bm{R}\bm{a}=\bm{a}^T\bm{I}\bm{a}=\bm{a}^T\bm{a}.
 \]
 !et
-The norm is conserved. Here the matrix $\bm{I}$ is the identity matrix with only oens along the diagonal and zero else. 
+The norm is conserved. Here the matrix $\bm{I}$ is the identity matrix with only ones along the diagonal and zero else. 
 
 === 6c (2pt), solution ===
 
@@ -463,14 +463,14 @@ The code which solves the problem of 7e can be written as
 import numpy as np
 from math import sin, cos, pi
 #We define a  the vector a (3-dim)
-a = np.array([1,0,0)]
+a = np.array([1,0,0])
 # define the angle in Radians
 phi = 45*pi/180.
 #define cos and sin
 c = cos(phi)
 s = sin(phi)
 # define a matrix of dimension 3 x 3 and set the elements
-R = np.array([c, s, 0], [-s,c,0],[0,0,1]]).
+R = np.array([[c, s, 0], [-s,c,0],[0,0,1]])
 #print the vector and the matrix
 print(a)
 print(R)
@@ -500,12 +500,13 @@ You can here make a file with the above data and read them in and set
 up two vectors, one for time and one for position. Alternatively, you
 can just set up these two vectors directly and define two vectors in
 your Python code.
+_Note_ we add by hand the initial conditions with position and time set to zero!
 
 The following example code may help here. It plots the solution as well.
 !bc pycod
 # we just initialize time and position
-x = np.array([10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0])
-t = np.array([1.85, 2.87, 3.78, 4.65, 5.50, 6.32, 7.14, 7.96, 8.79, 9.69])
+x = np.array([0.0, 10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0])
+t = np.array([0.0,1.85, 2.87, 3.78, 4.65, 5.50, 6.32, 7.14, 7.96, 8.79, 9.69])
 plt.plot(t,x, color='black')
 plt.xlabel("Time t[s]")
 plt.ylabel("Position x[m]")
@@ -523,13 +524,15 @@ Compute thereafter the mean velocity for every interval $i$ and the total veloci
 # We define first an array Vaverage
 n = np.size(t)
 Vaverage = np.zeros(n)
-for i in range(1,n-1):
-    Vaverage[i] = (x[i+1]-x[i])/(t[i+1]-t[i])
+TotalVaverage = np.zeros(n)
+for i in range(1,n):
+    Vaverage[i] = (x[i]-x[i-1])/(t[i]-t[i-1])
+    TotalVaverage[i] = (x[i]-x[0])/(t[i]-t[0])
 !ec
 
 === 7i (10pt), solution ===
 
-Finally, compute and plot the mean acceleration for each interval and the total acceleration. Again, comment your results. Can you see whether he slowed down during the last meters? 
+Finally, compute and print and plot the mean velocities, total average velocity, acceleration for each interval and the total acceleration. 
 
 
 !bc pycod
@@ -538,14 +541,32 @@ Finally, compute and plot the mean acceleration for each interval and the total 
 n = np.size(t)
 Aaverage = np.zeros(n)
 Aaverage[0] = 0
-for i in range(1,n-1):
-    Aaverage[i] = (Vaverage[i+1]-Vaverage[i])/(t[i+1]-t[i])
+TotalAaverage = np.zeros(n)
+for i in range(1,n):
+    Aaverage[i] = (Vaverage[i]-Vaverage[i-1])/(t[i]-t[i-1])
+    TotalAaverage[i] = (Vaverage[i]-Vaverage[0])/(t[i]-t[0])
 data = {'t[s]': t,
-        'y[m]': y,
+        'x[m]': x,
         'v[m/s]': Vaverage,
-        'a[m/s^2]': Aaverage
+	'Totvaver[m/s]': TotalVaverage,
+        'a[m/s^2]': Aaverage,
+	'TotAaver[m/s]': TotalAaverage
         }
 NewData = pd.DataFrame(data)
-display(NewData[0:n-2])
+display(NewData[0:n])
 !ec
 
+We see clearly from this table that the average velocity increases
+till approximately 60m. Then it is constant for another 20 meters
+before it starts to decrease. The average accelaration increases till
+he has reached the first 20 meters, then it starts decreasing. After 80
+meters we see clearly that he starts to slow since the acceleration
+becomes negative.
+
+After $100$m we note also that the total average velocity is approximately 10.32 m/s and the total average acceleration is decreasing from its peak around 20m.
+
+The interesting question is how quickly Usain Bolt could have run if
+he had not slowed down during the last 20 meters. Can you find this
+based on the present analysis, that is the above table? Assume he kept a constant velocity like
+the one he had from 60m to 80m. How fast could he have run if he had
+kept the same velocity till he reached 100m?
