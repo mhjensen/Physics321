@@ -180,22 +180,22 @@ $\frac{d}{dt}(\bm{a}\bm{b})=\bm{a}\frac{d\bm{b}}{dt}+\bm{b}\frac{d\bm{a}}{dt}$.
 
 !bt
 \begin{align*}
-\frac{d}{dt}(\bm{a}\bm{b})=& a_1(b_1+c_1)+a_2(b_2+c_2)+a_3(b_3+c_3)\\
-=& (a_1b_1+a_1c_1)+(a_2b_2+a_2c_2)+(a_3b_3+a_3c_3)\\
-= & (a_1b_1+a_2b_2+a_3b_3)+(a_1c_1+a_2c_2+a_3c_3)\\
-= & \bm{a}\bm{b}+\bm{a}\bm{c}. 
+\frac{d}{dt}(\bm{a}\bm{b})=& \frac{d}{dt}(a_1*b_1+a_2b_2+a_3b_3)\\
+=& \left(a_1\frac{db_1}{dt}+\frac{da_1}{dt}b_1\right)+\left(a_2\frac{db_2}{dt}+\frac{da_2}{dt}b_2\right)+\left(a_3\frac{db_3}{dt}+\frac{da_3}{dt}b_3\right)\\
+= & \left(a_1\frac{db_1}{dt}+a_2\frac{db_2}{dt}+a_3\frac{db_3}{dt}+\left(\frac{da_1}{dt}b_1\right)+\frac{da_2}{dt}b_2+\frac{da_3}{dt}b_3\right)\\
+= & \bm{a}\frac{d\bm{b}}{dt}+\frac{d\bm{a}}{dt}\bm{c}. 
 \end{align*}
 !et
 
 
 ===== Exercise 4 (10 pt), Algebra of cross products  =====
 
-=== 4a (5pt) ===
+=== 4a (5pt), solution ===
 
 Show that the cross products are distribuitive
 $\bm{a}\times(\bm{b}+\bm{c})=\bm{a}\times\bm{b}+\bm{a}\times\bm{c}$.
 
-=== 4b (5pt) ===
+=== 4b (5pt), solution ===
 
 Show that
 $\frac{d}{dt}(\bm{a}\times\bm{b})=\bm{a}\times\frac{d\bm{b}}{dt}+\bm{b}\times\frac{d\bm{a}}{dt}$. Be
@@ -206,6 +206,42 @@ careful with the order of factors
 
 Exercise 1.18 in the textbook of Taylor, Classical Mechanics. Part
 (1.18a) gives 5pt and part (1.18b) gives also 5pt.
+
+=== 5a (5pt), solution ===
+If we place the vertex $A$ at the origin and side $b$ along the $x$-axis, then the magnitude
+of the cross product $\bm{b}\times \bm{c}$ gives
+
+!bt
+\[
+\vert \bm{b}\times \bm{c}\vert = \vert b_xc_y-b_yc_x\vert =\vert b_xc_y-0\dots c_x\vert =b_xc_y,
+\]
+!et
+which is nothing but the magnitude of the base multiplied with the magnitude of the height.
+We recognize that $c_y$ is the height of the vertx $B$ above the $x$-axis. From this we get that the area is
+!bt
+\[
+\mathrm{area}=\frac{1}{2}(\mathrm{base})\dot\mathrm{height})=\frac{1}{2}\vert \bm{b}\times \bm{c}\vert,
+\]
+!et
+which we were supposed to show.
+
+
+=== 5b (5pt), solution ===
+
+From part 5a, using the formula for the magnitude of the cross product we have
+
+!bt
+\[
+\mathrm{area}=\frac{1}{2}ab\sin{\gamma}=\frac{1}{2}bc\sin{\alpha}=\frac{1}{2}ca\sin{\beta},
+\]
+!et
+which leads to
+
+!bt
+\[
+\frac{abc}{2\mathrm{area}}=    \frac{c}{\sin{\gamma}}=\frac{a}{\sin{\alpha}}=\frac{b}{\sin{\beta}}.
+\]
+!et
 
 ===== Exercise 6 (10pt), Matrices and rotations in the $xy$ plane =====
 
@@ -230,9 +266,71 @@ where the rotation matrix is defined as
 \]
 !et
 
-* 6a (4pt) Find the transpose of the matrix $\bm{R}$. We label this as $\bm{R}^T$.
-* 6b (4pt)  This matrix is a so-called unitary/orthogonal matrix.  Show that $\bm{R}^T\bm{R}= \bm{I}$ where $\bm{I}$ is the so-called identity matrix with ones only along the diagonal. How would you interpret this result? For example, are scalar products changed under this transformations?
-* 6c (2pt) Find the matrix for rotating a coordinate system by $90$ degrees about the $x$-axis.
+=== 6a (4pt), solution  ===
+
+Find the transpose of the matrix $\bm{R}$. We label this as $\bm{R}^T$.
+
+!bt
+\[
+\bm{R}^T=\begin{bmatrix} \cos{\phi} & -\sin{\phi} & 0 \\ \sin{\phi} & \cos{\phi} & 0 \\ 0 & 0 & 1\end{bmatrix}.
+\]
+!et
+
+
+
+
+
+=== 6b (4pt), solution ===
+
+This matrix is a so-called unitary/orthogonal matrix.  Show that $\bm{R}^T\bm{R}= \bm{I}$ where $\bm{I}$ is the so-called identity matrix with ones only along the diagonal. How would you interpret this result? For example, are scalar products changed under this transformations?
+
+!bt
+\[
+\bm{R}^T\bm{R}=\begin{bmatrix} \cos^2{\phi}+\sin^2{\phi} & 0 & 0 \\ 0 & \cos^2{\phi}+\sin^2{\phi} & 0 \\ 0 & 0 & 1\end{bmatrix}==\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{bmatrix}.
+\]
+!et
+
+This means that the dot product of a vector is unchanged under such a transformation. To see this consider a rotation
+
+!bt
+\[
+\bm{b}=\bm{R}\bm{a},
+\]
+!et
+and we have the dot product for any such vector given by
+!bt
+\[
+\bm{a}\bm{a}=\bm{a}^T\bm{a}.
+\]
+!et
+Under such an orthorgonal transformation we have
+!bt
+\[
+\bm{b}^T\bm{b}=(\bm{R}\bm{a})^T\bm{R}\bm{a}=\bm{a}^T\bm{R}^T\bm{R}\bm{a}=\bm{a}^T\bm{I}\bm{a}=\bm{a}^T\bm{a}.
+\]
+!et
+The norm is conserved. Here the matrix $\bm{I}$ is the identity matrix with only oens along the diagonal and zero else. 
+
+=== 6c (2pt), solution ===
+
+Find the matrix for rotating a coordinate system by $90$ degrees about the $x$-axis.
+
+The $x$-axis is now fixed, like the $z$-axis was done held fixed in part 6a. We are now rotating in $yz$-plane and the matrix becomes
+
+!bt
+\[
+\bm{R} = \begin{bmatrix}1 & 0 & \\ 0&  \cos{\phi} & \sin{\phi} \\ 0& -\sin{\phi} & \cos{\phi}\end{bmatrix}.
+\]
+!et
+Inserting the value for the angle gives us
+!bt
+\[
+\bm{R} = \begin{bmatrix}1 & 0 & \\ 0&  0 & 1 \\ 0& -1 & 0\end{bmatrix}.
+\]
+!et
+
+
+
 
 =====  Exercise 7 (40pt), Numerical elements, getting started with some simple data =====
 
@@ -284,18 +382,28 @@ Compute and print the following, and double check with hand calculations:
 * 7c (2pt) Calculate the dot product $\bm{V}_1\bm{V}_2$.
 * 7d (2pt) Calculate the cross product $\bm{V}_1\times\bm{V}_2$.
 
-Here is some useful explanation on numpy array operations if you feel a bit confused by what is happening, see URL:" https://www.pluralsight.com/guides/overview-basic-numpy-operations"
+Here is some useful explanation on numpy array operations if you feel a bit confused by what is happening, see URL:"https://www.pluralsight.com/guides/overview-basic-numpy-operations"
+
+=== 7a-7d, solutions ===
 
 The following code prints the first two exercises
 !bc pycod
 print(V1-V2)
-print(V2-V2)
+print(V2-V1)
 !ec
 
 For the dot product of V1 and V2 below we can use the _dot_ function of _numpy_ as follows
 !bc pycod
 print(V1.dot(V2))
 !ec
+Alternatively, and this is the way it is normally written in Python now, we have
+!bc pycod
+print(V1 @ V2)
+!ec
+
+A personal remark: I am not too fond of this notation!
+
+
 As a small challenge try to write your own function for the _dot_ product of two vectors.
 
 Matrices can be created in a similar fashion in python.  In this
@@ -321,7 +429,14 @@ print("M1+M3: ", M1+M3)
 !ec
 What happens if we try to do $M1+M2$?
 
-* 7e (4pt) Let us go back to exercise 6. Define a vector $\bm{a}=(1,0,0)$ and set the angle $\phi$ in the rotation matrix (rotation in the $xy$ plane) to $45$ degrees. Set up the matrix $\bm{R}$ and find the vector $\bm{b}=\bm{R}\bm{a}$.
+=== 7e (4pt), solution ===
+
+Let us go back to exercise 6. Define a vector $\bm{a}=(1,0,0)$ and set
+the angle $\phi$ in the rotation matrix (rotation in the $xy$ plane)
+to $45$ degrees. Set up the matrix $\bm{R}$ and find the vector
+$\bm{b}=\bm{R}\bm{a}$.
+
+
 
 To perform a matrix-vector multiplication of the above type, the following python code may be of use. Here we just define a random vector and a random $3\times 3$ matrix
 !bc pycod
@@ -339,6 +454,34 @@ b = R @ a.T
 print(b)
 !ec
 
+
+
+
+The code which solves the problem of 7e can be written as
+
+!bc pycod
+import numpy as np
+from math import sin, cos, pi
+#We define a  the vector a (3-dim)
+a = np.array([1,0,0)]
+# define the angle in Radians
+phi = 45*pi/180.
+#define cos and sin
+c = cos(phi)
+s = sin(phi)
+# define a matrix of dimension 3 x 3 and set the elements
+R = np.array([c, s, 0], [-s,c,0],[0,0,1]]).
+#print the vector and the matrix
+print(a)
+print(R)
+# perform a matrix-vector multiplication. Note that we need to transpose the vector and the odd way to indicate a multiplication with @
+b = R @ a.T
+print(b)
+!ec
+
+
+
+
 That's enough vectors and matrices for now. Let's move on to some physics problems! Yes, the actual subject we are studying for. 
 
 We can opt for two different ways of handling the data. The data is listed in the table here and represents the total time Usain Bolt used in steps of  10 meters of distance. The label $i$ is just a counter and we start from zero since Python arrays are by default set from zero. The variable $t$ is time in seconds and $x$ is the position in meters.
@@ -351,9 +494,14 @@ We can opt for two different ways of handling the data. The data is listed in th
 | t[s] | 1.85 | 2.87 | 3.78 |  4.65 | 5.50 | 6.32 | 7.14 | 7.96 | 8.79 | 9.69 |
 |-------------------------------------------|
 
-* 7f (4pt) You can here make a file with the above data and read them in and set up two vectors, one for time and one for position. Alternatively, you can just set up these two vectors directly and define two vectors in your Python code.
+=== 7f-7g (4pt)+(4pt), solution  ===
 
-The following example code may help here
+You can here make a file with the above data and read them in and set
+up two vectors, one for time and one for position. Alternatively, you
+can just set up these two vectors directly and define two vectors in
+your Python code.
+
+The following example code may help here. It plots the solution as well.
 !bc pycod
 # we just initialize time and position
 x = np.array([10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0])
@@ -365,6 +513,39 @@ plt.title("Usain Bolt's world record run")
 plt.show()
 !ec
 
-* 7g (4pt) Plot the position as function of time
-* 7h (10pt) Compute thereafter the mean velocity for every interval $i$ and the total velocity (from $i=0$ to the given interval $i$) for each interval and plot these two quantities as function of time. Comment your results.
-* 7i (10pt) Finally, compute and plot the mean acceleration for each interval and the total acceleration. Again, comment your results. Can you see whether he slowed down during the last meters? 
+
+=== 7h (10pt), solution ===
+
+Compute thereafter the mean velocity for every interval $i$ and the total velocity (from $i=0$ to the given interval $i$) for each interval and plot these two quantities as function of time. Comment your results.
+
+!bc pycod
+# Now we can compute the mean velocity using our data
+# We define first an array Vaverage
+n = np.size(t)
+Vaverage = np.zeros(n)
+for i in range(1,n-1):
+    Vaverage[i] = (x[i+1]-x[i])/(t[i+1]-t[i])
+!ec
+
+=== 7i (10pt), solution ===
+
+Finally, compute and plot the mean acceleration for each interval and the total acceleration. Again, comment your results. Can you see whether he slowed down during the last meters? 
+
+
+!bc pycod
+# Now we can compute the mean acceleration using our data
+# We define first an array Aaverage
+n = np.size(t)
+Aaverage = np.zeros(n)
+Aaverage[0] = 0
+for i in range(1,n-1):
+    Aaverage[i] = (Vaverage[i+1]-Vaverage[i])/(t[i+1]-t[i])
+data = {'t[s]': t,
+        'y[m]': y,
+        'v[m/s]': Vaverage,
+        'a[m/s^2]': Aaverage
+        }
+NewData = pd.DataFrame(data)
+display(NewData[0:n-2])
+!ec
+
