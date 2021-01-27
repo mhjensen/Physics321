@@ -117,6 +117,7 @@ Video of lecture at https://mediaspace.msu.edu/media/t/1_7pyc0yts and handwritte
 - Friday 1/29: Motion and forces, Newton's laws, examples
 - Solution to homeworks are in https://d2l.msu.edu/
 - Good reads are Taylor chapters 1.4, 1.5, 1.6, 2.1-2.4 and AMS chapters 4.2 and  5
+- Solutions to homework 1 at https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionhw1.ipynb and videos at https://www.youtube.com/playlist?list=PLq9LZ5390Us41TX42XzOPIEPcbHaqX8Hx
 
 ### Week 5, February 1-5, 2021
 - Monday 2/1: Work and energy conservation, 3rd homework, due February 8
