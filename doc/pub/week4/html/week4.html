@@ -205,7 +205,7 @@ MathJax.Hub.Config({
 <center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
 <br>
 <p>
-<center><h4>Jan 25, 2021</h4></center> <!-- date -->
+<center><h4>Jan 27, 2021</h4></center> <!-- date -->
 <br>
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -481,7 +481,7 @@ $$
 
 In the code we have set the time step \( \Delta t \) to a given value. We could define it in terms of the number of points \( n \) as
 $$
-\Delta t = \frac{t_{\mathrm{final}-}t_{\mathrm{initial}}}{n+1}.
+\Delta t = \frac{t_{\mathrm{final}-}t_{\mathrm{initial}}}{n}.
 $$
 
 <p>
@@ -594,6 +594,8 @@ spatial dimension.
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
 <h2 id="constant-acceleration-case-the-velocity">Constant acceleration case, the velocity </h2>
+
+<p>
 Let us compute the velocity using the constant value for the acceleration given by \( -g \). We have
 $$
 v(t)=v(t_0)+\int_{t_0}^t dt a(t)=v(t_0)+\int_{t_0}^t dt (-g).
@@ -631,25 +633,25 @@ After this mathematical background we are now ready to compute the mean velocity
 <span style="color: #408080; font-style: italic"># We define first an array Vaverage</span>
 n <span style="color: #666666">=</span> np<span style="color: #666666">.</span>size(t)
 Vaverage <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
-<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">1</span>,n<span style="color: #666666">-1</span>):
-    Vaverage[i] <span style="color: #666666">=</span> (y[i<span style="color: #666666">+1</span>]<span style="color: #666666">-</span>y[i])<span style="color: #666666">/</span>DeltaT
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">1</span>,n):
+    Vaverage[i] <span style="color: #666666">=</span> (y[i]<span style="color: #666666">-</span>y[i<span style="color: #666666">-1</span>])<span style="color: #666666">/</span>DeltaT
 <span style="color: #408080; font-style: italic"># Now we can compute the mean accelearatio using our data</span>
 <span style="color: #408080; font-style: italic"># We define first an array Aaverage</span>
 n <span style="color: #666666">=</span> np<span style="color: #666666">.</span>size(t)
 Aaverage <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
 Aaverage[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> <span style="color: #666666">-</span>g
-<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">1</span>,n<span style="color: #666666">-1</span>):
-    Aaverage[i] <span style="color: #666666">=</span> (Vaverage[i<span style="color: #666666">+1</span>]<span style="color: #666666">-</span>Vaverage[i])<span style="color: #666666">/</span>DeltaT
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">1</span>,n):
+    Aaverage[i] <span style="color: #666666">=</span> (Vaverage[i]<span style="color: #666666">-</span>Vaverage[i<span style="color: #666666">-1</span>])<span style="color: #666666">/</span>DeltaT
 data <span style="color: #666666">=</span> {<span style="color: #BA2121">&#39;t[s]&#39;</span>: t,
         <span style="color: #BA2121">&#39;y[m]&#39;</span>: y,
         <span style="color: #BA2121">&#39;v[m/s]&#39;</span>: Vaverage,
         <span style="color: #BA2121">&#39;a[m/s^2]&#39;</span>: Aaverage
         }
 NewData <span style="color: #666666">=</span> pd<span style="color: #666666">.</span>DataFrame(data)
-display(NewData[<span style="color: #666666">0</span>:n<span style="color: #666666">-2</span>])
+display(NewData[<span style="color: #666666">0</span>:n])
 </pre></div>
 <p>
-Note that we don't print the last values!
+Note that we used the previous value in the computation of the average velocities and accelerations. We did this since we wanted to compute the value for \( i=1 \) as well.
 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>

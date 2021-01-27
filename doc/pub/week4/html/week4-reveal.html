@@ -148,7 +148,7 @@ MathJax.Hub.Config({
 <center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
 <br>
 <p>&nbsp;<br>
-<center><h4>Jan 25, 2021</h4></center> <!-- date -->
+<center><h4>Jan 27, 2021</h4></center> <!-- date -->
 <br>
 <p>
 
@@ -441,7 +441,7 @@ $$
 In the code we have set the time step \( \Delta t \) to a given value. We could define it in terms of the number of points \( n \) as
 <p>&nbsp;<br>
 $$
-\Delta t = \frac{t_{\mathrm{final}-}t_{\mathrm{initial}}}{n+1}.
+\Delta t = \frac{t_{\mathrm{final}-}t_{\mathrm{initial}}}{n}.
 $$
 <p>&nbsp;<br>
 
@@ -581,6 +581,8 @@ spatial dimension.
 
 <section>
 <h2 id="constant-acceleration-case-the-velocity">Constant acceleration case, the velocity </h2>
+
+<p>
 Let us compute the velocity using the constant value for the acceleration given by \( -g \). We have
 <p>&nbsp;<br>
 $$
@@ -628,25 +630,25 @@ After this mathematical background we are now ready to compute the mean velocity
 <span style="color: #228B22"># We define first an array Vaverage</span>
 n = np.size(t)
 Vaverage = np.zeros(n)
-<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">1</span>,n-<span style="color: #B452CD">1</span>):
-    Vaverage[i] = (y[i+<span style="color: #B452CD">1</span>]-y[i])/DeltaT
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">1</span>,n):
+    Vaverage[i] = (y[i]-y[i-<span style="color: #B452CD">1</span>])/DeltaT
 <span style="color: #228B22"># Now we can compute the mean accelearatio using our data</span>
 <span style="color: #228B22"># We define first an array Aaverage</span>
 n = np.size(t)
 Aaverage = np.zeros(n)
 Aaverage[<span style="color: #B452CD">0</span>] = -g
-<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">1</span>,n-<span style="color: #B452CD">1</span>):
-    Aaverage[i] = (Vaverage[i+<span style="color: #B452CD">1</span>]-Vaverage[i])/DeltaT
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">1</span>,n):
+    Aaverage[i] = (Vaverage[i]-Vaverage[i-<span style="color: #B452CD">1</span>])/DeltaT
 data = {<span style="color: #CD5555">&#39;t[s]&#39;</span>: t,
         <span style="color: #CD5555">&#39;y[m]&#39;</span>: y,
         <span style="color: #CD5555">&#39;v[m/s]&#39;</span>: Vaverage,
         <span style="color: #CD5555">&#39;a[m/s^2]&#39;</span>: Aaverage
         }
 NewData = pd.DataFrame(data)
-display(NewData[<span style="color: #B452CD">0</span>:n-<span style="color: #B452CD">2</span>])
+display(NewData[<span style="color: #B452CD">0</span>:n])
 </pre></div>
 <p>
-Note that we don't print the last values!
+Note that we used the previous value in the computation of the average velocities and accelerations. We did this since we wanted to compute the value for \( i=1 \) as well.
 </section>
 
 
