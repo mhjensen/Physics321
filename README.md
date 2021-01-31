@@ -115,7 +115,8 @@ Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/Hand
 Video of lecture at https://mediaspace.msu.edu/media/t/1_7pyc0yts and handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesJan25.pdf
 - Wednesday 1/27: Motion and forces, Newton's laws, examples
 Video of lecture https://mediaspace.msu.edu/media/t/1_k2acom08 and handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesJan27.pdf
-- Friday 1/29: Motion and forces, Newton's laws, examples
+- Friday 1/29: Motion and forces, Newton's laws, examples.
+Video of lecture https://mediaspace.msu.edu/media/t/1_ieaw1a6y and handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesJan29.pdf
 - Solution to homeworks are in https://d2l.msu.edu/
 - Good reads are Taylor chapters 1.4, 1.5, 1.6, 2.1-2.4 and AMS chapters 4.2 and  5
 - Solutions to homework 1 at https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionhw1.ipynb and videos at https://www.youtube.com/playlist?list=PLq9LZ5390Us41TX42XzOPIEPcbHaqX8Hx
