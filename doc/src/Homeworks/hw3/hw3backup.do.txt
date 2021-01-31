@@ -1,0 +1,254 @@
+TITLE: PHY321: Classical Mechanics 1
+AUTHOR: Homework 3, due Monday February 8
+DATE: today
+
+===  Practicalities about  homeworks and projects ===
+
+o You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. _Remember to write your name(s)_!
+o Homeworks are available ten days  before the deadline. 
+o How do I(we)  hand in?  You can hand in the paper and pencil exercises as a  scanned document. For this homework this applies to exercises 1-5. Alternatively, you can hand in everything (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise(s) (exercise 6 here) should always be handed in as a jupyter notebook by the deadline at D2L. 
+
+=== Introduction to homework 3 ===
+
+This week's sets of classical pen and paper and computational
+exercises deal with the motion of different objects under the
+influence of various forces. The relevant reading background is
+o chapter 2 of Taylor (there are many good examples there) and
+o chapters 5-7 of Malthe-Sørenssen.
+
+In both textbooks there are many nice worked out
+examples. Malthe-Sørenssen's text contains also several coding
+examples you may find useful.
+
+There are several pedagogical aims we have in mind with these exercises:
+o Get practice in setting up and analyzing a physical problem, finding the forces and the relevant equations to solve;
+o Analyze the results and ask yourself whether they make sense or not;
+o Finding analytical solutions to problems if possible and compare these with numerical results. This teaches us also how to understand errors in numerical calculations;
+o Being able to solve (in mechanics these are the most common types of equations) numerically ordinary differential equations and compare the solutions where possible with analytical solutions;
+o Getting used to studying physical problems using all possible tools, from paper and pencil to numerical solutions;
+o Then analyze the results and ask yourself whether they make sense or not.
+
+The above steps outline important elements of our understanding of the
+scientific method. Furthermore, there are also explicit coding skills
+we aim at such as setting up arrays, solving differential equations
+numerically and plotting your results.  Coding practice is also an
+important aspect. The more we practice the better we get (hopefully).
+From a numerical mathematics point of view, we will solve the differential
+equations using Euler's method (forward Euler).
+
+The code we will develop can be reused as a basis for coming homeworks. We can
+also extend the numerical solver we write here to include other methods (later) like
+the modified Euler method (Euler-Cromer, midpoint Euler) and more
+advanced methods like the family of Runge-Kutta methods and the Velocity-Verlet method.
+
+At the end of this course, we will thus have developed a larger code
+(or set of codes) which will allow us to study different numerical
+methods (integration and differential equations) as well as being able
+to study different physical systems. Combined with analytical skills,
+the hope is that this can allow us to explore interesting and
+realistic physics problems. By doing so, the hope is that can lead to
+deeper insights about the laws of motion which govern a system.
+
+And hopefully you can reuse many of the above solvers in other courses (our ideal).
+
+Enough talk!  Here we go and best wishes.
+
+=== Exercise 1 (20 pt), Electron moving into an electric field  ===
+
+An electron is sent through a varying electrical
+field. Initially, the electron is moving in the $x$-direction with a velocity
+$v_x = 100$ m/s. The electron enters the field when it passes the origin. The field
+varies with time, causing an acceleration of the electron that varies in time
+!bt
+\[
+\bm{a}(t)=\left(−20 \mathrm{m/s}^2 −10\mathrm{m/s}^3t\right) \bm{e}_y
+\]
+!et
+* 1a (4pt) Find the velocity as a function of time for the electron.
+* 1b (4pt)  Find the position as a function of time for the electron.
+
+The field is only acting inside a box of length $L = 2m$.
+* 1c (4pt)  How long time is the electron inside the field?
+* 1d (4pt)  What is the displacement in the $y$-direction when the electron leaves the box. (We call this the deflection of the electron).
+* 1e (4pt)  Find the angle the velocity vector forms with the horizontal axis as the electron leaves the box.
+
+
+=== Exercise 2 (10 pt), Drag force ===
+
+Taylor exercise 2.3
+
+=== Exercise 3 (10 pt), Falling object  ===
+
+Taylor exercise 2.6
+
+=== Exercise 4 (10 pt), and then a cyclist  ===
+
+Taylor exercise 2.26
+
+
+=== Exercise 5 (10 pt), back to a falling ball and preparing for the numerical exercise  ===
+
+_Useful material: Malthe-Sørenssen chapter 7.5 and Taylor chapter 2.4._
+
+In this example we study the motion of an object subject to a constant force, a velocity dependent
+force, and for the numerical part a position-dependent force.
+Without the position dependent force, we can solve the problem analytically. This is what we will do in this exercise.
+The position dependent force requires numerical efforts (exercise 7).
+In addition to the  falling ball case, we will include the effect of the ball bouncing back from the floor in exercises 7.
+
+
+Here we limit ourselves to a ball that is thrown from a height $h$
+above the ground with an initial velocity
+$\bm{v}_0$ at time $t=t_0$.
+We assume we have only a gravitational force and a force due to the air resistance.
+The position of the ball as function of time is  $\bm{r}(t)$ where $t$ is time.
+ The position is measured with respect to a coordinate system with origin at the floor.
+
+We assume we have an initial position $\bm{r}(t_0)=h\bm{e}_y$ and an initial velocity $\bm{v}_0=v_{x,0}\bm{e}_x+v_{y,0}\bm{e}_y$.
+
+In this exercise we assume the system is influenced by the gravitational force
+!bt
+\[
+\bm{G}=-mg\bm{e}_y
+\]
+!et
+and an air resistance given by a square law
+!bt
+\[
+-Dv\bm{v}.
+\]
+!et
+
+The analytical expressions for velocity and position as functions of
+time will be used to compare with the numerical results in exercise 6.
+
+* 5a (3pt) Identify the forces acting on the ball and set up a diagram with the forces acting on the ball. Find the acceleration of the falling ball. 
+* 5b (4pt) Integrate the acceleration from an initial time $t_0$ to a final time $t$ and find the velocity.
+* 5c (4pt) Find thereafter the position as function of time starting with an initial time $t_0$. Find the time it takes to hit the floor.  Here you will find it convenient to set the initial velocity in the $y$-direction to zero.
+
+
+We will use the above analytical results in our numerical calculations in exercise 6.
+
+
+
+
+===  Exercise 6 (40pt), Numerical elements, solving exercise 5 numerically and adding the bouncing from the floor ===
+
+_This exercise should be handed in as a jupyter-notebook_ at D2L. Remember to write your name(s). 
+
+Last week we:
+o Gained more practice with plotting in Python
+o Became familiar with arrays and representing vectors with such objects
+ 
+This week we will:
+o Learn and utilize Euler's Method to find the position and the velocity
+o Compare analytical and computational solutions 
+o Add additional forces to our model
+
+!bc pycod
+# let's start by importing useful packages we are familiar with
+import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
+!ec
+
+We will choose the following values
+o mass $m=0,2$ kg
+o accelleration (gravity) $g=9.81$ m/s$^{2}$.
+o initial position is the height $h=2$ m
+o initial velocities $v_{x,0}=v_{y,0}=10$ m/s
+
+Can you find a reasonable value for the drag coefficient $D$?
+You need also to define an initial time and 
+the step size $\Delta t$. We can define the step size $\Delta t$ as the difference between any
+two neighboring values in time (time steps) that we analyze within
+some range. It can be determined by dividing the interval we are
+analyzing, which in our case is time $t_{\mathrm{final}}-t_0$, by the number of steps we
+are taking $(N)$. This gives us a step size $\Delta t = \dfrac{t_{\mathrm{final}}-t_0}{N}$.
+
+With these preliminaries we are now ready to plot our results from exercise 5.
+
+* 6a (10pt) Set up arrays for time, velocity, acceleration and positions for the results from exercise 5. Define an initial and final time. Choose the final time to be the time when the ball hits the ground for the first time. Make a plot of the position and velocity as functions of time.  Here you could set the initial velocity in the $y$-direction to zero and use the result from exercise 5. Else you need to try different initial times using the result from exercise 5 as a starting guess.  It is not critical if you don't reach the ground when the initial velocity in the $y$-direction is not zero.
+
+
+We move now to the numerical solution of the differential equations as discussed in the "lecture notes":"https://mhjensen.github.io/Physics321/doc/pub/motion/html/motion.html" or Malthe-Sørenssen chapter 7.5.
+Let us remind ourselves about  Euler's Method.
+
+Suppose we know $f(t)$ and its derivative $f'(t)$. To find $f(t+\Delta t)$ at the next step, $t+\Delta t$,
+we can consider the Taylor expansion:
+
+$f(t+\Delta t) = f(t) + \dfrac{(\Delta t)f'(t)}{1!} + \dfrac{(\Delta t)^2f''(t)}{2!} + ...$
+
+If we ignore the $f''$ term and higher derivatives, we obtain
+
+$f(t+\Delta t) \approx f(t) + (\Delta t)f'(t)$.
+
+This approximation is the basis of Euler's method, and the Taylor
+expansion suggests that it will have errors of $O(\Delta t^2)$.  Thus, one
+would expect it to work better, the smaller the step size $h$ that you
+use. In our case the step size is $\Delta t$. 
+
+In setting up our code we need to
+
+o  Define and obtain all initial values, constants, and time to be analyzed with step sizes as done above (you can use the same values)
+
+o  Calculate the velocity using $v_{i+1} = v_{i} + (\Delta t)*a_{i}$
+
+o  Calculate the position using $pos_{i+1} = r_{i} + (\Delta t)*v_{i}$
+
+o  Calculate the new acceleration $a_{i+1}$.
+
+o  Repeat steps 2-4 for all time steps within a loop.
+
+
+* 6b (20 pt) Write a code which implements Euler's method and compute numerically and plot the position and velocity as functions of time for various values of $\Delta t$. Comment your results.
+
+
+* 6c (10pt) Compare your numerically obtained positions and velocities with the analytical results from exercise 5. Comment again your results.
+
+
+===  Exercise 7, gives an additional bonus score of 30 points. ===
+
+You don't need to do this exercise, but it gives you a bonus score of 30 points. It shows also how we can include more complicated forces with no pain! And the force we include here is an example of a case where analytical solutions may either be difficult to find or we cannot find an analytical solution. 
+
+
+Till now we have only introduced gravity and air resistance and studied
+their effects via a constant acceleration due to gravity and the force
+arising from air resistance. But what happens when the ball hits the
+floor? What if we would like to simulate the normal force from the floor acting on the ball?
+
+We need then to include a force model for the normal force from
+the floor on the ball. The simplest approach to such a system is to introduce a contact force
+model represented by a spring model.  We model the interaction between the floor
+and the ball as a single spring. But the normal force is zero when
+there is no contact. Here  we define a simple model that allows us to include
+such effects in our models.
+
+The normal force from the floor on the ball is represented by a spring force. This
+is a strong simplification of the actual deformation process occurring at the contact
+between the ball and the floor due to the deformation of both the ball and the floor.
+
+The deformed region corresponds roughly to the region of _overlap_ between the
+ball and the floor. The depth of this region is $\Delta y = R − y(t)$, where $R$
+is the radius of the ball. This is supposed to represent the compression of the spring.
+Our model for the normal force acting on the ball is then
+!bt
+\[
+\bm{N} = −k (R − y(t)) \bm{e}_y. 
+\]
+!et
+The normal force must act upward when $y < R$,
+hence the sign must be negative.
+However, we must also ensure that the normal force only acts when the ball is in
+contact with the floor, otherwise the normal force is zero. The full formation of the
+normal force is therefore
+!bt
+\[
+\bm{N} = −k (R − y(t)) \bm{e}_y, 
+\]
+!et
+when $y(t) < R$ and zero when $y(t) \le R$.
+In the numerical calculations you can choose $R=0.1$ m and the spring constant $k=1000$ N/m.
+
+* 7a (10pt) Identify the forces acting on the ball and set up a diagram with the forces acting on the ball. Find the acceleration of the falling ball now with the normal force as well.
+* 7b (20pt) Choose a large enough final time so you can study the ball bouncing up and down several times. Add the normal force and compute the height of the ball as function of time with and without air resistance. Comment your results.
