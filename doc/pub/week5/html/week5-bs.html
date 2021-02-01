@@ -87,16 +87,7 @@ Automatically generated HTML file from DocOnce source
               ('Work, Energy, Momentum and Conservation laws',
                2,
                None,
-               'work-energy-momentum-and-conservation-laws'),
-              ('Energy Conservation', 2, None, 'energy-conservation'),
-              ('Inverting the kinetic energy expression',
-               2,
-               None,
-               'inverting-the-kinetic-energy-expression'),
-              ('EXample of Harmonic Oscillator',
-               2,
-               None,
-               'example-of-harmonic-oscillator')]}
+               'work-energy-momentum-and-conservation-laws')]}
 end of tocinfo -->
 
 <body>
@@ -150,9 +141,6 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="#motion-in-a-magnetic-field" style="font-size: 80%;"><b>Motion in a Magnetic Field</b></a></li>
      <!-- navigation toc: --> <li><a href="#sliding-block-tied-to-a-wall" style="font-size: 80%;"><b>Sliding Block tied to a Wall</b></a></li>
      <!-- navigation toc: --> <li><a href="#work-energy-momentum-and-conservation-laws" style="font-size: 80%;"><b>Work, Energy, Momentum and Conservation laws</b></a></li>
-     <!-- navigation toc: --> <li><a href="#energy-conservation" style="font-size: 80%;"><b>Energy Conservation</b></a></li>
-     <!-- navigation toc: --> <li><a href="#inverting-the-kinetic-energy-expression" style="font-size: 80%;"><b>Inverting the kinetic energy expression</b></a></li>
-     <!-- navigation toc: --> <li><a href="#example-of-harmonic-oscillator" style="font-size: 80%;"><b>EXample of Harmonic Oscillator</b></a></li>
 
         </ul>
       </li>
@@ -892,113 +880,7 @@ $$
 <h2 id="work-energy-momentum-and-conservation-laws" class="anchor">Work, Energy, Momentum and Conservation laws </h2>
 
 <p>
-Energy conservation is most convenient as a strategy for addressing
-problems where time does not appear. For example, a particle goes
-from position \( x_0 \) with speed \( v_0 \), to position \( x_f \); what is its
-new speed? However, it can also be applied to problems where time
-does appear, such as in solving for the trajectory \( x(t) \), or
-equivalently \( t(x) \).
-
-<p>
 <b>Note</b>: See the handwritten notes for more material. This will be added during this week to these slides.
-
-<p>
-<!-- !split -->
-
-<h2 id="energy-conservation" class="anchor">Energy Conservation </h2>
-Energy is conserved in the case where the potential energy, \( V(\boldsymbol{r}) \), depends only on position, and not on time. The force is determined by \( V \),
-$$
-\begin{equation}
-\boldsymbol{F}(\boldsymbol{r})=-\nabla V(\boldsymbol{r}).
-\label{_auto19}
-\end{equation}
-$$
-
-<p>
-The net energy, \( E=V+K \) where \( K \) is the kinetic energy, is then conserved,
-
-$$
-\begin{eqnarray}
-\frac{d}{dt}(K+V)&=&\frac{d}{dt}\left(\frac{m}{2}(v_x^2+v_y^2+v_z^2)+V(\boldsymbol{r})\right)\\
-\nonumber
-&=&m\left(v_x\frac{dv_x}{dt}+v_y\frac{dv_y}{dt}+v_z\frac{dv_z}{dt}\right)
-+\partial_xV\frac{dx}{dt}+\partial_yV\frac{dy}{dt}+\partial_zV\frac{dz}{dt}\\
-\nonumber
-&=&v_xF_x+v_yF_y+v_zF_z-F_xv_x-F_yv_y-F_zv_z=0.
-\end{eqnarray}
-$$
-
-<p>
-The same proof can be written more compactly with vector notation,
-
-$$
-\begin{eqnarray}
-\frac{d}{dt}\left(\frac{m}{2}v^2+V(\boldsymbol{r})\right)
-&=&m\boldsymbol{v}\cdot\dot{\boldsymbol{v}}+\nabla V(\boldsymbol{r})\cdot\dot{\boldsymbol{r}}\\
-\nonumber
-&=&\boldsymbol{v}\cdot\boldsymbol{F}-\boldsymbol{F}\cdot\boldsymbol{v}=0.
-\end{eqnarray}
-$$
-
-<p>
-<!-- !split -->
-
-<h2 id="inverting-the-kinetic-energy-expression" class="anchor">Inverting the kinetic energy expression </h2>
-
-<p>
-Inverting the expression for kinetic energy,
-$$
-\begin{equation}
-v=\sqrt{2K/m}=\sqrt{2(E-V)/m},
-\label{_auto20}
-\end{equation}
-$$
-
-<p>
-allows one to solve for the one-dimensional trajectory \( x(t) \), by finding \( t(x) \),
-
-$$
-\begin{equation}
-t=\int_{x_0}^x \frac{dx'}{v(x')}=\int_{x_0}^x\frac{dx'}{\sqrt{2(E-V(x'))/m}}.
-\label{_auto21}
-\end{equation}
-$$
-
-<p>
-Note this would be much more difficult in higher dimensions, because
-you would have to determine which points, \( x,y,z \), the particles might
-reach in the trajectory, whereas in one dimension you can typically
-tell by simply seeing whether the kinetic energy is positive at every
-point between the old position and the new position.
-
-<p>
-<!-- !split -->
-
-<h2 id="example-of-harmonic-oscillator" class="anchor">EXample of Harmonic Oscillator </h2>
-
-<p>
-Consider a simple harmonic oscillator potential, \( V(x)=kx^2/2 \), with a particle emitted from \( x=0 \) with velocity \( v_0 \). Solve for the trajectory \( t(x) \),
-
-$$
-\begin{eqnarray}
-t&=&\int_{0}^x \frac{dx'}{\sqrt{2(E-kx^2/2)/m}}\\
-\nonumber
-&=&\sqrt{m/k}\int_0^x~\frac{dx'}{\sqrt{x_{\rm max}^2-x^{\prime 2}}},~~~x_{\rm max}^2=2E/k.
-\end{eqnarray}
-$$
-
-<p>
-Here \( E=mv_0^2/2 \) and \( x_{\rm max} \) is defined as the maximum
-displacement before the particle turns around. This integral is done
-by the substitution \( \sin\theta=x/x_{\rm max} \).
-
-$$
-\begin{eqnarray}
-(k/m)^{1/2}t&=&\sin^{-1}(x/x_{\rm max}),\\
-\nonumber
-x&=&x_{\rm max}\sin\omega t,~~~\omega=\sqrt{k/m}.
-\end{eqnarray}
-$$
 
 <p>
 
