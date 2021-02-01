@@ -1,0 +1,720 @@
+TITLE: PHY321: More on Motion and Forces, begin Work and Energy  discussion
+AUTHOR: "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/" {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and Facility for Rare Ion Beams (FRIB), Michigan State University, USA & Department of Physics, University of Oslo, Norway
+DATE: today
+
+
+!split
+=====   Aims and Overarching Motivation =====
+
+=== Monday ===
+
+We discuss various forces and their pertinent equations of motion
+
+Recommended reading: Taylor 2.1-2.4. Malthe-Sørenssen chapter 6-7 contains many examples.
+We will cover in particular a falling object in two dimensions with linear air resistance relevant for homework 3. 
+
+=== Wednesday ===
+
+We discuss other force models with examples such as the gravitational force and a spring force. See Malthe-Sørenssen chapter 7.3-7.5. We start also discussion Energy and work, see Taylor 4.1
+
+
+===  Friday ===
+
+We discuss several examples of energy and work. Taylor 4.1-4.3.
+
+
+
+
+
+
+!split
+===== Air Resistance in One Dimension =====
+
+Last week we considered the motion of a falling object with air
+resistance. Here we look at both a quadratic in velocity resistance
+and linear in velocity.  But first we give a qualitative argument
+about the mathematical expression for the air resistance we used last
+Friday.
+
+
+Air resistance tends to scale as the square of the velocity. This is
+in contrast to many problems chosen for textbooks, where it is linear
+in the velocity. The choice of a linear dependence is motivated by
+mathematical simplicity (it keeps the differential equation linear)
+rather than by physics. One can see that the force should be quadratic
+in velocity by considering the momentum imparted on the air
+molecules. If an object sweeps through a volume $dV$ of air in time
+$dt$, the momentum imparted on the air is
+
+!bt
+\begin{equation}
+dP=\rho_m dV v,
+\end{equation}
+!et
+
+where $v$ is the velocity of the object and $\rho_m$ is the mass
+density of the air. If the molecules bounce back as opposed to stop
+you would double the size of the term. The opposite value of the
+momentum is imparted onto the object itself. Geometrically, the
+differential volume is
+
+!bt
+\begin{equation}
+dV=Avdt,
+\end{equation}
+!et
+
+where $A$ is the cross-sectional area and $vdt$ is the distance the
+object moved in time $dt$.
+
+!split
+===== Resulting Acceleration =====
+Plugging this into the expression above,
+
+!bt
+\begin{equation}
+\frac{dP}{dt}=-\rho_m A v^2.
+\end{equation}
+!et
+
+This is the force felt by the particle, and is opposite to its
+direction of motion. Now, because air doesn't stop when it hits an
+object, but flows around the best it can, the actual force is reduced
+by a dimensionless factor $c_W$, called the drag coefficient.
+
+!bt
+\begin{equation}
+F_{\rm drag}=-c_W\rho_m Av^2,
+\end{equation}
+!et
+
+and the acceleration is
+
+!bt
+\begin{eqnarray}
+\frac{dv}{dt}=-\frac{c_W\rho_mA}{m}v^2.
+\end{eqnarray}
+!et
+
+For a particle with initial velocity $v_0$, one can separate the $dt$
+to one side of the equation, and move everything with $v$s to the
+other side. We did this in our discussion of simple motion and will not repeat it here.
+
+On more general terms,
+for many systems, e.g. an automobile, there are multiple sources of
+resistance. In addition to wind resistance, where the force is
+proportional to $v^2$, there are dissipative effects of the tires on
+the pavement, and in the axel and drive train. These other forces can
+have components that scale proportional to $v$, and components that
+are independent of $v$. Those independent of $v$, e.g. the usual
+$f=\mu_K N$ frictional force you consider in your first Physics courses, only set in
+once the object is actually moving. As speeds become higher, the $v^2$
+components begin to dominate relative to the others. For automobiles
+at freeway speeds, the $v^2$ terms are largely responsible for the
+loss of efficiency. To travel a distance $L$ at fixed speed $v$, the
+energy/work required to overcome the dissipative forces are $fL$,
+which for a force of the form $f=\alpha v^n$ becomes
+!bt
+\begin{eqnarray}
+W=\int dx~f=\alpha v^n L.
+\end{eqnarray}
+!et
+For $n=0$ the work is
+independent of speed, but for the wind resistance, where $n=2$,
+slowing down is essential if one wishes to reduce fuel consumption. It
+is also important to consider that engines are designed to be most
+efficient at a chosen range of power output. Thus, some cars will get
+better mileage at higher speeds (They perform better at 50 mph than at
+5 mph) despite the considerations mentioned above.
+
+!split
+===== Going Ballistic, Projectile Motion or a Softer Approach, Falling Raindrops =====
+
+
+As an example of Newton's Laws we consider projectile motion (or a
+falling raindrop or a ball we throw up in the air) with a drag force. Even though air resistance is
+largely proportional to the square of the velocity, we will consider
+the drag force to be linear to the velocity, $\bm{F}=-m\gamma\bm{v}$,
+for the purposes of this exercise.
+
+Such a dependence can be extracted from experimental data for objects moving at low velocities, see for example Malthe-Sørenssen chapter 5.6.
+
+We will here focus on a two-dimensional problem.
+
+!split
+===== Two-dimensional falling object =====
+
+The acceleration for a projectile moving upwards,
+$\bm{a}=\bm{F}/m$, becomes
+
+!bt
+\begin{eqnarray}
+\frac{dv_x}{dt}=-\gamma v_x,\\
+\nonumber
+\frac{dv_y}{dt}=-\gamma v_y-g,
+\end{eqnarray}
+!et
+and $\gamma$ has dimensions of inverse time. 
+
+If you on the other hand have a falling raindrop, how do these equations change? See for example Figure 2.1 in Taylor.
+Let us stay with a ball which is thrown up in the air at $t=0$. 
+
+!split
+===== Ways of solving these equations =====
+
+We will go over two different ways to solve this equation. The first
+by direct integration, and the second as a differential equation. To
+do this by direct integration, one simply multiplies both sides of the
+equations above by $dt$, then divide by the appropriate factors so
+that the $v$s are all on one side of the equation and the $dt$ is on
+the other. For the $x$ motion one finds an easily integrable equation,
+
+!bt
+\begin{eqnarray}
+\frac{dv_x}{v_x}&=&-\gamma dt,\\
+\nonumber
+\int_{v_{0x}}^{v_{x}}\frac{dv_x}{v_x}&=&-\gamma\int_0^{t}dt,\\
+\nonumber
+\ln\left(\frac{v_{x}}{v_{0x}}\right)&=&-\gamma t,\\
+\nonumber
+v_{x}(t)&=&v_{0x}e^{-\gamma t}.
+\end{eqnarray}
+!et
+
+This is very much the result you would have written down
+by inspection. For the $y$-component of the velocity,
+
+!bt
+\begin{eqnarray}
+\frac{dv_y}{v_y+g/\gamma}&=&-\gamma dt\\
+\nonumber
+\ln\left(\frac{v_{y}+g/\gamma}{v_{0y}-g/\gamma}\right)&=&-\gamma t_f,\\
+\nonumber
+v_{fy}&=&-\frac{g}{\gamma}+\left(v_{0y}+\frac{g}{\gamma}\right)e^{-\gamma t}.
+\end{eqnarray}
+!et
+
+Whereas $v_x$ starts at some value and decays
+exponentially to zero, $v_y$ decays exponentially to the terminal
+velocity, $v_t=-g/\gamma$.
+
+!split
+===== Solving as differential equations =====
+
+Although this direct integration is simpler than the method we invoke
+below, the method below will come in useful for some slightly more
+difficult differential equations in the future. The differential
+equation for $v_x$ is straight-forward to solve. Because it is first
+order there is one arbitrary constant, $A$, and by inspection the
+solution is
+
+!bt
+\begin{equation}
+v_x=Ae^{-\gamma t}.
+\end{equation}
+!et
+
+The arbitrary constants for equations of motion are usually determined
+by the initial conditions, or more generally boundary conditions. By
+inspection $A=v_{0x}$, the initial $x$ component of the velocity.
+
+
+!split
+===== Differential Equations, contn =====
+The differential equation for $v_y$ is a bit more complicated due to
+the presence of $g$. Differential equations where all the terms are
+linearly proportional to a function, in this case $v_y$, or to
+derivatives of the function, e.g., $v_y$, $dv_y/dt$,
+$d^2v_y/dt^2\cdots$, are called linear differential equations. If
+there are terms proportional to $v^2$, as would happen if the drag
+force were proportional to the square of the velocity, the
+differential equation is not longer linear. Because this expression
+has only one derivative in $v$ it is a first-order linear differential
+equation. If a term were added proportional to $d^2v/dt^2$ it would be
+a second-order differential equation.  In this case we have a term
+completely independent of $v$, the gravitational acceleration $g$, and
+the usual strategy is to first rewrite the equation with all the
+linear terms on one side of the equal sign,
+
+!bt
+\begin{equation}
+\frac{dv_y}{dt}+\gamma v_y=-g.
+\end{equation}
+!et
+
+!split
+===== Splitting into two parts =====
+
+Now, the solution to the equation can be broken into two
+parts. Because this is a first-order differential equation we know
+that there will be one arbitrary constant. Physically, the arbitrary
+constant will be determined by setting the initial velocity, though it
+could be determined by setting the velocity at any given time. Like
+most differential equations, solutions are not ``solved''. Instead,
+one guesses at a form, then shows the guess is correct. For these
+types of equations, one first tries to find a single solution,
+i.e. one with no arbitrary constants. This is called the {\it
+particular} solution, $y_p(t)$, though it should really be called
+``a'' particular solution because there are an infinite number of such
+solutions. One then finds a solution to the {\it homogenous} equation,
+which is the equation with zero on the right-hand side,
+
+!bt
+\begin{equation}
+\frac{dv_{y,h}}{dt}+\gamma v_{y,h}=0.
+\end{equation}
+!et
+
+Homogenous solutions will have arbitrary constants. 
+
+The particular solution will solve the same equation as the original
+general equation
+
+!bt
+\begin{equation}
+\frac{dv_{y,p}}{dt}+\gamma v_{y,p}=-g.
+\end{equation}
+!et
+
+However, we don't need find one with arbitrary constants. Hence, it is
+called a _particular_ solution.
+
+The sum of the two,
+
+!bt
+\begin{equation}
+v_y=v_{y,p}+v_{y,h},
+\end{equation}
+!et
+
+is a solution of the total equation because of the linear nature of
+the differential equation. One has now found a *general* solution
+encompassing all solutions, because it both satisfies the general
+equation (like the particular solution), and has an arbitrary constant
+that can be adjusted to fit any initial condition (like the homogeneous
+solution). If the equations were not linear, that is if there were terms
+such as $v_y^2$ or $v_y\dot{v}_y$, this technique would not work.
+
+!split
+===== More details =====
+
+Returning to the example above, the homogenous solution is the same as
+that for $v_x$, because there was no gravitational acceleration in
+that case,
+
+!bt
+\begin{equation}
+v_{y,h}=Be^{-\gamma t}.
+\end{equation}
+!et
+In this case a particular solution is one with constant velocity,
+
+!bt
+\begin{equation}
+v_{y,p}=-g/\gamma.
+\end{equation}
+!et
+Note that this is the terminal velocity of a particle falling from a
+great height. The general solution is thus,
+
+!bt
+\begin{equation}
+v_y=Be^{-\gamma t}-g/\gamma,
+\end{equation}
+!et
+
+and one can find $B$ from the initial velocity,
+
+!bt
+\begin{equation}
+v_{0y}=B-g/\gamma,~~~B=v_{0y}+g/\gamma.
+\end{equation}
+!et
+Plugging in the expression for $B$ gives the $y$ motion given the initial velocity,
+
+!bt
+\begin{equation}
+v_y=(v_{0y}+g/\gamma)e^{-\gamma t}-g/\gamma.
+\end{equation}
+!et
+It is easy to see that this solution has $v_y=v_{0y}$ when $t=0$ and
+$v_y=-g/\gamma$ when $t\rightarrow\infty$.
+
+One can also integrate the two equations to find the coordinates $x$
+and $y$ as functions of $t$,
+
+!bt
+\begin{eqnarray}
+x&=&\int_0^t dt'~v_{0x}(t')=\frac{v_{0x}}{\gamma}\left(1-e^{-\gamma t}\right),\\
+\nonumber
+y&=&\int_0^t dt'~v_{0y}(t')=-\frac{gt}{\gamma}+\frac{v_{0y}+g/\gamma}{\gamma}\left(1-e^{-\gamma t}\right).
+\end{eqnarray}
+!et
+
+If the question was to find the position at a time $t$, we would be
+finished. However, the more common goal in a projectile equation
+problem is to find the range, i.e. the distance $x$ at which $y$
+returns to zero. For the case without a drag force this was much
+simpler. The solution for the $y$ coordinate would have been
+$y=v_{0y}t-gt^2/2$. One would solve for $t$ to make $y=0$, which would
+be $t=2v_{0y}/g$, then plug that value for $t$ into $x=v_{0x}t$ to
+find $x=2v_{0x}v_{0y}/g=v_0\sin(2\theta_0)/g$. One follows the same
+steps here, except that the expression for $y(t)$ is more
+complicated. Searching for the time where $y=0$, and we get
+
+!bt
+\begin{equation}
+0=-\frac{gt}{\gamma}+\frac{v_{0y}+g/\gamma}{\gamma}\left(1-e^{-\gamma t}\right).
+\end{equation}
+!et
+
+This cannot be inverted into a simple expression $t=\cdots$. Such
+expressions are known as ``transcendental equations'', and are not the
+rare instance, but are the norm. In the days before computers, one
+might plot the right-hand side of the above graphically as
+a function of time, then find the point where it crosses zero.
+
+Now, the most common way to solve for an equation of the above type
+would be to apply Newton's method numerically. This involves the
+following algorithm for finding solutions of some equation $F(t)=0$.
+
+o First guess a value for the time, $t_{\rm guess}$.
+o Calculate $F$ and its derivative, $F(t_{\rm guess})$ and $F'(t_{\rm guess})$. 
+o Unless you guessed perfectly, $F\ne 0$, and assuming that $\Delta F\approx F'\Delta t$, one would choose 
+o $\Delta t=-F(t_{\rm guess})/F'(t_{\rm guess})$.
+o Now repeat step 1, but with $t_{\rm guess}\rightarrow t_{\rm guess}+\Delta t$.
+
+
+If the $F(t)$ were perfectly linear in $t$, one would find $t$ in one
+step. Instead, one typically finds a value of $t$ that is closer to
+the final answer than $t_{\rm guess}$. One breaks the loop once one
+finds $F$ within some acceptable tolerance of zero. A program to do
+this will be added shortly.
+
+!split
+===== Motion in a Magnetic Field =====
+
+
+Another example of a velocity-dependent force is magnetism,
+!bt
+\begin{eqnarray}
+\bm{F}&=&q\bm{v}\times\bm{B},\\
+\nonumber
+F_i&=&q\sum_{jk}\epsilon_{ijk}v_jB_k.
+\end{eqnarray}
+!et
+
+For a uniform field in the $z$ direction $\bm{B}=B\hat{z}$, the force can only have $x$ and $y$ components,
+
+!bt
+\begin{eqnarray}
+F_x&=&qBv_y\\
+\nonumber
+F_y&=&-qBv_x.
+\end{eqnarray}
+!et
+
+The differential equations are
+
+!bt
+\begin{eqnarray}
+\dot{v}_x&=&\omega_c v_y,\omega_c= qB/m\\
+\nonumber
+\dot{v}_y&=&-\omega_c v_x.
+\end{eqnarray}
+!et
+One can solve the equations by taking time derivatives of either equation, then substituting into the other equation,
+!bt
+\begin{eqnarray}
+\ddot{v}_x=\omega_c\dot{v_y}=-\omega_c^2v_x,\\
+\nonumber
+\ddot{v}_y&=&-\omega_c\dot{v}_x=-\omega_cv_y.
+\end{eqnarray}
+!et
+
+The solution to these equations can be seen by inspection,
+!bt
+\begin{eqnarray}
+v_x&=&A\sin(\omega_ct+\phi),\\
+\nonumber
+v_y&=&A\cos(\omega_ct+\phi).
+\end{eqnarray}
+!et
+
+One can integrate the equations to find the positions as a function of time,
+!bt
+\begin{eqnarray}
+x-x_0&=&\int_{x_0}^x dx=\int_0^t dt v(t)\\
+\nonumber
+&=&\frac{-A}{\omega_c}\cos(\omega_ct+\phi),\\
+\nonumber
+y-y_0&=&\frac{A}{\omega_c}\sin(\omega_ct+\phi).
+\end{eqnarray}
+!et
+The trajectory is a circle centered at $x_0,y_0$ with amplitude $A$ rotating in the clockwise direction.
+
+The equations of motion for the $z$ motion are
+!bt
+\begin{equation}
+\dot{v_z}=0,
+\end{equation}
+!et
+which leads to
+!bt
+\begin{equation}
+z-z_0=V_zt.
+\end{equation}
+!et
+Added onto the circle, the motion is helical.
+
+Note that the kinetic energy,
+!bt
+\begin{equation}
+T=\frac{1}{2}m(v_x^2+v_y^2+v_z^2)=\frac{1}{2}m(\omega_c^2A^2+V_z^2),
+\end{equation}
+!et
+is constant. This is because the force is perpendicular to the
+velocity, so that in any differential time element $dt$ the work done
+on the particle $\bm{F}\cdot{dr}=dt\bm{F}\cdot{v}=0$.
+
+One should think about the implications of a velocity dependent
+force. Suppose one had a constant magnetic field in deep space. If a
+particle came through with velocity $v_0$, it would undergo cyclotron
+motion with radius $R=v_0/\omega_c$. However, if it were still its
+motion would remain fixed. Now, suppose an observer looked at the
+particle in one reference frame where the particle was moving, then
+changed their velocity so that the particle's velocity appeared to be
+zero. The motion would change from circular to fixed. Is this
+possible?
+
+The solution to the puzzle above relies on understanding
+relativity. Imagine that the first observer believes $\bm{B}\ne 0$ and
+that the electric field $\bm{E}=0$. If the observer then changes
+reference frames by accelerating to a velocity $\bm{v}$, in the new
+frame $\bm{B}$ and $\bm{E}$ both change. If the observer moved to the
+frame where the charge, originally moving with a small velocity $v$,
+is now at rest, the new electric field is indeed $\bm{v}\times\bm{B}$,
+which then leads to the same acceleration as one had before. If the
+velocity is not small compared to the speed of light, additional
+$\gamma$ factors come into play,
+$\gamma=1/\sqrt{1-(v/c)^2}$. Relativistic motion will not be
+considered in this course.
+
+
+
+!split
+===== Sliding Block tied to a Wall =====
+
+Another classical case is that of simple harmonic oscillations, here represented by a block sliding on a horizontal frictionless surface. The block is tied to a wall with a spring. If the spring is not compressed or stretched too far, the force on the block at a given position $x$ is 
+!bt
+  \[
+      F=-kx.
+  \]
+!et
+The negative sign means that the force acts to restore the object to an equilibrium position. Newton's equation of motion for this idealized system is then 
+!bt
+  \[
+    m\frac{d^2x}{dt^2}=-kx,
+  \]
+!et
+or we could rephrase it as
+!bt
+  \[
+   \frac{d^2x}{dt^2}=-\frac{k}{m}x=-\omega_0^2x,
+    label{eq:newton1}
+  \]
+!et
+with the angular frequency $\omega_0^2=k/m$. 
+
+The above differential equation has the advantage that it can be solved  analytically with solutions on the form
+!bt
+  \[
+     x(t)=Acos(\omega_0t+\nu),
+  \]
+!et
+where $A$ is the amplitude and $\nu$ the phase constant.   This provides in turn an important test for the numerical
+solution and the development of a program for more complicated cases which cannot be solved analytically. 
+
+
+With the position $x(t)$ and the velocity  $v(t)=dx/dt$ we can reformulate Newton's equation in the following way
+!bt
+  \[
+      \frac{dx(t)}{dt}=v(t),
+  \]
+!et
+  and
+!bt
+  \[
+      \frac{dv(t)}{dt}=-\omega_0^2x(t).
+  \]
+!et
+  We are now going to solve these equations using first the standard forward Euler  method. Later we will try to improve upon this.
+
+
+Before proceeding however, it is important to note that in addition to the exact solution, we have at least two further tests which can be used to check our solution. 
+
+Since functions like $cos$ are periodic with a period $2\pi$, then the solution $x(t)$ has also to be periodic. This means that
+!bt
+\[
+     x(t+T)=x(t),
+\]
+!et
+with $T$ the period defined as 
+!bt
+\[
+     T=\frac{2\pi}{\omega_0}=\frac{2\pi}{\sqrt{k/m}}.
+\]
+!et
+Observe that $T$ depends only on $k/m$ and not on the amplitude of the solution. 
+
+
+In addition to the periodicity test, the total energy has also to be conserved. 
+
+Suppose we choose the initial conditions 
+!bt
+\[
+     x(t=0)=1\hspace{0.1cm} \mathrm{m}\hspace{1cm} v(t=0)=0\hspace{0.1cm}\mathrm{m/s},
+\]
+!et
+meaning that block is at rest at $t=0$ but with a potential energy
+!bt
+\[
+    E_0=\frac{1}{2}kx(t=0)^2=\frac{1}{2}k.
+\]
+!et
+The total energy at any time $t$ has however to be conserved, meaning that our solution has to fulfil the condition
+!bt
+\[
+    E_0=\frac{1}{2}kx(t)^2+\frac{1}{2}mv(t)^2.
+\]
+!et
+We will derive this equation in our discussion on "energy conservation":"https://mhjensen.github.io/Physics321/doc/pub/energyconserv/html/energyconserv.html".
+
+
+An algorithm which implements these equations is included below.
+ * Choose the initial position and speed, with the most common choice $v(t=0)=0$ and some fixed value for the position. 
+ * Choose the method you wish to employ in solving the problem.
+ * Subdivide the time interval $[t_i,t_f] $ into a grid with step size
+!bt
+       \[
+	  h=\frac{t_f-t_i}{N},
+      \]
+!et
+where $N$ is the number of mesh points. 
+ * Calculate now the total energy given by 
+!bt
+  \[
+    E_0=\frac{1}{2}kx(t=0)^2=\frac{1}{2}k.
+  \]
+!et
+ * Choose ODE solver to obtain $x_{i+1}$ and $v_{i+1}$ starting from the previous values $x_i$ and $v_i$.
+ * When we have computed $x(v)_{i+1}$ we upgrade  $t_{i+1}=t_i+h$.
+ * This iterative  process continues till we reach the maximum time $t_f$.
+ * The results are checked against the exact solution. Furthermore, one has to check the stability of the numerical solution against the chosen number of mesh points $N$.      
+
+
+
+
+!split
+===== Work, Energy, Momentum and Conservation laws =====
+
+Energy conservation is most convenient as a strategy for addressing
+problems where time does not appear. For example, a particle goes
+from position $x_0$ with speed $v_0$, to position $x_f$; what is its
+new speed? However, it can also be applied to problems where time
+does appear, such as in solving for the trajectory $x(t)$, or
+equivalently $t(x)$.
+
+_Note_: See the handwritten notes for more material. This will be added during this week to these slides.
+
+
+!split
+===== Energy Conservation =====
+Energy is conserved in the case where the potential energy, $V(\bm{r})$, depends only on position, and not on time. The force is determined by $V$,
+!bt
+\begin{equation}
+\bm{F}(\bm{r})=-\nabla V(\bm{r}).
+\end{equation}
+!et
+
+The net energy, $E=V+K$ where $K$ is the kinetic energy, is then conserved,
+
+!bt
+\begin{eqnarray}
+\frac{d}{dt}(K+V)&=&\frac{d}{dt}\left(\frac{m}{2}(v_x^2+v_y^2+v_z^2)+V(\bm{r})\right)\\
+\nonumber
+&=&m\left(v_x\frac{dv_x}{dt}+v_y\frac{dv_y}{dt}+v_z\frac{dv_z}{dt}\right)
++\partial_xV\frac{dx}{dt}+\partial_yV\frac{dy}{dt}+\partial_zV\frac{dz}{dt}\\
+\nonumber
+&=&v_xF_x+v_yF_y+v_zF_z-F_xv_x-F_yv_y-F_zv_z=0.
+\end{eqnarray}
+!et
+
+The same proof can be written more compactly with vector notation,
+
+!bt
+\begin{eqnarray}
+\frac{d}{dt}\left(\frac{m}{2}v^2+V(\bm{r})\right)
+&=&m\bm{v}\cdot\dot{\bm{v}}+\nabla V(\bm{r})\cdot\dot{\bm{r}}\\
+\nonumber
+&=&\bm{v}\cdot\bm{F}-\bm{F}\cdot\bm{v}=0.
+\end{eqnarray}
+!et
+
+!split
+===== Inverting the kinetic energy expression =====
+
+Inverting the expression for kinetic energy,
+!bt
+\begin{equation}
+v=\sqrt{2K/m}=\sqrt{2(E-V)/m},
+\end{equation}
+!et
+
+allows one to solve for the one-dimensional trajectory $x(t)$, by finding $t(x)$,
+
+!bt
+\begin{equation}
+t=\int_{x_0}^x \frac{dx'}{v(x')}=\int_{x_0}^x\frac{dx'}{\sqrt{2(E-V(x'))/m}}.
+\end{equation}
+!et
+
+Note this would be much more difficult in higher dimensions, because
+you would have to determine which points, $x,y,z$, the particles might
+reach in the trajectory, whereas in one dimension you can typically
+tell by simply seeing whether the kinetic energy is positive at every
+point between the old position and the new position.
+
+!split
+===== EXample of Harmonic Oscillator =====
+
+Consider a simple harmonic oscillator potential, $V(x)=kx^2/2$, with a particle emitted from $x=0$ with velocity $v_0$. Solve for the trajectory $t(x)$,
+
+!bt
+\begin{eqnarray}
+t&=&\int_{0}^x \frac{dx'}{\sqrt{2(E-kx^2/2)/m}}\\
+\nonumber
+&=&\sqrt{m/k}\int_0^x~\frac{dx'}{\sqrt{x_{\rm max}^2-x^{\prime 2}}},~~~x_{\rm max}^2=2E/k.
+\end{eqnarray}
+!et
+
+Here $E=mv_0^2/2$ and $x_{\rm max}$ is defined as the maximum
+displacement before the particle turns around. This integral is done
+by the substitution $\sin\theta=x/x_{\rm max}$.
+
+!bt
+\begin{eqnarray}
+(k/m)^{1/2}t&=&\sin^{-1}(x/x_{\rm max}),\\
+\nonumber
+x&=&x_{\rm max}\sin\omega t,~~~\omega=\sqrt{k/m}.
+\end{eqnarray}
+!et
+
+
+
+
+
+
+
+
+
