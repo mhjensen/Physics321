@@ -103,7 +103,7 @@ PHY321: Classical Mechanics 1
 
 % --- begin date ---
 \begin{center}
-Jan 9, 2021
+Feb 1, 2021
 \end{center}
 % --- end date ---
 
@@ -351,51 +351,94 @@ In setting up our code we need to
 \item 6c (10pt) Compare your numerically obtained positions and velocities with the analytical results from exercise 5. Comment again your results.
 
 
-\paragraph{Exercise 7, gives an additional bonus score of 30 points.}
-You don't need to do this exercise, but it gives you a bonus score of 30 points. It shows also how we can include more complicated forces with no pain! And the force we include here is an example of a case where analytical solutions may either be difficult to find or we cannot find an analytical solution. 
+\paragraph{Classical Mechanics Extra Credit Assignment: Scientific Writing and attending Talks.}
+The following gives you an opportunity to earn \textbf{five extra credit
+points} on each of the remaining homeworks and \textbf{ten extra credit points}
+on the midterms and finals.  This assignment also covers an aspect of
+the scientific process that is not taught in most undergraduate
+programs: scientific writing.  Writing scientific reports is how
+scientist communicate their results to the rest of the field.  Knowing
+how to assemble a well written scientific report will greatly benefit
+you in you upper level classes, in graduate school, and in the work
+place.
+
+The full information on extra credits is found at \href{{https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/}}{\nolinkurl{https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/}}. There you will also find examples on how to write a scientific article. 
+Below you can also find a description on how to gain extra credits by attending scientific talks.
 
 
-Till now we have only introduced gravity and air resistance and studied
-their effects via a constant acceleration due to gravity and the force
-arising from air resistance. But what happens when the ball hits the
-floor? What if we would like to simulate the normal force from the floor acting on the ball?
+This assignment allows you to gain extra credit points by practicing
+your scientific writing.  For each of the remaining homeworks you can
+submit the specified section of a scientific report (written about the
+numerical aspect of the homework) for five extra credit points on the
+assignment.  FOr the two midterms and the final, submitting a full
+scientific report covering the numerical analysis problem will be
+worth ten extra points.  For credit the grader must be able to tell
+that you put effort into the assignment (i.e.~well written, well
+formatted, etc.).  If you are unfamiliar with writing scientific
+reports, \href{{https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/IntroductionScientificWriting.md}}{see the information here}
 
-We need then to include a force model for the normal force from
-the floor on the ball. The simplest approach to such a system is to introduce a contact force
-model represented by a spring model.  We model the interaction between the floor
-and the ball as a single spring. But the normal force is zero when
-there is no contact. Here  we define a simple model that allows us to include
-such effects in our models.
+The following table explains what aspect of a scientific report is due
+with which homework.  You can submit the assignment in any format you
+like, in the same document as your homework, or in a different one.
+Remember to cite any external references you use and include a
+reference list.  There are no length requirements, but make sure what
+you turn in is complete and through.  If you have any questions,
+please contact Julie Butler at butler@frib.msu.edu.
 
-The normal force from the floor on the ball is represented by a spring force. This
-is a strong simplification of the actual deformation process occurring at the contact
-between the ball and the floor due to the deformation of both the ball and the floor.
 
-The deformed region corresponds roughly to the region of \textbf{overlap} between the
-ball and the floor. The depth of this region is $\Delta y = R − y(t)$, where $R$
-is the radius of the ball. This is supposed to represent the compression of the spring.
-Our model for the normal force acting on the ball is then
-\[
-\bm{N} = −k (R − y(t)) \bm{e}_y. 
-\]
-The normal force must act upward when $y < R$,
-hence the sign must be negative.
-However, we must also ensure that the normal force only acts when the ball is in
-contact with the floor, otherwise the normal force is zero. The full formation of the
-normal force is therefore
-\[
-\bm{N} = −k (R − y(t)) \bm{e}_y, 
-\]
-when $y(t) < R$ and zero when $y(t) \le R$.
-In the numerical calculations you can choose $R=0.1$ m and the spring constant $k=1000$ N/m.
+\begin{quote}
+\begin{tabular}{ccc}
+\hline
+\multicolumn{1}{c}{ HW/Project } & \multicolumn{1}{c}{ Due Date } & \multicolumn{1}{c}{ Extra Credit Assignment } \\
+\hline
+HW 3                       & 2-8                        & Abstract                   \\
+HW 4                       & 2-15                       & Introduction               \\
+HW 5                       & 2-22                       & Methods                    \\
+HW 6                       & 3-1                        & Results and Discussion     \\
+\textbf{Midterm 1}         & \textbf{3-12}              & \emph{Full Written Report} \\
+HW 7                       & 3-22                       & Abstract                   \\
+HW 8                       & 3-29                       & Introduction               \\
+HW 9                       & 4-5                        & Results and Discussion     \\
+\textbf{Midterm 2|} _4-16_ & \emph{Full Written Report} \\
+HW 10                      & 4-26                       & Abstract                   \\
+\textbf{Final}             & \textbf{4-30}              & \emph{Full Written Report} \\
+\hline
+\end{tabular}
+\end{quote}
 
+\noindent
+
+You can also gain extra credits if you attend scientific talks.
+This is described here.
+
+
+\paragraph{Integrating Classwork With Research.}
+This opportunity will allow you to earn up to 5 extra credit points on a Homework per week. These points can push you above 100\% or help make up for missed exercises.
+In order to earn all points you must:
+
+\begin{enumerate}
+\item Attend an MSU research talk (recommended research oriented Clubs is  provided below)
+
+\item Summarize the talk using at least 150 words
+
+\item Turn in the summary along with your Homework.
+\end{enumerate}
+
+\noindent
+Approved talks:
+Talks given by researchers through the following clubs:
 \begin{itemize}
-\item 7a (10pt) Identify the forces acting on the ball and set up a diagram with the forces acting on the ball. Find the acceleration of the falling ball now with the normal force as well.
+\item Research and Idea Sharing Enterprise (RAISE)​: Meets Wednesday Nights Society for Physics Students (SPS)​: Meets Monday Nights
 
-\item 7b (20pt) Choose a large enough final time so you can study the ball bouncing up and down several times. Add the normal force and compute the height of the ball as function of time with and without air resistance. Comment your results.
+\item Astronomy Club​: Meets Monday Nights
+
+\item Facility For Rare Isotope Beam (FRIB) Seminars: ​Occur multiple times a week
 \end{itemize}
 
 \noindent
+If you have any questions please consult Jeremy Rebenstock, rebensto@msu.edu.
+
+All the material on extra credits is at \href{{https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/}}{\nolinkurl{https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/}}. 
 
 % ------------------- end of main content ---------------
 
