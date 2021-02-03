@@ -15,8 +15,11 @@ We will cover in particular a falling object in two dimensions with linear air r
 
 === Wednesday ===
 
-We discuss other force models with examples such as the gravitational force and a spring force. See Malthe-Sørenssen chapter 7.3-7.5. We start also discussion Energy and work, see Taylor 4.1
+We discuss other force models with examples such as the gravitational
+force and a spring force. See Malthe-Sørenssen chapter 7.3-7.5. We
+start our discussion Energy and work, see Taylor 4.1
 
+We discuss also exercise 5 from homework 2.
 
 ===  Friday ===
 
@@ -660,70 +663,39 @@ differential equations numerically. If we can compare our numerical
 solutions with analytical solutions, we have an extra check of our
 numerical approaches.
 
-The example here is relevant for homework 3. Here we deal with a falling object in two dimensions. Except for the derivations above with an
+The example code on the next slide is relevant for homework 3. Here we deal with a falling object in two dimensions. Except for the derivations above with an
 air resistance which is linear in the velocity, homework 3 uses a quadratic velocity dependence.
 
 !eblock
 
-
-
 !split
-===== Work, Energy, Momentum and Conservation laws =====
+===== Code example using Euler's methods =====
 
-
+_Note_: this code needs some additional expressions and will not run 
 !bc pycod
-# Exercise 6, hw3, brute force way with declaration of vx, vy, x and y
 # Common imports
 import numpy as np
 import pandas as pd
 from math import *
 import matplotlib.pyplot as plt
 import os
-
-# Where to save the figures and data files
-PROJECT_ROOT_DIR = "Results"
-FIGURE_ID = "Results/FigureFiles"
-DATA_ID = "DataFiles/"
-
-if not os.path.exists(PROJECT_ROOT_DIR):
-    os.mkdir(PROJECT_ROOT_DIR)
-
-if not os.path.exists(FIGURE_ID):
-    os.makedirs(FIGURE_ID)
-
-if not os.path.exists(DATA_ID):
-    os.makedirs(DATA_ID)
-
-def image_path(fig_id):
-    return os.path.join(FIGURE_ID, fig_id)
-
-def data_path(dat_id):
-    return os.path.join(DATA_ID, dat_id)
-
-def save_fig(fig_id):
-    plt.savefig(image_path(fig_id) + ".png", format='png')
-
-# Output file
-outfile = open(data_path("Eulerresults.dat"),'w')
-
 from pylab import plt, mpl
 plt.style.use('seaborn')
 mpl.rcParams['font.family'] = 'serif'
 
-
+#define the gravitational acceleration
 g = 9.80655 #m/s^2
 # The mass and the drag constant D
 D = 0.00245 #mass/length   kg/m
 m = 0.2 #kg, mass of falling object
 DeltaT = 0.001
-#set up arrays 
-tfinal = 1.4
+#set up final time, here just a number we have chosen
+tfinal = 1.0
 # set up number of points for all variables
 n = ceil(tfinal/DeltaT)
-# define scaling constant vT used in analytical solution
-vT = sqrt(m*g/D)
 # set up arrays for t, a, v, and y and arrays for analytical results
-#brute force setting up of arrays for x and y, vx, vy, ax and ay
+# Note the brute force setting up of arrays for x and y, vx, vy, ax and ay
+# For hw3 you should think of using the 2-dim vectors you used in homework 2
 t = np.zeros(n)
 vy = np.zeros(n)
 y = np.zeros(n)
@@ -737,8 +709,8 @@ x[0] = 0.0 #m
 # Start integrating using Euler's method
 for i in range(n-1):
     # expression for acceleration, note the absolute value and division by mass
-    ax = -D*vx[i]*abs(vx[i])/m
-    ay = -g - D*vy[i]*abs(vy[i])/m
+#    ax = You need to set up the expression for force and thereby the acceleration in the x-direction
+#    ay = You need to set up the expression for force and thereby the acceleration in the y-direction
     # update velocity and position
     vx[i+1] = vx[i] + DeltaT*ax
     x[i+1] = x[i] + DeltaT*vx[i]
@@ -746,7 +718,9 @@ for i in range(n-1):
     y[i+1] = y[i] + DeltaT*vy[i]
     # update time to next time step and compute analytical answer
     t[i+1] = t[i] + DeltaT
-    if ( y[i+1] < 0.0):
+#  Here you need to set up the analytical solution for y(t) and x(t)
+
+if ( y[i+1] < 0.0):
         break
 data = {'t[s]': t,
         'Relative error in y': abs((y-yanalytic)/yanalytic),
@@ -773,243 +747,93 @@ axs[3].plot(t, vx)
 axs[3].set_ylabel('vx[m/s]')
 axs[3].set_xlabel('time[s]')
 fig.tight_layout()
-save_fig("EulerIntegration")
 plt.show()
-
-
-
 !ec
 
 
-!bc pycod
-# Exercise 6, hw3, smarter way with declaration of vx, vy, x and y
-# Common imports
-import numpy as np
-import pandas as pd
-from math import *
-import matplotlib.pyplot as plt
-import os
 
-# Where to save the figures and data files
-PROJECT_ROOT_DIR = "Results"
-FIGURE_ID = "Results/FigureFiles"
-DATA_ID = "DataFiles/"
+!split
+===== Work, Energy, Momentum and Conservation laws =====
 
-if not os.path.exists(PROJECT_ROOT_DIR):
-    os.mkdir(PROJECT_ROOT_DIR)
+The previous three cases have shown us how to use Newton’s laws of
+motion to determine the motion of an object based on the forces acting
+on it. For two of the cases there is an underlying assumption that we can find an analytical solution to a continuous problem.
+With a continuous problem we mean a problem where the various variables can take any value within a finite or infinite interval. 
 
-if not os.path.exists(FIGURE_ID):
-    os.makedirs(FIGURE_ID)
+Unfortunately, in many cases we
+cannot find an exact solution to the equations of motion we get from
+Newton’s second law. The numerical approach, where we discretize the continuous problem, allows us however to study a much richer set of problems.
+For problems involving Newton's laws and the various equations of motion we encounter, solving the equations numerically, is the standard approach.
 
-if not os.path.exists(DATA_ID):
-    os.makedirs(DATA_ID)
+It allows us to focus on the underlying forces. Often we end up using the same numerical algorithm for different problems.
 
-def image_path(fig_id):
-    return os.path.join(FIGURE_ID, fig_id)
+Here we introduce a commonly used technique that allows us to find the
+velocity as a function of position without finding the position as a
+function of time—an alternate form of Newton’s second law. The method
+is based on a simple principle: Instead of solving the equations of
+motion directly, we integrate the equations of motion. Such a method
+is called an integration method. 
 
-def data_path(dat_id):
-    return os.path.join(DATA_ID, dat_id)
+This allows us also to introduce the _work-energy_ theorem. This
+theorem allows us to find the velocity as a function of position for
+an object even in cases when we cannot solve the equations of
+motion. This introduces us to the concept of work and kinetic energy,
+an energy related to the motion of an object.
 
-def save_fig(fig_id):
-    plt.savefig(image_path(fig_id) + ".png", format='png')
+And finally, we will link the work-energy theorem with the principle of conservation of energy.
 
+!split
+=====  The Work-Energy Theorem =====
 
-from pylab import plt, mpl
-plt.style.use('seaborn')
-mpl.rcParams['font.family'] = 'serif'
-
-g = 9.80655 #m/s^2 g to 6 leading digits after decimal point
-D = 0.00245 #m/s
-m = 0.2 # kg
-# Define Gravitational force as a vector in x and y. It is a constant
-G = -m*g*np.array([0.0,1])
-DeltaT = 0.01
-#set up arrays 
-tfinal = 1.3
-n = ceil(tfinal/DeltaT)
-# set up arrays for t, a, v, and x
-t = np.zeros(n)
-v = np.zeros((n,2))
-r = np.zeros((n,2))
-# Initial conditions as compact 2-dimensional arrays
-r0 = np.array([0.0,10.0])
-v0 = np.array([10.0,0.0])
-r[0] = r0
-v[0] = v0
-# Start integrating using Euler's method
-for i in range(n-1):
-    # Set up forces, air resistance FD, not now that we need the norm of the vector
-    # Here you could have defined your own function for this
-    vabs = sqrt(sum(v[i]*v[i]))
-    FD = -D*v[i]*vabs
-    # Final net forces acting on falling object
-    Fnet = FD+G
-    # The accelration at a given time t_i
-    a = Fnet/m
-    # update velocity, time and position using Euler's method
-    v[i+1] = v[i] + DeltaT*a
-    r[i+1] = r[i] + DeltaT*v[i]
-    t[i+1] = t[i] + DeltaT
-
-fig, axs = plt.subplots(2, 1)
-axs[0].plot(t, r[:,1])
-axs[0].set_xlim(0, tfinal)
-axs[0].set_ylabel('y')
-axs[1].plot(t, v[:,1])
-axs[1].set_ylabel('vy[m/s]')
-axs[1].set_xlabel('time[s]')
-fig.tight_layout()
-save_fig("YEulerIntegration")
-plt.show()
-
-
-
-!ec
-
-
-===  Exercise 7, gives an additional bonus score of 30 points. ===
-
-You don't need to do this exercise, but it gives you a bonus score of 30 points. It shows also how we can include more complicated forces with no pain! And the force we include here is an example of a case where analytical solutions may either be difficult to find or we cannot find an analytical solution. 
-
-
-Till now we have only introduced gravity and air resistance and studied
-their effects via a constant acceleration due to gravity and the force
-arising from air resistance. But what happens when the ball hits the
-floor? What if we would like to simulate the normal force from the floor acting on the ball?
-
-We need then to include a force model for the normal force from
-the floor on the ball. The simplest approach to such a system is to introduce a contact force
-model represented by a spring model.  We model the interaction between the floor
-and the ball as a single spring. But the normal force is zero when
-there is no contact. Here  we define a simple model that allows us to include
-such effects in our models.
-
-The normal force from the floor on the ball is represented by a spring force. This
-is a strong simplification of the actual deformation process occurring at the contact
-between the ball and the floor due to the deformation of both the ball and the floor.
-
-The deformed region corresponds roughly to the region of _overlap_ between the
-ball and the floor. The depth of this region is $\Delta y = R − y(t)$, where $R$
-is the radius of the ball. This is supposed to represent the compression of the spring.
-Our model for the normal force acting on the ball is then
+Let us define the kinetic energy $K$ with a given velocity $\bm{v}$
 !bt
 \[
-\bm{N} = −k (R − y(t)) \bm{e}_y. 
+K=\frac{1}{2}mv^2,
 \]
 !et
-The normal force must act upward when $y < R$,
-hence the sign must be negative.
-However, we must also ensure that the normal force only acts when the ball is in
-contact with the floor, otherwise the normal force is zero. The full formation of the
-normal force is therefore
+where $m$ is the mass of the object we are considering.
+We assume also that there is a force $\bm{F}$ acting on the given object
+
 !bt
 \[
-\bm{N} = −k (R − y(t)) \bm{e}_y, 
+\bm{F}=\bm{F}(\bm{r},\bm{v},t),
 \]
 !et
-when $y(t) < R$ and zero when $y(t) \le R$.
-In the numerical calculations you can choose $R=0.1$ m and the spring constant $k=1000$ N/m.
+with $\bm{r}$ the position and $t$ the time.
+In general we assume the force is a function of all these variables.
+Many of the more central forces in Nature however, depende only on the
+position. An example is the gravitational force or the force derived
+from the Coulomb potential in electromagnetism.
 
-* 7a (10pt) Identify the forces acting on the ball and set up a diagram with the forces acting on the ball. Find the acceleration of the falling ball now with the normal force as well.
-* 7b (20pt) Choose a large enough final time so you can study the ball bouncing up and down several times. Add the normal force and compute the height of the ball as function of time with and without air resistance. Comment your results.
+!split
+===== Rewriting the Kinetic Energy =====
 
+Let us study the derivative of the kinetic energy with respect to time $t$. Its continuous form is
+!bt
+\[
+\frac{dK}{dt}=\frac{1}{2}m\frac{d\bm{v}\cdot\bm{v}}{dt}. 
+\]
+!et
 
-For 7a, see Malthe-Sørenssen chapter 7.5.1, in particular figure
-7.10. The forces are in equation (7.10).  The following code shows how
-to set up the problem with gravitation, a drag force and a normal
-force from the ground. The normal force makes the ball bounce up
-again.
+Using our results from exercise 3 of homework 1, we can write the derivative of a vector dot product as
 
+!bt
+\[
+\frac{dK}{dt}=\frac{1}{2}m\frac{d\bm{v}\cdot\bm{v}}{dt}= \frac{1}{2}m\left(\frac{d\bm{v}}{dt}\cdot\bm{v}+\bm{v}\cdot\frac{d\bm{v}}{dt}\right)=m\frac{d\bm{v}}{dt}\cdot\bm{v}. 
+\]
+!et
 
-The code here includes all forces. Commenting out the air resistance will result in a ball which bounces up and down to the same height.
-Furthermore, you will note that for larger values of $\Delta t$ the results will not be physically meaningful. This points to the introduction of better methods, like the Euler-Cromer method. 
+We know also that the acceleration
+!bt
+\[
+\bm{a}=\frac{\bm{F}}{m}=\frac{d\bm{v}}{dt}.
+\]
+!et
 
-!bc pycod
-# Exercise 7, hw3, smarter way with declaration of vx, vy, x and y
-# Here we have added a normal force from the ground
-# Common imports
-import numpy as np
-import pandas as pd
-from math import *
-import matplotlib.pyplot as plt
-import os
-
-# Where to save the figures and data files
-PROJECT_ROOT_DIR = "Results"
-FIGURE_ID = "Results/FigureFiles"
-DATA_ID = "DataFiles/"
-
-if not os.path.exists(PROJECT_ROOT_DIR):
-    os.mkdir(PROJECT_ROOT_DIR)
-
-if not os.path.exists(FIGURE_ID):
-    os.makedirs(FIGURE_ID)
-
-if not os.path.exists(DATA_ID):
-    os.makedirs(DATA_ID)
-
-def image_path(fig_id):
-    return os.path.join(FIGURE_ID, fig_id)
-
-def data_path(dat_id):
-    return os.path.join(DATA_ID, dat_id)
-
-def save_fig(fig_id):
-    plt.savefig(image_path(fig_id) + ".png", format='png')
-
-
-from pylab import plt, mpl
-plt.style.use('seaborn')
-mpl.rcParams['font.family'] = 'serif'
-
-# Define constants
-g = 9.80655 #in m/s^2
-D = 0.0245 # in mass/length, kg/m
-m = 0.2 # in kg
-R = 0.1 # in meters
-k = 1000.0 # in mass/time^2
-# Define Gravitational force as a vector in x and y, zero x component
-G = -m*g*np.array([0.0,1])
-DeltaT = 0.001
-#set up arrays 
-tfinal = 15.0
-n = ceil(tfinal/DeltaT)
-# set up arrays for t, v, and r, the latter contain the x and y comps
-t = np.zeros(n)
-v = np.zeros((n,2))
-r = np.zeros((n,2))
-# Initial conditions
-r0 = np.array([0.0,2.0])
-v0 = np.array([10.0,10.0])
-r[0] = r0
-v[0] = v0
-# Start integrating using Euler's method
-for i in range(n-1):
-    # Set up forces, air resistance FD
-    if ( r[i,1] < R):
-        N = k*(R-r[i,1])*np.array([0,1])
-    else:
-        N = np.array([0,0])
-    vabs = sqrt(sum(v[i]*v[i]))
-    FD = -D*v[i]*vabs
-    Fnet = FD+G+N
-    a = Fnet/m
-    # update velocity, time and position
-    v[i+1] = v[i] + DeltaT*a
-    r[i+1] = r[i] + DeltaT*v[i]
-    t[i+1] = t[i] + DeltaT
-
-fig, ax = plt.subplots()
-ax.set_xlim(0, tfinal)
-ax.set_ylabel('y[m]')
-ax.set_xlabel('x[m]')
-ax.plot(r[:,0], r[:,1])
-fig.tight_layout()
-save_fig("BouncingBallEuler")
-plt.show()
-!ec
-
-
-
-
-
+We can then rewrite the equation for the derivative of the kinetic energy as 
+!bt
+\[
+\frac{dK}{dt}=m\frac{d\bm{v}}{dt}\bm{v}=\bm{F}\frac{d\bm{r}}{dt}, 
+\]
+!et
+where we defined the velocity as the derivative of the position with respect to time.
