@@ -802,7 +802,7 @@ We assume also that there is a force $\bm{F}$ acting on the given object
 with $\bm{r}$ the position and $t$ the time.
 In general we assume the force is a function of all these variables.
 Many of the more central forces in Nature however, depende only on the
-position. An example is the gravitational force or the force derived
+position. Examples are the gravitational force and the force derived
 from the Coulomb potential in electromagnetism.
 
 !split
@@ -823,7 +823,7 @@ Using our results from exercise 3 of homework 1, we can write the derivative of 
 \]
 !et
 
-We know also that the acceleration
+We know also that the acceleration is defined as
 !bt
 \[
 \bm{a}=\frac{\bm{F}}{m}=\frac{d\bm{v}}{dt}.
@@ -837,3 +837,66 @@ We can then rewrite the equation for the derivative of the kinetic energy as
 \]
 !et
 where we defined the velocity as the derivative of the position with respect to time.
+
+!split
+===== Discretizing =====
+
+Let us now discretize the above equation by letting the instantenous terms be replaced by a discrete quantity, that is
+we let $dK\rightarrow \Delta K$, $dt\rightarrow \Delta t$, $d\bm{r}\rightarrow \Delta \bm{r}$ and $d\bm{v}\rightarrow \Delta \bm{v}$.
+
+We have then
+
+!bt
+\[
+\frac{\Delta K}{\Delta t}=m\frac{\Delta \bm{v}}{\Delta t}\bm{v}=\bm{F}\frac{\Delta \bm{r}}{\Delta t}, 
+\]
+!et
+or by multiplying out $\Delta t$ we have
+!bt
+\[
+\Delta K=\bm{F}\Delta \bm{r}. 
+\]
+!et
+
+We define this quantity as the _work_ done by the force $\bm{F}$ during the displacement $\Delta \bm{r}$. If study the dimensionality of this problem we have mass times length squared divided by time squared, or just dimension energy.
+
+
+!split
+===== Difference in kinetic energy =====
+
+If we now a series of such displacements $\Delta \bm{r}$ $i=0,1,\dots,n$, we have a difference in kinetic energy at a final position $\bm{r}_n$ and an 
+initial position $\bm{r}_0$ given by
+!bt
+\[
+\Delta K=\frac{1}{2}mv_n^2-\frac{1}{2}mv_0^=\sum_{i=0}^n\bm{F}_i\Delta \bm{r},
+\]
+!et
+where $\bm{F}_i$ are the forces acting at every position $\bm{r}_i$.
+
+The work done by acting with a force on a set of displacements can
+then be as expressed as the difference between the initial and final
+kinetic energies.
+
+This defines the _work-energy_ theorem.
+
+!split
+===== From the discrete version to the continuous version =====
+
+If we take the limit $\Delta \bm{r}\rightarrow 0$, we can rewrite the sum over the various displacements in terms of an integral, that is
+!bt
+\[
+\Delta K=\frac{1}{2}mv_n^2-\frac{1}{2}mv_0^=\sum_{i=0}^n\bm{F}_i\Delta \bm{r}\rightarrow \int_{\bm{r}_0}^{\bm{r}_n}\bm{F}(\bm{r},\bm{v},t)d\bm{r}.
+\]
+!et
+
+This integral defines a path integral since it will depend on the given path we take between the two end points. We will replace the limits with the symbol $c$ in order to indicate that we take a specific countour in space when the force acts on the system. That is the work $W_{n0}$ between two points $\bm{r}_n$ and $\bm{r}_0$ is labeled as
+!bt
+\[
+W_{n0}=\frac{1}{2}mv_n^2-\frac{1}{2}mv_0^=\int_{c}\bm{F}(\bm{r},\bm{v},t)d\bm{r}.
+\]
+!et
+
+Note that if the force is perpendicular to the displacement, then the force does not affect the kinetic energy.
+
+Let us now at some examples.
+
