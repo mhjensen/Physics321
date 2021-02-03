@@ -15,8 +15,11 @@ We will cover in particular a falling object in two dimensions with linear air r
 
 === Wednesday ===
 
-We discuss other force models with examples such as the gravitational force and a spring force. See Malthe-Sørenssen chapter 7.3-7.5. We start also discussion Energy and work, see Taylor 4.1
+We discuss other force models with examples such as the gravitational
+force and a spring force. See Malthe-Sørenssen chapter 7.3-7.5. We
+start our discussion of energy and work, see Taylor 4.1
 
+We discuss also exercise 5 from homework 2.
 
 ===  Friday ===
 
@@ -572,7 +575,7 @@ and
 
 !bt
   \[
-     v(t)=-\omega A\sin{\omega_0t}+\omega B\cos{\omega_0t},
+     v(t)=-\omega_0 A\sin{\omega_0t}+\omega_0 B\cos{\omega_0t},
   \]
 !et
 
@@ -597,6 +600,20 @@ find the solutions of the equations of motion.
 We have solved the equations of motion in the following ways:
 
 !bblock Solve the differential equations analytically
+We did this for example with the following object in one or two dimensions or the sliding block. 
+Here we had for example an equation set like
+!bt
+\[
+\frac{dv_x}{dt}=-\gamma v_x,
+\]
+!et
+and
+!bt
+\[
+\frac{dv_y}{dt}=-\gamma v_y-g,
+\]
+!et
+and $\gamma$ has dimension of inverse time. 
 
 !eblock
 
@@ -606,6 +623,31 @@ We have solved the equations of motion in the following ways:
 
 
 !bblock Integrate the equations
+We could also in case we can separate the degrees of freedom integrate. Take for example one of the equations in the previous slide
+!bt
+\[
+\frac{dv_x}{dt}=-\gamma v_x,
+\]
+!et
+which we can rewrite in terms of a left-hand side which depends only on the velocity and a right-hand side which depends only on time
+!bt
+\[
+\frac{dv_x}{v_x}=-\gamma dt.
+\]
+!et
+Integrating we have (since we can separate $v_x$ and $t$)
+!bt
+\[
+\int_{v_0}^{v_t}\frac{dv_x}{v_x}=-\int_{t_0}^{t_f}\gamma dt,
+\]
+!et
+where $v_f$ is the velocity at a final time and $t_f$ is the final time.
+In this case we found, after having integrated the above two sides that
+!bt
+\[
+v_f(t)=v_0\exp{-\gamma t}.
+\]
+!et
 
 !eblock
 
@@ -616,13 +658,245 @@ We have solved the equations of motion in the following ways:
 
 !bblock Solve the differential equations numerically
 
-Finally, using for example Euler's method, we can solve the differential equations numerically. If we can compare our numerical solutions with analytical solutions, we have an extra check of our numerical approaches.
+Finally, using for example Euler's method, we can solve the
+differential equations numerically. If we can compare our numerical
+solutions with analytical solutions, we have an extra check of our
+numerical approaches.
 
+The example code on the next slide is relevant for homework 3. Here we deal with a falling object in two dimensions. Except for the derivations above with an
+air resistance which is linear in the velocity, homework 3 uses a quadratic velocity dependence.
 
 !eblock
+
+!split
+===== Code example using Euler's methods =====
+
+_Note_: this code needs some additional expressions and will not run 
+!bc pycod
+# Common imports
+import numpy as np
+import pandas as pd
+from math import *
+import matplotlib.pyplot as plt
+import os
+from pylab import plt, mpl
+plt.style.use('seaborn')
+mpl.rcParams['font.family'] = 'serif'
+
+#define the gravitational acceleration
+g = 9.80655 #m/s^2
+# The mass and the drag constant D
+D = 0.00245 #mass/length   kg/m
+m = 0.2 #kg, mass of falling object
+DeltaT = 0.001
+#set up final time, here just a number we have chosen
+tfinal = 1.0
+# set up number of points for all variables
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, a, v, and y and arrays for analytical results
+# Note the brute force setting up of arrays for x and y, vx, vy, ax and ay
+# For hw3 you should think of using the 2-dim vectors you used in homework 2
+t = np.zeros(n)
+vy = np.zeros(n)
+y = np.zeros(n)
+vx = np.zeros(n)
+x = np.zeros(n)
+# Initial conditions
+vx[0] = 10.0 #m/s
+vy[0] = 0.0  #m/s
+y[0] = 10.0 #m
+x[0] = 0.0 #m
+# Start integrating using Euler's method
+for i in range(n-1):
+    # expression for acceleration, note the absolute value and division by mass
+#    ax = You need to set up the expression for force and thereby the acceleration in the x-direction
+#    ay = You need to set up the expression for force and thereby the acceleration in the y-direction
+    # update velocity and position
+    vx[i+1] = vx[i] + DeltaT*ax
+    x[i+1] = x[i] + DeltaT*vx[i]
+    vy[i+1] = vy[i] + DeltaT*ay
+    y[i+1] = y[i] + DeltaT*vy[i]
+    # update time to next time step and compute analytical answer
+    t[i+1] = t[i] + DeltaT
+#  Here you need to set up the analytical solution for y(t) and x(t)
+
+if ( y[i+1] < 0.0):
+        break
+data = {'t[s]': t,
+        'Relative error in y': abs((y-yanalytic)/yanalytic),
+        'vy[m/s]': vy,
+        'Relative error in x': abs((x-xanalytic)/xanalytic),
+        'vx[m/s]': vx
+}
+NewData = pd.DataFrame(data)
+display(NewData)
+# save to file
+NewData.to_csv(outfile, index=False)
+#then plot
+fig, axs = plt.subplots(4, 1)
+axs[0].plot(t, y)
+axs[0].set_xlim(0, tfinal)
+axs[0].set_ylabel('y')
+axs[1].plot(t, vy)
+axs[1].set_ylabel('vy[m/s]')
+axs[1].set_xlabel('time[s]')
+axs[2].plot(t, x)
+axs[2].set_xlim(0, tfinal)
+axs[2].set_ylabel('x')
+axs[3].plot(t, vx)
+axs[3].set_ylabel('vx[m/s]')
+axs[3].set_xlabel('time[s]')
+fig.tight_layout()
+plt.show()
+!ec
 
 
 
 !split
 ===== Work, Energy, Momentum and Conservation laws =====
+
+The previous three cases have shown us how to use Newton’s laws of
+motion to determine the motion of an object based on the forces acting
+on it. For two of the cases there is an underlying assumption that we can find an analytical solution to a continuous problem.
+With a continuous problem we mean a problem where the various variables can take any value within a finite or infinite interval. 
+
+Unfortunately, in many cases we
+cannot find an exact solution to the equations of motion we get from
+Newton’s second law. The numerical approach, where we discretize the continuous problem, allows us however to study a much richer set of problems.
+For problems involving Newton's laws and the various equations of motion we encounter, solving the equations numerically, is the standard approach.
+
+It allows us to focus on the underlying forces. Often we end up using the same numerical algorithm for different problems.
+
+Here we introduce a commonly used technique that allows us to find the
+velocity as a function of position without finding the position as a
+function of time—an alternate form of Newton’s second law. The method
+is based on a simple principle: Instead of solving the equations of
+motion directly, we integrate the equations of motion. Such a method
+is called an integration method. 
+
+This allows us also to introduce the _work-energy_ theorem. This
+theorem allows us to find the velocity as a function of position for
+an object even in cases when we cannot solve the equations of
+motion. This introduces us to the concept of work and kinetic energy,
+an energy related to the motion of an object.
+
+And finally, we will link the work-energy theorem with the principle of conservation of energy.
+
+!split
+=====  The Work-Energy Theorem =====
+
+Let us define the kinetic energy $K$ with a given velocity $\bm{v}$
+!bt
+\[
+K=\frac{1}{2}mv^2,
+\]
+!et
+where $m$ is the mass of the object we are considering.
+We assume also that there is a force $\bm{F}$ acting on the given object
+
+!bt
+\[
+\bm{F}=\bm{F}(\bm{r},\bm{v},t),
+\]
+!et
+with $\bm{r}$ the position and $t$ the time.
+In general we assume the force is a function of all these variables.
+Many of the more central forces in Nature however, depende only on the
+position. Examples are the gravitational force and the force derived
+from the Coulomb potential in electromagnetism.
+
+!split
+===== Rewriting the Kinetic Energy =====
+
+Let us study the derivative of the kinetic energy with respect to time $t$. Its continuous form is
+!bt
+\[
+\frac{dK}{dt}=\frac{1}{2}m\frac{d\bm{v}\cdot\bm{v}}{dt}. 
+\]
+!et
+
+Using our results from exercise 3 of homework 1, we can write the derivative of a vector dot product as
+
+!bt
+\[
+\frac{dK}{dt}=\frac{1}{2}m\frac{d\bm{v}\cdot\bm{v}}{dt}= \frac{1}{2}m\left(\frac{d\bm{v}}{dt}\cdot\bm{v}+\bm{v}\cdot\frac{d\bm{v}}{dt}\right)=m\frac{d\bm{v}}{dt}\cdot\bm{v}. 
+\]
+!et
+
+We know also that the acceleration is defined as
+!bt
+\[
+\bm{a}=\frac{\bm{F}}{m}=\frac{d\bm{v}}{dt}.
+\]
+!et
+
+We can then rewrite the equation for the derivative of the kinetic energy as 
+!bt
+\[
+\frac{dK}{dt}=m\frac{d\bm{v}}{dt}\bm{v}=\bm{F}\frac{d\bm{r}}{dt}, 
+\]
+!et
+where we defined the velocity as the derivative of the position with respect to time.
+
+!split
+===== Discretizing =====
+
+Let us now discretize the above equation by letting the instantenous terms be replaced by a discrete quantity, that is
+we let $dK\rightarrow \Delta K$, $dt\rightarrow \Delta t$, $d\bm{r}\rightarrow \Delta \bm{r}$ and $d\bm{v}\rightarrow \Delta \bm{v}$.
+
+We have then
+
+!bt
+\[
+\frac{\Delta K}{\Delta t}=m\frac{\Delta \bm{v}}{\Delta t}\bm{v}=\bm{F}\frac{\Delta \bm{r}}{\Delta t}, 
+\]
+!et
+or by multiplying out $\Delta t$ we have
+!bt
+\[
+\Delta K=\bm{F}\Delta \bm{r}. 
+\]
+!et
+
+We define this quantity as the _work_ done by the force $\bm{F}$ during the displacement $\Delta \bm{r}$. If study the dimensionality of this problem we have mass times length squared divided by time squared, or just dimension energy.
+
+
+!split
+===== Difference in kinetic energy =====
+
+If we now a series of such displacements $\Delta \bm{r}$ $i=0,1,\dots,n$, we have a difference in kinetic energy at a final position $\bm{r}_n$ and an 
+initial position $\bm{r}_0$ given by
+!bt
+\[
+\Delta K=\frac{1}{2}mv_n^2-\frac{1}{2}mv_0^2=\sum_{i=0}^n\bm{F}_i\Delta \bm{r},
+\]
+!et
+where $\bm{F}_i$ are the forces acting at every position $\bm{r}_i$.
+
+The work done by acting with a force on a set of displacements can
+then be as expressed as the difference between the initial and final
+kinetic energies.
+
+This defines the _work-energy_ theorem.
+
+!split
+===== From the discrete version to the continuous version =====
+
+If we take the limit $\Delta \bm{r}\rightarrow 0$, we can rewrite the sum over the various displacements in terms of an integral, that is
+!bt
+\[
+\Delta K=\frac{1}{2}mv_n^2-\frac{1}{2}mv_0^2=\sum_{i=0}^n\bm{F}_i\Delta \bm{r}\rightarrow \int_{\bm{r}_0}^{\bm{r}_n}\bm{F}(\bm{r},\bm{v},t)d\bm{r}.
+\]
+!et
+
+This integral defines a path integral since it will depend on the given path we take between the two end points. We will replace the limits with the symbol $c$ in order to indicate that we take a specific countour in space when the force acts on the system. That is the work $W_{n0}$ between two points $\bm{r}_n$ and $\bm{r}_0$ is labeled as
+!bt
+\[
+W_{n0}=\frac{1}{2}mv_n^2-\frac{1}{2}mv_0^2=\int_{c}\bm{F}(\bm{r},\bm{v},t)d\bm{r}.
+\]
+!et
+
+Note that if the force is perpendicular to the displacement, then the force does not affect the kinetic energy.
+
+Let us now study some examples of forces and how to find the velocity from the integration over a given path.
 
