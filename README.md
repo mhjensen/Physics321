@@ -122,10 +122,9 @@ Video of lecture https://mediaspace.msu.edu/media/t/1_ieaw1a6y and handwritten n
 - Solutions to homework 1 at https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionhw1.ipynb and videos at https://www.youtube.com/playlist?list=PLq9LZ5390Us41TX42XzOPIEPcbHaqX8Hx
 
 ### Week 5, February 1-5, 2021
-- Monday 2/1: Work and energy conservation, 3rd homework, due February 8
-- Wednesday 2/3: Conservation laws, examples
-- Friday 2/5:  Example of conservation laws and single-particle motion
-- Good reads are Taylor chapters 4.1-.4.3 and AMS chapters 10-12.
+- Monday 2/1: We discuss various forces and their pertinent equations of motion. Recommended reading: Taylor 2.1-2.4. Malthe-Sørenssen chapter 6-7 contains many examples. We will cover in particular a falling object in two dimensions with linear air resistance relevant for homework 3, due February 8. Video of lecture at https://mediaspace.msu.edu/media/t/1_smo1913z and handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesFeb1.pdf
+- Wednesday 2/3: We discuss other force models with examples such as the gravitational force and a spring force. See Malthe-Sørenssen chapter 7.3-7.5. We start also our discussion of nergy and work, see Taylor 4.1
+- Friday 2/5:  We discuss several examples of energy and work. Taylor 4.1-4.3.
 
 ### Week 6, February 8-12, 2021
 - Monday 2/8: More on Conservation laws, momentum conservation, 4th homework, due February 15
