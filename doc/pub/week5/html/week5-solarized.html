@@ -143,7 +143,65 @@ div { text-align: justify; text-justify: inter-word; }
               ('From the discrete version to the continuous version',
                2,
                None,
-               'from-the-discrete-version-to-the-continuous-version')]}
+               'from-the-discrete-version-to-the-continuous-version'),
+              ('Studying the Work-energy Theorem numerically',
+               2,
+               None,
+               'studying-the-work-energy-theorem-numerically'),
+              ('Example of an Electron moving along a Surface',
+               2,
+               None,
+               'example-of-an-electron-moving-along-a-surface'),
+              ('Finding the Velocity', 2, None, 'finding-the-velocity'),
+              ('Harmonic Oscillations', 2, None, 'harmonic-oscillations'),
+              ('Numerical Integration', 2, None, 'numerical-integration'),
+              ('Newton-Cotes Quadrature or equal-step methods',
+               2,
+               None,
+               'newton-cotes-quadrature-or-equal-step-methods'),
+              ('Basic philosophy of equal-step methods',
+               2,
+               None,
+               'basic-philosophy-of-equal-step-methods'),
+              ('Simple algorithm for equal step methods',
+               2,
+               None,
+               'simple-algorithm-for-equal-step-methods'),
+              ('Simple algorithm for equal step methods',
+               2,
+               None,
+               'simple-algorithm-for-equal-step-methods'),
+              ('The rectangle method', 2, None, 'the-rectangle-method'),
+              ('Truncation error for the rectangular rule',
+               2,
+               None,
+               'truncation-error-for-the-rectangular-rule'),
+              ('Codes for the Rectangular rule',
+               2,
+               None,
+               'codes-for-the-rectangular-rule'),
+              ('The trapezoidal rule', 2, None, 'the-trapezoidal-rule'),
+              ('Error in the trapezoidal rule',
+               2,
+               None,
+               'error-in-the-trapezoidal-rule'),
+              ('Algorithm for the trapezoidal rule',
+               2,
+               None,
+               'algorithm-for-the-trapezoidal-rule'),
+              ('Trapezoidal Rule', 2, None, 'trapezoidal-rule'),
+              ("Simpsons' rule", 2, None, 'simpsons-rule'),
+              ("Simpson's rule", 2, None, 'simpson-s-rule'),
+              ('Mathematical expressions for the truncation error',
+               2,
+               None,
+               'mathematical-expressions-for-the-truncation-error'),
+              ("Algorithm for Simpson's rule",
+               2,
+               None,
+               'algorithm-for-simpson-s-rule'),
+              ('Code example', 2, None, 'code-example'),
+              ('Symbolic integration', 2, None, 'symbolic-integration')]}
 end of tocinfo -->
 
 <body>
@@ -185,7 +243,7 @@ MathJax.Hub.Config({
 <center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
 <br>
 <p>
-<center><h4>Feb 3, 2021</h4></center> <!-- date -->
+<center><h4>Feb 5, 2021</h4></center> <!-- date -->
 <br>
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -1200,6 +1258,577 @@ Note that if the force is perpendicular to the displacement, then the force does
 
 <p>
 Let us now study some examples of forces and how to find the velocity from the integration over a given path.
+
+<p>
+First however we look at how solve evaluate an integral numerically.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="studying-the-work-energy-theorem-numerically">Studying the Work-energy Theorem numerically </h2>
+
+<p>
+In order to study the work- energy, we will normally need to perform
+a numerical integration, unless we can integrate analytically. Here we
+present some of the simpler  methods such as the <b>rectangle</b> rule, the <b>trapezoidal</b> rule and higher-order methods like the Simpson family of methods.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="example-of-an-electron-moving-along-a-surface">Example of an Electron moving along a Surface </h2>
+
+<p>
+As an example, let us consider the following case.
+We have  classical electron which moves in the \( x \)-direction along a surface. The force from the surface is
+$$
+\boldsymbol{F}(x)=-F_0\sin{(\frac{2\pi x}{b})}\boldsymbol{e}_x.
+$$
+
+The constant \( b \) represents the distance between atoms at the surface of the material, \( F_0 \) is a constant and \( x \) is the position of the electron.
+
+<p>
+Using the work-energy theorem we can find the work \( W \) done when moving an electron from a position \( x_0 \) to a final position \( x \) through the
+ integral
+$$
+W=-\int_{x_0}^x \boldsymbol{F}(x')dx' =  \int_{x_0}^x F_0\sin{(\frac{2\pi x'}{b})} dx', 
+$$
+
+which results in
+$$
+W=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right].
+$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="finding-the-velocity">Finding the Velocity </h2>
+
+<p>
+If we now use the work-energy theorem we can find the the velocity at a final position \( x \) by setting up
+the differences in kinetic energies between the final position and the initial position \( x_0 \).
+
+<p>
+We have that the work done by the force is given by the difference in kinetic energies as
+$$
+W=\frac{1}{2}m\left(v^2(x)-v^2(x_0)\right)=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right],
+$$
+
+and labeling \( v(x_0)=v_0 \) (and assuming we know the initial velocity) we have
+$$
+v(x)=\pm \sqrt{v_0^2+\frac{F_0b}{m\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right]},
+$$
+
+<p>
+Choosing $x_0=0$m and $v_0=0$m/s we can simplify the above equation to
+$$
+v(x)=\pm \sqrt{\frac{F_0b}{m\pi}\left[\cos{(\frac{2\pi x}{b})}-1\right]},
+$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="harmonic-oscillations">Harmonic Oscillations </h2>
+
+<p>
+Another well-known force (and we will derive when we come to Harmonic
+Oscillations) is the case of a sliding block attached to a wall
+through a spring. The block is attached to a spring with spring
+constant \( k \). The other end of the spring is attached to the wall at
+the origin \( x=0 \).  We assume the spring has an equilibrium length
+\( L_0 \).
+
+<p>
+The force \( F_x \) from the spring on the block is then
+$$
+F_x=-k(x-L_0).
+$$
+
+The position \( x \) where the spring force is zero is called the equilibrium position. In our case this is
+\( x=L_0 \).
+
+<p>
+We can now compute the work done by this force when we move our block from an initial position \( x_0 \) to a final position \( x \)
+$$
+W=\int_{x_0}^{x}F_xdx'=-k\int_{x_0}^{x}(x'-L_0)dx'=\frac{1}{2}k(x_0-L_0)^2-\frac{1}{2}k(x-L_0)^2.
+$$
+
+If we now bring back the definition of the work-energy theorem in terms of the kinetic energy we have
+
+$$
+W=\frac{1}{2}mv^2(x)-\frac{1}{2}mv_0^2=\frac{1}{2}k(x_0-L_0)^2-\frac{1}{2}k(x-L_0)^2,
+$$
+
+which we rewrite as
+
+$$
+\frac{1}{2}mv^2(x)+\frac{1}{2}k(x-L_0)^2=\frac{1}{2}mv_0^2+\frac{1}{2}k(x_0-L_0)^2.
+$$
+
+<p>
+What does this mean? The total energy, which is the sum of potential and kinetic energy, is conserved.
+Wow, this sounds interesting. We will analyze this next week in more detail when we study energy, momentum and angular momentum conservation.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="numerical-integration">Numerical Integration </h2>
+
+<p>
+Let us now see how we could have solved the above integral numerically.
+
+<p>
+There are several numerical algorithms for finding an integral
+numerically. The more familiar ones like the rectangular rule or the
+trapezoidal rule have simple geometric interpretations.
+
+<p>
+Let us look at the mathematical details of what are called equal-step methods, also known as Newton-Cotes quadrature.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="newton-cotes-quadrature-or-equal-step-methods">Newton-Cotes Quadrature or equal-step methods </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+The integral 
+$$
+\begin{equation}
+   I=\int_a^bf(x) dx
+\label{eq:integraldef}
+\end{equation}
+$$
+
+has a very simple meaning. The integral is the
+area enscribed by the function \( f(x) \) starting from \( x=a \) to  \( x=b \). It is subdivided in several smaller areas whose evaluation is to  be approximated by different techniques. The areas under the curve can for example  be approximated by rectangular boxes or trapezoids.
+</div>
+
+
+<p>
+<!-- !split  -->
+
+<h2 id="basic-philosophy-of-equal-step-methods">Basic philosophy of equal-step methods </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+In considering equal step  methods, our basic approach is that of approximating
+a function \( f(x) \) with a polynomial of at most 
+degree \( N-1 \), given \( N \) integration points. If our polynomial is of degree \( 1 \),
+the function will be approximated with \( f(x)\approx a_0+a_1x \).
+</div>
+
+
+<p>
+<!-- !split  -->
+
+<h2 id="simple-algorithm-for-equal-step-methods">Simple algorithm for equal step methods </h2>
+The algorithm for these integration methods  is rather simple, and the number of approximations perhaps  unlimited!
+
+<ul>
+<li> Choose a step size \( h=(b-a)/N \)  where \( N \) is the number of steps and \( a \) and \( b \) the lower and upper limits of integration.</li>
+<li> With a given step length we rewrite the integral as</li>  
+</ul>
+
+$$
+\begin{equation*}     
+\int_a^bf(x) dx= \int_a^{a+h}f(x)dx + \int_{a+h}^{a+2h}f(x)dx+\dots \int_{b-h}^{b}f(x)dx.
+\end{equation*}
+$$
+
+
+<ul>
+<li> The strategy then is to find a reliable polynomial approximation   for \( f(x) \) in the various intervals.  Choosing a given approximation for  \( f(x) \), we obtain a specific approximation to the  integral.</li>
+<li> With this approximation to \( f(x) \) we perform the integration by computing the integrals over all subintervals.</li>
+</ul>
+
+<!-- !split  -->
+
+<h2 id="simple-algorithm-for-equal-step-methods">Simple algorithm for equal step methods </h2>
+
+<p>
+One possible strategy then is to find a reliable polynomial expansion for \( f(x) \) in the smaller
+subintervals. Consider for example evaluating
+$$
+\begin{equation*}
+   \int_a^{a+2h}f(x)dx, 
+\end{equation*}
+$$
+
+which we rewrite as
+$$
+\begin{equation}
+\int_a^{a+2h}f(x)dx=\int_{x_0-h}^{x_0+h}f(x)dx.
+\label{eq:hhint}
+\end{equation}
+$$
+
+We have chosen a midpoint \( x_0 \) and have defined \( x_0=a+h \).
+
+<p>
+<!-- !split  -->
+
+<h2 id="the-rectangle-method">The rectangle method </h2>
+
+<p>
+A very simple approach is the so-called midpoint or rectangle method.
+In this case the integration area is split in a given number of rectangles with length \( h \) and height given by the mid-point value of the function.  This gives the following simple rule for approximating an integral
+$$
+\begin{equation}
+I=\int_a^bf(x) dx \approx  h\sum_{i=1}^N f(x_{i-1/2}), 
+\label{eq:rectangle}
+\end{equation}
+$$
+
+where \( f(x_{i-1/2}) \) is the midpoint value of \( f \) for a given rectangle. We will discuss its truncation 
+error below.  It is easy to implement this algorithm,  as shown below
+
+<p>
+<!-- !split  -->
+
+<h2 id="truncation-error-for-the-rectangular-rule">Truncation error for the rectangular rule  </h2>
+
+<p>
+The correct mathematical expression for the local error for the rectangular rule \( R_i(h) \) for element \( i \) is
+
+$$
+\begin{equation*}
+\int_{-h}^hf(x)dx - R_i(h)=-\frac{h^3}{24}f^{(2)}(\xi),
+\end{equation*}
+$$
+
+and the global error reads
+$$
+\begin{equation*}
+\int_a^bf(x)dx -R_h(f)=-\frac{b-a}{24}h^2f^{(2)}(\xi),
+\end{equation*}
+$$
+
+where \( R_h \) is the result obtained with rectangular rule and \( \xi \in [a,b] \).
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="codes-for-the-rectangular-rule">Codes for the Rectangular rule </h2>
+
+<p>
+We go back to our simple example above and set \( F_0=b=1 \) and choose \( x_0=0 \) and \( x=1/2 \), and have
+$$
+W=\frac{1}{\pi}.
+$$
+
+The code here computes the integral using the rectangle rule and \( n=100 \) integration points we have a relative error of
+\( 10^{-5} \). 
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%;"><span></span><span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> sin, pi
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
+<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">sympy</span> <span style="color: #8B008B; font-weight: bold">import</span> Symbol, integrate
+<span style="color: #228B22"># function for the Rectangular rule                                                                                        </span>
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">Rectangular</span>(a,b,f,n):
+   h = (b-a)/<span style="color: #658b00">float</span>(n)
+   s = <span style="color: #B452CD">0</span>
+   <span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">0</span>,n,<span style="color: #B452CD">1</span>):
+       x = (i+<span style="color: #B452CD">0.5</span>)*h
+       s = s+ f(x)
+   <span style="color: #8B008B; font-weight: bold">return</span> h*s
+<span style="color: #228B22"># function to integrate</span>
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">function</span>(x):
+    <span style="color: #8B008B; font-weight: bold">return</span> sin(<span style="color: #B452CD">2</span>*pi*x)
+<span style="color: #228B22"># define integration limits and integration points                                                                         </span>
+a = <span style="color: #B452CD">0.0</span>; b = <span style="color: #B452CD">0.5</span>;
+n = <span style="color: #B452CD">100</span>
+Exact = <span style="color: #B452CD">1.</span>/pi
+<span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;Relative error= &quot;</span>, <span style="color: #658b00">abs</span>( (Rectangular(a,b,function,n)-Exact)/Exact))
+</pre></div>
+<p>
+<!-- !split  -->
+
+<h2 id="the-trapezoidal-rule">The trapezoidal rule </h2>
+
+<p>
+The other integral gives
+$$
+\begin{equation*}
+\int_{x_0-h}^{x_0}f(x)dx=\frac{h}{2}\left(f(x_0) + f(x_0-h)\right)+O(h^3),
+\end{equation*}
+$$
+
+and adding up we obtain
+$$
+\begin{equation}
+   \int_{x_0-h}^{x_0+h}f(x)dx=\frac{h}{2}\left(f(x_0+h) + 2f(x_0) + f(x_0-h)\right)+O(h^3),
+\label{eq:trapez}
+\end{equation}
+$$
+
+which is the well-known trapezoidal rule.  Concerning the error in the approximation made,
+\( O(h^3)=O((b-a)^3/N^3) \), you should  note 
+that this is the local error.  Since we are splitting the integral from
+\( a \) to \( b \) in \( N \) pieces, we will have to perform approximately \( N \) 
+such operations.
+
+<p>
+This means that the <em>global error</em> goes like \( \approx O(h^2) \). 
+The trapezoidal reads then
+$$
+\begin{equation}
+   I=\int_a^bf(x) dx=h\left(f(a)/2 + f(a+h) +f(a+2h)+
+                          \dots +f(b-h)+ f_{b}/2\right),
+\label{eq:trapez1}
+\end{equation}
+$$
+
+with a global error which goes like \( O(h^2) \).
+
+<p>
+Hereafter we use the shorthand notations \( f_{-h}=f(x_0-h) \), \( f_{0}=f(x_0) \)
+and \( f_{h}=f(x_0+h) \).
+
+<p>
+<!-- !split  -->
+
+<h2 id="error-in-the-trapezoidal-rule">Error in the trapezoidal rule </h2>
+
+<p>
+The correct mathematical expression for the local error for the trapezoidal rule is
+$$
+\begin{equation*}
+\int_a^bf(x)dx -\frac{b-a}{2}\left[f(a)+f(b)\right]=-\frac{h^3}{12}f^{(2)}(\xi),
+\end{equation*}
+$$
+
+and the global error reads
+$$
+\begin{equation*}
+\int_a^bf(x)dx -T_h(f)=-\frac{b-a}{12}h^2f^{(2)}(\xi),
+\end{equation*}
+$$
+
+where \( T_h \) is the trapezoidal result and \( \xi \in [a,b] \).
+
+<p>
+<!-- !split  -->
+
+<h2 id="algorithm-for-the-trapezoidal-rule">Algorithm for the trapezoidal rule </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+The trapezoidal rule is easy to  implement numerically 
+through the following simple algorithm
+
+<ul>
+  <li> Choose the number of mesh points and fix the step length.</li>
+  <li> calculate \( f(a) \) and \( f(b) \) and multiply with \( h/2 \).</li>
+  <li> Perform a loop over \( n=1 \) to \( n-1 \) (\( f(a) \) and \( f(b) \) are known) and sum up  the terms \( f(a+h) +f(a+2h)+f(a+3h)+\dots +f(b-h) \). Each step in the loop  corresponds to a given value \( a+nh \).</li>
+  <li> Multiply the final result by \( h \) and add \( hf(a)/2 \) and \( hf(b)/2 \).</li>
+</ul>
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="trapezoidal-rule">Trapezoidal Rule </h2>
+
+<p>
+We use the same function and integrate now using the trapoezoidal rule.
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%;"><span></span><span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
+<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">sympy</span> <span style="color: #8B008B; font-weight: bold">import</span> Symbol, integrate
+<span style="color: #228B22"># function for the trapezoidal rule</span>
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">Trapez</span>(a,b,f,n):
+   h = (b-a)/<span style="color: #658b00">float</span>(n)
+   s = <span style="color: #B452CD">0</span>
+   x = a
+   <span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">1</span>,n,<span style="color: #B452CD">1</span>):
+       x = x+h
+       s = s+ f(x)
+   s = <span style="color: #B452CD">0.5</span>*(f(a)+f(b)) +s
+   <span style="color: #8B008B; font-weight: bold">return</span> h*s
+<span style="color: #228B22"># function to integrate</span>
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">function</span>(x):
+    <span style="color: #8B008B; font-weight: bold">return</span> sin(<span style="color: #B452CD">2</span>*pi*x)
+<span style="color: #228B22"># define integration limits and integration points                                                                         </span>
+a = <span style="color: #B452CD">0.0</span>; b = <span style="color: #B452CD">0.5</span>;
+n = <span style="color: #B452CD">100</span>
+Exact = <span style="color: #B452CD">1.</span>/pi
+<span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;Relative error= &quot;</span>, <span style="color: #658b00">abs</span>( (Trapez(a,b,function,n)-Exact)/Exact))
+</pre></div>
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="simpsons-rule">Simpsons' rule </h2>
+
+<p>
+Instead of using the above first-order polynomials 
+approximations for \( f \), we attempt at using a second-order polynomials.
+In this case we need three points in order to define a second-order 
+polynomial approximation
+$$
+\begin{equation*}
+f(x) \approx P_2(x)=a_0+a_1x+a_2x^2.
+\end{equation*}
+$$
+
+Using again Lagrange's interpolation formula we have
+$$
+\begin{equation*}
+     P_2(x)=\frac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2-x_1)}y_2+
+            \frac{(x-x_0)(x-x_2)}{(x_1-x_0)(x_1-x_2)}y_1+
+            \frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}y_0.
+\end{equation*}
+$$
+
+Inserting this formula in the integral of Eq.  \eqref{eq:hhint} we obtain
+$$
+\begin{equation*}
+   \int_{-h}^{+h}f(x)dx=\frac{h}{3}\left(f_h + 4f_0 + f_{-h}\right)+O(h^5),
+\end{equation*}
+$$
+
+which is Simpson's rule.
+
+<p>
+<!-- !split  -->
+
+<h2 id="simpson-s-rule">Simpson's rule </h2>
+Note that the improved accuracy in the evaluation of
+the derivatives gives a better error approximation, \( O(h^5) \) vs.\ \( O(h^3) \) .
+But this is again the <em>local error approximation</em>. 
+Using Simpson's rule we can easily compute
+the integral     of Eq.  \eqref{eq:integraldef} to be
+$$
+\begin{equation}
+   I=\int_a^bf(x) dx=\frac{h}{3}\left(f(a) + 4f(a+h) +2f(a+2h)+
+                          \dots +4f(b-h)+ f_{b}\right),
+\label{eq:simpson}
+\end{equation}
+$$
+
+with a global error which goes like \( O(h^4) \).
+
+<p>
+<!-- !split  -->
+
+<h2 id="mathematical-expressions-for-the-truncation-error">Mathematical expressions for the truncation error </h2>
+More formal expressions for the local and global errors are for the local error
+$$
+\begin{equation*}
+\int_a^bf(x)dx -\frac{b-a}{6}\left[f(a)+4f((a+b)/2)+f(b)\right]=-\frac{h^5}{90}f^{(4)}(\xi),
+\end{equation*}
+$$
+
+and for the global error
+$$
+\begin{equation*}
+\int_a^bf(x)dx -S_h(f)=-\frac{b-a}{180}h^4f^{(4)}(\xi).
+\end{equation*}
+$$
+
+with \( \xi\in[a,b] \) and \( S_h \) the results obtained with Simpson's method.
+
+<p>
+<!-- !split  -->
+
+<h2 id="algorithm-for-simpson-s-rule">Algorithm for Simpson's rule </h2>
+The method 
+can easily be implemented numerically through the following simple algorithm
+
+<ul>
+  <li> Choose the number of mesh points and fix the step.</li>
+  <li> calculate \( f(a) \) and \( f(b) \)</li>
+  <li> Perform a loop over \( n=1 \) to \( n-1 \) (\( f(a) \) and \( f(b) \) are known) and sum up   the terms \( 4f(a+h) +2f(a+2h)+4f(a+3h)+\dots +4f(b-h) \). Each step in the loop  corresponds to a given value \( a+nh \). Odd values of \( n \) give \( 4 \) as factor  while even values yield \( 2 \) as factor.</li>
+  <li> Multiply the final result by \( \frac{h}{3} \).</li>
+</ul>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="code-example">Code example </h2>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%;"><span></span><span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> sin, pi
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
+<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">sympy</span> <span style="color: #8B008B; font-weight: bold">import</span> Symbol, integrate
+<span style="color: #228B22"># function for the trapezoidal rule                                                                                        </span>
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">Simpson</span>(a,b,f,n):
+   h = (b-a)/<span style="color: #658b00">float</span>(n)
+   <span style="color: #658b00">sum</span> = f(a)/<span style="color: #658b00">float</span>(<span style="color: #B452CD">2</span>);
+   <span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">1</span>,n):
+       <span style="color: #658b00">sum</span> = <span style="color: #658b00">sum</span> + f(a+i*h)*(<span style="color: #B452CD">3</span>+(-<span style="color: #B452CD">1</span>)**(i+<span style="color: #B452CD">1</span>))
+   <span style="color: #658b00">sum</span> = <span style="color: #658b00">sum</span> + f(b)/<span style="color: #658b00">float</span>(<span style="color: #B452CD">2</span>)
+   <span style="color: #8B008B; font-weight: bold">return</span> <span style="color: #658b00">sum</span>*h/<span style="color: #B452CD">3.0</span>
+<span style="color: #228B22"># function to integrate                                                                                                    </span>
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">function</span>(x):
+    <span style="color: #8B008B; font-weight: bold">return</span> sin(<span style="color: #B452CD">2</span>*pi*x)
+<span style="color: #228B22"># define integration limits and integration points                                                                         </span>
+a = <span style="color: #B452CD">0.0</span>; b = <span style="color: #B452CD">0.5</span>;
+n = <span style="color: #B452CD">100</span>
+Exact = <span style="color: #B452CD">1.</span>/pi
+<span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;Relative error= &quot;</span>, <span style="color: #658b00">abs</span>( (Simpson(a,b,function,n)-Exact)/Exact))
+</pre></div>
+<p>
+We see that Simpson's rule gives a much better estimation of the relative error with the same amount of points as we had for the Rectangle rule and the Trapezoidal rule.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="symbolic-integration">Symbolic integration </h2>
+
+<p>
+We could also use the symbolic mathematics. Here Python comes to our rescue with <a href="https://www.sympy.org/en/index.html" target="_blank">SymPy</a>, which is a Python library for symbolic mathematics.
+
+<p>
+Here's an example on how you could use <b>Sympy</b> where we compare the symbolic calculation with an
+integration of a function \( f(x) \) by the Trapezoidal rule.
+Here we show an
+example code that evaluates  the integral
+\( \int_0^1 dx x^2 = 1/3 \).
+The following code for  the trapezoidal rule allows you  to plot the relative error by comparing with the exact result. By increasing to \( 10^8 \) points one arrives at a region where numerical errors start to accumulate.
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%;"><span></span><span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> log10
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
+<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">sympy</span> <span style="color: #8B008B; font-weight: bold">import</span> Symbol, integrate
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
+<span style="color: #228B22"># function for the trapezoidal rule</span>
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">Trapez</span>(a,b,f,n):
+   h = (b-a)/<span style="color: #658b00">float</span>(n)
+   s = <span style="color: #B452CD">0</span>
+   x = a
+   <span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">1</span>,n,<span style="color: #B452CD">1</span>):
+       x = x+h
+       s = s+ f(x)
+   s = <span style="color: #B452CD">0.5</span>*(f(a)+f(b)) +s
+   <span style="color: #8B008B; font-weight: bold">return</span> h*s
+<span style="color: #228B22">#  function to compute pi</span>
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">function</span>(x):
+    <span style="color: #8B008B; font-weight: bold">return</span> x*x
+<span style="color: #228B22"># define integration limits</span>
+a = <span style="color: #B452CD">0.0</span>;  b = <span style="color: #B452CD">1.0</span>;
+<span style="color: #228B22"># find result from sympy</span>
+<span style="color: #228B22"># define x as a symbol to be used by sympy</span>
+x = Symbol(<span style="color: #CD5555">&#39;x&#39;</span>)
+exact = integrate(function(x), (x, a, b))
+<span style="color: #228B22"># set up the arrays for plotting the relative error</span>
+n = np.zeros(<span style="color: #B452CD">9</span>); y = np.zeros(<span style="color: #B452CD">9</span>);
+<span style="color: #228B22"># find the relative error as function of integration points</span>
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">1</span>, <span style="color: #B452CD">8</span>, <span style="color: #B452CD">1</span>):
+    npts = <span style="color: #B452CD">10</span>**i
+    result = Trapez(a,b,function,npts)
+    RelativeError = <span style="color: #658b00">abs</span>((exact-result)/exact)
+    n[i] = log10(npts); y[i] = log10(RelativeError);
+plt.plot(n,y, <span style="color: #CD5555">&#39;ro&#39;</span>)
+plt.xlabel(<span style="color: #CD5555">&#39;n&#39;</span>)
+plt.ylabel(<span style="color: #CD5555">&#39;Relative error&#39;</span>)
+plt.show()
+</pre></div>
+<p>
 
 <!-- ------------------- end of main content --------------- -->
 
