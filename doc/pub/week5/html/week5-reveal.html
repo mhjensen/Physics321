@@ -1202,7 +1202,7 @@ where we defined the velocity as the derivative of the position with respect to 
 <h2 id="discretizing">Discretizing </h2>
 
 <p>
-Let us now discretize the above equation by letting the instantenous terms be replaced by a discrete quantity, that is
+Let us now discretize the above equation by letting the instantaneous terms be replaced by a discrete quantity, that is
 we let \( dK\rightarrow \Delta K \), \( dt\rightarrow \Delta t \), \( d\boldsymbol{r}\rightarrow \Delta \boldsymbol{r} \) and \( d\boldsymbol{v}\rightarrow \Delta \boldsymbol{v} \).
 
 <p>
@@ -1222,7 +1222,10 @@ $$
 <p>&nbsp;<br>
 
 <p>
-We define this quantity as the <b>work</b> done by the force \( \boldsymbol{F} \) during the displacement \( \Delta \boldsymbol{r} \). If study the dimensionality of this problem we have mass times length squared divided by time squared, or just dimension energy.
+We define this quantity as the <b>work</b> done by the force \( \boldsymbol{F} \)
+during the displacement \( \Delta \boldsymbol{r} \). If we study the dimensionality
+of this problem we have mass times length squared divided by time
+squared, or just dimension energy.
 </section>
 
 
@@ -1230,7 +1233,7 @@ We define this quantity as the <b>work</b> done by the force \( \boldsymbol{F} \
 <h2 id="difference-in-kinetic-energy">Difference in kinetic energy </h2>
 
 <p>
-If we now a series of such displacements \( \Delta \boldsymbol{r} \) $i=0,1,\dots,n$, we have a difference in kinetic energy at a final position \( \boldsymbol{r}_n \) and an 
+If we now define a series of such displacements \( \Delta\boldsymbol{r} \) we have a difference in kinetic energy at a final position \( \boldsymbol{r}_n \) and an 
 initial position \( \boldsymbol{r}_0 \) given by
 <p>&nbsp;<br>
 $$
@@ -1276,7 +1279,7 @@ Note that if the force is perpendicular to the displacement, then the force does
 Let us now study some examples of forces and how to find the velocity from the integration over a given path.
 
 <p>
-First however we look at how solve evaluate an integral numerically.
+Thereafter we study how to  evaluate an integral numerically.
 </section>
 
 
@@ -1298,7 +1301,7 @@ As an example, let us consider the following case.
 We have  classical electron which moves in the \( x \)-direction along a surface. The force from the surface is
 <p>&nbsp;<br>
 $$
-\boldsymbol{F}(x)=-F_0\sin{(\frac{2\pi x}{b})}\boldsymbol{e}_x.
+\boldsymbol{F}(x)=-F_0\sin{(\frac{2\pi x}{b})}\boldsymbol{e}_1.
 $$
 <p>&nbsp;<br>
 
@@ -1309,7 +1312,7 @@ Using the work-energy theorem we can find the work \( W \) done when moving an e
  integral
 <p>&nbsp;<br>
 $$
-W=-\int_{x_0}^x \boldsymbol{F}(x')dx' =  \int_{x_0}^x F_0\sin{(\frac{2\pi x'}{b})} dx', 
+W=\int_{x_0}^x \boldsymbol{F}(x')dx' =  -\int_{x_0}^x F_0\sin{(\frac{2\pi x'}{b})} dx', 
 $$
 <p>&nbsp;<br>
 

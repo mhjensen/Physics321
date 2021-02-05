@@ -841,7 +841,7 @@ where we defined the velocity as the derivative of the position with respect to 
 !split
 ===== Discretizing =====
 
-Let us now discretize the above equation by letting the instantenous terms be replaced by a discrete quantity, that is
+Let us now discretize the above equation by letting the instantaneous terms be replaced by a discrete quantity, that is
 we let $dK\rightarrow \Delta K$, $dt\rightarrow \Delta t$, $d\bm{r}\rightarrow \Delta \bm{r}$ and $d\bm{v}\rightarrow \Delta \bm{v}$.
 
 We have then
@@ -858,13 +858,16 @@ or by multiplying out $\Delta t$ we have
 \]
 !et
 
-We define this quantity as the _work_ done by the force $\bm{F}$ during the displacement $\Delta \bm{r}$. If study the dimensionality of this problem we have mass times length squared divided by time squared, or just dimension energy.
+We define this quantity as the _work_ done by the force $\bm{F}$
+during the displacement $\Delta \bm{r}$. If we study the dimensionality
+of this problem we have mass times length squared divided by time
+squared, or just dimension energy.
 
 
 !split
 ===== Difference in kinetic energy =====
 
-If we now a series of such displacements $\Delta \bm{r}$ $i=0,1,\dots,n$, we have a difference in kinetic energy at a final position $\bm{r}_n$ and an 
+If we now define a series of such displacements $\Delta\bm{r}$ we have a difference in kinetic energy at a final position $\bm{r}_n$ and an 
 initial position $\bm{r}_0$ given by
 !bt
 \[
@@ -900,7 +903,7 @@ Note that if the force is perpendicular to the displacement, then the force does
 
 Let us now study some examples of forces and how to find the velocity from the integration over a given path.
 
-First however we look at how solve evaluate an integral numerically.
+Thereafter we study how to  evaluate an integral numerically.
 
 
 !split
@@ -920,7 +923,7 @@ As an example, let us consider the following case.
 We have  classical electron which moves in the $x$-direction along a surface. The force from the surface is
 !bt
 \[
-\bm{F}(x)=-F_0\sin{(\frac{2\pi x}{b})}\bm{e}_x.
+\bm{F}(x)=-F_0\sin{(\frac{2\pi x}{b})}\bm{e}_1.
 \]
 !et
 The constant $b$ represents the distance between atoms at the surface of the material, $F_0$ is a constant and $x$ is the position of the electron.
@@ -930,7 +933,7 @@ Using the work-energy theorem we can find the work $W$ done when moving an elect
  integral
 !bt
 \[
-W=-\int_{x_0}^x \bm{F}(x')dx' =  \int_{x_0}^x F_0\sin{(\frac{2\pi x'}{b})} dx', 
+W=\int_{x_0}^x \bm{F}(x')dx' =  -\int_{x_0}^x F_0\sin{(\frac{2\pi x'}{b})} dx', 
 \]
 !et
 which results in
