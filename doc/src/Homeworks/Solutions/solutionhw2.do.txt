@@ -3,6 +3,8 @@ AUTHOR: Homework 2, Solution
 DATE: today
 
 
+=== Exercises 1-3 as handwritten note ===
+
 === Exercise 4 (15 pt), now hitting a golf ball  ===
 
 Useful material here to read is
@@ -11,11 +13,22 @@ o Malthe-Sørenssen chapter 6.3-6.4 and 7.1-7.3
 
 _Taylor exercise 1.35_. The formulae you obtain here will be useful for the numerical exercises below (see exercise 6 below).
 
+!bt
+\[
+\overline{a(t)}=(a_x(t),a_y(t),a_z(t))=(0,0,-9.8).
+\]
+!et
 
-$\overline{a(t)}=(a_x(t),a_y(t),a_z(t))=(0,0,-9.8)$.
+We have 
+$v=v_0$, and
+!bt
+\[
+\overline{v(0)}=(v_0\cos(\theta), 0, v_0\sin(\theta)),
+\]
+!et,
+so $\overline{v(t)}=(v_0\cos(\theta),0,v_0\sin(\theta)-9.8t)$.
 
-$v=v_0$, and $\overline{v(0)}=(v_0\cos(\theta), 0, v_0\sin(\theta))$, so $\overline{v(t)}=(v_0\cos(\theta),0,v_0\sin(\theta)-9.8t)$.
-
+We have 
 $\overline{p(0)}=(0,0,0)$, and $\overline{p(t)}=(v_0\cos(\theta)t,0,v_0\sin(\theta)t-4.9t^2)$.
 
 When $v_0\sin(\theta)t-4.9t^2=0$, the ball is touching the ground.  This first happens at $t=0$, when it is hit, and then happens again at $t=\frac{v_0\sin(\theta)}{4.9}$s, which is when the ball lands.
@@ -28,8 +41,10 @@ In this time, the ball travels $p_x(t)=v_0\cos(\theta)\frac{v_0\sin(\theta)}{4.9
 
 Taylor exercise 1.38. 
 
-$\overline{a(t)}=(0,-9.8\sin(\theta),0)$.
+We have that
+$\overline{a(t)}=(0,-9.8\sin(\theta),0)$. 
 
+We have
 $\overline{v(0)}=(v_{0x},v_{0y},0)$, and $\overline{v(t)}=(v_{0x},v_{0y}-9.8\sin(\theta)t,0)$.
 
 $\overline{p(0)}=(0,0,0)$, and $\overline{p(t)}=(v_{0x}t,v_{0y}t-4.9\sin(\theta)t^2,0)$.
@@ -143,8 +158,7 @@ You could also think of an alternative way of storing the above information. Fee
 multidimensional objects. 
 
 
-Last week we studied Usain Bolt's 100m run and in class we studied a falling baseball. We made basic plots of the baseball
-moving in one dimension. This week we will be working with a three-dimensional variant. This will be useful for our next homeworks and numerical projects. 
+
 
 Assume we have a soccer ball moving in three dimensions with the following trajectory:
 
