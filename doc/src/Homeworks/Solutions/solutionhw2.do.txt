@@ -3,58 +3,7 @@ AUTHOR: Homework 2, Solution
 DATE: today
 
 
-=== Exercises 1-3 as handwritten note ===
-
-=== Exercise 4 (15 pt), now hitting a golf ball  ===
-
-Useful material here to read is
-o Taylor chapters 1.3-1.6 and
-o Malthe-Sørenssen chapter 6.3-6.4 and 7.1-7.3
-
-_Taylor exercise 1.35_. The formulae you obtain here will be useful for the numerical exercises below (see exercise 6 below).
-
-!bt
-\[
-\overline{a(t)}=(a_x(t),a_y(t),a_z(t))=(0,0,-9.8).
-\]
-!et
-
-We have 
-$v=v_0$, and
-
-!bt
-\[
-\overline{v(0)}=(v_0\cos(\theta), 0, v_0\sin(\theta)),
-\]
-!et
-
-so $\overline{v(t)}=(v_0\cos(\theta),0,v_0\sin(\theta)-9.8t)$.
-
-We have 
-$\overline{p(0)}=(0,0,0)$, and $\overline{p(t)}=(v_0\cos(\theta)t,0,v_0\sin(\theta)t-4.9t^2)$.
-
-When $v_0\sin(\theta)t-4.9t^2=0$, the ball is touching the ground.  This first happens at $t=0$, when it is hit, and then happens again at $t=\frac{v_0\sin(\theta)}{4.9}$s, which is when the ball lands.
-
-In this time, the ball travels $p_x(t)=v_0\cos(\theta)\frac{v_0\sin(\theta)}{4.9}=\frac{v_0^2\sin(\theta)\cos(\theta)}{4.9}$ meters.
-
-
-
-=== Exercise 5 (15 pt), hitting a puck instead  ===
-
-Taylor exercise 1.38. 
-
-We have that
-$\overline{a(t)}=(0,-9.8\sin(\theta),0)$. 
-
-We have
-$\overline{v(0)}=(v_{0x},v_{0y},0)$, and $\overline{v(t)}=(v_{0x},v_{0y}-9.8\sin(\theta)t,0)$.
-
-$\overline{p(0)}=(0,0,0)$, and $\overline{p(t)}=(v_{0x}t,v_{0y}t-4.9\sin(\theta)t^2,0)$.
-
-$F=ma$, so $F=m(0,-9.8\sin(\theta),0)=(0,-m9.8\sin(\theta),0)$.
-
-The puck returns to the floor level when $v_{0y}t-4.9\sin(\theta)t^2=0$ again, so when $t=\frac{v_{0y}}{9.8\sin(\theta)}$.  In this time, the puck will travel $v_{0x}\frac{v_{0y}}{9.8\sin(\theta)}=\frac{v_{0x}v_{0y}}{9.8\sin(\theta)}$ meters.
-
+=== Exercises 1-6 as handwritten note ===
 
 
 ===  Exercise 6 (40pt), Numerical elements, moving to more than one dimension ===
@@ -203,9 +152,11 @@ fig.set_zlabel('z')
 fig.scatter(x,y,z)
 !ec
 
+In the cell below we will put the equations into a single vector $\bm{r}$.
 
 Then run the code and plot using the array $r$
 !bc pycod
+r = np.array((10*t*np.cos(theta_rad), 10*t*np.sin(theta_rad), 10*t - 9.81/2*t**2))
 ## Run this code to plot using our r array 
 fig = plt.axes(projection='3d')
 fig.set_xlabel('x')
