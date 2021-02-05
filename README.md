@@ -126,6 +126,10 @@ Video of lecture https://mediaspace.msu.edu/media/t/1_ieaw1a6y and handwritten n
 - Wednesday 2/3: We discuss other force models with examples such as the gravitational force and a spring force. See Malthe-Sørenssen chapter 7.3-7.5. We start also our discussion of nergy and work, see Taylor 4.1 Video of lecture at https://mediaspace.msu.edu/media/t/1_raywhcdx
 and handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesFeb3.pdf. Julie's notes are at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/JulieNotesHW2.pdf
 - Friday 2/5:  We discuss several examples of energy and work. Taylor 4.1-4.3.
+Solution hw 2 for coding part as Jupyter notebook: https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionhw2.ipynb
+Solution for analytical part as handwritten note (exercises 1-5): https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/SolutionHW2Spring2021.pdf
+
+
 
 ### Week 6, February 8-12, 2021
 - Monday 2/8: More on Conservation laws, momentum conservation, 4th homework, due February 15
