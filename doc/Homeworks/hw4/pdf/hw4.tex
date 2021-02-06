@@ -20,10 +20,6 @@ final,                   % draft: marks overfull hboxes, figures with paths
 
 \usepackage[pdftex]{graphicx}
 
-\usepackage{fancyvrb} % packages needed for verbatim environments
-\usepackage{minted}
-\usemintedstyle{default}
-
 \usepackage[T1]{fontenc}
 %\usepackage[latin1]{inputenc}
 \usepackage{ucs}
@@ -103,7 +99,7 @@ PHY321: Classical Mechanics 1
 
 % --- begin date ---
 \begin{center}
-Jan 9, 2021
+Feb 6, 2021
 \end{center}
 % --- end date ---
 
@@ -122,7 +118,12 @@ Jan 9, 2021
 \noindent
 \paragraph{Introduction to homework 4.}
 This week's sets of classical pen and paper and computational
-exercises deal with simple motion problems and conservation laws; energy, momentum and angular momentum. These conservation laws are central in Physics and understanding them properly lays the foundation for understanding and analyzing more complicated physics problems.
+exercises deal with simple motion problems and conservation laws;
+energy, momentum and angular momentum. These conservation laws are
+central in Physics and understanding them properly lays the foundation
+for understanding and analyzing more complicated physics problems.
+
+
 The relevant reading background is
 \begin{enumerate}
 \item chapters 3, 4.1, 4.2 and 4.3 of Taylor (there are many good examples there) and
@@ -136,16 +137,10 @@ In both textbooks there are many nice worked out examples. Malthe-Sørenssen's t
 The numerical homework focuses on another motion problem where you can
 use the code you developed in homework 3, almost entirely. Please take
 a look at the posted solution (jupyter-notebook) for homework 3. You
-need only to change the forces at play. The problem at hand is a
-classic, the gravitational force acting between the Sun and the
-Earth. Here you will notice also that the standard Euler-integration
-algorithm is not the best choice and we will introduce the so-called
-Euler-Cromer method and the Velocity-Verlet method. These methods will
-give much more stable numerical results with only few additions to
-your code.
+need only to change the forces at play. The numerical problem this time is based
+on your code from homework 3 and we will try to make the motion of a falling object in two dimensions more realistic by allowing to bounce up again due to a normal force from the floor. 
 
-The code you develop here will also be reused when we analyze energy
-conservation in homework set 5. And for those of you doing the honors project, it serves as a starting point for the solar system variant.
+
 
 \paragraph{Exercise 1 (10 pt), Conservation laws, Energy and momentum.}
 \begin{itemize}
@@ -182,229 +177,86 @@ V(x,y,z)=A\exp\left\{-\frac{x^2+z^2}{2a^2}\right\}.
 \end{itemize}
 
 \noindent
-\paragraph{Exercise 4 (10pt), Angular momentum case.}
+\paragraph{Exercise 4 (15pt), Angular momentum case.}
 At $t=0$ we have a single object with position $\bm{r}_0=x_0\bm{e}_x+y_0\bm{e}_y$.We add also a force in the $x$-direction at $t=0$. We assume that the object is at rest at $t=0$. 
 \[
 \bm{F} = F\bm{e}_x.
 \]
 
 \begin{itemize}
-\item 4a (3pt) Find the velocity and momentum at a given time $t$ by integrating over time with the above initial conditions.
+\item 4a (5pt) Find the velocity and momentum at a given time $t$ by integrating over time with the above initial conditions.
 
-\item 4b (3pt) Find also the position at a time $t$. 
+\item 4b (5pt) Find also the position at a time $t$. 
 
-\item 4c (4pt) Use the position and the momentum to find the angular momentum and the torque. Is angular momentum conserved?
+\item 4c (5pt) Use the position and the momentum to find the angular momentum and the torque. Is angular momentum conserved?
 \end{itemize}
 
 \noindent
-\paragraph{Exercise 5 (10pt), forces  and potentials.}
+\paragraph{Exercise 5 (15pt), forces  and potentials.}
 A particle of mass $m$ has velocity $v=\alpha/x$, where $x$ is its displacement.
 
 \begin{itemize}
-\item 5a (3pt) Find the force $F(x)$ responsible for the motion.
+\item 5a (5pt) Find the force $F(x)$ responsible for the motion.
 \end{itemize}
 
 \noindent
 A particle is thereafter under the influence of a force $F=-kx+kx^3/\alpha^2$, where $k$ and $\alpha$ are constants and $k$ is positive.
 
 \begin{itemize}
-\item 5b (3pt) Determine $U(x)$  and discuss the motion. It can be convenient here to make a sketch/plot of the potential as function of $x$.
+\item 5b (5pt) Determine $U(x)$  and discuss the motion. It can be convenient here to make a sketch/plot of the potential as function of $x$.
 
-\item 5c (4pt)  What happens when the energy of the particle is $E=(1/4)k\alpha^2$? Hint: what is the maximum value of the potential energy?
+\item 5c (5pt)  What happens when the energy of the particle is $E=(1/4)k\alpha^2$? Hint: what is the maximum value of the potential energy?
 \end{itemize}
 
 \noindent
-\paragraph{Exercise 6 (10pt), Warming up for the Earth-Sun system, Scaling the Equations.}
-The aim of this exercise (as well as the next) is to study the motion
-of objects under the influence of the gravitational force.  We will
-limit ourselves to the Earth-Sun system. Here we will scale the
-equations and sketch our first algorithm for solving the equations,
-namely using Euler's method again, as we did in homework 3.  This part
-together with the numerical part forms also the entry point for the
-solar system honors project. Furthermore, we will reuse parts of these
-results when analyzing energy conservation in homework 5.
+\paragraph{Exercise 6 (40pt), Bouncing object.}
+This exercise builds on the code you wrote for solving homework 3.
+There we introduced gravity and air resistance and studied their
+effects via a constant acceleration due to gravity and the force
+arising from air resistance. But what happens when the ball hits the
+floor? What if we would like to simulate the normal force from the
+floor acting on the ball?  This exercise shows how we can include more
+complicated forces with no pain! And the force we include here is an
+example of a case where analytical solutions may either be difficult
+to find or we cannot find an analytical solution at all.
 
-We will limit ourselves (in order to test the algorithm) to a
-hypothetical solar system with the Earth only orbiting around the sun.
-The only force in the problem is gravity. Newton's law of gravitation
-is given by a force $F_G$
+We need then to include a force model for the normal force from the
+floor on the ball. The simplest approach to such a system is to
+introduce a contact force model represented by a spring model.  We
+model the interaction between the floor and the ball as a single
+spring. But the normal force is zero when there is no contact. Here we
+define a simple model that allows us to include such effects in our
+models.
 
+
+
+
+The normal force from the floor on the ball is represented by a spring force. This
+is a strong simplification of the actual deformation process occurring at the contact
+between the ball and the floor due to the deformation of both the ball and the floor.
+
+The deformed region corresponds roughly to the region of \textbf{overlap} between the
+ball and the floor. The depth of this region is $\Delta y = R − y(t)$, where $R$
+is the radius of the ball. This is supposed to represent the compression of the spring.
+Our model for the normal force acting on the ball is then
 \[
-F_G=\frac{GM_{\odot}M_{\mathrm{Earth}}}{r^2},
+\bm{N} = −k (R − y(t)) \bm{e}_y. 
 \]
-
-where $M_{\odot}$ is the mass of the Sun and $M_{\mathrm{Earth}}$ is
-the mass of the Earth. The gravitational constant is $G$ and $r$ is
-the distance between the Earth and the Sun.  The Sun
-has a mass which is much larger than that of the Earth. We can
-therefore safely neglect the motion of the Sun in this problem.
-
-
-We assume that the orbit of the Earth around the Sun 
-is co-planar, and we take this to be the $xy$-plane.
-Using Newton's second law of motion we get the following equations
+The normal force must act upward when $y < R$,
+hence the sign must be negative.
+However, we must also ensure that the normal force only acts when the ball is in
+contact with the floor, otherwise the normal force is zero. The full formation of the
+normal force is therefore
 \[
-\frac{d^2x}{dt^2}=\frac{F_{G,x}}{M_{\mathrm{Earth}}},
+\bm{N} = −k (R − y(t)) \bm{e}_y, 
 \]
-and
-\[
-\frac{d^2y}{dt^2}=\frac{F_{G,y}}{M_{\mathrm{Earth}}},
-\]
-
-where $F_{G,x}$ and $F_{G,y}$ are the $x$ and $y$ components of the
-gravitational force.
-
-We will use so-called astronomical units when rewriting our equations.
-Using astronomical units (AU as abbreviation)it means that one
-astronomical unit of length, known as 1 AU, is the average distance
-between the Sun and Earth, that is $1$ AU = $1.5\times 10^{11}$ m.  It
-can also be convenient to use years instead of seconds since years
-match better the time evolution of the solar system. The mass of the
-Sun is $M_{\mathrm{sun}}=M_{\odot}=2\times 10^{30}$ kg. The masses of
-all relevant planets and their distances from the sun are listed in
-the table here in kg and AU.
-
-
-\begin{quote}
-\begin{tabular}{ccc}
-\hline
-\multicolumn{1}{c}{ Planet } & \multicolumn{1}{c}{ Mass in kg } & \multicolumn{1}{c}{ Distance to  sun in AU } \\
-\hline
-Earth   & $M_{\mathrm{Earth}}=6\times 10^{24}$ kg     & 1AU                    \\
-Jupiter & $M_{\mathrm{Jupiter}}=1.9\times 10^{27}$ kg & 5.20 AU                \\
-Mars    & $M_{\mathrm{Mars}}=6.6\times 10^{23}$ kg    & 1.52 AU                \\
-Venus   & $M_{\mathrm{Venus}}=4.9\times 10^{24}$ kg   & 0.72 AU                \\
-Saturn  & $M_{\mathrm{Saturn}}=5.5\times 10^{26}$ kg  & 9.54 AU                \\
-Mercury & $M_{\mathrm{Mercury}}=3.3\times 10^{23}$ kg & 0.39 AU                \\
-Uranus  & $M_{\mathrm{Uranus}}=8.8\times 10^{25}$ kg  & 19.19 AU               \\
-Neptun  & $M_{\mathrm{Neptun}}=1.03\times 10^{26}$ kg & 30.06 AU               \\
-Pluto   & $M_{\mathrm{Pluto}}=1.31\times 10^{22}$ kg  & 39.53 AU               \\
-\hline
-\end{tabular}
-\end{quote}
-
-\noindent
-
-In setting up the equations we limit ourselves to a co-planar
-motion and use only the $x$ and $y$ coordinates. But you should feel
-free to extend your equations to three dimensions, it is not very
-difficult and the data from NASA are all in three dimensions.
-
-\href{{http://www.nasa.gov/index.html}}{NASA} has an excellent site at \href{{http://ssd.jpl.nasa.gov/horizons.cgi#top}}{\nolinkurl{http://ssd.jpl.nasa.gov/horizons.cgi\#top}}.
-From there you can extract initial conditions in order to start your differential equation solver.
-At the above website you need to change from \textbf{OBSERVER} to \textbf{VECTOR} and then write in the planet you are interested in.
-The generated data contain the $x$, $y$ and $z$ values as well as their corresponding velocities. The velocities are in units of AU per day.
-Alternatively they can be obtained in terms of km and km/s. 
-
-For the system below involving only the Earth and the Sun, you
-could just initialize the position with say $x=1$ AU and $y=0$ AU.
-
-
-
-We assume that mass units can be obtained by using the fact that Earth's orbit is almost circular around the Sun.
-
-For circular motion we know that the force must obey the following relation
-\[
-F_G= \frac{M_{\mathrm{Earth}}v^2}{r}=\frac{GM_{\odot}M_{\mathrm{Earth}}}{r^2},
-\]
-where $v$ is the velocity of Earth. 
-The latter equation can be used to show that
-\[
-v^2r=GM_{\odot}=4\pi^2\mathrm{AU}^3/\mathrm{yr}^2.
-\]
-\begin{itemize}
-\item 6a (5pt) Show how to derive the last equation and use this to scale the differential equations, getting thus rid of the constant $G$ and the two masses. Split the differential equations for the motion in the $x$ and $y$ directions in terms of four coupled differential equations.
-
-\item 6b (5pt)  Discretize the above differential equations and set up an algorithm for solving these equations using Euler's forward algorithm and the so-called velocity Verlet method \href{{https://mhjensen.github.io/Physics321/doc/pub/energyconserv/html/energyconserv.html}}{discussed in the lecture notes}. Here you can reuse what you did in homework 3, exercises 6 and 7. 
-\end{itemize}
-
-\noindent
-\paragraph{Exercise 7 (40pt), Numerical elements, solving exercise 6 numerically.}
-\textbf{This exercise should be handed in as a jupyter-notebook} at D2L. Remember to write your name(s). 
-
-Last week we:
-\begin{enumerate}
-\item Studied  Euler's Method to find the position and the velocity of a falling object, including air resistance and gravity
-
-\item Compared analytical and computational solutions 
-
-\item Added additional forces to our model
-\end{enumerate}
-
-\noindent
-This week we will reuse our code from homework 3 (exercises 6 and 7,
-\href{{https://github.com/mhjensen/Physics321/tree/master/doc/src/motion/Programs}}{see also the code examples at the course
-homepage})
-and replace the air resistance and force from the ground with the
-gravitational force. Then we will study the stability of the system as function of initial conditions and the time step length.
-
-We start by importing some standard packages
-\begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
-# let's start by importing useful packages we are familiar with
-import numpy as np
-from math import *
-import matplotlib.pyplot as plt
-%matplotlib inline
-\end{minted}
+when $y(t) < R$ and zero when $y(t) \le R$.
+In the numerical calculations you can choose $R=0.1$ m and the spring constant $k=1000$ N/m.
 
 \begin{itemize}
-\item 7a (5 pt)  Write then a program which solves the above differential equations for the Earth-Sun system using Euler's  method and the velocity Verlet method.  Find out which initial value for the velocity that gives a circular orbit and test the stability of your algorithm as function of different time steps $\Delta t$.  Make a plot of the results you obtain for the position of the Earth (plot the $x$ and $y$ values and/or if you prefer to use three dimensions the $z$-value as well) orbiting  the Sun. Discuss eventual differences between the Verlet algorithm and the Euler algorithm. 
+\item 6a (10pt) Identify the forces acting on the ball and set up a diagram with the forces acting on the ball. Find the acceleration of the falling ball now with the normal force as well.
 
-\item 7b (5pt) Consider then a planet which begins at a distance of 1 AU from the sun. Find out by trial and error what the initial velocity must be in order for the planet to escape from the sun.  Can you find an exact answer?  How does that match your numerical results?
-\end{itemize}
-
-\noindent
-Here we add a code-example which may aid in the above studies using Euler's forward method.
-\begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
-DeltaT = 0.001
-#set up arrays 
-tfinal = 10 # in years
-n = ceil(tfinal/DeltaT)
-# set up arrays for time t, velocity v, and position r
-t = np.zeros(n)
-v = np.zeros((n,2))
-r = np.zeros((n,2))
-# Initial conditions as compact 2-dimensional arrays
-r0 = np.array([1.0,0.0])
-v0 = np.array([0.0,2*pi])
-r[0] = r0
-v[0] = v0
-Fourpi2 = 4*pi*pi
-# Start integrating using Euler's method
-for i in range(n-1):
-    # Set up the acceleration
-    # Here you could have defined your own function for this
-    rabs = sqrt(sum(r[i]*r[i]))
-    a =  -Fourpi2*r[i]/(rabs**3)
-    # update velocity, time and position using Euler's forward method
-    v[i+1] = v[i] + DeltaT*a
-    r[i+1] = r[i] + DeltaT*v[i]
-    t[i+1] = t[i] + DeltaT
-\end{minted}
-
-
-\paragraph{Exercise 8 (30pt), Bonus exercise.}
-You don't need to do this exercise, but it gives you a bonus score of 30 points.
-
-This time the bonus exercise is a simple survey. We are now moving
-into our sixth week and we would very much have your feedback on how
-things are functioning. In particular, since this is (together with fall
-2019) the first time we have numerical exercises every week, we need
-to see if the pace is ok, if there is a good link between lectures and
-the homework exrcises etc etc.
-
-\begin{itemize}
-\item Is the weekly load with paper and pencil exercises and the numerical exercises reasonable?
-
-\item Is there enough material (lectures and lecture material) to get you started with the exercises?  We are thinking of both the paper and pencil and the numerical exercises?
-
-\item Is the pace during the lectures reasonable? And do the lectures link well with the exercises?
-
-\item In the beginning there will always be some elements of repetition of material many of you have seen before. Do you find the choice of material the first weeks adequate? Too easy? Too difficult?
-
-\item For those of you who have taken CMSE 201 Introduction to Computational Modeling, do you feel the material taught there links well with the exercises you have done in this course? Is there is something we are missing?
-
-\item Any other topic you would like to comment on?
+\item 6b (30pt) Choose a large enough final time so you can study the ball bouncing up and down several times. Add the normal force and compute the height of the ball as function of time with and without air resistance. Comment your results.
 \end{itemize}
 
 \noindent
