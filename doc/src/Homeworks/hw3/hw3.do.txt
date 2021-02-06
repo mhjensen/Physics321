@@ -91,16 +91,14 @@ Taylor exercise 2.26
 _Useful material: Malthe-Sørenssen chapter 7.5 and Taylor chapter 2.4._
 
 In this example we study the motion of an object subject to a constant force, a velocity dependent
-force, and for the numerical part a position-dependent force.
-Without the position dependent force, we can solve the problem analytically. This is what we will do in this exercise.
-The position dependent force requires numerical efforts (exercise 7).
-In addition to the  falling ball case, we will include the effect of the ball bouncing back from the floor in exercises 7.
-
+force. We will  reuse the code we develop here in homework 4 for a position-dependent force.
 
 Here we limit ourselves to a ball that is thrown from a height $h$
 above the ground with an initial velocity
-$\bm{v}_0$ at time $t=t_0$.
-We assume we have only a gravitational force and a force due to the air resistance.
+$\bm{v}_0$ at time $t=t_0$. We assume the air resistance is proportional  to the square velocity, Together with the gravitational force these are the forces acting on our system.
+Note that due to the specific velocity dependence, we cannot find an analytical solution for motion in the $x$ and $y$ directions, see the discussion in Taylor after eq. (2.61).
+In order to find an analytical solution we need to assume that the object is falling in the $y$-direction only. 
+
 The position of the ball as function of time is  $\bm{r}(t)$ where $t$ is time.
  The position is measured with respect to a coordinate system with origin at the floor.
 
@@ -123,11 +121,11 @@ The analytical expressions for velocity and position as functions of
 time will be used to compare with the numerical results in exercise 6.
 
 * 5a (3pt) Identify the forces acting on the ball and set up a diagram with the forces acting on the ball. Find the acceleration of the falling ball. 
-* 5b (4pt) Integrate the acceleration from an initial time $t_0$ to a final time $t$ and find the velocity.
+* 5b (4pt) Assume now that the object is falling only in the $y$-direction. Integrate the acceleration from an initial time $t_0$ to a final time $t$ and find the velocity.
 * 5c (4pt) Find thereafter the position as function of time starting with an initial time $t_0$. Find the time it takes to hit the floor.  Here you will find it convenient to set the initial velocity in the $y$-direction to zero.
 
 
-We will use the above analytical results in our numerical calculations in exercise 6.
+We will use the above analytical results in our numerical calculations in exercise 6. The analytical solution in the $y$-direction only will serve as a test for our numerical solution.
 
 
 
@@ -190,21 +188,21 @@ use. In our case the step size is $\Delta t$.
 
 In setting up our code we need to
 
-o  Define and obtain all initial values, constants, and time to be analyzed with step sizes as done above (you can use the same values)
+ o  Define and obtain all initial values, constants, and time to be analyzed with step sizes as done above (you can use the same values)
 
-o  Calculate the velocity using $v_{i+1} = v_{i} + (\Delta t)*a_{i}$
+ o  Calculate the velocity using $v_{i+1} = v_{i} + (\Delta t)*a_{i}$
 
-o  Calculate the position using $pos_{i+1} = r_{i} + (\Delta t)*v_{i}$
+ o  Calculate the position using $pos_{i+1} = r_{i} + (\Delta t)*v_{i}$
 
-o  Calculate the new acceleration $a_{i+1}$.
+ o  Calculate the new acceleration $a_{i+1}$.
 
-o  Repeat steps 2-4 for all time steps within a loop.
+ o  Repeat steps 2-4 for all time steps within a loop.
 
 
 * 6b (20 pt) Write a code which implements Euler's method and compute numerically and plot the position and velocity as functions of time for various values of $\Delta t$. Comment your results.
 
 
-* 6c (10pt) Compare your numerically obtained positions and velocities with the analytical results from exercise 5. Comment again your results.
+* 6c (10pt) Compare your numerically obtained positions and velocities with the analytical results from exercise 5. In order to do this, you need to take out the motion in the $x$-direction. Comment again your results.
 
 
 === Classical Mechanics Extra Credit Assignment: Scientific Writing and attending Talks ===
@@ -227,7 +225,7 @@ This assignment allows you to gain extra credit points by practicing
 your scientific writing.  For each of the remaining homeworks you can
 submit the specified section of a scientific report (written about the
 numerical aspect of the homework) for five extra credit points on the
-assignment.  FOr the two midterms and the final, submitting a full
+assignment.  For the two midterms and the final, submitting a full
 scientific report covering the numerical analysis problem will be
 worth ten extra points.  For credit the grader must be able to tell
 that you put effort into the assignment (i.e. well written, well

@@ -162,7 +162,7 @@ MathJax.Hub.Config({
 
 <br>
 <p>
-<center><h4>Feb 1, 2021</h4></center> <!-- date -->
+<center><h4>Feb 6, 2021</h4></center> <!-- date -->
 <br>
 <p>
 </div> <!-- end jumbotron -->
@@ -279,16 +279,16 @@ Taylor exercise 2.26
 
 <p>
 In this example we study the motion of an object subject to a constant force, a velocity dependent
-force, and for the numerical part a position-dependent force.
-Without the position dependent force, we can solve the problem analytically. This is what we will do in this exercise.
-The position dependent force requires numerical efforts (exercise 7).
-In addition to the  falling ball case, we will include the effect of the ball bouncing back from the floor in exercises 7.
+force. We will  reuse the code we develop here in homework 4 for a position-dependent force.
 
 <p>
 Here we limit ourselves to a ball that is thrown from a height \( h \)
 above the ground with an initial velocity
-\( \boldsymbol{v}_0 \) at time \( t=t_0 \).
-We assume we have only a gravitational force and a force due to the air resistance.
+\( \boldsymbol{v}_0 \) at time \( t=t_0 \). We assume the air resistance is proportional  to the square velocity, Together with the gravitational force these are the forces acting on our system.
+Note that due to the specific velocity dependence, we cannot find an analytical solution for motion in the \( x \) and \( y \) directions, see the discussion in Taylor after eq. (2.61).
+In order to find an analytical solution we need to assume that the object is falling in the \( y \)-direction only.
+
+<p>
 The position of the ball as function of time is  \( \boldsymbol{r}(t) \) where \( t \) is time.
  The position is measured with respect to a coordinate system with origin at the floor.
 
@@ -312,11 +312,11 @@ time will be used to compare with the numerical results in exercise 6.
 
 <ul>
 <li> 5a (3pt) Identify the forces acting on the ball and set up a diagram with the forces acting on the ball. Find the acceleration of the falling ball.</li> 
-<li> 5b (4pt) Integrate the acceleration from an initial time \( t_0 \) to a final time \( t \) and find the velocity.</li>
+<li> 5b (4pt) Assume now that the object is falling only in the \( y \)-direction. Integrate the acceleration from an initial time \( t_0 \) to a final time \( t \) and find the velocity.</li>
 <li> 5c (4pt) Find thereafter the position as function of time starting with an initial time \( t_0 \). Find the time it takes to hit the floor.  Here you will find it convenient to set the initial velocity in the \( y \)-direction to zero.</li>
 </ul>
 
-We will use the above analytical results in our numerical calculations in exercise 6.
+We will use the above analytical results in our numerical calculations in exercise 6. The analytical solution in the \( y \)-direction only will serve as a test for our numerical solution.
 
 <h3 id="exercise-6-40pt-numerical-elements-solving-exercise-5-numerically-and-adding-the-bouncing-from-the-floor" class="anchor">Exercise 6 (40pt), Numerical elements, solving exercise 5 numerically and adding the bouncing from the floor </h3>
 
@@ -398,17 +398,17 @@ use. In our case the step size is \( \Delta t \).
 In setting up our code we need to
 
 <ol>
-<li> Define and obtain all initial values, constants, and time to be analyzed with step sizes as done above (you can use the same values)</li>
-<li> Calculate the velocity using \( v_{i+1} = v_{i} + (\Delta t)*a_{i} \)</li>
-<li> Calculate the position using \( pos_{i+1} = r_{i} + (\Delta t)*v_{i} \)</li>
-<li> Calculate the new acceleration \( a_{i+1} \).</li>
-<li> Repeat steps 2-4 for all time steps within a loop.</li>
+ <li> Define and obtain all initial values, constants, and time to be analyzed with step sizes as done above (you can use the same values)</li>
+ <li> Calculate the velocity using \( v_{i+1} = v_{i} + (\Delta t)*a_{i} \)</li>
+ <li> Calculate the position using \( pos_{i+1} = r_{i} + (\Delta t)*v_{i} \)</li>
+ <li> Calculate the new acceleration \( a_{i+1} \).</li>
+ <li> Repeat steps 2-4 for all time steps within a loop.</li>
 </ol>
 
 <li> 6b (20 pt) Write a code which implements Euler's method and compute numerically and plot the position and velocity as functions of time for various values of \( \Delta t \). Comment your results.
 
 <p></li>
-<li> 6c (10pt) Compare your numerically obtained positions and velocities with the analytical results from exercise 5. Comment again your results.
+<li> 6c (10pt) Compare your numerically obtained positions and velocities with the analytical results from exercise 5. In order to do this, you need to take out the motion in the \( x \)-direction. Comment again your results.
 
 <h3 id="classical-mechanics-extra-credit-assignment-scientific-writing-and-attending-talks" class="anchor">Classical Mechanics Extra Credit Assignment: Scientific Writing and attending Talks </h3>
 
@@ -432,7 +432,7 @@ This assignment allows you to gain extra credit points by practicing
 your scientific writing.  For each of the remaining homeworks you can
 submit the specified section of a scientific report (written about the
 numerical aspect of the homework) for five extra credit points on the
-assignment.  FOr the two midterms and the final, submitting a full
+assignment.  For the two midterms and the final, submitting a full
 scientific report covering the numerical analysis problem will be
 worth ten extra points.  For credit the grader must be able to tell
 that you put effort into the assignment (i.e. well written, well
