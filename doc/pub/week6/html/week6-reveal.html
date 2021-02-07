@@ -164,14 +164,19 @@ MathJax.Hub.Config({
 <h3 id="monday">Monday </h3>
 
 <p>
-Energy conserving forces, Taylor chapter 4
+Short repetition from last week. Discussion of momentum and angular momentum.
+Reading suggestion: Taylor sections 3.1-3.4
 
 <h3 id="wednesday">Wednesday </h3>
 
 <p>
-Momentum Conservation, Taylor chapter 3
+More on angular momentum, Taylor sections 3.4 and 3.5. Discussion of potential energy and conservative forces.
+Reading suggestions: Taylor section 4.2
 
 <h3 id="friday">Friday </h3>
+
+<p>
+Conservative forces and potential energy. Reading suggestion: Taylor sections 4.2-4.4
 
 <p>
 Conservation of orbital momentum.
@@ -217,143 +222,16 @@ which we rewrote as
 
 <p>&nbsp;<br>
 $$
-\frac{1}{2}mv^2(x)+\frac{1}{2}k(x-L_0)^2=\frac{1}{2}mv_0^2+\frac{1}{2}k(x_0-L_0)^2.
+\frac{1}{2}mv^2(x)+\frac{1}{2}kx^2=\frac{1}{2}mv_0^2+\frac{1}{2}kx_0^2.
 $$
 <p>&nbsp;<br>
 
 <p>
 The total energy, which is the sum of potential and kinetic energy, is conserved.
 We will analyze this interesting result now in more detail when we study energy, momentum and angular momentum conservation.
-</section>
-
-
-<section>
-<h2 id="work-energy-momentum-and-conservation-laws">Work, Energy, Momentum and Conservation laws </h2>
 
 <p>
-Energy conservation is most convenient as a strategy for addressing
-problems where time does not appear. For example, a particle goes
-from position \( x_0 \) with speed \( v_0 \), to position \( x_f \); what is its
-new speed? However, it can also be applied to problems where time
-does appear, such as in solving for the trajectory \( x(t) \), or
-equivalently \( t(x) \).
-</section>
-
-
-<section>
-<h2 id="energy-conservation">Energy Conservation </h2>
-Energy is conserved in the case where the potential energy, \( V(\boldsymbol{r}) \), depends only on position, and not on time. The force is determined by \( V \),
-<p>&nbsp;<br>
-$$
-\begin{equation}
-\boldsymbol{F}(\boldsymbol{r})=-\nabla V(\boldsymbol{r}).
-\tag{1}
-\end{equation}
-$$
-<p>&nbsp;<br>
-</section>
-
-
-<section>
-<h2 id="net-energy">Net Energy  </h2>
-
-<p>
-The net energy, \( E=V+K \) where \( K \) is the kinetic energy, is then conserved,
-
-<p>&nbsp;<br>
-$$
-\begin{eqnarray}
-\frac{d}{dt}(K+V)&=&\frac{d}{dt}\left(\frac{m}{2}(v_x^2+v_y^2+v_z^2)+V(\boldsymbol{r})\right)\\
-\nonumber
-&=&m\left(v_x\frac{dv_x}{dt}+v_y\frac{dv_y}{dt}+v_z\frac{dv_z}{dt}\right)
-+\partial_xV\frac{dx}{dt}+\partial_yV\frac{dy}{dt}+\partial_zV\frac{dz}{dt}\\
-\nonumber
-&=&v_xF_x+v_yF_y+v_zF_z-F_xv_x-F_yv_y-F_zv_z=0.
-\end{eqnarray}
-$$
-<p>&nbsp;<br>
-</section>
-
-
-<section>
-<h2 id="in-vector-notation">In Vector Notation  </h2>
-
-<p>
-The same proof can be written more compactly with vector notation,
-
-<p>&nbsp;<br>
-$$
-\begin{eqnarray}
-\frac{d}{dt}\left(\frac{m}{2}v^2+V(\boldsymbol{r})\right)
-&=&m\boldsymbol{v}\cdot\dot{\boldsymbol{v}}+\nabla V(\boldsymbol{r})\cdot\dot{\boldsymbol{r}}\\
-\nonumber
-&=&\boldsymbol{v}\cdot\boldsymbol{F}-\boldsymbol{F}\cdot\boldsymbol{v}=0.
-\end{eqnarray}
-$$
-<p>&nbsp;<br>
-
-<p>
-Inverting the expression for kinetic energy,
-<p>&nbsp;<br>
-$$
-\begin{equation}
-v=\sqrt{2K/m}=\sqrt{2(E-V)/m},
-\tag{2}
-\end{equation}
-$$
-<p>&nbsp;<br>
-
-<p>
-allows one to solve for the one-dimensional trajectory \( x(t) \), by finding \( t(x) \),
-
-<p>&nbsp;<br>
-$$
-\begin{equation}
-t=\int_{x_0}^x \frac{dx'}{v(x')}=\int_{x_0}^x\frac{dx'}{\sqrt{2(E-V(x'))/m}}.
-\tag{3}
-\end{equation}
-$$
-<p>&nbsp;<br>
-
-<p>
-Note this would be much more difficult in higher dimensions, because
-you would have to determine which points, \( x,y,z \), the particles might
-reach in the trajectory, whereas in one dimension you can typically
-tell by simply seeing whether the kinetic energy is positive at every
-point between the old position and the new position.
-</section>
-
-
-<section>
-<h2 id="harmonic-oscillator-potential">Harmonic Oscillator Potential </h2>
-
-<p>
-Consider a simple harmonic oscillator potential, \( V(x)=kx^2/2 \), with a particle emitted from \( x=0 \) with velocity \( v_0 \). Solve for the trajectory \( t(x) \),
-
-<p>&nbsp;<br>
-$$
-\begin{eqnarray}
-t&=&\int_{0}^x \frac{dx'}{\sqrt{2(E-kx^2/2)/m}}\\
-\nonumber
-&=&\sqrt{m/k}\int_0^x~\frac{dx'}{\sqrt{x_{\rm max}^2-x^{\prime 2}}},~~~x_{\rm max}^2=2E/k.
-\end{eqnarray}
-$$
-<p>&nbsp;<br>
-
-<p>
-Here \( E=mv_0^2/2 \) and \( x_{\rm max} \) is defined as the maximum
-displacement before the particle turns around. This integral is done
-by the substitution \( \sin\theta=x/x_{\rm max} \).
-
-<p>&nbsp;<br>
-$$
-\begin{eqnarray}
-(k/m)^{1/2}t&=&\sin^{-1}(x/x_{\rm max}),\\
-\nonumber
-x&=&x_{\rm max}\sin\omega t,~~~\omega=\sqrt{k/m}.
-\end{eqnarray}
-$$
-<p>&nbsp;<br>
+But before we start with energy conservation, conservative forces and potential energies, we need to revisit our definitions of momentum and angular momentum.
 </section>
 
 
@@ -371,7 +249,7 @@ This means that for two bodies \( i \) and \( j \), if the force on \( i \) due 
 $$
 \begin{equation}
 \boldsymbol{F}_{ij}=-\boldsymbol{F}_{ji}. 
-\tag{4}
+\tag{1}
 \end{equation}
 $$
 <p>&nbsp;<br>
@@ -388,7 +266,7 @@ Newton's second law, \( \boldsymbol{F}=m\boldsymbol{a} \), can be written for a 
 $$
 \begin{equation}
 \boldsymbol{F}_i=\sum_{j\ne i} \boldsymbol{F}_{ij}=m_i\boldsymbol{a}_i,
-\tag{5}
+\tag{2}
 \end{equation}
 $$
 <p>&nbsp;<br>
@@ -400,7 +278,7 @@ where \( \boldsymbol{F}_i \) (a single subscript) denotes the net force acting o
 $$
 \begin{equation}
 \boldsymbol{F}_i=\frac{d}{dt}m_i\boldsymbol{v}_i=\sum_{j\ne i}\boldsymbol{F}_{ij}.
-\tag{6}
+\tag{3}
 \end{equation}
 $$
 <p>&nbsp;<br>
@@ -432,7 +310,7 @@ defined as \( m\boldsymbol{v} \), for a system of particles,
 $$
 \begin{equation}
 \frac{d}{dt}\sum_im_i\boldsymbol{v}_i=0,~~{\rm for~isolated~particles}.
-\tag{7}
+\tag{4}
 \end{equation}
 $$
 <p>&nbsp;<br>
@@ -519,7 +397,7 @@ masses weighted by the mass,
 $$
 \begin{equation}
 \bar{x}=\frac{\sum_im_ix_i}{\sum_i m_i}.
-\tag{8}
+\tag{5}
 \end{equation}
 $$
 <p>&nbsp;<br>
@@ -557,7 +435,7 @@ Consider a case where the force always points radially,
 $$
 \begin{equation}
 \boldsymbol{F}(\boldsymbol{r})=F(r)\hat{r},
-\tag{9}
+\tag{6}
 \end{equation}
 $$
 <p>&nbsp;<br>
@@ -569,7 +447,7 @@ where \( \hat{r} \) is a unit vector pointing outward from the origin. The angul
 $$
 \begin{equation}
 \boldsymbol{L}=\boldsymbol{r}\times\boldsymbol{p}=m\boldsymbol{r}\times\boldsymbol{v}.
-\tag{10}
+\tag{7}
 \end{equation}
 $$
 <p>&nbsp;<br>
@@ -629,7 +507,7 @@ denoting the \( x \) direction, either \( j \) denotes the \( y \) direction and
 $$
 \begin{equation}
 V_1=\epsilon_{123}A_2A_3+\epsilon_{132}A_3A_2.
-\tag{11}
+\tag{8}
 \end{equation}
 $$
 <p>&nbsp;<br>
@@ -644,7 +522,7 @@ If the force is not radial, \( \boldsymbol{r}\times\boldsymbol{F}\ne 0 \) as abo
 $$
 \begin{equation}
 \frac{d\boldsymbol{L}}{dt}=\boldsymbol{r}\times\boldsymbol{F}\equiv\boldsymbol{\tau},
-\tag{12}
+\tag{9}
 \end{equation}
 $$
 <p>&nbsp;<br>
@@ -741,6 +619,136 @@ $$
 <p>
 Thus, if the potential is independent of the azimuthal angle \( \phi \),
 there is no torque about the \( z \) axis and \( L_z \) is conserved.
+</section>
+
+
+<section>
+<h2 id="work-energy-momentum-and-conservation-laws">Work, Energy, Momentum and Conservation laws </h2>
+
+<p>
+Energy conservation is most convenient as a strategy for addressing
+problems where time does not appear. For example, a particle goes
+from position \( x_0 \) with speed \( v_0 \), to position \( x_f \); what is its
+new speed? However, it can also be applied to problems where time
+does appear, such as in solving for the trajectory \( x(t) \), or
+equivalently \( t(x) \).
+</section>
+
+
+<section>
+<h2 id="energy-conservation">Energy Conservation </h2>
+Energy is conserved in the case where the potential energy, \( V(\boldsymbol{r}) \), depends only on position, and not on time. The force is determined by \( V \),
+<p>&nbsp;<br>
+$$
+\begin{equation}
+\boldsymbol{F}(\boldsymbol{r})=-\nabla V(\boldsymbol{r}).
+\tag{10}
+\end{equation}
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="net-energy">Net Energy  </h2>
+
+<p>
+The net energy, \( E=V+K \) where \( K \) is the kinetic energy, is then conserved,
+
+<p>&nbsp;<br>
+$$
+\begin{eqnarray}
+\frac{d}{dt}(K+V)&=&\frac{d}{dt}\left(\frac{m}{2}(v_x^2+v_y^2+v_z^2)+V(\boldsymbol{r})\right)\\
+\nonumber
+&=&m\left(v_x\frac{dv_x}{dt}+v_y\frac{dv_y}{dt}+v_z\frac{dv_z}{dt}\right)
++\partial_xV\frac{dx}{dt}+\partial_yV\frac{dy}{dt}+\partial_zV\frac{dz}{dt}\\
+\nonumber
+&=&v_xF_x+v_yF_y+v_zF_z-F_xv_x-F_yv_y-F_zv_z=0.
+\end{eqnarray}
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="in-vector-notation">In Vector Notation  </h2>
+
+<p>
+The same proof can be written more compactly with vector notation,
+
+<p>&nbsp;<br>
+$$
+\begin{eqnarray}
+\frac{d}{dt}\left(\frac{m}{2}v^2+V(\boldsymbol{r})\right)
+&=&m\boldsymbol{v}\cdot\dot{\boldsymbol{v}}+\nabla V(\boldsymbol{r})\cdot\dot{\boldsymbol{r}}\\
+\nonumber
+&=&\boldsymbol{v}\cdot\boldsymbol{F}-\boldsymbol{F}\cdot\boldsymbol{v}=0.
+\end{eqnarray}
+$$
+<p>&nbsp;<br>
+
+<p>
+Inverting the expression for kinetic energy,
+<p>&nbsp;<br>
+$$
+\begin{equation}
+v=\sqrt{2K/m}=\sqrt{2(E-V)/m},
+\tag{11}
+\end{equation}
+$$
+<p>&nbsp;<br>
+
+<p>
+allows one to solve for the one-dimensional trajectory \( x(t) \), by finding \( t(x) \),
+
+<p>&nbsp;<br>
+$$
+\begin{equation}
+t=\int_{x_0}^x \frac{dx'}{v(x')}=\int_{x_0}^x\frac{dx'}{\sqrt{2(E-V(x'))/m}}.
+\tag{12}
+\end{equation}
+$$
+<p>&nbsp;<br>
+
+<p>
+Note this would be much more difficult in higher dimensions, because
+you would have to determine which points, \( x,y,z \), the particles might
+reach in the trajectory, whereas in one dimension you can typically
+tell by simply seeing whether the kinetic energy is positive at every
+point between the old position and the new position.
+</section>
+
+
+<section>
+<h2 id="harmonic-oscillator-potential">Harmonic Oscillator Potential </h2>
+
+<p>
+Consider a simple harmonic oscillator potential, \( V(x)=kx^2/2 \), with a particle emitted from \( x=0 \) with velocity \( v_0 \). Solve for the trajectory \( t(x) \),
+
+<p>&nbsp;<br>
+$$
+\begin{eqnarray}
+t&=&\int_{0}^x \frac{dx'}{\sqrt{2(E-kx^2/2)/m}}\\
+\nonumber
+&=&\sqrt{m/k}\int_0^x~\frac{dx'}{\sqrt{x_{\rm max}^2-x^{\prime 2}}},~~~x_{\rm max}^2=2E/k.
+\end{eqnarray}
+$$
+<p>&nbsp;<br>
+
+<p>
+Here \( E=mv_0^2/2 \) and \( x_{\rm max} \) is defined as the maximum
+displacement before the particle turns around. This integral is done
+by the substitution \( \sin\theta=x/x_{\rm max} \).
+
+<p>&nbsp;<br>
+$$
+\begin{eqnarray}
+(k/m)^{1/2}t&=&\sin^{-1}(x/x_{\rm max}),\\
+\nonumber
+x&=&x_{\rm max}\sin\omega t,~~~\omega=\sqrt{k/m}.
+\end{eqnarray}
+$$
+<p>&nbsp;<br>
 </section>
 
 
