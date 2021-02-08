@@ -46,6 +46,17 @@ div { text-align: justify; text-justify: inter-word; }
                2,
                None,
                'work-energy-theorem-and-energy-conservation'),
+              ('Conservation of energy', 2, None, 'conservation-of-energy'),
+              ('What is a Conservative Force?',
+               2,
+               None,
+               'what-is-a-conservative-force'),
+              ('Two important conditions', 2, None, 'two-important-conditions'),
+              ('Work-energy theorem to show that energy is conserved with a '
+               'conservative force',
+               2,
+               None,
+               'work-energy-theorem-to-show-that-energy-is-conserved-with-a-conservative-force'),
               ('Conservation of Momentum', 2, None, 'conservation-of-momentum'),
               ("Newton's Second Law", 2, None, 'newton-s-second-law'),
               ('Summing over all Particles',
@@ -178,7 +189,7 @@ MathJax.Hub.Config({
 <center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
 <br>
 <p>
-<center><h4>Feb 7, 2021</h4></center> <!-- date -->
+<center><h4>Feb 8, 2021</h4></center> <!-- date -->
 <br>
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -203,7 +214,10 @@ Reading suggestions: Taylor section 4.2
 Conservative forces and potential energy. Reading suggestion: Taylor sections 4.2-4.4
 
 <p>
-Conservation of orbital momentum.
+If you wish to read more about conservative forces or not, Feyman's lectures from 1963 are quite interesting.
+He states for example that <b>All fundamental forces in nature appear to be conservative</b>.
+This statement was made while developing his argument that <em>there are no nonconservative forces</em>.
+You may enjoy the link to <a href="http://www.feynmanlectures.caltech.edu/I_14.html" target="_blank">Feynman's lecture</a>.
 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -230,6 +244,10 @@ $$
 W=\int_{x_0}^{x}F_xdx'=\frac{1}{2}kx_0^2-\frac{1}{2}kx^2.
 $$
 
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="conservation-of-energy">Conservation of energy </h2>
 With the definition of the work-energy theorem in terms of the kinetic energy we obtained
 
 $$
@@ -252,10 +270,62 @@ But before we start with energy conservation, conservative forces and potential 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
+<h2 id="what-is-a-conservative-force">What is a Conservative Force? </h2>
+
+<p>
+A conservative force is a force whose property is that the total work
+done in moving an object between two points is independent of the
+taken path. This means that the work on an object under the influence
+of a conservative force, is independent on the path of the object. It
+depends only on the spatial degrees of freedom and it is possible to
+assign a numerical value for the potential at any point. It leads to
+conservation of energy. The gravitational force is an example of a
+conservative force.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="two-important-conditions">Two important conditions </h2>
+
+<p>
+First, a conservative force depends only on the spatial degrees of freedom. This is a necessary condition for obtaining a path integral which is independent of path.
+The  important condition for the final work to be independent of the path is that the <b>curl</b> of the force is zero, that
+is
+$$
+\boldsymbol{\nabla} \times \boldsymbol{F}=0
+$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="work-energy-theorem-to-show-that-energy-is-conserved-with-a-conservative-force">Work-energy theorem to show that energy is conserved with a conservative force </h2>
+
+<p>
+The work-energy theorem states that the work done \( W \) by a force \( \boldsymbol{F} \) that moves an object from a position \( \boldsymbol{r}_0 \) to a new position \( \boldsymbol{r}_1 \)
+$$
+W=\int_{\boldsymbol{r}_0}^{\boldsymbol{r}_1}\boldsymbol{F}\boldsymbol{dr}=\frac{1}{2}mv_1^2-\frac{1}{2}mv_0^2,
+$$
+
+where \( v_1^2 \) is the velocity squared at a time \( t_1 \) and \( v_0^2 \) the corresponding quantity at a time \( t_0 \).
+The work done is thus the difference in kinetic energies. We can rewrite the above equation as
+$$
+\frac{1}{2}mv_1^2=\int_{\boldsymbol{r}_0}^{\boldsymbol{r}_1}\boldsymbol{F}\boldsymbol{dr}+\frac{1}{2}mv_0^2,
+$$
+
+that is the final kinetic energy is equal to the initial kinetic energy plus the work done by the force over a given path from a  position \( \boldsymbol{r}_0 \) at time \( t_0 \) to a final position position \( \boldsymbol{r}_1 \) at a later time \( t_1 \).
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
 <h2 id="conservation-of-momentum">Conservation of Momentum </h2>
 
 <p>
+Before we move on however, we need to remind ourselves about important aspects like the linear momentum and angular momentum. After these considerations, we move back to more details about conservatives forces.
+
+<p>
 Newton's third law which we met earlier states that <b>For every action there is an equal and opposite reaction</b>, is more accurately stated as
+
+<p>
 <b>If two bodies exert forces on each other, these forces are equal in magnitude and opposite in direction</b>.
 
 <p>
