@@ -240,7 +240,13 @@ between the objects we have
 \]
 !et
 
-The derivative of the total momentum is just _the sum of the external forces_. If we assume that the external forces are zero and that only internal (here two-body forces) are at play, we obtain the important result that the derivative of the total momentum is zero. This means again that the total momentum is a constant of the motion and conserved quantity. This is a very important result that we will use in many applications to come.
+The derivative of the total momentum is just _the sum of the external
+forces_. If we assume that the external forces are zero and that only
+internal (here two-body forces) are at play, we obtain the important
+result that the derivative of the total momentum is zero. This means
+again that the total momentum is a constant of the motion and
+conserved quantity. This is a very important result that we will use
+in many applications to come.
 
 
 
@@ -248,7 +254,7 @@ The derivative of the total momentum is just _the sum of the external forces_. I
 !split
 ===== Newton's Second Law =====
 
-Let us now general to several objects $N$. 
+Let us now general to several objects $N$ and let us also assume that there are no external forces. We will label such a system as _an isolated system_. 
 
 
 Newton's second law, $\bm{F}=m\bm{a}$, can be written for a particle $i$ as
@@ -259,31 +265,44 @@ Newton's second law, $\bm{F}=m\bm{a}$, can be written for a particle $i$ as
 \end{equation}
 !et
 
-where $\bm{F}_i$ (a single subscript) denotes the net force acting on $i$. Because the mass of $i$ is fixed, one can see that
+where $\bm{F}_i$ (a single subscript) denotes the net force acting on $i$ from the other objects/particles.
+Because the mass of $i$ is fixed and we assume it does not change with time, one can see that
 
 !bt
 \begin{equation}
-\bm{F}_i=\frac{d}{dt}m_i\bm{v}_i=\sum_{j\ne i}\bm{F}_{ij}.
+\bm{F}_i=\frac{d}{dt}m_i\bm{v}_i=\sum_{j\ne i}^N\bm{F}_{ij}.
 \end{equation}
 !et
 
 
 !split
-===== Summing over all Particles =====
+===== Summing over all Objects/Particles =====
 
-Now, one can sum over all the particles and obtain
+Now, one can sum over all the objects/particles and obtain
 
 !bt
 \begin{eqnarray}
-\frac{d}{dt}\sum_i m_iv_i&=&\sum_{ij, i\ne j}\bm{F}_{ij}\\
+\frac{d}{dt}\sum_i m_iv_i&=&\sum_{ij, i\ne j}^N\bm{F}_{ij}\\
 \nonumber
 &=&0.
 \end{eqnarray}
 !et
 
-The last step made use of the fact that for every term $ij$, there is
-an equivalent term $ji$ with opposite force. Because the momentum is
-defined as $m\bm{v}$, for a system of particles,
+How did we arrive at the last step?  We rewrote the double sum as
+
+!bt
+\[
+\sum_{ij, i\ne j}^N\bm{F}_{ij}=\sum_i^N\sum_{j>i}\left(\bm{F}_{ij}+\bm{F}_{ji}\right),
+\]
+!et
+
+and using Newton's third law which states that
+$\bm{F}_{ij}=-\bm{F}_{ji}$, we obtain that the net sum over all  the two-particle
+forces is zero when we only consider so-called _internal forces_.
+Stated differently, the last step made use of the fact that for every
+term $ij$, there is an equivalent term $ji$ with opposite
+force. Because the momentum is defined as $m\bm{v}$, for a system of
+particles, we have thus
 
 !bt
 \begin{equation}

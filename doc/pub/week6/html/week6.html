@@ -71,10 +71,10 @@ div { text-align: justify; text-justify: inter-word; }
                'newton-s-second-law-and-momentum'),
               ('The total Momentum', 2, None, 'the-total-momentum'),
               ("Newton's Second Law", 2, None, 'newton-s-second-law'),
-              ('Summing over all Particles',
+              ('Summing over all Objects/Particles',
                2,
                None,
-               'summing-over-all-particles'),
+               'summing-over-all-objects-particles'),
               ('Conservation of total Momentum',
                2,
                None,
@@ -447,7 +447,13 @@ $$
 $$
 
 <p>
-The derivative of the total momentum is just <b>the sum of the external forces</b>. If we assume that the external forces are zero and that only internal (here two-body forces) are at play, we obtain the important result that the derivative of the total momentum is zero. This means again that the total momentum is a constant of the motion and conserved quantity. This is a very important result that we will use in many applications to come.
+The derivative of the total momentum is just <b>the sum of the external
+forces</b>. If we assume that the external forces are zero and that only
+internal (here two-body forces) are at play, we obtain the important
+result that the derivative of the total momentum is zero. This means
+again that the total momentum is a constant of the motion and
+conserved quantity. This is a very important result that we will use
+in many applications to come.
 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -455,7 +461,7 @@ The derivative of the total momentum is just <b>the sum of the external forces</
 <h2 id="newton-s-second-law">Newton's Second Law </h2>
 
 <p>
-Let us now general to several objects \( N \).
+Let us now general to several objects \( N \) and let us also assume that there are no external forces. We will label such a system as <b>an isolated system</b>.
 
 <p>
 Newton's second law, \( \boldsymbol{F}=m\boldsymbol{a} \), can be written for a particle \( i \) as
@@ -468,11 +474,12 @@ $$
 $$
 
 <p>
-where \( \boldsymbol{F}_i \) (a single subscript) denotes the net force acting on \( i \). Because the mass of \( i \) is fixed, one can see that
+where \( \boldsymbol{F}_i \) (a single subscript) denotes the net force acting on \( i \) from the other objects/particles.
+Because the mass of \( i \) is fixed and we assume it does not change with time, one can see that
 
 $$
 \begin{equation}
-\boldsymbol{F}_i=\frac{d}{dt}m_i\boldsymbol{v}_i=\sum_{j\ne i}\boldsymbol{F}_{ij}.
+\boldsymbol{F}_i=\frac{d}{dt}m_i\boldsymbol{v}_i=\sum_{j\ne i}^N\boldsymbol{F}_{ij}.
 \label{_auto3}
 \end{equation}
 $$
@@ -480,23 +487,34 @@ $$
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="summing-over-all-particles">Summing over all Particles </h2>
+<h2 id="summing-over-all-objects-particles">Summing over all Objects/Particles </h2>
 
 <p>
-Now, one can sum over all the particles and obtain
+Now, one can sum over all the objects/particles and obtain
 
 $$
 \begin{eqnarray}
-\frac{d}{dt}\sum_i m_iv_i&=&\sum_{ij, i\ne j}\boldsymbol{F}_{ij}\\
+\frac{d}{dt}\sum_i m_iv_i&=&\sum_{ij, i\ne j}^N\boldsymbol{F}_{ij}\\
 \nonumber
 &=&0.
 \end{eqnarray}
 $$
 
 <p>
-The last step made use of the fact that for every term \( ij \), there is
-an equivalent term \( ji \) with opposite force. Because the momentum is
-defined as \( m\boldsymbol{v} \), for a system of particles,
+How did we arrive at the last step?  We rewrote the double sum as
+
+$$
+\sum_{ij, i\ne j}^N\boldsymbol{F}_{ij}=\sum_i^N\sum_{j>i}\left(\boldsymbol{F}_{ij}+\boldsymbol{F}_{ji}\right),
+$$
+
+<p>
+and using Newton's third law which states that
+\( \boldsymbol{F}_{ij}=-\boldsymbol{F}_{ji} \), we obtain that the net sum over all  the two-particle
+forces is zero when we only consider so-called <b>internal forces</b>.
+Stated differently, the last step made use of the fact that for every
+term \( ij \), there is an equivalent term \( ji \) with opposite
+force. Because the momentum is defined as \( m\boldsymbol{v} \), for a system of
+particles, we have thus
 
 $$
 \begin{equation}
