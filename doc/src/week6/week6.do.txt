@@ -126,9 +126,50 @@ that is the final kinetic energy is equal to the initial kinetic energy plus the
 
 Before we move on however, we need to remind ourselves about important aspects like the linear momentum and angular momentum. After these considerations, we move back to more details about conservatives forces.
 
-Newton's third law which we met earlier states that _For every action there is an equal and opposite reaction_, is more accurately stated as
 
-_If two bodies exert forces on each other, these forces are equal in magnitude and opposite in direction_.
+Assume we have $N$ objects, each with velocity $\bm{v}_i$ with
+$i=1,2,\dots,N$ and mass $m_i$. The momentum of each object is
+$\bm{p}_i=m\bm{v}_i$ and the total linear (or mechanical) momentum is
+defined as
+
+!bt
+\[
+\bm{P}=\sum_{i=1}^N\bm{p}_i=\sum_{i=1}^Nm_i\bm{v}_i,
+\]
+!et
+
+
+!split
+===== Two objects first =====
+
+Let us assume we have two objects only that interact with each other and are influenced by an external force.
+
+We define also the total net force acting on object 1 as 
+
+!bt
+\[
+\bm{F}_1^{\mathrm{net}}=\bm{F}_1^{\mathrm{ext}}+\bm{F}_{12},
+\]
+!et
+
+where $\bm{F}_1^{\mathrm{ext}}$ is the external force
+(for example the force due to an electron moving in an electromagnetic field) and $\bm{F}_{12}$ is the
+force between object one and two. Similarly for object 2 we have
+
+
+!bt
+\[
+\bm{F}_2^{\mathrm{net}}=\bm{F}_2^{\mathrm{ext}}+\bm{F}_{21}.
+\]
+!et
+
+!split
+===== Newton's Third Law =====
+
+Newton's third law which we met earlier states that _for every action there is an equal and opposite reaction_.
+It is more accurately stated as
+
+_if two bodies exert forces on each other, these forces are equal in magnitude and opposite in direction_.
 
 This means that for two bodies $i$ and $j$, if the force on $i$ due to $j$ is called $\bm{F}_{ij}$, then 
 
@@ -139,14 +180,82 @@ This means that for two bodies $i$ and $j$, if the force on $i$ due to $j$ is ca
 !et
 
 
+For the abovementioned two objects we have thus $\bm{F}_{12}=-\bm{F}_{21}$.
+
+
+!split
+===== Newton's Second Law and Momentum =====
+
+With the net forces acting on each object we can now related the momentum to the forces via
+
+!bt
+\[
+\bm{F}_1^{\mathrm{net}}=m_1\bm{a}_i=m_1\frac{d\bm{v}_i}{dt}=\bm{F}_1^{\mathrm{ext}}+\bm{F}_{12},
+\]
+!et
+
+and 
+
+!bt
+\[
+\bm{F}_2^{\mathrm{net}}=m_2\bm{a}_2=m_1\frac{d\bm{v}_i}{dt}=\bm{F}_2^{\mathrm{ext}}+\bm{F}_{21}.
+\]
+!et
+
+Recalling our definition for the linear momentum we have then
+
+!bt
+\[
+\frac{d\bm{p}_1}{dt}=\bm{F}_1^{\mathrm{ext}}+\bm{F}_{12},
+\]
+!et
+
+and 
+
+!bt
+\[
+\frac{d\bm{p}_2}{dt}=\bm{F}_2^{\mathrm{ext}}+\bm{F}_{21}.
+\]
+!et
+
+
+!split
+===== The total Momentum =====
+
+The total momentum $\bm{P}$ is defined as the sum of the individual momenta, meaning that we can rewrite
+
+!bt
+\[
+\bm{F}_1^{\mathrm{net}}+\bm{F}_2^{\mathrm{net}}=\frac{d\bm{p}_1}{dt}+\frac{d\bm{p}_2}{dt}=\frac{d\bm{P}}{dt},
+\]
+!et
+
+that is the derivate with respect to time of the total momentum. If we now
+write the net forces as sums of the external plus internal forces
+between the objects we have
+
+!bt
+\[
+\frac{d\bm{P}}{dt}=\bm{F}_1^{\mathrm{ext}}+\bm{F}_{12}+\bm{F}_2^{\mathrm{ext}}+\bm{F}_{21}=\bm{F}_1^{\mathrm{ext}}+\bm{F}_2^{\mathrm{ext}}.
+\]
+!et
+
+The derivative of the total momentum is just _the sum of the external forces_. If we assume that the external forces are zero and that only internal (here two-body forces) are at play, we obtain the important result that the derivative of the total momentum is zero. This means again that the total momentum is a constant of the motion and conserved quantity. This is a very important result that we will use in many applications to come.
+
+
+
+
 !split
 ===== Newton's Second Law =====
+
+Let us now general to several objects $N$. 
+
 
 Newton's second law, $\bm{F}=m\bm{a}$, can be written for a particle $i$ as
 
 !bt
 \begin{equation}
-\bm{F}_i=\sum_{j\ne i} \bm{F}_{ij}=m_i\bm{a}_i,
+\bm{F}_i=\sum_{j\ne i}^N \bm{F}_{ij}=m_i\bm{a}_i,
 \end{equation}
 !et
 

@@ -64,6 +64,13 @@ Automatically generated HTML file from DocOnce source
                None,
                'work-energy-theorem-to-show-that-energy-is-conserved-with-a-conservative-force'),
               ('Conservation of Momentum', 2, None, 'conservation-of-momentum'),
+              ('Two objects first', 2, None, 'two-objects-first'),
+              ("Newton's Third Law", 2, None, 'newton-s-third-law'),
+              ("Newton's Second Law and Momentum",
+               2,
+               None,
+               'newton-s-second-law-and-momentum'),
+              ('The total Momentum', 2, None, 'the-total-momentum'),
               ("Newton's Second Law", 2, None, 'newton-s-second-law'),
               ('Summing over all Particles',
                2,
@@ -201,6 +208,10 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="#two-important-conditions" style="font-size: 80%;"><b>Two important conditions</b></a></li>
      <!-- navigation toc: --> <li><a href="#work-energy-theorem-to-show-that-energy-is-conserved-with-a-conservative-force" style="font-size: 80%;"><b>Work-energy theorem to show that energy is conserved with a conservative force</b></a></li>
      <!-- navigation toc: --> <li><a href="#conservation-of-momentum" style="font-size: 80%;"><b>Conservation of Momentum</b></a></li>
+     <!-- navigation toc: --> <li><a href="#two-objects-first" style="font-size: 80%;"><b>Two objects first</b></a></li>
+     <!-- navigation toc: --> <li><a href="#newton-s-third-law" style="font-size: 80%;"><b>Newton's Third Law</b></a></li>
+     <!-- navigation toc: --> <li><a href="#newton-s-second-law-and-momentum" style="font-size: 80%;"><b>Newton's Second Law and Momentum</b></a></li>
+     <!-- navigation toc: --> <li><a href="#the-total-momentum" style="font-size: 80%;"><b>The total Momentum</b></a></li>
      <!-- navigation toc: --> <li><a href="#newton-s-second-law" style="font-size: 80%;"><b>Newton's Second Law</b></a></li>
      <!-- navigation toc: --> <li><a href="#summing-over-all-particles" style="font-size: 80%;"><b>Summing over all Particles</b></a></li>
      <!-- navigation toc: --> <li><a href="#conservation-of-total-momentum" style="font-size: 80%;"><b>Conservation of total Momentum</b></a></li>
@@ -264,7 +275,7 @@ MathJax.Hub.Config({
 <center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
 <br>
 <p>
-<center><h4>Feb 8, 2021</h4></center> <!-- date -->
+<center><h4>Feb 9, 2021</h4></center> <!-- date -->
 <br>
 <p>
 <!-- potential-jumbotron-button -->
@@ -400,10 +411,50 @@ that is the final kinetic energy is equal to the initial kinetic energy plus the
 Before we move on however, we need to remind ourselves about important aspects like the linear momentum and angular momentum. After these considerations, we move back to more details about conservatives forces.
 
 <p>
-Newton's third law which we met earlier states that <b>For every action there is an equal and opposite reaction</b>, is more accurately stated as
+Assume we have \( N \) objects, each with velocity \( \boldsymbol{v}_i \) with
+\( i=1,2,\dots,N \) and mass \( m_i \). The momentum of each object is
+\( \boldsymbol{p}_i=m\boldsymbol{v}_i \) and the total linear (or mechanical) momentum is
+defined as
+
+$$
+\boldsymbol{P}=\sum_{i=1}^N\boldsymbol{p}_i=\sum_{i=1}^Nm_i\boldsymbol{v}_i,
+$$
 
 <p>
-<b>If two bodies exert forces on each other, these forces are equal in magnitude and opposite in direction</b>.
+<!-- !split -->
+
+<h2 id="two-objects-first" class="anchor">Two objects first </h2>
+
+<p>
+Let us assume we have two objects only that interact with each other and are influenced by an external force.
+
+<p>
+We define also the total net force acting on object 1 as 
+
+$$
+\boldsymbol{F}_1^{\mathrm{net}}=\boldsymbol{F}_1^{\mathrm{ext}}+\boldsymbol{F}_{12},
+$$
+
+<p>
+where \( \boldsymbol{F}_1^{\mathrm{ext}} \) is the external force
+(for example the force due to an electron moving in an electromagnetic field) and \( \boldsymbol{F}_{12} \) is the
+force between object one and two. Similarly for object 2 we have
+
+$$
+\boldsymbol{F}_2^{\mathrm{net}}=\boldsymbol{F}_2^{\mathrm{ext}}+\boldsymbol{F}_{21}.
+$$
+
+<p>
+<!-- !split -->
+
+<h2 id="newton-s-third-law" class="anchor">Newton's Third Law </h2>
+
+<p>
+Newton's third law which we met earlier states that <b>for every action there is an equal and opposite reaction</b>.
+It is more accurately stated as
+
+<p>
+<b>if two bodies exert forces on each other, these forces are equal in magnitude and opposite in direction</b>.
 
 <p>
 This means that for two bodies \( i \) and \( j \), if the force on \( i \) due to \( j \) is called \( \boldsymbol{F}_{ij} \), then 
@@ -416,16 +467,79 @@ $$
 $$
 
 <p>
+For the abovementioned two objects we have thus \( \boldsymbol{F}_{12}=-\boldsymbol{F}_{21} \).
+
+<p>
+<!-- !split -->
+
+<h2 id="newton-s-second-law-and-momentum" class="anchor">Newton's Second Law and Momentum </h2>
+
+<p>
+With the net forces acting on each object we can now related the momentum to the forces via
+
+$$
+\boldsymbol{F}_1^{\mathrm{net}}=m_1\boldsymbol{a}_i=m_1\frac{d\boldsymbol{v}_i}{dt}=\boldsymbol{F}_1^{\mathrm{ext}}+\boldsymbol{F}_{12},
+$$
+
+<p>
+and 
+
+$$
+\boldsymbol{F}_2^{\mathrm{net}}=m_2\boldsymbol{a}_2=m_1\frac{d\boldsymbol{v}_i}{dt}=\boldsymbol{F}_2^{\mathrm{ext}}+\boldsymbol{F}_{21}.
+$$
+
+<p>
+Recalling our definition for the linear momentum we have then
+
+$$
+\frac{d\boldsymbol{p}_1}{dt}=\boldsymbol{F}_1^{\mathrm{ext}}+\boldsymbol{F}_{12},
+$$
+
+<p>
+and 
+
+$$
+\frac{d\boldsymbol{p}_2}{dt}=\boldsymbol{F}_2^{\mathrm{ext}}+\boldsymbol{F}_{21}.
+$$
+
+<p>
+<!-- !split -->
+
+<h2 id="the-total-momentum" class="anchor">The total Momentum </h2>
+
+<p>
+The total momentum \( \boldsymbol{P} \) is defined as the sum of the individual momenta, meaning that we can rewrite
+
+$$
+\boldsymbol{F}_1^{\mathrm{net}}+\boldsymbol{F}_2^{\mathrm{net}}=\frac{d\boldsymbol{p}_1}{dt}+\frac{d\boldsymbol{p}_2}{dt}=\frac{d\boldsymbol{P}}{dt},
+$$
+
+<p>
+that is the derivate with respect to time of the total momentum. If we now
+write the net forces as sums of the external plus internal forces
+between the objects we have
+
+$$
+\frac{d\boldsymbol{P}}{dt}=\boldsymbol{F}_1^{\mathrm{ext}}+\boldsymbol{F}_{12}+\boldsymbol{F}_2^{\mathrm{ext}}+\boldsymbol{F}_{21}=\boldsymbol{F}_1^{\mathrm{ext}}+\boldsymbol{F}_2^{\mathrm{ext}}.
+$$
+
+<p>
+The derivative of the total momentum is just <b>the sum of the external forces</b>. If we assume that the external forces are zero and that only internal (here two-body forces) are at play, we obtain the important result that the derivative of the total momentum is zero. This means again that the total momentum is a constant of the motion and conserved quantity. This is a very important result that we will use in many applications to come.
+
+<p>
 <!-- !split -->
 
 <h2 id="newton-s-second-law" class="anchor">Newton's Second Law </h2>
+
+<p>
+Let us now general to several objects \( N \).
 
 <p>
 Newton's second law, \( \boldsymbol{F}=m\boldsymbol{a} \), can be written for a particle \( i \) as
 
 $$
 \begin{equation}
-\boldsymbol{F}_i=\sum_{j\ne i} \boldsymbol{F}_{ij}=m_i\boldsymbol{a}_i,
+\boldsymbol{F}_i=\sum_{j\ne i}^N \boldsymbol{F}_{ij}=m_i\boldsymbol{a}_i,
 \label{_auto2}
 \end{equation}
 $$
