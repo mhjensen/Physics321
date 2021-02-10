@@ -58,22 +58,34 @@ $v_x = 100$ m/s. The electron enters the field when it passes the origin. The fi
 varies with time, causing an acceleration of the electron that varies in time
 !bt
 \[
-\bm{a}(t)=\left(−20 \mathrm{m/s}^2 −10\mathrm{m/s}^3t\right) \bm{e}_y
+\bm{a}(t)=\left(−20 \mathrm{m/s}^2 −10\mathrm{m/s}^3t\right) \bm{e}_y,
 \]
 !et
+or if we replace $\bm{e}_y$ with $\bm{e}_2$ (the unit vectors in the $y$-direction) we have
+!bt
+\[
+\bm{a}(t)=\left(−20 \mathrm{m/s}^2 −10\mathrm{m/s}^3t\right) \bm{e}_2.
+\]
+!et
+
+
+
 * 1a (4pt) Find the velocity as a function of time for the electron.
 
 _Answer 1a:_
 
+Note that velocity in the $x$-direction is a constant and is not affected by the force which acts only in the $y$-direction.
+This means that we can decouple the two degrees of freedom and skip the vector symbols.
+We have then a constant velocity in the $x$-direction
 !bt
 \[
 v_x(t) = 100\mathrm{m/s},
 \]
 !et
-
+and integrating up the acceleration in the $y$-direction (and using that the initial time $t_0=0$) we get
 !bt
 \[
-v_y(t) = -20\mathrm{m/s^2}t-50\mathrm{m/s^3}t^2.
+v_y(t) = -20\mathrm{m/s^2}t-5\mathrm{m/s^3}t^2.
 \]
 !et
 
@@ -81,17 +93,17 @@ v_y(t) = -20\mathrm{m/s^2}t-50\mathrm{m/s^3}t^2.
 * 1b (4pt)  Find the position as a function of time for the electron.
 
 _Answer 1b:_
-
+We integrate again in the $x$-direction
 !bt
 \[
 x(t) = 100\mathrm{m/s}t,
 \]
 !et
-
-
+and in the $y$-direction (remember that these two degrees of freedom don't depend on each other)
+we get
 !bt
 \[
-y(t) = -10\mathrm{m/s^2}t^2-\frac{50}{3}\mathrm{m/s^3}t^3.
+y(t) = -10\mathrm{m/s^2}t^2-\frac{5}{3}\mathrm{m/s^3}t^3.
 \]
 !et
 
@@ -101,6 +113,8 @@ The field is only acting inside a box of length $L = 2m$.
 * 1c (4pt)  How long time is the electron inside the field?
 
 _Answer 1c:_
+If we use the equation for the $x$-direction (the length of the box), we can then use the equation for $x(t) = 100\mathrm{m/s}t$
+and simply set $x=2$m and we find
 
 !bt
 \[
@@ -112,7 +126,13 @@ t=\frac{1}{50}\mathrm{s}.
 * 1d (4pt)  What is the displacement in the $y$-direction when the electron leaves the box. (We call this the deflection of the electron).
 
 _Answer 1d:_
-
+Here we simply use
+!bt
+\[
+y(t) = -10\mathrm{m/s^2}t^2-\frac{5}{3}\mathrm{m/s^3}t^3,
+\]
+!et
+and use $t=1/50$s and find that
 !bt
 \[
 y = -4.01\times 10^{-3} \mathrm{m/s}.
@@ -123,7 +143,14 @@ y = -4.01\times 10^{-3} \mathrm{m/s}.
 * 1e (4pt)  Find the angle the velocity vector forms with the horizontal axis as the electron leaves the box.
 
 _Answer 1e:_
+Again, we use $t=1/50$s and calculate the velocities in the $x$- and the $y$-directions (the velocity in the $x$-direction is just a constant) and find the angle using
 
+!bt
+\[
+\tan{\alpha} = \frac{v_y(t=1/50)}{v_x(t=1/50)},
+\]
+!et
+which leads to
 
 !bt
 \[
@@ -152,7 +179,7 @@ The first two terms on the right cancel and, if $t$ is sufficiently small, we ca
 v_y(t) \approx v_{\mathrm{ter}}\frac{t}{\tau}=gt,
 \]
 !et
-where we used that $v_{\mathrm{ter}}=g\tau$ from equation (2.34) in Taylor.
+where we used that $v_{\mathrm{ter}}=g\tau$ from equation (2.34) in Taylor. This means that for small velocities it is the gravitational force which dominates.
 * 3b (5pt) Setting $v_y(t_0)=0$ in equation (2.35) of Taylor and using the Taylor series for the exponential we find that
 !bt
 \[
@@ -165,7 +192,7 @@ On the rhs the second and third terms cancel, as do the first and fourth. If we 
 y(t) \approx v_{\mathrm{ter}}\frac{t^2}{2\tau}=\frac{1}{2}gt^2.
 \]
 !et
-
+Again, for small times, as expected, the gravitational force plays the major role.
 
 === Exercise 4 (10 pt), and then a cyclist, Taylor exercise 2.26  ===
 
@@ -245,7 +272,8 @@ In the code below we would write this as
 
 * 5b (4pt) Integrate the acceleration from an initial time $t_0$ to a final time $t$ and find the velocity.
 
-We have for the $y$-direction
+We reduce our problem to a one-dimensional in the $y$-direction only since for the two-dimensional motion we cannot find an analtical solution. For one dimension however, we have an analytical solution.
+We specialize our equations  for the $y$-direction only
 !bt
 \[
 \frac{dv_y}{dt}= -g +Dv_y^2(t). 
@@ -262,8 +290,7 @@ terms that involve time. We get then
 !et
 
 We scale now the equation to the left by introducing a constant
-$v_T=\sqrt{g/D}$. This constant has dimension length/time. Can you
-show this?
+$v_T=\sqrt{g/D}$. This constant has dimension length/time. 
 
 Next we integrate the left-hand side (lhs) from $v_{y0}=0$ m/s to $v$ and
 the right-hand side (rhs) from $t_0=0$ to $t$ and obtain
@@ -288,12 +315,7 @@ v_y(t)=v_T\tanh{-(\frac{gt}{v_T})}.
 
 With a finite initial velocity we need simply to add $v_{y0}$.
 
-Similarly, for the $x$-direction we have
-!bt
-\[
-v_x(t)= \frac{v_{x0}}{1+Dv_{x0}t/m}. 
-\]
-!et
+
 
 * 5c (4pt) Find thereafter the position as function of time starting with an initial time $t_0$. Find the time it takes to hit the floor.  Here you will find it convenient to set the initial velocity in the $y$-direction to zero.
 
@@ -315,9 +337,10 @@ Here we have assumed that we set the initial velocity in the $y$-direction to ze
 Using a zero initial velocity and setting 
 !bt
 \[
-y(t)=0=y(t_0)-\frac{v_T^2}{g}\log{[\cosh{(\frac{gt}{v_T})}]},
+y(t)=0=y(t_0)-\frac{v_T^2}{g}\log{[\cosh{(-\frac{gt}{v_T})}]}=y(t_0)-\frac{v_T^2}{g}\log{[\cosh{(\frac{gt}{v_T})}]},
 \]
 !et
+(note that $\cosh$ yields the same values for negative and positive arguments)
 allows us to find the final time by solving
 !bt
 \[
@@ -331,17 +354,10 @@ t = \frac{v_T}{g}\mathrm{arccosh}(\exp{(gy_0/v_T^2)}).
 \]
 !et
 
-The position in $x$-direction is
-!bt
-\[
-x(t) = \frac{m}{D}\log{(1+\frac{tDv_{x0}}{m})}.
-\]
-!et
 
 In the code below we would code these analytical expressions (with zero initial velocity in the $y$-direction) as
 !bc pycod
     yanalytic[i+1] = y[0]-(vT*vT/g)*log(cosh(g*t[i+1]/vT))+vy[0]*t[i+1]
-    xanalytic[i+1] = m*log(1.+t[i+1]*vx[0]*D/m)/D
 !ec
 
 We will use the above analytical results in our numerical calculations in exercise 6.
