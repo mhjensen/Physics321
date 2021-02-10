@@ -135,7 +135,8 @@ Solution for analytical part as handwritten note (exercises 1-5): https://github
 - Monday 2/8: More on Conservation laws, momentum conservation, 4th homework, due February 15
 - Wednesday 2/10: Examples of applications of conservation laws, angular momentum conservation 
 - Friday 2/12:  Conservation laws and further examples
-- Good reads are Taylor chapter 4 and AMS chapters 10-14.
+- Good reads are Taylor sections 3.1-3.5 and 4.1-4.3 and AMS chapters 10-14.
+Solution hw 3 as Jupyter notebook at: https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionhw3.ipynb
 
 ### Week 7, February 15-19, 2021
 - Monday 2/15: Conservation laws. Introducing the Velocity Verlet algorithm and the Earth Sun problem, 5th homework due February 22.
