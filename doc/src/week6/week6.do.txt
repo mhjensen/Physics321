@@ -281,11 +281,9 @@ Because the mass of $i$ is fixed and we assume it does not change with time, one
 Now, one can sum over all the objects/particles and obtain
 
 !bt
-\begin{eqnarray}
-\frac{d}{dt}\sum_i m_iv_i&=&\sum_{ij, i\ne j}^N\bm{F}_{ij}\\
-\nonumber
-&=&0.
-\end{eqnarray}
+\[
+\frac{d}{dt}\sum_i m_iv_i=\sum_{ij, i\ne j}^N\bm{F}_{ij}=0.
+\]
 !et
 
 How did we arrive at the last step?  We rewrote the double sum as
@@ -319,11 +317,15 @@ external'' forces. Thus, Newton's third law leads to the conservation
 of total momentum,
 
 !bt
-\begin{eqnarray}
-\bm{P}&=&\sum_i m_i\bm{v}_i,\\
-\nonumber
-\frac{d}{dt}\bm{P}&=&0.
-\end{eqnarray}
+\[
+\bm{P}=\sum_i m_i\bm{v}_i,
+\]
+!et
+and we have
+!bt
+\[
+\frac{d}{dt}\bm{P}=0.
+\]
 !et
 
 
@@ -383,9 +385,9 @@ masses weighted by the mass,
 The rate of change of $\bar{x}$ is
 
 !bt
-\begin{eqnarray}
-\dot{\bar{x}}&=&\frac{1}{M}\sum_i m_i\dot{x}_i=\frac{1}{M}P_x.
-\end{eqnarray}
+\[
+\dot{\bar{x}}=\frac{1}{M}\sum_i m_i\dot{x}_i=\frac{1}{M}P_x.
+\]
 !et
 
 Thus if the total momentum is constant the center of mass moves at a
@@ -397,15 +399,7 @@ mass is fixed.
 ===== Conservation of Angular Momentum =====
 
 
-Consider a case where the force always points radially,
-
-!bt
-\begin{equation}
-\bm{F}(\bm{r})=F(r)\hat{r},
-\end{equation}
-!et
-
-where $\hat{r}$ is a unit vector pointing outward from the origin. The angular momentum is defined as
+The angular momentum is defined as
 
 !bt
 \begin{equation}
@@ -413,51 +407,23 @@ where $\hat{r}$ is a unit vector pointing outward from the origin. The angular m
 \end{equation}
 !et
 
+It means that the angular momentum is perpendicular to the plane defined by position $\bm{r}$ and the momentum $\bm{p}$ via $\bm{r}\times \bm{p}$. 
+
 !split
 ===== Rate of Change of Angular Momentum =====
 
 The rate of change of the angular momentum is
 
 !bt
-\begin{eqnarray}
-\frac{d\bm{L}}{dt}&=&m\bm{v}\times\bm{v}+m\bm{r}\times\dot{\bm{v}}\\
-\nonumber
-&=&m\bm{v}\times\bm{v}+\bm{r}\times{\bm{F}}=0.
-\end{eqnarray}
+\[
+\frac{d\bm{L}}{dt}=m\bm{v}\times\bm{v}+m\bm{r}\times\dot{\bm{v}}=\bm{r}\times{\bm{F}}
+\]
 !et
-
-
-!split
-=====  Rewriting the Equations =====
 
 The first term is zero because $\bm{v}$ is parallel to itself, and the
-second term is zero because $\bm{F}$ is parallel to $\bm{r}$.
+second term defines the so-called torque. If $\bm{F}$ is parallel to $\bm{r}$ then the torque is zero and we say that angular momentum is conserved.
 
-As an aside, one can see from the Levi-Civita symbol that the cross
-product of a vector with itself is zero. Here, we consider a vector
 
-!bt
-\begin{eqnarray}
-\bm{V}&=&\bm{A}\times\bm{A},\\
-\nonumber
-V_i&=&(\bm{A}\times\bm{A})_i=\sum_{jk}\epsilon_{ijk}A_jA_k.
-\end{eqnarray}
-!et
-
-!split
-=====  Two main Contributions =====
-
-For any term $i$, there are two contributions. For example, for $i$
-denoting the $x$ direction, either $j$ denotes the $y$ direction and
-$k$ denotes the $z$ direction, or vice versa, so
-
-!bt
-\begin{equation}
-V_1=\epsilon_{123}A_2A_3+\epsilon_{132}A_3A_2.
-\end{equation}
-!et
-
-This is zero by the antisymmetry of $\epsilon$ under permutations.
 
 If the force is not radial, $\bm{r}\times\bm{F}\ne 0$ as above, and angular momentum is no longer conserved,
 
@@ -471,30 +437,79 @@ where $\bm{\tau}$ is the torque.
 
 
 !split
-===== System of Isolated Particles =====
+===== The Torque, Example 1 (hw 4, exercise 4) =====
 
-For a system of isolated particles, one can write
-
-
+Let us assume we have an initial position $\bm{r}_0=x_0\bm{e}_1+y_0\bm{e}_2$ at a time $t_0=0$.
+We add now a force in the positive $x$-direction
 !bt
-\begin{eqnarray}
-\frac{d}{dt}\sum_i\bm{L}_i&=&\sum_{i\ne j}\bm{r}_i\times \bm{F}_{ij}\\
-\nonumber
-&=&\frac{1}{2}\sum_{i\ne j} \bm{r}_i\times \bm{F}_{ij}+\bm{r}_j\times\bm{F}_{ji}\\
-\nonumber
-&=&\frac{1}{2}\sum_{i\ne j} (\bm{r}_i-\bm{r}_j)\times\bm{F}_{ij}=0,
-\end{eqnarray}
+\[
+\bm{F}=F_x\bm{e}_1=frac{d\bm{p}}{dt},
+\]
 !et
+where we used the force as defined by the time derivative of the momentum.
 
-where the last step used Newton's third law,
-$\bm{F}_{ij}=-\bm{F}_{ji}$. If the forces between the particles are
-radial, i.e. $\bm{F}_{ij} ~||~ (\bm{r}_i-\bm{r}_j)$, then each term in
-the sum is zero and the net angular momentum is fixed. Otherwise, you
-could imagine an isolated system that would start spinning
-spontaneously.
+We can use this force (and its pertinent acceleration) to find the velocity via the relation
+!bt
+\[
+\bm{v}(t)=\bm{v}_0+\int_{t_0}^t\bm{a}dt',
+\]
+!et
+and with $\bm{v}_0=0$ we have
+!bt
+\[
+\bm{v}(t)=\int_{t_0}^t\frac{\bm{F}}{m}dt',
+\]
+!et
+where $m$ is the mass of the object.
 
 !split
-===== The Torque =====
+===== The Torque, Example 1 (hw 4, exercise 4) =====
+
+Since the force acts only in the $x$-direction, we have after integration
+!bt
+\[
+\bm{v}(t)=\frac{\bm{F}}{m}t=\frac{F_x}{m}t\bm{e}_1=v_x(t)\bm{e}_1.
+\]
+!et
+
+The momentum is in turn given by $\bm{p}=p_x\bm{e}_1=mv_x\bm{e}_1=F_xt\bm{e}_1$.
+
+Integrating over time again we find the final position as (note the force depends only on the $x$-direction)
+!bt
+\[
+\bm{r}(t)=(x_0+\frac{1}{2}\frac{F_x}{m}t^2) \bm{e}_1+y_0\bm{e}_2.
+\]
+!et
+There is no change in the position in the $y$-direction since the force acts only in the $x$-direction.
+
+!split
+===== The Torque, Example 1 (hw 4, exercise 4) =====
+
+We can now compute the angular momentum given by
+!bt
+\[
+\bm{l}=\bm{r}\times\bm{p}=\left[(x_0+\frac{1}{2}\frac{F_x}{m}t^2) \bm{e}_1+y_0\bm{e}_2\right]\times \frac{F_xt}{m}\bm{e}_1.
+\]
+!et
+Computing the cross product we find
+
+!bt
+\[
+\bm{l}=-y_0F_xt\bm{e}_3=-y_0F_xt\bm{e}_z.
+\]
+!et
+The torque is the time derivative of the angular momentum and we have
+
+!bt
+\[
+\bm{\tau}=-y_0F_x\bm{e}_3=-y_0F_x\bm{e}_z.
+\]
+!et
+The torque is non-zero and angular momentum is not conserved.
+
+
+!split
+===== The Torque, Example 2 =====
 
 One can write the torque about a given axis, which we will denote as $\hat{z}$, in polar coordinates, where
 
@@ -538,6 +553,32 @@ Combining the two equations,
 
 Thus, if the potential is independent of the azimuthal angle $\phi$,
 there is no torque about the $z$ axis and $L_z$ is conserved.
+
+
+
+
+!split
+===== System of Isolated Particles =====
+
+For a system of isolated particles, one can write
+
+
+!bt
+\begin{eqnarray}
+\frac{d}{dt}\sum_i\bm{L}_i&=&\sum_{i\ne j}\bm{r}_i\times \bm{F}_{ij}\\
+\nonumber
+&=&\frac{1}{2}\sum_{i\ne j} \bm{r}_i\times \bm{F}_{ij}+\bm{r}_j\times\bm{F}_{ji}\\
+\nonumber
+&=&\frac{1}{2}\sum_{i\ne j} (\bm{r}_i-\bm{r}_j)\times\bm{F}_{ij}=0,
+\end{eqnarray}
+!et
+
+where the last step used Newton's third law,
+$\bm{F}_{ij}=-\bm{F}_{ji}$. If the forces between the particles are
+radial, i.e. $\bm{F}_{ij} ~||~ (\bm{r}_i-\bm{r}_j)$, then each term in
+the sum is zero and the net angular momentum is fixed. Otherwise, you
+could imagine an isolated system that would start spinning
+spontaneously.
 
 
 

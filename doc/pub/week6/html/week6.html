@@ -93,17 +93,27 @@ div { text-align: justify; text-justify: inter-word; }
                2,
                None,
                'rate-of-change-of-angular-momentum'),
-              ('Rewriting the Equations', 2, None, 'rewriting-the-equations'),
-              ('Two main Contributions', 2, None, 'two-main-contributions'),
-              ('System of Isolated Particles',
+              ('The Torque, Example 1 (hw 4, exercise 4)',
                2,
                None,
-               'system-of-isolated-particles'),
-              ('The Torque', 2, None, 'the-torque'),
+               'the-torque-example-1-hw-4-exercise-4'),
+              ('The Torque, Example 1 (hw 4, exercise 4)',
+               2,
+               None,
+               'the-torque-example-1-hw-4-exercise-4'),
+              ('The Torque, Example 1 (hw 4, exercise 4)',
+               2,
+               None,
+               'the-torque-example-1-hw-4-exercise-4'),
+              ('The Torque, Example 2', 2, None, 'the-torque-example-2'),
               ('Chain Rule and Partial Derivatives',
                2,
                None,
                'chain-rule-and-partial-derivatives'),
+              ('System of Isolated Particles',
+               2,
+               None,
+               'system-of-isolated-particles'),
               ('Work, Energy, Momentum and Conservation laws',
                2,
                None,
@@ -201,7 +211,7 @@ MathJax.Hub.Config({
 <center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
 <br>
 <p>
-<center><h4>Feb 9, 2021</h4></center> <!-- date -->
+<center><h4>Feb 10, 2021</h4></center> <!-- date -->
 <br>
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -493,11 +503,7 @@ $$
 Now, one can sum over all the objects/particles and obtain
 
 $$
-\begin{eqnarray}
-\frac{d}{dt}\sum_i m_iv_i&=&\sum_{ij, i\ne j}^N\boldsymbol{F}_{ij}\\
-\nonumber
-&=&0.
-\end{eqnarray}
+\frac{d}{dt}\sum_i m_iv_i=\sum_{ij, i\ne j}^N\boldsymbol{F}_{ij}=0.
 $$
 
 <p>
@@ -535,11 +541,12 @@ external&quot; forces. Thus, Newton's third law leads to the conservation
 of total momentum,
 
 $$
-\begin{eqnarray}
-\boldsymbol{P}&=&\sum_i m_i\boldsymbol{v}_i,\\
-\nonumber
-\frac{d}{dt}\boldsymbol{P}&=&0.
-\end{eqnarray}
+\boldsymbol{P}=\sum_i m_i\boldsymbol{v}_i,
+$$
+
+and we have
+$$
+\frac{d}{dt}\boldsymbol{P}=0.
 $$
 
 <p>
@@ -609,9 +616,7 @@ $$
 The rate of change of \( \bar{x} \) is
 
 $$
-\begin{eqnarray}
-\dot{\bar{x}}&=&\frac{1}{M}\sum_i m_i\dot{x}_i=\frac{1}{M}P_x.
-\end{eqnarray}
+\dot{\bar{x}}=\frac{1}{M}\sum_i m_i\dot{x}_i=\frac{1}{M}P_x.
 $$
 
 <p>
@@ -625,24 +630,17 @@ mass is fixed.
 <h2 id="conservation-of-angular-momentum">Conservation of Angular Momentum </h2>
 
 <p>
-Consider a case where the force always points radially,
+The angular momentum is defined as
 
 $$
 \begin{equation}
-\boldsymbol{F}(\boldsymbol{r})=F(r)\hat{r},
+\boldsymbol{L}=\boldsymbol{r}\times\boldsymbol{p}=m\boldsymbol{r}\times\boldsymbol{v}.
 \label{_auto6}
 \end{equation}
 $$
 
 <p>
-where \( \hat{r} \) is a unit vector pointing outward from the origin. The angular momentum is defined as
-
-$$
-\begin{equation}
-\boldsymbol{L}=\boldsymbol{r}\times\boldsymbol{p}=m\boldsymbol{r}\times\boldsymbol{v}.
-\label{_auto7}
-\end{equation}
-$$
+It means that the angular momentum is perpendicular to the plane defined by position \( \boldsymbol{r} \) and the momentum \( \boldsymbol{p} \) via \( \boldsymbol{r}\times \boldsymbol{p} \).
 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -653,53 +651,12 @@ $$
 The rate of change of the angular momentum is
 
 $$
-\begin{eqnarray}
-\frac{d\boldsymbol{L}}{dt}&=&m\boldsymbol{v}\times\boldsymbol{v}+m\boldsymbol{r}\times\dot{\boldsymbol{v}}\\
-\nonumber
-&=&m\boldsymbol{v}\times\boldsymbol{v}+\boldsymbol{r}\times{\boldsymbol{F}}=0.
-\end{eqnarray}
+\frac{d\boldsymbol{L}}{dt}=m\boldsymbol{v}\times\boldsymbol{v}+m\boldsymbol{r}\times\dot{\boldsymbol{v}}=\boldsymbol{r}\times{\boldsymbol{F}}
 $$
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="rewriting-the-equations">Rewriting the Equations </h2>
 
 <p>
 The first term is zero because \( \boldsymbol{v} \) is parallel to itself, and the
-second term is zero because \( \boldsymbol{F} \) is parallel to \( \boldsymbol{r} \).
-
-<p>
-As an aside, one can see from the Levi-Civita symbol that the cross
-product of a vector with itself is zero. Here, we consider a vector
-
-$$
-\begin{eqnarray}
-\boldsymbol{V}&=&\boldsymbol{A}\times\boldsymbol{A},\\
-\nonumber
-V_i&=&(\boldsymbol{A}\times\boldsymbol{A})_i=\sum_{jk}\epsilon_{ijk}A_jA_k.
-\end{eqnarray}
-$$
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="two-main-contributions">Two main Contributions </h2>
-
-<p>
-For any term \( i \), there are two contributions. For example, for \( i \)
-denoting the \( x \) direction, either \( j \) denotes the \( y \) direction and
-\( k \) denotes the \( z \) direction, or vice versa, so
-
-$$
-\begin{equation}
-V_1=\epsilon_{123}A_2A_3+\epsilon_{132}A_3A_2.
-\label{_auto8}
-\end{equation}
-$$
-
-<p>
-This is zero by the antisymmetry of \( \epsilon \) under permutations.
+second term defines the so-called torque. If \( \boldsymbol{F} \) is parallel to \( \boldsymbol{r} \) then the torque is zero and we say that angular momentum is conserved.
 
 <p>
 If the force is not radial, \( \boldsymbol{r}\times\boldsymbol{F}\ne 0 \) as above, and angular momentum is no longer conserved,
@@ -707,7 +664,7 @@ If the force is not radial, \( \boldsymbol{r}\times\boldsymbol{F}\ne 0 \) as abo
 $$
 \begin{equation}
 \frac{d\boldsymbol{L}}{dt}=\boldsymbol{r}\times\boldsymbol{F}\equiv\boldsymbol{\tau},
-\label{_auto9}
+\label{_auto7}
 \end{equation}
 $$
 
@@ -717,33 +674,81 @@ where \( \boldsymbol{\tau} \) is the torque.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="system-of-isolated-particles">System of Isolated Particles </h2>
+<h2 id="the-torque-example-1-hw-4-exercise-4">The Torque, Example 1 (hw 4, exercise 4) </h2>
 
 <p>
-For a system of isolated particles, one can write
+Let us assume we have an initial position \( \boldsymbol{r}_0=x_0\boldsymbol{e}_1+y_0\boldsymbol{e}_2 \) at a time \( t_0=0 \).
+We add now a force in the positive \( x \)-direction
+$$
+\boldsymbol{F}=F_x\boldsymbol{e}_1=frac{d\boldsymbol{p}}{dt},
+$$
 
-$$
-\begin{eqnarray}
-\frac{d}{dt}\sum_i\boldsymbol{L}_i&=&\sum_{i\ne j}\boldsymbol{r}_i\times \boldsymbol{F}_{ij}\\
-\nonumber
-&=&\frac{1}{2}\sum_{i\ne j} \boldsymbol{r}_i\times \boldsymbol{F}_{ij}+\boldsymbol{r}_j\times\boldsymbol{F}_{ji}\\
-\nonumber
-&=&\frac{1}{2}\sum_{i\ne j} (\boldsymbol{r}_i-\boldsymbol{r}_j)\times\boldsymbol{F}_{ij}=0,
-\end{eqnarray}
-$$
+where we used the force as defined by the time derivative of the momentum.
 
 <p>
-where the last step used Newton's third law,
-\( \boldsymbol{F}_{ij}=-\boldsymbol{F}_{ji} \). If the forces between the particles are
-radial, i.e. \( \boldsymbol{F}_{ij} ~||~ (\boldsymbol{r}_i-\boldsymbol{r}_j) \), then each term in
-the sum is zero and the net angular momentum is fixed. Otherwise, you
-could imagine an isolated system that would start spinning
-spontaneously.
+We can use this force (and its pertinent acceleration) to find the velocity via the relation
+$$
+\boldsymbol{v}(t)=\boldsymbol{v}_0+\int_{t_0}^t\boldsymbol{a}dt',
+$$
+
+and with \( \boldsymbol{v}_0=0 \) we have
+$$
+\boldsymbol{v}(t)=\int_{t_0}^t\frac{\boldsymbol{F}}{m}dt',
+$$
+
+where \( m \) is the mass of the object.
 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="the-torque">The Torque </h2>
+<h2 id="the-torque-example-1-hw-4-exercise-4">The Torque, Example 1 (hw 4, exercise 4) </h2>
+
+<p>
+Since the force acts only in the \( x \)-direction, we have after integration
+$$
+\boldsymbol{v}(t)=\frac{\boldsymbol{F}}{m}t=\frac{F_x}{m}t\boldsymbol{e}_1=v_x(t)\boldsymbol{e}_1.
+$$
+
+<p>
+The momentum is in turn given by \( \boldsymbol{p}=p_x\boldsymbol{e}_1=mv_x\boldsymbol{e}_1=F_xt\boldsymbol{e}_1 \).
+
+<p>
+Integrating over time again we find the final position as (note the force depends only on the \( x \)-direction)
+$$
+\boldsymbol{r}(t)=(x_0+\frac{1}{2}\frac{F_x}{m}t^2) \boldsymbol{e}_1+y_0\boldsymbol{e}_2.
+$$
+
+There is no change in the position in the \( y \)-direction since the force acts only in the \( x \)-direction.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="the-torque-example-1-hw-4-exercise-4">The Torque, Example 1 (hw 4, exercise 4) </h2>
+
+<p>
+We can now compute the angular momentum given by
+$$
+\boldsymbol{l}=\boldsymbol{r}\times\boldsymbol{p}=\left[(x_0+\frac{1}{2}\frac{F_x}{m}t^2) \boldsymbol{e}_1+y_0\boldsymbol{e}_2\right]\times \frac{F_xt}{m}\boldsymbol{e}_1.
+$$
+
+Computing the cross product we find
+
+$$
+\boldsymbol{l}=-y_0F_xt\boldsymbol{e}_3=-y_0F_xt\boldsymbol{e}_z.
+$$
+
+The torque is the time derivative of the angular momentum and we have
+
+$$
+\boldsymbol{\tau}=-y_0F_x\boldsymbol{e}_3=-y_0F_x\boldsymbol{e}_z.
+$$
+
+The torque is non-zero and angular momentum is not conserved.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="the-torque-example-2">The Torque, Example 2 </h2>
 
 <p>
 One can write the torque about a given axis, which we will denote as \( \hat{z} \), in polar coordinates, where
@@ -797,6 +802,32 @@ there is no torque about the \( z \) axis and \( L_z \) is conserved.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
+<h2 id="system-of-isolated-particles">System of Isolated Particles </h2>
+
+<p>
+For a system of isolated particles, one can write
+
+$$
+\begin{eqnarray}
+\frac{d}{dt}\sum_i\boldsymbol{L}_i&=&\sum_{i\ne j}\boldsymbol{r}_i\times \boldsymbol{F}_{ij}\\
+\nonumber
+&=&\frac{1}{2}\sum_{i\ne j} \boldsymbol{r}_i\times \boldsymbol{F}_{ij}+\boldsymbol{r}_j\times\boldsymbol{F}_{ji}\\
+\nonumber
+&=&\frac{1}{2}\sum_{i\ne j} (\boldsymbol{r}_i-\boldsymbol{r}_j)\times\boldsymbol{F}_{ij}=0,
+\end{eqnarray}
+$$
+
+<p>
+where the last step used Newton's third law,
+\( \boldsymbol{F}_{ij}=-\boldsymbol{F}_{ji} \). If the forces between the particles are
+radial, i.e. \( \boldsymbol{F}_{ij} ~||~ (\boldsymbol{r}_i-\boldsymbol{r}_j) \), then each term in
+the sum is zero and the net angular momentum is fixed. Otherwise, you
+could imagine an isolated system that would start spinning
+spontaneously.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
 <h2 id="work-energy-momentum-and-conservation-laws">Work, Energy, Momentum and Conservation laws </h2>
 
 <p>
@@ -815,7 +846,7 @@ Energy is conserved in the case where the potential energy, \( V(\boldsymbol{r})
 $$
 \begin{equation}
 \boldsymbol{F}(\boldsymbol{r})=-\nabla V(\boldsymbol{r}).
-\label{_auto10}
+\label{_auto8}
 \end{equation}
 $$
 
@@ -860,7 +891,7 @@ Inverting the expression for kinetic energy,
 $$
 \begin{equation}
 v=\sqrt{2K/m}=\sqrt{2(E-V)/m},
-\label{_auto11}
+\label{_auto9}
 \end{equation}
 $$
 
@@ -870,7 +901,7 @@ allows one to solve for the one-dimensional trajectory \( x(t) \), by finding \(
 $$
 \begin{equation}
 t=\int_{x_0}^x \frac{dx'}{v(x')}=\int_{x_0}^x\frac{dx'}{\sqrt{2(E-V(x'))/m}}.
-\label{_auto12}
+\label{_auto10}
 \end{equation}
 $$
 
@@ -1285,7 +1316,7 @@ We have a differential equation
 $$
 \begin{equation}
 y'(t_i)=f(t_i,y_i)   
-\label{_auto13}
+\label{_auto11}
 \end{equation}
 $$
 
@@ -1318,7 +1349,7 @@ at \( v_0 \). A simple variation is to determine \( x_{n+1} \) using the velocit
 $$
 \begin{equation} 
 y_{n+1}=y_{n}+ v_{n+1}+O(\Delta t^2)
-\label{_auto14}
+\label{_auto12}
 \end{equation}
 $$
 
@@ -1326,7 +1357,7 @@ and
 $$
 \begin{equation}
 v_{n+1}=v_{n}+(\Delta t) a_{n}+O(\Delta t^2).
-\label{_auto15}
+\label{_auto13}
 \end{equation}
 $$
 
