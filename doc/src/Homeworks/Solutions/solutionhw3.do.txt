@@ -253,16 +253,16 @@ time will be used to compare with the numerical results in exercise 6.
 The forces acting on the ball are the gravitational force $\bm{G}=-mg\bm{e}_y$ and the air resistance $\bm{F}_D=-D\bm{v}v$ with $v$ the absolute value of the velocity. The accelaration in the $x$-direction is
 !bt
 \[
-a_x = -\frac{Dv\vert v_x\vert}{m},
+a_x = -\frac{Dv_x\vert v\vert}{m},
 \]
 !et
 and in the $y$-direction
 !bt
 \[
-a_y = -g-\frac{Dv\vert v_y\vert}{m},
+a_y = -g-\frac{Dv_y\vert v\vert}{m},
 \]
 !et
-where $v=\sqrt{v_x^2+v_y^2}$.  Note that due to the dependence on $v_x$ and $v_y$ in each equation, it means we may not be able find an analytical solution. In this case we cannot.
+where $\vert v\vert=\sqrt{v_x^2+v_y^2}$.  Note that due to the dependence on $v_x$ and $v_y$ in each equation, it means we may not be able find an analytical solution. In this case we cannot.
 In order to compare our code with analytical results, we will thus study the problem only in the $y$-direction.
 
 In the general code below we would write this as (pseudocode style)
