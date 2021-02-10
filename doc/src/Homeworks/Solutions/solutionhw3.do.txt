@@ -74,7 +74,7 @@ or if we replace $\bm{e}_y$ with $\bm{e}_2$ (the unit vectors in the $y$-directi
 
 _Answer 1a:_
 
-Note that velocity in the $x$-direction is a constant and is not affected by the force which acts only in the $y$-direction.
+Note that the velocity in the $x$-direction is a constant and is not affected by the force which acts only in the $y$-direction.
 This means that we can decouple the two degrees of freedom and skip the vector symbols.
 We have then a constant velocity in the $x$-direction
 !bt
@@ -135,7 +135,7 @@ y(t) = -10\mathrm{m/s^2}t^2-\frac{5}{3}\mathrm{m/s^3}t^3,
 and use $t=1/50$s and find that
 !bt
 \[
-y = -4.01\times 10^{-3} \mathrm{m/s}.
+y = -0.004013 \mathrm{m}.
 \]
 !et
 
@@ -154,10 +154,10 @@ which leads to
 
 !bt
 \[
-\alpha = -0.23
+\alpha = -0.23,
 \]
 !et
-
+in degrees (not radians).
 
 === Exercise 2 (10 pt), Drag force, Taylor exercise 2.3 ===
 
@@ -253,20 +253,22 @@ time will be used to compare with the numerical results in exercise 6.
 The forces acting on the ball are the gravitational force $\bm{G}=-mg\bm{e}_y$ and the air resistance $\bm{F}_D=-D\bm{v}v$ with $v$ the absolute value of the velocity. The accelaration in the $x$-direction is
 !bt
 \[
-a_x = -\frac{Dv_x\vert v_x\vert}{m},
+a_x = -\frac{Dv\vert v_x\vert}{m},
 \]
 !et
 and in the $y$-direction
 !bt
 \[
-a_y = -g-\frac{Dv_y\vert v_y\vert}{m}.
+a_y = -g-\frac{Dv\vert v_y\vert}{m},
 \]
 !et
+where $v=\sqrt{v_x^2+v_y^2}$.  Note that due to the dependence on $v_x$ and $v_y$ in each equation, it means we may not be able find an analytical solution. In this case we cannot.
+In order to compare our code with analytical results, we will thus study the problem only in the $y$-direction.
 
-In the code below we would write this as
+In the general code below we would write this as (pseudocode style)
 !bc pycod
-    ax = -D*vx[i]*abs(vx[i])/m
-    ay = -g - D*vy[i]*abs(vy[i])/m
+    ax = -D*vx[i]*abs(v[i])/m
+    ay = -g - D*vy[i]*abs(v[i])/m
 !ec
 
 
@@ -445,7 +447,14 @@ _Answers 6a, 6b and 6c:_
 
 The codes follow here. Running them allows you to probe the various parameters and compare with analytical solutions as well. 
 
+The analytical results are discussed in the lecture notes, see the slides of the week of January 25-29 URL:"https://mhjensen.github.io/Physics321/doc/pub/week4/html/week4-bs.html".
 
+
+The codes here show two different ways of solving the two-dimensional problem. The first one defines arrays for the $x$- and $y$-directions explicitely, while the second code uses a more
+compact (and thus closer to the mathmeatics) notation with a full two-dimensional vector.
+
+
+The initial conditions for the first example are set so that we only an object falling in the $y$-direction. Then it makes sense to compare with the analytical solution. If you change the initial conditions, this comparison is no longer correct.
 
 !bc pycod
 # Exercise 6, hw3, brute force way with declaration of vx, vy, x and y
@@ -505,20 +514,18 @@ vy = np.zeros(n)
 y = np.zeros(n)
 vx = np.zeros(n)
 x = np.zeros(n)
-xanalytic = np.zeros(n)
 yanalytic = np.zeros(n)
-# Initial conditions
-vx[0] = 10.0 #m/s
+# Initial conditions, note that these correspond to an object falling in the y-direction only.
+vx[0] = 0.0 #m/s
 vy[0] = 0.0  #m/s
 y[0] = 10.0 #m
 x[0] = 0.0 #m
 yanalytic[0] = y[0]
-xanalytic[0] = x[0]
 # Start integrating using Euler's method
 for i in range(n-1):
     # expression for acceleration, note the absolute value and division by mass
-    ax = -D*vx[i]*abs(vx[i])/m
-    ay = -g - D*vy[i]*abs(vy[i])/m
+    ax = -D*vx[i]*sqrt(vx[i]**2+vy[i]**2)/m
+    ay = -g - D*vy[i]*sqrt(vx[i]**2+vy[i]**2)/m
     # update velocity and position
     vx[i+1] = vx[i] + DeltaT*ax
     x[i+1] = x[i] + DeltaT*vx[i]
@@ -527,13 +534,12 @@ for i in range(n-1):
     # update time to next time step and compute analytical answer
     t[i+1] = t[i] + DeltaT
     yanalytic[i+1] = y[0]-(vT*vT/g)*log(cosh(g*t[i+1]/vT))+vy[0]*t[i+1]
-    xanalytic[i+1] = m*log(1.+t[i+1]*vx[0]*D/m)/D
     if ( y[i+1] < 0.0):
         break
 data = {'t[s]': t,
         'Relative error in y': abs((y-yanalytic)/yanalytic),
         'vy[m/s]': vy,
-        'Relative error in x': abs((x-xanalytic)/xanalytic),
+        'x[m]': x,
         'vx[m/s]': vx
 }
 NewData = pd.DataFrame(data)
@@ -561,6 +567,12 @@ plt.show()
 
 
 !ec
+
+We see a good agreement with the analytical solution. This agreement
+improves if we decrease $\Delta t$. Furthermore, since we put the
+initial velocity and position in the $x$ direction to zero, 
+the motion in the $x$-direction is
+zero, as expected.
 
 
 !bc pycod
@@ -633,15 +645,22 @@ for i in range(n-1):
     r[i+1] = r[i] + DeltaT*v[i]
     t[i+1] = t[i] + DeltaT
 
-fig, axs = plt.subplots(2, 1)
+fig, axs = plt.subplots(4, 1)
 axs[0].plot(t, r[:,1])
 axs[0].set_xlim(0, tfinal)
 axs[0].set_ylabel('y')
 axs[1].plot(t, v[:,1])
 axs[1].set_ylabel('vy[m/s]')
 axs[1].set_xlabel('time[s]')
+axs[2].plot(t, r[:,0])
+axs[2].set_xlim(0, tfinal)
+axs[2].set_ylabel('x')
+axs[3].plot(t, v[:,0])
+axs[3].set_ylabel('vx[m/s]')
+axs[3].set_xlabel('time[s]')
+
 fig.tight_layout()
-save_fig("YEulerIntegration")
+save_fig("EulerIntegration")
 plt.show()
 
 
