@@ -47,9 +47,9 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Office Hours Julie Butler |    
 |------------------|
-| Thursday 11am-12pm   | 
-|------------------|
 | Monday  2pm-3pm   | 
+| Thursday 11am-12pm   | 
+
 
 | Learning Assistant | Email |
 |--------------|------| 
