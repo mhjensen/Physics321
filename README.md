@@ -47,7 +47,9 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Office Hours Julie Butler |    
 |------------------|
-| Thursday 10am-12pm   | 
+| Monday  2pm-3pm   | 
+| Thursday 11am-12pm   | 
+
 
 | Learning Assistant | Email |
 |--------------|------| 
@@ -134,7 +136,8 @@ Solution for analytical part as handwritten note (exercises 1-5): https://github
 ### Week 6, February 8-12, 2021
 - Monday 2/8: More on Conservation laws, momentum conservation, 4th homework, due February 15
 - Wednesday 2/10: Examples of applications of conservation laws, angular momentum conservation. Video of lecture at https://mediaspace.msu.edu/media/t/1_ff1x7fjr and handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesFeb10.pdf
-- Friday 2/12:  Conservation laws and further examples
+- Friday 2/12:  Conservation laws and further examples. Video of lecture at https://mediaspace.msu.edu/media/t/1_98lgx23c and handwritten notes at 
+https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesFeb12.pdf
 - Good reads are Taylor sections 3.1-3.5 and 4.1-4.3 and AMS chapters 10-14.
 Solution hw 3 as Jupyter notebook at: https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionhw3.ipynb
 
