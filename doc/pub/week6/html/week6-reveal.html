@@ -879,7 +879,7 @@ Energy is conserved in the case where the potential energy, \( V(\boldsymbol{r})
 <p>&nbsp;<br>
 $$
 \begin{equation}
-\boldsymbol{F}(\boldsymbol{r})=-\nabla V(\boldsymbol{r}).
+\boldsymbol{F}(\boldsymbol{r})=-\boldsymbol{\nabla} V(\boldsymbol{r}).
 \tag{8}
 \end{equation}
 $$
@@ -918,7 +918,7 @@ The same proof can be written more compactly with vector notation,
 $$
 \begin{eqnarray}
 \frac{d}{dt}\left(\frac{m}{2}v^2+V(\boldsymbol{r})\right)
-&=&m\boldsymbol{v}\cdot\dot{\boldsymbol{v}}+\nabla V(\boldsymbol{r})\cdot\dot{\boldsymbol{r}}\\
+&=&m\boldsymbol{v}\cdot\dot{\boldsymbol{v}}+\boldsymbol{\nabla} V(\boldsymbol{r})\cdot\dot{\boldsymbol{r}}\\
 \nonumber
 &=&\boldsymbol{v}\cdot\boldsymbol{F}-\boldsymbol{F}\cdot\boldsymbol{v}=0.
 \end{eqnarray}
@@ -985,6 +985,264 @@ $$
 \nonumber
 x&=&x_{\rm max}\sin\omega t,~~~\omega=\sqrt{k/m}.
 \end{eqnarray}
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="conservative-forces">Conservative forces </h2>
+
+<p>
+We say a force is conservative if it satisfies the following conditions
+
+<ol>
+<p><li> The force \( \boldsymbol{F} \) acting on an object only depends on the position \( \boldsymbol{r} \), that is \( \boldsymbol{F}=\boldsymbol{F}(\boldsymbol{r} \).</li>
+<p><li> For any two points \( \boldsymbol{r}_1 \) and \( \boldsymbol{r}_2 \), the work done by the force \( \boldsymbol{F} \) on the displacement between these two points is independent of the path taken.</li>
+<p><li> Finally, the <b>curl</b> of the force is zero \( \boldsymbol{\nabla}\times\boldsymbol{F}=0 \).</li>
+</ol>
+</section>
+
+
+<section>
+<h2 id="forces-and-potentials">Forces and Potentials </h2>
+
+<p>
+The energy \( E \) of a given system is defined as the sum of kinetic and potential energies,
+<p>&nbsp;<br>
+$$
+E=K+V(\boldsymbol{r}).
+$$
+<p>&nbsp;<br>
+
+<p>
+We define the potential energy at a point \( \boldsymbol{r} \) as the negative work done from a starting point \( \boldsymbol{r}_0 \) to a final point \( \boldsymbol{r} \)
+
+<p>&nbsp;<br>
+$$
+V(\boldsymbol{r})=-W(\boldsymbol{r}_0\rightarrow\boldsymbol{r})= -\int_{\boldsymbol{r}_0}^{\boldsymbol{r}}d\boldsymbol{r}'\boldsymbol{F}(\boldsymbol{r}').
+$$
+<p>&nbsp;<br>
+
+If the potential depends on the path taken between these two points there is no unique potential.
+</section>
+
+
+<section>
+<h2 id="example">Example </h2>
+
+<p>
+We study a classical electron which moves in the \( x \)-direction along a surface. The force from the surface is
+<p>&nbsp;<br>
+$$
+\boldsymbol{F}(x)=-F_0\sin{(\frac{2\pi x}{b})}\boldsymbol{e}_x.
+$$
+<p>&nbsp;<br>
+
+The constant \( b \) represents the distance between atoms at the surface of the material, \( F_0 \) is a constant and \( x \) is the position of the electron.
+
+<p>
+This is indeed a conservative force since it depends only on position
+and its <b>curl</b> is zero. This means that energy is conserved and the
+integral over the work done by the force is independent of the path
+taken.
+</section>
+
+
+<section>
+<h2 id="example-continues">Example Continues </h2>
+
+<p>
+Using the work-energy theorem we can find the work \( W \) done when
+moving an electron from a position \( x_0 \) to a final position \( x \)
+through the integral
+
+<p>&nbsp;<br>
+$$
+W=-\int_{x_0}^x \boldsymbol{F}(x')dx' =  \int_{x_0}^x F_0\sin{(\frac{2\pi x'}{b})} dx',
+$$
+<p>&nbsp;<br>
+
+which results in
+<p>&nbsp;<br>
+$$
+W=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right].
+$$
+<p>&nbsp;<br>
+
+Since this is related to the change in kinetic energy we have, with \( v_0 \) being the initial velocity at a  time \( t_0 \),
+<p>&nbsp;<br>
+$$
+v  = \pm\sqrt{\frac{2}{m}\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right]+v_0^2}.
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="the-potential-energy-from-this-example">The potential energy from this example </h2>
+
+<p>
+The potential energy, due to energy conservation is
+<p>&nbsp;<br>
+$$
+V(x)=V(x_0)+\frac{1}{2}mv_0^2-\frac{1}{2}mv^2,
+$$
+<p>&nbsp;<br>
+
+with \( v \) given by the previous answer. 
+We can now, in order to find a more explicit expression for the potential energy at a given value \( x \), define a zero level value for the potential. The potential is defined , using the work-energy theorem , as
+<p>&nbsp;<br>
+$$
+V(x)=V(x_0)+\int_{x_0}^x (-F(x'))dx',
+$$
+<p>&nbsp;<br>
+
+and if you recall the definition of the indefinite integral, we can rewrite this as
+<p>&nbsp;<br>
+$$
+V(x)=\int (-F(x'))dx'+C,
+$$
+<p>&nbsp;<br>
+
+where \( C \) is an undefined constant. The force is defined as the gradient of the potential, and in that case the undefined constant vanishes. The constant does not affect the force we derive from the potential.
+
+<p>
+We have then
+<p>&nbsp;<br>
+$$
+V(x)=V(x_0)-\int_{x_0}^x \boldsymbol{F}(x')dx',
+$$
+<p>&nbsp;<br>
+
+which results in
+<p>&nbsp;<br>
+$$
+V(x)=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right]+V(x_0).
+$$
+<p>&nbsp;<br>
+
+We can now define
+<p>&nbsp;<br>
+$$
+\frac{F_0b}{2\pi}\cos{(\frac{2\pi x_0}{b})}=V(x_0),
+$$
+<p>&nbsp;<br>
+
+which gives 
+<p>&nbsp;<br>
+$$
+V(x)=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}\right].
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="force-and-potential">Force and Potential </h2>
+
+<p>
+We have defined work as the energy resulting from a net force acting
+on an object (or sseveral objects), that is
+
+<p>&nbsp;<br>
+$$
+W(\boldsymbol{r}\rightarrow \boldsymbol{r}+d\boldsymbol{r})= \boldsymbol{F}(\boldsymbol{r})d\boldsymbol{r}.
+$$
+<p>&nbsp;<br>
+
+<p>
+If we write out this for each component we have
+
+<p>&nbsp;<br>
+$$
+W(\boldsymbol{r}\rightarrow \boldsymbol{r}+d\boldsymbol{r})=\boldsymbol{F}(\boldsymbol{r})d\boldsymbol{r}=F_xdx+F_ydy+F_zdz.
+$$
+<p>&nbsp;<br>
+
+<p>
+The work done from an initial position to a final one defines also the difference in potential energies
+
+<p>&nbsp;<br>
+$$
+W(\boldsymbol{r}\rightarrow \boldsymbol{r}+d\boldsymbol{r})=-\left[V(\boldsymbol{r}+d\boldsymbol{r})-V(\boldsymbol{r})\right].
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="boldsymbol-f-boldsymbol-r-boldsymbol-nabla-v-boldsymbol-r">\( \boldsymbol{F}(\boldsymbol{r})=-\boldsymbol{\nabla} V(\boldsymbol{r}) \) </h2>
+
+<p>
+We can write out the differences in potential energies as
+
+<p>&nbsp;<br>
+$$
+V(\boldsymbol{r}+d\boldsymbol{r})-V(\boldsymbol{r})=V(x+dx,y+dy,z+dz)-V(x,y,z)=dV,
+$$
+<p>&nbsp;<br>
+
+and using the expression the differential of a multi-variable function \( f(x,y,z) \) 
+<p>&nbsp;<br>
+$$
+df=\frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy+\frac{\partial f}{\partial z}dz,
+$$
+<p>&nbsp;<br>
+
+we can write the expression for the work done as
+<p>&nbsp;<br>
+$$
+W(\boldsymbol{r}\rightarrow \boldsymbol{r}+d\boldsymbol{r})=-dV=-\left[\frac{\partial V}{\partial x}dx+\frac{\partial V}{\partial y}dy+\frac{\partial V}{\partial z}dz \right].
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="final-expression">Final expression </h2>
+
+<p>
+Comparing the last equation with 
+<p>&nbsp;<br>
+$$
+W(\boldsymbol{r}\rightarrow \boldsymbol{r}+d\boldsymbol{r})=F_xdx+F_ydy+F_zdz,
+$$
+<p>&nbsp;<br>
+
+we have
+<p>&nbsp;<br>
+$$
+F_xdx+F_ydy+F_zdz=-\left[\frac{\partial V}{\partial x}dx+\frac{\partial V}{\partial y}dy+\frac{\partial V}{\partial z}dz \right],
+$$
+<p>&nbsp;<br>
+
+<p>
+leading to
+<p>&nbsp;<br>
+$$
+F_x=-\frac{\partial V}{\partial x},
+$$
+<p>&nbsp;<br>
+
+and
+<p>&nbsp;<br>
+$$
+F_y=-\frac{\partial V}{\partial y},
+$$
+<p>&nbsp;<br>
+
+and
+<p>&nbsp;<br>
+$$
+F_z=-\frac{\partial V}{\partial z},
+$$
+<p>&nbsp;<br>
+
+or just
+<p>&nbsp;<br>
+$$
+\boldsymbol{F}=-\frac{\partial V}{\partial x}\boldsymbol{e}_1-\frac{\partial V}{\partial y}\boldsymbol{e}_2-\frac{\partial V}{\partial z}\boldsymbol{e}_3=-\boldsymbol{\nabla}V(\boldsymbol{r}).
 $$
 <p>&nbsp;<br>
 </section>

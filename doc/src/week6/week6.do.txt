@@ -600,7 +600,7 @@ equivalently $t(x)$.
 Energy is conserved in the case where the potential energy, $V(\bm{r})$, depends only on position, and not on time. The force is determined by $V$,
 !bt
 \begin{equation}
-\bm{F}(\bm{r})=-\nabla V(\bm{r}).
+\bm{F}(\bm{r})=-\bm{\nabla} V(\bm{r}).
 \end{equation}
 !et
 
@@ -630,7 +630,7 @@ The same proof can be written more compactly with vector notation,
 !bt
 \begin{eqnarray}
 \frac{d}{dt}\left(\frac{m}{2}v^2+V(\bm{r})\right)
-&=&m\bm{v}\cdot\dot{\bm{v}}+\nabla V(\bm{r})\cdot\dot{\bm{r}}\\
+&=&m\bm{v}\cdot\dot{\bm{v}}+\bm{\nabla} V(\bm{r})\cdot\dot{\bm{r}}\\
 \nonumber
 &=&\bm{v}\cdot\bm{F}-\bm{F}\cdot\bm{v}=0.
 \end{eqnarray}
@@ -682,6 +682,219 @@ by the substitution $\sin\theta=x/x_{\rm max}$.
 \nonumber
 x&=&x_{\rm max}\sin\omega t,~~~\omega=\sqrt{k/m}.
 \end{eqnarray}
+!et
+
+
+!split
+===== Conservative forces =====
+
+We say a force is conservative if it satisfies the following conditions
+o The force $\bm{F}$ acting on an object only depends on the position $\bm{r}$, that is $\bm{F}=\bm{F}(\bm{r}$.
+o For any two points $\bm{r}_1$ and $\bm{r}_2$, the work done by the force $\bm{F}$ on the displacement between these two points is independent of the path taken.
+o Finally, the _curl_ of the force is zero $\bm{\nabla}\times\bm{F}=0$.
+
+
+!split
+===== Forces and Potentials =====
+
+The energy $E$ of a given system is defined as the sum of kinetic and potential energies,
+!bt
+\[
+E=K+V(\bm{r}).
+\]
+!et
+
+We define the potential energy at a point $\bm{r}$ as the negative work done from a starting point $\bm{r}_0$ to a final point $\bm{r}$ 
+
+!bt
+\[
+V(\bm{r})=-W(\bm{r}_0\rightarrow\bm{r})= -\int_{\bm{r}_0}^{\bm{r}}d\bm{r}'\bm{F}(\bm{r}').
+\]
+!et
+If the potential depends on the path taken between these two points there is no unique potential.
+
+
+!split
+===== Example =====
+
+We study a classical electron which moves in the $x$-direction along a surface. The force from the surface is
+!bt
+\[
+\bm{F}(x)=-F_0\sin{(\frac{2\pi x}{b})}\bm{e}_x.
+\]
+!et
+The constant $b$ represents the distance between atoms at the surface of the material, $F_0$ is a constant and $x$ is the position of the electron.
+
+This is indeed a conservative force since it depends only on position
+and its _curl_ is zero. This means that energy is conserved and the
+integral over the work done by the force is independent of the path
+taken.
+
+!split
+===== Example Continues =====
+
+
+Using the work-energy theorem we can find the work $W$ done when
+moving an electron from a position $x_0$ to a final position $x$
+through the integral
+
+!bt
+\[
+W=-\int_{x_0}^x \bm{F}(x')dx' =  \int_{x_0}^x F_0\sin{(\frac{2\pi x'}{b})} dx',
+\]
+!et
+which results in
+!bt
+\[
+W=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right].
+\]
+!et
+Since this is related to the change in kinetic energy we have, with $v_0$ being the initial velocity at a  time $t_0$,
+!bt
+\[
+v  = \pm\sqrt{\frac{2}{m}\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right]+v_0^2}.
+\]
+!et
+
+!split
+===== The potential energy from this example =====
+
+The potential energy, due to energy conservation is
+!bt
+\[
+V(x)=V(x_0)+\frac{1}{2}mv_0^2-\frac{1}{2}mv^2,
+\]
+!et
+with $v$ given by the previous answer. 
+We can now, in order to find a more explicit expression for the potential energy at a given value $x$, define a zero level value for the potential. The potential is defined , using the work-energy theorem , as
+!bt
+\[
+V(x)=V(x_0)+\int_{x_0}^x (-F(x'))dx',
+\]
+!et
+and if you recall the definition of the indefinite integral, we can rewrite this as
+!bt
+\[
+V(x)=\int (-F(x'))dx'+C,
+\]
+!et
+where $C$ is an undefined constant. The force is defined as the gradient of the potential, and in that case the undefined constant vanishes. The constant does not affect the force we derive from the potential.
+
+We have then
+!bt
+\[
+V(x)=V(x_0)-\int_{x_0}^x \bm{F}(x')dx',
+\]
+!et
+which results in
+!bt
+\[
+V(x)=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right]+V(x_0).
+\]
+!et
+We can now define
+!bt
+\[
+\frac{F_0b}{2\pi}\cos{(\frac{2\pi x_0}{b})}=V(x_0),
+\]
+!et
+which gives 
+!bt
+\[
+V(x)=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}\right].
+\]
+!et
+
+!split
+===== Force and Potential =====
+
+We have defined work as the energy resulting from a net force acting
+on an object (or sseveral objects), that is
+
+!bt
+\[
+W(\bm{r}\rightarrow \bm{r}+d\bm{r})= \bm{F}(\bm{r})d\bm{r}.
+\]
+!et
+
+If we write out this for each component we have
+
+!bt
+\[
+W(\bm{r}\rightarrow \bm{r}+d\bm{r})=\bm{F}(\bm{r})d\bm{r}=F_xdx+F_ydy+F_zdz.
+\]
+!et
+
+The work done from an initial position to a final one defines also the difference in potential energies
+
+!bt
+\[
+W(\bm{r}\rightarrow \bm{r}+d\bm{r})=-\left[V(\bm{r}+d\bm{r})-V(\bm{r})\right].
+\]
+!et
+
+!split
+=====  $\bm{F}(\bm{r})=-\bm{\nabla} V(\bm{r})$ =====
+
+We can write out the differences in potential energies as
+
+!bt
+\[
+V(\bm{r}+d\bm{r})-V(\bm{r})=V(x+dx,y+dy,z+dz)-V(x,y,z)=dV,
+\]
+!et
+and using the expression the differential of a multi-variable function $f(x,y,z)$ 
+!bt
+\[
+df=\frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy+\frac{\partial f}{\partial z}dz,
+\]
+!et
+we can write the expression for the work done as
+!bt
+\[
+W(\bm{r}\rightarrow \bm{r}+d\bm{r})=-dV=-\left[\frac{\partial V}{\partial x}dx+\frac{\partial V}{\partial y}dy+\frac{\partial V}{\partial z}dz \right].
+\]
+!et
+
+!split
+===== Final expression =====
+
+Comparing the last equation with 
+!bt
+\[
+W(\bm{r}\rightarrow \bm{r}+d\bm{r})=F_xdx+F_ydy+F_zdz,
+\]
+!et
+we have
+!bt
+\[
+F_xdx+F_ydy+F_zdz=-\left[\frac{\partial V}{\partial x}dx+\frac{\partial V}{\partial y}dy+\frac{\partial V}{\partial z}dz \right],
+\]
+!et
+
+leading to
+!bt
+\[
+F_x=-\frac{\partial V}{\partial x},
+\]
+!et
+and
+!bt
+\[
+F_y=-\frac{\partial V}{\partial y},
+\]
+!et
+and
+!bt
+\[
+F_z=-\frac{\partial V}{\partial z},
+\]
+!et
+or just
+!bt
+\[
+\bm{F}=-\frac{\partial V}{\partial x}\bm{e}_1-\frac{\partial V}{\partial y}\bm{e}_2-\frac{\partial V}{\partial z}\bm{e}_3=-\bm{\nabla}V(\bm{r}).
+\]
 !et
 
 

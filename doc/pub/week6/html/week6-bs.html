@@ -125,7 +125,22 @@ Automatically generated HTML file from DocOnce source
               ('Harmonic Oscillator Potential',
                2,
                None,
-               'harmonic-oscillator-potential')]}
+               'harmonic-oscillator-potential'),
+              ('Conservative forces', 2, None, 'conservative-forces'),
+              ('Forces and Potentials', 2, None, 'forces-and-potentials'),
+              ('Example', 2, None, 'example'),
+              ('Example Continues', 2, None, 'example-continues'),
+              ('The potential energy from this example',
+               2,
+               None,
+               'the-potential-energy-from-this-example'),
+              ('Force and Potential', 2, None, 'force-and-potential'),
+              ('$\\boldsymbol{F}(\\boldsymbol{r})=-\\boldsymbol{\\nabla} '
+               'V(\\boldsymbol{r})$',
+               2,
+               None,
+               'boldsymbol-f-boldsymbol-r-boldsymbol-nabla-v-boldsymbol-r'),
+              ('Final expression', 2, None, 'final-expression')]}
 end of tocinfo -->
 
 <body>
@@ -196,6 +211,14 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="#net-energy" style="font-size: 80%;"><b>Net Energy</b></a></li>
      <!-- navigation toc: --> <li><a href="#in-vector-notation" style="font-size: 80%;"><b>In Vector Notation</b></a></li>
      <!-- navigation toc: --> <li><a href="#harmonic-oscillator-potential" style="font-size: 80%;"><b>Harmonic Oscillator Potential</b></a></li>
+     <!-- navigation toc: --> <li><a href="#conservative-forces" style="font-size: 80%;"><b>Conservative forces</b></a></li>
+     <!-- navigation toc: --> <li><a href="#forces-and-potentials" style="font-size: 80%;"><b>Forces and Potentials</b></a></li>
+     <!-- navigation toc: --> <li><a href="#example" style="font-size: 80%;"><b>Example</b></a></li>
+     <!-- navigation toc: --> <li><a href="#example-continues" style="font-size: 80%;"><b>Example Continues</b></a></li>
+     <!-- navigation toc: --> <li><a href="#the-potential-energy-from-this-example" style="font-size: 80%;"><b>The potential energy from this example</b></a></li>
+     <!-- navigation toc: --> <li><a href="#force-and-potential" style="font-size: 80%;"><b>Force and Potential</b></a></li>
+     <!-- navigation toc: --> <li><a href="#boldsymbol-f-boldsymbol-r-boldsymbol-nabla-v-boldsymbol-r" style="font-size: 80%;"><b>\( \boldsymbol{F}(\boldsymbol{r})=-\boldsymbol{\nabla} V(\boldsymbol{r}) \)</b></a></li>
+     <!-- navigation toc: --> <li><a href="#final-expression" style="font-size: 80%;"><b>Final expression</b></a></li>
 
         </ul>
       </li>
@@ -866,7 +889,7 @@ equivalently \( t(x) \).
 Energy is conserved in the case where the potential energy, \( V(\boldsymbol{r}) \), depends only on position, and not on time. The force is determined by \( V \),
 $$
 \begin{equation}
-\boldsymbol{F}(\boldsymbol{r})=-\nabla V(\boldsymbol{r}).
+\boldsymbol{F}(\boldsymbol{r})=-\boldsymbol{\nabla} V(\boldsymbol{r}).
 \label{_auto8}
 \end{equation}
 $$
@@ -901,7 +924,7 @@ The same proof can be written more compactly with vector notation,
 $$
 \begin{eqnarray}
 \frac{d}{dt}\left(\frac{m}{2}v^2+V(\boldsymbol{r})\right)
-&=&m\boldsymbol{v}\cdot\dot{\boldsymbol{v}}+\nabla V(\boldsymbol{r})\cdot\dot{\boldsymbol{r}}\\
+&=&m\boldsymbol{v}\cdot\dot{\boldsymbol{v}}+\boldsymbol{\nabla} V(\boldsymbol{r})\cdot\dot{\boldsymbol{r}}\\
 \nonumber
 &=&\boldsymbol{v}\cdot\boldsymbol{F}-\boldsymbol{F}\cdot\boldsymbol{v}=0.
 \end{eqnarray}
@@ -960,6 +983,213 @@ $$
 \nonumber
 x&=&x_{\rm max}\sin\omega t,~~~\omega=\sqrt{k/m}.
 \end{eqnarray}
+$$
+
+<p>
+<!-- !split -->
+
+<h2 id="conservative-forces" class="anchor">Conservative forces </h2>
+
+<p>
+We say a force is conservative if it satisfies the following conditions
+
+<ol>
+<li> The force \( \boldsymbol{F} \) acting on an object only depends on the position \( \boldsymbol{r} \), that is \( \boldsymbol{F}=\boldsymbol{F}(\boldsymbol{r} \).</li>
+<li> For any two points \( \boldsymbol{r}_1 \) and \( \boldsymbol{r}_2 \), the work done by the force \( \boldsymbol{F} \) on the displacement between these two points is independent of the path taken.</li>
+<li> Finally, the <b>curl</b> of the force is zero \( \boldsymbol{\nabla}\times\boldsymbol{F}=0 \).</li>
+</ol>
+
+<!-- !split -->
+
+<h2 id="forces-and-potentials" class="anchor">Forces and Potentials </h2>
+
+<p>
+The energy \( E \) of a given system is defined as the sum of kinetic and potential energies,
+$$
+E=K+V(\boldsymbol{r}).
+$$
+
+<p>
+We define the potential energy at a point \( \boldsymbol{r} \) as the negative work done from a starting point \( \boldsymbol{r}_0 \) to a final point \( \boldsymbol{r} \) 
+
+$$
+V(\boldsymbol{r})=-W(\boldsymbol{r}_0\rightarrow\boldsymbol{r})= -\int_{\boldsymbol{r}_0}^{\boldsymbol{r}}d\boldsymbol{r}'\boldsymbol{F}(\boldsymbol{r}').
+$$
+
+If the potential depends on the path taken between these two points there is no unique potential.
+
+<p>
+<!-- !split -->
+
+<h2 id="example" class="anchor">Example </h2>
+
+<p>
+We study a classical electron which moves in the \( x \)-direction along a surface. The force from the surface is
+$$
+\boldsymbol{F}(x)=-F_0\sin{(\frac{2\pi x}{b})}\boldsymbol{e}_x.
+$$
+
+The constant \( b \) represents the distance between atoms at the surface of the material, \( F_0 \) is a constant and \( x \) is the position of the electron.
+
+<p>
+This is indeed a conservative force since it depends only on position
+and its <b>curl</b> is zero. This means that energy is conserved and the
+integral over the work done by the force is independent of the path
+taken.
+
+<p>
+<!-- !split -->
+
+<h2 id="example-continues" class="anchor">Example Continues </h2>
+
+<p>
+Using the work-energy theorem we can find the work \( W \) done when
+moving an electron from a position \( x_0 \) to a final position \( x \)
+through the integral
+
+$$
+W=-\int_{x_0}^x \boldsymbol{F}(x')dx' =  \int_{x_0}^x F_0\sin{(\frac{2\pi x'}{b})} dx',
+$$
+
+which results in
+$$
+W=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right].
+$$
+
+Since this is related to the change in kinetic energy we have, with \( v_0 \) being the initial velocity at a  time \( t_0 \),
+$$
+v  = \pm\sqrt{\frac{2}{m}\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right]+v_0^2}.
+$$
+
+<p>
+<!-- !split -->
+
+<h2 id="the-potential-energy-from-this-example" class="anchor">The potential energy from this example </h2>
+
+<p>
+The potential energy, due to energy conservation is
+$$
+V(x)=V(x_0)+\frac{1}{2}mv_0^2-\frac{1}{2}mv^2,
+$$
+
+with \( v \) given by the previous answer. 
+We can now, in order to find a more explicit expression for the potential energy at a given value \( x \), define a zero level value for the potential. The potential is defined , using the work-energy theorem , as
+$$
+V(x)=V(x_0)+\int_{x_0}^x (-F(x'))dx',
+$$
+
+and if you recall the definition of the indefinite integral, we can rewrite this as
+$$
+V(x)=\int (-F(x'))dx'+C,
+$$
+
+where \( C \) is an undefined constant. The force is defined as the gradient of the potential, and in that case the undefined constant vanishes. The constant does not affect the force we derive from the potential.
+
+<p>
+We have then
+$$
+V(x)=V(x_0)-\int_{x_0}^x \boldsymbol{F}(x')dx',
+$$
+
+which results in
+$$
+V(x)=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right]+V(x_0).
+$$
+
+We can now define
+$$
+\frac{F_0b}{2\pi}\cos{(\frac{2\pi x_0}{b})}=V(x_0),
+$$
+
+which gives 
+$$
+V(x)=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}\right].
+$$
+
+<p>
+<!-- !split -->
+
+<h2 id="force-and-potential" class="anchor">Force and Potential </h2>
+
+<p>
+We have defined work as the energy resulting from a net force acting
+on an object (or sseveral objects), that is
+
+$$
+W(\boldsymbol{r}\rightarrow \boldsymbol{r}+d\boldsymbol{r})= \boldsymbol{F}(\boldsymbol{r})d\boldsymbol{r}.
+$$
+
+<p>
+If we write out this for each component we have
+
+$$
+W(\boldsymbol{r}\rightarrow \boldsymbol{r}+d\boldsymbol{r})=\boldsymbol{F}(\boldsymbol{r})d\boldsymbol{r}=F_xdx+F_ydy+F_zdz.
+$$
+
+<p>
+The work done from an initial position to a final one defines also the difference in potential energies
+
+$$
+W(\boldsymbol{r}\rightarrow \boldsymbol{r}+d\boldsymbol{r})=-\left[V(\boldsymbol{r}+d\boldsymbol{r})-V(\boldsymbol{r})\right].
+$$
+
+<p>
+<!-- !split -->
+
+<h2 id="boldsymbol-f-boldsymbol-r-boldsymbol-nabla-v-boldsymbol-r" class="anchor">\( \boldsymbol{F}(\boldsymbol{r})=-\boldsymbol{\nabla} V(\boldsymbol{r}) \) </h2>
+
+<p>
+We can write out the differences in potential energies as
+
+$$
+V(\boldsymbol{r}+d\boldsymbol{r})-V(\boldsymbol{r})=V(x+dx,y+dy,z+dz)-V(x,y,z)=dV,
+$$
+
+and using the expression the differential of a multi-variable function \( f(x,y,z) \) 
+$$
+df=\frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy+\frac{\partial f}{\partial z}dz,
+$$
+
+we can write the expression for the work done as
+$$
+W(\boldsymbol{r}\rightarrow \boldsymbol{r}+d\boldsymbol{r})=-dV=-\left[\frac{\partial V}{\partial x}dx+\frac{\partial V}{\partial y}dy+\frac{\partial V}{\partial z}dz \right].
+$$
+
+<p>
+<!-- !split -->
+
+<h2 id="final-expression" class="anchor">Final expression </h2>
+
+<p>
+Comparing the last equation with 
+$$
+W(\boldsymbol{r}\rightarrow \boldsymbol{r}+d\boldsymbol{r})=F_xdx+F_ydy+F_zdz,
+$$
+
+we have
+$$
+F_xdx+F_ydy+F_zdz=-\left[\frac{\partial V}{\partial x}dx+\frac{\partial V}{\partial y}dy+\frac{\partial V}{\partial z}dz \right],
+$$
+
+<p>
+leading to
+$$
+F_x=-\frac{\partial V}{\partial x},
+$$
+
+and
+$$
+F_y=-\frac{\partial V}{\partial y},
+$$
+
+and
+$$
+F_z=-\frac{\partial V}{\partial z},
+$$
+
+or just
+$$
+\boldsymbol{F}=-\frac{\partial V}{\partial x}\boldsymbol{e}_1-\frac{\partial V}{\partial y}\boldsymbol{e}_2-\frac{\partial V}{\partial z}\boldsymbol{e}_3=-\boldsymbol{\nabla}V(\boldsymbol{r}).
 $$
 
 <p>
