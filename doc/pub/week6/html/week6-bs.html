@@ -120,26 +120,24 @@ Automatically generated HTML file from DocOnce source
                None,
                'work-energy-momentum-and-conservation-laws'),
               ('Energy Conservation', 2, None, 'energy-conservation'),
-              ('Net Energy', 2, None, 'net-energy'),
-              ('In Vector Notation', 2, None, 'in-vector-notation'),
-              ('Harmonic Oscillator Potential',
-               2,
-               None,
-               'harmonic-oscillator-potential'),
               ('Conservative forces', 2, None, 'conservative-forces'),
               ('Forces and Potentials', 2, None, 'forces-and-potentials'),
-              ('Example', 2, None, 'example'),
+              ('Example (relevant for homework 5)',
+               2,
+               None,
+               'example-relevant-for-homework-5'),
               ('Example Continues', 2, None, 'example-continues'),
               ('The potential energy from this example',
                2,
                None,
                'the-potential-energy-from-this-example'),
               ('Force and Potential', 2, None, 'force-and-potential'),
-              ('$\\boldsymbol{F}(\\boldsymbol{r})=-\\boldsymbol{\\nabla} '
+              ('Getting to '
+               '$\\boldsymbol{F}(\\boldsymbol{r})=-\\boldsymbol{\\nabla} '
                'V(\\boldsymbol{r})$',
                2,
                None,
-               'boldsymbol-f-boldsymbol-r-boldsymbol-nabla-v-boldsymbol-r'),
+               'getting-to-boldsymbol-f-boldsymbol-r-boldsymbol-nabla-v-boldsymbol-r'),
               ('Final expression', 2, None, 'final-expression')]}
 end of tocinfo -->
 
@@ -208,16 +206,13 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="#system-of-isolated-particles" style="font-size: 80%;"><b>System of Isolated Particles</b></a></li>
      <!-- navigation toc: --> <li><a href="#work-energy-momentum-and-conservation-laws" style="font-size: 80%;"><b>Work, Energy, Momentum and Conservation laws</b></a></li>
      <!-- navigation toc: --> <li><a href="#energy-conservation" style="font-size: 80%;"><b>Energy Conservation</b></a></li>
-     <!-- navigation toc: --> <li><a href="#net-energy" style="font-size: 80%;"><b>Net Energy</b></a></li>
-     <!-- navigation toc: --> <li><a href="#in-vector-notation" style="font-size: 80%;"><b>In Vector Notation</b></a></li>
-     <!-- navigation toc: --> <li><a href="#harmonic-oscillator-potential" style="font-size: 80%;"><b>Harmonic Oscillator Potential</b></a></li>
      <!-- navigation toc: --> <li><a href="#conservative-forces" style="font-size: 80%;"><b>Conservative forces</b></a></li>
      <!-- navigation toc: --> <li><a href="#forces-and-potentials" style="font-size: 80%;"><b>Forces and Potentials</b></a></li>
-     <!-- navigation toc: --> <li><a href="#example" style="font-size: 80%;"><b>Example</b></a></li>
+     <!-- navigation toc: --> <li><a href="#example-relevant-for-homework-5" style="font-size: 80%;"><b>Example (relevant for homework 5)</b></a></li>
      <!-- navigation toc: --> <li><a href="#example-continues" style="font-size: 80%;"><b>Example Continues</b></a></li>
      <!-- navigation toc: --> <li><a href="#the-potential-energy-from-this-example" style="font-size: 80%;"><b>The potential energy from this example</b></a></li>
      <!-- navigation toc: --> <li><a href="#force-and-potential" style="font-size: 80%;"><b>Force and Potential</b></a></li>
-     <!-- navigation toc: --> <li><a href="#boldsymbol-f-boldsymbol-r-boldsymbol-nabla-v-boldsymbol-r" style="font-size: 80%;"><b>\( \boldsymbol{F}(\boldsymbol{r})=-\boldsymbol{\nabla} V(\boldsymbol{r}) \)</b></a></li>
+     <!-- navigation toc: --> <li><a href="#getting-to-boldsymbol-f-boldsymbol-r-boldsymbol-nabla-v-boldsymbol-r" style="font-size: 80%;"><b>Getting to \( \boldsymbol{F}(\boldsymbol{r})=-\boldsymbol{\nabla} V(\boldsymbol{r}) \)</b></a></li>
      <!-- navigation toc: --> <li><a href="#final-expression" style="font-size: 80%;"><b>Final expression</b></a></li>
 
         </ul>
@@ -252,7 +247,7 @@ MathJax.Hub.Config({
 <center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
 <br>
 <p>
-<center><h4>Feb 13, 2021</h4></center> <!-- date -->
+<center><h4>Feb 14, 2021</h4></center> <!-- date -->
 <br>
 <p>
 <!-- potential-jumbotron-button -->
@@ -897,104 +892,13 @@ $$
 <p>
 <!-- !split -->
 
-<h2 id="net-energy" class="anchor">Net Energy  </h2>
-
-<p>
-The net energy, \( E=V+K \) where \( K \) is the kinetic energy, is then conserved,
-
-$$
-\begin{eqnarray}
-\frac{d}{dt}(K+V)&=&\frac{d}{dt}\left(\frac{m}{2}(v_x^2+v_y^2+v_z^2)+V(\boldsymbol{r})\right)\\
-\nonumber
-&=&m\left(v_x\frac{dv_x}{dt}+v_y\frac{dv_y}{dt}+v_z\frac{dv_z}{dt}\right)
-+\partial_xV\frac{dx}{dt}+\partial_yV\frac{dy}{dt}+\partial_zV\frac{dz}{dt}\\
-\nonumber
-&=&v_xF_x+v_yF_y+v_zF_z-F_xv_x-F_yv_y-F_zv_z=0.
-\end{eqnarray}
-$$
-
-<p>
-<!-- !split -->
-
-<h2 id="in-vector-notation" class="anchor">In Vector Notation  </h2>
-
-<p>
-The same proof can be written more compactly with vector notation,
-
-$$
-\begin{eqnarray}
-\frac{d}{dt}\left(\frac{m}{2}v^2+V(\boldsymbol{r})\right)
-&=&m\boldsymbol{v}\cdot\dot{\boldsymbol{v}}+\boldsymbol{\nabla} V(\boldsymbol{r})\cdot\dot{\boldsymbol{r}}\\
-\nonumber
-&=&\boldsymbol{v}\cdot\boldsymbol{F}-\boldsymbol{F}\cdot\boldsymbol{v}=0.
-\end{eqnarray}
-$$
-
-<p>
-Inverting the expression for kinetic energy,
-$$
-\begin{equation}
-v=\sqrt{2K/m}=\sqrt{2(E-V)/m},
-\label{_auto9}
-\end{equation}
-$$
-
-<p>
-allows one to solve for the one-dimensional trajectory \( x(t) \), by finding \( t(x) \),
-
-$$
-\begin{equation}
-t=\int_{x_0}^x \frac{dx'}{v(x')}=\int_{x_0}^x\frac{dx'}{\sqrt{2(E-V(x'))/m}}.
-\label{_auto10}
-\end{equation}
-$$
-
-<p>
-Note this would be much more difficult in higher dimensions, because
-you would have to determine which points, \( x,y,z \), the particles might
-reach in the trajectory, whereas in one dimension you can typically
-tell by simply seeing whether the kinetic energy is positive at every
-point between the old position and the new position.
-
-<p>
-<!-- !split -->
-
-<h2 id="harmonic-oscillator-potential" class="anchor">Harmonic Oscillator Potential </h2>
-
-<p>
-Consider a simple harmonic oscillator potential, \( V(x)=kx^2/2 \), with a particle emitted from \( x=0 \) with velocity \( v_0 \). Solve for the trajectory \( t(x) \),
-
-$$
-\begin{eqnarray}
-t&=&\int_{0}^x \frac{dx'}{\sqrt{2(E-kx^2/2)/m}}\\
-\nonumber
-&=&\sqrt{m/k}\int_0^x~\frac{dx'}{\sqrt{x_{\rm max}^2-x^{\prime 2}}},~~~x_{\rm max}^2=2E/k.
-\end{eqnarray}
-$$
-
-<p>
-Here \( E=mv_0^2/2 \) and \( x_{\rm max} \) is defined as the maximum
-displacement before the particle turns around. This integral is done
-by the substitution \( \sin\theta=x/x_{\rm max} \).
-
-$$
-\begin{eqnarray}
-(k/m)^{1/2}t&=&\sin^{-1}(x/x_{\rm max}),\\
-\nonumber
-x&=&x_{\rm max}\sin\omega t,~~~\omega=\sqrt{k/m}.
-\end{eqnarray}
-$$
-
-<p>
-<!-- !split -->
-
 <h2 id="conservative-forces" class="anchor">Conservative forces </h2>
 
 <p>
-We say a force is conservative if it satisfies the following conditions
+We say a force is conservative if it satisfies the following conditions:
 
 <ol>
-<li> The force \( \boldsymbol{F} \) acting on an object only depends on the position \( \boldsymbol{r} \), that is \( \boldsymbol{F}=\boldsymbol{F}(\boldsymbol{r} \).</li>
+<li> The force \( \boldsymbol{F} \) acting on an object only depends on the position \( \boldsymbol{r} \), that is \( \boldsymbol{F}=\boldsymbol{F}(\boldsymbol{r}) \).</li>
 <li> For any two points \( \boldsymbol{r}_1 \) and \( \boldsymbol{r}_2 \), the work done by the force \( \boldsymbol{F} \) on the displacement between these two points is independent of the path taken.</li>
 <li> Finally, the <b>curl</b> of the force is zero \( \boldsymbol{\nabla}\times\boldsymbol{F}=0 \).</li>
 </ol>
@@ -1021,21 +925,21 @@ If the potential depends on the path taken between these two points there is no 
 <p>
 <!-- !split -->
 
-<h2 id="example" class="anchor">Example </h2>
+<h2 id="example-relevant-for-homework-5" class="anchor">Example (relevant for homework 5) </h2>
 
 <p>
 We study a classical electron which moves in the \( x \)-direction along a surface. The force from the surface is
 $$
-\boldsymbol{F}(x)=-F_0\sin{(\frac{2\pi x}{b})}\boldsymbol{e}_x.
+\boldsymbol{F}(x)=-F_0\sin{(\frac{2\pi x}{b})}\boldsymbol{e}_1.
 $$
 
 The constant \( b \) represents the distance between atoms at the surface of the material, \( F_0 \) is a constant and \( x \) is the position of the electron.
 
 <p>
 This is indeed a conservative force since it depends only on position
-and its <b>curl</b> is zero. This means that energy is conserved and the
+and its <b>curl</b> is zero, that is \( -\boldsymbol{\nabla}\times \boldsymbol{F}=0 \). This means that energy is conserved and the
 integral over the work done by the force is independent of the path
-taken.
+taken. We will come back to this in more detail next week.
 
 <p>
 <!-- !split -->
@@ -1072,18 +976,30 @@ $$
 V(x)=V(x_0)+\frac{1}{2}mv_0^2-\frac{1}{2}mv^2,
 $$
 
-with \( v \) given by the previous answer. 
-We can now, in order to find a more explicit expression for the potential energy at a given value \( x \), define a zero level value for the potential. The potential is defined , using the work-energy theorem , as
+with \( v \) given by the velocity from above.
+
+<p>
+We can now, in order to find a more explicit expression for the
+potential energy at a given value \( x \), define a zero level value for
+the potential. The potential is defined, using the work-energy
+theorem, as
+
 $$
 V(x)=V(x_0)+\int_{x_0}^x (-F(x'))dx',
 $$
 
+<p>
 and if you recall the definition of the indefinite integral, we can rewrite this as
+
 $$
 V(x)=\int (-F(x'))dx'+C,
 $$
 
-where \( C \) is an undefined constant. The force is defined as the gradient of the potential, and in that case the undefined constant vanishes. The constant does not affect the force we derive from the potential.
+<p>
+where \( C \) is an undefined constant. The force is defined as the
+gradient of the potential, and in that case the undefined constant
+vanishes. The constant does not affect the force we derive from the
+potential.
 
 <p>
 We have then
@@ -1136,7 +1052,7 @@ $$
 <p>
 <!-- !split -->
 
-<h2 id="boldsymbol-f-boldsymbol-r-boldsymbol-nabla-v-boldsymbol-r" class="anchor">\( \boldsymbol{F}(\boldsymbol{r})=-\boldsymbol{\nabla} V(\boldsymbol{r}) \) </h2>
+<h2 id="getting-to-boldsymbol-f-boldsymbol-r-boldsymbol-nabla-v-boldsymbol-r" class="anchor">Getting to \( \boldsymbol{F}(\boldsymbol{r})=-\boldsymbol{\nabla} V(\boldsymbol{r}) \) </h2>
 
 <p>
 We can write out the differences in potential energies as
@@ -1191,6 +1107,8 @@ or just
 $$
 \boldsymbol{F}=-\frac{\partial V}{\partial x}\boldsymbol{e}_1-\frac{\partial V}{\partial y}\boldsymbol{e}_2-\frac{\partial V}{\partial z}\boldsymbol{e}_3=-\boldsymbol{\nabla}V(\boldsymbol{r}).
 $$
+
+And this connection is the one we wanted to show.
 
 <p>
 

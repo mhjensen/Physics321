@@ -148,7 +148,7 @@ MathJax.Hub.Config({
 <center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
 <br>
 <p>&nbsp;<br>
-<center><h4>Feb 13, 2021</h4></center> <!-- date -->
+<center><h4>Feb 14, 2021</h4></center> <!-- date -->
 <br>
 <p>
 
@@ -888,116 +888,13 @@ $$
 
 
 <section>
-<h2 id="net-energy">Net Energy  </h2>
-
-<p>
-The net energy, \( E=V+K \) where \( K \) is the kinetic energy, is then conserved,
-
-<p>&nbsp;<br>
-$$
-\begin{eqnarray}
-\frac{d}{dt}(K+V)&=&\frac{d}{dt}\left(\frac{m}{2}(v_x^2+v_y^2+v_z^2)+V(\boldsymbol{r})\right)\\
-\nonumber
-&=&m\left(v_x\frac{dv_x}{dt}+v_y\frac{dv_y}{dt}+v_z\frac{dv_z}{dt}\right)
-+\partial_xV\frac{dx}{dt}+\partial_yV\frac{dy}{dt}+\partial_zV\frac{dz}{dt}\\
-\nonumber
-&=&v_xF_x+v_yF_y+v_zF_z-F_xv_x-F_yv_y-F_zv_z=0.
-\end{eqnarray}
-$$
-<p>&nbsp;<br>
-</section>
-
-
-<section>
-<h2 id="in-vector-notation">In Vector Notation  </h2>
-
-<p>
-The same proof can be written more compactly with vector notation,
-
-<p>&nbsp;<br>
-$$
-\begin{eqnarray}
-\frac{d}{dt}\left(\frac{m}{2}v^2+V(\boldsymbol{r})\right)
-&=&m\boldsymbol{v}\cdot\dot{\boldsymbol{v}}+\boldsymbol{\nabla} V(\boldsymbol{r})\cdot\dot{\boldsymbol{r}}\\
-\nonumber
-&=&\boldsymbol{v}\cdot\boldsymbol{F}-\boldsymbol{F}\cdot\boldsymbol{v}=0.
-\end{eqnarray}
-$$
-<p>&nbsp;<br>
-
-<p>
-Inverting the expression for kinetic energy,
-<p>&nbsp;<br>
-$$
-\begin{equation}
-v=\sqrt{2K/m}=\sqrt{2(E-V)/m},
-\tag{9}
-\end{equation}
-$$
-<p>&nbsp;<br>
-
-<p>
-allows one to solve for the one-dimensional trajectory \( x(t) \), by finding \( t(x) \),
-
-<p>&nbsp;<br>
-$$
-\begin{equation}
-t=\int_{x_0}^x \frac{dx'}{v(x')}=\int_{x_0}^x\frac{dx'}{\sqrt{2(E-V(x'))/m}}.
-\tag{10}
-\end{equation}
-$$
-<p>&nbsp;<br>
-
-<p>
-Note this would be much more difficult in higher dimensions, because
-you would have to determine which points, \( x,y,z \), the particles might
-reach in the trajectory, whereas in one dimension you can typically
-tell by simply seeing whether the kinetic energy is positive at every
-point between the old position and the new position.
-</section>
-
-
-<section>
-<h2 id="harmonic-oscillator-potential">Harmonic Oscillator Potential </h2>
-
-<p>
-Consider a simple harmonic oscillator potential, \( V(x)=kx^2/2 \), with a particle emitted from \( x=0 \) with velocity \( v_0 \). Solve for the trajectory \( t(x) \),
-
-<p>&nbsp;<br>
-$$
-\begin{eqnarray}
-t&=&\int_{0}^x \frac{dx'}{\sqrt{2(E-kx^2/2)/m}}\\
-\nonumber
-&=&\sqrt{m/k}\int_0^x~\frac{dx'}{\sqrt{x_{\rm max}^2-x^{\prime 2}}},~~~x_{\rm max}^2=2E/k.
-\end{eqnarray}
-$$
-<p>&nbsp;<br>
-
-<p>
-Here \( E=mv_0^2/2 \) and \( x_{\rm max} \) is defined as the maximum
-displacement before the particle turns around. This integral is done
-by the substitution \( \sin\theta=x/x_{\rm max} \).
-
-<p>&nbsp;<br>
-$$
-\begin{eqnarray}
-(k/m)^{1/2}t&=&\sin^{-1}(x/x_{\rm max}),\\
-\nonumber
-x&=&x_{\rm max}\sin\omega t,~~~\omega=\sqrt{k/m}.
-\end{eqnarray}
-$$
-<p>&nbsp;<br>
-</section>
-
-
-<section>
 <h2 id="conservative-forces">Conservative forces </h2>
 
 <p>
-We say a force is conservative if it satisfies the following conditions
+We say a force is conservative if it satisfies the following conditions:
 
 <ol>
-<p><li> The force \( \boldsymbol{F} \) acting on an object only depends on the position \( \boldsymbol{r} \), that is \( \boldsymbol{F}=\boldsymbol{F}(\boldsymbol{r} \).</li>
+<p><li> The force \( \boldsymbol{F} \) acting on an object only depends on the position \( \boldsymbol{r} \), that is \( \boldsymbol{F}=\boldsymbol{F}(\boldsymbol{r}) \).</li>
 <p><li> For any two points \( \boldsymbol{r}_1 \) and \( \boldsymbol{r}_2 \), the work done by the force \( \boldsymbol{F} \) on the displacement between these two points is independent of the path taken.</li>
 <p><li> Finally, the <b>curl</b> of the force is zero \( \boldsymbol{\nabla}\times\boldsymbol{F}=0 \).</li>
 </ol>
@@ -1029,13 +926,13 @@ If the potential depends on the path taken between these two points there is no 
 
 
 <section>
-<h2 id="example">Example </h2>
+<h2 id="example-relevant-for-homework-5">Example (relevant for homework 5) </h2>
 
 <p>
 We study a classical electron which moves in the \( x \)-direction along a surface. The force from the surface is
 <p>&nbsp;<br>
 $$
-\boldsymbol{F}(x)=-F_0\sin{(\frac{2\pi x}{b})}\boldsymbol{e}_x.
+\boldsymbol{F}(x)=-F_0\sin{(\frac{2\pi x}{b})}\boldsymbol{e}_1.
 $$
 <p>&nbsp;<br>
 
@@ -1043,9 +940,9 @@ The constant \( b \) represents the distance between atoms at the surface of the
 
 <p>
 This is indeed a conservative force since it depends only on position
-and its <b>curl</b> is zero. This means that energy is conserved and the
+and its <b>curl</b> is zero, that is \( -\boldsymbol{\nabla}\times \boldsymbol{F}=0 \). This means that energy is conserved and the
 integral over the work done by the force is independent of the path
-taken.
+taken. We will come back to this in more detail next week.
 </section>
 
 
@@ -1090,22 +987,34 @@ V(x)=V(x_0)+\frac{1}{2}mv_0^2-\frac{1}{2}mv^2,
 $$
 <p>&nbsp;<br>
 
-with \( v \) given by the previous answer. 
-We can now, in order to find a more explicit expression for the potential energy at a given value \( x \), define a zero level value for the potential. The potential is defined , using the work-energy theorem , as
+with \( v \) given by the velocity from above.
+
+<p>
+We can now, in order to find a more explicit expression for the
+potential energy at a given value \( x \), define a zero level value for
+the potential. The potential is defined, using the work-energy
+theorem, as
+
 <p>&nbsp;<br>
 $$
 V(x)=V(x_0)+\int_{x_0}^x (-F(x'))dx',
 $$
 <p>&nbsp;<br>
 
+<p>
 and if you recall the definition of the indefinite integral, we can rewrite this as
+
 <p>&nbsp;<br>
 $$
 V(x)=\int (-F(x'))dx'+C,
 $$
 <p>&nbsp;<br>
 
-where \( C \) is an undefined constant. The force is defined as the gradient of the potential, and in that case the undefined constant vanishes. The constant does not affect the force we derive from the potential.
+<p>
+where \( C \) is an undefined constant. The force is defined as the
+gradient of the potential, and in that case the undefined constant
+vanishes. The constant does not affect the force we derive from the
+potential.
 
 <p>
 We have then
@@ -1172,7 +1081,7 @@ $$
 
 
 <section>
-<h2 id="boldsymbol-f-boldsymbol-r-boldsymbol-nabla-v-boldsymbol-r">\( \boldsymbol{F}(\boldsymbol{r})=-\boldsymbol{\nabla} V(\boldsymbol{r}) \) </h2>
+<h2 id="getting-to-boldsymbol-f-boldsymbol-r-boldsymbol-nabla-v-boldsymbol-r">Getting to \( \boldsymbol{F}(\boldsymbol{r})=-\boldsymbol{\nabla} V(\boldsymbol{r}) \) </h2>
 
 <p>
 We can write out the differences in potential energies as
@@ -1245,6 +1154,8 @@ $$
 \boldsymbol{F}=-\frac{\partial V}{\partial x}\boldsymbol{e}_1-\frac{\partial V}{\partial y}\boldsymbol{e}_2-\frac{\partial V}{\partial z}\boldsymbol{e}_3=-\boldsymbol{\nabla}V(\boldsymbol{r}).
 $$
 <p>&nbsp;<br>
+
+And this connection is the one we wanted to show.
 </section>
 
 
