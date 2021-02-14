@@ -1,4 +1,4 @@
-TITLE: PHY321: Conservative Forces
+TITLE: PHY321: Conservative Forces, Examples and start Harmonic Oscillations
 AUTHOR: "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/" {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and Facility for Rare Ion Beams (FRIB), Michigan State University, USA & Department of Physics, University of Oslo, Norway
 DATE: today
 
@@ -8,81 +8,360 @@ DATE: today
 
 === Monday ===
 
-Short repetition from last week. Discussion of momentum and angular momentum.
-Reading suggestion: Taylor sections 3.1-3.4
+Short repetition from last week about conservative forces. Discussion
+of conditions for conservative forces and the Earth-Sun gravitional
+force example.  _Reading suggestion_: Taylor sections 4.3, 4.4 and 4.8.
 
 === Wednesday ===
 
-More on angular momentum, Taylor sections 3.4 and 3.5. Discussion of potential energy and conservative forces.
-Reading suggestions: Taylor section 4.2
+Potential curves and discussion of the Earth-Sun example, analytical and numerical considerations.
+_Reading suggestions_: Taylor section 4.6, 4.8 and 4.9.
 
 ===  Friday ===
+Earth-Sun,  conservative forces and potential energy.
+_Reading suggestion_: Taylor sections 4.8 and 4.9.
 
-Conservative forces and potential energy. Reading suggestion: Taylor sections 4.2-4.4
+If we get time, we start with harmonic oscillations and Hooke's law. _Reading suggestion_: Taylor section 5.1.
 
-If you wish to read more about conservative forces or not, Feyman's lectures from 1963 are quite interesting.
-He states for example that _All fundamental forces in nature appear to be conservative_.
-This statement was made while developing his argument that *there are no nonconservative forces*.
-You may enjoy the link to "Feynman's lecture":"http://www.feynmanlectures.caltech.edu/I_14.html".
+
+!split
+===== One Figure to Rule All Forces (thx to Julie) =====
+
+FIGURE: [figslides/ClassicalMechanicsJulie.pdf, width=500 frac=0.7]  
+
+!split
+===== Repetition from last week: Work, Energy, Momentum and Conservation laws =====
+
+Energy conservation is most convenient as a strategy for addressing
+problems where time does not appear. For example, a particle goes
+from position $x_0$ with speed $v_0$, to position $x_f$; what is its
+new speed? However, it can also be applied to problems where time
+does appear, such as in solving for the trajectory $x(t)$, or
+equivalently $t(x)$.
 
 
 
 
 !split
-===== Translational Invariance and Conservation of Momentum =====
+===== Energy Conservation =====
+Energy is conserved in the case where the potential energy, $V(\bm{r})$, depends only on position, and not on time. The force is determined by $V$,
+!bt
+\begin{equation}
+\bm{F}(\bm{r})=-\bm{\nabla} V(\bm{r}).
+\end{equation}
+!et
 
-Thus, if the potential is unchanged by a translation of the coordinate
-system, the total momentum is conserved. If the potential is
-translationally invariant in a given direction, defined by a unit
-vector, $\hat{\epsilon}$ in the $\bm{\epsilon}$ direction, one can see
-that
+
+
+
+!split
+===== Conservative forces =====
+
+We say a force is conservative if it satisfies the following conditions:
+o The force $\bm{F}$ acting on an object only depends on the position $\bm{r}$, that is $\bm{F}=\bm{F}(\bm{r})$.
+o For any two points $\bm{r}_1$ and $\bm{r}_2$, the work done by the force $\bm{F}$ on the displacement between these two points is independent of the path taken.
+o Finally, the _curl_ of the force is zero $\bm{\nabla}\times\bm{F}=0$.
+
+
+!split
+===== Forces and Potentials =====
+
+The energy $E$ of a given system is defined as the sum of kinetic and potential energies,
+!bt
+\[
+E=K+V(\bm{r}).
+\]
+!et
+
+We define the potential energy at a point $\bm{r}$ as the negative work done from a starting point $\bm{r}_0$ to a final point $\bm{r}$ 
+
+!bt
+\[
+V(\bm{r})=-W(\bm{r}_0\rightarrow\bm{r})= -\int_{\bm{r}_0}^{\bm{r}}d\bm{r}'\bm{F}(\bm{r}').
+\]
+!et
+If the potential depends on the path taken between these two points there is no unique potential.
+
+
+!split
+===== Example (relevant for homework 5) =====
+
+We study a classical electron which moves in the $x$-direction along a surface. The force from the surface is
+!bt
+\[
+\bm{F}(x)=-F_0\sin{(\frac{2\pi x}{b})}\bm{e}_1.
+\]
+!et
+The constant $b$ represents the distance between atoms at the surface of the material, $F_0$ is a constant and $x$ is the position of the electron.
+
+This is indeed a conservative force since it depends only on position
+and its _curl_ is zero, that is $-\bm{\nabla}\times \bm{F}=0$. This means that energy is conserved and the
+integral over the work done by the force is independent of the path
+taken. We will come back to this in more detail next week.
+
+!split
+===== Example Continues =====
+
+
+Using the work-energy theorem we can find the work $W$ done when
+moving an electron from a position $x_0$ to a final position $x$
+through the integral
+
+!bt
+\[
+W=-\int_{x_0}^x \bm{F}(x')dx' =  \int_{x_0}^x F_0\sin{(\frac{2\pi x'}{b})} dx',
+\]
+!et
+which results in
+!bt
+\[
+W=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right].
+\]
+!et
+Since this is related to the change in kinetic energy we have, with $v_0$ being the initial velocity at a  time $t_0$,
+!bt
+\[
+v  = \pm\sqrt{\frac{2}{m}\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right]+v_0^2}.
+\]
+!et
+
+!split
+===== The potential energy from this example =====
+
+The potential energy, due to energy conservation is
+!bt
+\[
+V(x)=V(x_0)+\frac{1}{2}mv_0^2-\frac{1}{2}mv^2,
+\]
+!et
+with $v$ given by the velocity from above.
+
+We can now, in order to find a more explicit expression for the
+potential energy at a given value $x$, define a zero level value for
+the potential. The potential is defined, using the work-energy
+theorem, as
+
+
+!bt
+\[
+V(x)=V(x_0)+\int_{x_0}^x (-F(x'))dx',
+\]
+!et
+
+and if you recall the definition of the indefinite integral, we can rewrite this as
+
+!bt
+\[
+V(x)=\int (-F(x'))dx'+C,
+\]
+!et
+
+where $C$ is an undefined constant. The force is defined as the
+gradient of the potential, and in that case the undefined constant
+vanishes. The constant does not affect the force we derive from the
+potential.
+
+We have then
+!bt
+\[
+V(x)=V(x_0)-\int_{x_0}^x \bm{F}(x')dx',
+\]
+!et
+which results in
+!bt
+\[
+V(x)=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right]+V(x_0).
+\]
+!et
+We can now define
+!bt
+\[
+\frac{F_0b}{2\pi}\cos{(\frac{2\pi x_0}{b})}=V(x_0),
+\]
+!et
+which gives 
+!bt
+\[
+V(x)=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}\right].
+\]
+!et
+
+!split
+===== Force and Potential =====
+
+We have defined work as the energy resulting from a net force acting
+on an object (or sseveral objects), that is
+
+!bt
+\[
+W(\bm{r}\rightarrow \bm{r}+d\bm{r})= \bm{F}(\bm{r})d\bm{r}.
+\]
+!et
+
+If we write out this for each component we have
+
+!bt
+\[
+W(\bm{r}\rightarrow \bm{r}+d\bm{r})=\bm{F}(\bm{r})d\bm{r}=F_xdx+F_ydy+F_zdz.
+\]
+!et
+
+The work done from an initial position to a final one defines also the difference in potential energies
+
+!bt
+\[
+W(\bm{r}\rightarrow \bm{r}+d\bm{r})=-\left[V(\bm{r}+d\bm{r})-V(\bm{r})\right].
+\]
+!et
+
+!split
+=====  Getting to $\bm{F}(\bm{r})=-\bm{\nabla} V(\bm{r})$ =====
+
+We can write out the differences in potential energies as
+
+!bt
+\[
+V(\bm{r}+d\bm{r})-V(\bm{r})=V(x+dx,y+dy,z+dz)-V(x,y,z)=dV,
+\]
+!et
+and using the expression the differential of a multi-variable function $f(x,y,z)$ 
+!bt
+\[
+df=\frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy+\frac{\partial f}{\partial z}dz,
+\]
+!et
+we can write the expression for the work done as
+!bt
+\[
+W(\bm{r}\rightarrow \bm{r}+d\bm{r})=-dV=-\left[\frac{\partial V}{\partial x}dx+\frac{\partial V}{\partial y}dy+\frac{\partial V}{\partial z}dz \right].
+\]
+!et
+
+!split
+===== Final expression =====
+
+Comparing the last equation with 
+!bt
+\[
+W(\bm{r}\rightarrow \bm{r}+d\bm{r})=F_xdx+F_ydy+F_zdz,
+\]
+!et
+we have
+!bt
+\[
+F_xdx+F_ydy+F_zdz=-\left[\frac{\partial V}{\partial x}dx+\frac{\partial V}{\partial y}dy+\frac{\partial V}{\partial z}dz \right],
+\]
+!et
+
+leading to
+!bt
+\[
+F_x=-\frac{\partial V}{\partial x},
+\]
+!et
+and
+!bt
+\[
+F_y=-\frac{\partial V}{\partial y},
+\]
+!et
+and
+!bt
+\[
+F_z=-\frac{\partial V}{\partial z},
+\]
+!et
+or just
+!bt
+\[
+\bm{F}=-\frac{\partial V}{\partial x}\bm{e}_1-\frac{\partial V}{\partial y}\bm{e}_2-\frac{\partial V}{\partial z}\bm{e}_3=-\bm{\nabla}V(\bm{r}).
+\]
+!et
+And this connection is the one we wanted to show.
+
+
+!split
+===== Net Energy  =====
+
+The net energy, $E=V+K$ where $K$ is the kinetic energy, is then conserved,
 
 !bt
 \begin{eqnarray}
-\hat{\epsilon}\cdot\nabla_i V(\bm{r}_i)&=&0.
+\frac{d}{dt}(K+V)&=&\frac{d}{dt}\left(\frac{m}{2}(v_x^2+v_y^2+v_z^2)+V(\bm{r})\right)\\
+\nonumber
+&=&m\left(v_x\frac{dv_x}{dt}+v_y\frac{dv_y}{dt}+v_z\frac{dv_z}{dt}\right)
++\partial_xV\frac{dx}{dt}+\partial_yV\frac{dy}{dt}+\partial_zV\frac{dz}{dt}\\
+\nonumber
+&=&v_xF_x+v_yF_y+v_zF_z-F_xv_x-F_yv_y-F_zv_z=0.
 \end{eqnarray}
 !et
 
-The component of the total momentum along that axis is conserved. This
-is rather obvious for a single particle. If $V(\bm{r})$ does not
-depend on some coordinate $x$, then the force in the $x$ direction is
-$F_x=-\partial_xV=0$, and momentum along the $x$ direction is
-constant.
 
-We showed how the total momentum of an isolated system of particle was conserved, even if the particles feel internal forces in all directions. In that case the potential energy could be written 
+!split
+===== In Vector Notation  =====
+
+The same proof can be written more compactly with vector notation,
 
 !bt
 \begin{eqnarray}
-V=\sum_{i,j\le i}V_{ij}(\bm{r}_i-\bm{r}_j).
+\frac{d}{dt}\left(\frac{m}{2}v^2+V(\bm{r})\right)
+&=&m\bm{v}\cdot\dot{\bm{v}}+\bm{\nabla} V(\bm{r})\cdot\dot{\bm{r}}\\
+\nonumber
+&=&\bm{v}\cdot\bm{F}-\bm{F}\cdot\bm{v}=0.
 \end{eqnarray}
 !et
 
-In this case, a translation leads to $\bm{r}_i\rightarrow
-\bm{r}_i+\bm{\epsilon}$, with the translation equally affecting the
-coordinates of each particle. Because the potential depends only on
-the relative coordinates, $\delta V$ is manifestly zero. If one were
-to go through the exercise of calculating $\delta V$ for small
-$\bm{\epsilon}$, one would find that the term
-$\nabla_i V(\bm{r}_i-\bm{r}_j)$ would be canceled by the term
-$\nabla_jV(\bm{r}_i-\bm{r}_j)$.
+Inverting the expression for kinetic energy,
+!bt
+\begin{equation}
+v=\sqrt{2K/m}=\sqrt{2(E-V)/m},
+\end{equation}
+!et
 
-The relation between symmetries of the potential and conserved
-quantities (also called constants of motion) is one of the most
-profound concepts one should gain from this course. It plays a
-critical role in all fields of physics. This is especially true in
-quantum mechanics, where a quantity $A$ is conserved if its operator
-commutes with the Hamiltonian. For example if the momentum operator
-$-i\hbar\partial_x$ commutes with the Hamiltonian, momentum is
-conserved, and clearly this operator commutes if the Hamiltonian
-(which represents the total energy, not just the potential) does not
-depend on $x$. Also in quantum mechanics the angular momentum operator
-is $L_z=-i\hbar\partial_\phi$. In fact, if the potential is unchanged
-by rotations about some axis, angular momentum about that axis is
-conserved. We return to this concept, from a more formal perspective,
-later in the course when Lagrangian mechanics is presented.
+allows one to solve for the one-dimensional trajectory $x(t)$, by finding $t(x)$,
+
+!bt
+\begin{equation}
+t=\int_{x_0}^x \frac{dx'}{v(x')}=\int_{x_0}^x\frac{dx'}{\sqrt{2(E-V(x'))/m}}.
+\end{equation}
+!et
+
+Note this would be much more difficult in higher dimensions, because
+you would have to determine which points, $x,y,z$, the particles might
+reach in the trajectory, whereas in one dimension you can typically
+tell by simply seeing whether the kinetic energy is positive at every
+point between the old position and the new position.
 
 
-===== Bulding a code for the Earth-Sun system =====
+!split
+===== Harmonic Oscillator Potential =====
+
+
+Consider a simple harmonic oscillator potential, $V(x)=kx^2/2$, with a particle emitted from $x=0$ with velocity $v_0$. Solve for the trajectory $t(x)$,
+
+!bt
+\begin{eqnarray}
+t&=&\int_{0}^x \frac{dx'}{\sqrt{2(E-kx^2/2)/m}}\\
+\nonumber
+&=&\sqrt{m/k}\int_0^x~\frac{dx'}{\sqrt{x_{\rm max}^2-x^{\prime 2}}},~~~x_{\rm max}^2=2E/k.
+\end{eqnarray}
+!et
+
+Here $E=mv_0^2/2$ and $x_{\rm max}$ is defined as the maximum
+displacement before the particle turns around. This integral is done
+by the substitution $\sin\theta=x/x_{\rm max}$.
+
+!bt
+\begin{eqnarray}
+(k/m)^{1/2}t&=&\sin^{-1}(x/x_{\rm max}),\\
+\nonumber
+x&=&x_{\rm max}\sin\omega t,~~~\omega=\sqrt{k/m}.
+\end{eqnarray}
+!et
+
+
+!split
+===== The Earth-Sun system =====
 
 We will now venture into a study of a system which is energy
 conserving. The aim is to see if we (since it is not possible to solve
@@ -117,6 +396,11 @@ r=1.5\times 10^{11}\mathrm{m},
 \]
 !et
 is the distance between Earth and the Sun. The latter defines what we call an astronomical unit _AU_.
+
+
+!split
+===== The Earth-Sun system, Newton's Laws =====
+
 From Newton's second law we have then for the $x$ direction
 !bt
 \[
@@ -151,6 +435,8 @@ F_{y}=-\frac{GM_{\odot}M_E}{r^2}\sin{(\theta)}=-\frac{GM_{\odot}M_E}{r^3}y,
 !et 
 for the $y$ direction.
 
+!split
+===== The Earth-Sun system, rewriting the Equations =====
 
 We can rewrite these two equations
 !bt
@@ -522,6 +808,129 @@ which takes in as input the various variables. We leave this as a challenge to y
 
 
 
+!split
+===== Harmonic Oscillator =====
+
+The harmonic oscillator is omnipresent in physics. Although you may think 
+of this as being related to springs, it, or an equivalent
+mathematical representation, appears in just about any problem where a
+mode is sitting near its potential energy minimum. At that point,
+$\partial_x V(x)=0$, and the first non-zero term (aside from a
+constant) in the potential energy is that of a harmonic oscillator. In
+a solid, sound modes (phonons) are built on a picture of coupled
+harmonic oscillators, and in relativistic field theory the fundamental
+interactions are also built on coupled oscillators positioned
+infinitesimally close to one another in space. The phenomena of a
+resonance of an oscillator driven at a fixed frequency plays out
+repeatedly in atomic, nuclear and high-energy physics, when quantum
+mechanically the evolution of a state oscillates according to
+$e^{-iEt}$ and exciting discrete quantum states has very similar
+mathematics as exciting discrete states of an oscillator.
 
 
+!split
+===== Harmonic Oscillator, deriving the Equations =====
+The potential energy for a single particle as a function of its position $x$ can be written as a Taylor expansion about some point $x_0$
+
+!bt
+\begin{equation}
+V(x)=V(x_0)+(x-x_0)\left.\partial_xV(x)\right|_{x_0}+\frac{1}{2}(x-x_0)^2\left.\partial_x^2V(x)\right|_{x_0}
++\frac{1}{3!}\left.\partial_x^3V(x)\right|_{x_0}+\cdots
+\end{equation}
+!et
+If the position $x_0$ is at the minimum of the resonance, the first two non-zero terms of the potential are
+
+!bt
+\begin{eqnarray}
+V(x)&\approx& V(x_0)+\frac{1}{2}(x-x_0)^2\left.\partial_x^2V(x)\right|_{x_0},\\
+\nonumber
+&=&V(x_0)+\frac{1}{2}k(x-x_0)^2,~~~~k\equiv \left.\partial_x^2V(x)\right|_{x_0},\\
+\nonumber
+F&=&-\partial_xV(x)=-k(x-x_0).
+\end{eqnarray}
+!et
+Put into Newton's 2nd law (assuming $x_0=0$),
+
+!bt
+\begin{eqnarray}
+m\ddot{x}&=&-kx,\\
+x&=&A\cos(\omega_0 t-\phi),~~~\omega_0=\sqrt{k/m}.
+\end{eqnarray}
+!et
+
+!split
+===== Harmonic Oscillator, Technicalities =====
+
+Here $A$ and $\phi$ are arbitrary. Equivalently, one could have
+written this as $A\cos(\omega_0 t)+B\sin(\omega_0 t)$, or as the real
+part of $Ae^{i\omega_0 t}$. In this last case $A$ could be an
+arbitrary complex constant. Thus, there are 2 arbitrary constants
+(either $A$ and $B$ or $A$ and $\phi$, or the real and imaginary part
+of one complex constant. This is the expectation for a second order
+differential equation, and also agrees with the physical expectation
+that if you know a particle's initial velocity and position you should
+be able to define its future motion, and that those two arbitrary
+conditions should translate to two arbitrary constants.
+
+A key feature of harmonic motion is that the system repeats itself
+after a time $T=1/f$, where $f$ is the frequency, and $\omega=2\pi f$
+is the angular frequency. The period of the motion is independent of
+the amplitude. However, this independence is only exact when one can
+neglect higher terms of the potential, $x^3, x^4\cdots$. Once can
+neglect these terms for sufficiently small amplitudes, and for larger
+amplitudes the motion is no longer purely sinusoidal, and even though
+the motion repeats itself, the time for repeating the motion is no
+longer independent of the amplitude.
+
+One can also calculate the velocity and the kinetic energy as a function of time,
+
+!bt
+\begin{eqnarray}
+\dot{x}&=&-\omega_0A\sin(\omega_0 t-\phi),\\
+\nonumber
+K&=&\frac{1}{2}m\dot{x}^2=\frac{m\omega_0^2A^2}{2}\sin^2(\omega_0t-\phi),\\
+\nonumber
+&=&\frac{k}{2}A^2\sin^2(\omega_0t-\phi).
+\end{eqnarray}
+!et
+
+!split
+===== Harmonic Oscillator, Total Energy =====
+
+The total energy is then
+
+!bt
+\begin{equation}
+E=K+V=\frac{1}{2}m\dot{x}^2+\frac{1}{2}kx^2=\frac{1}{2}kA^2.
+\end{equation}
+!et
+
+The total energy then goes as the square of the amplitude.
+
+
+A pendulum is an example of a harmonic oscillator. By expanding the
+kinetic and potential energies for small angles find the frequency for
+a pendulum of length $L$ with all the mass $m$ centered at the end by
+writing the eq.s of motion in the form of a harmonic oscillator.
+
+The potential energy and kinetic energies are (for $x$ being the displacement)
+
+!bt
+\begin{eqnarray*}
+V&=&mgL(1-\cos\theta)\approx mgL\frac{x^2}{2L^2},\\
+K&=&\frac{1}{2}mL^2\dot{\theta}^2\approx \frac{m}{2}\dot{x}^2.
+\end{eqnarray*}
+!et
+
+For small $x$ Newton's 2nd law becomes
+
+!bt
+\[
+m\ddot{x}=-\frac{mg}{L}x,
+\]
+!et
+
+and the spring constant would appear to be $k=mg/L$, which makes the
+frequency equal to $\omega_0=\sqrt{g/L}$. Note that the frequency is
+independent of the mass.
 
