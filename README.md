@@ -143,6 +143,7 @@ Solution hw 3 as Jupyter notebook at: https://github.com/mhjensen/Physics321/blo
 
 ### Week 7, February 15-19, 2021
 - Monday 2/15: Conservation laws. Introducing the Velocity Verlet algorithm and the Earth Sun problem, 5th homework due February 22.
+Video of lecture at https://mediaspace.msu.edu/media/t/1_mgqtt4lm and handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesFeb15.pdf
 - Wednesday 2/17: Examples of application of conservations laws (see chapter 4 of Taylor). 
 - Friday 2/19: Begin discussion of oscillations
 - Good reads are Taylor chapter 4 and AMS chapters 10-14 for the conservation laws and the first sections of chapter 5 of Taylor on oscillations. 
