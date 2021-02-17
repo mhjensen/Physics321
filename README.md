@@ -147,6 +147,8 @@ Video of lecture at https://mediaspace.msu.edu/media/t/1_mgqtt4lm and handwritte
 - Wednesday 2/17: Examples of application of conservations laws (see chapter 4 of Taylor). 
 - Friday 2/19: Begin discussion of oscillations
 - Good reads are Taylor chapter 4 and AMS chapters 10-14 for the conservation laws and the first sections of chapter 5 of Taylor on oscillations. 
+- Solution hw 4 as jupyter-notebook at https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionhw4.ipynb
+- Remember also the videos of the solutions at https://www.youtube.com/playlist?list=PLq9LZ5390Us41TX42XzOPIEPcbHaqX8Hx
 ### Week 8, February 22-26, 2021
 - Monday 2/22: Oscillations, mathematical details, the sliding block and energy conservation,  6th homework, due March 1
 - Wednesday 2/24:  Oscillations, damped motion and more mathematical details
