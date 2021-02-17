@@ -20,16 +20,7 @@ In both textbooks there are many nice worked out examples. Malthe-Sørenssen's t
 The numerical homework focuses on another motion problem where you can
 use the code you developed in homework 3, almost entirely. Please take
 a look at the posted solution (jupyter-notebook) for homework 3. You
-need only to change the forces at play. The problem at hand is a
-classic, the gravitational force acting between the Sun and the
-Earth. Here you will notice also that the standard Euler-integration
-algorithm is not the best choice and we will introduce the so-called
-Euler-Cromer method and the Velocity-Verlet method. These methods will
-give much more stable numerical results with only few additions to
-your code.
-
-The code you develop here will also be reused when we analyze energy
-conservation in homework set 5. And for those of you doing the honors project, it serves as a starting point for the solar system variant.
+need only to change the forces at play.
 
 === Exercise 1 (10 pt), Conservation laws, Energy and momentum ===
 
@@ -209,13 +200,99 @@ V(x,y,z)=A\exp\left\{-\frac{x^2+z^2}{2a^2}\right\}.
 !et
 
 * 3a (2pt) Is energy conserved? If so, why? 
-In this exercise $A$ and $a$ are constants. The force is given by the derivative of $V$ with respect to the spatial degrees of freedom and since the potential depends only of these degrees of freedom force is conservative and energy is conserved.
+In this exercise $A$ and $a$ are constants. The force is given by the derivative of $V$ with respect to the spatial degrees of freedom and since the potential depends only on position, the force is conservative and energy is conserved. Furthermore, the curl of the force is zero. To see this we need first to compute the derivatives of the potential with respect to $x$, $y$ and $z$.
+We have that
+!bt
+\[
+F_x = -\frac{\partial V}{\partial x}=-\frac{xA}{a^2}\exp\left\{-\frac{x^2+z^2}{2a^2}\right\},
+\]
+!et
+and 
+!bt
+\[
+F_y = 0,
+\]
+!et
+and
+!bt
+\[
+F_z = -\frac{\partial V}{\partial z}=-\frac{zA}{a^2}\exp\left\{-\frac{x^2+z^2}{2a^2}\right\}.
+\]
+!et
+
+The components of the _curl_ of $\bm{F}$ are
+!bt
+\[
+(\bm{\nabla}\times\bm{F})_x = \frac{\partial F_y}{\partial z}-\frac{\partial F_z}{\partial y}=0,
+\]
+!et
+and
+!bt
+\[
+(\bm{\nabla}\times\bm{F})_y = \frac{\partial F_x}{\partial z}-\frac{\partial F_z}{\partial x}=\frac{xzA}{a^4}\exp\left\{-\frac{x^2+z^2}{2a^2}\right\}-\frac{xzA}{a^4}\exp\left\{-\frac{x^2+z^2}{2a^2}\right\}=0,
+\]
+!et
+and
+!bt
+\[
+(\bm{\nabla}\times\bm{F})_z = \frac{\partial F_y}{\partial x}-\frac{\partial F_x}{\partial y}=0.
+\]
+!et
+The force is a conservative one.
+
+
 
 * 3b (4pt) Which of  the quantities, $p_x,p_y,p_z$ are conserved?
 
-Taking the derivatives with respect to time shows that only $p_y$ is conserved.
+Taking the derivatives with respect to time shows that only $p_y$ is conserved, that is we have
+
+!bt
+\[
+\frac{\partial F_x}{\partial x} = \frac{x^2A}{a^4}\exp\left\{-\frac{x^2+z^2}{2a^2}\right\}-\frac{A}{a^2}\exp\left\{-\frac{x^2+z^2}{2a^2}\right\},
+\]
+!et
+and 
+!bt
+\[
+\frac{\partial F_y}{\partial y} = 0,
+\]
+!et
+and
+!bt
+\[
+\frac{\partial F_z}{\partial z} = \frac{z^2A}{a^4}\exp\left\{-\frac{x^2+z^2}{2a^2}\right\}-\frac{A}{a^2}\exp\left\{-\frac{x^2+z^2}{2a^2}\right\},
+\]
+!et
+
+
 
 * 3c (4pt) Which of  the quantities, $L_x,L_y,L_z$ are conserved?
+
+Using that $\bm{L}=\bm{r}\times\bm{p}$ and that
+!bt
+\[
+\frac{d\bm{L}}{dt}=\bm{r}\times\bm{F},
+\]
+!et
+we have that the different components are
+!bt
+\[
+(\bm{r}\times\bm{F})_x = zF_y-yF_z=\frac{yzA}{a^2}\exp\left\{-\frac{x^2+z^2}{2a^2}\right\}.
+\]
+!et
+and
+!bt
+\[
+(\bm{r}\times\bm{F})_y = xF_z-zF_x=-\frac{xzA}{a^2}\exp\left\{-\frac{x^2+z^2}{2a^2}\right\}+\frac{xzA}{a^2}\exp\left\{-\frac{x^2+z^2}{2a^2}\right\}=0,
+\]
+!et
+and
+!bt
+\[
+(\bm{r}\times\bm{F})_z = xF_y-yF_x=\frac{yxA}{a^2}\exp\left\{-\frac{x^2+z^2}{2a^2}\right\}.
+\]
+!et
+
 
 Only $L_y$ is conserved. 
 
@@ -384,7 +461,7 @@ In the numerical calculations you can choose $R=0.1$ m and the spring constant $
 * 6b (30pt) Choose a large enough final time so you can study the ball bouncing up and down several times. Add the normal force and compute the height of the ball as function of time with and without air resistance. Comment your results.
 
 
-For 7a, see Malthe-Sørenssen chapter 7.5.1, in particular figure
+For 6a, see Malthe-Sørenssen chapter 7.5.1, in particular figure
 7.10. The forces are in equation (7.10).  The following code shows how
 to set up the problem with gravitation, a drag force and a normal
 force from the ground. The normal force makes the ball bounce up
@@ -392,7 +469,7 @@ again.
 
 
 The code here includes all forces. Commenting out the air resistance will result in a ball which bounces up and down to the same height.
-Furthermore, you will note that for larger values of $\Delta t$ the results will not be physically meaningful. This points to the introduction of better methods, like the Euler-Cromer method. 
+Furthermore, you will note that for larger values of $\Delta t$ the results will not be physically meaningful. Can you figure out why?  Try also different values for the step size in order to see whether the final results agrees with what you expect.
 
 !bc pycod
 # Exercise 6, hw4, smarter way with declaration of vx, vy, x and y
