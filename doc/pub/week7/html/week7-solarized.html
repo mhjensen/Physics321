@@ -7,9 +7,9 @@ Automatically generated HTML file from DocOnce source
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="PHY321: Conservative Forces, Examples and start Harmonic Oscillations">
+<meta name="description" content="PHY321: Conservative Forces, Examples and Theory">
 
-<title>PHY321: Conservative Forces, Examples and start Harmonic Oscillations</title>
+<title>PHY321: Conservative Forces, Examples and Theory</title>
 
 
 <link href="https://cdn.rawgit.com/doconce/doconce/master/bundled/html_styles/style_solarized_box/css/solarized_light_code.css" rel="stylesheet" type="text/css" title="light"/>
@@ -73,10 +73,6 @@ div { text-align: justify; text-justify: inter-word; }
               ('Final expression', 2, None, 'final-expression'),
               ('Net Energy', 2, None, 'net-energy'),
               ('In Vector Notation', 2, None, 'in-vector-notation'),
-              ('Harmonic Oscillator Potential',
-               2,
-               None,
-               'harmonic-oscillator-potential'),
               ('The Earth-Sun system', 2, None, 'the-earth-sun-system'),
               ("The Earth-Sun system, Newton's Laws",
                2,
@@ -118,24 +114,27 @@ div { text-align: justify; text-justify: inter-word; }
                2,
                None,
                'adding-the-velocity-verlet-method'),
-              ('Harmonic Oscillator', 2, None, 'harmonic-oscillator'),
-              ('Harmonic Oscillator, deriving the Equations',
-               2,
-               None,
-               'harmonic-oscillator-deriving-the-equations'),
-              ('Harmonic Oscillator, Technicalities',
-               2,
-               None,
-               'harmonic-oscillator-technicalities'),
-              ('Harmonic Oscillator, Total Energy',
-               2,
-               None,
-               'harmonic-oscillator-total-energy'),
               ('Additional Material: Link between Line Integrals and '
                'Conservative forces',
                2,
                None,
-               'additional-material-link-between-line-integrals-and-conservative-forces')]}
+               'additional-material-link-between-line-integrals-and-conservative-forces'),
+              ('Exactness and Independence of Path',
+               2,
+               None,
+               'exactness-and-independence-of-path'),
+              ('Differential Forms', 2, None, 'differential-forms'),
+              ('In Vector Language', 2, None, 'in-vector-language'),
+              ('Path Independence Theorem',
+               2,
+               None,
+               'path-independence-theorem'),
+              ('Work-Energy Theorem again',
+               2,
+               None,
+               'work-energy-theorem-again'),
+              ('Additional Theorem', 2, None, 'additional-theorem'),
+              ('Summarizing', 2, None, 'summarizing')]}
 end of tocinfo -->
 
 <body>
@@ -161,7 +160,7 @@ MathJax.Hub.Config({
 
 
 
-<center><h1>PHY321: Conservative Forces, Examples and start Harmonic Oscillations</h1></center>  <!-- document title -->
+<center><h1>PHY321: Conservative Forces, Examples and Theory</h1></center>  <!-- document title -->
 
 <p>
 <!-- author(s): <a href="http://mhjgit.github.io/info/doc/web/" target="_blank">Morten Hjorth-Jensen</a> -->
@@ -177,7 +176,7 @@ MathJax.Hub.Config({
 <center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
 <br>
 <p>
-<center><h4>Feb 16, 2021</h4></center> <!-- date -->
+<center><h4>Feb 19, 2021</h4></center> <!-- date -->
 <br>
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -520,35 +519,6 @@ you would have to determine which points, \( x,y,z \), the particles might
 reach in the trajectory, whereas in one dimension you can typically
 tell by simply seeing whether the kinetic energy is positive at every
 point between the old position and the new position.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="harmonic-oscillator-potential">Harmonic Oscillator Potential </h2>
-
-<p>
-Consider a simple harmonic oscillator potential, \( V(x)=kx^2/2 \), with a particle emitted from \( x=0 \) with velocity \( v_0 \). Solve for the trajectory \( t(x) \),
-
-$$
-\begin{eqnarray}
-t&=&\int_{0}^x \frac{dx'}{\sqrt{2(E-kx^2/2)/m}}\\
-\nonumber
-&=&\sqrt{m/k}\int_0^x~\frac{dx'}{\sqrt{x_{\rm max}^2-x^{\prime 2}}},~~~x_{\rm max}^2=2E/k.
-\end{eqnarray}
-$$
-
-<p>
-Here \( E=mv_0^2/2 \) and \( x_{\rm max} \) is defined as the maximum
-displacement before the particle turns around. This integral is done
-by the substitution \( \sin\theta=x/x_{\rm max} \).
-
-$$
-\begin{eqnarray}
-(k/m)^{1/2}t&=&\sin^{-1}(x/x_{\rm max}),\\
-\nonumber
-x&=&x_{\rm max}\sin\omega t,~~~\omega=\sqrt{k/m}.
-\end{eqnarray}
-$$
 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -1004,151 +974,245 @@ which takes in as input the various variables. We leave this as a challenge to y
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="harmonic-oscillator">Harmonic Oscillator </h2>
-
-<p>
-The harmonic oscillator is omnipresent in physics. Although you may think 
-of this as being related to springs, it, or an equivalent
-mathematical representation, appears in just about any problem where a
-mode is sitting near its potential energy minimum. At that point,
-\( \partial_x V(x)=0 \), and the first non-zero term (aside from a
-constant) in the potential energy is that of a harmonic oscillator. In
-a solid, sound modes (phonons) are built on a picture of coupled
-harmonic oscillators, and in relativistic field theory the fundamental
-interactions are also built on coupled oscillators positioned
-infinitesimally close to one another in space. The phenomena of a
-resonance of an oscillator driven at a fixed frequency plays out
-repeatedly in atomic, nuclear and high-energy physics, when quantum
-mechanically the evolution of a state oscillates according to
-\( e^{-iEt} \) and exciting discrete quantum states has very similar
-mathematics as exciting discrete states of an oscillator.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="harmonic-oscillator-deriving-the-equations">Harmonic Oscillator, deriving the Equations </h2>
-The potential energy for a single particle as a function of its position \( x \) can be written as a Taylor expansion about some point \( x_0 \)
-
-$$
-\begin{equation}
-V(x)=V(x_0)+(x-x_0)\left.\partial_xV(x)\right|_{x_0}+\frac{1}{2}(x-x_0)^2\left.\partial_x^2V(x)\right|_{x_0}
-+\frac{1}{3!}\left.\partial_x^3V(x)\right|_{x_0}+\cdots
-\label{_auto7}
-\end{equation}
-$$
-
-If the position \( x_0 \) is at the minimum of the resonance, the first two non-zero terms of the potential are
-
-$$
-\begin{eqnarray}
-V(x)&\approx& V(x_0)+\frac{1}{2}(x-x_0)^2\left.\partial_x^2V(x)\right|_{x_0},\\
-\nonumber
-&=&V(x_0)+\frac{1}{2}k(x-x_0)^2,~~~~k\equiv \left.\partial_x^2V(x)\right|_{x_0},\\
-\nonumber
-F&=&-\partial_xV(x)=-k(x-x_0).
-\end{eqnarray}
-$$
-
-Put into Newton's 2nd law (assuming \( x_0=0 \)),
-
-$$
-\begin{eqnarray}
-m\ddot{x}&=&-kx,\\
-x&=&A\cos(\omega_0 t-\phi),~~~\omega_0=\sqrt{k/m}.
-\end{eqnarray}
-$$
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="harmonic-oscillator-technicalities">Harmonic Oscillator, Technicalities </h2>
-
-<p>
-Here \( A \) and \( \phi \) are arbitrary. Equivalently, one could have
-written this as \( A\cos(\omega_0 t)+B\sin(\omega_0 t) \), or as the real
-part of \( Ae^{i\omega_0 t} \). In this last case \( A \) could be an
-arbitrary complex constant. Thus, there are 2 arbitrary constants
-(either \( A \) and \( B \) or \( A \) and \( \phi \), or the real and imaginary part
-of one complex constant. This is the expectation for a second order
-differential equation, and also agrees with the physical expectation
-that if you know a particle's initial velocity and position you should
-be able to define its future motion, and that those two arbitrary
-conditions should translate to two arbitrary constants.
-
-<p>
-A key feature of harmonic motion is that the system repeats itself
-after a time \( T=1/f \), where \( f \) is the frequency, and \( \omega=2\pi f \)
-is the angular frequency. The period of the motion is independent of
-the amplitude. However, this independence is only exact when one can
-neglect higher terms of the potential, \( x^3, x^4\cdots \). Once can
-neglect these terms for sufficiently small amplitudes, and for larger
-amplitudes the motion is no longer purely sinusoidal, and even though
-the motion repeats itself, the time for repeating the motion is no
-longer independent of the amplitude.
-
-<p>
-One can also calculate the velocity and the kinetic energy as a function of time,
-
-$$
-\begin{eqnarray}
-\dot{x}&=&-\omega_0A\sin(\omega_0 t-\phi),\\
-\nonumber
-K&=&\frac{1}{2}m\dot{x}^2=\frac{m\omega_0^2A^2}{2}\sin^2(\omega_0t-\phi),\\
-\nonumber
-&=&\frac{k}{2}A^2\sin^2(\omega_0t-\phi).
-\end{eqnarray}
-$$
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="harmonic-oscillator-total-energy">Harmonic Oscillator, Total Energy </h2>
-
-<p>
-The total energy is then
-
-$$
-\begin{equation}
-E=K+V=\frac{1}{2}m\dot{x}^2+\frac{1}{2}kx^2=\frac{1}{2}kA^2.
-\label{_auto8}
-\end{equation}
-$$
-
-<p>
-The total energy then goes as the square of the amplitude.
-
-<p>
-A pendulum is an example of a harmonic oscillator. By expanding the
-kinetic and potential energies for small angles find the frequency for
-a pendulum of length \( L \) with all the mass \( m \) centered at the end by
-writing the eq.s of motion in the form of a harmonic oscillator.
-
-<p>
-The potential energy and kinetic energies are (for \( x \) being the displacement)
-
-$$
-\begin{eqnarray*}
-V&=&mgL(1-\cos\theta)\approx mgL\frac{x^2}{2L^2},\\
-K&=&\frac{1}{2}mL^2\dot{\theta}^2\approx \frac{m}{2}\dot{x}^2.
-\end{eqnarray*}
-$$
-
-<p>
-For small \( x \) Newton's 2nd law becomes
-
-$$
-m\ddot{x}=-\frac{mg}{L}x,
-$$
-
-<p>
-and the spring constant would appear to be \( k=mg/L \), which makes the
-frequency equal to \( \omega_0=\sqrt{g/L} \). Note that the frequency is
-independent of the mass.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
 <h2 id="additional-material-link-between-line-integrals-and-conservative-forces">Additional Material: Link between Line Integrals and Conservative forces </h2>
+
+<p>
+The concept of line integrals plays an important role in our discussion of energy conservation,
+our definition of potentials and conservative forces.
+
+<p>
+Let us remind ourselves of some the basic elements (most of you may
+have seen this in a calculus course under the general topic of vector
+fields).
+
+<p>
+We define a path integration \( C \), that is we integrate
+from a point \( \boldsymbol{r}_1 \) to a point \( \boldsymbol{r}_2 \). 
+Let us assume that the path \( C \) is represented by an arc length \( s \). In three dimension we have the following representation of \( C \)
+$$
+\boldsymbol{r}(s)=x(s)\boldsymbol{e}_1+y(s)\boldsymbol{e}_2+z(s)\boldsymbol{e}_3,
+$$
+
+then our integral of a function \( f(x,y,z) \) along the path \( C \) is defined as 
+$$
+\int_Cf(x,y,z)ds=\int_a^bf\left(x(s),y(s),z(s)\right)ds,
+$$
+
+where the initial and final points are \( a \) and \( b \), respectively.
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="exactness-and-independence-of-path">Exactness and Independence of Path </h2>
+
+<p>
+With the definition of a line integral, we can in tunrn set up the
+theorem of independence of integration path.
+
+<p>
+Let us define
+\( f(x,y,z) \), \( g(x,y,z) \) and \( h(x,y,z) \) to be functions which are
+defined and continuous in a domain \( D \) in space. Then a line integral
+like the above is said to be independent of path in \( D \), if for every
+pair of endpoints \( a \) and \( b \) in \( D \) the value of the integral is the
+same for all paths \( C \) in \( D \) starting from a point \( a \) and ending in
+a point \( b \). The integral depends thus only on the integration limits
+and not on the path.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="differential-forms">Differential Forms </h2>
+
+<p>
+An expression of the form
+$$
+fdx+gdy+hdz,
+$$
+
+where \( f \), \( g \) and \( h \) are functions defined in \( D \), is a called a first-order differential form
+in three variables.
+The form is said to be exact if it is the differential
+$$
+du= \frac{\partial u}{\partial x}dx+\frac{\partial u}{\partial y}dy+\frac{\partial u}{\partial z}dz,
+$$
+
+of a differentiable function \( u(x,y,z) \) everywhere in \( D \), that is
+$$
+du=fdx+gdy+hdz.
+$$
+
+It is said to be exact if and only if we can then set
+$$
+f=\frac{\partial u}{\partial x},
+$$
+
+and
+$$
+g=\frac{\partial u}{\partial y},
+$$
+
+and
+$$
+h=\frac{\partial u}{\partial z},
+$$
+
+everywhere in the domain \( D \).
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="in-vector-language">In Vector Language </h2>
+
+<p>
+In vector language the above means that the differential form 
+$$
+fdx+gdy+hdz,
+$$
+
+is exact in \( D \) if and only if the vector function (it could be a force, or velocity, acceleration or other vectors we encounter in this course)
+$$
+\boldsymbol{F}=f\boldsymbol{e}_1+g\boldsymbol{e}_2+h\boldsymbol{e}_3,
+$$
+
+is the gradient of a function \( u(x,y,z) \)
+$$
+\boldsymbol{v}=\boldsymbol{\nabla}u=\frac{\partial u}{\partial x}\boldsymbol{e}_1+\frac{\partial u}{\partial y}\boldsymbol{e}_2+\frac{\partial u}{\partial z}\boldsymbol{e}_3.
+$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="path-independence-theorem">Path Independence Theorem </h2>
+
+<p>
+If this is the case, we can state the path independence theorem which
+states that with functions \( f(x,y,z) \), \( g(x,y,z) \) and \( h(x,y,z) \) that fulfill the above
+exactness conditions,  the line integral
+
+$$
+\int_C\left(fdx+gdy+hdz\right),
+$$
+
+<b>is independent of path in \( D \) if and only if the differential form under the integral sigh is exact in $D$</b>.
+
+<p>
+This is path independence theorem.
+
+<p>
+We will not give a proof of the theorem. You can find this in any vector analysis chapter in a mathematics textbook.
+
+<p>
+We note however that the path integral from a point \( p \) to a final point \( q \)
+$$
+\int_p^q\left(fdx+gdy+hdz\right)=\int_p^q\left(\frac{\partial u}{\partial x}dx+\frac{\partial u}{\partial y}dy+\frac{\partial u}{\partial z}dz\right)=\int_p^qdu.
+$$
+
+<p>
+Assume now that we have a dependence on a variable \( s \) for \( x \), \( y \) and \( z \). We haven then
+$$
+\int_p^qdu=\int_{s_1}^{s_2}\frac{du}{ds}ds = u(x(s),y(s),z(s))\vert_{s=s_1}^{s=s_2}=u(q)-u(p).
+$$
+
+<p>
+This last equation
+$$
+\int_p^q\left(fdx+gdy+hdz\right)=u(q)-u(p),
+$$
+
+is the anlogue of the usual formula
+$$
+\int_a^bf(x)dx=F(x)\vert_a^b=F(b)-F(a),
+$$
+
+with \( F'(x)=f(x) \).
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="work-energy-theorem-again">Work-Energy Theorem again </h2>
+
+<p>
+We remember that a the work done by a force
+\( \boldsymbol{F}=f\boldsymbol{e}_1+g\boldsymbol{e}_2+h\boldsymbol{e}_3 \) on a displacemnt \( d\boldsymbol{r} \)
+is
+$$
+W=\int_C\boldsymbol{F}d\boldsymbol{r}=\int_C(fdx+gdy+hdz).
+$$
+
+<p>
+From the path independence theorem, we know that this has to result in
+the difference between the two endpoints only. This is exact if and
+only if the force is the force \( \boldsymbol{F} \) is the gradient of a scalar
+function \( u \). We call this scalar function, which depends only the
+positions \( x,y,z \) for the potential energy \( V(x,y,z)=V(\boldsymbol{r}) \).
+
+<p>
+We have thus
+$$
+\boldsymbol{F}(\boldsymbol{r})\propto \boldsymbol{\nabla}V({\boldsymbol{r}),
+$$
+
+and we define  this as
+$$
+\boldsymbol{F}(\boldsymbol{r})= -\boldsymbol{\nabla}V({\boldsymbol{r}).
+$$
+
+<p>
+Such a force is called <b>a conservative force</b>. The above expression can be used to demonstrate
+energy conservation.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="additional-theorem">Additional Theorem </h2>
+
+<p>
+Finally we can define the criterion for exactness and independence of
+path. This theorem states that if \( f(x,y,z) \), \( g(x,y,z) \) and
+\( h(x,y,z) \) are continuous functions with continuous first partial derivatives in the domain \( D \),
+then the line integral
+$$
+\int_C\left(fdx+gdy+hdz\right),
+$$
+
+is independent of path in \( D \) when
+
+$$
+\frac{\partial h}{\partial y}=\frac{\partial g}{\partial z},
+$$
+
+and
+$$
+\frac{\partial f}{\partial z}=\frac{\partial h}{\partial x},
+$$
+
+and
+$$
+\frac{\partial g}{\partial x}=\frac{\partial f}{\partial y}.
+$$
+
+<p>
+This leads to the <b>curl</b> of \( \boldsymbol{F} \) being zero
+$$
+\boldsymbol{\nabla}\times\boldsymbol{F}=\boldsymbol{\nabla}\times\left(-\boldsymbol{\nabla}V(\boldsymbol{r})\right)=0!
+$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="summarizing">Summarizing </h2>
+
+<p>
+A conservative force \( \boldsymbol{F} \) is a defined as the partial derivative of a scalar potential which depends only on the position,
+$$
+\boldsymbol{F}(\boldsymbol{r})= -\boldsymbol{\nabla}V({\boldsymbol{r}).
+$$
+
+<p>
+This leads to conservation of energy and a path independent line integral as long as the curl of the force is zero, that is
+$$
+\boldsymbol{\nabla}\times\boldsymbol{F}=\boldsymbol{\nabla}\times\left(-\boldsymbol{\nabla}V(\boldsymbol{r})\right)=0.
+$$
+
 
 <!-- ------------------- end of main content --------------- -->
 
