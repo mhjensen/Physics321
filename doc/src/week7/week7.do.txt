@@ -938,3 +938,363 @@ independent of the mass.
 !split
 ===== Additional Material: Link between Line Integrals and Conservative forces =====
 
+
+The fundamental theorem of line integrals, also called the gradient theorem, states that
+\begin{aligned} \int_a^b \nabla \blueE{f}(\greenE{\vec{\textbf{r}}}(t)) \cdot \redE{\vec{\textbf{r}}'}(t)dt = \blueE{f}(\greenE{\vec{\textbf{r}}}(b)) - \blueE{f}(\greenE{\vec{\textbf{r}}}(a)) \end{aligned} 
+∫ 
+
+ 
+The intuition behind this formula is that each side represents the change in the value of a multivariable function \blueE{f}fstart color #0c7f99, f, end color #0c7f99 as you walk along a path parameterized by \greenE{\vec{\textbf{r}}(t)} 
+r
+ (t)start color #0d923f, start bold text, r, end bold text, with, vector, on top, left parenthesis, t, right parenthesis, end color #0d923f.
+This formula implies that gradient fields are path independent, meaning the line integrals along any two paths connecting the same start and end points will be equal.
+Statement of the theorem
+Recall that the fundamental theorem of calculus in the single-variable world states that
+\begin{aligned} \int_a^b g'(t)dt = g(b) - g(a) \end{aligned} 
+∫ 
+a
+b
+​	
+ g 
+′
+ (t)dt=g(b)−g(a)
+​	
+ 
+In some sense, this says that integration is the opposite of differentiation.
+The fundamental theorem of line integrals, also known as the gradient theorem, is one of several ways to extend this theorem into higher dimensions. In a sense, it says that line integration through a vector field is the opposite of the gradient. The statement of the theorem is that
+\begin{aligned} \int_a^b \nabla \blueE{f}(\greenE{\vec{\textbf{r}}}(t)) \cdot \redE{\vec{\textbf{r}}'}(t)dt = \blueE{f}(\greenE{\vec{\textbf{r}}}(b)) - \blueE{f}(\greenE{\vec{\textbf{r}}}(a)) \end{aligned} 
+∫ 
+a
+b
+​	
+ ∇f( 
+r
+ (t))⋅ 
+r
+  
+′
+ (t)dt=f( 
+r
+ (b))−f( 
+r
+ (a))
+​	
+ 
+
+Where
+\blueE{f}fstart color #0c7f99, f, end color #0c7f99 is some scalar-valued multivariable function.
+\nabla \blueE{f}∇fdel, start color #0c7f99, f, end color #0c7f99 is the gradient of \blueE{f}fstart color #0c7f99, f, end color #0c7f99.
+\greenE{\vec{\textbf{r}}}(t) 
+r
+ (t)start color #0d923f, start bold text, r, end bold text, with, vector, on top, end color #0d923f, left parenthesis, t, right parenthesis is a vector-valued function which parameterizes some path through the input space of \blueE{f}fstart color #0c7f99, f, end color #0c7f99.
+\vec{\textbf{r}}(a) 
+r
+ (a)start bold text, r, end bold text, with, vector, on top, left parenthesis, a, right parenthesis and \vec{\textbf{r}}(b) 
+r
+ (b)start bold text, r, end bold text, with, vector, on top, left parenthesis, b, right parenthesis are the end points of the path.
+\redE{\vec{\textbf{r}}'}(t) 
+r
+  
+′
+ (t)start color #bc2612, start bold text, r, end bold text, with, vector, on top, prime, end color #bc2612, left parenthesis, t, right parenthesis is the derivative of \greenE{\vec{\textbf{r}}}(t) 
+r
+ (t)start color #0d923f, start bold text, r, end bold text, with, vector, on top, end color #0d923f, left parenthesis, t, right parenthesis, taken component-wise as usual.
+You might also see this theorem written without reference to the parameterization \vec{\textbf{r}}(t) 
+r
+ (t)start bold text, r, end bold text, with, vector, on top, left parenthesis, t, right parenthesis as follows:
+\begin{aligned} \int_C \nabla f \cdot d\textbf{s} = f(B) - f(A) \end{aligned} 
+∫ 
+C
+​	
+ ∇f⋅ds=f(B)−f(A)
+​	
+ 
+Where CCC represents the path through space, with AAA as its starting point and BBB as its ending point, and d\textbf{s}dsd, start bold text, s, end bold text is thought of as a tiny step along CCC.
+In short, the theorem states that the line integral of the gradient of a function fff gives the total change in the value of fff from the start of the curve to its end.
+The intuition
+The meaning behind this formula is actually fairly straightforward​, once we take some time to digest the meaning of each term. There are two main players on the stage right now:
+A path wandering through space (let's say two-dimensional space, for now, to make drawing easier).
+A function fff which takes in points of that path as its input, and outputs a number.
+Think about how the value of the function fff changes as we walk along the path. The following video shows one way to visualize this, where the graph of some function fff is shown in blue, a path in the xyxyx, y-plane is shown in red, and the projection of that path onto the graph is also shown in red.
+
+
+
+A quick proof
+Using the multivariable chain rule, we have
+\begin{aligned} \dfrac{d}{dt} f(\vec{\textbf{r}}(t)) = \nabla f(\vec{\textbf{r}}(t)) \cdot \vec{\textbf{r}}'(t) \end{aligned} 
+dt
+d
+​	
+ f( 
+r
+ (t))=∇f( 
+r
+ (t))⋅ 
+r
+  
+′
+ (t)
+​	
+ 
+Plugging this into the statement of the gradient theorem, we see it becomes the same as the fundamental theorem of calculus
+\begin{aligned} &\phantom{=} \int_a^b \nabla f(\vec{\textbf{r}}(t)) \cdot \vec{\textbf{r}}'(t)dt \\\\ &= \int_a^b \dfrac{d}{dt} f(\vec{\textbf{r}}(t))dt \\\\ &= f(\vec{\textbf{r}}(b)) - f(\vec{\textbf{r}}(a)) \end{aligned} 
+​	
+  
+=∫ 
+a
+b
+​	
+ ∇f( 
+r
+ (t))⋅ 
+r
+  
+′
+ (t)dt
+=∫ 
+a
+b
+​	
+  
+dt
+d
+​	
+ f( 
+r
+ (t))dt
+=f( 
+r
+ (b))−f( 
+r
+ (a))
+​	
+ 
+Tada!
+This proof leverages the powerful fundamental theorem of calculus, along with the multivariable chain rule, and hence looks deceptively simple. A good exercise in understanding this theorem is to think through how exactly this quick and tidy three-line proof encapsulates the intuition for the gradient theorem spelled out in the last section.
+There's nothing wrong with using other powerful theorems to help prove new results. In fact, to avoid doing so would be foolish. However, walking through such proofs is often not enough for a deeper understanding, so it's healthy to unravel new results into their full meaning, seeing how they stand up on their own.
+
+
+
+Solution 2: Apply the fundamental theorem of line integrals
+Applying the fundamental theorem of line integrals, we can skip over many of the steps from the previous solution, including the computation of the gradient of fff and the derivative of \vec{\textbf{r}}(t) 
+r
+ (t)start bold text, r, end bold text, with, vector, on top, left parenthesis, t, right parenthesis.
+Solve the line integral above using the gradient theorem. [Solution]
+If you look back through the full computation of the line integral in solution 1, the computations we performed actually feel pretty silly. We took the derivative of everything, including the partial derivatives of x^2 + y^2x 
+2
+ +y 
+2
+ x, squared, plus, y, squared and the ordinary derivatives of ttt and \sin(t)sin(t)sine, left parenthesis, t, right parenthesis, then later integrated those derivatives back up to where they started.
+Working through this should also help build an intuition for how the fundamental theorem of line integrals derives from the fundamental theorem of calculus.
+Path independence
+The gradient theorem has a really important consequence regarding gradient fields. Suppose you have two distinct curves C_1C 
+1
+​	
+ C, start subscript, 1, end subscript and C_2C 
+2
+​	
+ C, start subscript, 2, end subscript, each connecting the same two points AAA and BBB. Let's say these are wandering through the gradient field of some scalar-valued function fff:
+
+According to the gradient theorem, the line integral of \nabla f∇fdel, f along each of these curves will be the same, since that integral is completely determined by the value of fff at AAA and BBB:
+\begin{aligned} \int_{C_1} \nabla f \cdot d\textbf{r} = f(B) - f(A) = \int_{C_2} \nabla f \cdot d\textbf{r} \end{aligned} 
+∫ 
+C 
+1
+​	
+ 
+​	
+ ∇f⋅dr=f(B)−f(A)=∫ 
+C 
+2
+​	
+ 
+​	
+ ∇f⋅dr
+​	
+ 
+We explore this idea further in the next article on conservative vector fields.
+Summary
+The fundamental theorem of line integrals, also called the gradient theorem, states that
+\begin{aligned} \int_a^b \nabla \blueE{f}(\greenE{\vec{\textbf{r}}}(t)) \cdot \redE{\vec{\textbf{r}}'}(t)dt = \blueE{f}(\greenE{\vec{\textbf{r}}}(b)) - \blueE{f}(\greenE{\vec{\textbf{r}}}(a)) \end{aligned} 
+∫ 
+a
+b
+​	
+ ∇f( 
+r
+ (t))⋅ 
+r
+  
+′
+ (t)dt=f( 
+r
+ (b))−f( 
+r
+ (a))
+​	
+ 
+The intuition behind this formula is that each side represents the change in the value of a multivariable function \blueE{f}fstart color #0c7f99, f, end color #0c7f99 as you walk along a path parameterized by \greenE{\vec{\textbf{r}}(t)} 
+r
+ (t)start color #0d923f, start bold text, r, end bold text, with, vector, on top, left parenthesis, t, right parenthesis, end color #0d923f.
+This formula implies that gradient fields are path independent, meaning the line integrals along any two paths connecting the same start and end points will be equal.
+
+
+A vector field \textbf{F}(x, y)F(x,y)start bold text, F, end bold text, left parenthesis, x, comma, y, right parenthesis is called a conservative vector field if it satisfies any one of the following three properties (all of which are defined within the article):
+Line integrals of \textbf{F}Fstart bold text, F, end bold text are path independent.
+Line integrals of \textbf{F}Fstart bold text, F, end bold text over closed loops are always 000.
+\textbf{F}Fstart bold text, F, end bold text is the gradient of some scalar-valued function, i.e. \textbf{F} = \nabla gF=∇gstart bold text, F, end bold text, equals, del, g for some function ggg.
+There is also another property equivalent to all these: \textbf{F}Fstart bold text, F, end bold text is irrotational, meaning its curl is zero everywhere (with a slight caveat). However, I'll discuss that in a separate article which defines curl in terms of line integrals.
+The key takeaway here is not just the definition of a conservative vector field, but the surprising fact that the seemingly different conditions listed above are equivalent to each other. Madness!
+Path independence
+Imagine you have any ol' off-the-shelf vector field \textbf{F}(x, y)F(x,y)start bold text, F, end bold text, left parenthesis, x, comma, y, right parenthesis, and you consider the line integrals of \textbf{F}Fstart bold text, F, end bold text of two separate paths, C_1C 
+1
+​	
+ C, start subscript, 1, end subscript and C_2C 
+2
+​	
+ C, start subscript, 2, end subscript, each starting at a point AAA and ending at a point BBB
+
+For almost all vector fields \textbf{F}Fstart bold text, F, end bold text, and almost all choices for the two paths C_1C 
+1
+​	
+ C, start subscript, 1, end subscript and C_2C 
+2
+​	
+ C, start subscript, 2, end subscript, these integrals will be different.
+\begin{aligned} \int_{C_1} \textbf{F} \cdot d\textbf{s} \ne \int_{C_2} \textbf{F} \cdot d\textbf{s} \quad \leftarrow \text{Almost always true} \end{aligned} 
+∫ 
+C 
+1
+​	
+ 
+​	
+ F⋅ds 
+
+​	
+ =∫ 
+C 
+2
+​	
+ 
+​	
+ F⋅ds←Almost always true
+​	
+ 
+And this makes sense! Each integral is adding up completely different values at completely different points in space. What's surprising is that there exist some vector fields where distinct paths connecting the same two points will always be equal, no matter the choice of paths (of which there are super-infinitely many).
+In the last article, covering the gradient theorem we saw that in the special case of vector fields which are the gradient of some scalar-valued function, \nabla f∇fdel, f, this magical property is true. The line integrals along distinct paths connecting the same two points AAA and BBB will always evaluate to the same thing:
+\begin{aligned} \int_{C_1} \nabla f \cdot d\textbf{s} = \underbrace{ f(B) - f(A) }_{\substack{ \text{Result of the} \\\\ \text{gradient theorem} }} = \int_{C_2} \nabla f \cdot d\textbf{s} \end{aligned} 
+∫ 
+C 
+1
+​	
+ 
+​	
+ ∇f⋅ds= 
+Result of the
+gradient theorem
+​	
+ 
+f(B)−f(A)
+​	
+ 
+​	
+ =∫ 
+C 
+2
+​	
+ 
+​	
+ ∇f⋅ds
+​	
+ 
+Definition: This property is called path independence. Specifically, a line integral through a vector field \textbf{F}(x, y)F(x,y)start bold text, F, end bold text, left parenthesis, x, comma, y, right parenthesis is said to be path independent if the value of the integral only depends on the point where the path starts and the point where it ends, not the specific choice of path in between.
+Actually, when you properly understand the gradient theorem, this statement isn't totally magical. This is because line integrals against the gradient of fff measure the change in the value of fff. Visualizing this with the graph of fff, this says that any two paths bringing you from one point to another change your altitude by the same amount.
+Khan Academy video wrapper
+The takeaway from this result is that gradient fields are very special vector fields. Because this property of path independence is so rare, in a sense, "most" vector fields cannot be gradient fields.
+Path independence implies gradient field
+Okay, so gradient fields are special due to this path independence property. But can you come up with a vector field \textbf{F}(x, y)F(x,y)start bold text, F, end bold text, left parenthesis, x, comma, y, right parenthesis in which all line integrals are path independent, but which is not the gradient of some scalar-valued function?
+I guess I've spoiled the answer with the section title and the introduction: All vector fields in which line integrals are path independent must be the gradient of some function. By why?
+Really, why would this be true? Consider an arbitrary vector field \textbf{F}(x, y)F(x,y)start bold text, F, end bold text, left parenthesis, x, comma, y, right parenthesis in which line integrals are path independent, meaning
+\begin{aligned} \int_{C_1} \textbf{F} \cdot d\textbf{s} = \int_{C_2} \textbf{F} \cdot d\textbf{s} \end{aligned} 
+∫ 
+C 
+1
+​	
+ 
+​	
+ F⋅ds=∫ 
+C 
+2
+​	
+ 
+​	
+ F⋅ds
+​	
+ 
+for all paths C_1C 
+1
+​	
+ C, start subscript, 1, end subscript and C_2C 
+2
+​	
+ C, start subscript, 2, end subscript which connect the same two points AAA and BBB. What is it about this property that ensures the existence of some function ggg such that \nabla g = \textbf{F}∇g=Fdel, g, equals, start bold text, F, end bold text?
+Challenge question: Can you think of a way to construct such a function ggg in terms of \textbf{F}Fstart bold text, F, end bold text using the fact that \textbf{F}Fstart bold text, F, end bold text is path-independent?
+This is a tricky question, but it might help to look back at the gradient theorem for inspiration.
+[Answer]
+Closed loops
+Definition: A path is called closed if it starts and ends at the same point. Such paths are also commonly called closed loops.
+For example, the path CCC pictured below starts and ends at AAA.
+
+If we take a vector field \textbf{F}Fstart bold text, F, end bold text where all line integrals are path independent, the line integral of \textbf{F}Fstart bold text, F, end bold text on any closed loop will be 000. Why?
+[Answer] [Another answer]
+The converse of this fact is also true: If the line integrals of \textbf{F}Fstart bold text, F, end bold text on all closed loops evaluate to 000, then all line integrals must be path independent. Why?
+[Answer]
+Funky notation for closed-loop integrals.
+You will sometimes see a line integral over a closed loop CCC written as
+\begin{aligned} \oint_C \textbf{F} \cdot d\textbf{r} \end{aligned} 
+∮ 
+C
+​	
+ F⋅dr
+​	
+ 
+Don't worry, this is not a new operation that needs to be learned. It is just a line integral, computed in just the same way as we have done before, but it is meant to emphasize to the reader that CCC is a closed loop.
+Potential energy
+In the article introducing​ line integrals through a vector field, I mentioned briefly how in physics, the work done by a force on an object in motion is computed by taking a line integral of the force's vector field along the path of motion.
+\begin{aligned} W = \int_C \textbf{F} \cdot d\textbf{s} \end{aligned} 
+W=∫ 
+C
+​	
+ F⋅ds
+​	
+ 
+A force is called conservative if the work it does on an object moving from any point AAA to another point BBB is always the same, no matter what path is taken. In other words, if this integral is always path-independent. Fundamental forces like gravity and the electric force are conservative, and the quintessential example of a non-conservative force is friction.
+This has an interesting consequence based on our discussion above: If a force is conservative, it must be the gradient of some function.
+\textbf{F} = \nabla UF=∇Ustart bold text, F, end bold text, equals, del, U
+Moreover, according to the gradient theorem, the work done on an object by this force as it moves from point AAA to point BBB can be computed just by evaluating this function UUU at each point:
+\begin{aligned} W &= \int_C \textbf{F} \cdot d\textbf{s} \\\\ &= \int_C \nabla U \cdot d\textbf{s} \\\\ &= U(B) - U(A) \end{aligned} 
+W
+​	
+  
+=∫ 
+C
+​	
+ F⋅ds
+=∫ 
+C
+​	
+ ∇U⋅ds
+=U(B)−U(A)
+​	
+ 
+As the physics students among you have likely guessed, this function UUU is potential energy. For example, if you take the gradient of gravitational potential or electric potential, you will get the gravitational force or electric force respectively. This is why computing the work done by a conservative force can be simplified to comparing potential energies.
+It also means you could never have a "potential friction energy" since friction force is non-conservative.
+Escher
+Moving from physics to art, this classic drawing "Ascending and Descending" by M.C. Escher shows what the world would look like if gravity were a non-conservative force.
+
+Closed loop perspective:
+Imagine walking clockwise on this staircase. With each step gravity would be doing negative work on you. So integrating the work along your full circular loop, the total work gravity does on you would be quite negative. However, that's an integral in a closed loop, so the fact that it's nonzero must mean the force acting on you cannot be conservative.
+Path independence perspective
+Imagine walking from the tower on the right corner to the left corner. If you get there along the clockwise path, gravity does negative work on you. If you get there along the counterclockwise path, gravity does positive work on you. Since both paths start and end at the same point, path independence fails, so the gravity force field cannot be conservative.
+Gradient perspective:
+In the real world, gravitational potential corresponds with altitude​, because the work done by gravity is proportional to a change in height. What makes the Escher drawing striking is that the idea of altitude doesn't make sense. Many steps "up" with no steps down can lead you back to the same point. This corresponds with the fact that there is no potential function UUU such that \nabla U∇Udel, U give the gravity field.
