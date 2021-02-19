@@ -1,4 +1,4 @@
-TITLE: PHY321: Conservative Forces, Examples and start Harmonic Oscillations
+TITLE: PHY321: Conservative Forces, Examples and Theory
 AUTHOR: "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/" {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and Facility for Rare Ion Beams (FRIB), Michigan State University, USA & Department of Physics, University of Oslo, Norway
 DATE: today
 
@@ -333,32 +333,6 @@ reach in the trajectory, whereas in one dimension you can typically
 tell by simply seeing whether the kinetic energy is positive at every
 point between the old position and the new position.
 
-
-!split
-===== Harmonic Oscillator Potential =====
-
-
-Consider a simple harmonic oscillator potential, $V(x)=kx^2/2$, with a particle emitted from $x=0$ with velocity $v_0$. Solve for the trajectory $t(x)$,
-
-!bt
-\begin{eqnarray}
-t&=&\int_{0}^x \frac{dx'}{\sqrt{2(E-kx^2/2)/m}}\\
-\nonumber
-&=&\sqrt{m/k}\int_0^x~\frac{dx'}{\sqrt{x_{\rm max}^2-x^{\prime 2}}},~~~x_{\rm max}^2=2E/k.
-\end{eqnarray}
-!et
-
-Here $E=mv_0^2/2$ and $x_{\rm max}$ is defined as the maximum
-displacement before the particle turns around. This integral is done
-by the substitution $\sin\theta=x/x_{\rm max}$.
-
-!bt
-\begin{eqnarray}
-(k/m)^{1/2}t&=&\sin^{-1}(x/x_{\rm max}),\\
-\nonumber
-x&=&x_{\rm max}\sin\omega t,~~~\omega=\sqrt{k/m}.
-\end{eqnarray}
-!et
 
 
 !split
@@ -810,491 +784,245 @@ which takes in as input the various variables. We leave this as a challenge to y
 
 
 !split
-===== Harmonic Oscillator =====
-
-The harmonic oscillator is omnipresent in physics. Although you may think 
-of this as being related to springs, it, or an equivalent
-mathematical representation, appears in just about any problem where a
-mode is sitting near its potential energy minimum. At that point,
-$\partial_x V(x)=0$, and the first non-zero term (aside from a
-constant) in the potential energy is that of a harmonic oscillator. In
-a solid, sound modes (phonons) are built on a picture of coupled
-harmonic oscillators, and in relativistic field theory the fundamental
-interactions are also built on coupled oscillators positioned
-infinitesimally close to one another in space. The phenomena of a
-resonance of an oscillator driven at a fixed frequency plays out
-repeatedly in atomic, nuclear and high-energy physics, when quantum
-mechanically the evolution of a state oscillates according to
-$e^{-iEt}$ and exciting discrete quantum states has very similar
-mathematics as exciting discrete states of an oscillator.
-
-
-!split
-===== Harmonic Oscillator, deriving the Equations =====
-The potential energy for a single particle as a function of its position $x$ can be written as a Taylor expansion about some point $x_0$
-
-!bt
-\begin{equation}
-V(x)=V(x_0)+(x-x_0)\left.\partial_xV(x)\right|_{x_0}+\frac{1}{2}(x-x_0)^2\left.\partial_x^2V(x)\right|_{x_0}
-+\frac{1}{3!}\left.\partial_x^3V(x)\right|_{x_0}+\cdots
-\end{equation}
-!et
-If the position $x_0$ is at the minimum of the resonance, the first two non-zero terms of the potential are
-
-!bt
-\begin{eqnarray}
-V(x)&\approx& V(x_0)+\frac{1}{2}(x-x_0)^2\left.\partial_x^2V(x)\right|_{x_0},\\
-\nonumber
-&=&V(x_0)+\frac{1}{2}k(x-x_0)^2,~~~~k\equiv \left.\partial_x^2V(x)\right|_{x_0},\\
-\nonumber
-F&=&-\partial_xV(x)=-k(x-x_0).
-\end{eqnarray}
-!et
-Put into Newton's 2nd law (assuming $x_0=0$),
-
-!bt
-\begin{eqnarray}
-m\ddot{x}&=&-kx,\\
-x&=&A\cos(\omega_0 t-\phi),~~~\omega_0=\sqrt{k/m}.
-\end{eqnarray}
-!et
-
-!split
-===== Harmonic Oscillator, Technicalities =====
-
-Here $A$ and $\phi$ are arbitrary. Equivalently, one could have
-written this as $A\cos(\omega_0 t)+B\sin(\omega_0 t)$, or as the real
-part of $Ae^{i\omega_0 t}$. In this last case $A$ could be an
-arbitrary complex constant. Thus, there are 2 arbitrary constants
-(either $A$ and $B$ or $A$ and $\phi$, or the real and imaginary part
-of one complex constant. This is the expectation for a second order
-differential equation, and also agrees with the physical expectation
-that if you know a particle's initial velocity and position you should
-be able to define its future motion, and that those two arbitrary
-conditions should translate to two arbitrary constants.
-
-A key feature of harmonic motion is that the system repeats itself
-after a time $T=1/f$, where $f$ is the frequency, and $\omega=2\pi f$
-is the angular frequency. The period of the motion is independent of
-the amplitude. However, this independence is only exact when one can
-neglect higher terms of the potential, $x^3, x^4\cdots$. Once can
-neglect these terms for sufficiently small amplitudes, and for larger
-amplitudes the motion is no longer purely sinusoidal, and even though
-the motion repeats itself, the time for repeating the motion is no
-longer independent of the amplitude.
-
-One can also calculate the velocity and the kinetic energy as a function of time,
-
-!bt
-\begin{eqnarray}
-\dot{x}&=&-\omega_0A\sin(\omega_0 t-\phi),\\
-\nonumber
-K&=&\frac{1}{2}m\dot{x}^2=\frac{m\omega_0^2A^2}{2}\sin^2(\omega_0t-\phi),\\
-\nonumber
-&=&\frac{k}{2}A^2\sin^2(\omega_0t-\phi).
-\end{eqnarray}
-!et
-
-!split
-===== Harmonic Oscillator, Total Energy =====
-
-The total energy is then
-
-!bt
-\begin{equation}
-E=K+V=\frac{1}{2}m\dot{x}^2+\frac{1}{2}kx^2=\frac{1}{2}kA^2.
-\end{equation}
-!et
-
-The total energy then goes as the square of the amplitude.
-
-
-A pendulum is an example of a harmonic oscillator. By expanding the
-kinetic and potential energies for small angles find the frequency for
-a pendulum of length $L$ with all the mass $m$ centered at the end by
-writing the eq.s of motion in the form of a harmonic oscillator.
-
-The potential energy and kinetic energies are (for $x$ being the displacement)
-
-!bt
-\begin{eqnarray*}
-V&=&mgL(1-\cos\theta)\approx mgL\frac{x^2}{2L^2},\\
-K&=&\frac{1}{2}mL^2\dot{\theta}^2\approx \frac{m}{2}\dot{x}^2.
-\end{eqnarray*}
-!et
-
-For small $x$ Newton's 2nd law becomes
-
-!bt
-\[
-m\ddot{x}=-\frac{mg}{L}x,
-\]
-!et
-
-and the spring constant would appear to be $k=mg/L$, which makes the
-frequency equal to $\omega_0=\sqrt{g/L}$. Note that the frequency is
-independent of the mass.
-
-!split
 ===== Additional Material: Link between Line Integrals and Conservative forces =====
 
 
-The fundamental theorem of line integrals, also called the gradient theorem, states that
-\begin{aligned} \int_a^b \nabla \blueE{f}(\greenE{\vec{\textbf{r}}}(t)) \cdot \redE{\vec{\textbf{r}}'}(t)dt = \blueE{f}(\greenE{\vec{\textbf{r}}}(b)) - \blueE{f}(\greenE{\vec{\textbf{r}}}(a)) \end{aligned} 
-∫ 
+The concept of line integrals plays an important role in our discussion of energy conservation,
+our definition of potentials and conservative forces.
 
- 
-The intuition behind this formula is that each side represents the change in the value of a multivariable function \blueE{f}fstart color #0c7f99, f, end color #0c7f99 as you walk along a path parameterized by \greenE{\vec{\textbf{r}}(t)} 
-r
- (t)start color #0d923f, start bold text, r, end bold text, with, vector, on top, left parenthesis, t, right parenthesis, end color #0d923f.
-This formula implies that gradient fields are path independent, meaning the line integrals along any two paths connecting the same start and end points will be equal.
-Statement of the theorem
-Recall that the fundamental theorem of calculus in the single-variable world states that
-\begin{aligned} \int_a^b g'(t)dt = g(b) - g(a) \end{aligned} 
-∫ 
-a
-b
-​	
- g 
-′
- (t)dt=g(b)−g(a)
-​	
- 
-In some sense, this says that integration is the opposite of differentiation.
-The fundamental theorem of line integrals, also known as the gradient theorem, is one of several ways to extend this theorem into higher dimensions. In a sense, it says that line integration through a vector field is the opposite of the gradient. The statement of the theorem is that
-\begin{aligned} \int_a^b \nabla \blueE{f}(\greenE{\vec{\textbf{r}}}(t)) \cdot \redE{\vec{\textbf{r}}'}(t)dt = \blueE{f}(\greenE{\vec{\textbf{r}}}(b)) - \blueE{f}(\greenE{\vec{\textbf{r}}}(a)) \end{aligned} 
-∫ 
-a
-b
-​	
- ∇f( 
-r
- (t))⋅ 
-r
-  
-′
- (t)dt=f( 
-r
- (b))−f( 
-r
- (a))
-​	
- 
+Let us remind ourselves of some the basic elements (most of you may
+have seen this in a calculus course under the general topic of vector
+fields).
 
-Where
-\blueE{f}fstart color #0c7f99, f, end color #0c7f99 is some scalar-valued multivariable function.
-\nabla \blueE{f}∇fdel, start color #0c7f99, f, end color #0c7f99 is the gradient of \blueE{f}fstart color #0c7f99, f, end color #0c7f99.
-\greenE{\vec{\textbf{r}}}(t) 
-r
- (t)start color #0d923f, start bold text, r, end bold text, with, vector, on top, end color #0d923f, left parenthesis, t, right parenthesis is a vector-valued function which parameterizes some path through the input space of \blueE{f}fstart color #0c7f99, f, end color #0c7f99.
-\vec{\textbf{r}}(a) 
-r
- (a)start bold text, r, end bold text, with, vector, on top, left parenthesis, a, right parenthesis and \vec{\textbf{r}}(b) 
-r
- (b)start bold text, r, end bold text, with, vector, on top, left parenthesis, b, right parenthesis are the end points of the path.
-\redE{\vec{\textbf{r}}'}(t) 
-r
-  
-′
- (t)start color #bc2612, start bold text, r, end bold text, with, vector, on top, prime, end color #bc2612, left parenthesis, t, right parenthesis is the derivative of \greenE{\vec{\textbf{r}}}(t) 
-r
- (t)start color #0d923f, start bold text, r, end bold text, with, vector, on top, end color #0d923f, left parenthesis, t, right parenthesis, taken component-wise as usual.
-You might also see this theorem written without reference to the parameterization \vec{\textbf{r}}(t) 
-r
- (t)start bold text, r, end bold text, with, vector, on top, left parenthesis, t, right parenthesis as follows:
-\begin{aligned} \int_C \nabla f \cdot d\textbf{s} = f(B) - f(A) \end{aligned} 
-∫ 
-C
-​	
- ∇f⋅ds=f(B)−f(A)
-​	
- 
-Where CCC represents the path through space, with AAA as its starting point and BBB as its ending point, and d\textbf{s}dsd, start bold text, s, end bold text is thought of as a tiny step along CCC.
-In short, the theorem states that the line integral of the gradient of a function fff gives the total change in the value of fff from the start of the curve to its end.
-The intuition
-The meaning behind this formula is actually fairly straightforward​, once we take some time to digest the meaning of each term. There are two main players on the stage right now:
-A path wandering through space (let's say two-dimensional space, for now, to make drawing easier).
-A function fff which takes in points of that path as its input, and outputs a number.
-Think about how the value of the function fff changes as we walk along the path. The following video shows one way to visualize this, where the graph of some function fff is shown in blue, a path in the xyxyx, y-plane is shown in red, and the projection of that path onto the graph is also shown in red.
+We define a path integration $C$, that is we integrate
+from a point $\bm{r}_1$ to a point $\bm{r}_2$. 
+Let us assume that the path $C$ is represented by an arc length $s$. In three dimension we have the following representation of $C$
+!bt
+\[
+\bm{r}(s)=x(s)\bm{e}_1+y(s)\bm{e}_2+z(s)\bm{e}_3,
+\]
+!et
+then our integral of a function $f(x,y,z)$ along the path $C$ is defined as 
+!bt
+\[
+\int_Cf(x,y,z)ds=\int_a^bf\left(x(s),y(s),z(s)\right)ds,
+\]
+!et
+where the initial and final points are $a$ and $b$, respectively.
+!split
+===== Exactness and Independence of Path =====
 
+With the definition of a line integral, we can in tunrn set up the
+theorem of independence of integration path.
 
+Let us define
+$f(x,y,z)$, $g(x,y,z)$ and $h(x,y,z)$ to be functions which are
+defined and continuous in a domain $D$ in space. Then a line integral
+like the above is said to be independent of path in $D$, if for every
+pair of endpoints $a$ and $b$ in $D$ the value of the integral is the
+same for all paths $C$ in $D$ starting from a point $a$ and ending in
+a point $b$. The integral depends thus only on the integration limits
+and not on the path.
 
-A quick proof
-Using the multivariable chain rule, we have
-\begin{aligned} \dfrac{d}{dt} f(\vec{\textbf{r}}(t)) = \nabla f(\vec{\textbf{r}}(t)) \cdot \vec{\textbf{r}}'(t) \end{aligned} 
-dt
-d
-​	
- f( 
-r
- (t))=∇f( 
-r
- (t))⋅ 
-r
-  
-′
- (t)
-​	
- 
-Plugging this into the statement of the gradient theorem, we see it becomes the same as the fundamental theorem of calculus
-\begin{aligned} &\phantom{=} \int_a^b \nabla f(\vec{\textbf{r}}(t)) \cdot \vec{\textbf{r}}'(t)dt \\\\ &= \int_a^b \dfrac{d}{dt} f(\vec{\textbf{r}}(t))dt \\\\ &= f(\vec{\textbf{r}}(b)) - f(\vec{\textbf{r}}(a)) \end{aligned} 
-​	
-  
-=∫ 
-a
-b
-​	
- ∇f( 
-r
- (t))⋅ 
-r
-  
-′
- (t)dt
-=∫ 
-a
-b
-​	
-  
-dt
-d
-​	
- f( 
-r
- (t))dt
-=f( 
-r
- (b))−f( 
-r
- (a))
-​	
- 
-Tada!
-This proof leverages the powerful fundamental theorem of calculus, along with the multivariable chain rule, and hence looks deceptively simple. A good exercise in understanding this theorem is to think through how exactly this quick and tidy three-line proof encapsulates the intuition for the gradient theorem spelled out in the last section.
-There's nothing wrong with using other powerful theorems to help prove new results. In fact, to avoid doing so would be foolish. However, walking through such proofs is often not enough for a deeper understanding, so it's healthy to unravel new results into their full meaning, seeing how they stand up on their own.
+!split
+===== Differential Forms =====
 
+An expression of the form
+!bt
+\[
+fdx+gdy+hdz,
+\]
+!et
+where $f$, $g$ and $h$ are functions defined in $D$, is a called a first-order differential form
+in three variables.
+The form is said to be exact if it is the differential
+!bt
+\[
+du= \frac{\partial u}{\partial x}dx+\frac{\partial u}{\partial y}dy+\frac{\partial u}{\partial z}dz,
+\]
+!et
+of a differentiable function $u(x,y,z)$ everywhere in $D$, that is
+!bt
+\[
+du=fdx+gdy+hdz.
+\]
+!et
+It is said to be exact if and only if we can then set
+!bt
+\[
+f=\frac{\partial u}{\partial x},
+\]
+!et
+and
+!bt
+\[
+g=\frac{\partial u}{\partial y},
+\]
+!et
+and
+!bt
+\[
+h=\frac{\partial u}{\partial z},
+\]
+!et
+everywhere in the domain $D$.
 
+!split
+=====  In Vector Language =====
 
-Solution 2: Apply the fundamental theorem of line integrals
-Applying the fundamental theorem of line integrals, we can skip over many of the steps from the previous solution, including the computation of the gradient of fff and the derivative of \vec{\textbf{r}}(t) 
-r
- (t)start bold text, r, end bold text, with, vector, on top, left parenthesis, t, right parenthesis.
-Solve the line integral above using the gradient theorem. [Solution]
-If you look back through the full computation of the line integral in solution 1, the computations we performed actually feel pretty silly. We took the derivative of everything, including the partial derivatives of x^2 + y^2x 
-2
- +y 
-2
- x, squared, plus, y, squared and the ordinary derivatives of ttt and \sin(t)sin(t)sine, left parenthesis, t, right parenthesis, then later integrated those derivatives back up to where they started.
-Working through this should also help build an intuition for how the fundamental theorem of line integrals derives from the fundamental theorem of calculus.
-Path independence
-The gradient theorem has a really important consequence regarding gradient fields. Suppose you have two distinct curves C_1C 
-1
-​	
- C, start subscript, 1, end subscript and C_2C 
-2
-​	
- C, start subscript, 2, end subscript, each connecting the same two points AAA and BBB. Let's say these are wandering through the gradient field of some scalar-valued function fff:
+In vector language the above means that the differential form 
+!bt
+\[
+fdx+gdy+hdz,
+\]
+!et
+is exact in $D$ if and only if the vector function (it could be a force, or velocity, acceleration or other vectors we encounter in this course)
+!bt
+\[
+\bm{F}=f\bm{e}_1+g\bm{e}_2+h\bm{e}_3,
+\]
+!et
+is the gradient of a function $u(x,y,z)$
+!bt
+\[
+\bm{v}=\bm{\nabla}u=\frac{\partial u}{\partial x}\bm{e}_1+\frac{\partial u}{\partial y}\bm{e}_2+\frac{\partial u}{\partial z}\bm{e}_3.
+\]
+!et
 
-According to the gradient theorem, the line integral of \nabla f∇fdel, f along each of these curves will be the same, since that integral is completely determined by the value of fff at AAA and BBB:
-\begin{aligned} \int_{C_1} \nabla f \cdot d\textbf{r} = f(B) - f(A) = \int_{C_2} \nabla f \cdot d\textbf{r} \end{aligned} 
-∫ 
-C 
-1
-​	
- 
-​	
- ∇f⋅dr=f(B)−f(A)=∫ 
-C 
-2
-​	
- 
-​	
- ∇f⋅dr
-​	
- 
-We explore this idea further in the next article on conservative vector fields.
-Summary
-The fundamental theorem of line integrals, also called the gradient theorem, states that
-\begin{aligned} \int_a^b \nabla \blueE{f}(\greenE{\vec{\textbf{r}}}(t)) \cdot \redE{\vec{\textbf{r}}'}(t)dt = \blueE{f}(\greenE{\vec{\textbf{r}}}(b)) - \blueE{f}(\greenE{\vec{\textbf{r}}}(a)) \end{aligned} 
-∫ 
-a
-b
-​	
- ∇f( 
-r
- (t))⋅ 
-r
-  
-′
- (t)dt=f( 
-r
- (b))−f( 
-r
- (a))
-​	
- 
-The intuition behind this formula is that each side represents the change in the value of a multivariable function \blueE{f}fstart color #0c7f99, f, end color #0c7f99 as you walk along a path parameterized by \greenE{\vec{\textbf{r}}(t)} 
-r
- (t)start color #0d923f, start bold text, r, end bold text, with, vector, on top, left parenthesis, t, right parenthesis, end color #0d923f.
-This formula implies that gradient fields are path independent, meaning the line integrals along any two paths connecting the same start and end points will be equal.
+!split
+===== Path Independence Theorem =====
+
+If this is the case, we can state the path independence theorem which
+states that with functions $f(x,y,z)$, $g(x,y,z)$ and $h(x,y,z)$ that fulfill the above
+exactness conditions,  the line integral
+
+!bt
+\[
+\int_C\left(fdx+gdy+hdz\right),
+\]
+!et
+_is independent of path in $D$ if and only if the differential form under the integral sigh is exact in $D$_.
+
+This is path independence theorem. 
+
+We will not give a proof of the theorem. You can find this in any vector analysis chapter in a mathematics textbook.
+
+We note however that the path integral from a point $p$ to a final point $q$
+!bt
+\[
+\int_p^q\left(fdx+gdy+hdz\right)=\int_p^q\left(\frac{\partial u}{\partial x}dx+\frac{\partial u}{\partial y}dy+\frac{\partial u}{\partial z}dz\right)=\int_p^qdu.
+\]
+!et
+
+Assume now that we have a dependence on a variable $s$ for $x$, $y$ and $z$. We haven then
+!bt
+\[
+\int_p^qdu=\int_{s_1}^{s_2}\frac{du}{ds}ds = u(x(s),y(s),z(s))\vert_{s=s_1}^{s=s_2}=u(q)-u(p).
+\]
+!et
 
 
-A vector field \textbf{F}(x, y)F(x,y)start bold text, F, end bold text, left parenthesis, x, comma, y, right parenthesis is called a conservative vector field if it satisfies any one of the following three properties (all of which are defined within the article):
-Line integrals of \textbf{F}Fstart bold text, F, end bold text are path independent.
-Line integrals of \textbf{F}Fstart bold text, F, end bold text over closed loops are always 000.
-\textbf{F}Fstart bold text, F, end bold text is the gradient of some scalar-valued function, i.e. \textbf{F} = \nabla gF=∇gstart bold text, F, end bold text, equals, del, g for some function ggg.
-There is also another property equivalent to all these: \textbf{F}Fstart bold text, F, end bold text is irrotational, meaning its curl is zero everywhere (with a slight caveat). However, I'll discuss that in a separate article which defines curl in terms of line integrals.
-The key takeaway here is not just the definition of a conservative vector field, but the surprising fact that the seemingly different conditions listed above are equivalent to each other. Madness!
-Path independence
-Imagine you have any ol' off-the-shelf vector field \textbf{F}(x, y)F(x,y)start bold text, F, end bold text, left parenthesis, x, comma, y, right parenthesis, and you consider the line integrals of \textbf{F}Fstart bold text, F, end bold text of two separate paths, C_1C 
-1
-​	
- C, start subscript, 1, end subscript and C_2C 
-2
-​	
- C, start subscript, 2, end subscript, each starting at a point AAA and ending at a point BBB
 
-For almost all vector fields \textbf{F}Fstart bold text, F, end bold text, and almost all choices for the two paths C_1C 
-1
-​	
- C, start subscript, 1, end subscript and C_2C 
-2
-​	
- C, start subscript, 2, end subscript, these integrals will be different.
-\begin{aligned} \int_{C_1} \textbf{F} \cdot d\textbf{s} \ne \int_{C_2} \textbf{F} \cdot d\textbf{s} \quad \leftarrow \text{Almost always true} \end{aligned} 
-∫ 
-C 
-1
-​	
- 
-​	
- F⋅ds 
-
-​	
- =∫ 
-C 
-2
-​	
- 
-​	
- F⋅ds←Almost always true
-​	
- 
-And this makes sense! Each integral is adding up completely different values at completely different points in space. What's surprising is that there exist some vector fields where distinct paths connecting the same two points will always be equal, no matter the choice of paths (of which there are super-infinitely many).
-In the last article, covering the gradient theorem we saw that in the special case of vector fields which are the gradient of some scalar-valued function, \nabla f∇fdel, f, this magical property is true. The line integrals along distinct paths connecting the same two points AAA and BBB will always evaluate to the same thing:
-\begin{aligned} \int_{C_1} \nabla f \cdot d\textbf{s} = \underbrace{ f(B) - f(A) }_{\substack{ \text{Result of the} \\\\ \text{gradient theorem} }} = \int_{C_2} \nabla f \cdot d\textbf{s} \end{aligned} 
-∫ 
-C 
-1
-​	
- 
-​	
- ∇f⋅ds= 
-Result of the
-gradient theorem
-​	
- 
-f(B)−f(A)
-​	
- 
-​	
- =∫ 
-C 
-2
-​	
- 
-​	
- ∇f⋅ds
-​	
- 
-Definition: This property is called path independence. Specifically, a line integral through a vector field \textbf{F}(x, y)F(x,y)start bold text, F, end bold text, left parenthesis, x, comma, y, right parenthesis is said to be path independent if the value of the integral only depends on the point where the path starts and the point where it ends, not the specific choice of path in between.
-Actually, when you properly understand the gradient theorem, this statement isn't totally magical. This is because line integrals against the gradient of fff measure the change in the value of fff. Visualizing this with the graph of fff, this says that any two paths bringing you from one point to another change your altitude by the same amount.
-Khan Academy video wrapper
-The takeaway from this result is that gradient fields are very special vector fields. Because this property of path independence is so rare, in a sense, "most" vector fields cannot be gradient fields.
-Path independence implies gradient field
-Okay, so gradient fields are special due to this path independence property. But can you come up with a vector field \textbf{F}(x, y)F(x,y)start bold text, F, end bold text, left parenthesis, x, comma, y, right parenthesis in which all line integrals are path independent, but which is not the gradient of some scalar-valued function?
-I guess I've spoiled the answer with the section title and the introduction: All vector fields in which line integrals are path independent must be the gradient of some function. By why?
-Really, why would this be true? Consider an arbitrary vector field \textbf{F}(x, y)F(x,y)start bold text, F, end bold text, left parenthesis, x, comma, y, right parenthesis in which line integrals are path independent, meaning
-\begin{aligned} \int_{C_1} \textbf{F} \cdot d\textbf{s} = \int_{C_2} \textbf{F} \cdot d\textbf{s} \end{aligned} 
-∫ 
-C 
-1
-​	
- 
-​	
- F⋅ds=∫ 
-C 
-2
-​	
- 
-​	
- F⋅ds
-​	
- 
-for all paths C_1C 
-1
-​	
- C, start subscript, 1, end subscript and C_2C 
-2
-​	
- C, start subscript, 2, end subscript which connect the same two points AAA and BBB. What is it about this property that ensures the existence of some function ggg such that \nabla g = \textbf{F}∇g=Fdel, g, equals, start bold text, F, end bold text?
-Challenge question: Can you think of a way to construct such a function ggg in terms of \textbf{F}Fstart bold text, F, end bold text using the fact that \textbf{F}Fstart bold text, F, end bold text is path-independent?
-This is a tricky question, but it might help to look back at the gradient theorem for inspiration.
-[Answer]
-Closed loops
-Definition: A path is called closed if it starts and ends at the same point. Such paths are also commonly called closed loops.
-For example, the path CCC pictured below starts and ends at AAA.
+This last equation
+!bt
+\[
+\int_p^q\left(fdx+gdy+hdz\right)=u(q)-u(p),
+\]
+!et
+is the anlogue of the usual formula
+!bt
+\[
+\int_a^bf(x)dx=F(x)\vert_a^b=F(b)-F(a),
+\]
+!et
+with $F'(x)=f(x)$.
 
-If we take a vector field \textbf{F}Fstart bold text, F, end bold text where all line integrals are path independent, the line integral of \textbf{F}Fstart bold text, F, end bold text on any closed loop will be 000. Why?
-[Answer] [Another answer]
-The converse of this fact is also true: If the line integrals of \textbf{F}Fstart bold text, F, end bold text on all closed loops evaluate to 000, then all line integrals must be path independent. Why?
-[Answer]
-Funky notation for closed-loop integrals.
-You will sometimes see a line integral over a closed loop CCC written as
-\begin{aligned} \oint_C \textbf{F} \cdot d\textbf{r} \end{aligned} 
-∮ 
-C
-​	
- F⋅dr
-​	
- 
-Don't worry, this is not a new operation that needs to be learned. It is just a line integral, computed in just the same way as we have done before, but it is meant to emphasize to the reader that CCC is a closed loop.
-Potential energy
-In the article introducing​ line integrals through a vector field, I mentioned briefly how in physics, the work done by a force on an object in motion is computed by taking a line integral of the force's vector field along the path of motion.
-\begin{aligned} W = \int_C \textbf{F} \cdot d\textbf{s} \end{aligned} 
-W=∫ 
-C
-​	
- F⋅ds
-​	
- 
-A force is called conservative if the work it does on an object moving from any point AAA to another point BBB is always the same, no matter what path is taken. In other words, if this integral is always path-independent. Fundamental forces like gravity and the electric force are conservative, and the quintessential example of a non-conservative force is friction.
-This has an interesting consequence based on our discussion above: If a force is conservative, it must be the gradient of some function.
-\textbf{F} = \nabla UF=∇Ustart bold text, F, end bold text, equals, del, U
-Moreover, according to the gradient theorem, the work done on an object by this force as it moves from point AAA to point BBB can be computed just by evaluating this function UUU at each point:
-\begin{aligned} W &= \int_C \textbf{F} \cdot d\textbf{s} \\\\ &= \int_C \nabla U \cdot d\textbf{s} \\\\ &= U(B) - U(A) \end{aligned} 
-W
-​	
-  
-=∫ 
-C
-​	
- F⋅ds
-=∫ 
-C
-​	
- ∇U⋅ds
-=U(B)−U(A)
-​	
- 
-As the physics students among you have likely guessed, this function UUU is potential energy. For example, if you take the gradient of gravitational potential or electric potential, you will get the gravitational force or electric force respectively. This is why computing the work done by a conservative force can be simplified to comparing potential energies.
-It also means you could never have a "potential friction energy" since friction force is non-conservative.
-Escher
-Moving from physics to art, this classic drawing "Ascending and Descending" by M.C. Escher shows what the world would look like if gravity were a non-conservative force.
+!split
+===== Work-Energy Theorem again =====
 
-Closed loop perspective:
-Imagine walking clockwise on this staircase. With each step gravity would be doing negative work on you. So integrating the work along your full circular loop, the total work gravity does on you would be quite negative. However, that's an integral in a closed loop, so the fact that it's nonzero must mean the force acting on you cannot be conservative.
-Path independence perspective
-Imagine walking from the tower on the right corner to the left corner. If you get there along the clockwise path, gravity does negative work on you. If you get there along the counterclockwise path, gravity does positive work on you. Since both paths start and end at the same point, path independence fails, so the gravity force field cannot be conservative.
-Gradient perspective:
-In the real world, gravitational potential corresponds with altitude​, because the work done by gravity is proportional to a change in height. What makes the Escher drawing striking is that the idea of altitude doesn't make sense. Many steps "up" with no steps down can lead you back to the same point. This corresponds with the fact that there is no potential function UUU such that \nabla U∇Udel, U give the gravity field.
+We remember that a the work done by a force
+$\bm{F}=f\bm{e}_1+g\bm{e}_2+h\bm{e}_3$ on a displacemnt $d\bm{r}$
+is
+!bt
+\[
+W=\int_C\bm{F}d\bm{r}=\int_C(fdx+gdy+hdz).
+\]
+!et
+
+From the path independence theorem, we know that this has to result in
+the difference between the two endpoints only. This is exact if and
+only if the force is the force $\bm{F}$ is the gradient of a scalar
+function $u$. We call this scalar function, which depends only the
+positions $x,y,z$ for the potential energy $V(x,y,z)=V(\bm{r})$.
+
+We have thus
+!bt
+\[
+\bm{F}(\bm{r})\propto \bm{\nabla}V({\bm{r}),
+\]
+!et
+and we define  this as
+!bt
+\[
+\bm{F}(\bm{r})= -\bm{\nabla}V({\bm{r}).
+\]
+!et
+
+Such a force is called _a conservative force_. The above expression can be used to demonstrate
+energy conservation.
+
+!split
+===== Additional Theorem =====
+
+Finally we can define the criterion for exactness and independence of
+path. This theorem states that if $f(x,y,z)$, $g(x,y,z)$ and
+$h(x,y,z)$ are continuous functions with continuous first partial derivatives in the domain $D$,
+then the line integral
+!bt
+\[
+\int_C\left(fdx+gdy+hdz\right),
+\]
+!et
+is independent of path in $D$ when
+
+!bt
+\[
+\frac{\partial h}{\partial y}=\frac{\partial g}{\partial z},
+\]
+!et
+and
+!bt
+\[
+\frac{\partial f}{\partial z}=\frac{\partial h}{\partial x},
+\]
+!et
+and
+!bt
+\[
+\frac{\partial g}{\partial x}=\frac{\partial f}{\partial y}.
+\]
+!et
+
+This leads to the _curl_ of $\bm{F}$ being zero
+!bt
+\[
+\bm{\nabla}\times\bm{F}=\bm{\nabla}\times\left(-\bm{\nabla}V(\bm{r})\right)=0!
+\]
+!et
+
+!split
+===== Summarizing =====
+
+A conservative force $\bm{F}$ is a defined as the partial derivative of a scalar potential which depends only on the position,
+!bt
+\[
+\bm{F}(\bm{r})= -\bm{\nabla}V({\bm{r}).
+\]
+!et
+
+This leads to conservation of energy and a path independent line integral as long as the curl of the force is zero, that is
+!bt
+\[
+\bm{\nabla}\times\bm{F}=\bm{\nabla}\times\left(-\bm{\nabla}V(\bm{r})\right)=0.
+\]
+!et
