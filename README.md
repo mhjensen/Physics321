@@ -154,7 +154,7 @@ Video of lecture at https://mediaspace.msu.edu/media/t/1_mgqtt4lm and handwritte
 ### Week 8, February 22-26, 2021
 - Monday 2/22: Oscillations, mathematical details, the sliding block and energy conservation,  6th homework, due March 1
 - Wednesday 2/24:  Oscillations, damped motion and more mathematical details
-- Friday 2/26: Oscillations, resonances and more on damped motion,   _First midterm project, available Friday Feb 26 and due March 12, 2021_ 
+- Friday 2/26: Oscillations, resonances and more on damped motion,   _First midterm project, available Friday Feb 26/27 and due March 12, 2021_ 
 - Good reads are chapter 5 of Taylor on oscillations. 
 
 ### Week 9, March 1-5
