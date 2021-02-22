@@ -116,7 +116,7 @@ MathJax.Hub.Config({
 
 <br>
 <p>
-<center><h4>Feb 21, 2021</h4></center> <!-- date -->
+<center><h4>Feb 22, 2021</h4></center> <!-- date -->
 <br>
 
 <h3 id="practicalities-about-homeworks-and-projects">Practicalities about  homeworks and projects </h3>
@@ -162,9 +162,9 @@ covered topics.
 Which of the following force are conservative?
 
 <ul>
-<li> 2a (2pt) \( \boldsymbol{F}=k(x\boldsymbol{i}+2y\boldsymbol{j}+3z\boldsymbol{k}) \) where \( k \) is a consttant.</li>
-<li> 2b (2pt) \( \boldsymbol{F}=y\boldsymbol{i}+x\boldsymbol{j}+0\boldsymbol{k} \).</li>
-<li> 2c (2pt) \( \boldsymbol{F}=k(-y\boldsymbol{i}+x\boldsymbol{j}+0\boldsymbol{k}) \) where \( k \) is a constant.</li>
+<li> 2a (2pt) \( \boldsymbol{F}=k(x\boldsymbol{e}_1+2y\boldsymbol{e}_2+3z\boldsymbol{e}_3) \) where \( k \) is a consttant.</li>
+<li> 2b (2pt) \( \boldsymbol{F}=y\boldsymbol{e}_1+x\boldsymbol{e}_2+0\boldsymbol{e}_3 \).</li>
+<li> 2c (2pt) \( \boldsymbol{F}=k(-y\boldsymbol{e}_1+x\boldsymbol{e}_2+0\boldsymbol{e}_3) \) where \( k \) is a constant.</li>
 <li> 2d (4pt) For those which are conservative, find the corresponding potential energy \( V \) and verify that direct differentiation that \( \boldsymbol{F}=-\boldsymbol{\nabla} V \).</li>
 </ul>
 
@@ -209,23 +209,10 @@ $$
 <h3 id="exercise-5-30pt-testing-energy-conservation">Exercise 5 (30pt), Testing Energy Conservation </h3>
 
 <p>
-This week we will reuse our code from homework 4 (exercises 6)
-and replace the air resistance and force from the ground with the
-gravitational force. Then we will study the stability of the system as function of initial conditions and the time step length.
+This week we will reuse our code from homework 5 and test that energy is conserved numerically.
 
-<p>
-We start by importing some standard packages
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #408080; font-style: italic"># let&#39;s start by importing useful packages we are familiar with</span>
-<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
-<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #666666">*</span>
-<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
-<span style="color: #666666">%</span>matplotlib inline
-</pre></div>
 <ul>
-<li> 5a (10 pt) Show that the <b>curl</b> of the gravitational force is zero and discuss whether the gravitational force is  a conservative force or not.</li>
+<li> 5a (10 pt) Show that the <b>curl</b> of the gravitational force is zero and discuss whether the gravitational force is  a conservative force or not. Hint: see Taylor section 4.4.</li>
 <li> 5b (20pt) Using the code from homework 5 (see also the solution), compute the kinetic and potential energies as functions of time. You will need the velocties and positions to compute these quantities. Remember to define initial positions and velocities, as well as the  initial kinetic and potential energies. Use Euler's methods, the Euler-Cromer method or the Velocity-Verlet</li>
 </ul>
 
