@@ -152,7 +152,8 @@ Video of lecture at https://mediaspace.msu.edu/media/t/1_mgqtt4lm and handwritte
 - Solution hw 4 as jupyter-notebook at https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionhw4.ipynb
 - Remember also the videos of the solutions at https://www.youtube.com/playlist?list=PLq9LZ5390Us41TX42XzOPIEPcbHaqX8Hx
 ### Week 8, February 22-26, 2021
-- Monday 2/22: Oscillations, mathematical details, the sliding block and energy conservation,  6th homework, due March 1
+- Monday 2/22: Oscillations, mathematical details, the sliding block and energy conservation,  6th homework, due March 1. Video of lecture at https://mediaspace.msu.edu/media/t/1_kj8ea37l and handwritten notes at 
+- https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesFeb22.pdf
 - Wednesday 2/24:  Oscillations, damped motion and more mathematical details
 - Friday 2/26: Oscillations, resonances and more on damped motion,   _First midterm project, available Friday Feb 26/27 and due March 12, 2021_ 
 - Good reads are chapter 5 of Taylor on oscillations. 
