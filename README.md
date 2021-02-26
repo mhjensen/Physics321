@@ -161,15 +161,16 @@ Video of lecture at https://mediaspace.msu.edu/media/t/1_mgqtt4lm and handwritte
 - Solution hw 5 as jupyter-notebook at https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionhw5.ipynb
 
 ### Week 9, March 1-5
-- Monday 3/1: Oscillations, driven oscillations and resonances
+- Monday 3/1: Damped Oscillations, driven oscillations and resonances
 - Wednesday 3/3:  Study day, no lectures
-- Friday 3/5: Fourier series and end of oscillation chapter
-- Good reads are sections 5.5-5.8 of Taylor on oscillations. 
+- Friday 3/5: Resonances and start discussion of Fourier series. Discussion of first midterm.
+- Good reads are sections 5.4-5.7 of Taylor on oscillations. 
+
 ### Week 10, March 8-12, 2021
-- Monday 3/8: Fourier series and oscillations 
-- Wednesday 3/10: Discussiom of first midterm 
+- Monday 3/8: Fourier series and oscillations. Discussion of first midterm. 
+- Wednesday 3/10: Central forces and Discussion of first midterm. 
 - Friday 3/12:  More discussions of first midterm and wrap up of oscillations part. Deadline first midterm at midnight. 
-- Good reads are chapter 8 of Taylor and Lecture notes 
+- Good reads are sections 5.7-5.8 and  8.2-8.4 of Taylor and Lecture notes 
 
 ### Week 11, March  15-19, 2021
 - Monday 3/15:  Gravity and central force problems, center of mass coordinates. Lecture notes and Taylor chapter 8. 7th homework due March 22
