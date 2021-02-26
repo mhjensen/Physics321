@@ -148,7 +148,7 @@ MathJax.Hub.Config({
 <center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
 <br>
 <p>&nbsp;<br>
-<center><h4>Feb 22, 2021</h4></center> <!-- date -->
+<center><h4>Feb 26, 2021</h4></center> <!-- date -->
 <br>
 <p>
 
@@ -210,33 +210,34 @@ mathematics as exciting discrete states of an oscillator.
 <p>
 The potential energy for a single particle as a function of its
 position \( x \) can be written as a Taylor expansion about some point
-\( x_0 \)
+\( b \) (we are considering a one-dimensional problem here)
 
 <p>&nbsp;<br>
 $$
 \begin{equation}
-V(x)=V(x_0)+(x-x_0)\left.\partial_xV(x)\right|_{x_0}+\frac{1}{2}(x-x_0)^2\left.\partial_x^2V(x)\right|_{x_0}
-+\frac{1}{3!}\left.\partial_x^3V(x)\right|_{x_0}+\cdots
+V(x)=V(b)+(x-b)\frac{dV(x)}{dx}\vert_{b}+\frac{1}{2!}(x-b)^2\frac{d^2V(x)}{dx^2}\vert_{b}
++\frac{1}{3!}(x-b)^3V(x)^{(3)}\vert_{b}+\cdots
 \tag{1}
 \end{equation}
 $$
 <p>&nbsp;<br>
 
-If the position \( x_0 \) is at the minimum of the resonance, the first two non-zero terms of the potential are
+If the position \( b \) is at the minimum of the resonance, the first two non-zero terms of the potential are
 
 <p>&nbsp;<br>
 $$
-\begin{eqnarray}
-V(x)&\approx& V(x_0)+\frac{1}{2}(x-x_0)^2\left.\partial_x^2V(x)\right|_{x_0},\\
+\begin{align}
+V(x)\approx& V(b)+\frac{1}{2!}(x-b)^2\frac{d^2V(x)}{dx^2}\vert_{b},
+\tag{2}\\
 \nonumber
-&=&V(x_0)+\frac{1}{2}k(x-x_0)^2,~~~~k\equiv \left.\partial_x^2V(x)\right|_{x_0},\\
+=&V(b)+\frac{1}{2}k(x-b)^2,~~~~k\equiv \frac{d^2V(x)}{dx^2}\vert_{b},\\
 \nonumber
-F&=&-\partial_xV(x)=-k(x-x_0).
-\end{eqnarray}
+F=&-\frac{dV(x)}{dx}=-k(x-x_0).
+\end{align}
 $$
 <p>&nbsp;<br>
 
-Put into Newton's 2nd law (assuming \( x_0=0 \)),
+Put into Newton's second law (assuming \( b=0 \)),
 
 <p>&nbsp;<br>
 $$
@@ -266,7 +267,7 @@ conditions should translate to two arbitrary constants.
 
 <p>
 A key feature of harmonic motion is that the system repeats itself
-after a time \( T=1/f \), where \( f \) is the frequency, and \( \omega=2\pi f \)
+after a time \( \tau=1/f \), where \( f \) is the frequency, and \( \omega_0=2\pi f \)
 is the angular frequency. The period of the motion is independent of
 the amplitude. However, this independence is only exact when one can
 neglect higher terms of the potential, \( x^3, x^4\cdots \). Once can
@@ -307,7 +308,7 @@ The total energy is then
 $$
 \begin{equation}
 E=K+V=\frac{1}{2}m\dot{x}^2+\frac{1}{2}kx^2=\frac{1}{2}kA^2.
-\tag{2}
+\tag{3}
 \end{equation}
 $$
 <p>&nbsp;<br>
@@ -346,224 +347,6 @@ $$
 and the spring constant would appear to be \( k=mg/L \), which makes the
 frequency equal to \( \omega_0=\sqrt{g/L} \). Note that the frequency is
 independent of the mass.
-</section>
-
-
-<section>
-<h2 id="damped-oscillators">Damped Oscillators </h2>
-
-<p>
-We consider only the case where the damping force is proportional to
-the velocity. This is counter to dragging friction, where the force is
-proportional in strength to the normal force and independent of
-velocity, and is also inconsistent with wind resistance, where the
-magnitude of the drag force is proportional the square of the
-velocity. Rolling resistance does seem to be mainly proportional to
-the velocity. However, the main motivation for considering damping
-forces proportional to the velocity is that the math is more
-friendly. This is because the differential equation is linear,
-i.e. each term is of order \( x \), \( \dot{x} \), \( \ddot{x}\cdots \), or even
-terms with no mention of \( x \), and there are no terms such as \( x^2 \) or
-\( x\ddot{x} \). The equations of motion for a spring with damping force
-\( -b\dot{x} \) are
-
-<p>&nbsp;<br>
-$$
-\begin{equation}
-m\ddot{x}+b\dot{x}+kx=0.
-\tag{3}
-\end{equation}
-$$
-<p>&nbsp;<br>
-</section>
-
-
-<section>
-<h2 id="harmonic-oscillator-damping">Harmonic Oscillator,  Damping </h2>
-
-<p>
-Just to make the solution a bit less messy, we rewrite this equation as
-
-<p>&nbsp;<br>
-$$
-\begin{equation}
-\tag{4}
-\ddot{x}+2\beta\dot{x}+\omega_0^2x=0,~~~~\beta\equiv b/2m,~\omega_0\equiv\sqrt{k/m}.
-\end{equation}
-$$
-<p>&nbsp;<br>
-
-<p>
-Both \( \beta \) and \( \omega \) have dimensions of inverse time. To find solutions (see appendix C in the text) you must make an educated guess at the form of the solution. To do this, first realize that the solution will need an arbitrary normalization \( A \) because the equation is linear. Secondly, realize that if the form is
-
-<p>&nbsp;<br>
-$$
-\begin{equation}
-x=Ae^{rt}
-\tag{5}
-\end{equation}
-$$
-<p>&nbsp;<br>
-
-<p>
-that each derivative simply brings out an extra power of \( r \). This
-means that the \( Ae^{rt} \) factors out and one can simply solve for an
-equation for \( r \). Plugging this form into Eq. <a href="#mjx-eqn-4">(4)</a>,
-
-<p>&nbsp;<br>
-$$
-\begin{equation}
-r^2+2\beta r+\omega_0^2=0.
-\tag{6}
-\end{equation}
-$$
-<p>&nbsp;<br>
-</section>
-
-
-<section>
-<h2 id="harmonic-oscillator-solutions-of-damped-motion">Harmonic Oscillator,  Solutions of Damped Motion </h2>
-
-<p>
-Because this is a quadratic equation there will be two solutions,
-
-<p>&nbsp;<br>
-$$
-\begin{equation}
-r=-\beta\pm\sqrt{\beta^2-\omega_0^2}.
-\tag{7}
-\end{equation}
-$$
-<p>&nbsp;<br>
-
-<p>
-We refer to the two solutions as \( r_1 \) and \( r_2 \) corresponding to the
-\( + \) and \( - \) roots. As expected, there should be two arbitrary
-constants involved in the solution,
-
-<p>&nbsp;<br>
-$$
-\begin{equation}
-x=A_1e^{r_1t}+A_2e^{r_2t},
-\tag{8}
-\end{equation}
-$$
-<p>&nbsp;<br>
-
-<p>
-where the coefficients \( A_1 \) and \( A_2 \) are determined by initial
-conditions.
-
-<p>
-The roots listed above, \( \sqrt{\omega_0^2-\beta_0^2} \), will be
-imaginary if the damping is small and \( \beta < \omega_0 \). In that case,
-\( r \) is complex and the factor \( e{rt} \) will have some oscillatory
-behavior. If the roots are real, there will only be exponentially
-decaying solutions. There are three cases:
-</section>
-
-
-<section>
-<h2 id="underdamped-beta-omega_0">Underdamped: \( \beta < \omega_0 \) </h2>
-
-<p>&nbsp;<br>
-$$
-\begin{eqnarray}
-x&=&A_1e^{-\beta t}e^{i\omega't}+A_2e^{-\beta t}e^{-i\omega't},~~\omega'\equiv\sqrt{\omega_0^2-\beta^2}\\
-\nonumber
-&=&(A_1+A_2)e^{-\beta t}\cos\omega't+i(A_1-A_2)e^{-\beta t}\sin\omega't.
-\end{eqnarray}
-$$
-<p>&nbsp;<br>
-
-<p>
-Here we have made use of the identity
-\( e^{i\omega't}=\cos\omega't+i\sin\omega't \). Because the constants are
-arbitrary, and because the real and imaginary parts are both solutions
-individually, we can simply consider the real part of the solution
-alone:
-
-<p>&nbsp;<br>
-$$
-\begin{eqnarray}
-\tag{9}
-x&=&B_1e^{-\beta t}\cos\omega't+B_2e^{-\beta t}\sin\omega't,\\
-\nonumber 
-\omega'&\equiv&\sqrt{\omega_0^2-\beta^2}.
-\end{eqnarray}
-$$
-<p>&nbsp;<br>
-</section>
-
-
-<section>
-<h2 id="critical-dampling-beta-omega_0">Critical dampling: \( \beta=\omega_0 \) </h2>
-
-<p>
-In this case the two terms involving \( r_1 \) and \( r_2 \) are identical
-because \( \omega'=0 \). Because we need to arbitrary constants, there
-needs to be another solution. This is found by simply guessing, or by
-taking the limit of \( \omega'\rightarrow 0 \) from the underdamped
-solution. The solution is then
-
-<p>&nbsp;<br>
-$$
-\begin{equation}
-\tag{10}
-x=Ae^{-\beta t}+Bte^{-\beta t}.
-\end{equation}
-$$
-<p>&nbsp;<br>
-
-<p>
-The critically damped solution is interesting because the solution
-approaches zero quickly, but does not oscillate. For a problem with
-zero initial velocity, the solution never crosses zero. This is a good
-choice for designing shock absorbers or swinging doors.
-</section>
-
-
-<section>
-<h2 id="overdamped-beta-omega_0">Overdamped: \( \beta>\omega_0 \) </h2>
-
-<p>&nbsp;<br>
-$$
-\begin{eqnarray}
-x&=&A_1\exp{-(\beta+\sqrt{\beta^2-\omega_0^2})t}+A_2\exp{-(\beta-\sqrt{\beta^2-\omega_0^2})t}
-\end{eqnarray}
-$$
-<p>&nbsp;<br>
-
-<p>
-This solution will also never pass the origin more than once, and then
-only if the initial velocity is strong and initially toward zero.
-
-<p>
-Given \( b \), \( m \) and \( \omega_0 \), find \( x(t) \) for a particle whose
-initial position is \( x=0 \) and has initial velocity \( v_0 \) (assuming an
-underdamped solution).
-
-<p>
-The solution is of the form,
-
-<p>&nbsp;<br>
-$$
-\begin{eqnarray*}
-x&=&e^{-\beta t}\left[A_1\cos(\omega' t)+A_2\sin\omega't\right],\\
-\dot{x}&=&-\beta x+\omega'e^{-\beta t}\left[-A_1\sin\omega't+A_2\cos\omega't\right].\\
-\omega'&\equiv&\sqrt{\omega_0^2-\beta^2},~~~\beta\equiv b/2m.
-\end{eqnarray*}
-$$
-<p>&nbsp;<br>
-
-<p>
-From the initial conditions, \( A_1=0 \) because \( x(0)=0 \) and \( \omega'A_2=v_0 \). So
-
-<p>&nbsp;<br>
-$$
-x=\frac{v_0}{\omega'}e^{-\beta t}\sin\omega't.
-$$
-<p>&nbsp;<br>
 </section>
 
 
@@ -706,6 +489,224 @@ yields a situation, as discussed above, where the solution approaches quickly ze
 
 
 <section>
+<h2 id="damped-oscillators">Damped Oscillators </h2>
+
+<p>
+We consider only the case where the damping force is proportional to
+the velocity. This is counter to dragging friction, where the force is
+proportional in strength to the normal force and independent of
+velocity, and is also inconsistent with wind resistance, where the
+magnitude of the drag force is proportional the square of the
+velocity. Rolling resistance does seem to be mainly proportional to
+the velocity. However, the main motivation for considering damping
+forces proportional to the velocity is that the math is more
+friendly. This is because the differential equation is linear,
+i.e. each term is of order \( x \), \( \dot{x} \), \( \ddot{x}\cdots \), or even
+terms with no mention of \( x \), and there are no terms such as \( x^2 \) or
+\( x\ddot{x} \). The equations of motion for a spring with damping force
+\( -b\dot{x} \) are
+
+<p>&nbsp;<br>
+$$
+\begin{equation}
+m\ddot{x}+b\dot{x}+kx=0.
+\tag{4}
+\end{equation}
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="harmonic-oscillator-damping">Harmonic Oscillator,  Damping </h2>
+
+<p>
+Just to make the solution a bit less messy, we rewrite this equation as
+
+<p>&nbsp;<br>
+$$
+\begin{equation}
+\tag{5}
+\ddot{x}+2\beta\dot{x}+\omega_0^2x=0,~~~~\beta\equiv b/2m,~\omega_0\equiv\sqrt{k/m}.
+\end{equation}
+$$
+<p>&nbsp;<br>
+
+<p>
+Both \( \beta \) and \( \omega \) have dimensions of inverse time. To find solutions (see appendix C in the text) you must make an educated guess at the form of the solution. To do this, first realize that the solution will need an arbitrary normalization \( A \) because the equation is linear. Secondly, realize that if the form is
+
+<p>&nbsp;<br>
+$$
+\begin{equation}
+x=Ae^{rt}
+\tag{6}
+\end{equation}
+$$
+<p>&nbsp;<br>
+
+<p>
+that each derivative simply brings out an extra power of \( r \). This
+means that the \( Ae^{rt} \) factors out and one can simply solve for an
+equation for \( r \). Plugging this form into Eq. <a href="#mjx-eqn-5">(5)</a>,
+
+<p>&nbsp;<br>
+$$
+\begin{equation}
+r^2+2\beta r+\omega_0^2=0.
+\tag{7}
+\end{equation}
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="harmonic-oscillator-solutions-of-damped-motion">Harmonic Oscillator,  Solutions of Damped Motion </h2>
+
+<p>
+Because this is a quadratic equation there will be two solutions,
+
+<p>&nbsp;<br>
+$$
+\begin{equation}
+r=-\beta\pm\sqrt{\beta^2-\omega_0^2}.
+\tag{8}
+\end{equation}
+$$
+<p>&nbsp;<br>
+
+<p>
+We refer to the two solutions as \( r_1 \) and \( r_2 \) corresponding to the
+\( + \) and \( - \) roots. As expected, there should be two arbitrary
+constants involved in the solution,
+
+<p>&nbsp;<br>
+$$
+\begin{equation}
+x=A_1e^{r_1t}+A_2e^{r_2t},
+\tag{9}
+\end{equation}
+$$
+<p>&nbsp;<br>
+
+<p>
+where the coefficients \( A_1 \) and \( A_2 \) are determined by initial
+conditions.
+
+<p>
+The roots listed above, \( \sqrt{\omega_0^2-\beta_0^2} \), will be
+imaginary if the damping is small and \( \beta < \omega_0 \). In that case,
+\( r \) is complex and the factor \( e{rt} \) will have some oscillatory
+behavior. If the roots are real, there will only be exponentially
+decaying solutions. There are three cases:
+</section>
+
+
+<section>
+<h2 id="underdamped-beta-omega_0">Underdamped: \( \beta < \omega_0 \) </h2>
+
+<p>&nbsp;<br>
+$$
+\begin{eqnarray}
+x&=&A_1e^{-\beta t}e^{i\omega't}+A_2e^{-\beta t}e^{-i\omega't},~~\omega'\equiv\sqrt{\omega_0^2-\beta^2}\\
+\nonumber
+&=&(A_1+A_2)e^{-\beta t}\cos\omega't+i(A_1-A_2)e^{-\beta t}\sin\omega't.
+\end{eqnarray}
+$$
+<p>&nbsp;<br>
+
+<p>
+Here we have made use of the identity
+\( e^{i\omega't}=\cos\omega't+i\sin\omega't \). Because the constants are
+arbitrary, and because the real and imaginary parts are both solutions
+individually, we can simply consider the real part of the solution
+alone:
+
+<p>&nbsp;<br>
+$$
+\begin{eqnarray}
+\tag{10}
+x&=&B_1e^{-\beta t}\cos\omega't+B_2e^{-\beta t}\sin\omega't,\\
+\nonumber 
+\omega'&\equiv&\sqrt{\omega_0^2-\beta^2}.
+\end{eqnarray}
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="critical-dampling-beta-omega_0">Critical dampling: \( \beta=\omega_0 \) </h2>
+
+<p>
+In this case the two terms involving \( r_1 \) and \( r_2 \) are identical
+because \( \omega'=0 \). Because we need to arbitrary constants, there
+needs to be another solution. This is found by simply guessing, or by
+taking the limit of \( \omega'\rightarrow 0 \) from the underdamped
+solution. The solution is then
+
+<p>&nbsp;<br>
+$$
+\begin{equation}
+\tag{11}
+x=Ae^{-\beta t}+Bte^{-\beta t}.
+\end{equation}
+$$
+<p>&nbsp;<br>
+
+<p>
+The critically damped solution is interesting because the solution
+approaches zero quickly, but does not oscillate. For a problem with
+zero initial velocity, the solution never crosses zero. This is a good
+choice for designing shock absorbers or swinging doors.
+</section>
+
+
+<section>
+<h2 id="overdamped-beta-omega_0">Overdamped: \( \beta>\omega_0 \) </h2>
+
+<p>&nbsp;<br>
+$$
+\begin{eqnarray}
+x&=&A_1\exp{-(\beta+\sqrt{\beta^2-\omega_0^2})t}+A_2\exp{-(\beta-\sqrt{\beta^2-\omega_0^2})t}
+\end{eqnarray}
+$$
+<p>&nbsp;<br>
+
+<p>
+This solution will also never pass the origin more than once, and then
+only if the initial velocity is strong and initially toward zero.
+
+<p>
+Given \( b \), \( m \) and \( \omega_0 \), find \( x(t) \) for a particle whose
+initial position is \( x=0 \) and has initial velocity \( v_0 \) (assuming an
+underdamped solution).
+
+<p>
+The solution is of the form,
+
+<p>&nbsp;<br>
+$$
+\begin{eqnarray*}
+x&=&e^{-\beta t}\left[A_1\cos(\omega' t)+A_2\sin\omega't\right],\\
+\dot{x}&=&-\beta x+\omega'e^{-\beta t}\left[-A_1\sin\omega't+A_2\cos\omega't\right].\\
+\omega'&\equiv&\sqrt{\omega_0^2-\beta^2},~~~\beta\equiv b/2m.
+\end{eqnarray*}
+$$
+<p>&nbsp;<br>
+
+<p>
+From the initial conditions, \( A_1=0 \) because \( x(0)=0 \) and \( \omega'A_2=v_0 \). So
+
+<p>&nbsp;<br>
+$$
+x=\frac{v_0}{\omega'}e^{-\beta t}\sin\omega't.
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
 <h2 id="sinusoidally-driven-oscillators">Sinusoidally Driven Oscillators </h2>
 
 <p>
@@ -715,7 +716,7 @@ Here, we consider the force
 $$
 \begin{equation}
 F=-kx-b\dot{x}+F_0\cos\omega t,
-\tag{11}
+\tag{12}
 \end{equation}
 $$
 <p>&nbsp;<br>
@@ -726,7 +727,7 @@ which leads to the differential equation
 <p>&nbsp;<br>
 $$
 \begin{equation}
-\tag{12}
+\tag{13}
 \ddot{x}+2\beta\dot{x}+\omega_0^2x=(F_0/m)\cos\omega t.
 \end{equation}
 $$
@@ -746,7 +747,7 @@ have two arbitrary constants. Now consider solutions to the same
 equation without the driving term, which include two arbitrary
 constants. These are called either {\it homogenous solutions} or {\it
 complementary solutions}, and were given in the previous section,
-e.g. Eq. <a href="#mjx-eqn-9">(9)</a> for the underdamped case. The
+e.g. Eq. <a href="#mjx-eqn-10">(10)</a> for the underdamped case. The
 homogenous solution already incorporates the two arbitrary constants,
 so any sum of a homogenous solution and a particular solution will
 represent the {\it general solution} of the equation. The general
@@ -773,7 +774,7 @@ To find a particular solution, one first guesses at the form,
 <p>&nbsp;<br>
 $$
 \begin{equation}
-\tag{13}
+\tag{14}
 x_p(t)=D\cos(\omega t-\delta),
 \end{equation}
 $$
@@ -786,7 +787,7 @@ and rewrite the differential equation as
 $$
 \begin{equation}
 D\left\{-\omega^2\cos(\omega t-\delta)-2\beta\omega\sin(\omega t-\delta)+\omega_0^2\cos(\omega t-\delta)\right\}=\frac{F_0}{m}\cos(\omega t).
-\tag{14}
+\tag{15}
 \end{equation}
 $$
 <p>&nbsp;<br>
@@ -825,7 +826,7 @@ After dividing by \( \cos\delta \), the lower expression leads to
 $$
 \begin{equation}
 \tan\delta=\frac{2\beta\omega}{\omega_0^2-\omega^2}.
-\tag{15}
+\tag{16}
 \end{equation}
 $$
 <p>&nbsp;<br>
@@ -854,7 +855,7 @@ Inserting the expressions for \( \cos\delta \) and \( \sin\delta \) into the exp
 <p>&nbsp;<br>
 $$
 \begin{equation}
-\tag{16}
+\tag{17}
 D=\frac{F_0/m}{\sqrt{(\omega_0^2-\omega^2)^2+4\omega^2\beta^2}}.
 \end{equation}
 $$
@@ -882,7 +883,7 @@ driving force (\( F_0/m \)), but also depends on the driving frequency
 <h2 id="alternative-derivation-for-driven-oscillators">Alternative Derivation for Driven Oscillators </h2>
 
 <p>
-Here, we derive the same expressions as in Equations <a href="#mjx-eqn-13">(13)</a> and <a href="#mjx-eqn-16">(16)</a> but express the driving forces as
+Here, we derive the same expressions as in Equations <a href="#mjx-eqn-14">(14)</a> and <a href="#mjx-eqn-17">(17)</a> but express the driving forces as
 
 <p>&nbsp;<br>
 $$
@@ -897,7 +898,7 @@ rather than as \( F_0\cos\omega t \). The real part of \( F \) is the same as be
 <p>&nbsp;<br>
 $$
 \begin{eqnarray}
-\tag{17}
+\tag{18}
 \ddot{x}+2\beta\dot{x}+\omega_0^2x&=&\frac{F_0}{m}e^{i\omega t},
 \end{eqnarray}
 $$
@@ -906,7 +907,7 @@ $$
 <p>
 one can treat \( x(t) \) as an imaginary function. Because the operations
 \( d^2/dt^2 \) and \( d/dt \) are real and thus do not mix the real and
-imaginary parts of \( x(t) \), Eq. <a href="#mjx-eqn-17">(17)</a> is effectively 2
+imaginary parts of \( x(t) \), Eq. <a href="#mjx-eqn-18">(18)</a> is effectively 2
 equations. Because \( e^{\omega t}=\cos\omega t+i\sin\omega t \), the real
 part of the solution for \( x(t) \) gives the solution for a driving force
 \( F_0\cos\omega t \), and the imaginary part of \( x \) corresponds to the
@@ -922,7 +923,7 @@ We assume a simple form for the particular solution
 $$
 \begin{equation}
 x_p=De^{i\omega t},
-\tag{18}
+\tag{19}
 \end{equation}
 $$
 <p>&nbsp;<br>
@@ -931,7 +932,7 @@ $$
 where \( D \) is a complex constant.
 
 <p>
-From Eq. <a href="#mjx-eqn-17">(17)</a> one inserts the form for \( x_p \) above to get
+From Eq. <a href="#mjx-eqn-18">(18)</a> one inserts the form for \( x_p \) above to get
 
 <p>&nbsp;<br>
 $$
@@ -950,7 +951,7 @@ The norm and phase for \( D=|D|e^{-i\delta} \) can be read by inspection,
 $$
 \begin{equation}
 |D|=\frac{F_0/m}{\sqrt{(\omega_0^2-\omega^2)^2+4\beta^2\omega^2}},~~~~\tan\delta=\frac{2\beta\omega}{\omega_0^2-\omega^2}.
-\tag{19}
+\tag{20}
 \end{equation}
 $$
 <p>&nbsp;<br>
@@ -961,7 +962,7 @@ This is the same expression for \( \delta \) as before. One then finds \( x_p(t)
 <p>&nbsp;<br>
 $$
 \begin{eqnarray}
-\tag{20}
+\tag{21}
 x_p(t)&=&\Re\frac{(F_0/m)e^{i\omega t-i\delta}}{\sqrt{(\omega_0^2-\omega^2)^2+4\beta^2\omega^2}}\\
 \nonumber
 &=&\frac{(F_0/m)\cos(\omega t-\delta)}{\sqrt{(\omega_0^2-\omega^2)^2+4\beta^2\omega^2}}.
@@ -975,7 +976,7 @@ If one wished to solve for the case where \( F(t)= F_0\sin\omega t \), the imagi
 <p>&nbsp;<br>
 $$
 \begin{eqnarray}
-\tag{21}
+\tag{22}
 x_p(t)&=&\Im\frac{(F_0/m)e^{i\omega t-i\delta}}{\sqrt{(\omega_0^2-\omega^2)^2+4\beta^2\omega^2}}\\
 \nonumber
 &=&\frac{(F_0/m)\sin(\omega t-\delta)}{\sqrt{(\omega_0^2-\omega^2)^2+4\beta^2\omega^2}}.
@@ -1063,7 +1064,7 @@ respect to \( \omega \), e.g. set
 $$
 \begin{equation}
 \frac{d}{d\omega}\left[(\omega_0^2-\omega^2)^2+4\omega^2\beta^2\right]=0,
-\tag{22}
+\tag{23}
 \end{equation}
 $$
 <p>&nbsp;<br>
@@ -1077,7 +1078,7 @@ and one finds that the maximum amplitude occurs when
 $$
 \begin{equation}
 x_{\rm max}\approx\frac{F_0}{2m\beta \omega_0}.
-\tag{23}
+\tag{24}
 \end{equation}
 $$
 <p>&nbsp;<br>
@@ -1097,7 +1098,7 @@ For small damping this occurs when \( \omega=\omega_0\pm \beta \), so the \( FWH
 $$
 \begin{equation}
 Q\equiv \frac{\omega_0}{2\beta}.
-\tag{24}
+\tag{25}
 \end{equation}
 $$
 <p>&nbsp;<br>
