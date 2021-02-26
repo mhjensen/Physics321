@@ -100,186 +100,210 @@ longer independent of the amplitude.
 
 
 !split
-===== Harmonic Oscillator, Velocity and Kineti Energy =====
+===== Analyzing the equations =====
 
-One can also calculate the velocity and the kinetic energy as a function of time,
-
-!bt
-\begin{eqnarray}
-\dot{x}&=&-\omega_0A\sin(\omega_0 t-\phi),\\
-\nonumber
-K&=&\frac{1}{2}m\dot{x}^2=\frac{m\omega_0^2A^2}{2}\sin^2(\omega_0t-\phi),\\
-\nonumber
-&=&\frac{k}{2}A^2\sin^2(\omega_0t-\phi).
-\end{eqnarray}
-!et
-
-!split
-===== Harmonic Oscillator, Total Energy =====
-
-The total energy is then
-
-!bt
-\begin{equation}
-E=K+V=\frac{1}{2}m\dot{x}^2+\frac{1}{2}kx^2=\frac{1}{2}kA^2.
-\end{equation}
-!et
-
-The total energy then goes as the square of the amplitude.
-
-
-A pendulum is an example of a harmonic oscillator. By expanding the
-kinetic and potential energies for small angles find the frequency for
-a pendulum of length $L$ with all the mass $m$ centered at the end by
-writing the eq.s of motion in the form of a harmonic oscillator.
-
-The potential energy and kinetic energies are (for $x$ being the displacement)
-
-!bt
-\begin{eqnarray*}
-V&=&mgL(1-\cos\theta)\approx mgL\frac{x^2}{2L^2},\\
-K&=&\frac{1}{2}mL^2\dot{\theta}^2\approx \frac{m}{2}\dot{x}^2.
-\end{eqnarray*}
-!et
-
-For small $x$ Newton's 2nd law becomes
+Our equation of motion is, with the only force given by the one-dimensional spring force,
 
 !bt
 \[
-m\ddot{x}=-\frac{mg}{L}x,
+m\frac{d^2x}{dt^2}=-kx.
+\]
+!et
+Defining the natural frequency $\omega_0^2=k/m$ we can rewrite this equation as
+!bt
+\[
+\frac{d^2x}{dt^2}=-\omega_0^2x.
+\]
+!et
+We call this a natural frequency since it is defined by the constants that describe our system, the spring constant $k$ and the mass $m$ of the object.
+
+
+We can as usual split this equation of motion into one equation for the derivative of the velocity and 
+!bt
+\[
+\frac{dv}{dt}=-\omega_0^2x,
+\]
+!et
+and
+!bt
+\[
+\frac{dx}{dt}=v.
 \]
 !et
 
-and the spring constant would appear to be $k=mg/L$, which makes the
-frequency equal to $\omega_0=\sqrt{g/L}$. Note that the frequency is
-independent of the mass.
+The solution to the equations of motion is given by
+!bt
+\[
+x(t) = A\cos{(\omega_0 t)}+B\sin{(\omega_0 t)},
+\]
+!et
+where $A$ and $B$ are in general complex constants to be determined by the initial conditions.
 
 
 !split
-===== Our Sliding Block Code =====
-Here we study first the case without additional friction term and scale our equation
-in terms of a dimensionless time $\tau$.
+===== Checking the Solution =====
 
-Let us remind ourselves about the differential equation we want to solve (the general case with damping due to friction)
+Inserting the solution into the equation of motion we have
 !bt
 \[
-m\frac{d^2x}{dt^2} + b\frac{dx}{dt}+kx(t) =0.
+\frac{d^2x}{dt^2}=-\omega_0^2x, 
 \]
 !et
-We divide by $m$ and introduce $\omega_0^2=\sqrt{k/m}$ and obtain
+we have
 !bt
 \[
-\frac{d^2x}{dt^2} + \frac{b}{m}\frac{dx}{dt}+\omega_0^2x(t) =0.
+\frac{d^2x}{dt^2} = -A\omega_0^2\cos{(\omega_0 t)}-B\omega_0^2\sin{(\omega_0 t)},
 \]
 !et
-
+and the right-hand side is just $-\omega_0^2 x(t)$. Thus, inserting the solution into the differential equation shows that we obtain the same original differential equation.
 
 !split
-===== Harmonic Oscillator, Sliding Block =====
+===== Initial condition example =====
 
-Thereafter we introduce a dimensionless time $\tau = t\omega_0$ (check
-that the dimensionality is correct) and rewrite our equation as
-
+Let us assume that our initial time $t_0=0$s and that the initial position $x(t_0)=x_0$ and that $v_0=0$ (we skip units here).
+This gives us
 !bt
 \[
-\frac{d^2x}{d\tau^2} + \frac{b}{m\omega_0}\frac{dx}{d\tau}+x(\tau) =0,
+x(t=0) = x_0 =A,
 \]
 !et
-which gives us
+and it leaves $B$ undetermined. Taking the derivative of $x$ we obtain the velocity
 !bt
 \[
-\frac{d^2x}{d\tau^2} + \frac{b}{m\omega_0}\frac{dx}{d\tau}+x(\tau) =0.
+v(t) = -A\omega_0\sin{(\omega_0 t)}+B\omega_0\cos{(\omega_0 t)},
 \]
 !et
-
+and with 
+!bt
+\[
+v(t=0) = 0=B,
+\]
+!et
+we see that our solution with these initial conditions becomes
+!bt
+\[
+x(t) = x_0\cos{(\omega_0 t)}.
+\]
+!et
 
 !split
-===== Harmonic Oscillator, Sliding Block, Numerical Aspects =====
+=====  Math Digression =====
 
-
-We then define $\gamma = b/(2m\omega_0)$ and rewrite our equations as
+From our first homework (exercise 1) we have that (we switch to $\omega$ instead of $\omega_0$)
 !bt
 \[
-\frac{d^2x}{d\tau^2} + 2\gamma\frac{dx}{d\tau}+x(\tau) =0.
+\cos{(\omega t)} = \sum_{n=0}^{\infty}\left(-1\right)^n \frac{(\omega t)^{2n}}{(2n)!},
 \]
 !et
-This is the equation we will code below. The first version employs the Euler-Cromer method.
-!bc pycod
-# Common imports
-import numpy as np
-import pandas as pd
-from math import *
-import matplotlib.pyplot as plt
-import os
+and 
+!bt
+\[
+\sin{(\omega t)} = \sum_{n=0}^{\infty}\left(-1\right)^n \frac{(\omega t)^{2n+1}}{(2n+1)!},
+\]
+!et
+and that we could  write
+!bt
+\[
+\exp{(\pm\imath\omega t)} = \cos{(\omega t)}+\pm\imath\sin{(\omega t)}.
+\]
+!et
 
-# Where to save the figures and data files
-PROJECT_ROOT_DIR = "Results"
-FIGURE_ID = "Results/FigureFiles"
-DATA_ID = "DataFiles/"
+This means (show this) that we can write our solution in terms of new constant $C$ and $D$ as
 
-if not os.path.exists(PROJECT_ROOT_DIR):
-    os.mkdir(PROJECT_ROOT_DIR)
+!bt
+\[
+x(t)=C\exp{(\imath\omega t)}+D\exp{(-\imath\omega t)}.
+\]
+!et
 
-if not os.path.exists(FIGURE_ID):
-    os.makedirs(FIGURE_ID)
+To see the relation between these two forms we note that we can write our original
+solution $x(t) = A\cos{(\omega t)}+B\sin{(\omega t)}$ as
 
-if not os.path.exists(DATA_ID):
-    os.makedirs(DATA_ID)
+!bt
+\[
+x(t) = (C+D)\cos{(\omega t)}+\imath(C-D)\sin{(\omega t)},
+\]
+!et
+meaning that we have $A=C+D$ and $B=\imath(C-D)$.
 
-def image_path(fig_id):
-    return os.path.join(FIGURE_ID, fig_id)
+!split
+===== More Math Manipulations =====
 
-def data_path(dat_id):
-    return os.path.join(DATA_ID, dat_id)
+We can also rewrite the solution in a simpler way.  We define a new
+constant $A=\sqrt{B_1^2+B_2^2}$ which can be thought as the hypotenuse
+of a right-angle triangle with sides $B_1$ and $B_2$ and
+$B_1=A\cos{(\delta)}$ and $B_2=A\sin{(\delta)}$.
 
-def save_fig(fig_id):
-    plt.savefig(image_path(fig_id) + ".png", format='png')
+We have then
+!bt
+\[
+x(t) = A\left[\frac{B_1}{A}\cos{(\omega t)}+\frac{B_2}{A}\sin{(\omega t)}\right],
+\]
+!et
+which becomes
+!bt
+\[
+x(t) = A\left[\cos{(\delta)}\cos{(\omega t)}+\sin{(\delta)}\sin{(\omega t)}\right],
+\]
+!et
+and using the trigonometric relations for addition of angles we have
+!bt
+\[
+x(t) = A\cos{(\omega t-\delta)},
+\]
+!et
+where $\delta$ is a so-called phase shift.
+
+!split
+===== Energy Conservation =====
+
+Our energy is given by the kinetic energy and the harmonic oscillator potential energy, that is we have (for a one-dimensional harmonic oscillator potential)
+!bt
+\[
+E=\frac{1}{2}mv^2+\frac{1}{2}kx^2.
+\]
+!et
+
+We assume that we have initial conditions $v_0=0$ (no kinetic energy) and $x(t=0)=x_0$.
+With these initial conditions we have
+!bt
+\[
+x(t) = x_0\cos{(\omega_0 t)},
+\]
+!et
+and the velocity is given by
+!bt
+\[
+v(t) = -x_0\omega_0\sin{(\omega_0 t)},
+\]
+!et
 
 
-from pylab import plt, mpl
-plt.style.use('seaborn')
-mpl.rcParams['font.family'] = 'serif'
+The energy is conserved (as we have discussed before) and at $t=t_0=0$ we have thus
+!bt
+\[
+E_0=\frac{1}{2}kx_0^2.
+\]
+!et
+At a time $t\ne 0$ we have
+!bt
+\[
+E(t)=\frac{1}{2}mv^2+\frac{1}{2}kx^2=\frac{1}{2}mx_0^2\omega_0^2\sin^2{(\omega_0 t)}+\frac{1}{2}kx_0^2\cos^2{(\omega_0 t)},
+\]
+!et
+Recalling that $\omega_0^2=k/m$ we get
+!bt
+\[
+E(t)=\frac{1}{2}kx_0^2\sin^2{(\omega_0 t)}+\frac{1}{2}kx_0^2\cos^2{(\omega_0 t)}=\frac{1}{2}kx_0^2=E_0.
+\]
+!et
+Energy is thus conserved
 
-DeltaT = 0.001
-#set up arrays 
-tfinal = 20 # in years
-n = ceil(tfinal/DeltaT)
-# set up arrays for t, v, and x
-t = np.zeros(n)
-v = np.zeros(n)
-x = np.zeros(n)
-# Initial conditions as simple one-dimensional arrays of time
-x0 =  1.0 
-v0 = 0.0
-x[0] = x0
-v[0] = v0
-gamma = 0.0
-# Start integrating using Euler-Cromer's method
-for i in range(n-1):
-    # Set up the acceleration
-    # Here you could have defined your own function for this
-    a =  -2*gamma*v[i]-x[i]
-    # update velocity, time and position
-    v[i+1] = v[i] + DeltaT*a
-    x[i+1] = x[i] + DeltaT*v[i+1]
-    t[i+1] = t[i] + DeltaT
-# Plot position as function of time    
-fig, ax = plt.subplots()
-#ax.set_xlim(0, tfinal)
-ax.set_ylabel('x[m]')
-ax.set_xlabel('t[s]')
-ax.plot(t, x)
-fig.tight_layout()
-save_fig("BlockEulerCromer")
-plt.show()
-!ec
+!split
+===== The mathematical pendulum =====
 
-When setting up the value of $\gamma$ we see that for $\gamma=0$ we get the simple oscillatory motion with no damping.
-Choosing $\gamma < 1$ leads to the classical underdamped case with oscillatory motion, but where the motion comes to an end.
+See handwritten notes and lecture videos.
 
-Choosing $\gamma =1$ leads to what normally is called critical damping and $\gamma> 1$ leads to critical overdamping.
-Try it out and try also to change the initial position and velocity. Setting $\gamma=1$
-yields a situation, as discussed above, where the solution approaches quickly zero and does not oscillate. With zero initial velocity it will never cross zero. 
 
 
 !split
@@ -758,6 +782,134 @@ For small damping this occurs when $\omega=\omega_0\pm \beta$, so the $FWHM\appr
 Q\equiv \frac{\omega_0}{2\beta}.
 \end{equation}
 !et
+
+
+
+!split
+===== Our Sliding Block Code =====
+Here we study first the case without additional friction term and scale our equation
+in terms of a dimensionless time $\tau$.
+
+Let us remind ourselves about the differential equation we want to solve (the general case with damping due to friction)
+!bt
+\[
+m\frac{d^2x}{dt^2} + b\frac{dx}{dt}+kx(t) =0.
+\]
+!et
+We divide by $m$ and introduce $\omega_0^2=\sqrt{k/m}$ and obtain
+!bt
+\[
+\frac{d^2x}{dt^2} + \frac{b}{m}\frac{dx}{dt}+\omega_0^2x(t) =0.
+\]
+!et
+
+
+!split
+===== Harmonic Oscillator, Sliding Block =====
+
+Thereafter we introduce a dimensionless time $\tau = t\omega_0$ (check
+that the dimensionality is correct) and rewrite our equation as
+
+!bt
+\[
+\frac{d^2x}{d\tau^2} + \frac{b}{m\omega_0}\frac{dx}{d\tau}+x(\tau) =0,
+\]
+!et
+which gives us
+!bt
+\[
+\frac{d^2x}{d\tau^2} + \frac{b}{m\omega_0}\frac{dx}{d\tau}+x(\tau) =0.
+\]
+!et
+
+
+!split
+===== Harmonic Oscillator, Sliding Block, Numerical Aspects =====
+
+
+We then define $\gamma = b/(2m\omega_0)$ and rewrite our equations as
+!bt
+\[
+\frac{d^2x}{d\tau^2} + 2\gamma\frac{dx}{d\tau}+x(\tau) =0.
+\]
+!et
+This is the equation we will code below. The first version employs the Euler-Cromer method.
+!bc pycod
+# Common imports
+import numpy as np
+import pandas as pd
+from math import *
+import matplotlib.pyplot as plt
+import os
+
+# Where to save the figures and data files
+PROJECT_ROOT_DIR = "Results"
+FIGURE_ID = "Results/FigureFiles"
+DATA_ID = "DataFiles/"
+
+if not os.path.exists(PROJECT_ROOT_DIR):
+    os.mkdir(PROJECT_ROOT_DIR)
+
+if not os.path.exists(FIGURE_ID):
+    os.makedirs(FIGURE_ID)
+
+if not os.path.exists(DATA_ID):
+    os.makedirs(DATA_ID)
+
+def image_path(fig_id):
+    return os.path.join(FIGURE_ID, fig_id)
+
+def data_path(dat_id):
+    return os.path.join(DATA_ID, dat_id)
+
+def save_fig(fig_id):
+    plt.savefig(image_path(fig_id) + ".png", format='png')
+
+
+from pylab import plt, mpl
+plt.style.use('seaborn')
+mpl.rcParams['font.family'] = 'serif'
+
+DeltaT = 0.001
+#set up arrays 
+tfinal = 20 # in years
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, v, and x
+t = np.zeros(n)
+v = np.zeros(n)
+x = np.zeros(n)
+# Initial conditions as simple one-dimensional arrays of time
+x0 =  1.0 
+v0 = 0.0
+x[0] = x0
+v[0] = v0
+gamma = 0.0
+# Start integrating using Euler-Cromer's method
+for i in range(n-1):
+    # Set up the acceleration
+    # Here you could have defined your own function for this
+    a =  -2*gamma*v[i]-x[i]
+    # update velocity, time and position
+    v[i+1] = v[i] + DeltaT*a
+    x[i+1] = x[i] + DeltaT*v[i+1]
+    t[i+1] = t[i] + DeltaT
+# Plot position as function of time    
+fig, ax = plt.subplots()
+#ax.set_xlim(0, tfinal)
+ax.set_ylabel('x[m]')
+ax.set_xlabel('t[s]')
+ax.plot(t, x)
+fig.tight_layout()
+save_fig("BlockEulerCromer")
+plt.show()
+!ec
+
+When setting up the value of $\gamma$ we see that for $\gamma=0$ we get the simple oscillatory motion with no damping.
+Choosing $\gamma < 1$ leads to the classical underdamped case with oscillatory motion, but where the motion comes to an end.
+
+Choosing $\gamma =1$ leads to what normally is called critical damping and $\gamma> 1$ leads to critical overdamping.
+Try it out and try also to change the initial position and velocity. Setting $\gamma=1$
+yields a situation, as discussed above, where the solution approaches quickly zero and does not oscillate. With zero initial velocity it will never cross zero. 
 
 
 
