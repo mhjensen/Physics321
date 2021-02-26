@@ -1,0 +1,754 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/doconce/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="PHY321: Harmonic Oscillations, Damping, Resonances and time-dependent Forces">
+
+<title>PHY321: Harmonic Oscillations, Damping, Resonances and time-dependent Forces</title>
+
+<!-- Bootstrap style: bootstrap -->
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+
+<style type="text/css">
+
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('Aims and Overarching Motivation',
+               2,
+               None,
+               'aims-and-overarching-motivation'),
+              ('Monday', 3, None, 'monday'),
+              ('Wednesday', 3, None, 'wednesday'),
+              ('Friday', 3, None, 'friday'),
+              ('Damped Oscillators', 2, None, 'damped-oscillators'),
+              ('Harmonic Oscillator,  Damping',
+               2,
+               None,
+               'harmonic-oscillator-damping'),
+              ('Harmonic Oscillator,  Solutions of Damped Motion',
+               2,
+               None,
+               'harmonic-oscillator-solutions-of-damped-motion'),
+              ('Underdamped: $\\beta<\\omega_0$',
+               2,
+               None,
+               'underdamped-beta-omega_0'),
+              ('Critical dampling: $\\beta=\\omega_0$',
+               2,
+               None,
+               'critical-dampling-beta-omega_0'),
+              ('Overdamped: $\\beta>\\omega_0$',
+               2,
+               None,
+               'overdamped-beta-omega_0'),
+              ('Harmonic Oscillator,  Solutions',
+               2,
+               None,
+               'harmonic-oscillator-solutions'),
+              ('Harmonic Oscillator,  Particular Solution',
+               2,
+               None,
+               'harmonic-oscillator-particular-solution'),
+              ('Solving with Driven Oscillations',
+               2,
+               None,
+               'solving-with-driven-oscillations'),
+              ('Alternative Derivation for Driven Oscillators',
+               2,
+               None,
+               'alternative-derivation-for-driven-oscillators'),
+              ('Damped and Driven Oscillator',
+               2,
+               None,
+               'damped-and-driven-oscillator'),
+              ('Resonance Widths; the $Q$ factor',
+               2,
+               None,
+               'resonance-widths-the-q-factor')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="week9-bs.html">PHY321: Harmonic Oscillations, Damping, Resonances and time-dependent Forces</a>
+  </div>
+
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="#aims-and-overarching-motivation" style="font-size: 80%;"><b>Aims and Overarching Motivation</b></a></li>
+     <!-- navigation toc: --> <li><a href="#monday" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Monday</a></li>
+     <!-- navigation toc: --> <li><a href="#wednesday" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Wednesday</a></li>
+     <!-- navigation toc: --> <li><a href="#friday" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Friday</a></li>
+     <!-- navigation toc: --> <li><a href="#damped-oscillators" style="font-size: 80%;"><b>Damped Oscillators</b></a></li>
+     <!-- navigation toc: --> <li><a href="#harmonic-oscillator-damping" style="font-size: 80%;"><b>Harmonic Oscillator,  Damping</b></a></li>
+     <!-- navigation toc: --> <li><a href="#harmonic-oscillator-solutions-of-damped-motion" style="font-size: 80%;"><b>Harmonic Oscillator,  Solutions of Damped Motion</b></a></li>
+     <!-- navigation toc: --> <li><a href="#underdamped-beta-omega_0" style="font-size: 80%;"><b>Underdamped: \( \beta<\omega_0 \)</b></a></li>
+     <!-- navigation toc: --> <li><a href="#critical-dampling-beta-omega_0" style="font-size: 80%;"><b>Critical dampling: \( \beta=\omega_0 \)</b></a></li>
+     <!-- navigation toc: --> <li><a href="#overdamped-beta-omega_0" style="font-size: 80%;"><b>Overdamped: \( \beta>\omega_0 \)</b></a></li>
+     <!-- navigation toc: --> <li><a href="#harmonic-oscillator-solutions" style="font-size: 80%;"><b>Harmonic Oscillator,  Solutions</b></a></li>
+     <!-- navigation toc: --> <li><a href="#harmonic-oscillator-particular-solution" style="font-size: 80%;"><b>Harmonic Oscillator,  Particular Solution</b></a></li>
+     <!-- navigation toc: --> <li><a href="#solving-with-driven-oscillations" style="font-size: 80%;"><b>Solving with Driven Oscillations</b></a></li>
+     <!-- navigation toc: --> <li><a href="#alternative-derivation-for-driven-oscillators" style="font-size: 80%;"><b>Alternative Derivation for Driven Oscillators</b></a></li>
+     <!-- navigation toc: --> <li><a href="#damped-and-driven-oscillator" style="font-size: 80%;"><b>Damped and Driven Oscillator</b></a></li>
+     <!-- navigation toc: --> <li><a href="#resonance-widths-the-q-factor" style="font-size: 80%;"><b>Resonance Widths; the \( Q \) factor</b></a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+
+<div class="container">
+
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<div class="jumbotron">
+<center><h1>PHY321: Harmonic Oscillations, Damping, Resonances and time-dependent Forces</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): <a href="http://mhjgit.github.io/info/doc/web/" target="_self">Morten Hjorth-Jensen</a> -->
+
+<center>
+<b><a href="http://mhjgit.github.io/info/doc/web/" target="_self">Morten Hjorth-Jensen</a></b> [1, 2]
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<center>[1] <b>Department of Physics and Astronomy and Facility for Rare Ion Beams (FRIB), Michigan State University, USA</b></center>
+<center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
+<br>
+<p>
+<center><h4>Feb 26, 2021</h4></center> <!-- date -->
+<br>
+<p>
+<!-- potential-jumbotron-button -->
+</div> <!-- end jumbotron -->
+
+<!-- !split -->
+
+<h2 id="aims-and-overarching-motivation" class="anchor">Aims and Overarching Motivation </h2>
+
+<h3 id="monday" class="anchor">Monday </h3>
+
+<p>
+Damped and forced  oscillations.
+
+<p>
+<b>Reading suggestion</b>: Taylor chapters 3 and 4 for the summary on forces and conservation laws. Taylor section 5.1 for start harmonic oscillations.
+
+<h3 id="wednesday" class="anchor">Wednesday </h3>
+
+No lecture, study day
+
+<h3 id="friday" class="anchor">Friday </h3>
+
+<p>
+<b>Reading suggestion</b>: Taylor sections 5.3-5.4.
+
+<p>
+<!-- !split -->
+
+<h2 id="damped-oscillators" class="anchor">Damped Oscillators </h2>
+
+<p>
+We consider only the case where the damping force is proportional to
+the velocity. This is counter to dragging friction, where the force is
+proportional in strength to the normal force and independent of
+velocity, and is also inconsistent with wind resistance, where the
+magnitude of the drag force is proportional the square of the
+velocity. Rolling resistance does seem to be mainly proportional to
+the velocity. However, the main motivation for considering damping
+forces proportional to the velocity is that the math is more
+friendly. This is because the differential equation is linear,
+i.e. each term is of order \( x \), \( \dot{x} \), \( \ddot{x}\cdots \), or even
+terms with no mention of \( x \), and there are no terms such as \( x^2 \) or
+\( x\ddot{x} \). The equations of motion for a spring with damping force
+\( -b\dot{x} \) are
+
+$$
+\begin{equation}
+m\ddot{x}+b\dot{x}+kx=0.
+\label{_auto1}
+\end{equation}
+$$
+
+<p>
+<!-- !split -->
+
+<h2 id="harmonic-oscillator-damping" class="anchor">Harmonic Oscillator,  Damping </h2>
+
+<p>
+Just to make the solution a bit less messy, we rewrite this equation as
+
+$$
+\begin{equation}
+\label{eq:dampeddiffyq}
+\ddot{x}+2\beta\dot{x}+\omega_0^2x=0,~~~~\beta\equiv b/2m,~\omega_0\equiv\sqrt{k/m}.
+\end{equation}
+$$
+
+<p>
+Both \( \beta \) and \( \omega \) have dimensions of inverse time. To find solutions (see appendix C in the text) you must make an educated guess at the form of the solution. To do this, first realize that the solution will need an arbitrary normalization \( A \) because the equation is linear. Secondly, realize that if the form is
+
+$$
+\begin{equation}
+x=Ae^{rt}
+\label{_auto2}
+\end{equation}
+$$
+
+<p>
+that each derivative simply brings out an extra power of \( r \). This
+means that the \( Ae^{rt} \) factors out and one can simply solve for an
+equation for \( r \). Plugging this form into Eq. \eqref{eq:dampeddiffyq},
+
+$$
+\begin{equation}
+r^2+2\beta r+\omega_0^2=0.
+\label{_auto3}
+\end{equation}
+$$
+
+<p>
+<!-- !split -->
+
+<h2 id="harmonic-oscillator-solutions-of-damped-motion" class="anchor">Harmonic Oscillator,  Solutions of Damped Motion </h2>
+
+<p>
+Because this is a quadratic equation there will be two solutions,
+
+$$
+\begin{equation}
+r=-\beta\pm\sqrt{\beta^2-\omega_0^2}.
+\label{_auto4}
+\end{equation}
+$$
+
+<p>
+We refer to the two solutions as \( r_1 \) and \( r_2 \) corresponding to the
+\( + \) and \( - \) roots. As expected, there should be two arbitrary
+constants involved in the solution,
+
+$$
+\begin{equation}
+x=A_1e^{r_1t}+A_2e^{r_2t},
+\label{_auto5}
+\end{equation}
+$$
+
+<p>
+where the coefficients \( A_1 \) and \( A_2 \) are determined by initial
+conditions.
+
+<p>
+The roots listed above, \( \sqrt{\omega_0^2-\beta_0^2} \), will be
+imaginary if the damping is small and \( \beta < \omega_0 \). In that case,
+\( r \) is complex and the factor \( e{rt} \) will have some oscillatory
+behavior. If the roots are real, there will only be exponentially
+decaying solutions. There are three cases:
+
+<p>
+<!-- !split -->
+
+<h2 id="underdamped-beta-omega_0" class="anchor">Underdamped: \( \beta < \omega_0 \) </h2>
+
+$$
+\begin{eqnarray}
+x&=&A_1e^{-\beta t}e^{i\omega't}+A_2e^{-\beta t}e^{-i\omega't},~~\omega'\equiv\sqrt{\omega_0^2-\beta^2}\\
+\nonumber
+&=&(A_1+A_2)e^{-\beta t}\cos\omega't+i(A_1-A_2)e^{-\beta t}\sin\omega't.
+\end{eqnarray}
+$$
+
+<p>
+Here we have made use of the identity
+\( e^{i\omega't}=\cos\omega't+i\sin\omega't \). Because the constants are
+arbitrary, and because the real and imaginary parts are both solutions
+individually, we can simply consider the real part of the solution
+alone:
+
+$$
+\begin{eqnarray}
+\label{eq:homogsolution}
+x&=&B_1e^{-\beta t}\cos\omega't+B_2e^{-\beta t}\sin\omega't,\\
+\nonumber 
+\omega'&\equiv&\sqrt{\omega_0^2-\beta^2}.
+\end{eqnarray}
+$$
+
+<p>
+<!-- !split -->
+
+<h2 id="critical-dampling-beta-omega_0" class="anchor">Critical dampling: \( \beta=\omega_0 \) </h2>
+
+<p>
+In this case the two terms involving \( r_1 \) and \( r_2 \) are identical
+because \( \omega'=0 \). Because we need to arbitrary constants, there
+needs to be another solution. This is found by simply guessing, or by
+taking the limit of \( \omega'\rightarrow 0 \) from the underdamped
+solution. The solution is then
+
+$$
+\begin{equation}
+\label{eq:criticallydamped}
+x=Ae^{-\beta t}+Bte^{-\beta t}.
+\end{equation}
+$$
+
+<p>
+The critically damped solution is interesting because the solution
+approaches zero quickly, but does not oscillate. For a problem with
+zero initial velocity, the solution never crosses zero. This is a good
+choice for designing shock absorbers or swinging doors.
+
+<p>
+<!-- !split -->
+
+<h2 id="overdamped-beta-omega_0" class="anchor">Overdamped: \( \beta>\omega_0 \) </h2>
+
+$$
+\begin{eqnarray}
+x&=&A_1\exp{-(\beta+\sqrt{\beta^2-\omega_0^2})t}+A_2\exp{-(\beta-\sqrt{\beta^2-\omega_0^2})t}
+\end{eqnarray}
+$$
+
+<p>
+This solution will also never pass the origin more than once, and then
+only if the initial velocity is strong and initially toward zero.
+
+<p>
+Given \( b \), \( m \) and \( \omega_0 \), find \( x(t) \) for a particle whose
+initial position is \( x=0 \) and has initial velocity \( v_0 \) (assuming an
+underdamped solution).
+
+<p>
+The solution is of the form,
+
+$$
+\begin{eqnarray*}
+x&=&e^{-\beta t}\left[A_1\cos(\omega' t)+A_2\sin\omega't\right],\\
+\dot{x}&=&-\beta x+\omega'e^{-\beta t}\left[-A_1\sin\omega't+A_2\cos\omega't\right].\\
+\omega'&\equiv&\sqrt{\omega_0^2-\beta^2},~~~\beta\equiv b/2m.
+\end{eqnarray*}
+$$
+
+<p>
+From the initial conditions, \( A_1=0 \) because \( x(0)=0 \) and \( \omega'A_2=v_0 \). So 
+
+$$
+x=\frac{v_0}{\omega'}e^{-\beta t}\sin\omega't.
+$$
+
+<p>
+<!-- !split -->
+
+<h2 id="harmonic-oscillator-solutions" class="anchor">Harmonic Oscillator,  Solutions </h2>
+
+<p>
+Consider a single solution with no arbitrary constants, which we will
+call a {\it particular solution}, \( x_p(t) \). It should be emphasized
+that this is {\bf A} particular solution, because there exists an
+infinite number of such solutions because the general solution should
+have two arbitrary constants. Now consider solutions to the same
+equation without the driving term, which include two arbitrary
+constants. These are called either {\it homogenous solutions} or {\it
+complementary solutions}, and were given in the previous section,
+e.g. Eq. \eqref{eq:homogsolution} for the underdamped case. The
+homogenous solution already incorporates the two arbitrary constants,
+so any sum of a homogenous solution and a particular solution will
+represent the {\it general solution} of the equation. The general
+solution incorporates the two arbitrary constants \( A \) and \( B \) to
+accommodate the two initial conditions. One could have picked a
+different particular solution, i.e. the original particular solution
+plus any homogenous solution with the arbitrary constants \( A_p \) and
+\( B_p \) chosen at will. When one adds in the homogenous solution, which
+has adjustable constants with arbitrary constants \( A' \) and \( B' \), to
+the new particular solution, one can get the same general solution by
+simply adjusting the new constants such that \( A'+A_p=A \) and
+\( B'+B_p=B \). Thus, the choice of \( A_p \) and \( B_p \) are irrelevant, and
+when choosing the particular solution it is best to make the simplest
+choice possible.
+
+<p>
+<!-- !split -->
+
+<h2 id="harmonic-oscillator-particular-solution" class="anchor">Harmonic Oscillator,  Particular Solution </h2>
+
+<p>
+To find a particular solution, one first guesses at the form,
+
+$$
+\begin{equation}
+\label{eq:partform}
+x_p(t)=D\cos(\omega t-\delta),
+\end{equation}
+$$
+
+<p>
+and rewrite the differential equation as
+
+$$
+\begin{equation}
+D\left\{-\omega^2\cos(\omega t-\delta)-2\beta\omega\sin(\omega t-\delta)+\omega_0^2\cos(\omega t-\delta)\right\}=\frac{F_0}{m}\cos(\omega t).
+\label{_auto6}
+\end{equation}
+$$
+
+<p>
+One can now use angle addition formulas to get
+
+$$
+\begin{eqnarray}
+D\left\{(-\omega^2\cos\delta+2\beta\omega\sin\delta+\omega_0^2\cos\delta)\cos(\omega t)\right.&&\\
+\nonumber
+\left.+(-\omega^2\sin\delta-2\beta\omega\cos\delta+\omega_0^2\sin\delta)\sin(\omega t)\right\}
+&=&\frac{F_0}{m}\cos(\omega t).
+\end{eqnarray}
+$$
+
+<p>
+Both the \( \cos \) and \( \sin \) terms need to equate if the expression is to hold at all times. Thus, this becomes two equations
+
+$$
+\begin{eqnarray}
+D\left\{-\omega^2\cos\delta+2\beta\omega\sin\delta+\omega_0^2\cos\delta\right\}&=&\frac{F_0}{m}\\
+\nonumber
+-\omega^2\sin\delta-2\beta\omega\cos\delta+\omega_0^2\sin\delta&=&0.
+\end{eqnarray}
+$$
+
+<p>
+After dividing by \( \cos\delta \), the lower expression leads to
+
+$$
+\begin{equation}
+\tan\delta=\frac{2\beta\omega}{\omega_0^2-\omega^2}.
+\label{_auto7}
+\end{equation}
+$$
+
+<p>
+<!-- !split -->
+
+<h2 id="solving-with-driven-oscillations" class="anchor">Solving with Driven Oscillations </h2>
+
+<p>
+Using the identities \( \tan^2+1=\csc^2 \) and \( \sin^2+\cos^2=1 \), one can also express \( \sin\delta \) and \( \cos\delta \),
+
+$$
+\begin{eqnarray}
+\sin\delta&=&\frac{2\beta\omega}{\sqrt{(\omega_0^2-\omega^2)^2+4\omega^2\beta^2}},\\
+\nonumber
+\cos\delta&=&\frac{(\omega_0^2-\omega^2)}{\sqrt{(\omega_0^2-\omega^2)^2+4\omega^2\beta^2}}
+\end{eqnarray}
+$$
+
+<p>
+Inserting the expressions for \( \cos\delta \) and \( \sin\delta \) into the expression for \( D \),
+
+$$
+\begin{equation}
+\label{eq:Ddrive}
+D=\frac{F_0/m}{\sqrt{(\omega_0^2-\omega^2)^2+4\omega^2\beta^2}}.
+\end{equation}
+$$
+
+<p>
+For a given initial condition, e.g. initial displacement and velocity,
+one must add the homogenous solution then solve for the two arbitrary
+constants. However, because the homogenous solutions decay with time
+as \( e^{-\beta t} \), the particular solution is all that remains at
+large times, and is therefore the steady state solution. Because the
+arbitrary constants are all in the homogenous solution, all memory of
+the initial conditions are lost at large times, \( t>>1/\beta \).
+
+<p>
+The amplitude of the motion, \( D \), is linearly proportional to the
+driving force (\( F_0/m \)), but also depends on the driving frequency
+\( \omega \). For small \( \beta \) the maximum will occur at
+\( \omega=\omega_0 \). This is referred to as a resonance. In the limit
+\( \beta\rightarrow 0 \) the amplitude at resonance approaches infinity.
+
+<p>
+<!-- !split -->
+
+<h2 id="alternative-derivation-for-driven-oscillators" class="anchor">Alternative Derivation for Driven Oscillators </h2>
+
+<p>
+Here, we derive the same expressions as in Equations \eqref{eq:partform} and \eqref{eq:Ddrive} but express the driving forces as
+
+$$
+\begin{eqnarray}
+F(t)&=&F_0e^{i\omega t},
+\end{eqnarray}
+$$
+
+rather than as \( F_0\cos\omega t \). The real part of \( F \) is the same as before. For the differential equation,
+
+$$
+\begin{eqnarray}
+\label{eq:compdrive}
+\ddot{x}+2\beta\dot{x}+\omega_0^2x&=&\frac{F_0}{m}e^{i\omega t},
+\end{eqnarray}
+$$
+
+<p>
+one can treat \( x(t) \) as an imaginary function. Because the operations
+\( d^2/dt^2 \) and \( d/dt \) are real and thus do not mix the real and
+imaginary parts of \( x(t) \), Eq. \eqref{eq:compdrive} is effectively 2
+equations. Because \( e^{\omega t}=\cos\omega t+i\sin\omega t \), the real
+part of the solution for \( x(t) \) gives the solution for a driving force
+\( F_0\cos\omega t \), and the imaginary part of \( x \) corresponds to the
+case where the driving force is \( F_0\sin\omega t \). It is rather easy
+to solve for the complex \( x \) in this case, and by taking the real part
+of the solution, one finds the answer for the \( \cos\omega t \) driving
+force.
+
+<p>
+We assume a simple form for the particular solution
+
+$$
+\begin{equation}
+x_p=De^{i\omega t},
+\label{_auto8}
+\end{equation}
+$$
+
+<p>
+where \( D \) is a complex constant.
+
+<p>
+From Eq. \eqref{eq:compdrive} one inserts the form for \( x_p \) above to get
+
+$$
+\begin{eqnarray}
+D\left\{-\omega^2+2i\beta\omega+\omega_0^2\right\}e^{i\omega t}=(F_0/m)e^{i\omega t},\\
+\nonumber
+D=\frac{F_0/m}{(\omega_0^2-\omega^2)+2i\beta\omega}.
+\end{eqnarray}
+$$
+
+<p>
+The norm and phase for \( D=|D|e^{-i\delta} \) can be read by inspection,
+
+$$
+\begin{equation}
+|D|=\frac{F_0/m}{\sqrt{(\omega_0^2-\omega^2)^2+4\beta^2\omega^2}},~~~~\tan\delta=\frac{2\beta\omega}{\omega_0^2-\omega^2}.
+\label{_auto9}
+\end{equation}
+$$
+
+<p>
+This is the same expression for \( \delta \) as before. One then finds \( x_p(t) \),
+
+$$
+\begin{eqnarray}
+\label{eq:fastdriven1}
+x_p(t)&=&\Re\frac{(F_0/m)e^{i\omega t-i\delta}}{\sqrt{(\omega_0^2-\omega^2)^2+4\beta^2\omega^2}}\\
+\nonumber
+&=&\frac{(F_0/m)\cos(\omega t-\delta)}{\sqrt{(\omega_0^2-\omega^2)^2+4\beta^2\omega^2}}.
+\end{eqnarray}
+$$
+
+This is the same answer as before.
+If one wished to solve for the case where \( F(t)= F_0\sin\omega t \), the imaginary part of the solution would work
+
+$$
+\begin{eqnarray}
+\label{eq:fastdriven2}
+x_p(t)&=&\Im\frac{(F_0/m)e^{i\omega t-i\delta}}{\sqrt{(\omega_0^2-\omega^2)^2+4\beta^2\omega^2}}\\
+\nonumber
+&=&\frac{(F_0/m)\sin(\omega t-\delta)}{\sqrt{(\omega_0^2-\omega^2)^2+4\beta^2\omega^2}}.
+\end{eqnarray}
+$$
+
+<p>
+<!-- !split -->
+
+<h2 id="damped-and-driven-oscillator" class="anchor">Damped and Driven Oscillator  </h2>
+
+<p>
+Consider the damped and driven harmonic oscillator worked out above. Given \( F_0, m,\beta \) and \( \omega_0 \), solve for the complete solution \( x(t) \) for the case where \( F=F_0\sin\omega t \) with initial conditions \( x(t=0)=0 \) and \( v(t=0)=0 \). Assume the underdamped case.
+
+<p>
+The general solution including the arbitrary constants includes both the homogenous and particular solutions,
+
+$$
+\begin{eqnarray*}
+x(t)&=&\frac{F_0}{m}\frac{\sin(\omega t-\delta)}{\sqrt{(\omega_0^2-\omega^2)^2+4\beta^2\omega^2}}
++A\cos\omega't e^{-\beta t}+B\sin\omega't e^{-\beta t}.
+\end{eqnarray*}
+$$
+
+<p>
+The quantities \( \delta \) and \( \omega' \) are given earlier in the
+section, \( \omega'=\sqrt{\omega_0^2-\beta^2},
+\delta=\tan^{-1}(2\beta\omega/(\omega_0^2-\omega^2) \). Here, solving
+the problem means finding the arbitrary constants \( A \) and
+\( B \). Satisfying the initial conditions for the initial position and
+velocity:
+
+$$
+\begin{eqnarray*}
+x(t=0)=0&=&-\eta\sin\delta+A,\\
+v(t=0)=0&=&\omega\eta\cos\delta-\beta A+\omega'B,\\
+\eta&\equiv&\frac{F_0}{m}\frac{1}{\sqrt{(\omega_0^2-\omega^2)^2+4\beta^2\omega^2}}.
+\end{eqnarray*}
+$$
+
+<p>
+The problem is now reduced to 2 equations and 2 unknowns, \( A \) and \( B \). The solution is
+
+$$
+\begin{eqnarray}
+A&=& \eta\sin\delta ,~~~B=\frac{-\omega\eta\cos\delta+\beta\eta\sin\delta}{\omega'}.
+\end{eqnarray}
+$$
+
+<p>
+<!-- !split -->
+
+<h2 id="resonance-widths-the-q-factor" class="anchor">Resonance Widths; the \( Q \) factor </h2>
+
+<p>
+From the previous two sections, the particular solution for a driving force, \( F=F_0\cos\omega t \), is
+
+$$
+\begin{eqnarray}
+x_p(t)&=&\frac{F_0/m}{\sqrt{(\omega_0^2-\omega^2)^2+4\omega^2\beta^2}}\cos(\omega_t-\delta),\\
+\nonumber
+\delta&=&\tan^{-1}\left(\frac{2\beta\omega}{\omega_0^2-\omega^2}\right).
+\end{eqnarray}
+$$
+
+<p>
+If one fixes the driving frequency \( \omega \) and adjusts the
+fundamental frequency \( \omega_0=\sqrt{k/m} \), the maximum amplitude
+occurs when \( \omega_0=\omega \) because that is when the term from the
+denominator \( (\omega_0^2-\omega^2)^2+4\omega^2\beta^2 \) is at a
+minimum. This is akin to dialing into a radio station. However, if one
+fixes \( \omega_0 \) and adjusts the driving frequency one minimize with
+respect to \( \omega \), e.g. set
+
+$$
+\begin{equation}
+\frac{d}{d\omega}\left[(\omega_0^2-\omega^2)^2+4\omega^2\beta^2\right]=0,
+\label{_auto10}
+\end{equation}
+$$
+
+<p>
+and one finds that the maximum amplitude occurs when
+\( \omega=\sqrt{\omega_0^2-2\beta^2} \). If \( \beta \) is small relative to
+\( \omega_0 \), one can simply state that the maximum amplitude is
+
+$$
+\begin{equation}
+x_{\rm max}\approx\frac{F_0}{2m\beta \omega_0}.
+\label{_auto11}
+\end{equation}
+$$
+
+
+$$
+\begin{eqnarray}
+\frac{4\omega^2\beta^2}{(\omega_0^2-\omega^2)^2+4\omega^2\beta^2}=\frac{1}{2}.
+\end{eqnarray}
+$$
+
+<p>
+For small damping this occurs when \( \omega=\omega_0\pm \beta \), so the \( FWHM\approx 2\beta \). For the purposes of tuning to a specific frequency, one wants the width to be as small as possible. The ratio of \( \omega_0 \) to \( FWHM \) is known as the {\it quality} factor, or \( Q \) factor,
+
+$$
+\begin{equation}
+Q\equiv \frac{\omega_0}{2\beta}.
+\label{_auto12}
+\end{equation}
+$$
+
+<p>
+
+<!-- ------------------- end of main content --------------- -->
+
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap footer
+<footer>
+<a href="https://..."><img width="250" align=right src="https://..."></a>
+</footer>
+-->
+
+
+<center style="font-size:80%">
+<!-- copyright --> &copy; 1999-2021, "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/". Released under CC Attribution-NonCommercial 4.0 license
+</center>
+
+
+</body>
+</html>
+    
+
