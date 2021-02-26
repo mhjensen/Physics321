@@ -70,6 +70,13 @@ Automatically generated HTML file from DocOnce source
                2,
                None,
                'the-mathematical-pendulum'),
+              ('Finding the equations for the $x$- and $y$-directions',
+               2,
+               None,
+               'finding-the-equations-for-the-x-and-y-directions'),
+              ('Collecting terms', 2, None, 'collecting-terms'),
+              ('Simple trick', 2, None, 'simple-trick'),
+              ('Last step', 2, None, 'last-step'),
               ('Damped Oscillators', 2, None, 'damped-oscillators'),
               ('Harmonic Oscillator,  Damping',
                2,
@@ -179,6 +186,10 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="#more-math-manipulations" style="font-size: 80%;"><b>More Math Manipulations</b></a></li>
      <!-- navigation toc: --> <li><a href="#energy-conservation" style="font-size: 80%;"><b>Energy Conservation</b></a></li>
      <!-- navigation toc: --> <li><a href="#the-mathematical-pendulum" style="font-size: 80%;"><b>The mathematical pendulum</b></a></li>
+     <!-- navigation toc: --> <li><a href="#finding-the-equations-for-the-x-and-y-directions" style="font-size: 80%;"><b>Finding the equations for the \( x \)- and \( y \)-directions</b></a></li>
+     <!-- navigation toc: --> <li><a href="#collecting-terms" style="font-size: 80%;"><b>Collecting terms</b></a></li>
+     <!-- navigation toc: --> <li><a href="#simple-trick" style="font-size: 80%;"><b>Simple trick</b></a></li>
+     <!-- navigation toc: --> <li><a href="#last-step" style="font-size: 80%;"><b>Last step</b></a></li>
      <!-- navigation toc: --> <li><a href="#damped-oscillators" style="font-size: 80%;"><b>Damped Oscillators</b></a></li>
      <!-- navigation toc: --> <li><a href="#harmonic-oscillator-damping" style="font-size: 80%;"><b>Harmonic Oscillator,  Damping</b></a></li>
      <!-- navigation toc: --> <li><a href="#harmonic-oscillator-solutions-of-damped-motion" style="font-size: 80%;"><b>Harmonic Oscillator,  Solutions of Damped Motion</b></a></li>
@@ -535,7 +546,146 @@ Energy is thus conserved
 <h2 id="the-mathematical-pendulum" class="anchor">The mathematical pendulum </h2>
 
 <p>
-See handwritten notes and lecture videos.
+<b>Note</b>: Figure to be inserted.
+
+<p>
+We consider a pendulum of length \( l \) attached to the roof as illustrated in the figure (see <a href="https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesFeb24.pdf" target="_self">handwritten notes from Wednesday Feb 24</a>).
+
+<p>
+The pendulum consists of a rod and a small object attached to the rod. The mass of this object is \( m \) and it is the motion of this object we are concerned with. The distance from the object to the roof is \( \boldsymbol{r} \) and we have \( \vert \boldsymbol{r}\vert =l \).
+
+<p>
+The angle between the \( y \)-axis and the rod is \( \phi \). The forces at play are the gravitational force and a tension force from the rod to the object. The net for is
+
+$$
+\boldsymbol{F}^{\mathrm{net}}=\boldsymbol{T}+\boldsymbol{G}=T\sin{(\phi)}\boldsymbol{e}_1+T\cos{(\phi)}\boldsymbol{e}_2-mg\boldsymbol{e}_2,
+$$
+
+and with
+$$
+\boldsymbol{r}=l\sin{(\phi)}\boldsymbol{e}_1+l\cos{(\phi)}\boldsymbol{e}_2,
+$$
+
+the equation of motion becomes
+
+$$
+\frac{d^2\boldsymbol{r}}{dt^2}=\boldsymbol{T}+\boldsymbol{G}=T\sin{(\phi)}\boldsymbol{e}_1+T\cos{(\phi)}\boldsymbol{e}_2-mg\boldsymbol{e}_2.
+$$
+
+<p>
+<!-- !split -->
+
+<h2 id="finding-the-equations-for-the-x-and-y-directions" class="anchor">Finding the equations for the \( x \)- and \( y \)-directions </h2>
+
+<p>
+Using the chain rule we can find the first derivative of \( \boldsymbol{r} \)
+$$
+\frac{d\boldsymbol{r}}{dt}=l\frac{d\phi}{dt}\cos{(\phi)}\boldsymbol{e}_1-l\frac{d\phi}{dt}\sin{(\phi)}\boldsymbol{e}_2,
+$$
+
+and thereafter the second derivative in the \( x \)-direction as
+$$
+\frac{d^2\boldsymbol{r}}{dt^2}\boldsymbol{e}_1=l\frac{d^2\phi}{dt^2}\cos{(\phi)}-l(\frac{d\phi}{dt})^2\sin{(\phi)},
+$$
+
+and in the \( y \) direction
+$$
+\frac{d^2\boldsymbol{r}}{dt^2}\boldsymbol{e}_2=-l\frac{d^2\phi}{dt^2}\sin{(\phi)}-l(\frac{d\phi}{dt})^2\cos{(\phi)}.
+$$
+
+<p>
+<!-- !split -->
+
+<h2 id="collecting-terms" class="anchor">Collecting terms </h2>
+
+<p>
+We can now set up the equations of motion in the \( x \) and \( y \) directions and get for the \( x \)-direction
+$$
+ml\frac{d^2\phi}{dt^2}\cos{(\phi)}-ml(\frac{d\phi}{dt})^2\sin{(\phi)}=T\sin{(\phi)},
+$$
+
+and for the \( y \)-direction
+$$
+-ml\frac{d^2\phi}{dt^2}\sin{(\phi)}-ml(\frac{d\phi}{dt})^2\cos{(\phi)}=T\cos{(\phi)}-mg.
+$$
+
+<p>
+This looks ugly!
+
+<p>
+Let us rewrite
+$$
+ml\frac{d^2\phi}{dt^2}\cos{(\phi)}=\left[ml(\frac{d\phi}{dt})^2+T\right]\sin{(\phi)},
+$$
+
+and
+$$
+-ml\frac{d^2\phi}{dt^2}\sin{(\phi)}+mg=\left[ml(\frac{d\phi}{dt})^2+T\cos{(\phi)}\right].
+$$
+
+<p>
+Still not so nice.
+
+<p>
+<!-- !split -->
+
+<h2 id="simple-trick" class="anchor">Simple trick </h2>
+
+<p>
+How can we simplify the above equations, rewritten here
+$$
+ml\frac{d^2\phi}{dt^2}\cos{(\phi)}=\left[ml(\frac{d\phi}{dt})^2+T\right]\sin{(\phi)},
+$$
+
+and
+$$
+-ml\frac{d^2\phi}{dt^2}\sin{(\phi)}+mg=\left[ml(\frac{d\phi}{dt})^2+T\right]\cos{(\phi)}.
+$$
+
+We multiply the first equation with \( \cos\phi \) and the second one with \( \sin\phi \) and then subtract the two equations.
+We get then
+
+$$
+-ml\frac{d^2\phi}{dt^2}(\cos{(\phi)})^2-ml\frac{d^2\phi}{dt^2}(\sin{(\phi)})^2+mg\sin{(\phi)}=0,
+$$
+
+leading to 
+$$
+ml\frac{d^2\phi}{dt^2}=-mg\sin{(\phi)}.
+$$
+
+We are almost there.
+
+<p>
+<!-- !split -->
+
+<h2 id="last-step" class="anchor">Last step </h2>
+
+<p>
+We divide by \( m \) and \( l \) and we have the famous non-linear in \( \phi \) (due to the sine function) equation for the pendulumn
+$$
+\frac{d^2\phi}{dt^2}=-\frac{g}{l}\sin{(\phi)}.
+$$
+
+Introducing the natural frequency \( \omega_0^2=g/l \) we can rewrite the equation as
+$$
+\frac{d^2\phi}{dt^2}=-\omega_0^2\sin{(\phi)}.
+$$
+
+<p>
+If we now assume that the angle is very small, we can approximate \( \sin{(\phi)}\approx \phi \) and we have essentially the same equation as we had for harmonic oscillations, that is
+$$
+\frac{d^2\phi}{dt^2}=-\omega_0^2\phi.
+$$
+
+<p>
+The solution to this equation is again given by
+$$
+\phi(t) = A\cos{(\omega_0 t)}+B\sin{(\omega_0 t)}.
+$$
+
+<p>
+For the general case, we have to resort to numerical solutions.
 
 <p>
 <!-- !split -->
