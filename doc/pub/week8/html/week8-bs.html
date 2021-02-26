@@ -53,10 +53,6 @@ Automatically generated HTML file from DocOnce source
                2,
                None,
                'harmonic-oscillator-deriving-the-equations'),
-              ('Harmonic Oscillator, Technicalities',
-               2,
-               None,
-               'harmonic-oscillator-technicalities'),
               ('Analyzing the equations', 2, None, 'analyzing-the-equations'),
               ('Checking the Solution', 2, None, 'checking-the-solution'),
               ('Initial condition example',
@@ -178,7 +174,6 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="#friday" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Friday</a></li>
      <!-- navigation toc: --> <li><a href="#harmonic-oscillator" style="font-size: 80%;"><b>Harmonic Oscillator</b></a></li>
      <!-- navigation toc: --> <li><a href="#harmonic-oscillator-deriving-the-equations" style="font-size: 80%;"><b>Harmonic Oscillator, deriving the Equations</b></a></li>
-     <!-- navigation toc: --> <li><a href="#harmonic-oscillator-technicalities" style="font-size: 80%;"><b>Harmonic Oscillator, Technicalities</b></a></li>
      <!-- navigation toc: --> <li><a href="#analyzing-the-equations" style="font-size: 80%;"><b>Analyzing the equations</b></a></li>
      <!-- navigation toc: --> <li><a href="#checking-the-solution" style="font-size: 80%;"><b>Checking the Solution</b></a></li>
      <!-- navigation toc: --> <li><a href="#initial-condition-example" style="font-size: 80%;"><b>Initial condition example</b></a></li>
@@ -320,34 +315,6 @@ V(x)\approx& V(b)+\frac{1}{2!}(x-b)^2\frac{d^2V(x)}{dx^2}\vert_{b},
 F=&-\frac{dV(x)}{dx}=-k(x-b).
 \end{align}
 $$
-
-<p>
-<!-- !split -->
-
-<h2 id="harmonic-oscillator-technicalities" class="anchor">Harmonic Oscillator, Technicalities </h2>
-
-<p>
-Here \( A \) and \( \phi \) are arbitrary. Equivalently, one could have
-written this as \( A\cos(\omega_0 t)+B\sin(\omega_0 t) \), or as the real
-part of \( Ae^{i\omega_0 t} \). In this last case \( A \) could be an
-arbitrary complex constant. Thus, there are 2 arbitrary constants
-(either \( A \) and \( B \) or \( A \) and \( \phi \), or the real and imaginary part
-of one complex constant. This is the expectation for a second order
-differential equation, and also agrees with the physical expectation
-that if you know a particle's initial velocity and position you should
-be able to define its future motion, and that those two arbitrary
-conditions should translate to two arbitrary constants.
-
-<p>
-A key feature of harmonic motion is that the system repeats itself
-after a time \( \tau=1/f \), where \( f \) is the frequency, and \( \omega_0=2\pi f \)
-is the angular frequency. The period of the motion is independent of
-the amplitude. However, this independence is only exact when one can
-neglect higher terms of the potential, \( x^3, x^4\cdots \). Once can
-neglect these terms for sufficiently small amplitudes, and for larger
-amplitudes the motion is no longer purely sinusoidal, and even though
-the motion repeats itself, the time for repeating the motion is no
-longer independent of the amplitude.
 
 <p>
 <!-- !split -->
@@ -569,7 +536,7 @@ $$
 the equation of motion becomes
 
 $$
-\frac{d^2\boldsymbol{r}}{dt^2}=\boldsymbol{T}+\boldsymbol{G}=T\sin{(\phi)}\boldsymbol{e}_1+T\cos{(\phi)}\boldsymbol{e}_2-mg\boldsymbol{e}_2.
+m\frac{d^2\boldsymbol{r}}{dt^2}=\boldsymbol{T}+\boldsymbol{G}=T\sin{(\phi)}\boldsymbol{e}_1+T\cos{(\phi)}\boldsymbol{e}_2-mg\boldsymbol{e}_2.
 $$
 
 <p>
