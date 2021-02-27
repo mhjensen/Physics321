@@ -157,8 +157,8 @@ Video of lecture at https://mediaspace.msu.edu/media/t/1_mgqtt4lm and handwritte
 - Wednesday 2/24:  Oscillations, damped motion and more mathematical details. Taylor chapter 5.1 and 5.2. Video of lecture at https://mediaspace.msu.edu/media/t/1_3e16h2bz and  handwritten notes at 
 - https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesFeb24.pdf
 - Friday 2/26: Oscillations, resonances and more on damped motion,  video of lecture at https://mediaspace.msu.edu/media/t/1_j5ou5khh and  handwritten notes at 
-- https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesFeb26.pdf._
-- First midterm project, available Feb 26 or 27 and due March 12, 2021_ 
+- https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesFeb26.pdf.
+- First midterm project, available Feb 27/28 and due March 12, 2021
 - Good reads are chapter 5 of Taylor on oscillations. 
 - Solution hw 5 as jupyter-notebook at https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionhw5.ipynb
 
