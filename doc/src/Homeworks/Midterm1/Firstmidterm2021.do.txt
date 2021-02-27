@@ -1,5 +1,5 @@
 TITLE: PHY321: Classical Mechanics 1
-AUTHOR: First midterm project, due Wednesday March 11
+AUTHOR: First midterm project, due Wednesday March 12
 DATE: today
 
 ===  Practicalities about  homeworks and projects ===
@@ -51,7 +51,6 @@ o (10pt) Implement the numerical algorithms in a program to find the position of
 
 o (5pt) Describe the behavior of the particle for the three initial conditions  and sketch the motion in an energy diagram. Is energy conserved in your simulations?
 
-o (5pt) Repeat the calculations with the full potential and all three initial conditions but now with a damping force $-\beta v$. Find the modified acceleration using $\beta/m=0.1$. Discuss your results and sketch again the motion in an energy diagram.
 
 === Part 2, two dimensions ===
 
@@ -66,7 +65,7 @@ where $r=\sqrt{x^2+y^2}$ is the distance to the origin.
 
 o (5pt) Show that the acceleration is now $\bm{a}=-\frac{4V_0}{md^4}\left(r^3-rd^2\right)\frac{\bm{r}}{r}$.
 
-o (10pt) Rewrite your program to find the velocity and position of the atom using the new expression for the force $\bm{F}$. Use vectorized expressions in your code as you did in homework 4 for the Earth-Sun system. See eventually the code from the "lectures":"https://mhjensen.github.io/Physics321/doc/pub/energyconserv/html/energyconserv.html".  We recommend to revisit the Earth-Sun problem from homework 4 since it has several similarities with the problem here.
+o (10pt) Rewrite your program to find the velocity and position of the atom using the new expression for the force $\bm{F}$. Use vectorized expressions in your code as you did in homework 6 for the Earth-Sun system. See eventually the code from the "lectures":"https://mhjensen.github.io/Physics321/doc/pub/energyconserv/html/energyconserv.html".  We recommend to revisit the Earth-Sun problem from homework 6 since it has several similarities with the problem here.
 
 o (10pt) Plot the motion of a particle starting in $\bm{r}_0=(d,0)$ from $t=0$ s to $t=20$ s for the initial velocities $\bm{v}_0=(0,0.5)$ m/s, $\bm{v}_0=(0,1)$ m/s, and $\bm{v}_0=(0,1.5)$ m/s. The parameters $d$ and $V_0$ are as before.
 
@@ -74,61 +73,80 @@ o (10pt) Is energy conserved?
 
 o (10pt) Can you choose initial conditions $r_0$ and $v_0$ in such a manner that the particle moves in a circular orbit with a constant radius? If so, what initial conditions are those? Plot the motion for these conditions.
 
-=== Part 3, Bonus part (30pt)  ===
 
-This part requires that you implement the Runge-Kutta to fourth-order algorithm for solving the differential equations.
-This is discussed in detail in the "lecture notes on harmonic oscillations":"https://mhjensen.github.io/Physics321/doc/pub/harmonic/html/harmonic.html".
 
-We will focus only on the one-dimensional problem from part 1. That is we use the potential for motion in one dimension only.
+=== Classical Mechanics Extra Credit Assignment: Scientific Writing and attending Talks ===
 
-We use the same initial conditions and parameter values to find the position and velocity of the particle as function of time from $t=0$ to $t=30$ s using a mass  $m=1.0$ kg, the parameter $V_0=1$ J and $d=0.1$ m.  The  initial conditions are $x_0=d$ and $v_0=0.5$ m/s, $x_0=d$ and $v_0=1.5$ m/s, and $x_0=d$ and $v_0=2.5$ m/s. We include a damping term
-$-\beta v$ using $\beta/m=0.1$.
+The following gives you an opportunity to earn _five extra credit
+points_ on each of the remaining homeworks and _ten extra credit points_
+on the midterms and finals.  This assignment also covers an aspect of
+the scientific process that is not taught in most undergraduate
+programs: scientific writing.  Writing scientific reports is how
+scientist communicate their results to the rest of the field.  Knowing
+how to assemble a well written scientific report will greatly benefit
+you in you upper level classes, in graduate school, and in the work
+place.
 
-Add a periodic driving force $F(t)=F_0\cos{(\omega t)}$  to your equation and find the new acceleration. Can you tune
-$\omega$ and $F_0$ so that the particle exhibits stable oscillations in one well only and in both wells as well?
+The full information on extra credits is found at URL:"https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/". There you will also find examples on how to write a scientific article. 
+Below you can also find a description on how to gain extra credits by attending scientific talks.
 
-Study the stability of your differential equations as function of the Runge-Kutta 4 method compared with the Euler-Cromer method. Vary also the step size and study the differences between the two methods. Comment your results.
 
-=== Part 4, Additional Bonus part, Analytical solution of anharmonic oscillator (60pt) ===
+This assignment allows you to gain extra credit points by practicing
+your scientific writing.  For each of the remaining homeworks you can
+submit the specified section of a scientific report (written about the
+numerical aspect of the homework) for five extra credit points on the
+assignment.  For the two midterms and the final, submitting a full
+scientific report covering the numerical analysis problem will be
+worth ten extra points.  For credit the grader must be able to tell
+that you put effort into the assignment (i.e. well written, well
+formatted, etc.).  If you are unfamiliar with writing scientific
+reports, "see the information here":"https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/IntroductionScientificWriting.md"
 
-The anharmonic-oscillator equation with dissipation has been widely used in various areas of science,
-and surprisingly little has been known about its analytical solutions.
+The following table explains what aspect of a scientific report is due
+with which homework.  You can submit the assignment in any format you
+like, in the same document as your homework, or in a different one.
+Remember to cite any external references you use and include a
+reference list.  There are no length requirements, but make sure what
+you turn in is complete and through.  If you have any questions,
+please contact Julie Butler at butler@frib.msu.edu.
 
-The differential equation (in one dimension) is similar to the one we have studied in part 1.
-The potential we started with
-!bt
-\[
-V(x)=\frac{V_0}{d^4}\left(x^4-2x^2d^2+d^4\right),
-\]
-!et
-results in a force
-!bt
-\[
-F(x)=-\frac{dV}{dx}=\frac{4V_0}{d^4}\left(x^3-xd^2\right).
-\]
-!et
-We could write this force in a more general way adding an $x^2$ term as
-!bt
-\[
-F(x)=Ax+Bx^2+Cx^3.
-\]
-!et
-Our specific force does not have the $x^2$ term, which means we can set $B=0$.
-The general differential equation with a drift/dissipation term is then
-!bt
-\[
-m\frac{d^2x}{dt^2}+b\frac{dx}{dt}=Ax+Bx^2+Cx^3.
-\]
-!et
-Dividing by $m$ and introducing new constants we have a differential equation
-!bt
-\[
-\frac{d^2x}{dt^2}+\gamma\frac{dx}{dt}=\alpha x+\beta x^2+\delta x^3,
-\]
-!et
-with $\gamma=b/m$, $\alpha=A/m$, $\beta=B/m$ and $\delta=C/m$.
-Numerically, as we have seen, it is almost trivial to solve these equations by simply adding different terms to the definition of the acceleration.
+|-------------------------------------------------|
+| HW/Project | Due Date | Extra Credit Assignment |
+|-----------------------------------------------|
+| HW 3       | 2-8      | Abstract                |
+| HW 4       | 2-15     | Introduction            |
+| HW 5       | 2-22     | Methods                 |
+| HW 6       | 3-1      | Results and Discussion  |
+| _Midterm 1_ |  _3-12_    | *Full Written Report*     |
+| HW 7       | 3-22     | Abstract                |
+| HW 8       | 3-29     | Introduction            |
+| HW 9       | 4-5      | Results and Discussion  |
+| _Midterm 2|_ _4-16_    | *Full Written Report*     |
+|HW 10       | 4-26     | Abstract                |
+| _Final_   | _4-30_     | *Full Written Report*     |
+|--------------------------------------------------|
 
-This part is meant more as a mathematical challenge if you feel tempted. It is a very interesting field, with connections to chaotic motion and much more. It requires some research from your side to find the analytical solution.  Your task here is to find the analytical solution and if time allows, compare with numerical studies. 
-The following reference can help here
-o "Dixon et al, Physical Review A 44, 3484 (1991)":"https://journals.aps.org/pra/pdf/10.1103/PhysRevA.44.3484"
+
+You can also gain extra credits if you attend scientific talks.
+This is described here.
+
+
+=== Integrating Classwork With Research ===
+
+This opportunity will allow you to earn up to 5 extra credit points on a Homework per week. These points can push you above 100% or help make up for missed exercises.
+In order to earn all points you must:
+
+o Attend an MSU research talk (recommended research oriented Clubs is  provided below)
+o Summarize the talk using at least 150 words
+o Turn in the summary along with your Homework.
+
+Approved talks:
+Talks given by researchers through the following clubs:
+* Research and Idea Sharing Enterprise (RAISE)​: Meets Wednesday Nights Society for Physics Students (SPS)​: Meets Monday Nights
+* Astronomy Club​: Meets Monday Nights
+* Facility For Rare Isotope Beam (FRIB) Seminars: ​Occur multiple times a week
+
+
+If you have any questions please consult Jeremy Rebenstock, rebensto@msu.edu.
+
+All the material on extra credits is at URL:"https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/". 
