@@ -16,14 +16,14 @@ o chapters 6-14 of Malthe-Sørenssen.
 In this midterm project we will start with a potential similar to the
 one we discussed in exercise 4 in homework 6. There are some elements
 of that exercise which are repeated here, similarly, a good fraction
-of the codes you have developed for homeworks 4-6 can be used here.
+of the codes you have developed for homeworks 3-6 can be used here.
 We start with a one-dimensional potential and motion.  Thereafter we
 extend this potential model to a two-dimensional model and study the
 numerical solution of the corresponding problem.
 
 === Part 1, Particle in a one-dimensional  potential ===
 
-We consider a particle of mass $m$ moving in a one-dimensional potential,
+We consider a particle (for example an atom) of mass $m$ moving in a one-dimensional potential,
 !bt
 \[
 V(x)=\frac{V_0}{d^4}\left(x^4-2x^2d^2+d^4\right).
@@ -36,7 +36,7 @@ o (5pt) Plot the potential and find the  equilibrium points (stable and unstable
 o (5pt) Choose two different energies that give two distinct types of motions, draw them into the energy diagram, and describe the motion in each case.
 
 
-o (5pt) If the particle  starts at rest at $x=2d$, what is the velocity of the atom at the point $x=d$?
+o (5pt) If the particle  starts at rest at $x=2d$, what is the velocity of the particle at the point $x=d$?
 
 o (5pt) If the particle  starts at rest at $x=d$ with velocity $v_0$, how large must $v_0$ be for the  particle to reach the point $x=−d$?
 
@@ -45,9 +45,9 @@ o (5pt) Use the above potential to set up the total forces acting on the particl
 
 o (5pt) Are linear momentum and angular momentum conserved? You need to show this by calculating the quantities.
 
-o (5pt) Write a numerical algorithm to find the position and velocity of the particle at a time $t+\Delta t$ given the position and velocity at a time $t$. Here we aim at the _Euler-Cromer and the Velocity Verlet algorithms_.   
+o (5pt) Write a numerical algorithm to find the position and velocity of the particle at a time $t+\Delta t$ given the position and velocity at a time $t$. Here you can use either the standard forward Euler, or the _Euler-Cromer or the Velocity Verlet algorithms_.   You need to justify your choice here (hint: consider energy conservation).
 
-o (10pt) Implement the numerical algorithms in a program to find the position of the particle as function of time from $t=0$ to $t=30$ s using a mass  $m=1.0$ kg, the parameter $V_0=1$ J and $d=0.1$ m. Make a plot of three distinct positions with initial conditions $x_0=d$ and $v_0=0.5$ m/s, $x_0=d$ and $v_0=1.5$ m/s, and $x_0=d$ and $v_0=2.5$ m/s. Plot also the velocity.  Perform calculations with and without the term $x^4$ in the potential. Do you see a difference? Compare and discuss the results obtained with the Velocity Verlet algorithm and the Euler-Cromer algorithm. 
+o (10pt) Implement the numerical algorithm in a program to find the position of the particle as function of time from $t=0$ to $t=30$ s using a mass  $m=1.0$ kg, the parameter $V_0=1$ J and $d=0.1$ m. Make a plot of three distinct positions with initial conditions $x_0=d$ and $v_0=0.5$ m/s, $x_0=d$ and $v_0=1.5$ m/s, and $x_0=d$ and $v_0=2.5$ m/s. Plot also the velocity.  Perform calculations with and without the term $x^4$ in the potential. Do you see a difference? Compare and discuss the results obtained with the Velocity Verlet algorithm and the Euler-Cromer algorithm. 
 
 o (5pt) Describe the behavior of the particle for the three initial conditions  and sketch the motion in an energy diagram. Is energy conserved in your simulations?
 
