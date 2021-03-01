@@ -148,7 +148,7 @@ MathJax.Hub.Config({
 <center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
 <br>
 <p>&nbsp;<br>
-<center><h4>Feb 22, 2021</h4></center> <!-- date -->
+<center><h4>Feb 26, 2021</h4></center> <!-- date -->
 <br>
 <p>
 
@@ -210,142 +210,456 @@ mathematics as exciting discrete states of an oscillator.
 <p>
 The potential energy for a single particle as a function of its
 position \( x \) can be written as a Taylor expansion about some point
-\( x_0 \)
+\( b \) (we are considering a one-dimensional problem here)
 
 <p>&nbsp;<br>
 $$
 \begin{equation}
-V(x)=V(x_0)+(x-x_0)\left.\partial_xV(x)\right|_{x_0}+\frac{1}{2}(x-x_0)^2\left.\partial_x^2V(x)\right|_{x_0}
-+\frac{1}{3!}\left.\partial_x^3V(x)\right|_{x_0}+\cdots
+V(x)=V(b)+(x-b)\frac{dV(x)}{dx}\vert_{b}+\frac{1}{2!}(x-b)^2\frac{d^2V(x)}{dx^2}\vert_{b}
++\frac{1}{3!}(x-b)^3V(x)^{(3)}\vert_{b}+\cdots
 \tag{1}
 \end{equation}
 $$
 <p>&nbsp;<br>
 
-If the position \( x_0 \) is at the minimum of the resonance, the first two non-zero terms of the potential are
+If the position \( b \) is at the minimum of the resonance, the first two non-zero terms of the potential are
 
 <p>&nbsp;<br>
 $$
-\begin{eqnarray}
-V(x)&\approx& V(x_0)+\frac{1}{2}(x-x_0)^2\left.\partial_x^2V(x)\right|_{x_0},\\
+\begin{align}
+V(x)\approx& V(b)+\frac{1}{2!}(x-b)^2\frac{d^2V(x)}{dx^2}\vert_{b},
+\tag{2}\\
 \nonumber
-&=&V(x_0)+\frac{1}{2}k(x-x_0)^2,~~~~k\equiv \left.\partial_x^2V(x)\right|_{x_0},\\
+=&V(b)+\frac{1}{2}k(x-b)^2,~~~~k\equiv \frac{d^2V(x)}{dx^2}\vert_{b},\\
 \nonumber
-F&=&-\partial_xV(x)=-k(x-x_0).
-\end{eqnarray}
-$$
-<p>&nbsp;<br>
-
-Put into Newton's 2nd law (assuming \( x_0=0 \)),
-
-<p>&nbsp;<br>
-$$
-\begin{eqnarray}
-m\ddot{x}&=&-kx,\\
-x&=&A\cos(\omega_0 t-\phi),~~~\omega_0=\sqrt{k/m}.
-\end{eqnarray}
+F=&-\frac{dV(x)}{dx}=-k(x-b).
+\end{align}
 $$
 <p>&nbsp;<br>
 </section>
 
 
 <section>
-<h2 id="harmonic-oscillator-technicalities">Harmonic Oscillator, Technicalities </h2>
+<h2 id="analyzing-the-equations">Analyzing the equations </h2>
 
 <p>
-Here \( A \) and \( \phi \) are arbitrary. Equivalently, one could have
-written this as \( A\cos(\omega_0 t)+B\sin(\omega_0 t) \), or as the real
-part of \( Ae^{i\omega_0 t} \). In this last case \( A \) could be an
-arbitrary complex constant. Thus, there are 2 arbitrary constants
-(either \( A \) and \( B \) or \( A \) and \( \phi \), or the real and imaginary part
-of one complex constant. This is the expectation for a second order
-differential equation, and also agrees with the physical expectation
-that if you know a particle's initial velocity and position you should
-be able to define its future motion, and that those two arbitrary
-conditions should translate to two arbitrary constants.
+Our equation of motion is, with the only force given by the one-dimensional spring force,
+
+<p>&nbsp;<br>
+$$
+m\frac{d^2x}{dt^2}=-kx.
+$$
+<p>&nbsp;<br>
+
+Defining the natural frequency \( \omega_0^2=k/m \) we can rewrite this equation as
+<p>&nbsp;<br>
+$$
+\frac{d^2x}{dt^2}=-\omega_0^2x.
+$$
+<p>&nbsp;<br>
+
+We call this a natural frequency since it is defined by the constants that describe our system, the spring constant \( k \) and the mass \( m \) of the object.
 
 <p>
-A key feature of harmonic motion is that the system repeats itself
-after a time \( T=1/f \), where \( f \) is the frequency, and \( \omega=2\pi f \)
-is the angular frequency. The period of the motion is independent of
-the amplitude. However, this independence is only exact when one can
-neglect higher terms of the potential, \( x^3, x^4\cdots \). Once can
-neglect these terms for sufficiently small amplitudes, and for larger
-amplitudes the motion is no longer purely sinusoidal, and even though
-the motion repeats itself, the time for repeating the motion is no
-longer independent of the amplitude.
+We can as usual split this equation of motion into one equation for the derivative of the velocity and 
+<p>&nbsp;<br>
+$$
+\frac{dv}{dt}=-\omega_0^2x,
+$$
+<p>&nbsp;<br>
+
+and
+<p>&nbsp;<br>
+$$
+\frac{dx}{dt}=v.
+$$
+<p>&nbsp;<br>
+
+<p>
+The solution to the equations of motion is given by
+<p>&nbsp;<br>
+$$
+x(t) = A\cos{(\omega_0 t)}+B\sin{(\omega_0 t)},
+$$
+<p>&nbsp;<br>
+
+where \( A \) and \( B \) are in general complex constants to be determined by the initial conditions.
 </section>
 
 
 <section>
-<h2 id="harmonic-oscillator-velocity-and-kineti-energy">Harmonic Oscillator, Velocity and Kineti Energy </h2>
+<h2 id="checking-the-solution">Checking the Solution </h2>
 
 <p>
-One can also calculate the velocity and the kinetic energy as a function of time,
-
+Inserting the solution into the equation of motion we have
 <p>&nbsp;<br>
 $$
-\begin{eqnarray}
-\dot{x}&=&-\omega_0A\sin(\omega_0 t-\phi),\\
-\nonumber
-K&=&\frac{1}{2}m\dot{x}^2=\frac{m\omega_0^2A^2}{2}\sin^2(\omega_0t-\phi),\\
-\nonumber
-&=&\frac{k}{2}A^2\sin^2(\omega_0t-\phi).
-\end{eqnarray}
+\frac{d^2x}{dt^2}=-\omega_0^2x, 
+$$
+<p>&nbsp;<br>
+
+we have
+<p>&nbsp;<br>
+$$
+\frac{d^2x}{dt^2} = -A\omega_0^2\cos{(\omega_0 t)}-B\omega_0^2\sin{(\omega_0 t)},
+$$
+<p>&nbsp;<br>
+
+and the right-hand side is just \( -\omega_0^2 x(t) \). Thus, inserting the solution into the differential equation shows that we obtain the same original differential equation.
+</section>
+
+
+<section>
+<h2 id="initial-condition-example">Initial condition example </h2>
+
+<p>
+Let us assume that our initial time $t_0=0$s and that the initial position \( x(t_0)=x_0 \) and that \( v_0=0 \) (we skip units here).
+This gives us
+<p>&nbsp;<br>
+$$
+x(t=0) = x_0 =A,
+$$
+<p>&nbsp;<br>
+
+and it leaves \( B \) undetermined. Taking the derivative of \( x \) we obtain the velocity
+<p>&nbsp;<br>
+$$
+v(t) = -A\omega_0\sin{(\omega_0 t)}+B\omega_0\cos{(\omega_0 t)},
+$$
+<p>&nbsp;<br>
+
+and with 
+<p>&nbsp;<br>
+$$
+v(t=0) = 0=B,
+$$
+<p>&nbsp;<br>
+
+we see that our solution with these initial conditions becomes
+<p>&nbsp;<br>
+$$
+x(t) = x_0\cos{(\omega_0 t)}.
 $$
 <p>&nbsp;<br>
 </section>
 
 
 <section>
-<h2 id="harmonic-oscillator-total-energy">Harmonic Oscillator, Total Energy </h2>
+<h2 id="math-digression">Math Digression </h2>
 
 <p>
-The total energy is then
-
+From our first homework (exercise 1) we have that (we switch to \( \omega \) instead of \( \omega_0 \))
 <p>&nbsp;<br>
 $$
-\begin{equation}
-E=K+V=\frac{1}{2}m\dot{x}^2+\frac{1}{2}kx^2=\frac{1}{2}kA^2.
-\tag{2}
-\end{equation}
+\cos{(\omega t)} = \sum_{n=0}^{\infty}\left(-1\right)^n \frac{(\omega t)^{2n}}{(2n)!},
 $$
 <p>&nbsp;<br>
 
-<p>
-The total energy then goes as the square of the amplitude.
-
-<p>
-A pendulum is an example of a harmonic oscillator. By expanding the
-kinetic and potential energies for small angles find the frequency for
-a pendulum of length \( L \) with all the mass \( m \) centered at the end by
-writing the eq.s of motion in the form of a harmonic oscillator.
-
-<p>
-The potential energy and kinetic energies are (for \( x \) being the displacement)
-
+and 
 <p>&nbsp;<br>
 $$
-\begin{eqnarray*}
-V&=&mgL(1-\cos\theta)\approx mgL\frac{x^2}{2L^2},\\
-K&=&\frac{1}{2}mL^2\dot{\theta}^2\approx \frac{m}{2}\dot{x}^2.
-\end{eqnarray*}
+\sin{(\omega t)} = \sum_{n=0}^{\infty}\left(-1\right)^n \frac{(\omega t)^{2n+1}}{(2n+1)!},
+$$
+<p>&nbsp;<br>
+
+and that we could  write
+<p>&nbsp;<br>
+$$
+\exp{(\pm\imath\omega t)} = \cos{(\omega t)}+\pm\imath\sin{(\omega t)}.
 $$
 <p>&nbsp;<br>
 
 <p>
-For small \( x \) Newton's 2nd law becomes
+This means (show this) that we can write our solution in terms of new constant \( C \) and \( D \) as
 
 <p>&nbsp;<br>
 $$
-m\ddot{x}=-\frac{mg}{L}x,
+x(t)=C\exp{(\imath\omega t)}+D\exp{(-\imath\omega t)}.
 $$
 <p>&nbsp;<br>
 
 <p>
-and the spring constant would appear to be \( k=mg/L \), which makes the
-frequency equal to \( \omega_0=\sqrt{g/L} \). Note that the frequency is
-independent of the mass.
+To see the relation between these two forms we note that we can write our original
+solution \( x(t) = A\cos{(\omega t)}+B\sin{(\omega t)} \) as
+
+<p>&nbsp;<br>
+$$
+x(t) = (C+D)\cos{(\omega t)}+\imath(C-D)\sin{(\omega t)},
+$$
+<p>&nbsp;<br>
+
+meaning that we have \( A=C+D \) and \( B=\imath(C-D) \).
+</section>
+
+
+<section>
+<h2 id="more-math-manipulations">More Math Manipulations </h2>
+
+<p>
+We can also rewrite the solution in a simpler way.  We define a new
+constant \( A=\sqrt{B_1^2+B_2^2} \) which can be thought as the hypotenuse
+of a right-angle triangle with sides \( B_1 \) and \( B_2 \) and
+\( B_1=A\cos{(\delta)} \) and \( B_2=A\sin{(\delta)} \).
+
+<p>
+We have then
+<p>&nbsp;<br>
+$$
+x(t) = A\left[\frac{B_1}{A}\cos{(\omega t)}+\frac{B_2}{A}\sin{(\omega t)}\right],
+$$
+<p>&nbsp;<br>
+
+which becomes
+<p>&nbsp;<br>
+$$
+x(t) = A\left[\cos{(\delta)}\cos{(\omega t)}+\sin{(\delta)}\sin{(\omega t)}\right],
+$$
+<p>&nbsp;<br>
+
+and using the trigonometric relations for addition of angles we have
+<p>&nbsp;<br>
+$$
+x(t) = A\cos{(\omega t-\delta)},
+$$
+<p>&nbsp;<br>
+
+where \( \delta \) is a so-called phase shift.
+</section>
+
+
+<section>
+<h2 id="energy-conservation">Energy Conservation </h2>
+
+<p>
+Our energy is given by the kinetic energy and the harmonic oscillator potential energy, that is we have (for a one-dimensional harmonic oscillator potential)
+<p>&nbsp;<br>
+$$
+E=\frac{1}{2}mv^2+\frac{1}{2}kx^2.
+$$
+<p>&nbsp;<br>
+
+<p>
+We assume that we have initial conditions \( v_0=0 \) (no kinetic energy) and \( x(t=0)=x_0 \).
+With these initial conditions we have
+<p>&nbsp;<br>
+$$
+x(t) = x_0\cos{(\omega_0 t)},
+$$
+<p>&nbsp;<br>
+
+and the velocity is given by
+<p>&nbsp;<br>
+$$
+v(t) = -x_0\omega_0\sin{(\omega_0 t)},
+$$
+<p>&nbsp;<br>
+
+<p>
+The energy is conserved (as we have discussed before) and at \( t=t_0=0 \) we have thus
+<p>&nbsp;<br>
+$$
+E_0=\frac{1}{2}kx_0^2.
+$$
+<p>&nbsp;<br>
+
+At a time \( t\ne 0 \) we have
+<p>&nbsp;<br>
+$$
+E(t)=\frac{1}{2}mv^2+\frac{1}{2}kx^2=\frac{1}{2}mx_0^2\omega_0^2\sin^2{(\omega_0 t)}+\frac{1}{2}kx_0^2\cos^2{(\omega_0 t)},
+$$
+<p>&nbsp;<br>
+
+Recalling that \( \omega_0^2=k/m \) we get
+<p>&nbsp;<br>
+$$
+E(t)=\frac{1}{2}kx_0^2\sin^2{(\omega_0 t)}+\frac{1}{2}kx_0^2\cos^2{(\omega_0 t)}=\frac{1}{2}kx_0^2=E_0.
+$$
+<p>&nbsp;<br>
+
+Energy is thus conserved
+</section>
+
+
+<section>
+<h2 id="the-mathematical-pendulum">The mathematical pendulum </h2>
+
+<p>
+<b>Note</b>: Figure to be inserted.
+
+<p>
+We consider a pendulum of length \( l \) attached to the roof as illustrated in the figure (see <a href="https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesFeb24.pdf" target="_blank">handwritten notes from Wednesday Feb 24</a>).
+
+<p>
+The pendulum consists of a rod and a small object attached to the rod. The mass of this object is \( m \) and it is the motion of this object we are concerned with. The distance from the object to the roof is \( \boldsymbol{r} \) and we have \( \vert \boldsymbol{r}\vert =l \).
+
+<p>
+The angle between the \( y \)-axis and the rod is \( \phi \). The forces at play are the gravitational force and a tension force from the rod to the object. The net for is
+
+<p>&nbsp;<br>
+$$
+\boldsymbol{F}^{\mathrm{net}}=\boldsymbol{T}+\boldsymbol{G}=T\sin{(\phi)}\boldsymbol{e}_1+T\cos{(\phi)}\boldsymbol{e}_2-mg\boldsymbol{e}_2,
+$$
+<p>&nbsp;<br>
+
+and with
+<p>&nbsp;<br>
+$$
+\boldsymbol{r}=l\sin{(\phi)}\boldsymbol{e}_1+l\cos{(\phi)}\boldsymbol{e}_2,
+$$
+<p>&nbsp;<br>
+
+the equation of motion becomes
+
+<p>&nbsp;<br>
+$$
+m\frac{d^2\boldsymbol{r}}{dt^2}=\boldsymbol{T}+\boldsymbol{G}=T\sin{(\phi)}\boldsymbol{e}_1+T\cos{(\phi)}\boldsymbol{e}_2-mg\boldsymbol{e}_2.
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="finding-the-equations-for-the-x-and-y-directions">Finding the equations for the \( x \)- and \( y \)-directions </h2>
+
+<p>
+Using the chain rule we can find the first derivative of \( \boldsymbol{r} \)
+<p>&nbsp;<br>
+$$
+\frac{d\boldsymbol{r}}{dt}=l\frac{d\phi}{dt}\cos{(\phi)}\boldsymbol{e}_1-l\frac{d\phi}{dt}\sin{(\phi)}\boldsymbol{e}_2,
+$$
+<p>&nbsp;<br>
+
+and thereafter the second derivative in the \( x \)-direction as
+<p>&nbsp;<br>
+$$
+\frac{d^2\boldsymbol{r}}{dt^2}\boldsymbol{e}_1=l\frac{d^2\phi}{dt^2}\cos{(\phi)}-l(\frac{d\phi}{dt})^2\sin{(\phi)},
+$$
+<p>&nbsp;<br>
+
+and in the \( y \) direction
+<p>&nbsp;<br>
+$$
+\frac{d^2\boldsymbol{r}}{dt^2}\boldsymbol{e}_2=-l\frac{d^2\phi}{dt^2}\sin{(\phi)}-l(\frac{d\phi}{dt})^2\cos{(\phi)}.
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="collecting-terms">Collecting terms </h2>
+
+<p>
+We can now set up the equations of motion in the \( x \) and \( y \) directions and get for the \( x \)-direction
+<p>&nbsp;<br>
+$$
+ml\frac{d^2\phi}{dt^2}\cos{(\phi)}-ml(\frac{d\phi}{dt})^2\sin{(\phi)}=T\sin{(\phi)},
+$$
+<p>&nbsp;<br>
+
+and for the \( y \)-direction
+<p>&nbsp;<br>
+$$
+-ml\frac{d^2\phi}{dt^2}\sin{(\phi)}-ml(\frac{d\phi}{dt})^2\cos{(\phi)}=T\cos{(\phi)}-mg.
+$$
+<p>&nbsp;<br>
+
+<p>
+This looks ugly!
+
+<p>
+Let us rewrite
+<p>&nbsp;<br>
+$$
+ml\frac{d^2\phi}{dt^2}\cos{(\phi)}=\left[ml(\frac{d\phi}{dt})^2+T\right]\sin{(\phi)},
+$$
+<p>&nbsp;<br>
+
+and
+<p>&nbsp;<br>
+$$
+-ml\frac{d^2\phi}{dt^2}\sin{(\phi)}+mg=\left[ml(\frac{d\phi}{dt})^2+T\cos{(\phi)}\right].
+$$
+<p>&nbsp;<br>
+
+<p>
+Still not so nice.
+</section>
+
+
+<section>
+<h2 id="simple-trick">Simple trick </h2>
+
+<p>
+How can we simplify the above equations, rewritten here
+<p>&nbsp;<br>
+$$
+ml\frac{d^2\phi}{dt^2}\cos{(\phi)}=\left[ml(\frac{d\phi}{dt})^2+T\right]\sin{(\phi)},
+$$
+<p>&nbsp;<br>
+
+and
+<p>&nbsp;<br>
+$$
+-ml\frac{d^2\phi}{dt^2}\sin{(\phi)}+mg=\left[ml(\frac{d\phi}{dt})^2+T\right]\cos{(\phi)}.
+$$
+<p>&nbsp;<br>
+
+We multiply the first equation with \( \cos\phi \) and the second one with \( \sin\phi \) and then subtract the two equations.
+We get then
+
+<p>&nbsp;<br>
+$$
+-ml\frac{d^2\phi}{dt^2}(\cos{(\phi)})^2-ml\frac{d^2\phi}{dt^2}(\sin{(\phi)})^2+mg\sin{(\phi)}=0,
+$$
+<p>&nbsp;<br>
+
+leading to 
+<p>&nbsp;<br>
+$$
+ml\frac{d^2\phi}{dt^2}=-mg\sin{(\phi)}.
+$$
+<p>&nbsp;<br>
+
+We are almost there.
+</section>
+
+
+<section>
+<h2 id="last-step">Last step </h2>
+
+<p>
+We divide by \( m \) and \( l \) and we have the famous non-linear in \( \phi \) (due to the sine function) equation for the pendulumn
+<p>&nbsp;<br>
+$$
+\frac{d^2\phi}{dt^2}=-\frac{g}{l}\sin{(\phi)}.
+$$
+<p>&nbsp;<br>
+
+Introducing the natural frequency \( \omega_0^2=g/l \) we can rewrite the equation as
+<p>&nbsp;<br>
+$$
+\frac{d^2\phi}{dt^2}=-\omega_0^2\sin{(\phi)}.
+$$
+<p>&nbsp;<br>
+
+<p>
+If we now assume that the angle is very small, we can approximate \( \sin{(\phi)}\approx \phi \) and we have essentially the same equation as we had for harmonic oscillations, that is
+<p>&nbsp;<br>
+$$
+\frac{d^2\phi}{dt^2}=-\omega_0^2\phi.
+$$
+<p>&nbsp;<br>
+
+<p>
+The solution to this equation is again given by
+<p>&nbsp;<br>
+$$
+\phi(t) = A\cos{(\omega_0 t)}+B\sin{(\omega_0 t)}.
+$$
+<p>&nbsp;<br>
+
+<p>
+For the general case, we have to resort to numerical solutions.
 </section>
 
 
@@ -564,144 +878,6 @@ $$
 x=\frac{v_0}{\omega'}e^{-\beta t}\sin\omega't.
 $$
 <p>&nbsp;<br>
-</section>
-
-
-<section>
-<h2 id="our-sliding-block-code">Our Sliding Block Code </h2>
-Here we study first the case without additional friction term and scale our equation
-in terms of a dimensionless time \( \tau \).
-
-<p>
-Let us remind ourselves about the differential equation we want to solve (the general case with damping due to friction)
-<p>&nbsp;<br>
-$$
-m\frac{d^2x}{dt^2} + b\frac{dx}{dt}+kx(t) =0.
-$$
-<p>&nbsp;<br>
-
-We divide by \( m \) and introduce \( \omega_0^2=\sqrt{k/m} \) and obtain
-<p>&nbsp;<br>
-$$
-\frac{d^2x}{dt^2} + \frac{b}{m}\frac{dx}{dt}+\omega_0^2x(t) =0.
-$$
-<p>&nbsp;<br>
-</section>
-
-
-<section>
-<h2 id="harmonic-oscillator-sliding-block">Harmonic Oscillator, Sliding Block </h2>
-
-<p>
-Thereafter we introduce a dimensionless time \( \tau = t\omega_0 \) (check
-that the dimensionality is correct) and rewrite our equation as
-
-<p>&nbsp;<br>
-$$
-\frac{d^2x}{d\tau^2} + \frac{b}{m\omega_0}\frac{dx}{d\tau}+x(\tau) =0,
-$$
-<p>&nbsp;<br>
-
-which gives us
-<p>&nbsp;<br>
-$$
-\frac{d^2x}{d\tau^2} + \frac{b}{m\omega_0}\frac{dx}{d\tau}+x(\tau) =0.
-$$
-<p>&nbsp;<br>
-</section>
-
-
-<section>
-<h2 id="harmonic-oscillator-sliding-block-numerical-aspects">Harmonic Oscillator, Sliding Block, Numerical Aspects </h2>
-
-<p>
-We then define \( \gamma = b/(2m\omega_0) \) and rewrite our equations as
-<p>&nbsp;<br>
-$$
-\frac{d^2x}{d\tau^2} + 2\gamma\frac{dx}{d\tau}+x(\tau) =0.
-$$
-<p>&nbsp;<br>
-
-This is the equation we will code below. The first version employs the Euler-Cromer method.
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%;"><span></span><span style="color: #228B22"># Common imports</span>
-<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
-<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">pandas</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">pd</span>
-<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> *
-<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
-<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">os</span>
-
-<span style="color: #228B22"># Where to save the figures and data files</span>
-PROJECT_ROOT_DIR = <span style="color: #CD5555">&quot;Results&quot;</span>
-FIGURE_ID = <span style="color: #CD5555">&quot;Results/FigureFiles&quot;</span>
-DATA_ID = <span style="color: #CD5555">&quot;DataFiles/&quot;</span>
-
-<span style="color: #8B008B; font-weight: bold">if</span> <span style="color: #8B008B">not</span> os.path.exists(PROJECT_ROOT_DIR):
-    os.mkdir(PROJECT_ROOT_DIR)
-
-<span style="color: #8B008B; font-weight: bold">if</span> <span style="color: #8B008B">not</span> os.path.exists(FIGURE_ID):
-    os.makedirs(FIGURE_ID)
-
-<span style="color: #8B008B; font-weight: bold">if</span> <span style="color: #8B008B">not</span> os.path.exists(DATA_ID):
-    os.makedirs(DATA_ID)
-
-<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">image_path</span>(fig_id):
-    <span style="color: #8B008B; font-weight: bold">return</span> os.path.join(FIGURE_ID, fig_id)
-
-<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">data_path</span>(dat_id):
-    <span style="color: #8B008B; font-weight: bold">return</span> os.path.join(DATA_ID, dat_id)
-
-<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">save_fig</span>(fig_id):
-    plt.savefig(image_path(fig_id) + <span style="color: #CD5555">&quot;.png&quot;</span>, <span style="color: #658b00">format</span>=<span style="color: #CD5555">&#39;png&#39;</span>)
-
-
-<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">pylab</span> <span style="color: #8B008B; font-weight: bold">import</span> plt, mpl
-plt.style.use(<span style="color: #CD5555">&#39;seaborn&#39;</span>)
-mpl.rcParams[<span style="color: #CD5555">&#39;font.family&#39;</span>] = <span style="color: #CD5555">&#39;serif&#39;</span>
-
-DeltaT = <span style="color: #B452CD">0.001</span>
-<span style="color: #228B22">#set up arrays </span>
-tfinal = <span style="color: #B452CD">20</span> <span style="color: #228B22"># in years</span>
-n = ceil(tfinal/DeltaT)
-<span style="color: #228B22"># set up arrays for t, v, and x</span>
-t = np.zeros(n)
-v = np.zeros(n)
-x = np.zeros(n)
-<span style="color: #228B22"># Initial conditions as simple one-dimensional arrays of time</span>
-x0 =  <span style="color: #B452CD">1.0</span> 
-v0 = <span style="color: #B452CD">0.0</span>
-x[<span style="color: #B452CD">0</span>] = x0
-v[<span style="color: #B452CD">0</span>] = v0
-gamma = <span style="color: #B452CD">0.0</span>
-<span style="color: #228B22"># Start integrating using Euler-Cromer&#39;s method</span>
-<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
-    <span style="color: #228B22"># Set up the acceleration</span>
-    <span style="color: #228B22"># Here you could have defined your own function for this</span>
-    a =  -<span style="color: #B452CD">2</span>*gamma*v[i]-x[i]
-    <span style="color: #228B22"># update velocity, time and position</span>
-    v[i+<span style="color: #B452CD">1</span>] = v[i] + DeltaT*a
-    x[i+<span style="color: #B452CD">1</span>] = x[i] + DeltaT*v[i+<span style="color: #B452CD">1</span>]
-    t[i+<span style="color: #B452CD">1</span>] = t[i] + DeltaT
-<span style="color: #228B22"># Plot position as function of time    </span>
-fig, ax = plt.subplots()
-<span style="color: #228B22">#ax.set_xlim(0, tfinal)</span>
-ax.set_ylabel(<span style="color: #CD5555">&#39;x[m]&#39;</span>)
-ax.set_xlabel(<span style="color: #CD5555">&#39;t[s]&#39;</span>)
-ax.plot(t, x)
-fig.tight_layout()
-save_fig(<span style="color: #CD5555">&quot;BlockEulerCromer&quot;</span>)
-plt.show()
-</pre></div>
-<p>
-When setting up the value of \( \gamma \) we see that for \( \gamma=0 \) we get the simple oscillatory motion with no damping.
-Choosing \( \gamma < 1 \) leads to the classical underdamped case with oscillatory motion, but where the motion comes to an end.
-
-<p>
-Choosing \( \gamma =1 \) leads to what normally is called critical damping and \( \gamma> 1 \) leads to critical overdamping.
-Try it out and try also to change the initial position and velocity. Setting \( \gamma=1 \)
-yields a situation, as discussed above, where the solution approaches quickly zero and does not oscillate. With zero initial velocity it will never cross zero.
 </section>
 
 
@@ -1101,6 +1277,144 @@ Q\equiv \frac{\omega_0}{2\beta}.
 \end{equation}
 $$
 <p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="our-sliding-block-code">Our Sliding Block Code </h2>
+Here we study first the case without additional friction term and scale our equation
+in terms of a dimensionless time \( \tau \).
+
+<p>
+Let us remind ourselves about the differential equation we want to solve (the general case with damping due to friction)
+<p>&nbsp;<br>
+$$
+m\frac{d^2x}{dt^2} + b\frac{dx}{dt}+kx(t) =0.
+$$
+<p>&nbsp;<br>
+
+We divide by \( m \) and introduce \( \omega_0^2=\sqrt{k/m} \) and obtain
+<p>&nbsp;<br>
+$$
+\frac{d^2x}{dt^2} + \frac{b}{m}\frac{dx}{dt}+\omega_0^2x(t) =0.
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="harmonic-oscillator-sliding-block">Harmonic Oscillator, Sliding Block </h2>
+
+<p>
+Thereafter we introduce a dimensionless time \( \tau = t\omega_0 \) (check
+that the dimensionality is correct) and rewrite our equation as
+
+<p>&nbsp;<br>
+$$
+\frac{d^2x}{d\tau^2} + \frac{b}{m\omega_0}\frac{dx}{d\tau}+x(\tau) =0,
+$$
+<p>&nbsp;<br>
+
+which gives us
+<p>&nbsp;<br>
+$$
+\frac{d^2x}{d\tau^2} + \frac{b}{m\omega_0}\frac{dx}{d\tau}+x(\tau) =0.
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="harmonic-oscillator-sliding-block-numerical-aspects">Harmonic Oscillator, Sliding Block, Numerical Aspects </h2>
+
+<p>
+We then define \( \gamma = b/(2m\omega_0) \) and rewrite our equations as
+<p>&nbsp;<br>
+$$
+\frac{d^2x}{d\tau^2} + 2\gamma\frac{dx}{d\tau}+x(\tau) =0.
+$$
+<p>&nbsp;<br>
+
+This is the equation we will code below. The first version employs the Euler-Cromer method.
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%;"><span></span><span style="color: #228B22"># Common imports</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">pandas</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">pd</span>
+<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> *
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">os</span>
+
+<span style="color: #228B22"># Where to save the figures and data files</span>
+PROJECT_ROOT_DIR = <span style="color: #CD5555">&quot;Results&quot;</span>
+FIGURE_ID = <span style="color: #CD5555">&quot;Results/FigureFiles&quot;</span>
+DATA_ID = <span style="color: #CD5555">&quot;DataFiles/&quot;</span>
+
+<span style="color: #8B008B; font-weight: bold">if</span> <span style="color: #8B008B">not</span> os.path.exists(PROJECT_ROOT_DIR):
+    os.mkdir(PROJECT_ROOT_DIR)
+
+<span style="color: #8B008B; font-weight: bold">if</span> <span style="color: #8B008B">not</span> os.path.exists(FIGURE_ID):
+    os.makedirs(FIGURE_ID)
+
+<span style="color: #8B008B; font-weight: bold">if</span> <span style="color: #8B008B">not</span> os.path.exists(DATA_ID):
+    os.makedirs(DATA_ID)
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">image_path</span>(fig_id):
+    <span style="color: #8B008B; font-weight: bold">return</span> os.path.join(FIGURE_ID, fig_id)
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">data_path</span>(dat_id):
+    <span style="color: #8B008B; font-weight: bold">return</span> os.path.join(DATA_ID, dat_id)
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">save_fig</span>(fig_id):
+    plt.savefig(image_path(fig_id) + <span style="color: #CD5555">&quot;.png&quot;</span>, <span style="color: #658b00">format</span>=<span style="color: #CD5555">&#39;png&#39;</span>)
+
+
+<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">pylab</span> <span style="color: #8B008B; font-weight: bold">import</span> plt, mpl
+plt.style.use(<span style="color: #CD5555">&#39;seaborn&#39;</span>)
+mpl.rcParams[<span style="color: #CD5555">&#39;font.family&#39;</span>] = <span style="color: #CD5555">&#39;serif&#39;</span>
+
+DeltaT = <span style="color: #B452CD">0.001</span>
+<span style="color: #228B22">#set up arrays </span>
+tfinal = <span style="color: #B452CD">20</span> <span style="color: #228B22"># in years</span>
+n = ceil(tfinal/DeltaT)
+<span style="color: #228B22"># set up arrays for t, v, and x</span>
+t = np.zeros(n)
+v = np.zeros(n)
+x = np.zeros(n)
+<span style="color: #228B22"># Initial conditions as simple one-dimensional arrays of time</span>
+x0 =  <span style="color: #B452CD">1.0</span> 
+v0 = <span style="color: #B452CD">0.0</span>
+x[<span style="color: #B452CD">0</span>] = x0
+v[<span style="color: #B452CD">0</span>] = v0
+gamma = <span style="color: #B452CD">0.0</span>
+<span style="color: #228B22"># Start integrating using Euler-Cromer&#39;s method</span>
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
+    <span style="color: #228B22"># Set up the acceleration</span>
+    <span style="color: #228B22"># Here you could have defined your own function for this</span>
+    a =  -<span style="color: #B452CD">2</span>*gamma*v[i]-x[i]
+    <span style="color: #228B22"># update velocity, time and position</span>
+    v[i+<span style="color: #B452CD">1</span>] = v[i] + DeltaT*a
+    x[i+<span style="color: #B452CD">1</span>] = x[i] + DeltaT*v[i+<span style="color: #B452CD">1</span>]
+    t[i+<span style="color: #B452CD">1</span>] = t[i] + DeltaT
+<span style="color: #228B22"># Plot position as function of time    </span>
+fig, ax = plt.subplots()
+<span style="color: #228B22">#ax.set_xlim(0, tfinal)</span>
+ax.set_ylabel(<span style="color: #CD5555">&#39;x[m]&#39;</span>)
+ax.set_xlabel(<span style="color: #CD5555">&#39;t[s]&#39;</span>)
+ax.plot(t, x)
+fig.tight_layout()
+save_fig(<span style="color: #CD5555">&quot;BlockEulerCromer&quot;</span>)
+plt.show()
+</pre></div>
+<p>
+When setting up the value of \( \gamma \) we see that for \( \gamma=0 \) we get the simple oscillatory motion with no damping.
+Choosing \( \gamma < 1 \) leads to the classical underdamped case with oscillatory motion, but where the motion comes to an end.
+
+<p>
+Choosing \( \gamma =1 \) leads to what normally is called critical damping and \( \gamma> 1 \) leads to critical overdamping.
+Try it out and try also to change the initial position and velocity. Setting \( \gamma=1 \)
+yields a situation, as discussed above, where the solution approaches quickly zero and does not oscillate. With zero initial velocity it will never cross zero.
 </section>
 
 

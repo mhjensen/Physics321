@@ -1,49 +1,11 @@
 TITLE: PHY321: Classical Mechanics 1
-AUTHOR: Solution Homework 6, due Monday  February 24
+AUTHOR: Solution Homework 6, due March 1
 DATE: today
 
-===  Practicalities about  homeworks and projects ===
-
-o You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. _Remember to write your name(s)_!
-o Homeworks are available Wednesday/Thursday the week before the deadline. The deadline is at the Friday lecture.
-o How do I(we)  hand in?  You can hand in the paper and pencil exercises as a hand-written document. For this homework this applies to exercises 1-5. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise(s) (exercise 6 here) should always be handed in as a jupyter notebook by the deadline at D2L. 
-
-=== Introduction to homework 6 ===
-
-This week's sets of classical pen and paper and computational
-exercises are again a continuation of the topics from the previous homework sets. We keep
-discussing conservation laws, conservative forces, energy, momentum and angular momentum. These conservation laws are central in Physics and understanding them properly lays the foundation for understanding and analyzing more complicated physics problems.
-The relevant reading background is
-o chapters 3 and 4 of Taylor (there are many good examples there) and
-o chapters 10-14 of Malthe-Sørenssen.
-In both textbooks there are many nice worked out examples. Malthe-Sørenssen's text contains also several coding examples you may find useful. For the first three exercises here 
 
 
-The numerical homework is based on what you did in homework 5, but includes now an added driving force. In your code this implies a simple extension. In exercise 4, you will need to set up the analytical solutions for this case as well. 
 
-
-=== Exercise 1 (6 pt), Conservative forces ===
-
-An additional requirement for a force to be conservative is that its _curl_ is equal to zero (see Taylor section 4.5), that is
-!bt
-\[
-\bm{\nabla}\times \bm{F} =0.
-\]
-!et
-Find the curl of the following forces
-* 1a (2pt) $\bm{F}=k\bm{r}$ where $k$ is a constant and $\bm{r}=x\bm{i}+y\bm{j}+z\bm{k}$ where $\bm{i},\bm{j}$ and $\bm{k}$ are the unit vectors in the $x$, $y$ and $z$ directions respectively. Previously we used $\bm{e}_x$ etc for these unit vector. We will stick with the notation in Taylor.
-Here the _curl_ is just zero.
-* 1b (2pt) $\bm{F}=Ax\bm{i}+By^2\bm{j}+Cz^2\bm{k}$ where $A$, $B$ and $C$ are constants.
-Here the _curl_ is just zero.
-* 1c (2pt) $\bm{F}=Ay\bm{i}+Bx\bm{j}+Cz\bm{k}$ where $A$, $B$ and $C$ are constants.
-!bt
-\[
-\bm{\nabla}\times \bm{F} =(0,0,B-A).
-\]
-!et
-
-
-=== Exercise 2 (10 pt), More on conservative forces ===
+=== Exercise 2 (10 pt), Conservative forces ===
 Which of the following force are conservative?  All three forces depend only on $\bm{r}$ and satisfy the first condition for being conservative.
 * 2a (2pt) $\bm{F}=k(x\bm{i}+2y\bm{j}+3z\bm{k})$ where $k$ is a constant.
 The _curl_ is zero and the force is conservative.  The potential energy is upon integration $V(x)=-k(1/2x^2+y^2+3/2z^2)$. Taking the derivative shows that this is indeed the case since it gives back the force.
@@ -145,7 +107,7 @@ The force on particle $i$ at position $\bm{r}_i$ from all particles  $j$ at thei
 
 This is also a conservative force, with zero _curl_ as well. 
 
-=== Exercise 4 (20 pt), particle in a new potential ===
+=== Exercise 4 (10 pt), particle in a new potential ===
 
 Relevant reading here is Taylor chapter 5 and the lecture notes on oscilaltions. In particular, you will find useful  sections 5.1, 5.2, 5.4-5.6. They contain all material needed to solve this exercise.
 
@@ -252,135 +214,16 @@ $x(t)=-\omega_0A\sin{(\omega_0t)}+\omega_0B\cos{(\omega_0t)}$. The initial condi
 
 
 
-
-* 4d (5pt) Assume we have no friction. If you add a small force $F=F_0\cos{(\omega t-\delta)}$, and if the particle is initially at the minimum with zero initial velocity, find its position as a function of time. Note that here you need to add the particular solution. 
-
-Let us simplify the force by setting the phase shift $\delta=0$. The equation of motion is then
-!bt
-\[
-\frac{d^2x}{dt^2}+\omega_0^2x=\frac{F_0}{m}\cos{(\omega t)}.
-\]
-!et
-
-The particular solution is then
-!bt
-\[
-x_p(t)=D\cos{(\omega t)}=\frac{F_0}{m}\frac{1}{\omega_0^2-\omega^2}\cos{(\omega t)},
-\]
-!et
-resulting in
-!bt
-\[
-x(t)=A\cos{(\omega_0t)}+B\sin{(\omega_0t)}+\frac{F_0}{m}\frac{1}{\omega_0^2-\omega^2}\cos{(\omega t)},
-\]
-!et
-and 
-!bt
-\[
-v(t)=-\omega_0A\sin{(\omega_0t)}+\omega_0B\cos{(\omega_0t)}-\frac{F_0}{m}\frac{\omega}{\omega_0^2-\omega^2}\sin{(\omega t)}.
-\]
-!et
-Again, the constants $A$ and $B$ are determined by the initial conditions. 
-
-If we choose $x(t_0)=x_0$ and $v(t_0)=v_0$ we have
-!bt
-\[
-x_0=A+\frac{F_0}{m}\frac{1}{\omega_0^2-\omega^2},
-\]
-!et
-resulting in
-!bt
-\[
-A=x_0-\frac{F_0}{m}\frac{1}{\omega_0^2-\omega^2},
-\]
-!et
-
-and 
-!bt
-\[
-B=v_0.
-\]
-!et
-
-For numerical work it is useful to scale our equations by introducing a dimensionless time $\tau = \omega_0 t$.
-Our equation of motion becomes then
-!bt
-\[
-\frac{d^2x}{d\tau^2}+x=\frac{F_0}{m\omega_0^2}\cos{(\tilde{\omega} \tau)},
-\]
-!et
-where we have defined $\tilde{\omega}=\omega/\omega_0$.
-Our general solution is then, introducing $\tilde{F}_0=F_0/(m\omega_0^2)$,
-!bt
-\[
-x(\tau)=A\cos{(\tau)}+B\sin{(\tau)}+\frac{\tilde{F}_0}{1-\tilde{\omega}^2}\cos{(\tilde{\omega}\tau)}.
-\]
-!et
+===  Exercise 5 (40pt), Testing Energy conservation ===
 
 
-* 4e (5pt) We add now  a small drag force $-bv$ to the previous exercise (4d). Find the forces acting on the particle and the acceleration. Find also the analytical solutions with the same initial conditions as in the previous exercise.
-
-The equation of motion reads now
-!bt
-\[
-\frac{d^2x}{dt^2}+\frac{b}{m}\frac{dx}{dt}+\omega_0^2x=\frac{F_0}{m}\cos{(\omega t)}.
-\]
-!et
-
-We scale now the equations as we did in the previous exercise and have (see Taylor chapter 5) with the definition
-$\gamma = b/(2m\omega_0)$ 
-
-!bt
-\[
-\frac{d^2x}{d\tau^2}+2\gamma\frac{dx}{d\tau}+x=\frac{F_0}{m\omega_0^2}\cos{(\tilde{\omega} \tau)}.
-\]
-!et
-
-The analytical solution is then
-
-!bt
-\[
-x(\tau)=A\cos{(\tau)}+B\sin{(\tau)}+\frac{\tilde{F}_0}{\sqrt{(1-\tilde{\omega}^2)^2+4\gamma^2\tilde{\omega}^2}}\cos{(\tilde{\omega}\tau-\delta)},
-\]
-!et
-with (see "Lecture notes":"https://mhjensen.github.io/Physics321/doc/pub/harmonic/html/harmonic.html", equations 17-25)
-!bt
-\[
-\delta = \tan^{-1}{(\frac{2\gamma\tilde{\omega}}{1-\tilde{\omega}^2})}.
-\]
-!et
-
-We can use either this analytical solutions or the one from 4d in the numerical part.
+* 5a, See Taylor chapter 4.4
 
 
-===  Exercise 5 (40pt), Sliding Block with driving force  ===
+!split
+===== Code Example with Euler's Method =====
 
-
-_This exercise should be handed in as a jupyter-notebook_ at D2L. Remember to write your name(s). 
-
-Last week we developed a code for the sliding block including a friction term. This week we will simply reuse this code and add a force to it. The only thing we need to do is simply to add an expression for the force we want to study.
-
-_We will use the Euler-Cromer method only here_.
-
-* 5a (20pt) Add the force from exercise 4d to your code from last week. If you have not done the bonus exercise from hw5, add also the friction term $-bv$ from the previous exercise. Scale your equations and study the solution as function of different values of $F_0$, $b$, $k$ and $\omega$ and $\omega_0$. Keep the initial conditions as in exercise 4d. Discuss your results. Is energy conserved? If not, why? 
-
-* 5b (20 pt)  Compare your numerical results with the analytical ones from exercise 4. You can focus on either the results from 4d or 4e or both.  Discuss your results. 
-
-
-
-The scaling of the equations was done in the previous exercise and we need to solve the following equation numerically
-
-!bt
-\[
-\frac{d^2x}{d\tau^2}+2\gamma\frac{dx}{d\tau}+x=\frac{F_0}{m\omega_0^2}\cos{(\tilde{\omega} \tau)},
-\]
-!et
-which we rewrite as
-!bt
-\[
-\frac{d^2x}{d\tau^2}+2\gamma\frac{dx}{d\tau}+x=\tilde{F}_0\cos{(\tilde{\omega} \tau)}.
-\]
-!et
+The code here implements Euler's method for the Earth-Sun system using a more compact way of representing the vectors. Alternatively, you could have spelled out all the variables $v_x$, $v_y$, $x$ and $y$ as one-dimensional arrays.  It tests conservation of potential and kinetic energy as functions of time, in addition to the total energy, again as function of time
 
 !bc pycod
 # Common imports
@@ -413,305 +256,260 @@ def data_path(dat_id):
 def save_fig(fig_id):
     plt.savefig(image_path(fig_id) + ".png", format='png')
 
+# Initial values, time step, positions and velocites
 
-from pylab import plt, mpl
-plt.style.use('seaborn')
-mpl.rcParams['font.family'] = 'serif'
-
-
-#  We define here a function for the forces acting on the object and
-#  functions to solve the ordinary differential equations. Here we use either
-#  the Euler-Cromer method or the Runge-Kutta to fourth order.
-
-def SpringForce(v,x,t):
-#   note here that we have divided by mass and we return the acceleration
-    return  -2*gamma*v-x+Ftilde*cos(t*Omegatilde)
-
-def ForwardEulerCromer(v,x,E,t,n,Force):
-    for i in range(n-1):
-        a = Force(v[i],x[i],t[i])
-        v[i+1] = v[i] + DeltaT*a
-        x[i+1] = x[i] + DeltaT*v[i+1]
-        t[i+1] = t[i] + DeltaT
-	# Scaled energy
-        E[i+1] = 0.5*x[i+1]*x[i+1]+0.5*v[i+1]*v[i+1]
-def RK4(v,x,E,t,n,Force):
-    for i in range(n-1):
-# Setting up k1
-        k1x = DeltaT*v[i]
-        k1v = DeltaT*Force(v[i],x[i],t[i])
-# Setting up k2
-        vv = v[i]+k1v*0.5
-        xx = x[i]+k1x*0.5
-        k2x = DeltaT*vv
-        k2v = DeltaT*Force(vv,xx,t[i]+DeltaT*0.5)
-# Setting up k3
-        vv = v[i]+k2v*0.5
-        xx = x[i]+k2x*0.5
-        k3x = DeltaT*vv
-        k3v = DeltaT*Force(vv,xx,t[i]+DeltaT*0.5)
-# Setting up k4
-        vv = v[i]+k3v
-        xx = x[i]+k3x
-        k4x = DeltaT*vv
-        k4v = DeltaT*Force(vv,xx,t[i]+DeltaT)
-# Final result
-        x[i+1] = x[i]+(k1x+2*k2x+2*k3x+k4x)/6.
-        v[i+1] = v[i]+(k1v+2*k2v+2*k3v+k4v)/6.
-        t[i+1] = t[i] + DeltaT
-	# Scaled energy
-        E[i+1] = 0.5*x[i+1]*x[i+1]+0.5*v[i+1]*v[i+1]
-
-DeltaT = 0.001
+DeltaT = 0.0001
 #set up arrays 
-tfinal = 20 
+tfinal = 100 # in years
 n = ceil(tfinal/DeltaT)
-# set up arrays for t, v, and x
+# set up arrays for t, a, v, and x
 t = np.zeros(n)
-v = np.zeros(n)
-x = np.zeros(n)
-E  = np.zeros(n)
-# Initial conditions
-x0 =  1.0 
-v0 = 0.0
-x[0] = x0
+v = np.zeros((n,2))
+r = np.zeros((n,2))
+
+# setting up the kinetic, potential and total energy, note only functions of time
+EKinetic = np.zeros(n)
+EPotential = np.zeros(n)
+ETotal = np.zeros(n)
+
+# Initial conditions as compact 2-dimensional arrays
+
+
+r0 = np.array([1.0,0.0])
+v0 = np.array([0.0,2*pi])
+r[0] = r0
 v[0] = v0
-# Define parameters
-mass = 0.1  # mass of the object
-b = 0.08  # friction constant
-omega0 = 2.0  # natural frequency 
-omega = 1.0  #  driving frequency
-F0 = 0.4   # driven force amplitude 
-# define scaled parameters
-gamma = b*0.5/(omega0*mass)
-Omegatilde = omega/omega0
-Ftilde = F0/(mass*omega0*omega0)
-# Scaled initial energy
-E0 = 0.5*x0*x0+0.5*v0*v0
-E[0] = E0
-# Start integrating using the RK4 method
-RK4(v,x,E,t,n,SpringForce)
+Fourpi2 = 4*pi*pi
+# Setting up variables for the calculation of energies
+#  distance that defines rabs in potential energy
+rabs0 = sqrt(sum(r[0]*r[0]))
+#  Initial kinetic energy. Note that we skip the mass of the Earth here!
+EKinetic[0] = 0.5*sum(v0*v0)
+#  Initial potential energy 
+EPotential[0] = 4*pi*pi/rabs0
+#  Initial total energy 
+ETotal[0] = EPotential[0]+EKinetic[0]
+# Start integrating using Euler's method
+for i in range(n-1):
+    # Set up the acceleration
+    # Here you could have defined your own function for this
+    rabs = sqrt(sum(r[i]*r[i]))
+    a =  -Fourpi2*r[i]/(rabs**3)
+    # update velocity, time and position using Euler's forward method
+    v[i+1] = v[i] + DeltaT*a
+    r[i+1] = r[i] + DeltaT*v[i]
+    t[i+1] = t[i] + DeltaT
+    EKinetic[i+1] = 0.5*sum(v[i+1]*v[i+1])
+    EPotential[i+1] = 4*pi*pi/sqrt(sum(r[i+1]*r[i+1]))
+    ETotal[i+1] = EPotential[i+1]+EKinetic[i+1]
+# Plot energies as functions of time    
 
-# Plot position as function of time    
-fig, ax = plt.subplots()
-ax.set_ylabel('x[m]')
-ax.set_xlabel('t[s]')
-ax.plot(t, x)
+fig, axs = plt.subplots(3, 1)
+axs[0].plot(t, EKinetic)
+axs[0].set_xlim(0, tfinal)
+axs[0].set_ylabel('Kinetic energy')
+axs[1].plot(t, EPotential)
+axs[1].set_ylabel('Potential Energy')
+axs[2].plot(t, ETotal)
+axs[2].set_xlabel('Time [yr]')
+axs[2].set_ylabel('Total Energy')
 fig.tight_layout()
-save_fig("ForcedBlockRK4Position")
-plt.show()
-!ec
-Thereafter we plot the velocity
-!bc pycod
-# Plot velocity as function of time    
-fig, ax = plt.subplots()
-ax.set_ylabel('v[m]')
-ax.set_xlabel('t[s]')
-ax.plot(t, v)
-fig.tight_layout()
-save_fig("ForcedBlockRK4Velocity")
-plt.show()
-!ec
-and finally the energy
-!bc pycod
-# Plot energy conservation as function of time    
-fig, ax = plt.subplots()
-ax.set_ylabel('E[m*m]')
-ax.set_xlabel('t[s]')
-ax.plot(t, abs(E0-E))
-fig.tight_layout()
-save_fig("ForcedBlockRK4Energy")
+save_fig("EarthSunEuler")
 plt.show()
 !ec
 
-The code here shows an example of how easy it is to extend our orginal
-code in order to include a driving force. We have also rewritten the
-code in terms of functions that now include two different integration
-methods and an own code for the force which returns the acceleration.
-The code here is general and we have sinply included a version where
-we allow for different values of the parameters mentioned above. The
-code here includes also plots of the energy and the velocity. As
-expected, due to the friction term, energy is not conserved. This would also be the case if we don't include the friction term but keep the driving force. For the latter case, the energy difference between the initial and final energies will oscillate with the frequency of the driving force.
 
-We note also that after some time, the information about the initial conditions (it depends on the values of the initial conditions) is lost and the motion is governed by the particular solution and the driving frequency of the force.
+We see very clearly that Euler's method does not conserve energy!!
 
+!split
+===== Adding the Euler-Cromer Method =====
 
-Finally, we revert back to exercise 4d and compare our numerically calculated position with the analytical solution
-!bt
-\[
-x(t)=A\cos{(\omega_0t)}+B\sin{(\omega_0t)}+\frac{F_0}{m}\frac{1}{\omega_0^2-\omega^2}\cos{(\omega t)}.
-\]
-!et
-If we choose $x(t_0)=x_0$ and $v(t_0)=v_0$ we have
-!bt
-\[
-x_0=A+\frac{F_0}{m}\frac{1}{\omega_0^2-\omega^2},
-\]
-!et
-resulting in
-!bt
-\[
-A=x_0-\frac{F_0}{m}\frac{1}{\omega_0^2-\omega^2},
-\]
-!et
+With the Euler-Cromer method, the only thing we need is to update the position at a time $t+1$ with the update velocity from the same time. Thus, the change in the code is extremely simply, and _energy is suddenly conserved_. Note that the error runs like $O(\Delta t)$ and this is why we see the larger oscillations. But within this oscillating energy envelope, we see that the energies swing between a max and a min value and never exceed these values.
 
-and 
-!bt
-\[
-B=v_0.
-\]
-!et
-
-If we scale these equations we have 
-!bt
-\[
-x(\tau)=A\cos{(\tau)}+B\sin{(\tau)}+\tilde{F}_0\frac{1}{1-\tilde{\omega}^2}\cos{(\tilde{\omega} \tau)}.
-\]
-!et
-with
-!bt
-\[
-x_0=A+\tilde{F}_0\frac{1}{1-\tilde{\omega}^2},
-\]
-!et
-resulting in
-!bt
-\[
-A=x_0-\tilde{F}_0\frac{1}{1-\tilde{\omega}^2},
-\]
-!et
-
-and 
-!bt
-\[
-B=v_0.
-\]
-!et
 
 !bc pycod
-DeltaT = 0.001
+# Common imports
+import numpy as np
+import pandas as pd
+from math import *
+import matplotlib.pyplot as plt
+import os
+
+# Where to save the figures and data files
+PROJECT_ROOT_DIR = "Results"
+FIGURE_ID = "Results/FigureFiles"
+DATA_ID = "DataFiles/"
+
+if not os.path.exists(PROJECT_ROOT_DIR):
+    os.mkdir(PROJECT_ROOT_DIR)
+
+if not os.path.exists(FIGURE_ID):
+    os.makedirs(FIGURE_ID)
+
+if not os.path.exists(DATA_ID):
+    os.makedirs(DATA_ID)
+
+def image_path(fig_id):
+    return os.path.join(FIGURE_ID, fig_id)
+
+def data_path(dat_id):
+    return os.path.join(DATA_ID, dat_id)
+
+def save_fig(fig_id):
+    plt.savefig(image_path(fig_id) + ".png", format='png')
+
+# Initial values, time step, positions and velocites
+
+DeltaT = 0.0001
 #set up arrays 
-tfinal = 20 
+tfinal = 100 # in years
 n = ceil(tfinal/DeltaT)
-# set up arrays for t, v, and x
+# set up arrays for t, a, v, and x
 t = np.zeros(n)
-v = np.zeros(n)
-x = np.zeros(n)
-xanalytic = np.zeros(n)
-E  = np.zeros(n)
-# Initial conditions
-x0 =  1.0 
-v0 = 0.0
-x[0] = x0
-v[0] = v0
-# Define parameters
-mass = 0.1  # mass of the object
-b = 0.0  # friction constant
-omega0 = 2.0  # natural frequency 
-omega = 1.0  #  driving frequency
-F0 = 0.4   # driven force amplitude 
-# define scaled parameters
-gamma = b*0.5/(omega0*mass)
-Omegatilde = omega/omega0
-Ftilde = F0/(mass*omega0*omega0)
-# Scaled initial energy
-E0 = 0.5*x0*x0+0.5*v0*v0
-E[0] = E0
-# Start integrating using the RK4 method
-RK4(v,x,E,t,n,SpringForce)
-# setting up analytical solution
+v = np.zeros((n,2))
+r = np.zeros((n,2))
 
-D = Ftilde/(1-Omegatilde*Omegatilde)
-A = x0-D
-xanalytic = A*np.cos(t)+B*np.sin(t)+D*np.cos(Omegatilde*t)
-# Plot numerical and analytical positions as function of time    
-fig, ax = plt.subplots()
-ax.set_ylabel('x[m]')
-ax.set_xlabel('t[s]')
-ax.plot(t, x)
-ax.plot(t, xanalytic)
+# setting up the kinetic, potential and total energy, note only functions of time
+EKinetic = np.zeros(n)
+EPotential = np.zeros(n)
+ETotal = np.zeros(n)
+
+# Initial conditions as compact 2-dimensional arrays
+
+
+r0 = np.array([1.0,0.0])
+v0 = np.array([0.0,2*pi])
+r[0] = r0
+v[0] = v0
+Fourpi2 = 4*pi*pi
+# Setting up variables for the calculation of energies
+#  distance that defines rabs in potential energy
+rabs0 = sqrt(sum(r[0]*r[0]))
+#  Initial kinetic energy. Note that we skip the mass of the Earth here!
+EKinetic[0] = 0.5*sum(v0*v0)
+#  Initial potential energy 
+EPotential[0] = 4*pi*pi/rabs0
+#  Initial total energy 
+ETotal[0] = EPotential[0]+EKinetic[0]
+# Start integrating using Euler's method
+for i in range(n-1):
+    # Set up the acceleration
+    # Here you could have defined your own function for this
+    rabs = sqrt(sum(r[i]*r[i]))
+    a =  -Fourpi2*r[i]/(rabs**3)
+    # update velocity, time and position using Euler's forward method
+    v[i+1] = v[i] + DeltaT*a
+#   Only change when we add the Euler-Cromer method    
+    r[i+1] = r[i] + DeltaT*v[i+1]
+    t[i+1] = t[i] + DeltaT
+    EKinetic[i+1] = 0.5*sum(v[i+1]*v[i+1])
+    EPotential[i+1] = 4*pi*pi/sqrt(sum(r[i+1]*r[i+1]))
+    ETotal[i+1] = EPotential[i+1]+EKinetic[i+1]
+# Plot energies as functions of time    
+
+fig, axs = plt.subplots(3, 1)
+axs[0].plot(t, EKinetic)
+axs[0].set_xlim(0, tfinal)
+axs[0].set_ylabel('Kinetic energy')
+axs[1].plot(t, EPotential)
+axs[1].set_ylabel('Potential Energy')
+axs[2].plot(t, ETotal)
+axs[2].set_xlabel('Time [yr]')
+axs[2].set_ylabel('Total Energy')
 fig.tight_layout()
-save_fig("ForcedBlockRK4analyticPosition")
+save_fig("EarthSunEuler")
 plt.show()
 !ec
 
-We see that the results agree excellently.
 
 
-===  Exercise 6 (30pt), Bonus exercise ===
+!split
+===== The velocity Verlet method =====
 
-You don't need to do this exercise, but it gives you a bonus score of 30 points. Taylor's section 5.4 and the lecture notes on damped oscillations cover most of the theoretical background.
-
-Here we will explore resonances, using the full solution from exercise
-4e.  We recommend reading section 5.6 of Taylor before starting
-analyzing your results.  This exercise means that you will use your
-code from the previous exercise (5) and study the choice of physical
-parameters which will lead to a resonant behavior. As such, this bonus
-exercises is meant as an example where you use your numerical code to
-explore interesting physics.
-
-* 6a (30pt)  Find the value of $\omega$ which results in a resonant behavior and study the numerical and analytical solutions for the resonant case. Discuss your results. 
-
-The resonant behavior occurs when $\omega_0=\omega$ or with our scaled equations, it results when $\tilde{\omega}=1$.
-This can be done easily with the above codes by setting $\tilde{\omega}=1$. Running the code for the position here, 
-shows an amplitude for $x$ which increases with time. We can play around with values near $1$ and we note that, running again the code that our results approach an amplitude which diverges over time. In the code here we have chosen to set the friction term equal zero since then the amplitude for the position is governed by the amplitude of the particular solution, namely
+Our final equations for the position and the velocity become then 
 !bt
 \[
-\frac{F_0}{m}\frac{1}{\omega_0^2-\omega^2}.
+x_{i+1} = x_i+(\Delta t)v_i+\frac{(\Delta t)^2}{2}a_{i}+O((\Delta t)^3),
 \]
 !et
-In the code here we have made $\omega$ almost equal $\omega_0$. Try out different values of $\omega$. What do you see?
+and
+!bt
+\[
+v_{i+1} = v_i+\frac{(\Delta t)}{2}\left(a_{i+1}+a_{i}\right)+O((\Delta t)^3). 
+\]
+!et
+Note well that the term $a_{i+1}$ depends on the position at $x_{i+1}$. This means that you need to calculate 
+the position at the updated time $t_{i+1}$ before the computing the next velocity.  Note also that the derivative of the velocity at the time
+$t_i$ used in the updating of the position can be reused in the calculation of the velocity update as well. 
 
+
+!split
+===== Adding the Velocity-Verlet Method =====
+
+We can now easily add the Verlet method to our original code as
 !bc pycod
 DeltaT = 0.001
 #set up arrays 
-tfinal = 100 
+tfinal = 100
 n = ceil(tfinal/DeltaT)
-# set up arrays for t, v, and x
+# set up arrays for t, a, v, and x
 t = np.zeros(n)
-v = np.zeros(n)
-x = np.zeros(n)
-E  = np.zeros(n)
-# Initial conditions
-x0 =  1.0 
-v0 = 0.0
-x[0] = x0
+v = np.zeros((n,2))
+r = np.zeros((n,2))
+# Initial conditions as compact 2-dimensional arrays
+r0 = np.array([1.0,0.0])
+v0 = np.array([0.0,2*pi])
+r[0] = r0
 v[0] = v0
-# Define parameters
-mass = 0.1  # mass of the object
-b = 0  # No friction 
-omega0 = 2.0  # natural frequency 
-omega = 2.0001  #  driving frequency
-F0 = 0.4   # driven force amplitude 
-# define scaled parameters
-gamma = b*0.5/(omega0*mass)
-Omegatilde = omega/omega0
-Ftilde = F0/(mass*omega0*omega0)
-# Scaled initial energy
-E0 = 0.5*x0*x0+0.5*v0*v0
-E[0] = E0
-# Start integrating using the RK4 method
-RK4(v,x,E,t,n,SpringForce)
+Fourpi2 = 4*pi*pi
 
-# Plot position as function of time    
-fig, ax = plt.subplots()
-ax.set_ylabel('x[m]')
-ax.set_xlabel('t[s]')
-ax.plot(t, x)
+# setting up the kinetic, potential and total energy, note only functions of time
+EKinetic = np.zeros(n)
+EPotential = np.zeros(n)
+ETotal = np.zeros(n)
+
+# Setting up variables for the calculation of energies
+#  distance that defines rabs in potential energy
+rabs0 = sqrt(sum(r[0]*r[0]))
+#  Initial kinetic energy. Note that we skip the mass of the Earth here!
+EKinetic[0] = 0.5*sum(v0*v0)
+#  Initial potential energy 
+EPotential[0] = 4*pi*pi/rabs0
+#  Initial total energy 
+ETotal[0] = EPotential[0]+EKinetic[0]
+
+
+
+# Start integrating using the Velocity-Verlet  method
+for i in range(n-1):
+    # Set up forces, air resistance FD, note now that we need the norm of the vecto
+    # Here you could have defined your own function for this
+    rabs = sqrt(sum(r[i]*r[i]))
+    a =  -Fourpi2*r[i]/(rabs**3)
+    # update velocity, time and position using the Velocity-Verlet method
+    r[i+1] = r[i] + DeltaT*v[i]+0.5*(DeltaT**2)*a
+    rabs = sqrt(sum(r[i+1]*r[i+1]))
+    anew = -4*(pi**2)*r[i+1]/(rabs**3)
+    v[i+1] = v[i] + 0.5*DeltaT*(a+anew)
+    t[i+1] = t[i] + DeltaT
+    EKinetic[i+1] = 0.5*sum(v[i+1]*v[i+1])
+    EPotential[i+1] = 4*pi*pi/sqrt(sum(r[i+1]*r[i+1]))
+    ETotal[i+1] = EPotential[i+1]+EKinetic[i+1]
+# Plot energies as functions of time    
+
+fig, axs = plt.subplots(3, 1)
+axs[0].plot(t, EKinetic)
+axs[0].set_xlim(0, tfinal)
+axs[0].set_ylabel('Kinetic energy')
+axs[1].plot(t, EPotential)
+axs[1].set_ylabel('Potential Energy')
+axs[2].plot(t, ETotal)
+axs[2].set_xlabel('Time [yr]')
+axs[2].set_ylabel('Total Energy')
 fig.tight_layout()
-save_fig("ForcedBlockRK4Resonance")
+save_fig("EarthSunEuler")
 plt.show()
 !ec
 
-
-
-
-
-
-
-
-
-
-
-
+And we see that due to the smaller truncation error that energy conservation is improved as a function of time.
 
