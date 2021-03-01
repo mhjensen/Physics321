@@ -43,7 +43,7 @@ Using the work-energy theorem we can find the work $W$ done when moving an elect
 0$ to a final position $x$ through the integral
 !bt
 \[
-W=-\int_{x_0}^x \bm{F}(x')dx' =  \int_{x_0}^x F_0\sin{(\frac{2\pi x'}{b})} dx',
+W=\int_{x_0}^x \bm{F}(x')dx' =  -\int_{x_0}^x F_0\sin{(\frac{2\pi x'}{b})} dx',
 \]
 !et
 which results in
@@ -168,20 +168,21 @@ assume it is small. The last equation gives
 \frac{dv}{dt}&=&\frac{v_e}{M}\frac{dM}{dt}.
 \end{eqnarray}
 !et
-
+Here we let $\Delta v\rightarrow dv$ and $\Delta M\rightarrow dM$.
+We have also assumed that $M(t) = M_0-kt$. 
 Integrating the expression with lower limits $v_0=0$ and $M_0$, one finds
 
 !bt
 \begin{eqnarray*}
 v&=&v_e\int_{M_0}^M \frac{dM'}{M'}\\
 v&=&v_e\ln(M/M_0)\\
-&=&v_e\ln[(M_0-\alpha t)/M_0].
+&=&v_e\ln[(M_0-k t)/M_0].
 \end{eqnarray*}
 !et
 We have ignored gravity here. If we add gravity as the external force, we get when integrating an additional terms $-gt$, that is
 !bt
 \[
-v=v_e\ln[(M_0-\alpha t)/M_0]-gt.
+v=v_e\ln[(M_0-k t)/M_0]-gt.
 \]
 !et
 
@@ -209,17 +210,45 @@ which gives
 y(t) = v_et\ln{M_0}-v_e\int_0^t \ln{M(t')}dt'-\frac{1}{2}gt^2.
 \]
 !et
-To do the integral over time we recall that $M(t')=M_0-\Delta M t'$. We assumed that $\Delta M=k$ is a constant. We obtain then that the integral gives
+To do the integral over time we recall that $M(t')=M_0-\Delta M t'$. We assumed that $\Delta M=k$ is a constant.
+We use that $M_0-M=kt$ and assume that mass decreases by a constant $k$ times time $t$.
+
+We obtain then that the integral gives
 !bt
 \[
-\int_0^t \ln{M(t')}dt' = \frac{1}{k}\left(M_0\ln{M_0}-M\ln{M}\right)-t,
+\int_0^t \ln{M(t')}dt' = \int_0^t \ln{(M_0-kt')}dt',
 \]
 !et
-where we used that $M_0-M=kt$. We have assumed that mass decreases by a constant $k$ times time $t$.
+and defining the variable $u=M_0-kt'$, with $du=-kdt'$ and the new limits $M_0$ when $t=0$ and $M_0-kt$ when time is equal to $t$, we have
+!bt
+\[
+\int_0^t \ln{M(t')}dt' = \int_0^t \ln{(M_0-kt')}dt'=-\frac{1}{k}\int_{M_0}^{M_0-kt} \ln{(u)}du=-\frac{1}{k}\left[u\ln{(u)}-u\right]_{M_0}^{M_0-kt},
+\]
+!et
+and writing out we obtain
+!bt
+\[
+-\frac{1}{k}\left[u\ln{(u)}-u\right]_{M_0}^{M_0-kt} = \frac{1}{k}\left(M_0\ln{M_0}-M\ln{M}\right)-t,
+\]
+!et
+Mulitplying with $-v_e$ we have
+!bt
+\[
+-\frac{v_e}{k}\left(M_0\ln{M_0}-M\ln{M}\right)+v_et,
+\]
+!et
+which we can rewrite as, using $M_0=M+kt$, 
+!bt
+\[
+-\frac{v_e}{k}\left((M+kt)\ln{M_0}-M\ln{M}\right)+v_et=v_et-v_et\ln{M_0}-\frac{Mv_e}{k}\ln{(\frac{M_0}{M})}.
+\]
+!et
+
+
 Inserting into $y(t)$ we obtain then
 !bt
 \[
-y(t) = v_et-\frac{1}{2}gt^2-\frac{mv_e}{k}\ln{(\frac{M_0}{M})}.
+y(t) = v_et-\frac{1}{2}gt^2-\frac{Mv_e}{k}\ln{(\frac{M_0}{M})}.
 \]
 !et
 Using the numbers from the previous exercise with $t=2$ min we obtain that $y\approx 40$ km.
