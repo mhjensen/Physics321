@@ -163,7 +163,8 @@ Video of lecture at https://mediaspace.msu.edu/media/t/1_mgqtt4lm and handwritte
 - Solution hw 5 as jupyter-notebook at https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionhw5.ipynb
 
 ### Week 9, March 1-5
-- Monday 3/1: Damped Oscillations, driven oscillations and resonances
+- Monday 3/1: Damped Oscillations, driven oscillations and resonances. Video of Lecture at https://mediaspace.msu.edu/media/t/1_e1qae0lc and handwritten notes at 
+- https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesMarch1.pdf.
 - Wednesday 3/3:  Study day, no lectures
 - Friday 3/5: Resonances and start discussion of Fourier series. Discussion of first midterm.
 - Good reads are sections 5.4-5.7 of Taylor on oscillations. 
