@@ -1,0 +1,16 @@
+Translating doconce text in week10.do.txt to html
+*** error: reference ref{eq:fastdriven1} to non-defined label
+*** error: reference ref{eq:fastdriven2} to non-defined label
+*** error: reference ref{eq:partform} to non-defined label
+*** error: reference ref{eq:Ddrive} to non-defined label
+*** error: reference ref{eq:homogsolution} to non-defined label
+    run the generated script tmp_missing_labels.sh
+    to search for these missing labels!
+Causes of missing labels:
+1: label is defined in another document. Use generalized references
+   ref[][][], or use --allow_refs_to_external_docs (to ignore this error)
+   (if generalized reference and this error occur: syntax of generalized
+   reference is wrong!)
+2: preprocessor if-else has left the label out
+3: forgotten to define the label
+
