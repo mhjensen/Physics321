@@ -148,7 +148,7 @@ MathJax.Hub.Config({
 <center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
 <br>
 <p>&nbsp;<br>
-<center><h4>Feb 19, 2021</h4></center> <!-- date -->
+<center><h4>Mar 3, 2021</h4></center> <!-- date -->
 <br>
 <p>
 
@@ -853,8 +853,8 @@ Fourpi2 = <span style="color: #B452CD">4</span>*pi*pi
 <span style="color: #228B22"># Plot position as function of time    </span>
 fig, ax = plt.subplots()
 <span style="color: #228B22">#ax.set_xlim(0, tfinal)</span>
-ax.set_ylabel(<span style="color: #CD5555">&#39;x[m]&#39;</span>)
-ax.set_xlabel(<span style="color: #CD5555">&#39;y[m]&#39;</span>)
+ax.set_ylabel(<span style="color: #CD5555">&#39;y[AU]&#39;</span>)
+ax.set_xlabel(<span style="color: #CD5555">&#39;x[AU]&#39;</span>)
 ax.plot(r[:,<span style="color: #B452CD">0</span>], r[:,<span style="color: #B452CD">1</span>])
 fig.tight_layout()
 save_fig(<span style="color: #CD5555">&quot;EarthSunEuler&quot;</span>)
@@ -1052,7 +1052,7 @@ We can now easily add the Verlet method to our original code as
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
 <div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%;"><span></span>DeltaT = <span style="color: #B452CD">0.01</span>
 <span style="color: #228B22">#set up arrays </span>
-tfinal = <span style="color: #B452CD">10</span>
+tfinal = <span style="color: #B452CD">10</span> <span style="color: #228B22"># in years</span>
 n = ceil(tfinal/DeltaT)
 <span style="color: #228B22"># set up arrays for t, a, v, and x</span>
 t = np.zeros(n)
@@ -1078,8 +1078,8 @@ Fourpi2 = <span style="color: #B452CD">4</span>*pi*pi
     t[i+<span style="color: #B452CD">1</span>] = t[i] + DeltaT
 <span style="color: #228B22"># Plot position as function of time    </span>
 fig, ax = plt.subplots()
-ax.set_ylabel(<span style="color: #CD5555">&#39;x[m]&#39;</span>)
-ax.set_xlabel(<span style="color: #CD5555">&#39;y[m]&#39;</span>)
+ax.set_ylabel(<span style="color: #CD5555">&#39;y[AU]&#39;</span>)
+ax.set_xlabel(<span style="color: #CD5555">&#39;x[AU]&#39;</span>)
 ax.plot(r[:,<span style="color: #B452CD">0</span>], r[:,<span style="color: #B452CD">1</span>])
 fig.tight_layout()
 save_fig(<span style="color: #CD5555">&quot;EarthSunVV&quot;</span>)

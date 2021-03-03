@@ -587,8 +587,8 @@ for i in range(n-1):
 # Plot position as function of time    
 fig, ax = plt.subplots()
 #ax.set_xlim(0, tfinal)
-ax.set_ylabel('x[m]')
-ax.set_xlabel('y[m]')
+ax.set_ylabel('y[AU]')
+ax.set_xlabel('x[AU]')
 ax.plot(r[:,0], r[:,1])
 fig.tight_layout()
 save_fig("EarthSunEuler")
@@ -743,7 +743,7 @@ We can now easily add the Verlet method to our original code as
 !bc pycod
 DeltaT = 0.01
 #set up arrays 
-tfinal = 10
+tfinal = 10 # in years
 n = ceil(tfinal/DeltaT)
 # set up arrays for t, a, v, and x
 t = np.zeros(n)
@@ -769,8 +769,8 @@ for i in range(n-1):
     t[i+1] = t[i] + DeltaT
 # Plot position as function of time    
 fig, ax = plt.subplots()
-ax.set_ylabel('x[m]')
-ax.set_xlabel('y[m]')
+ax.set_ylabel('y[AU]')
+ax.set_xlabel('x[AU]')
 ax.plot(r[:,0], r[:,1])
 fig.tight_layout()
 save_fig("EarthSunVV")

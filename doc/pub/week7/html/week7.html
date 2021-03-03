@@ -181,7 +181,7 @@ MathJax.Hub.Config({
 <center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
 <br>
 <p>
-<center><h4>Feb 19, 2021</h4></center> <!-- date -->
+<center><h4>Mar 3, 2021</h4></center> <!-- date -->
 <br>
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -766,8 +766,8 @@ Fourpi2 <span style="color: #666666">=</span> <span style="color: #666666">4*</s
 <span style="color: #408080; font-style: italic"># Plot position as function of time    </span>
 fig, ax <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots()
 <span style="color: #408080; font-style: italic">#ax.set_xlim(0, tfinal)</span>
-ax<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;x[m]&#39;</span>)
-ax<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;y[m]&#39;</span>)
+ax<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;y[AU]&#39;</span>)
+ax<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;x[AU]&#39;</span>)
 ax<span style="color: #666666">.</span>plot(r[:,<span style="color: #666666">0</span>], r[:,<span style="color: #666666">1</span>])
 fig<span style="color: #666666">.</span>tight_layout()
 save_fig(<span style="color: #BA2121">&quot;EarthSunEuler&quot;</span>)
@@ -939,7 +939,7 @@ We can now easily add the Verlet method to our original code as
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.01</span>
 <span style="color: #408080; font-style: italic">#set up arrays </span>
-tfinal <span style="color: #666666">=</span> <span style="color: #666666">10</span>
+tfinal <span style="color: #666666">=</span> <span style="color: #666666">10</span> <span style="color: #408080; font-style: italic"># in years</span>
 n <span style="color: #666666">=</span> ceil(tfinal<span style="color: #666666">/</span>DeltaT)
 <span style="color: #408080; font-style: italic"># set up arrays for t, a, v, and x</span>
 t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
@@ -965,8 +965,8 @@ Fourpi2 <span style="color: #666666">=</span> <span style="color: #666666">4*</s
     t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i] <span style="color: #666666">+</span> DeltaT
 <span style="color: #408080; font-style: italic"># Plot position as function of time    </span>
 fig, ax <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots()
-ax<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;x[m]&#39;</span>)
-ax<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;y[m]&#39;</span>)
+ax<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;y[AU]&#39;</span>)
+ax<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;x[AU]&#39;</span>)
 ax<span style="color: #666666">.</span>plot(r[:,<span style="color: #666666">0</span>], r[:,<span style="color: #666666">1</span>])
 fig<span style="color: #666666">.</span>tight_layout()
 save_fig(<span style="color: #BA2121">&quot;EarthSunVV&quot;</span>)
