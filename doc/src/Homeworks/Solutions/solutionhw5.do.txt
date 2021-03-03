@@ -128,8 +128,8 @@ F0 = 1.0; b = 1.0;
 V = F0*b/(2*pi)*np.cos(2*pi*x/b)
 # Plot position as function of time    
 fig, ax = plt.subplots()
-ax.set_ylabel('x')
-ax.set_xlabel('V')
+ax.set_ylabel('V')
+ax.set_xlabel('x')
 ax.plot(x, V)
 fig.tight_layout()
 plt.show()
@@ -566,8 +566,8 @@ for i in range(n-1):
 # Plot position as function of time    
 fig, ax = plt.subplots()
 #ax.set_xlim(0, tfinal)
-ax.set_ylabel('x[m]')
-ax.set_xlabel('y[m]')
+ax.set_xlabel('x[AU]')
+ax.set_ylabel('y[AU]')
 ax.plot(r[:,0], r[:,1])
 fig.tight_layout()
 save_fig("EarthSunEuler")
@@ -731,8 +731,8 @@ for i in range(n-1):
     t[i+1] = t[i] + DeltaT
 # Plot position as function of time    
 fig, ax = plt.subplots()
-ax.set_ylabel('x[m]')
-ax.set_xlabel('y[m]')
+ax.set_xlabel('x[AU]')
+ax.set_ylabel('y[AU]')
 ax.plot(r[:,0], r[:,1])
 fig.tight_layout()
 save_fig("EarthSunVV")
@@ -789,8 +789,8 @@ for i in range(n-1):
     t[i+1] = t[i] + DeltaT
 # Plot position as function of time    
 fig, ax = plt.subplots()
-ax.set_ylabel('x[m]')
-ax.set_xlabel('y[m]')
+ax.set_xlabel('x[AU]')
+ax.set_ylabel('y[AU]')
 ax.plot(r[:,0], r[:,1])
 fig.tight_layout()
 save_fig("EscapeEarthSunVV")
