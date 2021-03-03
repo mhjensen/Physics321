@@ -2,10 +2,19 @@ TITLE: PHY321: Classical Mechanics 1
 AUTHOR: Solution Homework 6, due March 1
 DATE: today
 
+=== Exercise 1 (40pt) Summary of course ===
+
+This was meant as your personal summary of what we have done till now.
+One possible solution is the illustration made by Julie, also at the
+end of every chapter of Taylor's textbook, you will find excellent
+summaries of what we have covered till now.
+
+
 
 
 
 === Exercise 2 (10 pt), Conservative forces ===
+
 Which of the following force are conservative?  All three forces depend only on $\bm{r}$ and satisfy the first condition for being conservative.
 * 2a (2pt) $\bm{F}=k(x\bm{i}+2y\bm{j}+3z\bm{k})$ where $k$ is a constant.
 The _curl_ is zero and the force is conservative.  The potential energy is upon integration $V(x)=-k(1/2x^2+y^2+3/2z^2)$. Taking the derivative shows that this is indeed the case since it gives back the force.
@@ -56,8 +65,8 @@ V = V0*((a/r)**(12)-(b/r)**6)
 # Plot position as function of time    
 fig, ax = plt.subplots()
 #ax.set_xlim(0, tfinal)
-ax.set_ylabel('r')
-ax.set_xlabel('V')
+ax.set_ylabel('V')
+ax.set_xlabel('r')
 ax.plot(r, V)
 fig.tight_layout()
 plt.show()
@@ -109,7 +118,7 @@ This is also a conservative force, with zero _curl_ as well.
 
 === Exercise 4 (10 pt), particle in a new potential ===
 
-Relevant reading here is Taylor chapter 5 and the lecture notes on oscilaltions. In particular, you will find useful  sections 5.1, 5.2, 5.4-5.6. They contain all material needed to solve this exercise.
+Relevant reading here is Taylor chapter 5 and the lecture notes on oscillations. Similalry, Taylor section 4.8 and Malthe-Sørenssen section 11.3 on the potential surfaces are of relevance here.
 
 Consider a particle of mass $m$ moving in a one-dimensional potential,
 !bt
@@ -143,8 +152,8 @@ V = -alpha*x*x*0.5 + beta*(x**4)*0.25
 # Plot position as function of time    
 fig, ax = plt.subplots()
 #ax.set_xlim(0, tfinal)
-ax.set_ylabel('x[m]')
-ax.set_xlabel('V[s]')
+ax.set_xlabel('x')
+ax.set_ylabel('V[s]')
 ax.plot(x, V)
 fig.tight_layout()
 plt.show()
@@ -169,10 +178,10 @@ Taking the second derivatives we have that
 \frac{d^2V}{dx^2} = -\alpha  + 3\beta x^2,
 \]
 !et
-and for $\alpha,\beta \le 0$ (we assume they are positive constants) we see that when $x=0$ that the 
+and for $\alpha,\beta > 0$ (we assume they are positive constants) we see that when $x=0$ that the 
 the second derivative is negative, which means this is a maximum. For $x=\pm\sqrt{\alpha/\beta}$ we see that the second derivative is positive. Thus these points correspond to two minima.
 
-Assume now we Taylor expand the potential around one of these minima, say $x_{\mathrm{min}}=\sqrt{\alpha/\beta}$. We have thus
+Assume now we Taylor-expand the potential around one of these minima, say $x_{\mathrm{min}}=\sqrt{\alpha/\beta}$. We have thus
 !bt
 \[
 V(x) = V(x_{\mathrm{min}})+(x-x_{\mathrm{min}})\frac{dV}{dx}\vert_{x_{\mathrm{min}}}+\frac{1}{2}(x-x_{\mathrm{min}})^2\frac{d^2V}{dx^2}\vert_{x_{\mathrm{min}}}+\dots
@@ -223,7 +232,15 @@ $x(t)=-\omega_0A\sin{(\omega_0t)}+\omega_0B\cos{(\omega_0t)}$. The initial condi
 !split
 ===== Code Example with Euler's Method =====
 
-The code here implements Euler's method for the Earth-Sun system using a more compact way of representing the vectors. Alternatively, you could have spelled out all the variables $v_x$, $v_y$, $x$ and $y$ as one-dimensional arrays.  It tests conservation of potential and kinetic energy as functions of time, in addition to the total energy, again as function of time
+The code here implements Euler's method for the Earth-Sun system using
+a more compact way of representing the vectors. Alternatively, you
+could have spelled out all the variables $v_x$, $v_y$, $x$ and $y$ as
+one-dimensional arrays.  It tests conservation of potential and
+kinetic energy as functions of time, in addition to the total energy,
+again as function of time
+
+_Note_: in all codes we have used scaled equations so that the gravitational constant times the mass of the sum is given by $4\pi^2$ and the mass of the earth is set to _one_ in the calculations of kinetic and potential energies. Else, we would get very large results. 
+
 
 !bc pycod
 # Common imports
@@ -283,10 +300,10 @@ Fourpi2 = 4*pi*pi
 # Setting up variables for the calculation of energies
 #  distance that defines rabs in potential energy
 rabs0 = sqrt(sum(r[0]*r[0]))
-#  Initial kinetic energy. Note that we skip the mass of the Earth here!
+#  Initial kinetic energy. Note that we skip the mass of the Earth here, that is MassEarth=1 in all codes
 EKinetic[0] = 0.5*sum(v0*v0)
-#  Initial potential energy 
-EPotential[0] = 4*pi*pi/rabs0
+#  Initial potential energy  (note negative sign, why?)
+EPotential[0] = -4*pi*pi/rabs0
 #  Initial total energy 
 ETotal[0] = EPotential[0]+EKinetic[0]
 # Start integrating using Euler's method
@@ -295,12 +312,12 @@ for i in range(n-1):
     # Here you could have defined your own function for this
     rabs = sqrt(sum(r[i]*r[i]))
     a =  -Fourpi2*r[i]/(rabs**3)
-    # update velocity, time and position using Euler's forward method
+    # update Energies, velocity, time and position using Euler's forward method
     v[i+1] = v[i] + DeltaT*a
     r[i+1] = r[i] + DeltaT*v[i]
     t[i+1] = t[i] + DeltaT
     EKinetic[i+1] = 0.5*sum(v[i+1]*v[i+1])
-    EPotential[i+1] = 4*pi*pi/sqrt(sum(r[i+1]*r[i+1]))
+    EPotential[i+1] = -4*pi*pi/sqrt(sum(r[i+1]*r[i+1]))
     ETotal[i+1] = EPotential[i+1]+EKinetic[i+1]
 # Plot energies as functions of time    
 
@@ -319,12 +336,18 @@ plt.show()
 !ec
 
 
-We see very clearly that Euler's method does not conserve energy!!
+We see very clearly that Euler's method does not conserve energy!! Try to reduce the time step $\Delta t$. What do you see?
 
 !split
 ===== Adding the Euler-Cromer Method =====
 
-With the Euler-Cromer method, the only thing we need is to update the position at a time $t+1$ with the update velocity from the same time. Thus, the change in the code is extremely simply, and _energy is suddenly conserved_. Note that the error runs like $O(\Delta t)$ and this is why we see the larger oscillations. But within this oscillating energy envelope, we see that the energies swing between a max and a min value and never exceed these values.
+With the Euler-Cromer method, the only thing we need is to update the
+position at a time $t+1$ with the update velocity from the same
+time. Thus, the change in the code is extremely simply, and _energy is
+suddenly conserved_. Note that the error runs like $O(\Delta t)$ and
+this is why we see the larger oscillations. But within this
+oscillating energy envelope, we see that the energies swing between a
+max and a min value and never exceed these values.
 
 
 !bc pycod
@@ -385,10 +408,10 @@ Fourpi2 = 4*pi*pi
 # Setting up variables for the calculation of energies
 #  distance that defines rabs in potential energy
 rabs0 = sqrt(sum(r[0]*r[0]))
-#  Initial kinetic energy. Note that we skip the mass of the Earth here!
+#  Initial kinetic energy. Note that we skip the mass of the Earth here, that is MassEarth=1 in all codes
 EKinetic[0] = 0.5*sum(v0*v0)
 #  Initial potential energy 
-EPotential[0] = 4*pi*pi/rabs0
+EPotential[0] = -4*pi*pi/rabs0
 #  Initial total energy 
 ETotal[0] = EPotential[0]+EKinetic[0]
 # Start integrating using Euler's method
@@ -403,7 +426,7 @@ for i in range(n-1):
     r[i+1] = r[i] + DeltaT*v[i+1]
     t[i+1] = t[i] + DeltaT
     EKinetic[i+1] = 0.5*sum(v[i+1]*v[i+1])
-    EPotential[i+1] = 4*pi*pi/sqrt(sum(r[i+1]*r[i+1]))
+    EPotential[i+1] = -4*pi*pi/sqrt(sum(r[i+1]*r[i+1]))
     ETotal[i+1] = EPotential[i+1]+EKinetic[i+1]
 # Plot energies as functions of time    
 
@@ -417,7 +440,7 @@ axs[2].plot(t, ETotal)
 axs[2].set_xlabel('Time [yr]')
 axs[2].set_ylabel('Total Energy')
 fig.tight_layout()
-save_fig("EarthSunEuler")
+save_fig("EarthSunEulerCromer")
 plt.show()
 !ec
 
@@ -471,14 +494,12 @@ ETotal = np.zeros(n)
 # Setting up variables for the calculation of energies
 #  distance that defines rabs in potential energy
 rabs0 = sqrt(sum(r[0]*r[0]))
-#  Initial kinetic energy. Note that we skip the mass of the Earth here!
+#  Initial kinetic energy. Note that we skip the mass of the Earth here, that is MassEarth=1 in all codes
 EKinetic[0] = 0.5*sum(v0*v0)
 #  Initial potential energy 
-EPotential[0] = 4*pi*pi/rabs0
+EPotential[0] = -4*pi*pi/rabs0
 #  Initial total energy 
 ETotal[0] = EPotential[0]+EKinetic[0]
-
-
 
 # Start integrating using the Velocity-Verlet  method
 for i in range(n-1):
@@ -493,7 +514,7 @@ for i in range(n-1):
     v[i+1] = v[i] + 0.5*DeltaT*(a+anew)
     t[i+1] = t[i] + DeltaT
     EKinetic[i+1] = 0.5*sum(v[i+1]*v[i+1])
-    EPotential[i+1] = 4*pi*pi/sqrt(sum(r[i+1]*r[i+1]))
+    EPotential[i+1] = -4*pi*pi/sqrt(sum(r[i+1]*r[i+1]))
     ETotal[i+1] = EPotential[i+1]+EKinetic[i+1]
 # Plot energies as functions of time    
 
@@ -507,9 +528,9 @@ axs[2].plot(t, ETotal)
 axs[2].set_xlabel('Time [yr]')
 axs[2].set_ylabel('Total Energy')
 fig.tight_layout()
-save_fig("EarthSunEuler")
+save_fig("EarthSunVelocityVerlet")
 plt.show()
 !ec
 
 And we see that due to the smaller truncation error that energy conservation is improved as a function of time.
-
+Try out different time steps $\Delta t$ and see if the results improve or worsen.
