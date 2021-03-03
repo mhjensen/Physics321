@@ -168,6 +168,8 @@ Video of lecture at https://mediaspace.msu.edu/media/t/1_mgqtt4lm and handwritte
 - Wednesday 3/3:  Study day, no lectures
 - Friday 3/5: Resonances and start discussion of Fourier series. Discussion of first midterm.
 - Good reads are sections 5.4-5.7 of Taylor on oscillations. 
+- Solution hw 6 as jupyter-notebook at https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionhw6.ipynb
+
 
 ### Week 10, March 8-12, 2021
 - Monday 3/8: Fourier series and oscillations. Discussion of first midterm. 
