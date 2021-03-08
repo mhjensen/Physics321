@@ -1,0 +1,204 @@
+% !TEX root = lectures.tex
+%\input{lectureheader.tex}
+
+\section{Rotating Coordinate Systems}
+\bigskip
+
+\subsection{Accelerating Frames}
+
+Here we again consider the effect of uniformly accelerating reference frames. If a particle is observed in an inertial reference frame, which we will denote with a prime, Newton's third law applies
+\begin{equation}
+m\frac{d^2\vec{r}'}{dt^2}=\vec{F}.
+\end{equation}
+Now, if we have a second coordinate system,
+\begin{equation}
+\vec{r}=\vec{r}'-\vec{r}_0,~~~~\vec{r_0}=\frac{1}{2}\vec{a}_0t^2.
+\end{equation}
+We would see that
+\begin{equation}
+m\frac{d^2\vec{r}}{dt^2}=\vec{F}-m\vec{a}_0.
+\end{equation}
+Here $\vec{a}_0$ is the acceleration of the coordinate system. The last term acts like an additional apparent force. In fact, it acts like a contribution to the gravitational force which alters the acceleration of gravity by $\delta\vec{g}=-\vec{a}_0$.
+
+\subsection{Rotating Frames}
+If you are on Earth's surface and if your reference frame is fixed with the surface, this is an example of an accelerating frame, where the acceleration is $\omega^2 r_{\perp}$, where $r_{\perp}\equiv\sqrt{x^2+y^2}$, and $\omega$ is the angular velocity of Earth's rotation. The acceleration is inward toward the axis of rotation, so the additional contribution to the apparent acceleration of gravity is outward in the $x-y$ plane. In contrast the usual $\vec{g}$ is radially inward pointing toward the origin. 
+
+In the rotating coordinate system (not an inertial frame), motion is determined by the apparent force and one can define effective potentials. In addition to the normal gravitational potential energy, there is a contribution to the effective potential,
+\begin{equation}
+\delta U_{\rm eff}=-\frac{m}{2}\omega^2r_\perp^2=-\frac{m}{2}r^2\omega^2\sin^2\theta,
+\end{equation}
+where $\theta$ is the polar angle, measured from the north pole. If the true gravitational force can be considered as originating from a point in Earth's center, the net effective potential for a mass $m$ near Earth's surface could be 
+\begin{equation}
+U_{\rm eff}=mgh-m\frac{1}{2}\omega^2(R+h)^2\sin^2\theta.
+\end{equation}
+
+\example
+How much wider is Earth at the equator than the north-south distance between the poles assuming that the gravitational field above the surface can be approximated by that of a point mass at Earth's center.
+
+{\bf Solution}: 
+The surface of the ocean must be at constant effective potential for a sample mass $m$. This means that if $h$ now refers to the height of the water
+\[
+m g[h(\theta=\pi/2)-h(\theta=0)]=\frac{m}{2}\omega^2(R+h)^2.
+\]
+Because $R>>h$, one can approximate $R+h\rightarrow R$ on the right-hand side, thus
+\[
+h(\theta=\pi)-h(\theta=0)=\frac{\omega^2R^2}{2g}.
+\]
+This come out a bit less than 11 km, or a difference of near 22 km for the diameter of the Earth in the equatorial plane compared to a diameter between the poles. In reality, the difference is approximately 41 km. The discrepancy comes from the assumption that the true gravitational force can be treated as if it came from a point at Earth's center. This would be true if the distribution of mass was radially symmetric. However, Earth's center is molten and the rotation distorts the mass distribution. Remarkably this effect nearly doubles the elliptic distortion of Earth's shape. Due to this distortion, the top of Mount Everest is not the furthest point from the center of the Earth. That belongs to the top of a volcano, Chimborazo, in Equador, which is one degree in latitude below the Equator. Chimborazo is about 8500 ft lower than Everest when measured relative to sea level, but is 7700 feet further from the center of the Earth.
+
+\exampleend
+
+\subsection{Coriolis Force}
+
+Consider some vector $\vec{A}$ according to an observer in a frame rotating about the $z$ axis with angular velocity $\vec{\omega}=\omega\hat{z}$. To an observer in the laboratory frame (the primed frame) the vector will change even if the vector appears fixed to the rotating observer. For a rotation of $\Delta\theta=\omega\Delta t$, the change of the vector due to the rotation is
+\begin{eqnarray}
+\Delta\vec{A}'=\vec{\omega}\times\vec{A}\Delta t.
+\end{eqnarray}
+If one includes the fact that $A$, the vector measured in the rotating frame, might be changing as a function of time,
+\begin{eqnarray}
+\label{eq:dAdtrot}
+\Delta\vec{A}'&=&\Delta\vec{A}+\vec{\omega}\times\vec{A}\Delta t,\\
+\nonumber
+\frac{d}{dt}\vec{A}'&=&\frac{d}{dt}\vec{A}+\vec{\omega}\times\vec{A}.
+\end{eqnarray}
+If the vector happens to be the position $\vec{r}$,
+\begin{eqnarray}
+\dot{\vec{r}}'&=&\vec{v}'=\vec{v}+\vec{\omega}\times\vec{r}.
+\end{eqnarray}
+Here, the first term on the r.h.s. corresponds to the vector $\vec{r}$ not being fixed, but changing with time, $\dot{\vec{r}}=\vec{v}$. One can now use $\vec{v}'=\vec{v}+\vec{\omega}\times\vec{r}$ in place of $\vec{A}$ in Eq. (\ref{eq:dAdtrot}), and see
+\begin{eqnarray}
+\dot{\vec{v}}'&=&\frac{d}{dt}(\vec{v}+\vec{\omega}\times\vec{r})+\vec{\omega}\times(\vec{v}+\vec{\omega}\times\vec{r})\\
+\nonumber
+&=&\dot{\vec{v}}+\vec{\omega}\times\dot\vec{r}+\vec{\omega}\times\left(\vec{v}+\vec{\omega}\times\vec{r}\right)\\
+\nonumber
+&=&\dot{\vec{v}}+2\vec{\omega}\times\vec{v}+\vec{\omega}\times(\vec{\omega}\times\vec{r}).
+\end{eqnarray}
+Because $\dot{\vec{v}}'$ is $\vec{F}/m$,
+\begin{eqnarray}
+\label{eq:FmaRotatingFrame}
+\vec{F}&=&m\left\{\vec{a}+2\vec{\omega}\times\vec{v}+\vec{\omega}\times(\vec{\omega}\times\vec{r})\right\},\\
+\nonumber
+m\vec{a}&=&\vec{F}-2m\vec{\omega}\times\vec{v}-m\vec{\omega}\times(\vec{\omega}\times\vec{r}).
+\end{eqnarray}
+The extra terms on the right behave like additional forces. Like gravitational forces, they are proportional to the mass, so the mass cancels for many problems. 
+
+The last term, $-m\vec{\omega}\times(\vec{\omega}\times\vec{r})$, represents the centrifugal force. Using the vector identity, 
+$\vec{A}\times(\vec{B}\times\vec{C})=\vec{B}(\vec{A}\cdot{\vec{C}})-\vec{C}(\vec{A}\cdot\vec{B})$,
+\begin{equation}
+-\vec{\omega}\times(\vec{\omega}\times\vec{r})=\omega^2\vec{r}+(\omega\cdot\vec{r})\vec{\omega}.
+\end{equation}
+If $\vec{\omega}$ is in the $z$ direction,
+\begin{equation}
+-\vec{\omega}\times(\vec{\omega}\times\vec{r})=\omega^2(x\hat{x}+y\hat{y}).
+\end{equation}
+The centrifugal force points outward in the $x-y$ plane, and its magnitude is $m\omega^2r_{\rm\perp}$, where $r_{\rm\perp}=\sqrt{x^2+y^2}$.
+
+The second term is Eq. (\ref{eq:FmaRotatingFrame}) represents the Coriolis force. It does not enter problems like the shape of the Earth above because in that case the water was not moving relative to the rotating frame. Once an object is moving in a rotating frame, the particle is no longer being described in a single accelerating frame because at each point the acceleration is $-\omega^2\vec{r}$. 
+
+\example
+A ball is dropped from a height $h=500$m above Minneapolis. Due to the Coriolis force, it is deflected by an amount $\delta x$ and $\delta y$. Find the deflection. Ignore the centrifugal terms.
+
+{\bf Solution}: The equations of motion are:
+\begin{eqnarray*}
+\frac{dv_x}{dt}&=&-2(\omega_yv_z-\omega_zv_y),\\
+\frac{dv_y}{dt}&=&-2(\omega_zv_x-\omega_xv_z),\\
+\frac{dv_z}{dt}&=&-g-2(\omega_xv_y-\omega_yv_x),\\
+\omega_z&=&\omega\cos\theta,~~~\omega_y=\omega\sin\theta,~~~\omega_x=0.
+\end{eqnarray*}
+Here the coordinate system is $\hat{x}$ points east, $\hat{y}$ points north and $\hat{z}$ points upward.
+
+One can now ignore all the Coriolis terms on the right-hand sides except for those with $v_z$. The other terms will all be doubly small. One can also throw out terms with $\omega_x$. This gives
+\begin{eqnarray*}
+\frac{dv_x}{dt}&\approx& -2\omega v_z\sin\theta,\\
+\frac{dv_y}{dt}&\approx& 0,\\
+\frac{dv_z}{dt}&\approx& -g.
+\end{eqnarray*}
+There will be no significant deflection in the $y$ direction, $\delta y=0$, but in the $x$ direction one can substitute $v_z=-gt$ above,
+\begin{eqnarray*}
+v_x&\approx&\int_0^t dt'~2\omega gt'\sin\theta=\omega gt^2\sin\theta,\\
+\delta x&\approx& \int_0^t dt'~v_x(t')=\frac{g\omega\sin\theta t^3}{3}.
+\end{eqnarray*}
+One can find the deflections by using $h=\frac{1}{2}gt^2$, to find the time, and using the all-knowing internet to see that the latitude of Minneapolis is $44.6^\circ$ or $\theta=45.4^\circ$.
+\begin{eqnarray*}
+t&=&\sqrt{2h/g}=10.1~{\rm s},\\
+\omega&=&\frac{2\pi}{3600\cdot 24~{\rm s}}=7.27\times 10^{-5}~{\rm s}^{-1},\\
+\delta x&=&17.4~{\rm cm}~~{\rm(east)}.
+\end{eqnarray*}
+
+\exampleend
+
+
+\subsection{The Foucault Pendulum}
+The Foucault Pendulum is simply a regular pendulum moving in both horizontal directions, and with the Coriolis force included. In this case,
+\begin{eqnarray*}
+m\ddot{\vec{r}}&=&\vec{T}+m\vec{g}-2m\vec{\Omega}\times\vec{v},
+\end{eqnarray*}
+as the centrifugal force term is absorbed into the definition of $\vec{g}$. The magnitude of the tension, $\vec{T}$, is considered constant because we consider only small oscillations. Then $T\approx mg$, and the components, using $\hat{x},\hat{y}$ to correspond to east and north respectively, are
+\begin{eqnarray*}
+T_x=-mgx/L,~~~T_y=-mgy/L. 
+\end{eqnarray*}
+If $\Omega$ is the rotation of the earth, and if $\theta$ is the polar angle, $\pi-$lattitude, 
+\begin{eqnarray*}
+\ddot{x}&=&-gx/L+2\dot{y}\Omega_z,\\
+\ddot{y}&=&-gy/L-2\dot{x}\Omega_z.
+\end{eqnarray*}
+Here we have used the fact that the oscillations are sufficiently small so we can ignore $v_z$. Using $\omega_0\equiv\sqrt{k/m}$,
+\begin{eqnarray*}
+\ddot{x}-2\Omega_z\dot{y}+\omega_0^2x&=&0\\
+\ddot{y}+2\Omega_z\dot{x}+\omega_0^2y&=&0,
+\end{eqnarray*}
+where $\Omega_z=|\vec{\Omega}|\cos\theta$, with $\theta$ being the polar angle (zero at the north pole). The terms linear in time derivatives are what make life difficult. This will be solved with a trick. We will incorporate both differential equations into a single complex equation where the first/second are the real/imaginary parts.
+\begin{eqnarray*}
+\eta\equiv x+iy,\\
+\ddot{\eta}+2i\Omega_z\dot{\eta}+\omega_0^2\eta&=&0. 
+\end{eqnarray*}
+
+Now, we guess at a form for the solutions, $\eta(t)=e^{-i\alpha t}$, which turns the differential equation into
+\begin{eqnarray*}
+-\alpha^2+2\Omega_z\alpha+\omega_0^2&=&0,\\
+\alpha&=&\Omega_z\pm \sqrt{\Omega_z^2+\omega_0^2},\\
+&\approx&\Omega_z\pm \omega_0.
+\end{eqnarray*}
+The solution with two arbitrary constants is then
+\begin{eqnarray*}
+\eta&=&e^{-i\Omega_zt}\left[C_1e^{i\omega_0t}+C_2e^{-i\omega_0t}\right].
+\end{eqnarray*}
+Here, $C_1$ and $C_2$ are complex, so they actually represent four arbitrary numbers. These four numbers should be fixed by the four initial conditions, i.e. $x(t=0), \dot{x}(t=0), y(t=0)$ and $\dot{y}(t=0)$. With some lengthy algebra, one can rewrite the expression as
+\begin{eqnarray*}
+\label{eq:precmess}
+\eta&=&e^{-i\Omega_zt}\left[A\cos(\omega_0t+\phi_A)+iB\cos(\omega_0t+\phi_B)\right].
+\end{eqnarray*}
+Here, the four coefficients are represented by the two real arbitrary real amplitudes, $A$ and $B$, and two arbitrary phases, $\phi_A$ and $\phi_B$. For an initial condition where $y=0$ at $t=0$, one can see that $B=0$. This then gives
+\begin{eqnarray*}
+\eta(t)&=&Ae^{-i\Omega_zt}\cos(\omega_0t+\gamma)\\
+\nonumber
+&=&A\cos\Omega_zt\cos(\omega_0t+\gamma)+iA\sin\Omega_zt\cos(\omega_0t+\gamma).
+\end{eqnarray*}
+Translating into $x$ and $y$,
+\begin{eqnarray}
+x&=&A\cos\Omega_zt\cos(\omega_0t+\gamma),\\
+\nonumber
+y&=&A\sin\Omega_zt\cos(\omega_0t+\gamma).
+\end{eqnarray}
+Assuming the pendulum's frequency is much higher than Earth's rotational frequency, $\omega_0>>\Omega_z$, one can see that the plane of the pendulum simply precesses with angular velocity $\Omega_z$. This means that in this limit the pendulum oscillates only in the $x$-direction with frequency many times before the phase $\Omega_zt$ becomes noticeable. Eventually, when $\Omega_zt=\pi/2$, the motion is along the $y$-direction. If you were at the north pole, the motion would switch from the $x$-direction to the $y$ direction every 6 hours. Away from the north pole, $\Omega_z\ne|\vec{\Omega}|$ and the precession frequency is less.  At the equator it does not precess at all. If one were to repeat for the solutions where $A=0$ and $B\ne 0$ in Eq. (\ref{eq:precmess}), one would look at motions that started in the $y$-direction, then precessed toward the $-x$ direction. Linear combinations of the two sets of solutions give pendulum motions that resemble ellipses rather than simple back-and-forth motion.
+
+\subsection{Exercises}
+
+\begin{enumerate}
+
+\item Consider a pail of water spinning about a vertical axis at the center of the pail with frequency $\omega$. Find the height of the water (within a constant) as a function the radius $r_\perp$ from the axis of rotation. Use the concept of a centrifugal potential in the rotating frame.
+
+\item A high-speed cannon shoots a projectile with an initial velocity
+  of 1000 m/s in the east direction. The cannon is situated in
+  Minneapolis (latitude of 45 degrees) The projectile velocity is
+  nearly horizontal and it hits the ground after a distance $x=3000$
+  m. Find the alteration of the point of impact in the north-south
+  ($y$) direction due to the Coriolis force. Assume the effect is
+  small so that you can approximate the eastward ($x$) component of
+  the velocity as being constant. Be sure to indicate whether the
+  deflection is north or south.
+
+\item Someone wishes to use a Foucault pendulum as a crude clock. If the person lives in Minneapolis (latitude of $45^\circ$), how much time will pass between having the pendulum swinging in the east-west direction until it swings in the north-south direction.
+
+\end{enumerate}
+%\end{document}

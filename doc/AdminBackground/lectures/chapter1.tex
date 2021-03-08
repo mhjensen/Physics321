@@ -1,0 +1,343 @@
+% !TEX root = lectures.tex
+\section{Math Basics}
+\bigskip
+
+\subsection{Scalars, Vectors and Matrices}
+
+A scalar is something with a value that is independent of coordinate system. Examples are mass, or the relative time between events. A vector has magnitude and direction. Under rotation, the magnitude stays the same but the direction changes. Scalars have no spatial index, whereas a three-dimensional vector has 3 indices, e.g. the position $\vec{r}$ has components $r_1,r_2,r_3$, which are often referred to as $x,y,z$.
+
+There are several categories of changes of coordinate system. The observer can translate the origin, might move with a different velocity, or might rotate his/her coordinate axes. For instance, a particle's position vector changes when the origin is translated, but its velocity does not. When you study relativity you will find that quantities you thought of as scalars, such as time or electric potential, are actually parts of four-dimensional vectors and that changes of the velocity of the reference frame act in a similar way to rotations.
+
+In addition to vectors and scalars, there are matrices, which have two indices. One also has objects with 3 or four indices. These are called tensors of rank $n$, where $n$ is the number of indices. A matrix is a rank-two tensor. The Levi-Civita symbol, $\epsilon_{ijk}$ used for cross products, is a third-rank tensor.
+
+\subsubsection*{Unit Vectors}
+
+Also known as basis vectors, unit vectors point in the direction of the coordinate axes, have unit norm, and are orthogonal to one another. Sometimes this is referred to as an orthonormal basis,
+\begin{equation}
+\hat{e}_i\cdot\hat{e}_j=\delta_{ij}=\left(\begin{array}{ccc}
+1 & 0 & 0\\
+0& 1 & 0\\
+0 & 0 & 1
+\end{array}\right).
+\end{equation}
+Here, $\delta_{ij}$ is unity when $i=j$ and is zero otherwise. This is called the unit matrix, because you can multiply it with any other matrix and not change the matrix. The ``dot'' denotes the dot product, $\vec{A}\cdot\vec{B}=A_1B_1+A_2B_2+A_3B_3=|A||B|\cos\theta_{AB}$. Sometimes the unit vectors are called $\hat{x}$, $\hat{y}$ and $\hat{z}$. Vectors can be decomposed in terms of unit vectors,
+\begin{equation}
+\vec{r}=r_1\hat{e}_1+r_2\hat{e}_2+r_3\hat{e}_3.
+\end{equation}
+The vector components $r_1$, $r_2$ and $r_3$ might be called $x$, $y$ and $z$ for a displacement of $v_x$, $v_y$ and $v_z$ for a velocity.
+
+\subsubsection*{Rotations}
+
+Here, we use rotations as an example of matrices and their operations. One can consider a different orthonormal basis $\hat{e}'_1$, $\hat{e}'_2$ and $\hat{e}'_3$. The same vector $\vec{r}$ mentioned above can also be expressed in the new basis,
+\begin{equation}
+\vec{r}=r'_1\hat{e}'_1+r'_2\hat{e}'_2+r'_3\hat{e}'_3.
+\end{equation}
+Even though it is the same vector, the components have changed. Each new unit vector $\hat{e}'_i$ can be expressed as a linear sum of the previous vectors,
+\begin{equation}
+\hat{e}'_i=\sum_j U_{ij}\hat{e}_j,
+\end{equation}
+and the matrix $U$ can be found by taking the dot product of both sides with $\hat{e}_k$,
+\begin{eqnarray}
+\nonumber
+\hat{e}_k\cdot\hat{e}'_i&=&\sum_jU_{ij}\hat{e}_k\cdot\hat{e}_j\\
+\label{eq:lambda_angles}
+\hat{e}_k\cdot\hat{e}'_i&=&\sum_jU_{ij}\delta_{jk}=U_{ik}.
+\end{eqnarray}
+Thus, the matrix lambda has components $U_{ij}$ that are equal to the cosine of the angle between new unit vector $\hat{e}'_i$ and the old unit vector $\hat{e}_j$.
+\begin{equation}
+U = \left(\begin{array}{ccc}
+\hat{e}'_1\cdot\hat{e}_1& \hat{e}'_1\cdot\hat{e}_2& \hat{e}'_1\cdot\hat{e}_3\\
+\hat{e}'_2\cdot\hat{e}_1& \hat{e}'_2\cdot\hat{e}_2& \hat{e}'_2\cdot\hat{e}_3\\
+\hat{e}'_3\cdot\hat{e}_1& \hat{e}'_3\cdot\hat{e}_2& \hat{e}'_3\cdot\hat{e}_3
+\end{array}\right),~~~~~U_{ij}=\hat{e}'_i\cdot\hat{e}_j=\cos\theta_{ij}.
+\end{equation}
+Note that the matrix is not symmetric, $U_{ij}\ne U_{ji}$. One can also look at the inverse transformation, by switching the primed and unprimed coordinates,
+\begin{eqnarray}
+\label{eq:inverseU}
+\hat{e}_i&=&\sum_jU^{-1}_{ij}\hat{e}'_j,\\
+\nonumber
+U^{-1}_{ij}&=&\hat{e}_i\cdot\hat{e}'_j=U_{ji}.
+\end{eqnarray}
+The definition of transpose of a matrix, $M^{t}_{ij}=M_{ji}$, allows one to state this as
+\begin{eqnarray}
+\label{eq:transposedef}
+U^{-1}&=&U^{t}.
+\end{eqnarray}
+A tensor obeying Eq. (\ref{eq:transposedef}) defines what is known as a unitary, or orthogonal, transformation.
+
+The matrix $U$ can be used to transform any vector to the new basis. Consider a vector
+\begin{eqnarray}
+\vec{r}&=&r_1\hat{e}_1+r_2\hat{e}_2+r_3\hat{e}_3\\
+\nonumber
+&=&r'_1\hat{e}'_1+r'_2\hat{e}'_2+r'_3\hat{e}'_3.
+\end{eqnarray}
+This is the same vector expressed as a sum over two different sets of basis vectors. The coefficients $r_i$ and $r'_i$ represent components of the same vector. The relation between them can be found by taking the dot product of each side with one of the unit vectors, $\hat{e}_i$, which gives
+\begin{eqnarray}
+r_i&=&\sum_j \hat{e}_i\cdot\hat{e}'_j~r'_j.
+\end{eqnarray}
+Using Eq. (\ref{eq:inverseU}) one can see that the transformation of $r$ can be also written in terms of $U$,
+\begin{eqnarray}
+\label{eq:rotateR}
+r_i&=&\sum_jU^{-1}_{ij}~r'_j.
+\end{eqnarray}
+Thus, the matrix that transforms the coordinates of the unit vectors, Eq. (\ref{eq:inverseU}) is the same one that transforms the coordinates of a vector, Eq. (\ref{eq:rotateR}). 
+
+\example\label{ex:rotmat}
+Find the rotation matrix $U$ for finding the components in the primed coordinate system given from those in the unprimed system, given that the unit vectors in the new system are found by rotating the coordinate system by and angle $\phi$ about the $z$ axis.\\
+Solution:\\
+In this case
+\begin{eqnarray*}
+\hat{e}'_1&=&\cos\phi \hat{e}_1-\sin\phi\hat{e}_2,\\
+\hat{e}'_2&=&\sin\phi\hat{e}_1+\cos\phi\hat{e}_2,\\
+\hat{e}'_3&=&\hat{e}_3.
+\end{eqnarray*}
+
+By inspecting Eq. (\ref{eq:lambda_angles}),
+\[
+U=\left(\begin{array}{ccc}
+\cos\phi&-\sin\phi&0\\
+\sin\phi&\cos\phi&0\\
+0&0&1\end{array}\right).
+\]
+\exampleend
+
+Under a unitary transformation $U$ (or basis transformation) scalars are unchanged, whereas vectors $\vec{r}$ and matrices $M$ change as
+\begin{eqnarray}
+r'_i&=&U_{ij}~ r_j, ~~({\rm sum~inferred})\\
+\nonumber
+M'_{ij}&=&U_{ik}M_{km}U^{-1}_{mj}.
+\end{eqnarray}
+Physical quantities with no spatial indices are scalars (or pseudoscalars if they depend on right-handed vs. left-handed coordinate systems), and are unchanged by unitary transformations. This includes quantities like the trace of a matrix -- the matrix itself had indices but none remain after performing the trace.
+\begin{eqnarray}
+{\rm Tr} M&\equiv& M_{ii}.
+\end{eqnarray}
+Because there are no remaining indices, one expects it to be a scalar. Indeed one can see this,
+\begin{eqnarray}
+{\rm Tr} M'&=&U_{ij}M_{jm}U^{-1}_{mi}\\
+\nonumber
+&=&M_{jm}U^{-1}_{mi}U_{ij}\\
+\nonumber
+&=&M_{jm}\delta_{mj}\\
+\nonumber
+&=&M_{jj}={\rm Tr} M.
+\end{eqnarray}
+A similar example is the determinant of a matrix, which is also a scalar.
+
+\subsubsection*{Vector and Matrix Operations}
+\begin{itemize}\itemsep=0pt
+\item Scalar Product (or dot product): For vectors $\vec{A}$ and $\vec{B}$,
+\begin{eqnarray*}
+\vec{A}\cdot\vec{B}&=&A_iB_i=|A||B|\cos\theta_{AB},\\
+|A|&\equiv& \sqrt{\vec{A}\cdot\vec{A}}.
+\end{eqnarray*}
+Note that the summation sign is inferred any time there are repeated indices. For example, 
+\begin{eqnarray}
+A_iB_i&=&\sum A_iB_i.
+\end{eqnarray}
+\item Multiplying a matrix $C$ times a vector $\vec{A}$:
+\[
+(CA)_i=C_{ij}A_j.
+\]
+For the $i^{\rm th}$ element one takes the scalar product of the $i^{\rm th}$ row of $C$ with the vector $\vec{A}$.
+\item Mutiplying matrices $C$ and $D$:
+\[
+(CD)_{ij}=C_{ik}D_{kj},
+\]
+This means the one obtains the $ij$ element by taking the scalar product of the $i^{\rm th}$ of $C$ with the $j^{\rm th}$ column of $D$.
+\item Vector Product (or cross product) of vectors $\vec{A}$ and $\vec{B}$:
+\begin{eqnarray*}
+\vec{C}&=&\vec{A}\times\vec{B},\\
+C_i&=&\epsilon_{ijk}A_jB_k.
+\end{eqnarray*}
+Here $\epsilon$ is the third-rank anti-symmetric tensor, also known as the Levi-Civita symbol. It is $\pm 1$ only if all three indices are different, and is zero otherwise. The choice of $\pm 1$ depends on whether the indices are an even or odd permutation of the original symbols. The permutation $xyz$ or $123$ is considered to be $+1$. For the 27 elements,
+\begin{eqnarray}
+\epsilon_{ijk}&=&-\epsilon_{ikj}=-\epsilon_{jik}=-\epsilon_{kji}\\
+\nonumber
+\epsilon_{123}&=&\epsilon_{231}=\epsilon_{312}=1,\\
+\nonumber
+\epsilon_{213}&=&\epsilon_{132}=\epsilon_{321}=-1,\\
+\nonumber
+\epsilon_{iij}&=&\epsilon_{iji}=\epsilon_{jii}=0.
+\end{eqnarray}
+You used cross products extensively when studying magnetic fields. Because the matrix is anti-symmetric, switching the $x$ and $y$ axes (or any two axes) flips the sign. If the coordinate system is right-handed, meaning the $xyz$ axes satisfy $\hat{x}\times\hat{y}=\hat{z}$, where you can point along the $x$ axis with your extended right index finger, the $y$ axis with your contracted middle finger and the $z$ axis with your extended thumb. Switching to a left-handed system flips the sign of the vector $\vec{C}=\vec{A}\times\vec{B}$. Note that $\vec{A}\times\vec{B}=-\vec{B}\times\vec{A}$. The vector $\vec{C}$ is perpendicular to both $\vec{A}$ and $\vec{B}$ and the magnitude of $\vec{C}$ is given by 
+\[
+|C|=|A||B|\sin\theta_{AB}.
+\]
+Vectors obtained by the cross product of two real vectors are called pseudo-vectors because the assignment of their direction can be arbitrarily flipped by defining the Levi-Civita symbol to be based on left-handed rules. Examples are the magnetic field and angular momentum. If the direction of a real vector prefers the right-handed over the left-handed direction, that constitutes a violation of parity. For instance, one can polarize the spins (angular momentum) of nuclei with a magnetic field so that the spins preferentially point along the direction of the magnetic field. This does not violate parity because both are pseudo-vectors. Now assume these polarized nuclei decay and that electrons are one of the products. If these electrons prefer to exit the decay parallel vs. antiparallel to the polarizing magnetic field, this constitutes parity violation because the direction of the outgoing electron momenta are a real vector. This is precisely what is observed in weak decays.
+
+\item Differentiation of a vector with respect to a scalar: For example, the acceleration is $d\vec{v}/dt$:
+\[
+(d\vec{v}/dt)_i=\frac{dv_i}{dt}.
+\]
+
+\item Angular velocity: Choose the vector $\vec{\omega}$ so that the motion is like your fingers wrapping around your thumb on your right hand with $\vec{\omega}$ pointing along your thumb. The magnitude is $d|\phi|/dt$.
+
+\item Gradient operator $\nabla$: This is the derivative $\partial/\partial x$, $\partial/\partial y$ and $\partial/\partial z$, where $\partial _x$ means $\partial/\partial_x$. For taking the gradient of a scalar $\Phi$,
+\[
+{\rm\bf grad}~\Phi, (\nabla\Phi(x,y,z,t))_i=\partial/\partial r_i\Phi(\vec{r},t)=\partial_i\Phi(\vec{r},t).
+\]
+For taking the dot product of the gradient with a vector, sometimes called a divergence,
+\[
+div \vec{A}, \nabla\cdot\vec{A}=\partial_i A_i.
+\]
+For taking the vector product with another vector, sometimes called curl, $\nabla\times\vec{A}$,
+\[
+{\rm\bf curl}~\vec{A}, (\nabla\times\vec{A})_i=\epsilon_{ijk}\partial_j A_k(\vec{r},t).
+\]
+\item The Laplacian is referred to as $\nabla^2$ and is defined as
+\[
+\nabla^2=\nabla\cdot\nabla=\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2}.
+\]
+\end{itemize}
+
+\subsubsection*{Some identities}
+
+Here we simply state these, but you may wish to prove a few. They are useful for this class and will be essential when you study E\&M.
+\begin{eqnarray}
+\vec{A}\cdot(\vec{B}\times\vec{C})&=&\vec{B}\cdot(\vec{C}\times\vec{A})=\vec{C}\cdot(\vec{A}\times\vec{B})\\
+\nonumber
+\vec{A}\times(\vec{B}\times\vec{C})&=&(\vec{A}\cdot\vec{C})\vec{B}-(\vec{A}\cdot\vec{B})\vec{C}\\
+\nonumber
+(\vec{A}\times\vec{B})\cdot(\vec{C}\times\vec{D})&=&(\vec{A}\cdot\vec{C})(\vec{B}\cdot\vec{D})
+-(\vec{A}\cdot\vec{D})(\vec{B}\cdot\vec{C})
+\end{eqnarray}
+
+
+
+\example
+The height of a hill is given by the formula 
+\[
+z(x,y)=2xy-3x^2-4y^2-18x+28y+12.
+\]
+Here $z$ is the height in meters and $x$ and $y$ are the east-west and north-south coordinates. Find the position $x,y$ where the hill is the highest, and give its height.
+
+{\bf Solution:} The maxima or minima, or inflection points, are given when $\partial_x z=0$ and $\partial_yz=0$.
+\begin{eqnarray*}
+\partial_xz(x,y)&=&2y-6x-18=0,\\
+\partial_yz(x,y)&=&2x-8y+28=0.
+\end{eqnarray*}
+Solving for two equations and two unknowns gives one solution $x=-2,y=3$. This then gives $z=72$. Although this procedure could have given a minimum or an inflection point you can look at the form for $z$ and see that for $x=y=0$ the height is lower, therefore it is not a minimum. You can also look and see that the quadratic contributions are negative so the height falls off to $-\infty$ far away in any direction. Thus, there must be a maximum, and this must be it. Deciding between maximum or minimum or inflection point for a general problem would involve looking at the matrix $\partial_i\partial_j z$ at the specific point, then finding the eigenvalues of the matrix and seeing whether they were both positive (minimum) both negative (maximum) or one positive and one negative (saddle point).
+
+\exampleend
+
+\subsubsection*{Gauss's Theorem and Stokes's Theorem}
+
+For an integral over a volume $V$ confined by a surface $S$, Gauss's theorem gives
+\[
+\int_V dv~\nabla\cdot\vec{A}=\int_Sd\vec{S}\cdot\vec{A}.
+\]
+For a closed path $C$ which carves out some area $S$, 
+\[
+\int_C d\vec{\ell}\cdot\vec{A}=\int_Sd\vec{s} \cdot(\nabla\times\vec{A})
+\]
+Stoke's law can be understood by considering a small rectangle, $-\Delta x<x<\Delta x$, $-\Delta y<y<\Delta y$. The path integral around the edges is
+\begin{eqnarray}
+\int_C d\vec{\ell}\cdot\vec{A}&=&2\Delta y[A_y(\Delta x,0)-A_y(-\Delta x,0)]-2\Delta x[A_x(0,\Delta y)-A_x(0,-\Delta y)]\\
+\nonumber
+&=&4\Delta x\Delta y\left\{
+\frac{A_y(\Delta x,0)-A_y(-\Delta x,0)}{2\Delta x}-\frac{A_x(0,\Delta y)-A_x(0,-\Delta y)}{2\Delta y}\right\}\\
+\nonumber
+&=&4\Delta x\Delta y\left\{\frac{\partial A_y}{\partial x}-\frac{\partial A_x}{\partial y}\right\}\\
+&=&\Delta S \cdot \nabla\times\vec{A}.
+\end{eqnarray}
+Here $\Delta S$ is the area of the surface element.
+
+\subsubsection*{Some Notation}
+From here on in, we may use bold face to denote vectors, e.g. ${\bf v}$ instead of $\vec{v}$. We also might use dots over quantities to represent time derivatives, e.g. $\dot{\bf v}=d{\bf v}/dt$. As mentioned above, repeated indices infer sums, e.g.,
+\begin{eqnarray}
+x_iy_i&=&\sum_i x_iy_i=\vec{x}\cdot\vec{y},\\
+\nonumber
+x_iA_{ij}y_j&=&\sum_{ij}x_iA_{ij}y_j,
+\end{eqnarray}
+
+
+\subsection{Exercises}
+
+\begin{enumerate}
+
+\item All physicists must become comfortable with thinking of oscillatory and wave mechanics in terms of expressions that include the form $e^{i\omega t}$.
+\begin{enumerate}
+\item Perform Taylor expansions in powers of $\omega t$ of the functions $\cos\omega t$ and $\sin\omega t$.
+\item Perform a Taylor expansion of $e^{i\omega t}$.
+\item Using parts (a) and (b) show that $e^{i\omega t}=\cos\omega t+i\sin\omega t$.
+\item Show that $\ln(-1)=i\pi$.
+\end{enumerate}
+
+\item One of the many uses of the scalar product is to find the angle between two given vectors. Find the angle between the vectors $\vec{b}=(1,2,4)$ and $\vec{c}=(4,2,1)$ by evaluating their scalar product.
+
+\item Use the product rule to show that
+\[
+\frac{d}{dt}(\vec{r}\cdot\vec{s})=\frac{d\vec{r}}{dt}\cdot\vec{s}+\vec{r}\cdot\frac{d\vec{s}}{dt}.
+\]
+
+\item Multiply the rotation matrix in Example \ref{ex:rotmat} by its transpose to show that the matrix is unitary or orthogonal, i.e. you get the unit matrix.
+
+\item Find the matrix for rotating a coordinate system by 90 degrees about the $x$ axis.
+
+\begin{comment}
+
+\item Consider a rotation where in the new coordinate system the three axes are at angles $\alpha$, $\beta$ and $\gamma$ relative to the original $x$ axis. Show that
+\[
+\cos^2\alpha+\cos^2\beta+\cos^2\gamma=1.
+\]
+
+\item Find the rotation matrix for each of the three rotations, then find the matrix for the combined rotations.
+First rotate by 90$^\circ$ around the $y$ axis to get to the primed system. Then rotate the primed system 90$^\circ$ about the new $z$ axis to get to the doubly primed system. Then find the matrix that rotates the doubly primed coordinate system 90$^\circ$ about the new $x$ axis to get to the triply primed system. Finally, find the matrix that performs all three operations sequentially.
+
+\end{comment}
+
+\item Consider a parity transformation which reflects about the $x=0$ plane. Find the matrix that performs the transformation. Find the matrix that performs the inverse transformation.
+
+\item Show that the scalar product of two vectors is unchanged if both undergo the same rotation. Use the fact that the rotation matrix is unitary, $U_{ab}=U^{-1}_{ba}$.
+
+\item Show that the product of two unitary matrices is a unitary matrix. 
+
+\item Show that
+\[
+\sum_k\epsilon_{ijk}\epsilon_{klm}=\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl}.
+\]
+
+\item Consider a cubic volume $V=L^3$ defined by $0<x<L$, $0<y<L$ and $0<z<L$. Consider a vector $\vec{A}$ that depends arbitrarily on $x,y,z$. Show how Gauss's law,
+\[
+\int_V dv\nabla\cdot\vec{A}=\int_Sd\vec{S}\cdot\vec{A},
+\]
+is satisfied by direct integration. I.e., you should use the fact that $\int_a^b dx~(d/dx)f(x)=f(b)-f(a)$.
+
+\item Consider the function $z=3x^2-4y^2+12xy-6x+24$. Find any maxima or minima and determine whether it is a maximum or a minimum or an inflection point.
+
+\item A real $n-$dimensional symmetric matrix $\lambda$ can always be diagonalized by a unitary transformation, i.e. there exists some unitary matrix $U$ such that,
+\begin{eqnarray}
+U_{ij}\lambda_{jk}U^{-1}_{km}&=&\tilde{\lambda}_{im}=\left(\begin{array}{cccc}
+\tilde{\lambda}_{11}&0&\cdots&0\\
+0&\tilde{\lambda}_{22}&\cdots&0\\
+\vdots& & \ddots & \vdots\\
+0& \cdots &\cdots &\tilde{\lambda}_{nn}
+\end{array}\right).
+\end{eqnarray}
+The values $\tilde{\lambda}_{ii}$ are referred to as eigenvalues. The set of $n$ eigenvalues are unique, but their ordering is not -- there exists a unitary transformation that permutes the indices. 
+
+Consider a function $f(x_1,\cdots,x_n)$ that has the property,
+\begin{eqnarray}
+\left.\partial_i f(\vec{x})\right|_{\vec{x}=0}=0,
+\end{eqnarray}
+for all $i$. Show that if this function is a minimum, and not a maximum or an inflection point, that the $n$ eigenvalues of the matrix
+\begin{eqnarray}
+\lambda_{ij}&\equiv&\left.\partial_i\partial_j f(\vec{x})\right|_{\vec{x}=0},
+\end{eqnarray}
+must be positive.
+
+\item
+\begin{enumerate}
+\item For the unitary matrix $U$ that diagonalizes $\lambda$ as shown in the previous problem. Show that each row of the unitary matrix represents an orthogonal unit vector by using the definition of a unitary matrix.
+\item Show that the vector
+\begin{eqnarray}
+x_i^{(k)}&\equiv& U_{ki}=(U_{k1},U_{k2},\cdots,U_{kn}),
+\end{eqnarray}
+has the property that
+\begin{eqnarray}
+\lambda_{ij}x^{(k)}_j&=&\tilde{\lambda}_{kk}x^{(k)}_i.
+\end{eqnarray}
+These vectors are known as eigenvectors, as they have the property that when multiplied by $\lambda$ the resulting vector is proportional ( same direction) as the original vector. Because one can transform to a basis, using $U$, where $\lambda$ is diagonalized, in the new basis the eigenvectors are simply the unit vectors.
+\end{enumerate}
+\end{enumerate} 
+

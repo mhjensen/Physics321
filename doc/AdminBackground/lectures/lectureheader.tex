@@ -1,0 +1,86 @@
+% !TEX root =  lectures.tex
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage[
+	pdfencoding=auto,%
+	pdftitle={PHY 321, Classical Mechanics I, Lecture Notes},%
+	pdfauthor={Scott Pratt},%
+	pdfstartview=FitV,%
+	colorlinks=true,%
+	linkcolor=blue,%
+	citecolor=black, %
+	urlcolor=blue]{hyperref}
+%\usepackage{pdfsync}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{bbold}
+\numberwithin{equation}{section} 
+\numberwithin{figure}{section} 
+\usepackage[small,bf]{caption}
+
+\usepackage{fontspec}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{fancyhdr}
+\usepackage{bm}
+
+\newcounter{examplecounter}
+\setcounter{examplecounter}{0}
+\newcommand{\example}{
+\stepcounter{examplecounter}{\nopagebreak\noindent\rule{\textwidth}{1pt}\nopagebreak\\ \bf Example \nopagebreak \arabic{section}.\arabic{examplecounter}:\\ \nopagebreak}}
+
+\newcommand{\exampleend}{
+\begin{samepage}
+\nopagebreak\noindent\rule{\textwidth}{1pt}
+\end{samepage}}
+
+%\usepackage[T1]{fontenc}
+%\renewcommand*{\sfdefault}{Berenis}
+%\renewcommand*{\rmdefault}{Berenis}
+%\renewcommand*{\sfdefault}{phv} % helvetica
+%\renewcommand*{\sfdefault}{ppl} % palatino
+%\renewcommand*{\rmdefault}{ppl}
+%\renewcommand*{\sfdefault}{Bookman}
+%\renewcommand*{\rmdefault}{Bookman}
+
+\defaultfontfeatures{Scale=MatchLowercase}
+%\setmainfont[Mapping=tex-text,SmallCapsFont={CalifornianFB Expert}]{CalifornianFB}
+%\setmainfont[Mapping=tex-text]{Minion Pro}
+\setmainfont[Mapping=tex-text]{Palatino Bold}
+\setmonofont[Mapping=tex-text]{Courier New Bold}
+%\setsansfont[Mapping=tex-text]{Myriad Pro}
+%\usepackage{xltxtra}
+%\setromanfont{Palatino}
+\setromanfont{Palatino Bold}
+
+
+%\pagestyle{empty}
+\textwidth 7.0in
+\hoffset -0.8in
+\textheight 9.4in
+\voffset -1in
+
+\pagestyle{fancy}             % page layout
+\newcommand{\TheShortTitle}{}
+\newcommand{\ShortTitle}[1]{\renewcommand{\TheShortTitle}{#1}}
+\fancyhead[LO,RE]{\slshape \TheShortTitle}
+\fancyhead[LE,RO]{\slshape \leftmark}
+
+\usepackage{colortbl}
+\newcommand{\cc}[1]{\cellcolor{#1}}
+\definecolor{lightred}{rgb}{1,0.5,0.6}
+\definecolor{lightblue}{rgb}{0.6,0.8,1.0}
+
+\usepackage{comment}
+\parskip 4pt
+\parindent 0pt
+
+%\newcommand{\bm}{\boldmath}
+\boldmath
+
+% for the banner across the tops of pages 2-
+\ShortTitle{PHY 831}
+
+\ShortTitle{PHY 321 Lecture Notes}
