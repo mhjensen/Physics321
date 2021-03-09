@@ -1,0 +1,1166 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/doconce/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="PHY321: Two-body problems and Gravitational Forces">
+
+<title>PHY321: Two-body problems and Gravitational Forces</title>
+
+<!-- Bootstrap style: bootstrap -->
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+
+<style type="text/css">
+
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 1,
+ 'sections': [('Aims and Overarching Motivation',
+               2,
+               None,
+               'aims-and-overarching-motivation'),
+              ('Monday', 3, None, 'monday'),
+              ('Wednesday', 3, None, 'wednesday'),
+              ('Friday', 3, None, 'friday'),
+              ('Two-body Problems', 1, None, 'two-body-problems'),
+              ('Relative and Center of Mass Motion',
+               2,
+               None,
+               'relative-and-center-of-mass-motion'),
+              ('Deriving Elliptical Orbits',
+               2,
+               None,
+               'deriving-elliptical-orbits'),
+              ('Effective or Centrifugal Potential',
+               2,
+               None,
+               'effective-or-centrifugal-potential'),
+              ('Gravitational force example',
+               3,
+               None,
+               'gravitational-force-example'),
+              ('Harmonic Oscillator in two dimensions',
+               3,
+               None,
+               'harmonic-oscillator-in-two-dimensions'),
+              ('Stability of Orbits', 2, None, 'stability-of-orbits'),
+              ('Code example with gravitional force',
+               3,
+               None,
+               'code-example-with-gravitional-force')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="week11.do.txt-bs.html">PHY321: Two-body problems and Gravitational Forces</a>
+  </div>
+
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="#aims-and-overarching-motivation" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Aims and Overarching Motivation</a></li>
+     <!-- navigation toc: --> <li><a href="#monday" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Monday</a></li>
+     <!-- navigation toc: --> <li><a href="#wednesday" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wednesday</a></li>
+     <!-- navigation toc: --> <li><a href="#friday" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Friday</a></li>
+     <!-- navigation toc: --> <li><a href="#two-body-problems" style="font-size: 80%;"><b>Two-body Problems</b></a></li>
+     <!-- navigation toc: --> <li><a href="#relative-and-center-of-mass-motion" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Relative and Center of Mass Motion</a></li>
+     <!-- navigation toc: --> <li><a href="#deriving-elliptical-orbits" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Deriving Elliptical Orbits</a></li>
+     <!-- navigation toc: --> <li><a href="#effective-or-centrifugal-potential" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Effective or Centrifugal Potential</a></li>
+     <!-- navigation toc: --> <li><a href="#gravitational-force-example" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gravitational force example</a></li>
+     <!-- navigation toc: --> <li><a href="#harmonic-oscillator-in-two-dimensions" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Harmonic Oscillator in two dimensions</a></li>
+     <!-- navigation toc: --> <li><a href="#stability-of-orbits" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Stability of Orbits</a></li>
+     <!-- navigation toc: --> <li><a href="#code-example-with-gravitional-force" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Code example with gravitional force</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+
+<div class="container">
+
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<div class="jumbotron">
+<center><h1>PHY321: Two-body problems and Gravitational Forces</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): <a href="http://mhjgit.github.io/info/doc/web/" target="_self">Morten Hjorth-Jensen</a> -->
+
+<center>
+<b><a href="http://mhjgit.github.io/info/doc/web/" target="_self">Morten Hjorth-Jensen</a></b> [1, 2]
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<center>[1] <b>Department of Physics and Astronomy and Facility for Rare Ion Beams (FRIB), Michigan State University, USA</b></center>
+<center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
+<br>
+<p>
+<center><h4>Mar 9, 2021</h4></center> <!-- date -->
+<br>
+<p>
+<!-- potential-jumbotron-button -->
+</div> <!-- end jumbotron -->
+
+<!-- !split -->
+
+<h2 id="aims-and-overarching-motivation" class="anchor">Aims and Overarching Motivation </h2>
+
+<h3 id="monday" class="anchor">Monday </h3>
+
+Definition of the two-body problem, rewriting the equations in relative and center-of-mass coordinates
+
+<p>
+<b>Reading suggestion</b>: Taylor sections 8.2-8.3
+
+<h3 id="wednesday" class="anchor">Wednesday </h3>
+
+<p>
+The gravitional force and its solution in teo dimensions
+
+<p>
+<b>Reading suggestion</b>: Taylor chapter 8.4
+
+<h3 id="friday" class="anchor">Friday </h3>
+
+<p>
+Kepler's laws
+
+<p>
+<b>Reading suggestion</b>: Taylor section 8.5-8.6
+
+<p>
+<!-- !split -->
+
+<h1 id="two-body-problems" class="anchor">Two-body Problems </h1>
+
+<p>
+The gravitational potential energy and forces involving two masses \( a \) and \( b \) are
+$$
+\begin{eqnarray}
+V_{ab}&=&-\frac{Gm_am_b}{|\boldsymbol{r}_a-\boldsymbol{r}_b|},\\
+\nonumber
+F_{ba}&=&-\frac{Gm_am_b}{|\boldsymbol{r}_a-\boldsymbol{r}_b|^2}\hat{r}_{ab},\\
+\nonumber
+\hat{r}_{ab}&=&\frac{\boldsymbol{r}_b-\boldsymbol{r}_a}{|\boldsymbol{r}_a-\boldsymbol{r}_b|}.
+\end{eqnarray}
+$$
+
+<p>
+Here \( G=6.67\times 10^{-11} \) Nm$^2$/kg$^2$, and \( F_{ba} \) is the force
+on \( b \) due to \( a \). By inspection, one can see that the force on \( b \)
+due to \( a \) and the force on \( a \) due to \( b \) are equal and opposite. The
+net potential energy for a large number of masses would be
+
+$$
+\begin{equation}
+V=\sum_{a < b}U_{ab}=\frac{1}{2}\sum_{a\ne b}V_{ab}.
+\label{_auto1}
+\end{equation}
+$$
+
+<p>
+<!-- !split -->
+
+<h2 id="relative-and-center-of-mass-motion" class="anchor">Relative and Center of Mass Motion </h2>
+
+<p>
+Thus far, we have considered the trajectory as if the force is
+centered around a fixed point. For two bodies interacting only with
+one another, both masses circulate around the center of mass. One
+might think that solutions would become more complex when both
+particles move, but we will see here that the problem can be reduced
+to one with a single body moving according to a fixed force by
+expressing the trajectories for \( \boldsymbol{r}_1 \) and \( \boldsymbol{r}_2 \) into the
+center-of-mass coordinate \( \boldsymbol{R}_{\rm cm} \) and the relative
+coordinate \( \boldsymbol{r} \),
+
+$$
+\begin{eqnarray}
+\boldsymbol{R}_{\rm cm}&\equiv&\frac{m_1\boldsymbol{r}_1+m_2\boldsymbol{r}_2}{m_1+m_2},\\
+\nonumber
+\boldsymbol{r}&\equiv&\boldsymbol{r}_1-\boldsymbol{r_2}.
+\end{eqnarray}
+$$
+
+<p>
+Here, we assume the two particles interact only with one another, so
+\( \boldsymbol{F}_{12}=-\boldsymbol{F}_{21} \) (where \( \boldsymbol{F}_{ij} \) is the force on \( i \)
+due to \( j \). The equations of motion then become
+
+$$
+\begin{eqnarray}
+\ddot{\boldsymbol{R}}_{\rm cm}&=&\frac{1}{m_1+m_2}\left\{m_1\ddot{\boldsymbol{r}}_1+m_2\ddot{\boldsymbol{r}}_2\right\}\\
+\nonumber
+&=&\frac{1}{m_1+m_2}\left\{\boldsymbol{F}_{12}+\boldsymbol{F}_{21}\right\}=0.\\
+\ddot{\boldsymbol{r}}&=&\ddot{\boldsymbol{r}}_1-\ddot{\boldsymbol{r}}_2=\left(\frac{\boldsymbol{F}_{12}}{m_1}-\frac{\boldsymbol{F}_{21}}{m_2}\right)\\
+\nonumber
+&=&\left(\frac{1}{m_1}+\frac{1}{m_2}\right)\boldsymbol{F}_{12}.
+\end{eqnarray}
+$$
+
+<p>
+The first expression simply states that the center of mass coordinate
+\( \boldsymbol{R}_{\rm cm} \) moves at a fixed velocity. The second expression
+can be rewritten in terms of the reduced mass \( \mu \).
+
+$$
+\begin{eqnarray}
+\mu \ddot{\boldsymbol{r}}&=&\boldsymbol{F}_{12},\\
+\frac{1}{\mu}&=&\frac{1}{m_1}+\frac{1}{m_2},~~~~\mu=\frac{m_1m_2}{m_1+m_2}.
+\end{eqnarray}
+$$
+
+<p>
+Thus, one can treat the trajectory as a one-body problem where the
+reduced mass is \( \mu \), and a second trivial problem for the center of
+mass. The reduced mass is especially convenient when one is
+considering gravitational problems because then
+
+$$
+\begin{eqnarray}
+\mu \ddot{r}&=&-\frac{Gm_1m_2}{r^2}\hat{r}\\
+\nonumber
+&=&-\frac{GM\mu}{r^2}\hat{r},~~~M\equiv m_1+m_2.
+\end{eqnarray}
+$$
+
+<p>
+For the gravitational problem, the reduced mass then falls out and the
+trajectory depends only on the total mass \( M \).
+
+<p>
+The kinetic energy and momenta also have analogues in center-of-mass
+coordinates. The total and relative momenta are
+
+$$
+\begin{eqnarray}
+\boldsymbol{P}&\equiv&\boldsymbol{p}_1+\boldsymbol{p}_2=M\dot{\boldsymbol{R}}_{\rm cm},\\
+\nonumber
+\boldsymbol{q}&\equiv&\mu\dot{\boldsymbol{r}}.
+\end{eqnarray}
+$$
+
+<p>
+With these definitions, a little algebra shows that the kinetic energy becomes
+
+$$
+\begin{eqnarray}
+T&=&\frac{1}{2}m_1|\boldsymbol{v}_1|^2+\frac{1}{2}m_2|\boldsymbol{v}_2|^2\\
+\nonumber
+&=&\frac{1}{2}M|\dot{\boldsymbol{R}}_{\rm cm}|^2
++\frac{1}{2}\mu|\dot{\boldsymbol{r}}|^2\\
+\nonumber
+&=&\frac{P^2}{2M}+\frac{q^2}{2\mu}.
+\end{eqnarray}
+$$
+
+<p>
+The standard strategy is to transform into the center of mass frame,
+then treat the problem as one of a single particle of mass \( \mu \)
+undergoing a force \( \boldsymbol{F}_{12} \). Scattering angles can also be
+expressed in this frame, then transformed into the lab frame. In
+practice, one sees examples in the literature where \( d\sigma/d\Omega \)
+expressed in both the &quot;center-of-mass&quot; and in the &quot;laboratory&quot;
+frame.
+
+<p>
+<!-- !split -->
+
+<h2 id="deriving-elliptical-orbits" class="anchor">Deriving Elliptical Orbits </h2>
+
+<p>
+Kepler's laws state that a gravitational orbit should be an ellipse
+with the source of the gravitational field at one focus. Deriving this
+is surprisingly messy. To do this, we first use angular momentum
+conservation to transform the equations of motion so that it is in
+terms of \( r \) and \( \theta \) instead of \( r \) and \( t \). The overall strategy
+is to
+
+<ol>
+<li> Find equations of motion for \( r \) and \( t \) with no angle (\( \theta \)) mentioned, i.e. \( d^2r/dt^2=\cdots \). Angular momentum conservation will be used, and the equation will involve the angular momentum \( L \).</li>
+<li> Use angular momentum conservation to find an expression for \( \dot{\theta} \) in terms of \( r \).</li>
+<li> Use the chain rule to convert the equations of motions for \( r \), an expression involving \( r,\dot{r} \) and \( \ddot{r} \), to one involving \( r,dr/d\theta \) and \( d^2r/d\theta^2 \). This is quitecomplicated because the expressions will also involve a substitution \( u=1/r \) so that one finds an expression in terms of \( u \) and \( \theta \).</li>
+<li> Once \( u(\theta) \) is found, you need to show that this can be converted to the familiar form for an ellipse.</li>
+</ol>
+
+The equations of motion give
+
+$$
+\begin{eqnarray}
+\label{eq:radialeqofmotion}
+\frac{d}{dt}r^2&=&\frac{d}{dt}(x^2+y^2)=2x\dot{x}+2y\dot{y}=2r\dot{r},\\
+\nonumber
+\dot{r}&=&\frac{x}{r}\dot{x}+\frac{y}{r}\dot{y},\\
+\nonumber
+\ddot{r}&=&\frac{x}{r}\ddot{x}+\frac{y}{r}\ddot{y}
++\frac{\dot{x}^2+\dot{y}^2}{r}
+-\frac{\dot{r}^2}{r}.
+\end{eqnarray}
+$$
+
+<p>
+Recognizing that the numerator of the third term is the velocity squared, and that it can be written in polar coordinates, 
+
+$$
+\begin{equation}
+v^2=\dot{x}^2+\dot{y}^2=\dot{r}^2+r^2\dot{\theta}^2,
+\label{_auto2}
+\end{equation}
+$$
+
+<p>
+one can write \( \ddot{r} \) as
+
+$$
+\begin{eqnarray}
+\label{eq:radialeqofmotion2}
+\ddot{r}&=&\frac{F_x\cos\theta+F_y\sin\theta}{m}+\frac{\dot{r}^2+r^2\dot{\theta}^2}{r}-\frac{\dot{r}^2}{r}\\
+\nonumber
+&=&\frac{F}{m}+\frac{r^2\dot{\theta}^2}{r}\\
+\nonumber
+m\ddot{r}&=&F+\frac{L^2}{mr^3}.
+\end{eqnarray}
+$$
+
+<p>
+This derivation used the fact that the force was radial,
+\( F=F_r=F_x\cos\theta+F_y\sin\theta \), and that angular momentum is
+\( L=mrv_{\theta}=mr^2\dot{\theta} \). The term \( L^2/mr^3=mv^2/r \) behaves
+like an additional force. Sometimes this is referred to as a
+centrifugal force, but it is not a force. Instead, it is the
+consequence of considering the motion in a rotating (and therefore
+accelerating) frame.
+
+<p>
+Now, we switch to the particular case of an attractive inverse square
+force, \( F=-\alpha/r^2 \), and show that the trajectory, \( r(\theta) \), is
+an ellipse. To do this we transform derivatives w.r.t. time to
+derivatives w.r.t. \( \theta \) using the chain rule combined with angular
+momentum conservation, \( \dot{\theta}=L/mr^2 \).
+
+$$
+\begin{eqnarray}
+\label{eq:rtotheta}
+\dot{r}&=&\frac{dr}{d\theta}\dot{\theta}=\frac{dr}{d\theta}\frac{L}{mr^2},\\
+\nonumber
+\ddot{r}&=&\frac{d^2r}{d\theta^2}\dot{\theta}^2
++\frac{dr}{d\theta}\left(\frac{d}{dr}\frac{L}{mr^2}\right)\dot{r}\\
+\nonumber
+&=&\frac{d^2r}{d\theta^2}\left(\frac{L}{mr^2}\right)^2
+-2\frac{dr}{d\theta}\frac{L}{mr^3}\dot{r}\\
+\nonumber
+&=&\frac{d^2r}{d\theta^2}\left(\frac{L}{mr^2}\right)^2
+-\frac{2}{r}\left(\frac{dr}{d\theta}\right)^2\left(\frac{L}{mr^2}\right)^2
+\end{eqnarray}
+$$
+
+<p>
+Equating the two expressions for \( \ddot{r} \) in Eq.s \eqref{eq:radialeqofmotion2} and \eqref{eq:rtotheta} eliminates all the derivatives w.r.t. time, and provides a differential equation with only derivatives w.r.t. \( \theta \),
+
+$$
+\begin{equation}
+\label{eq:rdotdot}
+\frac{d^2r}{d\theta^2}\left(\frac{L}{mr^2}\right)^2
+-\frac{2}{r}\left(\frac{dr}{d\theta}\right)^2\left(\frac{L}{mr^2}\right)^2
+=\frac{F}{m}+\frac{L^2}{m^2r^3},
+\end{equation}
+$$
+
+<p>
+that when solved yields the trajectory, i.e. \( r(\theta) \). Up to this
+point the expressions work for any radial force, not just forces that
+fall as \( 1/r^2 \).
+
+<p>
+The trick to simplifying this differential equation for the inverse
+square problems is to make a substitution, \( u\equiv 1/r \), and rewrite
+the differential equation for \( u(\theta) \).
+
+$$
+\begin{eqnarray}
+r&=&1/u,\\
+\nonumber
+\frac{dr}{d\theta}&=&-\frac{1}{u^2}\frac{du}{d\theta},\\
+\nonumber
+\frac{d^2r}{d\theta^2}&=&\frac{2}{u^3}\left(\frac{du}{d\theta}\right)^2-\frac{1}{u^2}\frac{d^2u}{d\theta^2}.
+\end{eqnarray}
+$$
+
+<p>
+Plugging these expressions into Eq. \eqref{eq:rdotdot} gives an
+expression in terms of \( u \), \( du/d\theta \), and \( d^2u/d\theta^2 \). After
+some tedious algebra,
+
+$$
+\begin{equation}
+\frac{d^2u}{d\theta^2}=-u-\frac{F m}{L^2u^2}.
+\label{_auto3}
+\end{equation}
+$$
+
+<p>
+For the attractive inverse square law force, \( F=-\alpha u^2 \),
+
+$$
+\begin{equation}
+\frac{d^2u}{d\theta^2}=-u+\frac{m\alpha}{L^2}.
+\label{_auto4}
+\end{equation}
+$$
+
+<p>
+The solution has two arbitrary constants, \( A \) and \( \theta_0 \),
+
+$$
+\begin{eqnarray}
+\label{eq:Ctrajectory}
+u&=&\frac{m\alpha}{L^2}+A\cos(\theta-\theta_0),\\
+\nonumber
+r&=&\frac{1}{(m\alpha/L^2)+A\cos(\theta-\theta_0)}.
+\end{eqnarray}
+$$
+
+<p>
+The radius will be at a minimum when \( \theta=\theta_0 \) and at a
+maximum when \( \theta=\theta_0+\pi \). The constant \( A \) is related to the
+eccentricity of the orbit. When \( A=0 \) the radius is a constant
+\( r=L^2/(m\alpha) \), and the motion is circular. If one solved the
+expression \( mv^2/r=-\alpha/r^2 \) for a circular orbit, using the
+substitution \( v=L/(mr) \), one would reproduce the expression
+\( r=L^2/(m\alpha) \).
+
+<p>
+The form describing the elliptical trajectory in
+Eq. \eqref{eq:Ctrajectory} can be identified as an ellipse with one
+focus being the center of the ellipse by considering the definition of
+an ellipse as being the points such that the sum of the two distances
+between the two foci are a constant. Making that distance \( 2D \), the
+distance between the two foci as \( 2a \), and putting one focus at the
+origin,
+
+$$
+\begin{eqnarray}
+2D&=&r+\sqrt{(r\cos\theta-2a)^2+r^2\sin^2\theta},\\
+\nonumber
+4D^2+r^2-4Dr&=&r^2+4a^2-4ar\cos\theta,\\
+\nonumber
+r&=&\frac{D^2-a^2}{D+a\cos\theta}=\frac{1}{D/(D^2-a^2)-a\cos\theta/(D^2-a^2)}.
+\end{eqnarray}
+$$
+
+<p>
+By inspection, this is the same form as Eq. \eqref{eq:Ctrajectory} with \( D/(D^2-a^2)=m\alpha/L^2 \) and \( a/(D^2-a^2)=A \).
+
+<p>
+Let us remind ourselves about what an ellipse is before we proceed.
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">matplotlib</span> <span style="color: #008000; font-weight: bold">import</span> pyplot <span style="color: #008000; font-weight: bold">as</span> plt
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> pi
+
+u<span style="color: #666666">=1.</span>     <span style="color: #408080; font-style: italic">#x-position of the center</span>
+v<span style="color: #666666">=0.5</span>    <span style="color: #408080; font-style: italic">#y-position of the center</span>
+a<span style="color: #666666">=2.</span>     <span style="color: #408080; font-style: italic">#radius on the x-axis</span>
+b<span style="color: #666666">=1.5</span>    <span style="color: #408080; font-style: italic">#radius on the y-axis</span>
+
+t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linspace(<span style="color: #666666">0</span>, <span style="color: #666666">2*</span>pi, <span style="color: #666666">100</span>)
+plt<span style="color: #666666">.</span>plot( u<span style="color: #666666">+</span>a<span style="color: #666666">*</span>np<span style="color: #666666">.</span>cos(t) , v<span style="color: #666666">+</span>b<span style="color: #666666">*</span>np<span style="color: #666666">.</span>sin(t) )
+plt<span style="color: #666666">.</span>grid(color<span style="color: #666666">=</span><span style="color: #BA2121">&#39;lightgray&#39;</span>,linestyle<span style="color: #666666">=</span><span style="color: #BA2121">&#39;--&#39;</span>)
+plt<span style="color: #666666">.</span>show()
+</pre></div>
+<p>
+<!-- !split -->
+
+<h2 id="effective-or-centrifugal-potential" class="anchor">Effective or Centrifugal Potential </h2>
+
+<p>
+The total energy of a particle is
+
+$$
+\begin{eqnarray}
+E&=&U(r)+\frac{1}{2}mv_\theta^2+\frac{1}{2}m\dot{r}^2\\
+\nonumber
+&=&U(r)+\frac{1}{2}mr^2\dot{\theta}^2+\frac{1}{2}m\dot{r}^2\\
+\nonumber
+&=&U(r)+\frac{L^2}{2mr^2}+\frac{1}{2}m\dot{r}^2.
+\end{eqnarray}
+$$
+
+<p>
+The second term then contributes to the energy like an additional
+repulsive potential. The term is sometimes referred to as the
+"centrifugal" potential, even though it is actually the kinetic energy
+of the angular motion. Combined with \( U(r) \), it is sometimes referred
+to as the "effective" potential,
+
+$$
+\begin{eqnarray}
+U_{\rm eff}(r)&=&U(r)+\frac{L^2}{2mr^2}.
+\end{eqnarray}
+$$
+
+<p>
+Note that if one treats the effective potential like a real potential, one would expect to be able to generate an effective force,
+
+$$
+\begin{eqnarray}
+F_{\rm eff}&=&-\frac{d}{dr}U(r) -\frac{d}{dr}\frac{L^2}{2mr^2}\\
+\nonumber
+&=&F(r)+\frac{L^2}{mr^3}=F(r)+m\frac{v_\perp^2}{r},
+\end{eqnarray}
+$$
+
+<p>
+which is indeed matches the form for \( m\ddot{r} \) in Eq. \eqref{eq:radialeqofmotion2}, which included the <b>centrifugal</b> force.
+
+<p>
+The following code plots this effective potential for a simple choice of parameters, with a standard gravitational potential \( -\alpha/r \). Here we have chosen \( L=m=\alpha=1 \). 
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #408080; font-style: italic"># Common imports</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #666666">*</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+
+Deltax <span style="color: #666666">=</span> <span style="color: #666666">0.01</span>
+<span style="color: #408080; font-style: italic">#set up arrays</span>
+xinitial <span style="color: #666666">=</span> <span style="color: #666666">0.3</span>
+xfinal <span style="color: #666666">=</span> <span style="color: #666666">5.0</span>
+alpha <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>   <span style="color: #408080; font-style: italic"># spring constant</span>
+m <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>   <span style="color: #408080; font-style: italic"># mass, you can change these</span>
+AngMom <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>  <span style="color: #408080; font-style: italic">#  The angular momentum</span>
+n <span style="color: #666666">=</span> ceil((xfinal<span style="color: #666666">-</span>xinitial)<span style="color: #666666">/</span>Deltax)
+x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n):
+    x[i] <span style="color: #666666">=</span> xinitial<span style="color: #666666">+</span>i<span style="color: #666666">*</span>Deltax
+V <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+V <span style="color: #666666">=</span> <span style="color: #666666">-</span>alpha<span style="color: #666666">/</span>x<span style="color: #666666">+0.5*</span>AngMom<span style="color: #666666">*</span>AngMom<span style="color: #666666">/</span>(m<span style="color: #666666">*</span>x<span style="color: #666666">*</span>x)
+<span style="color: #408080; font-style: italic"># Plot potential</span>
+fig, ax <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots()
+ax<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;r[m]&#39;</span>)
+ax<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;V[J]&#39;</span>)
+ax<span style="color: #666666">.</span>plot(x, V)
+fig<span style="color: #666666">.</span>tight_layout()
+plt<span style="color: #666666">.</span>show()
+</pre></div>
+
+<h3 id="gravitational-force-example" class="anchor">Gravitational force example </h3>
+
+<p>
+Using the above parameters, we can now study the evolution of the system using for example the velocity Verlet method.
+This is done in the code here for an initial radius equal to the minimum of the potential well.  We seen then that the radius is always the same and corresponds to a circle (the radius is always constant).
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #408080; font-style: italic"># Common imports</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">pandas</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">pd</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #666666">*</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">os</span>
+
+<span style="color: #408080; font-style: italic"># Where to save the figures and data files</span>
+PROJECT_ROOT_DIR <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Results&quot;</span>
+FIGURE_ID <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Results/FigureFiles&quot;</span>
+DATA_ID <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;DataFiles/&quot;</span>
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>exists(PROJECT_ROOT_DIR):
+    os<span style="color: #666666">.</span>mkdir(PROJECT_ROOT_DIR)
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>exists(FIGURE_ID):
+    os<span style="color: #666666">.</span>makedirs(FIGURE_ID)
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>exists(DATA_ID):
+    os<span style="color: #666666">.</span>makedirs(DATA_ID)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">image_path</span>(fig_id):
+    <span style="color: #008000; font-weight: bold">return</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>join(FIGURE_ID, fig_id)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">data_path</span>(dat_id):
+    <span style="color: #008000; font-weight: bold">return</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>join(DATA_ID, dat_id)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">save_fig</span>(fig_id):
+    plt<span style="color: #666666">.</span>savefig(image_path(fig_id) <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;.png&quot;</span>, <span style="color: #008000">format</span><span style="color: #666666">=</span><span style="color: #BA2121">&#39;png&#39;</span>)
+
+
+<span style="color: #408080; font-style: italic"># Simple Gravitational Force   -alpha/r</span>
+    
+DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.01</span>
+<span style="color: #408080; font-style: italic">#set up arrays </span>
+tfinal <span style="color: #666666">=</span> <span style="color: #666666">100.0</span>
+n <span style="color: #666666">=</span> ceil(tfinal<span style="color: #666666">/</span>DeltaT)
+<span style="color: #408080; font-style: italic"># set up arrays for t, v and r</span>
+t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+v <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+r <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+<span style="color: #408080; font-style: italic"># Constants of the model, setting all variables to one for simplicity</span>
+alpha <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>
+AngMom <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>  <span style="color: #408080; font-style: italic">#  The angular momentum</span>
+m <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>  <span style="color: #408080; font-style: italic"># scale mass to one</span>
+c1 <span style="color: #666666">=</span> AngMom<span style="color: #666666">*</span>AngMom<span style="color: #666666">/</span>(m<span style="color: #666666">*</span>m)
+c2 <span style="color: #666666">=</span> AngMom<span style="color: #666666">*</span>AngMom<span style="color: #666666">/</span>m
+rmin <span style="color: #666666">=</span> (AngMom<span style="color: #666666">*</span>AngMom<span style="color: #666666">/</span>m<span style="color: #666666">/</span>alpha)
+<span style="color: #408080; font-style: italic"># Initial conditions</span>
+r0 <span style="color: #666666">=</span> rmin
+v0 <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
+r[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> r0
+v[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> v0
+<span style="color: #408080; font-style: italic"># Start integrating using the Velocity-Verlet  method</span>
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
+    <span style="color: #408080; font-style: italic"># Set up acceleration</span>
+    a <span style="color: #666666">=</span> <span style="color: #666666">-</span>alpha<span style="color: #666666">/</span>(r[i]<span style="color: #666666">**2</span>)<span style="color: #666666">+</span>c1<span style="color: #666666">/</span>(r[i]<span style="color: #666666">**3</span>)
+    <span style="color: #408080; font-style: italic"># update velocity, time and position using the Velocity-Verlet method</span>
+    r[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> r[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>v[i]<span style="color: #666666">+0.5*</span>(DeltaT<span style="color: #666666">**2</span>)<span style="color: #666666">*</span>a
+    anew <span style="color: #666666">=</span> <span style="color: #666666">-</span>alpha<span style="color: #666666">/</span>(r[i<span style="color: #666666">+1</span>]<span style="color: #666666">**2</span>)<span style="color: #666666">+</span>c1<span style="color: #666666">/</span>(r[i<span style="color: #666666">+1</span>]<span style="color: #666666">**3</span>)
+    v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i] <span style="color: #666666">+</span> <span style="color: #666666">0.5*</span>DeltaT<span style="color: #666666">*</span>(a<span style="color: #666666">+</span>anew)
+    t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i] <span style="color: #666666">+</span> DeltaT
+    <span style="color: #408080; font-style: italic"># Plot position as function of time</span>
+fig, ax <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots(<span style="color: #666666">2</span>,<span style="color: #666666">1</span>)
+ax[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;time&#39;</span>)
+ax[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;radius&#39;</span>)
+ax[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>plot(t,r)
+ax[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;time&#39;</span>)
+ax[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;Velocity&#39;</span>)
+ax[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>plot(t,v)
+save_fig(<span style="color: #BA2121">&quot;RadialGVV&quot;</span>)
+plt<span style="color: #666666">.</span>show()
+</pre></div>
+<p>
+Changing the value of the initial position to a value where the energy is positive, leads to an increasing radius with time, a so-called unbound orbit. Choosing on the other hand an initial radius that corresponds to a negative energy and different from the minimum value leads to a radius that oscillates back and forth between two values.
+
+<h3 id="harmonic-oscillator-in-two-dimensions" class="anchor">Harmonic Oscillator in two dimensions </h3>
+
+<p>
+Consider a particle of mass \( m \) in a 2-dimensional harmonic oscillator with potential
+
+$$
+U=\frac{1}{2}kr^2=\frac{1}{2}k(x^2+y^2).
+$$
+
+<p>
+If the orbit has angular momentum \( L \), we can find the radius and angular velocity of the circular orbit as well as the b) the angular frequency of small radial perturbations.
+
+<p>
+We consider the effective potential. The radius of a circular orbit is at the minimum of the potential (where the effective force is zero).
+The potential is plotted here with the parameters \( k=m=0.1 \) and \( L=1.0 \).
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #408080; font-style: italic"># Common imports</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #666666">*</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+
+Deltax <span style="color: #666666">=</span> <span style="color: #666666">0.01</span>
+<span style="color: #408080; font-style: italic">#set up arrays</span>
+xinitial <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>
+xfinal <span style="color: #666666">=</span> <span style="color: #666666">5.0</span>
+k <span style="color: #666666">=</span> <span style="color: #666666">0.1</span>   <span style="color: #408080; font-style: italic"># spring constant</span>
+m <span style="color: #666666">=</span> <span style="color: #666666">0.1</span>   <span style="color: #408080; font-style: italic"># mass, you can change these</span>
+AngMom <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>  <span style="color: #408080; font-style: italic">#  The angular momentum</span>
+n <span style="color: #666666">=</span> ceil((xfinal<span style="color: #666666">-</span>xinitial)<span style="color: #666666">/</span>Deltax)
+x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n):
+    x[i] <span style="color: #666666">=</span> xinitial<span style="color: #666666">+</span>i<span style="color: #666666">*</span>Deltax
+V <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+V <span style="color: #666666">=</span> <span style="color: #666666">0.5*</span>k<span style="color: #666666">*</span>x<span style="color: #666666">*</span>x<span style="color: #666666">+0.5*</span>AngMom<span style="color: #666666">*</span>AngMom<span style="color: #666666">/</span>(m<span style="color: #666666">*</span>x<span style="color: #666666">*</span>x)
+<span style="color: #408080; font-style: italic"># Plot potential</span>
+fig, ax <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots()
+ax<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;r[m]&#39;</span>)
+ax<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;V[J]&#39;</span>)
+ax<span style="color: #666666">.</span>plot(x, V)
+fig<span style="color: #666666">.</span>tight_layout()
+plt<span style="color: #666666">.</span>show()
+</pre></div>
+$$
+\begin{eqnarray*}
+U_{\rm eff}&=&\frac{1}{2}kr^2+\frac{L^2}{2mr^2}
+\end{eqnarray*}
+$$
+
+<p>
+The effective potential looks like that of a harmonic oscillator for
+large \( r \), but for small \( r \), the centrifugal potential repels the
+particle from the origin. The combination of the two potentials has a
+minimum for at some radius \( r_{\rm min} \). 
+
+$$
+\begin{eqnarray*}
+0&=&kr_{\rm min}-\frac{L^2}{mr_{\rm min}^3},\\
+r_{\rm min}&=&\left(\frac{L^2}{mk}\right)^{1/4},\\
+\dot{\theta}&=&\frac{L}{mr_{\rm min}^2}=\sqrt{k/m}.
+\end{eqnarray*}
+$$
+
+<p>
+For particles at \( r_{\rm min} \) with \( \dot{r}=0 \), the particle does not
+accelerate and \( r \) stays constant, i.e. a circular orbit. The radius
+of the circular orbit can be adjusted by changing the angular momentum
+\( L \).
+
+<p>
+For the above parameters this minimum is at \( r_{\rm min}=1 \).
+
+<p>
+ Now consider small vibrations about \( r_{\rm min} \). The effective spring constant is the curvature of the effective potential.
+
+$$
+\begin{eqnarray*}
+k_{\rm eff}&=&\left.\frac{d^2}{dr^2}U_{\rm eff}(r)\right|_{r=r_{\rm min}}=k+\frac{3L^2}{mr_{\rm min}^4}\\
+&=&4k,\\
+\omega&=&\sqrt{k_{\rm eff}/m}=2\sqrt{k/m}=2\dot{\theta}.
+\end{eqnarray*}
+$$
+
+<p>
+Here, the second step used the result of the last step from part
+(a). Because the radius oscillates with twice the angular frequency,
+the orbit has two places where \( r \) reaches a minimum in one
+cycle. This differs from the inverse-square force where there is one
+minimum in an orbit. One can show that the orbit for the harmonic
+oscillator is also elliptical, but in this case the center of the
+potential is at the center of the ellipse, not at one of the foci.
+
+<p>
+The solution is also simple to write down exactly in Cartesian coordinates. The \( x \) and \( y \) equations of motion separate,
+
+$$
+\begin{eqnarray*}
+\ddot{x}&=&-kx,\\
+\ddot{y}&=&-ky.
+\end{eqnarray*}
+$$
+
+<p>
+So the general solution can be expressed as
+
+$$
+\begin{eqnarray*}
+x&=&A\cos\omega_0 t+B\sin\omega_0 t,\\
+y&=&C\cos\omega_0 t+D\sin\omega_0 t.
+\end{eqnarray*}
+$$
+
+<p>
+The code here finds the solution for \( x \) and \( y \) using the code we developed in homework 4.
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.01</span>
+<span style="color: #408080; font-style: italic">#set up arrays </span>
+tfinal <span style="color: #666666">=</span> <span style="color: #666666">10.0</span>
+n <span style="color: #666666">=</span> ceil(tfinal<span style="color: #666666">/</span>DeltaT)
+<span style="color: #408080; font-style: italic"># set up arrays</span>
+t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+v <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((n,<span style="color: #666666">2</span>))
+r <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((n,<span style="color: #666666">2</span>))
+radius <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+<span style="color: #408080; font-style: italic"># Constants of the model</span>
+k <span style="color: #666666">=</span> <span style="color: #666666">0.1</span>   <span style="color: #408080; font-style: italic"># spring constant</span>
+m <span style="color: #666666">=</span> <span style="color: #666666">0.1</span>   <span style="color: #408080; font-style: italic"># mass, you can change these</span>
+omega02 <span style="color: #666666">=</span> sqrt(k<span style="color: #666666">/</span>m)  <span style="color: #408080; font-style: italic"># Frequency</span>
+AngMom <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>  <span style="color: #408080; font-style: italic">#  The angular momentum</span>
+rmin <span style="color: #666666">=</span> (AngMom<span style="color: #666666">*</span>AngMom<span style="color: #666666">/</span>k<span style="color: #666666">/</span>m)<span style="color: #666666">**0.25</span>
+<span style="color: #408080; font-style: italic"># Initial conditions as compact 2-dimensional arrays</span>
+<span style="color: #408080; font-style: italic">#x0 =rmin*0.5; y0 = sqrt(rmin*rmin-x0*x0)</span>
+x0 <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>; y0<span style="color: #666666">=</span> <span style="color: #666666">1.0</span>
+r0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([x0,y0]) 
+v0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">0.0</span>,<span style="color: #666666">0.0</span>])
+r[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> r0
+v[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> v0
+<span style="color: #408080; font-style: italic"># Start integrating using the Velocity-Verlet  method</span>
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
+    <span style="color: #408080; font-style: italic"># Set up the acceleration</span>
+    a <span style="color: #666666">=</span>  <span style="color: #666666">-</span>r[i]<span style="color: #666666">*</span>omega02  
+    <span style="color: #408080; font-style: italic"># update velocity, time and position using the Velocity-Verlet method</span>
+    r[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> r[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>v[i]<span style="color: #666666">+0.5*</span>(DeltaT<span style="color: #666666">**2</span>)<span style="color: #666666">*</span>a
+    anew <span style="color: #666666">=</span> <span style="color: #666666">-</span>r[i<span style="color: #666666">+1</span>]<span style="color: #666666">*</span>omega02  
+    v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i] <span style="color: #666666">+</span> <span style="color: #666666">0.5*</span>DeltaT<span style="color: #666666">*</span>(a<span style="color: #666666">+</span>anew)
+    t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i] <span style="color: #666666">+</span> DeltaT
+<span style="color: #408080; font-style: italic"># Plot position as function of time</span>
+radius <span style="color: #666666">=</span> np<span style="color: #666666">.</span>sqrt(r[:,<span style="color: #666666">0</span>]<span style="color: #666666">**2+</span>r[:,<span style="color: #666666">1</span>]<span style="color: #666666">**2</span>)
+fig, ax <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots(<span style="color: #666666">3</span>,<span style="color: #666666">1</span>)
+ax[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;time&#39;</span>)
+ax[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;radius squared&#39;</span>)
+ax[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>plot(t,r[:,<span style="color: #666666">0</span>]<span style="color: #666666">**2+</span>r[:,<span style="color: #666666">1</span>]<span style="color: #666666">**2</span>)
+ax[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;time&#39;</span>)
+ax[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;x position&#39;</span>)
+ax[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>plot(t,r[:,<span style="color: #666666">0</span>])
+ax[<span style="color: #666666">2</span>]<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;time&#39;</span>)
+ax[<span style="color: #666666">2</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;y position&#39;</span>)
+ax[<span style="color: #666666">2</span>]<span style="color: #666666">.</span>plot(t,r[:,<span style="color: #666666">1</span>])
+
+fig<span style="color: #666666">.</span>tight_layout()
+save_fig(<span style="color: #BA2121">&quot;2DimHOVV&quot;</span>)
+plt<span style="color: #666666">.</span>show()
+</pre></div>
+<p>
+With some work using double angle formulas, one can calculate
+
+$$
+\begin{eqnarray*}
+r^2&=&x^2+y^2\\
+\nonumber
+&=&(A^2+C^2)\cos^2(\omega_0t)+(B^2+D^2)\sin^2\omega_0t+(AB+CD)\cos(\omega_0t)\sin(\omega_0t)\\
+\nonumber
+&=&\alpha+\beta\cos 2\omega_0 t+\gamma\sin 2\omega_0 t,\\
+\alpha&=&\frac{A^2+B^2+C^2+D^2}{2},~~\beta=\frac{A^2-B^2+C^2-D^2}{2},~~\gamma=AB+CD,\\
+r^2&=&\alpha+(\beta^2+\gamma^2)^{1/2}\cos(2\omega_0 t-\delta),~~~\delta=\arctan(\gamma/\beta),
+\end{eqnarray*}
+$$
+
+<p>
+and see that radius oscillates with frequency \( 2\omega_0 \). The
+factor of two comes because the oscillation \( x=A\cos\omega_0t \) has two
+maxima for \( x^2 \), one at \( t=0 \) and one a half period later.
+
+<p>
+The following code shows first how we can solve this problem using the radial degrees of freedom only.
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.01</span>
+<span style="color: #408080; font-style: italic">#set up arrays </span>
+tfinal <span style="color: #666666">=</span> <span style="color: #666666">10.0</span>
+n <span style="color: #666666">=</span> ceil(tfinal<span style="color: #666666">/</span>DeltaT)
+<span style="color: #408080; font-style: italic"># set up arrays for t, v and r</span>
+t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+v <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+r <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+E <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+<span style="color: #408080; font-style: italic"># Constants of the model</span>
+AngMom <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>  <span style="color: #408080; font-style: italic">#  The angular momentum</span>
+m <span style="color: #666666">=</span> <span style="color: #666666">0.1</span>
+k <span style="color: #666666">=</span> <span style="color: #666666">0.1</span>
+omega02 <span style="color: #666666">=</span> k<span style="color: #666666">/</span>m
+c1 <span style="color: #666666">=</span> AngMom<span style="color: #666666">*</span>AngMom<span style="color: #666666">/</span>(m<span style="color: #666666">*</span>m)
+c2 <span style="color: #666666">=</span> AngMom<span style="color: #666666">*</span>AngMom<span style="color: #666666">/</span>m
+rmin <span style="color: #666666">=</span> (AngMom<span style="color: #666666">*</span>AngMom<span style="color: #666666">/</span>k<span style="color: #666666">/</span>m)<span style="color: #666666">**0.25</span>
+<span style="color: #408080; font-style: italic"># Initial conditions</span>
+r0 <span style="color: #666666">=</span> rmin
+v0 <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
+r[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> r0
+v[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> v0
+E[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> <span style="color: #666666">0.5*</span>m<span style="color: #666666">*</span>v0<span style="color: #666666">*</span>v0<span style="color: #666666">+0.5*</span>k<span style="color: #666666">*</span>r0<span style="color: #666666">*</span>r0<span style="color: #666666">+0.5*</span>c2<span style="color: #666666">/</span>(r0<span style="color: #666666">*</span>r0)
+<span style="color: #408080; font-style: italic"># Start integrating using the Velocity-Verlet  method</span>
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
+    <span style="color: #408080; font-style: italic"># Set up acceleration</span>
+    a <span style="color: #666666">=</span> <span style="color: #666666">-</span>r[i]<span style="color: #666666">*</span>omega02<span style="color: #666666">+</span>c1<span style="color: #666666">/</span>(r[i]<span style="color: #666666">**3</span>)    
+    <span style="color: #408080; font-style: italic"># update velocity, time and position using the Velocity-Verlet method</span>
+    r[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> r[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>v[i]<span style="color: #666666">+0.5*</span>(DeltaT<span style="color: #666666">**2</span>)<span style="color: #666666">*</span>a
+    anew <span style="color: #666666">=</span> <span style="color: #666666">-</span>r[i<span style="color: #666666">+1</span>]<span style="color: #666666">*</span>omega02<span style="color: #666666">+</span>c1<span style="color: #666666">/</span>(r[i<span style="color: #666666">+1</span>]<span style="color: #666666">**3</span>)
+    v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i] <span style="color: #666666">+</span> <span style="color: #666666">0.5*</span>DeltaT<span style="color: #666666">*</span>(a<span style="color: #666666">+</span>anew)
+    t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i] <span style="color: #666666">+</span> DeltaT
+    E[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> <span style="color: #666666">0.5*</span>m<span style="color: #666666">*</span>v[i<span style="color: #666666">+1</span>]<span style="color: #666666">*</span>v[i<span style="color: #666666">+1</span>]<span style="color: #666666">+0.5*</span>k<span style="color: #666666">*</span>r[i<span style="color: #666666">+1</span>]<span style="color: #666666">*</span>r[i<span style="color: #666666">+1</span>]<span style="color: #666666">+0.5*</span>c2<span style="color: #666666">/</span>(r[i<span style="color: #666666">+1</span>]<span style="color: #666666">*</span>r[i<span style="color: #666666">+1</span>])
+    <span style="color: #408080; font-style: italic"># Plot position as function of time</span>
+fig, ax <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots(<span style="color: #666666">2</span>,<span style="color: #666666">1</span>)
+ax[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;time&#39;</span>)
+ax[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;radius&#39;</span>)
+ax[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>plot(t,r)
+ax[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;time&#39;</span>)
+ax[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;Energy&#39;</span>)
+ax[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>plot(t,E)
+save_fig(<span style="color: #BA2121">&quot;RadialHOVV&quot;</span>)
+plt<span style="color: #666666">.</span>show()
+</pre></div>
+
+<h2 id="stability-of-orbits" class="anchor">Stability of Orbits </h2>
+
+<p>
+The effective force can be extracted from the effective potential, \( U_{\rm eff} \). Beginning from the equations of motion, Eq. \eqref{eq:radialeqofmotion}, for \( r \),
+
+$$
+\begin{eqnarray}
+m\ddot{r}&=&F+\frac{L^2}{mr^3}\\
+\nonumber
+&=&F_{\rm eff}\\
+\nonumber
+&=&-\partial_rU_{\rm eff},\\
+\nonumber
+F_{\rm eff}&=&-\partial_r\left[U(r)+(L^2/2mr^2)\right].
+\end{eqnarray}
+$$
+
+<p>
+For a circular orbit, the radius must be fixed as a function of time,
+so one must be at a maximum or a minimum of the effective
+potential. However, if one is at a maximum of the effective potential
+the radius will be unstable. For the attractive Coulomb force the
+effective potential will be dominated by the \( -\alpha/r \) term for
+large \( r \) because the centrifugal part falls off more quickly, \( \sim
+1/r^2 \). At low \( r \) the centrifugal piece wins and the effective
+potential is repulsive. Thus, the potential must have a minimum
+somewhere with negative potential. The circular orbits are then stable
+to perturbation.
+
+<p>
+The effective potential is sketched for two cases, a \( 1/r \) attractive
+potential and a \( 1/r^3 \) attractive potential. The \( 1/r \) case has a
+stable minimum, whereas the circular orbit in the \( 1/r^3 \) case is
+unstable.
+
+<p>
+If one considers a potential that falls as \( 1/r^3 \), the situation is
+reversed and the point where \( \partial_rU \) disappears will be a local
+maximum rather than a local minimum. <b>Fig to come here with code</b>
+
+<p>
+The repulsive centrifugal piece dominates at large \( r \) and the attractive
+Coulomb piece wins out at small \( r \). The circular orbit is then at a
+maximum of the effective potential and the orbits are unstable. It is
+the clear that for potentials that fall as \( r^n \), that one must have
+\( n>-2 \) for the orbits to be stable.
+
+<p>
+Consider a potential \( U(r)=\beta r \). For a particle of mass \( m \) with
+angular momentum \( L \), find the angular frequency of a circular
+orbit. Then find the angular frequency for small radial perturbations.
+
+<p>
+For the circular orbit you search for the position \( r_{\rm min} \) where the effective potential is minimized,
+
+$$
+\begin{eqnarray*}
+\partial_r\left\{\beta r+\frac{L^2}{2mr^2}\right\}&=&0,\\
+\beta&=&\frac{L^2}{mr_{\rm min}^3},\\
+r_{\rm min}&=&\left(\frac{L^2}{\beta m}\right)^{1/3},\\
+\dot{\theta}&=&\frac{L}{mr_{\rm min}^2}=\frac{\beta^{2/3}}{(mL)^{1/3}}
+\end{eqnarray*}
+$$
+
+<p>
+Now, we can find the angular frequency of small perturbations about the circular orbit. To do this we find the effective spring constant for the effective potential,
+
+$$
+\begin{eqnarray*}
+k_{\rm eff}&=&\partial_r^2 \left.U_{\rm eff}\right|_{r_{\rm min}}\\
+&=&\frac{3L^2}{mr_{\rm min}^4},\\
+\omega&=&\sqrt{\frac{k_{\rm eff}}{m}}\\
+&=&\frac{\beta^{2/3}}{(mL)^{1/3}}\sqrt{3}.
+\end{eqnarray*}
+$$
+
+<p>
+If the two frequencies, \( \dot{\theta} \) and \( \omega \), differ by an
+integer factor, the orbit's trajectory will repeat itself each time
+around. This is the case for the inverse-square force,
+\( \omega=\dot{\theta} \), and for the harmonic oscillator,
+\( \omega=2\dot{\theta} \). In this case, \( \omega=\sqrt{3}\dot{\theta} \),
+and the angles at which the maxima and minima occur change with each
+orbit.
+
+<h3 id="code-example-with-gravitional-force" class="anchor">Code example with gravitional force </h3>
+
+<p>
+The code example here is meant to illustrate how we can make a plot of the final orbit. We solve the equations in polar coordinates (the example here uses the minimum of the potential as initial value) and then we transform back to cartesian coordinates and plot \( x \) versus \( y \). We see that we get a perfect circle when we place ourselves at the minimum of the potential energy, as expected.
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #408080; font-style: italic"># Simple Gravitational Force   -alpha/r</span>
+    
+DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.01</span>
+<span style="color: #408080; font-style: italic">#set up arrays </span>
+tfinal <span style="color: #666666">=</span> <span style="color: #666666">8.0</span>
+n <span style="color: #666666">=</span> ceil(tfinal<span style="color: #666666">/</span>DeltaT)
+<span style="color: #408080; font-style: italic"># set up arrays for t, v and r</span>
+t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+v <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+r <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+phi <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+y <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+<span style="color: #408080; font-style: italic"># Constants of the model, setting all variables to one for simplicity</span>
+alpha <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>
+AngMom <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>  <span style="color: #408080; font-style: italic">#  The angular momentum</span>
+m <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>  <span style="color: #408080; font-style: italic"># scale mass to one</span>
+c1 <span style="color: #666666">=</span> AngMom<span style="color: #666666">*</span>AngMom<span style="color: #666666">/</span>(m<span style="color: #666666">*</span>m)
+c2 <span style="color: #666666">=</span> AngMom<span style="color: #666666">*</span>AngMom<span style="color: #666666">/</span>m
+rmin <span style="color: #666666">=</span> (AngMom<span style="color: #666666">*</span>AngMom<span style="color: #666666">/</span>m<span style="color: #666666">/</span>alpha)
+<span style="color: #408080; font-style: italic"># Initial conditions, place yourself at the potential min</span>
+r0 <span style="color: #666666">=</span> rmin
+v0 <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>  <span style="color: #408080; font-style: italic"># starts at rest</span>
+r[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> r0
+v[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> v0
+phi[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
+<span style="color: #408080; font-style: italic"># Start integrating using the Velocity-Verlet  method</span>
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
+    <span style="color: #408080; font-style: italic"># Set up acceleration</span>
+    a <span style="color: #666666">=</span> <span style="color: #666666">-</span>alpha<span style="color: #666666">/</span>(r[i]<span style="color: #666666">**2</span>)<span style="color: #666666">+</span>c1<span style="color: #666666">/</span>(r[i]<span style="color: #666666">**3</span>)
+    <span style="color: #408080; font-style: italic"># update velocity, time and position using the Velocity-Verlet method</span>
+    r[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> r[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>v[i]<span style="color: #666666">+0.5*</span>(DeltaT<span style="color: #666666">**2</span>)<span style="color: #666666">*</span>a
+    anew <span style="color: #666666">=</span> <span style="color: #666666">-</span>alpha<span style="color: #666666">/</span>(r[i<span style="color: #666666">+1</span>]<span style="color: #666666">**2</span>)<span style="color: #666666">+</span>c1<span style="color: #666666">/</span>(r[i<span style="color: #666666">+1</span>]<span style="color: #666666">**3</span>)
+    v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i] <span style="color: #666666">+</span> <span style="color: #666666">0.5*</span>DeltaT<span style="color: #666666">*</span>(a<span style="color: #666666">+</span>anew)
+    t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i] <span style="color: #666666">+</span> DeltaT
+    phi[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i<span style="color: #666666">+1</span>]<span style="color: #666666">*</span>c2<span style="color: #666666">/</span>(r0<span style="color: #666666">**2</span>)
+<span style="color: #408080; font-style: italic"># Find cartesian coordinates for easy plot    </span>
+x <span style="color: #666666">=</span> r<span style="color: #666666">*</span>np<span style="color: #666666">.</span>cos(phi)
+y <span style="color: #666666">=</span> r<span style="color: #666666">*</span>np<span style="color: #666666">.</span>sin(phi)
+fig, ax <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots(<span style="color: #666666">3</span>,<span style="color: #666666">1</span>)
+ax[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;time&#39;</span>)
+ax[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;radius&#39;</span>)
+ax[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>plot(t,r)
+ax[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;time&#39;</span>)
+ax[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;Angle $\cos{\phi}$&#39;</span>)
+ax[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>plot(t,np<span style="color: #666666">.</span>cos(phi))
+ax[<span style="color: #666666">2</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;y&#39;</span>)
+ax[<span style="color: #666666">2</span>]<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;x&#39;</span>)
+ax[<span style="color: #666666">2</span>]<span style="color: #666666">.</span>plot(x,y)
+
+save_fig(<span style="color: #BA2121">&quot;Phasespace&quot;</span>)
+plt<span style="color: #666666">.</span>show()
+</pre></div>
+<p>
+Try to change the initial value for \( r \) and see what kind of orbits you get.
+In order to test different energies, it can be useful to look at the plot of the effective potential discussed above.
+
+<p>
+However, for orbits different from a circle the above code would need modifications in order to allow us to display say an ellipse. For the latter, it is much easier to run our code in cartesian coordinates, as done here. In this code we test also energy conservation and see that it is conserved to numerical precision. The code here is a simple extension of the code we developed for homework 4.
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #408080; font-style: italic"># Common imports</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">pandas</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">pd</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #666666">*</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+
+DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.01</span>
+<span style="color: #408080; font-style: italic">#set up arrays </span>
+tfinal <span style="color: #666666">=</span> <span style="color: #666666">10.0</span>
+n <span style="color: #666666">=</span> ceil(tfinal<span style="color: #666666">/</span>DeltaT)
+<span style="color: #408080; font-style: italic"># set up arrays</span>
+t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+v <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((n,<span style="color: #666666">2</span>))
+r <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((n,<span style="color: #666666">2</span>))
+E <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+<span style="color: #408080; font-style: italic"># Constants of the model</span>
+m <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>   <span style="color: #408080; font-style: italic"># mass, you can change these</span>
+alpha <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>
+<span style="color: #408080; font-style: italic"># Initial conditions as compact 2-dimensional arrays</span>
+x0 <span style="color: #666666">=</span> <span style="color: #666666">0.5</span>; y0<span style="color: #666666">=</span> <span style="color: #666666">0.</span>
+r0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([x0,y0]) 
+v0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">0.0</span>,<span style="color: #666666">1.0</span>])
+r[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> r0
+v[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> v0
+rabs <span style="color: #666666">=</span> sqrt(<span style="color: #008000">sum</span>(r[<span style="color: #666666">0</span>]<span style="color: #666666">*</span>r[<span style="color: #666666">0</span>]))
+E[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> <span style="color: #666666">0.5*</span>m<span style="color: #666666">*</span>(v[<span style="color: #666666">0</span>,<span style="color: #666666">0</span>]<span style="color: #666666">**2+</span>v[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>]<span style="color: #666666">**2</span>)<span style="color: #666666">-</span>alpha<span style="color: #666666">/</span>rabs
+<span style="color: #408080; font-style: italic"># Start integrating using the Velocity-Verlet  method</span>
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
+    <span style="color: #408080; font-style: italic"># Set up the acceleration</span>
+    rabs <span style="color: #666666">=</span> sqrt(<span style="color: #008000">sum</span>(r[i]<span style="color: #666666">*</span>r[i]))
+    a <span style="color: #666666">=</span>  <span style="color: #666666">-</span>alpha<span style="color: #666666">*</span>r[i]<span style="color: #666666">/</span>(rabs<span style="color: #666666">**3</span>)
+    <span style="color: #408080; font-style: italic"># update velocity, time and position using the Velocity-Verlet method</span>
+    r[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> r[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>v[i]<span style="color: #666666">+0.5*</span>(DeltaT<span style="color: #666666">**2</span>)<span style="color: #666666">*</span>a
+    rabs <span style="color: #666666">=</span> sqrt(<span style="color: #008000">sum</span>(r[i<span style="color: #666666">+1</span>]<span style="color: #666666">*</span>r[i<span style="color: #666666">+1</span>]))
+    anew <span style="color: #666666">=</span> <span style="color: #666666">-</span>alpha<span style="color: #666666">*</span>r[i<span style="color: #666666">+1</span>]<span style="color: #666666">/</span>(rabs<span style="color: #666666">**3</span>)
+    v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i] <span style="color: #666666">+</span> <span style="color: #666666">0.5*</span>DeltaT<span style="color: #666666">*</span>(a<span style="color: #666666">+</span>anew)
+    E[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> <span style="color: #666666">0.5*</span>m<span style="color: #666666">*</span>(v[i<span style="color: #666666">+1</span>,<span style="color: #666666">0</span>]<span style="color: #666666">**2+</span>v[i<span style="color: #666666">+1</span>,<span style="color: #666666">1</span>]<span style="color: #666666">**2</span>)<span style="color: #666666">-</span>alpha<span style="color: #666666">/</span>rabs
+    t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i] <span style="color: #666666">+</span> DeltaT
+<span style="color: #408080; font-style: italic"># Plot position as function of time</span>
+fig, ax <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots(<span style="color: #666666">3</span>,<span style="color: #666666">1</span>)
+ax[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;y&#39;</span>)
+ax[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;x&#39;</span>)
+ax[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>plot(r[:,<span style="color: #666666">0</span>],r[:,<span style="color: #666666">1</span>])
+ax[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;time&#39;</span>)
+ax[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;y position&#39;</span>)
+ax[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>plot(t,r[:,<span style="color: #666666">0</span>])
+ax[<span style="color: #666666">2</span>]<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;time&#39;</span>)
+ax[<span style="color: #666666">2</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;y position&#39;</span>)
+ax[<span style="color: #666666">2</span>]<span style="color: #666666">.</span>plot(t,r[:,<span style="color: #666666">1</span>])
+
+fig<span style="color: #666666">.</span>tight_layout()
+save_fig(<span style="color: #BA2121">&quot;2DimGravity&quot;</span>)
+plt<span style="color: #666666">.</span>show()
+<span style="color: #008000">print</span>(E)
+</pre></div>
+<p>
+
+<!-- ------------------- end of main content --------------- -->
+
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap footer
+<footer>
+<a href="https://..."><img width="250" align=right src="https://..."></a>
+</footer>
+-->
+
+
+<center style="font-size:80%">
+<!-- copyright --> &copy; 1999-2021, "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/". Released under CC Attribution-NonCommercial 4.0 license
+</center>
+
+
+</body>
+</html>
+    
+
