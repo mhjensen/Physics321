@@ -553,7 +553,7 @@ The code below uses the Runge-Kutta4 methods.
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
 <div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%;"><span></span>DeltaT = <span style="color: #B452CD">0.001</span>
 <span style="color: #228B22">#set up arrays </span>
-tfinal = <span style="color: #B452CD">20</span> <span style="color: #228B22"># in years</span>
+tfinal = <span style="color: #B452CD">20</span> <span style="color: #228B22"># in dimensionless time</span>
 n = ceil(tfinal/DeltaT)
 <span style="color: #228B22"># set up arrays for t, v, and x</span>
 t = np.zeros(n)
@@ -567,7 +567,7 @@ v[<span style="color: #B452CD">0</span>] = v0
 gamma = <span style="color: #B452CD">0.2</span>
 Omegatilde = <span style="color: #B452CD">0.5</span>
 Ftilde = <span style="color: #B452CD">1.0</span>
-<span style="color: #228B22"># Start integrating using Euler&#39;s method</span>
+<span style="color: #228B22"># Start integrating using the RK4 method</span>
 <span style="color: #228B22"># Note that we define the force function as a SpringForce</span>
 RK4(v,x,t,n,SpringForce)
 

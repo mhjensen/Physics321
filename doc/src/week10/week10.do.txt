@@ -390,7 +390,7 @@ The code below uses the Runge-Kutta4 methods.
 !bc pycod
 DeltaT = 0.001
 #set up arrays 
-tfinal = 20 # in years
+tfinal = 20 # in dimensionless time
 n = ceil(tfinal/DeltaT)
 # set up arrays for t, v, and x
 t = np.zeros(n)
@@ -404,7 +404,7 @@ v[0] = v0
 gamma = 0.2
 Omegatilde = 0.5
 Ftilde = 1.0
-# Start integrating using Euler's method
+# Start integrating using the RK4 method
 # Note that we define the force function as a SpringForce
 RK4(v,x,t,n,SpringForce)
 

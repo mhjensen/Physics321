@@ -609,7 +609,7 @@ The code below uses the Runge-Kutta4 methods.
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.001</span>
 <span style="color: #408080; font-style: italic">#set up arrays </span>
-tfinal <span style="color: #666666">=</span> <span style="color: #666666">20</span> <span style="color: #408080; font-style: italic"># in years</span>
+tfinal <span style="color: #666666">=</span> <span style="color: #666666">20</span> <span style="color: #408080; font-style: italic"># in dimensionless time</span>
 n <span style="color: #666666">=</span> ceil(tfinal<span style="color: #666666">/</span>DeltaT)
 <span style="color: #408080; font-style: italic"># set up arrays for t, v, and x</span>
 t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
@@ -623,7 +623,7 @@ v[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> v
 gamma <span style="color: #666666">=</span> <span style="color: #666666">0.2</span>
 Omegatilde <span style="color: #666666">=</span> <span style="color: #666666">0.5</span>
 Ftilde <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>
-<span style="color: #408080; font-style: italic"># Start integrating using Euler&#39;s method</span>
+<span style="color: #408080; font-style: italic"># Start integrating using the RK4 method</span>
 <span style="color: #408080; font-style: italic"># Note that we define the force function as a SpringForce</span>
 RK4(v,x,t,n,SpringForce)
 
