@@ -56,6 +56,16 @@ Automatically generated HTML file from DocOnce source
                2,
                None,
                'differential-equations-runge-kutta-methods'),
+              ('Example: The classical pendulum and scaling the equations',
+               2,
+               None,
+               'example-the-classical-pendulum-and-scaling-the-equations'),
+              ('More on the Pendulum', 2, None, 'more-on-the-pendulum'),
+              ('The Pendulum code', 2, None, 'the-pendulum-code'),
+              ('Setting up the various variables and running the code',
+               2,
+               None,
+               'setting-up-the-various-variables-and-running-the-code'),
               ('Principle of Superposition and Periodic Forces (Fourier '
                'Transforms)',
                2,
@@ -70,11 +80,6 @@ Automatically generated HTML file from DocOnce source
                2,
                None,
                'response-to-transient-force'),
-              ('The classical pendulum and scaling the equations',
-               2,
-               None,
-               'the-classical-pendulum-and-scaling-the-equations'),
-              ('More on the Pendulum', 2, None, 'more-on-the-pendulum'),
               ('Two-body Problems', 1, None, 'two-body-problems'),
               ('Relative and Center of Mass Motion',
                2,
@@ -131,12 +136,14 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="#friday" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Friday</a></li>
      <!-- navigation toc: --> <li><a href="#numerical-studies-of-driven-oscillations" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Numerical Studies of Driven Oscillations</a></li>
      <!-- navigation toc: --> <li><a href="#differential-equations-runge-kutta-methods" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Differential Equations, Runge-Kutta methods</a></li>
+     <!-- navigation toc: --> <li><a href="#example-the-classical-pendulum-and-scaling-the-equations" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Example: The classical pendulum and scaling the equations</a></li>
+     <!-- navigation toc: --> <li><a href="#more-on-the-pendulum" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;More on the Pendulum</a></li>
+     <!-- navigation toc: --> <li><a href="#the-pendulum-code" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;The Pendulum code</a></li>
+     <!-- navigation toc: --> <li><a href="#setting-up-the-various-variables-and-running-the-code" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Setting up the various variables and running the code</a></li>
      <!-- navigation toc: --> <li><a href="#principle-of-superposition-and-periodic-forces-fourier-transforms" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Principle of Superposition and Periodic Forces (Fourier Transforms)</a></li>
      <!-- navigation toc: --> <li><a href="#fourier-series" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Fourier Series</a></li>
      <!-- navigation toc: --> <li><a href="#solving-differential-equations-with-fouries-series" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Solving differential equations with Fouries series</a></li>
      <!-- navigation toc: --> <li><a href="#response-to-transient-force" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Response to Transient Force</a></li>
-     <!-- navigation toc: --> <li><a href="#the-classical-pendulum-and-scaling-the-equations" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;The classical pendulum and scaling the equations</a></li>
-     <!-- navigation toc: --> <li><a href="#more-on-the-pendulum" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;More on the Pendulum</a></li>
      <!-- navigation toc: --> <li><a href="#two-body-problems" style="font-size: 80%;"><b>Two-body Problems</b></a></li>
      <!-- navigation toc: --> <li><a href="#relative-and-center-of-mass-motion" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Relative and Center of Mass Motion</a></li>
      <!-- navigation toc: --> <li><a href="#deriving-elliptical-orbits" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Deriving Elliptical Orbits</a></li>
@@ -174,7 +181,7 @@ MathJax.Hub.Config({
 <center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
 <br>
 <p>
-<center><h4>Mar 9, 2021</h4></center> <!-- date -->
+<center><h4>Mar 10, 2021</h4></center> <!-- date -->
 <br>
 <p>
 <!-- potential-jumbotron-button -->
@@ -194,7 +201,7 @@ Driven oscillations and resonances with numerical examples and Fourier Series
 
 <h3 id="wednesday" class="anchor">Wednesday </h3>
 
-Summary oscillations and resonances with examples and Fourier Series
+Oscillations and resonances with examples like th emathematical pendulum.  Discussion of  Fourier Series.
 
 <p>
 <b>Reading suggestion</b>: Taylor chapter 5.
@@ -202,7 +209,7 @@ Summary oscillations and resonances with examples and Fourier Series
 <h3 id="friday" class="anchor">Friday </h3>
 
 <p>
-Begin two-body problems
+Summary oscillations and if we get time begin two-body problems.
 <b>Reading suggestion</b>: Taylor section 8.2.
 
 <p>
@@ -617,6 +624,171 @@ save_fig(<span style="color: #BA2121">&quot;ForcedBlockRK4&quot;</span>)
 plt<span style="color: #666666">.</span>show()
 </pre></div>
 <p>
+<!-- !split -->
+
+<h2 id="example-the-classical-pendulum-and-scaling-the-equations" class="anchor">Example: The classical pendulum and scaling the equations </h2>
+
+<p>
+Let us end our discussion of oscillations with another classical case, the pendulum.
+
+<p>
+The angular equation of motion of the pendulum is given by
+Newton's equation and with no external force it reads 
+$$
+\begin{equation}
+  ml\frac{d^2\theta}{dt^2}+mgsin(\theta)=0,
+\label{_auto10}
+\end{equation}
+$$
+
+with an angular velocity and acceleration given by
+$$
+\begin{equation}
+     v=l\frac{d\theta}{dt},
+\label{_auto11}
+\end{equation}
+$$
+
+and 
+$$
+\begin{equation}
+     a=l\frac{d^2\theta}{dt^2}.
+\label{_auto12}
+\end{equation}
+$$
+
+<p>
+We do however expect that the motion will gradually come to an end due a viscous drag torque acting on the pendulum. 
+In the presence of the drag, the above equation becomes
+$$
+\begin{equation}
+   ml\frac{d^2\theta}{dt^2}+\nu\frac{d\theta}{dt}  +mgsin(\theta)=0, \label{eq:pend1}
+\end{equation}
+$$
+
+where \( \nu \) is now a positive constant parameterizing the viscosity
+of the medium in question. In order to maintain the motion against
+viscosity, it is necessary to add some external driving force. 
+We choose here a periodic driving force. The last equation becomes then
+$$
+\begin{equation}
+   ml\frac{d^2\theta}{dt^2}+\nu\frac{d\theta}{dt}  +mgsin(\theta)=Asin(\omega t), \label{eq:pend2}
+\end{equation}
+$$
+
+with \( A \) and \( \omega \) two constants representing the amplitude and 
+the angular frequency respectively. The latter is called the driving frequency.
+
+<p>
+We define 
+$$
+      \omega_0=\sqrt{g/l},
+  $$
+
+the so-called natural frequency and the new dimensionless quantities
+$$
+      \hat{t}=\omega_0t,
+  $$
+
+with the dimensionless driving frequency
+$$
+     \hat{\omega}=\frac{\omega}{\omega_0},
+  $$
+
+and introducing the quantity \( Q \), called the <em>quality factor</em>,
+$$
+     Q=\frac{mg}{\omega_0\nu},
+  $$
+
+  and the dimensionless amplitude 
+$$
+\hat{A}=\frac{A}{mg}
+  $$
+
+<p>
+<!-- !split -->
+
+<h2 id="more-on-the-pendulum" class="anchor">More on the Pendulum </h2>
+
+<p>
+We have 
+$$
+    \frac{d^2\theta}{d\hat{t}^2}+\frac{1}{Q}\frac{d\theta}{d\hat{t}}  
+     +sin(\theta)=\hat{A}cos(\hat{\omega}\hat{t}).
+$$
+
+This equation can in turn be recast in terms of two coupled first-order differential equations as follows
+$$
+     \frac{d\theta}{d\hat{t}}=\hat{v},
+$$
+
+and
+$$
+     \frac{d\hat{v}}{d\hat{t}}=-\frac{\hat{v}}{Q}-sin(\theta)+\hat{A}cos(\hat{\omega}\hat{t}).
+$$
+
+<p>
+These are the equations to be solved.  The factor \( Q \) represents the
+number of oscillations of the undriven system that must occur before
+its energy is significantly reduced due to the viscous drag. The
+amplitude \( \hat{A} \) is measured in units of the maximum possible
+gravitational torque while \( \hat{\omega} \) is the angular frequency of
+the external torque measured in units of the pendulum's natural
+frequency.
+
+<p>
+<!-- !split -->
+
+<h2 id="the-pendulum-code" class="anchor">The Pendulum code </h2>
+
+<p>
+We need to define a new force, which we simply call the pendulum force. The only thing which changes from our previous spring-force problem is the non-linearity introduced by angle \( \theta \)  due to the \( \sin{\theta} \) term.  Here we have kept a generic variable \( x \) instead. This makes our codes very similar.
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">PendulumForce</span>(v,x,t):
+<span style="color: #408080; font-style: italic">#   note here that we have divided by mass and we return the acceleration</span>
+    <span style="color: #008000; font-weight: bold">return</span>  <span style="color: #666666">-</span>gamma<span style="color: #666666">*</span>v<span style="color: #666666">-</span>sin(x)<span style="color: #666666">+</span>Ftilde<span style="color: #666666">*</span>cos(t<span style="color: #666666">*</span>Omegatilde)
+</pre></div>
+<p>
+<!-- !split -->
+
+<h2 id="setting-up-the-various-variables-and-running-the-code" class="anchor">Setting up the various variables and running the code </h2>
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.001</span>
+<span style="color: #408080; font-style: italic">#set up arrays </span>
+tfinal <span style="color: #666666">=</span> <span style="color: #666666">20</span> <span style="color: #408080; font-style: italic"># in years</span>
+n <span style="color: #666666">=</span> ceil(tfinal<span style="color: #666666">/</span>DeltaT)
+<span style="color: #408080; font-style: italic"># set up arrays for t, v, and x</span>
+t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+v <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+theta <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+<span style="color: #408080; font-style: italic"># Initial conditions (can change to more than one dim)</span>
+theta0 <span style="color: #666666">=</span>  <span style="color: #666666">1.0</span> 
+v0 <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
+theta[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> theta0
+v[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> v0
+gamma <span style="color: #666666">=</span> <span style="color: #666666">0.2</span>
+Omegatilde <span style="color: #666666">=</span> <span style="color: #666666">0.5</span>
+Ftilde <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>
+<span style="color: #408080; font-style: italic"># Start integrating using the RK4 method</span>
+<span style="color: #408080; font-style: italic"># Note that we define the force function as a PendulumForce</span>
+RK4(v,theta,t,n,PendulumForce)
+
+<span style="color: #408080; font-style: italic"># Plot position as function of time    </span>
+fig, ax <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots()
+ax<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;theta[radians]&#39;</span>)
+ax<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;t[s]&#39;</span>)
+ax<span style="color: #666666">.</span>plot(t, theta)
+fig<span style="color: #666666">.</span>tight_layout()
+save_fig(<span style="color: #BA2121">&quot;PendulumRK4&quot;</span>)
+plt<span style="color: #666666">.</span>show()
+</pre></div>
+<p>
 <!-- !split  -->
 
 <h2 id="principle-of-superposition-and-periodic-forces-fourier-transforms" class="anchor">Principle of Superposition and Periodic Forces (Fourier Transforms) </h2>
@@ -629,7 +801,7 @@ solution for the entire driving force is
 $$
 \begin{equation}
 x_p(t)=\sum_nx_{pn}(t).
-\label{_auto10}
+\label{_auto13}
 \end{equation}
 $$
 
@@ -692,7 +864,7 @@ harmonics,
 $$
 \begin{equation}
 F(t)=\frac{f_0}{2}+\sum_{n>0} f_n\cos(2n\pi t/\tau)+g_n\sin(2n\pi t/\tau).
-\label{_auto11}
+\label{_auto14}
 \end{equation}
 $$
 
@@ -772,7 +944,7 @@ to zero unless \( m=n \). In that case the \( m=n \) term gives
 $$
 \begin{equation}
 \int_{-\tau/2}^{\tau/2}dt~\cos^2(m\omega t)=\frac{\tau}{2},
-\label{_auto12}
+\label{_auto15}
 \end{equation}
 $$
 
@@ -796,7 +968,7 @@ Consider the driving force:
 $$
 \begin{equation}
 F(t)=At/\tau,~~-\tau/2 < t < \tau/2,~~~F(t+\tau)=F(t).
-\label{_auto13}
+\label{_auto16}
 \end{equation}
 $$
 
@@ -905,7 +1077,7 @@ conditions \( v_0=I/m \) and \( x_0=0 \). This gives
 $$
 \begin{equation}
 x(t)=\frac{I}{m\omega'}e^{-\beta t}\sin\omega't, ~~t>0.
-\label{_auto14}
+\label{_auto17}
 \end{equation}
 $$
 
@@ -916,7 +1088,7 @@ occurs at time \( t_i \) the trajectory would be
 $$
 \begin{equation}
 x(t)=\frac{I_i}{m\omega'}e^{-\beta (t-t_i)}\sin[\omega'(t-t_i)] \Theta(t-t_i),
-\label{_auto15}
+\label{_auto18}
 \end{equation}
 $$
 
@@ -928,7 +1100,7 @@ superposition tells us that we can sum over each contribution,
 $$
 \begin{equation}
 x(t)=\sum_i\frac{I_i}{m\omega'}e^{-\beta(t-t_i)}\sin[\omega'(t-t_i)]\Theta(t-t_i)
-\label{_auto16}
+\label{_auto19}
 \end{equation} 
 $$
 
@@ -1032,119 +1204,6 @@ $$
 x(t>>\tau)&=&\frac{F_0\tau}{m\omega_0} \sqrt{2\pi} e^{-\omega_0^2\tau^2/2}\sin(\omega_0t).
 \end{eqnarray*}
 $$
-
-<p>
-<!-- !split -->
-
-<h2 id="the-classical-pendulum-and-scaling-the-equations" class="anchor">The classical pendulum and scaling the equations </h2>
-
-<p>
-Let us end our discussion of oscillations with another classical case, the pendulum.
-
-<p>
-The angular equation of motion of the pendulum is given by
-Newton's equation and with no external force it reads 
-$$
-\begin{equation}
-  ml\frac{d^2\theta}{dt^2}+mgsin(\theta)=0,
-\label{_auto17}
-\end{equation}
-$$
-
-with an angular velocity and acceleration given by
-$$
-\begin{equation}
-     v=l\frac{d\theta}{dt},
-\label{_auto18}
-\end{equation}
-$$
-
-and 
-$$
-\begin{equation}
-     a=l\frac{d^2\theta}{dt^2}.
-\label{_auto19}
-\end{equation}
-$$
-
-<p>
-We do however expect that the motion will gradually come to an end due a viscous drag torque acting on the pendulum. 
-In the presence of the drag, the above equation becomes
-$$
-\begin{equation}
-   ml\frac{d^2\theta}{dt^2}+\nu\frac{d\theta}{dt}  +mgsin(\theta)=0, \label{eq:pend1}
-\end{equation}
-$$
-
-where \( \nu \) is now a positive constant parameterizing the viscosity
-of the medium in question. In order to maintain the motion against
-viscosity, it is necessary to add some external driving force. 
-We choose here a periodic driving force. The last equation becomes then
-$$
-\begin{equation}
-   ml\frac{d^2\theta}{dt^2}+\nu\frac{d\theta}{dt}  +mgsin(\theta)=Asin(\omega t), \label{eq:pend2}
-\end{equation}
-$$
-
-with \( A \) and \( \omega \) two constants representing the amplitude and 
-the angular frequency respectively. The latter is called the driving frequency.
-
-<p>
-We define 
-$$
-      \omega_0=\sqrt{g/l},
-  $$
-
-the so-called natural frequency and the new dimensionless quantities
-$$
-      \hat{t}=\omega_0t,
-  $$
-
-with the dimensionless driving frequency
-$$
-     \hat{\omega}=\frac{\omega}{\omega_0},
-  $$
-
-and introducing the quantity \( Q \), called the <em>quality factor</em>,
-$$
-     Q=\frac{mg}{\omega_0\nu},
-  $$
-
-  and the dimensionless amplitude 
-$$
-\hat{A}=\frac{A}{mg}
-  $$
-
-<p>
-<!-- !split -->
-
-<h2 id="more-on-the-pendulum" class="anchor">More on the Pendulum </h2>
-
-<p>
-We have 
-$$
-    \frac{d^2\theta}{d\hat{t}^2}+\frac{1}{Q}\frac{d\theta}{d\hat{t}}  
-     +sin(\theta)=\hat{A}cos(\hat{\omega}\hat{t}).
-$$
-
-This equation can in turn be recast in terms of two coupled first-order differential equations as follows
-$$
-     \frac{d\theta}{d\hat{t}}=\hat{v},
-$$
-
-and
-$$
-     \frac{d\hat{v}}{d\hat{t}}=-\frac{\hat{v}}{Q}-sin(\theta)+\hat{A}cos(\hat{\omega}\hat{t}).
-$$
-
-<p>
-These are the equations to be solved.  The factor \( Q \) represents the
-number of oscillations of the undriven system that must occur before
-its energy is significantly reduced due to the viscous drag. The
-amplitude \( \hat{A} \) is measured in units of the maximum possible
-gravitational torque while \( \hat{\omega} \) is the angular frequency of
-the external torque measured in units of the pendulum's natural
-frequency.
 
 <p>
 <!-- !split -->
