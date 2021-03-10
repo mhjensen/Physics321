@@ -374,12 +374,16 @@ $$
 
 This means that we can define the following algorithm for 
 the second-order Runge-Kutta method, RK2.
+
 $$
 \begin{equation} 
 k_1=hf(t_i,y_i),
 \label{_auto7}
 \end{equation} 
 $$
+
+<p>
+and
 
 $$
 \begin{equation}
@@ -388,7 +392,9 @@ k_2=hf(t_{i+1/2},y_i+k_1/2),
 \end{equation}
 $$
 
+<p>
 with the final value
+
 $$
 \begin{equation} 
 y_{i+i}\approx y_i + k_2 +O(h^3). 
@@ -405,19 +411,26 @@ in the solution.
 
 <p>
 The fourth-order Runge-Kutta, RK4, has the following algorithm
+
 $$
 k_1=hf(t_i,y_i) \hspace{0.5cm}   k_2=hf(t_i+h/2,y_i+k_1/2)
 $$
+
+<p>
+and
 
 $$
 k_3=hf(t_i+h/2,y_i+k_2/2)\hspace{0.5cm}   k_4=hf(t_i+h,y_i+k_3)
 $$
 
+<p>
 with the final result
+
 $$
 y_{i+1}=y_i +\frac{1}{6}\left( k_1 +2k_2+2k_3+k_4\right).
 $$
 
+<p>
 Thus, the algorithm consists in first calculating \( k_1 \) 
 with \( t_i \), \( y_1 \) and \( f \) as inputs. Thereafter, we increase the step
 size by \( h/2 \) and calculate \( k_2 \), then \( k_3 \) and finally \( k_4 \). The global error goes as \( O(h^4) \).
