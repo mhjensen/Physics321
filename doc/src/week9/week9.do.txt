@@ -467,7 +467,7 @@ x_{\rm max}\approx\frac{F_0}{2m\beta \omega_0}.
 \end{eqnarray}
 !et
 
-For small damping this occurs when $\omega=\omega_0\pm \beta$, so the $FWHM\approx 2\beta$. For the purposes of tuning to a specific frequency, one wants the width to be as small as possible. The ratio of $\omega_0$ to $FWHM$ is known as the _quality_factor, or $Q$ factor,
+For small damping this occurs when $\omega=\omega_0\pm \beta$, so the $FWHM\approx 2\beta$. For the purposes of tuning to a specific frequency, one wants the width to be as small as possible. The ratio of $\omega_0$ to $FWHM$ is known as the "quality factor":"https://en.wikipedia.org/wiki/Q_factor", or $Q$ factor,
 
 !bt
 \begin{equation}
@@ -767,7 +767,7 @@ and the Velocity Verlet method (be careful with time-dependence here, it is not 
 def VelocityVerlet(v,x,t,n,Force):
     for i in range(n-1):
         a = Force(v[i],x[i],t[i])
-        x[i+1] = x[i] + DeltaT*v[i]+0.5*a
+        x[i+1] = x[i] + DeltaT*v[i]+0.5*a*DeltaT*DeltaT
         anew = Force(v[i],x[i+1],t[i+1])
         v[i+1] = v[i] + 0.5*DeltaT*(a+anew)
         t[i+1] = t[i] + DeltaT

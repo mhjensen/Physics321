@@ -148,7 +148,7 @@ MathJax.Hub.Config({
 <center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
 <br>
 <p>&nbsp;<br>
-<center><h4>Mar 5, 2021</h4></center> <!-- date -->
+<center><h4>Mar 13, 2021</h4></center> <!-- date -->
 <br>
 <p>
 
@@ -753,7 +753,7 @@ $$
 <p>&nbsp;<br>
 
 <p>
-For small damping this occurs when \( \omega=\omega_0\pm \beta \), so the \( FWHM\approx 2\beta \). For the purposes of tuning to a specific frequency, one wants the width to be as small as possible. The ratio of \( \omega_0 \) to \( FWHM \) is known as the _quality_factor, or \( Q \) factor,
+For small damping this occurs when \( \omega=\omega_0\pm \beta \), so the \( FWHM\approx 2\beta \). For the purposes of tuning to a specific frequency, one wants the width to be as small as possible. The ratio of \( \omega_0 \) to \( FWHM \) is known as the <a href="https://en.wikipedia.org/wiki/Q_factor" target="_blank">quality factor</a>, or \( Q \) factor,
 
 <p>&nbsp;<br>
 $$
@@ -1117,7 +1117,7 @@ and the Velocity Verlet method (be careful with time-dependence here, it is not 
 <div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%;"><span></span><span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">VelocityVerlet</span>(v,x,t,n,Force):
     <span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
         a = Force(v[i],x[i],t[i])
-        x[i+<span style="color: #B452CD">1</span>] = x[i] + DeltaT*v[i]+<span style="color: #B452CD">0.5</span>*a
+        x[i+<span style="color: #B452CD">1</span>] = x[i] + DeltaT*v[i]+<span style="color: #B452CD">0.5</span>*a*DeltaT*DeltaT
         anew = Force(v[i],x[i+<span style="color: #B452CD">1</span>],t[i+<span style="color: #B452CD">1</span>])
         v[i+<span style="color: #B452CD">1</span>] = v[i] + <span style="color: #B452CD">0.5</span>*DeltaT*(a+anew)
         t[i+<span style="color: #B452CD">1</span>] = t[i] + DeltaT
