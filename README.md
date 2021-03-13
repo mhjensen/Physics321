@@ -174,7 +174,8 @@ Video of lecture at https://mediaspace.msu.edu/media/t/1_mgqtt4lm and handwritte
 ### Week 10, March 8-12, 2021
 - Monday 3/8: Fourier series and oscillations. Discussion of first midterm.  Video of lecture at https://mediaspace.msu.edu/media/t/1_8zktj1wn and handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesMarch8.pdf.
 - Wednesday 3/10: Discussions  of oscillations and time-dependent forces. and Discussion of first midterm. Video of lecture at https://mediaspace.msu.edu/media/t/1_dmio1l34 and handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesMarch10.pdf.
-- Friday 3/12:  Two-body problems of first midterm. Deadline first midterm at midnight. 
+- Friday 3/12:  Discussion  of first midterm and summary of oscillations. Deadline first midterm at midnight.
+There is no video of Friday's session since the lecture was organized in breakout sessions plus a discussion of the first midterm. Thx to all of you for heroic efforts with the first midterm.
 - Good reads are sections 5.7-5.8 and  8.2-8.4 of Taylor and Lecture notes 
 
 ### Week 11, March  15-19, 2021
