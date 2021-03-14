@@ -1,124 +1,94 @@
-# Space, Time, Motion, Reference Frames  and Reminder on vectors and other mathematical quantities
+# Simple Motion problems and Reminder on Newton's Laws
 
-Our studies will start with the motion of different types of objects
-such as a falling ball, a runner, a bicycle etc etc. It means that an
-object's position in space varies with time.
-In order to study such systems we need to define
-* choice of origin
 
-* choice of the direction of the axes
+## Basic Steps of Scientific Investigations
 
-* choice of positive direction (left-handed or right-handed system of reference)
 
-* choice of units and dimensions
+An overarching aim in this course is to give you a deeper
+understanding of the scientific method. The problems we study will all
+involve cases where we can apply classical mechanics. In our previous
+material we already assumed that we had a model for the motion of an
+object.  Alternatively we could have data from experiment (like Usain
+Bolt's 100m world record run in 2008).  Or we could have performed
+ourselves an experiment and we want to understand which forces are at
+play and whether these forces can be understood in terms of
+fundamental forces.
 
-These choices lead to some important questions such as
+Our first step consists in identifying the problem. What we sketch
+here may include a mix of experiment and theoretical simulations, or
+just experiment or only theory.
 
-* is the  physics of a system independent of the origin of the axes?
 
-* is the  physics independent of the directions of the axes, that is are there privileged axes?
+### Identifying our System
 
-* is the physics independent of the orientation of system?
+Here we can ask questions like
+1. What kind of object is moving
 
-* is the physics independent of the scale of the length?
+2. What kind of data do we have
 
-### Dimension, units and labels
+3. How do we measure position, velocity, acceleration etc
 
-Throughout this course we will use the standardized SI units. The standard unit for length is thus one meter 1m, for mass
-one kilogram 1kg, for time one second 1s, for force one Newton 1kgm/s$^2$ and for energy 1 Joule 1kgm$^2$s$^{-2}$.
+4. Which initial conditions influence our system
 
-We will use the following notations for various variables (vectors are always boldfaced in these lecture notes):
-* position $\boldsymbol{r}$, in one dimention we will normally just use $x$,
+5. Other aspects which allow us to identify the system
 
-* mass $m$,
+### Defining a Model
 
-* time $t$,
+With our eventual data and observations we would now like to develop a
+model for the system. In the end we want obviously to be able to
+understand which forces are at play and how they influence our
+specific system. That is, can we extract some deeper insights about a
+system?
 
-* velocity $\boldsymbol{v}$ or just $v$ in one dimension,
+We need then to
+1. Find the forces that act on our system
 
-* acceleration $\boldsymbol{a}$ or just $a$ in one dimension,
+2. Introduce models for the forces
 
-* momentum $\boldsymbol{p}$ or just $p$ in one dimension,
+3. Identify the equations which can govern the system (Newton's second law for example)
 
-* kinetic energy $K$,
+4. More elements we deem important for defining our model
 
-* potential energy $V$ and
+### Solving the Equations
 
-* frequency $\omega$.
+With the model at hand, we can then solve the equations. In classical mechanics we normally end up  with solving sets of coupled ordinary differential equations or partial differential equations.
+1. Using Newton's second law we have equations of the type $\boldsymbol{F}=m\boldsymbol{a}=md\boldsymbol{v}/dt$
 
-More variables will be defined as we need them.
+2. We need to  define the initial conditions (typically the initial velocity and position as functions of time) and/or initial conditions and boundary conditions
 
-It is also important to keep track of dimensionalities. Don't mix this up with a chosen unit for a given variable. We mark the dimensionality in these lectures as $[a]$, where $a$ is the quantity we are interested in. Thus
+3. The solution of the equations give us then the position, the velocity and other time-dependent quantities which may specify the motion of a given object.
 
-* $[\boldsymbol{r}]=$ length
+We are not yet done. With our lovely solvers, we need to start thinking.
 
-* $[m]=$ mass
 
-* $[K]=$ energy
+### Analyze
 
-* $[t]=$ time
+Now it is time to ask the big questions. What do our results mean? Can we give a simple interpretation in terms of fundamental laws?  What do our results mean? Are they correct?
+Thus, typical questions we may ask are
+1. Are our results for say $\boldsymbol{r}(t)$ valid?  Do we trust what we did?  Can you validate and verify the correctness of your results?
 
-* $[\boldsymbol{v}]=$ length over time
+2. Evaluate the answers and their implications
 
-* $[\boldsymbol{a}]=$ length over time squared
+3. Compare with experimental data if possible. Does our model make sense?
 
-* $[\boldsymbol{p}]=$ mass times length over time
+4. and obviously many other questions.
 
-* $[\omega]=$ 1/time
+The analysis stage feeds back to the first stage. It may happen that
+the data we had were not good enough, there could be large statistical
+uncertainties. We may need to collect more data or perhaps we did a
+sloppy job in identifying the degrees of freedom.
 
-## Elements of Vector Algebra
+All these steps are essential elements in a scientific
+enquiry. Hopefully, through a mix of numerical simulations, analytical
+calculations and experiments we may gain a deeper insight about the
+physics of a specific system.
 
-**Note**: This section is under revision
 
-In these lectures we will use boldfaced lower-case letters to label a vector. A vector $\boldsymbol{a}$ in three dimensions is thus defined as
 
-$$
-\boldsymbol{a} =(a_x,a_y, a_z),
-$$
 
-and using the unit vectors in a cartesian system we have
 
-$$
-\boldsymbol{a} = a_x\boldsymbol{e}_x+a_y\boldsymbol{e}_y+a_z\boldsymbol{e}_z,
-$$
 
-where the unit vectors have magnitude $\vert\boldsymbol{e}_i\vert = 1$ with $i=x,y,z$.
 
-Using the fact that multiplication of reals is distributive we can show that
-
-$$
-\boldsymbol{a}(\boldsymbol{b}+\boldsymbol{c})=\boldsymbol{a}\boldsymbol{b}+\boldsymbol{a}\boldsymbol{c},
-$$
-
-Similarly we can also show that (using product rule for differentiating reals)
-
-$$
-\frac{d}{dt}(\boldsymbol{a}\boldsymbol{b})=\boldsymbol{a}\frac{d\boldsymbol{b}}{dt}+\boldsymbol{b}\frac{d\boldsymbol{a}}{dt}.
-$$
-
-We can repeat these operations for the cross products and show that they are distribuitive
-
-$$
-\boldsymbol{a}\times(\boldsymbol{b}+\boldsymbol{c})=\boldsymbol{a}\times\boldsymbol{b}+\boldsymbol{a}\times\boldsymbol{c}.
-$$
-
-We have also that
-
-$$
-\frac{d}{dt}(\boldsymbol{a}\times\boldsymbol{b})=\boldsymbol{a}\times\frac{d\boldsymbol{b}}{dt}+\boldsymbol{b}\times\frac{d\boldsymbol{a}}{dt}.
-$$
-
-The rotation of a three-dimensional  vector $\boldsymbol{a}=(a_x,a_y,a_z)$ in the $xy$ plane around an angle $\phi$ results in a new vector $\boldsymbol{b}=(b_x,b_y,b_z)$.  This operation can be expressed in terms of linear algebra as a matrix (the rotation matrix) multiplied with a vector. We can write this as
-
-$$
-\begin{bmatrix} b_x \\ b_y \\ b_z \end{bmatrix} = \begin{bmatrix} \cos{\phi} & \sin{\phi} & 0 \\ -\sin{\phi} & \cos{\phi} & 0 \\ 0 & 0 & 1\end{bmatrix}\begin{bmatrix} a_x \\ a_y \\ a_z \end{bmatrix}.
-$$
-
-We can write this in a more compact form as $\boldsymbol{b} = \boldsymbol{R}\boldsymbol{a}$, where the rotation matrix is defined as
-
-$$
-\boldsymbol{R} = \begin{bmatrix} \cos{\phi} & \sin{\phi} & 0 \\ -\sin{\phi} & \cos{\phi} & 0 \\ 0 & 0 & 1\end{bmatrix}.
-$$
 
 ## Falling baseball in one dimension
 
@@ -145,7 +115,6 @@ which gives us a final time $t_f=\sqrt{2y_0/g}$.
 As of now we simply assume that   we know the formula for the falling object. Afterwards, we will derive it.
 
 
-## Our Python Encounter
 
 We start with preparing folders for storing our calculations, figures and if needed, specific data files we use as input or output files.
 
@@ -236,7 +205,6 @@ Here we used **pandas** (see below) to systemize the output of the position as f
 
 
 
-## Average quantities
 We define now the average velocity as
 
 $$
@@ -263,7 +231,8 @@ $$
 y_{i\pm 1} = y(t_i\pm \Delta t),\hspace{0.12cm} i=0,1,2,\dots,n.
 $$
 
-## Compact equations
+### Compact equations
+
 We can then rewrite in a more compact form the average velocity as
 
 $$
@@ -294,8 +263,6 @@ $$
 $v_i$ refers always to the discretized values.
 
 
-## A differential equation
-
 We can rewrite the instantaneous acceleration as
 
 $$
@@ -323,7 +290,7 @@ where $F$ is the force acting on an object with mass $m$. We see that it also ha
 We will come back to this soon.
 
 
-## Integrating our equations
+### Integrating our equations
 
 Formally we can then, starting with the acceleration (suppose we have measured it, how could we do that?)
 compute say the height of a building.  To see this we perform the following integrations from an initial time $t_0$  to a given time $t$
@@ -356,8 +323,6 @@ no loss of generality if we extend these equations to more than one
 spatial dimension.
 
 
-## Constant acceleration case, the velocity
-
 Let us compute the velocity using the constant value for the acceleration given by $-g$. We have
 
 $$
@@ -388,7 +353,7 @@ $$
 y(t)=10-\frac{1}{2}gt^2.
 $$
 
-## Computing the averages
+### Computing the averages
 
 After this mathematical background we are now ready to compute the mean velocity using our data.
 
@@ -455,7 +420,6 @@ compute the solutions analytically, thereafter we will derive Euler's
 method for solving these differential equations numerically.
 
 
-## Analytical solutions
 
 For simplicity let us just write $v(t)$ as $v$. We have
 
@@ -493,8 +457,6 @@ which gives us $v$ as function of time
 $$
 v(t)=v_T\tanh{-(\frac{gt}{v_T})}.
 $$
-
-## Finding the final height
 
 With the velocity we can then find the height $y(t)$ by integrating yet another time, that is
 
@@ -563,7 +525,7 @@ $$
 v(t+\Delta t) = v(t)+\Delta t a(t)+O(\Delta t^2).
 $$
 
-## Discretizing our equations
+### Discretizing our equations
 
 Using our discretized versions of the equations with for example
 $y_{i}=y(t_i)$ and $y_{i\pm 1}=y(t_i+\Delta t)$, we can rewrite the
@@ -632,7 +594,6 @@ by setting all elelements to zero, as done here
 a = np.zeros(n)
 print(a)
 
-## Code for implementing Euler's method
 In the code here we implement this simple Eurler scheme choosing a value for $D=0.0245$ m/s.
 
 # Common imports
@@ -721,7 +682,7 @@ plt.show()
 Try different values for $\Delta t$ and study the difference between the exact solution and the numerical solution.
 
 
-## Simple extension, the Euler-Cromer method
+### Simple extension, the Euler-Cromer method
 
 The Euler-Cromer method is a simple variant of the standard Euler
 method. We use the newly updated velocity $v_{i+1}$ as an input to the
@@ -759,401 +720,115 @@ for i in range(n-1):
     y[i+1] = y[i] + DeltaT*v[i+1]
     # more code
 
-## Python practicalities, Software and needed installations
+## Newton's Laws
 
-We will make extensive use of Python as programming language and its
-myriad of available libraries.  You will find
-Jupyter notebooks invaluable in your work.  
+Let us now remind ourselves of Newton's laws, since these are the laws of motion we will study in this course.
 
-If you have Python installed (we strongly recommend Python3) and you feel
-pretty familiar with installing different packages, we recommend that
-you install the following Python packages via **pip** as 
 
-1. pip install numpy scipy matplotlib ipython scikit-learn mglearn sympy pandas pillow 
+When analyzing a physical system we normally start with distinguishing between the object we are studying (we will label this in more general terms as our **system**) and how this system interacts with the environment (which often means everything else!)
 
-For Python3, replace **pip** with **pip3**.
+In our investigations we will thus analyze a specific physics problem in terms of the system and the environment.
+In doing so we need to identify the forces that act on the system and assume that the
+forces acting on the system must have a source, an identifiable cause in
+the environment.
 
-For OSX users we recommend, after having installed Xcode, to
-install **brew**. Brew allows for a seamless installation of additional
-software via for example 
+A force acting on for example a falling object must be related to an interaction with something in the environment.
+This also means that we do not consider internal forces. The latter are forces between
+one part of the object and another part. In this course we will mainly focus on external forces.
 
-1. brew install python3
+Forces are either contact forces or long-range forces.
 
-For Linux users, with its variety of distributions like for example the widely popular Ubuntu distribution,
-you can use **pip** as well and simply install Python as 
-
-1. sudo apt-get install python3  (or python for pyhton2.7)
-
-etc etc. 
+Contact forces, as evident from the name, are forces that occur at the contact between
+the system and the environment. Well-known long-range forces are the gravitional force and the electromagnetic force.
 
 
 
-## Python installers
 
-If you don't want to perform these operations separately and venture
-into the hassle of exploring how to set up dependencies and paths, we
-recommend two widely used distrubutions which set up all relevant
-dependencies for Python, namely 
+In order to set up the forces which act on an object, the following steps may be useful
+1. Divide the problem into system and environment.
 
-* [Anaconda](https://docs.anaconda.com/), 
+2. Draw a figure of the object and everything in contact with the object.
 
-which is an open source
-distribution of the Python and R programming languages for large-scale
-data processing, predictive analytics, and scientific computing, that
-aims to simplify package management and deployment. Package versions
-are managed by the package management system **conda**. 
+3. Draw a closed curve around the system.
 
-* [Enthought canopy](https://www.enthought.com/product/canopy/) 
+4. Find contact points—these are the points where contact forces may act.
 
-is a Python
-distribution for scientific and analytic computing distribution and
-analysis environment, available for free and under a commercial
-license.
+5. Give names and symbols to all the contact forces.
 
-Furthermore, [Google's Colab](https://colab.research.google.com/notebooks/welcome.ipynb) is a free Jupyter notebook environment that requires 
-no setup and runs entirely in the cloud. Try it out!
+6. Identify the long-range forces.
 
-## Useful Python libraries
-Here we list several useful Python libraries we strongly recommend (if you use anaconda many of these are already there)
+7. Make a drawing of the object. Draw the forces as arrows, vectors, starting from where the force is acting. The direction of the vector(s) indicates the (positive) direction of the force. Try to make the length of the arrow indicate the relative magnitude of the forces.
 
-* [NumPy](https://www.numpy.org/) is a highly popular library for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays
+8. Draw in the axes of the coordinate system. It is often convenient to make one axis parallel to the direction of motion. When you choose the direction of the axis you also choose the positive direction for the axis.
 
-* [The pandas](https://pandas.pydata.org/) library provides high-performance, easy-to-use data structures and data analysis tools 
-
-* [Xarray](http://xarray.pydata.org/en/stable/) is a Python package that makes working with labelled multi-dimensional arrays simple, efficient, and fun!
-
-* [Scipy](https://www.scipy.org/) (pronounced “Sigh Pie”) is a Python-based ecosystem of open-source software for mathematics, science, and engineering. 
-
-* [Matplotlib](https://matplotlib.org/) is a Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms.
-
-* [Autograd](https://github.com/HIPS/autograd) can automatically differentiate native Python and Numpy code. It can handle a large subset of Python's features, including loops, ifs, recursion and closures, and it can even take derivatives of derivatives of derivatives
-
-* [SymPy](https://www.sympy.org/en/index.html) is a Python library for symbolic mathematics. 
-
-* [scikit-learn](https://scikit-learn.org/stable/) has simple and efficient tools for machine learning, data mining and data analysis
-
-* [TensorFlow](https://www.tensorflow.org/) is a Python library for fast numerical computing created and released by Google
-
-* [Keras](https://keras.io/) is a high-level neural networks API, written in Python and capable of running on top of TensorFlow, CNTK, or Theano
-
-* And many more such as [pytorch](https://pytorch.org/),  [Theano](https://pypi.org/project/Theano/) etc 
-
-Your jupyter notebook can easily be
-converted into a nicely rendered **PDF** file or a Latex file for
-further processing. For example, convert to latex as
-
-        pycod jupyter nbconvert filename.ipynb --to latex 
-
-
-And to add more versatility, the Python package [SymPy](http://www.sympy.org/en/index.html) is a Python library for symbolic mathematics. It aims to become a full-featured computer algebra system (CAS)  and is entirely written in Python. 
-
-
-
-## Numpy examples and Important Matrix and vector handling packages
-
-There are several central software libraries for linear algebra and eigenvalue problems. Several of the more
-popular ones have been wrapped into ofter software packages like those from the widely used text **Numerical Recipes**. The original source codes in many of the available packages are often taken from the widely used
-software package LAPACK, which follows two other popular packages
-developed in the 1970s, namely EISPACK and LINPACK.  We describe them shortly here.
-
-  * LINPACK: package for linear equations and least square problems.
-
-  * LAPACK:package for solving symmetric, unsymmetric and generalized eigenvalue problems. From LAPACK's website <http://www.netlib.org> it is possible to download for free all source codes from this library. Both C/C++ and Fortran versions are available.
-
-  * BLAS (I, II and III): (Basic Linear Algebra Subprograms) are routines that provide standard building blocks for performing basic vector and matrix operations. Blas I is vector operations, II vector-matrix operations and III matrix-matrix operations. Highly parallelized and efficient codes, all available for download from <http://www.netlib.org>.
-
-## Basic Matrix Features
-
-**Matrix properties reminder.**
+Newton’s second law of motion: The force $\boldsymbol{F}$ on an object of inertial mass $m$
+is related to the acceleration a of the object through
 
 $$
-\mathbf{A} =
-      \begin{bmatrix} a_{11} & a_{12} & a_{13} & a_{14} \\
-                                 a_{21} & a_{22} & a_{23} & a_{24} \\
-                                   a_{31} & a_{32} & a_{33} & a_{34} \\
-                                  a_{41} & a_{42} & a_{43} & a_{44}
-             \end{bmatrix}\qquad
-\mathbf{I} =
-      \begin{bmatrix} 1 & 0 & 0 & 0 \\
-                                 0 & 1 & 0 & 0 \\
-                                 0 & 0 & 1 & 0 \\
-                                 0 & 0 & 0 & 1
-             \end{bmatrix}
+\boldsymbol{F} = m\boldsymbol{a},
 $$
 
-The inverse of a matrix is defined by
+where $\boldsymbol{a}$ is the acceleration.
+
+Newton’s laws of motion are laws of nature that have been found by experimental
+investigations and have been shown to hold up to continued experimental investigations.
+Newton’s laws are valid over a wide range of length- and time-scales. We
+use Newton’s laws of motion to describe everything from the motion of atoms to the
+motion of galaxies.
+
+The second law is a vector equation with the acceleration having the same
+direction as the force. The acceleration is proportional to the force via the mass $m$ of the system under study.
+
+
+Newton’s second law introduces a new property of an object, the so-called 
+inertial mass $m$. We determine the inertial mass of an object by measuring the
+acceleration for a given applied force.
+
+
+
+### Then the First Law
+
+What happens if the net external force on a body is zero? Applying Newton’s second
+law, we find:
 
 $$
-\mathbf{A}^{-1} \cdot \mathbf{A} = I
+\boldsymbol{F} = 0 = m\boldsymbol{a},
 $$
 
-<table border="1">
-<thead>
-<tr><th align="center">              Relations               </th> <th align="center">      Name     </th> <th align="center">                            matrix elements                            </th> </tr>
-</thead>
-<tbody>
-<tr><td align="center">   $A = A^{T}$                               </td> <td align="center">   symmetric          </td> <td align="center">   $a_{ij} = a_{ji}$                                                          </td> </tr>
-<tr><td align="center">   $A = \left (A^{T} \right )^{-1}$          </td> <td align="center">   real orthogonal    </td> <td align="center">   $\sum_k a_{ik} a_{jk} = \sum_k a_{ki} a_{kj} = \delta_{ij}$                </td> </tr>
-<tr><td align="center">   $A = A^{ * }$                             </td> <td align="center">   real matrix        </td> <td align="center">   $a_{ij} = a_{ij}^{ * }$                                                    </td> </tr>
-<tr><td align="center">   $A = A^{\dagger}$                         </td> <td align="center">   hermitian          </td> <td align="center">   $a_{ij} = a_{ji}^{ * }$                                                    </td> </tr>
-<tr><td align="center">   $A = \left (A^{\dagger} \right )^{-1}$    </td> <td align="center">   unitary            </td> <td align="center">   $\sum_k a_{ik} a_{jk}^{ * } = \sum_k a_{ki}^{ * } a_{kj} = \delta_{ij}$    </td> </tr>
-</tbody>
-</table>
-
-
-
-
-### Some famous Matrices
-
-  * Diagonal if $a_{ij}=0$ for $i\ne j$
-
-  * Upper triangular if $a_{ij}=0$ for $i > j$
-
-  * Lower triangular if $a_{ij}=0$ for $i < j$
-
-  * Upper Hessenberg if $a_{ij}=0$ for $i > j+1$
-
-  * Lower Hessenberg if $a_{ij}=0$ for $i < j+1$
-
-  * Tridiagonal if $a_{ij}=0$ for $|i -j| > 1$
-
-  * Lower banded with bandwidth $p$: $a_{ij}=0$ for $i > j+p$
-
-  * Upper banded with bandwidth $p$: $a_{ij}=0$ for $i < j+p$
-
-  * Banded, block upper triangular, block lower triangular....
-
-### More Basic Matrix Features
-
-**Some Equivalent Statements.**
-
-For an $N\times N$ matrix  $\mathbf{A}$ the following properties are all equivalent
-
-  * If the inverse of $\mathbf{A}$ exists, $\mathbf{A}$ is nonsingular.
-
-  * The equation $\mathbf{Ax}=0$ implies $\mathbf{x}=0$.
-
-  * The rows of $\mathbf{A}$ form a basis of $R^N$.
-
-  * The columns of $\mathbf{A}$ form a basis of $R^N$.
-
-  * $\mathbf{A}$ is a product of elementary matrices.
-
-  * $0$ is not eigenvalue of $\mathbf{A}$.
-
-
-
-
-## Numpy and arrays
-[Numpy](http://www.numpy.org/) provides an easy way to handle arrays in Python. The standard way to import this library is as
-
-import numpy as np
-
-Here follows a simple example where we set up an array of ten elements, all determined by random numbers drawn according to the normal distribution,
-
-n = 10
-x = np.random.normal(size=n)
-print(x)
-
-We defined a vector $x$ with $n=10$ elements with its values given by the Normal distribution $N(0,1)$.
-Another alternative is to declare a vector as follows
-
-import numpy as np
-x = np.array([1, 2, 3])
-print(x)
-
-Here we have defined a vector with three elements, with $x_0=1$, $x_1=2$ and $x_2=3$. Note that both Python and C++
-start numbering array elements from $0$ and on. This means that a vector with $n$ elements has a sequence of entities $x_0, x_1, x_2, \dots, x_{n-1}$. We could also let (recommended) Numpy to compute the logarithms of a specific array as
-
-import numpy as np
-x = np.log(np.array([4, 7, 8]))
-print(x)
-
-In the last example we used Numpy's unary function $np.log$. This function is
-highly tuned to compute array elements since the code is vectorized
-and does not require looping. We normaly recommend that you use the
-Numpy intrinsic functions instead of the corresponding **log** function
-from Python's **math** module. The looping is done explicitely by the
-**np.log** function. The alternative, and slower way to compute the
-logarithms of a vector would be to write
-
-import numpy as np
-from math import log
-x = np.array([4, 7, 8])
-for i in range(0, len(x)):
-    x[i] = log(x[i])
-print(x)
-
-We note that our code is much longer already and we need to import the **log** function from the **math** module. 
-The attentive reader will also notice that the output is $[1, 1, 2]$. Python interprets automagically our numbers as integers (like the **automatic** keyword in C++). To change this we could define our array elements to be double precision numbers as
-
-import numpy as np
-x = np.log(np.array([4, 7, 8], dtype = np.float64))
-print(x)
-
-or simply write them as double precision numbers (Python uses 64 bits as default for floating point type variables), that is
-
-import numpy as np
-x = np.log(np.array([4.0, 7.0, 8.0])
-print(x)
-
-To check the number of bytes (remember that one byte contains eight bits for double precision variables), you can use simple use the **itemsize** functionality (the array $x$ is actually an object which inherits the functionalities defined in Numpy) as
-
-import numpy as np
-x = np.log(np.array([4.0, 7.0, 8.0])
-print(x.itemsize)
-
-## Matrices in Python
-
-Having defined vectors, we are now ready to try out matrices. We can
-define a $3 \times 3 $ real matrix $\hat{A}$ as (recall that we user
-lowercase letters for vectors and uppercase letters for matrices)
-
-import numpy as np
-A = np.log(np.array([ [4.0, 7.0, 8.0], [3.0, 10.0, 11.0], [4.0, 5.0, 7.0] ]))
-print(A)
-
-If we use the **shape** function we would get $(3, 3)$ as output, that is verifying that our matrix is a $3\times 3$ matrix. We can slice the matrix and print for example the first column (Python organized matrix elements in a row-major order, see below) as
-
-import numpy as np
-A = np.log(np.array([ [4.0, 7.0, 8.0], [3.0, 10.0, 11.0], [4.0, 5.0, 7.0] ]))
-# print the first column, row-major order and elements start with 0
-print(A[:,0])
-
-We can continue this was by printing out other columns or rows. The example here prints out the second column
-
-import numpy as np
-A = np.log(np.array([ [4.0, 7.0, 8.0], [3.0, 10.0, 11.0], [4.0, 5.0, 7.0] ]))
-# print the first column, row-major order and elements start with 0
-print(A[1,:])
-
-Numpy contains many other functionalities that allow us to slice, subdivide etc etc arrays. We strongly recommend that you look up the [Numpy website for more details](http://www.numpy.org/). Useful functions when defining a matrix are the **np.zeros** function which declares a matrix of a given dimension and sets all elements to zero
-
-import numpy as np
-n = 10
-# define a matrix of dimension 10 x 10 and set all elements to zero
-A = np.zeros( (n, n) )
-print(A)
-
-or initializing all elements to
-
-import numpy as np
-n = 10
-# define a matrix of dimension 10 x 10 and set all elements to one
-A = np.ones( (n, n) )
-print(A)
-
-or as unitarily distributed random numbers (see the material on random number generators in the statistics part)
-
-import numpy as np
-n = 10
-# define a matrix of dimension 10 x 10 and set all elements to random numbers with x \in [0, 1]
-A = np.random.rand(n, n)
-print(A)
-
-## Meet the Pandas
-
-
-<!-- dom:FIGURE: [fig/pandas.jpg, width=600 frac=0.8] -->
-<!-- begin figure -->
-
-<p></p>
-<img src="fig/pandas.jpg" width=600>
-
-<!-- end figure -->
-
-
-Another useful Python package is
-[pandas](https://pandas.pydata.org/), which is an open source library
-providing high-performance, easy-to-use data structures and data
-analysis tools for Python. **pandas** stands for panel data, a term borrowed from econometrics and is an efficient library for data analysis with an emphasis on tabular data.
-**pandas** has two major classes, the **DataFrame** class with two-dimensional data objects and tabular data organized in columns and the class **Series** with a focus on one-dimensional data objects. Both classes allow you to index data easily as we will see in the examples below. 
-**pandas** allows you also to perform mathematical operations on the data, spanning from simple reshapings of vectors and matrices to statistical operations. 
-
-The following simple example shows how we can, in an easy way make tables of our data. Here we define a data set which includes names, place of birth and date of birth, and displays the data in an easy to read way. We will see repeated use of **pandas**, in particular in connection with classification of data.
-
-import pandas as pd
-from IPython.display import display
-data = {'First Name': ["Frodo", "Bilbo", "Aragorn II", "Samwise"],
-        'Last Name': ["Baggins", "Baggins","Elessar","Gamgee"],
-        'Place of birth': ["Shire", "Shire", "Eriador", "Shire"],
-        'Date of Birth T.A.': [2968, 2890, 2931, 2980]
-        }
-data_pandas = pd.DataFrame(data)
-display(data_pandas)
-
-In the above we have imported **pandas** with the shorthand **pd**, the latter has become the standard way we import **pandas**. We make then a list of various variables
-and reorganize the above lists into a **DataFrame** and then print out  a neat table with specific column labels as *Name*, *place of birth* and *date of birth*.
-Displaying these results, we see that the indices are given by the default numbers from zero to three.
-**pandas** is extremely flexible and we can easily change the above indices by defining a new type of indexing as
-
-data_pandas = pd.DataFrame(data,index=['Frodo','Bilbo','Aragorn','Sam'])
-display(data_pandas)
-
-Thereafter we display the content of the row which begins with the index **Aragorn**
-
-display(data_pandas.loc['Aragorn'])
-
-We can easily append data to this, for example
-
-new_hobbit = {'First Name': ["Peregrin"],
-              'Last Name': ["Took"],
-              'Place of birth': ["Shire"],
-              'Date of Birth T.A.': [2990]
-              }
-data_pandas=data_pandas.append(pd.DataFrame(new_hobbit, index=['Pippin']))
-display(data_pandas)
-
-Here are other examples where we use the **DataFrame** functionality to handle arrays, now with more interesting features for us, namely numbers. We set up a matrix 
-of dimensionality $10\times 5$ and compute the mean value and standard deviation of each column. Similarly, we can perform mathematial operations like squaring the matrix elements and many other operations.
-
-import numpy as np
-import pandas as pd
-from IPython.display import display
-np.random.seed(100)
-# setting up a 10 x 5 matrix
-rows = 10
-cols = 5
-a = np.random.randn(rows,cols)
-df = pd.DataFrame(a)
-display(df)
-print(df.mean())
-print(df.std())
-display(df**2)
-
-Thereafter we can select specific columns only and plot final results
-
-df.columns = ['First', 'Second', 'Third', 'Fourth', 'Fifth']
-df.index = np.arange(10)
-
-display(df)
-print(df['Second'].mean() )
-print(df.info())
-print(df.describe())
-
-from pylab import plt, mpl
-plt.style.use('seaborn')
-mpl.rcParams['font.family'] = 'serif'
-
-df.cumsum().plot(lw=2.0, figsize=(10,6))
-plt.show()
-
-
-df.plot.bar(figsize=(10,6), rot=15)
-plt.show()
-
-We can produce a $4\times 4$ matrix
-
-b = np.arange(16).reshape((4,4))
-print(b)
-df1 = pd.DataFrame(b)
-print(df1)
-
-and many other operations. 
-
-The **Series** class is another important class included in
-**pandas**. You can view it as a specialization of **DataFrame** but where
-we have just a single column of data. It shares many of the same features as _DataFrame. As with **DataFrame**,
-most operations are vectorized, achieving thereby a high performance when dealing with computations of arrays, in particular labeled arrays.
-As we will see below it leads also to a very concice code close to the mathematical operations we may be interested in.
-For multidimensional arrays, we recommend strongly [xarray](http://xarray.pydata.org/en/stable/). **xarray** has much of the same flexibility as **pandas**, but allows for the extension to higher dimensions than two.
+which gives using the definition of the acceleration
+
+$$
+\boldsymbol{a} = \frac{d\boldsymbol{v}}{dt}=0.
+$$
+
+The acceleration is zero, which means that the velocity of the object is constant. This
+is often referred to as Newton’s first law. An object in a state of uniform motion tends to remain in
+that state unless an external force changes its state of motion.
+Why do we need a separate law for this? Is it not simply a special case of Newton’s
+second law? Yes, Newton’s first law can be deduced from the second law as we have
+illustrated. However, the first law is often used for a different purpose: Newton’s
+First Law tells us about the limit of applicability of Newton’s Second law. Newton’s
+Second law can only be used in reference systems where the First law is obeyed. But
+is not the First law always valid? No! The First law is only valid in reference systems
+that are not accelerated. If you observe the motion of a ball from an accelerating
+car, the ball will appear to accelerate even if there are no forces acting on it. We call
+systems that are not accelerating inertial systems, and Newton’s first law is often
+called the law of inertia. Newton’s first and second laws of motion are only valid in
+inertial systems. 
+
+A system is an inertial system if it is not accelerated. It means that the reference system
+must not be accelerating linearly or rotating. Unfortunately, this means that most
+systems we know are not really inertial systems. For example, the surface of the
+Earth is clearly not an inertial system, because the Earth is rotating. The Earth is also
+not an inertial system, because it ismoving in a curved path around the Sun. However,
+even if the surface of the Earth is not strictly an inertial system, it may be considered
+to be approximately an inertial system for many laboratory-size experiments.
+
+
+### And finally the Third Law
+
+If there is a force from object A on object B, there is also a force from object B on object A.
+This fundamental principle of interactions is called Newton’s third law. We do not
+know of any force that do not obey this law: All forces appear in pairs. Newton’s
+third law is usually formulated as: For every action there is an equal and opposite
+reaction.
