@@ -179,7 +179,7 @@ There is no video of Friday's session since the lecture was organized in breakou
 - Good reads are sections 5.7-5.8 and  8.2-8.4 of Taylor and Lecture notes 
 
 ### Week 11, March  15-19, 2021
-- Monday 3/15:  Gravity and central force problems, center of mass coordinates. Lecture notes and Taylor chapter 8. 7th homework due March 22
+- Monday 3/15:  Gravity and central force problems, center of mass coordinates. Lecture notes and Taylor chapter 8. 7th homework due March 22. Video of Lecture at https://mediaspace.msu.edu/media/t/1_x34gdl5o and handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesMarch15.pdf.
 - Wednesday 3/17: Gravity and central force problems
 - Friday 3/19:  Gravity and central force problems, centrifugal barriers. 
 ### Week 12, March 22-26, 2021
