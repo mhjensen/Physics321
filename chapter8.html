@@ -1,0 +1,1599 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4. Variational Calculus and Lagrangian Formalism &#8212; Classical mechanics</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="3. Non-inertial Frames, Translation and Rotating Coordinate Systems" href="chapter7.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Classical mechanics</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   PHY321 Classical Mechanics I, Michigan State University, Spring 2021
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Introductory Material
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter1.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter2.html">
+   2. Classical Mechanics, Mathematics and Numerical background
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter3.html">
+   3. Simple Motion problems and Reminder on Newton’s Laws
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter4.html">
+   4. Work, Energy, Momentum and Conservation laws
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Advanced Topics
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter5.html">
+   1. Harmonic Oscillations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter6.html">
+   2. Two-body problems and Gravitational Forces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter7.html">
+   3. Non-inertial Frames, Translation and Rotating Coordinate Systems
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   4. Variational Calculus and Lagrangian Formalism
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/chapter8.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constrained-motion">
+   4.1. Constrained motion
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-brachiostone">
+     4.1.1. Example: brachiostone
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#maximizing-a-function">
+     4.1.2. Maximizing a Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     4.1.3. Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lagrangians">
+   4.2. Lagrangians
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#proving-lagrange-s-equations-of-motion-from-newton-s-laws">
+     4.2.1. Proving Lagrange’s Equations of Motion from Newton’s Laws
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lagrangian-examples">
+     4.2.2. Lagrangian Examples
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#small-vibrations-and-normal-modes">
+   4.3. Small Vibrations and Normal Modes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conservation-laws">
+   4.4. Conservation Laws
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="variational-calculus-and-lagrangian-formalism">
+<h1><span class="section-number">4. </span>Variational Calculus and Lagrangian Formalism<a class="headerlink" href="#variational-calculus-and-lagrangian-formalism" title="Permalink to this headline">¶</a></h1>
+<p>The calculus of variations involves
+problems where the quantity to be minimized or maximized is an integral.</p>
+<p>The usual minimization problem one faces involves taking a function
+<span class="math notranslate nohighlight">\(\cal{L}(x)\)</span>, then finding the single value <span class="math notranslate nohighlight">\(x\)</span> for which <span class="math notranslate nohighlight">\(\cal{L}\)</span>
+is either a maximum or minimum. In multivariate calculus one also
+learns to solve problems where you minimize for multiple variables,
+<span class="math notranslate nohighlight">\(\cal{L}(x_1,x_2,\cdots x_n)\)</span>, and finding the points <span class="math notranslate nohighlight">\((x_1\cdots
+y_n)\)</span> in an <span class="math notranslate nohighlight">\(n\)</span>-dimensional space that maximize or minimize the
+function. Here, we consider what seems to be a much more ambitious
+problem. Imagine you have a function <span class="math notranslate nohighlight">\(\cal{L}(x(t),\dot{x}(t),t)\)</span>,
+and you wish to find the extrema for an infinite number of values of
+<span class="math notranslate nohighlight">\(x\)</span>, i.e. <span class="math notranslate nohighlight">\(x\)</span> at each point <span class="math notranslate nohighlight">\(t\)</span>. The function <span class="math notranslate nohighlight">\(\cal{L}\)</span> will not only
+depend on <span class="math notranslate nohighlight">\(x\)</span> at each point <span class="math notranslate nohighlight">\(t\)</span>, but also on the slope at each point,
+plus an additional dependence on <span class="math notranslate nohighlight">\(t\)</span>. Note we are NOT finding an
+optimum value of <span class="math notranslate nohighlight">\(t\)</span>, we are finding the set of optimum values of <span class="math notranslate nohighlight">\(x\)</span>
+at each point <span class="math notranslate nohighlight">\(t\)</span>, or equivalently, finding the function <span class="math notranslate nohighlight">\(x(t)\)</span>.</p>
+<p>One treats the function <span class="math notranslate nohighlight">\(x(t)\)</span> as being unknown while minimizing the action</p>
+<div class="math notranslate nohighlight">
+\[
+S=\int_{t_1}^{t_2}dt~\cal{L}(x(t),\dot{x}(t),t).
+\]</div>
+<p>Thus, we are minimizing <span class="math notranslate nohighlight">\(S\)</span> with respect to an infinite number of
+values of <span class="math notranslate nohighlight">\(x(t_i)\)</span> at points <span class="math notranslate nohighlight">\(t_i\)</span>. As an additional criteria, we will
+assume that <span class="math notranslate nohighlight">\(x(t_1)\)</span> and <span class="math notranslate nohighlight">\(x(t_2)\)</span> are fixed, and that that we will
+only consider variations of <span class="math notranslate nohighlight">\(x\)</span> between the boundaries. The dependence
+on the derivative, <span class="math notranslate nohighlight">\(\dot{x}=dx/dt\)</span>, is crucial because otherwise the
+solution would involve simply finding the one value of <span class="math notranslate nohighlight">\(x\)</span> that
+minimized <span class="math notranslate nohighlight">\(\cal{L}\)</span>, and <span class="math notranslate nohighlight">\(x(t)\)</span> would equal a constant if there were no
+explicit <span class="math notranslate nohighlight">\(t\)</span> dependence. Furthermore, <span class="math notranslate nohighlight">\(x\)</span> wouldn’t need to be
+continuous at the boundary.</p>
+<p>In the general case we have an integral of the type</p>
+<div class="math notranslate nohighlight">
+\[
+S[q]= \int_{t_1}^{t_2} \cal{L}(q(t),\dot{q}(t),t)dt,
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(S\)</span> is the quantity which is sought minimized or maximized.  The
+problem is that although <span class="math notranslate nohighlight">\(\cal{L}\)</span>  is a function of the general variables
+<span class="math notranslate nohighlight">\(q(t),\dot{q}(t),t\)</span> (note our change of variables), the exact dependence of <span class="math notranslate nohighlight">\(q\)</span> on <span class="math notranslate nohighlight">\(t\)</span> is not known.
+This means again that even though the integral has fixed limits <span class="math notranslate nohighlight">\(t_1\)</span>
+and <span class="math notranslate nohighlight">\(t_2\)</span>, the path of integration is not known. In our case the unknown
+quantities are the positions and general velocities of a given number
+of objects and we wish to choose an integration path which makes the
+functional <span class="math notranslate nohighlight">\(S[q]\)</span> stationary. This means that we want to find minima,
+or maxima or saddle points. In physics we search normally for minima.
+Our task is therefore to find the minimum of <span class="math notranslate nohighlight">\(S[q]\)</span> so that its
+variation <span class="math notranslate nohighlight">\(\delta S\)</span> is zero subject to specific constraints.  The
+constraints can be treated via the technique of Lagrangian multipliers
+as we will see below.</p>
+<p>We assume the existence of an optimum path, that is a path for which
+<span class="math notranslate nohighlight">\(S[q]\)</span> is stationary. There are infinitely many such paths.  The
+difference between two paths <span class="math notranslate nohighlight">\(\delta q\)</span> is called the variation of
+<span class="math notranslate nohighlight">\(q\)</span>.</p>
+<p>We call the variation <span class="math notranslate nohighlight">\(\eta(t)\)</span> and it is scaled by a factor <span class="math notranslate nohighlight">\(\alpha\)</span>.
+The function <span class="math notranslate nohighlight">\(\eta(t)\)</span> is arbitrary except for</p>
+<div class="math notranslate nohighlight">
+\[
+\eta(t_1)=\eta(t_2)=0,
+\]</div>
+<p>and we assume that we can model the change in <span class="math notranslate nohighlight">\(q\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[
+q(t,\alpha) = q(t)+\alpha\eta(t),
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+\delta q = q(t,\alpha) -q(t,0)=\alpha\eta(t).
+\]</div>
+<p>We choose <span class="math notranslate nohighlight">\(q(t,\alpha=0)\)</span> as the unkonwn path  that will minimize <span class="math notranslate nohighlight">\(S\)</span>.  The value
+<span class="math notranslate nohighlight">\(q(t,\alpha\ne 0)\)</span>  describes a neighbouring path.</p>
+<p>We have</p>
+<div class="math notranslate nohighlight">
+\[
+S[q(\alpha)]= \int_{t_1}^{t_2} \cal{L}(q(t,\alpha),\dot{q}(t,\alpha),t)dt.
+\]</div>
+<p>The condition for an extreme of</p>
+<div class="math notranslate nohighlight">
+\[
+S[q(\alpha)]= \int_{t_1}^{t_2} \cal{L}(q(t,\alpha),\dot{q}(t,\alpha),t)dt,
+\]</div>
+<p>is</p>
+<div class="math notranslate nohighlight">
+\[
+\left[\frac{\partial  S[q(\alpha)]}{\partial t}\right]_{\alpha=0} =0.
+\]</div>
+<p>The <span class="math notranslate nohighlight">\(\alpha\)</span> dependence is contained in <span class="math notranslate nohighlight">\(q(t,\alpha)\)</span> and <span class="math notranslate nohighlight">\(\dot{q}(t,\alpha)\)</span> meaning that</p>
+<div class="math notranslate nohighlight">
+\[
+\left[\frac{\partial  E[q(\alpha)]}{\partial \alpha}\right]=\int_{t_1}^{t_2} \left( \frac{\partial \cal{l}}{\partial q}\frac{\partial q}{\partial \alpha}+\frac{\partial \cal{L}}{\partial \dot{q}}\frac{\partial \dot{q}}{\partial \alpha}\right)dt.
+\]</div>
+<p>We have defined</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial q(x,\alpha)}{\partial \alpha}=\eta(x)
+\]</div>
+<p>and thereby</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \dot{q}(t,\alpha)}{\partial \alpha}=\frac{d(\eta(t))}{dt}.
+\]</div>
+<p>Using</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial q(t,\alpha)}{\partial \alpha}=\eta(t),
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \dot{q}(t,\alpha)}{\partial \alpha}=\frac{d(\eta(t))}{dt},
+\]</div>
+<p>in the integral gives</p>
+<div class="math notranslate nohighlight">
+\[
+\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]=\int_{t_1}^{t_2} \left( \frac{\partial \cal{L}}{\partial q}\eta(t)+\frac{\partial \cal{L}}{\partial \dot{q}}\frac{d(\eta(t))}{dt}\right)dt.
+\]</div>
+<p>Integrating the second term by parts</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{t_1}^{t_2} \frac{\partial \cal{L}}{\partial \dot{q}}\frac{d(\eta(t))}{dt}dt =\eta(t)\frac{\partial \cal{L}}{\partial \dot{q}}|_{t_1}^{t_2}-
+\int_a^b \eta(t)\frac{d}{dx}\frac{\partial \cal{L}}{\partial \dot{q}}dt,
+\]</div>
+<p>and since the first term dissappears due to <span class="math notranslate nohighlight">\(\eta(a)=\eta(b)=0\)</span>, we obtain</p>
+<div class="math notranslate nohighlight">
+\[
+\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]=\int_{t_1}^{t_2} \left( \frac{\partial \cal{L}}{\partial q}-\frac{d}{dx}\frac{\partial \cal{L}}{\partial \dot{q}}
+\right)\eta(t)dt=0,
+\]</div>
+<p>which can also be written as</p>
+<div class="math notranslate nohighlight">
+\[
+\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]_{\alpha=0}=\int_{t_1}^{t_2} \left( \frac{\partial \cal{L}}{\partial q}-\frac{d}{\
+dx}\frac{\partial \cal{L}}{\partial \dot{q}}\right)\delta q(t)dt=\delta S = 0.
+\]</div>
+<p>The condition for a stationary value is thus a partial differential equation</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \cal{L}}{\partial q}-\frac{d}{dx}\frac{\partial \cal{L}}{\partial \dot{q}}=0,
+\]</div>
+<p>known as the <strong>Euler-Lagrange</strong> equation.</p>
+<div class="section" id="constrained-motion">
+<h2><span class="section-number">4.1. </span>Constrained motion<a class="headerlink" href="#constrained-motion" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes an auxiliary constraint is added to the problem (beyond
+fixing the end poits <span class="math notranslate nohighlight">\(y_1\)</span> and <span class="math notranslate nohighlight">\(y_2\)</span>). Just ahead, we will work on the
+example of a hanging chain. The shape of the curve minimizes the
+potential energy, under the constraint of a fixed length of
+chain. Before presenting such an example we first review the method of
+Lagrange multipliers as a method for finding minima or maxima under
+constraints.</p>
+<p>Imagine a function <span class="math notranslate nohighlight">\(f(x_1,x_2\cdots x_n)\)</span> for which you wish to find
+the minima. Additionally, you are given a constraint</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{eqnarray}
+C(x_1\cdots x_n)=0
+\end{eqnarray}
+\]</div>
+<p>The usual condition for a a minimum is</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{eqnarray}
+\frac{\partial f}{\partial x_i}=0{\rm ,~~or~}\nabla f=0.
+\end{eqnarray}
+\]</div>
+<p>which would be <span class="math notranslate nohighlight">\(n\)</span> equations for the <span class="math notranslate nohighlight">\(n\)</span> variables. The gradient of a
+scalar is a vector, so you should think of <span class="math notranslate nohighlight">\(\nabla\)</span> as
+<span class="math notranslate nohighlight">\(\boldsymbol{\nabla}\)</span>. However, the solution will likely not satisfy the
+constraint, i.e. the point at which <span class="math notranslate nohighlight">\(f(x_1\cdots x_n)\)</span> has an extrema,
+may not be a point where <span class="math notranslate nohighlight">\(C(x_1\cdots x_n)=0\)</span>.</p>
+<p>A necessary condition for the solution is that</p>
+<!-- Equation labels as ordinary links -->
+<div id="_auto1"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\nabla f\cdot\boldsymbol{\epsilon}=0,
+\label{_auto1} \tag{1}
+\end{equation}
+\]</div>
+<p>for any infinitesimal vector <span class="math notranslate nohighlight">\(\boldsymbol{\epsilon}\)</span> if <span class="math notranslate nohighlight">\(\boldsymbol{\epsilon}\)</span>
+satisfies the condition</p>
+<!-- Equation labels as ordinary links -->
+<div id="_auto2"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\delta C=\nabla C\cdot\boldsymbol{\epsilon}=0.
+\label{_auto2} \tag{2}
+\end{equation}
+\]</div>
+<p>That is to say if I take a small step in a direction that doesn’t
+change the constraint, then <span class="math notranslate nohighlight">\(f\)</span> must not change if it is an
+extrema. Not changing the constraint implies the step is orthogonal to
+<span class="math notranslate nohighlight">\(\nabla C\)</span>. As there are <span class="math notranslate nohighlight">\(n\)</span> dimensions of <span class="math notranslate nohighlight">\(x\)</span>, the vector <span class="math notranslate nohighlight">\(\nabla C\)</span>
+defines one direction, and <span class="math notranslate nohighlight">\(\boldsymbol{\epsilon}\)</span> can be in any of the <span class="math notranslate nohighlight">\(n-1\)</span>
+directions orthogonal to <span class="math notranslate nohighlight">\(\nabla C\)</span>. If <span class="math notranslate nohighlight">\(\nabla f\cdot\boldsymbol{\epsilon}=0\)</span>
+for ANY of the <span class="math notranslate nohighlight">\(n-1\)</span> directions of <span class="math notranslate nohighlight">\(\boldsymbol{\epsilon}\)</span> orthogonal to
+<span class="math notranslate nohighlight">\(\nabla C\)</span>, then</p>
+<!-- Equation labels as ordinary links -->
+<div id="_auto3"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\nabla f ~||~ \nabla C.
+\label{_auto3} \tag{3}
+\end{equation}
+\]</div>
+<p>Because the two vectors are parallel you can say there must exist some
+constant <span class="math notranslate nohighlight">\(\lambda\)</span> such that</p>
+<!-- Equation labels as ordinary links -->
+<div id="_auto4"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\nabla(f-\lambda C)=0.
+\label{_auto4} \tag{4}
+\end{equation}
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\lambda\)</span> is known as a Lagrange multiplier. Satisfying
+this equation  is a necessary, but not a sufficient
+condition. One could add a constant to the constraint and the gradient
+would not change. One must find the correct value of <span class="math notranslate nohighlight">\(\lambda\)</span> that
+satisfies the constraint <span class="math notranslate nohighlight">\(C=0\)</span>, rather than <span class="math notranslate nohighlight">\(C=\)</span> some other
+constant. The strategy is then to solve
+thw above equation  then adjust <span class="math notranslate nohighlight">\(\lambda\)</span> until one
+finds the <span class="math notranslate nohighlight">\(x_1\cdots x_n\)</span> that gives <span class="math notranslate nohighlight">\(C(x_1\cdots x_n)=0\)</span>.</p>
+<p>The method of Lagrange multipliers is counter-intuitive to one’s
+intuition to use the constraint to reduce the dimensionality of the
+problem. Normally, minimizing a function of <span class="math notranslate nohighlight">\(n\)</span> variables, leads to
+<span class="math notranslate nohighlight">\(n\)</span> equations and <span class="math notranslate nohighlight">\(n\)</span> unknowns. A constraint could be used, by
+substitution, to replace the <span class="math notranslate nohighlight">\(n\)</span> variables with <span class="math notranslate nohighlight">\(n-1\)</span>
+variables. Instead, we add an unknown parameter, <span class="math notranslate nohighlight">\(\lambda\)</span>, and change
+the equation to <span class="math notranslate nohighlight">\(n+1\)</span> equations with <span class="math notranslate nohighlight">\(n+1\)</span> unknowns, with the extra
+unknown being the Lagrange multiplier <span class="math notranslate nohighlight">\(\lambda\)</span>. Often, it is rather
+easy to solve for <span class="math notranslate nohighlight">\(x_1\cdots x_n\)</span>. Then one is left with the usually
+difficult problem of finding <span class="math notranslate nohighlight">\(\lambda\)</span>, often requiring the solution
+of a transcendental equation.</p>
+<p>Let us try to formalize this. We consider a function of three independent variables <span class="math notranslate nohighlight">\(f(x,y,z)\)</span> . For
+the function <span class="math notranslate nohighlight">\(f\)</span> to be an extreme we have</p>
+<div class="math notranslate nohighlight">
+\[
+df=0.
+\]</div>
+<p>A necessary and sufficient condition is</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial f}{\partial x} =\frac{\partial f}{\partial y}=\frac{\partial f}{\partial z}=0,
+\]</div>
+<p>due to</p>
+<div class="math notranslate nohighlight">
+\[
+df = \frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy+\frac{\partial f}{\partial z}dz.
+\]</div>
+<p>In physical problems the variables <span class="math notranslate nohighlight">\(x,y,z\)</span> are often subject to constraints (in our case <span class="math notranslate nohighlight">\(q\)</span> and the orthogonality constraint)
+so that they are no longer all independent. It is possible at least in principle to use each constraint to eliminate one variable
+and to proceed with a new and smaller set of independent varables.</p>
+<p>The use of so-called Lagrangian  multipliers is an alternative technique  when the elimination of
+of variables is incovenient or undesirable.  Assume that we have an equation of constraint on the variables <span class="math notranslate nohighlight">\(x,y,z\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\phi(x,y,z) = 0,
+\]</div>
+<p>resulting in</p>
+<div class="math notranslate nohighlight">
+\[
+d\phi = \frac{\partial \phi}{\partial x}dx+\frac{\partial \phi}{\partial y}dy+\frac{\partial \phi}{\partial z}dz =0.
+\]</div>
+<p>Now we cannot set anymore</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial f}{\partial x} =\frac{\partial f}{\partial y}=\frac{\partial f}{\partial z}=0,
+\]</div>
+<p>if <span class="math notranslate nohighlight">\(df=0\)</span> is wanted
+because there are now only two independent variables!  Assume <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are the independent variables.
+Then <span class="math notranslate nohighlight">\(dz\)</span> is no longer arbitrary.</p>
+<p>However, we can add to</p>
+<div class="math notranslate nohighlight">
+\[
+df = \frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy+\frac{\partial f}{\partial z}dz,
+\]</div>
+<p>a multiplum of <span class="math notranslate nohighlight">\(d\phi\)</span>, viz. <span class="math notranslate nohighlight">\(\lambda d\phi\)</span>, resulting  in</p>
+<div class="math notranslate nohighlight">
+\[
+df+\lambda d\phi = (\frac{\partial f}{\partial z}+\lambda\frac{\partial \phi}{\partial x})dx+(\frac{\partial f}{\partial y}+\lambda\frac{\partial \phi}{\partial y})dy+(\frac{\partial f}{\partial z}+\lambda\frac{\partial \phi}{\partial z})dz =0.
+\]</div>
+<p>Our multiplier is chosen so that</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial f}{\partial z}+\lambda\frac{\partial \phi}{\partial z} =0.
+\]</div>
+<p>However, we took <span class="math notranslate nohighlight">\(dx\)</span> and <span class="math notranslate nohighlight">\(dy\)</span> as to be arbitrary and thus we must have</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial f}{\partial x}+\lambda\frac{\partial \phi}{\partial x} =0,
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial f}{\partial y}+\lambda\frac{\partial \phi}{\partial y} =0.
+\]</div>
+<p>When all these equations are satisfied, <span class="math notranslate nohighlight">\(df=0\)</span>.  We have four
+unknowns, <span class="math notranslate nohighlight">\(x,y,z\)</span> and <span class="math notranslate nohighlight">\(\lambda\)</span>. Actually we want only <span class="math notranslate nohighlight">\(x,y,z\)</span>,
+<span class="math notranslate nohighlight">\(\lambda\)</span> need not to be determined, it is therefore often called
+Lagrange’s undetermined multiplier.  If we have a set of constraints
+<span class="math notranslate nohighlight">\(\phi_k\)</span> we have the equations</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial f}{\partial x_i}+\sum_k\lambda_k\frac{\partial \phi_k}{\partial x_i} =0.
+\]</div>
+<div class="section" id="example-brachiostone">
+<h3><span class="section-number">4.1.1. </span>Example: brachiostone<a class="headerlink" href="#example-brachiostone" title="Permalink to this headline">¶</a></h3>
+<p>Consider a particle constrained to move along a path (like a bead
+moving without friction on a wire) and you need to design a path from
+<span class="math notranslate nohighlight">\(x=y=0\)</span> to some final point <span class="math notranslate nohighlight">\(x_f,y_f\)</span>. Assume there is a constant
+force in the <span class="math notranslate nohighlight">\(x\)</span> direction, <span class="math notranslate nohighlight">\(F_x=mg\)</span>. Design the path so that the time
+the bead travels is a minimum.</p>
+<p>The net time is</p>
+<div class="math notranslate nohighlight">
+\[
+T=\int \frac{d\ell}{v}=\int_0^{x_f} dx~\frac{\sqrt{1+y'^2}}{\sqrt{2gx}}={\rm minimum}.
+\]</div>
+<p>Here we made use of the fact that <span class="math notranslate nohighlight">\(d\ell=\sqrt{dx^2+dy^2}\)</span> and that
+the velocity is determined by <span class="math notranslate nohighlight">\(KE=mv^2/2=mgx\)</span>. The Euler equations can
+be applied if you first define the function as</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{eqnarray*}
+f(y,y';x)&amp;=&amp;\frac{\sqrt{1+y'^2}}{\sqrt{x}}.
+\end{eqnarray*}
+\]</div>
+<p>The equations are then</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{eqnarray*}
+\frac{d}{dx}\frac{\partial f}{\partial y'}&amp;=&amp;0.
+\end{eqnarray*}
+\]</div>
+<p>The simplification ensued from <span class="math notranslate nohighlight">\(f\)</span> not having any dependence on <span class="math notranslate nohighlight">\(y\)</span>. This yields the differential equation</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{eqnarray}
+\frac{y'}{x^{1/2}(1+y'^2)^{1/2}}&amp;=&amp;(2a)^{-1/2},
+\end{eqnarray}
+\]</div>
+<p>because <span class="math notranslate nohighlight">\(\partial f/\partial y'\)</span> must be a constant, which with some
+foresight we label <span class="math notranslate nohighlight">\((2a)^{-1/2}\)</span>. One can now solve for <span class="math notranslate nohighlight">\(y'\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+(y')^2&amp;=&amp;2ax(1+y'^2)\\
+\nonumber
+y'&amp;=&amp;\sqrt{\frac{x}{2a-x}},\\
+\nonumber
+y(t)&amp;=&amp;\int_0^x dx'~\frac{\sqrt{x'}dx'}{\sqrt{2a-x'}}=\int_0^x dx'~\frac{x'dx'}{\sqrt{2ax'-x'^2}}\\
+\nonumber
+&amp;=&amp;\frac{1}{2}\int_0^x\frac{(2x'-2a)dx'}{(2ax'-x'^2)^{1/2}}+a\int_0^x\frac{dx'}{\sqrt{2ax'-x'^2}}\\
+\nonumber
+&amp;=&amp;\frac{-1}{2}\int_0^{2ax-x^2}\frac{du}{\sqrt{u}}+a\int_0^x\frac{dx'}{\sqrt{a^2-(x'-a)^2}}\\
+&amp;=&amp;-\sqrt{2ax-x^2}+a\cos^{-1}(1-x/a).
+\end{eqnarray*}
+\end{split}\]</div>
+<p>This turns out to be the equation for a {\it cycloid} or a {\it
+brachiostone}. If you rolled a wheel of radius <span class="math notranslate nohighlight">\(a\)</span> down the <span class="math notranslate nohighlight">\(y\)</span> axis
+and followed a point on the rim, it would trace out a cycloid. Here,
+the constant <span class="math notranslate nohighlight">\(a\)</span> must be chosen to match the boundary condition,
+<span class="math notranslate nohighlight">\(y_2=y(x_2)\)</span>. You can see the textbook for more details, plus you get
+a chance to work with cycloids in the exercises at the end of this
+chapter.</p>
+</div>
+<div class="section" id="maximizing-a-function">
+<h3><span class="section-number">4.1.2. </span>Maximizing a Function<a class="headerlink" href="#maximizing-a-function" title="Permalink to this headline">¶</a></h3>
+<p>As an example of using Lagrange multipliers for a standard
+optimization formula we attempt to maximize the following function,</p>
+<div class="math notranslate nohighlight">
+\[
+F(x_1\cdots x_n)=-\sum_{i=1}^n x_i\ln(x_i),
+\]</div>
+<p>with respect to the <span class="math notranslate nohighlight">\(n\)</span> variables <span class="math notranslate nohighlight">\(x_i\)</span>. With no constraints, each
+<span class="math notranslate nohighlight">\(x_i\)</span> would maximize the function for</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+\frac{d}{dx_j}~\left[-\sum_i x_i\ln(x_i)\right]&amp;=&amp;0\\
+-\ln(x_j)-1&amp;=&amp;0,~~~~x_j=e^{-1}.
+\end{eqnarray*}
+\end{split}\]</div>
+<p>Now, we repeat the problem but with two constraints,</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_ix_i=1~,~~~~\sum_ix_i\epsilon_i=E.
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\epsilon_i\)</span> and <span class="math notranslate nohighlight">\(E\)</span> are fixed constants. We go forward by
+finding the extrema for</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{eqnarray*}
+G(x_1\cdots x_n)&amp;=&amp;F-\alpha\sum_i x_i-\beta\sum_i\epsilon_ix_i
+=\sum_i \left\{-x_i\ln(x_i)-\alpha x_i-\beta\epsilon_ix_i\right\}.
+\end{eqnarray*}
+\]</div>
+<p>There are two Lagrange multipliers, <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>,
+corresponding to the two constraints. One then solves for the extrema</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+\frac{d}{dx_j}G&amp;=&amp;0\\
+&amp;=&amp;-\ln(x_j)-1-\alpha-\beta\epsilon_j,\\
+x_j&amp;=&amp;\exp\left\{-1-\alpha-\beta\epsilon_j\right\}.
+\end{eqnarray*}
+\end{split}\]</div>
+<p>For any given <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> this provides a solution for
+constraining <span class="math notranslate nohighlight">\(\sum_i x_i\)</span> and <span class="math notranslate nohighlight">\(\sum_i\epsilon_ix_i\)</span> to some values,
+just not the values of unity and <span class="math notranslate nohighlight">\(E\)</span> that you wish. One would then
+have to search for the correct values by adjusting <span class="math notranslate nohighlight">\(\alpha\)</span> and
+<span class="math notranslate nohighlight">\(\beta\)</span> until the constraint are actually matched by solving a
+transcendental equation. Although this can be complicated, it is
+certainly less expensive than searching over all <span class="math notranslate nohighlight">\(N\)</span> values of
+<span class="math notranslate nohighlight">\(x_i\)</span>. This particular example corresponds to maximizing the entropy
+for a system, <span class="math notranslate nohighlight">\(S=-\sum_i x_i\ln(x_i)\)</span>, where <span class="math notranslate nohighlight">\(x_i\)</span> is the probability
+of the system being in a particular discrete level <span class="math notranslate nohighlight">\(i\)</span> that has energy
+<span class="math notranslate nohighlight">\(\epsilon_i\)</span>. One wishes to maximize the entropy subject to the
+constraints that the probabilities sum to unity and the average energy
+has some given value. The result that <span class="math notranslate nohighlight">\(x_i\sim e^{-\beta\epsilon_i}\)</span>
+demonstrates the origin of the Boltzmann factor, with the inverse
+temperature <span class="math notranslate nohighlight">\(\beta=1/T\)</span>.</p>
+<p>Lagrange multipliers also assist with the Euler-Lagrange equation. If
+one breaks an interval <span class="math notranslate nohighlight">\(x_1&lt;x&lt;x_2\)</span> into a large number
+<span class="math notranslate nohighlight">\(n\rightarrow\infty\)</span> points separated by <span class="math notranslate nohighlight">\(dx\)</span>, the Euler-Lagrange
+equation involves finding the <span class="math notranslate nohighlight">\(n\)</span> values <span class="math notranslate nohighlight">\(y_i\)</span> at each point so that
+<span class="math notranslate nohighlight">\(\sum_i dx f\left\{y_i,y'_i=(y_{i+1}-y_{i-1})/(2dx)\right\}\)</span> is
+maximized for some given function <span class="math notranslate nohighlight">\(f\)</span>. If an additional auxiliary
+constraint is added, also some function of the <span class="math notranslate nohighlight">\(n\)</span> values <span class="math notranslate nohighlight">\(y_i\)</span>, one
+can use the method of Lagrange multipliers. In the constraint can also
+be written as some function of <span class="math notranslate nohighlight">\(C(y_i,y'_i)\)</span>, then one simply adds a
+term <span class="math notranslate nohighlight">\(\lambda C(y,y')\)</span> to the function <span class="math notranslate nohighlight">\(f\)</span> and uses the Euler-Lagrange
+equation to find the extrema of.</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{eqnarray}
+J&amp;=&amp;\int_{x_1}^{x_2}dx~f\left\{y(t),y'(t),x\right\}-\lambda C\left\{y(t),y'(t),x\right\},
+\end{eqnarray}
+\]</div>
+<p>the one difference being that</p>
+<!-- Equation labels as ordinary links -->
+<div id="_auto5"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+f\left\{y(t),y'(t),x\right\}\rightarrow f\left\{y(t),y'(t),x\right\}-\lambda C\left\{y(t),y'(t),x\right\}
+\label{_auto5} \tag{5}
+\end{equation}
+\]</div>
+</div>
+<div class="section" id="example">
+<h3><span class="section-number">4.1.3. </span>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>Consider a chain of length <span class="math notranslate nohighlight">\(L\)</span> and mass per unit length <span class="math notranslate nohighlight">\(\kappa\)</span> that
+hangs from point <span class="math notranslate nohighlight">\(x=0,y=0\)</span> to point <span class="math notranslate nohighlight">\(x_f,y_f\)</span>. The shape must minimize
+the potential energy. Find general expressions for the shape in terms
+of three constants which must be chosen to match <span class="math notranslate nohighlight">\(y(0)=0, y(x_f)=y_f\)</span>
+and the fixed length. Equivalently, one finds the function <span class="math notranslate nohighlight">\(y(t)\)</span> that
+provides an extrema for the integral,</p>
+<p>One must minimize</p>
+<div class="math notranslate nohighlight">
+\[
+\int d\ell~\kappa gy-\lambda\int d\ell=
+\int_0^{x_f} dx~\sqrt{1+y'^2}\kappa gy-\lambda \int_0^{x_f} dx\sqrt{1+y'^2}.
+\]</div>
+<p>Here <span class="math notranslate nohighlight">\(\lambda\)</span> is the Lagrange multiplier associated with constraining
+the length of the chain. The constrained length <span class="math notranslate nohighlight">\(L\)</span> appears nowhere in
+the expression. Instead, one solves for form of the answer, then
+adjusts <span class="math notranslate nohighlight">\(\lambda\)</span> to give the correct length. For the purposes of the
+Euler-Lagrange minimization one considers the function</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{eqnarray}
+f(y,y';x)&amp;=&amp;\kappa gy\sqrt{1+y'^2}-\lambda\sqrt{1+y'^2}.
+\end{eqnarray}
+\]</div>
+<p>Because <span class="math notranslate nohighlight">\(\lambda\)</span> is an unknown constant and because minimizing a
+function multiplied by a constant is the same as minimizing the
+function, we can equivlently minimize the integral using the function</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray}
+\tilde{f}(y,y';x)&amp;=&amp;y\sqrt{1+y'^2}-\tilde{\lambda}\sqrt{1+y'^2},\\
+\nonumber
+\tilde{\lambda}&amp;\equiv&amp;\frac{\lambda}{\kappa g}.
+\end{eqnarray}
+\end{split}\]</div>
+<p>The Euler-Lagrange equations then become</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{eqnarray*}
+\frac{d}{dx}\left\{
+\frac{y'}{\sqrt{1+y'^2}}y-\tilde{\lambda}\frac{y'}{\sqrt{1+y'^2}}
+\right\}&amp;=&amp;\sqrt{1+y'^2}.
+\end{eqnarray*}
+\]</div>
+<p>Here, we will guess at the form of the solution,</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{eqnarray*}
+y'&amp;=&amp;\sinh[(x-x_0)/a],~~y=a\cosh[(x-x_0)/a]+y_0.
+\end{eqnarray*}
+\]</div>
+<p>Plugging into the Euler-Lagange equations,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+\frac{d}{dx}\left\{(a\cosh[(x-x_0)/a]+y_0)\frac{\sinh[(x-x_0)/a]}{\cosh[(x-x_0)/a]}-\tilde{\lambda}\frac{\sinh[(x-x_0)/a]}{\cosh[(x-x_0)/a]}\right\}&amp;=&amp;\cosh[(x-x_0)/a],\\
+\nonumber
+\frac{d}{dx}\left\{(y_0-\tilde{\lambda})\tanh[(x-x_0)/a]\right\}=0.
+\end{eqnarray*}
+\end{split}\]</div>
+<p>This solution works if <span class="math notranslate nohighlight">\(y_0=\tilde{\lambda}\)</span>. So the general form of
+the solution is</p>
+<div class="math notranslate nohighlight">
+\[
+y=\tilde{\lambda}+a\cosh[(x-x_0)/a].
+\]</div>
+<p>One must find <span class="math notranslate nohighlight">\(\tilde{\lambda}\)</span>, <span class="math notranslate nohighlight">\(x_0\)</span> and <span class="math notranslate nohighlight">\(a\)</span> to satisfy three
+conditions, <span class="math notranslate nohighlight">\(y(x=0)=0\)</span>, <span class="math notranslate nohighlight">\(y(x=x_f)=y_f\)</span> and that the length is <span class="math notranslate nohighlight">\(L\)</span>. For
+a hanging chain <span class="math notranslate nohighlight">\(a\)</span> is positive. A solution with negative <span class="math notranslate nohighlight">\(a\)</span> would
+represent a maximum of the potential energy. A remarkable property of
+the solution is that once you define the length and the end-point
+positions <span class="math notranslate nohighlight">\(y_1\)</span> and <span class="math notranslate nohighlight">\(y_2\)</span>, the solution does not depend on <span class="math notranslate nohighlight">\(\kappa\)</span> or
+<span class="math notranslate nohighlight">\(g\)</span>. Thus, the shape of the chain would be the same if you took it to
+the moon. These solutions are known as <a class="reference external" href="http://en.wikipedia.org/wiki/Catenary%7D%7Bhttp://en.wikipedia.org/wiki/Catenary">catenaries</a>.</p>
+</div>
+</div>
+<div class="section" id="lagrangians">
+<h2><span class="section-number">4.2. </span>Lagrangians<a class="headerlink" href="#lagrangians" title="Permalink to this headline">¶</a></h2>
+<p>Lagrangians represent a powerful method for solving problems that
+would be nearly impossible by direct application of Newton’s third
+law, <span class="math notranslate nohighlight">\(\boldsymbol{F}=m\boldsymbol{a}\)</span>. The method works well for problems where a
+system is well described by a few \textit{generalized coordinates}. A
+generalized coordinate might be the angle describing the position of a
+pendulum. This one angle takes the place of using <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> to
+describe the position of the pendulum, then applying a clumsy
+constraint.</p>
+<p>The Lagrangian equations of motion can be derived from a principle of
+least action, where the action <span class="math notranslate nohighlight">\(S\)</span> is defined as</p>
+<!-- Equation labels as ordinary links -->
+<div id="_auto6"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+S=\int dt~ L(q,\dot{q},t),
+\label{_auto6} \tag{6}
+\end{equation}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(q\)</span> is some coordinate that describes the orientation of a
+system and the Lagrangian <span class="math notranslate nohighlight">\(L\)</span> is defined as</p>
+<!-- Equation labels as ordinary links -->
+<div id="_auto7"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+L=T-U,
+\label{_auto7} \tag{7}
+\end{equation}
+\]</div>
+<p>the difference of the kinetic and potential energies. Minimizing the
+action through the Euler-Lagrange equations gives the Lagrangian
+equations of motion,</p>
+<!-- Equation labels as ordinary links -->
+<div id="_auto8"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\frac{d}{dt}\frac{\partial L}{\partial \dot{q}}=\frac{\partial L}{\partial q}.
+\label{_auto8} \tag{8}
+\end{equation}
+\]</div>
+<p>We begin with two simple examples, neither of which gains from the Lagrangian approach.</p>
+<p>Consider a particle of mass <span class="math notranslate nohighlight">\(m\)</span> connected to a spring with stiffness <span class="math notranslate nohighlight">\(k\)</span>. Derive the Lagrangian equations of motion.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+L&amp;=&amp;\frac{1}{2}m\dot{x}^2-\frac{1}{2}kx^2,\\
+\frac{d}{dt}\frac{\partial L}{\partial \dot{x}}&amp;=&amp;\frac{\partial L}{\partial x},\\
+m\ddot{x}&amp;=&amp;-kx.
+\end{eqnarray*}
+\end{split}\]</div>
+<p>Derive the Lagrangian equations of motion for a pendulum of mass <span class="math notranslate nohighlight">\(m\)</span>
+and length <span class="math notranslate nohighlight">\(\ell\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+L&amp;=&amp;\frac{m}{2}\ell^2\dot{\theta}^2-mg\ell(1-\cos\theta),\\
+\frac{d}{dt}\frac{\partial L}{\partial \dot{\theta}}&amp;=&amp;\frac{\partial L}{\partial \theta},\\
+m\ell^2\ddot{\theta}&amp;=&amp;-mg\ell\sin\theta,\\
+\ddot{\theta}&amp;=&amp;-\frac{g}{\ell}\sin\theta,\\
+\ddot{\theta}&amp;\approx&amp;-\frac{g}{\ell}\theta.
+\end{eqnarray*}
+\end{split}\]</div>
+<div class="section" id="proving-lagrange-s-equations-of-motion-from-newton-s-laws">
+<h3><span class="section-number">4.2.1. </span>Proving Lagrange’s Equations of Motion from Newton’s Laws<a class="headerlink" href="#proving-lagrange-s-equations-of-motion-from-newton-s-laws" title="Permalink to this headline">¶</a></h3>
+<p>Lagrange’s equations of motion can only be applied for the following conditions:</p>
+<ul class="simple">
+<li><p>The potential energy is a function of the generalized coordinates <span class="math notranslate nohighlight">\(q_i\)</span>, but not of <span class="math notranslate nohighlight">\(\dot{q}_i\)</span>.</p></li>
+<li><p>The relation between the original coordinates <span class="math notranslate nohighlight">\(x,y,z\cdots\)</span> and the generalized coordinates does not depend on <span class="math notranslate nohighlight">\(\dot{q}_i\)</span>, e.g. <span class="math notranslate nohighlight">\(x(q,t)\)</span> not <span class="math notranslate nohighlight">\(x(q,\dot{q},t)\)</span>.</p></li>
+<li><p>Any constraints used to reduce the number of degrees of freedom are functions of <span class="math notranslate nohighlight">\(\boldsymbol{q}\)</span>, but not of <span class="math notranslate nohighlight">\(\dot{\boldsymbol{q}}\)</span>.</p></li>
+<li><p>The motion is not dissipative (no damping or friction).</p></li>
+</ul>
+<p>Going forward with the proof, consider <span class="math notranslate nohighlight">\(x_i(q_1,q_2\cdots,t)\)</span> and look
+at the l.h.s. of Lagrange’s equations of motion.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray}
+\frac{\partial T}{\partial\dot{q}_j}&amp;=&amp;\sum_i\frac{\partial T}{\partial\dot{x}_i}\frac{\partial\dot{x}_i}{\partial\dot{q_j}}
++\sum_i\frac{\partial T}{\partial x_i}\frac{\partial x_i}{\partial\dot{q_j}}\\
+\nonumber
+&amp;=&amp;\sum_i m\dot{x}_i\frac{\partial \dot{x}_i}{\partial\dot{q_j}}\\
+\nonumber
+&amp;=&amp;\sum_i m\dot{x}_i\frac{(\delta x_i/\delta t)|_{{\rm fixed~}q_{j'\ne j}}}{\delta q_j/\delta t}\\
+\nonumber
+&amp;=&amp;\sum_im\dot{x}_i\frac{\delta{x}_i|_{{\rm fixed~}q_{j'\ne j}}}{\delta q_j}\\
+\nonumber
+&amp;=&amp;\sum_i m\dot{x}_i\frac{\partial x_i}{\partial q_j}.
+\end{eqnarray}
+\end{split}\]</div>
+<p>In the first line we used the fact that <span class="math notranslate nohighlight">\(T\)</span> does not depend on
+<span class="math notranslate nohighlight">\(x\)</span>. Continuing with taking the derivative of <span class="math notranslate nohighlight">\(U\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{eqnarray}
+-\frac{\partial U}{\partial\dot{q}_j}&amp;=&amp;-\sum_i\frac{\partial U}{\partial x_i}\frac{\partial x_i}{\partial\dot{q}_j}=0.
+\end{eqnarray}
+\]</div>
+<p>In the first line above we used the fact that <span class="math notranslate nohighlight">\(U\)</span> does not depend on <span class="math notranslate nohighlight">\(\dot{x}\)</span> then we used the second condition that <span class="math notranslate nohighlight">\(x\)</span> does not depend on <span class="math notranslate nohighlight">\(\dot{q}\)</span>. Adding the two pieces together, then taking the derivative w.r.t. time,</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{eqnarray}
+\nonumber
+\frac{d}{dt}\frac{\partial}{\partial\dot{q}}(T-U)&amp;=&amp;\sum_im\ddot{x}_i\frac{\partial x_i}{\partial q_j}
++\sum_i m\dot{x}_i\frac{\partial\dot{x}_i}{\partial q_j}.
+\end{eqnarray}
+\]</div>
+<p>Now, we consider the r.h.s. of Lagrange’s equations. Because the
+kinetic energy depends only on <span class="math notranslate nohighlight">\(\dot{x}\)</span> and not <span class="math notranslate nohighlight">\(x\)</span>, and because the
+potential depends on <span class="math notranslate nohighlight">\(x\)</span> but not <span class="math notranslate nohighlight">\(\dot{x}\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray}
+\frac{\partial}{\partial q_j}(T-U)&amp;=&amp;\sum_i\frac{\partial T}{\partial\dot{x}_i}\frac{\partial\dot{x_i}}{\partial q_j}
+-\sum_i\frac{\partial U}{\partial x_i}\frac{\partial x_i}{\partial q_j}\\
+\nonumber
+&amp;=&amp;\sum_i m\dot{x}_i\frac{\partial\dot{x_i}}{\partial q_j}
+-\sum_i\frac{\partial U}{\partial x_i}\frac{\partial x_i}{\partial q_j}
+\end{eqnarray}
+\end{split}\]</div>
+<p>Using the fact that <span class="math notranslate nohighlight">\(m\ddot{x}_i=-(\partial/\partial x_i)U\)</span>, one can
+see that the bottom expressions above are identical,</p>
+<!-- Equation labels as ordinary links -->
+<div id="_auto9"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\frac{d}{dt}\frac{\partial}{\partial\dot{q}_i}(T-U)=\frac{\partial}{\partial q_i}(T-U).
+\label{_auto9} \tag{9}
+\end{equation}
+\]</div>
+</div>
+<div class="section" id="lagrangian-examples">
+<h3><span class="section-number">4.2.2. </span>Lagrangian Examples<a class="headerlink" href="#lagrangian-examples" title="Permalink to this headline">¶</a></h3>
+<p>Two examples are presented here. In the first, there are two
+generalized coordinates, but the two equations of motion can be
+reduced to one through conservation laws (angular momentum in this
+case). In the second, there is a time-dependent constraint.</p>
+<p>Consider a cone of half angle <span class="math notranslate nohighlight">\(\alpha\)</span> standing on its tip at the
+origin. The surface of the cone is defined as</p>
+<div class="math notranslate nohighlight">
+\[
+r=\sqrt{x^2+y^2}=z\tan \alpha.
+\]</div>
+<p>Find the equations of motion for a particle of mass <span class="math notranslate nohighlight">\(m\)</span> moving along the surface under the influence of a constant gravitational force, <span class="math notranslate nohighlight">\(-mg\hat{z}\)</span>. For generalized coordinates use the azimuthal angle <span class="math notranslate nohighlight">\(\phi\)</span> and <span class="math notranslate nohighlight">\(r\)</span>.</p>
+<p>The kinetic energy is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+T&amp;=&amp;\frac{1}{2}mr^2\dot{\theta}^2+\frac{1}{2}m(\dot{r}^2+\dot{z}^2)\\
+&amp;=&amp;\frac{1}{2}mr^2\dot{\theta}^2+\frac{1}{2}m\dot{r}^2\left(1+\cot^2\alpha\right)\\
+&amp;=&amp;\frac{1}{2}mr^2\dot{\theta}^2+\frac{1}{2}m\dot{r}^2\csc^2\alpha.
+\end{eqnarray*}
+\end{split}\]</div>
+<p>The potential energy is</p>
+<div class="math notranslate nohighlight">
+\[
+U=mgr\cot\alpha,
+\]</div>
+<p>so Lagrange’s equations give</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+\frac{d}{dt}\left(mr^2\dot{\theta}\right)&amp;=&amp;0,\\
+\frac{d}{dt}\left(m\csc^2\alpha \dot{r}\right)&amp;=&amp;mr\dot{\theta}^2-mg\cot\alpha,\\
+\ddot{r}&amp;=&amp;r\dot{\theta}^2\sin^2\alpha-g\cos\alpha\sin\alpha
+\end{eqnarray*}
+\end{split}\]</div>
+<p>The first equation is a statement of the conservation of angular
+momentum with <span class="math notranslate nohighlight">\(L=mr^2\dot{\theta}\)</span>, so the second equation can also be
+expressed as</p>
+<div class="math notranslate nohighlight">
+\[
+\ddot{r}=\frac{L^2\sin^2\alpha}{m^2r^3}-g\sin\alpha\cos\alpha.
+\]</div>
+<p>A bead slides along a wire bent in the shape of a parabola,</p>
+<div class="math notranslate nohighlight">
+\[
+z=\frac{1}{2}kr^2,~~r^2=x^2+y^2.
+\]</div>
+<p>Also, the parabolic wire is rotating about the <span class="math notranslate nohighlight">\(z\)</span> axis with angular
+velocity <span class="math notranslate nohighlight">\(\omega\)</span>. Derive the equations of motion. Are there any
+stable configurations?</p>
+<p>Using the fact that</p>
+<div class="math notranslate nohighlight">
+\[
+\dot{z}=\dot{r}\frac{\partial z}{\partial r}=kr\dot{r},
+\]</div>
+<p>the kinetic and potential energies are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+T&amp;=&amp;\frac{1}{2}m\left(\dot{r}^2+\dot{z}^2+r^2\omega^2\right)\\
+&amp;=&amp;\frac{1}{2}m\left(\dot{r}^2+(kr\dot{r})^2+r^2\omega^2\right),\\
+U&amp;=&amp;mgkr^2/2.
+\end{eqnarray*}
+\end{split}\]</div>
+<p>The equations of motion are then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+\frac{d}{dt}\left\{m\dot{r}(1+k^2r^2)\right\}&amp;=&amp;-mgkr+mk^2\dot{r}^2r+m\omega^2r,\\
+\ddot{r}&amp;=&amp;\frac{-gkr+\omega^2r-k^2\dot{r}^2r}{1+k^2r^2}
+\end{eqnarray*}
+\end{split}\]</div>
+<p>For a stable configuration, there needs to be a solution with
+<span class="math notranslate nohighlight">\(\dot{r}=0\)</span> and <span class="math notranslate nohighlight">\(\ddot{r}=0\)</span>. This can only happen at <span class="math notranslate nohighlight">\(r=0\)</span>, and then
+for the acceleration to be inward for small deviations of <span class="math notranslate nohighlight">\(r\)</span> one
+needs to have <span class="math notranslate nohighlight">\(gk&gt;\omega^2\)</span>. If <span class="math notranslate nohighlight">\(\omega^2&gt;gk\)</span> the bead will move
+outward indefinitely.</p>
+</div>
+</div>
+<div class="section" id="small-vibrations-and-normal-modes">
+<h2><span class="section-number">4.3. </span>Small Vibrations and Normal Modes<a class="headerlink" href="#small-vibrations-and-normal-modes" title="Permalink to this headline">¶</a></h2>
+<p>Two examples are provided for solving for normal modes. These are
+solutions with multiple generalized coordinates, where the motion is
+that of simple harmonic motion. However, the motion is only simple for
+a particular set of coordinates <span class="math notranslate nohighlight">\(q_1\)</span> and <span class="math notranslate nohighlight">\(q_2\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray}
+q_1&amp;=&amp;A\cos(\omega_1 t),\\
+\nonumber
+q_2&amp;=&amp;B\cos(\omega_2 t),
+\end{eqnarray}
+\end{split}\]</div>
+<p>while it is not necessarily simple in other coordinates. For example
+if <span class="math notranslate nohighlight">\(x=q_1+q_2\)</span>, and <span class="math notranslate nohighlight">\(y=q_1-q_2\)</span>, the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> motions will contain
+mixtures of multiple frequencies. For many problems, or in the limit
+of small vibrations about a minimum, there is some coordinate system
+where the motion is simple. These are normal modes. Characterizing the
+normal modes involves finding the frequencies, <span class="math notranslate nohighlight">\(\omega_i\)</span>, and the
+coordinate system where the motion is simple for each coordinate. This
+involves finding the direction, or the linear combination of <span class="math notranslate nohighlight">\(x_i\)</span>
+that form the coordinates <span class="math notranslate nohighlight">\(q_i\)</span> in which the motion is that of a
+single oscillator in each coordinate.</p>
+<p>For a first example, we consider a system of springs, where we write
+the Lagrangian, then find the normal modes. For the second example, a
+double pendulum is considered. In this case, one must first make a
+small angle expansion before finding the modes. In principle, problems
+could have the same number of normal modes a degrees of freedom. For
+example, a system of 7 particles moving in three dimensions has 21
+degrees of freedom. However, some of the degrees of freedom do not
+have oscillatory behavior. For example, for a rigid body in free
+space, the angles describing the orientation evolve, but do not
+oscillate. Also, the center-of-mass coordinates of a system of
+particles isolated from outside particles moves at constant
+velocity. One can also describe these as normal modes, but acknowledge
+that their characteristic frequency is zero, as there are no restoring
+forces.</p>
+<p>Consider two springs, whose relaxed lengths are <span class="math notranslate nohighlight">\(\ell\)</span>, connected to three masses as depicted in the figure here. Describe the two normal modes of the motion. We can write the Lagrangian as</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{eqnarray*}
+\mathcal{L}&amp;=&amp;\frac{m}{2}\dot{x}_1^2+m\dot{x}_2^2+\frac{m}{2}\dot{x}_3^2
+-\frac{k}{2}(x_2-x_1-\ell)^2-\frac{k}{2}(x_3-x_2-\ell)^2.
+\end{eqnarray*}
+\]</div>
+<p>There are three coordinates, thus there are three equations of motion,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+m\ddot{x}_1&amp;=&amp;-k(x_1-x_2+\ell)\\
+2m\ddot{x}_2&amp;=&amp;-k(x_2-x_1-\ell)-k(x_2-x_3+\ell)\\
+&amp;=&amp;-k(2x_2-x_1-x_3)\\
+m\ddot{x}_3&amp;=&amp;-k(x_3-x_2+\ell).
+\end{eqnarray*}
+\end{split}\]</div>
+<p>This is a bit complicated because the center-of-mass motion does not easily separate from the three equations. Instead, choose the following coordinates,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+X&amp;=&amp;\frac{x_1+2x_2+x_3}{4},\\
+q_1&amp;=&amp;x_1-x_2+\ell,\\
+q_3&amp;=&amp;x_3-x_2-\ell.
+\end{eqnarray*}
+\end{split}\]</div>
+<p>In these coordinates the potential energy only involves two coordinates,</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{eqnarray*}
+U&amp;=&amp;\frac{k}{2}(q_1^2+q_3^2).
+\end{eqnarray*}
+\]</div>
+<p>To express the kinetic energy express <span class="math notranslate nohighlight">\(x_1, x_2\)</span> and <span class="math notranslate nohighlight">\(x_3\)</span> in terms of
+<span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(q_1\)</span> and <span class="math notranslate nohighlight">\(q_3\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+x_1&amp;=&amp;(3q_1-q_3-4\ell+4X)/4,\\
+x_2&amp;=&amp;(4X-q_1-q_3)/4,\\
+x_3&amp;=&amp;(3q_3-q_1+4\ell+4X)/4.
+\end{eqnarray*}
+\end{split}\]</div>
+<p>The kinetic energy and Lagrangian are them</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+T&amp;=&amp;\frac{m}{2}\frac{1}{16}(3\dot{q}_1-\dot{q}_3+4\dot{X})^2
++m\frac{1}{16}(4\dot{X}-\dot{q}_1-\dot{q}_3)^2
++\frac{m}{2}\frac{1}{16}(3\dot{q}_3-\dot{q}_1+4\dot{X})^2\\
+&amp;=&amp;\frac{3m}{8}(\dot{q}_1^2+\dot{q}_3^2)-\frac{m}{4}\dot{q}_1\dot{q}_3
++2m\dot{X}^2,\\
+\mathcal{L}&amp;=&amp;\frac{3m}{8}(\dot{q}_1^2+\dot{q}_3^2)-\frac{m}{4}\dot{q}_1\dot{q}_3
++2m\dot{X}^2-\frac{k}{2}q_1^2-\frac{k}{2}q_3^2.
+\end{eqnarray*}
+\end{split}\]</div>
+<p>The three equations of motion are then,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+\frac{3}{4}m\ddot{q}_1-\frac{1}{4}m\ddot{q}_3&amp;=&amp;-kq_1,\\
+\frac{3}{4}m\ddot{q}_3-\frac{1}{4}m\ddot{q}_1&amp;=&amp;-kq_3,\\
+4M\ddot{X}&amp;=&amp;0.
+\end{eqnarray*}
+\end{split}\]</div>
+<p>The last equation simply states that the center-of-mass velocity is
+fixed. One could obtain the same result by summing the equations of
+motion for <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(2x_2\)</span> and <span class="math notranslate nohighlight">\(x_3\)</span> above. The second two equations are
+more complicated. To solve them, we assume a form</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+q_1&amp;=&amp;Ae^{i\omega t},\\
+q_3&amp;=&amp;Be^{i\omega t},
+\end{eqnarray*}
+\end{split}\]</div>
+<p>Because this is a linear equation, we can multiply the solution by a
+constant and it will still be a solution. Thus, we can set <span class="math notranslate nohighlight">\(B=1\)</span>, then
+solve for <span class="math notranslate nohighlight">\(A\)</span>, effectively solving for <span class="math notranslate nohighlight">\(A/B\)</span>. Putting this guess into
+the equations of motion,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+-\frac{3}{4}\frac{A}{B}\omega^2+\frac{1}{4}\omega^2&amp;=&amp;-\omega_0^2\frac{A}{B},\\
+-\frac{3}{4}\omega^2+\frac{1}{4}\frac{A}{B}\omega^2&amp;=&amp;-\omega_0^2.
+\end{eqnarray*}
+\end{split}\]</div>
+<p>This is two equations and two unknowns, <span class="math notranslate nohighlight">\(\omega^2\)</span> and
+<span class="math notranslate nohighlight">\(A/B\)</span>. Substituting for <span class="math notranslate nohighlight">\(A/B\)</span> gives a quadratic equation,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+\omega^4-3\omega_0^2\omega^2+2\omega_0^4&amp;=&amp;0,\\
+\omega_0^2&amp;\equiv&amp;k/m.
+\end{eqnarray*}
+\end{split}\]</div>
+<p>The two solutions are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+(1)~~\omega&amp;=&amp;\omega_0,~~~A=-B,\\
+(2)~~\omega&amp;=&amp;\omega_0\sqrt{2},~~~A=B.
+\end{eqnarray*}
+\end{split}\]</div>
+<p>The first solution corresponds to the two outer masses moving in
+opposite directions, in sync, with the middle mass fixed. The second
+solution has both outer masses moving in the same direction, but with
+the center mass moving opposite. These two solutions are referred to
+as normal modes, and are characterized by their frequency and by the
+linear combinations of coordinates that oscillate together. In
+general, the solution is a linear combination of normal modes, which
+usually results in a chaotic looking motion. However, once the
+solution is expressed in terms of the normal modes, each of which
+oscillates independently in a simple manner, one can better understand
+the motion. Further, the frequencies of these modes represent the
+natural resonant frequencies of the system. This is important in the
+construction of many structures, such as bridges or vehicles.</p>
+<p>Consider a double pendulum confined to the <span class="math notranslate nohighlight">\(x-y\)</span> plane, where <span class="math notranslate nohighlight">\(y\)</span> is
+vertical. A mass <span class="math notranslate nohighlight">\(m\)</span> is connected to the ceiling with a massless
+string of length <span class="math notranslate nohighlight">\(\ell\)</span>. A second mass <span class="math notranslate nohighlight">\(m\)</span> hangs from the first mass
+with an identical massless string of the same length. Using <span class="math notranslate nohighlight">\(\theta_1\)</span>
+and <span class="math notranslate nohighlight">\(\theta_2\)</span> to describe the orientations of the strings relative to
+the vertical axis, find the Lagrangian and derive the equations of
+motion, both for arbitrary angles and in the small-angle
+approximation. Finally, express the equations of motion in the limit
+of small oscillations.</p>
+<p>The kinetic and potential energies are:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+T&amp;=&amp;\frac{1}{2}m\ell^2\dot{\theta}_1^2
++\frac{1}{2}m\left\{(\ell\dot{\theta}_1\cos\theta_1+\ell\dot{\theta}_2\cos\theta_2)^2
++(\ell\dot{\theta}_1\sin\theta_1+\ell\dot{\theta}_2\sin\theta_2)^2\right\}\\
+&amp;=&amp;\frac{1}{2}m\ell^2\left\{2\dot{\theta}_1^2+\dot{\theta}_2^2+2\dot{\theta}_1\dot{\theta}_2\cos(\theta_1-\theta_2)
+\right\},\\
+U&amp;=&amp;mg\ell(1-\cos\theta_1)+mg\left[\ell(1-\cos\theta_1)+\ell(1-\cos\theta_2)\right]\\
+&amp;=&amp;mg\ell(3-2\cos\theta_1-\cos\theta_2)
+\end{eqnarray*}
+\end{split}\]</div>
+<p>Lagrange’s equations for <span class="math notranslate nohighlight">\(\theta_1\)</span> lead to</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+m\ell^2\frac{d}{dt}\left\{2\dot{\theta}_1+\dot{\theta}_2\cos(\theta_1-\theta_2)\right\}&amp;=&amp;
+-m\ell^2\dot{\theta}_1\dot{\theta}_2\sin(\theta_1-\theta_2)
+-2mg\ell\sin\theta_1,\\
+2\ddot{\theta}_1+\ddot{\theta}_2\cos(\theta_1-\theta_2)+\dot{\theta}_2^2\sin(\theta_1-\theta_2)
+&amp;=&amp;-2\omega_0^2\sin\theta_1,\\
+\omega_0^2&amp;\equiv&amp; g/\ell,
+\end{eqnarray*}
+\end{split}\]</div>
+<p>and the equations for <span class="math notranslate nohighlight">\(\theta_2\)</span> are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+m\ell^2\frac{d}{dt}\left\{\dot{\theta}_2+\dot{\theta}_1\cos(\theta_1-\theta_2)\right\}&amp;=&amp;
+m\ell^2\dot{\theta}_1\dot{\theta}_2\sin(\theta_1-\theta_2)-mg\ell\sin\theta_2,\\
+\ddot{\theta}_2+\ddot{\theta_1}\cos(\theta_1-\theta_2)&amp;=&amp;
+-\omega_0^2\sin\theta_2.
+\end{eqnarray*}
+\end{split}\]</div>
+<p>For small oscillations, one can only consider terms linear in <span class="math notranslate nohighlight">\(\theta_1\)</span> and <span class="math notranslate nohighlight">\(\theta_2\)</span> or their derivatives,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray}
+2\ddot{\theta}_1+\ddot{\theta}_2&amp;=&amp;-2\omega_0^2\theta_1,\\
+\nonumber
+\ddot{\theta}_1+\ddot{\theta}_2&amp;=&amp;-\omega_0^2\theta_2.
+\end{eqnarray}
+\end{split}\]</div>
+<p>To find the solutions, assume they are of the form
+<span class="math notranslate nohighlight">\(\theta_1=Ae^{i\omega t}, \theta_2=Be^{i\omega t}\)</span>. Solve for <span class="math notranslate nohighlight">\(\omega\)</span>
+and <span class="math notranslate nohighlight">\(A/B\)</span>, noting that <span class="math notranslate nohighlight">\(B\)</span> is arbitrary.</p>
+<p>Plug in the desired form and find</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+e^{i\omega t}(-2\omega^2A-\omega^2B)&amp;=&amp;e^{i\omega t}(-2\omega_0^2A),\\
+e^{i\omega t}(-\omega^2A-\omega^2B)&amp;=&amp;e^{i\omega t}(-\omega_0^2B).
+\end{eqnarray*}
+\end{split}\]</div>
+<p>We can treat <span class="math notranslate nohighlight">\(B\)</span> as arbitrary and set it to unity. When we find <span class="math notranslate nohighlight">\(A\)</span>,
+it is the same as <span class="math notranslate nohighlight">\(A/B\)</span> for arbitrary <span class="math notranslate nohighlight">\(B\)</span>. This gives the equations</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+2\omega^2A+\omega^2&amp;=&amp;2\omega_0^2A,\\
+\omega^2A+\omega^2&amp;=&amp;\omega_0^2.
+\end{eqnarray*}
+\end{split}\]</div>
+<p>This is two equations and two unknowns. Solving them leads to a
+quadratic equation with solutions</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+A/B&amp;=&amp;\pm\frac{1}{\sqrt{2}},\\
+\omega^2&amp;=&amp;\frac{\omega_0^2}{1\pm 1/\sqrt{2}}.
+\end{eqnarray*}
+\end{split}\]</div>
+<p>Again, these two solutions are the normal modes, and the general
+solution is a sum of the two solutions, with two arbitrary
+constants. For the angles <span class="math notranslate nohighlight">\(\theta_1\)</span> and <span class="math notranslate nohighlight">\(\theta_2\)</span> are:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+\theta_1&amp;=&amp;\frac{A_+}{\sqrt{2}}e^{i\omega_+t}, ~\theta_2=A_+e^{i\omega_+t},\\
+\theta_1&amp;=&amp;\frac{-A_-}{\sqrt{2}}e^{i\omega_-t}, ~\theta_2=A_-e^{i\omega_-t},\\
+\omega_{\pm}&amp;=&amp;\omega_0\sqrt{\frac{1}{1\pm 1/\sqrt{2}}}.
+\end{eqnarray*}
+\end{split}\]</div>
+<p>One can also express the solution in vector notation, with the vectors
+having arbitrary amplitudes <span class="math notranslate nohighlight">\(A_+\)</span> and <span class="math notranslate nohighlight">\(A_-\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+\theta_+&amp;=&amp;\left(\begin{array}{c}
+\frac{1}{\sqrt{2}}\\ 1\end{array}\right)A_+e^{i\omega_+t},\\
+\theta_-&amp;=&amp;\left(\begin{array}{c}
+\frac{-1}{\sqrt{2}}\\ 1\end{array}\right)A_-e^{i\omega_-t}.
+\end{eqnarray*}
+\end{split}\]</div>
+<p>Here, the upper/lower components of the vector describe
+<span class="math notranslate nohighlight">\(\theta_1/\theta_2\)</span> respectively.</p>
+<p>These problems can be treated as linear algebra exercises. Linear
+algebra is not used in this course, but nonetheless we describe how
+this works for the curious student. In the limit of small vibrations,
+the equations of motion can be expressed in the form,</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{eqnarray*}
+M\ddot{q}&amp;=&amp;-Kq,
+\end{eqnarray*}
+\]</div>
+<p>a form that looks like the spring equation. However, <span class="math notranslate nohighlight">\(q\)</span> is an
+<span class="math notranslate nohighlight">\(n-\)</span>dimensional vector and <span class="math notranslate nohighlight">\(M\)</span> and <span class="math notranslate nohighlight">\(k\)</span> are <span class="math notranslate nohighlight">\(n\times n\)</span> matrices. In
+the double pendulum example, the dimensionality is 2 and the <span class="math notranslate nohighlight">\(q\)</span>
+refers to the <span class="math notranslate nohighlight">\(\theta_1\)</span> and <span class="math notranslate nohighlight">\(\theta_2\)</span>, and the matrices for <span class="math notranslate nohighlight">\(M\)</span> and
+<span class="math notranslate nohighlight">\(K\)</span> can be read off (add ref).</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+M&amp;=&amp;\left(\begin{array}{cc}
+2&amp;1\\
+1&amp;1\end{array}\right)~,\hspace*{40pt} K=\left(\begin{array}{cc}
+2\omega_0^2&amp;0\\
+0&amp;\omega_0^2\end{array}\right).
+\end{eqnarray*}
+\end{split}\]</div>
+<p>Multiplying both sides of the equation by the inverse matrix <span class="math notranslate nohighlight">\(M^{-1}\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{eqnarray*}
+\ddot{q}&amp;=&amp;-\left(M^{-1}K\right)q.
+\end{eqnarray*}
+\]</div>
+<p>Here,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+M^{-1}&amp;=&amp;\left(\begin{array}{cc}
+1&amp;-1\\
+-1&amp;2\end{array}\right),\\
+M^{-1}K&amp;=&amp;\left(\begin{array}{cc}
+2&amp;-1\\
+-2&amp;2\end{array}\right)\omega_0^2.
+\end{eqnarray*}
+\end{split}\]</div>
+<p>One can find a transformation, basically a rotation, that transforms
+to a frame where <span class="math notranslate nohighlight">\(M^{-1}K\)</span> is diagonal. In this coordinate system the
+diagonal components of <span class="math notranslate nohighlight">\(M^{-1}K\)</span> represent the squared frequencies of
+the normal modes,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+M^{-1}K\rightarrow -\left(\begin{array}{cc}
+\omega_+^2&amp;0\\
+0&amp;\omega_-^2\end{array}\right)~,
+\end{split}\]</div>
+<p>and are known as “eigen” frequencies. The corresponding unit vectors,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left(\begin{array}{c}
+1\\0\end{array}\right)~{\rm and}~\left(\begin{array}{c}
+0\\1\end{array}\right)~{\rm in~the~new~coordinate~system},
+\end{split}\]</div>
+<p>can be rotated back into the original frame, and become the solutions
+for the normal modes. These are then called “eigenvectors”, which
+are the same as the normal modes. Finding the eigenfrequencies is
+performed by realizing that the determinant of a matrix is unchanged
+by the rotation between coordinate systems. Writing the equations of
+motion as an eigenvalue problem,</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{eqnarray}
+\left[A-\lambda_i\mathbb{1}\right]u_i&amp;=&amp;0,~~~A\equiv M^{-1}K,~\lambda_i\equiv \omega^2_i.
+\end{eqnarray}
+\]</div>
+<p>In the coordinate system where <span class="math notranslate nohighlight">\(M^{-1}K\)</span> is diagonal, and the forms
+for <span class="math notranslate nohighlight">\(u_i\)</span> are simple this requires that in that system, the diagonal
+elements of <span class="math notranslate nohighlight">\(M^{-1}K\)</span> are the eigenvalues, <span class="math notranslate nohighlight">\(\omega_i^2\)</span>. For each
+<span class="math notranslate nohighlight">\(\omega^2_i\)</span>, the determinant <span class="math notranslate nohighlight">\(|A-\lambda_i\mathbb{1}|\)</span> must
+vanish. This is then true in any coordinate system,</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{eqnarray}
+{\rm det}\left[A-\lambda\mathbb{1}\right]&amp;=&amp;0,
+\end{eqnarray}
+\]</div>
+<p>which for a <span class="math notranslate nohighlight">\(2\times 2\)</span> matrix becomes</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray}
+\left|
+\begin{array}{cc}
+A_{11}-\lambda&amp;A_{12}\\
+A_{21}&amp;A_{22}-\lambda
+\end{array}
+\right|&amp;=&amp;0,\\
+A_{11}A_{22}-\lambda A_{11}-\lambda A_{22}+\lambda^2-A_{21}A_{12}&amp;=&amp;0.
+\end{eqnarray}
+\end{split}\]</div>
+<p>One can solve a quadratic equation for <span class="math notranslate nohighlight">\(\lambda\)</span>, which gives two
+eigenvalues corresponding to <span class="math notranslate nohighlight">\(\omega_+^2\)</span> and <span class="math notranslate nohighlight">\(\omega_-^2\)</span> found
+above. Choosing one of the eigenvalues, one can insert one of the
+eigenvalues <span class="math notranslate nohighlight">\(\lambda_i\)</span> into the eigenvalue problem  and solve for <span class="math notranslate nohighlight">\(u_i\)</span>,
+then choose the other eigenvalue and solve for the other corresponding
+vector.</p>
+<p>If this were a 3-dimensional set of equations, the determinant would
+include terms like <span class="math notranslate nohighlight">\(\lambda^3\)</span> and would become a cubic equation with
+three eigenvalues. One would then solve for three eigenvectors. If one
+has a system with dimensionality <span class="math notranslate nohighlight">\(n&gt;2\)</span>, one usually resorts to solving
+the problem numerically due to the messiness of the algebra. The main
+programming languages all have packages which readily diagonalize
+matrices and find eigenvectors and eigenvalues.</p>
+</div>
+<div class="section" id="conservation-laws">
+<h2><span class="section-number">4.4. </span>Conservation Laws<a class="headerlink" href="#conservation-laws" title="Permalink to this headline">¶</a></h2>
+<p>Energy is conserved only when the Lagrangian has no explicit
+dependence on time, i.e. <span class="math notranslate nohighlight">\(L(q,\dot{q})\)</span>, not <span class="math notranslate nohighlight">\(L(q,\dot{q},t)\)</span>. To show
+this, we first define the Hamiltonian,</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{eqnarray}
+H&amp;=&amp;\sum_i\left(\dot{q}_i\frac{\partial L}{\partial\dot{q}_i}\right)-L.
+\end{eqnarray}
+\]</div>
+<p>After showing that <span class="math notranslate nohighlight">\(H\)</span> is conserved, i.e. <span class="math notranslate nohighlight">\((d/dt)H=0\)</span>, we then show
+that <span class="math notranslate nohighlight">\(H\)</span> can be identified with the total energy, <span class="math notranslate nohighlight">\(H=T+V\)</span>.</p>
+<p>One can see that <span class="math notranslate nohighlight">\(H\)</span> is conserved by applying first using the chain
+rule for <span class="math notranslate nohighlight">\((d/dt)H\)</span>, then applying Lagrange’s
+equations,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray}
+\frac{d}{dt}H&amp;=&amp;\sum_i\left\{\ddot{q}_i\frac{\partial L}{\partial\dot{q}_i}+\dot{q}_i\frac{d}{dt}\left(\frac{\partial L}{\partial\dot{q}_i}\right)-\frac{\partial L}{\partial\dot{q}_i}\ddot{q}_i-\frac{\partial L}{\partial q_i}\dot{q}_i\right\}\\
+\nonumber
+&amp;=&amp;\sum_i\left\{\ddot{q}_i\frac{\partial L}{\partial\dot{q}_i}+\dot{q}_i\frac{\partial L}{\partial q_i}-\frac{\partial L}{\partial\dot{q}_i}\ddot{q}_i-\frac{\partial L}{\partial q_i}\dot{q}_i\right\}\\
+\nonumber
+&amp;=&amp;0.
+\end{eqnarray}
+\end{split}\]</div>
+<p>These steps assumed that <span class="math notranslate nohighlight">\(L\)</span> had no explicit time dependence, i.e. <span class="math notranslate nohighlight">\(L\)</span>
+is a function of <span class="math notranslate nohighlight">\(q\)</span> and <span class="math notranslate nohighlight">\(\dot{q}\)</span>, but not of <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p>Next, we show that <span class="math notranslate nohighlight">\(L\)</span> can be identified with the energy. Because <span class="math notranslate nohighlight">\(V\)</span> does not depend on <span class="math notranslate nohighlight">\(\dot{q}\)</span>,</p>
+<!-- Equation labels as ordinary links -->
+<div id="_auto10"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+H=\sum_i\frac{\partial T}{\partial\dot{q}_i}\dot{q}_i-T+V.
+\label{_auto10} \tag{10}
+\end{equation}
+\]</div>
+<p>If the kinetic energy has a purely quadratic form in terms of <span class="math notranslate nohighlight">\(\dot{q}\)</span>,</p>
+<!-- Equation labels as ordinary links -->
+<div id="_auto11"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+T=\sum_{ij}A_{ij}(q)\dot{q}_i\dot{q}_j,
+\label{_auto11} \tag{11}
+\end{equation}
+\]</div>
+<p>the Hamiltonian becomes</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray}
+H&amp;=&amp;\sum_{ij}2A_{ij}(q)\dot{q}_i\dot{q}_j-\sum_{ij}A_{ij}(q)\dot{q}_i\dot{q}_j+V\\
+\nonumber
+&amp;=&amp;T+V.
+\end{eqnarray}
+\end{split}\]</div>
+<p>The proof that <span class="math notranslate nohighlight">\(H\)</span> equals the energy hinged on the fact that the
+kinetic energy was quadratic in <span class="math notranslate nohighlight">\(\dot{q}\)</span>. This can be attributed to
+time-reversal symmetry. Because the Cartesian coordinates <span class="math notranslate nohighlight">\(x_i\)</span> do not
+depend on <span class="math notranslate nohighlight">\(\dot{q}_i\)</span> or on time, <span class="math notranslate nohighlight">\(\dot{x}_i=(\partial x_i/\partial
+q_j)\dot{q}_j\)</span>. Thus, the kinetic energy, <span class="math notranslate nohighlight">\(T=m\dot{x}_i^2/2\)</span>, should
+be proportional to two powers of <span class="math notranslate nohighlight">\(\dot{q}\)</span>, which validates the
+assumption above.</p>
+<p>Here, energy conservation is predicated on the Lagrangian not having
+an explicit time dependence. Without an explicit time dependence the
+equations of motion are unchanged if one translates a fixed amount in
+time because the physics does not depend on when the clock starts. In
+contrast, the absolute time becomes relevant if there is an explicit
+time dependence. In fact, conservation laws can usually be associated
+with symmetries. In this case the translation symmetry in time leads
+to energy conservation.</p>
+<p>For another example of how symmetry leads to conservation laws,
+consider a Lagrangian for a particle of mass <span class="math notranslate nohighlight">\(m\)</span> moving in a
+two-dimensional plane where the generalized coordinates are the radius
+<span class="math notranslate nohighlight">\(r\)</span> and the angle <span class="math notranslate nohighlight">\(\theta\)</span>. The kinetic energy would be</p>
+<!-- Equation labels as ordinary links -->
+<div id="_auto12"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+T=\frac{1}{2}m\left\{\dot{r}^2+r^2\dot{\theta}^2\right\},
+\label{_auto12} \tag{12}
+\end{equation}
+\]</div>
+<p>and if the potential energy <span class="math notranslate nohighlight">\(V(r)\)</span> depends only on the radius <span class="math notranslate nohighlight">\(r\)</span> and
+not on the angle, Lagrange’s equations become</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray}
+\frac{d}{dt}(m\dot{r})&amp;=&amp;-\frac{\partial V}{\partial r}+m\dot{\theta}^2r,\\
+\nonumber
+\frac{d}{dt}(mr^2\dot{\theta})&amp;=&amp;0.
+\end{eqnarray}
+\end{split}\]</div>
+<p>The second equation implies that <span class="math notranslate nohighlight">\(mr^2\dot{\theta}\)</span> is a
+constant. Indeed, it is the angular momentum which is conserved for a
+radial force. Here, the conservation of angular momentum is associated
+with the independence of the physics to changes in <span class="math notranslate nohighlight">\(\theta\)</span>, or in
+other words, rotational invariance. Once one knows the fact that
+<span class="math notranslate nohighlight">\(L=mr^2\dot{\theta}\)</span> is conserved, it can be inserted into the
+equations of motion for <span class="math notranslate nohighlight">\(\dot{r}\)</span>,</p>
+<!-- Equation labels as ordinary links -->
+<div id="_auto13"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+m\ddot{r}=-\frac{\partial V}{\partial r}+\frac{L^2}{mr^3}.
+\label{_auto13} \tag{13}
+\end{equation}
+\]</div>
+<p>This is related to <a class="reference external" href="http://en.wikipedia.org/wiki/Noether%27s_theorem">Emmy Noether’s theorem</a></p>
+<p>Simply stated, if the Lagrangian <span class="math notranslate nohighlight">\(L\)</span> is independent of <span class="math notranslate nohighlight">\(q_i\)</span>, one can
+see that the quantity <span class="math notranslate nohighlight">\(\partial L/\partial\dot{q}_i\)</span> is conserved,</p>
+<!-- Equation labels as ordinary links -->
+<div id="_auto14"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\frac{d}{dt}\frac{\partial L}{\partial\dot{q}_i}=0.
+\label{_auto14} \tag{14}
+\end{equation}
+\]</div>
+<p>Another easy example is in Cartesian coordinates where the potential
+depends only on <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> but not on <span class="math notranslate nohighlight">\(z\)</span>. In that case, there is a
+translational symmetry. From the last equation, this translates
+into conservation of the momentum in the <span class="math notranslate nohighlight">\(z\)</span> direction.</p>
+<p>Consider a pair of particles of mass <span class="math notranslate nohighlight">\(m_1\)</span> and <span class="math notranslate nohighlight">\(m_2\)</span> where the potential is of the form</p>
+<div class="math notranslate nohighlight">
+\[
+U(\boldsymbol{r}_1,\boldsymbol{r}_2)=V_a(|m_1\boldsymbol{r}_1+m_2\boldsymbol{r}_2|/(m_1+m_2))+V_b(|\boldsymbol{r}_1-\boldsymbol{r}_2|).
+\]</div>
+<p>Using symmetry arguments alone, are there any conserved components of
+the momentum? or the angular momentum??</p>
+<p>There is no translational invariance, hence there are no conserved
+components of the momentum. However, there is rotational invariance
+about any axis that goes through the origin. Hence, there is angular
+momentum conservation in all three directions. Symmetry arguments are
+great ways to recognize the existence of conserved quantities, but
+actually expressing them in terms of coordinates can be tricky. For
+instance, you may need to write the Lagrangian in terms of angles.</p>
+<!-- more examples to be added, in particular develop better pendulum model with constraints -->
+<!-- Add material about angular momentum conservation and linear momentum. -->
+<!-- Add material about non-inertial frames -->
+<!-- Double pendulum and Foucalt's pendulum -->
+<!-- Revisit oscillations and example on earthquake models --></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="chapter7.html" title="previous page"><span class="section-number">3. </span>Non-inertial Frames, Translation and Rotating Coordinate Systems</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Morten Hjorth-Jensen and Scott Pratt<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
