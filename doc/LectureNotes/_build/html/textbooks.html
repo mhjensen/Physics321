@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Search &#8212; Classical mechanics</title>
+    <title>Textbooks &#8212; Classical mechanics</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -36,7 +36,6 @@
     
   <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
 
-    
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
@@ -56,15 +55,13 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script src="_static/searchtools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" />
-  <script src="searchindex.js" defer></script>
-  
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Introduction" href="chapter1.html" />
+    <link rel="prev" title="Teachers and Grading" href="teachers.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
 
 
 
@@ -86,7 +83,7 @@
   <h1 class="site-logo" id="site-title">Classical mechanics</h1>
   
 </a>
-</div><form class="bd-search d-flex align-items-center" action="#" method="get">
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
@@ -103,7 +100,7 @@
   About the course
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="schedule.html">
    Teaching schedule with links to material
@@ -114,8 +111,8 @@
    Teachers and Grading
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="textbooks.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Textbooks
   </a>
  </li>
@@ -205,6 +202,23 @@
             </button>
             
             
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/textbooks.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
             <!-- Source interaction buttons -->
 
 
@@ -221,6 +235,21 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#possible-textbooks-and-lecture-notes">
+   Possible textbooks and lecture notes
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
         </div>
     </div>
 </div>
@@ -229,33 +258,47 @@
         
               <div>
                 
-  <h1 id="search-documentation">Search</h1>
-  <div id="fallback" class="admonition warning">
-  <script>$('#fallback').hide();</script>
-  <p>
-    Please activate JavaScript to enable the search
-    functionality.
-  </p>
-  </div>
-  <p>
-    Searching for multiple words only shows matches that contain
-    all words.
-  </p>
-  <form action="" method="get">
-    <input type="text" name="q" aria-labelledby="search-documentation" value="" />
-    <input type="submit" value="search" />
-    <span id="search-progress" style="padding-left: 10px"></span>
-  </form>
-  
-  <div id="search-results">
-  
-  </div>
+  <div class="section" id="textbooks">
+<h1>Textbooks<a class="headerlink" href="#textbooks" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="possible-textbooks-and-lecture-notes">
+<h2>Possible textbooks and lecture notes<a class="headerlink" href="#possible-textbooks-and-lecture-notes" title="Permalink to this headline">¶</a></h2>
+<p><em>Recommended textbook</em>:</p>
+<ul class="simple">
+<li><p>JRT: John R. Taylor, Classical Mechanics (Univ. Sci. Books 2005), <a class="reference external" href="https://www.uscibooks.com/taylor2.htm">https://www.uscibooks.com/taylor2.htm</a>, see also <a class="reference external" href="https://github.com/mhjensen/Physics321/tree/master/doc/Literature">https://github.com/mhjensen/Physics321/tree/master/doc/Literature</a>
+<em>Additional textbooks</em>:</p></li>
+<li><p>AMS: Anders Malthe-Sørenssen, Elementary Mechanics using Python (Springer 2015), <a class="reference external" href="https://www.springer.com/gp/book/9783319195957">https://www.springer.com/gp/book/9783319195957</a> and <a class="reference external" href="https://github.com/mhjensen/Physics321/tree/master/doc/Literature">https://github.com/mhjensen/Physics321/tree/master/doc/Literature</a></p></li>
+<li><p><em>Lecture notes</em>: Posted lecture notes are in the doc/pub folder here or at <a class="reference external" href="https://mhjensen.github.io/Physics321/doc/web/course.html">https://mhjensen.github.io/Physics321/doc/web/course.html</a> for easier viewing. They are not meant to be a replacement for textbook. These notes are updated on a weekly basis and a <em>git pull</em> should thus always give you the latest update.</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="teachers.html" title="previous page">Teachers and Grading</a>
+    <a class='right-next' id="next-link" href="chapter1.html" title="next page"><span class="section-number">1. </span>Introduction</a>
 
         </div>
         
