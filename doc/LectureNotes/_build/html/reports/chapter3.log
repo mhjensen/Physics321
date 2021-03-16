@@ -17,92 +17,16 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# Common imports
-import numpy as np
-import pandas as pd
-from math import *
-import matplotlib.pyplot as plt
-import os
-from pylab import plt, mpl
-plt.style.use('seaborn')
-mpl.rcParams['font.family'] = 'serif'
-
-#define the gravitational acceleration
-g = 9.80655 #m/s^2
-# The mass and the drag constant D
-D = 0.00245 #mass/length   kg/m
-m = 0.2 #kg, mass of falling object
-DeltaT = 0.001
-#set up final time, here just a number we have chosen
-tfinal = 1.0
-# set up number of points for all variables
-n = ceil(tfinal/DeltaT)
-# set up arrays for t, a, v, and y and arrays for analytical results
-# Note the brute force setting up of arrays for x and y, vx, vy, ax and ay
-# For hw3 you should think of using the 2-dim vectors you used in homework 2
-t = np.zeros(n)
-vy = np.zeros(n)
-y = np.zeros(n)
-vx = np.zeros(n)
-x = np.zeros(n)
-# Initial conditions
-vx[0] = 10.0 #m/s
-vy[0] = 0.0  #m/s
-y[0] = 10.0 #m
-x[0] = 0.0 #m
-# Start integrating using Euler's method
-for i in range(n-1):
-    # expression for acceleration, note the absolute value and division by mass
-#    ax = You need to set up the expression for force and thereby the acceleration in the x-direction
-#    ay = You need to set up the expression for force and thereby the acceleration in the y-direction
-    # update velocity and position
-    vx[i+1] = vx[i] + DeltaT*ax
-    x[i+1] = x[i] + DeltaT*vx[i]
-    vy[i+1] = vy[i] + DeltaT*ay
-    y[i+1] = y[i] + DeltaT*vy[i]
-    # update time to next time step and compute analytical answer
-    t[i+1] = t[i] + DeltaT
-#  Here you need to set up the analytical solution for y(t) and x(t)
-
-if ( y[i+1] < 0.0):
-        break
-data = {'t[s]': t,
-        'Relative error in y': abs((y-yanalytic)/yanalytic),
-        'vy[m/s]': vy,
-        'Relative error in x': abs((x-xanalytic)/xanalytic),
-        'vx[m/s]': vx
-}
-NewData = pd.DataFrame(data)
-display(NewData)
-# save to file
-NewData.to_csv(outfile, index=False)
-#then plot
-fig, axs = plt.subplots(4, 1)
-axs[0].plot(t, y)
-axs[0].set_xlim(0, tfinal)
-axs[0].set_ylabel('y')
-axs[1].plot(t, vy)
-axs[1].set_ylabel('vy[m/s]')
-axs[1].set_xlabel('time[s]')
-axs[2].plot(t, x)
-axs[2].set_xlim(0, tfinal)
-axs[2].set_ylabel('x')
-axs[3].plot(t, vx)
-axs[3].set_ylabel('vx[m/s]')
-axs[3].set_xlabel('time[s]')
-fig.tight_layout()
-plt.show()
+    ax = -D*vx[i]*abs(v[i])/m
+    ay = -g - D*vy[i]*abs(v[i])/m
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-14-f041d9eecb29>[0m in [0;36m<module>[0;34m[0m
-[1;32m     38[0m [0;31m#    ay = You need to set up the expression for force and thereby the acceleration in the y-direction[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     39[0m     [0;31m# update velocity and position[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 40[0;31m     [0mvx[0m[0;34m[[0m[0mi[0m[0;34m+[0m[0;36m1[0m[0;34m][0m [0;34m=[0m [0mvx[0m[0;34m[[0m[0mi[0m[0;34m][0m [0;34m+[0m [0mDeltaT[0m[0;34m*[0m[0max[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     41[0m     [0mx[0m[0;34m[[0m[0mi[0m[0;34m+[0m[0;36m1[0m[0;34m][0m [0;34m=[0m [0mx[0m[0;34m[[0m[0mi[0m[0;34m][0m [0;34m+[0m [0mDeltaT[0m[0;34m*[0m[0mvx[0m[0;34m[[0m[0mi[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
-[1;32m     42[0m     [0mvy[0m[0;34m[[0m[0mi[0m[0;34m+[0m[0;36m1[0m[0;34m][0m [0;34m=[0m [0mvy[0m[0;34m[[0m[0mi[0m[0;34m][0m [0;34m+[0m [0mDeltaT[0m[0;34m*[0m[0may[0m[0;34m[0m[0;34m[0m[0m
+[0;32m<ipython-input-14-847092aec374>[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0max[0m [0;34m=[0m [0;34m-[0m[0mD[0m[0;34m*[0m[0mvx[0m[0;34m[[0m[0mi[0m[0;34m][0m[0;34m*[0m[0mabs[0m[0;34m([0m[0mv[0m[0;34m[[0m[0mi[0m[0;34m][0m[0;34m)[0m[0;34m/[0m[0mm[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      2[0m [0may[0m [0;34m=[0m [0;34m-[0m[0mg[0m [0;34m-[0m [0mD[0m[0;34m*[0m[0mvy[0m[0;34m[[0m[0mi[0m[0;34m][0m[0;34m*[0m[0mabs[0m[0;34m([0m[0mv[0m[0;34m[[0m[0mi[0m[0;34m][0m[0;34m)[0m[0;34m/[0m[0mm[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mNameError[0m: name 'ax' is not defined
-NameError: name 'ax' is not defined
+[0;31mNameError[0m: name 'vx' is not defined
+NameError: name 'vx' is not defined
 

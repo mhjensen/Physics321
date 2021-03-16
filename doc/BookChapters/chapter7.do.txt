@@ -1,0 +1,858 @@
+======= Non-inertial Frames, Translation and Rotating Coordinate Systems =======
+
+
+Let us quickly remind ourselves about the definition of a so-called _inertial frame of reference_.
+An inertial frame of reference in classical physics (and in special
+relativity as well) possesses the property that in this frame of reference a
+body with zero net force acting upon it does not accelerate; that is,
+such a body is at rest or moving at a constant velocity.  If we recall the definition of Newton's first law, this is essentially its description.
+
+An
+inertial frame of reference can be defined in analytical terms as a
+frame of reference that describes time and space homogeneously,
+isotropically, and in a time-independent manner.
+
+Conceptually, the
+physics of a system in an inertial frame has no causes external to
+the system. An inertial frame of reference may also be called an
+inertial reference frame, inertial frame, Galilean reference frame, or
+inertial space. 
+
+All inertial frames are in a state of constant, rectilinear motion
+with respect to one another; an accelerometer moving with any of them
+would detect zero acceleration. Measurements in one inertial frame can
+be converted to measurements in another by a simple transformation
+(the Galilean transformation in Newtonian physics and the Lorentz
+transformation in special relativity).
+In general relativity, in any
+region small enough for the curvature of spacetime and tidal forces
+to be negligible, one can find a set of inertial frames that
+approximately describe that region.
+
+In a non-inertial reference frame in classical physics and special
+relativity, the physics of a system vary depending on the acceleration
+of that frame with respect to an inertial frame, and the usual
+physical forces must be supplemented by fictitious forces. In
+contrast, systems in general relativity don't have external causes,
+because of the principle of geodesic motion.
+
+In classical physics, for example, a ball dropped towards the ground
+does not go exactly straight down because the Earth is rotating, which
+means the frame of reference of an observer on Earth is not
+inertial. The physics must account for the Coriolis effect—in this
+case thought of as a force—to predict the horizontal motion. Another
+example of such a fictitious force associated with rotating reference
+frames is the centrifugal effect, or centrifugal force. We will here,
+in addition to the abovementioned example of the Coriolis effect study
+a classic case in classical mechanics, namely Focoault's pendulum.
+
+
+===== Galilean Transformations =====
+
+In many of the examples studied till now we have restricted our
+attention to the motion of a particle (or a system of particles) as
+seen from an inertial frame of reference. An inertial reference frame
+moves at constant velocity with respect to other reference frames. We
+can formalize this relationship as a coordinate transformation (known
+as a Galilean transformation) between say two given frames, one
+labeled $S_0$ and the other one labeled $S$. In our discussions here we will refer to the frame $S_0$ as the reference frame. 
+
+We could consider for example an object in a car, where the car  moves with a
+constant velocity with respect to the system $S_0$. We then throw this
+object up in the air and study it's motion with respect to the two chosen frames.
+We denote the position of this object in the
+car relative to the car's frame as $\bm{r}_S(t)$. We have included an explicit 
+time dependence here. The position of the car relative to the
+reference frame $S_0$ is $\bm{R}(t)$ and the position of the object in
+the car relative to $S_0$ is $\bm{r}_{S_0}(t)$.
+
+The following relations between the positions
+link the various variables that describe the object in the two frames
+
+!bt
+\[
+\bm{r}_{S_0}(t) = \bm{r}_{S}(t) + \bm{R}(t).
+\]
+!et
+
+We will stay with Newtonian mechanics, meaning that we do not consider
+relatistic effects. This means also that the time we measure in $S_0$
+is the same as the time we measure in $S$. This approximation is
+reasonable as long as the two frames do not move very fast relative to
+each other. 
+
+We can then compute the time derivatives and obtain the corresponding velocities
+
+!bt
+\[
+\dot{\bm{r}}_{S_0}(t) = \bm{v}_{S_0}=\dot{\bm{r}}_{S} + \dot{\bm{R}},
+\]
+!et
+
+or
+
+!bt
+\[
+\bm{v}_{S_0}=\bm{v}_{S} + \bm{u},
+\]
+!et
+
+with $\bm{u}=\dot{\bm{R}}$. 
+
+If our system $S$ moves at constant velocity, we have that the
+accelerations in the two systems equal each other since
+$\ddot{\bm{R}}=0$ and we have
+
+!bt
+\[
+\bm{a}_{S_0}=\bm{a}_{S}.
+\]
+!et
+
+The above equations are examples of what we call a homogeneous
+Galilean transformation.  In an inertial frame, an object moves with
+constant velocity (i.e., has zero acceleration) if there are no forces
+acting on it. When we are not in an inertial frame, there will be
+spurious (or fictitious) accelerations arising from the acceleration
+of the reference frame. These effects can be seen in simple every-day
+situations such as sitting in a vehicle that is accelerating or
+rounding a corner. Or think of yourself sitting in a seat of an
+aircraft that accelerates rapidly during takeoff. You feel a force
+which pushes you back in the seat. Similarly, if you stand in a bus
+which suddenly brakes (negative acceleration), you feel a force which
+may make you fall forward unless you hold yourself.  In these
+situations, loose objects will appear to accelerate relative to the
+observer or vehicle.
+
+
+Our next step is thus to study an accelerating frame. Thereafter we
+will study reference frames that are rotating. This will introduce
+forces like the Coriolis force and the well-known centrifugal
+force. We will use these to study again an object which falls towards
+the Earth (the Earth rotates around its axis). This will lead to a
+correction to the object's acceleration twoards the Earth.
+
+Finally, we bring together acceleration and rotation and end the
+discussion here with a classic in classical mechanics, namely
+Focault's pendulum.
+
+
+===== Accelerating Frames (No Rotation) =====
+
+We consider first the effect of uniformly accelerating reference
+frames.  We will hereafter label this frame with a subscript
+$S$. Assume now that this reference systems accelerates with an
+acceleration $\bm{a}_{S_0}$ relative to an inertial reference frame,
+which we will label with a subscript $S_0$.  The accelerating frame
+has a velocity $\bm{v}_{S_0}$ with respect to the inertial frame.
+
+The figure here
+FIGURE: [figslides/rotation.png, width=600 frac=0.6] 
+
+shows the relation between the two
+frames. The position of an object in frame $S$ relative to $S_0$ is
+labeled as $\bm{r}_{S_0}$. Seen from this inertial frame, an object in
+the accelerating frame obeys Newton's second law
+
+!bt
+\begin{equation}
+m\frac{d^2\bm{r}_{S_0}}{dt^2}=\bm{F}.
+\end{equation}
+!et
+
+Here $\bm{F}$ is the net force on an object in the accelerating frame
+seen from the inertial frame.
+
+If we on the other hand wish to study the motion of this object (say a
+ball in an accelerating car) relative to the accelerating frame, we
+need to define its position relative to this frame. We label this
+position as $\bm{r}_{S}$.
+
+Using the definition of velocity as the time derivative of position
+and the standard vector addition of velocities, we can define the
+velocity relative to $S_0$ as
+
+!bt
+\[
+\dot{\bm{r}}_{S_0}=\dot{\bm{r}}_{S}+\bm{v}_{S_0}.
+\]
+!et
+
+The left hand side in the last equation defines the object's velocity
+relative to the inertial frame. The right hand side says this is the
+object's velocity relative to the accelerating frame plus the velocity
+of the accelerating frame with respect to the inertial frame. If we
+now take the second derivative of the above equation,
+we have the corresponding accelerations
+
+!bt
+\[
+\ddot{\bm{r}}_{S_0}=\ddot{\bm{r}}_{S}+\bm{a}_{S_0}.
+\]
+!et
+
+Multiplying with the mass of a given object, we can rewrite Newton's
+law in the accelerating frame as
+
+!bt
+\[
+m\ddot{\bm{r}}_{S}=\bm{F}-\bm{a}_{S_0}.
+\]
+!et
+
+We see that we have again Newton's second law except that we added a
+correction which defines an effective acceleration compared to the
+equation seen in the inertial frame. We can thus continue to use
+Newton's law in the accelerating frame provided we correct the
+equation of motion with what is often called a fictitious force. This
+often also called an inertial force or an effective force.
+
+_Add example about pendulum in train car_
+
+===== Rotating Frames =====
+
+
+If you are on Earth's surface and if your reference frame is fixed
+with the surface, this is an example of an accelerating frame, where
+the acceleration, as we will show below,  is $\Omega^2 r$, where
+$r\equiv\sqrt{x^2+y^2}$, and $\Omega$ is the angular velocity
+of Earth's rotation. The acceleration is inward toward the axis of
+rotation, so the additional contribution to the apparent acceleration
+of gravity is outward in the $x-y$ plane. In contrast the usual
+acceleration $\bm{g}$ is radially inward pointing toward the origin.
+
+We will now deal with motion in a rotating frame and relate this to an
+inertial frame. The outcome of our derivations will be effective
+forces (or inertial forces) like the abovementioned acceleration (from
+the centrifugal force) and the Coriolis force term.
+
+For a reference frame that rotates with respect to an inertial frame,
+_Euler's theorem_ is central here. It states that the most general
+displacement (motion) of a rigid body with a one point fixed (we
+normally approximate a rigid body with a mass center) is a rotation
+about some fixed axis. In different words, the most general motion of
+any body relative to a fixed point $O$ is a rotation abotu some axis
+through the same point $O$. This means that for a specific rotation
+about a given point $O$ we only to specify the direction of the axis
+about which the rotation occurs with the corresponding angle of
+rotation. As we will see below, the direction of the angle of rotation
+can be specified by a unit vector $\bm{e}$ in the rotating frame and
+the rate of rotation per unit time. The latter defines the angular
+velocity $\Omega$. We will define these quantities more rigorously below.
+At the end of this section we will also prove Euler's theorem.
+
+What we will show here is that Newton's laws for an object in the rotating frame is given by
+
+!bt
+\[
+m\ddot{\bm{r}}_{S}=\bm{F}+m\bm{r}\times\dot{\bm{\Omega}}+2m\bm{v}_S\times\bm{\Omega}+m\left(\bm{\Omega}\times\bm{r}\right)\times\bm{\Omega}.
+\]
+!et
+
+
+
+
+
+
+
+The first term to the right is the force we defined in the inertial
+system, that is $m\ddot{\bm{r}}_{S_0}=\bm{F}$. The second term is the
+angular acceleration of the rotating reference frame, a quantity which
+in many cases is set to zero since we assume that the angular velocity
+is constant as function of time. The third terms is the Coriolis force, that
+is
+
+!bt
+\[
+\bm{F}_{\mathrm{Coriolis}}=2m\bm{v}_S\times\bm{\Omega},
+\]
+!et
+while the last term is going to give us the standard centrifugal force
+
+!bt
+\[
+\bm{F}_{\mathrm{Centrifugal}}=m\left(\bm{\Omega}\times\bm{r}\right)\times\bm{\Omega}.
+\]
+!et
+
+
+Let us derive these terms, following much of the same procedure as we
+did for an accelerating reference frame. The figure here (to come)
+shows the two reference systems $S$ and $S_0$.
+
+
+We define a general vector $\bm{A}$. It could represent the position,
+a given force, the velocity and other quantities of interest for
+studies of the equations of motion.
+
+We let this vector to be defined by three orthogonal (we assume motion
+in three dimensions) unit vectors $\bm{e}_i$, that is we have
+
+
+!bt
+\[
+\bm{A}=A_1\bm{e}_1+A_2\bm{e}_2+A_3\bm{e}_3=\sum_iA_i\bm{e}_i.
+\]
+!et
+
+These unit vectors are fixed in the rotating frame, that is their time
+derivatives are zero. However, for an observer in the inertial frame
+$S_0$, however these unit vectors are rotating and may thus have an
+explicit time dependence.
+
+Since we want to find an expression for the equations of motion in the
+inertial frame and the rotating frame, we need expressions for the
+time derivative of a vector $\bm{A}$ in these two frames. Since the
+unit vectors are assumed to be fixed in $S$, we have
+
+!bt
+\[
+\dot{\bm{A}}_S=\sum_i\frac{dA_i}{dt}\bm{e}_i=\sum_i\dot{dA_i}\bm{e}_i.
+\]
+!et
+
+In the inertial frame $S_0$ we have
+
+!bt
+\[
+\dot{\bm{A}}_{S_0}=\sum_i\dot{dA_i}\bm{e}_i+\sum_i A_i\left(\dot{\bm{e}}_i\right)_{S_0}.
+\]
+!et
+
+We will show below that
+
+!bt
+\[
+\left(\dot{\bm{e}}_i\right)_{S_0}=\Omega\times\bm{e}_i,
+\]
+!et
+
+where $\Omega$ is the angular velocity (to be derived below).  This
+means we can write the derivative of an arbitrary vector $\bm{A}$ in
+the inertial frame $S_0$ as (the vector is defined in the rotating
+frame),
+
+!bt
+\[
+\dot{\bm{A}}_{S_0}=\sum_i\dot{dA_i}\bm{e}_i+\sum_i A_i\left(\dot{\bm{e}}_i\right)_{S_0}=\dot{\bm{A}}_S+\sum_i A_i(\Omega\times\bm{e}_i)=\dot{\bm{A}}_S+\bm{\Omega}\times\bm{A}. 
+\]
+!et
+
+This is a very useful relation which relates the derivative of any
+vector $\bm{A}$ measured in the inertial frame $S_0$ to the
+correspoding derivative in a rotating frame $S$.
+
+If we now let $\bm{A}$ be the position and the velocity vectors, we
+can derive the equations of motion in the rotating frame in terms of
+the same equations of motion in the inertial frame $S_0$.
+
+Let us start with the position $\bm{r}$. 
+
+We have
+!bt
+\[
+\dot{\bm{r}}_{S_0}=\dot{\bm{r}}_S+\bm{\Omega}\times\bm{r}. 
+\]
+!et
+
+If we define the velocities in the two  frames as 
+!bt
+\[
+\bm{v}_{S_0}=\dot{\bm{r}}_{S_0},
+\]
+!et
+and
+!bt
+\[
+\bm{v}_{S}=\dot{\bm{r}}_{S},
+\]
+!et
+we have then
+
+!bt
+\[
+\dot{\bm{r}}_{S_0}=\bm{v}_{S_0}=\bm{v}_{S}+\bm{\Omega}\times\bm{r}. 
+\]
+!et
+
+In order to find the equations of motion, we need the acceleration and
+thereby the time derivative of the last equation. The derivative of
+the angular velocity $\Omega$ will turn in handy in these derivations
+(repeated applications of the chain rule again).
+The latter derivative is
+
+!bt
+\[
+\dot{\bm{\Omega}}_{S_0}=\dot{\bm{\Omega}}_S+\bm{\Omega}\times\bm{\Omega}, 
+\]
+!et
+
+which leads to (an expected result, why?) 
+
+!bt
+\[
+\dot{\bm{\Omega}}_{S_0}=\dot{\bm{\Omega}}_S,
+\]
+!et
+
+since $\bm{\Omega}\times\bm{\Omega}=0$. 
+
+Let us now take the second derivative with respect to time.
+
+Using
+!bt
+\[
+\left[\frac{d^2\bm{r}}{dt^2}\right]_{S_0}=\ddot{\bm{r}}_{S_0}=\left[\frac{d}{dt}\right]_{S_0}\left[\frac{d\bm{r}}{dt}\right]_{S_0},
+\]
+!et
+
+we have
+
+!bt
+\[
+\ddot{\bm{r}}_{S_0}=\left[\frac{d}{dt}\right]_{S_0}\left[\bm{v}_{S}+\bm{\Omega}\times\bm{r}\right]=\left[\frac{d}{dt}\right]_{S_0}\bm{v}_{S_0},
+\]
+!et
+
+which gives 
+
+!bt
+\[
+\ddot{\bm{r}}_{S_0}=\left[\frac{d\bm{v}_S}{dt}\right]_{S}+\dot{\bm{\Omega}}\times \bm{r}+2\bm{\Omega}\times\bm{v}_S+\bm{\Omega}\times(\bm{\Omega}\times\bm{r}).
+\]
+!et
+
+Defining the accelerations $\bm{a}_{S_0}=\ddot{\bm{r}}_{S_0}=\dot{\bm{v}}_{S_0}$ and $\bm{a}_{S}=\dot{\bm{v}}_{S}$, we have
+
+!bt
+\[
+\bm{a}_{S_0}=\bm{a}_{S}+\dot{\bm{\Omega}}\times \bm{r}+2\bm{\Omega}\times\bm{v}_S+\bm{\Omega}\times(\bm{\Omega}\times\bm{r}).
+\]
+!et
+
+If we now use Newton's law in the inertial frame $\bm{F}=m\bm{a}_{S_0}$, we get the effective force in the rotating frame (multiplying by the mass $m$)
+
+!bt
+\[
+m\bm{a}_{S}=\bm{F}+m\dot{\bm{r}\times\bm{\Omega}}+2m\bm{v}_S\times\bm{\Omega}+m(\bm{\Omega}\times\bm{r})\times\bm{\Omega},
+\]
+!et
+which is what we wanted to demostrate. We have the Coriolis force
+!bt
+\[
+\bm{F}_{\mathrm{Coriolis}}=2m\bm{v}_S\times\bm{\Omega},
+\]
+!et
+while the last term is the standard centrifugal force
+
+!bt
+\[
+\bm{F}_{\mathrm{Centrifugal}}=m\left(\bm{\Omega}\times\bm{r}\right)\times\bm{\Omega}.
+\]
+!et
+
+In our discussions below we will assume that the angular acceleration of the rotating frame is zero and focus only on the Coriolis force and the centrifugal force.
+
+
+
+=== Effective potential and Centrifugal force ===
+
+Suppose we can ignore the Coriolis force. If we focus only on the
+centrifugal force we have an additional force
+
+!bt
+\[
+\bm{F}_{\mathrm{Centrifugal}}=m\left(\bm{\Omega}\times\bm{r}\right)\times\bm{\Omega},
+\]
+!et
+
+where the term $\bm{\Omega}\times\bm{r}$ is the radial velocity.
+
+Consider now an object with position  $\bm{r}$ according to an observer in a frame
+rotating about the $z$ axis with angular velocity
+$\bm{\Omega}=\Omega\hat{z}$. To an observer in the inertial frame
+the vector will change even if the vector appears
+fixed to the rotating observer.
+
+
+If $\bm{\Omega}$ is in the $z$ direction,
+the centrifugal force becomes 
+!bt
+\begin{equation}
+\bm{F}_{\mathrm{Centrifugal}}=m\Omega^2(x\hat{x}+y\hat{y}).
+\end{equation}
+!et
+
+The centrifugal force points outward in the $x-y$ plane, and its
+magnitude is $m\Omega^2r$, where
+$r=\sqrt{x^2+y^2}$.
+
+Continuing along these lines, 
+if we define a rotating frame which makes an angle $\theta$ with the inertial frame and define the distance to an object in this frame from the origin as $\bm{r}$, then the centrifugal force (which points outward) has as magnitude $\Omega^2r\sin{\theta}$. Defining $\rho=r\sin{\theta}$ and the unit vector $\hat{\bm{\rho}}$ (see figure here)
+FIGURE: [figslides/centrifugal.png, width=600 frac=0.6]
+we have the well-known expression for the centrifugal force
+
+!bt
+\[
+\bm{F}_{\mathrm{Centrifugal}}=m\Omega^2\rho\hat{\bm{\rho}},
+\]
+!et
+and with the velocity given by its magnitude $v=\Omega\rho$ we obtain the well-known expression for the centrifugal force
+!bt
+\[
+\bm{F}_{\mathrm{Centrifugal}}=m\frac{v^2}{\rho}{\bm{\rho}}.
+\]
+!et
+
+If we now go back again to our falling object discussed in the
+beginning of these lectures, we need to modify for the fact that the Earth
+is rotating with respect to the falling object.
+
+Seen from a rotating coordinate system we have now that the forces acting on the falling object are
+!bt
+\[
+m\ddot{\bm{r}}=\bm{F}_{\mathrm{gravity}}+\bm{F}_{\mathrm{Centrifugal}}.
+\]
+!et
+
+If we define the mass of Earth as $M$ and its radius as $R$ and assuming that the object is close to the Earth, the gravitational force takes then well-known expression
+!bt
+\[
+\bm{F}_{\mathrm{gravity}}=-\frac{GMm}{R^2}\hat{\bm{r}}=m\bm{g}_0.
+\]
+!et
+Inserting the expression for the centrifugal force, we can then define an effective force
+!bt
+\[
+\bm{F}_{\mathrm{eff}}=\bm{F}_{\mathrm{gravity}}+\bm{F}_{\mathrm{Centrifugal}}=m\bm{g}_0-m\Omega^2R\sin{(\theta)}\hat{\bm{\rho}},
+\]
+!et
+and with 
+!bt
+\[
+\bm{g}_{\mathrm{eff}}=\bm{g}_0-\Omega^2R\sin{(\theta)}\hat{\bm{\rho}},
+\]
+!et
+we have
+!bt
+\[
+\bm{F}_{\mathrm{eff}}=m\bm{g}_{\mathrm{eff}}. 
+\]
+!et
+
+
+In the rotating coordinate system (not an inertial frame), motion is
+thus determined by an apparent force and one can define effective
+potentials. In addition to the normal gravitational potential energy,
+there is a contribution to the effective potential,
+
+!bt
+\begin{equation}
+\delta V_{\rm eff}(r)=-\frac{m}{2}\Omega^2r^2=-\frac{m}{2}r^2\Omega^2\sin^2\theta,
+\end{equation}
+!et
+
+where $\theta$ is the polar angle, measured from say the north
+pole. If the true gravitational force can be considered as originating
+from a point in Earth's center, the net effective potential for a mass
+$m$ near Earth's surface could be (a distance $h$)
+
+!bt
+\begin{equation}
+V_{\rm eff}=mgh-m\frac{1}{2}\Omega^2(R+h)^2\sin^2\theta.
+\end{equation}
+!et
+
+
+As an example, let us ask ourselves how much wider is Earth at the
+equator than the north-south distance between the poles assuming that
+the gravitational field above the surface can be approximated by that
+of a point mass at Earth's center.
+
+
+The surface of the ocean must be at constant effective potential for a
+sample mass $m$. This means that if $h$ now refers to the height of
+the water
+
+!bt
+\[
+m g[h(\theta=\pi/2)-h(\theta=0)]=\frac{m}{2}\Omega^2(R+h)^2.
+\]
+!et
+
+Because $R>>h$, one can approximate $R+h\rightarrow R$ on the right-hand side, thus
+
+!bt
+\[
+h(\theta=\pi)-h(\theta=0)=\frac{\Omega^2R^2}{2g}.
+\]
+!et
+
+This come out a bit less than 11 km, or a difference of near 22 km for
+the diameter of the Earth in the equatorial plane compared to a
+diameter between the poles. In reality, the difference is
+approximately 41 km. The discrepancy comes from the assumption that
+the true gravitational force can be treated as if it came from a point
+at Earth's center. This would be true if the distribution of mass was
+radially symmetric. However, Earth's center is molten and the rotation
+distorts the mass distribution. Remarkably this effect nearly doubles
+the elliptic distortion of Earth's shape. Due to this distortion, the
+top of Mount Everest is not the furthest point from the center of the
+Earth. That belongs to the top of a volcano, Chimborazo, in Equador,
+which is one degree in latitude below the Equator. Chimborazo is about
+8500 ft lower than Everest when measured relative to sea level, but is
+7700 feet further from the center of the Earth.
+
+
+
+
+
+===== Coriolis Force and Falling Objects =====
+
+The Coriolis force is given by
+
+!bt
+\[
+\bm{F}_{\mathrm{Coriolis}}=2m\bm{v}_S\times\bm{\Omega},
+\]
+!et
+
+It does not enter problems like the shape of the Earth
+above because in that case the water was not moving relative to the
+rotating frame. 
+
+The Coriolis force is non-zero only if $\bm{v}_S\ne 0$ and is directed
+perpendicular to both $\bm{v}_S$ and $\Omega$. Viewed along the
+direction of $\bm{v}_S$, the Coriolis force associated with
+counter-clockwise rotational motion produces a deflection to the
+right. For clockwise rotational motion, it produces a deflection to
+the left.
+
+The Coriolis force associated with Earth’s rotational motion is
+responsible for the circulating or cyclonic weather patterns
+associated with hurricanes and cyclones, as illustrated in the figure
+here. Basically, a pressure gradient gives rise to air currents that
+tend to flow from high pressure to low pressure regions. But as the
+air flows toward the low pressure region, the Coriolis force deflects
+the air currents away from their straight line paths. Since the
+projection of $\Omega$ perpendicular to the local tangent plane
+changes sign as one crosses the equator, the direction of the cyclonic
+motion (either counter-clockwise or clockwise) is different in the
+Northern and Southern hemispheres.
+FIGURE: [figslides/coriolis.png,width=600 frac=0.6]
+
+
+As an example, assume  a ball is dropped from a height $h=500$m above Minneapolis. Due to the
+Coriolis force, it is deflected by an amount $\delta x$ and $\delta
+y$. We want to find the deflection due to the Coriolis force. Here we ignore the centrifugal terms.
+
+The equations of motion are:
+
+!bt
+\begin{eqnarray*}
+\frac{dv_x}{dt}&=&-2(\Omega_yv_z-\Omega_zv_y),\\
+\frac{dv_y}{dt}&=&-2(\Omega_zv_x-\Omega_xv_z),\\
+\frac{dv_z}{dt}&=&-g-2(\Omega_xv_y-\Omega_yv_x),\\
+\Omega_z&=&\Omega\cos\theta,~~~\Omega_y=\Omega\sin\theta,~~~\Omega_x=0.
+\end{eqnarray*}
+!et
+
+Here the coordinate system is $\hat{x}$ and  points east, $\hat{y}$ points
+north and $\hat{z}$ points upward.
+
+One can now ignore all the Coriolis terms on the right-hand sides
+except for those with $v_z$. The other terms will all be doubly
+small. One can also throw out terms with $\Omega_x$. This gives
+
+!bt
+\begin{eqnarray*}
+\frac{dv_x}{dt}&\approx& -2\Omega v_z\sin\theta,\\
+\frac{dv_y}{dt}&\approx& 0,\\
+\frac{dv_z}{dt}&\approx& -g.
+\end{eqnarray*}
+!et
+
+There will be no significant deflection in the $y$ direction, $\delta
+y=0$, but in the $x$ direction one can substitute $v_z=-gt$ above,
+
+!bt
+\begin{eqnarray*}
+v_x&\approx&\int_0^t dt'~2\Omega gt'\sin\theta=\Omega gt^2\sin\theta,\\
+\delta x&\approx& \int_0^t dt'~v_x(t')=\frac{g\Omega\sin\theta t^3}{3}.
+\end{eqnarray*}
+!et
+
+One can find the deflections by using $h=\frac{1}{2}gt^2$, to find the
+time, and using the all-knowing internet to see that the latitude of
+Minneapolis is $44.6^\circ$ or $\theta=45.4^\circ$.
+
+!bt
+\begin{eqnarray*}
+t&=&\sqrt{2h/g}=10.1~{\rm s},\\
+\Omega&=&\frac{2\pi}{3600\cdot 24~{\rm s}}=7.27\times 10^{-5}~{\rm s}^{-1},\\
+\delta x&=&17.4~{\rm cm}~~{\rm(east)}.
+\end{eqnarray*}
+!et
+
+===== Accelerating and Rotating Frames =====
+
+It is now simple to bring together the equations for an accelerating and rotating frame. Using our results we have the equations of motion for an object in an accelerating and rotating frame with respect to an inertial frame
+!bt
+\[
+m\ddot{\bm{r}}_{S}=\bm{F}+m\bm{r}\times\dot{\bm{\Omega}}+2m\bm{v}_S\times\bm{\Omega}+m\left(\bm{\Omega}\times\bm{r}\right)\times\bm{\Omega}-\bm{a}_{S_0},
+\]
+!et
+where the last term is the acceleration of the accelerating frame seen from the  inertial frame.
+
+
+===== The Foucault Pendulum =====
+
+
+
+The "Foucault
+Pendulum":"https://en.wikipedia.org/wiki/Foucault_pendulum" is simply
+a regular pendulum moving in both horizontal directions, and with the
+Coriolis force included. It is explained at its simplest if we
+consider a pendulum positioned at the North pole. Foucault's
+experiment was actually the first laboratory demonstration that the
+Earth is rotating. The experiment is rather simple and many physics
+department worldwide have their own pendulum.
+
+In the original experiment done in Paris in 1851, Foucault used a
+massive pendulum of 28kg and 67m long.
+
+If use an inertial frame with the North pole as its origin, the Earth
+below the pendulum rotates with a period of 24h (actually 23h and
+56min). Seen with respect to the surface of the Earth, the plane of
+the pendulum moves in the opposite direction of the rotation of the Earth.
+
+If we were to perform the experiment in other places, the setup is slightly more complicated since the pendulum will then rotate with the Earth. The net effect is a slower rotation compared to North pole.
+
+FIGURE: [figslides/foucault.png,width=600 frac=0.6]
+
+Let us look at the equations we need to solve.
+
+!bt
+\begin{eqnarray*}
+m\ddot{\bm{r}}&=&\bm{T}+m\bm{g}-2m\bm{\Omega}\times\bm{v},
+\end{eqnarray*}
+!et
+
+as the centrifugal force term is absorbed into the definition of
+$\bm{g}$. The magnitude of the tension, $\bm{T}$, is considered
+constant because we consider only small oscillations. Then $T\approx mg$, and the components, using $\hat{x},\hat{y}$ to correspond to east
+and north respectively, are
+
+!bt
+\begin{eqnarray*}
+T_x=-mgx/L,~~~T_y=-mgy/L. 
+\end{eqnarray*}
+!et
+
+If $\Omega$ is the rotation of the earth, and if $\theta$ is the polar angle, $\pi$-latitude, 
+
+!bt
+\begin{eqnarray*}
+\ddot{x}&=&-gx/L+2\dot{y}\Omega_z,\\
+\ddot{y}&=&-gy/L-2\dot{x}\Omega_z.
+\end{eqnarray*}
+!et
+
+Here we have used the fact that the oscillations are sufficiently
+small so we can ignore $v_z$. Using $\Omega_0\equiv\sqrt{k/m}$,
+
+!bt
+\begin{eqnarray*}
+\ddot{x}-2\Omega_z\dot{y}+\Omega_0^2x&=&0\\
+\ddot{y}+2\Omega_z\dot{x}+\Omega_0^2y&=&0,
+\end{eqnarray*}
+!et
+
+where $\Omega_z=|\bm{\Omega}|\cos\theta$, with $\theta$ being the
+polar angle (zero at the north pole). The terms linear in time
+derivatives are what make life difficult. This will be solved with a
+trick. We will incorporate both differential equations into a single
+complex equation where the first/second are the real/imaginary parts.
+
+!bt
+\begin{eqnarray*}
+\eta\equiv x+iy,\\
+\ddot{\eta}+2i\Omega_z\dot{\eta}+\Omega_0^2\eta&=&0. 
+\end{eqnarray*}
+!et
+
+Now, we guess at a form for the solutions, $\eta(t)=e^{-i\alpha t}$,
+which turns the differential equation into
+
+!bt
+\begin{eqnarray*}
+-\alpha^2+2\Omega_z\alpha+\Omega_0^2&=&0,\\
+\alpha&=&\Omega_z\pm \sqrt{\Omega_z^2+\Omega_0^2},\\
+&\approx&\Omega_z\pm \Omega_0.
+\end{eqnarray*}
+!et
+
+The solution with two arbitrary constants is then
+
+!bt
+\begin{eqnarray*}
+\eta&=&e^{-i\Omega_zt}\left[C_1e^{i\Omega_0t}+C_2e^{-i\Omega_0t}\right].
+\end{eqnarray*}
+!et
+
+Here, $C_1$ and $C_2$ are complex, so they actually represent four
+arbitrary numbers. These four numbers should be fixed by the four
+initial conditions, i.e. $x(t=0), \dot{x}(t=0), y(t=0)$ and
+$\dot{y}(t=0)$. With some lengthy algebra, one can rewrite the
+expression as
+
+!bt
+\begin{eqnarray*}
+label{eq:precmess}
+\eta&=&e^{-i\Omega_zt}\left[A\cos(\Omega_0t+\phi_A)+iB\cos(\Omega_0t+\phi_B)\right].
+\end{eqnarray*}
+!et
+
+Here, the four coefficients are represented by the two real arbitrary
+real amplitudes, $A$ and $B$, and two arbitrary phases, $\phi_A$ and
+$\phi_B$. For an initial condition where $y=0$ at $t=0$, one can see
+that $B=0$. This then gives
+
+!bt
+\begin{eqnarray*}
+\eta(t)&=&Ae^{-i\Omega_zt}\cos(\Omega_0t+\gamma)\\
+\nonumber
+&=&A\cos\Omega_zt\cos(\Omega_0t+\gamma)+iA\sin\Omega_zt\cos(\Omega_0t+\gamma).
+\end{eqnarray*}
+!et
+
+Translating into $x$ and $y$,
+
+!bt
+\begin{eqnarray}
+x&=&A\cos\Omega_zt\cos(\Omega_0t+\gamma),\\
+\nonumber
+y&=&A\sin\Omega_zt\cos(\Omega_0t+\gamma).
+\end{eqnarray}
+!et
+
+Assuming the pendulum's frequency is much higher than Earth's
+rotational frequency, $\Omega_0>>\Omega_z$, one can see that the plane
+of the pendulum simply precesses with angular velocity
+$\Omega_z$. This means that in this limit the pendulum oscillates only
+in the $x$-direction with frequency many times before the phase
+$\Omega_zt$ becomes noticeable. Eventually, when $\Omega_zt=\pi/2$,
+the motion is along the $y$-direction. If you were at the north pole,
+the motion would switch from the $x$-direction to the $y$ direction
+every 6 hours. Away from the north pole, $\Omega_z\ne|\bm{\Omega}|$
+and the precession frequency is less.  At the equator it does not
+precess at all. If one were to repeat for the solutions where $A=0$
+and $B\ne 0$, one would look at motions
+that started in the $y$-direction, then precessed toward the $-x$
+direction. Linear combinations of the two sets of solutions give
+pendulum motions that resemble ellipses rather than simple
+back-and-forth motion.
+
+===== Euler's Theorem from a Linear Algebra Perspective =====
+
+_this material will be added soon_

@@ -1,0 +1,1027 @@
+TITLE: PHY321: Harmonic Oscillations
+AUTHOR: "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/" {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and Facility for Rare Ion Beams (FRIB), Michigan State University, USA & Department of Physics, University of Oslo, Norway
+DATE: today
+
+
+!split
+=====   Aims and Overarching Motivation =====
+
+=== Monday ===
+
+Summary on forces and conservation laws, with additional examples.
+Begin harmonic oscillations.
+
+_Reading suggestion_: Taylor chapters 3 and 4 for the summary on forces and conservation laws. Taylor section 5.1 for start harmonic oscillations.
+
+=== Wednesday ===
+Harmonic oscillations, basic equations and formalism
+_Reading suggestions_: Taylor sections 5.1-5.2
+
+===  Friday ===
+Harmonic oscillations, damped motion.
+_Reading suggestion_: Taylor sections 5.3-5.4. 
+
+!split
+===== Harmonic Oscillator =====
+
+The harmonic oscillator is omnipresent in physics. Although you may think 
+of this as being related to springs, it, or an equivalent
+mathematical representation, appears in just about any problem where a
+mode is sitting near its potential energy minimum. At that point,
+$\partial_x V(x)=0$, and the first non-zero term (aside from a
+constant) in the potential energy is that of a harmonic oscillator. In
+a solid, sound modes (phonons) are built on a picture of coupled
+harmonic oscillators, and in relativistic field theory the fundamental
+interactions are also built on coupled oscillators positioned
+infinitesimally close to one another in space. The phenomena of a
+resonance of an oscillator driven at a fixed frequency plays out
+repeatedly in atomic, nuclear and high-energy physics, when quantum
+mechanically the evolution of a state oscillates according to
+$e^{-iEt}$ and exciting discrete quantum states has very similar
+mathematics as exciting discrete states of an oscillator.
+
+
+!split
+===== Harmonic Oscillator, deriving the Equations =====
+
+The potential energy for a single particle as a function of its
+position $x$ can be written as a Taylor expansion about some point
+$b$ (we are considering a one-dimensional problem here)
+
+!bt
+\begin{equation}
+V(x)=V(b)+(x-b)\frac{dV(x)}{dx}\vert_{b}+\frac{1}{2!}(x-b)^2\frac{d^2V(x)}{dx^2}\vert_{b}
++\frac{1}{3!}(x-b)^3V(x)^{(3)}\vert_{b}+\cdots
+\end{equation}
+!et
+If the position $b$ is at the minimum of the resonance, the first two non-zero terms of the potential are
+
+!bt
+\begin{align}
+V(x)\approx& V(b)+\frac{1}{2!}(x-b)^2\frac{d^2V(x)}{dx^2}\vert_{b},\\
+\nonumber
+=&V(b)+\frac{1}{2}k(x-b)^2,~~~~k\equiv \frac{d^2V(x)}{dx^2}\vert_{b},\\
+\nonumber
+F=&-\frac{dV(x)}{dx}=-k(x-b).
+\end{align}
+!et
+
+
+
+!split
+===== Analyzing the equations =====
+
+Our equation of motion is, with the only force given by the one-dimensional spring force,
+
+!bt
+\[
+m\frac{d^2x}{dt^2}=-kx.
+\]
+!et
+Defining the natural frequency $\omega_0^2=k/m$ we can rewrite this equation as
+!bt
+\[
+\frac{d^2x}{dt^2}=-\omega_0^2x.
+\]
+!et
+We call this a natural frequency since it is defined by the constants that describe our system, the spring constant $k$ and the mass $m$ of the object.
+
+
+We can as usual split this equation of motion into one equation for the derivative of the velocity and 
+!bt
+\[
+\frac{dv}{dt}=-\omega_0^2x,
+\]
+!et
+and
+!bt
+\[
+\frac{dx}{dt}=v.
+\]
+!et
+
+The solution to the equations of motion is given by
+!bt
+\[
+x(t) = A\cos{(\omega_0 t)}+B\sin{(\omega_0 t)},
+\]
+!et
+where $A$ and $B$ are in general complex constants to be determined by the initial conditions.
+
+
+!split
+===== Checking the Solution =====
+
+Inserting the solution into the equation of motion we have
+!bt
+\[
+\frac{d^2x}{dt^2}=-\omega_0^2x, 
+\]
+!et
+we have
+!bt
+\[
+\frac{d^2x}{dt^2} = -A\omega_0^2\cos{(\omega_0 t)}-B\omega_0^2\sin{(\omega_0 t)},
+\]
+!et
+and the right-hand side is just $-\omega_0^2 x(t)$. Thus, inserting the solution into the differential equation shows that we obtain the same original differential equation.
+
+!split
+===== Initial condition example =====
+
+Let us assume that our initial time $t_0=0$s and that the initial position $x(t_0)=x_0$ and that $v_0=0$ (we skip units here).
+This gives us
+!bt
+\[
+x(t=0) = x_0 =A,
+\]
+!et
+and it leaves $B$ undetermined. Taking the derivative of $x$ we obtain the velocity
+!bt
+\[
+v(t) = -A\omega_0\sin{(\omega_0 t)}+B\omega_0\cos{(\omega_0 t)},
+\]
+!et
+and with 
+!bt
+\[
+v(t=0) = 0=B,
+\]
+!et
+we see that our solution with these initial conditions becomes
+!bt
+\[
+x(t) = x_0\cos{(\omega_0 t)}.
+\]
+!et
+
+!split
+=====  Math Digression =====
+
+From our first homework (exercise 1) we have that (we switch to $\omega$ instead of $\omega_0$)
+!bt
+\[
+\cos{(\omega t)} = \sum_{n=0}^{\infty}\left(-1\right)^n \frac{(\omega t)^{2n}}{(2n)!},
+\]
+!et
+and 
+!bt
+\[
+\sin{(\omega t)} = \sum_{n=0}^{\infty}\left(-1\right)^n \frac{(\omega t)^{2n+1}}{(2n+1)!},
+\]
+!et
+and that we could  write
+!bt
+\[
+\exp{(\pm\imath\omega t)} = \cos{(\omega t)}+\pm\imath\sin{(\omega t)}.
+\]
+!et
+
+This means (show this) that we can write our solution in terms of new constant $C$ and $D$ as
+
+!bt
+\[
+x(t)=C\exp{(\imath\omega t)}+D\exp{(-\imath\omega t)}.
+\]
+!et
+
+To see the relation between these two forms we note that we can write our original
+solution $x(t) = A\cos{(\omega t)}+B\sin{(\omega t)}$ as
+
+!bt
+\[
+x(t) = (C+D)\cos{(\omega t)}+\imath(C-D)\sin{(\omega t)},
+\]
+!et
+meaning that we have $A=C+D$ and $B=\imath(C-D)$.
+
+!split
+===== More Math Manipulations =====
+
+We can also rewrite the solution in a simpler way.  We define a new
+constant $A=\sqrt{B_1^2+B_2^2}$ which can be thought as the hypotenuse
+of a right-angle triangle with sides $B_1$ and $B_2$ and
+$B_1=A\cos{(\delta)}$ and $B_2=A\sin{(\delta)}$.
+
+We have then
+!bt
+\[
+x(t) = A\left[\frac{B_1}{A}\cos{(\omega t)}+\frac{B_2}{A}\sin{(\omega t)}\right],
+\]
+!et
+which becomes
+!bt
+\[
+x(t) = A\left[\cos{(\delta)}\cos{(\omega t)}+\sin{(\delta)}\sin{(\omega t)}\right],
+\]
+!et
+and using the trigonometric relations for addition of angles we have
+!bt
+\[
+x(t) = A\cos{(\omega t-\delta)},
+\]
+!et
+where $\delta$ is a so-called phase shift.
+
+!split
+===== Energy Conservation =====
+
+Our energy is given by the kinetic energy and the harmonic oscillator potential energy, that is we have (for a one-dimensional harmonic oscillator potential)
+!bt
+\[
+E=\frac{1}{2}mv^2+\frac{1}{2}kx^2.
+\]
+!et
+
+We assume that we have initial conditions $v_0=0$ (no kinetic energy) and $x(t=0)=x_0$.
+With these initial conditions we have
+!bt
+\[
+x(t) = x_0\cos{(\omega_0 t)},
+\]
+!et
+and the velocity is given by
+!bt
+\[
+v(t) = -x_0\omega_0\sin{(\omega_0 t)},
+\]
+!et
+
+
+The energy is conserved (as we have discussed before) and at $t=t_0=0$ we have thus
+!bt
+\[
+E_0=\frac{1}{2}kx_0^2.
+\]
+!et
+At a time $t\ne 0$ we have
+!bt
+\[
+E(t)=\frac{1}{2}mv^2+\frac{1}{2}kx^2=\frac{1}{2}mx_0^2\omega_0^2\sin^2{(\omega_0 t)}+\frac{1}{2}kx_0^2\cos^2{(\omega_0 t)},
+\]
+!et
+Recalling that $\omega_0^2=k/m$ we get
+!bt
+\[
+E(t)=\frac{1}{2}kx_0^2\sin^2{(\omega_0 t)}+\frac{1}{2}kx_0^2\cos^2{(\omega_0 t)}=\frac{1}{2}kx_0^2=E_0.
+\]
+!et
+Energy is thus conserved
+
+!split
+===== The mathematical pendulum =====
+
+_Note_: Figure to be inserted.
+
+We consider a pendulum of length $l$ attached to the roof as illustrated in the figure (see "handwritten notes from Wednesday Feb 24":"https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesFeb24.pdf").
+
+The pendulum consists of a rod and a small object attached to the rod. The mass of this object is $m$ and it is the motion of this object we are concerned with. The distance from the object to the roof is $\bm{r}$ and we have $\vert \bm{r}\vert =l$.
+
+The angle between the $y$-axis and the rod is $\phi$. The forces at play are the gravitational force and a tension force from the rod to the object. The net for is
+
+!bt
+\[
+\bm{F}^{\mathrm{net}}=\bm{T}+\bm{G}=T\sin{(\phi)}\bm{e}_1+T\cos{(\phi)}\bm{e}_2-mg\bm{e}_2,
+\]
+!et
+and with
+!bt
+\[
+\bm{r}=l\sin{(\phi)}\bm{e}_1+l\cos{(\phi)}\bm{e}_2,
+\]
+!et
+the equation of motion becomes
+
+!bt
+\[
+m\frac{d^2\bm{r}}{dt^2}=\bm{T}+\bm{G}=T\sin{(\phi)}\bm{e}_1+T\cos{(\phi)}\bm{e}_2-mg\bm{e}_2.
+\]
+!et
+
+!split
+===== Finding the equations for the $x$- and $y$-directions =====
+
+Using the chain rule we can find the first derivative of $\bm{r}$
+!bt
+\[
+\frac{d\bm{r}}{dt}=l\frac{d\phi}{dt}\cos{(\phi)}\bm{e}_1-l\frac{d\phi}{dt}\sin{(\phi)}\bm{e}_2,
+\]
+!et
+and thereafter the second derivative in the $x$-direction as
+!bt
+\[
+\frac{d^2\bm{r}}{dt^2}\bm{e}_1=l\frac{d^2\phi}{dt^2}\cos{(\phi)}-l(\frac{d\phi}{dt})^2\sin{(\phi)},
+\]
+!et
+and in the $y$ direction
+!bt
+\[
+\frac{d^2\bm{r}}{dt^2}\bm{e}_2=-l\frac{d^2\phi}{dt^2}\sin{(\phi)}-l(\frac{d\phi}{dt})^2\cos{(\phi)}.
+\]
+!et
+
+
+!split
+===== Collecting terms =====
+
+We can now set up the equations of motion in the $x$ and $y$ directions and get for the $x$-direction
+!bt
+\[
+ml\frac{d^2\phi}{dt^2}\cos{(\phi)}-ml(\frac{d\phi}{dt})^2\sin{(\phi)}=T\sin{(\phi)},
+\]
+!et
+and for the $y$-direction
+!bt
+\[
+-ml\frac{d^2\phi}{dt^2}\sin{(\phi)}-ml(\frac{d\phi}{dt})^2\cos{(\phi)}=T\cos{(\phi)}-mg.
+\]
+!et
+
+This looks ugly!
+
+Let us rewrite
+!bt
+\[
+ml\frac{d^2\phi}{dt^2}\cos{(\phi)}=\left[ml(\frac{d\phi}{dt})^2+T\right]\sin{(\phi)},
+\]
+!et
+and
+!bt
+\[
+-ml\frac{d^2\phi}{dt^2}\sin{(\phi)}+mg=\left[ml(\frac{d\phi}{dt})^2+T\cos{(\phi)}\right].
+\]
+!et
+
+Still not so nice.
+
+!split
+===== Simple trick =====
+
+How can we simplify the above equations, rewritten here
+!bt
+\[
+ml\frac{d^2\phi}{dt^2}\cos{(\phi)}=\left[ml(\frac{d\phi}{dt})^2+T\right]\sin{(\phi)},
+\]
+!et
+and
+!bt
+\[
+-ml\frac{d^2\phi}{dt^2}\sin{(\phi)}+mg=\left[ml(\frac{d\phi}{dt})^2+T\right]\cos{(\phi)}.
+\]
+!et
+We multiply the first equation with $\cos\phi$ and the second one with $\sin\phi$ and then subtract the two equations.
+We get then
+
+!bt
+\[
+-ml\frac{d^2\phi}{dt^2}(\cos{(\phi)})^2-ml\frac{d^2\phi}{dt^2}(\sin{(\phi)})^2+mg\sin{(\phi)}=0,
+\]
+!et
+leading to 
+!bt
+\[
+ml\frac{d^2\phi}{dt^2}=-mg\sin{(\phi)}.
+\]
+!et
+We are almost there.
+
+!split
+===== Last step =====
+
+We divide by $m$ and $l$ and we have the famous non-linear in $\phi$ (due to the sine function) equation for the pendulumn
+!bt
+\[
+\frac{d^2\phi}{dt^2}=-\frac{g}{l}\sin{(\phi)}.
+\]
+!et
+Introducing the natural frequency $\omega_0^2=g/l$ we can rewrite the equation as
+!bt
+\[
+\frac{d^2\phi}{dt^2}=-\omega_0^2\sin{(\phi)}.
+\]
+!et
+
+If we now assume that the angle is very small, we can approximate $\sin{(\phi)}\approx \phi$ and we have essentially the same equation as we had for harmonic oscillations, that is
+!bt
+\[
+\frac{d^2\phi}{dt^2}=-\omega_0^2\phi.
+\]
+!et
+
+The solution to this equation is again given by
+!bt
+\[
+\phi(t) = A\cos{(\omega_0 t)}+B\sin{(\omega_0 t)}.
+\]
+!et
+
+For the general case, we have to resort to numerical solutions.
+
+!split
+===== Damped Oscillators =====
+
+We consider only the case where the damping force is proportional to
+the velocity. This is counter to dragging friction, where the force is
+proportional in strength to the normal force and independent of
+velocity, and is also inconsistent with wind resistance, where the
+magnitude of the drag force is proportional the square of the
+velocity. Rolling resistance does seem to be mainly proportional to
+the velocity. However, the main motivation for considering damping
+forces proportional to the velocity is that the math is more
+friendly. This is because the differential equation is linear,
+i.e. each term is of order $x$, $\dot{x}$, $\ddot{x}\cdots$, or even
+terms with no mention of $x$, and there are no terms such as $x^2$ or
+$x\ddot{x}$. The equations of motion for a spring with damping force
+$-b\dot{x}$ are
+
+!bt
+\begin{equation}
+m\ddot{x}+b\dot{x}+kx=0.
+\end{equation}
+!et
+
+
+
+!split
+===== Harmonic Oscillator,  Damping =====
+
+Just to make the solution a bit less messy, we rewrite this equation as
+
+!bt
+\begin{equation}
+label{eq:dampeddiffyq}
+\ddot{x}+2\beta\dot{x}+\omega_0^2x=0,~~~~\beta\equiv b/2m,~\omega_0\equiv\sqrt{k/m}.
+\end{equation}
+!et
+
+Both $\beta$ and $\omega$ have dimensions of inverse time. To find solutions (see appendix C in the text) you must make an educated guess at the form of the solution. To do this, first realize that the solution will need an arbitrary normalization $A$ because the equation is linear. Secondly, realize that if the form is
+
+!bt
+\begin{equation}
+x=Ae^{rt}
+\end{equation}
+!et
+
+that each derivative simply brings out an extra power of $r$. This
+means that the $Ae^{rt}$ factors out and one can simply solve for an
+equation for $r$. Plugging this form into Eq. (ref{eq:dampeddiffyq}),
+
+!bt
+\begin{equation}
+r^2+2\beta r+\omega_0^2=0.
+\end{equation}
+!et
+
+
+!split
+===== Harmonic Oscillator,  Solutions of Damped Motion =====
+
+Because this is a quadratic equation there will be two solutions,
+
+!bt
+\begin{equation}
+r=-\beta\pm\sqrt{\beta^2-\omega_0^2}.
+\end{equation}
+!et
+
+We refer to the two solutions as $r_1$ and $r_2$ corresponding to the
+$+$ and $-$ roots. As expected, there should be two arbitrary
+constants involved in the solution,
+
+!bt
+\begin{equation}
+x=A_1e^{r_1t}+A_2e^{r_2t},
+\end{equation}
+!et
+
+where the coefficients $A_1$ and $A_2$ are determined by initial
+conditions.
+
+The roots listed above, $\sqrt{\omega_0^2-\beta_0^2}$, will be
+imaginary if the damping is small and $\beta<\omega_0$. In that case,
+$r$ is complex and the factor $e{rt}$ will have some oscillatory
+behavior. If the roots are real, there will only be exponentially
+decaying solutions. There are three cases:
+
+
+!split
+===== Underdamped: $\beta<\omega_0$ =====
+
+!bt
+\begin{eqnarray}
+x&=&A_1e^{-\beta t}e^{i\omega't}+A_2e^{-\beta t}e^{-i\omega't},~~\omega'\equiv\sqrt{\omega_0^2-\beta^2}\\
+\nonumber
+&=&(A_1+A_2)e^{-\beta t}\cos\omega't+i(A_1-A_2)e^{-\beta t}\sin\omega't.
+\end{eqnarray}
+!et
+
+Here we have made use of the identity
+$e^{i\omega't}=\cos\omega't+i\sin\omega't$. Because the constants are
+arbitrary, and because the real and imaginary parts are both solutions
+individually, we can simply consider the real part of the solution
+alone:
+
+!bt
+\begin{eqnarray}
+label{eq:homogsolution}
+x&=&B_1e^{-\beta t}\cos\omega't+B_2e^{-\beta t}\sin\omega't,\\
+\nonumber 
+\omega'&\equiv&\sqrt{\omega_0^2-\beta^2}.
+\end{eqnarray}
+!et
+
+!split
+===== Critical dampling: $\beta=\omega_0$ =====
+
+In this case the two terms involving $r_1$ and $r_2$ are identical
+because $\omega'=0$. Because we need to arbitrary constants, there
+needs to be another solution. This is found by simply guessing, or by
+taking the limit of $\omega'\rightarrow 0$ from the underdamped
+solution. The solution is then
+
+!bt
+\begin{equation}
+label{eq:criticallydamped}
+x=Ae^{-\beta t}+Bte^{-\beta t}.
+\end{equation}
+!et
+
+The critically damped solution is interesting because the solution
+approaches zero quickly, but does not oscillate. For a problem with
+zero initial velocity, the solution never crosses zero. This is a good
+choice for designing shock absorbers or swinging doors.
+
+!split
+===== Overdamped: $\beta>\omega_0$ =====
+
+
+!bt
+\begin{eqnarray}
+x&=&A_1\exp{-(\beta+\sqrt{\beta^2-\omega_0^2})t}+A_2\exp{-(\beta-\sqrt{\beta^2-\omega_0^2})t}
+\end{eqnarray}
+!et
+
+This solution will also never pass the origin more than once, and then
+only if the initial velocity is strong and initially toward zero.
+
+
+
+
+Given $b$, $m$ and $\omega_0$, find $x(t)$ for a particle whose
+initial position is $x=0$ and has initial velocity $v_0$ (assuming an
+underdamped solution).
+
+The solution is of the form,
+
+!bt
+\begin{eqnarray*}
+x&=&e^{-\beta t}\left[A_1\cos(\omega' t)+A_2\sin\omega't\right],\\
+\dot{x}&=&-\beta x+\omega'e^{-\beta t}\left[-A_1\sin\omega't+A_2\cos\omega't\right].\\
+\omega'&\equiv&\sqrt{\omega_0^2-\beta^2},~~~\beta\equiv b/2m.
+\end{eqnarray*}
+!et
+
+From the initial conditions, $A_1=0$ because $x(0)=0$ and $\omega'A_2=v_0$. So 
+
+!bt
+\[
+x=\frac{v_0}{\omega'}e^{-\beta t}\sin\omega't.
+\]
+!et
+
+
+!split
+===== Sinusoidally Driven Oscillators =====
+
+Here, we consider the force
+
+!bt
+\begin{equation}
+F=-kx-b\dot{x}+F_0\cos\omega t,
+\end{equation}
+!et
+
+which leads to the differential equation
+
+!bt
+\begin{equation}
+label{eq:drivenosc}
+\ddot{x}+2\beta\dot{x}+\omega_0^2x=(F_0/m)\cos\omega t.
+\end{equation}
+!et
+
+
+
+!split
+===== Harmonic Oscillator,  Solutions =====
+
+Consider a single solution with no arbitrary constants, which we will
+call a {\it particular solution}, $x_p(t)$. It should be emphasized
+that this is {\bf A} particular solution, because there exists an
+infinite number of such solutions because the general solution should
+have two arbitrary constants. Now consider solutions to the same
+equation without the driving term, which include two arbitrary
+constants. These are called either {\it homogenous solutions} or {\it
+complementary solutions}, and were given in the previous section,
+e.g. Eq. (ref{eq:homogsolution}) for the underdamped case. The
+homogenous solution already incorporates the two arbitrary constants,
+so any sum of a homogenous solution and a particular solution will
+represent the {\it general solution} of the equation. The general
+solution incorporates the two arbitrary constants $A$ and $B$ to
+accommodate the two initial conditions. One could have picked a
+different particular solution, i.e. the original particular solution
+plus any homogenous solution with the arbitrary constants $A_p$ and
+$B_p$ chosen at will. When one adds in the homogenous solution, which
+has adjustable constants with arbitrary constants $A'$ and $B'$, to
+the new particular solution, one can get the same general solution by
+simply adjusting the new constants such that $A'+A_p=A$ and
+$B'+B_p=B$. Thus, the choice of $A_p$ and $B_p$ are irrelevant, and
+when choosing the particular solution it is best to make the simplest
+choice possible.
+
+!split
+===== Harmonic Oscillator,  Particular Solution =====
+
+To find a particular solution, one first guesses at the form,
+
+
+!bt
+\begin{equation}
+label{eq:partform}
+x_p(t)=D\cos(\omega t-\delta),
+\end{equation}
+!et
+
+and rewrite the differential equation as
+
+!bt
+\begin{equation}
+D\left\{-\omega^2\cos(\omega t-\delta)-2\beta\omega\sin(\omega t-\delta)+\omega_0^2\cos(\omega t-\delta)\right\}=\frac{F_0}{m}\cos(\omega t).
+\end{equation}
+!et
+
+One can now use angle addition formulas to get
+
+!bt
+\begin{eqnarray}
+D\left\{(-\omega^2\cos\delta+2\beta\omega\sin\delta+\omega_0^2\cos\delta)\cos(\omega t)\right.&&\\
+\nonumber
+\left.+(-\omega^2\sin\delta-2\beta\omega\cos\delta+\omega_0^2\sin\delta)\sin(\omega t)\right\}
+&=&\frac{F_0}{m}\cos(\omega t).
+\end{eqnarray}
+!et
+
+Both the $\cos$ and $\sin$ terms need to equate if the expression is to hold at all times. Thus, this becomes two equations
+
+!bt
+\begin{eqnarray}
+D\left\{-\omega^2\cos\delta+2\beta\omega\sin\delta+\omega_0^2\cos\delta\right\}&=&\frac{F_0}{m}\\
+\nonumber
+-\omega^2\sin\delta-2\beta\omega\cos\delta+\omega_0^2\sin\delta&=&0.
+\end{eqnarray}
+!et
+
+After dividing by $\cos\delta$, the lower expression leads to
+
+!bt
+\begin{equation}
+\tan\delta=\frac{2\beta\omega}{\omega_0^2-\omega^2}.
+\end{equation}
+!et
+
+!split
+===== Solving with Driven Oscillations =====
+
+
+Using the identities $\tan^2+1=\csc^2$ and $\sin^2+\cos^2=1$, one can also express $\sin\delta$ and $\cos\delta$,
+
+!bt
+\begin{eqnarray}
+\sin\delta&=&\frac{2\beta\omega}{\sqrt{(\omega_0^2-\omega^2)^2+4\omega^2\beta^2}},\\
+\nonumber
+\cos\delta&=&\frac{(\omega_0^2-\omega^2)}{\sqrt{(\omega_0^2-\omega^2)^2+4\omega^2\beta^2}}
+\end{eqnarray}
+!et
+
+Inserting the expressions for $\cos\delta$ and $\sin\delta$ into the expression for $D$,
+
+!bt
+\begin{equation}
+label{eq:Ddrive}
+D=\frac{F_0/m}{\sqrt{(\omega_0^2-\omega^2)^2+4\omega^2\beta^2}}.
+\end{equation}
+!et
+
+For a given initial condition, e.g. initial displacement and velocity,
+one must add the homogenous solution then solve for the two arbitrary
+constants. However, because the homogenous solutions decay with time
+as $e^{-\beta t}$, the particular solution is all that remains at
+large times, and is therefore the steady state solution. Because the
+arbitrary constants are all in the homogenous solution, all memory of
+the initial conditions are lost at large times, $t>>1/\beta$.
+
+The amplitude of the motion, $D$, is linearly proportional to the
+driving force ($F_0/m$), but also depends on the driving frequency
+$\omega$. For small $\beta$ the maximum will occur at
+$\omega=\omega_0$. This is referred to as a resonance. In the limit
+$\beta\rightarrow 0$ the amplitude at resonance approaches infinity.
+
+!split
+===== Alternative Derivation for Driven Oscillators =====
+
+Here, we derive the same expressions as in Equations (ref{eq:partform}) and (ref{eq:Ddrive}) but express the driving forces as
+
+!bt
+\begin{eqnarray}
+F(t)&=&F_0e^{i\omega t},
+\end{eqnarray}
+!et
+rather than as $F_0\cos\omega t$. The real part of $F$ is the same as before. For the differential equation,
+
+!bt
+\begin{eqnarray}
+label{eq:compdrive}
+\ddot{x}+2\beta\dot{x}+\omega_0^2x&=&\frac{F_0}{m}e^{i\omega t},
+\end{eqnarray}
+!et
+
+one can treat $x(t)$ as an imaginary function. Because the operations
+$d^2/dt^2$ and $d/dt$ are real and thus do not mix the real and
+imaginary parts of $x(t)$, Eq. (ref{eq:compdrive}) is effectively 2
+equations. Because $e^{\omega t}=\cos\omega t+i\sin\omega t$, the real
+part of the solution for $x(t)$ gives the solution for a driving force
+$F_0\cos\omega t$, and the imaginary part of $x$ corresponds to the
+case where the driving force is $F_0\sin\omega t$. It is rather easy
+to solve for the complex $x$ in this case, and by taking the real part
+of the solution, one finds the answer for the $\cos\omega t$ driving
+force.
+
+We assume a simple form for the particular solution
+
+!bt
+\begin{equation}
+x_p=De^{i\omega t},
+\end{equation}
+!et
+
+where $D$ is a complex constant.
+
+From Eq. (ref{eq:compdrive}) one inserts the form for $x_p$ above to get
+
+!bt
+\begin{eqnarray}
+D\left\{-\omega^2+2i\beta\omega+\omega_0^2\right\}e^{i\omega t}=(F_0/m)e^{i\omega t},\\
+\nonumber
+D=\frac{F_0/m}{(\omega_0^2-\omega^2)+2i\beta\omega}.
+\end{eqnarray}
+!et
+
+The norm and phase for $D=|D|e^{-i\delta}$ can be read by inspection,
+
+!bt
+\begin{equation}
+|D|=\frac{F_0/m}{\sqrt{(\omega_0^2-\omega^2)^2+4\beta^2\omega^2}},~~~~\tan\delta=\frac{2\beta\omega}{\omega_0^2-\omega^2}.
+\end{equation}
+!et
+
+This is the same expression for $\delta$ as before. One then finds $x_p(t)$,
+
+!bt
+\begin{eqnarray}
+label{eq:fastdriven1}
+x_p(t)&=&\Re\frac{(F_0/m)e^{i\omega t-i\delta}}{\sqrt{(\omega_0^2-\omega^2)^2+4\beta^2\omega^2}}\\
+\nonumber
+&=&\frac{(F_0/m)\cos(\omega t-\delta)}{\sqrt{(\omega_0^2-\omega^2)^2+4\beta^2\omega^2}}.
+\end{eqnarray}
+!et
+This is the same answer as before.
+If one wished to solve for the case where $F(t)= F_0\sin\omega t$, the imaginary part of the solution would work
+
+!bt
+\begin{eqnarray}
+label{eq:fastdriven2}
+x_p(t)&=&\Im\frac{(F_0/m)e^{i\omega t-i\delta}}{\sqrt{(\omega_0^2-\omega^2)^2+4\beta^2\omega^2}}\\
+\nonumber
+&=&\frac{(F_0/m)\sin(\omega t-\delta)}{\sqrt{(\omega_0^2-\omega^2)^2+4\beta^2\omega^2}}.
+\end{eqnarray}
+!et
+
+!split
+===== Damped and Driven Oscillator  =====
+
+Consider the damped and driven harmonic oscillator worked out above. Given $F_0, m,\beta$ and $\omega_0$, solve for the complete solution $x(t)$ for the case where $F=F_0\sin\omega t$ with initial conditions $x(t=0)=0$ and $v(t=0)=0$. Assume the underdamped case.
+
+The general solution including the arbitrary constants includes both the homogenous and particular solutions,
+
+!bt
+\begin{eqnarray*}
+x(t)&=&\frac{F_0}{m}\frac{\sin(\omega t-\delta)}{\sqrt{(\omega_0^2-\omega^2)^2+4\beta^2\omega^2}}
++A\cos\omega't e^{-\beta t}+B\sin\omega't e^{-\beta t}.
+\end{eqnarray*}
+!et
+
+The quantities $\delta$ and $\omega'$ are given earlier in the
+section, $\omega'=\sqrt{\omega_0^2-\beta^2},
+\delta=\tan^{-1}(2\beta\omega/(\omega_0^2-\omega^2)$. Here, solving
+the problem means finding the arbitrary constants $A$ and
+$B$. Satisfying the initial conditions for the initial position and
+velocity:
+
+!bt
+\begin{eqnarray*}
+x(t=0)=0&=&-\eta\sin\delta+A,\\
+v(t=0)=0&=&\omega\eta\cos\delta-\beta A+\omega'B,\\
+\eta&\equiv&\frac{F_0}{m}\frac{1}{\sqrt{(\omega_0^2-\omega^2)^2+4\beta^2\omega^2}}.
+\end{eqnarray*}
+!et
+
+The problem is now reduced to 2 equations and 2 unknowns, $A$ and $B$. The solution is
+
+!bt
+\begin{eqnarray}
+A&=& \eta\sin\delta ,~~~B=\frac{-\omega\eta\cos\delta+\beta\eta\sin\delta}{\omega'}.
+\end{eqnarray}
+!et
+
+!split
+===== Resonance Widths; the $Q$ factor =====
+
+From the previous two sections, the particular solution for a driving force, $F=F_0\cos\omega t$, is
+
+!bt
+\begin{eqnarray}
+x_p(t)&=&\frac{F_0/m}{\sqrt{(\omega_0^2-\omega^2)^2+4\omega^2\beta^2}}\cos(\omega_t-\delta),\\
+\nonumber
+\delta&=&\tan^{-1}\left(\frac{2\beta\omega}{\omega_0^2-\omega^2}\right).
+\end{eqnarray}
+!et
+
+If one fixes the driving frequency $\omega$ and adjusts the
+fundamental frequency $\omega_0=\sqrt{k/m}$, the maximum amplitude
+occurs when $\omega_0=\omega$ because that is when the term from the
+denominator $(\omega_0^2-\omega^2)^2+4\omega^2\beta^2$ is at a
+minimum. This is akin to dialing into a radio station. However, if one
+fixes $\omega_0$ and adjusts the driving frequency one minimize with
+respect to $\omega$, e.g. set
+
+!bt
+\begin{equation}
+\frac{d}{d\omega}\left[(\omega_0^2-\omega^2)^2+4\omega^2\beta^2\right]=0,
+\end{equation}
+!et
+
+and one finds that the maximum amplitude occurs when
+$\omega=\sqrt{\omega_0^2-2\beta^2}$. If $\beta$ is small relative to
+$\omega_0$, one can simply state that the maximum amplitude is
+
+!bt
+\begin{equation}
+x_{\rm max}\approx\frac{F_0}{2m\beta \omega_0}.
+\end{equation}
+!et
+
+!bt
+\begin{eqnarray}
+\frac{4\omega^2\beta^2}{(\omega_0^2-\omega^2)^2+4\omega^2\beta^2}=\frac{1}{2}.
+\end{eqnarray}
+!et
+
+For small damping this occurs when $\omega=\omega_0\pm \beta$, so the $FWHM\approx 2\beta$. For the purposes of tuning to a specific frequency, one wants the width to be as small as possible. The ratio of $\omega_0$ to $FWHM$ is known as the {\it quality} factor, or $Q$ factor,
+
+!bt
+\begin{equation}
+Q\equiv \frac{\omega_0}{2\beta}.
+\end{equation}
+!et
+
+
+
+!split
+===== Our Sliding Block Code =====
+Here we study first the case without additional friction term and scale our equation
+in terms of a dimensionless time $\tau$.
+
+Let us remind ourselves about the differential equation we want to solve (the general case with damping due to friction)
+!bt
+\[
+m\frac{d^2x}{dt^2} + b\frac{dx}{dt}+kx(t) =0.
+\]
+!et
+We divide by $m$ and introduce $\omega_0^2=\sqrt{k/m}$ and obtain
+!bt
+\[
+\frac{d^2x}{dt^2} + \frac{b}{m}\frac{dx}{dt}+\omega_0^2x(t) =0.
+\]
+!et
+
+
+!split
+===== Harmonic Oscillator, Sliding Block =====
+
+Thereafter we introduce a dimensionless time $\tau = t\omega_0$ (check
+that the dimensionality is correct) and rewrite our equation as
+
+!bt
+\[
+\frac{d^2x}{d\tau^2} + \frac{b}{m\omega_0}\frac{dx}{d\tau}+x(\tau) =0,
+\]
+!et
+which gives us
+!bt
+\[
+\frac{d^2x}{d\tau^2} + \frac{b}{m\omega_0}\frac{dx}{d\tau}+x(\tau) =0.
+\]
+!et
+
+
+!split
+===== Harmonic Oscillator, Sliding Block, Numerical Aspects =====
+
+
+We then define $\gamma = b/(2m\omega_0)$ and rewrite our equations as
+!bt
+\[
+\frac{d^2x}{d\tau^2} + 2\gamma\frac{dx}{d\tau}+x(\tau) =0.
+\]
+!et
+This is the equation we will code below. The first version employs the Euler-Cromer method.
+!bc pycod
+# Common imports
+import numpy as np
+import pandas as pd
+from math import *
+import matplotlib.pyplot as plt
+import os
+
+# Where to save the figures and data files
+PROJECT_ROOT_DIR = "Results"
+FIGURE_ID = "Results/FigureFiles"
+DATA_ID = "DataFiles/"
+
+if not os.path.exists(PROJECT_ROOT_DIR):
+    os.mkdir(PROJECT_ROOT_DIR)
+
+if not os.path.exists(FIGURE_ID):
+    os.makedirs(FIGURE_ID)
+
+if not os.path.exists(DATA_ID):
+    os.makedirs(DATA_ID)
+
+def image_path(fig_id):
+    return os.path.join(FIGURE_ID, fig_id)
+
+def data_path(dat_id):
+    return os.path.join(DATA_ID, dat_id)
+
+def save_fig(fig_id):
+    plt.savefig(image_path(fig_id) + ".png", format='png')
+
+
+from pylab import plt, mpl
+plt.style.use('seaborn')
+mpl.rcParams['font.family'] = 'serif'
+
+DeltaT = 0.001
+#set up arrays 
+tfinal = 20 # in dimensionless time
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, v, and x
+t = np.zeros(n)
+v = np.zeros(n)
+x = np.zeros(n)
+# Initial conditions as simple one-dimensional arrays of time
+x0 =  1.0 
+v0 = 0.0
+x[0] = x0
+v[0] = v0
+gamma = 0.0
+# Start integrating using Euler-Cromer's method
+for i in range(n-1):
+    # Set up the acceleration
+    # Here you could have defined your own function for this
+    a =  -2*gamma*v[i]-x[i]
+    # update velocity, time and position
+    v[i+1] = v[i] + DeltaT*a
+    x[i+1] = x[i] + DeltaT*v[i+1]
+    t[i+1] = t[i] + DeltaT
+# Plot position as function of time    
+fig, ax = plt.subplots()
+#ax.set_xlim(0, tfinal)
+ax.set_ylabel('x[m]')
+ax.set_xlabel('t[s]')
+ax.plot(t, x)
+fig.tight_layout()
+save_fig("BlockEulerCromer")
+plt.show()
+!ec
+
+When setting up the value of $\gamma$ we see that for $\gamma=0$ we get the simple oscillatory motion with no damping.
+Choosing $\gamma < 1$ leads to the classical underdamped case with oscillatory motion, but where the motion comes to an end.
+
+Choosing $\gamma =1$ leads to what normally is called critical damping and $\gamma> 1$ leads to critical overdamping.
+Try it out and try also to change the initial position and velocity. Setting $\gamma=1$
+yields a situation, as discussed above, where the solution approaches quickly zero and does not oscillate. With zero initial velocity it will never cross zero. 
+
+
+
+

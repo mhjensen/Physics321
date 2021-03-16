@@ -1447,90 +1447,10 @@ differential equations numerically. If we can compare our numerical
 solutions with analytical solutions, we have an extra check of our
 numerical approaches.
 
-The example code on the next slide is relevant for homework 3. Here we deal with a falling object in two dimensions. Except for the derivations above with an
-air resistance which is linear in the velocity, homework 3 uses a quadratic velocity dependence.
+## Exercises
 
 
-
-**Note**: this code needs some additional expressions and will not run
-
-# Common imports
-import numpy as np
-import pandas as pd
-from math import *
-import matplotlib.pyplot as plt
-import os
-from pylab import plt, mpl
-plt.style.use('seaborn')
-mpl.rcParams['font.family'] = 'serif'
-
-#define the gravitational acceleration
-g = 9.80655 #m/s^2
-# The mass and the drag constant D
-D = 0.00245 #mass/length   kg/m
-m = 0.2 #kg, mass of falling object
-DeltaT = 0.001
-#set up final time, here just a number we have chosen
-tfinal = 1.0
-# set up number of points for all variables
-n = ceil(tfinal/DeltaT)
-# set up arrays for t, a, v, and y and arrays for analytical results
-# Note the brute force setting up of arrays for x and y, vx, vy, ax and ay
-# For hw3 you should think of using the 2-dim vectors you used in homework 2
-t = np.zeros(n)
-vy = np.zeros(n)
-y = np.zeros(n)
-vx = np.zeros(n)
-x = np.zeros(n)
-# Initial conditions
-vx[0] = 10.0 #m/s
-vy[0] = 0.0  #m/s
-y[0] = 10.0 #m
-x[0] = 0.0 #m
-# Start integrating using Euler's method
-for i in range(n-1):
-    # expression for acceleration, note the absolute value and division by mass
-#    ax = You need to set up the expression for force and thereby the acceleration in the x-direction
-#    ay = You need to set up the expression for force and thereby the acceleration in the y-direction
-    # update velocity and position
-    vx[i+1] = vx[i] + DeltaT*ax
-    x[i+1] = x[i] + DeltaT*vx[i]
-    vy[i+1] = vy[i] + DeltaT*ay
-    y[i+1] = y[i] + DeltaT*vy[i]
-    # update time to next time step and compute analytical answer
-    t[i+1] = t[i] + DeltaT
-#  Here you need to set up the analytical solution for y(t) and x(t)
-
-if ( y[i+1] < 0.0):
-        break
-data = {'t[s]': t,
-        'Relative error in y': abs((y-yanalytic)/yanalytic),
-        'vy[m/s]': vy,
-        'Relative error in x': abs((x-xanalytic)/xanalytic),
-        'vx[m/s]': vx
-}
-NewData = pd.DataFrame(data)
-display(NewData)
-# save to file
-NewData.to_csv(outfile, index=False)
-#then plot
-fig, axs = plt.subplots(4, 1)
-axs[0].plot(t, y)
-axs[0].set_xlim(0, tfinal)
-axs[0].set_ylabel('y')
-axs[1].plot(t, vy)
-axs[1].set_ylabel('vy[m/s]')
-axs[1].set_xlabel('time[s]')
-axs[2].plot(t, x)
-axs[2].set_xlim(0, tfinal)
-axs[2].set_ylabel('x')
-axs[3].plot(t, vx)
-axs[3].set_ylabel('vx[m/s]')
-axs[3].set_xlabel('time[s]')
-fig.tight_layout()
-plt.show()
-
-### Exercise 1 (20 pt), Electron moving into an electric field
+### Electron moving into an electric field
 
 An electron is sent through a varying electrical
 field. Initially, the electron is moving in the $x$-direction with a velocity
@@ -1547,10 +1467,6 @@ $$
 \boldsymbol{a}(t)=\left(−20 \mathrm{m/s}^2 −10\mathrm{m/s}^3t\right) \boldsymbol{e}_2.
 $$
 
-* 1a (4pt) Find the velocity as a function of time for the electron.
-
-**Answer 1a:**
-
 Note that the velocity in the $x$-direction is a constant and is not affected by the force which acts only in the $y$-direction.
 This means that we can decouple the two degrees of freedom and skip the vector symbols.
 We have then a constant velocity in the $x$-direction
@@ -1565,9 +1481,9 @@ $$
 v_y(t) = -20\mathrm{m/s^2}t-5\mathrm{m/s^3}t^2.
 $$
 
-* 1b (4pt)  Find the position as a function of time for the electron.
+Find the position as a function of time for the electron.
 
-**Answer 1b:**
+
 We integrate again in the $x$-direction
 
 $$
@@ -1582,9 +1498,10 @@ y(t) = -10\mathrm{m/s^2}t^2-\frac{5}{3}\mathrm{m/s^3}t^3.
 $$
 
 The field is only acting inside a box of length $L = 2m$.
-* 1c (4pt)  How long time is the electron inside the field?
 
-**Answer 1c:**
+How long time is the electron inside the field?
+
+
 If we use the equation for the $x$-direction (the length of the box), we can then use the equation for $x(t) = 100\mathrm{m/s}t$
 and simply set $x=2$m and we find
 
@@ -1592,9 +1509,9 @@ $$
 t=\frac{1}{50}\mathrm{s}.
 $$
 
-* 1d (4pt)  What is the displacement in the $y$-direction when the electron leaves the box. (We call this the deflection of the electron).
+What is the displacement in the $y$-direction when the electron leaves the box. (We call this the deflection of the electron).
 
-**Answer 1d:**
+
 Here we simply use
 
 $$
@@ -1607,9 +1524,9 @@ $$
 y = -0.004013 \mathrm{m}.
 $$
 
-* 1e (4pt)  Find the angle the velocity vector forms with the horizontal axis as the electron leaves the box.
+Find the angle the velocity vector forms with the horizontal axis as the electron leaves the box.
 
-**Answer 1e:**
+
 Again, we use $t=1/50$s and calculate the velocities in the $x$- and the $y$-directions (the velocity in the $x$-direction is just a constant) and find the angle using
 
 $$
@@ -1624,15 +1541,15 @@ $$
 
 in degrees (not radians).
 
-### Exercise 2 (10 pt), Drag force, Taylor exercise 2.3
+### Drag force
 
-* 2a (5pt) Using equations (2.84) and (2.82) in Taylor, we have that $f_{\mathrm{quad}}/f_{\mathrm{lin}}=(\kappa\rho Av^2)/(3\pi\eta Dv)$. With $\kappa =1/4$ and $A=\pi D^2/4$ we obtain $f_{\mathrm{quad}}/f_{\mathrm{lin}}=(\rho Dv)/(48\eta)$ or $R/48$ with $R$ given by equation (2.83) of Taylor.
+Using equations (2.84) and (2.82) in Taylor, we have that $f_{\mathrm{quad}}/f_{\mathrm{lin}}=(\kappa\rho Av^2)/(3\pi\eta Dv)$. With $\kappa =1/4$ and $A=\pi D^2/4$ we obtain $f_{\mathrm{quad}}/f_{\mathrm{lin}}=(\rho Dv)/(48\eta)$ or $R/48$ with $R$ given by equation (2.83) of Taylor.
 
-* 2b (5pt) With these numbers $R=1.1\times 10^{-2}$ and it is safe to neglect the quadratic drag.
+With these numbers $R=1.1\times 10^{-2}$ and it is safe to neglect the quadratic drag.
 
-### Exercise 3 (10 pt), Falling object, Taylor exercise 2.6
+### Falling object
 
-* 3a (5pt) If we insert Taylor series for $\exp{-(t/\tau)}$ into equation (2.33) of Taylor, we have
+If we insert Taylor series for $\exp{-(t/\tau)}$ into equation (2.33) of Taylor, we have
 
 $$
 v_y(t) = v_{\mathrm{ter}}\left[1-\exp{-(t/\tau)}\right] = v_{\mathrm{ter}}\left[1-(1-\frac{t}{\tau}+\frac{t^2}{2\tau^2}+\dots   )\right].
@@ -1645,7 +1562,8 @@ v_y(t) \approx v_{\mathrm{ter}}\frac{t}{\tau}=gt,
 $$
 
 where we used that $v_{\mathrm{ter}}=g\tau$ from equation (2.34) in Taylor. This means that for small velocities it is the gravitational force which dominates.
-* 3b (5pt) Setting $v_y(t_0)=0$ in equation (2.35) of Taylor and using the Taylor series for the exponential we find that
+
+Setting $v_y(t_0)=0$ in equation (2.35) of Taylor and using the Taylor series for the exponential we find that
 
 $$
 y(t) = v_{\mathrm{ter}}t-v_{\mathrm{ter}}\tau\left[1-\exp{-(t/\tau)}\right] = v_{\mathrm{ter}}t-v_{\mathrm{ter}}\tau\left[1-(1-\frac{t}{\tau}+\frac{t^2}{2\tau^2}+\dots   )\right].
@@ -1659,7 +1577,7 @@ $$
 
 Again, for small times, as expected, the gravitational force plays the major role.
 
-### Exercise 4 (10 pt), and then a cyclist, Taylor exercise 2.26
+### Motion of a cyclist
 
 Putting in the numbers for the characteristic time we find
 
@@ -1677,9 +1595,7 @@ This gives a time of 6.7s for a velocity of 15m/s, 20s for a velocity of 10m/s a
 
 
 
-### Exercise 5 (10 pt), back to a falling ball and preparing for the numerical exercise
-
-**Useful material: Malthe-Sørenssen chapter 7.5 and Taylor chapter 2.4.**
+### Falling ball and preparing for the numerical exercise
 
 In this example we study the motion of an object subject to a constant force, a velocity dependent
 force, and for the numerical part a position-dependent force.
@@ -1712,7 +1628,7 @@ $$
 The analytical expressions for velocity and position as functions of
 time will be used to compare with the numerical results in exercise 6.
 
-* 5a (3pt) Identify the forces acting on the ball and set up a diagram with the forces acting on the ball. Find the acceleration of the falling ball.
+Identify the forces acting on the ball and set up a diagram with the forces acting on the ball. Find the acceleration of the falling ball.
 
 The forces acting on the ball are the gravitational force $\boldsymbol{G}=-mg\boldsymbol{e}_y$ and the air resistance $\boldsymbol{F}_D=-D\boldsymbol{v}v$ with $v$ the absolute value of the velocity. The accelaration in the $x$-direction is
 
@@ -1734,7 +1650,7 @@ In the general code below we would write this as (pseudocode style)
     ax = -D*vx[i]*abs(v[i])/m
     ay = -g - D*vy[i]*abs(v[i])/m
 
-* 5b (4pt) Integrate the acceleration from an initial time $t_0$ to a final time $t$ and find the velocity.
+Integrate the acceleration from an initial time $t_0$ to a final time $t$ and find the velocity.
 
 We reduce our problem to a one-dimensional in the $y$-direction only since for the two-dimensional motion we cannot find an analtical solution. For one dimension however, we have an analytical solution.
 We specialize our equations  for the $y$-direction only
@@ -1777,7 +1693,8 @@ With a finite initial velocity we need simply to add $v_{y0}$.
 
 
 
-* 5c (4pt) Find thereafter the position as function of time starting with an initial time $t_0$. Find the time it takes to hit the floor.  Here you will find it convenient to set the initial velocity in the $y$-direction to zero.
+Find thereafter the position as function of time starting with an initial time $t_0$. Find the time it takes to hit the floor.  Here you will find it convenient to set the initial velocity in the $y$-direction to zero.
+
 
 With the velocity we can then find the height $y(t)$ by integrating yet another time, that is
 
@@ -1816,21 +1733,14 @@ In the code below we would code these analytical expressions (with zero initial 
 
     yanalytic[i+1] = y[0]-(vT*vT/g)*log(cosh(g*t[i+1]/vT))+vy[0]*t[i+1]
 
-We will use the above analytical results in our numerical calculations in exercise 6.
+We will use the above analytical results in our numerical calculations in the next exercise
 
 
 
 
-### Exercise 6 (40pt), Numerical elements, solving exercise 5 numerically and adding the bouncing from the floor
+### Numerical elements, solving the previous exercise  numerically and adding the bouncing from the floor
 
-**This exercise should be handed in as a jupyter-notebook** at D2L. Remember to write your name(s). 
-
-Last week we:
-1. Gained more practice with plotting in Python
-
-2. Became familiar with arrays and representing vectors with such objects
-
-This week we will:
+Here we will:
 1. Learn and utilize Euler's Method to find the position and the velocity
 
 2. Compare analytical and computational solutions 
@@ -1861,7 +1771,8 @@ are taking $(N)$. This gives us a step size $\Delta t = \dfrac{t_{\mathrm{final}
 
 With these preliminaries we are now ready to plot our results from exercise 5.
 
-* 6a (10pt) Set up arrays for time, velocity, acceleration and positions for the results from exercise 5. Define an initial and final time. Choose the final time to be the time when the ball hits the ground for the first time. Make a plot of the position and velocity as functions of time.  Here you could set the initial velocity in the $y$-direction to zero and use the result from exercise 5. Else you need to try different initial times using the result from exercise 5 as a starting guess.  It is not critical if you don't reach the ground when the initial velocity in the $y$-direction is not zero.
+Set up arrays for time, velocity, acceleration and positions for the results from exercise 5. Define an initial and final time. Choose the final time to be the time when the ball hits the ground for the first time. Make a plot of the position and velocity as functions of time.  Here you could set the initial velocity in the $y$-direction to zero and use the result from exercise 5. Else you need to try different initial times using the result from exercise 5 as a starting guess.  It is not critical if you don't reach the ground when the initial velocity in the $y$-direction is not zero.
+
 
 We move now to the numerical solution of the differential equations as discussed in the [lecture notes](https://mhjensen.github.io/Physics321/doc/pub/motion/html/motion.html) or Malthe-Sørenssen chapter 7.5.
 Let us remind ourselves about  Euler's Method.
@@ -1892,14 +1803,11 @@ In setting up our code we need to
 
 5. Repeat steps 2-4 for all time steps within a loop.
 
-
-* 6b (20 pt) Write a code which implements Euler's method and compute numerically and plot the position and velocity as functions of time for various values of $\Delta t$. Comment your results.
+Write a code which implements Euler's method and compute numerically and plot the position and velocity as functions of time for various values of $\Delta t$. Comment your results.
 
 Below you will find two codes, one which uses explicit expressions for the $x$- and $y$-directions and one which rewrites the expressions as compact vectors, as done in homework 2. Running the codes shows a sensitivity to the chosen step size $\Delta t$. You will clearly notice that when comparing with the analytical results, that larger values of the step size in time result in a poorer agreement with the analytical solutions.
 
-* 6c (10pt) Compare your numerically obtained positions and velocities with the analytical results from exercise 5. Comment again your results.
-
-**Answers 6a, 6b and 6c:**
+* Compare your numerically obtained positions and velocities with the analytical results from exercise 5. Comment again your results.
 
 The codes follow here. Running them allows you to probe the various parameters and compare with analytical solutions as well. 
 
@@ -2025,7 +1933,7 @@ initial velocity and position in the $x$ direction to zero,
 the motion in the $x$-direction is
 zero, as expected.
 
-# Exercise 6, hw3, smarter way with declaration of vx, vy, x and y
+# Smarter way with declaration of vx, vy, x and y
 # Common imports
 import numpy as np
 import pandas as pd
@@ -2150,12 +2058,11 @@ $$
 when $y(t) < R$ and zero when $y(t) \le R$.
 In the numerical calculations you can choose $R=0.1$ m and the spring constant $k=1000$ N/m.
 
-* 6a (10pt) Identify the forces acting on the ball and set up a diagram with the forces acting on the ball. Find the acceleration of the falling ball now with the normal force as well.
+* Identify the forces acting on the ball and set up a diagram with the forces acting on the ball. Find the acceleration of the falling ball now with the normal force as well.
 
-* 6b (30pt) Choose a large enough final time so you can study the ball bouncing up and down several times. Add the normal force and compute the height of the ball as function of time with and without air resistance. Comment your results.
+* Choose a large enough final time so you can study the ball bouncing up and down several times. Add the normal force and compute the height of the ball as function of time with and without air resistance. Comment your results.
 
-For 6a, see Malthe-Sørenssen chapter 7.5.1, in particular figure
-7.10. The forces are in equation (7.10).  The following code shows how
+The following code shows how
 to set up the problem with gravitation, a drag force and a normal
 force from the ground. The normal force makes the ball bounce up
 again.
@@ -2164,7 +2071,7 @@ again.
 The code here includes all forces. Commenting out the air resistance will result in a ball which bounces up and down to the same height.
 Furthermore, you will note that for larger values of $\Delta t$ the results will not be physically meaningful. Can you figure out why?  Try also different values for the step size in order to see whether the final results agrees with what you expect.
 
-# Exercise 6, hw4, smarter way with declaration of vx, vy, x and y
+# Smarter way with declaration of vx, vy, x and y
 # Here we have added a normal force from the ground
 # Common imports
 import numpy as np
