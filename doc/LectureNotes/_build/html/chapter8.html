@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Variational Calculus and Lagrangian Formalism &#8212; Classical mechanics</title>
+    <title>4. Variational Calculus and Lagrangian Formalism &#8212; Classical mechanics</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -57,7 +57,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Non-inertial Frames, Translation and Rotating Coordinate Systems" href="chapter7.html" />
+    <link rel="prev" title="3. Non-inertial Frames, Translation and Rotating Coordinate Systems" href="chapter7.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -102,17 +102,17 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="schedule.html">
-   PHY321 Classical Mechanics I, Michigan State University, Spring 2021: Teaching schedule with links to material
+   Teaching schedule with links to material
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="teachers.html">
-   PHY321 Classical Mechanics I, Michigan State University, Spring 2021: Teachers and Grading
+   Teachers and Grading
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="textbooks.html">
-   PHY321 Classical Mechanics I, Michigan State University, Spring 2021: Textbooks
+   Textbooks
   </a>
  </li>
 </ul>
@@ -151,22 +151,22 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter5.html">
-   Harmonic Oscillations
+   1. Harmonic Oscillations
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="chapter6.html">
-   Two-body problems and Gravitational Forces
+   2. Two-body problems and Gravitational Forces
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="chapter7.html">
-   Non-inertial Frames, Translation and Rotating Coordinate Systems
+   3. Non-inertial Frames, Translation and Rotating Coordinate Systems
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Variational Calculus and Lagrangian Formalism
+   4. Variational Calculus and Lagrangian Formalism
   </a>
  </li>
 </ul>
@@ -242,51 +242,51 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#constrained-motion">
-   Constrained motion
+   4.1. Constrained motion
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#example-brachiostone">
-     Example: brachiostone
+     4.1.1. Example: brachiostone
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#maximizing-a-function">
-     Maximizing a Function
+     4.1.2. Maximizing a Function
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#example">
-     Example
+     4.1.3. Example
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#lagrangians">
-   Lagrangians
+   4.2. Lagrangians
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#proving-lagrange-s-equations-of-motion-from-newton-s-laws">
-     Proving Lagrange’s Equations of Motion from Newton’s Laws
+     4.2.1. Proving Lagrange’s Equations of Motion from Newton’s Laws
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#lagrangian-examples">
-     Lagrangian Examples
+     4.2.2. Lagrangian Examples
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#small-vibrations-and-normal-modes">
-   Small Vibrations and Normal Modes
+   4.3. Small Vibrations and Normal Modes
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conservation-laws">
-   Conservation Laws
+   4.4. Conservation Laws
   </a>
  </li>
 </ul>
@@ -302,7 +302,7 @@
               <div>
                 
   <div class="section" id="variational-calculus-and-lagrangian-formalism">
-<h1>Variational Calculus and Lagrangian Formalism<a class="headerlink" href="#variational-calculus-and-lagrangian-formalism" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4. </span>Variational Calculus and Lagrangian Formalism<a class="headerlink" href="#variational-calculus-and-lagrangian-formalism" title="Permalink to this headline">¶</a></h1>
 <p>The calculus of variations involves
 problems where the quantity to be minimized or maximized is an integral.</p>
 <p>The usual minimization problem one faces involves taking a function
@@ -443,7 +443,7 @@ dx}\frac{\partial \cal{L}}{\partial \dot{q}}\right)\delta q(t)dt=\delta S = 0.
 \]</div>
 <p>known as the <strong>Euler-Lagrange</strong> equation.</p>
 <div class="section" id="constrained-motion">
-<h2>Constrained motion<a class="headerlink" href="#constrained-motion" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1. </span>Constrained motion<a class="headerlink" href="#constrained-motion" title="Permalink to this headline">¶</a></h2>
 <p>Sometimes an auxiliary constraint is added to the problem (beyond
 fixing the end poits <span class="math notranslate nohighlight">\(y_1\)</span> and <span class="math notranslate nohighlight">\(y_2\)</span>). Just ahead, we will work on the
 example of a hanging chain. The shape of the curve minimizes the
@@ -612,7 +612,7 @@ Lagrange’s undetermined multiplier.  If we have a set of constraints
 \frac{\partial f}{\partial x_i}+\sum_k\lambda_k\frac{\partial \phi_k}{\partial x_i} =0.
 \]</div>
 <div class="section" id="example-brachiostone">
-<h3>Example: brachiostone<a class="headerlink" href="#example-brachiostone" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.1. </span>Example: brachiostone<a class="headerlink" href="#example-brachiostone" title="Permalink to this headline">¶</a></h3>
 <p>Consider a particle constrained to move along a path (like a bead
 moving without friction on a wire) and you need to design a path from
 <span class="math notranslate nohighlight">\(x=y=0\)</span> to some final point <span class="math notranslate nohighlight">\(x_f,y_f\)</span>. Assume there is a constant
@@ -672,7 +672,7 @@ a chance to work with cycloids in the exercises at the end of this
 chapter.</p>
 </div>
 <div class="section" id="maximizing-a-function">
-<h3>Maximizing a Function<a class="headerlink" href="#maximizing-a-function" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.2. </span>Maximizing a Function<a class="headerlink" href="#maximizing-a-function" title="Permalink to this headline">¶</a></h3>
 <p>As an example of using Lagrange multipliers for a standard
 optimization formula we attempt to maximize the following function,</p>
 <div class="math notranslate nohighlight">
@@ -756,7 +756,7 @@ f\left\{y(t),y'(t),x\right\}\rightarrow f\left\{y(t),y'(t),x\right\}-\lambda C\l
 \]</div>
 </div>
 <div class="section" id="example">
-<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.3. </span>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
 <p>Consider a chain of length <span class="math notranslate nohighlight">\(L\)</span> and mass per unit length <span class="math notranslate nohighlight">\(\kappa\)</span> that
 hangs from point <span class="math notranslate nohighlight">\(x=0,y=0\)</span> to point <span class="math notranslate nohighlight">\(x_f,y_f\)</span>. The shape must minimize
 the potential energy. Find general expressions for the shape in terms
@@ -833,7 +833,7 @@ the moon. These solutions are known as <a class="reference external" href="http:
 </div>
 </div>
 <div class="section" id="lagrangians">
-<h2>Lagrangians<a class="headerlink" href="#lagrangians" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2. </span>Lagrangians<a class="headerlink" href="#lagrangians" title="Permalink to this headline">¶</a></h2>
 <p>Lagrangians represent a powerful method for solving problems that
 would be nearly impossible by direct application of Newton’s third
 law, <span class="math notranslate nohighlight">\(\boldsymbol{F}=m\boldsymbol{a}\)</span>. The method works well for problems where a
@@ -899,7 +899,7 @@ m\ell^2\ddot{\theta}&amp;=&amp;-mg\ell\sin\theta,\\
 \end{eqnarray*}
 \end{split}\]</div>
 <div class="section" id="proving-lagrange-s-equations-of-motion-from-newton-s-laws">
-<h3>Proving Lagrange’s Equations of Motion from Newton’s Laws<a class="headerlink" href="#proving-lagrange-s-equations-of-motion-from-newton-s-laws" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.1. </span>Proving Lagrange’s Equations of Motion from Newton’s Laws<a class="headerlink" href="#proving-lagrange-s-equations-of-motion-from-newton-s-laws" title="Permalink to this headline">¶</a></h3>
 <p>Lagrange’s equations of motion can only be applied for the following conditions:</p>
 <ul class="simple">
 <li><p>The potential energy is a function of the generalized coordinates <span class="math notranslate nohighlight">\(q_i\)</span>, but not of <span class="math notranslate nohighlight">\(\dot{q}_i\)</span>.</p></li>
@@ -967,7 +967,7 @@ see that the bottom expressions above are identical,</p>
 \]</div>
 </div>
 <div class="section" id="lagrangian-examples">
-<h3>Lagrangian Examples<a class="headerlink" href="#lagrangian-examples" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.2. </span>Lagrangian Examples<a class="headerlink" href="#lagrangian-examples" title="Permalink to this headline">¶</a></h3>
 <p>Two examples are presented here. In the first, there are two
 generalized coordinates, but the two equations of motion can be
 reduced to one through conservation laws (angular momentum in this
@@ -1047,7 +1047,7 @@ outward indefinitely.</p>
 </div>
 </div>
 <div class="section" id="small-vibrations-and-normal-modes">
-<h2>Small Vibrations and Normal Modes<a class="headerlink" href="#small-vibrations-and-normal-modes" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.3. </span>Small Vibrations and Normal Modes<a class="headerlink" href="#small-vibrations-and-normal-modes" title="Permalink to this headline">¶</a></h2>
 <p>Two examples are provided for solving for normal modes. These are
 solutions with multiple generalized coordinates, where the motion is
 that of simple harmonic motion. However, the motion is only simple for
@@ -1420,7 +1420,7 @@ programming languages all have packages which readily diagonalize
 matrices and find eigenvectors and eigenvalues.</p>
 </div>
 <div class="section" id="conservation-laws">
-<h2>Conservation Laws<a class="headerlink" href="#conservation-laws" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.4. </span>Conservation Laws<a class="headerlink" href="#conservation-laws" title="Permalink to this headline">¶</a></h2>
 <p>Energy is conserved only when the Lagrangian has no explicit
 dependence on time, i.e. <span class="math notranslate nohighlight">\(L(q,\dot{q})\)</span>, not <span class="math notranslate nohighlight">\(L(q,\dot{q},t)\)</span>. To show
 this, we first define the Hamiltonian,</p>
@@ -1592,7 +1592,7 @@ instance, you may need to write the Lagrangian in terms of angles.</p>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="chapter7.html" title="previous page">Non-inertial Frames, Translation and Rotating Coordinate Systems</a>
+    <a class='left-prev' id="prev-link" href="chapter7.html" title="previous page"><span class="section-number">3. </span>Non-inertial Frames, Translation and Rotating Coordinate Systems</a>
 
         </div>
         
