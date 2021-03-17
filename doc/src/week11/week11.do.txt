@@ -502,7 +502,7 @@ Consider a particle of mass $m$ in a 2-dimensional harmonic oscillator with pote
 
 !bt
 \[
-U=\frac{1}{2}kr^2=\frac{1}{2}k(x^2+y^2).
+V=\frac{1}{2}kr^2=\frac{1}{2}k(x^2+y^2).
 \]
 !et
 
@@ -603,7 +603,7 @@ y&=&C\cos\omega_0 t+D\sin\omega_0 t.
 \end{eqnarray*}
 !et
 
-The code here finds the solution for $x$ and $y$ using the code we developed in homework 4.
+The code here finds the solution for $x$ and $y$ using the code we developed in homework 5 and 6 and the midterm.  Note that this code is tailored to run in Cartesian coordinates. There is thus no angular momentum dependent term.
 !bc pycod
 
 DeltaT = 0.01
@@ -616,14 +616,13 @@ v = np.zeros((n,2))
 r = np.zeros((n,2))
 radius = np.zeros(n)
 # Constants of the model
-k = 0.1   # spring constant
-m = 0.1   # mass, you can change these
+k = 1.0   # spring constant
+m = 1.0   # mass, you can change these
 omega02 = sqrt(k/m)  # Frequency
 AngMom = 1.0  #  The angular momentum
 rmin = (AngMom*AngMom/k/m)**0.25
 # Initial conditions as compact 2-dimensional arrays
-#x0 =rmin*0.5; y0 = sqrt(rmin*rmin-x0*x0)
-x0 = 1.0; y0= 1.0
+x0 = rmin-0.5; y0= sqrt(rmin*rmin-x0*x0)
 r0 = np.array([x0,y0]) 
 v0 = np.array([0.0,0.0])
 r[0] = r0
@@ -690,8 +689,8 @@ r = np.zeros(n)
 E = np.zeros(n)
 # Constants of the model
 AngMom = 1.0  #  The angular momentum
-m = 0.1
-k = 0.1
+m = 1.0
+k = 1.0
 omega02 = k/m
 c1 = AngMom*AngMom/(m*m)
 c2 = AngMom*AngMom/m

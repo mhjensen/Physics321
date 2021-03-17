@@ -656,7 +656,7 @@ Changing the value of the initial position to a value where the energy is positi
 Consider a particle of mass \( m \) in a 2-dimensional harmonic oscillator with potential
 
 $$
-U=\frac{1}{2}kr^2=\frac{1}{2}k(x^2+y^2).
+V=\frac{1}{2}kr^2=\frac{1}{2}k(x^2+y^2).
 $$
 
 <p>
@@ -764,7 +764,7 @@ y&=&C\cos\omega_0 t+D\sin\omega_0 t.
 $$
 
 <p>
-The code here finds the solution for \( x \) and \( y \) using the code we developed in homework 4.
+The code here finds the solution for \( x \) and \( y \) using the code we developed in homework 5 and 6 and the midterm.  Note that this code is tailored to run in Cartesian coordinates. There is thus no angular momentum dependent term.
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
@@ -778,14 +778,13 @@ v <span style="color: #666666">=</span> np<span style="color: #666666">.</span>z
 r <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((n,<span style="color: #666666">2</span>))
 radius <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
 <span style="color: #408080; font-style: italic"># Constants of the model</span>
-k <span style="color: #666666">=</span> <span style="color: #666666">0.1</span>   <span style="color: #408080; font-style: italic"># spring constant</span>
-m <span style="color: #666666">=</span> <span style="color: #666666">0.1</span>   <span style="color: #408080; font-style: italic"># mass, you can change these</span>
+k <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>   <span style="color: #408080; font-style: italic"># spring constant</span>
+m <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>   <span style="color: #408080; font-style: italic"># mass, you can change these</span>
 omega02 <span style="color: #666666">=</span> sqrt(k<span style="color: #666666">/</span>m)  <span style="color: #408080; font-style: italic"># Frequency</span>
 AngMom <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>  <span style="color: #408080; font-style: italic">#  The angular momentum</span>
 rmin <span style="color: #666666">=</span> (AngMom<span style="color: #666666">*</span>AngMom<span style="color: #666666">/</span>k<span style="color: #666666">/</span>m)<span style="color: #666666">**0.25</span>
 <span style="color: #408080; font-style: italic"># Initial conditions as compact 2-dimensional arrays</span>
-<span style="color: #408080; font-style: italic">#x0 =rmin*0.5; y0 = sqrt(rmin*rmin-x0*x0)</span>
-x0 <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>; y0<span style="color: #666666">=</span> <span style="color: #666666">1.0</span>
+x0 <span style="color: #666666">=</span> rmin<span style="color: #666666">-0.5</span>; y0<span style="color: #666666">=</span> sqrt(rmin<span style="color: #666666">*</span>rmin<span style="color: #666666">-</span>x0<span style="color: #666666">*</span>x0)
 r0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([x0,y0]) 
 v0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">0.0</span>,<span style="color: #666666">0.0</span>])
 r[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> r0
@@ -852,8 +851,8 @@ r <span style="color: #666666">=</span> np<span style="color: #666666">.</span>z
 E <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
 <span style="color: #408080; font-style: italic"># Constants of the model</span>
 AngMom <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>  <span style="color: #408080; font-style: italic">#  The angular momentum</span>
-m <span style="color: #666666">=</span> <span style="color: #666666">0.1</span>
-k <span style="color: #666666">=</span> <span style="color: #666666">0.1</span>
+m <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>
+k <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>
 omega02 <span style="color: #666666">=</span> k<span style="color: #666666">/</span>m
 c1 <span style="color: #666666">=</span> AngMom<span style="color: #666666">*</span>AngMom<span style="color: #666666">/</span>(m<span style="color: #666666">*</span>m)
 c2 <span style="color: #666666">=</span> AngMom<span style="color: #666666">*</span>AngMom<span style="color: #666666">/</span>m

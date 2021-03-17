@@ -741,7 +741,7 @@ Consider a particle of mass \( m \) in a 2-dimensional harmonic oscillator with 
 
 <p>&nbsp;<br>
 $$
-U=\frac{1}{2}kr^2=\frac{1}{2}k(x^2+y^2).
+V=\frac{1}{2}kr^2=\frac{1}{2}k(x^2+y^2).
 $$
 <p>&nbsp;<br>
 
@@ -860,7 +860,7 @@ $$
 <p>&nbsp;<br>
 
 <p>
-The code here finds the solution for \( x \) and \( y \) using the code we developed in homework 4.
+The code here finds the solution for \( x \) and \( y \) using the code we developed in homework 5 and 6 and the midterm.  Note that this code is tailored to run in Cartesian coordinates. There is thus no angular momentum dependent term.
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
@@ -874,14 +874,13 @@ v = np.zeros((n,<span style="color: #B452CD">2</span>))
 r = np.zeros((n,<span style="color: #B452CD">2</span>))
 radius = np.zeros(n)
 <span style="color: #228B22"># Constants of the model</span>
-k = <span style="color: #B452CD">0.1</span>   <span style="color: #228B22"># spring constant</span>
-m = <span style="color: #B452CD">0.1</span>   <span style="color: #228B22"># mass, you can change these</span>
+k = <span style="color: #B452CD">1.0</span>   <span style="color: #228B22"># spring constant</span>
+m = <span style="color: #B452CD">1.0</span>   <span style="color: #228B22"># mass, you can change these</span>
 omega02 = sqrt(k/m)  <span style="color: #228B22"># Frequency</span>
 AngMom = <span style="color: #B452CD">1.0</span>  <span style="color: #228B22">#  The angular momentum</span>
 rmin = (AngMom*AngMom/k/m)**<span style="color: #B452CD">0.25</span>
 <span style="color: #228B22"># Initial conditions as compact 2-dimensional arrays</span>
-<span style="color: #228B22">#x0 =rmin*0.5; y0 = sqrt(rmin*rmin-x0*x0)</span>
-x0 = <span style="color: #B452CD">1.0</span>; y0= <span style="color: #B452CD">1.0</span>
+x0 = rmin-<span style="color: #B452CD">0.5</span>; y0= sqrt(rmin*rmin-x0*x0)
 r0 = np.array([x0,y0]) 
 v0 = np.array([<span style="color: #B452CD">0.0</span>,<span style="color: #B452CD">0.0</span>])
 r[<span style="color: #B452CD">0</span>] = r0
@@ -950,8 +949,8 @@ r = np.zeros(n)
 E = np.zeros(n)
 <span style="color: #228B22"># Constants of the model</span>
 AngMom = <span style="color: #B452CD">1.0</span>  <span style="color: #228B22">#  The angular momentum</span>
-m = <span style="color: #B452CD">0.1</span>
-k = <span style="color: #B452CD">0.1</span>
+m = <span style="color: #B452CD">1.0</span>
+k = <span style="color: #B452CD">1.0</span>
 omega02 = k/m
 c1 = AngMom*AngMom/(m*m)
 c2 = AngMom*AngMom/m
