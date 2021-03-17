@@ -134,7 +134,7 @@ The gravitional force and its solution in two dimensions
 <h3 id="friday">Friday </h3>
 
 <p>
-Kepler's laws
+Kepler's laws and computing with classes.
 
 <p>
 <b>Reading suggestion</b>: Taylor section 8.5-8.6
@@ -143,6 +143,9 @@ Kepler's laws
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
 <h1 id="two-body-problems">Two-body Problems </h1>
+
+<p>
+<b>Note: more text to be added</b>.
 
 <p>
 The gravitational potential energy and forces involving two masses \( a \) and \( b \) are
@@ -256,7 +259,7 @@ With these definitions, a little algebra shows that the kinetic energy becomes
 
 $$
 \begin{eqnarray}
-T&=&\frac{1}{2}m_1|\boldsymbol{v}_1|^2+\frac{1}{2}m_2|\boldsymbol{v}_2|^2\\
+K&=&\frac{1}{2}m_1|\boldsymbol{v}_1|^2+\frac{1}{2}m_2|\boldsymbol{v}_2|^2\\
 \nonumber
 &=&\frac{1}{2}M|\dot{\boldsymbol{R}}_{\rm cm}|^2
 +\frac{1}{2}\mu|\dot{\boldsymbol{r}}|^2\\
@@ -491,11 +494,11 @@ The total energy of a particle is
 
 $$
 \begin{eqnarray}
-E&=&U(r)+\frac{1}{2}mv_\theta^2+\frac{1}{2}m\dot{r}^2\\
+E&=&V(r)+\frac{1}{2}mv_\theta^2+\frac{1}{2}m\dot{r}^2\\
 \nonumber
-&=&U(r)+\frac{1}{2}mr^2\dot{\theta}^2+\frac{1}{2}m\dot{r}^2\\
+&=&V(r)+\frac{1}{2}mr^2\dot{\theta}^2+\frac{1}{2}m\dot{r}^2\\
 \nonumber
-&=&U(r)+\frac{L^2}{2mr^2}+\frac{1}{2}m\dot{r}^2.
+&=&V(r)+\frac{L^2}{2mr^2}+\frac{1}{2}m\dot{r}^2.
 \end{eqnarray}
 $$
 
@@ -503,12 +506,12 @@ $$
 The second term then contributes to the energy like an additional
 repulsive potential. The term is sometimes referred to as the
 "centrifugal" potential, even though it is actually the kinetic energy
-of the angular motion. Combined with \( U(r) \), it is sometimes referred
+of the angular motion. Combined with \( V(r) \), it is sometimes referred
 to as the "effective" potential,
 
 $$
 \begin{eqnarray}
-U_{\rm eff}(r)&=&U(r)+\frac{L^2}{2mr^2}.
+V_{\rm eff}(r)&=&V(r)+\frac{L^2}{2mr^2}.
 \end{eqnarray}
 $$
 
@@ -517,7 +520,7 @@ Note that if one treats the effective potential like a real potential, one would
 
 $$
 \begin{eqnarray}
-F_{\rm eff}&=&-\frac{d}{dr}U(r) -\frac{d}{dr}\frac{L^2}{2mr^2}\\
+F_{\rm eff}&=&-\frac{d}{dr}V(r) -\frac{d}{dr}\frac{L^2}{2mr^2}\\
 \nonumber
 &=&F(r)+\frac{L^2}{mr^3}=F(r)+m\frac{v_\perp^2}{r},
 \end{eqnarray}
@@ -667,10 +670,10 @@ The potential is plotted here with the parameters \( k=m=0.1 \) and \( L=1.0 \).
 
 Deltax = <span style="color: #B452CD">0.01</span>
 <span style="color: #228B22">#set up arrays</span>
-xinitial = <span style="color: #B452CD">1.0</span>
-xfinal = <span style="color: #B452CD">5.0</span>
-k = <span style="color: #B452CD">0.1</span>   <span style="color: #228B22"># spring constant</span>
-m = <span style="color: #B452CD">0.1</span>   <span style="color: #228B22"># mass, you can change these</span>
+xinitial = <span style="color: #B452CD">0.5</span>
+xfinal = <span style="color: #B452CD">3.0</span>
+k = <span style="color: #B452CD">1.0</span>   <span style="color: #228B22"># spring constant</span>
+m = <span style="color: #B452CD">1.0</span>   <span style="color: #228B22"># mass, you can change these</span>
 AngMom = <span style="color: #B452CD">1.0</span>  <span style="color: #228B22">#  The angular momentum</span>
 n = ceil((xfinal-xinitial)/Deltax)
 x = np.zeros(n)
@@ -688,7 +691,7 @@ plt.show()
 </pre></div>
 $$
 \begin{eqnarray*}
-U_{\rm eff}&=&\frac{1}{2}kr^2+\frac{L^2}{2mr^2}
+V_{\rm eff}&=&\frac{1}{2}kr^2+\frac{L^2}{2mr^2}
 \end{eqnarray*}
 $$
 
@@ -720,7 +723,7 @@ For the above parameters this minimum is at \( r_{\rm min}=1 \).
 
 $$
 \begin{eqnarray*}
-k_{\rm eff}&=&\left.\frac{d^2}{dr^2}U_{\rm eff}(r)\right|_{r=r_{\rm min}}=k+\frac{3L^2}{mr_{\rm min}^4}\\
+k_{\rm eff}&=&\left.\frac{d^2}{dr^2}V_{\rm eff}(r)\right|_{r=r_{\rm min}}=k+\frac{3L^2}{mr_{\rm min}^4}\\
 &=&4k,\\
 \omega&=&\sqrt{k_{\rm eff}/m}=2\sqrt{k/m}=2\dot{\theta}.
 \end{eqnarray*}
@@ -881,7 +884,7 @@ plt.show()
 <h2 id="stability-of-orbits">Stability of Orbits </h2>
 
 <p>
-The effective force can be extracted from the effective potential, \( U_{\rm eff} \). Beginning from the equations of motion, Eq. \eqref{eq:radialeqofmotion}, for \( r \),
+The effective force can be extracted from the effective potential, \( V_{\rm eff} \). Beginning from the equations of motion, Eq. \eqref{eq:radialeqofmotion}, for \( r \),
 
 $$
 \begin{eqnarray}
@@ -889,9 +892,9 @@ m\ddot{r}&=&F+\frac{L^2}{mr^3}\\
 \nonumber
 &=&F_{\rm eff}\\
 \nonumber
-&=&-\partial_rU_{\rm eff},\\
+&=&-\partial_rV_{\rm eff},\\
 \nonumber
-F_{\rm eff}&=&-\partial_r\left[U(r)+(L^2/2mr^2)\right].
+F_{\rm eff}&=&-\partial_r\left[V(r)+(L^2/2mr^2)\right].
 \end{eqnarray}
 $$
 
@@ -915,7 +918,7 @@ unstable.
 
 <p>
 If one considers a potential that falls as \( 1/r^3 \), the situation is
-reversed and the point where \( \partial_rU \) disappears will be a local
+reversed and the point where \( \partial_rV \) disappears will be a local
 maximum rather than a local minimum. <b>Fig to come here with code</b>
 
 <p>
@@ -926,7 +929,7 @@ the clear that for potentials that fall as \( r^n \), that one must have
 \( n>-2 \) for the orbits to be stable.
 
 <p>
-Consider a potential \( U(r)=\beta r \). For a particle of mass \( m \) with
+Consider a potential \( V(r)=\beta r \). For a particle of mass \( m \) with
 angular momentum \( L \), find the angular frequency of a circular
 orbit. Then find the angular frequency for small radial perturbations.
 
@@ -947,7 +950,7 @@ Now, we can find the angular frequency of small perturbations about the circular
 
 $$
 \begin{eqnarray*}
-k_{\rm eff}&=&\partial_r^2 \left.U_{\rm eff}\right|_{r_{\rm min}}\\
+k_{\rm eff}&=&\partial_r^2 \left.V_{\rm eff}\right|_{r_{\rm min}}\\
 &=&\frac{3L^2}{mr_{\rm min}^4},\\
 \omega&=&\sqrt{\frac{k_{\rm eff}}{m}}\\
 &=&\frac{\beta^{2/3}}{(mL)^{1/3}}\sqrt{3}.
