@@ -2,6 +2,7 @@
 
 ## Two-body Problems and Center of Mass Motion
 
+**Note: more text to be added**.
 
 The gravitational potential energy and forces involving two masses $a$ and $b$ are
 
@@ -105,7 +106,7 @@ With these definitions, a little algebra shows that the kinetic energy becomes
 
 $$
 \begin{eqnarray}
-T&=&\frac{1}{2}m_1|\boldsymbol{v}_1|^2+\frac{1}{2}m_2|\boldsymbol{v}_2|^2\\
+K&=&\frac{1}{2}m_1|\boldsymbol{v}_1|^2+\frac{1}{2}m_2|\boldsymbol{v}_2|^2\\
 \nonumber
 &=&\frac{1}{2}M|\dot{\boldsymbol{R}}_{\rm cm}|^2
 +\frac{1}{2}\mu|\dot{\boldsymbol{r}}|^2\\
@@ -121,6 +122,7 @@ expressed in this frame, then transformed into the lab frame. In
 practice, one sees examples in the literature where $d\sigma/d\Omega$
 expressed in both the "center-of-mass" and in the "laboratory"
 frame.
+
 
 
 ## Deriving Elliptical Orbits
@@ -345,23 +347,23 @@ The total energy of a particle is
 
 $$
 \begin{eqnarray}
-E&=&U(r)+\frac{1}{2}mv_\theta^2+\frac{1}{2}m\dot{r}^2\\
+E&=&V(r)+\frac{1}{2}mv_\theta^2+\frac{1}{2}m\dot{r}^2\\
 \nonumber
-&=&U(r)+\frac{1}{2}mr^2\dot{\theta}^2+\frac{1}{2}m\dot{r}^2\\
+&=&V(r)+\frac{1}{2}mr^2\dot{\theta}^2+\frac{1}{2}m\dot{r}^2\\
 \nonumber
-&=&U(r)+\frac{L^2}{2mr^2}+\frac{1}{2}m\dot{r}^2.
+&=&V(r)+\frac{L^2}{2mr^2}+\frac{1}{2}m\dot{r}^2.
 \end{eqnarray}
 $$
 
 The second term then contributes to the energy like an additional
 repulsive potential. The term is sometimes referred to as the
 "centrifugal" potential, even though it is actually the kinetic energy
-of the angular motion. Combined with $U(r)$, it is sometimes referred
+of the angular motion. Combined with $V(r)$, it is sometimes referred
 to as the "effective" potential,
 
 $$
 \begin{eqnarray}
-U_{\rm eff}(r)&=&U(r)+\frac{L^2}{2mr^2}.
+V_{\rm eff}(r)&=&V(r)+\frac{L^2}{2mr^2}.
 \end{eqnarray}
 $$
 
@@ -369,7 +371,7 @@ Note that if one treats the effective potential like a real potential, one would
 
 $$
 \begin{eqnarray}
-F_{\rm eff}&=&-\frac{d}{dr}U(r) -\frac{d}{dr}\frac{L^2}{2mr^2}\\
+F_{\rm eff}&=&-\frac{d}{dr}V(r) -\frac{d}{dr}\frac{L^2}{2mr^2}\\
 \nonumber
 &=&F(r)+\frac{L^2}{mr^3}=F(r)+m\frac{v_\perp^2}{r},
 \end{eqnarray}
@@ -490,7 +492,7 @@ Changing the value of the initial position to a value where the energy is positi
 Consider a particle of mass $m$ in a 2-dimensional harmonic oscillator with potential
 
 $$
-U=\frac{1}{2}kr^2=\frac{1}{2}k(x^2+y^2).
+V=\frac{1}{2}kr^2=\frac{1}{2}k(x^2+y^2).
 $$
 
 If the orbit has angular momentum $L$, we can find the radius and angular velocity of the circular orbit as well as the b) the angular frequency of small radial perturbations.
@@ -505,10 +507,10 @@ import matplotlib.pyplot as plt
 
 Deltax = 0.01
 #set up arrays
-xinitial = 1.0
-xfinal = 5.0
-k = 0.1   # spring constant
-m = 0.1   # mass, you can change these
+xinitial = 0.5
+xfinal = 3.0
+k = 1.0   # spring constant
+m = 1.0   # mass, you can change these
 AngMom = 1.0  #  The angular momentum
 n = ceil((xfinal-xinitial)/Deltax)
 x = np.zeros(n)
@@ -526,7 +528,7 @@ plt.show()
 
 $$
 \begin{eqnarray*}
-U_{\rm eff}&=&\frac{1}{2}kr^2+\frac{L^2}{2mr^2}
+V_{\rm eff}&=&\frac{1}{2}kr^2+\frac{L^2}{2mr^2}
 \end{eqnarray*}
 $$
 
@@ -554,7 +556,7 @@ For the above parameters this minimum is at $r_{\rm min}=1$.
 
 $$
 \begin{eqnarray*}
-k_{\rm eff}&=&\left.\frac{d^2}{dr^2}U_{\rm eff}(r)\right|_{r=r_{\rm min}}=k+\frac{3L^2}{mr_{\rm min}^4}\\
+k_{\rm eff}&=&\left.\frac{d^2}{dr^2}V_{\rm eff}(r)\right|_{r=r_{\rm min}}=k+\frac{3L^2}{mr_{\rm min}^4}\\
 &=&4k,\\
 \omega&=&\sqrt{k_{\rm eff}/m}=2\sqrt{k/m}=2\dot{\theta}.
 \end{eqnarray*}
@@ -586,7 +588,7 @@ y&=&C\cos\omega_0 t+D\sin\omega_0 t.
 \end{eqnarray*}
 $$
 
-The code here finds the solution for $x$ and $y$ using the code we developed in homework 4.
+The code here finds the solution for $x$ and $y$ using the code we developed in homework 5 and 6 and the midterm.  Note that this code is tailored to run in Cartesian coordinates. There is thus no angular momentum dependent term.
 
 
 DeltaT = 0.01
@@ -599,14 +601,13 @@ v = np.zeros((n,2))
 r = np.zeros((n,2))
 radius = np.zeros(n)
 # Constants of the model
-k = 0.1   # spring constant
-m = 0.1   # mass, you can change these
+k = 1.0   # spring constant
+m = 1.0   # mass, you can change these
 omega02 = sqrt(k/m)  # Frequency
 AngMom = 1.0  #  The angular momentum
 rmin = (AngMom*AngMom/k/m)**0.25
 # Initial conditions as compact 2-dimensional arrays
-#x0 =rmin*0.5; y0 = sqrt(rmin*rmin-x0*x0)
-x0 = 1.0; y0= 1.0
+x0 = rmin-0.5; y0= sqrt(rmin*rmin-x0*x0)
 r0 = np.array([x0,y0]) 
 v0 = np.array([0.0,0.0])
 r[0] = r0
@@ -668,8 +669,8 @@ r = np.zeros(n)
 E = np.zeros(n)
 # Constants of the model
 AngMom = 1.0  #  The angular momentum
-m = 0.1
-k = 0.1
+m = 1.0
+k = 1.0
 omega02 = k/m
 c1 = AngMom*AngMom/(m*m)
 c2 = AngMom*AngMom/m
@@ -703,7 +704,7 @@ plt.show()
 
 ## Stability of Orbits
 
-The effective force can be extracted from the effective potential, $U_{\rm eff}$. Beginning from the equations of motion, Eq. ([2](#eq:radialeqofmotion)), for $r$,
+The effective force can be extracted from the effective potential, $V_{\rm eff}$. Beginning from the equations of motion, Eq. ([2](#eq:radialeqofmotion)), for $r$,
 
 $$
 \begin{eqnarray}
@@ -711,9 +712,9 @@ m\ddot{r}&=&F+\frac{L^2}{mr^3}\\
 \nonumber
 &=&F_{\rm eff}\\
 \nonumber
-&=&-\partial_rU_{\rm eff},\\
+&=&-\partial_rV_{\rm eff},\\
 \nonumber
-F_{\rm eff}&=&-\partial_r\left[U(r)+(L^2/2mr^2)\right].
+F_{\rm eff}&=&-\partial_r\left[V(r)+(L^2/2mr^2)\right].
 \end{eqnarray}
 $$
 
@@ -736,7 +737,7 @@ unstable.
 
 
 If one considers a potential that falls as $1/r^3$, the situation is
-reversed and the point where $\partial_rU$ disappears will be a local
+reversed and the point where $\partial_rV$ disappears will be a local
 maximum rather than a local minimum. **Fig to come here with code**
 
 The repulsive centrifugal piece dominates at large $r$ and the attractive
@@ -746,7 +747,7 @@ the clear that for potentials that fall as $r^n$, that one must have
 $n>-2$ for the orbits to be stable.
 
 
-Consider a potential $U(r)=\beta r$. For a particle of mass $m$ with
+Consider a potential $V(r)=\beta r$. For a particle of mass $m$ with
 angular momentum $L$, find the angular frequency of a circular
 orbit. Then find the angular frequency for small radial perturbations.
 
@@ -766,7 +767,7 @@ Now, we can find the angular frequency of small perturbations about the circular
 
 $$
 \begin{eqnarray*}
-k_{\rm eff}&=&\partial_r^2 \left.U_{\rm eff}\right|_{r_{\rm min}}\\
+k_{\rm eff}&=&\partial_r^2 \left.V_{\rm eff}\right|_{r_{\rm min}}\\
 &=&\frac{3L^2}{mr_{\rm min}^4},\\
 \omega&=&\sqrt{\frac{k_{\rm eff}}{m}}\\
 &=&\frac{\beta^{2/3}}{(mL)^{1/3}}\sqrt{3}.

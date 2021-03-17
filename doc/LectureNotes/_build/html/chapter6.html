@@ -325,6 +325,7 @@
 <h1><span class="section-number">2. </span>Two-body problems and Gravitational Forces<a class="headerlink" href="#two-body-problems-and-gravitational-forces" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="two-body-problems-and-center-of-mass-motion">
 <h2><span class="section-number">2.1. </span>Two-body Problems and Center of Mass Motion<a class="headerlink" href="#two-body-problems-and-center-of-mass-motion" title="Permalink to this headline">¶</a></h2>
+<p><strong>Note: more text to be added</strong>.</p>
 <p>The gravitational potential energy and forces involving two masses <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -418,7 +419,7 @@ coordinates. The total and relative momenta are</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray}
-T&amp;=&amp;\frac{1}{2}m_1|\boldsymbol{v}_1|^2+\frac{1}{2}m_2|\boldsymbol{v}_2|^2\\
+K&amp;=&amp;\frac{1}{2}m_1|\boldsymbol{v}_1|^2+\frac{1}{2}m_2|\boldsymbol{v}_2|^2\\
 \nonumber
 &amp;=&amp;\frac{1}{2}M|\dot{\boldsymbol{R}}_{\rm cm}|^2
 +\frac{1}{2}\mu|\dot{\boldsymbol{r}}|^2\\
@@ -637,29 +638,29 @@ r&amp;=&amp;\frac{D^2-a^2}{D+a\cos\theta}=\frac{1}{D/(D^2-a^2)-a\cos\theta/(D^2-
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray}
-E&amp;=&amp;U(r)+\frac{1}{2}mv_\theta^2+\frac{1}{2}m\dot{r}^2\\
+E&amp;=&amp;V(r)+\frac{1}{2}mv_\theta^2+\frac{1}{2}m\dot{r}^2\\
 \nonumber
-&amp;=&amp;U(r)+\frac{1}{2}mr^2\dot{\theta}^2+\frac{1}{2}m\dot{r}^2\\
+&amp;=&amp;V(r)+\frac{1}{2}mr^2\dot{\theta}^2+\frac{1}{2}m\dot{r}^2\\
 \nonumber
-&amp;=&amp;U(r)+\frac{L^2}{2mr^2}+\frac{1}{2}m\dot{r}^2.
+&amp;=&amp;V(r)+\frac{L^2}{2mr^2}+\frac{1}{2}m\dot{r}^2.
 \end{eqnarray}
 \end{split}\]</div>
 <p>The second term then contributes to the energy like an additional
 repulsive potential. The term is sometimes referred to as the
 “centrifugal” potential, even though it is actually the kinetic energy
-of the angular motion. Combined with <span class="math notranslate nohighlight">\(U(r)\)</span>, it is sometimes referred
+of the angular motion. Combined with <span class="math notranslate nohighlight">\(V(r)\)</span>, it is sometimes referred
 to as the “effective” potential,</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{eqnarray}
-U_{\rm eff}(r)&amp;=&amp;U(r)+\frac{L^2}{2mr^2}.
+V_{\rm eff}(r)&amp;=&amp;V(r)+\frac{L^2}{2mr^2}.
 \end{eqnarray}
 \]</div>
 <p>Note that if one treats the effective potential like a real potential, one would expect to be able to generate an effective force,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray}
-F_{\rm eff}&amp;=&amp;-\frac{d}{dr}U(r) -\frac{d}{dr}\frac{L^2}{2mr^2}\\
+F_{\rm eff}&amp;=&amp;-\frac{d}{dr}V(r) -\frac{d}{dr}\frac{L^2}{2mr^2}\\
 \nonumber
 &amp;=&amp;F(r)+\frac{L^2}{mr^3}=F(r)+m\frac{v_\perp^2}{r},
 \end{eqnarray}
@@ -792,7 +793,7 @@ This is done in the code here for an initial radius equal to the minimum of the 
 <p>Consider a particle of mass <span class="math notranslate nohighlight">\(m\)</span> in a 2-dimensional harmonic oscillator with potential</p>
 <div class="math notranslate nohighlight">
 \[
-U=\frac{1}{2}kr^2=\frac{1}{2}k(x^2+y^2).
+V=\frac{1}{2}kr^2=\frac{1}{2}k(x^2+y^2).
 \]</div>
 <p>If the orbit has angular momentum <span class="math notranslate nohighlight">\(L\)</span>, we can find the radius and angular velocity of the circular orbit as well as the b) the angular frequency of small radial perturbations.</p>
 <p>We consider the effective potential. The radius of a circular orbit is at the minimum of the potential (where the effective force is zero).
@@ -806,10 +807,10 @@ The potential is plotted here with the parameters <span class="math notranslate 
 
 <span class="n">Deltax</span> <span class="o">=</span> <span class="mf">0.01</span>
 <span class="c1">#set up arrays</span>
-<span class="n">xinitial</span> <span class="o">=</span> <span class="mf">1.0</span>
-<span class="n">xfinal</span> <span class="o">=</span> <span class="mf">5.0</span>
-<span class="n">k</span> <span class="o">=</span> <span class="mf">0.1</span>   <span class="c1"># spring constant</span>
-<span class="n">m</span> <span class="o">=</span> <span class="mf">0.1</span>   <span class="c1"># mass, you can change these</span>
+<span class="n">xinitial</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">xfinal</span> <span class="o">=</span> <span class="mf">3.0</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mf">1.0</span>   <span class="c1"># spring constant</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mf">1.0</span>   <span class="c1"># mass, you can change these</span>
 <span class="n">AngMom</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1">#  The angular momentum</span>
 <span class="n">n</span> <span class="o">=</span> <span class="n">ceil</span><span class="p">((</span><span class="n">xfinal</span><span class="o">-</span><span class="n">xinitial</span><span class="p">)</span><span class="o">/</span><span class="n">Deltax</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
@@ -834,7 +835,7 @@ The potential is plotted here with the parameters <span class="math notranslate 
 <div class="math notranslate nohighlight">
 \[
 \begin{eqnarray*}
-U_{\rm eff}&amp;=&amp;\frac{1}{2}kr^2+\frac{L^2}{2mr^2}
+V_{\rm eff}&amp;=&amp;\frac{1}{2}kr^2+\frac{L^2}{2mr^2}
 \end{eqnarray*}
 \]</div>
 <p>The effective potential looks like that of a harmonic oscillator for
@@ -858,7 +859,7 @@ of the circular orbit can be adjusted by changing the angular momentum
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray*}
-k_{\rm eff}&amp;=&amp;\left.\frac{d^2}{dr^2}U_{\rm eff}(r)\right|_{r=r_{\rm min}}=k+\frac{3L^2}{mr_{\rm min}^4}\\
+k_{\rm eff}&amp;=&amp;\left.\frac{d^2}{dr^2}V_{\rm eff}(r)\right|_{r=r_{\rm min}}=k+\frac{3L^2}{mr_{\rm min}^4}\\
 &amp;=&amp;4k,\\
 \omega&amp;=&amp;\sqrt{k_{\rm eff}/m}=2\sqrt{k/m}=2\dot{\theta}.
 \end{eqnarray*}
@@ -886,7 +887,7 @@ x&amp;=&amp;A\cos\omega_0 t+B\sin\omega_0 t,\\
 y&amp;=&amp;C\cos\omega_0 t+D\sin\omega_0 t.
 \end{eqnarray*}
 \end{split}\]</div>
-<p>The code here finds the solution for <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> using the code we developed in homework 4.</p>
+<p>The code here finds the solution for <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> using the code we developed in homework 5 and 6 and the midterm.  Note that this code is tailored to run in Cartesian coordinates. There is thus no angular momentum dependent term.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DeltaT</span> <span class="o">=</span> <span class="mf">0.01</span>
@@ -899,14 +900,13 @@ y&amp;=&amp;C\cos\omega_0 t+D\sin\omega_0 t.
 <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 <span class="n">radius</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 <span class="c1"># Constants of the model</span>
-<span class="n">k</span> <span class="o">=</span> <span class="mf">0.1</span>   <span class="c1"># spring constant</span>
-<span class="n">m</span> <span class="o">=</span> <span class="mf">0.1</span>   <span class="c1"># mass, you can change these</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mf">1.0</span>   <span class="c1"># spring constant</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mf">1.0</span>   <span class="c1"># mass, you can change these</span>
 <span class="n">omega02</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">k</span><span class="o">/</span><span class="n">m</span><span class="p">)</span>  <span class="c1"># Frequency</span>
 <span class="n">AngMom</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1">#  The angular momentum</span>
 <span class="n">rmin</span> <span class="o">=</span> <span class="p">(</span><span class="n">AngMom</span><span class="o">*</span><span class="n">AngMom</span><span class="o">/</span><span class="n">k</span><span class="o">/</span><span class="n">m</span><span class="p">)</span><span class="o">**</span><span class="mf">0.25</span>
 <span class="c1"># Initial conditions as compact 2-dimensional arrays</span>
-<span class="c1">#x0 =rmin*0.5; y0 = sqrt(rmin*rmin-x0*x0)</span>
-<span class="n">x0</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span> <span class="n">y0</span><span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="n">rmin</span><span class="o">-</span><span class="mf">0.5</span><span class="p">;</span> <span class="n">y0</span><span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">rmin</span><span class="o">*</span><span class="n">rmin</span><span class="o">-</span><span class="n">x0</span><span class="o">*</span><span class="n">x0</span><span class="p">)</span>
 <span class="n">r0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x0</span><span class="p">,</span><span class="n">y0</span><span class="p">])</span> 
 <span class="n">v0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">])</span>
 <span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">r0</span>
@@ -973,8 +973,8 @@ maxima for <span class="math notranslate nohighlight">\(x^2\)</span>, one at <sp
 <span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 <span class="c1"># Constants of the model</span>
 <span class="n">AngMom</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1">#  The angular momentum</span>
-<span class="n">m</span> <span class="o">=</span> <span class="mf">0.1</span>
-<span class="n">k</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mf">1.0</span>
 <span class="n">omega02</span> <span class="o">=</span> <span class="n">k</span><span class="o">/</span><span class="n">m</span>
 <span class="n">c1</span> <span class="o">=</span> <span class="n">AngMom</span><span class="o">*</span><span class="n">AngMom</span><span class="o">/</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">m</span><span class="p">)</span>
 <span class="n">c2</span> <span class="o">=</span> <span class="n">AngMom</span><span class="o">*</span><span class="n">AngMom</span><span class="o">/</span><span class="n">m</span>
@@ -1016,7 +1016,7 @@ maxima for <span class="math notranslate nohighlight">\(x^2\)</span>, one at <sp
 </div>
 <div class="section" id="stability-of-orbits">
 <h2><span class="section-number">2.4. </span>Stability of Orbits<a class="headerlink" href="#stability-of-orbits" title="Permalink to this headline">¶</a></h2>
-<p>The effective force can be extracted from the effective potential, <span class="math notranslate nohighlight">\(U_{\rm eff}\)</span>. Beginning from the equations of motion, Eq. (<a class="reference external" href="#eq:radialeqofmotion">2</a>), for <span class="math notranslate nohighlight">\(r\)</span>,</p>
+<p>The effective force can be extracted from the effective potential, <span class="math notranslate nohighlight">\(V_{\rm eff}\)</span>. Beginning from the equations of motion, Eq. (<a class="reference external" href="#eq:radialeqofmotion">2</a>), for <span class="math notranslate nohighlight">\(r\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray}
@@ -1024,9 +1024,9 @@ m\ddot{r}&amp;=&amp;F+\frac{L^2}{mr^3}\\
 \nonumber
 &amp;=&amp;F_{\rm eff}\\
 \nonumber
-&amp;=&amp;-\partial_rU_{\rm eff},\\
+&amp;=&amp;-\partial_rV_{\rm eff},\\
 \nonumber
-F_{\rm eff}&amp;=&amp;-\partial_r\left[U(r)+(L^2/2mr^2)\right].
+F_{\rm eff}&amp;=&amp;-\partial_r\left[V(r)+(L^2/2mr^2)\right].
 \end{eqnarray}
 \end{split}\]</div>
 <p>For a circular orbit, the radius must be fixed as a function of time,
@@ -1044,14 +1044,14 @@ potential and a <span class="math notranslate nohighlight">\(1/r^3\)</span> attr
 stable minimum, whereas the circular orbit in the <span class="math notranslate nohighlight">\(1/r^3\)</span> case is
 unstable.</p>
 <p>If one considers a potential that falls as <span class="math notranslate nohighlight">\(1/r^3\)</span>, the situation is
-reversed and the point where <span class="math notranslate nohighlight">\(\partial_rU\)</span> disappears will be a local
+reversed and the point where <span class="math notranslate nohighlight">\(\partial_rV\)</span> disappears will be a local
 maximum rather than a local minimum. <strong>Fig to come here with code</strong></p>
 <p>The repulsive centrifugal piece dominates at large <span class="math notranslate nohighlight">\(r\)</span> and the attractive
 Coulomb piece wins out at small <span class="math notranslate nohighlight">\(r\)</span>. The circular orbit is then at a
 maximum of the effective potential and the orbits are unstable. It is
 the clear that for potentials that fall as <span class="math notranslate nohighlight">\(r^n\)</span>, that one must have
 <span class="math notranslate nohighlight">\(n&gt;-2\)</span> for the orbits to be stable.</p>
-<p>Consider a potential <span class="math notranslate nohighlight">\(U(r)=\beta r\)</span>. For a particle of mass <span class="math notranslate nohighlight">\(m\)</span> with
+<p>Consider a potential <span class="math notranslate nohighlight">\(V(r)=\beta r\)</span>. For a particle of mass <span class="math notranslate nohighlight">\(m\)</span> with
 angular momentum <span class="math notranslate nohighlight">\(L\)</span>, find the angular frequency of a circular
 orbit. Then find the angular frequency for small radial perturbations.</p>
 <p>For the circular orbit you search for the position <span class="math notranslate nohighlight">\(r_{\rm min}\)</span> where the effective potential is minimized,</p>
@@ -1068,7 +1068,7 @@ r_{\rm min}&amp;=&amp;\left(\frac{L^2}{\beta m}\right)^{1/3},\\
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray*}
-k_{\rm eff}&amp;=&amp;\partial_r^2 \left.U_{\rm eff}\right|_{r_{\rm min}}\\
+k_{\rm eff}&amp;=&amp;\partial_r^2 \left.V_{\rm eff}\right|_{r_{\rm min}}\\
 &amp;=&amp;\frac{3L^2}{mr_{\rm min}^4},\\
 \omega&amp;=&amp;\sqrt{\frac{k_{\rm eff}}{m}}\\
 &amp;=&amp;\frac{\beta^{2/3}}{(mL)^{1/3}}\sqrt{3}.
