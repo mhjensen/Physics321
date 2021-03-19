@@ -827,8 +827,7 @@ $$
 <p>&nbsp;<br>
 
 <p>
-Here, the second step used the result of the last step from part
-(a). Because the radius oscillates with twice the angular frequency,
+Because the radius oscillates with twice the angular frequency,
 the orbit has two places where \( r \) reaches a minimum in one
 cycle. This differs from the inverse-square force where there is one
 minimum in an orbit. One can show that the orbit for the harmonic
@@ -848,7 +847,7 @@ $$
 <p>&nbsp;<br>
 
 <p>
-So the general solution can be expressed as
+The general solution can be expressed as
 
 <p>&nbsp;<br>
 $$
@@ -860,11 +859,34 @@ $$
 <p>&nbsp;<br>
 
 <p>
-The code here finds the solution for \( x \) and \( y \) using the code we developed in homework 5 and 6 and the midterm.  Note that this code is tailored to run in Cartesian coordinates. There is thus no angular momentum dependent term.
+The code here finds the solution for \( x \) and \( y \) using the code we
+developed in homework 5 and 6 and the midterm.  Note that this code is
+tailored to run in Cartesian coordinates. There is thus no angular
+momentum dependent term.
+
+<p>
+Here we have chose initial conditions that
+correspond to the minimum of the effective potential
+\( r_{\mathrm{min}} \). We have chosen \( x_0=r_{\mathrm{min}} \) and
+\( y_0=0 \). Similarly, we use the centripetal acceleration to determine
+the initial velocity so that we have a circular motion (see back to the
+last question of the midterm). This means that we set the centripetal
+acceleration \( v^2/r \) equal to the force from the harmonic oscillator \( -k\boldsymbol{r} \). Taking the
+magnitude of \( \boldsymbol{r} \) we have then
+\( v^2/r=k/mr \), which gives \( v=\pm\omega_0r \).
+
+<p>
+Since the code here solves the equations of motion in cartesian
+coordinates and the harmonic oscillator potential leads to forces in
+the \( x \)- and \( y \)-directions that are decoupled, we have to select the initial velocities and positions so that we don't get that for example \( y(t)=0 \).
+
+<p>
+We set \( x_0 \) to be different from zero and \( v_{y0} \) to be different from zero.
+
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%;"><span></span>DeltaT = <span style="color: #B452CD">0.01</span>
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%;"><span></span>DeltaT = <span style="color: #B452CD">0.001</span>
 <span style="color: #228B22">#set up arrays </span>
 tfinal = <span style="color: #B452CD">10.0</span>
 n = ceil(tfinal/DeltaT)
@@ -876,13 +898,15 @@ radius = np.zeros(n)
 <span style="color: #228B22"># Constants of the model</span>
 k = <span style="color: #B452CD">1.0</span>   <span style="color: #228B22"># spring constant</span>
 m = <span style="color: #B452CD">1.0</span>   <span style="color: #228B22"># mass, you can change these</span>
-omega02 = sqrt(k/m)  <span style="color: #228B22"># Frequency</span>
+omega02 = k/m  <span style="color: #228B22"># Frequency</span>
 AngMom = <span style="color: #B452CD">1.0</span>  <span style="color: #228B22">#  The angular momentum</span>
+<span style="color: #228B22"># Potential minimum</span>
 rmin = (AngMom*AngMom/k/m)**<span style="color: #B452CD">0.25</span>
-<span style="color: #228B22"># Initial conditions as compact 2-dimensional arrays</span>
-x0 = rmin-<span style="color: #B452CD">0.5</span>; y0= sqrt(rmin*rmin-x0*x0)
-r0 = np.array([x0,y0]) 
-v0 = np.array([<span style="color: #B452CD">0.0</span>,<span style="color: #B452CD">0.0</span>])
+<span style="color: #228B22"># Initial conditions as compact 2-dimensional arrays, x0=rmin and y0 = 0</span>
+x0 = rmin; y0= <span style="color: #B452CD">0.0</span>
+r0 = np.array([x0,y0])
+vy0 = sqrt(omega02)*rmin; vx0 = <span style="color: #B452CD">0.0</span>
+v0 = np.array([vx0,vy0])
 r[<span style="color: #B452CD">0</span>] = r0
 v[<span style="color: #B452CD">0</span>] = v0
 <span style="color: #228B22"># Start integrating using the Velocity-Verlet  method</span>
@@ -912,29 +936,13 @@ save_fig(<span style="color: #CD5555">&quot;2DimHOVV&quot;</span>)
 plt.show()
 </pre></div>
 <p>
-With some work using double angle formulas, one can calculate
-
-<p>&nbsp;<br>
-$$
-\begin{eqnarray*}
-r^2&=&x^2+y^2\\
-\nonumber
-&=&(A^2+C^2)\cos^2(\omega_0t)+(B^2+D^2)\sin^2\omega_0t+(AB+CD)\cos(\omega_0t)\sin(\omega_0t)\\
-\nonumber
-&=&\alpha+\beta\cos 2\omega_0 t+\gamma\sin 2\omega_0 t,\\
-\alpha&=&\frac{A^2+B^2+C^2+D^2}{2},~~\beta=\frac{A^2-B^2+C^2-D^2}{2},~~\gamma=AB+CD,\\
-r^2&=&\alpha+(\beta^2+\gamma^2)^{1/2}\cos(2\omega_0 t-\delta),~~~\delta=\arctan(\gamma/\beta),
-\end{eqnarray*}
-$$
-<p>&nbsp;<br>
-
-<p>
-and see that radius oscillates with frequency \( 2\omega_0 \). The
-factor of two comes because the oscillation \( x=A\cos\omega_0t \) has two
-maxima for \( x^2 \), one at \( t=0 \) and one a half period later.
+We see that the radius (to within a given error), we obtain a constant radius.
 
 <p>
 The following code shows first how we can solve this problem using the radial degrees of freedom only.
+Here we need to add the explicit centrifugal barrier.  Note that the variable \( r \) depends only on time. There is no \( x \) and \( y \) directions
+since we have transformed the equations to polar coordinates.
+
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
@@ -982,6 +990,27 @@ ax[<span style="color: #B452CD">1</span>].plot(t,E)
 save_fig(<span style="color: #CD5555">&quot;RadialHOVV&quot;</span>)
 plt.show()
 </pre></div>
+<p>
+With some work using double angle formulas, one can calculate
+
+<p>&nbsp;<br>
+$$
+\begin{eqnarray*}
+r^2&=&x^2+y^2\\
+\nonumber
+&=&(A^2+C^2)\cos^2(\omega_0t)+(B^2+D^2)\sin^2\omega_0t+(AB+CD)\cos(\omega_0t)\sin(\omega_0t)\\
+\nonumber
+&=&\alpha+\beta\cos 2\omega_0 t+\gamma\sin 2\omega_0 t,\\
+\alpha&=&\frac{A^2+B^2+C^2+D^2}{2},~~\beta=\frac{A^2-B^2+C^2-D^2}{2},~~\gamma=AB+CD,\\
+r^2&=&\alpha+(\beta^2+\gamma^2)^{1/2}\cos(2\omega_0 t-\delta),~~~\delta=\arctan(\gamma/\beta),
+\end{eqnarray*}
+$$
+<p>&nbsp;<br>
+
+<p>
+and see that radius oscillates with frequency \( 2\omega_0 \). The
+factor of two comes because the oscillation \( x=A\cos\omega_0t \) has two
+maxima for \( x^2 \), one at \( t=0 \) and one a half period later.
 
 <h2 id="stability-of-orbits">Stability of Orbits </h2>
 

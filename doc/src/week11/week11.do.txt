@@ -577,8 +577,7 @@ k_{\rm eff}&=&\left.\frac{d^2}{dr^2}V_{\rm eff}(r)\right|_{r=r_{\rm min}}=k+\fra
 \end{eqnarray*}
 !et
 
-Here, the second step used the result of the last step from part
-(a). Because the radius oscillates with twice the angular frequency,
+Because the radius oscillates with twice the angular frequency,
 the orbit has two places where $r$ reaches a minimum in one
 cycle. This differs from the inverse-square force where there is one
 minimum in an orbit. One can show that the orbit for the harmonic
@@ -594,7 +593,7 @@ The solution is also simple to write down exactly in Cartesian coordinates. The 
 \end{eqnarray*}
 !et
 
-So the general solution can be expressed as
+The general solution can be expressed as
 
 !bt
 \begin{eqnarray*}
@@ -603,10 +602,31 @@ y&=&C\cos\omega_0 t+D\sin\omega_0 t.
 \end{eqnarray*}
 !et
 
-The code here finds the solution for $x$ and $y$ using the code we developed in homework 5 and 6 and the midterm.  Note that this code is tailored to run in Cartesian coordinates. There is thus no angular momentum dependent term.
+The code here finds the solution for $x$ and $y$ using the code we
+developed in homework 5 and 6 and the midterm.  Note that this code is
+tailored to run in Cartesian coordinates. There is thus no angular
+momentum dependent term.
+
+Here we have chose initial conditions that
+correspond to the minimum of the effective potential
+$r_{\mathrm{min}}$. We have chosen $x_0=r_{\mathrm{min}}$ and
+$y_0=0$. Similarly, we use the centripetal acceleration to determine
+the initial velocity so that we have a circular motion (see back to the
+last question of the midterm). This means that we set the centripetal
+acceleration $v^2/r$ equal to the force from the harmonic oscillator $-k\bm{r}$. Taking the
+magnitude of $\bm{r}$ we have then
+$v^2/r=k/mr$, which gives $v=\pm\omega_0r$. 
+
+Since the code here solves the equations of motion in cartesian
+coordinates and the harmonic oscillator potential leads to forces in
+the $x$- and $y$-directions that are decoupled, we have to select the initial velocities and positions so that we don't get that for example $y(t)=0$.
+
+We set $x_0$ to be different from zero and $v_{y0}$ to be different from zero.
+
+
 !bc pycod
 
-DeltaT = 0.01
+DeltaT = 0.001
 #set up arrays 
 tfinal = 10.0
 n = ceil(tfinal/DeltaT)
@@ -618,13 +638,15 @@ radius = np.zeros(n)
 # Constants of the model
 k = 1.0   # spring constant
 m = 1.0   # mass, you can change these
-omega02 = sqrt(k/m)  # Frequency
+omega02 = k/m  # Frequency
 AngMom = 1.0  #  The angular momentum
+# Potential minimum
 rmin = (AngMom*AngMom/k/m)**0.25
-# Initial conditions as compact 2-dimensional arrays
-x0 = rmin-0.5; y0= sqrt(rmin*rmin-x0*x0)
-r0 = np.array([x0,y0]) 
-v0 = np.array([0.0,0.0])
+# Initial conditions as compact 2-dimensional arrays, x0=rmin and y0 = 0
+x0 = rmin; y0= 0.0
+r0 = np.array([x0,y0])
+vy0 = sqrt(omega02)*rmin; vx0 = 0.0
+v0 = np.array([vx0,vy0])
 r[0] = r0
 v[0] = v0
 # Start integrating using the Velocity-Verlet  method
@@ -652,31 +674,15 @@ ax[2].plot(t,r[:,1])
 fig.tight_layout()
 save_fig("2DimHOVV")
 plt.show()
-
-
 !ec
 
+We see that the radius (to within a given error), we obtain a constant radius.
 
-With some work using double angle formulas, one can calculate
-
-
-!bt
-\begin{eqnarray*}
-r^2&=&x^2+y^2\\
-\nonumber
-&=&(A^2+C^2)\cos^2(\omega_0t)+(B^2+D^2)\sin^2\omega_0t+(AB+CD)\cos(\omega_0t)\sin(\omega_0t)\\
-\nonumber
-&=&\alpha+\beta\cos 2\omega_0 t+\gamma\sin 2\omega_0 t,\\
-\alpha&=&\frac{A^2+B^2+C^2+D^2}{2},~~\beta=\frac{A^2-B^2+C^2-D^2}{2},~~\gamma=AB+CD,\\
-r^2&=&\alpha+(\beta^2+\gamma^2)^{1/2}\cos(2\omega_0 t-\delta),~~~\delta=\arctan(\gamma/\beta),
-\end{eqnarray*}
-!et
-
-and see that radius oscillates with frequency $2\omega_0$. The
-factor of two comes because the oscillation $x=A\cos\omega_0t$ has two
-maxima for $x^2$, one at $t=0$ and one a half period later.
 
 The following code shows first how we can solve this problem using the radial degrees of freedom only.
+Here we need to add the explicit centrifugal barrier.  Note that the variable $r$ depends only on time. There is no $x$ and $y$ directions
+since we have transformed the equations to polar coordinates.
+
 !bc pycod
 DeltaT = 0.01
 #set up arrays 
@@ -721,12 +727,28 @@ ax[1].set_ylabel('Energy')
 ax[1].plot(t,E)
 save_fig("RadialHOVV")
 plt.show()
-
-
-
-
-
 !ec
+
+With some work using double angle formulas, one can calculate
+
+
+!bt
+\begin{eqnarray*}
+r^2&=&x^2+y^2\\
+\nonumber
+&=&(A^2+C^2)\cos^2(\omega_0t)+(B^2+D^2)\sin^2\omega_0t+(AB+CD)\cos(\omega_0t)\sin(\omega_0t)\\
+\nonumber
+&=&\alpha+\beta\cos 2\omega_0 t+\gamma\sin 2\omega_0 t,\\
+\alpha&=&\frac{A^2+B^2+C^2+D^2}{2},~~\beta=\frac{A^2-B^2+C^2-D^2}{2},~~\gamma=AB+CD,\\
+r^2&=&\alpha+(\beta^2+\gamma^2)^{1/2}\cos(2\omega_0 t-\delta),~~~\delta=\arctan(\gamma/\beta),
+\end{eqnarray*}
+!et
+
+and see that radius oscillates with frequency $2\omega_0$. The
+factor of two comes because the oscillation $x=A\cos\omega_0t$ has two
+maxima for $x^2$, one at $t=0$ and one a half period later.
+
+
 
 
 ===== Stability of Orbits =====
