@@ -88,24 +88,28 @@ Video of lecture at https://mediaspace.msu.edu/media/t/1_mgqtt4lm and handwritte
 There is no video of Friday's session since the lecture was organized in breakout sessions plus a discussion of the first midterm. Thx to all of you for heroic efforts with the first midterm.
 - Good reads are sections 5.7-5.8 and  8.2-8.4 of Taylor and Lecture notes 
 
+
 ### Week 11, March  15-19, 2021
 - Monday 3/15:  Gravity and central force problems, center of mass coordinates. Lecture notes and Taylor chapter 8. 7th homework due March 22. Video of Lecture at https://mediaspace.msu.edu/media/t/1_x34gdl5o and handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesMarch15.pdf.
-- Wednesday 3/17: Gravity and central force problems
-- Friday 3/19:  Gravity and central force problems, centrifugal barriers. 
+- Wednesday 3/17: Gravity and central force problems. Video of lecture at https://mediaspace.msu.edu/media/t/1_dwy3ekta and and handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesMarch17.pdf.
+- Friday 3/19:  Gravity and central force problems, centrifugal barriers. Video of lecture at https://mediaspace.msu.edu/media/t/1_moj8tmsv and and handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesMarch19.pdf. Julie's notes on methods and classes are at https://github.com/mhjensen/Physics321/tree/master/doc/pub/PythonClassesMethods
+
 ### Week 12, March 22-26, 2021
 - Monday 3/22: Gravity and central force problems, elliptical orbits and Kepler's laws, 8th homework, due March 29. 
 - Wednesday 3/24: Gravity and central force problems, elliptical orbits  and two-body scattering examples. 
 - Friday 3/26:  Elliptical orbits, examples and two-body scattering problems. 
+
 ### Week 13, March 29-April 2, 2020
 - Monday 3/29: Central force problems, summary and discussion of two-body scattering problems. 9th homework, due April  5.
 - Wednesday 3/31: Two-body scattering. Taylor chapter 14 covers parts of the material. 
 - Friday 4/2:  Two-body scattering (Taylor chapter 14). Second midterm available, due Friday April 16.  
+
 ### Week 14, April 5-9, 2021
-- Monday 4/5: Wrapping up two-body scattering and begin non-inertial frames.  
-- Wednesday 4/7: Non-inertial frames, accelerating frames (Taylor sections 9.1-9.2).  
-- Friday 4/9: Rotating non-inertial frames and Coriolis force (Taylor sections 9.3-9.6). 
+- Monday 4/5: Wrapping up two-body scattering and begin Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. 
+- Wednesday 4/7: Variational Calculus, chapter 6 of Taylor  
+- Friday 4/9: Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. 
 ### Week 15, April  12-16, 2021
-- Monday 4/12: Rotating non-inertial frames, Coriolis force and Foucalt's pendulum (Taylor sections 9.7-9.9). 
+- Monday 4/12: Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. 
 - Wednesday 4/14: Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. 
 - Friday 4/16: Euler-Lagrange equations and Lagrangian formalism. Taylor chapter 6 and lecture notes. Deadline 2nd midterm at midnight.
 ### Week 16, April 19-23, 2021
@@ -114,4 +118,8 @@ There is no video of Friday's session since the lecture was organized in breakou
 - Friday 4/23:  Study day
 ### Week 17, April 26- April 30, 2021, Finals week
 - Final Exam:  The final exam will be a project similar to the two midterm projects. Deadline April 30. We will have Q/A sessions Monday 26 and Wednesday 28 at 2.30pm to 4pm. Other sessions can always be arranged. 
+
+
+
+
 
