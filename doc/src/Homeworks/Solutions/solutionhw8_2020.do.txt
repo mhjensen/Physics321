@@ -1,0 +1,573 @@
+TITLE: PHY321: Classical Mechanics 1
+AUTHOR: Solution Homework 8, due Monday  March 30
+DATE: today
+
+===  Practicalities about  homeworks and projects ===
+
+
+o You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. _Remember to write your name(s)_!
+o Homeworks are available  the week before the deadline. 
+o How do I(we)  hand in?  Due to the corona virus and many of you not being on campus, we recommend that you scan your handwritten notes and upload them to D2L. If you are ok with typing mathematical formulae using say Latex, you can hand in everything as a single jupyter notebook at D2L. The numerical exercise(s) should always be handed in as a jupyter notebook by the deadline at D2L. 
+
+=== Introduction to homework 8 ===
+
+This week's sets of classical pen and paper and computational
+exercises are tailored to the topic of two-body problems and central
+forces, as in hw7. It follows what was discussed during the lectures during week
+11 (March 9-13), week 12 (March 16-20) and March 23. It can also be seen as a continuation of hw7. 
+
+The relevant reading background is
+o Sections 8.1-8.7 of Taylor.
+o Lecture notes on two-body problems, central forces and gravity.
+
+Exercises 2, 3, 4 and 5 all deal with an inverse-square-law and deal with various types of orbits, whether they are ellipses, parabolae or hyperbolae. 
+The numerical homework is based on what you did in homework 7, but now of an inverse-square-law force as discussed here.  The numerical exercise is a study of the situations you have analyzed in exercises 2, 3, 4 and 5.
+
+This homework has no bonus exercise.
+
+
+
+=== Exercise 1, equations for an ellipse (10pt)  ===
+
+Consider an ellipse defined by the sum of the distances from the two foci being $2D$, which expressed in a Cartesian coordinates with the middle of the ellipse being at the origin becomes
+!bt
+\[
+\sqrt{(x-a)^2+y^2}+\sqrt{(x+a)^2+y^2}=2D.
+\]
+!et
+Here the two foci are at $(a,0)$ and $(-a,0)$. Show that this form is can be written as
+!bt
+\[
+\frac{x^2}{D^2}+\frac{y^2}{D^2-a^2}=1.
+\]
+!et
+
+
+We start by squaring the two sides and after some _exciting algebraic manipulations_ we arrive at
+!bt
+    \[
+\sqrt{(x-a)^2+y^2}+\sqrt{(x+a)^2+y^2} =2D
+\\ (x-a)^2 + y^2 + (x+a)^2 + y^2 + 2\sqrt{(x-a)^2 + y^2}\sqrt{(x+a)^2+y^2}  = 4D^2
+\\ 2y^2 + 2x^2 + 2a^2 + 2\sqrt{(x-a)^2(x+a)^2 + y^4 + y^2[(x-a)^2+(x+a)^2]}  = 4D^2
+\\ y^2 + x^2 + a^2 + \sqrt{(x^2-a^2)^2 + y^4 + y^2(2x^2+2a^2)}  = 2D^2
+\\ \sqrt{(x^2-a^2)^2 + y^4 + y^2(2x^2+2a^2)}  = 2D^2 -( y^2 + x^2 + a^2 )
+\\ (x^2-a^2)^2 + y^4 + y^2(2x^2+2a^2)  = 4D^4 + y^4 + x^4 + a^4 - 4D^2( y^2 + x^2 + a^2 ) + 2(y^2x^2+y^2a^2+x^2a^2)
+\\ x^4-2x^2a^2+a^4 + y^4 + 2y^2x^2+2y^2a^2  = 4D^4 + y^4 + x^4 + a^4 - 4D^2y^2 -4D^2 x^2 -4D^2 a^2 + 2y^2x^2+2y^2a^2+2x^2a^2
+\\ 4D^4 - 4D^2y^2 -4D^2 x^2 -4D^2 a^2 +4x^2a^2 = 0
+\\ D^4 - D^2y^2 -D^2 x^2 -D^2 a^2 +x^2a^2 = 0
+\\ D^2(D^2-a^2) - x^2(D^2-a^2) = D^2y^2
+\\ D^2 - x^2 = \frac{D^2y^2}{D^2-a^2}
+\\ 1 - \frac{x^2}{D^2} = \frac{y^2}{D^2-a^2}
+\\ \frac{x^2}{D^2} + \frac{y^2}{D^2-a^2} = 1
+\]
+!et
+
+
+
+=== Exercise 2: Attractive Potential (10pt) ===
+
+Consider a particle in an attractive potential
+!bt
+\[
+U(r)=-\alpha/r.
+\]
+!et
+
+The quantity $r$ is the absolute value of the relative position. We
+will use the reduced mass $\mu$ and the angular momentum $L$, as
+discussed during the lectures. With the transformation of a two-body
+problem to the center-of-mass frame, the actual equations look like an
+*effective* one-body problem. The energy of the system is $E$ and the
+minimum of the effective potential is $r_{\rm min}$.
+
+
+The analytical solution to the radial equation of motion is
+!bt
+\[
+r(\phi) = \frac{1}{\frac{\mu\alpha}{L^2}+A\cos{(\phi)}}.
+\]
+!et
+
+Find the value of $A$. Hint: Use the fact that at $r_{\rm min}$
+there is no radial kinetic energy and $E=-\alpha/r_{\rm min}+L^2/2mr_{\rm min}^2$.
+
+
+    At \(r_{\min}\) and \(r_{\max}\), all the kinetic energy is stored in
+the velocity in the direction perpendicular to \(r\) since
+\(\dot{r}=0\). We can calculate using angular momentum and from there,
+find \(A\) in terms of the energy \(E\) which is constant. But first, we
+need to find \(r_{\min}\) from the conservation of energy:
+
+    \[
+E = U(r) + \half \mu(v_{\perp}^2 + v_{\parallel})
+\\
+E = \frac{-\alpha}{r_{\min}} + \half \mu\lp\frac{L}{\mu r_{\min}}\rp^2
+\\
+E r_{\min}^2 - \half\mu\lp\frac{L}{\mu}\rp^2 + \alpha r_{\min} = 0
+\\
+r_{\min}^2 + \frac{\alpha}{E} r_{\min} - \frac{L^2}{2E\mu} = 0
+\\
+r_{\min} = - \frac{\alpha}{2E} \pm \half \sqrt{\frac{\alpha^2}{E^2} + 2\frac{L^2}{E\mu}}
+\]
+
+Since we're looking for the minimum, the \(\pm\) sign must be negative
+(then \(r_{\min}\) will not be negative since \(E<0\)). Therefore, we
+have
+
+\[
+\frac{1}{\frac{\mu\alpha}{L^2}+A} = -\frac{\alpha}{2E} - \half \sqrt{\frac{\alpha^2}{E^2} + 2\frac{L^2}{E\mu}}
+\\
+A = - \frac{\mu\alpha}{L^2} - \frac{2E}{\alpha + \sqrt{\alpha^2 + 2\frac{L^2E}{\mu}}}
+\]
+
+
+
+=== Exercise 3 (20pt) Inverse-square force ===
+
+Consider again the same effective potential as in 2. This leads to an attractive inverse-square-law force, $F=-\alpha/r^2$. Consider a particle of mass $m$ with angular momentum $L$. Taylor sections 8.4-8.7 are relevant background material.  See also the harmonic oscillator potential from hw7. The equation of motion for the radial degrees of freedom is (see also hw7) in the center-of-mass frame in two dimensions with $x=r\cos{(\phi)}$ and $y=r\sin{(\phi)}$ and
+$r\in [0,\infty)$, $\phi\in [0,2\pi]$ and $r=\sqrt{x^2+y^2}$ are given by
+!bt
+\[
+\ddot{r}=-\frac{1}{m}\frac{dV(r)}{dr}+r\dot{\phi}^2,
+\]
+!et
+and
+!bt
+\[
+\dot{\phi}=\frac{L}{m r^2}.
+\]
+!et
+Here $V(r)$ is any central force which depends only on the relative coordinate.
+
+
+* 3a (5pt)  Find the radius of a circular orbit by solving for the position of the minimum of the effective potential. 
+
+    For a cicular orbit, we should have
+\(\dot{r}=\ddot{r}=-\ddr{V_{\text{eff}}}=0\). Therefore,
+
+!bt
+\[
+\begal
+\over{m}\ddr{V(r)} & = r\dot{\phi}^2
+\\ \over{m}\lp-\frac{-\alpha}{r^2}\rp & = r \frac{L^2}{m^2r^4}
+\\ \frac{\alpha}{mr^2} & = \frac{L^2}{m^2r^3}
+\\ r & = \frac{L^2}{m\alpha}
+\endal
+\]
+!et
+
+* 3b (5pt) At the minimum, the radial velocity is zero and it is only the "centripetal velocity":"https://en.wikipedia.org/wiki/Centripetal_force" which is nonzero. This implies that $\ddot{r}=0$.  What is the angular frequency, $\dot{\theta}$, of the orbit? Solve this by setting $\ddot{r}=0=F/m+\dot{\theta}^2r$.
+
+!bt
+\[
+\begal
+\dot{\theta}^2 r & = - \frac{F}{m}
+\\ \dot{\theta}^2 r & = - \frac{-\frac{\alpha}{r^2}}{m}
+\\ \dot{\theta}^2 & = \frac{\alpha}{mr^3}
+\\ \dot{\theta} & = \pm \sqrt{\frac{\alpha}{mr^3}}
+\\ \dot{\theta} & = \pm \sqrt{\frac{\alpha}{m\frac{L^6}{m^3\alpha^3}}}
+\\ \dot{\theta} & = \pm \sqrt{\frac{\alpha^4m^2}{L^6}}
+\\ \dot{\theta} & = \pm \frac{\alpha^2m}{L^3}
+\endal
+\]
+!et
+
+* 3c (5pt) Find the effective spring constant for the particle at the minimum.
+
+!bt
+\[
+k = \ddrtwo{V_{\text{eff}}}
+\]
+!et
+
+
+Therefore, all we have to do is find the second derivative of
+$V_{\text{eff}}$ around the minimum point of $V_{\text{eff}}$ where
+$\dot{r} = \ddot{r} = 0$.
+
+!bt
+\[
+\begal
+k & = \ddrtwo{V_{\text{eff}}}
+\\ & = \ddrtwo{\lp-\frac{\alpha}{r} + \half \frac{L^2}{mr^2}\rp}
+\\ & = -\frac{2\alpha}{r^3} + \frac{3L^2}{mr^4}
+\\ & = -\frac{2\alpha}{\frac{L^6}{m^3\alpha^3}} + \frac{3L^2}{m\frac{L^8}{m^4\alpha^4}}
+\\ & = -\frac{2m^3\alpha^4}{L^6} + \frac{3m^3\alpha^4}{L^6}
+\\ & = \frac{m^3\alpha^4}{L^6}
+\endal
+\]
+!et
+
+* 3d (5pt) What is the angular frequency for small vibrations about the minimum? How does this compare with the answer to (3b)?
+
+
+    For small deviations $\delta r$ of $r$,
+
+!bt
+\[
+m\ddttwo{\lp \delta r \rp} = -k \delta r
+\]
+!et
+
+The solution of this differential equation is of the form
+
+!bt
+\[
+\delta r = A \cos(\omega t + \phi)
+\]
+!et
+where
+
+!bt
+\[
+\begal
+\omega = & \sqrt{\frac{k}{m}}
+\\ & = \sqrt{\frac{m^2\alpha^4}{L^6}}
+\\ & = \frac{m\alpha^2}{L^3}
+\endal
+\]
+!et
+This is in fact equal to the expression for $\dot{\theta}$. This means
+that small perturbations oscillate in sync with the orbit and this
+traces out an ellipse with a very small eccentricity, a very nice
+physical result.
+
+
+
+
+=== Exercise 4, Inverse-square force again (10pt) ===
+Consider again a  particle of mass $m$ in the same attractive potential, $U(r)=-\alpha/r$, with angular momentum $L$ with just the right energy so that
+
+!bt
+\[
+A=m\alpha/L^2
+\]
+!et
+where $A$ comes from the expression
+!bt
+\[
+r=\frac{1}{(m\alpha/L^2)+A\cos{(\phi)}}.
+\]
+!et
+The trajectory can then be rewritten as
+!bt
+\[
+r=\frac{2r_0}{1+\cos\theta},~~~r_0=\frac{L^2}{2m\alpha}.
+\]
+!et
+
+
+* 4a (5pt) Show that for this case the total energy $E$ approaches zero.
+
+!bt
+
+!et
+
+* 4b (5pt) With zero energy $E=0$, write this trajectory in a more recognizable parabolic form, that is express $x_0$ and $R$ in terms of $r_0$ using 
+!bt
+\[
+x=x_0-\frac{y^2}{R}.
+\]
+!et
+
+=== Exercise 5, parabolic and hyperbolic orbits (10pt) ===
+
+The solution to the radial function for an inverse-square-law force, see for example Taylor equation (8.59) or the equation above, is
+!bt
+\[
+r(\phi) = \frac{c}{1+\epsilon\cos{(\phi)}}.
+\]
+!et
+
+For $\epsilon=1$ (or the energy $E=0$) the orbit reduces to a parabola as we saw in the previous exercise,
+while for $\epsilon > 1$ (or energy positive) the orbit becomes a hyperbola. The equation for a hyperbola in Cartesian coordinates is
+!bt 
+\[
+\frac{(x-\delta)^2}{\alpha^2}-\frac{y^2}{\beta^2}=1.
+\]
+!et
+For a hyperbola, identify the constants $\alpha$, $\beta$ and $\delta$ in terms of the constants $c$ and $\epsilon$ for $r(\phi)$. 
+
+===  Exercise 6, Testing orbit types (40 pt) ===
+
+In this exercise we can use the program for $r(\phi)$ we developed in hw7. We will use an inverse-square-law force as in exercises 2, 3, 4 and 5. The aim is to see that the orbits we get for $E<0$ become ellipses (or circles), parabola for $E=0$ and hyperbola for $E>0$.  An example code is shown here.
+
+Here we have defined the constants $L=m=\alpha=1$. Feel free to set new values. _You need also to set the initial conditions_ in order to study the different types of orbits. It may be useful to plot the potential here and find the values for the initial conditions that fit $E<0$, $E=0$ and $E>0$. 
+
+!bc pycode
+# Common imports
+import numpy as np
+import pandas as pd
+from math import *
+import matplotlib.pyplot as plt
+# Simple Gravitational Force   -alpha/r
+    
+DeltaT = 0.01
+#set up arrays 
+tfinal = 100.0
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, v and r
+t = np.zeros(n)
+v = np.zeros(n)
+r = np.zeros(n)
+# Constants of the model, setting all variables to one for simplicity
+alpha = 1.0
+AngMom = 1.0  #  The angular momentum
+m = 1.0  # scale mass to one
+c1 = AngMom*AngMom/(m*m)
+c2 = AngMom*AngMom/m
+# You need to specify the initial conditions
+r0 = 0.0
+v0 = 0.0
+r[0] = r0
+v[0] = v0
+# Start integrating using the Velocity-Verlet  method
+for i in range(n-1):
+    # Set up acceleration
+    a = -alpha/(r[i]**2)+c1/(r[i]**3)
+    # update velocity, time and position using the Velocity-Verlet method
+    r[i+1] = r[i] + DeltaT*v[i]+0.5*(DeltaT**2)*a
+    anew = -alpha/(r[i+1]**2)+c1/(r[i+1]**3)
+    v[i+1] = v[i] + 0.5*DeltaT*(a+anew)
+    t[i+1] = t[i] + DeltaT
+    # Plot position as function of time
+fig, ax = plt.subplots(2,1)
+ax[0].set_xlabel('time')
+ax[0].set_ylabel('radius')
+ax[0].plot(t,r)
+ax[1].set_xlabel('time')
+ax[1].set_ylabel('Velocity')
+ax[1].plot(t,v)
+
+plt.show()
+
+!ec
+
+
+Run your code and study and discuss the situations where you have elliptical, parabolic and hyperbolic orbits. Discuss the physics of these cases. The results from exercises 2, 3, 4 and 5 may be useful here. 
+
+
+
+\[
+\begal
+E & = - \frac{\alpha}{r} + \half m \lp (\dot{\theta}r)^2+\dot{r}^2\rp
+\\ & = - \frac{\alpha}{r} + \half m \lb \lp\frac{L}{mr^2}r\rp^2+\lp\frac{dr}{d\theta}\dot{\theta}\rp^2\rb
+\\ & = - \frac{\alpha}{2r_0}(1+\cos\theta) + \half m \lb \lp\frac{L(1+\cos\theta)}{2mr_0}\rp^2+\lp2r_0\frac{-1}{(1+\cos\theta)^2}(-\sin\theta)\frac{L}{mr^2}\rp^2\rb
+\\ & = - \frac{\alpha}{2r_0}(1+\cos\theta) + \half m \lb \lp\frac{L(1+\cos\theta)}{2mr_0}\rp^2+\lp2r_0\frac{-1}{(1+\cos\theta)^2}(-\sin\theta)\frac{L(1+\cos\theta)^2}{4mr_0^2}\rp^2\rb
+\\ & = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
+\half m \lb \lp\frac{L(1+\cos\theta)}{2mr_0}\rp^2+\lp\sin\theta\frac{L}{2mr_0}\rp^2\rb
+\\ & = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
+\half m \lb \lp\frac{L(1+\cos\theta)}{2mr_0}\rp^2+\lp\sin\theta\frac{L}{2mr_0}\rp^2\rb
+\\ & = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
+\half m \frac{L^2}{4m^2r_0^2} \lb \lp1+\cos\theta\rp^2+\lp\sin\theta\rp^2\rb
+\\ & = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
+\half \frac{L^2}{4mr_0^2} \lp 1 + \cos^2\theta + 2\cos \theta + \sin^2\theta\rp
+\\ & = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
+\half \frac{L^2}{4mr_0^2} \lp 2 + 2\cos \theta \rp
+\\ & = (1+\cos\theta) \lp- \frac{\alpha}{2r_0} + \frac{L^2}{4mr_0^2}\rp
+\\ & = (1+\cos\theta) \lp- \frac{\alpha}{2\frac{L^2}{2m\alpha}} + \frac{L^2}{4m\frac{L^4}{4m^2\alpha^2}}\rp
+\\ & = (1+\cos\theta) \lp- \frac{m\alpha^2}{L^2} + \frac{m\alpha^2}{L^2}\rp
+\\ & = 0
+\endal
+\]
+
+
+    \[
+x=x_0-\frac{y^2}{R}.
+\]
+
+    Knowing that
+
+\[
+\begal
+x & = r \cos\theta
+\\
+y & = r \sin \theta
+\endal
+\]
+
+we have
+
+\[
+\begal
+y & = r \sin\theta
+\\
+& = \frac{2r_0}{1+\cos\theta}\sin\theta
+\\
+& = \frac{2r_0}{1-\cos^2\theta}\sin\theta(1-\cos\theta)
+\\
+& = \frac{2r_0(1-\cos\theta)}{\sin\theta}
+\endal
+\]
+
+and
+
+\[
+\begal
+x & = r \sin\theta
+\\
+& = \frac{2r_0}{1+\cos\theta}\cos\theta
+\\
+& = \frac{2r_0}{1-\cos^2\theta}\cos\theta(1-\cos\theta)
+\\
+& = \frac{2r_0(\cos\theta-\cos^2\theta)}{\sin^2 \theta}
+\endal
+\]
+
+Here, we notice that the denominator of \(x\) is the square of the
+denominator of \(y\). We also see that.
+
+\[
+y^2 = \frac{4r_0^2(1-2\cos\theta+\cos^2\theta)}{\sin^2\theta}
+\]
+
+now, let's try to add them such that the \(\cos\theta\) cancel out.
+
+\[
+\begal
+x + \frac{y^2}{4r_0} & = \frac{2r_0(\cos\theta-\cos^2\theta)}{\sin^2 \theta} + \frac{4r_0^2(1-2\cos\theta+\cos^2\theta)}{\sin^2\theta}\over{4r_0}
+\\ & = \frac{r_0}{\sin^2\theta}\lp 2\cos\theta-2\cos^2\theta + 1 - 2\cos\theta + \cos^2\theta\rp
+\\ & = \frac{r_0}{\sin^2\theta}\lp -2\cos^2\theta + 1 + \cos^2\theta\rp
+\\ & = \frac{r_0}{\sin^2\theta}\lp 1 - \cos^2\theta\rp
+\\ & = \frac{r_0}{\sin^2\theta}\lp \sin^2\theta\rp
+\\ & = r_0
+\endal
+\]
+
+Therefore, we have
+
+\[
+x = r_0 - \frac{y^2}{4r_0}
+\]
+
+
+    \[
+r(\phi) = \frac{c}{1+\epsilon\cos{(\phi)}}.
+\]
+
+    For \(\epsilon=1\) (or the energy \(E=0\)) the orbit reduces to a
+parabola as we saw in the previous exercise, while for \(\epsilon > 1\)
+(or energy positive) the orbit becomes a hyperbola. The equation for a
+hyperbola in Cartesian coordinates is
+
+    \[
+\frac{(x-\delta)^2}{\alpha^2}-\frac{y^2}{\beta^2}=1.
+\]
+
+    For a hyperbola, identify the constants \(\alpha\), \(\beta\) and
+\(\delta\) in terms of the constants \(c\) and \(\epsilon\) for
+\(r(\phi)\).
+
+    \[
+\begal
+x & = r\cos\phi
+\\ & = \frac{c\cos\phi}{1+\epsilon\cos\phi}
+\endal
+\]
+
+\[
+\begal
+y & = r\sin\phi 
+\\ & = \frac{c\sin\phi}{1+\epsilon\cos\phi}
+\endal
+\]
+
+Therefore,
+
+\[
+\begal
+\frac{(x-\delta)^2}{\alpha^2} - \frac{y^2}{\beta^2} 
+& = \frac{(\frac{c\cos\phi-\delta(1+\epsilon\cos\phi)}{1+\epsilon\cos\phi})^2}{\alpha^2} - \frac{(\frac{c\sin\phi}{1+\epsilon\cos\phi})^2}{\beta^2}
+\\ & = \frac{\beta^2 c^2\cos^2\phi + \beta^2\delta^2 + \beta^2\delta^2 \epsilon^2 \cos^2 \phi - 2\beta^2\delta c \cos\phi - 2 \beta^2\delta c \epsilon \cos^2 \phi + 2\beta^2\delta^2 \epsilon \cos \phi - \alpha^2 c^2 \sin^2 \phi}{\alpha^2\beta^2(1 + 2\epsilon\cos\phi + \epsilon^2\cos^2\phi)}
+\\ & = \frac{
+\beta^2\cos^2\phi (c^2 + \delta^2 \epsilon^2 - 2 \delta c \epsilon) - \alpha^2 c^2 \sin^2 \phi + \beta^2\delta^2 + 2\beta^2\delta \cos\phi (-c + \delta \epsilon)
+}{\alpha^2\beta^2(1 + 2\epsilon\cos\phi + \epsilon^2\cos^2\phi)}
+\\ & = \frac{
+(\beta^2\delta^2 - \alpha^2 c^2)
+ + 2\beta^2\delta \cos\phi (\delta \epsilon-c)
+ + \cos^2\phi (\beta^2c^2 + \beta^2\delta^2 \epsilon^2 - 2\beta^2 \delta c \epsilon + \alpha^2 c^2)
+}{\alpha^2\beta^2(1 + 2\epsilon\cos\phi + \epsilon^2\cos^2\phi)}
+\\ & = 1
+\endal
+\]
+
+We can seperate this into several equations:
+
+\[
+\frac{\beta^2\delta^2 - \alpha^2 c^2}{\alpha^2\beta^2} = 1
+\\ \frac{2\beta^2\delta \cos\phi (\delta \epsilon-c)}{\alpha^2\beta^2} = 2\epsilon\cos\phi
+\\ \frac{\cos^2\phi (\beta^2c^2 + \beta^2\delta^2 \epsilon^2 - 2\beta^2 \delta c \epsilon + \alpha^2 c^2)}{\alpha^2\beta^2} = \epsilon^2\cos^2\phi
+\]
+
+These can further be simplified:
+
+\[
+\frac{\delta^2}{\alpha^2} - \frac{c^2}{\beta^2} = 1
+\\
+\frac{\delta^2\epsilon}{\alpha^2} - \frac{\delta c}{\beta^2} = \epsilon
+\\
+\frac{c^2}{\alpha^2} + \frac{\delta^2\epsilon^2}{\alpha^2} - 2\frac{\delta c \epsilon}{\alpha^2} + \frac{c^2}{\beta^2}
+= \epsilon^2
+\]
+
+Now, all we have to do is solve these three equations for the three
+unknowns \(\alpha\), \(\beta\), and \(\gamma\):
+
+From the first equation, we have \[
+\frac{1}{\beta^2} = \frac{\delta^2}{c^2\alpha^2} - \over{c^2}
+\]
+
+Therefore,
+
+\[
+\frac{\delta^2\epsilon}{\alpha^2} - \lp \frac{\delta^2}{c^2\alpha^2} - \over{c^2} \rp\delta c = 
+\frac{\delta^2\epsilon}{\alpha^2} - \frac{\delta^3}{c\alpha^2} + \frac{\delta}{c}
+= \epsilon
+\\
+\frac{c^2}{\alpha^2} + \frac{\delta^2\epsilon^2}{\alpha^2} - 2\frac{\delta c \epsilon}{\alpha^2} + c^2\lp \frac{\delta^2}{c^2\alpha^2} - \over{c^2} \rp =
+\frac{c^2}{\alpha^2} + \frac{\delta^2\epsilon^2}{\alpha^2} - 2\frac{\delta c \epsilon}{\alpha^2}
++ \frac{\delta^2}{\alpha^2} - 1
+= \epsilon^2
+\]
+
+From here, we have
+
+\[
+\over{\alpha^2} = \frac{\epsilon-\frac{\delta}{c}}{\delta^2\epsilon - \frac{\delta^3}{c}} = \over{\delta^2}\frac{\epsilon-\frac{\delta}{c}}{\epsilon-\frac{\delta}{c}}
+\]
+
+This means we have two possibilities: either \(\delta^2 = \alpha^2\) or
+\(\delta = c\). Since the first option would mean
+\(\beta \rightarrow \pm \infty\), the second option must be true. Hence,
+
+\[
+\frac{c^2}{\alpha^2} + \frac{c^2\epsilon^2}{\alpha^2} - 2\frac{c^2 \epsilon}{\alpha^2}
++ \frac{c^2}{\alpha^2} - 1
+= \epsilon^2
+\\
+\frac{c^2}{\alpha^2} (1 + \epsilon^2 - 2 \epsilon) = 1 + \epsilon^2
+\\ \frac{c^2}{\alpha^2} = \frac{1 + \epsilon^2}{(1-\epsilon)^2}
+\\ \alpha = \pm c \sqrt{\frac{(1-\epsilon)^2}{1 + \epsilon^2}}
+\]
+
+And we have
+
+\[
+\begal
+\beta & = \pm \sqrt{\over{\frac{\delta^2}{c^2\alpha^2} - \over{c^2}}}
+\\ & = \pm \sqrt{\over{\frac{1 + \epsilon^2}{(1-\epsilon)^2} - \over{c^2}}}
+\\ & = \pm c \sqrt{\over{\frac{1 + \epsilon^2}{1-2\epsilon+\epsilon^2} - \frac{1-2\epsilon+\epsilon^2}{1-2\epsilon+\epsilon^2}}}
+\\ & = \pm c \sqrt{\frac{(1-\epsilon)^2}{2\epsilon}}
+\endal
+\]
+
+Therefore, we have found that
+
+\[
+\delta = c
+\\
+\alpha = \pm c \sqrt{\frac{(1-\epsilon)^2}{1 + \epsilon^2}}
+\\
+\beta = \pm c \sqrt{\frac{(1-\epsilon)^2}{2\epsilon}}
+\]
+
