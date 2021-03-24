@@ -177,6 +177,8 @@ Video of lecture at https://mediaspace.msu.edu/media/t/1_mgqtt4lm and handwritte
 - Friday 3/12:  Discussion  of first midterm and summary of oscillations. Deadline first midterm at midnight.
 There is no video of Friday's session since the lecture was organized in breakout sessions plus a discussion of the first midterm. Thx to all of you for heroic efforts with the first midterm.
 - Good reads are sections 5.7-5.8 and  8.2-8.4 of Taylor and Lecture notes 
+- Solutions to first midterm at https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/SolutionFirstMid.ipynb
+
 
 ### Week 11, March  15-19, 2021
 - Monday 3/15:  Gravity and central force problems, center of mass coordinates. Lecture notes and Taylor chapter 8. 7th homework due March 22. Video of Lecture at https://mediaspace.msu.edu/media/t/1_x34gdl5o and handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesMarch15.pdf.
@@ -188,6 +190,10 @@ There is no video of Friday's session since the lecture was organized in breakou
 
 - Wednesday 3/24: Gravity and central force problems, elliptical orbits  and two-body scattering examples. 
 - Friday 3/26:  Elliptical orbits, examples and two-body scattering problems. 
+- Solutions to homework 7 at https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionhw7.ipynb
+
+
+
 
 ### Week 13, March 29-April 2, 2020
 - Monday 3/29: Central force problems, summary and discussion of two-body scattering problems. 9th homework, due April  5.
