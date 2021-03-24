@@ -188,7 +188,7 @@ There is no video of Friday's session since the lecture was organized in breakou
 ### Week 12, March 22-26, 2021
 - Monday 3/22: Gravity and central force problems, elliptical orbits and Kepler's laws, 8th homework, due March 29.  Video of Lecture at https://mediaspace.msu.edu/media/t/1_4tiot5np and handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesMarch22.pdf. Julie's notes on methods and classes are at https://github.com/mhjensen/Physics321/tree/master/doc/pub/PythonClassesMethods
 
-- Wednesday 3/24: Gravity and central force problems, elliptical orbits  and two-body scattering examples. 
+- Wednesday 3/24: Gravity and central force problems, elliptical orbits. Video of Lecture at  and handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesMarch24.pdf.
 - Friday 3/26:  Elliptical orbits, examples and two-body scattering problems. 
 - Solutions to homework 7 at https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionhw7.ipynb
 
