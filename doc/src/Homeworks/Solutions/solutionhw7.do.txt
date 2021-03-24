@@ -278,7 +278,9 @@ In the codes below, we have implemented the dimensionless  equations.
 * 1c (25pt) You can use your codes from either the first midterm or from homeworks 5 and/or 6.  Study numerically the three cases from 1a, that is the underdamped motion, the critically damped one and finally the overdamped one. Compare your numerical results with the analytical ones from 1a. Discuss your results. You can use the Euler-Cromer method, or the Velocity-Verlet method or the Runge-Kutta methods discussed during the lectures, see for example URL:"https://mhjensen.github.io/Physics321/doc/pub/week10/html/week10.html". Alternatively, you could use the _odeint_ solvers included functionality in Python, see URL:"https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html". Give a short argument about the numerical algorithm you ended up using.  
 
 
-We have chosen to implement the Runge-Kutta4 method since this has a truncation error in terms of the step size $\Delta t$ to the power of five. The codes are included after part 1d. 
+We have chosen to implement the Runge-Kutta4 method since this has a
+truncation error in terms of the step size $\Delta t$ to the power of
+five. The codes are included after part 1d.
 
 
 
@@ -377,7 +379,6 @@ F_{\mathrm{ext}}(t) = F_0\cos{(\omega t)},
 \]
 !et
 where $F_0$ is a constant (what is its dimension?) and $\omega$ is the frequency of the applied external driving force.
-_Small question:_ would you expect energy to be conserved now?
 
 
 Introducing the external force into our lovely differential equation
@@ -410,9 +411,24 @@ to define $\gamma = b/(2m\omega_0)$ and rewrite our equations as
 \]
 !et
 
+These are the equations implemented in the codes below. In the code example below we have chosen the initial position to be
+$x_0=1.0$ (skipping the units), the initial velocity $v_0=0$, $k=m=1$ giving $\omega_0 =1$ and $\gamma=0.2$, $\tilde{\omega}=0.5$ and $\tilde{F_0}=1.0$.
+These definitions gives us for the homogenous solution a classical underdamped case since $\gamma < 1$, resulting in the homogenous solution
+!bt
+\[
+x_h(\tau)=x_0\cos{(\omega_0\tau)},
+\]
+!et
+and the particular solution defined as
+!bt
+\[
+x_p(\tau)=x_0\cos{(\omega_0\tau)},
+\]
+!et
 
 
-Eenergy is not conserved since we have a time and velocity dependent total net force acting on the system.
+
+Energy is not conserved since we have a time and velocity dependent total net force acting on the system.
 
 Note that here the forward Euler method does not know the specific force function to be called.
 It receives just an input the name. We can easily change the force by adding another function.
