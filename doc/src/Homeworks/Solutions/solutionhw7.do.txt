@@ -608,24 +608,6 @@ Here, we assume the two particles interact only with one another, so $\bm{F}_{12
 
 The first expression simply states that the center of mass coordinate $\bm{R}_{\rm cm}$ moves at a fixed velocity. The second expression can be rewritten in terms of the reduced mass $\mu$.
 
-* 2b (5pt) Show that the linear momenta for the center-of-mass $\bm{P}$ motion and the relative motion $\bm{q}$ are given by $\bm{P}=M\dot{\bm{R}}_{\rm cm}$ with $M=m_1+m_2$ and $\bm{q}=\mu\dot{\bm{r}}$.  The linear momentum of the relative motion is defined $\bm{q} = (m_2\bm{p}_1-m_1\bm{p}_2)/(m_1+m_2)$.
-
-* 2c (5pt) Show then that the  kinetic energy for two objects can then be written as
-!bt
-\[
-K=\frac{P^2}{2M}+\frac{q^2}{2\mu}.
-\]
-!et
-
-* 2d (5pt) Show that the total angular momentum for two-particles in the center-of-mass frame $\bm{R}=0$, is given by
-!bt
-\[
-\bm{L}=\bm{r}\times \mu\dot{\bm{r}}.
-\]
-!et
-
-===  Solution to exercise 2 ===
-
 Let us first start with some basic definitions. We have the center of mass coordinate $\bm{R}$ defined as (for two particles)
 !bt
 \[
@@ -669,15 +651,18 @@ In our case the forces are given by the internal forces only. The force acting o
 \bm{F}_1+\bm{F}_2=\bm{F}_{12}+\bm{F}_{21}=0=\dot{\bm{P}}=M\ddot{d\bm{R}},
 \]
 !et
-which is what we wanted to show.
+which is what we wanted to show. The center of mass velocity is thus a constant of the motion. We could also define the so-called center of mass reference frame where we simply set $\bm{R}=0$.
+
+This has also another important consequence for our forces. If we assume that our force depends only on the positions, it means that the gradient of the potential with respect to the center of mass position is zero, that is
+!bt
+\[
+M\ddot{d\bm{R}}=-\bm{\nabla}_{\bm{R}}V =0!
+\]
+!et
 
 
-From homework 4, we know that in case we have only an internal force
-
-
-
-
-We introduce now the relative position
+We move now on to the relative motion.
+We introduce the relative position
 
 !bt
 \[
@@ -707,6 +692,34 @@ We can now rewrite the
 
 \]
 !et
+
+
+
+* 2b (5pt) Show that the linear momenta for the center-of-mass $\bm{P}$ motion and the relative motion $\bm{q}$ are given by $\bm{P}=M\dot{\bm{R}}_{\rm cm}$ with $M=m_1+m_2$ and $\bm{q}=\mu\dot{\bm{r}}$.  The linear momentum of the relative motion is defined $\bm{q} = (m_2\bm{p}_1-m_1\bm{p}_2)/(m_1+m_2)$.
+
+* 2c (5pt) Show then that the  kinetic energy for two objects can then be written as
+!bt
+\[
+K=\frac{P^2}{2M}+\frac{q^2}{2\mu}.
+\]
+!et
+
+* 2d (5pt) Show that the total angular momentum for two-particles in the center-of-mass frame $\bm{R}=0$, is given by
+!bt
+\[
+\bm{L}=\bm{r}\times \mu\dot{\bm{r}}.
+\]
+!et
+
+
+
+
+
+
+
+
+
+
 
 
 
