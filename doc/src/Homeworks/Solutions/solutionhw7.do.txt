@@ -412,17 +412,11 @@ to define $\gamma = b/(2m\omega_0)$ and rewrite our equations as
 !et
 
 These are the equations implemented in the codes below. In the code example below we have chosen the initial position to be
-$x_0=1.0$ (skipping the units), the initial velocity $v_0=0$, $k=m=1$ giving $\omega_0 =1$ and $\gamma=0.2$, $\tilde{\omega}=0.5$ and $\tilde{F_0}=1.0$.
-These definitions gives us for the homogenous solution a classical underdamped case since $\gamma < 1$, resulting in the homogenous solution
+$x_0=1.0$ (skipping the units), the initial velocity $v_0=0$, $k=m=1$ giving $\omega_0 =1.0$ and $\gamma=1.0$, $\tilde{\omega}=0.0$ and $\tilde{F_0}=0.0$.
+These definitions gives us for the homogenous solution a classical critical case since $\gamma = 1$, resulting in the homogenous solution only (show this with the given initial conditions))
 !bt
 \[
-x_h(\tau)=x_0\cos{(\omega_0\tau)},
-\]
-!et
-and the particular solution defined as
-!bt
-\[
-x_p(\tau)=x_0\cos{(\omega_0\tau)},
+x_h(\tau)=x_0(\exp{-(\tau)}+\tau\exp{-(\tau)}).
 \]
 !et
 
@@ -561,23 +555,27 @@ x0 =  1.0
 v0 = 0.0
 x[0] = x0
 v[0] = v0
-gamma = 0.2
-Omegatilde = 0.5
-Ftilde = 1.0
+gamma = 1.0
+Omegatilde = 0.0
+Ftilde = 0.0
 # Start integrating using Euler's method
 # Note that we define the force function as a SpringForce
 RK4(v,x,t,n,SpringForce)
+# Here we define the analytical solution for the critical damping case
+xanalytic = np.zeros(n)
+xanalytic = x0*np.exp(-t)+x0*t*np.exp(-t)
 
 # Plot position as function of time    
 fig, ax = plt.subplots()
 ax.set_ylabel('x[m]')
 ax.set_xlabel('t[s]')
-ax.plot(t, x)
+ax.plot(t, np.abs(x-xanalytic))
 fig.tight_layout()
 save_fig("ForcedBlockRK4")
 plt.show()
 !ec
 
+Here we have plotted the difference (absolute value) between the analytical solution and numerical one and we see that the error is extremely small with the chosen parameters. Feel free to explore other situations.
 
 
 
@@ -719,7 +717,7 @@ can be rewritten in terms of the reduced mass $\mu$.
 Thus, one can treat the trajectory as a one-body problem where the
 reduced mass is $\mu$, and a second trivial problem for the center of
 mass. The reduced mass is especially convenient when one is
-considering gravitational problems because then
+considering gravitational problems, as we have seen during the lectures of weeks 11-13.
 
 
 
