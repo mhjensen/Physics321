@@ -36,7 +36,7 @@ We will limit ourselves to a one-dimensional system. You will need to select val
 
 * 1a (20pt)  Assume no driving force first and add a drag force $-bv$, where $v$ is the velocity. Find the forces acting on the object. Find the analytical solutions to the equations of motion. Discuss the three cases: _underdamping_, _critical damping_ and _overdamping_.
 
-The text here is taken from the lecture notes of week 9. We have made this text more extensive than needed. This is done for the sake of completeness.
+The text here is taken from the lecture notes of week 9. We have made this text more extensive than needed. This is done for the sake of completeness.  We don't expect that you would provide this level of detail.
 
 We consider only the case where the damping force is proportional to
 the velocity. This is counter to dragging friction, where the force is
@@ -628,6 +628,7 @@ where $N=2$ in our case. With the above definition of the center of mass positio
 \bm{P}=M\frac{d\bm{R}}{dt}=M\dot{d\bm{R}}.
 \]
 !et
+This result is also an answer to a part of exercise 2b, see below.
 
 The net force acting on the system is given by the time derivative of the linear momentum (assuming mass is time independent)
 and we have
@@ -661,7 +662,7 @@ M\ddot{d\bm{R}}=-\bm{\nabla}_{\bm{R}}V =0!
 !et
 
 
-We move now on to the relative motion.
+
 We introduce the relative position
 
 !bt
@@ -697,12 +698,91 @@ We can now rewrite the
 
 * 2b (5pt) Show that the linear momenta for the center-of-mass $\bm{P}$ motion and the relative motion $\bm{q}$ are given by $\bm{P}=M\dot{\bm{R}}_{\rm cm}$ with $M=m_1+m_2$ and $\bm{q}=\mu\dot{\bm{r}}$.  The linear momentum of the relative motion is defined $\bm{q} = (m_2\bm{p}_1-m_1\bm{p}_2)/(m_1+m_2)$.
 
+In 2a we showed, as an intermediate step that the total linear momentum is given by
+!bt
+\[
+\bm{P}=\sum_{i=1}^Nm_i\frac{d\bm{r}_i}{dt}=M\dot{\bm{R}}.
+\]
+!et
+
+For the relative momentum $\bm{q}$, we have that the time derivative of $\bm{r}$ is
+!bt
+\[
+\dot{\bm{r}} =\dot{\bm{r}}_1-\dot{\bm{r}}_2,
+\]
+!et
+
+We now also that the momenta $\bm{p}_1=m_1\dot{\bm{r}}_1$ and
+$\bm{p}_2=m_2\dot{\bm{r}}_2$. Using these expressions we can rewrite
+
+!bt
+\[
+\dot{\bm{r}} =\frac{\bm{p}_1}{m_1}-\frac{\bm{p}_2}{m_2},
+\]
+!et
+
+which we can rewrite as
+
+!bt
+\[
+\dot{\bm{r}} =\frac{m_2\bm{p}_1}-m_1\bm{p}_2}{m_1m_2},
+\]
+!et
+
+and divding both sides with $M$ we have
+
+!bt
+\[
+\frac{m_1m_2}{M}\dot{\bm{r}} =\frac{m_2\bm{p}_1}-m_1\bm{p}_2}{M}.
+\]
+!et
+
+Introducing the reduced mass $\mu=m_1m_2/M$ we have finally
+
+!bt
+\[
+\mu\dot{\bm{r}} =\frac{m_2\bm{p}_1}-m_1\bm{p}_2}{M}.
+\]
+!et
+And $\mu\dot{\bm{r}}$ defines the relative momentum $\bm{q}=\mu\dot{\bm{r}}$. 
+
+When we introduce the Lagrangian formalism we will see that it is much easier to derive these equations.
+
 * 2c (5pt) Show then that the  kinetic energy for two objects can then be written as
 !bt
 \[
 K=\frac{P^2}{2M}+\frac{q^2}{2\mu}.
 \]
 !et
+
+Here we just need to use our definitions of kinetic energy in terms of the coordinates $\bm{r}_1$ and $\bm{r}_2$.
+
+We have that
+
+!bt
+\[
+K=\frac{p_1^2}{2m_1}+\frac{p_2^2}{2m_2},
+\]
+!et
+
+and with $\bm{p}_1=m_1\dot{\bm{r}}_1$ and $\bm{p}_2=m_2\dot{\bm{r}}_2$ and using
+
+!bt
+\[
+\dot{\bm{r}}_1=\dot{\bm{R}}+\frac{m_2}{M}\dot{\bm{r}},
+\]
+!et
+and
+
+!bt
+\[
+\dot{\bm{r}}_2=\dot{\bm{R}}-\frac{m_1}{M}\dot{\bm{r}},
+\]
+!et
+
+we obtain
+
+
 
 * 2d (5pt) Show that the total angular momentum for two-particles in the center-of-mass frame $\bm{R}=0$, is given by
 !bt
