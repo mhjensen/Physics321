@@ -614,56 +614,9 @@ Let us first start with some basic definitions. We have the center of mass coord
 \bm{R}=\frac{m_1\bm{r}_1+m_2\bm{r}_2}{M},
 \]
 !et
-where $m_1$ and $m_2$ are the masses of the two objects and $\bm{r}_1$ and $\bm{r}_2$ their respective positions defined according to a chosen origin. Here $M=m_1+m_2$ is the total mass. The total linear momentum is then defined as
+where $m_1$ and $m_2$ are the masses of the two objects and $\bm{r}_1$ and $\bm{r}_2$ their respective positions defined according to a chosen origin. Here $M=m_1+m_2$ is the total mass.
 
-!bt
-\[
-\bm{P}=\sum_[i=1}^Nm_i\frac{\bm{r}_i}dt},
-\]
-!et
-where $N=2$ in our case. With the above definition of the center of mass position, we see that we can rewrite the total linear momentum as (multiplying the center of mass position with $M$)
-
-!bt
-\[
-\bm{P}=M\frac{d\bm{R}}{dt}=M\dot{d\bm{R}}.
-\]
-!et
-This result is also an answer to a part of exercise 2b, see below.
-
-The net force acting on the system is given by the time derivative of the linear momentum (assuming mass is time independent)
-and we have
-
-!bt
-\[
-\bm{F}^{\mathrm{net}}=\dot{\bm{P}}=M\ddot{d\bm{R}}.
-\]
-!et
-
-The net force acting on the system is given by the sum of the forces acting on the two object, that is we have
-
-!bt
-\[
-\bm{F}^{\mathrm{net}}=\bm{F}_1+\bm{F}_2=\dot{\bm{P}}=M\ddot{d\bm{R}}.
-\]
-!et
-In our case the forces are given by the internal forces only. The force acting on object $1$ is thus $\bm{F}_{12}$ and the one acting on object $2$ is $\bm{F}_{12}$. We have also defined that $\bm{F}_{12}=-\bm{F}_{21}$. This means thar we have
-!bt
-\[
-\bm{F}_1+\bm{F}_2=\bm{F}_{12}+\bm{F}_{21}=0=\dot{\bm{P}}=M\ddot{d\bm{R}},
-\]
-!et
-which is what we wanted to show. The center of mass velocity is thus a constant of the motion. We could also define the so-called center of mass reference frame where we simply set $\bm{R}=0$.
-
-This has also another important consequence for our forces. If we assume that our force depends only on the positions, it means that the gradient of the potential with respect to the center of mass position is zero, that is
-!bt
-\[
-M\ddot{d\bm{R}}=-\bm{\nabla}_{\bm{R}}V =0!
-\]
-!et
-
-
-
-We introduce the relative position
+The relative position is defined as
 
 !bt
 \[
@@ -686,13 +639,88 @@ and
 \]
 !et
 
-We can now rewrite the 
+
+
+The total linear momentum is then defined as
 
 !bt
 \[
-
+\bm{P}=\sum_{i=1}^Nm_i\frac{\bm{r}_i}{dt},
 \]
 !et
+where $N=2$ in our case. With the above definition of the center of mass position, we see that we can rewrite the total linear momentum as (multiplying the center of mass position with $M$)
+
+!bt
+\[
+\bm{P}=M\frac{d\bm{R}}{dt}=M\dot{\bm{R}}.
+\]
+!et
+This result is also an answer to a part of exercise 2b, see below.
+
+The net force acting on the system is given by the time derivative of the linear momentum (assuming mass is time independent)
+and we have
+
+!bt
+\[
+\bm{F}^{\mathrm{net}}=\dot{\bm{P}}=M\ddot{\bm{R}}.
+\]
+!et
+
+The net force acting on the system is given by the sum of the forces acting on the two object, that is we have
+
+!bt
+\[
+\bm{F}^{\mathrm{net}}=\bm{F}_1+\bm{F}_2=\dot{\bm{P}}=M\ddot{\bm{R}}.
+\]
+!et
+In our case the forces are given by the internal forces only. The force acting on object $1$ is thus $\bm{F}_{12}$ and the one acting on object $2$ is $\bm{F}_{12}$. We have also defined that $\bm{F}_{12}=-\bm{F}_{21}$. This means thar we have
+!bt
+\[
+\bm{F}_1+\bm{F}_2=\bm{F}_{12}+\bm{F}_{21}=0=\dot{\bm{P}}=M\ddot{\bm{R}},
+\]
+!et
+which is what we wanted to show. The center of mass velocity is thus a constant of the motion. We could also define the so-called center of mass reference frame where we simply set $\bm{R}=0$.
+
+This has also another important consequence for our forces. If we assume that our force depends only on the positions, it means that the gradient of the potential with respect to the center of mass position is zero, that is
+!bt
+\[
+M\ddot{d\bm{R}}=-\bm{\nabla}_{\bm{R}}V =0!
+\]
+!et
+
+
+
+
+An alternative way is 
+
+
+!bt
+\begin{eqnarray}
+\ddot{\bm{R}}_{\rm cm}&=&\frac{1}{m_1+m_2}\left\{m_1\ddot{\bm{r}}_1+m_2\ddot{\bm{r}}_2\right\}\\
+\nonumber
+&=&\frac{1}{m_1+m_2}\left\{\bm{F}_{12}+\bm{F}_{21}\right\}=0.\\
+\ddot{\bm{r}}&=&\ddot{\bm{r}}_1-\ddot{\bm{r}}_2=\left(\frac{\bm{F}_{12}}{m_1}-\frac{\bm{F}_{21}}{m_2}\right)\\
+\nonumber
+&=&\left(\frac{1}{m_1}+\frac{1}{m_2}\right)\bm{F}_{12}.
+\end{eqnarray}
+!et
+
+The first expression simply states that the center of mass coordinate
+$\bm{R}_{\rm cm}$ moves at a fixed velocity. The second expression
+can be rewritten in terms of the reduced mass $\mu$.
+
+!bt
+\begin{eqnarray}
+\mu \ddot{\bm{r}}&=&\bm{F}_{12},\\
+\frac{1}{\mu}&=&\frac{1}{m_1}+\frac{1}{m_2},~~~~\mu=\frac{m_1m_2}{m_1+m_2}.
+\end{eqnarray}
+!et
+
+Thus, one can treat the trajectory as a one-body problem where the
+reduced mass is $\mu$, and a second trivial problem for the center of
+mass. The reduced mass is especially convenient when one is
+considering gravitational problems because then
+
 
 
 
@@ -725,15 +753,15 @@ which we can rewrite as
 
 !bt
 \[
-\dot{\bm{r}} =\frac{m_2\bm{p}_1}-m_1\bm{p}_2}{m_1m_2},
+\dot{\bm{r}} =\frac{m_2\bm{p}_1-m_1\bm{p}_2}{m_1m_2},
 \]
 !et
 
-and divding both sides with $M$ we have
+and dividing both sides with $M$ we have
 
 !bt
 \[
-\frac{m_1m_2}{M}\dot{\bm{r}} =\frac{m_2\bm{p}_1}-m_1\bm{p}_2}{M}.
+\frac{m_1m_2}{M}\dot{\bm{r}} =\frac{m_2\bm{p}_1-m_1\bm{p}_2}{M}.
 \]
 !et
 
@@ -741,7 +769,7 @@ Introducing the reduced mass $\mu=m_1m_2/M$ we have finally
 
 !bt
 \[
-\mu\dot{\bm{r}} =\frac{m_2\bm{p}_1}-m_1\bm{p}_2}{M}.
+\mu\dot{\bm{r}} =\frac{m_2\bm{p}_1-m_1\bm{p}_2}{M}.
 \]
 !et
 And $\mu\dot{\bm{r}}$ defines the relative momentum $\bm{q}=\mu\dot{\bm{r}}$. 
@@ -780,9 +808,21 @@ and
 \]
 !et
 
-we obtain
+we obtain (after squaring the expressions for $\dot{\bm{r}}_1$ and $\dot{\bm{r}}_2$) we have
 
+!bt
+\[
+K=\frac{(m_1+m_2)\dot{\bm{R}}^2}{2}+\frac{(m_1+m_2)m_1m_2\dot{\bm{r}}^2}{2M^2},
+\]
+!et
+which we simplify to 
 
+!bt
+\[
+K=\frac{\dot{\bm{P}}^2}{2M}+\frac{\mu\dot{\bm{q}}^2}{2},
+\]
+!et
+which is what we wanted to show.
 
 * 2d (5pt) Show that the total angular momentum for two-particles in the center-of-mass frame $\bm{R}=0$, is given by
 !bt
@@ -792,19 +832,58 @@ we obtain
 !et
 
 
+Here we need again that 
 
+!bt
+\[
+\bm{r} =\bm{r}_1-\bm{r}_2,
+\]
+!et
 
+and we then define $\bm{r}_1$ and $\bm{r}_2$ in terms of the relative and center of mass positions with $\bm{R}=0$
 
+!bt
+\[
+\bm{r}_1=\frac{m_2}{M}\bm{r},
+\]
+!et
+and
 
+!bt
+\[
+\bm{r}_2=-\frac{m_1}{M}\bm{r},
+\]
+!et
 
+The angular momentum (the total one) is the sum of the individual angular momenta (see homework 4) and we have
 
+!bt
+\[
+\bm{L} = \bm{r}_1 \times \bm{p}_1+\bm{r}_2 \times \bm{p}_2,
+\]
+!et
+and using that $m_1\dot{\bm{r}}_1=\bm{p}_1$ and $m_2\dot{\bm{r}}_2=\bm{p}_2$ we have
 
+!bt
+\[
+\bm{L} = m_1\bm{r}_1 \times \dot{\bm{r}}_1+m_2\bm{r}_2 \times \dot{\bm{r}}_2.
+\]
+!et
 
+Inserting the equations for $\bm{r}_1$ and $\bm{r}_2$ in terms of the relative motion, we have
 
+!bt
+\[
+\bm{L} = m_1 \frac{m_2}{M}\bm{r}\times\frac{m_2}{M}\bm{r} +m_2 \frac{m_1}{M}\bm{r} \times \frac{m_1}{M}\dot{\bm{r}}.
+\]
+!et
 
-
-
-
-
+We see that can rewrite this equation as 
+!bt
+\[
+\bm{L}=\bm{r}\times \mu\dot{\bm{r}},
+\]
+!et
+which is what we wanted to derive.
 
 
