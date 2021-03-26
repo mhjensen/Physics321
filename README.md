@@ -193,8 +193,6 @@ There is no video of Friday's session since the lecture was organized in breakou
 - Solutions to homework 7 at https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionhw7.ipynb
 
 
-
-
 ### Week 13, March 29-April 2, 2020
 - Monday 3/29: Central force problems, summary and discussion of two-body scattering problems. 9th homework, due April  5.
 - Wednesday 3/31: Two-body scattering. Taylor chapter 14 covers parts of the material. 
