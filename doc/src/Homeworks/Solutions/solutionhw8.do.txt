@@ -272,7 +272,7 @@ with
 \begin{align}
 r^2 & = x^2+y^2
 \\ 
-& = \lp A\cos\omega_0 t+B\sin\omega_0 t\rp^2 + \lp C\cos\omega_0 t+D\sin\omega_0 t\rp^2
+& = \left(  A\cos\omega_0 t+B\sin\omega_0 t\right) ^2 + \left(  C\cos\omega_0 t+D\sin\omega_0 t\right) ^2
 \\ 
 & = A^2\cos^2\omega_0 t+B^2\sin^2\omega_0 t + 2AB\sin\omega_0 t \cos\omega_0 t + C^2\cos^2\omega_0 t+D^2\sin^2\omega_0 t + 2CD\sin\omega_0 t \cos\omega_0 t
 \\
@@ -280,7 +280,7 @@ r^2 & = x^2+y^2
 \\
 & = (B^2+D^2) + (A^2+C^2-B^2-D^2)\cos^2\omega_0 t + 2(AC + BD)2\sin2\omega_0 t
 \\
-& = (B^2+D^2) + (A^2+C^2-B^2-D^2)\frac{1+\cos{2\omega_0 t}}{2} + 2(AC + BD)\half\sin2\omega_0 t
+& = (B^2+D^2) + (A^2+C^2-B^2-D^2)\frac{1+\cos{2\omega_0 t}}{2} + 2(AC + BD)\frac{1}{2}\sin2\omega_0 t
 \\
 & = \frac{2B^2+2D^2+A^2+C^2-B^2-D^2}{2} + (A^2+C^2-B^2-D^2)\frac{\cos{2\omega_0 t}}{2} + (AC + BD)\sin2\omega_0 t
 \\
@@ -288,11 +288,11 @@ r^2 & = x^2+y^2
 \\
 & = \alpha + \beta\cos{2\omega_0 t} + \gamma\sin2\omega_0 t
 \\
-& = \alpha + \sqrt{\beta^2+\gamma^2}\lp\frac{\beta}{\sqrt{\beta^2+\gamma^2}}\cos{2\omega_0 t} + \frac{\gamma}{\sqrt{\beta^2+\gamma^2}}\sin2\omega_0 t\rp
+& = \alpha + \sqrt{\beta^2+\gamma^2}\left( \frac{\beta}{\sqrt{\beta^2+\gamma^2}}\cos{2\omega_0 t} + \frac{\gamma}{\sqrt{\beta^2+\gamma^2}}\sin2\omega_0 t\right) 
 \\
-& = \alpha + \sqrt{\beta^2+\gamma^2}\lp\cos{\delta}\cos{2\omega_0 t} + \sin{\delta}\sin2\omega_0 t\rp
+& = \alpha + \sqrt{\beta^2+\gamma^2}\left( \cos{\delta}\cos{2\omega_0 t} + \sin{\delta}\sin2\omega_0 t\right) 
 \\
-& = \alpha + \sqrt{\beta^2+\gamma^2}\cos{\lp2\omega_0 t - \delta\rp}
+& = \alpha + \sqrt{\beta^2+\gamma^2}\cos{\left( 2\omega_0 t - \delta\right) }
 \end{align}
 !et
 
