@@ -109,7 +109,33 @@ Automatically generated HTML file from DocOnce source
               ('Rutherford Scattering, Example, wrapping up',
                2,
                None,
-               'rutherford-scattering-example-wrapping-up')]}
+               'rutherford-scattering-example-wrapping-up'),
+              ('Variational Calculus', 2, None, 'variational-calculus'),
+              ('Variational Calculus, introducing the action',
+               2,
+               None,
+               'variational-calculus-introducing-the-action'),
+              ('Variational Calculus, general Action',
+               2,
+               None,
+               'variational-calculus-general-action'),
+              ('Variational Calculus, Optimal Path',
+               2,
+               None,
+               'variational-calculus-optimal-path'),
+              ('Variational Calculus, Condition for an Extreme Value',
+               2,
+               None,
+               'variational-calculus-condition-for-an-extreme-value'),
+              ('Variational Calculus. $\\alpha$ Dependence',
+               2,
+               None,
+               'variational-calculus-alpha-dependence'),
+              ('INtegrating by Parts', 2, None, 'integrating-by-parts'),
+              ('Euler-Lagrange Equations',
+               2,
+               None,
+               'euler-lagrange-equations')]}
 end of tocinfo -->
 
 <body>
@@ -168,6 +194,14 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="#rutherford-scattering-the-differential-cross-section" style="font-size: 80%;"><b>Rutherford Scattering, the Differential Cross Section</b></a></li>
      <!-- navigation toc: --> <li><a href="#rutherford-scattering-example" style="font-size: 80%;"><b>Rutherford Scattering, Example</b></a></li>
      <!-- navigation toc: --> <li><a href="#rutherford-scattering-example-wrapping-up" style="font-size: 80%;"><b>Rutherford Scattering, Example, wrapping up</b></a></li>
+     <!-- navigation toc: --> <li><a href="#variational-calculus" style="font-size: 80%;"><b>Variational Calculus</b></a></li>
+     <!-- navigation toc: --> <li><a href="#variational-calculus-introducing-the-action" style="font-size: 80%;"><b>Variational Calculus, introducing the action</b></a></li>
+     <!-- navigation toc: --> <li><a href="#variational-calculus-general-action" style="font-size: 80%;"><b>Variational Calculus, general Action</b></a></li>
+     <!-- navigation toc: --> <li><a href="#variational-calculus-optimal-path" style="font-size: 80%;"><b>Variational Calculus, Optimal Path</b></a></li>
+     <!-- navigation toc: --> <li><a href="#variational-calculus-condition-for-an-extreme-value" style="font-size: 80%;"><b>Variational Calculus, Condition for an Extreme Value</b></a></li>
+     <!-- navigation toc: --> <li><a href="#variational-calculus-alpha-dependence" style="font-size: 80%;"><b>Variational Calculus. \( \alpha \) Dependence</b></a></li>
+     <!-- navigation toc: --> <li><a href="#integrating-by-parts" style="font-size: 80%;"><b>INtegrating by Parts</b></a></li>
+     <!-- navigation toc: --> <li><a href="#euler-lagrange-equations" style="font-size: 80%;"><b>Euler-Lagrange Equations</b></a></li>
 
         </ul>
       </li>
@@ -804,6 +838,232 @@ $$
 It was from this departure of the experimentally measured
 \( d\sigma/d\Omega \) from the Rutherford formula that allowed Rutherford
 to infer the radius of the gold nucleus, \( R \).
+
+<p>
+<!-- !split -->
+
+<h2 id="variational-calculus" class="anchor">Variational Calculus </h2>
+
+<p>
+The calculus of variations involves 
+problems where the quantity to be minimized or maximized is an integral.
+
+<p>
+The usual minimization problem one faces involves taking a function
+\( {\cal L}(x) \), then finding the single value \( x \) for which \( {\cal L} \)
+is either a maximum or minimum. In multivariate calculus one also
+learns to solve problems where you minimize for multiple variables,
+\( {\cal L}(x_1,x_2,\cdots x_n) \), and finding the points \( (x_1\cdots
+y_n) \) in an \( n \)-dimensional space that maximize or minimize the
+function. Here, we consider what seems to be a much more ambitious
+problem. Imagine you have a function \( {\cal L}(x(t),\dot{x}(t),t) \),
+and you wish to find the extrema for an infinite number of values of
+\( x \), i.e. \( x \) at each point \( t \). The function \( {\cal L} \) will not only
+depend on \( x \) at each point \( t \), but also on the slope at each point,
+plus an additional dependence on \( t \). Note we are NOT finding an
+optimum value of \( t \), we are finding the set of optimum values of \( x \)
+at each point \( t \), or equivalently, finding the function \( x(t) \).
+
+<p>
+<!-- !split -->
+
+<h2 id="variational-calculus-introducing-the-action" class="anchor">Variational Calculus, introducing the action </h2>
+
+<p>
+One treats the function \( x(t) \) as being unknown while minimizing the action
+
+$$
+S=\int_{t_1}^{t_2}dt~{\cal L}(x(t),\dot{x}(t),t).
+$$
+
+<p>
+Thus, we are minimizing \( S \) with respect to an infinite number of
+values of \( x(t_i) \) at points \( t_i \). As an additional criteria, we will
+assume that \( x(t_1) \) and \( x(t_2) \) are fixed, and that that we will
+only consider variations of \( x \) between the boundaries. The dependence
+on the derivative, \( \dot{x}=dx/dt \), is crucial because otherwise the
+solution would involve simply finding the one value of \( x \) that
+minimized \( {\cal L} \), and \( x(t) \) would equal a constant if there were no
+explicit \( t \) dependence. Furthermore, \( x \) wouldn't need to be
+continuous at the boundary.
+
+<p>
+<!-- !split -->
+
+<h2 id="variational-calculus-general-action" class="anchor">Variational Calculus, general Action </h2>
+
+<p>
+In the general case we have an integral of the type
+$$ 
+S[q]= \int_{t_1}^{t_2} {\cal L}(q(t),\dot{q}(t),t)dt,
+$$
+
+<p>
+where \( S \) is the quantity which is sought minimized or maximized.  The
+problem is that although \( {\cal L} \)  is a function of the general variables
+\( q(t),\dot{q}(t),t \) (note our change of variables), the exact dependence of \( q \) on \( t \) is not known.
+This means again that even though the integral has fixed limits \( t_1 \)
+and \( t_2 \), the path of integration is not known. In our case the unknown
+quantities are the positions and general velocities of a given number
+of objects and we wish to choose an integration path which makes the
+functional \( S[q] \) stationary. This means that we want to find minima,
+or maxima or saddle points. In physics we search normally for minima.
+Our task is therefore to find the minimum of \( S[q] \) so that its
+variation \( \delta S \) is zero subject to specific constraints.  The
+constraints can be treated via the technique of Lagrangian multipliers
+as we will see below.
+
+<p>
+<!-- !split -->
+
+<h2 id="variational-calculus-optimal-path" class="anchor">Variational Calculus, Optimal Path </h2>
+
+<p>
+We assume the existence of an optimum path, that is a path for which
+\( S[q] \) is stationary. There are infinitely many such paths.  The
+difference between two paths \( \delta q \) is called the variation of
+\( q \).
+
+<p>
+We call the variation \( \eta(t) \) and it is scaled by a factor \( \alpha \).
+The function \( \eta(t) \) is arbitrary except for
+
+$$
+\eta(t_1)=\eta(t_2)=0,
+$$
+
+<p>
+and we assume that we can model the change in \( q \) as
+
+$$
+q(t,\alpha) = q(t)+\alpha\eta(t),
+$$
+
+<p>
+and
+
+$$
+\delta q = q(t,\alpha) -q(t,0)=\alpha\eta(t).
+$$
+
+<p>
+<!-- !split -->
+
+<h2 id="variational-calculus-condition-for-an-extreme-value" class="anchor">Variational Calculus, Condition for an Extreme Value </h2>
+
+<p>
+We choose \( q(t,\alpha=0) \) as the unkonwn path  that will minimize \( S \).  The value
+\( q(t,\alpha\ne 0) \)  describes a neighbouring path.
+
+<p>
+We have
+
+$$
+S[q(\alpha)]= \int_{t_1}^{t_2} {\cal L}(q(t,\alpha),\dot{q}(t,\alpha),t)dt.
+$$
+
+<p>
+The condition for an extreme of
+
+$$
+S[q(\alpha)]= \int_{t_1}^{t_2} {\cal L}(q(t,\alpha),\dot{q}(t,\alpha),t)dt,
+$$
+
+<p>
+is
+
+$$
+\left[\frac{\partial  S[q(\alpha)]}{\partial t}\right]_{\alpha=0} =0.
+$$
+
+<p>
+<!-- !split -->
+
+<h2 id="variational-calculus-alpha-dependence" class="anchor">Variational Calculus. \( \alpha \) Dependence </h2>
+
+<p>
+The \( \alpha \) dependence is contained in \( q(t,\alpha) \) and \( \dot{q}(t,\alpha) \) meaning that
+
+$$
+\left[\frac{\partial  E[q(\alpha)]}{\partial \alpha}\right]=\int_{t_1}^{t_2} \left( \frac{\partial {\cal l}}{\partial q}\frac{\partial q}{\partial \alpha}+\frac{\partial {\cal L}}{\partial \dot{q}}\frac{\partial \dot{q}}{\partial \alpha}\right)dt.
+$$
+
+We have defined
+
+$$
+\frac{\partial q(x,\alpha)}{\partial \alpha}=\eta(x)
+$$
+
+and thereby
+
+$$
+\frac{\partial \dot{q}(t,\alpha)}{\partial \alpha}=\frac{d(\eta(t))}{dt}.
+$$
+
+<p>
+<!-- !split -->
+
+<h2 id="integrating-by-parts" class="anchor">INtegrating by Parts </h2>
+
+<p>
+Using
+
+$$
+\frac{\partial q(t,\alpha)}{\partial \alpha}=\eta(t),
+$$
+
+<p>
+and
+
+$$
+\frac{\partial \dot{q}(t,\alpha)}{\partial \alpha}=\frac{d(\eta(t))}{dt},
+$$
+
+<p>
+in the integral gives
+
+$$
+\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]=\int_{t_1}^{t_2} \left( \frac{\partial {\cal L}}{\partial q}\eta(t)+\frac{\partial {\cal L}}{\partial \dot{q}}\frac{d(\eta(t))}{dt}\right)dt.
+$$
+
+<p>
+Integrating the second term by parts
+
+$$
+\int_{t_1}^{t_2} \frac{\partial {\cal L}}{\partial \dot{q}}\frac{d(\eta(t))}{dt}dt =\eta(t)\frac{\partial {\cal L}}{\partial \dot{q}}|_{t_1}^{t_2}-
+\int_a^b \eta(t)\frac{d}{dx}\frac{\partial {\cal L}}{\partial \dot{q}}dt,
+$$
+
+<p>
+and since the first term dissappears due to \( \eta(a)=\eta(b)=0 \), we obtain
+
+$$
+\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]=\int_{t_1}^{t_2} \left( \frac{\partial {\cal L}}{\partial q}-\frac{d}{dx}\frac{\partial {\cal L}}{\partial \dot{q}}
+\right)\eta(t)dt=0.
+$$
+
+<p>
+<!-- !split -->
+
+<h2 id="euler-lagrange-equations" class="anchor">Euler-Lagrange Equations </h2>
+
+<p>
+The latter can be written as
+
+$$
+\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]_{\alpha=0}=\int_{t_1}^{t_2} \left( \frac{\partial {\cal L}}{\partial q}-\frac{d}{\
+dx}\frac{\partial {\cal L}}{\partial \dot{q}}\right)\delta q(t)dt=\delta S = 0.
+$$
+
+<p>
+The condition for a stationary value is thus a partial differential equation
+
+$$
+\frac{\partial {\cal L}}{\partial q}-\frac{d}{dx}\frac{\partial {\cal L}}{\partial \dot{q}}=0,
+$$
+
+<p>
+known as the <b>Euler-Lagrange</b> equation.
 
 <p>
 
