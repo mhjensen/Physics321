@@ -194,7 +194,7 @@ There is no video of Friday's session since the lecture was organized in breakou
 
 
 ### Week 13, March 29-April 2, 2020
-- Monday 3/29: Central force problems, summary and discussion of two-body scattering problems. 9th homework, due April  5.
+- Monday 3/29: Central force problems, summary and discussion of two-body scattering problems. 9th homework, due April  5.  Video of lecture at https://mediaspace.msu.edu/media/t/1_6ryr6atu and handwriten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesMarch29.pdf
 - Wednesday 3/31: Two-body scattering. Taylor chapter 14 covers parts of the material. 
 - Friday 4/2:  Two-body scattering (Taylor chapter 14). Second midterm available, due Friday April 16.  
 
