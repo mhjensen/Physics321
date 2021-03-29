@@ -269,24 +269,32 @@ with
 
 
 !bt
-\begin{eqnarray*}
-r^2&=&x^2+y^2\\
-\nonumber
-&=&(A^2+C^2)\cos^2(\omega_0t)+(B^2+D^2)\sin^2\omega_0t+(AB+CD)\cos(\omega_0t)\sin(\omega_0t)\\
-\nonumber
-&=&\alpha+\beta\cos 2\omega_0 t+\gamma\sin 2\omega_0 t,\\
-\alpha&=&\frac{A^2+B^2+C^2+D^2}{2},~~\beta=\frac{A^2-B^2+C^2-D^2}{2},~~\gamma=AB+CD,\\
-r^2&=&\alpha+(\beta^2+\gamma^2)^{1/2}\cos(2\omega_0 t-\delta),~~~\delta=\arctan(\gamma/\beta),
-\end{eqnarray*}
+\begin{align}
+r^2 & = x^2+y^2
+\\ 
+& = \lp A\cos\omega_0 t+B\sin\omega_0 t\rp^2 + \lp C\cos\omega_0 t+D\sin\omega_0 t\rp^2
+\\ 
+& = A^2\cos^2\omega_0 t+B^2\sin^2\omega_0 t + 2AB\sin\omega_0 t \cos\omega_0 t + C^2\cos^2\omega_0 t+D^2\sin^2\omega_0 t + 2CD\sin\omega_0 t \cos\omega_0 t
+\\
+& = (A^2+C^2)\cos^2\omega_0 t + (B^2+D^2)\sin^2\omega_0 t + 2(AC + BD)\sin\omega_0 t \cos\omega_0 t
+\\
+& = (B^2+D^2) + (A^2+C^2-B^2-D^2)\cos^2\omega_0 t + 2(AC + BD)2\sin2\omega_0 t
+\\
+& = (B^2+D^2) + (A^2+C^2-B^2-D^2)\frac{1+\cos{2\omega_0 t}}{2} + 2(AC + BD)\half\sin2\omega_0 t
+\\
+& = \frac{2B^2+2D^2+A^2+C^2-B^2-D^2}{2} + (A^2+C^2-B^2-D^2)\frac{\cos{2\omega_0 t}}{2} + (AC + BD)\sin2\omega_0 t
+\\
+& = \frac{B^2+D^2+A^2+C^2}{2} + \frac{A^2+C^2-B^2-D^2}{2}\cos{2\omega_0 t} + (AC + BD)\sin2\omega_0 t
+\\
+& = \alpha + \beta\cos{2\omega_0 t} + \gamma\sin2\omega_0 t
+\\
+& = \alpha + \sqrt{\beta^2+\gamma^2}\lp\frac{\beta}{\sqrt{\beta^2+\gamma^2}}\cos{2\omega_0 t} + \frac{\gamma}{\sqrt{\beta^2+\gamma^2}}\sin2\omega_0 t\rp
+\\
+& = \alpha + \sqrt{\beta^2+\gamma^2}\lp\cos{\delta}\cos{2\omega_0 t} + \sin{\delta}\sin2\omega_0 t\rp
+\\
+& = \alpha + \sqrt{\beta^2+\gamma^2}\cos{\lp2\omega_0 t - \delta\rp}
+\end{align}
 !et
-
-and see that radius oscillates with frequency $2\omega_0$. The
-factor of two comes because the oscillation $x=A\cos\omega_0t$ has two
-maxima for $x^2$, one at $t=0$ and one a half period later.
-
-
-
-
 
 
 

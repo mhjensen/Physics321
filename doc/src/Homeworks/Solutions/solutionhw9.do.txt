@@ -1,709 +1,481 @@
 TITLE: PHY321: Classical Mechanics 1
-AUTHOR: Solution Homework 6, due Monday  February 24
+AUTHOR: Solution Homework 9, due Monday  April 5
 DATE: today
 
-===  Practicalities about  homeworks and projects ===
+=== Introduction to homework 9 ===
 
-o You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. _Remember to write your name(s)_!
-o Homeworks are available Wednesday/Thursday the week before the deadline. The deadline is at the Friday lecture.
-o How do I(we)  hand in?  You can hand in the paper and pencil exercises as a hand-written document. For this homework this applies to exercises 1-5. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise(s) (exercise 6 here) should always be handed in as a jupyter notebook by the deadline at D2L. 
+This week's exercises focus on solving
+two-body  problems with central forces. It is based on what you did in hw7 and hw8, see also their respective solutions.
 
-=== Introduction to homework 6 ===
+=== Exercise 1: Attractive Potential (10pt) ===
 
-This week's sets of classical pen and paper and computational
-exercises are again a continuation of the topics from the previous homework sets. We keep
-discussing conservation laws, conservative forces, energy, momentum and angular momentum. These conservation laws are central in Physics and understanding them properly lays the foundation for understanding and analyzing more complicated physics problems.
-The relevant reading background is
-o chapters 3 and 4 of Taylor (there are many good examples there) and
-o chapters 10-14 of Malthe-Sørenssen.
-In both textbooks there are many nice worked out examples. Malthe-Sørenssen's text contains also several coding examples you may find useful. For the first three exercises here 
-
-
-The numerical homework is based on what you did in homework 5, but includes now an added driving force. In your code this implies a simple extension. In exercise 4, you will need to set up the analytical solutions for this case as well. 
-
-
-=== Exercise 1 (6 pt), Conservative forces ===
-
-An additional requirement for a force to be conservative is that its _curl_ is equal to zero (see Taylor section 4.5), that is
+Consider a particle in an attractive potential
 !bt
 \[
-\bm{\nabla}\times \bm{F} =0.
-\]
-!et
-Find the curl of the following forces
-* 1a (2pt) $\bm{F}=k\bm{r}$ where $k$ is a constant and $\bm{r}=x\bm{i}+y\bm{j}+z\bm{k}$ where $\bm{i},\bm{j}$ and $\bm{k}$ are the unit vectors in the $x$, $y$ and $z$ directions respectively. Previously we used $\bm{e}_x$ etc for these unit vector. We will stick with the notation in Taylor.
-Here the _curl_ is just zero.
-* 1b (2pt) $\bm{F}=Ax\bm{i}+By^2\bm{j}+Cz^2\bm{k}$ where $A$, $B$ and $C$ are constants.
-Here the _curl_ is just zero.
-* 1c (2pt) $\bm{F}=Ay\bm{i}+Bx\bm{j}+Cz\bm{k}$ where $A$, $B$ and $C$ are constants.
-!bt
-\[
-\bm{\nabla}\times \bm{F} =(0,0,B-A).
+U(r)=-\alpha/r.
 \]
 !et
 
+The quantity $r$ is the absolute value of the relative position. We
+will use the reduced mass $\mu$ and the angular momentum $L$, as
+discussed during the lectures. With the transformation of a two-body
+problem to the center-of-mass frame, the actual equations look like an
+*effective* one-body problem. The energy of the system is $E$ and the
+minimum of the effective potential is $r_{\rm min}$.
 
-=== Exercise 2 (10 pt), More on conservative forces ===
-Which of the following force are conservative?  All three forces depend only on $\bm{r}$ and satisfy the first condition for being conservative.
-* 2a (2pt) $\bm{F}=k(x\bm{i}+2y\bm{j}+3z\bm{k})$ where $k$ is a constant.
-The _curl_ is zero and the force is conservative.  The potential energy is upon integration $V(x)=-k(1/2x^2+y^2+3/2z^2)$. Taking the derivative shows that this is indeed the case since it gives back the force.
-* 2b (2pt) $\bm{F}=y\bm{i}+x\bm{j}+0\bm{k}$. 
-This force is also conservative since it depends only on the coordinates and its curl is zero. To find the potential energy, since the integral is path independent, we can choose to integrate along any direction. The simplest is start from $x=0$ as origin and follow a path along the $x$-axis (which gives zero) and then parallel to the $y$-axis, which results in $V(x,y) = -xy$. Taking the derivative with respect to $x$ and $y$ gives us back the expression for the force.
 
-* 2c (2pt) $\bm{F}=k(-y\bm{i}+x\bm{j}+0\bm{k})$ where $k$ is a constant.
-Here the _curl_ is $(0,0,2)$ and the force is not conservative.
-
-* 2d (4pt) For those which are conservative, find the corresponding potential energy $V$ and verify that direct differentiation that $\bm{F}=-\bm{\nabla} V$.
-See the answers to each exercise above.
-
-=== Exercise 3 (10 pt), The Lennard-Jones potential ===
-
-"The Lennard-Jones potential":"https://en.wikipedia.org/wiki/Lennard-Jones_potential" is often used to describe
-the interaction between two atoms or ions or molecules. If you end up doing materals science and molecular dynamics calculations, it is very likely that you will encounter this potential model.
-The expression for the potential energy is
+The analytical solution to the radial equation of motion is
 !bt
 \[
-V(r) = V_0\left((\frac{a}{r})^{12}-(\frac{b}{r})^{6}\right),
-\]
-!et
-where $V_0$, $a$ and $b$ are constants and the potential depends only on the relative distance between two objects
-$i$ and $j$, that is $r=\vert\vert\bm{r}_i-\bm{r}_j\vert\vert=\sqrt{(x_i-x_j)^2+(y_i-y_j)^2+(z_i-z_j)^2}$.
-
-* 3a (3pt) Sketch/plot the potential (choose some values for the constants in doing so).
-The following Python code plots the potential
-!bc pycod
-# Common imports
-import numpy as np
-from math import *
-import matplotlib.pyplot as plt
-
-Deltar = 0.01
-#set up arrays
-rinitial = 1.8
-rfinal = 3.
-n = ceil((rfinal-rinitial)/Deltar)
-r = np.zeros(n)
-for i in range(n):
-    r[i] = rinitial+i*Deltar
-V = np.zeros(n)
-# Initial conditions as compact 2-dimensional arrays
-a = 2.0
-b = 2.0
-V0 = 10.0
-V = V0*((a/r)**(12)-(b/r)**6)
-# Plot position as function of time    
-fig, ax = plt.subplots()
-#ax.set_xlim(0, tfinal)
-ax.set_ylabel('r')
-ax.set_xlabel('V')
-ax.plot(r, V)
-fig.tight_layout()
-plt.show()
-!ec
-
-* 3b (3pt) Find and classify the equilibrium points.
-Here there is  only one equilibrium point when we take the derivative of the potential with respect to the relative distance.
-
-The derivative with respect to $r$, the relative distance, is
-!bt
-\[
-\frac{dV}{dr} = -6V_0\left(2\frac{a^{12}}{r^{13}}-\frac{b^6}{r^7}\right),
-\]
-!et
-and this is zero when
-!bt
-\[
-r = 2^{1/6}\frac{a^2}{b}.
+r(\phi) = \frac{1}{\frac{\mu\alpha}{L^2}+A\cos{(\phi)}}.
 \]
 !et
 
-If we choose $a=2$ and $b=2$ then $r=2\times 2^{1/6}$. Since the second derivative is positive for all $r$ for our choices of $a$ and $b$  (convince yourself about  this), then this value of $r$ has to correspond to a minimum of the potential. This agrees with our graph from the figure above (run the code to produce the figure). 
+Find the value of $A$. Hint: Use the fact that at $r_{\rm min}$
+there is no radial kinetic energy and $E=-\alpha/r_{\rm min}+L^2/2mr_{\rm min}^2$.
 
-* 3c (4pt) What is the force acting on one of the objects (an atom for example) from the other object? Is this a conservative force?
-
-From the previous exercise we have
-!bt
-\[
-\frac{dV}{dr} = -6V_0\left(2\frac{a^{12}}{r^{13}}-\frac{b^6}{r^7}\right).
-\]
-!et
-
-We need the gradient and since the force on particle $i$ is given by $\bm{F}_i=\bm{\nabla}_i V(\bm{r}_i-\bm{r}_j)$, we obtain
-!bt
-\[
-\bm{F}_i=6V_0\left(2(\frac{a}{\vert\vert\bm{r}_i-\bm{r}_j\vert\vert})^{12}-(\frac{b}{\vert\vert\bm{r}_i-\bm{r}_j\vert\vert})^6\right)\frac{\bm{r}_i-\bm{r}_j}{\vert\vert\bm{r}_i-\bm{r}_j\vert\vert^2}.
-\]
-!et
-Here $r = \vert\vert \bm{r}_i-\bm{r}_j\vert \vert$.
-If we have more than two particles, we need to sum over all other particles $j$. We have thus to introduce a sum over all particles $N$. 
-The force on particle $i$ at position $\bm{r}_i$ from all particles  $j$ at their positions $\bm{r}_j$ results in the equation of motion (note that we have divided by the mass $m$ here)
-!bt
-\[
-\bm{a}_i=\frac{d^2\bm{r}_i}{dt^2} = \frac{6V_0}{m} \sum_{j \neq i}^{N}\left(2(\frac{a}{\vert\vert\bm{r}_i-\bm{r}_j\vert\vert})^{12}-(\frac{b}{\vert\vert\bm{r}_i-\bm{r}_j\vert\vert})^6\right)\frac{\bm{r}_i-\bm{r}_j}{\vert\vert\bm{r}_i-\bm{r}_j\vert\vert^2}.
-\]
-!et
-
-This is also a conservative force, with zero _curl_ as well. 
-
-=== Exercise 4 (20 pt), particle in a new potential ===
-
-Relevant reading here is Taylor chapter 5 and the lecture notes on oscilaltions. In particular, you will find useful  sections 5.1, 5.2, 5.4-5.6. They contain all material needed to solve this exercise.
-
-Consider a particle of mass $m$ moving in a one-dimensional potential,
-!bt
-\[
-V(x)=-\alpha\frac{x^2}{2}+\beta\frac{x^4}{4}.
-\]
-!et
-
-* 4a (3pt) Plot the potential and discuss eventual equilibrium points. Is this a conservative force?
-The following Python code gives a plot of potential
-!bc pycod
-# Common imports
-import numpy as np
-from math import *
-import matplotlib.pyplot as plt
-
-Deltax = 0.01
-#set up arrays
-xinitial = -2.0
-xfinal = 2.0 
-n = ceil((xfinal-xinitial)/Deltax)
-x = np.zeros(n)
-for i in range(n):
-    x[i] = xinitial+i*Deltax
-V = np.zeros(n)
-# Initial conditions as compact 2-dimensional arrays
-alpha = 0.81
-beta = 0.5
-print(sqrt(alpha/beta))
-V = -alpha*x*x*0.5 + beta*(x**4)*0.25
-# Plot position as function of time    
-fig, ax = plt.subplots()
-#ax.set_xlim(0, tfinal)
-ax.set_ylabel('x[m]')
-ax.set_xlabel('V[s]')
-ax.plot(x, V)
-fig.tight_layout()
-plt.show()
-!ec
-Here we have chosen $\alpha=0.81$ and $\beta=0.5$. Taking the derivative of $V$ with respect to $x$ gives two minima (and it is easy to see here that the second derivative is positive) at $x\pm\sqrt{\alpha/\beta}$ and a maximum at $x=0$. The derivative is
-!bt
-\[
-\frac{dV}{dx} = -\alpha x + \beta x^3,
-\]
-!et
-which gives when we require that it should equal zero the above values. As we can see from the plot (run the above Python code), we have two so-called stable equilibrium points (where the potential has its minima) and an unstable equilibrium point.
-
-The force is conservative since it depends only on $x$ and has a _curl_ which is zero.
-
-* 4b (3pt) Compute the second derivative of the potential and find its miminum position(s). Using the Taylor expansion of the potential around its minimum (see Taylor section 5.1) to define a spring constant $k$. Use the spring constant to find the natural (angular) frequency $\omega_0=\sqrt{k/m}$. We call the new spring constant for  an effective spring constant.
-
-In the solution to the previous exercise we listed the values where the derivatives of the potential are zero.
-Taking the second derivatives we have that
+At  𝑟min  and  𝑟max , all the kinetic energy is stored in the velocity in the direction perpendicular to  𝑟  since  𝑟˙=0 . We can calculate using angular momentum and from there, find  𝐴  in terms of the energy  𝐸  which is constant. But first, we need to find  𝑟min  from the conservation of energy:
 
 !bt
 \[
-\frac{d^2V}{dx^2} = -\alpha  + 3\beta x^2,
+E = U(r) + \half \mu(v_{\perp}^2 + v_{\parallel})
+\\
+E = \frac{-\alpha}{r_{\min}} + \half \mu\lp\frac{L}{\mu r_{\min}}\rp^2
+\\
+E r_{\min}^2 - \half\mu\lp\frac{L}{\mu}\rp^2 + \alpha r_{\min} = 0
+\\
+r_{\min}^2 + \frac{\alpha}{E} r_{\min} - \frac{L^2}{2E\mu} = 0
+\\
+r_{\min} = - \frac{\alpha}{2E} \pm \half \sqrt{\frac{\alpha^2}{E^2} + 2\frac{L^2}{E\mu}}
 \]
 !et
-and for $\alpha,\beta \le 0$ (we assume they are positive constants) we see that when $x=0$ that the 
-the second derivative is negative, which means this is a maximum. For $x=\pm\sqrt{\alpha/\beta}$ we see that the second derivative is positive. Thus these points correspond to two minima.
 
-Assume now we Taylor expand the potential around one of these minima, say $x_{\mathrm{min}}=\sqrt{\alpha/\beta}$. We have thus
+
+Since we're looking for the minimum, the  ±  sign must be negative (then  𝑟min  will not be negative since  𝐸<0 ). Therefore, we have
+
 !bt
 \[
-V(x) = V(x_{\mathrm{min}})+(x-x_{\mathrm{min}})\frac{dV}{dx}\vert_{x_{\mathrm{min}}}+\frac{1}{2}(x-x_{\mathrm{min}})^2\frac{d^2V}{dx^2}\vert_{x_{\mathrm{min}}}+\dots
+frac{1}{\frac{\mu\alpha}{L^2}+A} = -\frac{\alpha}{2E} - \half \sqrt{\frac{\alpha^2}{E^2} + 2\frac{L^2}{E\mu}}
+\\
+A = - \frac{\mu\alpha}{L^2} - \frac{2E}{\alpha + \sqrt{\alpha^2 + 2\frac{L^2E}{\mu}}}
 \]
 !et
 
-Since we are at point where the first derivative is zero and inserting the value for the second derivative of $V$, keeping only terms up to the second derivative and finally taking the derivative with respect to $x$, we find the expression for the force
+=== Exercise 2 (20pt) Inverse-square force ===
+
+Consider again the same effective potential as in exercise 1. This leads to an attractive inverse-square-law force, $F=-\alpha/r^2$. Consider a particle of mass $m$ with angular momentum $L$. Taylor sections 8.4-8.7 are relevant background material.  See also the harmonic oscillator potential from hw8. The equation of motion for the radial degrees of freedom is (see also hw8) in the center-of-mass frame in two dimensions with $x=r\cos{(\phi)}$ and $y=r\sin{(\phi)}$ and
+$r\in [0,\infty)$, $\phi\in [0,2\pi]$ and $r=\sqrt{x^2+y^2}$ are given by
 !bt
 \[
-F(x) = -(x-x_{\mathrm{min}})\frac{d^2V}{dx^2}\vert_{x_{\mathrm{min}}},
+\ddot{r}=-\frac{1}{m}\frac{dV(r)}{dr}+r\dot{\phi}^2,
 \]
 !et
-and setting in the expression for the second derivative at the minimum we find 
+and
 !bt
 \[
-F(x) = -2\alpha(x-\sqrt{\frac{\alpha}{\beta}}).
+\dot{\phi}=\frac{L}{m r^2}.
 \]
 !et
-Thus our effective spring constant $k=2\alpha$.
+Here $V(r)$ is any central force which depends only on the relative coordinate.
 
-* 4c (4pt) We ignore the second term in the potential energy and keep only the term proportional to the effective spring constant, that is a force $F\propto kx$. Find the acceleration and set up the differential equation.  Find the general analytical solution for these harmonic oscillations.  You don't need to find the constants in the general solution.
 
-Here we simplify our force by rescaling our zeroth point so that we have a force (setting $x_{\mathrm{min}}=0$)
+* 2a (5pt)  Find the radius of a circular orbit by solving for the position of the minimum of the effective potential. 
+
+\begal
+\over{m}\ddr{V(r)} & = r\dot{\phi}^2
+\\ \over{m}\lp-\frac{-\alpha}{r^2}\rp & = r \frac{L^2}{m^2r^4}
+\\ \frac{\alpha}{mr^2} & = \frac{L^2}{m^2r^3}
+\\ r & = \frac{L^2}{m\alpha}
+\endal
+
+
+* 2b (5pt) At the minimum, the radial velocity is zero and it is only the "centripetal velocity":"https://en.wikipedia.org/wiki/Centripetal_force" which is nonzero. This implies that $\ddot{r}=0$.  What is the angular frequency, $\dot{\theta}$, of the orbit? Solve this by setting $\ddot{r}=0=F/m+\dot{\theta}^2r$.
+
+$$
+\begal
+\dot{\theta}^2 r & = - \frac{F}{m}
+\\ \dot{\theta}^2 r & = - \frac{-\frac{\alpha}{r^2}}{m}
+\\ \dot{\theta}^2 & = \frac{\alpha}{mr^3}
+\\ \dot{\theta} & = \pm \sqrt{\frac{\alpha}{mr^3}}
+\\ \dot{\theta} & = \pm \sqrt{\frac{\alpha}{m\frac{L^6}{m^3\alpha^3}}}
+\\ \dot{\theta} & = \pm \sqrt{\frac{\alpha^4m^2}{L^6}}
+\\ \dot{\theta} & = \pm \frac{\alpha^2m}{L^3}
+\endal
+$$
+
+* 2c (5pt) Find the effective spring constant for the particle at the minimum.
+
+We have shown in class that from the taylor expansion, we have
+
+$$
+k = \ddrtwo{V_{\text{eff}}}
+$$
+
+Therefore, all we have to do is find the second derivative of $V_{\text{eff}}$ around the minimum point of $V_{\text{eff}}$ where $\dot{r} = \ddot{r} = 0$.
+
+$$
+\begal
+k & = \ddrtwo{V_{\text{eff}}}
+\\ & = \ddrtwo{\lp-\frac{\alpha}{r} + \half \frac{L^2}{mr^2}\rp}
+\\ & = -\frac{2\alpha}{r^3} + \frac{3L^2}{mr^4}
+\\ & = -\frac{2\alpha}{\frac{L^6}{m^3\alpha^3}} + \frac{3L^2}{m\frac{L^8}{m^4\alpha^4}}
+\\ & = -\frac{2m^3\alpha^4}{L^6} + \frac{3m^3\alpha^4}{L^6}
+\\ & = \frac{m^3\alpha^4}{L^6}
+\endal
+
+
+* 2d (5pt) What is the angular frequency for small vibrations about the minimum? How does this compare with the answer to (3b)?
+
+For small deviations $\delta r$ of $r$,
+
+$$
+m\ddttwo{\lp \delta r \rp} = -k \delta r
+$$
+
+The solution of this differential equation is of the form
+
+$$
+\delta r = A \cos(\omega t + \phi)
+$$
+
+where 
+
+$$
+\begal
+\omega = & \sqrt{\frac{k}{m}}
+\\ & = \sqrt{\frac{m^2\alpha^4}{L^6}} 
+\\ & = \frac{m\alpha^2}{L^3}
+\endal
+$$
+
+This is in fact equal to the expression for $\dot{\theta}$. This means that small perturbations oscillate in sync with the orbit and this traces out an ellipse with a very small eccentricity, a very nice physical result.
+
+
+=== Exercise 3, Inverse-square force again (10pt) ===
+Consider again a  particle of mass $m$ in the same attractive potential, $U(r)=-\alpha/r$, with angular momentum $L$ with just the right energy so that
+
 !bt
 \[
-F(x) = -kx,
+A=m\alpha/L^2
 \]
 !et
-with $k=2\alpha$. Defining a natural frequency $\omega_0 = \sqrt{k/m}$, where $m$ is the mass of our particle, we have the following equation of motion
+where $A$ comes from the expression
 !bt
 \[
-\frac{d^2x}{dt^2}=-\omega_0^2x,
+r=\frac{1}{(m\alpha/L^2)+A\cos{(\phi)}}.
 \]
 !et
-which has as analytical solution $x(t)=A\cos{(\omega_0t)}+B\sin{(\omega_0t)}$ and velocity
-$x(t)=-\omega_0A\sin{(\omega_0t)}+\omega_0B\cos{(\omega_0t)}$. The initial conditions are used to define $A$ and $B$.
-
-
-
-
-
-
-* 4d (5pt) Assume we have no friction. If you add a small force $F=F_0\cos{(\omega t-\delta)}$, and if the particle is initially at the minimum with zero initial velocity, find its position as a function of time. Note that here you need to add the particular solution. 
-
-Let us simplify the force by setting the phase shift $\delta=0$. The equation of motion is then
+The trajectory can then be rewritten as
 !bt
 \[
-\frac{d^2x}{dt^2}+\omega_0^2x=\frac{F_0}{m}\cos{(\omega t)}.
+r=\frac{2r_0}{1+\cos\theta},~~~r_0=\frac{L^2}{2m\alpha}.
 \]
 !et
 
-The particular solution is then
-!bt
-\[
-x_p(t)=D\cos{(\omega t)}=\frac{F_0}{m}\frac{1}{\omega_0^2-\omega^2}\cos{(\omega t)},
-\]
-!et
-resulting in
-!bt
-\[
-x(t)=A\cos{(\omega_0t)}+B\sin{(\omega_0t)}+\frac{F_0}{m}\frac{1}{\omega_0^2-\omega^2}\cos{(\omega t)},
-\]
-!et
-and 
-!bt
-\[
-v(t)=-\omega_0A\sin{(\omega_0t)}+\omega_0B\cos{(\omega_0t)}-\frac{F_0}{m}\frac{\omega}{\omega_0^2-\omega^2}\sin{(\omega t)}.
-\]
-!et
-Again, the constants $A$ and $B$ are determined by the initial conditions. 
 
-If we choose $x(t_0)=x_0$ and $v(t_0)=v_0$ we have
+* 3a (5pt) Show that for this case the total energy $E$ approaches zero.
+
+$$
+\begal
+E & = - \frac{\alpha}{r} + \half m \lp (\dot{\theta}r)^2+\dot{r}^2\rp
+\\ & = - \frac{\alpha}{r} + \half m \lb \lp\frac{L}{mr^2}r\rp^2+\lp\frac{dr}{d\theta}\dot{\theta}\rp^2\rb
+\\ & = - \frac{\alpha}{2r_0}(1+\cos\theta) + \half m \lb \lp\frac{L(1+\cos\theta)}{2mr_0}\rp^2+\lp2r_0\frac{-1}{(1+\cos\theta)^2}(-\sin\theta)\frac{L}{mr^2}\rp^2\rb
+\\ & = - \frac{\alpha}{2r_0}(1+\cos\theta) + \half m \lb \lp\frac{L(1+\cos\theta)}{2mr_0}\rp^2+\lp2r_0\frac{-1}{(1+\cos\theta)^2}(-\sin\theta)\frac{L(1+\cos\theta)^2}{4mr_0^2}\rp^2\rb
+\\ & = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
+\half m \lb \lp\frac{L(1+\cos\theta)}{2mr_0}\rp^2+\lp\sin\theta\frac{L}{2mr_0}\rp^2\rb
+\\ & = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
+\half m \lb \lp\frac{L(1+\cos\theta)}{2mr_0}\rp^2+\lp\sin\theta\frac{L}{2mr_0}\rp^2\rb
+\\ & = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
+\half m \frac{L^2}{4m^2r_0^2} \lb \lp1+\cos\theta\rp^2+\lp\sin\theta\rp^2\rb
+\\ & = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
+\half \frac{L^2}{4mr_0^2} \lp 1 + \cos^2\theta + 2\cos \theta + \sin^2\theta\rp
+\\ & = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
+\half \frac{L^2}{4mr_0^2} \lp 2 + 2\cos \theta \rp
+\\ & = (1+\cos\theta) \lp- \frac{\alpha}{2r_0} + \frac{L^2}{4mr_0^2}\rp
+\\ & = (1+\cos\theta) \lp- \frac{\alpha}{2\frac{L^2}{2m\alpha}} + \frac{L^2}{4m\frac{L^4}{4m^2\alpha^2}}\rp
+\\ & = (1+\cos\theta) \lp- \frac{m\alpha^2}{L^2} + \frac{m\alpha^2}{L^2}\rp
+\\ & = 0
+\endal
+$$
+
+* 3b (5pt) With zero energy $E=0$, write this trajectory in a more recognizable parabolic form, that is express $x_0$ and $R$ in terms of $r_0$ using 
 !bt
 \[
-x_0=A+\frac{F_0}{m}\frac{1}{\omega_0^2-\omega^2},
+x=x_0-\frac{y^2}{R}.
 \]
 !et
-resulting in
-!bt
-\[
-A=x_0-\frac{F_0}{m}\frac{1}{\omega_0^2-\omega^2},
-\]
-!et
+
+Knowing that 
+
+$$
+\begal
+x & = r \cos\theta
+\\
+y & = r \sin \theta
+\endal
+$$
+
+we have
+
+$$
+\begal
+y & = r \sin\theta
+\\
+& = \frac{2r_0}{1+\cos\theta}\sin\theta
+\\
+& = \frac{2r_0}{1-\cos^2\theta}\sin\theta(1-\cos\theta)
+\\
+& = \frac{2r_0(1-\cos\theta)}{\sin\theta}
+\endal
+$$
 
 and 
+
+$$
+\begal
+x & = r \sin\theta
+\\
+& = \frac{2r_0}{1+\cos\theta}\cos\theta
+\\
+& = \frac{2r_0}{1-\cos^2\theta}\cos\theta(1-\cos\theta)
+\\
+& = \frac{2r_0(\cos\theta-\cos^2\theta)}{\sin^2 \theta}
+\endal
+$$
+
+Here, we notice that the denominator of $x$ is the square of the denominator of $y$. We also see that.
+
+$$
+y^2 = \frac{4r_0^2(1-2\cos\theta+\cos^2\theta)}{\sin^2\theta}
+$$
+
+now, let's try to add them such that the $\cos\theta$ cancel out.
+
+$$
+\begal
+x + \frac{y^2}{4r_0} & = \frac{2r_0(\cos\theta-\cos^2\theta)}{\sin^2 \theta} + \frac{4r_0^2(1-2\cos\theta+\cos^2\theta)}{\sin^2\theta}\over{4r_0}
+\\ & = \frac{r_0}{\sin^2\theta}\lp 2\cos\theta-2\cos^2\theta + 1 - 2\cos\theta + \cos^2\theta\rp
+\\ & = \frac{r_0}{\sin^2\theta}\lp -2\cos^2\theta + 1 + \cos^2\theta\rp
+\\ & = \frac{r_0}{\sin^2\theta}\lp 1 - \cos^2\theta\rp
+\\ & = \frac{r_0}{\sin^2\theta}\lp \sin^2\theta\rp
+\\ & = r_0
+\endal
+$$
+
+Therefore, we have
+
+$$
+x = r_0 - \frac{y^2}{4r_0}
+$$
+
+
+=== Exercise 4, parabolic and hyperbolic orbits (10pt) ===
+
+The solution to the radial function for an inverse-square-law force, see for example Taylor equation (8.59) or the equation above, is
 !bt
 \[
-B=v_0.
+r(\phi) = \frac{c}{1+\epsilon\cos{(\phi)}}.
 \]
 !et
 
-For numerical work it is useful to scale our equations by introducing a dimensionless time $\tau = \omega_0 t$.
-Our equation of motion becomes then
-!bt
+For $\epsilon=1$ (or the energy $E=0$) the orbit reduces to a parabola as we saw in the previous exercise,
+while for $\epsilon > 1$ (or energy positive) the orbit becomes a hyperbola. The equation for a hyperbola in Cartesian coordinates is
+!bt 
 \[
-\frac{d^2x}{d\tau^2}+x=\frac{F_0}{m\omega_0^2}\cos{(\tilde{\omega} \tau)},
+\frac{(x-\delta)^2}{\alpha^2}-\frac{y^2}{\beta^2}=1.
 \]
 !et
-where we have defined $\tilde{\omega}=\omega/\omega_0$.
-Our general solution is then, introducing $\tilde{F}_0=F_0/(m\omega_0^2)$,
-!bt
-\[
-x(\tau)=A\cos{(\tau)}+B\sin{(\tau)}+\frac{\tilde{F}_0}{1-\tilde{\omega}^2}\cos{(\tilde{\omega}\tau)}.
-\]
-!et
+For a hyperbola, identify the constants $\alpha$, $\beta$ and $\delta$ in terms of the constants $c$ and $\epsilon$ for $r(\phi)$. 
 
 
-* 4e (5pt) We add now  a small drag force $-bv$ to the previous exercise (4d). Find the forces acting on the particle and the acceleration. Find also the analytical solutions with the same initial conditions as in the previous exercise.
+$$
+\begal
+x & = r\cos\phi
+\\ & = \frac{c\cos\phi}{1+\epsilon\cos\phi}
+\endal
+$$
 
-The equation of motion reads now
-!bt
-\[
-\frac{d^2x}{dt^2}+\frac{b}{m}\frac{dx}{dt}+\omega_0^2x=\frac{F_0}{m}\cos{(\omega t)}.
-\]
-!et
+$$
+\begal
+y & = r\sin\phi 
+\\ & = \frac{c\sin\phi}{1+\epsilon\cos\phi}
+\endal
+$$
 
-We scale now the equations as we did in the previous exercise and have (see Taylor chapter 5) with the definition
-$\gamma = b/(2m\omega_0)$ 
+Therefore, 
 
-!bt
-\[
-\frac{d^2x}{d\tau^2}+2\gamma\frac{dx}{d\tau}+x=\frac{F_0}{m\omega_0^2}\cos{(\tilde{\omega} \tau)}.
-\]
-!et
+$$
+\begal
+\frac{(x-\delta)^2}{\alpha^2} - \frac{y^2}{\beta^2} 
+& = \frac{(\frac{c\cos\phi-\delta(1+\epsilon\cos\phi)}{1+\epsilon\cos\phi})^2}{\alpha^2} - \frac{(\frac{c\sin\phi}{1+\epsilon\cos\phi})^2}{\beta^2}
+\\ & = \frac{\beta^2 c^2\cos^2\phi + \beta^2\delta^2 + \beta^2\delta^2 \epsilon^2 \cos^2 \phi - 2\beta^2\delta c \cos\phi - 2 \beta^2\delta c \epsilon \cos^2 \phi + 2\beta^2\delta^2 \epsilon \cos \phi - \alpha^2 c^2 \sin^2 \phi}{\alpha^2\beta^2(1 + 2\epsilon\cos\phi + \epsilon^2\cos^2\phi)}
+\\ & = \frac{
+\beta^2\cos^2\phi (c^2 + \delta^2 \epsilon^2 - 2 \delta c \epsilon) - \alpha^2 c^2 \sin^2 \phi + \beta^2\delta^2 + 2\beta^2\delta \cos\phi (-c + \delta \epsilon)
+}{\alpha^2\beta^2(1 + 2\epsilon\cos\phi + \epsilon^2\cos^2\phi)}
+\\ & = \frac{
+(\beta^2\delta^2 - \alpha^2 c^2)
+ + 2\beta^2\delta \cos\phi (\delta \epsilon-c)
+ + \cos^2\phi (\beta^2c^2 + \beta^2\delta^2 \epsilon^2 - 2\beta^2 \delta c \epsilon + \alpha^2 c^2)
+}{\alpha^2\beta^2(1 + 2\epsilon\cos\phi + \epsilon^2\cos^2\phi)}
+\\ & = 1
+\endal
+$$
 
-The analytical solution is then
+We can seperate this into several equations:
 
-!bt
-\[
-x(\tau)=A\cos{(\tau)}+B\sin{(\tau)}+\frac{\tilde{F}_0}{\sqrt{(1-\tilde{\omega}^2)^2+4\gamma^2\tilde{\omega}^2}}\cos{(\tilde{\omega}\tau-\delta)},
-\]
-!et
-with (see "Lecture notes":"https://mhjensen.github.io/Physics321/doc/pub/harmonic/html/harmonic.html", equations 17-25)
-!bt
-\[
-\delta = \tan^{-1}{(\frac{2\gamma\tilde{\omega}}{1-\tilde{\omega}^2})}.
-\]
-!et
+$$
+\frac{\beta^2\delta^2 - \alpha^2 c^2}{\alpha^2\beta^2} = 1
+\\ \frac{2\beta^2\delta \cos\phi (\delta \epsilon-c)}{\alpha^2\beta^2} = 2\epsilon\cos\phi
+\\ \frac{\cos^2\phi (\beta^2c^2 + \beta^2\delta^2 \epsilon^2 - 2\beta^2 \delta c \epsilon + \alpha^2 c^2)}{\alpha^2\beta^2} = \epsilon^2\cos^2\phi
+$$
 
-We can use either this analytical solutions or the one from 4d in the numerical part.
+These can further be simplified:
+
+$$
+\frac{\delta^2}{\alpha^2} - \frac{c^2}{\beta^2} = 1
+\\
+\frac{\delta^2\epsilon}{\alpha^2} - \frac{\delta c}{\beta^2} = \epsilon
+\\
+\frac{c^2}{\alpha^2} + \frac{\delta^2\epsilon^2}{\alpha^2} - 2\frac{\delta c \epsilon}{\alpha^2} + \frac{c^2}{\beta^2}
+= \epsilon^2
+$$
+
+Now, all we have to do is solve these three equations for the three unknowns $\alpha$, $\beta$, and $\gamma$:
+
+From the first equation, we have
+$$
+\frac{1}{\beta^2} = \frac{\delta^2}{c^2\alpha^2} - \over{c^2}
+$$
+
+Therefore,
+
+$$
+\frac{\delta^2\epsilon}{\alpha^2} - \lp \frac{\delta^2}{c^2\alpha^2} - \over{c^2} \rp\delta c = 
+\frac{\delta^2\epsilon}{\alpha^2} - \frac{\delta^3}{c\alpha^2} + \frac{\delta}{c}
+= \epsilon
+\\
+\frac{c^2}{\alpha^2} + \frac{\delta^2\epsilon^2}{\alpha^2} - 2\frac{\delta c \epsilon}{\alpha^2} + c^2\lp \frac{\delta^2}{c^2\alpha^2} - \over{c^2} \rp =
+\frac{c^2}{\alpha^2} + \frac{\delta^2\epsilon^2}{\alpha^2} - 2\frac{\delta c \epsilon}{\alpha^2}
++ \frac{\delta^2}{\alpha^2} - 1
+= \epsilon^2
+$$
+
+From here, we have
+
+$$
+\over{\alpha^2} = \frac{\epsilon-\frac{\delta}{c}}{\delta^2\epsilon - \frac{\delta^3}{c}} = \over{\delta^2}\frac{\epsilon-\frac{\delta}{c}}{\epsilon-\frac{\delta}{c}}
+$$
+
+This means we have two possibilities: either $\delta^2 = \alpha^2$ or $\delta = c$. Since the first option would mean $\beta \rightarrow \pm \infty$, the second option must be true. Hence,
+
+$$
+\frac{c^2}{\alpha^2} + \frac{c^2\epsilon^2}{\alpha^2} - 2\frac{c^2 \epsilon}{\alpha^2}
++ \frac{c^2}{\alpha^2} - 1
+= \epsilon^2
+\\
+\frac{c^2}{\alpha^2} (1 + \epsilon^2 - 2 \epsilon) = 1 + \epsilon^2
+\\ \frac{c^2}{\alpha^2} = \frac{1 + \epsilon^2}{(1-\epsilon)^2}
+\\ \alpha = \pm c \sqrt{\frac{(1-\epsilon)^2}{1 + \epsilon^2}}
+$$
+
+And we have
+
+$$
+\begal
+\beta & = \pm \sqrt{\over{\frac{\delta^2}{c^2\alpha^2} - \over{c^2}}}
+\\ & = \pm \sqrt{\over{\frac{1 + \epsilon^2}{(1-\epsilon)^2} - \over{c^2}}}
+\\ & = \pm c \sqrt{\over{\frac{1 + \epsilon^2}{1-2\epsilon+\epsilon^2} - \frac{1-2\epsilon+\epsilon^2}{1-2\epsilon+\epsilon^2}}}
+\\ & = \pm c \sqrt{\frac{(1-\epsilon)^2}{2\epsilon}}
+\endal
+$$
+
+Therefore, we have found that
+
+$$
+\delta = c
+\\
+\alpha = \pm c \sqrt{\frac{(1-\epsilon)^2}{1 + \epsilon^2}}
+\\
+\beta = \pm c \sqrt{\frac{(1-\epsilon)^2}{2\epsilon}}
+$$
 
 
-===  Exercise 5 (40pt), Sliding Block with driving force  ===
+===  Exercise 5, Testing orbit types (50 pt) ===
 
+In this exercise we can use the program for $r(\phi)$ we developed in hw8. We will use an inverse-square-law force as in exercises 1, 2, 3 and 4. The aim is to see that the orbits we get for $E<0$ become ellipses (or circles), parabola for $E=0$ and hyperbola for $E>0$.  An example code is shown here.
 
-_This exercise should be handed in as a jupyter-notebook_ at D2L. Remember to write your name(s). 
+Here we have defined the constants $L=m=\alpha=1$. Feel free to set new values. _You need also to set the initial conditions_ in order to study the different types of orbits. It may be useful to plot the potential here and find the values for the initial conditions that fit $E<0$, $E=0$ and $E>0$. 
 
-Last week we developed a code for the sliding block including a friction term. This week we will simply reuse this code and add a force to it. The only thing we need to do is simply to add an expression for the force we want to study.
-
-_We will use the Euler-Cromer method only here_.
-
-* 5a (20pt) Add the force from exercise 4d to your code from last week. If you have not done the bonus exercise from hw5, add also the friction term $-bv$ from the previous exercise. Scale your equations and study the solution as function of different values of $F_0$, $b$, $k$ and $\omega$ and $\omega_0$. Keep the initial conditions as in exercise 4d. Discuss your results. Is energy conserved? If not, why? 
-
-* 5b (20 pt)  Compare your numerical results with the analytical ones from exercise 4. You can focus on either the results from 4d or 4e or both.  Discuss your results. 
-
-
-
-The scaling of the equations was done in the previous exercise and we need to solve the following equation numerically
-
-!bt
-\[
-\frac{d^2x}{d\tau^2}+2\gamma\frac{dx}{d\tau}+x=\frac{F_0}{m\omega_0^2}\cos{(\tilde{\omega} \tau)},
-\]
-!et
-which we rewrite as
-!bt
-\[
-\frac{d^2x}{d\tau^2}+2\gamma\frac{dx}{d\tau}+x=\tilde{F}_0\cos{(\tilde{\omega} \tau)}.
-\]
-!et
-
-!bc pycod
+!bc pycode
 # Common imports
 import numpy as np
 import pandas as pd
 from math import *
 import matplotlib.pyplot as plt
-import os
-
-# Where to save the figures and data files
-PROJECT_ROOT_DIR = "Results"
-FIGURE_ID = "Results/FigureFiles"
-DATA_ID = "DataFiles/"
-
-if not os.path.exists(PROJECT_ROOT_DIR):
-    os.mkdir(PROJECT_ROOT_DIR)
-
-if not os.path.exists(FIGURE_ID):
-    os.makedirs(FIGURE_ID)
-
-if not os.path.exists(DATA_ID):
-    os.makedirs(DATA_ID)
-
-def image_path(fig_id):
-    return os.path.join(FIGURE_ID, fig_id)
-
-def data_path(dat_id):
-    return os.path.join(DATA_ID, dat_id)
-
-def save_fig(fig_id):
-    plt.savefig(image_path(fig_id) + ".png", format='png')
-
-
-from pylab import plt, mpl
-plt.style.use('seaborn')
-mpl.rcParams['font.family'] = 'serif'
-
-
-#  We define here a function for the forces acting on the object and
-#  functions to solve the ordinary differential equations. Here we use either
-#  the Euler-Cromer method or the Runge-Kutta to fourth order.
-
-def SpringForce(v,x,t):
-#   note here that we have divided by mass and we return the acceleration
-    return  -2*gamma*v-x+Ftilde*cos(t*Omegatilde)
-
-def ForwardEulerCromer(v,x,E,t,n,Force):
-    for i in range(n-1):
-        a = Force(v[i],x[i],t[i])
-        v[i+1] = v[i] + DeltaT*a
-        x[i+1] = x[i] + DeltaT*v[i+1]
-        t[i+1] = t[i] + DeltaT
-	# Scaled energy
-        E[i+1] = 0.5*x[i+1]*x[i+1]+0.5*v[i+1]*v[i+1]
-def RK4(v,x,E,t,n,Force):
-    for i in range(n-1):
-# Setting up k1
-        k1x = DeltaT*v[i]
-        k1v = DeltaT*Force(v[i],x[i],t[i])
-# Setting up k2
-        vv = v[i]+k1v*0.5
-        xx = x[i]+k1x*0.5
-        k2x = DeltaT*vv
-        k2v = DeltaT*Force(vv,xx,t[i]+DeltaT*0.5)
-# Setting up k3
-        vv = v[i]+k2v*0.5
-        xx = x[i]+k2x*0.5
-        k3x = DeltaT*vv
-        k3v = DeltaT*Force(vv,xx,t[i]+DeltaT*0.5)
-# Setting up k4
-        vv = v[i]+k3v
-        xx = x[i]+k3x
-        k4x = DeltaT*vv
-        k4v = DeltaT*Force(vv,xx,t[i]+DeltaT)
-# Final result
-        x[i+1] = x[i]+(k1x+2*k2x+2*k3x+k4x)/6.
-        v[i+1] = v[i]+(k1v+2*k2v+2*k3v+k4v)/6.
-        t[i+1] = t[i] + DeltaT
-	# Scaled energy
-        E[i+1] = 0.5*x[i+1]*x[i+1]+0.5*v[i+1]*v[i+1]
-
-DeltaT = 0.001
+# Simple Gravitational Force   -alpha/r
+    
+DeltaT = 0.01
 #set up arrays 
-tfinal = 20 
+tfinal = 100.0
 n = ceil(tfinal/DeltaT)
-# set up arrays for t, v, and x
+# set up arrays for t, v and r
 t = np.zeros(n)
 v = np.zeros(n)
-x = np.zeros(n)
-E  = np.zeros(n)
-# Initial conditions
-x0 =  1.0 
+r = np.zeros(n)
+# Constants of the model, setting all variables to one for simplicity
+alpha = 1.0
+AngMom = 1.0  #  The angular momentum
+m = 1.0  # scale mass to one
+c1 = AngMom*AngMom/(m*m)
+c2 = AngMom*AngMom/m
+# You need to specify the initial conditions
+r0 = 0.0
 v0 = 0.0
-x[0] = x0
+r[0] = r0
 v[0] = v0
-# Define parameters
-mass = 0.1  # mass of the object
-b = 0.08  # friction constant
-omega0 = 2.0  # natural frequency 
-omega = 1.0  #  driving frequency
-F0 = 0.4   # driven force amplitude 
-# define scaled parameters
-gamma = b*0.5/(omega0*mass)
-Omegatilde = omega/omega0
-Ftilde = F0/(mass*omega0*omega0)
-# Scaled initial energy
-E0 = 0.5*x0*x0+0.5*v0*v0
-E[0] = E0
-# Start integrating using the RK4 method
-RK4(v,x,E,t,n,SpringForce)
+# Start integrating using the Velocity-Verlet  method
+for i in range(n-1):
+    # Set up acceleration
+    a = -alpha/(r[i]**2)+c1/(r[i]**3)
+    # update velocity, time and position using the Velocity-Verlet method
+    r[i+1] = r[i] + DeltaT*v[i]+0.5*(DeltaT**2)*a
+    anew = -alpha/(r[i+1]**2)+c1/(r[i+1]**3)
+    v[i+1] = v[i] + 0.5*DeltaT*(a+anew)
+    t[i+1] = t[i] + DeltaT
+    # Plot position as function of time
+fig, ax = plt.subplots(2,1)
+ax[0].set_xlabel('time')
+ax[0].set_ylabel('radius')
+ax[0].plot(t,r)
+ax[1].set_xlabel('time')
+ax[1].set_ylabel('Velocity')
+ax[1].plot(t,v)
 
-# Plot position as function of time    
-fig, ax = plt.subplots()
-ax.set_ylabel('x[m]')
-ax.set_xlabel('t[s]')
-ax.plot(t, x)
-fig.tight_layout()
-save_fig("ForcedBlockRK4Position")
 plt.show()
-!ec
-Thereafter we plot the velocity
-!bc pycod
-# Plot velocity as function of time    
-fig, ax = plt.subplots()
-ax.set_ylabel('v[m]')
-ax.set_xlabel('t[s]')
-ax.plot(t, v)
-fig.tight_layout()
-save_fig("ForcedBlockRK4Velocity")
-plt.show()
-!ec
-and finally the energy
-!bc pycod
-# Plot energy conservation as function of time    
-fig, ax = plt.subplots()
-ax.set_ylabel('E[m*m]')
-ax.set_xlabel('t[s]')
-ax.plot(t, abs(E0-E))
-fig.tight_layout()
-save_fig("ForcedBlockRK4Energy")
-plt.show()
-!ec
 
-The code here shows an example of how easy it is to extend our orginal
-code in order to include a driving force. We have also rewritten the
-code in terms of functions that now include two different integration
-methods and an own code for the force which returns the acceleration.
-The code here is general and we have sinply included a version where
-we allow for different values of the parameters mentioned above. The
-code here includes also plots of the energy and the velocity. As
-expected, due to the friction term, energy is not conserved. This would also be the case if we don't include the friction term but keep the driving force. For the latter case, the energy difference between the initial and final energies will oscillate with the frequency of the driving force.
-
-We note also that after some time, the information about the initial conditions (it depends on the values of the initial conditions) is lost and the motion is governed by the particular solution and the driving frequency of the force.
-
-
-Finally, we revert back to exercise 4d and compare our numerically calculated position with the analytical solution
-!bt
-\[
-x(t)=A\cos{(\omega_0t)}+B\sin{(\omega_0t)}+\frac{F_0}{m}\frac{1}{\omega_0^2-\omega^2}\cos{(\omega t)}.
-\]
-!et
-If we choose $x(t_0)=x_0$ and $v(t_0)=v_0$ we have
-!bt
-\[
-x_0=A+\frac{F_0}{m}\frac{1}{\omega_0^2-\omega^2},
-\]
-!et
-resulting in
-!bt
-\[
-A=x_0-\frac{F_0}{m}\frac{1}{\omega_0^2-\omega^2},
-\]
-!et
-
-and 
-!bt
-\[
-B=v_0.
-\]
-!et
-
-If we scale these equations we have 
-!bt
-\[
-x(\tau)=A\cos{(\tau)}+B\sin{(\tau)}+\tilde{F}_0\frac{1}{1-\tilde{\omega}^2}\cos{(\tilde{\omega} \tau)}.
-\]
-!et
-with
-!bt
-\[
-x_0=A+\tilde{F}_0\frac{1}{1-\tilde{\omega}^2},
-\]
-!et
-resulting in
-!bt
-\[
-A=x_0-\tilde{F}_0\frac{1}{1-\tilde{\omega}^2},
-\]
-!et
-
-and 
-!bt
-\[
-B=v_0.
-\]
-!et
-
-!bc pycod
-DeltaT = 0.001
-#set up arrays 
-tfinal = 20 
-n = ceil(tfinal/DeltaT)
-# set up arrays for t, v, and x
-t = np.zeros(n)
-v = np.zeros(n)
-x = np.zeros(n)
-xanalytic = np.zeros(n)
-E  = np.zeros(n)
-# Initial conditions
-x0 =  1.0 
-v0 = 0.0
-x[0] = x0
-v[0] = v0
-# Define parameters
-mass = 0.1  # mass of the object
-b = 0.0  # friction constant
-omega0 = 2.0  # natural frequency 
-omega = 1.0  #  driving frequency
-F0 = 0.4   # driven force amplitude 
-# define scaled parameters
-gamma = b*0.5/(omega0*mass)
-Omegatilde = omega/omega0
-Ftilde = F0/(mass*omega0*omega0)
-# Scaled initial energy
-E0 = 0.5*x0*x0+0.5*v0*v0
-E[0] = E0
-# Start integrating using the RK4 method
-RK4(v,x,E,t,n,SpringForce)
-# setting up analytical solution
-
-D = Ftilde/(1-Omegatilde*Omegatilde)
-A = x0-D
-xanalytic = A*np.cos(t)+B*np.sin(t)+D*np.cos(Omegatilde*t)
-# Plot numerical and analytical positions as function of time    
-fig, ax = plt.subplots()
-ax.set_ylabel('x[m]')
-ax.set_xlabel('t[s]')
-ax.plot(t, x)
-ax.plot(t, xanalytic)
-fig.tight_layout()
-save_fig("ForcedBlockRK4analyticPosition")
-plt.show()
-!ec
-
-We see that the results agree excellently.
-
-
-===  Exercise 6 (30pt), Bonus exercise ===
-
-You don't need to do this exercise, but it gives you a bonus score of 30 points. Taylor's section 5.4 and the lecture notes on damped oscillations cover most of the theoretical background.
-
-Here we will explore resonances, using the full solution from exercise
-4e.  We recommend reading section 5.6 of Taylor before starting
-analyzing your results.  This exercise means that you will use your
-code from the previous exercise (5) and study the choice of physical
-parameters which will lead to a resonant behavior. As such, this bonus
-exercises is meant as an example where you use your numerical code to
-explore interesting physics.
-
-* 6a (30pt)  Find the value of $\omega$ which results in a resonant behavior and study the numerical and analytical solutions for the resonant case. Discuss your results. 
-
-The resonant behavior occurs when $\omega_0=\omega$ or with our scaled equations, it results when $\tilde{\omega}=1$.
-This can be done easily with the above codes by setting $\tilde{\omega}=1$. Running the code for the position here, 
-shows an amplitude for $x$ which increases with time. We can play around with values near $1$ and we note that, running again the code that our results approach an amplitude which diverges over time. In the code here we have chosen to set the friction term equal zero since then the amplitude for the position is governed by the amplitude of the particular solution, namely
-!bt
-\[
-\frac{F_0}{m}\frac{1}{\omega_0^2-\omega^2}.
-\]
-!et
-In the code here we have made $\omega$ almost equal $\omega_0$. Try out different values of $\omega$. What do you see?
-
-!bc pycod
-DeltaT = 0.001
-#set up arrays 
-tfinal = 100 
-n = ceil(tfinal/DeltaT)
-# set up arrays for t, v, and x
-t = np.zeros(n)
-v = np.zeros(n)
-x = np.zeros(n)
-E  = np.zeros(n)
-# Initial conditions
-x0 =  1.0 
-v0 = 0.0
-x[0] = x0
-v[0] = v0
-# Define parameters
-mass = 0.1  # mass of the object
-b = 0  # No friction 
-omega0 = 2.0  # natural frequency 
-omega = 2.0001  #  driving frequency
-F0 = 0.4   # driven force amplitude 
-# define scaled parameters
-gamma = b*0.5/(omega0*mass)
-Omegatilde = omega/omega0
-Ftilde = F0/(mass*omega0*omega0)
-# Scaled initial energy
-E0 = 0.5*x0*x0+0.5*v0*v0
-E[0] = E0
-# Start integrating using the RK4 method
-RK4(v,x,E,t,n,SpringForce)
-
-# Plot position as function of time    
-fig, ax = plt.subplots()
-ax.set_ylabel('x[m]')
-ax.set_xlabel('t[s]')
-ax.plot(t, x)
-fig.tight_layout()
-save_fig("ForcedBlockRK4Resonance")
-plt.show()
 !ec
 
 
+Run your code and study and discuss the situations where you have
+elliptical, parabolic and hyperbolic orbits. Discuss the physics of
+these cases. The results from exercises 1, 2, 3 and 4 may be useful
+here.
+
+
+===  Additional Bonus Exercise (10pt) ===
+
+You don't need to do this exercise, but it gives you a bonus score of 10 points.
+
+This time the additional bonus exercise is a simple survey. We are now moving
+into our last month  and we would very much have your feedback on how
+things are functioning so that we can improve and correct. 
+
+* Is the weekly load with paper and pencil exercises and the numerical exercises reasonable?
+* Is there enough material (lectures and lecture material) to get you started with the exercises?  We are thinking of both the paper and pencil and the numerical exercises?
+* Is the pace during the lectures reasonable? And do the lectures link well with the exercises?
+* In the beginning there will always be some elements of repetition of material many of you have seen before. Do you find the choice of material the first 4 weeks adequate? Too easy? Too difficult?
+* For those of you who have taken CMSE 201 Introduction to Computational Modeling, do you feel the material taught there links well with the exercises you have done in this course? Is there is something we are missing?
+* Any other topic you would like to comment on?
 
 
 
@@ -711,6 +483,82 @@ plt.show()
 
 
 
+
+=== Classical Mechanics Extra Credit Assignment: Scientific Writing and attending Talks ===
+
+The following gives you an opportunity to earn _five extra credit
+points_ on each of the remaining homeworks and _ten extra credit points_
+on the midterms and finals.  This assignment also covers an aspect of
+the scientific process that is not taught in most undergraduate
+programs: scientific writing.  Writing scientific reports is how
+scientist communicate their results to the rest of the field.  Knowing
+how to assemble a well written scientific report will greatly benefit
+you in you upper level classes, in graduate school, and in the work
+place.
+
+The full information on extra credits is found at URL:"https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/". There you will also find examples on how to write a scientific article. 
+Below you can also find a description on how to gain extra credits by attending scientific talks.
+
+
+This assignment allows you to gain extra credit points by practicing
+your scientific writing.  For each of the remaining homeworks you can
+submit the specified section of a scientific report (written about the
+numerical aspect of the homework) for five extra credit points on the
+assignment.  For the two midterms and the final, submitting a full
+scientific report covering the numerical analysis problem will be
+worth ten extra points.  For credit the grader must be able to tell
+that you put effort into the assignment (i.e. well written, well
+formatted, etc.).  If you are unfamiliar with writing scientific
+reports, "see the information here":"https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/IntroductionScientificWriting.md"
+
+The following table explains what aspect of a scientific report is due
+with which homework.  You can submit the assignment in any format you
+like, in the same document as your homework, or in a different one.
+Remember to cite any external references you use and include a
+reference list.  There are no length requirements, but make sure what
+you turn in is complete and through.  If you have any questions,
+please contact Julie Butler at butler@frib.msu.edu.
+
+|-------------------------------------------------|
+| HW/Project | Due Date | Extra Credit Assignment |
+|-----------------------------------------------|
+| HW 3       | 2-8      | Abstract                |
+| HW 4       | 2-15     | Introduction            |
+| HW 5       | 2-22     | Methods                 |
+| HW 6       | 3-1      | Results and Discussion  |
+| _Midterm 1_ |  _3-12_    | *Full Written Report*     |
+| HW 7       | 3-22     | Abstract                |
+| HW 8       | 3-29     | Introduction            |
+| HW 9       | 4-5      | Results and Discussion  |
+| _Midterm 2_ | _4-16_    | *Full Written Report*     |
+|HW 10       | 4-26     | Abstract                |
+| _Final_   | _4-30_     | *Full Written Report*     |
+|--------------------------------------------------|
+
+
+You can also gain extra credits if you attend scientific talks.
+This is described here.
+
+
+=== Integrating Classwork With Research ===
+
+This opportunity will allow you to earn up to 5 extra credit points on a Homework per week. These points can push you above 100% or help make up for missed exercises.
+In order to earn all points you must:
+
+o Attend an MSU research talk (recommended research oriented Clubs is  provided below)
+o Summarize the talk using at least 150 words
+o Turn in the summary along with your Homework.
+
+Approved talks:
+Talks given by researchers through the following clubs:
+* Research and Idea Sharing Enterprise (RAISE)​: Meets Wednesday Nights Society for Physics Students (SPS)​: Meets Monday Nights
+* Astronomy Club​: Meets Monday Nights
+* Facility For Rare Isotope Beam (FRIB) Seminars: ​Occur multiple times a week
+
+
+If you have any questions please consult Jeremy Rebenstock, rebensto@msu.edu.
+
+All the material on extra credits is at URL:"https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/". 
 
 
 
