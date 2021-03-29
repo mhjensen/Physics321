@@ -9,7 +9,7 @@ DATE: today
 
 === Monday ===
 
-o Physical interpretation of various orbit types and summary gravitational forces
+o Physical interpretation of various orbit types and summary gravitational forces, examples on whiteboard and handwritten notes
 o Start discussion two-body scattering
 
 
@@ -21,99 +21,17 @@ _Reading suggestion_: Taylor chapter 8 and sections 14.1-14.2 and Lecture notes
 o Two-body scattering
 
 
-_Reading suggestion_: Taylor and sections 14.3-14.4 
+_Reading suggestion_: Taylor and sections 14.3-14.6 
 
 ===  Friday ===
 
 o Lagrangian formalism
 
 
-_Reading suggestion_: Taylor chaoter 6
+_Reading suggestion_: Taylor Sections 6.1-6.2
+
 
 !split
-===== Stability of Orbits =====
-
-The effective force can be extracted from the effective potential, $V_{\rm eff}$. Beginning from the equations of motion, Eq. (ref{eq:radialeqofmotion}), for $r$,
-
-!bt
-\begin{eqnarray}
-m\ddot{r}&=&F+\frac{L^2}{mr^3}\\
-\nonumber
-&=&F_{\rm eff}\\
-\nonumber
-&=&-\partial_rV_{\rm eff},\\
-\nonumber
-F_{\rm eff}&=&-\partial_r\left[V(r)+(L^2/2mr^2)\right].
-\end{eqnarray}
-!et
-
-For a circular orbit, the radius must be fixed as a function of time,
-so one must be at a maximum or a minimum of the effective
-potential. However, if one is at a maximum of the effective potential
-the radius will be unstable. For the attractive Coulomb force the
-effective potential will be dominated by the $-\alpha/r$ term for
-large $r$ because the centrifugal part falls off more quickly, $\sim
-1/r^2$. At low $r$ the centrifugal piece wins and the effective
-potential is repulsive. Thus, the potential must have a minimum
-somewhere with negative potential. The circular orbits are then stable
-to perturbation.
-
-
-The effective potential is sketched for two cases, a $1/r$ attractive
-potential and a $1/r^3$ attractive potential. The $1/r$ case has a
-stable minimum, whereas the circular orbit in the $1/r^3$ case is
-unstable.
-
-
-If one considers a potential that falls as $1/r^3$, the situation is
-reversed and the point where $\partial_rV$ disappears will be a local
-maximum rather than a local minimum. _Fig to come here with code_
-
-The repulsive centrifugal piece dominates at large $r$ and the attractive
-Coulomb piece wins out at small $r$. The circular orbit is then at a
-maximum of the effective potential and the orbits are unstable. It is
-the clear that for potentials that fall as $r^n$, that one must have
-$n>-2$ for the orbits to be stable.
-
-
-Consider a potential $V(r)=\beta r$. For a particle of mass $m$ with
-angular momentum $L$, find the angular frequency of a circular
-orbit. Then find the angular frequency for small radial perturbations.
-
-
-For the circular orbit you search for the position $r_{\rm min}$ where the effective potential is minimized,
-
-
-!bt
-\begin{eqnarray*}
-\partial_r\left\{\beta r+\frac{L^2}{2mr^2}\right\}&=&0,\\
-\beta&=&\frac{L^2}{mr_{\rm min}^3},\\
-r_{\rm min}&=&\left(\frac{L^2}{\beta m}\right)^{1/3},\\
-\dot{\theta}&=&\frac{L}{mr_{\rm min}^2}=\frac{\beta^{2/3}}{(mL)^{1/3}}
-\end{eqnarray*}
-!et
-
-Now, we can find the angular frequency of small perturbations about the circular orbit. To do this we find the effective spring constant for the effective potential,
-
-
-!bt
-\begin{eqnarray*}
-k_{\rm eff}&=&\partial_r^2 \left.V_{\rm eff}\right|_{r_{\rm min}}\\
-&=&\frac{3L^2}{mr_{\rm min}^4},\\
-\omega&=&\sqrt{\frac{k_{\rm eff}}{m}}\\
-&=&\frac{\beta^{2/3}}{(mL)^{1/3}}\sqrt{3}.
-\end{eqnarray*}
-!et
-
-If the two frequencies, $\dot{\theta}$ and $\omega$, differ by an
-integer factor, the orbit's trajectory will repeat itself each time
-around. This is the case for the inverse-square force,
-$\omega=\dot{\theta}$, and for the harmonic oscillator,
-$\omega=2\dot{\theta}$. In this case, $\omega=\sqrt{3}\dot{\theta}$,
-and the angles at which the maxima and minima occur change with each
-orbit.
- 
-
 === Code example with gravitional force ===
 
 The code example here is meant to illustrate how we can make a plot of the final orbit. We solve the equations in polar coordinates (the example here uses the minimum of the potential as initial value) and then we transform back to cartesian coordinates and plot $x$ versus $y$. We see that we get a perfect circle when we place ourselves at the minimum of the potential energy, as expected.
@@ -174,6 +92,10 @@ save_fig("Phasespace")
 plt.show()
 
 !ec
+
+
+!split
+===== Changing initial conditions =====
 
 Try to change the initial value for $r$ and see what kind of orbits you get.
 In order to test different energies, it can be useful to look at the plot of the effective potential discussed above.
@@ -240,7 +162,7 @@ print(E)
 
 
 
-
+!split
 ===== Scattering and Cross Sections =====
 
 Scattering experiments don't measure entire trajectories. For elastic
@@ -262,6 +184,9 @@ collision. If the collision excites one of the participants into a
 higher state, or transforms the particles into different species, or
 creates additional particles, the collision is inelastic. Here, we
 consider only elastic collisions.
+
+!split
+===== Scattering: Coulomb forces =====
 
 For Coulomb forces, the cross section is infinite because the range of
 the Coulomb force is infinite, but for interactions such as the strong
@@ -286,6 +211,9 @@ cross-sections,
 \sigma=\frac{P_{\rm scatt}}{dN/dA}.
 \end{eqnarray}
 !et
+
+!split
+===== Scattering, more details =====
 
 Instead of merely stating that a particle collided, one can measure
 the probability the particle scattered by a given angle. The
@@ -330,6 +258,10 @@ With this definition $d\sigma/d\Omega$ is independent of the distance
 from which one places the detector, or the size of the detector (as
 long as it is small).
 
+
+!split
+=====  Differential scattering cross sections =====
+
 Differential scattering cross sections are calculated by assuming a
 random distribution of impact parameters $b$. These represent the
 distance in the $xy$ plane for particles moving in the $z$ direction
@@ -349,7 +281,13 @@ d\sigma=2\pi bdb,
 which is the area of a thin ring of radius $b$ and thickness $db$. In
 classical physics, one can calculate the trajectory given the incoming
 kinetic energy $E$ and the impact parameter if one knows the mass and
-potential. From the trajectory, one then finds the scattering angle
+potential.
+
+
+!split
+===== More on Differential  Cross Sections =====
+
+From the trajectory, one then finds the scattering angle
 $\theta_s(b)$. The differential cross section is then
 
 !bt
@@ -375,33 +313,7 @@ can still have a finite differential cross section as we will see
 later on.
 
 
-An asteroid of mass $m$ and kinetic energy $E$ approaches a planet of
-radius $R$ and mass $M$. What is the cross section for the asteroid to
-impact the planet?
-
-=== Solution ===
-Calculate the maximum impact parameter, $b_{\rm max}$, for which the asteroid will hit the planet. The total cross  section for impact is $\sigma_{\rm impact}=\pi b_{\rm max}^2$. The maximum cross-section can be found with the help of angular momentum conservation. The asteroid's incoming momentum is $p_0=\sqrt{2mE}$ and the angular momentum is $L=p_0b$. If the asteroid just grazes the planet, it is moving with zero radial kinetic energy at impact. Combining energy and angular momentum conservation and having $p_f$ refer to the momentum of the asteroid at a distance $R$,
-
-!bt
-\begin{eqnarray*}
-\frac{p_f^2}{2m}-\frac{GMm}{R}&=&E,\\
-p_fR&=&p_0b_{\rm max},
-\end{eqnarray*}
-!et
-
-allows one to solve for $b_{\rm max}$,
-
-!bt
-\begin{eqnarray*}
-b_{\rm max}&=&R\frac{p_f}{p_0}\\
-&=&R\frac{\sqrt{2m(E+GMm/R)}}{\sqrt{2mE}}\\
-\sigma_{\rm impact}&=&\pi R^2\frac{E+GMm/R}{E}.
-\end{eqnarray*}
-!et
-
-
-
-
+!split
 ===== Rutherford Scattering =====
 
 This refers to the calculation of $d\sigma/d\Omega$ due to an inverse
@@ -419,23 +331,29 @@ that of the atom, which is less than the size of a football relative
 to Spartan Stadium.
 
 
+!split
+===== Rutherford Scattering, more details =====
 
-The incoming and outgoing angles of the trajectory are at
-$\pm\theta'$. They are related to the scattering angle by
-$2\theta'=\pi+\theta_s$.
+
 
 In order to calculate differential cross section, we must find how the
 impact parameter is related to the scattering angle. This requires
 analysis of the trajectory. We consider our previous expression for
 the trajectory where we derived the elliptic form for the trajectory,
-Eq. (ref{eq:Ctrajectory}). For that case we considered an attractive
+For that case we considered an attractive
 force with the particle's energy being negative, i.e. it was
 bound. However, the same form will work for positive energy, and
 repulsive forces can be considered by simple flipping the sign of
 $\alpha$. For positive energies, the trajectories will be hyperbolas,
 rather than ellipses, with the asymptotes of the trajectories
 representing the directions of the incoming and outgoing
-tracks. Rewriting Eq. (ref{eq:Ctrajectory}),
+tracks.
+
+!split
+===== Rutherford Scattering, final trajectories =====
+
+
+We have
 
 
 !bt
@@ -455,6 +373,12 @@ the denominator goes to zero,
 \cos\theta'=-\frac{m\alpha}{AL^2}.
 \end{equation}
 !et
+
+
+!split
+===== Rutherford Scattering, Closest Approach =====
+
+
 
 The trajectory's point of closest approach is at $\theta=0$ and the
 two angles $\theta'$, which have this value of $\cos\theta'$, are the
@@ -485,6 +409,10 @@ L^2=p_0^2b^2=2mEb^2.
 \end{equation}
 !et
 
+!split
+===== Rutherford Scattering, getting there =====
+
+
 Finding $A$ is more complicated. To accomplish this we realize that
 the point of closest approach occurs at $\theta=0$, so from
 Eq. (ref{eq:ruthtraj})
@@ -508,6 +436,9 @@ E=-\frac{\alpha}{r_{\rm min}}+\frac{L^2}{2mr_{\rm min}^2}.
 \end{equation}
 !et
 
+!split
+===== Rutherford Scattering, More Manipulations =====
+
 One can solve the quadratic equation for $1/r_{\rm min}$,
 
 !bt
@@ -524,6 +455,10 @@ A=\sqrt{(m\alpha/L^2)^2+2mE/L^2}=\sqrt{(\alpha^2/(4E^2b^4)+1/b^2}
 \end{equation}
 !et
 
+
+!split
+===== Rutherford Scattering, final expression =====
+
 Finally, we insert the expression for $A$ into that for the scattering angle, Eq. (ref{eq:sthetover2}),
 
 !bt
@@ -534,6 +469,10 @@ label{eq:scattangle}
 &=&\frac{a}{\sqrt{a^2+b^2}}, ~~a\equiv \frac{\alpha}{2E}
 \end{eqnarray}
 !et
+
+!split
+===== Rutherford Scattering, the Differential Cross Section =====
+
 
 
 The differential cross section can now be found by differentiating the
@@ -562,12 +501,14 @@ $d\sigma/d\Omega$ is the same whether the interaction is positive or
 negative.
 
 
+!split
+===== Rutherford Scattering, Example =====
+
+
 Consider a particle of mass $m$ and charge $z$ with kinetic energy $E$
 (Let it be the center-of-mass energy) incident on a heavy nucleus of
-mass $M$ and charge $Z$ and radius $R$. Find the angle at which the
+mass $M$ and charge $Z$ and radius $R$. We want to find the angle at which the
 Rutherford scattering formula breaks down.
-
-=== Solution ===
 
 Let $\alpha=Zze^2/(4\pi\epsilon_0)$. The scattering angle in Eq. (ref{eq:scattangle}) is 
 
@@ -588,6 +529,12 @@ b&=&R\frac{\sqrt{2m(E-\alpha/R)}}{\sqrt{2mE}}\\
 \end{eqnarray*}
 !et
 
+
+!split
+===== Rutherford Scattering, Example, wrapping up =====
+
+
+
 Putting these together
 
 !bt
@@ -604,78 +551,6 @@ to infer the radius of the gold nucleus, $R$.
 
 
 
-Just like electrodynamics, one can define "fields", which for a small
-additional mass $m$ are the force per mass and the additional
-potential energy per mass. The {\it gravitational field} related to
-the force has dimensions of force per mass, or acceleration, and can
-be labeled $\bm{g}(\bm{r})$. The potential energy per mass has
-dimensions of energy per mass. This is analogous to the
-electromagnetic potential, which is the potential energy per charge,
-and the electric field which is the force per charge.
-
-Because the field $\bm{g}$ obeys the same inverse square law for a
-point mass as the electric field does for a point charge, the
-gravitational field also satisfies a version of Gauss's law,
-
-!bt
-\begin{equation}
-label{eq:GravGauss}
-\oint d\bm{A}\cdot\bm{g}=-4\pi GM_{\rm inside}.
-\end{equation}
-!et
-
-Here, $M_{\rm inside}$ is the net mass inside a closed area.
-
-Gauss's law can be understood by considering a nozzle that sprays
-paint in all directions uniformly from a point source. Let $B$ be the
-number of gallons per minute of paint leaving the nozzle. If the
-nozzle is at the center of a sphere of radius $r$, the paint per
-square meter per minute that is deposited on some part of the sphere
-is
-
-!bt
-\begin{eqnarray}
-F(r)&=&\frac{B}{4\pi r^2}.
-\end{eqnarray}
-!et
-
-Now, let $F$ also be assigned a direction, so that it becomes a vector
-pointing along the direction of the flying paint. For any surface that
-surrounds the nozzle, not necessarily a sphere, one can state that
-
-!bt
-\begin{eqnarray}
-label{eq:paint}
-\oint \bm{dA}\cdot\bm{F}&=&B,
-\end{eqnarray}
-!et
-
-regardless of the shape of the surface. This follows because the rate
-at which paint is deposited on the surface should equal the rate at
-which it leaves the nozzle. The dot product ensures that only the
-component of $\bm{F}$ into the surface contributes to the deposition
-of paint. Similarly, if $\bm{F}$ is any radial inverse-square forces,
-that falls as $B/(4\pi r^2)$, then one can apply
-Eq. (ref{eq:paint}). For gravitational fields, $B/(4\pi)$ is replaced
-by $GM$, and one quickly ``derives'' Gauss's law for gravity,
-Eq. (ref{eq:GravGauss}).
 
 
-Consider Earth to have its mass $M$ uniformly distributed in a sphere
-of radius $R$. Find the magnitude of the gravitational acceleration as
-a function of the radius $r$ in terms of the acceleration of gravity
-at the surface $g(R)$. Assume $r<R$, i.e. you are inside the surface.
-
-{\bf Solution}: Take the ratio of Eq. (ref{eq:GravGauss}) for two radii, $R$ and $r<R$,
-
-!bt
-\begin{eqnarray*}
-\frac{4\pi r^2 g(r)}{4\pi R^2 g(R)}&=&\frac{4\pi GM_{\rm inside~r}}{4\pi GM_{\rm inside~R}}\\
-\nonumber
-&=&\frac{r^3}{R^3}\\
-\nonumber
-g(r)&=&g(R)\frac{r}{R}~.
-\end{eqnarray*}
-!et
-The potential energy per mass is similar conceptually to the voltage, or electric potential energy per charge, that was studied in electromagnetism, if $V\equiv U/m$, $\bm{g}=-\nabla V$.
 
