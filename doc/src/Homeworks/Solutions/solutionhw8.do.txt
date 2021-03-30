@@ -61,7 +61,40 @@ we can rewrite our equation of motion in terms of
 \]
 !et
 
-The addition due to the angular momentum comes from the kinetic energy when we rewrote it in terms of polar coordinates. It introduces a so-called centrifugal barrier due to the angular momentum. This centrifugal barrier pushes the object farther away from the origin.
+The addition due to the angular momentum comes from the kinetic energy
+when we rewrote it in terms of polar coordinates. It introduces a
+so-called centrifugal barrier due to the angular momentum. This
+centrifugal barrier pushes the object farther away from the origin.
+
+Alternatively, 
+
+!bt
+\begin{align}
+-\frac{dV_{\text{eff}}(r)}{dr} = \mu \ddot{r} & =-\frac{dV(r)}{dr}+\mu\dot{\phi}^2r
+\\
+-\frac{dV_{\text{eff}}(r)}{dr} & = -\frac{dV(r)}{dr}+\mu\left( \frac{L}{\mu r^2}\right) ^2r
+\\
+& = -\frac{dV(r)}{dr}+\mu\frac{L^2}{\mu}r^{-3}
+\\
+& = -\frac{d\left(  V(r)+\frac{1}{2} \frac{L^2}{\mu r^2}\right) }{dr}.
+\end{align}
+!et
+
+Integrating we obtain
+
+!bt
+\begin{align}
+V_{\text{eff}}(r) = V(r) + \frac{L^2}{2\mu r^2} + C
+\end{align}
+!et
+
+Imposing  the extra condition that $V_{\text{eff}}(r\rightarrow \infty) = V(r\rightarrow \infty)$,
+
+!bt
+\begin{align}
+V_{\text{eff}}(r) = V(r) + \frac{L^2}{2\mu r^2}
+\end{align}
+!et
 
 
 * 1b (5pt) Write out the final differential equation for the radial degrees of freedom when we specify that $V(r)=-\alpha/r$.  Plot the effective potential. You can choose values for $\alpha$ and $L$ and discuss (see Taylor section 8.4 and example 8.2) the physics of the system for two energies, one larger than zero and one smaller than zero. This is similar to what you did in the first midterm, except that the potential is different.
@@ -263,11 +296,11 @@ r^2=\alpha+(\beta^2+\gamma^2)^{1/2}\cos(2\omega_0 t-\delta),
 with
 !bt
 \[
-\delta=\arctan(\gamma/\beta),
+\delta=\arctan(\gamma/\beta).
 \]
 !et
 
-
+We start with $r^2 & = x^2+y^2$ and square the above analytical solutions and   after some _exciting algebraic manipulations_ we arrive at
 !bt
 \begin{align}
 r^2 & = x^2+y^2
@@ -292,10 +325,10 @@ r^2 & = x^2+y^2
 \\
 & = \alpha + \sqrt{\beta^2+\gamma^2}\left( \cos{\delta}\cos{2\omega_0 t} + \sin{\delta}\sin2\omega_0 t\right) 
 \\
-& = \alpha + \sqrt{\beta^2+\gamma^2}\cos{\left( 2\omega_0 t - \delta\right) }
+& = \alpha + \sqrt{\beta^2+\gamma^2}\cos{\left( 2\omega_0 t - \delta\right) },
 \end{align}
 !et
-
+which is what we wanted to show.  
 
 
 
@@ -331,7 +364,7 @@ developed in homework 5 and 6 and the midterm.  Note that this code is
 tailored to run in Cartesian coordinates. There is thus no angular
 momentum dependent term.
 
-Here we have chose initial conditions that
+Here we have chosen initial conditions that
 correspond to the minimum of the effective potential
 $r_{\mathrm{min}}$. We have chosen $x_0=r_{\mathrm{min}}$ and
 $y_0=0$. Similarly, we use the centripetal acceleration to determine
@@ -501,7 +534,7 @@ Here the two foci are at $(a,0)$ and $(-a,0)$. Show that this form is can be wri
 !et
 
 
-We start by squaring the two sides and after some _exciting algebraic manipulations_ we arrive at
+We start by squaring the two sides and, again,  after some _exciting algebraic manipulations_ we arrive at
 !bt
     \[
 \sqrt{(x-a)^2+y^2}+\sqrt{(x+a)^2+y^2} =2D
@@ -516,10 +549,10 @@ We start by squaring the two sides and after some _exciting algebraic manipulati
 \\ D^2(D^2-a^2) - x^2(D^2-a^2) = D^2y^2
 \\ D^2 - x^2 = \frac{D^2y^2}{D^2-a^2}
 \\ 1 - \frac{x^2}{D^2} = \frac{y^2}{D^2-a^2}
-\\ \frac{x^2}{D^2} + \frac{y^2}{D^2-a^2} = 1
+\\ \frac{x^2}{D^2} + \frac{y^2}{D^2-a^2} = 1,
 \]
 !et
-
+where the last line is indeed the equation for an ellipse. 
 
 
 
