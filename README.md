@@ -197,6 +197,7 @@ There is no video of Friday's session since the lecture was organized in breakou
 - Monday 3/29: Central force problems, summary and discussion of two-body scattering problems. 9th homework, due April  5.  Video of lecture at https://mediaspace.msu.edu/media/t/1_6ryr6atu and handwriten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesMarch29.pdf
 - Wednesday 3/31: Two-body scattering. Taylor chapter 14 covers parts of the material. 
 - Friday 4/2:  Two-body scattering (Taylor chapter 14). Second midterm available, due Friday April 16.  
+- Solutions to homework 8 at https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionhw8.ipynb
 
 ### Week 14, April 5-9, 2021
 - Monday 4/5: Wrapping up two-body scattering and begin Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. 
