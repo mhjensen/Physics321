@@ -34,19 +34,19 @@ r(\phi) = \frac{1}{\frac{\mu\alpha}{L^2}+A\cos{(\phi)}}.
 Find the value of $A$. Hint: Use the fact that at $r_{\rm min}$
 there is no radial kinetic energy and $E=-\alpha/r_{\rm min}+L^2/2mr_{\rm min}^2$.
 
-At  𝑟min  and  𝑟max , all the kinetic energy is stored in the velocity in the direction perpendicular to  𝑟  since  𝑟˙=0 . We can calculate using angular momentum and from there, find  𝐴  in terms of the energy  𝐸  which is constant. But first, we need to find  𝑟min  from the conservation of energy:
+At  $r_{\mathrm{min}}$  and $r_{\mathrm{max}}$ , all the kinetic energy is stored in the velocity in the direction perpendicular to $r$  since the radial velocity is set to zero . We can calculate using angular momentum and from there, find  𝐴  in terms of the energy  𝐸  which is constant. But first, we need to find  𝑟min  from the conservation of energy:
 
 !bt
 \[
-E = U(r) + \half \mu(v_{\perp}^2 + v_{\parallel})
+E = U(r) + \frac{1}{2} \mu(v_{\perp}^2 + v_{\parallel})
 \\
-E = \frac{-\alpha}{r_{\min}} + \half \mu\lp\frac{L}{\mu r_{\min}}\rp^2
+E = \frac{-\alpha}{r_{\min}} + \frac{1}{2} \mu\left( \frac{L}{\mu r_{\min}}\right) ^2
 \\
-E r_{\min}^2 - \half\mu\lp\frac{L}{\mu}\rp^2 + \alpha r_{\min} = 0
+E r_{\min}^2 - \frac{1}{2}\mu\left( \frac{L}{\mu}\right) ^2 + \alpha r_{\min} = 0
 \\
 r_{\min}^2 + \frac{\alpha}{E} r_{\min} - \frac{L^2}{2E\mu} = 0
 \\
-r_{\min} = - \frac{\alpha}{2E} \pm \half \sqrt{\frac{\alpha^2}{E^2} + 2\frac{L^2}{E\mu}}
+r_{\min} = - \frac{\alpha}{2E} \pm \frac{1}{2} \sqrt{\frac{\alpha^2}{E^2} + 2\frac{L^2}{E\mu}}
 \]
 !et
 
@@ -55,7 +55,7 @@ Since we're looking for the minimum, the  ±  sign must be negative (then  𝑟m
 
 !bt
 \[
-frac{1}{\frac{\mu\alpha}{L^2}+A} = -\frac{\alpha}{2E} - \half \sqrt{\frac{\alpha^2}{E^2} + 2\frac{L^2}{E\mu}}
+frac{1}{\frac{\mu\alpha}{L^2}+A} = -\frac{\alpha}{2E} - \frac{1}{2} \sqrt{\frac{\alpha^2}{E^2} + 2\frac{L^2}{E\mu}}
 \\
 A = - \frac{\mu\alpha}{L^2} - \frac{2E}{\alpha + \sqrt{\alpha^2 + 2\frac{L^2E}{\mu}}}
 \]
@@ -81,18 +81,19 @@ Here $V(r)$ is any central force which depends only on the relative coordinate.
 
 * 2a (5pt)  Find the radius of a circular orbit by solving for the position of the minimum of the effective potential. 
 
-\begal
-\over{m}\ddr{V(r)} & = r\dot{\phi}^2
-\\ \over{m}\lp-\frac{-\alpha}{r^2}\rp & = r \frac{L^2}{m^2r^4}
+!bt
+\begin{align}
+\frac{1}{m}\frac{dV(r)}{dr} & = r\dot{\phi}^2
+\\ \frac{1}{m}\left( -\frac{-\alpha}{r^2}\right)  & = r \frac{L^2}{m^2r^4}
 \\ \frac{\alpha}{mr^2} & = \frac{L^2}{m^2r^3}
 \\ r & = \frac{L^2}{m\alpha}
-\endal
-
+\end{align}
+!et
 
 * 2b (5pt) At the minimum, the radial velocity is zero and it is only the "centripetal velocity":"https://en.wikipedia.org/wiki/Centripetal_force" which is nonzero. This implies that $\ddot{r}=0$.  What is the angular frequency, $\dot{\theta}$, of the orbit? Solve this by setting $\ddot{r}=0=F/m+\dot{\theta}^2r$.
 
-$$
-\begal
+!bt
+\begin{align}
 \dot{\theta}^2 r & = - \frac{F}{m}
 \\ \dot{\theta}^2 r & = - \frac{-\frac{\alpha}{r^2}}{m}
 \\ \dot{\theta}^2 & = \frac{\alpha}{mr^3}
@@ -100,53 +101,53 @@ $$
 \\ \dot{\theta} & = \pm \sqrt{\frac{\alpha}{m\frac{L^6}{m^3\alpha^3}}}
 \\ \dot{\theta} & = \pm \sqrt{\frac{\alpha^4m^2}{L^6}}
 \\ \dot{\theta} & = \pm \frac{\alpha^2m}{L^3}
-\endal
-$$
+\end{align}
+!et
 
 * 2c (5pt) Find the effective spring constant for the particle at the minimum.
 
 We have shown in class that from the taylor expansion, we have
 
-$$
-k = \ddrtwo{V_{\text{eff}}}
-$$
+!bt
+k = \frac{d^2V_{\text{eff}}}{dr^2}
+!et
 
 Therefore, all we have to do is find the second derivative of $V_{\text{eff}}$ around the minimum point of $V_{\text{eff}}$ where $\dot{r} = \ddot{r} = 0$.
 
-$$
-\begal
-k & = \ddrtwo{V_{\text{eff}}}
-\\ & = \ddrtwo{\lp-\frac{\alpha}{r} + \half \frac{L^2}{mr^2}\rp}
+!bt
+\begin{align}
+k & = \frac{d^2V_{\text{eff}}}{dr^2}
+\\ & = \frac{d^2\left( -\frac{\alpha}{r} + \frac{1}{2} \frac{L^2}{mr^2}\right) }{dr^2}
 \\ & = -\frac{2\alpha}{r^3} + \frac{3L^2}{mr^4}
 \\ & = -\frac{2\alpha}{\frac{L^6}{m^3\alpha^3}} + \frac{3L^2}{m\frac{L^8}{m^4\alpha^4}}
 \\ & = -\frac{2m^3\alpha^4}{L^6} + \frac{3m^3\alpha^4}{L^6}
 \\ & = \frac{m^3\alpha^4}{L^6}
-\endal
-
+\end{align}
+!et
 
 * 2d (5pt) What is the angular frequency for small vibrations about the minimum? How does this compare with the answer to (3b)?
 
 For small deviations $\delta r$ of $r$,
 
-$$
-m\ddttwo{\lp \delta r \rp} = -k \delta r
-$$
+!bt
+m\frac{d^2\left(  \delta r \right) }{dt^2} = -k \delta r
+!et
 
 The solution of this differential equation is of the form
 
-$$
+!bt
 \delta r = A \cos(\omega t + \phi)
-$$
+!et
 
 where 
 
-$$
-\begal
+!bt
+\begin{align}
 \omega = & \sqrt{\frac{k}{m}}
 \\ & = \sqrt{\frac{m^2\alpha^4}{L^6}} 
 \\ & = \frac{m\alpha^2}{L^3}
-\endal
-$$
+\end{align}
+!et
 
 This is in fact equal to the expression for $\dot{\theta}$. This means that small perturbations oscillate in sync with the orbit and this traces out an ellipse with a very small eccentricity, a very nice physical result.
 
@@ -175,98 +176,102 @@ r=\frac{2r_0}{1+\cos\theta},~~~r_0=\frac{L^2}{2m\alpha}.
 
 * 3a (5pt) Show that for this case the total energy $E$ approaches zero.
 
-$$
-\begal
-E & = - \frac{\alpha}{r} + \half m \lp (\dot{\theta}r)^2+\dot{r}^2\rp
-\\ & = - \frac{\alpha}{r} + \half m \lb \lp\frac{L}{mr^2}r\rp^2+\lp\frac{dr}{d\theta}\dot{\theta}\rp^2\rb
-\\ & = - \frac{\alpha}{2r_0}(1+\cos\theta) + \half m \lb \lp\frac{L(1+\cos\theta)}{2mr_0}\rp^2+\lp2r_0\frac{-1}{(1+\cos\theta)^2}(-\sin\theta)\frac{L}{mr^2}\rp^2\rb
-\\ & = - \frac{\alpha}{2r_0}(1+\cos\theta) + \half m \lb \lp\frac{L(1+\cos\theta)}{2mr_0}\rp^2+\lp2r_0\frac{-1}{(1+\cos\theta)^2}(-\sin\theta)\frac{L(1+\cos\theta)^2}{4mr_0^2}\rp^2\rb
+!bt
+\begin{align}
+E & = - \frac{\alpha}{r} + \frac{1}{2} m \left(  (\dot{\theta}r)^2+\dot{r}^2\right) 
+\\ & = - \frac{\alpha}{r} + \frac{1}{2} m \left[  \left( \frac{L}{mr^2}r\right) ^2+\left( \frac{dr}{d\theta}\dot{\theta}\right) ^2\right] 
+\\ & = - \frac{\alpha}{2r_0}(1+\cos\theta) + \frac{1}{2} m \left[  \left( \frac{L(1+\cos\theta)}{2mr_0}\right) ^2+\left( 2r_0\frac{-1}{(1+\cos\theta)^2}(-\sin\theta)\frac{L}{mr^2}\right) ^2\right] 
+\\ & = - \frac{\alpha}{2r_0}(1+\cos\theta) + \frac{1}{2} m \left[  \left( \frac{L(1+\cos\theta)}{2mr_0}\right) ^2+\left( 2r_0\frac{-1}{(1+\cos\theta)^2}(-\sin\theta)\frac{L(1+\cos\theta)^2}{4mr_0^2}\right) ^2\right] 
 \\ & = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
-\half m \lb \lp\frac{L(1+\cos\theta)}{2mr_0}\rp^2+\lp\sin\theta\frac{L}{2mr_0}\rp^2\rb
+\frac{1}{2} m \left[  \left( \frac{L(1+\cos\theta)}{2mr_0}\right) ^2+\left( \sin\theta\frac{L}{2mr_0}\right) ^2\right] 
 \\ & = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
-\half m \lb \lp\frac{L(1+\cos\theta)}{2mr_0}\rp^2+\lp\sin\theta\frac{L}{2mr_0}\rp^2\rb
+\frac{1}{2} m \left[  \left( \frac{L(1+\cos\theta)}{2mr_0}\right) ^2+\left( \sin\theta\frac{L}{2mr_0}\right) ^2\right] 
 \\ & = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
-\half m \frac{L^2}{4m^2r_0^2} \lb \lp1+\cos\theta\rp^2+\lp\sin\theta\rp^2\rb
+\frac{1}{2} m \frac{L^2}{4m^2r_0^2} \left[  \left( 1+\cos\theta\right) ^2+\left( \sin\theta\right) ^2\right] 
 \\ & = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
-\half \frac{L^2}{4mr_0^2} \lp 1 + \cos^2\theta + 2\cos \theta + \sin^2\theta\rp
+\frac{1}{2} \frac{L^2}{4mr_0^2} \left(  1 + \cos^2\theta + 2\cos \theta + \sin^2\theta\right) 
 \\ & = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
-\half \frac{L^2}{4mr_0^2} \lp 2 + 2\cos \theta \rp
-\\ & = (1+\cos\theta) \lp- \frac{\alpha}{2r_0} + \frac{L^2}{4mr_0^2}\rp
-\\ & = (1+\cos\theta) \lp- \frac{\alpha}{2\frac{L^2}{2m\alpha}} + \frac{L^2}{4m\frac{L^4}{4m^2\alpha^2}}\rp
-\\ & = (1+\cos\theta) \lp- \frac{m\alpha^2}{L^2} + \frac{m\alpha^2}{L^2}\rp
+\frac{1}{2} \frac{L^2}{4mr_0^2} \left(  2 + 2\cos \theta \right) 
+\\ & = (1+\cos\theta) \left( - \frac{\alpha}{2r_0} + \frac{L^2}{4mr_0^2}\right) 
+\\ & = (1+\cos\theta) \left( - \frac{\alpha}{2\frac{L^2}{2m\alpha}} + \frac{L^2}{4m\frac{L^4}{4m^2\alpha^2}}\right) 
+\\ & = (1+\cos\theta) \left( - \frac{m\alpha^2}{L^2} + \frac{m\alpha^2}{L^2}\right) 
 \\ & = 0
-\endal
-$$
+\end{align}
+!et
 
 * 3b (5pt) With zero energy $E=0$, write this trajectory in a more recognizable parabolic form, that is express $x_0$ and $R$ in terms of $r_0$ using 
+
 !bt
 \[
 x=x_0-\frac{y^2}{R}.
 \]
 !et
 
-Knowing that 
+We have that 
 
-$$
-\begal
+!bt
+\begin{align}
 x & = r \cos\theta
 \\
-y & = r \sin \theta
-\endal
-$$
+y & = r \sin \theta,
+\end{align}
+!et
 
-we have
-
-$$
-\begal
+we obtain
+!bt
+\begin{align}
 y & = r \sin\theta
 \\
 & = \frac{2r_0}{1+\cos\theta}\sin\theta
 \\
 & = \frac{2r_0}{1-\cos^2\theta}\sin\theta(1-\cos\theta)
 \\
-& = \frac{2r_0(1-\cos\theta)}{\sin\theta}
-\endal
-$$
+& = \frac{2r_0(1-\cos\theta)}{\sin\theta},
+\end{align}
+!et
 
 and 
 
-$$
-\begal
+!bt
+\begin{align}
 x & = r \sin\theta
 \\
 & = \frac{2r_0}{1+\cos\theta}\cos\theta
 \\
 & = \frac{2r_0}{1-\cos^2\theta}\cos\theta(1-\cos\theta)
 \\
-& = \frac{2r_0(\cos\theta-\cos^2\theta)}{\sin^2 \theta}
-\endal
-$$
+& = \frac{2r_0(\cos\theta-\cos^2\theta)}{\sin^2 \theta}.
+\end{align}
+!et
 
-Here, we notice that the denominator of $x$ is the square of the denominator of $y$. We also see that.
+Here  we notice that the denominator of $x$ is the square of the denominator of $y$. We also have
 
-$$
-y^2 = \frac{4r_0^2(1-2\cos\theta+\cos^2\theta)}{\sin^2\theta}
-$$
+!bt
+\[
+y^2 = \frac{4r_0^2(1-2\cos\theta+\cos^2\theta)}{\sin^2\theta}.
+\]
+!et
 
-now, let's try to add them such that the $\cos\theta$ cancel out.
+Let try to add them such that $\cos\theta$ cancels out, that is
 
-$$
-\begal
-x + \frac{y^2}{4r_0} & = \frac{2r_0(\cos\theta-\cos^2\theta)}{\sin^2 \theta} + \frac{4r_0^2(1-2\cos\theta+\cos^2\theta)}{\sin^2\theta}\over{4r_0}
-\\ & = \frac{r_0}{\sin^2\theta}\lp 2\cos\theta-2\cos^2\theta + 1 - 2\cos\theta + \cos^2\theta\rp
-\\ & = \frac{r_0}{\sin^2\theta}\lp -2\cos^2\theta + 1 + \cos^2\theta\rp
-\\ & = \frac{r_0}{\sin^2\theta}\lp 1 - \cos^2\theta\rp
-\\ & = \frac{r_0}{\sin^2\theta}\lp \sin^2\theta\rp
+!bt
+\begin{align}
+x + \frac{y^2}{4r_0} & = \frac{2r_0(\cos\theta-\cos^2\theta)}{\sin^2 \theta} + \frac{4r_0^2(1-2\cos\theta+\cos^2\theta)}{\sin^2\theta}\frac{1}{4r_0}
+\\ & = \frac{r_0}{\sin^2\theta}\left(  2\cos\theta-2\cos^2\theta + 1 - 2\cos\theta + \cos^2\theta\right) 
+\\ & = \frac{r_0}{\sin^2\theta}\left(  -2\cos^2\theta + 1 + \cos^2\theta\right) 
+\\ & = \frac{r_0}{\sin^2\theta}\left(  1 - \cos^2\theta\right) 
+\\ & = \frac{r_0}{\sin^2\theta}\left(  \sin^2\theta\right) 
 \\ & = r_0
-\endal
-$$
+\end{align}
+!et
 
-Therefore, we have
+Thus, we have
 
-$$
+!bt
+\[
 x = r_0 - \frac{y^2}{4r_0}
-$$
+\]
+!et
 
 
 === Exercise 4, parabolic and hyperbolic orbits (10pt) ===
@@ -288,24 +293,24 @@ while for $\epsilon > 1$ (or energy positive) the orbit becomes a hyperbola. The
 For a hyperbola, identify the constants $\alpha$, $\beta$ and $\delta$ in terms of the constants $c$ and $\epsilon$ for $r(\phi)$. 
 
 
-$$
-\begal
+!bt
+\begin{align}
 x & = r\cos\phi
 \\ & = \frac{c\cos\phi}{1+\epsilon\cos\phi}
-\endal
-$$
+\end{align}
+!et
 
-$$
-\begal
+!bt
+\begin{align}
 y & = r\sin\phi 
 \\ & = \frac{c\sin\phi}{1+\epsilon\cos\phi}
-\endal
-$$
+\end{align}
+!et
 
 Therefore, 
 
-$$
-\begal
+!bt
+\begin{align}
 \frac{(x-\delta)^2}{\alpha^2} - \frac{y^2}{\beta^2} 
 & = \frac{(\frac{c\cos\phi-\delta(1+\epsilon\cos\phi)}{1+\epsilon\cos\phi})^2}{\alpha^2} - \frac{(\frac{c\sin\phi}{1+\epsilon\cos\phi})^2}{\beta^2}
 \\ & = \frac{\beta^2 c^2\cos^2\phi + \beta^2\delta^2 + \beta^2\delta^2 \epsilon^2 \cos^2 \phi - 2\beta^2\delta c \cos\phi - 2 \beta^2\delta c \epsilon \cos^2 \phi + 2\beta^2\delta^2 \epsilon \cos \phi - \alpha^2 c^2 \sin^2 \phi}{\alpha^2\beta^2(1 + 2\epsilon\cos\phi + \epsilon^2\cos^2\phi)}
@@ -318,86 +323,98 @@ $$
  + \cos^2\phi (\beta^2c^2 + \beta^2\delta^2 \epsilon^2 - 2\beta^2 \delta c \epsilon + \alpha^2 c^2)
 }{\alpha^2\beta^2(1 + 2\epsilon\cos\phi + \epsilon^2\cos^2\phi)}
 \\ & = 1
-\endal
-$$
+\end{align}
+!et
 
 We can seperate this into several equations:
 
-$$
+!bt
+\[
 \frac{\beta^2\delta^2 - \alpha^2 c^2}{\alpha^2\beta^2} = 1
 \\ \frac{2\beta^2\delta \cos\phi (\delta \epsilon-c)}{\alpha^2\beta^2} = 2\epsilon\cos\phi
 \\ \frac{\cos^2\phi (\beta^2c^2 + \beta^2\delta^2 \epsilon^2 - 2\beta^2 \delta c \epsilon + \alpha^2 c^2)}{\alpha^2\beta^2} = \epsilon^2\cos^2\phi
-$$
+\]
+!et
 
 These can further be simplified:
 
-$$
+!bt
+\[
 \frac{\delta^2}{\alpha^2} - \frac{c^2}{\beta^2} = 1
 \\
 \frac{\delta^2\epsilon}{\alpha^2} - \frac{\delta c}{\beta^2} = \epsilon
 \\
 \frac{c^2}{\alpha^2} + \frac{\delta^2\epsilon^2}{\alpha^2} - 2\frac{\delta c \epsilon}{\alpha^2} + \frac{c^2}{\beta^2}
 = \epsilon^2
-$$
-
+\]
+!et
 Now, all we have to do is solve these three equations for the three unknowns $\alpha$, $\beta$, and $\gamma$:
 
 From the first equation, we have
-$$
-\frac{1}{\beta^2} = \frac{\delta^2}{c^2\alpha^2} - \over{c^2}
-$$
-
+!bt
+\[
+\frac{1}{\beta^2} = \frac{\delta^2}{c^2\alpha^2} - \frac{1}{c^2}
+\]
+!et
 Therefore,
 
-$$
-\frac{\delta^2\epsilon}{\alpha^2} - \lp \frac{\delta^2}{c^2\alpha^2} - \over{c^2} \rp\delta c = 
+!bt
+\[
+\frac{\delta^2\epsilon}{\alpha^2} - \left(  \frac{\delta^2}{c^2\alpha^2} - \frac{1}{c^2} \right) \delta c = 
 \frac{\delta^2\epsilon}{\alpha^2} - \frac{\delta^3}{c\alpha^2} + \frac{\delta}{c}
 = \epsilon
 \\
-\frac{c^2}{\alpha^2} + \frac{\delta^2\epsilon^2}{\alpha^2} - 2\frac{\delta c \epsilon}{\alpha^2} + c^2\lp \frac{\delta^2}{c^2\alpha^2} - \over{c^2} \rp =
+\frac{c^2}{\alpha^2} + \frac{\delta^2\epsilon^2}{\alpha^2} - 2\frac{\delta c \epsilon}{\alpha^2} + c^2\left(  \frac{\delta^2}{c^2\alpha^2} - \frac{1}{c^2} \right)  =
 \frac{c^2}{\alpha^2} + \frac{\delta^2\epsilon^2}{\alpha^2} - 2\frac{\delta c \epsilon}{\alpha^2}
 + \frac{\delta^2}{\alpha^2} - 1
 = \epsilon^2
-$$
+\]
+!et
 
-From here, we have
+From here  we obtain
 
-$$
-\over{\alpha^2} = \frac{\epsilon-\frac{\delta}{c}}{\delta^2\epsilon - \frac{\delta^3}{c}} = \over{\delta^2}\frac{\epsilon-\frac{\delta}{c}}{\epsilon-\frac{\delta}{c}}
-$$
+!bt
+\[
+\frac{1}{\alpha^2} = \frac{\epsilon-\frac{\delta}{c}}{\delta^2\epsilon - \frac{\delta^3}{c}} = \frac{1}{\delta^2}\frac{\epsilon-\frac{\delta}{c}}{\epsilon-\frac{\delta}{c}}
+\]
+!et
 
 This means we have two possibilities: either $\delta^2 = \alpha^2$ or $\delta = c$. Since the first option would mean $\beta \rightarrow \pm \infty$, the second option must be true. Hence,
 
-$$
+!bt
+\[
 \frac{c^2}{\alpha^2} + \frac{c^2\epsilon^2}{\alpha^2} - 2\frac{c^2 \epsilon}{\alpha^2}
 + \frac{c^2}{\alpha^2} - 1
 = \epsilon^2
 \\
 \frac{c^2}{\alpha^2} (1 + \epsilon^2 - 2 \epsilon) = 1 + \epsilon^2
 \\ \frac{c^2}{\alpha^2} = \frac{1 + \epsilon^2}{(1-\epsilon)^2}
-\\ \alpha = \pm c \sqrt{\frac{(1-\epsilon)^2}{1 + \epsilon^2}}
-$$
+\\ \alpha = \pm c \sqrt{\frac{(1-\epsilon)^2}{1 + \epsilon^2}}.
+\]
+!et
 
 And we have
 
-$$
-\begal
-\beta & = \pm \sqrt{\over{\frac{\delta^2}{c^2\alpha^2} - \over{c^2}}}
-\\ & = \pm \sqrt{\over{\frac{1 + \epsilon^2}{(1-\epsilon)^2} - \over{c^2}}}
-\\ & = \pm c \sqrt{\over{\frac{1 + \epsilon^2}{1-2\epsilon+\epsilon^2} - \frac{1-2\epsilon+\epsilon^2}{1-2\epsilon+\epsilon^2}}}
+!bt
+\begin{align}
+\beta & = \pm \sqrt{\frac{1}{\frac{\delta^2}{c^2\alpha^2} - \frac{1}{c^2}}}
+\\ & = \pm \sqrt{\frac{1}{\frac{1 + \epsilon^2}{(1-\epsilon)^2} - \frac{1}{c^2}}}
+\\ & = \pm c \sqrt{\frac{1}{\frac{1 + \epsilon^2}{1-2\epsilon+\epsilon^2} - \frac{1-2\epsilon+\epsilon^2}{1-2\epsilon+\epsilon^2}}}
 \\ & = \pm c \sqrt{\frac{(1-\epsilon)^2}{2\epsilon}}
-\endal
-$$
+\end{align}
+!et
 
-Therefore, we have found that
+Summing up, we have
 
-$$
+!bt
+\[
 \delta = c
 \\
 \alpha = \pm c \sqrt{\frac{(1-\epsilon)^2}{1 + \epsilon^2}}
 \\
 \beta = \pm c \sqrt{\frac{(1-\epsilon)^2}{2\epsilon}}
-$$
+\]
+!et
 
 
 ===  Exercise 5, Testing orbit types (50 pt) ===

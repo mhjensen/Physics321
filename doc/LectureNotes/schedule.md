@@ -87,25 +87,30 @@ Video of lecture at https://mediaspace.msu.edu/media/t/1_mgqtt4lm and handwritte
 - Friday 3/12:  Discussion  of first midterm and summary of oscillations. Deadline first midterm at midnight.
 There is no video of Friday's session since the lecture was organized in breakout sessions plus a discussion of the first midterm. Thx to all of you for heroic efforts with the first midterm.
 - Good reads are sections 5.7-5.8 and  8.2-8.4 of Taylor and Lecture notes 
+- Solutions to first midterm at https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/SolutionFirstMid.ipynb
 
 
 ### Week 11, March  15-19, 2021
 - Monday 3/15:  Gravity and central force problems, center of mass coordinates. Lecture notes and Taylor chapter 8. 7th homework due March 22. Video of Lecture at https://mediaspace.msu.edu/media/t/1_x34gdl5o and handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesMarch15.pdf.
 - Wednesday 3/17: Gravity and central force problems. Video of lecture at https://mediaspace.msu.edu/media/t/1_dwy3ekta and and handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesMarch17.pdf.
-- Friday 3/19:  Gravity and central force problems, centrifugal barriers. Video of lecture at https://mediaspace.msu.edu/media/t/1_moj8tmsv and and handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesMarch19.pdf. Julie's notes on methods and classes are at https://github.com/mhjensen/Physics321/tree/master/doc/pub/PythonClassesMethods
+- Friday 3/19:  Gravity and central force problems, centrifugal barriers. Video of lecture at https://mediaspace.msu.edu/media/t/1_moj8tmsv and handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesMarch19.pdf. Julie's notes on methods and classes are at https://github.com/mhjensen/Physics321/tree/master/doc/pub/PythonClassesMethods
 
 ### Week 12, March 22-26, 2021
-- Monday 3/22: Gravity and central force problems, elliptical orbits and Kepler's laws, 8th homework, due March 29. 
-- Wednesday 3/24: Gravity and central force problems, elliptical orbits  and two-body scattering examples. 
-- Friday 3/26:  Elliptical orbits, examples and two-body scattering problems. 
+- Monday 3/22: Gravity and central force problems, elliptical orbits and Kepler's laws, 8th homework, due March 29.  Video of Lecture at https://mediaspace.msu.edu/media/t/1_4tiot5np and handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesMarch22.pdf. Julie's notes on methods and classes are at https://github.com/mhjensen/Physics321/tree/master/doc/pub/PythonClassesMethods
+
+- Wednesday 3/24: Gravity and central force problems, elliptical orbits. Video of Lecture at  https://mediaspace.msu.edu/media/t/1_zwc05jpy and handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesMarch24.pdf.
+- Friday 3/26:  Elliptical orbits, examples and two-body scattering problems.  Video of lecture at https://mediaspace.msu.edu/media/t/1_w2yisao3 and handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesMarch26.pdf
+- Solutions to homework 7 at https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionhw7.ipynb
+
 
 ### Week 13, March 29-April 2, 2020
-- Monday 3/29: Central force problems, summary and discussion of two-body scattering problems. 9th homework, due April  5.
+- Monday 3/29: Central force problems, summary and discussion of two-body scattering problems. 9th homework, due April  5.  Video of lecture at https://mediaspace.msu.edu/media/t/1_6ryr6atu and handwriten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesMarch29.pdf
 - Wednesday 3/31: Two-body scattering. Taylor chapter 14 covers parts of the material. 
-- Friday 4/2:  Two-body scattering (Taylor chapter 14). Second midterm available, due Friday April 16.  
+- Friday 4/2:  Two-body scattering (Taylor chapter 14). Second midterm available April 5/6, due Friday April 16.  
+- Solutions to homework 8 at https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionhw8.ipynb
 
 ### Week 14, April 5-9, 2021
-- Monday 4/5: Wrapping up two-body scattering and begin Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. 
+- Monday 4/5: Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. 
 - Wednesday 4/7: Variational Calculus, chapter 6 of Taylor  
 - Friday 4/9: Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. 
 ### Week 15, April  12-16, 2021
@@ -118,6 +123,43 @@ There is no video of Friday's session since the lecture was organized in breakou
 - Friday 4/23:  Study day
 ### Week 17, April 26- April 30, 2021, Finals week
 - Final Exam:  The final exam will be a project similar to the two midterm projects. Deadline April 30. We will have Q/A sessions Monday 26 and Wednesday 28 at 2.30pm to 4pm. Other sessions can always be arranged. 
+
+
+## Learning outcomes
+
+After the course you should:
+
+- be able to analyze forces that act on objects, apply Newton’s laws to determine the equations of motion, and solve these analytically and numerically,
+- Know about  inertial frames and their relation to accelerating and rotating frames (non-inertial frames)
+- Know about forces, work, energy, angular momentum, linear momentum and conservation laws
+- Know about  various types of motions, falling objects, objects moving in various fields
+- Know how to analyze energy diagrams and defining effective potential
+- Have knowledge about small oscillations, Harmonic oscillator potential and equations of motion
+- Have knowledge about transformation of variables that allow for analytical solutions, example two-body problems
+- Have knowledge about central forces and two-body problems, center-of-mass and relative coordinates as reference frame
+- Have knowledge about two-body scattering problems, classical scattering cross section
+- Have knowledge about Variational calculus and Lagrangian formalism
+- Know how to derive the equations of motion from the Lagrangian formalism with and without constraints (Lagrangian multipliers)
+
+To solve many of these problems, we have through different projects and weekly exercises studied many systems numerically, from falling objects with and without friction/air resistance, small oscillations (harmonic oscillator), gravitational problems and other central force problems, rotations and the classical pendulum. To solve these systems, we have applied different algorithms for solving differential equations. These are
+- Euler-Cromer and Velocity-Verlet as energy conserving algorithms (time-independent forces)
+- Runge-Kutta family of algorithms for time-dependent forces
+We have also, in connection with for example the work-energy theorem studied methods for evaluating integrals. These are
+- Numerical integration using the Trapezoidal, midpoint and Simpson's rule.
+
+You should also have acquired skills in structuring a numerical project, as well as having developed a critical understanding of the pros and cons of the methods and an understanding of their limits and what can go wrong.  Computing means solving scientific problems using computers. It covers numerical as well as symbolic computing. Computing is also about developing an understanding of the scientific process by enhancing algorithmic thinking when solving problems.  Computing competence has
+always been a central part of the science and engineering education.
+In particular, some of the competences that are important in the development of your own understanding of
+computations, we would like to emphasize
+- derivation, verification, and implementation of algorithms
+- understanding what can go wrong with algorithms
+- overview of important, known algorithms for solving mechanics problems (To a extent large differential equations and integration)
+- understanding how algorithms are used to solve mathematical problems
+- Making science (your results) reproducible
+- algorithmic thinking for gaining deeper insights about scientific problems
+
+
+
 
 
 
