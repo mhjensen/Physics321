@@ -52,10 +52,29 @@ Automatically generated HTML file from DocOnce source
                3,
                None,
                'code-example-with-gravitional-force'),
+              ('Plotting the potential first',
+               2,
+               None,
+               'plotting-the-potential-first'),
+              ('Solving the differential equations, Radial Degrees of Freedom '
+               'only',
+               2,
+               None,
+               'solving-the-differential-equations-radial-degrees-of-freedom-only'),
               ('Changing initial conditions',
                2,
                None,
                'changing-initial-conditions'),
+              ('Different Potential', 2, None, 'different-potential'),
+              ('Plotting the Effective Potential',
+               2,
+               None,
+               'plotting-the-effective-potential'),
+              ('Finding the Minimum for Circular Orbits',
+               2,
+               None,
+               'finding-the-minimum-for-circular-orbits'),
+              ('Numerical Studies', 2, None, 'numerical-studies'),
               ('Scattering and Cross Sections',
                2,
                None,
@@ -178,7 +197,13 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="#wednesday" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Wednesday</a></li>
      <!-- navigation toc: --> <li><a href="#friday" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Friday</a></li>
      <!-- navigation toc: --> <li><a href="#code-example-with-gravitional-force" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Code example with gravitional force</a></li>
+     <!-- navigation toc: --> <li><a href="#plotting-the-potential-first" style="font-size: 80%;"><b>Plotting the potential first</b></a></li>
+     <!-- navigation toc: --> <li><a href="#solving-the-differential-equations-radial-degrees-of-freedom-only" style="font-size: 80%;"><b>Solving the differential equations, Radial Degrees of Freedom only</b></a></li>
      <!-- navigation toc: --> <li><a href="#changing-initial-conditions" style="font-size: 80%;"><b>Changing initial conditions</b></a></li>
+     <!-- navigation toc: --> <li><a href="#different-potential" style="font-size: 80%;"><b>Different Potential</b></a></li>
+     <!-- navigation toc: --> <li><a href="#plotting-the-effective-potential" style="font-size: 80%;"><b>Plotting the Effective Potential</b></a></li>
+     <!-- navigation toc: --> <li><a href="#finding-the-minimum-for-circular-orbits" style="font-size: 80%;"><b>Finding the Minimum for Circular Orbits</b></a></li>
+     <!-- navigation toc: --> <li><a href="#numerical-studies" style="font-size: 80%;"><b>Numerical Studies</b></a></li>
      <!-- navigation toc: --> <li><a href="#scattering-and-cross-sections" style="font-size: 80%;"><b>Scattering and Cross Sections</b></a></li>
      <!-- navigation toc: --> <li><a href="#scattering-coulomb-forces" style="font-size: 80%;"><b>Scattering: Coulomb forces</b></a></li>
      <!-- navigation toc: --> <li><a href="#scattering-more-details" style="font-size: 80%;"><b>Scattering, more details</b></a></li>
@@ -235,7 +260,7 @@ MathJax.Hub.Config({
 <center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
 <br>
 <p>
-<center><h4>Mar 29, 2021</h4></center> <!-- date -->
+<center><h4>Mar 31, 2021</h4></center> <!-- date -->
 <br>
 <p>
 <!-- potential-jumbotron-button -->
@@ -276,12 +301,95 @@ MathJax.Hub.Config({
 <h3 id="code-example-with-gravitional-force" class="anchor">Code example with gravitional force </h3>
 
 <p>
-The code example here is meant to illustrate how we can make a plot of the final orbit. We solve the equations in polar coordinates (the example here uses the minimum of the potential as initial value) and then we transform back to cartesian coordinates and plot \( x \) versus \( y \). We see that we get a perfect circle when we place ourselves at the minimum of the potential energy, as expected.
+The code example here is meant to illustrate how we can make a plot of
+the final orbit. We solve the equations in polar coordinates (the
+example here uses the minimum of the potential as initial value) and
+then we transform back to cartesian coordinates and plot \( x \) versus
+\( y \). We see that we get a perfect circle when we place ourselves at
+the minimum of the potential energy, as expected.
+
+<p>
+<!-- !split -->
+
+<h2 id="plotting-the-potential-first" class="anchor">Plotting the potential first </h2>
+
+<p>
+The code here plots the effective potential
+
+<p>
+The following code plots this effective potential for a simple choice of parameters, with a standard gravitational potential \( -\alpha/r \). Here we have chosen \( L=m=\alpha=1 \). 
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #408080; font-style: italic"># Common imports</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #666666">*</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+
+Deltax <span style="color: #666666">=</span> <span style="color: #666666">0.01</span>
+<span style="color: #408080; font-style: italic">#set up arrays</span>
+xinitial <span style="color: #666666">=</span> <span style="color: #666666">0.3</span>
+xfinal <span style="color: #666666">=</span> <span style="color: #666666">5.0</span>
+alpha <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>   <span style="color: #408080; font-style: italic"># spring constant</span>
+m <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>   <span style="color: #408080; font-style: italic"># mass, you can change these</span>
+AngMom <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>  <span style="color: #408080; font-style: italic">#  The angular momentum</span>
+n <span style="color: #666666">=</span> ceil((xfinal<span style="color: #666666">-</span>xinitial)<span style="color: #666666">/</span>Deltax)
+x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n):
+    x[i] <span style="color: #666666">=</span> xinitial<span style="color: #666666">+</span>i<span style="color: #666666">*</span>Deltax
+V <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+V <span style="color: #666666">=</span> <span style="color: #666666">-</span>alpha<span style="color: #666666">/</span>x<span style="color: #666666">+0.5*</span>AngMom<span style="color: #666666">*</span>AngMom<span style="color: #666666">/</span>(m<span style="color: #666666">*</span>x<span style="color: #666666">*</span>x)
+<span style="color: #408080; font-style: italic"># Plot potential</span>
+fig, ax <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots()
+ax<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;r[m]&#39;</span>)
+ax<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;V[J]&#39;</span>)
+ax<span style="color: #666666">.</span>plot(x, V)
+fig<span style="color: #666666">.</span>tight_layout()
+plt<span style="color: #666666">.</span>show()
+</pre></div>
+<p>
+<!-- !split -->
+
+<h2 id="solving-the-differential-equations-radial-degrees-of-freedom-only" class="anchor">Solving the differential equations, Radial Degrees of Freedom only  </h2>
+
+<p>
+This code and the subsequent one are relevant for homework 9 (the numerical exercise).
 
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #408080; font-style: italic"># Simple Gravitational Force   -alpha/r</span>
+<span style="color: #408080; font-style: italic"># Common imports</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">pandas</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">pd</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #666666">*</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">os</span>
+
+<span style="color: #408080; font-style: italic"># Where to save the figures and data files</span>
+PROJECT_ROOT_DIR <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Results&quot;</span>
+FIGURE_ID <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Results/FigureFiles&quot;</span>
+DATA_ID <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;DataFiles/&quot;</span>
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>exists(PROJECT_ROOT_DIR):
+    os<span style="color: #666666">.</span>mkdir(PROJECT_ROOT_DIR)
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>exists(FIGURE_ID):
+    os<span style="color: #666666">.</span>makedirs(FIGURE_ID)
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>exists(DATA_ID):
+    os<span style="color: #666666">.</span>makedirs(DATA_ID)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">image_path</span>(fig_id):
+    <span style="color: #008000; font-weight: bold">return</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>join(FIGURE_ID, fig_id)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">data_path</span>(dat_id):
+    <span style="color: #008000; font-weight: bold">return</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>join(DATA_ID, dat_id)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">save_fig</span>(fig_id):
+    plt<span style="color: #666666">.</span>savefig(image_path(fig_id) <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;.png&quot;</span>, <span style="color: #008000">format</span><span style="color: #666666">=</span><span style="color: #BA2121">&#39;png&#39;</span>)
+
+
     
 DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.01</span>
 <span style="color: #408080; font-style: italic">#set up arrays </span>
@@ -403,6 +511,148 @@ fig<span style="color: #666666">.</span>tight_layout()
 save_fig(<span style="color: #BA2121">&quot;2DimGravity&quot;</span>)
 plt<span style="color: #666666">.</span>show()
 <span style="color: #008000">print</span>(E)
+</pre></div>
+<p>
+<!-- !split -->
+
+<h2 id="different-potential" class="anchor">Different Potential </h2>
+
+<p>
+Let us now try another potential, given by
+$$
+V(r) = \beta r,
+$$
+
+where \( \beta \) is constant we assume is larger than zero. This type of potential has played an importan role in modeling confinement of quarks in non-relativistic models for the interactions among quarks, see for example <a href="https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.44.1369" target="_self"><tt>https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.44.1369</tt></a>
+
+<p>
+Adding the angular momentum part, we obtain the effective potential
+
+$$
+V_{\mathrm{eff}}(r) = \beta r+\frac{L^2}{2\mu r^2},
+$$
+
+<p>
+and taking the derivative with respect to \( r \), we get the radial force
+
+$$
+F_r=-\frac{dV_{\mathrm{eff}}(r)}{dr} = -\beta+\frac{L^2}{\mu r^3}.
+$$
+
+It gives us in turn a radial acceleration \( a_r \)
+$$
+a_r== -\frac{\beta}{\mu}+\frac{L^2}{\mu^2 r^3}.
+$$
+
+<p>
+This is the equation we need to include in our code. I have not been able to find out if there is an analytical solution to the above equation. If you can find one, there is a reward of \( 50 \) USD to the first one who finds. Numerically life is very easy, we just define a new acceleration, as seen below.
+
+<p>
+<!-- !split -->
+
+<h2 id="plotting-the-effective-potential" class="anchor">Plotting the Effective Potential </h2>
+
+<p>
+First however, we plot the effective potential in order to get a feeling of what we may expect.
+
+<p>
+The following code plots this effective potential for a simple choice of parameters, with a potential \( \beta r  \). Here we have chosen \( L=m=\beta=1 \). 
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #408080; font-style: italic"># Common imports</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #666666">*</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+
+Deltax <span style="color: #666666">=</span> <span style="color: #666666">0.01</span>
+<span style="color: #408080; font-style: italic">#set up arrays</span>
+xinitial <span style="color: #666666">=</span> <span style="color: #666666">0.3</span>
+xfinal <span style="color: #666666">=</span> <span style="color: #666666">5.0</span>
+beta <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>   <span style="color: #408080; font-style: italic"># spring constant</span>
+m <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>   <span style="color: #408080; font-style: italic"># mass, you can change these</span>
+AngMom <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>  <span style="color: #408080; font-style: italic">#  The angular momentum</span>
+n <span style="color: #666666">=</span> ceil((xfinal<span style="color: #666666">-</span>xinitial)<span style="color: #666666">/</span>Deltax)
+x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n):
+    x[i] <span style="color: #666666">=</span> xinitial<span style="color: #666666">+</span>i<span style="color: #666666">*</span>Deltax
+V <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+V <span style="color: #666666">=</span> beta<span style="color: #666666">*</span>x<span style="color: #666666">+0.5*</span>AngMom<span style="color: #666666">*</span>AngMom<span style="color: #666666">/</span>(m<span style="color: #666666">*</span>x<span style="color: #666666">*</span>x)
+<span style="color: #408080; font-style: italic"># Plot potential</span>
+fig, ax <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots()
+ax<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;r[m]&#39;</span>)
+ax<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;V[J]&#39;</span>)
+ax<span style="color: #666666">.</span>plot(x, V)
+fig<span style="color: #666666">.</span>tight_layout()
+plt<span style="color: #666666">.</span>show()
+</pre></div>
+<p>
+<!-- !split -->
+
+<h2 id="finding-the-minimum-for-circular-orbits" class="anchor">Finding the Minimum for Circular Orbits </h2>
+
+<p>
+We take now the derivative of the effective potential in order to find its minimum, that is
+$$
+\frac{dV_{\mathrm{eff}}(r)}{dr} = \beta-\frac{L^2}{\mu r^3}=0,
+$$
+
+<p>
+which gives us \( r_{\mathrm{min}} \)
+
+$$
+r_{\mathrm{min}}=\left [\frac{L^2}{\beta m}\right ]^{1/3}.
+$$
+
+<p>
+With the above choice of parameters this gives \( r_{\mathrm{min}}=1 \).
+
+<p>
+In the code here we solve the equations of motion and find the time-evolution of the radius \( r \).
+
+<p>
+<!-- !split -->
+
+<h2 id="numerical-studies" class="anchor">Numerical Studies </h2>
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.01</span>
+<span style="color: #408080; font-style: italic">#set up arrays </span>
+tfinal <span style="color: #666666">=</span> <span style="color: #666666">8.0</span>
+n <span style="color: #666666">=</span> ceil(tfinal<span style="color: #666666">/</span>DeltaT)
+<span style="color: #408080; font-style: italic"># set up arrays for t, v and r</span>
+t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+v <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+r <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+<span style="color: #408080; font-style: italic"># Constants of the model, setting all variables to one for simplicity</span>
+beta <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>
+AngMom <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>  <span style="color: #408080; font-style: italic">#  The angular momentum</span>
+m <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>  <span style="color: #408080; font-style: italic"># scale mass to one</span>
+c1 <span style="color: #666666">=</span> AngMom<span style="color: #666666">*</span>AngMom<span style="color: #666666">/</span>(m<span style="color: #666666">*</span>m)
+c2 <span style="color: #666666">=</span> AngMom<span style="color: #666666">*</span>AngMom<span style="color: #666666">/</span>m
+rmin <span style="color: #666666">=</span> (AngMom<span style="color: #666666">*</span>AngMom<span style="color: #666666">/</span>m<span style="color: #666666">/</span>beta)<span style="color: #666666">**</span>(<span style="color: #666666">1./3.</span>)
+<span style="color: #408080; font-style: italic"># Initial conditions, place yourself at the potential min</span>
+r0 <span style="color: #666666">=</span> rmin
+v0 <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>  <span style="color: #408080; font-style: italic"># starts at rest</span>
+r[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> r0
+v[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> v0
+<span style="color: #408080; font-style: italic"># Start integrating using the Velocity-Verlet  method</span>
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
+    <span style="color: #408080; font-style: italic"># Set up acceleration</span>
+    a <span style="color: #666666">=</span> <span style="color: #666666">-</span>beta<span style="color: #666666">+</span>c1<span style="color: #666666">/</span>(r[i]<span style="color: #666666">**3</span>)
+    <span style="color: #408080; font-style: italic"># update velocity, time and position using the Velocity-Verlet method</span>
+    r[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> r[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>v[i]<span style="color: #666666">+0.5*</span>(DeltaT<span style="color: #666666">**2</span>)<span style="color: #666666">*</span>a
+    anew <span style="color: #666666">=</span> <span style="color: #666666">-</span>beta<span style="color: #666666">+</span>c1<span style="color: #666666">/</span>(r[i<span style="color: #666666">+1</span>]<span style="color: #666666">**3</span>)
+    v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i] <span style="color: #666666">+</span> <span style="color: #666666">0.5*</span>DeltaT<span style="color: #666666">*</span>(a<span style="color: #666666">+</span>anew)
+    t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i] <span style="color: #666666">+</span> DeltaT
+fig, ax <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots(<span style="color: #666666">1</span>,<span style="color: #666666">1</span>)
+ax[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;time&#39;</span>)
+ax[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;radius&#39;</span>)
+ax[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>plot(t,r)
+save_fig(<span style="color: #BA2121">&quot;LinearPotential&quot;</span>)
+plt<span style="color: #666666">.</span>show()
 </pre></div>
 <p>
 <!-- !split -->
