@@ -468,7 +468,7 @@ $$
 
 It gives us in turn a radial acceleration \( a_r \)
 $$
-a_r== -\frac{\beta}{\mu}+\frac{L^2}{\mu^2 r^3}.
+a_r= -\frac{\beta}{\mu}+\frac{L^2}{\mu^2 r^3}.
 $$
 
 <p>
@@ -528,7 +528,7 @@ $$
 which gives us \( r_{\mathrm{min}} \)
 
 $$
-r_{\mathrm{min}}=\left [\frac{L^2}{\beta m}\right ]^{1/3}.
+r_{\mathrm{min}}=\left [\frac{L^2}{\beta \mu}\right ]^{1/3}.
 $$
 
 <p>
@@ -574,13 +574,16 @@ v[<span style="color: #B452CD">0</span>] = v0
     anew = -beta+c1/(r[i+<span style="color: #B452CD">1</span>]**<span style="color: #B452CD">3</span>)
     v[i+<span style="color: #B452CD">1</span>] = v[i] + <span style="color: #B452CD">0.5</span>*DeltaT*(a+anew)
     t[i+<span style="color: #B452CD">1</span>] = t[i] + DeltaT
-fig, ax = plt.subplots(<span style="color: #B452CD">1</span>,<span style="color: #B452CD">1</span>)
-ax[<span style="color: #B452CD">0</span>].set_xlabel(<span style="color: #CD5555">&#39;time&#39;</span>)
-ax[<span style="color: #B452CD">0</span>].set_ylabel(<span style="color: #CD5555">&#39;radius&#39;</span>)
-ax[<span style="color: #B452CD">0</span>].plot(t,r)
+<span style="color: #228B22">#plotting</span>
+plt.xlabel(<span style="color: #CD5555">&#39;time&#39;</span>)
+plt.ylabel(<span style="color: #CD5555">&#39;radius&#39;</span>)
+plt.plot(t,r)
 save_fig(<span style="color: #CD5555">&quot;LinearPotential&quot;</span>)
 plt.show()
 </pre></div>
+<p>
+We see that if we run with the initial condition corresponding to a circular orbit, our radius stays constant as function of time.
+
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 

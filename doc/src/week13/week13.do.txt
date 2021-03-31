@@ -269,7 +269,7 @@ F_r=-\frac{dV_{\mathrm{eff}}(r)}{dr} = -\beta+\frac{L^2}{\mu r^3}.
 It gives us in turn a radial acceleration $a_r$
 !bt
 \[
-a_r== -\frac{\beta}{\mu}+\frac{L^2}{\mu^2 r^3}.
+a_r= -\frac{\beta}{\mu}+\frac{L^2}{\mu^2 r^3}.
 \]
 !et
 
@@ -325,7 +325,7 @@ which gives us $r_{\mathrm{min}}$
 
 !bt
 \[
-r_{\mathrm{min}}=\left [\frac{L^2}{\beta m}\right ]^{1/3}.
+r_{\mathrm{min}}=\left [\frac{L^2}{\beta \mu}\right ]^{1/3}.
 \]
 !et
 
@@ -367,15 +367,16 @@ for i in range(n-1):
     anew = -beta+c1/(r[i+1]**3)
     v[i+1] = v[i] + 0.5*DeltaT*(a+anew)
     t[i+1] = t[i] + DeltaT
-fig, ax = plt.subplots(1,1)
-ax[0].set_xlabel('time')
-ax[0].set_ylabel('radius')
-ax[0].plot(t,r)
+#plotting
+plt.xlabel('time')
+plt.ylabel('radius')
+plt.plot(t,r)
 save_fig("LinearPotential")
 plt.show()
 
 !ec
 
+We see that if we run with the initial condition corresponding to a circular orbit, our radius stays constant as function of time. 
 
 
 
