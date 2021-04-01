@@ -1,34 +1,114 @@
-======= Two-body problems, Gravitational Forces and other Central Forces =======
+======= Two-body problems, from the Gravitational Force to Two-body Scattering  =======
 
-===== Introduction =====
+===== Introduction and Definitions =====
 
-Throughout this course 
+Central forces are forces which are directed towards or away from a
+point called center of force. A familiar force is the gravitional
+force and as we have seen earlier, one of the classical examples is
+that of the motion of our Earth around the Sun. The Sun, being
+approximately sixth order of magnitude heavier than the Earth, serves
+as our origin. A force like the gravitational force is a function of the
+relative distance $\bm{r}=\bm{r}_1-\bm{r}_2$ only, where here
+$\bm{r}_1$ and $\bm{r}_2$ are the positions relative to a defined
+origin for object one and object two, respectively.
 
-===== Two-body Problems and Center of Mass Motion =====
+These forces depend on the spatial degrees of freedom only (the
+positions of the interacting objects/particles and as we have discussed before, these forces are so-called conservative forces meaning. As we will see in this chapter, this implies conservation of energy, the total linear momentum and angular momentum, and their are defined in terms of the gradient of a
+potential which also depends only on the positions of the particles.
 
-_Note: more text to be added_.
+With a scalar potential $V(\bm{r})$ we define the force as the gradient of the potential
 
-The gravitational potential energy and forces involving two masses $a$ and $b$ are
 !bt
-\begin{eqnarray}
-V_{ab}&=&-\frac{Gm_am_b}{|\bm{r}_a-\bm{r}_b|},\\
-\nonumber
-F_{ba}&=&-\frac{Gm_am_b}{|\bm{r}_a-\bm{r}_b|^2}\hat{r}_{ab},\\
-\nonumber
-\hat{r}_{ab}&=&\frac{\bm{r}_b-\bm{r}_a}{|\bm{r}_a-\bm{r}_b|}.
-\end{eqnarray}
+\[
+\bm{F}(\bm{r})=-\bm{\nabla}V(\bm{r}).
+\]
 !et
 
-Here $G=6.67\times 10^{-11}$ Nm$^2$/kg$^2$, and $F_{ba}$ is the force
-on $b$ due to $a$. By inspection, one can see that the force on $b$
-due to $a$ and the force on $a$ due to $b$ are equal and opposite. The
+In general these potentials depend only on the magnitude of the
+relative position and we will write the potential as $V(r)$ where $r$
+is defined as,
+
+!bt
+\[
+r = |\bm{r}_1-\bm{r}_2|.
+\]
+!et
+
+In three dimensions our vectors are defined as (for an object/particle $i$)
+!bt
+\[
+\bm{r}_i = x_i\bm{e}_1+y_i\bm{e}_2+z_i\bm{e}_3,
+\]
+!et
+while in two dimensions we have
+!bt
+\[
+\bm{r}_i = x_i\bm{e}_1+y_i\bm{e}_2.
+\]
+!et
+
+In two dimensions the radius $r$ is defined as 
+!bt
+\[
+r = |\bm{r}_1-\bm{r}_2|=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}.
+\]
+!et
+
+If we consider the gravitational potential involving two masses $1$ and $2$, we have
+!bt
+\[
+V_{12}(r)=V(r)=-\frac{Gm_1m_2}{|\bm{r}_1-\bm{r}_2|}=-\frac{Gm_1m_2}{r}.
+\]
+!et
+
+Calculating the gradient of this potential we obtain the force
+!bt
+\[
+\bm{F}(\bm{r})=-\frac{Gm_1m_2}{|\bm{r}_1-\bm{r}_1|^2}\hat{\bm{r}}_{12}=-\frac{Gm_am_b}{r^2}\hat{\bm{r}},
+\]
+!et
+where we have the unit vector
+!bt
+\[
+\hat{\bm{r}}=\hat{\bm{r}}_{12}=\frac{\bm{r}_2-\bm{r}_1}{|\bm{r}_1-\bm{r}_2|}.
+\]
+!et
+
+Here $G=6.67\times 10^{-11}$ Nm$^2$/kg$^2$, and $\bm{F}$ is the force
+on $2$ due to $1$. By inspection, one can see that the force on $2$
+due to $1$ and the force on $1$ due to $2$ are equal and opposite. The
 net potential energy for a large number of masses would be
 
 !bt
-\begin{equation}
-V=\sum_{a<b}U_{ab}=\frac{1}{2}\sum_{a\ne b}V_{ab}.
-\end{equation}
+\[
+V=\sum_{i<j}V_{ij}=\frac{1}{2}\sum_{i\ne j}V_{ij}.
+\]
 !et
+
+
+In general, the central forces that we will study can be written mathematically as
+!bt
+\[
+\bm{F}(\bm{r})=f(r)\hat{r},
+\]
+!et
+where $f(r)$ is  a scalar function. For the above gravitational force this scalar term is
+$-Gm_1m_2/r^2$.
+In general we will simply write this scalar function $f(r)=\alpha/r^2$ where $\alpha$ is a constant that be either negative or positive. We will also see examples of other types of potentials in the examples below.
+
+Besides general expressions for the potentials/forces, we will discuss
+in detail different types of motion that arise, from circular to
+elliptical or hyperbolic or parabolic. By transforming to either polar
+coordinates or spherical coordinates, we will be able to obtain
+analytical solutions for the equations of motion and thereby obtain
+new insights about the properties of a system. Where possible, we will
+compare our analytical equations with numerical studies.
+
+However, before we arrive at these lovely insights, we need to introduce some mathematical manipulations and definitions. We conclude this chapter with a discussion of two-body scattering.
+
+
+
+
 
 
 Thus far, we have considered the trajectory as if the force is
