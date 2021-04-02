@@ -3,18 +3,17 @@
 ===== Introduction and Definitions =====
 
 Central forces are forces which are directed towards or away from a
-point called center of force. A familiar force is the gravitional
-force and as we have seen earlier, one of the classical examples is
-that of the motion of our Earth around the Sun. The Sun, being
-approximately sixth order of magnitude heavier than the Earth, serves
+reference point. A familiar force is the gravitional
+force  with the motion of our Earth around the Sun as a classic. The Sun, being
+approximately sixth order of magnitude heavier than the Earth serves
 as our origin. A force like the gravitational force is a function of the
-relative distance $\bm{r}=\bm{r}_1-\bm{r}_2$ only, where here
+relative distance $\bm{r}=\bm{r}_1-\bm{r}_2$ only, where 
 $\bm{r}_1$ and $\bm{r}_2$ are the positions relative to a defined
 origin for object one and object two, respectively.
 
 These forces depend on the spatial degrees of freedom only (the
-positions of the interacting objects/particles and as we have discussed before, these forces are so-called conservative forces meaning. As we will see in this chapter, this implies conservation of energy, the total linear momentum and angular momentum, and their are defined in terms of the gradient of a
-potential which also depends only on the positions of the particles.
+positions of the interacting objects/particles). As discussed earlier, from such forces we can infer
+that  the total internal energy, the total linear momentum and total angular momentum are so-called constants of the motion, that is they stay constant  over time. We say that energy, linear and anuglar momentum are conserved.
 
 With a scalar potential $V(\bm{r})$ we define the force as the gradient of the potential
 
@@ -34,7 +33,7 @@ r = |\bm{r}_1-\bm{r}_2|.
 \]
 !et
 
-In three dimensions our vectors are defined as (for an object/particle $i$)
+In three dimensions our vectors are defined as (for a given object/particle $i$)
 !bt
 \[
 \bm{r}_i = x_i\bm{e}_1+y_i\bm{e}_2+z_i\bm{e}_3,
@@ -94,7 +93,7 @@ In general, the central forces that we will study can be written mathematically 
 !et
 where $f(r)$ is  a scalar function. For the above gravitational force this scalar term is
 $-Gm_1m_2/r^2$.
-In general we will simply write this scalar function $f(r)=\alpha/r^2$ where $\alpha$ is a constant that be either negative or positive. We will also see examples of other types of potentials in the examples below.
+In general we will simply write this scalar function $f(r)=\alpha/r^2$ where $\alpha$ is a constant that can be either negative or positive. We will also see examples of other types of potentials in the examples below.
 
 Besides general expressions for the potentials/forces, we will discuss
 in detail different types of motion that arise, from circular to
@@ -104,11 +103,12 @@ analytical solutions for the equations of motion and thereby obtain
 new insights about the properties of a system. Where possible, we will
 compare our analytical equations with numerical studies.
 
-However, before we arrive at these lovely insights, we need to introduce some mathematical manipulations and definitions. We conclude this chapter with a discussion of two-body scattering.
+However, before we arrive at these lovely insights, we need to
+introduce some mathematical manipulations and definitions. We conclude
+this chapter with a discussion of two-body scattering.
 
 
-
-
+===== Center of Mass and Relative Coordinates =====
 
 
 Thus far, we have considered the trajectory as if the force is
@@ -118,93 +118,350 @@ might think that solutions would become more complex when both
 particles move, but we will see here that the problem can be reduced
 to one with a single body moving according to a fixed force by
 expressing the trajectories for $\bm{r}_1$ and $\bm{r}_2$ into the
-center-of-mass coordinate $\bm{R}_{\rm cm}$ and the relative
-coordinate $\bm{r}$,
+center-of-mass coordinate $\bm{R}$ and the relative
+coordinate $\bm{r}$. We define the center-of-mass (CoM) coordinate as 
 
 !bt
-\begin{eqnarray}
-\bm{R}_{\rm cm}&\equiv&\frac{m_1\bm{r}_1+m_2\bm{r}_2}{m_1+m_2},\\
-\nonumber
-\bm{r}&\equiv&\bm{r}_1-\bm{r_2}.
-\end{eqnarray}
+\[
+\bm{R}\equiv\frac{m_1\bm{r}_1+m_2\bm{r}_2}{m_1+m_2},
+\]
+!et
+and the relative coordinate as
+!bt
+\[
+\bm{r}\equiv\bm{r}_1-\bm{r_2}.
+\]
 !et
 
-Here, we assume the two particles interact only with one another, so
-$\bm{F}_{12}=-\bm{F}_{21}$ (where $\bm{F}_{ij}$ is the force on $i$
-due to $j$. The equations of motion then become
+We can then rewrite $\bm{r}_1$ and $\bm{r}_2$ in terms of the relative and CoM coordinates as
 
 !bt
-\begin{eqnarray}
-\ddot{\bm{R}}_{\rm cm}&=&\frac{1}{m_1+m_2}\left\{m_1\ddot{\bm{r}}_1+m_2\ddot{\bm{r}}_2\right\}\\
-\nonumber
-&=&\frac{1}{m_1+m_2}\left\{\bm{F}_{12}+\bm{F}_{21}\right\}=0.\\
-\ddot{\bm{r}}&=&\ddot{\bm{r}}_1-\ddot{\bm{r}}_2=\left(\frac{\bm{F}_{12}}{m_1}-\frac{\bm{F}_{21}}{m_2}\right)\\
-\nonumber
-&=&\left(\frac{1}{m_1}+\frac{1}{m_2}\right)\bm{F}_{12}.
-\end{eqnarray}
+\[
+\bm{r}_1=\bm{R}+\frac{m_2}{M}\bm{r},
+\]
 !et
-
-The first expression simply states that the center of mass coordinate
-$\bm{R}_{\rm cm}$ moves at a fixed velocity. The second expression
-can be rewritten in terms of the reduced mass $\mu$.
+and
 
 !bt
-\begin{eqnarray}
-\mu \ddot{\bm{r}}&=&\bm{F}_{12},\\
-\frac{1}{\mu}&=&\frac{1}{m_1}+\frac{1}{m_2},~~~~\mu=\frac{m_1m_2}{m_1+m_2}.
-\end{eqnarray}
+\[
+\bm{r}_2=\bm{R}-\frac{m_1}{M}\bm{r}.
+\]
 !et
 
-Thus, one can treat the trajectory as a one-body problem where the
-reduced mass is $\mu$, and a second trivial problem for the center of
+
+===  Conservation of total  Linear Momentum ===
+
+In our discussions on conservative forces we defined 
+the total linear momentum as
+
+!bt
+\[
+\bm{P}=\sum_{i=1}^Nm_i\frac{d\bm{r}_i}{dt},
+\]
+!et
+where $N=2$ in our case. With the above definition of the center of mass position, we see that we can rewrite the total linear momentum as (multiplying the CoM coordinate  with $M$)
+
+!bt
+\[
+\bm{P}=M\frac{d\bm{R}}{dt}=M\dot{\bm{R}}.
+\]
+!et
+
+The net force acting on the system is given by the time derivative of the linear momentum (assuming mass is time independent)
+and we have
+
+!bt
+\[
+\bm{F}^{\mathrm{net}}=\dot{\bm{P}}=M\ddot{\bm{R}}.
+\]
+!et
+
+The net force acting on the system is given by the sum of the forces acting on the two bodies, that is we have
+
+!bt
+\[
+\bm{F}^{\mathrm{net}}=\bm{F}_1+\bm{F}_2=\dot{\bm{P}}=M\ddot{\bm{R}}.
+\]
+!et
+
+
+In our case the forces are given by the internal forces only. The force acting on object $1$ is thus $\bm{F}_{12}$ and the one acting on object $2$ is $\bm{F}_{12}$. We have also defined that $\bm{F}_{12}=-\bm{F}_{21}$. This means thar we have
+!bt
+\[
+\bm{F}_1+\bm{F}_2=\bm{F}_{12}+\bm{F}_{21}=0=\dot{\bm{P}}=M\ddot{\bm{R}}.
+\]
+!et
+We could alternatively had write this
+!bt
+\[
+\ddot{\bm{R}}_{\rm cm}=\frac{1}{m_1+m_2}\left\{m_1\ddot{\bm{r}}_1+m_2\ddot{\bm{r}}_2\right\}=\frac{1}{m_1+m_2}\left\{\bm{F}_{12}+\bm{F}_{21}\right\}=0.
+\]
+!et
+
+This has the important consequence that the CoM velocity is a constant
+of the motion. And since the total linear momentum is given by the
+time-derivative of the CoM coordinate times the total mass
+$M=m_1+m_2$, it means that linear momentum is also conserved.
+Stated differently,  the center-of-mass coordinate
+$\bm{R}$ moves at a fixed velocity.
+
+This has also another important consequence for our forces. If we
+assume that our force depends only on the relative coordinate, it
+means that the gradient of the potential with respect to the center of
+mass position is zero, that is
+!bt
+\[
+M\ddot{d\bm{R}}=-\bm{\nabla}_{\bm{R}}V =0!
+\]
+!et
+
+
+If we now switch to the equation of motion for the relative coordinate, we have 
+!bt
+\[
+\ddot{\bm{r}}=\ddot{\bm{r}}_1-\ddot{\bm{r}}_2=\left(\frac{\bm{F}_{12}}{m_1}-\frac{\bm{F}_{21}}{m_2}\right)=\left(\frac{1}{m_1}+\frac{1}{m_2}\right)\bm{F}_{12},
+\]
+!et
+which we can rewrite in terms of the reduced mass
+!bt
+\[
+\mu=\frac{m_1m_2}{m_1+m_2},
+\]
+!et
+as
+!bt
+\[
+\mu \ddot{\bm{r}}=\bm{F}_{12}.
+\]
+!et
+
+This has a very important consequence for our coming analysis of the equations of motion for the two-body problem.
+Since the acceleration for the CoM coordinate is zero, we can now
+treat the trajectory as a one-body problem where the mass is given by 
+the reduced mass $\mu$ plus a second trivial problem for the center of
 mass. The reduced mass is especially convenient when one is
-considering gravitational problems because then
+considering forces that depend only on the relative coordinate (like the Gravitational force or the electrostatic force between two charges)  because then for say the gravitational force we have
 
 !bt
-\begin{eqnarray}
-\mu \ddot{r}&=&-\frac{Gm_1m_2}{r^2}\hat{r}\\
-\nonumber
-&=&-\frac{GM\mu}{r^2}\hat{r},~~~M\equiv m_1+m_2.
-\end{eqnarray}
+\[
+\mu \ddot{\bm{r}}=-\frac{Gm_1m_2}{r^2}\hat{\bm{r}}=-\frac{GM\mu}{r^2}\hat{\bm{r}},
+\]
 !et
-
-For the gravitational problem, the reduced mass then falls out and the
+where we have defined $M= m_1+m_2$.  It means that the acceleration of the relative coordinate is
+!bt
+\[
+\ddot{\bm{r}}=-\frac{GM}{r^2}\hat{\bm{r}},
+\]
+!et
+and we have that for the gravitational problem, the reduced mass then falls out and the
 trajectory depends only on the total mass $M$.
-
-The kinetic energy and momenta also have analogues in center-of-mass
-coordinates. The total and relative momenta are
-
-!bt
-\begin{eqnarray}
-\bm{P}&\equiv&\bm{p}_1+\bm{p}_2=M\dot{\bm{R}}_{\rm cm},\\
-\nonumber
-\bm{q}&\equiv&\mu\dot{\bm{r}}.
-\end{eqnarray}
-!et
-
-With these definitions, a little algebra shows that the kinetic energy becomes
-
-
-!bt
-\begin{eqnarray}
-K&=&\frac{1}{2}m_1|\bm{v}_1|^2+\frac{1}{2}m_2|\bm{v}_2|^2\\
-\nonumber
-&=&\frac{1}{2}M|\dot{\bm{R}}_{\rm cm}|^2
-+\frac{1}{2}\mu|\dot{\bm{r}}|^2\\
-\nonumber
-&=&\frac{P^2}{2M}+\frac{q^2}{2\mu}.
-\end{eqnarray}
-!et
 
 The standard strategy is to transform into the center of mass frame,
 then treat the problem as one of a single particle of mass $\mu$
-undergoing a force $\bm{F}_{12}$. Scattering angles can also be
-expressed in this frame, then transformed into the lab frame. In
-practice, one sees examples in the literature where $d\sigma/d\Omega$
-expressed in both the ``center-of-mass'' and in the ``laboratory''
-frame.
+undergoing a force $\bm{F}_{12}$. Scattering angles, see our discussion of scattering problems below, can also be
+expressed in this frame.  Before we proceed to our definition of the CoM frame we need to set up the expression for the energy in terms of the relative and CoM coordinates.
 
 
+=== Kinetic and total Energy ===
+
+The kinetic energy and momenta also have analogues in center-of-mass
+coordinates. 
+We have defined the total linear momentum as 
+
+!bt
+\[
+\bm{P}=\sum_{i=1}^Nm_i\frac{d\bm{r}_i}{dt}=M\dot{\bm{R}}.
+\]
+!et
+
+For the relative momentum $\bm{q}$, we have that the time derivative of $\bm{r}$ is
+!bt
+\[
+\dot{\bm{r}} =\dot{\bm{r}}_1-\dot{\bm{r}}_2,
+\]
+!et
+
+We know also that the momenta $\bm{p}_1=m_1\dot{\bm{r}}_1$ and
+$\bm{p}_2=m_2\dot{\bm{r}}_2$. Using these expressions we can rewrite
+
+!bt
+\[
+\dot{\bm{r}} =\frac{\bm{p}_1}{m_1}-\frac{\bm{p}_2}{m_2},
+\]
+!et
+
+which gives
+
+!bt
+\[
+\dot{\bm{r}} =\frac{m_2\bm{p}_1-m_1\bm{p}_2}{m_1m_2},
+\]
+!et
+
+and dividing both sides with $M$ we have
+
+!bt
+\[
+\frac{m_1m_2}{M}\dot{\bm{r}} =\frac{m_2\bm{p}_1-m_1\bm{p}_2}{M}.
+\]
+!et
+
+Introducing the reduced mass $\mu=m_1m_2/M$ we have finally
+
+!bt
+\[
+\mu\dot{\bm{r}} =\frac{m_2\bm{p}_1-m_1\bm{p}_2}{M}.
+\]
+!et
+And $\mu\dot{\bm{r}}$ defines the relative momentum $\bm{q}=\mu\dot{\bm{r}}$. 
+
+With these definitions we can then calculate the kinetic energy in terms of the relative and CoM coordinates.
+
+We have that
+
+!bt
+\[
+K=\frac{p_1^2}{2m_1}+\frac{p_2^2}{2m_2},
+\]
+!et
+
+and with $\bm{p}_1=m_1\dot{\bm{r}}_1$ and $\bm{p}_2=m_2\dot{\bm{r}}_2$ and using
+
+!bt
+\[
+\dot{\bm{r}}_1=\dot{\bm{R}}+\frac{m_2}{M}\dot{\bm{r}},
+\]
+!et
+and
+
+!bt
+\[
+\dot{\bm{r}}_2=\dot{\bm{R}}-\frac{m_1}{M}\dot{\bm{r}},
+\]
+!et
+
+we obtain after squaring the expressions for $\dot{\bm{r}}_1$ and $\dot{\bm{r}}_2$
+
+!bt
+\[
+K=\frac{(m_1+m_2)\dot{\bm{R}}^2}{2}+\frac{(m_1+m_2)m_1m_2\dot{\bm{r}}^2}{2M^2},
+\]
+!et
+which we simplify to 
+
+!bt
+\[
+K=\frac{\dot{\bm{P}}^2}{2M}+\frac{\mu\dot{\bm{q}}^2}{2}.
+\]
+!et
+
+Below we will define a reference frame, the so-called CoM-frame, where
+$\bm{R}=0$. This is going to simplify our equations further.
+
+
+=== Conservation of Angular Momentum ===
+
+
+The angular momentum (the total one) is the sum of the individual angular momenta. In our case we have two bodies only, meaning that our angular momentum is defined as
+
+!bt
+\[
+\bm{L} = \bm{r}_1 \times \bm{p}_1+\bm{r}_2 \times \bm{p}_2,
+\]
+!et
+and using that $m_1\dot{\bm{r}}_1=\bm{p}_1$ and $m_2\dot{\bm{r}}_2=\bm{p}_2$ we have
+
+!bt
+\[
+\bm{L} = m_1\bm{r}_1 \times \dot{\bm{r}}_1+m_2\bm{r}_2 \times \dot{\bm{r}}_2.
+\]
+!et
+
+We define now the CoM-Frame where we set $\bm{R}=0$. This means that the equations 
+for $\bm{r}_1$ and $\bm{r}_2$ in terms of the relative motion simplify and  we have
+!bt
+\[
+\bm{r}_1=\frac{m_2}{M}\bm{r},
+\]
+!et
+and
+
+!bt
+\[
+\bm{r}_2=-\frac{m_1}{M}\bm{r}.
+\]
+!et
+resulting in 
+!bt
+\[
+\bm{L} = m_1 \frac{m_2}{M}\bm{r}\times\frac{m_2}{M}\bm{r} +m_2 \frac{m_1}{M}\bm{r} \times \frac{m_1}{M}\dot{\bm{r}}.
+\]
+!et
+
+We see that can rewrite this equation as 
+!bt
+\[
+\bm{L}=\bm{r}\times \mu\dot{\bm{r}}=\mu\bm{r}\times \dot{\bm{r}}.
+\]
+!et
+If we now use a central force, we have that
+!bt
+\[
+\mu\dot{\bm{r}}=\bm{F}(\bm{r})=f(r)\hat{\bm{r}}, 
+\]
+!et
+and inserting this in the equation for the angular momentum we have
+!bt
+\[
+\bm{L}=\bm{r}\times f(r)\hat{\bm{r}},
+\]
+!et
+
+which equals zero since we are taking the cross product of the vector
+$\bm{r}$ with itself.  Angular momentum is thus conserved and in
+addition to the total linear momentum being conserved, we know that
+energy is also conserved with forces that depend only on position and
+the relative coordinate only.
+
+Since angular momentum is conserved, we can idealize
+the motion of our two objects as two bodies moving in a plane spanned by the
+relative coordinate and the relative momentum. The angular
+momentum is perpendicular to the plane spanned by these two vectors.
+
+
+It means also, since $\bm{L}$ is conserved, that we can reduce our
+problem to a motion in say the $xy$-plane.  What we have done then is to
+reduce a two-body problem in three-dimensions with six degrees of
+freedom (the six coordinates of the two objects) to a problem defined
+entirely by the relative coordinate in two dimensions.  We have thus
+moved from a problem with six degrees of freedom to one with two degrees of freedom only.
+
+Since we deal with central forces that depend only on the
+relative coordinate, we will show below that transforming to polar
+coordinates, we cna find analytical solution to
+the equation of motion
+!bt
+\[
+\mu\dot{\bm{r}}=\bm{F}(\bm{r})=f(r)\hat{\bm{r}}.
+\]
+!et
+
+Note the boldfaced symbols for the relative position $\bm{r}$. Our vector $\bm{r}$ is defined as
+
+!bt
+\[
+\bm{r}=x\bm{e}_1+y\bm{e}_2
+\]
+!et
+and introducing polar coordinates $r\in[0,\infty)$ and $\phi\in [0,2\pi]$ and the transformation 
+!bt
+\[
+r=\sqrt{x^2+y^2},
+\]
+!et
+and $x=r\cos\phi$ and $y=r\sin\phi$, we will rewrite our equation of motion by transforming from Cartesian coordinates to Polar coordinates. By so doing, we end up with two differential equations which can be solved analytically (it depends on the form of the potential).
+
+What follows now is a rewrite of these equations and the introduction of Kepler's laws as well.
 
 ===== Deriving Elliptical Orbits =====
 
@@ -212,17 +469,24 @@ Kepler's laws state that a gravitational orbit should be an ellipse
 with the source of the gravitational field at one focus. Deriving this
 is surprisingly messy. To do this, we first use angular momentum
 conservation to transform the equations of motion so that it is in
-terms of $r$ and $\theta$ instead of $r$ and $t$. The overall strategy
+terms of $r$ and $\phi$ instead of $r$ and $t$. The overall strategy
 is to
 
 
-o Find equations of motion for $r$ and $t$ with no angle ($\theta$) mentioned, i.e. $d^2r/dt^2=\cdots$. Angular momentum conservation will be used, and the equation will involve the angular momentum $L$.
-o Use angular momentum conservation to find an expression for $\dot{\theta}$ in terms of $r$.
-o Use the chain rule to convert the equations of motions for $r$, an expression involving $r,\dot{r}$ and $\ddot{r}$, to one involving $r,dr/d\theta$ and $d^2r/d\theta^2$. This is quitecomplicated because the expressions will also involve a substitution $u=1/r$ so that one finds an expression in terms of $u$ and $\theta$.
-o Once $u(\theta)$ is found, you need to show that this can be converted to the familiar form for an ellipse.
+o Find equations of motion for $r$ and $t$ with no angle ($\phi$) mentioned, i.e. $d^2r/dt^2=\cdots$. Angular momentum conservation will be used, and the equation will involve the angular momentum $L$.
+o Use angular momentum conservation to find an expression for $\dot{\phi}$ in terms of $r$.
+o Use the chain rule to convert the equations of motions for $r$, an expression involving $r,\dot{r}$ and $\ddot{r}$, to one involving $r,dr/d\phi$ and $d^2r/d\phi^2$. This is quitecomplicated because the expressions will also involve a substitution $u=1/r$ so that one finds an expression in terms of $u$ and $\phi$.
+o Once $u(\phi)$ is found, you need to show that this can be converted to the familiar form for an ellipse.
 
-
-The equations of motion give
+We will now rewrite the above equation of motion (note the boldfaced vector $\bm{r}$)
+!bt
+\[
+\mu \ddot{\bm{r}}=\bm{F}(\bm{r}),
+\]
+!et
+in polar coordinates.
+What follows here is a repeated application of the chain rule for derivatives.
+We start with derivative for $r$ as function of time in a cartesian basis
 
 !bt
 \begin{eqnarray}
@@ -236,97 +500,102 @@ label{eq:radialeqofmotion}
 -\frac{\dot{r}^2}{r}.
 \end{eqnarray}
 !et
+Note that there are no vectors involved here.
 
 Recognizing that the numerator of the third term is the velocity squared, and that it can be written in polar coordinates, 
 
 !bt
 \begin{equation}
-v^2=\dot{x}^2+\dot{y}^2=\dot{r}^2+r^2\dot{\theta}^2,
+v^2=\dot{x}^2+\dot{y}^2=\dot{r}^2+r^2\dot{\phi}^2,
 \end{equation}
 !et
 
 one can write $\ddot{r}$ as
 
 !bt
-\begin{eqnarray}
+\begin{align}
 label{eq:radialeqofmotion2}
-\ddot{r}&=&\frac{F_x\cos\theta+F_y\sin\theta}{m}+\frac{\dot{r}^2+r^2\dot{\theta}^2}{r}-\frac{\dot{r}^2}{r}\\
+\ddot{r}&=\frac{F_x\cos\phi+F_y\sin\phi}{m}+\frac{\dot{r}^2+r^2\dot{\phi}^2}{r}-\frac{\dot{r}^2}{r}\\
 \nonumber
-&=&\frac{F}{m}+\frac{r^2\dot{\theta}^2}{r}\\
-\nonumber
-m\ddot{r}&=&F+\frac{L^2}{mr^3}.
-\end{eqnarray}
+&=\frac{F}{m}+\frac{r^2\dot{\phi}^2}{r}\\
+\end{align}
+!et
+or
+!bt
+\[
+m\ddot{r}=F+\frac{L^2}{mr^3}.
+\]
 !et
 
 This derivation used the fact that the force was radial,
-$F=F_r=F_x\cos\theta+F_y\sin\theta$, and that angular momentum is
-$L=mrv_{\theta}=mr^2\dot{\theta}$. The term $L^2/mr^3=mv^2/r$ behaves
+$F=F_r=F_x\cos\phi+F_y\sin\phi$, and that angular momentum is
+$L=mrv_{\phi}=mr^2\dot{\phi}$. The term $L^2/mr^3=mv^2/r$ behaves
 like an additional force. Sometimes this is referred to as a
 centrifugal force, but it is not a force. Instead, it is the
 consequence of considering the motion in a rotating (and therefore
 accelerating) frame.
 
 Now, we switch to the particular case of an attractive inverse square
-force, $F=-\alpha/r^2$, and show that the trajectory, $r(\theta)$, is
+force, $F=-\alpha/r^2$, and show that the trajectory, $r(\phi)$, is
 an ellipse. To do this we transform derivatives w.r.t. time to
-derivatives w.r.t. $\theta$ using the chain rule combined with angular
-momentum conservation, $\dot{\theta}=L/mr^2$.
+derivatives w.r.t. $\phi$ using the chain rule combined with angular
+momentum conservation, $\dot{\phi}=L/mr^2$.
 
 !bt
 \begin{eqnarray}
 label{eq:rtotheta}
-\dot{r}&=&\frac{dr}{d\theta}\dot{\theta}=\frac{dr}{d\theta}\frac{L}{mr^2},\\
+\dot{r}&=&\frac{dr}{d\phi}\dot{\phi}=\frac{dr}{d\phi}\frac{L}{mr^2},\\
 \nonumber
-\ddot{r}&=&\frac{d^2r}{d\theta^2}\dot{\theta}^2
-+\frac{dr}{d\theta}\left(\frac{d}{dr}\frac{L}{mr^2}\right)\dot{r}\\
+\ddot{r}&=&\frac{d^2r}{d\phi^2}\dot{\phi}^2
++\frac{dr}{d\phi}\left(\frac{d}{dr}\frac{L}{mr^2}\right)\dot{r}\\
 \nonumber
-&=&\frac{d^2r}{d\theta^2}\left(\frac{L}{mr^2}\right)^2
--2\frac{dr}{d\theta}\frac{L}{mr^3}\dot{r}\\
+&=&\frac{d^2r}{d\phi^2}\left(\frac{L}{mr^2}\right)^2
+-2\frac{dr}{d\phi}\frac{L}{mr^3}\dot{r}\\
 \nonumber
-&=&\frac{d^2r}{d\theta^2}\left(\frac{L}{mr^2}\right)^2
--\frac{2}{r}\left(\frac{dr}{d\theta}\right)^2\left(\frac{L}{mr^2}\right)^2
+&=&\frac{d^2r}{d\phi^2}\left(\frac{L}{mr^2}\right)^2
+-\frac{2}{r}\left(\frac{dr}{d\phi}\right)^2\left(\frac{L}{mr^2}\right)^2
 \end{eqnarray}
 !et
 
 
-Equating the two expressions for $\ddot{r}$ in Eq.s (ref{eq:radialeqofmotion2}) and (ref{eq:rtotheta}) eliminates all the derivatives w.r.t. time, and provides a differential equation with only derivatives w.r.t. $\theta$,
+Equating the two expressions for $\ddot{r}$ in Eq.s (ref{eq:radialeqofmotion2}) and (ref{eq:rtotheta}) eliminates all the derivatives w.r.t. time, and provides a differential equation with only derivatives w.r.t. $\phi$,
 
 !bt
 \begin{equation}
 label{eq:rdotdot}
-\frac{d^2r}{d\theta^2}\left(\frac{L}{mr^2}\right)^2
--\frac{2}{r}\left(\frac{dr}{d\theta}\right)^2\left(\frac{L}{mr^2}\right)^2
+\frac{d^2r}{d\phi^2}\left(\frac{L}{mr^2}\right)^2
+-\frac{2}{r}\left(\frac{dr}{d\phi}\right)^2\left(\frac{L}{mr^2}\right)^2
 =\frac{F}{m}+\frac{L^2}{m^2r^3},
 \end{equation}
 !et
 
 
-that when solved yields the trajectory, i.e. $r(\theta)$. Up to this
+that when solved yields the trajectory, i.e. $r(\phi)$. Up to this
 point the expressions work for any radial force, not just forces that
 fall as $1/r^2$.
 
 The trick to simplifying this differential equation for the inverse
 square problems is to make a substitution, $u\equiv 1/r$, and rewrite
-the differential equation for $u(\theta)$.
+the differential equation for $u(\phi)$.
 
 
 !bt
 \begin{eqnarray}
 r&=&1/u,\\
 \nonumber
-\frac{dr}{d\theta}&=&-\frac{1}{u^2}\frac{du}{d\theta},\\
+\frac{dr}{d\phi}&=&-\frac{1}{u^2}\frac{du}{d\phi},\\
 \nonumber
-\frac{d^2r}{d\theta^2}&=&\frac{2}{u^3}\left(\frac{du}{d\theta}\right)^2-\frac{1}{u^2}\frac{d^2u}{d\theta^2}.
+\frac{d^2r}{d\phi^2}&=&\frac{2}{u^3}\left(\frac{du}{d\phi}\right)^2-\frac{1}{u^2}\frac{d^2u}{d\phi^2}.
 \end{eqnarray}
 !et
 
 Plugging these expressions into Eq. (ref{eq:rdotdot}) gives an
-expression in terms of $u$, $du/d\theta$, and $d^2u/d\theta^2$. After
+expression in terms of $u$, $du/d\phi$, and $d^2u/d\phi^2$. After
 some tedious algebra,
 
 !bt
 \begin{equation}
-\frac{d^2u}{d\theta^2}=-u-\frac{F m}{L^2u^2}.
+\frac{d^2u}{d\phi^2}=-u-\frac{F m}{L^2u^2}.
 \end{equation}
 !et
 
@@ -334,23 +603,23 @@ For the attractive inverse square law force, $F=-\alpha u^2$,
 
 !bt
 \begin{equation}
-\frac{d^2u}{d\theta^2}=-u+\frac{m\alpha}{L^2}.
+\frac{d^2u}{d\phi^2}=-u+\frac{m\alpha}{L^2}.
 \end{equation}
 !et
 
-The solution has two arbitrary constants, $A$ and $\theta_0$,
+The solution has two arbitrary constants, $A$ and $\phi_0$,
 
 !bt
 \begin{eqnarray}
 label{eq:Ctrajectory}
-u&=&\frac{m\alpha}{L^2}+A\cos(\theta-\theta_0),\\
+u&=&\frac{m\alpha}{L^2}+A\cos(\phi-\phi_0),\\
 \nonumber
-r&=&\frac{1}{(m\alpha/L^2)+A\cos(\theta-\theta_0)}.
+r&=&\frac{1}{(m\alpha/L^2)+A\cos(\phi-\phi_0)}.
 \end{eqnarray}
 !et
 
-The radius will be at a minimum when $\theta=\theta_0$ and at a
-maximum when $\theta=\theta_0+\pi$. The constant $A$ is related to the
+The radius will be at a minimum when $\phi=\phi_0$ and at a
+maximum when $\phi=\phi_0+\pi$. The constant $A$ is related to the
 eccentricity of the orbit. When $A=0$ the radius is a constant
 $r=L^2/(m\alpha)$, and the motion is circular. If one solved the
 expression $mv^2/r=-\alpha/r^2$ for a circular orbit, using the
@@ -367,11 +636,11 @@ origin,
 
 !bt
 \begin{eqnarray}
-2D&=&r+\sqrt{(r\cos\theta-2a)^2+r^2\sin^2\theta},\\
+2D&=&r+\sqrt{(r\cos\phi-2a)^2+r^2\sin^2\phi},\\
 \nonumber
-4D^2+r^2-4Dr&=&r^2+4a^2-4ar\cos\theta,\\
+4D^2+r^2-4Dr&=&r^2+4a^2-4ar\cos\phi,\\
 \nonumber
-r&=&\frac{D^2-a^2}{D+a\cos\theta}=\frac{1}{D/(D^2-a^2)-a\cos\theta/(D^2-a^2)}.
+r&=&\frac{D^2-a^2}{D+a\cos\phi}=\frac{1}{D/(D^2-a^2)-a\cos\phi/(D^2-a^2)}.
 \end{eqnarray}
 !et
 
@@ -403,9 +672,9 @@ The total energy of a particle is
 
 !bt
 \begin{eqnarray}
-E&=&V(r)+\frac{1}{2}mv_\theta^2+\frac{1}{2}m\dot{r}^2\\
+E&=&V(r)+\frac{1}{2}mv_\phi^2+\frac{1}{2}m\dot{r}^2\\
 \nonumber
-&=&V(r)+\frac{1}{2}mr^2\dot{\theta}^2+\frac{1}{2}m\dot{r}^2\\
+&=&V(r)+\frac{1}{2}mr^2\dot{\phi}^2+\frac{1}{2}m\dot{r}^2\\
 \nonumber
 &=&V(r)+\frac{L^2}{2mr^2}+\frac{1}{2}m\dot{r}^2.
 \end{eqnarray}
@@ -610,7 +879,7 @@ minimum for at some radius $r_{\rm min}$.
 \begin{eqnarray*}
 0&=&kr_{\rm min}-\frac{L^2}{mr_{\rm min}^3},\\
 r_{\rm min}&=&\left(\frac{L^2}{mk}\right)^{1/4},\\
-\dot{\theta}&=&\frac{L}{mr_{\rm min}^2}=\sqrt{k/m}.
+\dot{\phi}&=&\frac{L}{mr_{\rm min}^2}=\sqrt{k/m}.
 \end{eqnarray*}
 !et
 
@@ -627,7 +896,7 @@ For the above parameters this minimum is at $r_{\rm min}=1$.
 \begin{eqnarray*}
 k_{\rm eff}&=&\left.\frac{d^2}{dr^2}V_{\rm eff}(r)\right|_{r=r_{\rm min}}=k+\frac{3L^2}{mr_{\rm min}^4}\\
 &=&4k,\\
-\omega&=&\sqrt{k_{\rm eff}/m}=2\sqrt{k/m}=2\dot{\theta}.
+\omega&=&\sqrt{k_{\rm eff}/m}=2\sqrt{k/m}=2\dot{\phi}.
 \end{eqnarray*}
 !et
 
@@ -841,7 +1110,7 @@ For the circular orbit you search for the position $r_{\rm min}$ where the effec
 \partial_r\left\{\beta r+\frac{L^2}{2mr^2}\right\}&=&0,\\
 \beta&=&\frac{L^2}{mr_{\rm min}^3},\\
 r_{\rm min}&=&\left(\frac{L^2}{\beta m}\right)^{1/3},\\
-\dot{\theta}&=&\frac{L}{mr_{\rm min}^2}=\frac{\beta^{2/3}}{(mL)^{1/3}}
+\dot{\phi}&=&\frac{L}{mr_{\rm min}^2}=\frac{\beta^{2/3}}{(mL)^{1/3}}
 \end{eqnarray*}
 !et
 
@@ -857,11 +1126,11 @@ k_{\rm eff}&=&\partial_r^2 \left.V_{\rm eff}\right|_{r_{\rm min}}\\
 \end{eqnarray*}
 !et
 
-If the two frequencies, $\dot{\theta}$ and $\omega$, differ by an
+If the two frequencies, $\dot{\phi}$ and $\omega$, differ by an
 integer factor, the orbit's trajectory will repeat itself each time
 around. This is the case for the inverse-square force,
-$\omega=\dot{\theta}$, and for the harmonic oscillator,
-$\omega=2\dot{\theta}$. In this case, $\omega=\sqrt{3}\dot{\theta}$,
+$\omega=\dot{\phi}$, and for the harmonic oscillator,
+$\omega=2\dot{\phi}$. In this case, $\omega=\sqrt{3}\dot{\phi}$,
 and the angles at which the maxima and minima occur change with each
 orbit.
  
@@ -1023,7 +1292,7 @@ interaction in nuclear or particle physics, there is no long-range
 force and cross-sections are finite. Even for Coulomb forces, the part
 of the cross section that corresponds to a specific scattering angle,
 $d\sigma/d\Omega$, which is a function of the scattering angle
-$\theta_s$ is still finite.
+$\phi_s$ is still finite.
 
 If a particle travels through a thin target, the chance the particle
 scatters is $P_{\rm scatt}=\sigma dN/dA$, where $dN/dA$ is the number
@@ -1043,8 +1312,8 @@ cross-sections,
 
 Instead of merely stating that a particle collided, one can measure
 the probability the particle scattered by a given angle. The
-scattering angle $\theta_s$ is defined so that at zero the particle is
-unscattered and at $\theta_s=\pi$ the particle is scattered directly
+scattering angle $\phi_s$ is defined so that at zero the particle is
+unscattered and at $\phi_s=\pi$ the particle is scattered directly
 backward. Scattering angles are often described in the center-of-mass
 frame, but that is a detail we will neglect for this first discussion,
 where we will consider the scattering of particles moving classically
@@ -1054,7 +1323,7 @@ differential cross section,
 
 !bt
 \begin{equation}
-\frac{d^2\sigma}{d\cos\theta_s~d\phi}.
+\frac{d^2\sigma}{d\cos\phi_s~d\phi}.
 \end{equation}
 !et
 
@@ -1062,7 +1331,7 @@ Usually, the literature expresses differential cross sections as
 
 !bt
 \begin{equation}
-d\sigma/d\Omega=\frac{d\sigma}{d\cos\theta d\phi}=\frac{1}{2\pi}\frac{d\sigma}{d\cos\theta},
+d\sigma/d\Omega=\frac{d\sigma}{d\cos\phi d\phi}=\frac{1}{2\pi}\frac{d\sigma}{d\cos\phi},
 \end{equation}
 !et
 
@@ -1104,23 +1373,23 @@ which is the area of a thin ring of radius $b$ and thickness $db$. In
 classical physics, one can calculate the trajectory given the incoming
 kinetic energy $E$ and the impact parameter if one knows the mass and
 potential. From the trajectory, one then finds the scattering angle
-$\theta_s(b)$. The differential cross section is then
+$\phi_s(b)$. The differential cross section is then
 
 !bt
 \begin{equation}
-\frac{d\sigma}{d\Omega}=\frac{1}{2\pi}\frac{d\sigma}{d\cos\theta_s}=b\frac{db}{d\cos\theta_s}=\frac{b}{(d/db)\cos\theta_s(b)}.
+\frac{d\sigma}{d\Omega}=\frac{1}{2\pi}\frac{d\sigma}{d\cos\phi_s}=b\frac{db}{d\cos\phi_s}=\frac{b}{(d/db)\cos\phi_s(b)}.
 \end{equation}
 !et
 
-Typically, one would calculate $\cos\theta_s$ and $(d/db)\cos\theta_s$
+Typically, one would calculate $\cos\phi_s$ and $(d/db)\cos\phi_s$
 as functions of $b$. This is sufficient to plot the differential cross
-section as a function of $\theta_s$.
+section as a function of $\phi_s$.
 
 The total cross section is 
 
 !bt
 \begin{equation}
-\sigma_{\rm tot}=\int d\Omega\frac{d\sigma}{d\Omega}=2\pi\int d\cos\theta_s~\frac{d\sigma}{d\Omega}. 
+\sigma_{\rm tot}=\int d\Omega\frac{d\sigma}{d\Omega}=2\pi\int d\cos\phi_s~\frac{d\sigma}{d\Omega}. 
 \end{equation}
 !et
 
@@ -1175,8 +1444,8 @@ to Spartan Stadium.
 
 
 The incoming and outgoing angles of the trajectory are at
-$\pm\theta'$. They are related to the scattering angle by
-$2\theta'=\pi+\theta_s$.
+$\pm\phi'$. They are related to the scattering angle by
+$2\phi'=\pi+\phi_s$.
 
 In order to calculate differential cross section, we must find how the
 impact parameter is related to the scattering angle. This requires
@@ -1194,43 +1463,43 @@ tracks. Rewriting Eq. (ref{eq:Ctrajectory}),
 
 !bt
 \begin{equation}label{eq:ruthtraj}
-r=\frac{1}{\frac{m\alpha}{L^2}+A\cos\theta}.
+r=\frac{1}{\frac{m\alpha}{L^2}+A\cos\phi}.
 \end{equation}
 !et
 
 Once $A$ is large enough, which will happen when the energy is
 positive, the denominator will become negative for a range of
-$\theta$. This is because the scattered particle will never reach
-certain angles. The asymptotic angles $\theta'$ are those for which
+$\phi$. This is because the scattered particle will never reach
+certain angles. The asymptotic angles $\phi'$ are those for which
 the denominator goes to zero,
 
 !bt
 \begin{equation}
-\cos\theta'=-\frac{m\alpha}{AL^2}.
+\cos\phi'=-\frac{m\alpha}{AL^2}.
 \end{equation}
 !et
 
-The trajectory's point of closest approach is at $\theta=0$ and the
-two angles $\theta'$, which have this value of $\cos\theta'$, are the
+The trajectory's point of closest approach is at $\phi=0$ and the
+two angles $\phi'$, which have this value of $\cos\phi'$, are the
 angles of the incoming and outgoing particles. From
 Fig (_to come_), one can see that the scattering angle
-$\theta_s$ is given by,
+$\phi_s$ is given by,
 
 !bt
 \begin{eqnarray}
 label{eq:sthetover2}
-2\theta'-\pi&=&\theta_s,~~~\theta'=\frac{\pi}{2}+\frac{\theta_s}{2},\\
+2\phi'-\pi&=&\phi_s,~~~\phi'=\frac{\pi}{2}+\frac{\phi_s}{2},\\
 \nonumber
-\sin(\theta_s/2)&=&-\cos\theta'\\
+\sin(\phi_s/2)&=&-\cos\phi'\\
 \nonumber
 &=&\frac{m\alpha}{AL^2}.
 \end{eqnarray}
 !et
 
-Now that we have $\theta_s$ in terms of $m,\alpha,L$ and $A$, we wish
+Now that we have $\phi_s$ in terms of $m,\alpha,L$ and $A$, we wish
 to re-express $L$ and $A$ in terms of the impact parameter $b$ and the
 energy $E$. This will set us up to calculate the differential cross
-section, which requires knowing $db/d\theta_s$. It is easy to write
+section, which requires knowing $db/d\phi_s$. It is easy to write
 the angular momentum as
 
 !bt
@@ -1240,7 +1509,7 @@ L^2=p_0^2b^2=2mEb^2.
 !et
 
 Finding $A$ is more complicated. To accomplish this we realize that
-the point of closest approach occurs at $\theta=0$, so from
+the point of closest approach occurs at $\phi=0$, so from
 Eq. (ref{eq:ruthtraj})
 
 !bt
@@ -1283,7 +1552,7 @@ Finally, we insert the expression for $A$ into that for the scattering angle, Eq
 !bt
 \begin{eqnarray}
 label{eq:scattangle}
-\sin(\theta_s/2)&=&\frac{m\alpha}{AL^2}\\
+\sin(\phi_s/2)&=&\frac{m\alpha}{AL^2}\\
 \nonumber
 &=&\frac{a}{\sqrt{a^2+b^2}}, ~~a\equiv \frac{\alpha}{2E}
 \end{eqnarray}
@@ -1291,25 +1560,25 @@ label{eq:scattangle}
 
 
 The differential cross section can now be found by differentiating the
-expression for $\theta_s$ with $b$,
+expression for $\phi_s$ with $b$,
 
 !bt
 \begin{eqnarray}
 label{eq:rutherford}
-\frac{1}{2}\cos(\theta_s/2)d\theta_s&=&\frac{ab~db}{(a^2+b^2)^{3/2}}=\frac{bdb}{a^2}\sin^3(\theta_s/2),\\
+\frac{1}{2}\cos(\phi_s/2)d\phi_s&=&\frac{ab~db}{(a^2+b^2)^{3/2}}=\frac{bdb}{a^2}\sin^3(\phi_s/2),\\
 \nonumber
-d\sigma&=&2\pi bdb=\frac{\pi a^2}{\sin^3(\theta_s/2)}\cos(\theta_s/2)d\theta_s\\
+d\sigma&=&2\pi bdb=\frac{\pi a^2}{\sin^3(\phi_s/2)}\cos(\phi_s/2)d\phi_s\\
 \nonumber
-&=&\frac{\pi a^2}{2\sin^4(\theta_s/2)}\sin\theta_s d\theta_s\\
+&=&\frac{\pi a^2}{2\sin^4(\phi_s/2)}\sin\phi_s d\phi_s\\
 \nonumber
-\frac{d\sigma}{d\cos\theta_s}&=&\frac{\pi a^2}{2\sin^4(\theta_s/2)},\\
+\frac{d\sigma}{d\cos\phi_s}&=&\frac{\pi a^2}{2\sin^4(\phi_s/2)},\\
 \nonumber
-\frac{d\sigma}{d\Omega}&=&\frac{a^2}{4\sin^4(\theta_s/2)}.
+\frac{d\sigma}{d\Omega}&=&\frac{a^2}{4\sin^4(\phi_s/2)}.
 \end{eqnarray}
 !et
 
 where $a= \alpha/2E$. This the Rutherford formula for the differential
-cross section. It diverges as $\theta_s\rightarrow 0$ because
+cross section. It diverges as $\phi_s\rightarrow 0$ because
 scatterings with arbitrarily large impact parameters still scatter to
 arbitrarily small scattering angles. The expression for
 $d\sigma/d\Omega$ is the same whether the interaction is positive or
@@ -1327,7 +1596,7 @@ Let $\alpha=Zze^2/(4\pi\epsilon_0)$. The scattering angle in Eq. (ref{eq:scattan
 
 !bt
 \[
-\sin(\theta_s/2)=\frac{a}{\sqrt{a^2+b^2}}, ~~a\equiv \frac{\alpha}{2E}.
+\sin(\phi_s/2)=\frac{a}{\sqrt{a^2+b^2}}, ~~a\equiv \frac{\alpha}{2E}.
 \]
 !et
 
@@ -1346,7 +1615,7 @@ Putting these together
 
 !bt
 \[
-\theta_s=2\sin^{-1}\left\{
+\phi_s=2\sin^{-1}\left\{
 \frac{a}{\sqrt{a^2+R^2(1-\alpha/(RE))}}
 \right\},~~~a=\frac{\alpha}{2E}.
 \]
@@ -1470,12 +1739,12 @@ m\frac{d^2z}{dt^2}=2\frac{GM\delta m}{D^3}z+{\rm other~forces~acting~on~}\delta 
 
 Here the other forces could represent the forces acting on $\delta m$
 from the spherical planet such as the gravitational force or the
-contact force with the surface. If $\theta$ is the angle w.r.t. the
+contact force with the surface. If $\phi$ is the angle w.r.t. the
 $z$ axis, the effective force acting on $\delta m$ is
 
 !bt
 \begin{equation}
-F_{\rm eff}\approx 2\frac{GM\delta m}{D^3}r\cos\theta\hat{z}+{\rm other~forces~acting~on~}\delta m.
+F_{\rm eff}\approx 2\frac{GM\delta m}{D^3}r\cos\phi\hat{z}+{\rm other~forces~acting~on~}\delta m.
 \end{equation}
 !et
 
@@ -1486,7 +1755,7 @@ Consider the Earth to be a sphere of radius $R$ covered with water,
 with the gravitational acceleration at the surface noted by $g$. Now
 assume that a distant body provides an additional constant
 gravitational acceleration $\bm{a}$ pointed along the $z$ axis. Find
-the distortion of the radius as a function of $\theta$. Ignore
+the distortion of the radius as a function of $\phi$. Ignore
 planetary rotation and assume $a<<g$.
 
 {\bf Solution}: Because Earth would then accelerate with $a$, the
@@ -1506,19 +1775,19 @@ potential. Thus, the potential energy for a sample mass $\delta m$ is
 
 !bt
 \begin{eqnarray*}
-V(R)+\delta m gh(\theta)-\frac{\delta m}{2}kr^2\cos^2\theta={\rm Constant}\\
-V(R)+\delta mgh(\theta)-\frac{\delta m}{2}kR^2\cos^2\theta-\delta m kRh(\theta)\cos^2\theta-\frac{\delta m}{2}kh^2(\theta)\cos^2\theta={\rm Constant}.
+V(R)+\delta m gh(\phi)-\frac{\delta m}{2}kr^2\cos^2\phi={\rm Constant}\\
+V(R)+\delta mgh(\phi)-\frac{\delta m}{2}kR^2\cos^2\phi-\delta m kRh(\phi)\cos^2\phi-\frac{\delta m}{2}kh^2(\phi)\cos^2\phi={\rm Constant}.
 \end{eqnarray*}
 !et
 
 
-Here, the potential due to the external field is $(1/2)kz^2$ so that $-\nabla U=-kz$. One now needs to solve for $h(\theta)$. Absorbing all the constant terms from both sides of the equation into one constant $C$, and because both $h$ and $kR$ are small, we can through away terms of order $h^2$ or $kRh$. This gives
+Here, the potential due to the external field is $(1/2)kz^2$ so that $-\nabla U=-kz$. One now needs to solve for $h(\phi)$. Absorbing all the constant terms from both sides of the equation into one constant $C$, and because both $h$ and $kR$ are small, we can through away terms of order $h^2$ or $kRh$. This gives
 
 !bt
 \begin{eqnarray*}
-gh(\theta)-\frac{1}{2}kR^2\cos^2\theta&=&C,\\
-h(\theta)&=&\frac{C}{g}+\frac{1}{2g}kR^2\cos^2\theta,\\
-h(\theta)&=&\frac{1}{2g}kR^2(\cos^2\theta-1/3).
+gh(\phi)-\frac{1}{2}kR^2\cos^2\phi&=&C,\\
+h(\phi)&=&\frac{C}{g}+\frac{1}{2g}kR^2\cos^2\phi,\\
+h(\phi)&=&\frac{1}{2g}kR^2(\cos^2\phi-1/3).
 \end{eqnarray*}
 !et
 
@@ -1546,3 +1815,509 @@ Therefore the ratio of force is
 !et
 
 The Moon more strongly affects tides than the Sun.
+
+
+
+
+
+
+
+
+
+
+* 2d (10pt) With the solutions for $x$ and $y$, and $r^2=x^2+y^2$ and the definitions $\alpha=\frac{A^2+B^2+C^2+D^2}{2}$, $\beta=\frac{A^2-B^2+C^2-D^2}{2}$ and $\gamma=AB+CD$, show that
+!bt
+\[
+r^2=\alpha+(\beta^2+\gamma^2)^{1/2}\cos(2\omega_0 t-\delta),
+\]
+!et
+with
+!bt
+\[
+\delta=\arctan(\gamma/\beta).
+\]
+!et
+
+We start with $r^2 & = x^2+y^2$ and square the above analytical solutions and   after some _exciting algebraic manipulations_ we arrive at
+!bt
+\begin{align}
+r^2 & = x^2+y^2
+\\ 
+& = \left(  A\cos\omega_0 t+B\sin\omega_0 t\right) ^2 + \left(  C\cos\omega_0 t+D\sin\omega_0 t\right) ^2
+\\ 
+& = A^2\cos^2\omega_0 t+B^2\sin^2\omega_0 t + 2AB\sin\omega_0 t \cos\omega_0 t + C^2\cos^2\omega_0 t+D^2\sin^2\omega_0 t + 2CD\sin\omega_0 t \cos\omega_0 t
+\\
+& = (A^2+C^2)\cos^2\omega_0 t + (B^2+D^2)\sin^2\omega_0 t + 2(AC + BD)\sin\omega_0 t \cos\omega_0 t
+\\
+& = (B^2+D^2) + (A^2+C^2-B^2-D^2)\cos^2\omega_0 t + 2(AC + BD)2\sin2\omega_0 t
+\\
+& = (B^2+D^2) + (A^2+C^2-B^2-D^2)\frac{1+\cos{2\omega_0 t}}{2} + 2(AC + BD)\frac{1}{2}\sin2\omega_0 t
+\\
+& = \frac{2B^2+2D^2+A^2+C^2-B^2-D^2}{2} + (A^2+C^2-B^2-D^2)\frac{\cos{2\omega_0 t}}{2} + (AC + BD)\sin2\omega_0 t
+\\
+& = \frac{B^2+D^2+A^2+C^2}{2} + \frac{A^2+C^2-B^2-D^2}{2}\cos{2\omega_0 t} + (AC + BD)\sin2\omega_0 t
+\\
+& = \alpha + \beta\cos{2\omega_0 t} + \gamma\sin2\omega_0 t
+\\
+& = \alpha + \sqrt{\beta^2+\gamma^2}\left( \frac{\beta}{\sqrt{\beta^2+\gamma^2}}\cos{2\omega_0 t} + \frac{\gamma}{\sqrt{\beta^2+\gamma^2}}\sin2\omega_0 t\right) 
+\\
+& = \alpha + \sqrt{\beta^2+\gamma^2}\left( \cos{\delta}\cos{2\omega_0 t} + \sin{\delta}\sin2\omega_0 t\right) 
+\\
+& = \alpha + \sqrt{\beta^2+\gamma^2}\cos{\left( 2\omega_0 t - \delta\right) },
+\end{align}
+!et
+which is what we wanted to show.  
+
+
+
+
+
+=== Exercise 4, equations for an ellipse (10pt)  ===
+
+Consider an ellipse defined by the sum of the distances from the two foci being $2D$, which expressed in a Cartesian coordinates with the middle of the ellipse being at the origin becomes
+!bt
+\[
+\sqrt{(x-a)^2+y^2}+\sqrt{(x+a)^2+y^2}=2D.
+\]
+!et
+Here the two foci are at $(a,0)$ and $(-a,0)$. Show that this form is can be written as
+!bt
+\[
+\frac{x^2}{D^2}+\frac{y^2}{D^2-a^2}=1.
+\]
+!et
+
+
+We start by squaring the two sides and, again,  after some _exciting algebraic manipulations_ we arrive at
+!bt
+    \[
+\sqrt{(x-a)^2+y^2}+\sqrt{(x+a)^2+y^2} =2D
+\\ (x-a)^2 + y^2 + (x+a)^2 + y^2 + 2\sqrt{(x-a)^2 + y^2}\sqrt{(x+a)^2+y^2}  = 4D^2
+\\ 2y^2 + 2x^2 + 2a^2 + 2\sqrt{(x-a)^2(x+a)^2 + y^4 + y^2[(x-a)^2+(x+a)^2]}  = 4D^2
+\\ y^2 + x^2 + a^2 + \sqrt{(x^2-a^2)^2 + y^4 + y^2(2x^2+2a^2)}  = 2D^2
+\\ \sqrt{(x^2-a^2)^2 + y^4 + y^2(2x^2+2a^2)}  = 2D^2 -( y^2 + x^2 + a^2 )
+\\ (x^2-a^2)^2 + y^4 + y^2(2x^2+2a^2)  = 4D^4 + y^4 + x^4 + a^4 - 4D^2( y^2 + x^2 + a^2 ) + 2(y^2x^2+y^2a^2+x^2a^2)
+\\ x^4-2x^2a^2+a^4 + y^4 + 2y^2x^2+2y^2a^2  = 4D^4 + y^4 + x^4 + a^4 - 4D^2y^2 -4D^2 x^2 -4D^2 a^2 + 2y^2x^2+2y^2a^2+2x^2a^2
+\\ 4D^4 - 4D^2y^2 -4D^2 x^2 -4D^2 a^2 +4x^2a^2 = 0
+\\ D^4 - D^2y^2 -D^2 x^2 -D^2 a^2 +x^2a^2 = 0
+\\ D^2(D^2-a^2) - x^2(D^2-a^2) = D^2y^2
+\\ D^2 - x^2 = \frac{D^2y^2}{D^2-a^2}
+\\ 1 - \frac{x^2}{D^2} = \frac{y^2}{D^2-a^2}
+\\ \frac{x^2}{D^2} + \frac{y^2}{D^2-a^2} = 1,
+\]
+!et
+where the last line is indeed the equation for an ellipse. 
+
+
+
+
+Consider a particle in an attractive potential
+!bt
+\[
+U(r)=-\alpha/r.
+\]
+!et
+
+The quantity $r$ is the absolute value of the relative position. We
+will use the reduced mass $\mu$ and the angular momentum $L$, as
+discussed during the lectures. With the transformation of a two-body
+problem to the center-of-mass frame, the actual equations look like an
+*effective* one-body problem. The energy of the system is $E$ and the
+minimum of the effective potential is $r_{\rm min}$.
+
+
+The analytical solution to the radial equation of motion is
+!bt
+\[
+r(\phi) = \frac{1}{\frac{\mu\alpha}{L^2}+A\cos{(\phi)}}.
+\]
+!et
+
+Find the value of $A$. Hint: Use the fact that at $r_{\rm min}$
+there is no radial kinetic energy and $E=-\alpha/r_{\rm min}+L^2/2mr_{\rm min}^2$.
+
+At  $r_{\mathrm{min}}$  and $r_{\mathrm{max}}$ , all the kinetic energy is stored in the velocity in the direction perpendicular to $r$  since the radial velocity is set to zero . We can calculate using angular momentum and from there, find  𝐴  in terms of the energy  𝐸  which is constant. But first, we need to find  𝑟min  from the conservation of energy:
+
+!bt
+\[
+E = U(r) + \frac{1}{2} \mu(v_{\perp}^2 + v_{\parallel})
+\\
+E = \frac{-\alpha}{r_{\min}} + \frac{1}{2} \mu\left( \frac{L}{\mu r_{\min}}\right) ^2
+\\
+E r_{\min}^2 - \frac{1}{2}\mu\left( \frac{L}{\mu}\right) ^2 + \alpha r_{\min} = 0
+\\
+r_{\min}^2 + \frac{\alpha}{E} r_{\min} - \frac{L^2}{2E\mu} = 0
+\\
+r_{\min} = - \frac{\alpha}{2E} \pm \frac{1}{2} \sqrt{\frac{\alpha^2}{E^2} + 2\frac{L^2}{E\mu}}
+\]
+!et
+
+
+Since we're looking for the minimum, the  ±  sign must be negative (then  𝑟min  will not be negative since  𝐸<0 ). Therefore, we have
+
+!bt
+\[
+frac{1}{\frac{\mu\alpha}{L^2}+A} = -\frac{\alpha}{2E} - \frac{1}{2} \sqrt{\frac{\alpha^2}{E^2} + 2\frac{L^2}{E\mu}}
+\\
+A = - \frac{\mu\alpha}{L^2} - \frac{2E}{\alpha + \sqrt{\alpha^2 + 2\frac{L^2E}{\mu}}}
+\]
+!et
+
+=== Exercise 2 (20pt) Inverse-square force ===
+
+Consider again the same effective potential as in exercise 1. This leads to an attractive inverse-square-law force, $F=-\alpha/r^2$. Consider a particle of mass $m$ with angular momentum $L$. Taylor sections 8.4-8.7 are relevant background material.  See also the harmonic oscillator potential from hw8. The equation of motion for the radial degrees of freedom is (see also hw8) in the center-of-mass frame in two dimensions with $x=r\cos{(\phi)}$ and $y=r\sin{(\phi)}$ and
+$r\in [0,\infty)$, $\phi\in [0,2\pi]$ and $r=\sqrt{x^2+y^2}$ are given by
+!bt
+\[
+\ddot{r}=-\frac{1}{m}\frac{dV(r)}{dr}+r\dot{\phi}^2,
+\]
+!et
+and
+!bt
+\[
+\dot{\phi}=\frac{L}{m r^2}.
+\]
+!et
+Here $V(r)$ is any central force which depends only on the relative coordinate.
+
+
+* 2a (5pt)  Find the radius of a circular orbit by solving for the position of the minimum of the effective potential. 
+
+!bt
+\begin{align}
+\frac{1}{m}\frac{dV(r)}{dr} & = r\dot{\phi}^2
+\\ \frac{1}{m}\left( -\frac{-\alpha}{r^2}\right)  & = r \frac{L^2}{m^2r^4}
+\\ \frac{\alpha}{mr^2} & = \frac{L^2}{m^2r^3}
+\\ r & = \frac{L^2}{m\alpha}
+\end{align}
+!et
+
+* 2b (5pt) At the minimum, the radial velocity is zero and it is only the "centripetal velocity":"https://en.wikipedia.org/wiki/Centripetal_force" which is nonzero. This implies that $\ddot{r}=0$.  What is the angular frequency, $\dot{\theta}$, of the orbit? Solve this by setting $\ddot{r}=0=F/m+\dot{\theta}^2r$.
+
+!bt
+\begin{align}
+\dot{\theta}^2 r & = - \frac{F}{m}
+\\ \dot{\theta}^2 r & = - \frac{-\frac{\alpha}{r^2}}{m}
+\\ \dot{\theta}^2 & = \frac{\alpha}{mr^3}
+\\ \dot{\theta} & = \pm \sqrt{\frac{\alpha}{mr^3}}
+\\ \dot{\theta} & = \pm \sqrt{\frac{\alpha}{m\frac{L^6}{m^3\alpha^3}}}
+\\ \dot{\theta} & = \pm \sqrt{\frac{\alpha^4m^2}{L^6}}
+\\ \dot{\theta} & = \pm \frac{\alpha^2m}{L^3}
+\end{align}
+!et
+
+* 2c (5pt) Find the effective spring constant for the particle at the minimum.
+
+We have shown in class that from the taylor expansion, we have
+
+!bt
+k = \frac{d^2V_{\text{eff}}}{dr^2}
+!et
+
+Therefore, all we have to do is find the second derivative of $V_{\text{eff}}$ around the minimum point of $V_{\text{eff}}$ where $\dot{r} = \ddot{r} = 0$.
+
+!bt
+\begin{align}
+k & = \frac{d^2V_{\text{eff}}}{dr^2}
+\\ & = \frac{d^2\left( -\frac{\alpha}{r} + \frac{1}{2} \frac{L^2}{mr^2}\right) }{dr^2}
+\\ & = -\frac{2\alpha}{r^3} + \frac{3L^2}{mr^4}
+\\ & = -\frac{2\alpha}{\frac{L^6}{m^3\alpha^3}} + \frac{3L^2}{m\frac{L^8}{m^4\alpha^4}}
+\\ & = -\frac{2m^3\alpha^4}{L^6} + \frac{3m^3\alpha^4}{L^6}
+\\ & = \frac{m^3\alpha^4}{L^6}
+\end{align}
+!et
+
+* 2d (5pt) What is the angular frequency for small vibrations about the minimum? How does this compare with the answer to (3b)?
+
+For small deviations $\delta r$ of $r$,
+
+!bt
+m\frac{d^2\left(  \delta r \right) }{dt^2} = -k \delta r
+!et
+
+The solution of this differential equation is of the form
+
+!bt
+\delta r = A \cos(\omega t + \phi)
+!et
+
+where 
+
+!bt
+\begin{align}
+\omega = & \sqrt{\frac{k}{m}}
+\\ & = \sqrt{\frac{m^2\alpha^4}{L^6}} 
+\\ & = \frac{m\alpha^2}{L^3}
+\end{align}
+!et
+
+This is in fact equal to the expression for $\dot{\theta}$. This means that small perturbations oscillate in sync with the orbit and this traces out an ellipse with a very small eccentricity, a very nice physical result.
+
+
+=== Exercise 3, Inverse-square force again (10pt) ===
+Consider again a  particle of mass $m$ in the same attractive potential, $U(r)=-\alpha/r$, with angular momentum $L$ with just the right energy so that
+
+!bt
+\[
+A=m\alpha/L^2
+\]
+!et
+where $A$ comes from the expression
+!bt
+\[
+r=\frac{1}{(m\alpha/L^2)+A\cos{(\phi)}}.
+\]
+!et
+The trajectory can then be rewritten as
+!bt
+\[
+r=\frac{2r_0}{1+\cos\theta},~~~r_0=\frac{L^2}{2m\alpha}.
+\]
+!et
+
+
+* 3a (5pt) Show that for this case the total energy $E$ approaches zero.
+
+!bt
+\begin{align}
+E & = - \frac{\alpha}{r} + \frac{1}{2} m \left(  (\dot{\theta}r)^2+\dot{r}^2\right) 
+\\ & = - \frac{\alpha}{r} + \frac{1}{2} m \left[  \left( \frac{L}{mr^2}r\right) ^2+\left( \frac{dr}{d\theta}\dot{\theta}\right) ^2\right] 
+\\ & = - \frac{\alpha}{2r_0}(1+\cos\theta) + \frac{1}{2} m \left[  \left( \frac{L(1+\cos\theta)}{2mr_0}\right) ^2+\left( 2r_0\frac{-1}{(1+\cos\theta)^2}(-\sin\theta)\frac{L}{mr^2}\right) ^2\right] 
+\\ & = - \frac{\alpha}{2r_0}(1+\cos\theta) + \frac{1}{2} m \left[  \left( \frac{L(1+\cos\theta)}{2mr_0}\right) ^2+\left( 2r_0\frac{-1}{(1+\cos\theta)^2}(-\sin\theta)\frac{L(1+\cos\theta)^2}{4mr_0^2}\right) ^2\right] 
+\\ & = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
+\frac{1}{2} m \left[  \left( \frac{L(1+\cos\theta)}{2mr_0}\right) ^2+\left( \sin\theta\frac{L}{2mr_0}\right) ^2\right] 
+\\ & = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
+\frac{1}{2} m \left[  \left( \frac{L(1+\cos\theta)}{2mr_0}\right) ^2+\left( \sin\theta\frac{L}{2mr_0}\right) ^2\right] 
+\\ & = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
+\frac{1}{2} m \frac{L^2}{4m^2r_0^2} \left[  \left( 1+\cos\theta\right) ^2+\left( \sin\theta\right) ^2\right] 
+\\ & = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
+\frac{1}{2} \frac{L^2}{4mr_0^2} \left(  1 + \cos^2\theta + 2\cos \theta + \sin^2\theta\right) 
+\\ & = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
+\frac{1}{2} \frac{L^2}{4mr_0^2} \left(  2 + 2\cos \theta \right) 
+\\ & = (1+\cos\theta) \left( - \frac{\alpha}{2r_0} + \frac{L^2}{4mr_0^2}\right) 
+\\ & = (1+\cos\theta) \left( - \frac{\alpha}{2\frac{L^2}{2m\alpha}} + \frac{L^2}{4m\frac{L^4}{4m^2\alpha^2}}\right) 
+\\ & = (1+\cos\theta) \left( - \frac{m\alpha^2}{L^2} + \frac{m\alpha^2}{L^2}\right) 
+\\ & = 0
+\end{align}
+!et
+
+* 3b (5pt) With zero energy $E=0$, write this trajectory in a more recognizable parabolic form, that is express $x_0$ and $R$ in terms of $r_0$ using 
+
+!bt
+\[
+x=x_0-\frac{y^2}{R}.
+\]
+!et
+
+We have that 
+
+!bt
+\begin{align}
+x & = r \cos\theta
+\\
+y & = r \sin \theta,
+\end{align}
+!et
+
+we obtain
+!bt
+\begin{align}
+y & = r \sin\theta
+\\
+& = \frac{2r_0}{1+\cos\theta}\sin\theta
+\\
+& = \frac{2r_0}{1-\cos^2\theta}\sin\theta(1-\cos\theta)
+\\
+& = \frac{2r_0(1-\cos\theta)}{\sin\theta},
+\end{align}
+!et
+
+and 
+
+!bt
+\begin{align}
+x & = r \sin\theta
+\\
+& = \frac{2r_0}{1+\cos\theta}\cos\theta
+\\
+& = \frac{2r_0}{1-\cos^2\theta}\cos\theta(1-\cos\theta)
+\\
+& = \frac{2r_0(\cos\theta-\cos^2\theta)}{\sin^2 \theta}.
+\end{align}
+!et
+
+Here  we notice that the denominator of $x$ is the square of the denominator of $y$. We also have
+
+!bt
+\[
+y^2 = \frac{4r_0^2(1-2\cos\theta+\cos^2\theta)}{\sin^2\theta}.
+\]
+!et
+
+Let try to add them such that $\cos\theta$ cancels out, that is
+
+!bt
+\begin{align}
+x + \frac{y^2}{4r_0} & = \frac{2r_0(\cos\theta-\cos^2\theta)}{\sin^2 \theta} + \frac{4r_0^2(1-2\cos\theta+\cos^2\theta)}{\sin^2\theta}\frac{1}{4r_0}
+\\ & = \frac{r_0}{\sin^2\theta}\left(  2\cos\theta-2\cos^2\theta + 1 - 2\cos\theta + \cos^2\theta\right) 
+\\ & = \frac{r_0}{\sin^2\theta}\left(  -2\cos^2\theta + 1 + \cos^2\theta\right) 
+\\ & = \frac{r_0}{\sin^2\theta}\left(  1 - \cos^2\theta\right) 
+\\ & = \frac{r_0}{\sin^2\theta}\left(  \sin^2\theta\right) 
+\\ & = r_0
+\end{align}
+!et
+
+Thus, we have
+
+!bt
+\[
+x = r_0 - \frac{y^2}{4r_0}
+\]
+!et
+
+
+=== Exercise 4, parabolic and hyperbolic orbits (10pt) ===
+
+The solution to the radial function for an inverse-square-law force, see for example Taylor equation (8.59) or the equation above, is
+!bt
+\[
+r(\phi) = \frac{c}{1+\epsilon\cos{(\phi)}}.
+\]
+!et
+
+For $\epsilon=1$ (or the energy $E=0$) the orbit reduces to a parabola as we saw in the previous exercise,
+while for $\epsilon > 1$ (or energy positive) the orbit becomes a hyperbola. The equation for a hyperbola in Cartesian coordinates is
+!bt 
+\[
+\frac{(x-\delta)^2}{\alpha^2}-\frac{y^2}{\beta^2}=1.
+\]
+!et
+For a hyperbola, identify the constants $\alpha$, $\beta$ and $\delta$ in terms of the constants $c$ and $\epsilon$ for $r(\phi)$. 
+
+
+!bt
+\begin{align}
+x & = r\cos\phi
+\\ & = \frac{c\cos\phi}{1+\epsilon\cos\phi}
+\end{align}
+!et
+
+!bt
+\begin{align}
+y & = r\sin\phi 
+\\ & = \frac{c\sin\phi}{1+\epsilon\cos\phi}
+\end{align}
+!et
+
+Therefore, 
+
+!bt
+\begin{align}
+\frac{(x-\delta)^2}{\alpha^2} - \frac{y^2}{\beta^2} 
+& = \frac{(\frac{c\cos\phi-\delta(1+\epsilon\cos\phi)}{1+\epsilon\cos\phi})^2}{\alpha^2} - \frac{(\frac{c\sin\phi}{1+\epsilon\cos\phi})^2}{\beta^2}
+\\ & = \frac{\beta^2 c^2\cos^2\phi + \beta^2\delta^2 + \beta^2\delta^2 \epsilon^2 \cos^2 \phi - 2\beta^2\delta c \cos\phi - 2 \beta^2\delta c \epsilon \cos^2 \phi + 2\beta^2\delta^2 \epsilon \cos \phi - \alpha^2 c^2 \sin^2 \phi}{\alpha^2\beta^2(1 + 2\epsilon\cos\phi + \epsilon^2\cos^2\phi)}
+\\ & = \frac{
+\beta^2\cos^2\phi (c^2 + \delta^2 \epsilon^2 - 2 \delta c \epsilon) - \alpha^2 c^2 \sin^2 \phi + \beta^2\delta^2 + 2\beta^2\delta \cos\phi (-c + \delta \epsilon)
+}{\alpha^2\beta^2(1 + 2\epsilon\cos\phi + \epsilon^2\cos^2\phi)}
+\\ & = \frac{
+(\beta^2\delta^2 - \alpha^2 c^2)
+ + 2\beta^2\delta \cos\phi (\delta \epsilon-c)
+ + \cos^2\phi (\beta^2c^2 + \beta^2\delta^2 \epsilon^2 - 2\beta^2 \delta c \epsilon + \alpha^2 c^2)
+}{\alpha^2\beta^2(1 + 2\epsilon\cos\phi + \epsilon^2\cos^2\phi)}
+\\ & = 1
+\end{align}
+!et
+
+We can seperate this into several equations:
+
+!bt
+\[
+\frac{\beta^2\delta^2 - \alpha^2 c^2}{\alpha^2\beta^2} = 1
+\\ \frac{2\beta^2\delta \cos\phi (\delta \epsilon-c)}{\alpha^2\beta^2} = 2\epsilon\cos\phi
+\\ \frac{\cos^2\phi (\beta^2c^2 + \beta^2\delta^2 \epsilon^2 - 2\beta^2 \delta c \epsilon + \alpha^2 c^2)}{\alpha^2\beta^2} = \epsilon^2\cos^2\phi
+\]
+!et
+
+These can further be simplified:
+
+!bt
+\[
+\frac{\delta^2}{\alpha^2} - \frac{c^2}{\beta^2} = 1
+\\
+\frac{\delta^2\epsilon}{\alpha^2} - \frac{\delta c}{\beta^2} = \epsilon
+\\
+\frac{c^2}{\alpha^2} + \frac{\delta^2\epsilon^2}{\alpha^2} - 2\frac{\delta c \epsilon}{\alpha^2} + \frac{c^2}{\beta^2}
+= \epsilon^2
+\]
+!et
+Now, all we have to do is solve these three equations for the three unknowns $\alpha$, $\beta$, and $\gamma$:
+
+From the first equation, we have
+!bt
+\[
+\frac{1}{\beta^2} = \frac{\delta^2}{c^2\alpha^2} - \frac{1}{c^2}
+\]
+!et
+Therefore,
+
+!bt
+\[
+\frac{\delta^2\epsilon}{\alpha^2} - \left(  \frac{\delta^2}{c^2\alpha^2} - \frac{1}{c^2} \right) \delta c = 
+\frac{\delta^2\epsilon}{\alpha^2} - \frac{\delta^3}{c\alpha^2} + \frac{\delta}{c}
+= \epsilon
+\\
+\frac{c^2}{\alpha^2} + \frac{\delta^2\epsilon^2}{\alpha^2} - 2\frac{\delta c \epsilon}{\alpha^2} + c^2\left(  \frac{\delta^2}{c^2\alpha^2} - \frac{1}{c^2} \right)  =
+\frac{c^2}{\alpha^2} + \frac{\delta^2\epsilon^2}{\alpha^2} - 2\frac{\delta c \epsilon}{\alpha^2}
++ \frac{\delta^2}{\alpha^2} - 1
+= \epsilon^2
+\]
+!et
+
+From here  we obtain
+
+!bt
+\[
+\frac{1}{\alpha^2} = \frac{\epsilon-\frac{\delta}{c}}{\delta^2\epsilon - \frac{\delta^3}{c}} = \frac{1}{\delta^2}\frac{\epsilon-\frac{\delta}{c}}{\epsilon-\frac{\delta}{c}}
+\]
+!et
+
+This means we have two possibilities: either $\delta^2 = \alpha^2$ or $\delta = c$. Since the first option would mean $\beta \rightarrow \pm \infty$, the second option must be true. Hence,
+
+!bt
+\[
+\frac{c^2}{\alpha^2} + \frac{c^2\epsilon^2}{\alpha^2} - 2\frac{c^2 \epsilon}{\alpha^2}
++ \frac{c^2}{\alpha^2} - 1
+= \epsilon^2
+\\
+\frac{c^2}{\alpha^2} (1 + \epsilon^2 - 2 \epsilon) = 1 + \epsilon^2
+\\ \frac{c^2}{\alpha^2} = \frac{1 + \epsilon^2}{(1-\epsilon)^2}
+\\ \alpha = \pm c \sqrt{\frac{(1-\epsilon)^2}{1 + \epsilon^2}}.
+\]
+!et
+
+And we have
+
+!bt
+\begin{align}
+\beta & = \pm \sqrt{\frac{1}{\frac{\delta^2}{c^2\alpha^2} - \frac{1}{c^2}}}
+\\ & = \pm \sqrt{\frac{1}{\frac{1 + \epsilon^2}{(1-\epsilon)^2} - \frac{1}{c^2}}}
+\\ & = \pm c \sqrt{\frac{1}{\frac{1 + \epsilon^2}{1-2\epsilon+\epsilon^2} - \frac{1-2\epsilon+\epsilon^2}{1-2\epsilon+\epsilon^2}}}
+\\ & = \pm c \sqrt{\frac{(1-\epsilon)^2}{2\epsilon}}
+\end{align}
+!et
+
+Summing up, we have
+
+!bt
+\[
+\delta = c
+\\
+\alpha = \pm c \sqrt{\frac{(1-\epsilon)^2}{1 + \epsilon^2}}
+\\
+\beta = \pm c \sqrt{\frac{(1-\epsilon)^2}{2\epsilon}}
+\]
+!et
+
+
+
+
