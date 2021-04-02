@@ -2321,3 +2321,135 @@ Summing up, we have
 
 
 
+===== Different Potential =====
+
+Let us now try another potential, given by
+!bt
+\[
+V(r) = \beta r,
+\]
+!et
+where $\beta$ is constant we assume is larger than zero. This type of potential has played an importan role in modeling confinement of quarks in non-relativistic models for the interactions among quarks, see for example URL:"https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.44.1369" 
+
+
+Adding the angular momentum part, we obtain the effective potential
+
+!bt
+\[
+V_{\mathrm{eff}}(r) = \beta r+\frac{L^2}{2\mu r^2},
+\]
+!et
+
+and taking the derivative with respect to $r$, we get the radial force
+
+!bt
+\[
+F_r=-\frac{dV_{\mathrm{eff}}(r)}{dr} = -\beta+\frac{L^2}{\mu r^3}.
+\]
+!et
+It gives us in turn a radial acceleration $a_r$
+!bt
+\[
+a_r= -\frac{\beta}{\mu}+\frac{L^2}{\mu^2 r^3}.
+\]
+!et
+
+This is the equation we need to include in our code. I have not been able to find out if there is an analytical solution to the above equation. If you can find one, there is a reward of $50$ USD to the first one who finds. Numerically life is very easy, we just define a new acceleration, as seen below.
+
+
+
+First however, we plot the effective potential in order to get a feeling of what we may expect.
+
+The following code plots this effective potential for a simple choice of parameters, with a potential $\beta r $. Here we have chosen $L=m=\beta=1$. 
+!bc pycod
+# Common imports
+import numpy as np
+from math import *
+import matplotlib.pyplot as plt
+
+Deltax = 0.01
+#set up arrays
+xinitial = 0.3
+xfinal = 5.0
+beta = 1.0   # spring constant
+m = 1.0   # mass, you can change these
+AngMom = 1.0  #  The angular momentum
+n = ceil((xfinal-xinitial)/Deltax)
+x = np.zeros(n)
+for i in range(n):
+    x[i] = xinitial+i*Deltax
+V = np.zeros(n)
+V = beta*x+0.5*AngMom*AngMom/(m*x*x)
+# Plot potential
+fig, ax = plt.subplots()
+ax.set_xlabel('r[m]')
+ax.set_ylabel('V[J]')
+ax.plot(x, V)
+fig.tight_layout()
+plt.show()
+
+!ec
+
+
+We take now the derivative of the effective potential in order to find its minimum, that is
+!bt
+\[
+\frac{dV_{\mathrm{eff}}(r)}{dr} = \beta-\frac{L^2}{\mu r^3}=0,
+\]
+!et
+
+which gives us $r_{\mathrm{min}}$
+
+!bt
+\[
+r_{\mathrm{min}}=\left [\frac{L^2}{\beta \mu}\right ]^{1/3}.
+\]
+!et
+
+With the above choice of parameters this gives $r_{\mathrm{min}}=1$. 
+
+In the code here we solve the equations of motion and find the time-evolution of the radius $r$.
+
+
+!bc pycod
+DeltaT = 0.01
+#set up arrays 
+tfinal = 8.0
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, v and r
+t = np.zeros(n)
+v = np.zeros(n)
+r = np.zeros(n)
+# Constants of the model, setting all variables to one for simplicity
+beta = 1.0
+AngMom = 1.0  #  The angular momentum
+m = 1.0  # scale mass to one
+c1 = AngMom*AngMom/(m*m)
+c2 = AngMom*AngMom/m
+rmin = (AngMom*AngMom/m/beta)**(1./3.)
+# Initial conditions, place yourself at the potential min
+r0 = rmin
+v0 = 0.0  # starts at rest
+r[0] = r0
+v[0] = v0
+# Start integrating using the Velocity-Verlet  method
+for i in range(n-1):
+    # Set up acceleration
+    a = -beta+c1/(r[i]**3)
+    # update velocity, time and position using the Velocity-Verlet method
+    r[i+1] = r[i] + DeltaT*v[i]+0.5*(DeltaT**2)*a
+    anew = -beta+c1/(r[i+1]**3)
+    v[i+1] = v[i] + 0.5*DeltaT*(a+anew)
+    t[i+1] = t[i] + DeltaT
+#plotting
+plt.xlabel('time')
+plt.ylabel('radius')
+plt.plot(t,r)
+save_fig("LinearPotential")
+plt.show()
+
+!ec
+
+We see that if we run with the initial condition corresponding to a circular orbit, our radius stays constant as function of time. 
+
+What kind of orbits do we have here? Will it be bounded or unbounded?

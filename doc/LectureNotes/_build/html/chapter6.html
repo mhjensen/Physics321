@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2. Two-body problems and Gravitational Forces &#8212; Classical mechanics</title>
+    <title>2. Two-body problems, from the Gravitational Force to Two-body Scattering &#8212; Classical mechanics</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -157,7 +157,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   2. Two-body problems and Gravitational Forces
+   2. Two-body problems, from the Gravitational Force to Two-body Scattering
   </a>
  </li>
  <li class="toctree-l1">
@@ -242,71 +242,120 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#two-body-problems-and-center-of-mass-motion">
-   2.1. Two-body Problems and Center of Mass Motion
+  <a class="reference internal nav-link" href="#introduction-and-definitions">
+   2.1. Introduction and Definitions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#center-of-mass-and-relative-coordinates">
+   2.2. Center of Mass and Relative Coordinates
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conservation-of-total-linear-momentum">
+     2.2.1. Conservation of total  Linear Momentum
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kinetic-and-total-energy">
+     2.2.2. Kinetic and total Energy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conservation-of-angular-momentum">
+     2.2.3. Conservation of Angular Momentum
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#deriving-elliptical-orbits">
-   2.2. Deriving Elliptical Orbits
+   2.3. Deriving Elliptical Orbits
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#effective-or-centrifugal-potential">
-   2.3. Effective or Centrifugal Potential
+   2.4. Effective or Centrifugal Potential
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#gravitational-force-example">
-     2.3.1. Gravitational force example
+     2.4.1. Gravitational force example
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#harmonic-oscillator-in-two-dimensions">
-     2.3.2. Harmonic Oscillator in two dimensions
+     2.4.2. Harmonic Oscillator in two dimensions
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#stability-of-orbits">
-   2.4. Stability of Orbits
+   2.5. Stability of Orbits
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#code-example-with-gravitional-force">
-     2.4.1. Code example with gravitional force
+     2.5.1. Code example with gravitional force
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#scattering-and-cross-sections">
-   2.5. Scattering and Cross Sections
+   2.6. Scattering and Cross Sections
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#solution">
-     2.5.1. Solution
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#rutherford-scattering">
-   2.6. Rutherford Scattering
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
      2.6.1. Solution
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rutherford-scattering">
+   2.7. Rutherford Scattering
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     2.7.1. Solution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tidal-forces">
-   2.7. Tidal Forces
+   2.8. Tidal Forces
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-4-equations-for-an-ellipse-10pt">
+     2.8.1. Exercise 4, equations for an ellipse (10pt)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-20pt-inverse-square-force">
+     2.8.2. Exercise 2 (20pt) Inverse-square force
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-inverse-square-force-again-10pt">
+     2.8.3. Exercise 3, Inverse-square force again (10pt)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-4-parabolic-and-hyperbolic-orbits-10pt">
+     2.8.4. Exercise 4, parabolic and hyperbolic orbits (10pt)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#different-potential">
+   2.9. Different Potential
   </a>
  </li>
 </ul>
@@ -321,35 +370,92 @@
         
               <div>
                 
-  <div class="section" id="two-body-problems-and-gravitational-forces">
-<h1><span class="section-number">2. </span>Two-body problems and Gravitational Forces<a class="headerlink" href="#two-body-problems-and-gravitational-forces" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="two-body-problems-and-center-of-mass-motion">
-<h2><span class="section-number">2.1. </span>Two-body Problems and Center of Mass Motion<a class="headerlink" href="#two-body-problems-and-center-of-mass-motion" title="Permalink to this headline">¶</a></h2>
-<p><strong>Note: more text to be added</strong>.</p>
-<p>The gravitational potential energy and forces involving two masses <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{eqnarray}
-V_{ab}&amp;=&amp;-\frac{Gm_am_b}{|\boldsymbol{r}_a-\boldsymbol{r}_b|},\\
-\nonumber
-F_{ba}&amp;=&amp;-\frac{Gm_am_b}{|\boldsymbol{r}_a-\boldsymbol{r}_b|^2}\hat{r}_{ab},\\
-\nonumber
-\hat{r}_{ab}&amp;=&amp;\frac{\boldsymbol{r}_b-\boldsymbol{r}_a}{|\boldsymbol{r}_a-\boldsymbol{r}_b|}.
-\end{eqnarray}
-\end{split}\]</div>
-<p>Here <span class="math notranslate nohighlight">\(G=6.67\times 10^{-11}\)</span> Nm<span class="math notranslate nohighlight">\(^2\)</span>/kg<span class="math notranslate nohighlight">\(^2\)</span>, and <span class="math notranslate nohighlight">\(F_{ba}\)</span> is the force
-on <span class="math notranslate nohighlight">\(b\)</span> due to <span class="math notranslate nohighlight">\(a\)</span>. By inspection, one can see that the force on <span class="math notranslate nohighlight">\(b\)</span>
-due to <span class="math notranslate nohighlight">\(a\)</span> and the force on <span class="math notranslate nohighlight">\(a\)</span> due to <span class="math notranslate nohighlight">\(b\)</span> are equal and opposite. The
-net potential energy for a large number of masses would be</p>
-<!-- Equation labels as ordinary links -->
-<div id="_auto1"></div>
+  <div class="section" id="two-body-problems-from-the-gravitational-force-to-two-body-scattering">
+<h1><span class="section-number">2. </span>Two-body problems, from the Gravitational Force to Two-body Scattering<a class="headerlink" href="#two-body-problems-from-the-gravitational-force-to-two-body-scattering" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction-and-definitions">
+<h2><span class="section-number">2.1. </span>Introduction and Definitions<a class="headerlink" href="#introduction-and-definitions" title="Permalink to this headline">¶</a></h2>
+<p>Central forces are forces which are directed towards or away from a
+reference point. A familiar force is the gravitional
+force  with the motion of our Earth around the Sun as a classic. The Sun, being
+approximately sixth order of magnitude heavier than the Earth serves
+as our origin. A force like the gravitational force is a function of the
+relative distance <span class="math notranslate nohighlight">\(\boldsymbol{r}=\boldsymbol{r}_1-\boldsymbol{r}_2\)</span> only, where
+<span class="math notranslate nohighlight">\(\boldsymbol{r}_1\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{r}_2\)</span> are the positions relative to a defined
+origin for object one and object two, respectively.</p>
+<p>These forces depend on the spatial degrees of freedom only (the
+positions of the interacting objects/particles). As discussed earlier, from such forces we can infer
+that  the total internal energy, the total linear momentum and total angular momentum are so-called constants of the motion, that is they stay constant  over time. We say that energy, linear and anuglar momentum are conserved.</p>
+<p>With a scalar potential <span class="math notranslate nohighlight">\(V(\boldsymbol{r})\)</span> we define the force as the gradient of the potential</p>
 <div class="math notranslate nohighlight">
 \[
-\begin{equation}
-V=\sum_{a&lt;b}U_{ab}=\frac{1}{2}\sum_{a\ne b}V_{ab}.
-\label{_auto1} \tag{1}
-\end{equation}
+\boldsymbol{F}(\boldsymbol{r})=-\boldsymbol{\nabla}V(\boldsymbol{r}).
 \]</div>
+<p>In general these potentials depend only on the magnitude of the
+relative position and we will write the potential as <span class="math notranslate nohighlight">\(V(r)\)</span> where <span class="math notranslate nohighlight">\(r\)</span>
+is defined as,</p>
+<div class="math notranslate nohighlight">
+\[
+r = |\boldsymbol{r}_1-\boldsymbol{r}_2|.
+\]</div>
+<p>In three dimensions our vectors are defined as (for a given object/particle <span class="math notranslate nohighlight">\(i\)</span>)</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{r}_i = x_i\boldsymbol{e}_1+y_i\boldsymbol{e}_2+z_i\boldsymbol{e}_3,
+\]</div>
+<p>while in two dimensions we have</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{r}_i = x_i\boldsymbol{e}_1+y_i\boldsymbol{e}_2.
+\]</div>
+<p>In two dimensions the radius <span class="math notranslate nohighlight">\(r\)</span> is defined as</p>
+<div class="math notranslate nohighlight">
+\[
+r = |\boldsymbol{r}_1-\boldsymbol{r}_2|=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}.
+\]</div>
+<p>If we consider the gravitational potential involving two masses <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(2\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[
+V_{12}(r)=V(r)=-\frac{Gm_1m_2}{|\boldsymbol{r}_1-\boldsymbol{r}_2|}=-\frac{Gm_1m_2}{r}.
+\]</div>
+<p>Calculating the gradient of this potential we obtain the force</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{F}(\boldsymbol{r})=-\frac{Gm_1m_2}{|\boldsymbol{r}_1-\boldsymbol{r}_1|^2}\hat{\boldsymbol{r}}_{12}=-\frac{Gm_am_b}{r^2}\hat{\boldsymbol{r}},
+\]</div>
+<p>where we have the unit vector</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\boldsymbol{r}}=\hat{\boldsymbol{r}}_{12}=\frac{\boldsymbol{r}_2-\boldsymbol{r}_1}{|\boldsymbol{r}_1-\boldsymbol{r}_2|}.
+\]</div>
+<p>Here <span class="math notranslate nohighlight">\(G=6.67\times 10^{-11}\)</span> Nm<span class="math notranslate nohighlight">\(^2\)</span>/kg<span class="math notranslate nohighlight">\(^2\)</span>, and <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span> is the force
+on <span class="math notranslate nohighlight">\(2\)</span> due to <span class="math notranslate nohighlight">\(1\)</span>. By inspection, one can see that the force on <span class="math notranslate nohighlight">\(2\)</span>
+due to <span class="math notranslate nohighlight">\(1\)</span> and the force on <span class="math notranslate nohighlight">\(1\)</span> due to <span class="math notranslate nohighlight">\(2\)</span> are equal and opposite. The
+net potential energy for a large number of masses would be</p>
+<div class="math notranslate nohighlight">
+\[
+V=\sum_{i&lt;j}V_{ij}=\frac{1}{2}\sum_{i\ne j}V_{ij}.
+\]</div>
+<p>In general, the central forces that we will study can be written mathematically as</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{F}(\boldsymbol{r})=f(r)\hat{r},
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(f(r)\)</span> is  a scalar function. For the above gravitational force this scalar term is
+<span class="math notranslate nohighlight">\(-Gm_1m_2/r^2\)</span>.
+In general we will simply write this scalar function <span class="math notranslate nohighlight">\(f(r)=\alpha/r^2\)</span> where <span class="math notranslate nohighlight">\(\alpha\)</span> is a constant that can be either negative or positive. We will also see examples of other types of potentials in the examples below.</p>
+<p>Besides general expressions for the potentials/forces, we will discuss
+in detail different types of motion that arise, from circular to
+elliptical or hyperbolic or parabolic. By transforming to either polar
+coordinates or spherical coordinates, we will be able to obtain
+analytical solutions for the equations of motion and thereby obtain
+new insights about the properties of a system. Where possible, we will
+compare our analytical equations with numerical studies.</p>
+<p>However, before we arrive at these lovely insights, we need to
+introduce some mathematical manipulations and definitions. We conclude
+this chapter with a discussion of two-body scattering.</p>
+</div>
+<div class="section" id="center-of-mass-and-relative-coordinates">
+<h2><span class="section-number">2.2. </span>Center of Mass and Relative Coordinates<a class="headerlink" href="#center-of-mass-and-relative-coordinates" title="Permalink to this headline">¶</a></h2>
 <p>Thus far, we have considered the trajectory as if the force is
 centered around a fixed point. For two bodies interacting only with
 one another, both masses circulate around the center of mass. One
@@ -357,105 +463,285 @@ might think that solutions would become more complex when both
 particles move, but we will see here that the problem can be reduced
 to one with a single body moving according to a fixed force by
 expressing the trajectories for <span class="math notranslate nohighlight">\(\boldsymbol{r}_1\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{r}_2\)</span> into the
-center-of-mass coordinate <span class="math notranslate nohighlight">\(\boldsymbol{R}_{\rm cm}\)</span> and the relative
-coordinate <span class="math notranslate nohighlight">\(\boldsymbol{r}\)</span>,</p>
+center-of-mass coordinate <span class="math notranslate nohighlight">\(\boldsymbol{R}\)</span> and the relative
+coordinate <span class="math notranslate nohighlight">\(\boldsymbol{r}\)</span>. We define the center-of-mass (CoM) coordinate as</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{eqnarray}
-\boldsymbol{R}_{\rm cm}&amp;\equiv&amp;\frac{m_1\boldsymbol{r}_1+m_2\boldsymbol{r}_2}{m_1+m_2},\\
-\nonumber
-\boldsymbol{r}&amp;\equiv&amp;\boldsymbol{r}_1-\boldsymbol{r_2}.
-\end{eqnarray}
-\end{split}\]</div>
-<p>Here, we assume the two particles interact only with one another, so
-<span class="math notranslate nohighlight">\(\boldsymbol{F}_{12}=-\boldsymbol{F}_{21}\)</span> (where <span class="math notranslate nohighlight">\(\boldsymbol{F}_{ij}\)</span> is the force on <span class="math notranslate nohighlight">\(i\)</span>
-due to <span class="math notranslate nohighlight">\(j\)</span>. The equations of motion then become</p>
+\[
+\boldsymbol{R}\equiv\frac{m_1\boldsymbol{r}_1+m_2\boldsymbol{r}_2}{m_1+m_2},
+\]</div>
+<p>and the relative coordinate as</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{eqnarray}
-\ddot{\boldsymbol{R}}_{\rm cm}&amp;=&amp;\frac{1}{m_1+m_2}\left\{m_1\ddot{\boldsymbol{r}}_1+m_2\ddot{\boldsymbol{r}}_2\right\}\\
-\nonumber
-&amp;=&amp;\frac{1}{m_1+m_2}\left\{\boldsymbol{F}_{12}+\boldsymbol{F}_{21}\right\}=0.\\
-\ddot{\boldsymbol{r}}&amp;=&amp;\ddot{\boldsymbol{r}}_1-\ddot{\boldsymbol{r}}_2=\left(\frac{\boldsymbol{F}_{12}}{m_1}-\frac{\boldsymbol{F}_{21}}{m_2}\right)\\
-\nonumber
-&amp;=&amp;\left(\frac{1}{m_1}+\frac{1}{m_2}\right)\boldsymbol{F}_{12}.
-\end{eqnarray}
-\end{split}\]</div>
-<p>The first expression simply states that the center of mass coordinate
-<span class="math notranslate nohighlight">\(\boldsymbol{R}_{\rm cm}\)</span> moves at a fixed velocity. The second expression
-can be rewritten in terms of the reduced mass <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
+\[
+\boldsymbol{r}\equiv\boldsymbol{r}_1-\boldsymbol{r_2}.
+\]</div>
+<p>We can then rewrite <span class="math notranslate nohighlight">\(\boldsymbol{r}_1\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{r}_2\)</span> in terms of the relative and CoM coordinates as</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{eqnarray}
-\mu \ddot{\boldsymbol{r}}&amp;=&amp;\boldsymbol{F}_{12},\\
-\frac{1}{\mu}&amp;=&amp;\frac{1}{m_1}+\frac{1}{m_2},~~~~\mu=\frac{m_1m_2}{m_1+m_2}.
-\end{eqnarray}
-\end{split}\]</div>
-<p>Thus, one can treat the trajectory as a one-body problem where the
-reduced mass is <span class="math notranslate nohighlight">\(\mu\)</span>, and a second trivial problem for the center of
+\[
+\boldsymbol{r}_1=\boldsymbol{R}+\frac{m_2}{M}\boldsymbol{r},
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{r}_2=\boldsymbol{R}-\frac{m_1}{M}\boldsymbol{r}.
+\]</div>
+<div class="section" id="conservation-of-total-linear-momentum">
+<h3><span class="section-number">2.2.1. </span>Conservation of total  Linear Momentum<a class="headerlink" href="#conservation-of-total-linear-momentum" title="Permalink to this headline">¶</a></h3>
+<p>In our discussions on conservative forces we defined
+the total linear momentum as</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{P}=\sum_{i=1}^Nm_i\frac{d\boldsymbol{r}_i}{dt},
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(N=2\)</span> in our case. With the above definition of the center of mass position, we see that we can rewrite the total linear momentum as (multiplying the CoM coordinate  with <span class="math notranslate nohighlight">\(M\)</span>)</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{P}=M\frac{d\boldsymbol{R}}{dt}=M\dot{\boldsymbol{R}}.
+\]</div>
+<p>The net force acting on the system is given by the time derivative of the linear momentum (assuming mass is time independent)
+and we have</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{F}^{\mathrm{net}}=\dot{\boldsymbol{P}}=M\ddot{\boldsymbol{R}}.
+\]</div>
+<p>The net force acting on the system is given by the sum of the forces acting on the two bodies, that is we have</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{F}^{\mathrm{net}}=\boldsymbol{F}_1+\boldsymbol{F}_2=\dot{\boldsymbol{P}}=M\ddot{\boldsymbol{R}}.
+\]</div>
+<p>In our case the forces are given by the internal forces only. The force acting on object <span class="math notranslate nohighlight">\(1\)</span> is thus <span class="math notranslate nohighlight">\(\boldsymbol{F}_{12}\)</span> and the one acting on object <span class="math notranslate nohighlight">\(2\)</span> is <span class="math notranslate nohighlight">\(\boldsymbol{F}_{12}\)</span>. We have also defined that <span class="math notranslate nohighlight">\(\boldsymbol{F}_{12}=-\boldsymbol{F}_{21}\)</span>. This means thar we have</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{F}_1+\boldsymbol{F}_2=\boldsymbol{F}_{12}+\boldsymbol{F}_{21}=0=\dot{\boldsymbol{P}}=M\ddot{\boldsymbol{R}}.
+\]</div>
+<p>We could alternatively had write this</p>
+<div class="math notranslate nohighlight">
+\[
+\ddot{\boldsymbol{R}}_{\rm cm}=\frac{1}{m_1+m_2}\left\{m_1\ddot{\boldsymbol{r}}_1+m_2\ddot{\boldsymbol{r}}_2\right\}=\frac{1}{m_1+m_2}\left\{\boldsymbol{F}_{12}+\boldsymbol{F}_{21}\right\}=0.
+\]</div>
+<p>This has the important consequence that the CoM velocity is a constant
+of the motion. And since the total linear momentum is given by the
+time-derivative of the CoM coordinate times the total mass
+<span class="math notranslate nohighlight">\(M=m_1+m_2\)</span>, it means that linear momentum is also conserved.
+Stated differently,  the center-of-mass coordinate
+<span class="math notranslate nohighlight">\(\boldsymbol{R}\)</span> moves at a fixed velocity.</p>
+<p>This has also another important consequence for our forces. If we
+assume that our force depends only on the relative coordinate, it
+means that the gradient of the potential with respect to the center of
+mass position is zero, that is</p>
+<div class="math notranslate nohighlight">
+\[
+M\ddot{d\boldsymbol{R}}=-\boldsymbol{\nabla}_{\boldsymbol{R}}V =0!
+\]</div>
+<p>If we now switch to the equation of motion for the relative coordinate, we have</p>
+<div class="math notranslate nohighlight">
+\[
+\ddot{\boldsymbol{r}}=\ddot{\boldsymbol{r}}_1-\ddot{\boldsymbol{r}}_2=\left(\frac{\boldsymbol{F}_{12}}{m_1}-\frac{\boldsymbol{F}_{21}}{m_2}\right)=\left(\frac{1}{m_1}+\frac{1}{m_2}\right)\boldsymbol{F}_{12},
+\]</div>
+<p>which we can rewrite in terms of the reduced mass</p>
+<div class="math notranslate nohighlight">
+\[
+\mu=\frac{m_1m_2}{m_1+m_2},
+\]</div>
+<p>as</p>
+<div class="math notranslate nohighlight">
+\[
+\mu \ddot{\boldsymbol{r}}=\boldsymbol{F}_{12}.
+\]</div>
+<p>This has a very important consequence for our coming analysis of the equations of motion for the two-body problem.
+Since the acceleration for the CoM coordinate is zero, we can now
+treat the trajectory as a one-body problem where the mass is given by
+the reduced mass <span class="math notranslate nohighlight">\(\mu\)</span> plus a second trivial problem for the center of
 mass. The reduced mass is especially convenient when one is
-considering gravitational problems because then</p>
+considering forces that depend only on the relative coordinate (like the Gravitational force or the electrostatic force between two charges)  because then for say the gravitational force we have</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{eqnarray}
-\mu \ddot{r}&amp;=&amp;-\frac{Gm_1m_2}{r^2}\hat{r}\\
-\nonumber
-&amp;=&amp;-\frac{GM\mu}{r^2}\hat{r},~~~M\equiv m_1+m_2.
-\end{eqnarray}
-\end{split}\]</div>
-<p>For the gravitational problem, the reduced mass then falls out and the
+\[
+\mu \ddot{\boldsymbol{r}}=-\frac{Gm_1m_2}{r^2}\hat{\boldsymbol{r}}=-\frac{GM\mu}{r^2}\hat{\boldsymbol{r}},
+\]</div>
+<p>where we have defined <span class="math notranslate nohighlight">\(M= m_1+m_2\)</span>.  It means that the acceleration of the relative coordinate is</p>
+<div class="math notranslate nohighlight">
+\[
+\ddot{\boldsymbol{r}}=-\frac{GM}{r^2}\hat{\boldsymbol{r}},
+\]</div>
+<p>and we have that for the gravitational problem, the reduced mass then falls out and the
 trajectory depends only on the total mass <span class="math notranslate nohighlight">\(M\)</span>.</p>
-<p>The kinetic energy and momenta also have analogues in center-of-mass
-coordinates. The total and relative momenta are</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{eqnarray}
-\boldsymbol{P}&amp;\equiv&amp;\boldsymbol{p}_1+\boldsymbol{p}_2=M\dot{\boldsymbol{R}}_{\rm cm},\\
-\nonumber
-\boldsymbol{q}&amp;\equiv&amp;\mu\dot{\boldsymbol{r}}.
-\end{eqnarray}
-\end{split}\]</div>
-<p>With these definitions, a little algebra shows that the kinetic energy becomes</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{eqnarray}
-K&amp;=&amp;\frac{1}{2}m_1|\boldsymbol{v}_1|^2+\frac{1}{2}m_2|\boldsymbol{v}_2|^2\\
-\nonumber
-&amp;=&amp;\frac{1}{2}M|\dot{\boldsymbol{R}}_{\rm cm}|^2
-+\frac{1}{2}\mu|\dot{\boldsymbol{r}}|^2\\
-\nonumber
-&amp;=&amp;\frac{P^2}{2M}+\frac{q^2}{2\mu}.
-\end{eqnarray}
-\end{split}\]</div>
 <p>The standard strategy is to transform into the center of mass frame,
 then treat the problem as one of a single particle of mass <span class="math notranslate nohighlight">\(\mu\)</span>
-undergoing a force <span class="math notranslate nohighlight">\(\boldsymbol{F}_{12}\)</span>. Scattering angles can also be
-expressed in this frame, then transformed into the lab frame. In
-practice, one sees examples in the literature where <span class="math notranslate nohighlight">\(d\sigma/d\Omega\)</span>
-expressed in both the “center-of-mass” and in the “laboratory”
-frame.</p>
+undergoing a force <span class="math notranslate nohighlight">\(\boldsymbol{F}_{12}\)</span>. Scattering angles, see our discussion of scattering problems below, can also be
+expressed in this frame.  Before we proceed to our definition of the CoM frame we need to set up the expression for the energy in terms of the relative and CoM coordinates.</p>
+</div>
+<div class="section" id="kinetic-and-total-energy">
+<h3><span class="section-number">2.2.2. </span>Kinetic and total Energy<a class="headerlink" href="#kinetic-and-total-energy" title="Permalink to this headline">¶</a></h3>
+<p>The kinetic energy and momenta also have analogues in center-of-mass
+coordinates.
+We have defined the total linear momentum as</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{P}=\sum_{i=1}^Nm_i\frac{d\boldsymbol{r}_i}{dt}=M\dot{\boldsymbol{R}}.
+\]</div>
+<p>For the relative momentum <span class="math notranslate nohighlight">\(\boldsymbol{q}\)</span>, we have that the time derivative of <span class="math notranslate nohighlight">\(\boldsymbol{r}\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+\dot{\boldsymbol{r}} =\dot{\boldsymbol{r}}_1-\dot{\boldsymbol{r}}_2,
+\]</div>
+<p>We know also that the momenta <span class="math notranslate nohighlight">\(\boldsymbol{p}_1=m_1\dot{\boldsymbol{r}}_1\)</span> and
+<span class="math notranslate nohighlight">\(\boldsymbol{p}_2=m_2\dot{\boldsymbol{r}}_2\)</span>. Using these expressions we can rewrite</p>
+<div class="math notranslate nohighlight">
+\[
+\dot{\boldsymbol{r}} =\frac{\boldsymbol{p}_1}{m_1}-\frac{\boldsymbol{p}_2}{m_2},
+\]</div>
+<p>which gives</p>
+<div class="math notranslate nohighlight">
+\[
+\dot{\boldsymbol{r}} =\frac{m_2\boldsymbol{p}_1-m_1\boldsymbol{p}_2}{m_1m_2},
+\]</div>
+<p>and dividing both sides with <span class="math notranslate nohighlight">\(M\)</span> we have</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{m_1m_2}{M}\dot{\boldsymbol{r}} =\frac{m_2\boldsymbol{p}_1-m_1\boldsymbol{p}_2}{M}.
+\]</div>
+<p>Introducing the reduced mass <span class="math notranslate nohighlight">\(\mu=m_1m_2/M\)</span> we have finally</p>
+<div class="math notranslate nohighlight">
+\[
+\mu\dot{\boldsymbol{r}} =\frac{m_2\boldsymbol{p}_1-m_1\boldsymbol{p}_2}{M}.
+\]</div>
+<p>And <span class="math notranslate nohighlight">\(\mu\dot{\boldsymbol{r}}\)</span> defines the relative momentum <span class="math notranslate nohighlight">\(\boldsymbol{q}=\mu\dot{\boldsymbol{r}}\)</span>.</p>
+<p>With these definitions we can then calculate the kinetic energy in terms of the relative and CoM coordinates.</p>
+<p>We have that</p>
+<div class="math notranslate nohighlight">
+\[
+K=\frac{p_1^2}{2m_1}+\frac{p_2^2}{2m_2},
+\]</div>
+<p>and with <span class="math notranslate nohighlight">\(\boldsymbol{p}_1=m_1\dot{\boldsymbol{r}}_1\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{p}_2=m_2\dot{\boldsymbol{r}}_2\)</span> and using</p>
+<div class="math notranslate nohighlight">
+\[
+\dot{\boldsymbol{r}}_1=\dot{\boldsymbol{R}}+\frac{m_2}{M}\dot{\boldsymbol{r}},
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+\dot{\boldsymbol{r}}_2=\dot{\boldsymbol{R}}-\frac{m_1}{M}\dot{\boldsymbol{r}},
+\]</div>
+<p>we obtain after squaring the expressions for <span class="math notranslate nohighlight">\(\dot{\boldsymbol{r}}_1\)</span> and <span class="math notranslate nohighlight">\(\dot{\boldsymbol{r}}_2\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+K=\frac{(m_1+m_2)\dot{\boldsymbol{R}}^2}{2}+\frac{(m_1+m_2)m_1m_2\dot{\boldsymbol{r}}^2}{2M^2},
+\]</div>
+<p>which we simplify to</p>
+<div class="math notranslate nohighlight">
+\[
+K=\frac{\dot{\boldsymbol{P}}^2}{2M}+\frac{\mu\dot{\boldsymbol{q}}^2}{2}.
+\]</div>
+<p>Below we will define a reference frame, the so-called CoM-frame, where
+<span class="math notranslate nohighlight">\(\boldsymbol{R}=0\)</span>. This is going to simplify our equations further.</p>
+</div>
+<div class="section" id="conservation-of-angular-momentum">
+<h3><span class="section-number">2.2.3. </span>Conservation of Angular Momentum<a class="headerlink" href="#conservation-of-angular-momentum" title="Permalink to this headline">¶</a></h3>
+<p>The angular momentum (the total one) is the sum of the individual angular momenta. In our case we have two bodies only, meaning that our angular momentum is defined as</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{L} = \boldsymbol{r}_1 \times \boldsymbol{p}_1+\boldsymbol{r}_2 \times \boldsymbol{p}_2,
+\]</div>
+<p>and using that <span class="math notranslate nohighlight">\(m_1\dot{\boldsymbol{r}}_1=\boldsymbol{p}_1\)</span> and <span class="math notranslate nohighlight">\(m_2\dot{\boldsymbol{r}}_2=\boldsymbol{p}_2\)</span> we have</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{L} = m_1\boldsymbol{r}_1 \times \dot{\boldsymbol{r}}_1+m_2\boldsymbol{r}_2 \times \dot{\boldsymbol{r}}_2.
+\]</div>
+<p>We define now the CoM-Frame where we set <span class="math notranslate nohighlight">\(\boldsymbol{R}=0\)</span>. This means that the equations
+for <span class="math notranslate nohighlight">\(\boldsymbol{r}_1\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{r}_2\)</span> in terms of the relative motion simplify and  we have</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{r}_1=\frac{m_2}{M}\boldsymbol{r},
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{r}_2=-\frac{m_1}{M}\boldsymbol{r}.
+\]</div>
+<p>resulting in</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{L} = m_1 \frac{m_2}{M}\boldsymbol{r}\times\frac{m_2}{M}\boldsymbol{r} +m_2 \frac{m_1}{M}\boldsymbol{r} \times \frac{m_1}{M}\dot{\boldsymbol{r}}.
+\]</div>
+<p>We see that can rewrite this equation as</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{L}=\boldsymbol{r}\times \mu\dot{\boldsymbol{r}}=\mu\boldsymbol{r}\times \dot{\boldsymbol{r}}.
+\]</div>
+<p>If we now use a central force, we have that</p>
+<div class="math notranslate nohighlight">
+\[
+\mu\dot{\boldsymbol{r}}=\boldsymbol{F}(\boldsymbol{r})=f(r)\hat{\boldsymbol{r}},
+\]</div>
+<p>and inserting this in the equation for the angular momentum we have</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{L}=\boldsymbol{r}\times f(r)\hat{\boldsymbol{r}},
+\]</div>
+<p>which equals zero since we are taking the cross product of the vector
+<span class="math notranslate nohighlight">\(\boldsymbol{r}\)</span> with itself.  Angular momentum is thus conserved and in
+addition to the total linear momentum being conserved, we know that
+energy is also conserved with forces that depend only on position and
+the relative coordinate only.</p>
+<p>Since angular momentum is conserved, we can idealize
+the motion of our two objects as two bodies moving in a plane spanned by the
+relative coordinate and the relative momentum. The angular
+momentum is perpendicular to the plane spanned by these two vectors.</p>
+<p>It means also, since <span class="math notranslate nohighlight">\(\boldsymbol{L}\)</span> is conserved, that we can reduce our
+problem to a motion in say the <span class="math notranslate nohighlight">\(xy\)</span>-plane.  What we have done then is to
+reduce a two-body problem in three-dimensions with six degrees of
+freedom (the six coordinates of the two objects) to a problem defined
+entirely by the relative coordinate in two dimensions.  We have thus
+moved from a problem with six degrees of freedom to one with two degrees of freedom only.</p>
+<p>Since we deal with central forces that depend only on the
+relative coordinate, we will show below that transforming to polar
+coordinates, we cna find analytical solution to
+the equation of motion</p>
+<div class="math notranslate nohighlight">
+\[
+\mu\dot{\boldsymbol{r}}=\boldsymbol{F}(\boldsymbol{r})=f(r)\hat{\boldsymbol{r}}.
+\]</div>
+<p>Note the boldfaced symbols for the relative position <span class="math notranslate nohighlight">\(\boldsymbol{r}\)</span>. Our vector <span class="math notranslate nohighlight">\(\boldsymbol{r}\)</span> is defined as</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{r}=x\boldsymbol{e}_1+y\boldsymbol{e}_2
+\]</div>
+<p>and introducing polar coordinates <span class="math notranslate nohighlight">\(r\in[0,\infty)\)</span> and <span class="math notranslate nohighlight">\(\phi\in [0,2\pi]\)</span> and the transformation</p>
+<div class="math notranslate nohighlight">
+\[
+r=\sqrt{x^2+y^2},
+\]</div>
+<p>and <span class="math notranslate nohighlight">\(x=r\cos\phi\)</span> and <span class="math notranslate nohighlight">\(y=r\sin\phi\)</span>, we will rewrite our equation of motion by transforming from Cartesian coordinates to Polar coordinates. By so doing, we end up with two differential equations which can be solved analytically (it depends on the form of the potential).</p>
+<p>What follows now is a rewrite of these equations and the introduction of Kepler’s laws as well.</p>
+</div>
 </div>
 <div class="section" id="deriving-elliptical-orbits">
-<h2><span class="section-number">2.2. </span>Deriving Elliptical Orbits<a class="headerlink" href="#deriving-elliptical-orbits" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.3. </span>Deriving Elliptical Orbits<a class="headerlink" href="#deriving-elliptical-orbits" title="Permalink to this headline">¶</a></h2>
 <p>Kepler’s laws state that a gravitational orbit should be an ellipse
 with the source of the gravitational field at one focus. Deriving this
 is surprisingly messy. To do this, we first use angular momentum
 conservation to transform the equations of motion so that it is in
-terms of <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span> instead of <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(t\)</span>. The overall strategy
+terms of <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(\phi\)</span> instead of <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(t\)</span>. The overall strategy
 is to</p>
 <ol class="simple">
-<li><p>Find equations of motion for <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(t\)</span> with no angle (<span class="math notranslate nohighlight">\(\theta\)</span>) mentioned, i.e. <span class="math notranslate nohighlight">\(d^2r/dt^2=\cdots\)</span>. Angular momentum conservation will be used, and the equation will involve the angular momentum <span class="math notranslate nohighlight">\(L\)</span>.</p></li>
-<li><p>Use angular momentum conservation to find an expression for <span class="math notranslate nohighlight">\(\dot{\theta}\)</span> in terms of <span class="math notranslate nohighlight">\(r\)</span>.</p></li>
-<li><p>Use the chain rule to convert the equations of motions for <span class="math notranslate nohighlight">\(r\)</span>, an expression involving <span class="math notranslate nohighlight">\(r,\dot{r}\)</span> and <span class="math notranslate nohighlight">\(\ddot{r}\)</span>, to one involving <span class="math notranslate nohighlight">\(r,dr/d\theta\)</span> and <span class="math notranslate nohighlight">\(d^2r/d\theta^2\)</span>. This is quitecomplicated because the expressions will also involve a substitution <span class="math notranslate nohighlight">\(u=1/r\)</span> so that one finds an expression in terms of <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span>.</p></li>
-<li><p>Once <span class="math notranslate nohighlight">\(u(\theta)\)</span> is found, you need to show that this can be converted to the familiar form for an ellipse.</p></li>
+<li><p>Find equations of motion for <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(t\)</span> with no angle (<span class="math notranslate nohighlight">\(\phi\)</span>) mentioned, i.e. <span class="math notranslate nohighlight">\(d^2r/dt^2=\cdots\)</span>. Angular momentum conservation will be used, and the equation will involve the angular momentum <span class="math notranslate nohighlight">\(L\)</span>.</p></li>
+<li><p>Use angular momentum conservation to find an expression for <span class="math notranslate nohighlight">\(\dot{\phi}\)</span> in terms of <span class="math notranslate nohighlight">\(r\)</span>.</p></li>
+<li><p>Use the chain rule to convert the equations of motions for <span class="math notranslate nohighlight">\(r\)</span>, an expression involving <span class="math notranslate nohighlight">\(r,\dot{r}\)</span> and <span class="math notranslate nohighlight">\(\ddot{r}\)</span>, to one involving <span class="math notranslate nohighlight">\(r,dr/d\phi\)</span> and <span class="math notranslate nohighlight">\(d^2r/d\phi^2\)</span>. This is quitecomplicated because the expressions will also involve a substitution <span class="math notranslate nohighlight">\(u=1/r\)</span> so that one finds an expression in terms of <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(\phi\)</span>.</p></li>
+<li><p>Once <span class="math notranslate nohighlight">\(u(\phi)\)</span> is found, you need to show that this can be converted to the familiar form for an ellipse.</p></li>
 </ol>
-<p>The equations of motion give</p>
+<p>We will now rewrite the above equation of motion (note the boldfaced vector <span class="math notranslate nohighlight">\(\boldsymbol{r}\)</span>)</p>
+<div class="math notranslate nohighlight">
+\[
+\mu \ddot{\boldsymbol{r}}=\boldsymbol{F}(\boldsymbol{r}),
+\]</div>
+<p>in polar coordinates.
+What follows here is a repeated application of the chain rule for derivatives.
+We start with derivative for <span class="math notranslate nohighlight">\(r\)</span> as function of time in a cartesian basis</p>
 <!-- Equation labels as ordinary links -->
 <div id="eq:radialeqofmotion"></div>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray}
-\label{eq:radialeqofmotion} \tag{2}
+\label{eq:radialeqofmotion} \tag{1}
 \frac{d}{dt}r^2&amp;=&amp;\frac{d}{dt}(x^2+y^2)=2x\dot{x}+2y\dot{y}=2r\dot{r},\\
 \nonumber
 \dot{r}&amp;=&amp;\frac{x}{r}\dot{x}+\frac{y}{r}\dot{y},\\
@@ -465,97 +751,112 @@ is to</p>
 -\frac{\dot{r}^2}{r}.
 \end{eqnarray}
 \end{split}\]</div>
+<p>Note that there are no vectors involved here.</p>
 <p>Recognizing that the numerator of the third term is the velocity squared, and that it can be written in polar coordinates,</p>
 <!-- Equation labels as ordinary links -->
-<div id="_auto2"></div>
+<div id="_auto1"></div>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation}
-v^2=\dot{x}^2+\dot{y}^2=\dot{r}^2+r^2\dot{\theta}^2,
-\label{_auto2} \tag{3}
+v^2=\dot{x}^2+\dot{y}^2=\dot{r}^2+r^2\dot{\phi}^2,
+\label{_auto1} \tag{2}
 \end{equation}
 \]</div>
 <p>one can write <span class="math notranslate nohighlight">\(\ddot{r}\)</span> as</p>
 <!-- Equation labels as ordinary links -->
 <div id="eq:radialeqofmotion2"></div>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{eqnarray}
-\label{eq:radialeqofmotion2} \tag{4}
-\ddot{r}&amp;=&amp;\frac{F_x\cos\theta+F_y\sin\theta}{m}+\frac{\dot{r}^2+r^2\dot{\theta}^2}{r}-\frac{\dot{r}^2}{r}\\
+\[
+\begin{equation}
+\label{eq:radialeqofmotion2} \tag{3}
+\ddot{r}=\frac{F_x\cos\phi+F_y\sin\phi}{m}+\frac{\dot{r}^2+r^2\dot{\phi}^2}{r}-\frac{\dot{r}^2}{r}
+\end{equation}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 \nonumber
-&amp;=&amp;\frac{F}{m}+\frac{r^2\dot{\theta}^2}{r}\\
-\nonumber
-m\ddot{r}&amp;=&amp;F+\frac{L^2}{mr^3}.
-\end{eqnarray}
-\end{split}\]</div>
+=\frac{F}{m}+\frac{r^2\dot{\phi}^2}{r}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto2"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation} 
+\label{_auto2} \tag{4}
+\end{equation}
+\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[
+m\ddot{r}=F+\frac{L^2}{mr^3}.
+\]</div>
 <p>This derivation used the fact that the force was radial,
-<span class="math notranslate nohighlight">\(F=F_r=F_x\cos\theta+F_y\sin\theta\)</span>, and that angular momentum is
-<span class="math notranslate nohighlight">\(L=mrv_{\theta}=mr^2\dot{\theta}\)</span>. The term <span class="math notranslate nohighlight">\(L^2/mr^3=mv^2/r\)</span> behaves
+<span class="math notranslate nohighlight">\(F=F_r=F_x\cos\phi+F_y\sin\phi\)</span>, and that angular momentum is
+<span class="math notranslate nohighlight">\(L=mrv_{\phi}=mr^2\dot{\phi}\)</span>. The term <span class="math notranslate nohighlight">\(L^2/mr^3=mv^2/r\)</span> behaves
 like an additional force. Sometimes this is referred to as a
 centrifugal force, but it is not a force. Instead, it is the
 consequence of considering the motion in a rotating (and therefore
 accelerating) frame.</p>
 <p>Now, we switch to the particular case of an attractive inverse square
-force, <span class="math notranslate nohighlight">\(F=-\alpha/r^2\)</span>, and show that the trajectory, <span class="math notranslate nohighlight">\(r(\theta)\)</span>, is
+force, <span class="math notranslate nohighlight">\(F=-\alpha/r^2\)</span>, and show that the trajectory, <span class="math notranslate nohighlight">\(r(\phi)\)</span>, is
 an ellipse. To do this we transform derivatives w.r.t. time to
-derivatives w.r.t. <span class="math notranslate nohighlight">\(\theta\)</span> using the chain rule combined with angular
-momentum conservation, <span class="math notranslate nohighlight">\(\dot{\theta}=L/mr^2\)</span>.</p>
+derivatives w.r.t. <span class="math notranslate nohighlight">\(\phi\)</span> using the chain rule combined with angular
+momentum conservation, <span class="math notranslate nohighlight">\(\dot{\phi}=L/mr^2\)</span>.</p>
 <!-- Equation labels as ordinary links -->
 <div id="eq:rtotheta"></div>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray}
 \label{eq:rtotheta} \tag{5}
-\dot{r}&amp;=&amp;\frac{dr}{d\theta}\dot{\theta}=\frac{dr}{d\theta}\frac{L}{mr^2},\\
+\dot{r}&amp;=&amp;\frac{dr}{d\phi}\dot{\phi}=\frac{dr}{d\phi}\frac{L}{mr^2},\\
 \nonumber
-\ddot{r}&amp;=&amp;\frac{d^2r}{d\theta^2}\dot{\theta}^2
-+\frac{dr}{d\theta}\left(\frac{d}{dr}\frac{L}{mr^2}\right)\dot{r}\\
+\ddot{r}&amp;=&amp;\frac{d^2r}{d\phi^2}\dot{\phi}^2
++\frac{dr}{d\phi}\left(\frac{d}{dr}\frac{L}{mr^2}\right)\dot{r}\\
 \nonumber
-&amp;=&amp;\frac{d^2r}{d\theta^2}\left(\frac{L}{mr^2}\right)^2
--2\frac{dr}{d\theta}\frac{L}{mr^3}\dot{r}\\
+&amp;=&amp;\frac{d^2r}{d\phi^2}\left(\frac{L}{mr^2}\right)^2
+-2\frac{dr}{d\phi}\frac{L}{mr^3}\dot{r}\\
 \nonumber
-&amp;=&amp;\frac{d^2r}{d\theta^2}\left(\frac{L}{mr^2}\right)^2
--\frac{2}{r}\left(\frac{dr}{d\theta}\right)^2\left(\frac{L}{mr^2}\right)^2
+&amp;=&amp;\frac{d^2r}{d\phi^2}\left(\frac{L}{mr^2}\right)^2
+-\frac{2}{r}\left(\frac{dr}{d\phi}\right)^2\left(\frac{L}{mr^2}\right)^2
 \end{eqnarray}
 \end{split}\]</div>
-<p>Equating the two expressions for <span class="math notranslate nohighlight">\(\ddot{r}\)</span> in Eq.s (<a class="reference external" href="#eq:radialeqofmotion2">4</a>) and (<a class="reference external" href="#eq:rtotheta">5</a>) eliminates all the derivatives w.r.t. time, and provides a differential equation with only derivatives w.r.t. <span class="math notranslate nohighlight">\(\theta\)</span>,</p>
+<p>Equating the two expressions for <span class="math notranslate nohighlight">\(\ddot{r}\)</span> in Eq.s (<a class="reference external" href="#eq:radialeqofmotion2">3</a>) and (<a class="reference external" href="#eq:rtotheta">5</a>) eliminates all the derivatives w.r.t. time, and provides a differential equation with only derivatives w.r.t. <span class="math notranslate nohighlight">\(\phi\)</span>,</p>
 <!-- Equation labels as ordinary links -->
 <div id="eq:rdotdot"></div>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation}
 \label{eq:rdotdot} \tag{6}
-\frac{d^2r}{d\theta^2}\left(\frac{L}{mr^2}\right)^2
--\frac{2}{r}\left(\frac{dr}{d\theta}\right)^2\left(\frac{L}{mr^2}\right)^2
+\frac{d^2r}{d\phi^2}\left(\frac{L}{mr^2}\right)^2
+-\frac{2}{r}\left(\frac{dr}{d\phi}\right)^2\left(\frac{L}{mr^2}\right)^2
 =\frac{F}{m}+\frac{L^2}{m^2r^3},
 \end{equation}
 \]</div>
-<p>that when solved yields the trajectory, i.e. <span class="math notranslate nohighlight">\(r(\theta)\)</span>. Up to this
+<p>that when solved yields the trajectory, i.e. <span class="math notranslate nohighlight">\(r(\phi)\)</span>. Up to this
 point the expressions work for any radial force, not just forces that
 fall as <span class="math notranslate nohighlight">\(1/r^2\)</span>.</p>
 <p>The trick to simplifying this differential equation for the inverse
 square problems is to make a substitution, <span class="math notranslate nohighlight">\(u\equiv 1/r\)</span>, and rewrite
-the differential equation for <span class="math notranslate nohighlight">\(u(\theta)\)</span>.</p>
+the differential equation for <span class="math notranslate nohighlight">\(u(\phi)\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray}
 r&amp;=&amp;1/u,\\
 \nonumber
-\frac{dr}{d\theta}&amp;=&amp;-\frac{1}{u^2}\frac{du}{d\theta},\\
+\frac{dr}{d\phi}&amp;=&amp;-\frac{1}{u^2}\frac{du}{d\phi},\\
 \nonumber
-\frac{d^2r}{d\theta^2}&amp;=&amp;\frac{2}{u^3}\left(\frac{du}{d\theta}\right)^2-\frac{1}{u^2}\frac{d^2u}{d\theta^2}.
+\frac{d^2r}{d\phi^2}&amp;=&amp;\frac{2}{u^3}\left(\frac{du}{d\phi}\right)^2-\frac{1}{u^2}\frac{d^2u}{d\phi^2}.
 \end{eqnarray}
 \end{split}\]</div>
 <p>Plugging these expressions into Eq. (<a class="reference external" href="#eq:rdotdot">6</a>) gives an
-expression in terms of <span class="math notranslate nohighlight">\(u\)</span>, <span class="math notranslate nohighlight">\(du/d\theta\)</span>, and <span class="math notranslate nohighlight">\(d^2u/d\theta^2\)</span>. After
+expression in terms of <span class="math notranslate nohighlight">\(u\)</span>, <span class="math notranslate nohighlight">\(du/d\phi\)</span>, and <span class="math notranslate nohighlight">\(d^2u/d\phi^2\)</span>. After
 some tedious algebra,</p>
 <!-- Equation labels as ordinary links -->
 <div id="_auto3"></div>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation}
-\frac{d^2u}{d\theta^2}=-u-\frac{F m}{L^2u^2}.
+\frac{d^2u}{d\phi^2}=-u-\frac{F m}{L^2u^2}.
 \label{_auto3} \tag{7}
 \end{equation}
 \]</div>
@@ -565,24 +866,24 @@ some tedious algebra,</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation}
-\frac{d^2u}{d\theta^2}=-u+\frac{m\alpha}{L^2}.
+\frac{d^2u}{d\phi^2}=-u+\frac{m\alpha}{L^2}.
 \label{_auto4} \tag{8}
 \end{equation}
 \]</div>
-<p>The solution has two arbitrary constants, <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(\theta_0\)</span>,</p>
+<p>The solution has two arbitrary constants, <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(\phi_0\)</span>,</p>
 <!-- Equation labels as ordinary links -->
 <div id="eq:Ctrajectory"></div>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray}
 \label{eq:Ctrajectory} \tag{9}
-u&amp;=&amp;\frac{m\alpha}{L^2}+A\cos(\theta-\theta_0),\\
+u&amp;=&amp;\frac{m\alpha}{L^2}+A\cos(\phi-\phi_0),\\
 \nonumber
-r&amp;=&amp;\frac{1}{(m\alpha/L^2)+A\cos(\theta-\theta_0)}.
+r&amp;=&amp;\frac{1}{(m\alpha/L^2)+A\cos(\phi-\phi_0)}.
 \end{eqnarray}
 \end{split}\]</div>
-<p>The radius will be at a minimum when <span class="math notranslate nohighlight">\(\theta=\theta_0\)</span> and at a
-maximum when <span class="math notranslate nohighlight">\(\theta=\theta_0+\pi\)</span>. The constant <span class="math notranslate nohighlight">\(A\)</span> is related to the
+<p>The radius will be at a minimum when <span class="math notranslate nohighlight">\(\phi=\phi_0\)</span> and at a
+maximum when <span class="math notranslate nohighlight">\(\phi=\phi_0+\pi\)</span>. The constant <span class="math notranslate nohighlight">\(A\)</span> is related to the
 eccentricity of the orbit. When <span class="math notranslate nohighlight">\(A=0\)</span> the radius is a constant
 <span class="math notranslate nohighlight">\(r=L^2/(m\alpha)\)</span>, and the motion is circular. If one solved the
 expression <span class="math notranslate nohighlight">\(mv^2/r=-\alpha/r^2\)</span> for a circular orbit, using the
@@ -598,11 +899,11 @@ origin,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray}
-2D&amp;=&amp;r+\sqrt{(r\cos\theta-2a)^2+r^2\sin^2\theta},\\
+2D&amp;=&amp;r+\sqrt{(r\cos\phi-2a)^2+r^2\sin^2\phi},\\
 \nonumber
-4D^2+r^2-4Dr&amp;=&amp;r^2+4a^2-4ar\cos\theta,\\
+4D^2+r^2-4Dr&amp;=&amp;r^2+4a^2-4ar\cos\phi,\\
 \nonumber
-r&amp;=&amp;\frac{D^2-a^2}{D+a\cos\theta}=\frac{1}{D/(D^2-a^2)-a\cos\theta/(D^2-a^2)}.
+r&amp;=&amp;\frac{D^2-a^2}{D+a\cos\phi}=\frac{1}{D/(D^2-a^2)-a\cos\phi/(D^2-a^2)}.
 \end{eqnarray}
 \end{split}\]</div>
 <p>By inspection, this is the same form as Eq. (<a class="reference external" href="#eq:Ctrajectory">9</a>) with <span class="math notranslate nohighlight">\(D/(D^2-a^2)=m\alpha/L^2\)</span> and <span class="math notranslate nohighlight">\(a/(D^2-a^2)=A\)</span>.</p>
@@ -628,19 +929,19 @@ r&amp;=&amp;\frac{D^2-a^2}{D+a\cos\theta}=\frac{1}{D/(D^2-a^2)-a\cos\theta/(D^2-
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/chapter6_37_0.png" src="_images/chapter6_37_0.png" />
+<img alt="_images/chapter6_123_0.png" src="_images/chapter6_123_0.png" />
 </div>
 </div>
 </div>
 <div class="section" id="effective-or-centrifugal-potential">
-<h2><span class="section-number">2.3. </span>Effective or Centrifugal Potential<a class="headerlink" href="#effective-or-centrifugal-potential" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4. </span>Effective or Centrifugal Potential<a class="headerlink" href="#effective-or-centrifugal-potential" title="Permalink to this headline">¶</a></h2>
 <p>The total energy of a particle is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray}
-E&amp;=&amp;V(r)+\frac{1}{2}mv_\theta^2+\frac{1}{2}m\dot{r}^2\\
+E&amp;=&amp;V(r)+\frac{1}{2}mv_\phi^2+\frac{1}{2}m\dot{r}^2\\
 \nonumber
-&amp;=&amp;V(r)+\frac{1}{2}mr^2\dot{\theta}^2+\frac{1}{2}m\dot{r}^2\\
+&amp;=&amp;V(r)+\frac{1}{2}mr^2\dot{\phi}^2+\frac{1}{2}m\dot{r}^2\\
 \nonumber
 &amp;=&amp;V(r)+\frac{L^2}{2mr^2}+\frac{1}{2}m\dot{r}^2.
 \end{eqnarray}
@@ -665,7 +966,7 @@ F_{\rm eff}&amp;=&amp;-\frac{d}{dr}V(r) -\frac{d}{dr}\frac{L^2}{2mr^2}\\
 &amp;=&amp;F(r)+\frac{L^2}{mr^3}=F(r)+m\frac{v_\perp^2}{r},
 \end{eqnarray}
 \end{split}\]</div>
-<p>which is indeed matches the form for <span class="math notranslate nohighlight">\(m\ddot{r}\)</span> in Eq. (<a class="reference external" href="#eq:radialeqofmotion2">4</a>), which included the <strong>centrifugal</strong> force.</p>
+<p>which is indeed matches the form for <span class="math notranslate nohighlight">\(m\ddot{r}\)</span> in Eq. (<a class="reference external" href="#eq:radialeqofmotion2">3</a>), which included the <strong>centrifugal</strong> force.</p>
 <p>The following code plots this effective potential for a simple choice of parameters, with a standard gravitational potential <span class="math notranslate nohighlight">\(-\alpha/r\)</span>. Here we have chosen <span class="math notranslate nohighlight">\(L=m=\alpha=1\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -698,11 +999,11 @@ F_{\rm eff}&amp;=&amp;-\frac{d}{dr}V(r) -\frac{d}{dr}\frac{L^2}{2mr^2}\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/chapter6_45_0.png" src="_images/chapter6_45_0.png" />
+<img alt="_images/chapter6_131_0.png" src="_images/chapter6_131_0.png" />
 </div>
 </div>
 <div class="section" id="gravitational-force-example">
-<h3><span class="section-number">2.3.1. </span>Gravitational force example<a class="headerlink" href="#gravitational-force-example" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.4.1. </span>Gravitational force example<a class="headerlink" href="#gravitational-force-example" title="Permalink to this headline">¶</a></h3>
 <p>Using the above parameters, we can now study the evolution of the system using for example the velocity Verlet method.
 This is done in the code here for an initial radius equal to the minimum of the potential well.  We seen then that the radius is always the same and corresponds to a circle (the radius is always constant).</p>
 <div class="cell docutils container">
@@ -783,13 +1084,13 @@ This is done in the code here for an initial radius equal to the minimum of the 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/chapter6_47_0.png" src="_images/chapter6_47_0.png" />
+<img alt="_images/chapter6_133_0.png" src="_images/chapter6_133_0.png" />
 </div>
 </div>
 <p>Changing the value of the initial position to a value where the energy is positive, leads to an increasing radius with time, a so-called unbound orbit. Choosing on the other hand an initial radius that corresponds to a negative energy and different from the minimum value leads to a radius that oscillates back and forth between two values.</p>
 </div>
 <div class="section" id="harmonic-oscillator-in-two-dimensions">
-<h3><span class="section-number">2.3.2. </span>Harmonic Oscillator in two dimensions<a class="headerlink" href="#harmonic-oscillator-in-two-dimensions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.4.2. </span>Harmonic Oscillator in two dimensions<a class="headerlink" href="#harmonic-oscillator-in-two-dimensions" title="Permalink to this headline">¶</a></h3>
 <p>Consider a particle of mass <span class="math notranslate nohighlight">\(m\)</span> in a 2-dimensional harmonic oscillator with potential</p>
 <div class="math notranslate nohighlight">
 \[
@@ -829,7 +1130,7 @@ The potential is plotted here with the parameters <span class="math notranslate 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/chapter6_51_0.png" src="_images/chapter6_51_0.png" />
+<img alt="_images/chapter6_137_0.png" src="_images/chapter6_137_0.png" />
 </div>
 </div>
 <div class="math notranslate nohighlight">
@@ -847,7 +1148,7 @@ minimum for at some radius <span class="math notranslate nohighlight">\(r_{\rm m
 \begin{eqnarray*}
 0&amp;=&amp;kr_{\rm min}-\frac{L^2}{mr_{\rm min}^3},\\
 r_{\rm min}&amp;=&amp;\left(\frac{L^2}{mk}\right)^{1/4},\\
-\dot{\theta}&amp;=&amp;\frac{L}{mr_{\rm min}^2}=\sqrt{k/m}.
+\dot{\phi}&amp;=&amp;\frac{L}{mr_{\rm min}^2}=\sqrt{k/m}.
 \end{eqnarray*}
 \end{split}\]</div>
 <p>For particles at <span class="math notranslate nohighlight">\(r_{\rm min}\)</span> with <span class="math notranslate nohighlight">\(\dot{r}=0\)</span>, the particle does not
@@ -861,7 +1162,7 @@ of the circular orbit can be adjusted by changing the angular momentum
 \begin{eqnarray*}
 k_{\rm eff}&amp;=&amp;\left.\frac{d^2}{dr^2}V_{\rm eff}(r)\right|_{r=r_{\rm min}}=k+\frac{3L^2}{mr_{\rm min}^4}\\
 &amp;=&amp;4k,\\
-\omega&amp;=&amp;\sqrt{k_{\rm eff}/m}=2\sqrt{k/m}=2\dot{\theta}.
+\omega&amp;=&amp;\sqrt{k_{\rm eff}/m}=2\sqrt{k/m}=2\dot{\phi}.
 \end{eqnarray*}
 \end{split}\]</div>
 <p>Here, the second step used the result of the last step from part
@@ -940,7 +1241,7 @@ y&amp;=&amp;C\cos\omega_0 t+D\sin\omega_0 t.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/chapter6_62_0.png" src="_images/chapter6_62_0.png" />
+<img alt="_images/chapter6_148_0.png" src="_images/chapter6_148_0.png" />
 </div>
 </div>
 <p>With some work using double angle formulas, one can calculate</p>
@@ -1009,14 +1310,14 @@ maxima for <span class="math notranslate nohighlight">\(x^2\)</span>, one at <sp
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/chapter6_66_0.png" src="_images/chapter6_66_0.png" />
+<img alt="_images/chapter6_152_0.png" src="_images/chapter6_152_0.png" />
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="stability-of-orbits">
-<h2><span class="section-number">2.4. </span>Stability of Orbits<a class="headerlink" href="#stability-of-orbits" title="Permalink to this headline">¶</a></h2>
-<p>The effective force can be extracted from the effective potential, <span class="math notranslate nohighlight">\(V_{\rm eff}\)</span>. Beginning from the equations of motion, Eq. (<a class="reference external" href="#eq:radialeqofmotion">2</a>), for <span class="math notranslate nohighlight">\(r\)</span>,</p>
+<h2><span class="section-number">2.5. </span>Stability of Orbits<a class="headerlink" href="#stability-of-orbits" title="Permalink to this headline">¶</a></h2>
+<p>The effective force can be extracted from the effective potential, <span class="math notranslate nohighlight">\(V_{\rm eff}\)</span>. Beginning from the equations of motion, Eq. (<a class="reference external" href="#eq:radialeqofmotion">1</a>), for <span class="math notranslate nohighlight">\(r\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray}
@@ -1061,7 +1362,7 @@ orbit. Then find the angular frequency for small radial perturbations.</p>
 \partial_r\left\{\beta r+\frac{L^2}{2mr^2}\right\}&amp;=&amp;0,\\
 \beta&amp;=&amp;\frac{L^2}{mr_{\rm min}^3},\\
 r_{\rm min}&amp;=&amp;\left(\frac{L^2}{\beta m}\right)^{1/3},\\
-\dot{\theta}&amp;=&amp;\frac{L}{mr_{\rm min}^2}=\frac{\beta^{2/3}}{(mL)^{1/3}}
+\dot{\phi}&amp;=&amp;\frac{L}{mr_{\rm min}^2}=\frac{\beta^{2/3}}{(mL)^{1/3}}
 \end{eqnarray*}
 \end{split}\]</div>
 <p>Now, we can find the angular frequency of small perturbations about the circular orbit. To do this we find the effective spring constant for the effective potential,</p>
@@ -1074,15 +1375,15 @@ k_{\rm eff}&amp;=&amp;\partial_r^2 \left.V_{\rm eff}\right|_{r_{\rm min}}\\
 &amp;=&amp;\frac{\beta^{2/3}}{(mL)^{1/3}}\sqrt{3}.
 \end{eqnarray*}
 \end{split}\]</div>
-<p>If the two frequencies, <span class="math notranslate nohighlight">\(\dot{\theta}\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span>, differ by an
+<p>If the two frequencies, <span class="math notranslate nohighlight">\(\dot{\phi}\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span>, differ by an
 integer factor, the orbit’s trajectory will repeat itself each time
 around. This is the case for the inverse-square force,
-<span class="math notranslate nohighlight">\(\omega=\dot{\theta}\)</span>, and for the harmonic oscillator,
-<span class="math notranslate nohighlight">\(\omega=2\dot{\theta}\)</span>. In this case, <span class="math notranslate nohighlight">\(\omega=\sqrt{3}\dot{\theta}\)</span>,
+<span class="math notranslate nohighlight">\(\omega=\dot{\phi}\)</span>, and for the harmonic oscillator,
+<span class="math notranslate nohighlight">\(\omega=2\dot{\phi}\)</span>. In this case, <span class="math notranslate nohighlight">\(\omega=\sqrt{3}\dot{\phi}\)</span>,
 and the angles at which the maxima and minima occur change with each
 orbit.</p>
 <div class="section" id="code-example-with-gravitional-force">
-<h3><span class="section-number">2.4.1. </span>Code example with gravitional force<a class="headerlink" href="#code-example-with-gravitional-force" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.5.1. </span>Code example with gravitional force<a class="headerlink" href="#code-example-with-gravitional-force" title="Permalink to this headline">¶</a></h3>
 <p>The code example here is meant to illustrate how we can make a plot of the final orbit. We solve the equations in polar coordinates (the example here uses the minimum of the potential as initial value) and then we transform back to cartesian coordinates and plot <span class="math notranslate nohighlight">\(x\)</span> versus <span class="math notranslate nohighlight">\(y\)</span>. We see that we get a perfect circle when we place ourselves at the minimum of the potential energy, as expected.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1142,7 +1443,7 @@ orbit.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/chapter6_74_0.png" src="_images/chapter6_74_0.png" />
+<img alt="_images/chapter6_160_0.png" src="_images/chapter6_160_0.png" />
 </div>
 </div>
 <p>Try to change the initial value for <span class="math notranslate nohighlight">\(r\)</span> and see what kind of orbits you get.
@@ -1208,7 +1509,7 @@ In order to test different energies, it can be useful to look at the plot of the
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/chapter6_76_0.png" src="_images/chapter6_76_0.png" />
+<img alt="_images/chapter6_162_0.png" src="_images/chapter6_162_0.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1.5        -1.49999996 -1.49999984 -1.49999964 -1.49999935 -1.49999898
  -1.49999853 -1.49999798 -1.49999734 -1.49999659 -1.49999574 -1.49999478
  -1.49999369 -1.49999247 -1.49999112 -1.49998961 -1.49998794 -1.49998609
@@ -1383,7 +1684,7 @@ In order to test different energies, it can be useful to look at the plot of the
 </div>
 </div>
 <div class="section" id="scattering-and-cross-sections">
-<h2><span class="section-number">2.5. </span>Scattering and Cross Sections<a class="headerlink" href="#scattering-and-cross-sections" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.6. </span>Scattering and Cross Sections<a class="headerlink" href="#scattering-and-cross-sections" title="Permalink to this headline">¶</a></h2>
 <p>Scattering experiments don’t measure entire trajectories. For elastic
 collisions, they measure the distribution of final scattering angles
 at best. Most experiments use targets thin enough so that the number
@@ -1409,7 +1710,7 @@ interaction in nuclear or particle physics, there is no long-range
 force and cross-sections are finite. Even for Coulomb forces, the part
 of the cross section that corresponds to a specific scattering angle,
 <span class="math notranslate nohighlight">\(d\sigma/d\Omega\)</span>, which is a function of the scattering angle
-<span class="math notranslate nohighlight">\(\theta_s\)</span> is still finite.</p>
+<span class="math notranslate nohighlight">\(\phi_s\)</span> is still finite.</p>
 <p>If a particle travels through a thin target, the chance the particle
 scatters is <span class="math notranslate nohighlight">\(P_{\rm scatt}=\sigma dN/dA\)</span>, where <span class="math notranslate nohighlight">\(dN/dA\)</span> is the number
 of scattering centers per area the particle encounters. If the density
@@ -1427,8 +1728,8 @@ cross-sections,</p>
 \]</div>
 <p>Instead of merely stating that a particle collided, one can measure
 the probability the particle scattered by a given angle. The
-scattering angle <span class="math notranslate nohighlight">\(\theta_s\)</span> is defined so that at zero the particle is
-unscattered and at <span class="math notranslate nohighlight">\(\theta_s=\pi\)</span> the particle is scattered directly
+scattering angle <span class="math notranslate nohighlight">\(\phi_s\)</span> is defined so that at zero the particle is
+unscattered and at <span class="math notranslate nohighlight">\(\phi_s=\pi\)</span> the particle is scattered directly
 backward. Scattering angles are often described in the center-of-mass
 frame, but that is a detail we will neglect for this first discussion,
 where we will consider the scattering of particles moving classically
@@ -1440,7 +1741,7 @@ differential cross section,</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation}
-\frac{d^2\sigma}{d\cos\theta_s~d\phi}.
+\frac{d^2\sigma}{d\cos\phi_s~d\phi}.
 \label{_auto5} \tag{10}
 \end{equation}
 \]</div>
@@ -1450,7 +1751,7 @@ differential cross section,</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation}
-d\sigma/d\Omega=\frac{d\sigma}{d\cos\theta d\phi}=\frac{1}{2\pi}\frac{d\sigma}{d\cos\theta},
+d\sigma/d\Omega=\frac{d\sigma}{d\cos\phi d\phi}=\frac{1}{2\pi}\frac{d\sigma}{d\cos\phi},
 \label{_auto6} \tag{11}
 \end{equation}
 \]</div>
@@ -1491,26 +1792,26 @@ d\sigma=2\pi bdb,
 classical physics, one can calculate the trajectory given the incoming
 kinetic energy <span class="math notranslate nohighlight">\(E\)</span> and the impact parameter if one knows the mass and
 potential. From the trajectory, one then finds the scattering angle
-<span class="math notranslate nohighlight">\(\theta_s(b)\)</span>. The differential cross section is then</p>
+<span class="math notranslate nohighlight">\(\phi_s(b)\)</span>. The differential cross section is then</p>
 <!-- Equation labels as ordinary links -->
 <div id="_auto8"></div>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation}
-\frac{d\sigma}{d\Omega}=\frac{1}{2\pi}\frac{d\sigma}{d\cos\theta_s}=b\frac{db}{d\cos\theta_s}=\frac{b}{(d/db)\cos\theta_s(b)}.
+\frac{d\sigma}{d\Omega}=\frac{1}{2\pi}\frac{d\sigma}{d\cos\phi_s}=b\frac{db}{d\cos\phi_s}=\frac{b}{(d/db)\cos\phi_s(b)}.
 \label{_auto8} \tag{13}
 \end{equation}
 \]</div>
-<p>Typically, one would calculate <span class="math notranslate nohighlight">\(\cos\theta_s\)</span> and <span class="math notranslate nohighlight">\((d/db)\cos\theta_s\)</span>
+<p>Typically, one would calculate <span class="math notranslate nohighlight">\(\cos\phi_s\)</span> and <span class="math notranslate nohighlight">\((d/db)\cos\phi_s\)</span>
 as functions of <span class="math notranslate nohighlight">\(b\)</span>. This is sufficient to plot the differential cross
-section as a function of <span class="math notranslate nohighlight">\(\theta_s\)</span>.</p>
+section as a function of <span class="math notranslate nohighlight">\(\phi_s\)</span>.</p>
 <p>The total cross section is</p>
 <!-- Equation labels as ordinary links -->
 <div id="_auto9"></div>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation}
-\sigma_{\rm tot}=\int d\Omega\frac{d\sigma}{d\Omega}=2\pi\int d\cos\theta_s~\frac{d\sigma}{d\Omega}. 
+\sigma_{\rm tot}=\int d\Omega\frac{d\sigma}{d\Omega}=2\pi\int d\cos\phi_s~\frac{d\sigma}{d\Omega}. 
 \label{_auto9} \tag{14}
 \end{equation}
 \]</div>
@@ -1521,7 +1822,7 @@ later on.</p>
 radius <span class="math notranslate nohighlight">\(R\)</span> and mass <span class="math notranslate nohighlight">\(M\)</span>. What is the cross section for the asteroid to
 impact the planet?</p>
 <div class="section" id="solution">
-<h3><span class="section-number">2.5.1. </span>Solution<a class="headerlink" href="#solution" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.6.1. </span>Solution<a class="headerlink" href="#solution" title="Permalink to this headline">¶</a></h3>
 <p>Calculate the maximum impact parameter, <span class="math notranslate nohighlight">\(b_{\rm max}\)</span>, for which the asteroid will hit the planet. The total cross  section for impact is <span class="math notranslate nohighlight">\(\sigma_{\rm impact}=\pi b_{\rm max}^2\)</span>. The maximum cross-section can be found with the help of angular momentum conservation. The asteroid’s incoming momentum is <span class="math notranslate nohighlight">\(p_0=\sqrt{2mE}\)</span> and the angular momentum is <span class="math notranslate nohighlight">\(L=p_0b\)</span>. If the asteroid just grazes the planet, it is moving with zero radial kinetic energy at impact. Combining energy and angular momentum conservation and having <span class="math notranslate nohighlight">\(p_f\)</span> refer to the momentum of the asteroid at a distance <span class="math notranslate nohighlight">\(R\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1542,7 +1843,7 @@ b_{\rm max}&amp;=&amp;R\frac{p_f}{p_0}\\
 </div>
 </div>
 <div class="section" id="rutherford-scattering">
-<h2><span class="section-number">2.6. </span>Rutherford Scattering<a class="headerlink" href="#rutherford-scattering" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.7. </span>Rutherford Scattering<a class="headerlink" href="#rutherford-scattering" title="Permalink to this headline">¶</a></h2>
 <p>This refers to the calculation of <span class="math notranslate nohighlight">\(d\sigma/d\Omega\)</span> due to an inverse
 square force, <span class="math notranslate nohighlight">\(F_{12}=\pm\alpha/r^2\)</span> for repulsive/attractive
 interaction. Rutherford compared the scattering of <span class="math notranslate nohighlight">\(\alpha\)</span> particles
@@ -1557,8 +1858,8 @@ of the nucleus tended to be roughly 4 orders of magnitude smaller than
 that of the atom, which is less than the size of a football relative
 to Spartan Stadium.</p>
 <p>The incoming and outgoing angles of the trajectory are at
-<span class="math notranslate nohighlight">\(\pm\theta'\)</span>. They are related to the scattering angle by
-<span class="math notranslate nohighlight">\(2\theta'=\pi+\theta_s\)</span>.</p>
+<span class="math notranslate nohighlight">\(\pm\phi'\)</span>. They are related to the scattering angle by
+<span class="math notranslate nohighlight">\(2\phi'=\pi+\phi_s\)</span>.</p>
 <p>In order to calculate differential cross section, we must find how the
 impact parameter is related to the scattering angle. This requires
 analysis of the trajectory. We consider our previous expression for
@@ -1576,45 +1877,45 @@ tracks. Rewriting Eq. (<a class="reference external" href="#eq:Ctrajectory">9</a
 <div class="math notranslate nohighlight">
 \[
 \begin{equation}\label{eq:ruthtraj} \tag{15}
-r=\frac{1}{\frac{m\alpha}{L^2}+A\cos\theta}.
+r=\frac{1}{\frac{m\alpha}{L^2}+A\cos\phi}.
 \end{equation}
 \]</div>
 <p>Once <span class="math notranslate nohighlight">\(A\)</span> is large enough, which will happen when the energy is
 positive, the denominator will become negative for a range of
-<span class="math notranslate nohighlight">\(\theta\)</span>. This is because the scattered particle will never reach
-certain angles. The asymptotic angles <span class="math notranslate nohighlight">\(\theta'\)</span> are those for which
+<span class="math notranslate nohighlight">\(\phi\)</span>. This is because the scattered particle will never reach
+certain angles. The asymptotic angles <span class="math notranslate nohighlight">\(\phi'\)</span> are those for which
 the denominator goes to zero,</p>
 <!-- Equation labels as ordinary links -->
 <div id="_auto10"></div>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation}
-\cos\theta'=-\frac{m\alpha}{AL^2}.
+\cos\phi'=-\frac{m\alpha}{AL^2}.
 \label{_auto10} \tag{16}
 \end{equation}
 \]</div>
-<p>The trajectory’s point of closest approach is at <span class="math notranslate nohighlight">\(\theta=0\)</span> and the
-two angles <span class="math notranslate nohighlight">\(\theta'\)</span>, which have this value of <span class="math notranslate nohighlight">\(\cos\theta'\)</span>, are the
+<p>The trajectory’s point of closest approach is at <span class="math notranslate nohighlight">\(\phi=0\)</span> and the
+two angles <span class="math notranslate nohighlight">\(\phi'\)</span>, which have this value of <span class="math notranslate nohighlight">\(\cos\phi'\)</span>, are the
 angles of the incoming and outgoing particles. From
 Fig (<strong>to come</strong>), one can see that the scattering angle
-<span class="math notranslate nohighlight">\(\theta_s\)</span> is given by,</p>
+<span class="math notranslate nohighlight">\(\phi_s\)</span> is given by,</p>
 <!-- Equation labels as ordinary links -->
 <div id="eq:sthetover2"></div>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray}
 \label{eq:sthetover2} \tag{17}
-2\theta'-\pi&amp;=&amp;\theta_s,~~~\theta'=\frac{\pi}{2}+\frac{\theta_s}{2},\\
+2\phi'-\pi&amp;=&amp;\phi_s,~~~\phi'=\frac{\pi}{2}+\frac{\phi_s}{2},\\
 \nonumber
-\sin(\theta_s/2)&amp;=&amp;-\cos\theta'\\
+\sin(\phi_s/2)&amp;=&amp;-\cos\phi'\\
 \nonumber
 &amp;=&amp;\frac{m\alpha}{AL^2}.
 \end{eqnarray}
 \end{split}\]</div>
-<p>Now that we have <span class="math notranslate nohighlight">\(\theta_s\)</span> in terms of <span class="math notranslate nohighlight">\(m,\alpha,L\)</span> and <span class="math notranslate nohighlight">\(A\)</span>, we wish
+<p>Now that we have <span class="math notranslate nohighlight">\(\phi_s\)</span> in terms of <span class="math notranslate nohighlight">\(m,\alpha,L\)</span> and <span class="math notranslate nohighlight">\(A\)</span>, we wish
 to re-express <span class="math notranslate nohighlight">\(L\)</span> and <span class="math notranslate nohighlight">\(A\)</span> in terms of the impact parameter <span class="math notranslate nohighlight">\(b\)</span> and the
 energy <span class="math notranslate nohighlight">\(E\)</span>. This will set us up to calculate the differential cross
-section, which requires knowing <span class="math notranslate nohighlight">\(db/d\theta_s\)</span>. It is easy to write
+section, which requires knowing <span class="math notranslate nohighlight">\(db/d\phi_s\)</span>. It is easy to write
 the angular momentum as</p>
 <!-- Equation labels as ordinary links -->
 <div id="_auto11"></div>
@@ -1626,7 +1927,7 @@ L^2=p_0^2b^2=2mEb^2.
 \end{equation}
 \]</div>
 <p>Finding <span class="math notranslate nohighlight">\(A\)</span> is more complicated. To accomplish this we realize that
-the point of closest approach occurs at <span class="math notranslate nohighlight">\(\theta=0\)</span>, so from
+the point of closest approach occurs at <span class="math notranslate nohighlight">\(\phi=0\)</span>, so from
 Eq. (<a class="reference external" href="#eq:ruthtraj">15</a>)</p>
 <!-- Equation labels as ordinary links -->
 <div id="eq:rminofA"></div>
@@ -1678,32 +1979,32 @@ A=\sqrt{(m\alpha/L^2)^2+2mE/L^2}=\sqrt{(\alpha^2/(4E^2b^4)+1/b^2}
 \[\begin{split}
 \begin{eqnarray}
 \label{eq:scattangle} \tag{23}
-\sin(\theta_s/2)&amp;=&amp;\frac{m\alpha}{AL^2}\\
+\sin(\phi_s/2)&amp;=&amp;\frac{m\alpha}{AL^2}\\
 \nonumber
 &amp;=&amp;\frac{a}{\sqrt{a^2+b^2}}, ~~a\equiv \frac{\alpha}{2E}
 \end{eqnarray}
 \end{split}\]</div>
 <p>The differential cross section can now be found by differentiating the
-expression for <span class="math notranslate nohighlight">\(\theta_s\)</span> with <span class="math notranslate nohighlight">\(b\)</span>,</p>
+expression for <span class="math notranslate nohighlight">\(\phi_s\)</span> with <span class="math notranslate nohighlight">\(b\)</span>,</p>
 <!-- Equation labels as ordinary links -->
 <div id="eq:rutherford"></div>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray}
 \label{eq:rutherford} \tag{24}
-\frac{1}{2}\cos(\theta_s/2)d\theta_s&amp;=&amp;\frac{ab~db}{(a^2+b^2)^{3/2}}=\frac{bdb}{a^2}\sin^3(\theta_s/2),\\
+\frac{1}{2}\cos(\phi_s/2)d\phi_s&amp;=&amp;\frac{ab~db}{(a^2+b^2)^{3/2}}=\frac{bdb}{a^2}\sin^3(\phi_s/2),\\
 \nonumber
-d\sigma&amp;=&amp;2\pi bdb=\frac{\pi a^2}{\sin^3(\theta_s/2)}\cos(\theta_s/2)d\theta_s\\
+d\sigma&amp;=&amp;2\pi bdb=\frac{\pi a^2}{\sin^3(\phi_s/2)}\cos(\phi_s/2)d\phi_s\\
 \nonumber
-&amp;=&amp;\frac{\pi a^2}{2\sin^4(\theta_s/2)}\sin\theta_s d\theta_s\\
+&amp;=&amp;\frac{\pi a^2}{2\sin^4(\phi_s/2)}\sin\phi_s d\phi_s\\
 \nonumber
-\frac{d\sigma}{d\cos\theta_s}&amp;=&amp;\frac{\pi a^2}{2\sin^4(\theta_s/2)},\\
+\frac{d\sigma}{d\cos\phi_s}&amp;=&amp;\frac{\pi a^2}{2\sin^4(\phi_s/2)},\\
 \nonumber
-\frac{d\sigma}{d\Omega}&amp;=&amp;\frac{a^2}{4\sin^4(\theta_s/2)}.
+\frac{d\sigma}{d\Omega}&amp;=&amp;\frac{a^2}{4\sin^4(\phi_s/2)}.
 \end{eqnarray}
 \end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(a= \alpha/2E\)</span>. This the Rutherford formula for the differential
-cross section. It diverges as <span class="math notranslate nohighlight">\(\theta_s\rightarrow 0\)</span> because
+cross section. It diverges as <span class="math notranslate nohighlight">\(\phi_s\rightarrow 0\)</span> because
 scatterings with arbitrarily large impact parameters still scatter to
 arbitrarily small scattering angles. The expression for
 <span class="math notranslate nohighlight">\(d\sigma/d\Omega\)</span> is the same whether the interaction is positive or
@@ -1713,11 +2014,11 @@ negative.</p>
 mass <span class="math notranslate nohighlight">\(M\)</span> and charge <span class="math notranslate nohighlight">\(Z\)</span> and radius <span class="math notranslate nohighlight">\(R\)</span>. Find the angle at which the
 Rutherford scattering formula breaks down.</p>
 <div class="section" id="id1">
-<h3><span class="section-number">2.6.1. </span>Solution<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.7.1. </span>Solution<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Let <span class="math notranslate nohighlight">\(\alpha=Zze^2/(4\pi\epsilon_0)\)</span>. The scattering angle in Eq. (<a class="reference external" href="#eq:scattangle">23</a>) is</p>
 <div class="math notranslate nohighlight">
 \[
-\sin(\theta_s/2)=\frac{a}{\sqrt{a^2+b^2}}, ~~a\equiv \frac{\alpha}{2E}.
+\sin(\phi_s/2)=\frac{a}{\sqrt{a^2+b^2}}, ~~a\equiv \frac{\alpha}{2E}.
 \]</div>
 <p>The impact parameter <span class="math notranslate nohighlight">\(b\)</span> for which the point of closest approach
 equals <span class="math notranslate nohighlight">\(R\)</span> can be found by using angular momentum conservation,</p>
@@ -1732,7 +2033,7 @@ b&amp;=&amp;R\frac{\sqrt{2m(E-\alpha/R)}}{\sqrt{2mE}}\\
 <p>Putting these together</p>
 <div class="math notranslate nohighlight">
 \[
-\theta_s=2\sin^{-1}\left\{
+\phi_s=2\sin^{-1}\left\{
 \frac{a}{\sqrt{a^2+R^2(1-\alpha/(RE))}}
 \right\},~~~a=\frac{\alpha}{2E}.
 \]</div>
@@ -1812,7 +2113,7 @@ g(r)&amp;=&amp;g(R)\frac{r}{R}~.
 </div>
 </div>
 <div class="section" id="tidal-forces">
-<h2><span class="section-number">2.7. </span>Tidal Forces<a class="headerlink" href="#tidal-forces" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.8. </span>Tidal Forces<a class="headerlink" href="#tidal-forces" title="Permalink to this headline">¶</a></h2>
 <p>Consider a spherical planet of radius <span class="math notranslate nohighlight">\(r\)</span> a distance <span class="math notranslate nohighlight">\(D\)</span> from another
 body of mass <span class="math notranslate nohighlight">\(M\)</span>. The magnitude of the force due to <span class="math notranslate nohighlight">\(M\)</span> on an small
 object of mass <span class="math notranslate nohighlight">\(\delta m\)</span> on surface of the planet can be calculated
@@ -1853,14 +2154,14 @@ m\frac{d^2z}{dt^2}=2\frac{GM\delta m}{D^3}z+{\rm other~forces~acting~on~}\delta 
 \]</div>
 <p>Here the other forces could represent the forces acting on <span class="math notranslate nohighlight">\(\delta m\)</span>
 from the spherical planet such as the gravitational force or the
-contact force with the surface. If <span class="math notranslate nohighlight">\(\theta\)</span> is the angle w.r.t. the
+contact force with the surface. If <span class="math notranslate nohighlight">\(\phi\)</span> is the angle w.r.t. the
 <span class="math notranslate nohighlight">\(z\)</span> axis, the effective force acting on <span class="math notranslate nohighlight">\(\delta m\)</span> is</p>
 <!-- Equation labels as ordinary links -->
 <div id="_auto18"></div>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation}
-F_{\rm eff}\approx 2\frac{GM\delta m}{D^3}r\cos\theta\hat{z}+{\rm other~forces~acting~on~}\delta m.
+F_{\rm eff}\approx 2\frac{GM\delta m}{D^3}r\cos\phi\hat{z}+{\rm other~forces~acting~on~}\delta m.
 \label{_auto18} \tag{30}
 \end{equation}
 \]</div>
@@ -1869,7 +2170,7 @@ F_{\rm eff}\approx 2\frac{GM\delta m}{D^3}r\cos\theta\hat{z}+{\rm other~forces~a
 with the gravitational acceleration at the surface noted by <span class="math notranslate nohighlight">\(g\)</span>. Now
 assume that a distant body provides an additional constant
 gravitational acceleration <span class="math notranslate nohighlight">\(\boldsymbol{a}\)</span> pointed along the <span class="math notranslate nohighlight">\(z\)</span> axis. Find
-the distortion of the radius as a function of <span class="math notranslate nohighlight">\(\theta\)</span>. Ignore
+the distortion of the radius as a function of <span class="math notranslate nohighlight">\(\phi\)</span>. Ignore
 planetary rotation and assume <span class="math notranslate nohighlight">\(a&lt;&lt;g\)</span>.</p>
 <p>{\bf Solution}: Because Earth would then accelerate with <span class="math notranslate nohighlight">\(a\)</span>, the
 field <span class="math notranslate nohighlight">\(a\)</span> would seem invisible in the accelerating frame. A tidal
@@ -1884,17 +2185,17 @@ potential. Thus, the potential energy for a sample mass <span class="math notran
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray*}
-V(R)+\delta m gh(\theta)-\frac{\delta m}{2}kr^2\cos^2\theta={\rm Constant}\\
-V(R)+\delta mgh(\theta)-\frac{\delta m}{2}kR^2\cos^2\theta-\delta m kRh(\theta)\cos^2\theta-\frac{\delta m}{2}kh^2(\theta)\cos^2\theta={\rm Constant}.
+V(R)+\delta m gh(\phi)-\frac{\delta m}{2}kr^2\cos^2\phi={\rm Constant}\\
+V(R)+\delta mgh(\phi)-\frac{\delta m}{2}kR^2\cos^2\phi-\delta m kRh(\phi)\cos^2\phi-\frac{\delta m}{2}kh^2(\phi)\cos^2\phi={\rm Constant}.
 \end{eqnarray*}
 \end{split}\]</div>
-<p>Here, the potential due to the external field is <span class="math notranslate nohighlight">\((1/2)kz^2\)</span> so that <span class="math notranslate nohighlight">\(-\nabla U=-kz\)</span>. One now needs to solve for <span class="math notranslate nohighlight">\(h(\theta)\)</span>. Absorbing all the constant terms from both sides of the equation into one constant <span class="math notranslate nohighlight">\(C\)</span>, and because both <span class="math notranslate nohighlight">\(h\)</span> and <span class="math notranslate nohighlight">\(kR\)</span> are small, we can through away terms of order <span class="math notranslate nohighlight">\(h^2\)</span> or <span class="math notranslate nohighlight">\(kRh\)</span>. This gives</p>
+<p>Here, the potential due to the external field is <span class="math notranslate nohighlight">\((1/2)kz^2\)</span> so that <span class="math notranslate nohighlight">\(-\nabla U=-kz\)</span>. One now needs to solve for <span class="math notranslate nohighlight">\(h(\phi)\)</span>. Absorbing all the constant terms from both sides of the equation into one constant <span class="math notranslate nohighlight">\(C\)</span>, and because both <span class="math notranslate nohighlight">\(h\)</span> and <span class="math notranslate nohighlight">\(kR\)</span> are small, we can through away terms of order <span class="math notranslate nohighlight">\(h^2\)</span> or <span class="math notranslate nohighlight">\(kRh\)</span>. This gives</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray*}
-gh(\theta)-\frac{1}{2}kR^2\cos^2\theta&amp;=&amp;C,\\
-h(\theta)&amp;=&amp;\frac{C}{g}+\frac{1}{2g}kR^2\cos^2\theta,\\
-h(\theta)&amp;=&amp;\frac{1}{2g}kR^2(\cos^2\theta-1/3).
+gh(\phi)-\frac{1}{2}kR^2\cos^2\phi&amp;=&amp;C,\\
+h(\phi)&amp;=&amp;\frac{C}{g}+\frac{1}{2g}kR^2\cos^2\phi,\\
+h(\phi)&amp;=&amp;\frac{1}{2g}kR^2(\cos^2\phi-1/3).
 \end{eqnarray*}
 \end{split}\]</div>
 <p>The term with the factor of <span class="math notranslate nohighlight">\(1/3\)</span> replaced the constant and was chosen so that the average height of the water would be zero.</p>
@@ -1914,6 +2215,1008 @@ F_{\rm tidal}\propto \frac{M}{D^3}R.
 \end{eqnarray*}
 \end{split}\]</div>
 <p>The Moon more strongly affects tides than the Sun.</p>
+<ul class="simple">
+<li><p>2d (10pt) With the solutions for <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, and <span class="math notranslate nohighlight">\(r^2=x^2+y^2\)</span> and the definitions <span class="math notranslate nohighlight">\(\alpha=\frac{A^2+B^2+C^2+D^2}{2}\)</span>, <span class="math notranslate nohighlight">\(\beta=\frac{A^2-B^2+C^2-D^2}{2}\)</span> and <span class="math notranslate nohighlight">\(\gamma=AB+CD\)</span>, show that</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+r^2=\alpha+(\beta^2+\gamma^2)^{1/2}\cos(2\omega_0 t-\delta),
+\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight">
+\[
+\delta=\arctan(\gamma/\beta).
+\]</div>
+<p>We start with <span class="math notranslate nohighlight">\(r^2 &amp; = x^2+y^2\)</span> and square the above analytical solutions and   after some <strong>exciting algebraic manipulations</strong> we arrive at</p>
+<!-- Equation labels as ordinary links -->
+<div id="_auto19"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+r^2  = x^2+y^2
+\label{_auto19} \tag{31}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto20"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}  
+ = \left(  A\cos\omega_0 t+B\sin\omega_0 t\right) ^2 + \left(  C\cos\omega_0 t+D\sin\omega_0 t\right) ^2
+\label{_auto20} \tag{32}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto21"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}  
+ = A^2\cos^2\omega_0 t+B^2\sin^2\omega_0 t + 2AB\sin\omega_0 t \cos\omega_0 t + C^2\cos^2\omega_0 t+D^2\sin^2\omega_0 t + 2CD\sin\omega_0 t \cos\omega_0 t
+\label{_auto21} \tag{33}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto22"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation} 
+ = (A^2+C^2)\cos^2\omega_0 t + (B^2+D^2)\sin^2\omega_0 t + 2(AC + BD)\sin\omega_0 t \cos\omega_0 t
+\label{_auto22} \tag{34}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto23"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation} 
+ = (B^2+D^2) + (A^2+C^2-B^2-D^2)\cos^2\omega_0 t + 2(AC + BD)2\sin2\omega_0 t
+\label{_auto23} \tag{35}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto24"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation} 
+ = (B^2+D^2) + (A^2+C^2-B^2-D^2)\frac{1+\cos{2\omega_0 t}}{2} + 2(AC + BD)\frac{1}{2}\sin2\omega_0 t
+\label{_auto24} \tag{36}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto25"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation} 
+ = \frac{2B^2+2D^2+A^2+C^2-B^2-D^2}{2} + (A^2+C^2-B^2-D^2)\frac{\cos{2\omega_0 t}}{2} + (AC + BD)\sin2\omega_0 t
+\label{_auto25} \tag{37}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto26"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation} 
+ = \frac{B^2+D^2+A^2+C^2}{2} + \frac{A^2+C^2-B^2-D^2}{2}\cos{2\omega_0 t} + (AC + BD)\sin2\omega_0 t
+\label{_auto26} \tag{38}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto27"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation} 
+ = \alpha + \beta\cos{2\omega_0 t} + \gamma\sin2\omega_0 t
+\label{_auto27} \tag{39}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto28"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation} 
+ = \alpha + \sqrt{\beta^2+\gamma^2}\left( \frac{\beta}{\sqrt{\beta^2+\gamma^2}}\cos{2\omega_0 t} + \frac{\gamma}{\sqrt{\beta^2+\gamma^2}}\sin2\omega_0 t\right) 
+\label{_auto28} \tag{40}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto29"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation} 
+ = \alpha + \sqrt{\beta^2+\gamma^2}\left( \cos{\delta}\cos{2\omega_0 t} + \sin{\delta}\sin2\omega_0 t\right) 
+\label{_auto29} \tag{41}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto30"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation} 
+ = \alpha + \sqrt{\beta^2+\gamma^2}\cos{\left( 2\omega_0 t - \delta\right) },
+\label{_auto30} \tag{42}
+\end{equation}
+\]</div>
+<p>which is what we wanted to show.</p>
+<div class="section" id="exercise-4-equations-for-an-ellipse-10pt">
+<h3><span class="section-number">2.8.1. </span>Exercise 4, equations for an ellipse (10pt)<a class="headerlink" href="#exercise-4-equations-for-an-ellipse-10pt" title="Permalink to this headline">¶</a></h3>
+<p>Consider an ellipse defined by the sum of the distances from the two foci being <span class="math notranslate nohighlight">\(2D\)</span>, which expressed in a Cartesian coordinates with the middle of the ellipse being at the origin becomes</p>
+<div class="math notranslate nohighlight">
+\[
+\sqrt{(x-a)^2+y^2}+\sqrt{(x+a)^2+y^2}=2D.
+\]</div>
+<p>Here the two foci are at <span class="math notranslate nohighlight">\((a,0)\)</span> and <span class="math notranslate nohighlight">\((-a,0)\)</span>. Show that this form is can be written as</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{x^2}{D^2}+\frac{y^2}{D^2-a^2}=1.
+\]</div>
+<p>We start by squaring the two sides and, again,  after some <strong>exciting algebraic manipulations</strong> we arrive at</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\sqrt{(x-a)^2+y^2}+\sqrt{(x+a)^2+y^2} =2D
+\\ (x-a)^2 + y^2 + (x+a)^2 + y^2 + 2\sqrt{(x-a)^2 + y^2}\sqrt{(x+a)^2+y^2}  = 4D^2
+\\ 2y^2 + 2x^2 + 2a^2 + 2\sqrt{(x-a)^2(x+a)^2 + y^4 + y^2[(x-a)^2+(x+a)^2]}  = 4D^2
+\\ y^2 + x^2 + a^2 + \sqrt{(x^2-a^2)^2 + y^4 + y^2(2x^2+2a^2)}  = 2D^2
+\\ \sqrt{(x^2-a^2)^2 + y^4 + y^2(2x^2+2a^2)}  = 2D^2 -( y^2 + x^2 + a^2 )
+\\ (x^2-a^2)^2 + y^4 + y^2(2x^2+2a^2)  = 4D^4 + y^4 + x^4 + a^4 - 4D^2( y^2 + x^2 + a^2 ) + 2(y^2x^2+y^2a^2+x^2a^2)
+\\ x^4-2x^2a^2+a^4 + y^4 + 2y^2x^2+2y^2a^2  = 4D^4 + y^4 + x^4 + a^4 - 4D^2y^2 -4D^2 x^2 -4D^2 a^2 + 2y^2x^2+2y^2a^2+2x^2a^2
+\\ 4D^4 - 4D^2y^2 -4D^2 x^2 -4D^2 a^2 +4x^2a^2 = 0
+\\ D^4 - D^2y^2 -D^2 x^2 -D^2 a^2 +x^2a^2 = 0
+\\ D^2(D^2-a^2) - x^2(D^2-a^2) = D^2y^2
+\\ D^2 - x^2 = \frac{D^2y^2}{D^2-a^2}
+\\ 1 - \frac{x^2}{D^2} = \frac{y^2}{D^2-a^2}
+\\ \frac{x^2}{D^2} + \frac{y^2}{D^2-a^2} = 1,
+\end{split}\]</div>
+<p>where the last line is indeed the equation for an ellipse.</p>
+<p>Consider a particle in an attractive potential</p>
+<div class="math notranslate nohighlight">
+\[
+U(r)=-\alpha/r.
+\]</div>
+<p>The quantity <span class="math notranslate nohighlight">\(r\)</span> is the absolute value of the relative position. We
+will use the reduced mass <span class="math notranslate nohighlight">\(\mu\)</span> and the angular momentum <span class="math notranslate nohighlight">\(L\)</span>, as
+discussed during the lectures. With the transformation of a two-body
+problem to the center-of-mass frame, the actual equations look like an
+<em>effective</em> one-body problem. The energy of the system is <span class="math notranslate nohighlight">\(E\)</span> and the
+minimum of the effective potential is <span class="math notranslate nohighlight">\(r_{\rm min}\)</span>.</p>
+<p>The analytical solution to the radial equation of motion is</p>
+<div class="math notranslate nohighlight">
+\[
+r(\phi) = \frac{1}{\frac{\mu\alpha}{L^2}+A\cos{(\phi)}}.
+\]</div>
+<p>Find the value of <span class="math notranslate nohighlight">\(A\)</span>. Hint: Use the fact that at <span class="math notranslate nohighlight">\(r_{\rm min}\)</span>
+there is no radial kinetic energy and <span class="math notranslate nohighlight">\(E=-\alpha/r_{\rm min}+L^2/2mr_{\rm min}^2\)</span>.</p>
+<p>At  <span class="math notranslate nohighlight">\(r_{\mathrm{min}}\)</span>  and <span class="math notranslate nohighlight">\(r_{\mathrm{max}}\)</span> , all the kinetic energy is stored in the velocity in the direction perpendicular to <span class="math notranslate nohighlight">\(r\)</span>  since the radial velocity is set to zero . We can calculate using angular momentum and from there, find  𝐴  in terms of the energy  𝐸  which is constant. But first, we need to find  𝑟min  from the conservation of energy:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+E = U(r) + \frac{1}{2} \mu(v_{\perp}^2 + v_{\parallel})
+\\
+E = \frac{-\alpha}{r_{\min}} + \frac{1}{2} \mu\left( \frac{L}{\mu r_{\min}}\right) ^2
+\\
+E r_{\min}^2 - \frac{1}{2}\mu\left( \frac{L}{\mu}\right) ^2 + \alpha r_{\min} = 0
+\\
+r_{\min}^2 + \frac{\alpha}{E} r_{\min} - \frac{L^2}{2E\mu} = 0
+\\
+r_{\min} = - \frac{\alpha}{2E} \pm \frac{1}{2} \sqrt{\frac{\alpha^2}{E^2} + 2\frac{L^2}{E\mu}}
+\end{split}\]</div>
+<p>Since we’re looking for the minimum, the  ±  sign must be negative (then  𝑟min  will not be negative since  𝐸&lt;0 ). Therefore, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+frac{1}{\frac{\mu\alpha}{L^2}+A} = -\frac{\alpha}{2E} - \frac{1}{2} \sqrt{\frac{\alpha^2}{E^2} + 2\frac{L^2}{E\mu}}
+\\
+A = - \frac{\mu\alpha}{L^2} - \frac{2E}{\alpha + \sqrt{\alpha^2 + 2\frac{L^2E}{\mu}}}
+\end{split}\]</div>
+</div>
+<div class="section" id="exercise-2-20pt-inverse-square-force">
+<h3><span class="section-number">2.8.2. </span>Exercise 2 (20pt) Inverse-square force<a class="headerlink" href="#exercise-2-20pt-inverse-square-force" title="Permalink to this headline">¶</a></h3>
+<p>Consider again the same effective potential as in exercise 1. This leads to an attractive inverse-square-law force, <span class="math notranslate nohighlight">\(F=-\alpha/r^2\)</span>. Consider a particle of mass <span class="math notranslate nohighlight">\(m\)</span> with angular momentum <span class="math notranslate nohighlight">\(L\)</span>. Taylor sections 8.4-8.7 are relevant background material.  See also the harmonic oscillator potential from hw8. The equation of motion for the radial degrees of freedom is (see also hw8) in the center-of-mass frame in two dimensions with <span class="math notranslate nohighlight">\(x=r\cos{(\phi)}\)</span> and <span class="math notranslate nohighlight">\(y=r\sin{(\phi)}\)</span> and
+<span class="math notranslate nohighlight">\(r\in [0,\infty)\)</span>, <span class="math notranslate nohighlight">\(\phi\in [0,2\pi]\)</span> and <span class="math notranslate nohighlight">\(r=\sqrt{x^2+y^2}\)</span> are given by</p>
+<div class="math notranslate nohighlight">
+\[
+\ddot{r}=-\frac{1}{m}\frac{dV(r)}{dr}+r\dot{\phi}^2,
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+\dot{\phi}=\frac{L}{m r^2}.
+\]</div>
+<p>Here <span class="math notranslate nohighlight">\(V(r)\)</span> is any central force which depends only on the relative coordinate.</p>
+<ul class="simple">
+<li><p>2a (5pt)  Find the radius of a circular orbit by solving for the position of the minimum of the effective potential.</p></li>
+</ul>
+<!-- Equation labels as ordinary links -->
+<div id="_auto31"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\frac{1}{m}\frac{dV(r)}{dr}  = r\dot{\phi}^2
+\label{_auto31} \tag{43}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto32"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}  \frac{1}{m}\left( -\frac{-\alpha}{r^2}\right)   = r \frac{L^2}{m^2r^4}
+\label{_auto32} \tag{44}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto33"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}  \frac{\alpha}{mr^2}  = \frac{L^2}{m^2r^3}
+\label{_auto33} \tag{45}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto34"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}  r  = \frac{L^2}{m\alpha}
+\label{_auto34} \tag{46}
+\end{equation}
+\]</div>
+<ul class="simple">
+<li><p>2b (5pt) At the minimum, the radial velocity is zero and it is only the <a class="reference external" href="https://en.wikipedia.org/wiki/Centripetal_force">centripetal velocity</a> which is nonzero. This implies that <span class="math notranslate nohighlight">\(\ddot{r}=0\)</span>.  What is the angular frequency, <span class="math notranslate nohighlight">\(\dot{\theta}\)</span>, of the orbit? Solve this by setting <span class="math notranslate nohighlight">\(\ddot{r}=0=F/m+\dot{\theta}^2r\)</span>.</p></li>
+</ul>
+<!-- Equation labels as ordinary links -->
+<div id="_auto35"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\dot{\theta}^2 r  = - \frac{F}{m}
+\label{_auto35} \tag{47}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto36"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}  \dot{\theta}^2 r  = - \frac{-\frac{\alpha}{r^2}}{m}
+\label{_auto36} \tag{48}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto37"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}  \dot{\theta}^2  = \frac{\alpha}{mr^3}
+\label{_auto37} \tag{49}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto38"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}  \dot{\theta}  = \pm \sqrt{\frac{\alpha}{mr^3}}
+\label{_auto38} \tag{50}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto39"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}  \dot{\theta}  = \pm \sqrt{\frac{\alpha}{m\frac{L^6}{m^3\alpha^3}}}
+\label{_auto39} \tag{51}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto40"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}  \dot{\theta}  = \pm \sqrt{\frac{\alpha^4m^2}{L^6}}
+\label{_auto40} \tag{52}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto41"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}  \dot{\theta}  = \pm \frac{\alpha^2m}{L^3}
+\label{_auto41} \tag{53}
+\end{equation}
+\]</div>
+<ul class="simple">
+<li><p>2c (5pt) Find the effective spring constant for the particle at the minimum.</p></li>
+</ul>
+<p>We have shown in class that from the taylor expansion, we have</p>
+<div class="math notranslate nohighlight">
+\[
+k = \frac{d^2V_{\text{eff}}}{dr^2}
+\]</div>
+<p>Therefore, all we have to do is find the second derivative of <span class="math notranslate nohighlight">\(V_{\text{eff}}\)</span> around the minimum point of <span class="math notranslate nohighlight">\(V_{\text{eff}}\)</span> where <span class="math notranslate nohighlight">\(\dot{r} = \ddot{r} = 0\)</span>.</p>
+<!-- Equation labels as ordinary links -->
+<div id="_auto42"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+k  = \frac{d^2V_{\text{eff}}}{dr^2}
+\label{_auto42} \tag{54}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto43"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = \frac{d^2\left( -\frac{\alpha}{r} + \frac{1}{2} \frac{L^2}{mr^2}\right) }{dr^2}
+\label{_auto43} \tag{55}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto44"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = -\frac{2\alpha}{r^3} + \frac{3L^2}{mr^4}
+\label{_auto44} \tag{56}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto45"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = -\frac{2\alpha}{\frac{L^6}{m^3\alpha^3}} + \frac{3L^2}{m\frac{L^8}{m^4\alpha^4}}
+\label{_auto45} \tag{57}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto46"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = -\frac{2m^3\alpha^4}{L^6} + \frac{3m^3\alpha^4}{L^6}
+\label{_auto46} \tag{58}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto47"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = \frac{m^3\alpha^4}{L^6}
+\label{_auto47} \tag{59}
+\end{equation}
+\]</div>
+<ul class="simple">
+<li><p>2d (5pt) What is the angular frequency for small vibrations about the minimum? How does this compare with the answer to (3b)?</p></li>
+</ul>
+<p>For small deviations <span class="math notranslate nohighlight">\(\delta r\)</span> of <span class="math notranslate nohighlight">\(r\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+m\frac{d^2\left(  \delta r \right) }{dt^2} = -k \delta r
+\]</div>
+<p>The solution of this differential equation is of the form</p>
+<div class="math notranslate nohighlight">
+\[
+\delta r = A \cos(\omega t + \phi)
+\]</div>
+<p>where</p>
+<!-- Equation labels as ordinary links -->
+<div id="_auto48"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\omega =  \sqrt{\frac{k}{m}}
+\label{_auto48} \tag{60}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto49"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = \sqrt{\frac{m^2\alpha^4}{L^6}} 
+\label{_auto49} \tag{61}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto50"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = \frac{m\alpha^2}{L^3}
+\label{_auto50} \tag{62}
+\end{equation}
+\]</div>
+<p>This is in fact equal to the expression for <span class="math notranslate nohighlight">\(\dot{\theta}\)</span>. This means that small perturbations oscillate in sync with the orbit and this traces out an ellipse with a very small eccentricity, a very nice physical result.</p>
+</div>
+<div class="section" id="exercise-3-inverse-square-force-again-10pt">
+<h3><span class="section-number">2.8.3. </span>Exercise 3, Inverse-square force again (10pt)<a class="headerlink" href="#exercise-3-inverse-square-force-again-10pt" title="Permalink to this headline">¶</a></h3>
+<p>Consider again a  particle of mass <span class="math notranslate nohighlight">\(m\)</span> in the same attractive potential, <span class="math notranslate nohighlight">\(U(r)=-\alpha/r\)</span>, with angular momentum <span class="math notranslate nohighlight">\(L\)</span> with just the right energy so that</p>
+<div class="math notranslate nohighlight">
+\[
+A=m\alpha/L^2
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(A\)</span> comes from the expression</p>
+<div class="math notranslate nohighlight">
+\[
+r=\frac{1}{(m\alpha/L^2)+A\cos{(\phi)}}.
+\]</div>
+<p>The trajectory can then be rewritten as</p>
+<div class="math notranslate nohighlight">
+\[
+r=\frac{2r_0}{1+\cos\theta},~~~r_0=\frac{L^2}{2m\alpha}.
+\]</div>
+<ul class="simple">
+<li><p>3a (5pt) Show that for this case the total energy <span class="math notranslate nohighlight">\(E\)</span> approaches zero.</p></li>
+</ul>
+<!-- Equation labels as ordinary links -->
+<div id="_auto51"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+E  = - \frac{\alpha}{r} + \frac{1}{2} m \left(  (\dot{\theta}r)^2+\dot{r}^2\right) 
+\label{_auto51} \tag{63}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto52"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = - \frac{\alpha}{r} + \frac{1}{2} m \left[  \left( \frac{L}{mr^2}r\right) ^2+\left( \frac{dr}{d\theta}\dot{\theta}\right) ^2\right] 
+\label{_auto52} \tag{64}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto53"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = - \frac{\alpha}{2r_0}(1+\cos\theta) + \frac{1}{2} m \left[  \left( \frac{L(1+\cos\theta)}{2mr_0}\right) ^2+\left( 2r_0\frac{-1}{(1+\cos\theta)^2}(-\sin\theta)\frac{L}{mr^2}\right) ^2\right] 
+\label{_auto53} \tag{65}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto54"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = - \frac{\alpha}{2r_0}(1+\cos\theta) + \frac{1}{2} m \left[  \left( \frac{L(1+\cos\theta)}{2mr_0}\right) ^2+\left( 2r_0\frac{-1}{(1+\cos\theta)^2}(-\sin\theta)\frac{L(1+\cos\theta)^2}{4mr_0^2}\right) ^2\right] 
+\label{_auto54} \tag{66}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto55"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
+\frac{1}{2} m \left[  \left( \frac{L(1+\cos\theta)}{2mr_0}\right) ^2+\left( \sin\theta\frac{L}{2mr_0}\right) ^2\right] 
+\label{_auto55} \tag{67}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto56"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
+\frac{1}{2} m \left[  \left( \frac{L(1+\cos\theta)}{2mr_0}\right) ^2+\left( \sin\theta\frac{L}{2mr_0}\right) ^2\right] 
+\label{_auto56} \tag{68}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto57"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
+\frac{1}{2} m \frac{L^2}{4m^2r_0^2} \left[  \left( 1+\cos\theta\right) ^2+\left( \sin\theta\right) ^2\right] 
+\label{_auto57} \tag{69}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto58"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
+\frac{1}{2} \frac{L^2}{4mr_0^2} \left(  1 + \cos^2\theta + 2\cos \theta + \sin^2\theta\right) 
+\label{_auto58} \tag{70}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto59"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
+\frac{1}{2} \frac{L^2}{4mr_0^2} \left(  2 + 2\cos \theta \right) 
+\label{_auto59} \tag{71}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto60"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = (1+\cos\theta) \left( - \frac{\alpha}{2r_0} + \frac{L^2}{4mr_0^2}\right) 
+\label{_auto60} \tag{72}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto61"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = (1+\cos\theta) \left( - \frac{\alpha}{2\frac{L^2}{2m\alpha}} + \frac{L^2}{4m\frac{L^4}{4m^2\alpha^2}}\right) 
+\label{_auto61} \tag{73}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto62"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = (1+\cos\theta) \left( - \frac{m\alpha^2}{L^2} + \frac{m\alpha^2}{L^2}\right) 
+\label{_auto62} \tag{74}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto63"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = 0
+\label{_auto63} \tag{75}
+\end{equation}
+\]</div>
+<ul class="simple">
+<li><p>3b (5pt) With zero energy <span class="math notranslate nohighlight">\(E=0\)</span>, write this trajectory in a more recognizable parabolic form, that is express <span class="math notranslate nohighlight">\(x_0\)</span> and <span class="math notranslate nohighlight">\(R\)</span> in terms of <span class="math notranslate nohighlight">\(r_0\)</span> using</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+x=x_0-\frac{y^2}{R}.
+\]</div>
+<p>We have that</p>
+<!-- Equation labels as ordinary links -->
+<div id="_auto64"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+x  = r \cos\theta
+\label{_auto64} \tag{76}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto65"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation} 
+y  = r \sin \theta,
+\label{_auto65} \tag{77}
+\end{equation}
+\]</div>
+<p>we obtain</p>
+<!-- Equation labels as ordinary links -->
+<div id="_auto66"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+y  = r \sin\theta
+\label{_auto66} \tag{78}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto67"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation} 
+ = \frac{2r_0}{1+\cos\theta}\sin\theta
+\label{_auto67} \tag{79}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto68"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation} 
+ = \frac{2r_0}{1-\cos^2\theta}\sin\theta(1-\cos\theta)
+\label{_auto68} \tag{80}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto69"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation} 
+ = \frac{2r_0(1-\cos\theta)}{\sin\theta},
+\label{_auto69} \tag{81}
+\end{equation}
+\]</div>
+<p>and</p>
+<!-- Equation labels as ordinary links -->
+<div id="_auto70"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+x  = r \sin\theta
+\label{_auto70} \tag{82}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto71"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation} 
+ = \frac{2r_0}{1+\cos\theta}\cos\theta
+\label{_auto71} \tag{83}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto72"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation} 
+ = \frac{2r_0}{1-\cos^2\theta}\cos\theta(1-\cos\theta)
+\label{_auto72} \tag{84}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto73"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation} 
+ = \frac{2r_0(\cos\theta-\cos^2\theta)}{\sin^2 \theta}.
+\label{_auto73} \tag{85}
+\end{equation}
+\]</div>
+<p>Here  we notice that the denominator of <span class="math notranslate nohighlight">\(x\)</span> is the square of the denominator of <span class="math notranslate nohighlight">\(y\)</span>. We also have</p>
+<div class="math notranslate nohighlight">
+\[
+y^2 = \frac{4r_0^2(1-2\cos\theta+\cos^2\theta)}{\sin^2\theta}.
+\]</div>
+<p>Let try to add them such that <span class="math notranslate nohighlight">\(\cos\theta\)</span> cancels out, that is</p>
+<!-- Equation labels as ordinary links -->
+<div id="_auto74"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+x + \frac{y^2}{4r_0}  = \frac{2r_0(\cos\theta-\cos^2\theta)}{\sin^2 \theta} + \frac{4r_0^2(1-2\cos\theta+\cos^2\theta)}{\sin^2\theta}\frac{1}{4r_0}
+\label{_auto74} \tag{86}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto75"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = \frac{r_0}{\sin^2\theta}\left(  2\cos\theta-2\cos^2\theta + 1 - 2\cos\theta + \cos^2\theta\right) 
+\label{_auto75} \tag{87}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto76"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = \frac{r_0}{\sin^2\theta}\left(  -2\cos^2\theta + 1 + \cos^2\theta\right) 
+\label{_auto76} \tag{88}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto77"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = \frac{r_0}{\sin^2\theta}\left(  1 - \cos^2\theta\right) 
+\label{_auto77} \tag{89}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto78"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = \frac{r_0}{\sin^2\theta}\left(  \sin^2\theta\right) 
+\label{_auto78} \tag{90}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto79"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = r_0
+\label{_auto79} \tag{91}
+\end{equation}
+\]</div>
+<p>Thus, we have</p>
+<div class="math notranslate nohighlight">
+\[
+x = r_0 - \frac{y^2}{4r_0}
+\]</div>
+</div>
+<div class="section" id="exercise-4-parabolic-and-hyperbolic-orbits-10pt">
+<h3><span class="section-number">2.8.4. </span>Exercise 4, parabolic and hyperbolic orbits (10pt)<a class="headerlink" href="#exercise-4-parabolic-and-hyperbolic-orbits-10pt" title="Permalink to this headline">¶</a></h3>
+<p>The solution to the radial function for an inverse-square-law force, see for example Taylor equation (8.59) or the equation above, is</p>
+<div class="math notranslate nohighlight">
+\[
+r(\phi) = \frac{c}{1+\epsilon\cos{(\phi)}}.
+\]</div>
+<p>For <span class="math notranslate nohighlight">\(\epsilon=1\)</span> (or the energy <span class="math notranslate nohighlight">\(E=0\)</span>) the orbit reduces to a parabola as we saw in the previous exercise,
+while for <span class="math notranslate nohighlight">\(\epsilon &gt; 1\)</span> (or energy positive) the orbit becomes a hyperbola. The equation for a hyperbola in Cartesian coordinates is</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{(x-\delta)^2}{\alpha^2}-\frac{y^2}{\beta^2}=1.
+\]</div>
+<p>For a hyperbola, identify the constants <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(\delta\)</span> in terms of the constants <span class="math notranslate nohighlight">\(c\)</span> and <span class="math notranslate nohighlight">\(\epsilon\)</span> for <span class="math notranslate nohighlight">\(r(\phi)\)</span>.</p>
+<!-- Equation labels as ordinary links -->
+<div id="_auto80"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+x  = r\cos\phi
+\label{_auto80} \tag{92}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto81"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = \frac{c\cos\phi}{1+\epsilon\cos\phi}
+\label{_auto81} \tag{93}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto82"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+y  = r\sin\phi 
+\label{_auto82} \tag{94}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto83"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = \frac{c\sin\phi}{1+\epsilon\cos\phi}
+\label{_auto83} \tag{95}
+\end{equation}
+\]</div>
+<p>Therefore,</p>
+<!-- Equation labels as ordinary links -->
+<div id="_auto84"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\frac{(x-\delta)^2}{\alpha^2} - \frac{y^2}{\beta^2} 
+ = \frac{(\frac{c\cos\phi-\delta(1+\epsilon\cos\phi)}{1+\epsilon\cos\phi})^2}{\alpha^2} - \frac{(\frac{c\sin\phi}{1+\epsilon\cos\phi})^2}{\beta^2}
+\label{_auto84} \tag{96}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto85"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = \frac{\beta^2 c^2\cos^2\phi + \beta^2\delta^2 + \beta^2\delta^2 \epsilon^2 \cos^2 \phi - 2\beta^2\delta c \cos\phi - 2 \beta^2\delta c \epsilon \cos^2 \phi + 2\beta^2\delta^2 \epsilon \cos \phi - \alpha^2 c^2 \sin^2 \phi}{\alpha^2\beta^2(1 + 2\epsilon\cos\phi + \epsilon^2\cos^2\phi)}
+\label{_auto85} \tag{97}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto86"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = \frac{
+\beta^2\cos^2\phi (c^2 + \delta^2 \epsilon^2 - 2 \delta c \epsilon) - \alpha^2 c^2 \sin^2 \phi + \beta^2\delta^2 + 2\beta^2\delta \cos\phi (-c + \delta \epsilon)
+}{\alpha^2\beta^2(1 + 2\epsilon\cos\phi + \epsilon^2\cos^2\phi)}
+\label{_auto86} \tag{98}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto87"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = \frac{
+(\beta^2\delta^2 - \alpha^2 c^2)
+ + 2\beta^2\delta \cos\phi (\delta \epsilon-c)
+ + \cos^2\phi (\beta^2c^2 + \beta^2\delta^2 \epsilon^2 - 2\beta^2 \delta c \epsilon + \alpha^2 c^2)
+}{\alpha^2\beta^2(1 + 2\epsilon\cos\phi + \epsilon^2\cos^2\phi)}
+\label{_auto87} \tag{99}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto88"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = 1
+\label{_auto88} \tag{100}
+\end{equation}
+\]</div>
+<p>We can seperate this into several equations:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\frac{\beta^2\delta^2 - \alpha^2 c^2}{\alpha^2\beta^2} = 1
+\\ \frac{2\beta^2\delta \cos\phi (\delta \epsilon-c)}{\alpha^2\beta^2} = 2\epsilon\cos\phi
+\\ \frac{\cos^2\phi (\beta^2c^2 + \beta^2\delta^2 \epsilon^2 - 2\beta^2 \delta c \epsilon + \alpha^2 c^2)}{\alpha^2\beta^2} = \epsilon^2\cos^2\phi
+\end{split}\]</div>
+<p>These can further be simplified:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\frac{\delta^2}{\alpha^2} - \frac{c^2}{\beta^2} = 1
+\\
+\frac{\delta^2\epsilon}{\alpha^2} - \frac{\delta c}{\beta^2} = \epsilon
+\\
+\frac{c^2}{\alpha^2} + \frac{\delta^2\epsilon^2}{\alpha^2} - 2\frac{\delta c \epsilon}{\alpha^2} + \frac{c^2}{\beta^2}
+= \epsilon^2
+\end{split}\]</div>
+<p>Now, all we have to do is solve these three equations for the three unknowns <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span>, and <span class="math notranslate nohighlight">\(\gamma\)</span>:</p>
+<p>From the first equation, we have</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{\beta^2} = \frac{\delta^2}{c^2\alpha^2} - \frac{1}{c^2}
+\]</div>
+<p>Therefore,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\frac{\delta^2\epsilon}{\alpha^2} - \left(  \frac{\delta^2}{c^2\alpha^2} - \frac{1}{c^2} \right) \delta c = 
+\frac{\delta^2\epsilon}{\alpha^2} - \frac{\delta^3}{c\alpha^2} + \frac{\delta}{c}
+= \epsilon
+\\
+\frac{c^2}{\alpha^2} + \frac{\delta^2\epsilon^2}{\alpha^2} - 2\frac{\delta c \epsilon}{\alpha^2} + c^2\left(  \frac{\delta^2}{c^2\alpha^2} - \frac{1}{c^2} \right)  =
+\frac{c^2}{\alpha^2} + \frac{\delta^2\epsilon^2}{\alpha^2} - 2\frac{\delta c \epsilon}{\alpha^2}
++ \frac{\delta^2}{\alpha^2} - 1
+= \epsilon^2
+\end{split}\]</div>
+<p>From here  we obtain</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{\alpha^2} = \frac{\epsilon-\frac{\delta}{c}}{\delta^2\epsilon - \frac{\delta^3}{c}} = \frac{1}{\delta^2}\frac{\epsilon-\frac{\delta}{c}}{\epsilon-\frac{\delta}{c}}
+\]</div>
+<p>This means we have two possibilities: either <span class="math notranslate nohighlight">\(\delta^2 = \alpha^2\)</span> or <span class="math notranslate nohighlight">\(\delta = c\)</span>. Since the first option would mean <span class="math notranslate nohighlight">\(\beta \rightarrow \pm \infty\)</span>, the second option must be true. Hence,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\frac{c^2}{\alpha^2} + \frac{c^2\epsilon^2}{\alpha^2} - 2\frac{c^2 \epsilon}{\alpha^2}
++ \frac{c^2}{\alpha^2} - 1
+= \epsilon^2
+\\
+\frac{c^2}{\alpha^2} (1 + \epsilon^2 - 2 \epsilon) = 1 + \epsilon^2
+\\ \frac{c^2}{\alpha^2} = \frac{1 + \epsilon^2}{(1-\epsilon)^2}
+\\ \alpha = \pm c \sqrt{\frac{(1-\epsilon)^2}{1 + \epsilon^2}}.
+\end{split}\]</div>
+<p>And we have</p>
+<!-- Equation labels as ordinary links -->
+<div id="_auto89"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\beta  = \pm \sqrt{\frac{1}{\frac{\delta^2}{c^2\alpha^2} - \frac{1}{c^2}}}
+\label{_auto89} \tag{101}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto90"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = \pm \sqrt{\frac{1}{\frac{1 + \epsilon^2}{(1-\epsilon)^2} - \frac{1}{c^2}}}
+\label{_auto90} \tag{102}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto91"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = \pm c \sqrt{\frac{1}{\frac{1 + \epsilon^2}{1-2\epsilon+\epsilon^2} - \frac{1-2\epsilon+\epsilon^2}{1-2\epsilon+\epsilon^2}}}
+\label{_auto91} \tag{103}
+\end{equation}
+\]</div>
+<!-- Equation labels as ordinary links -->
+<div id="_auto92"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}   = \pm c \sqrt{\frac{(1-\epsilon)^2}{2\epsilon}}
+\label{_auto92} \tag{104}
+\end{equation}
+\]</div>
+<p>Summing up, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\delta = c
+\\
+\alpha = \pm c \sqrt{\frac{(1-\epsilon)^2}{1 + \epsilon^2}}
+\\
+\beta = \pm c \sqrt{\frac{(1-\epsilon)^2}{2\epsilon}}
+\end{split}\]</div>
+</div>
+</div>
+<div class="section" id="different-potential">
+<h2><span class="section-number">2.9. </span>Different Potential<a class="headerlink" href="#different-potential" title="Permalink to this headline">¶</a></h2>
+<p>Let us now try another potential, given by</p>
+<div class="math notranslate nohighlight">
+\[
+V(r) = \beta r,
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\beta\)</span> is constant we assume is larger than zero. This type of potential has played an importan role in modeling confinement of quarks in non-relativistic models for the interactions among quarks, see for example <a class="reference external" href="https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.44.1369">https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.44.1369</a></p>
+<p>Adding the angular momentum part, we obtain the effective potential</p>
+<div class="math notranslate nohighlight">
+\[
+V_{\mathrm{eff}}(r) = \beta r+\frac{L^2}{2\mu r^2},
+\]</div>
+<p>and taking the derivative with respect to <span class="math notranslate nohighlight">\(r\)</span>, we get the radial force</p>
+<div class="math notranslate nohighlight">
+\[
+F_r=-\frac{dV_{\mathrm{eff}}(r)}{dr} = -\beta+\frac{L^2}{\mu r^3}.
+\]</div>
+<p>It gives us in turn a radial acceleration <span class="math notranslate nohighlight">\(a_r\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+a_r= -\frac{\beta}{\mu}+\frac{L^2}{\mu^2 r^3}.
+\]</div>
+<p>This is the equation we need to include in our code. I have not been able to find out if there is an analytical solution to the above equation. If you can find one, there is a reward of <span class="math notranslate nohighlight">\(50\)</span> USD to the first one who finds. Numerically life is very easy, we just define a new acceleration, as seen below.</p>
+<p>First however, we plot the effective potential in order to get a feeling of what we may expect.</p>
+<p>The following code plots this effective potential for a simple choice of parameters, with a potential <span class="math notranslate nohighlight">\(\beta r \)</span>. Here we have chosen <span class="math notranslate nohighlight">\(L=m=\beta=1\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Common imports</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">Deltax</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="c1">#set up arrays</span>
+<span class="n">xinitial</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="n">xfinal</span> <span class="o">=</span> <span class="mf">5.0</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="mf">1.0</span>   <span class="c1"># spring constant</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mf">1.0</span>   <span class="c1"># mass, you can change these</span>
+<span class="n">AngMom</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1">#  The angular momentum</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">ceil</span><span class="p">((</span><span class="n">xfinal</span><span class="o">-</span><span class="n">xinitial</span><span class="p">)</span><span class="o">/</span><span class="n">Deltax</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">xinitial</span><span class="o">+</span><span class="n">i</span><span class="o">*</span><span class="n">Deltax</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">beta</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">AngMom</span><span class="o">*</span><span class="n">AngMom</span><span class="o">/</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+<span class="c1"># Plot potential</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;r[m]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;V[J]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter6_385_0.png" src="_images/chapter6_385_0.png" />
+</div>
+</div>
+<p>We take now the derivative of the effective potential in order to find its minimum, that is</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dV_{\mathrm{eff}}(r)}{dr} = \beta-\frac{L^2}{\mu r^3}=0,
+\]</div>
+<p>which gives us <span class="math notranslate nohighlight">\(r_{\mathrm{min}}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+r_{\mathrm{min}}=\left [\frac{L^2}{\beta \mu}\right ]^{1/3}.
+\]</div>
+<p>With the above choice of parameters this gives <span class="math notranslate nohighlight">\(r_{\mathrm{min}}=1\)</span>.</p>
+<p>In the code here we solve the equations of motion and find the time-evolution of the radius <span class="math notranslate nohighlight">\(r\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DeltaT</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="c1">#set up arrays </span>
+<span class="n">tfinal</span> <span class="o">=</span> <span class="mf">8.0</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">ceil</span><span class="p">(</span><span class="n">tfinal</span><span class="o">/</span><span class="n">DeltaT</span><span class="p">)</span>
+<span class="c1"># set up arrays for t, v and r</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="c1"># Constants of the model, setting all variables to one for simplicity</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">AngMom</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1">#  The angular momentum</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># scale mass to one</span>
+<span class="n">c1</span> <span class="o">=</span> <span class="n">AngMom</span><span class="o">*</span><span class="n">AngMom</span><span class="o">/</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">m</span><span class="p">)</span>
+<span class="n">c2</span> <span class="o">=</span> <span class="n">AngMom</span><span class="o">*</span><span class="n">AngMom</span><span class="o">/</span><span class="n">m</span>
+<span class="n">rmin</span> <span class="o">=</span> <span class="p">(</span><span class="n">AngMom</span><span class="o">*</span><span class="n">AngMom</span><span class="o">/</span><span class="n">m</span><span class="o">/</span><span class="n">beta</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mf">3.</span><span class="p">)</span>
+<span class="c1"># Initial conditions, place yourself at the potential min</span>
+<span class="n">r0</span> <span class="o">=</span> <span class="n">rmin</span>
+<span class="n">v0</span> <span class="o">=</span> <span class="mf">0.0</span>  <span class="c1"># starts at rest</span>
+<span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">r0</span>
+<span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">v0</span>
+<span class="c1"># Start integrating using the Velocity-Verlet  method</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="c1"># Set up acceleration</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="n">beta</span><span class="o">+</span><span class="n">c1</span><span class="o">/</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+    <span class="c1"># update velocity, time and position using the Velocity-Verlet method</span>
+    <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">DeltaT</span><span class="o">*</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">DeltaT</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">a</span>
+    <span class="n">anew</span> <span class="o">=</span> <span class="o">-</span><span class="n">beta</span><span class="o">+</span><span class="n">c1</span><span class="o">/</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">DeltaT</span><span class="o">*</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">anew</span><span class="p">)</span>
+    <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">DeltaT</span>
+<span class="c1">#plotting</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;radius&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">r</span><span class="p">)</span>
+<span class="n">save_fig</span><span class="p">(</span><span class="s2">&quot;LinearPotential&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter6_391_0.png" src="_images/chapter6_391_0.png" />
+</div>
+</div>
+<p>We see that if we run with the initial condition corresponding to a circular orbit, our radius stays constant as function of time.</p>
+<p>What kind of orbits do we have here? Will it be bounded or unbounded?</p>
 </div>
 </div>
 
