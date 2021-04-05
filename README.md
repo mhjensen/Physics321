@@ -203,15 +203,18 @@ There is no video of Friday's session since the lecture was organized in breakou
 - Monday 4/5: Wrapping up two-body scattering and begin Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. 
 - Wednesday 4/7: Variational Calculus, chapter 6 of Taylor  
 - Friday 4/9: Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. 
+
 ### Week 15, April  12-16, 2021
 - Monday 4/12: Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. 
 - Wednesday 4/14: Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. 
 - Friday 4/16: Euler-Lagrange equations and Lagrangian formalism. Taylor chapter 6 and lecture notes. Deadline 2nd midterm at midnight.
+
 ### Week 16, April 19-23, 2021
 - Monday 4/19:  Langrangian formalism, discussion of examples. Taylor chapters 6 and 7. 10th homework as extra assignments, due April 26. 
 - Wednesday 4/21: Lagrangian formalism, examples such as the linear chain and double pendulum. Summary and discussions of final exam project. _Final exam project project, due April 30_   
 - Friday 4/23:  Study day
 ### Week 17, April 26- April 30, 2021, Finals week
+
 - Final Exam:  The final exam will be a project similar to the two midterm projects. Deadline April 30. We will have Q/A sessions Monday 26 and Wednesday 28 at 2.30pm to 4pm. Other sessions can always be arranged. 
 
 
