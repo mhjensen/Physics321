@@ -34,11 +34,11 @@ r(\phi) = \frac{1}{\frac{\mu\alpha}{L^2}+A\cos{(\phi)}}.
 Find the value of $A$. Hint: Use the fact that at $r_{\rm min}$
 there is no radial kinetic energy and $E=-\alpha/r_{\rm min}+L^2/2mr_{\rm min}^2$.
 
-At  $r_{\mathrm{min}}$  and $r_{\mathrm{max}}$ , all the kinetic energy is stored in the velocity in the direction perpendicular to $r$  since the radial velocity is set to zero . We can calculate using angular momentum and from there, find  𝐴  in terms of the energy  𝐸  which is constant. But first, we need to find  𝑟min  from the conservation of energy:
+At  $r_{\mathrm{min}}$  and $r_{\mathrm{max}}$ , all the kinetic energy is stored in the velocity in the direction perpendicular to $r$  since the radial velocity is set to zero . We can calculate using angular momentum and from there, find  𝐴  in terms of the energy  $E$  which is constant. But first, we need to find $r_{\mathrm{min}}$  from the conservation of energy (noting that the radial velocity $\ddot{r}$ at the mininum is zero):
 
 !bt
 \[
-E = U(r) + \frac{1}{2} \mu(v_{\perp}^2 + v_{\parallel})
+E = U(r) + \frac{1}{2} \mu(\ddot{r}^2 + (r\ddot{\phi})^2)
 \\
 E = \frac{-\alpha}{r_{\min}} + \frac{1}{2} \mu\left( \frac{L}{\mu r_{\min}}\right) ^2
 \\
@@ -55,7 +55,7 @@ Since we're looking for the minimum, the  ±  sign must be negative (then  𝑟m
 
 !bt
 \[
-frac{1}{\frac{\mu\alpha}{L^2}+A} = -\frac{\alpha}{2E} - \frac{1}{2} \sqrt{\frac{\alpha^2}{E^2} + 2\frac{L^2}{E\mu}}
+\frac{1}{\frac{\mu\alpha}{L^2}+A} = -\frac{\alpha}{2E} - \frac{1}{2} \sqrt{\frac{\alpha^2}{E^2} + 2\frac{L^2}{E\mu}}
 \\
 A = - \frac{\mu\alpha}{L^2} - \frac{2E}{\alpha + \sqrt{\alpha^2 + 2\frac{L^2E}{\mu}}}
 \]
@@ -213,60 +213,44 @@ We have that
 \begin{align}
 x & = r \cos\theta
 \\
-y & = r \sin \theta,
+y & = r \sin \theta.
 \end{align}
 !et
 
-we obtain
-!bt
-\begin{align}
-y & = r \sin\theta
-\\
-& = \frac{2r_0}{1+\cos\theta}\sin\theta
-\\
-& = \frac{2r_0}{1-\cos^2\theta}\sin\theta(1-\cos\theta)
-\\
-& = \frac{2r_0(1-\cos\theta)}{\sin\theta},
-\end{align}
-!et
-
-and 
-
-!bt
-\begin{align}
-x & = r \sin\theta
-\\
-& = \frac{2r_0}{1+\cos\theta}\cos\theta
-\\
-& = \frac{2r_0}{1-\cos^2\theta}\cos\theta(1-\cos\theta)
-\\
-& = \frac{2r_0(\cos\theta-\cos^2\theta)}{\sin^2 \theta}.
-\end{align}
-!et
-
-Here  we notice that the denominator of $x$ is the square of the denominator of $y$. We also have
+Using the general solution with eccintricity $\epsilon=1$, we have
 
 !bt
 \[
-y^2 = \frac{4r_0^2(1-2\cos\theta+\cos^2\theta)}{\sin^2\theta}.
+r(\theta)=\frac{c}{1+\cos\theta},
 \]
 !et
-
-Let try to add them such that $\cos\theta$ cancels out, that is
+and multiplying both sides with $1+\cos\theta$ and using that $x=r\cos\theta$,
+!bt
+\[
+r = c -x,
+\]
+!et
+and using that $r^2=x^2+y^2$, we square both sides
 
 !bt
-\begin{align}
-x + \frac{y^2}{4r_0} & = \frac{2r_0(\cos\theta-\cos^2\theta)}{\sin^2 \theta} + \frac{4r_0^2(1-2\cos\theta+\cos^2\theta)}{\sin^2\theta}\frac{1}{4r_0}
-\\ & = \frac{r_0}{\sin^2\theta}\left(  2\cos\theta-2\cos^2\theta + 1 - 2\cos\theta + \cos^2\theta\right) 
-\\ & = \frac{r_0}{\sin^2\theta}\left(  -2\cos^2\theta + 1 + \cos^2\theta\right) 
-\\ & = \frac{r_0}{\sin^2\theta}\left(  1 - \cos^2\theta\right) 
-\\ & = \frac{r_0}{\sin^2\theta}\left(  \sin^2\theta\right) 
-\\ & = r_0
-\end{align}
+\[
+r^2 = x^2+y^2=c^2 +x^2-2cx,
+\]
 !et
-
-Thus, we have
-
+leading to
+!bt
+\[
+y^2=c^2-2cx,
+\]
+!et
+and using that we defined
+!bt
+\[
+c=2r_0=\frac{L^2}{m\alpha},
+\]
+!et
+we divide by $2c$ 
+and we get the final answer
 !bt
 \[
 x = r_0 - \frac{y^2}{4r_0}
@@ -307,114 +291,67 @@ y & = r\sin\phi
 \end{align}
 !et
 
-Therefore, 
-
-!bt
-\begin{align}
-\frac{(x-\delta)^2}{\alpha^2} - \frac{y^2}{\beta^2} 
-& = \frac{(\frac{c\cos\phi-\delta(1+\epsilon\cos\phi)}{1+\epsilon\cos\phi})^2}{\alpha^2} - \frac{(\frac{c\sin\phi}{1+\epsilon\cos\phi})^2}{\beta^2}
-\\ & = \frac{\beta^2 c^2\cos^2\phi + \beta^2\delta^2 + \beta^2\delta^2 \epsilon^2 \cos^2 \phi - 2\beta^2\delta c \cos\phi - 2 \beta^2\delta c \epsilon \cos^2 \phi + 2\beta^2\delta^2 \epsilon \cos \phi - \alpha^2 c^2 \sin^2 \phi}{\alpha^2\beta^2(1 + 2\epsilon\cos\phi + \epsilon^2\cos^2\phi)}
-\\ & = \frac{
-\beta^2\cos^2\phi (c^2 + \delta^2 \epsilon^2 - 2 \delta c \epsilon) - \alpha^2 c^2 \sin^2 \phi + \beta^2\delta^2 + 2\beta^2\delta \cos\phi (-c + \delta \epsilon)
-}{\alpha^2\beta^2(1 + 2\epsilon\cos\phi + \epsilon^2\cos^2\phi)}
-\\ & = \frac{
-(\beta^2\delta^2 - \alpha^2 c^2)
- + 2\beta^2\delta \cos\phi (\delta \epsilon-c)
- + \cos^2\phi (\beta^2c^2 + \beta^2\delta^2 \epsilon^2 - 2\beta^2 \delta c \epsilon + \alpha^2 c^2)
-}{\alpha^2\beta^2(1 + 2\epsilon\cos\phi + \epsilon^2\cos^2\phi)}
-\\ & = 1
-\end{align}
-!et
-
-We can seperate this into several equations:
+Here $\epsilon>1$.  We use our equation for $r$, multiply with the denominator $1+\epsilon\cos\phi$ on both sides and have
 
 !bt
 \[
-\frac{\beta^2\delta^2 - \alpha^2 c^2}{\alpha^2\beta^2} = 1
-\\ \frac{2\beta^2\delta \cos\phi (\delta \epsilon-c)}{\alpha^2\beta^2} = 2\epsilon\cos\phi
-\\ \frac{\cos^2\phi (\beta^2c^2 + \beta^2\delta^2 \epsilon^2 - 2\beta^2 \delta c \epsilon + \alpha^2 c^2)}{\alpha^2\beta^2} = \epsilon^2\cos^2\phi
+r(1+\epsilon\cos\phi)=c,
+\]
+!et
+use $x=r\cos\phi$ and square and use that $r^2=x^2+y^2$ and we have
+!bt
+\[
+r^2=x^2+y^2=c^2+\epsilon^2x^2-2cx\epsilon,
 \]
 !et
 
-These can further be simplified:
+and reorder
 
 !bt
 \[
-\frac{\delta^2}{\alpha^2} - \frac{c^2}{\beta^2} = 1
-\\
-\frac{\delta^2\epsilon}{\alpha^2} - \frac{\delta c}{\beta^2} = \epsilon
-\\
-\frac{c^2}{\alpha^2} + \frac{\delta^2\epsilon^2}{\alpha^2} - 2\frac{\delta c \epsilon}{\alpha^2} + \frac{c^2}{\beta^2}
-= \epsilon^2
+x^2(\epsilon^2-1)-y^2-2cx\epsilon= -c^2.
 \]
 !et
-Now, all we have to do is solve these three equations for the three unknowns $\alpha$, $\beta$, and $\gamma$:
 
-From the first equation, we have
-!bt
-\[
-\frac{1}{\beta^2} = \frac{\delta^2}{c^2\alpha^2} - \frac{1}{c^2}
-\]
-!et
-Therefore,
+We complete the square in $x$ by adding and subtracting on both sides $\epsilon^2c^2/(\epsilon^2-1)$
+and we obtain
 
 !bt
 \[
-\frac{\delta^2\epsilon}{\alpha^2} - \left(  \frac{\delta^2}{c^2\alpha^2} - \frac{1}{c^2} \right) \delta c = 
-\frac{\delta^2\epsilon}{\alpha^2} - \frac{\delta^3}{c\alpha^2} + \frac{\delta}{c}
-= \epsilon
-\\
-\frac{c^2}{\alpha^2} + \frac{\delta^2\epsilon^2}{\alpha^2} - 2\frac{\delta c \epsilon}{\alpha^2} + c^2\left(  \frac{\delta^2}{c^2\alpha^2} - \frac{1}{c^2} \right)  =
-\frac{c^2}{\alpha^2} + \frac{\delta^2\epsilon^2}{\alpha^2} - 2\frac{\delta c \epsilon}{\alpha^2}
-+ \frac{\delta^2}{\alpha^2} - 1
-= \epsilon^2
+(\epsilon^2-1)(x-\delta)^2-y^2= -c^2+\frac{\epsilon^2c^2}{\epsilon^2-1}.
 \]
 !et
 
-From here  we obtain
+Here we have defined
 
 !bt
 \[
-\frac{1}{\alpha^2} = \frac{\epsilon-\frac{\delta}{c}}{\delta^2\epsilon - \frac{\delta^3}{c}} = \frac{1}{\delta^2}\frac{\epsilon-\frac{\delta}{c}}{\epsilon-\frac{\delta}{c}}
+\delta = \frac{c\epsilon}{\epsilon^2-1},
 \]
 !et
-
-This means we have two possibilities: either $\delta^2 = \alpha^2$ or $\delta = c$. Since the first option would mean $\beta \rightarrow \pm \infty$, the second option must be true. Hence,
+and introducing the constants
 
 !bt
 \[
-\frac{c^2}{\alpha^2} + \frac{c^2\epsilon^2}{\alpha^2} - 2\frac{c^2 \epsilon}{\alpha^2}
-+ \frac{c^2}{\alpha^2} - 1
-= \epsilon^2
-\\
-\frac{c^2}{\alpha^2} (1 + \epsilon^2 - 2 \epsilon) = 1 + \epsilon^2
-\\ \frac{c^2}{\alpha^2} = \frac{1 + \epsilon^2}{(1-\epsilon)^2}
-\\ \alpha = \pm c \sqrt{\frac{(1-\epsilon)^2}{1 + \epsilon^2}}.
+\alpha = \frac{c}{\epsilon^2-1},
+\]
+!et
+and
+!bt
+\[
+\beta = \frac{c}{\sqrt{\epsilon^2-1}},
 \]
 !et
 
-And we have
-
-!bt
-\begin{align}
-\beta & = \pm \sqrt{\frac{1}{\frac{\delta^2}{c^2\alpha^2} - \frac{1}{c^2}}}
-\\ & = \pm \sqrt{\frac{1}{\frac{1 + \epsilon^2}{(1-\epsilon)^2} - \frac{1}{c^2}}}
-\\ & = \pm c \sqrt{\frac{1}{\frac{1 + \epsilon^2}{1-2\epsilon+\epsilon^2} - \frac{1-2\epsilon+\epsilon^2}{1-2\epsilon+\epsilon^2}}}
-\\ & = \pm c \sqrt{\frac{(1-\epsilon)^2}{2\epsilon}}
-\end{align}
-!et
-
-Summing up, we have
+we can rewrite the above equation as
 
 !bt
 \[
-\delta = c
-\\
-\alpha = \pm c \sqrt{\frac{(1-\epsilon)^2}{1 + \epsilon^2}}
-\\
-\beta = \pm c \sqrt{\frac{(1-\epsilon)^2}{2\epsilon}}
+\frac{(x-\delta)^2}{\alpha^2}-\frac{y^2}{\beta^2}=1,
 \]
 !et
+
+which is nothing but the equation for a hyperbola.
 
 
 ===  Exercise 5, Testing orbit types (50 pt) ===
@@ -446,7 +383,8 @@ m = 1.0  # scale mass to one
 c1 = AngMom*AngMom/(m*m)
 c2 = AngMom*AngMom/m
 # You need to specify the initial conditions
-r0 = 0.0
+# Here we have chosen the conditions which lead to circular orbit and thereby a constant r
+r0 = (AngMom*AngMom/m/alpha)
 v0 = 0.0
 r[0] = r0
 v[0] = v0
@@ -476,7 +414,15 @@ plt.show()
 Run your code and study and discuss the situations where you have
 elliptical, parabolic and hyperbolic orbits. Discuss the physics of
 these cases. The results from exercises 1, 2, 3 and 4 may be useful
-here.
+here.  In the code here we have chosen initial conditions which correspond to circular motion.
+This corresponds to
+!bt
+\[
+r_{\mathrm{min}} = \frac{L^2}{m\alpha}.
+\]
+!et
+
+Note well that the velocity is now the radial velocity. If we want to study the angular velocity we would need to add the equations for this quantity. The solution to exercises 1-4 give you the minimum $r$ values needed to find the elliptical, parabolic and hyperbolic orbits. For elliptical orbits you should have  $\frac{L^2}{2m\alpha} < r_{\mathrm{min}} <\frac{L^2}{m\alpha}$. For parabolic orbits $r_{\mathrm{min}} =\frac{L^2}{m\alpha}$ and for hyperbolic orbits we have $0<r_{\mathrm{min}} <\frac{L^2}{m\alpha}$. Try out these different initial conditions in order to test these different types of motion.
 
 
 ===  Additional Bonus Exercise (10pt) ===
