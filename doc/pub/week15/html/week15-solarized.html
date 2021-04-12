@@ -42,6 +42,14 @@ div { text-align: justify; text-justify: inter-word; }
               ('Monday', 3, None, 'monday'),
               ('Wednesday', 3, None, 'wednesday'),
               ('Friday', 3, None, 'friday'),
+              ("Second midterm, Angular Momentum and Kepler's Laws",
+               2,
+               None,
+               'second-midterm-angular-momentum-and-kepler-s-laws'),
+              ('The Angular momentum Part',
+               2,
+               None,
+               'the-angular-momentum-part'),
               ('Variational Calculus', 2, None, 'variational-calculus'),
               ('Variational Calculus, introducing the action',
                2,
@@ -150,7 +158,7 @@ MathJax.Hub.Config({
 <center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
 <br>
 <p>
-<center><h4>Apr 10, 2021</h4></center> <!-- date -->
+<center><h4>Apr 12, 2021</h4></center> <!-- date -->
 <br>
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -182,6 +190,107 @@ MathJax.Hub.Config({
 
 <b>Reading suggestion</b>: Taylor sections 7.5-7.8
 
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="second-midterm-angular-momentum-and-kepler-s-laws">Second midterm, Angular Momentum and Kepler's Laws </h2>
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%;"><span></span>%matplotlib inline
+
+<span style="color: #228B22"># let&#39;s start by importing useful packages we are familiar with</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
+<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> *
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">seaborn</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">sns</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">math</span> 
+
+<span style="color: #228B22">#Velocity-Verlet Method</span>
+newDeltaT = <span style="color: #B452CD">0.001</span>
+<span style="color: #228B22">#set up arrays </span>
+tfinal = <span style="color: #B452CD">10</span> <span style="color: #228B22"># in years</span>
+n = ceil(tfinal/newDeltaT)
+<span style="color: #228B22"># set up arrays for time t, velocity v, and position r</span>
+t = np.zeros(n)
+v = np.zeros((n,<span style="color: #B452CD">2</span>))
+r = np.zeros((n,<span style="color: #B452CD">2</span>))
+<span style="color: #228B22">#newa = np.zeros((n,2))</span>
+<span style="color: #228B22"># Initial conditions as compact 2-dimensional arrays</span>
+r0 = np.array([<span style="color: #B452CD">1.0</span>,<span style="color: #B452CD">0.0</span>])
+v0 = np.array([<span style="color: #B452CD">0.0</span>,<span style="color: #B452CD">2</span>*pi])
+<span style="color: #228B22">#newa0 = np.array(-Fourpi2*newr0)</span>
+r[<span style="color: #B452CD">0</span>] = r0
+v[<span style="color: #B452CD">0</span>] = v0
+<span style="color: #228B22">#newa[0] = newa0</span>
+Fourpi2 = <span style="color: #B452CD">4</span>*pi*pi
+<span style="color: #228B22"># Start integrating using Euler&#39;s method</span>
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
+    <span style="color: #228B22"># Set up the accelerationn</span>
+    <span style="color: #228B22"># Here you could have defined your own function for this</span>
+    rabs = sqrt(<span style="color: #658b00">sum</span>(r[i]*r[i]))
+    a = -Fourpi2*r[i]/(rabs**<span style="color: #B452CD">3</span>)
+    <span style="color: #228B22"># update velocity, time and position using Euler&#39;s forward method</span>
+    r[i+<span style="color: #B452CD">1</span>] = r[i] + newDeltaT*v[i] + ((newDeltaT**<span style="color: #B452CD">2</span>)/<span style="color: #B452CD">2</span>)*(a)
+    rabs = sqrt(<span style="color: #658b00">sum</span>(r[i+<span style="color: #B452CD">1</span>]*r[i+<span style="color: #B452CD">1</span>]))
+    agh_a = -<span style="color: #B452CD">4</span>*(pi**<span style="color: #B452CD">2</span>)*r[i+<span style="color: #B452CD">1</span>]/(rabs**<span style="color: #B452CD">3</span>)
+    v[i+<span style="color: #B452CD">1</span>] = v[i] + newDeltaT*(<span style="color: #B452CD">0.5</span>)*(a + agh_a)
+    t[i+<span style="color: #B452CD">1</span>] = t[i] + newDeltaT
+sns.set()
+plt.plot(r[:,<span style="color: #B452CD">0</span>], r[:,<span style="color: #B452CD">1</span>])
+</pre></div>
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="the-angular-momentum-part">The Angular momentum Part </h2>
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%;"><span></span><span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">AreaCalc</span>(rad1,rad2):
+    rad1n = np.linalg.norm(rad1)
+    rad2n = np.linalg.norm(rad2)
+    theta1 = math.atan(<span style="color: #658b00">abs</span>(rad1[<span style="color: #B452CD">1</span>]/rad1[<span style="color: #B452CD">0</span>]))
+    theta2 = math.atan(<span style="color: #658b00">abs</span>(rad2[<span style="color: #B452CD">1</span>]/rad2[<span style="color: #B452CD">0</span>]))
+    radn = <span style="color: #B452CD">0.5</span>*(rad1n+rad2n)
+    delta_theta = np.abs(theta1 - theta2)
+    <span style="color: #8B008B; font-weight: bold">return</span> <span style="color: #B452CD">0.5</span>*delta_theta*radn**<span style="color: #B452CD">2</span>
+</pre></div>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%;"><span></span><span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">AngMomentum</span>(rad,vel):
+    radn = np.linalg.norm(rad)
+    veln = np.linalg.norm(vel)
+    rad = rad/radn
+    vel = vel/veln
+    dotprod = rad[<span style="color: #B452CD">0</span>]*vel[<span style="color: #B452CD">0</span>]+rad[<span style="color: #B452CD">1</span>]*vel[<span style="color: #B452CD">1</span>]
+    theta = math.acos(dotprod)
+    <span style="color: #8B008B; font-weight: bold">return</span> radn*veln*np.sin(theta)
+</pre></div>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%;"><span></span>AreaVal = np.zeros(<span style="color: #658b00">len</span>(t))
+AreaVal[<span style="color: #B452CD">0</span>] = <span style="color: #B452CD">0</span>
+AngMo = np.zeros(<span style="color: #658b00">len</span>(t))  
+AngMo[<span style="color: #B452CD">0</span>] = AngMomentum(r[<span style="color: #B452CD">0</span>,:],v[<span style="color: #B452CD">0</span>,:])
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">0</span>,<span style="color: #658b00">len</span>(t)-<span style="color: #B452CD">1</span>):
+    AreaVal[i+<span style="color: #B452CD">1</span>] = AreaVal[i] + AreaCalc(r[i,:],r[i+<span style="color: #B452CD">1</span>,:])
+    AngMo[i+<span style="color: #B452CD">1</span>] = AngMomentum(r[i+<span style="color: #B452CD">1</span>,:],v[i+<span style="color: #B452CD">1</span>,:])
+
+fig, ax = plt.subplots(<span style="color: #B452CD">2</span>,<span style="color: #B452CD">1</span>,figsize=(<span style="color: #B452CD">12</span>,<span style="color: #B452CD">6</span>))
+ax[<span style="color: #B452CD">0</span>].plot(t,AreaVal,label=<span style="color: #CD5555">&#39;Area&#39;</span>)
+ax[<span style="color: #B452CD">0</span>].set_title(<span style="color: #CD5555">&#39;Sweeped Area vs time&#39;</span>)
+ax[<span style="color: #B452CD">0</span>].set_xlabel(<span style="color: #CD5555">&#39;t [yr]&#39;</span>)
+ax[<span style="color: #B452CD">0</span>].set_ylabel(<span style="color: #CD5555">&#39;Area Sweeped in AU^2&#39;</span>)
+
+ax[<span style="color: #B452CD">1</span>].plot(t,AngMo,label=<span style="color: #CD5555">&#39;Angular Momentum&#39;</span>)
+ax[<span style="color: #B452CD">1</span>].set_title(<span style="color: #CD5555">&#39;Angular Momentum vs time&#39;</span>)
+ax[<span style="color: #B452CD">1</span>].set_xlabel(<span style="color: #CD5555">&#39;t [yr]&#39;</span>)
+plt.tight_layout()
+</pre></div>
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 

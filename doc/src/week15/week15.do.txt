@@ -30,6 +30,101 @@ _Reading suggestion_: Taylor sections 7.5-7.8
 
 
 
+!split
+=====   Second midterm, Angular Momentum and Kepler's Laws =====
+
+!bc pycod
+%matplotlib inline
+
+# let's start by importing useful packages we are familiar with
+import numpy as np
+from math import *
+import matplotlib.pyplot as plt
+import seaborn as sns
+import math 
+
+#Velocity-Verlet Method
+newDeltaT = 0.001
+#set up arrays 
+tfinal = 10 # in years
+n = ceil(tfinal/newDeltaT)
+# set up arrays for time t, velocity v, and position r
+t = np.zeros(n)
+v = np.zeros((n,2))
+r = np.zeros((n,2))
+#newa = np.zeros((n,2))
+# Initial conditions as compact 2-dimensional arrays
+r0 = np.array([1.0,0.0])
+v0 = np.array([0.0,2*pi])
+#newa0 = np.array(-Fourpi2*newr0)
+r[0] = r0
+v[0] = v0
+#newa[0] = newa0
+Fourpi2 = 4*pi*pi
+# Start integrating using Euler's method
+for i in range(n-1):
+    # Set up the accelerationn
+    # Here you could have defined your own function for this
+    rabs = sqrt(sum(r[i]*r[i]))
+    a = -Fourpi2*r[i]/(rabs**3)
+    # update velocity, time and position using Euler's forward method
+    r[i+1] = r[i] + newDeltaT*v[i] + ((newDeltaT**2)/2)*(a)
+    rabs = sqrt(sum(r[i+1]*r[i+1]))
+    agh_a = -4*(pi**2)*r[i+1]/(rabs**3)
+    v[i+1] = v[i] + newDeltaT*(0.5)*(a + agh_a)
+    t[i+1] = t[i] + newDeltaT
+sns.set()
+plt.plot(r[:,0], r[:,1])
+
+!ec
+
+!split
+===== The Angular momentum Part =====
+
+!bc pycod
+
+def AreaCalc(rad1,rad2):
+    rad1n = np.linalg.norm(rad1)
+    rad2n = np.linalg.norm(rad2)
+    theta1 = math.atan(abs(rad1[1]/rad1[0]))
+    theta2 = math.atan(abs(rad2[1]/rad2[0]))
+    radn = 0.5*(rad1n+rad2n)
+    delta_theta = np.abs(theta1 - theta2)
+    return 0.5*delta_theta*radn**2
+
+!ec
+
+!bc pycod
+def AngMomentum(rad,vel):
+    radn = np.linalg.norm(rad)
+    veln = np.linalg.norm(vel)
+    rad = rad/radn
+    vel = vel/veln
+    dotprod = rad[0]*vel[0]+rad[1]*vel[1]
+    theta = math.acos(dotprod)
+    return radn*veln*np.sin(theta)
+!ec
+
+!bc pycod
+AreaVal = np.zeros(len(t))
+AreaVal[0] = 0
+AngMo = np.zeros(len(t))  
+AngMo[0] = AngMomentum(r[0,:],v[0,:])
+for i in range(0,len(t)-1):
+    AreaVal[i+1] = AreaVal[i] + AreaCalc(r[i,:],r[i+1,:])
+    AngMo[i+1] = AngMomentum(r[i+1,:],v[i+1,:])
+
+fig, ax = plt.subplots(2,1,figsize=(12,6))
+ax[0].plot(t,AreaVal,label='Area')
+ax[0].set_title('Sweeped Area vs time')
+ax[0].set_xlabel('t [yr]')
+ax[0].set_ylabel('Area Sweeped in AU^2')
+
+ax[1].plot(t,AngMo,label='Angular Momentum')
+ax[1].set_title('Angular Momentum vs time')
+ax[1].set_xlabel('t [yr]')
+plt.tight_layout()
+!ec
 
 
 
