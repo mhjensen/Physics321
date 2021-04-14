@@ -166,7 +166,7 @@ MathJax.Hub.Config({
 <ul>
 <p><li> Euler-Lagrange equations and the Lagrangian with examples</li>
 <p><li> Principle of Least Action, watch <a href="https://www.feynmanlectures.caltech.edu/II_19.html" target="_blank">Feynman Lecture</a>.</li>
-<p><li> Discussions of second midterm</li>
+<p><li> Discussions of second midterm, see codes right after this slide.</li>
 </ul>
 <p>
 
@@ -176,7 +176,7 @@ MathJax.Hub.Config({
 
 <ul>
 <p><li> Lagrangian formalism, constrained and unconstrained motion</li>
-<p><li> Discussions of second midterm</li>
+<p><li> Discussions of second midterm, see codes right after this slide.</li>
 </ul>
 <p>
 
@@ -186,7 +186,7 @@ MathJax.Hub.Config({
 
 <ul>
 <p><li> Variational Calculus with examples</li>
-<p><li> Discussions of second midterm</li>
+<p><li> Discussions of second midterm, see codes right after this slide.</li>
 </ul>
 <p>
 
@@ -616,6 +616,101 @@ Alternatively they can be obtained in terms of km and km/s.
 For the first simple system involving the Earth and the Sun, you could just initialize the position with say \( x=1 \) AU
 and \( y=0 \) AU.
 </div>
+</section>
+
+
+<section>
+<h2 id="code-example">Code Example </h2>
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%;"><span></span><span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">math</span>
+%matplotlib inline
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">solarsystem_j_scaled</span>(f = <span style="color: #B452CD">1</span>, tf = <span style="color: #B452CD">100</span>, dt = .<span style="color: #B452CD">01</span>):
+    m_j = <span style="color: #B452CD">1.9</span> * <span style="color: #B452CD">10</span>**<span style="color: #B452CD">27</span> * f
+    m_e = <span style="color: #B452CD">6</span> * <span style="color: #B452CD">10</span> ** <span style="color: #B452CD">24</span>
+    m_s = <span style="color: #B452CD">2</span> * <span style="color: #B452CD">10</span> ** <span style="color: #B452CD">30</span>
+
+    <span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">get_accel</span>(m1,m2,r1,r2):
+        <span style="color: #CD5555">&#39;&#39;&#39;</span>
+<span style="color: #CD5555">        Given a masses and locations m1, m2, r1, r2</span>
+<span style="color: #CD5555">        Returns the force between the two masses, </span>
+<span style="color: #CD5555">        f = [fx, fy]</span>
+<span style="color: #CD5555">        &#39;&#39;&#39;</span>
+        dist = r1-r2
+        dist_sun = np.sqrt((r1[<span style="color: #B452CD">0</span>])**<span style="color: #B452CD">2</span> + (r1[<span style="color: #B452CD">1</span>])**<span style="color: #B452CD">2</span>)
+        distance = np.sqrt((r1[<span style="color: #B452CD">0</span>]-r2[<span style="color: #B452CD">0</span>])**<span style="color: #B452CD">2</span> + (r1[<span style="color: #B452CD">1</span>]-r2[<span style="color: #B452CD">1</span>])**<span style="color: #B452CD">2</span>)
+        a = -<span style="color: #B452CD">4</span>*math.pi**<span style="color: #B452CD">2</span>*r1/dist_sun**<span style="color: #B452CD">3</span>-<span style="color: #B452CD">4</span>*math.pi**<span style="color: #B452CD">2</span>*dist*(m2/m_s)/distance**<span style="color: #B452CD">3</span>
+        <span style="color: #8B008B; font-weight: bold">return</span> a
+    
+    r_s = np.array([<span style="color: #B452CD">0</span>,<span style="color: #B452CD">0</span>])
+    n = math.ceil(tf/dt)
+    <span style="color: #658b00">print</span>(<span style="color: #CD5555">&#39;Integration points: &#39;</span>, n)
+    
+    <span style="color: #228B22"># set up arrays for time t, velocity v, and position r</span>
+    t = np.zeros(n)
+    v_j = np.zeros((n,<span style="color: #B452CD">2</span>))
+    r_j = np.zeros((n,<span style="color: #B452CD">2</span>))
+    r_j[<span style="color: #B452CD">0</span>] = np.array([<span style="color: #B452CD">0</span>, <span style="color: #B452CD">5.2</span>])
+    v_j[<span style="color: #B452CD">0</span>] = np.array([-<span style="color: #B452CD">2.76</span>, <span style="color: #B452CD">0</span>])
+    
+    v_e = np.zeros((n,<span style="color: #B452CD">2</span>))
+    r_e = np.zeros((n,<span style="color: #B452CD">2</span>))
+    r_e[<span style="color: #B452CD">0</span>] = np.array([<span style="color: #B452CD">1</span>, <span style="color: #B452CD">0</span>])
+    v_e[<span style="color: #B452CD">0</span>] = np.array([<span style="color: #B452CD">0</span>, <span style="color: #B452CD">6.28</span>])
+    
+    <span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
+        accel_earth = get_accel(m_e, m_j, r_e[i], r_j[i])
+        accel_jupyter = get_accel(m_j, m_e, r_j[i], r_e[i])
+        
+        r_e[i+<span style="color: #B452CD">1</span>] = r_e[i] + dt*v_e[i]+.<span style="color: #B452CD">5</span>*dt**<span style="color: #B452CD">2</span>*accel_earth
+        r_j[i+<span style="color: #B452CD">1</span>] = r_j[i] + dt*v_j[i]+.<span style="color: #B452CD">5</span>*dt**<span style="color: #B452CD">2</span>*accel_jupyter
+        
+        <span style="color: #228B22"># Update forces, accel</span>
+        accel_earth_2 = get_accel(m_e, m_j, r_e[i+<span style="color: #B452CD">1</span>], r_j[i+<span style="color: #B452CD">1</span>])
+        accel_jupyter_2 = get_accel(m_j, m_e, r_j[i+<span style="color: #B452CD">1</span>], r_e[i+<span style="color: #B452CD">1</span>])
+        
+        v_e[i+<span style="color: #B452CD">1</span>] = v_e[i] + <span style="color: #B452CD">1</span>/<span style="color: #B452CD">2</span>*dt*(accel_earth + accel_earth_2)
+        v_j[i+<span style="color: #B452CD">1</span>] = v_j[i] + <span style="color: #B452CD">1</span>/<span style="color: #B452CD">2</span>*dt*(accel_jupyter + accel_jupyter_2)
+        
+        t[i+<span style="color: #B452CD">1</span>] = t[i] + dt
+    
+    plt.plot(r_e[:, <span style="color: #B452CD">0</span>], r_e[:, <span style="color: #B452CD">1</span>], color = <span style="color: #CD5555">&#39;green&#39;</span>)
+    plt.plot(r_j[:, <span style="color: #B452CD">0</span>], r_j[:, <span style="color: #B452CD">1</span>], color = <span style="color: #CD5555">&#39;blue&#39;</span>)
+    plt.scatter(<span style="color: #B452CD">0</span>,<span style="color: #B452CD">0</span>,color = <span style="color: #CD5555">&#39;red&#39;</span>)
+</pre></div>
+</section>
+
+
+<section>
+<h2 id="running-the-code">Running the Code  </h2>
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%;"><span></span>solarsystem_j_scaled(f = <span style="color: #B452CD">1</span>, tf = <span style="color: #B452CD">20</span>, dt = <span style="color: #B452CD">1</span>)
+</pre></div>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%;"><span></span>solarsystem_j_scaled(f = <span style="color: #B452CD">1</span>, tf = <span style="color: #B452CD">300</span>, dt = .<span style="color: #B452CD">1</span>)
+</pre></div>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%;"><span></span>solarsystem_j_scaled(f = <span style="color: #B452CD">1</span>, tf = <span style="color: #B452CD">300</span>, dt = .<span style="color: #B452CD">001</span>)
+</pre></div>
+<p>
+Changing the mass factor
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%;"><span></span>solarsystem_j_scaled(f = <span style="color: #B452CD">1000</span>, tf = <span style="color: #B452CD">3</span>, dt = .<span style="color: #B452CD">001</span>)
+</pre></div>
 </section>
 
 

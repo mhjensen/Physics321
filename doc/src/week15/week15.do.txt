@@ -11,7 +11,7 @@ DATE: today
 
 * Euler-Lagrange equations and the Lagrangian with examples
 * Principle of Least Action, watch "Feynman Lecture":"https://www.feynmanlectures.caltech.edu/II_19.html".
-* Discussions of second midterm
+* Discussions of second midterm, see codes right after this slide.
 
 _Reading suggestion_: Taylor sections 6.3-6.4
 
@@ -19,14 +19,14 @@ _Reading suggestion_: Taylor sections 6.3-6.4
 === Wednesday ===
 
 * Lagrangian formalism, constrained and unconstrained motion
-* Discussions of second midterm
+* Discussions of second midterm, see codes right after this slide.
 
 _Reading suggestion_: Taylor sections 7.1-7.4
 
 ===  Friday ===
 
 * Variational Calculus with examples
-* Discussions of second midterm
+* Discussions of second midterm, see codes right after this slide.
 
 _Reading suggestion_: Taylor sections 7.5-7.8
 
@@ -393,7 +393,90 @@ and $y=0$ AU.
 !eblock
 
 
+!split
+===== Code Example =====
 
+!bc pycod
+import matplotlib.pyplot as plt
+import numpy as np
+import math
+%matplotlib inline
+
+def solarsystem_j_scaled(f = 1, tf = 100, dt = .01):
+    m_j = 1.9 * 10**27 * f
+    m_e = 6 * 10 ** 24
+    m_s = 2 * 10 ** 30
+
+    def get_accel(m1,m2,r1,r2):
+        '''
+        Given a masses and locations m1, m2, r1, r2
+        Returns the force between the two masses, 
+        f = [fx, fy]
+        '''
+        dist = r1-r2
+        dist_sun = np.sqrt((r1[0])**2 + (r1[1])**2)
+        distance = np.sqrt((r1[0]-r2[0])**2 + (r1[1]-r2[1])**2)
+        a = -4*math.pi**2*r1/dist_sun**3-4*math.pi**2*dist*(m2/m_s)/distance**3
+        return a
+    
+    r_s = np.array([0,0])
+    n = math.ceil(tf/dt)
+    print('Integration points: ', n)
+    
+    # set up arrays for time t, velocity v, and position r
+    t = np.zeros(n)
+    v_j = np.zeros((n,2))
+    r_j = np.zeros((n,2))
+    r_j[0] = np.array([0, 5.2])
+    v_j[0] = np.array([-2.76, 0])
+    
+    v_e = np.zeros((n,2))
+    r_e = np.zeros((n,2))
+    r_e[0] = np.array([1, 0])
+    v_e[0] = np.array([0, 6.28])
+    
+    for i in range(n-1):
+        accel_earth = get_accel(m_e, m_j, r_e[i], r_j[i])
+        accel_jupyter = get_accel(m_j, m_e, r_j[i], r_e[i])
+        
+        r_e[i+1] = r_e[i] + dt*v_e[i]+.5*dt**2*accel_earth
+        r_j[i+1] = r_j[i] + dt*v_j[i]+.5*dt**2*accel_jupyter
+        
+        # Update forces, accel
+        accel_earth_2 = get_accel(m_e, m_j, r_e[i+1], r_j[i+1])
+        accel_jupyter_2 = get_accel(m_j, m_e, r_j[i+1], r_e[i+1])
+        
+        v_e[i+1] = v_e[i] + 1/2*dt*(accel_earth + accel_earth_2)
+        v_j[i+1] = v_j[i] + 1/2*dt*(accel_jupyter + accel_jupyter_2)
+        
+        t[i+1] = t[i] + dt
+    
+    plt.plot(r_e[:, 0], r_e[:, 1], color = 'green')
+    plt.plot(r_j[:, 0], r_j[:, 1], color = 'blue')
+    plt.scatter(0,0,color = 'red')
+
+!ec
+
+!split
+===== Running the Code  =====
+
+!bc pycod
+solarsystem_j_scaled(f = 1, tf = 20, dt = 1)
+!ec
+
+
+!bc pycod
+solarsystem_j_scaled(f = 1, tf = 300, dt = .1)
+!ec
+
+!bc pycod
+solarsystem_j_scaled(f = 1, tf = 300, dt = .001)
+!ec
+
+Changing the mass factor
+!bc pycod
+solarsystem_j_scaled(f = 1000, tf = 3, dt = .001)
+!ec
 
 
 !split
