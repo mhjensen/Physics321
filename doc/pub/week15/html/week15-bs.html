@@ -56,6 +56,40 @@ Automatically generated HTML file from DocOnce source
                2,
                None,
                'the-angular-momentum-part'),
+              ('Building a code for the solar system, gravitational force and '
+               'constants',
+               2,
+               None,
+               'building-a-code-for-the-solar-system-gravitational-force-and-constants'),
+              ('Building a code for the solar system, force equations',
+               2,
+               None,
+               'building-a-code-for-the-solar-system-force-equations'),
+              ('Building a code for the solar system, coupled equations',
+               2,
+               None,
+               'building-a-code-for-the-solar-system-coupled-equations'),
+              ('Building a code for the solar system, final coupled equations',
+               2,
+               None,
+               'building-a-code-for-the-solar-system-final-coupled-equations'),
+              ('Building a code for the solar system, discretized equations',
+               2,
+               None,
+               'building-a-code-for-the-solar-system-discretized-equations'),
+              ('Building a code for the solar system, adding Jupiter',
+               2,
+               None,
+               'building-a-code-for-the-solar-system-adding-jupiter'),
+              ('Building a code for the solar system, adding Jupiter',
+               2,
+               None,
+               'building-a-code-for-the-solar-system-adding-jupiter'),
+              ('How can I get the initial velocities and positions of the '
+               'planets',
+               2,
+               None,
+               'how-can-i-get-the-initial-velocities-and-positions-of-the-planets'),
               ('Variational Calculus', 2, None, 'variational-calculus'),
               ('Variational Calculus, introducing the action',
                2,
@@ -166,6 +200,14 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="#friday" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Friday</a></li>
      <!-- navigation toc: --> <li><a href="#second-midterm-angular-momentum-and-kepler-s-laws" style="font-size: 80%;"><b>Second midterm, Angular Momentum and Kepler's Laws</b></a></li>
      <!-- navigation toc: --> <li><a href="#the-angular-momentum-part" style="font-size: 80%;"><b>The Angular momentum Part</b></a></li>
+     <!-- navigation toc: --> <li><a href="#building-a-code-for-the-solar-system-gravitational-force-and-constants" style="font-size: 80%;"><b>Building a code for the solar system, gravitational force and constants</b></a></li>
+     <!-- navigation toc: --> <li><a href="#building-a-code-for-the-solar-system-force-equations" style="font-size: 80%;"><b>Building a code for the solar system, force equations</b></a></li>
+     <!-- navigation toc: --> <li><a href="#building-a-code-for-the-solar-system-coupled-equations" style="font-size: 80%;"><b>Building a code for the solar system, coupled equations</b></a></li>
+     <!-- navigation toc: --> <li><a href="#building-a-code-for-the-solar-system-final-coupled-equations" style="font-size: 80%;"><b>Building a code for the solar system, final coupled equations</b></a></li>
+     <!-- navigation toc: --> <li><a href="#building-a-code-for-the-solar-system-discretized-equations" style="font-size: 80%;"><b>Building a code for the solar system, discretized equations</b></a></li>
+     <!-- navigation toc: --> <li><a href="#building-a-code-for-the-solar-system-adding-jupiter" style="font-size: 80%;"><b>Building a code for the solar system, adding Jupiter</b></a></li>
+     <!-- navigation toc: --> <li><a href="#building-a-code-for-the-solar-system-adding-jupiter" style="font-size: 80%;"><b>Building a code for the solar system, adding Jupiter</b></a></li>
+     <!-- navigation toc: --> <li><a href="#how-can-i-get-the-initial-velocities-and-positions-of-the-planets" style="font-size: 80%;"><b>How can I get the initial velocities and positions of the planets</b></a></li>
      <!-- navigation toc: --> <li><a href="#variational-calculus" style="font-size: 80%;"><b>Variational Calculus</b></a></li>
      <!-- navigation toc: --> <li><a href="#variational-calculus-introducing-the-action" style="font-size: 80%;"><b>Variational Calculus, introducing the action</b></a></li>
      <!-- navigation toc: --> <li><a href="#variational-calculus-general-action" style="font-size: 80%;"><b>Variational Calculus, general Action</b></a></li>
@@ -230,7 +272,7 @@ MathJax.Hub.Config({
 <center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
 <br>
 <p>
-<center><h4>Apr 12, 2021</h4></center> <!-- date -->
+<center><h4>Apr 14, 2021</h4></center> <!-- date -->
 <br>
 <p>
 <!-- potential-jumbotron-button -->
@@ -245,6 +287,7 @@ MathJax.Hub.Config({
 <ul>
 <li> Euler-Lagrange equations and the Lagrangian with examples</li>
 <li> Principle of Least Action, watch <a href="https://www.feynmanlectures.caltech.edu/II_19.html" target="_self">Feynman Lecture</a>.</li>
+<li> Discussions of second midterm</li>
 </ul>
 
 <b>Reading suggestion</b>: Taylor sections 6.3-6.4
@@ -253,6 +296,7 @@ MathJax.Hub.Config({
 
 <ul>
 <li> Lagrangian formalism, constrained and unconstrained motion</li>
+<li> Discussions of second midterm</li>
 </ul>
 
 <b>Reading suggestion</b>: Taylor sections 7.1-7.4
@@ -261,6 +305,7 @@ MathJax.Hub.Config({
 
 <ul>
 <li> Variational Calculus with examples</li>
+<li> Discussions of second midterm</li>
 </ul>
 
 <b>Reading suggestion</b>: Taylor sections 7.5-7.8
@@ -366,6 +411,275 @@ ax[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>se
 ax[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;t [yr]&#39;</span>)
 plt<span style="color: #666666">.</span>tight_layout()
 </pre></div>
+<p>
+<!-- !split -->
+
+<h2 id="building-a-code-for-the-solar-system-gravitational-force-and-constants" class="anchor">Building a code for the solar system, gravitational force and constants </h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+We start with a simpler case first, the Earth-Sun system  in two dimensions only.  The gravitational force \( F_G \) is  
+$$
+      F=\frac{GM_{\odot}M_E}{r^2},
+  $$
+
+where \( G \) is the gravitational constant, 
+$$
+M_E=6\times 10^{24}\mathrm{Kg},
+$$
+
+the mass of Earth, 
+$$
+M_{\odot}=2\times 10^{30}\mathrm{Kg}, 
+$$
+
+the mass of the Sun and 
+$$
+r=1.5\times 10^{11}\mathrm{m}, 
+$$
+
+is the distance between Earth and the Sun. The latter defines what we call an astronomical unit <b>AU</b>.
+From Newton's second law we have then for the \( x \) direction
+$$
+   \frac{d^2x}{dt^2}=\frac{F_{x}}{M_E},
+  $$
+
+and
+$$
+   \frac{d^2y}{dt^2}=\frac{F_{y}}{M_E},
+  $$
+
+for the \( y \) direction.
+</div>
+</div>
+
+
+<p>
+<!-- !split -->
+
+<h2 id="building-a-code-for-the-solar-system-force-equations" class="anchor">Building a code for the solar system, force equations </h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+Introducing \( x=r\cos{(\theta)} \), \( y=r\sin{(\theta)} \) and
+$$
+r = \sqrt{x^2+y^2},
+$$
+
+we can rewrite 
+$$
+   F_{x}=-\frac{GM_{\odot}M_E}{r^2}\cos{(\theta)}=-\frac{GM_{\odot}M_E}{r^3}x,
+  $$
+
+and
+$$
+     F_{y}=-\frac{GM_{\odot}M_E}{r^2}\sin{(\theta)}=-\frac{GM_{\odot}M_E}{r^3}y,
+  $$
+
+for the \( y \) direction.
+</div>
+</div>
+
+
+<p>
+<!-- !split -->
+
+<h2 id="building-a-code-for-the-solar-system-coupled-equations" class="anchor">Building a code for the solar system, coupled equations </h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+We can rewrite these two equations
+$$
+   F_{x}=-\frac{GM_{\odot}M_E}{r^2}\cos{(\theta)}=-\frac{GM_{\odot}M_E}{r^3}x,
+  $$
+
+and
+$$
+     F_{y}=-\frac{GM_{\odot}M_E}{r^2}\sin{(\theta)}=-\frac{GM_{\odot}M_E}{r^3}y,
+  $$
+
+as four first-order coupled differential equations
+$$
+   \frac{dv_x}{dt}=-\frac{GM_{\odot}}{r^3}x,
+$$
+
+$$
+   \frac{dx}{dt}=v_x,
+$$
+
+$$
+   \frac{dv_y}{dt}=-\frac{GM_{\odot}}{r^3}y,
+$$
+
+$$
+   \frac{dy}{dt}=v_y.
+$$
+</div>
+</div>
+
+
+<p>
+<!-- !split -->
+
+<h2 id="building-a-code-for-the-solar-system-final-coupled-equations" class="anchor">Building a code for the solar system, final coupled equations </h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+The four coupled differential equations
+$$
+   \frac{dv_x}{dt}=-\frac{GM_{\odot}}{r^3}x,
+$$
+
+$$
+   \frac{dx}{dt}=v_x,
+$$
+
+$$
+   \frac{dv_y}{dt}=-\frac{GM_{\odot}}{r^3}y,
+$$
+
+$$
+   \frac{dy}{dt}=v_y,
+$$
+
+can be turned into dimensionless equations (as we did in project 2) or we can introduce astronomical units with \( 1 \) AU = \( 1.5\times 10^{11} \).
+
+<p>
+Using the equations from circular motion (with \( r =1\mathrm{AU} \)) 
+$$
+\frac{M_E v^2}{r} = F = \frac{GM_{\odot}M_E}{r^2},
+$$
+
+we have
+$$
+GM_{\odot}=v^2r,
+$$
+
+and using that the velocity of Earth (assuming circular motion) is
+\( v = 2\pi r/\mathrm{yr}=2\pi\mathrm{AU}/\mathrm{yr} \), we have
+$$
+GM_{\odot}= v^2r = 4\pi^2 \frac{(\mathrm{AU})^3}{\mathrm{yr}^2}.
+$$
+</div>
+</div>
+
+
+<p>
+<!-- !split -->
+
+<h2 id="building-a-code-for-the-solar-system-discretized-equations" class="anchor">Building a code for the solar system, discretized equations </h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+The four coupled differential equations can then be discretized using the Euler-Cromer method as (with step length \( h \))
+$$
+   v_{x,i+1}=v_{x,i}-h\frac{4\pi^2}{r_i^3}x_i,
+$$
+
+$$
+   x_{i+1}=x_i+hv_{x,i+1},
+$$
+
+$$
+   v_{y,i+1}=v_{y,i}-h\frac{4\pi^2}{r_i^3}y_i,
+$$
+
+$$
+   y_{i+1}=y_i+hv_{y,i+1},
+$$
+
+<p>
+</div>
+</div>
+
+
+<p>
+<!-- !split -->
+
+<h2 id="building-a-code-for-the-solar-system-adding-jupiter" class="anchor">Building a code for the solar system, adding Jupiter </h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+It is rather straightforward to add a new planet, say Jupiter.
+Jupiter has mass
+$$
+M_J=1.9\times 10^{27}\mathrm{kg},
+$$
+
+and distance to the Sun of \( 5.2 \) AU. 
+The additional gravitational force the Earth feels from Jupiter in the \( x \)-direction is
+$$
+   F_{x}^{EJ}=-\frac{GM_JM_E}{r_{EJ}^3}(x_E-x_J),
+  $$
+
+where \( E \) stands for Earth, \( J \) for Jupiter, \( r_{EJ} \) is distance between Earth and Jupiter
+$$
+r_{EJ} = \sqrt{(x_E-x_J)^2+(y_E-y_J)^2},
+$$
+
+and \( x_E \) and \( y_E \) are the \( x \) and \( y \) coordinates of Earth, respectively, and 
+\( x_J \) and \( y_J \) are the \( x \) and \( y \) coordinates of Jupiter, respectively.
+The \( x \)-component of the velocity of Earth changes thus to
+$$
+   \frac{dv_x^E}{dt}=-\frac{GM_{\odot}}{r^3}x_E-\frac{GM_J}{r_{EJ}^3}(x_E-x_J).
+$$
+</div>
+</div>
+
+
+<p>
+<!-- !split -->
+
+<h2 id="building-a-code-for-the-solar-system-adding-jupiter" class="anchor">Building a code for the solar system, adding Jupiter </h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+We can rewrite 
+$$
+   \frac{dv_x^E}{dt}=-\frac{GM_{\odot}}{r^3}x_E-\frac{GM_J}{r_{EJ}^3}(x_E-x_J).
+$$
+
+to
+$$
+   \frac{dv_x^E}{dt}=-\frac{4\pi^2}{r^3}x_E-\frac{4\pi^2M_J/M_{\odot}}{r_{EJ}^3}(x_E-x_J),
+$$
+
+where we used 
+$$
+GM_J = GM_{\odot}\left(\frac{M_J}{M_{\odot}}\right)=4\pi^2 \frac{M_J}{M_{\odot}}.
+$$
+
+Similarly, for the velocity in \( y \)-direction we have 
+$$
+   \frac{dv_y^E}{dt}=-\frac{4\pi^2}{r^3}y_E-\frac{4\pi^2M_J/M_{\odot}}{r_{EJ}^3}(y_E-y_J).
+$$
+
+Similar expressions apply for Jupiter. The equations for \( x \) and \( y \) 
+derivatives are unchanged. This equations are similar for all other planets and as we will see later, it will be convenient to object orient this part when we program the full solar system.
+</div>
+</div>
+
+
+<p>
+<!-- !split -->
+
+<h2 id="how-can-i-get-the-initial-velocities-and-positions-of-the-planets" class="anchor">How can I get the initial velocities and positions of the planets </h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+<a href="http://www.nasa.gov/index.html" target="_self">NASA</a> has an excellent site at <a href="http://ssd.jpl.nasa.gov/horizons.cgi#top" target="_self"><tt>http://ssd.jpl.nasa.gov/horizons.cgi#top</tt></a>.
+From there you can extract initial conditions in order to start your differential equation solver.
+At the above website you need to change from <b>OBSERVER</b> to <b>VECTOR</b> and then write in the planet you are interested in.
+The generated data contain the \( x \), \( y \) and \( z \) values as well as their corresponding velocities. The velocities are in units of AU per day.
+Alternatively they can be obtained in terms of km and km/s.
+
+<p>
+For the first simple system involving the Earth and the Sun, you could just initialize the position with say \( x=1 \) AU
+and \( y=0 \) AU.
+</div>
+</div>
+
+
 <p>
 <!-- !split -->
 
@@ -2022,6 +2336,8 @@ instance, you may need to write the Lagrangian in terms of angles.
 <!-- Add material about non-inertial frames -->
 <!-- Double pendulum and Foucalt's pendulum -->
 <!-- Revisit oscillations and example on earthquake models -->
+
+<p>
 
 <!-- ------------------- end of main content --------------- -->
 
