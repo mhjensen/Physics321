@@ -208,7 +208,8 @@ There is no video of Friday's session since the lecture was organized in breakou
 ### Week 15, April  12-16, 2021
 - Monday 4/12: Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. Video at https://mediaspace.msu.edu/media/t/1_glmwe3s1 and handwriten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesApril12.pdf
 - Wednesday 4/14: Variational calculus and the Euler-Lagrange equations, chapters 6-7 of Taylor and lecture notes.  Video of Lecture at https://mediaspace.msu.edu/media/t/1_foeveqvo and handwriten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesApril14.pdf 
-- Friday 4/16: Euler-Lagrange equations and Lagrangian formalism. Taylor chapters 6-7 and lecture notes. Deadline 2nd midterm at midnight.
+- Friday 4/16: Euler-Lagrange equations and Lagrangian formalism. Taylor chapters 6-7 and lecture notes. Deadline 2nd midterm at midnight of April 18. Video of lecture at https://mediaspace.msu.edu/media/t/1_9tdk8c94 and handwriten notes at https://github.com/mhjensen/Physics321\
+/blob/master/doc/HandWrittenNotes/Spring2021/NotesApril16.pdf 
 
 ### Week 16, April 19-23, 2021
 - Monday 4/19:  Langrangian formalism, discussion of examples. Taylor chapters 6 and 7. 10th homework as extra assignments, due April 26. 
