@@ -23,6 +23,7 @@ _Reading suggestion_: Taylor sections 6.3-6.4
 * Lagrangian formalism, constrained and unconstrained motion
 * Discussions of second midterm, see codes right after this slide.
 
+"See video from Wednesday April 14, with discussion of part 2 of the midterm":"https://mediaspace.msu.edu/media/t/1_foeveqvo"
 _Reading suggestion_: Taylor sections 7.1-7.4
 
 ===  Friday ===
@@ -518,6 +519,125 @@ solarsystem_j_scaled(f = 1, tf = 300, dt = .001)
 Changing the mass factor
 !bc pycod
 solarsystem_j_scaled(f = 1000, tf = 3, dt = .001)
+!ec
+
+
+!split
+===== A summary of Part I =====
+
+!bc pycod
+# let's start by importing useful packages we are familiar with
+import numpy as np
+from math import *
+import matplotlib.pyplot as plt
+import seaborn as sns
+import math 
+
+#Velocity-Verlet Method
+DeltaT = 0.001
+#set up arrays 
+tfinal = 100 # in years
+n = ceil(tfinal/DeltaT)
+# set up arrays for time t, velocity v, and position r
+t = np.zeros(n)
+v = np.zeros((n,2))
+r = np.zeros((n,2))
+# Initial conditions as compact 2-dimensional arrays. Here: circular orbit conditions.
+r0 = np.array([1.0,0.0])
+v0 = np.array([0.0,2*pi])
+r[0] = r0
+v[0] = v0
+Fourpi2 = 4*pi*pi
+# Start integrating using the Velocity-Verlet method
+for i in range(n-1):
+    # Set up the accelerationn
+    rabs = sqrt(sum(r[i]*r[i]))
+    a = -Fourpi2*r[i]/(rabs**3)
+    # update velocity, time and position using the Velocity-Verlet  method
+    r[i+1] = r[i] + DeltaT*v[i] + ((DeltaT**2)/2)*(a)
+    rabs = sqrt(sum(r[i+1]*r[i+1]))
+    anew = -4*(pi**2)*r[i+1]/(rabs**3)
+    v[i+1] = v[i] + DeltaT*(0.5)*(a + anew)
+    t[i+1] = t[i] + DeltaT
+sns.set()
+plt.plot(r[:,0], r[:,1])
+
+
+# We check that the total energy is conserved. For a circular orbit, potential and kinetic energy do not change since the radius is a constant. 
+
+# Note that we have set the mass of the Earth = 1
+def kinetic_energy(v):
+    KE = []
+    step = len(t)
+    for i in range(step):
+        KE.append(0)
+        KE[i] += 0.5 *np.sum(v[i]*v[i])
+    return np.array(KE)
+
+
+# Note that G x Mass_sun = 4*pi*pi and the mass of the Earth = 1
+# Note also that if you change the exponent in the force you need also to change the potential energy!
+def pot():
+    Pot = []
+    step = len(t)
+    for i in range(step):
+        Pot.append(0)
+        Pot[i] +=  - 4*pi*pi/ sqrt(np.sum(r[i]*r[i]))
+    return np.array(Pot)
+
+fig, ax = plt.subplots(1,1,figsize=(12,6))
+ax.plot(t,kinetic_energy(v)+pot(),label='Total')
+ax.plot(t,kinetic_energy(v),label='Kinetic')
+ax.plot(t,pot(),label='Potential')
+ax.set_title('Energy vs time')
+ax.set_xlabel('t [yr]')
+ax.legend()
+ax.set_ylabel(r'E')
+
+
+# With the same initial conditions we use Kepler's second law (see Taylor section 3.4) to show that angular momentum is conserved. 
+
+
+def AreaCalc(rad1,rad2):
+    rad1n = np.linalg.norm(rad1)
+    rad2n = np.linalg.norm(rad2)
+    theta1 = math.atan(abs(rad1[1]/rad1[0]))
+    theta2 = math.atan(abs(rad2[1]/rad2[0]))
+    radn = 0.5*(rad1n+rad2n)
+    delta_theta = np.abs(theta1 - theta2)
+    return 0.5*delta_theta*radn**2
+
+def AngMomentum(rad,vel):
+    radn = np.linalg.norm(rad)
+    veln = np.linalg.norm(vel)
+    rad = rad/radn
+    vel = vel/veln
+    dotprod = rad[0]*vel[0]+rad[1]*vel[1]
+    theta = math.acos(dotprod)
+    return radn*veln*np.sin(theta)
+
+
+AreaVal = np.zeros(len(t))
+AreaVal[0] = 0
+AngMo = np.zeros(len(t))  
+AngMo[0] = AngMomentum(r[0,:],v[0,:])
+
+for i in range(0,len(t)-1):
+    AreaVal[i+1] = AreaVal[i] + AreaCalc(r[i,:],r[i+1,:])
+    AngMo[i+1] = AngMomentum(r[i+1,:],v[i+1,:])
+
+fig, ax = plt.subplots(2,1,figsize=(12,6))
+ax[0].plot(t,AreaVal,label='Area')
+ax[0].set_title('Sweeped Area vs time')
+ax[0].set_xlabel('t [yr]')
+ax[0].set_ylabel('Area Sweeped in AU^2')
+
+ax[1].plot(t,AngMo,label='Angular Momentum')
+ax[1].set_title('Angular Momentum vs time')
+ax[1].set_xlabel('t [yr]')
+plt.tight_layout()
+
+
 !ec
 
 
