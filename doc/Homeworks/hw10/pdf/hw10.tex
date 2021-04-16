@@ -46,6 +46,21 @@ final,                   % draft: marks overfull hboxes, figures with paths
 
 \setcounter{tocdepth}{2}  % levels in table of contents
 
+% Tricks for having figures close to where they are defined:
+% 1. define less restrictive rules for where to put figures
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.95}
+\renewcommand{\textfraction}{0}
+\renewcommand{\floatpagefraction}{0.75}
+% floatpagefraction must always be less than topfraction!
+% 2. ensure all figures are flushed before next section
+\usepackage[section]{placeins}
+% 3. enable begin{figure}[H] (often leads to ugly pagebreaks)
+%\usepackage{float}\restylefloat{figure}
+
 % prevent orhpans and widows
 \clubpenalty = 10000
 \widowpenalty = 10000
@@ -88,7 +103,7 @@ PHY321: Classical Mechanics 1
 % ----------------- author(s) -------------------------
 
 \begin{center}
-{\bf Homework 10, due Friday  April 24${}^{}$} \\ [0mm]
+{\bf Homework 10, due Friday  April 26${}^{}$} \\ [0mm]
 \end{center}
 
 \begin{center}
@@ -99,7 +114,7 @@ PHY321: Classical Mechanics 1
 
 % --- begin date ---
 \begin{center}
-Apr 20, 2020
+Apr 16, 2021
 \end{center}
 % --- end date ---
 
@@ -158,53 +173,164 @@ where $\alpha$ is a constant.
 \end{itemize}
 
 \noindent
-\paragraph{Exercise 4 (10pt) Non-inertial frames (Taylor chapter 9).}
-A high-speed cannon shoots a projectile with an initial velocity of
-1000 m/s in the east direction. The cannon is situated in
-Minneapolis (latitude of 45 degrees) The projectile velocity is
-nearly horizontal and it hits the ground after a distance $x=3000$
-  m. Find the alteration of the point of impact in the north-south
-  ($y$) direction due to the Coriolis force. Assume the effect is
-  small so that you can approximate the eastward ($x$) component of
-  the velocity as being constant. Be sure to indicate whether the
-  deflection is north or south.
-
-As a hint, if you let $y$ be the north-south direction the equation of motions with the Coriolis force reads
-
-\[
-\frac{dv_y}{dt}= -2\Omega_zv_x + 2\Omega_xv_z,
-\]
-with the angular velocity $\Omega_z=\Omega_{\mathrm{Earth}}/\sqrt{2}$ and $\Omega_x=0$.
-Integrate up and the find the velocity in the $y$-direction and the corresponding displacement. 
-
-
-
-\paragraph{Exercise 5 (10pt), Lagrangian formalism (Taylor chapters 6-7).}
+\paragraph{Exercise 4 (10pt), Lagrangian formalism (Taylor chapters 6-7).}
 Consider a mass $m$ connected to a spring with spring constant $k$. Rather than being fixed, the other end of the spring oscillates with frequency $\omega$ and amplitude $A$. For a generalized coordinate, use the displacement of the mass from its relaxed position and call it $y=x-\ell-A\cos\omega t$. In this system the potential energy of the spring is $ky^2/2$.
 
 \begin{itemize}
-\item 5a (5pt) Write the kinetic energy in terms of the generalized coordinate
+\item 4a (5pt) Write the kinetic energy in terms of the generalized coordinate
 
-\item 5b (5pt) Write down the Lagrangian and find the equations of motion for $y$
+\item 4b (5pt) Write down the Lagrangian and find the equations of motion for $y$
 \end{itemize}
 
 \noindent
-\paragraph{Exercise 6 (30pt), Pendulum and Lagrangians (Taylor chapters 6-7).}
-Consider a pendulum of length $\ell$ with all the mass $m$ at its end. The pendulum is allowed to swing freely in both directions. Using $\phi$ to describe the azimuthal angle about the $z$ axis and $\theta$ to measure the angular deviation of the pendulum from the downward direction, address the following questions:
+\paragraph{Exercise 5 (40pt), Pendulum and Lagrangians (Taylor chapters 6-7).}
+A mathematical pendulum consists of a point mass $m$ suspended by a massless thread/rod of length $l$ in a gravitational field, as shown in the figure here. The constraining force is labeled by $\bm{T}$
+and the gravitational force is labeled $\bm{F}_g$.
+
+
+
+\vspace{6mm}
+
+% inline figure
+\centerline{\includegraphics[width=0.6\linewidth]{figures/Simplependulum.png}}
+
+\vspace{6mm}
+
+
+
+We assume that the length $l$ is constant and we define the coordinates involved as
+
+\[
+\bm{r} = l\sin(\phi)\bm{\hat{x}}+l\cos(\phi)\bm{\hat{y}},
+\]
+where $\bm{\hat{x}}$ and $\bm{\hat{y}}$ are the unit vectors in the $x$ and $y$ directions, respectively.
 
 \begin{itemize}
-\item 6a (5pt) Write the Lagrangian using $\theta$ and $\phi$ as generalized coordinates.
+\item \textbf{5a (10pt):} Set up the forces acting on the system and show that the equation of motion is $m\ddot{\bm{r}}=\bm{F}_g+\bm{T}$.
 
-\item 6b (5pt) Write the equations of motion for $\theta$ and $\phi$.
-
-\item 6c (5pt) Rewrite the equations of motion for $\theta$ using angular momentum conservation to eliminate the reference to $\phi$.
-
-\item 6d (5pt) Find the value of $L$ required for the stable orbit to be at $\theta=45^\circ$.
-
-\item 6e (10pt)  For the steady orbit found in (f) consider small perturbations of the orbit. Find the frequency with which the pendulum oscillates around $\theta=45^\circ$.
+\item \textbf{5b (10pt):} Show that you can rewrite the above equation of motion as two independent equations of motion, one for $\phi$ and one for the constraining force. Show that these equations are $\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}$ with $\omega_0^2=g/l$ and $T=ml\dot{\phi}^2+mg\cos{(\phi)}$.
 \end{itemize}
 
 \noindent
+The equation for $\phi$ is a second-order differential equation
+\[
+\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}.
+\]
+
+This equation can be solved analytically if we assume that the angle $\phi$ is very small. Then we can approximate our equation as
+
+\[
+\ddot{\phi}(t)=-\omega_0^2\phi(t).
+\]
+
+\begin{itemize}
+\item \textbf{5c (5pt):} Find the analytical solution for the last equation. Hint, look back at the solutions for the simple harmonic oscillator problem in one dimension in for example homework 7.
+
+\item \textbf{5d (5pt):} Find the expressions for the kinetic and potential energies in terms of the variables $r$ and $\phi$. 
+
+\item \textbf{5e (10pt):} With the potential $V$  and kinetic $T$ energies, define the Lagrangian for the mathematical pendulum discussed here. Add the constraint $r=l$ via a Lagrange multiplier $\lambda$ and derive the equations of motion. Show that these result in  $\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}$ with $\omega_0^2=g/l$ and $\lambda=ml\dot{\phi}^2+mg\cos{(\phi)}$.  How would you interpret $\lambda$? 
+\end{itemize}
+
+\noindent
+\paragraph{Classical Mechanics Extra Credit Assignment: Scientific Writing and attending Talks.}
+The following gives you an opportunity to earn \textbf{five extra credit
+points} on each of the remaining homeworks and \textbf{ten extra credit points}
+on the midterms and finals.  This assignment also covers an aspect of
+the scientific process that is not taught in most undergraduate
+programs: scientific writing.  Writing scientific reports is how
+scientist communicate their results to the rest of the field.  Knowing
+how to assemble a well written scientific report will greatly benefit
+you in you upper level classes, in graduate school, and in the work
+place.
+
+The full information on extra credits is found at \href{{https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/}}{\nolinkurl{https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/}}. There you will also find examples on how to write a scientific article. 
+Below you can also find a description on how to gain extra credits by attending scientific talks.
+
+
+This assignment allows you to gain extra credit points by practicing
+your scientific writing.  For each of the remaining homeworks you can
+submit the specified section of a scientific report (written about the
+numerical aspect of the homework) for five extra credit points on the
+assignment.  For the two midterms and the final, submitting a full
+scientific report covering the numerical analysis problem will be
+worth ten extra points.  For credit the grader must be able to tell
+that you put effort into the assignment (i.e.~well written, well
+formatted, etc.).  If you are unfamiliar with writing scientific
+reports, \href{{https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/IntroductionScientificWriting.md}}{see the information here}
+
+The following table explains what aspect of a scientific report is due
+with which homework.  You can submit the assignment in any format you
+like, in the same document as your homework, or in a different one.
+Remember to cite any external references you use and include a
+reference list.  There are no length requirements, but make sure what
+you turn in is complete and through.  If you have any questions,
+please contact Julie Butler at butler@frib.msu.edu.
+
+
+\begin{quote}
+\begin{tabular}{ccc}
+\hline
+\multicolumn{1}{c}{ HW/Project } & \multicolumn{1}{c}{ Due Date } & \multicolumn{1}{c}{ Extra Credit Assignment } \\
+\hline
+HW 3               & 2-8           & Abstract                   \\
+HW 4               & 2-15          & Introduction               \\
+HW 5               & 2-22          & Methods                    \\
+HW 6               & 3-1           & Results and Discussion     \\
+\textbf{Midterm 1} & \textbf{3-12} & \emph{Full Written Report} \\
+HW 7               & 3-22          & Abstract                   \\
+HW 8               & 3-29          & Introduction               \\
+HW 9               & 4-5           & Results and Discussion     \\
+\textbf{Midterm 2} & \textbf{4-16} & \emph{Full Written Report} \\
+HW 10              & 4-26          & Abstract                   \\
+\textbf{Final}     & \textbf{4-30} & \emph{Full Written Report} \\
+\hline
+\end{tabular}
+\end{quote}
+
+\noindent
+
+You can also gain extra credits if you attend scientific talks.
+This is described here.
+
+
+\paragraph{Integrating Classwork With Research.}
+This opportunity will allow you to earn up to 5 extra credit points on a Homework per week. These points can push you above 100\% or help make up for missed exercises.
+In order to earn all points you must:
+
+\begin{enumerate}
+\item Attend an MSU research talk (recommended research oriented Clubs is  provided below)
+
+\item Summarize the talk using at least 150 words
+
+\item Turn in the summary along with your Homework.
+\end{enumerate}
+
+\noindent
+Approved talks:
+Talks given by researchers through the following clubs:
+\begin{itemize}
+\item Research and Idea Sharing Enterprise (RAISE)​: Meets Wednesday Nights Society for Physics Students (SPS)​: Meets Monday Nights
+
+\item Astronomy Club​: Meets Monday Nights
+
+\item Facility For Rare Isotope Beam (FRIB) Seminars: ​Occur multiple times a week
+\end{itemize}
+
+\noindent
+If you have any questions please consult Jeremy Rebenstock, rebensto@msu.edu.
+
+All the material on extra credits is at \href{{https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/}}{\nolinkurl{https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/}}. 
+
+
+
+
+
+
+
+
+
+
+
 
 % ------------------- end of main content ---------------
 

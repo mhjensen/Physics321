@@ -1,0 +1,98 @@
+TITLE: PHY321: Classical Mechanics 1
+AUTHOR: Homework 10, due Friday  April 24
+DATE: today
+
+===  Practicalities about  homeworks and projects ===
+
+o You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. _Remember to write your name(s)_!
+o Homeworks are available  the week before the deadline. 
+o How do I(we)  hand in?  Due to the corona virus and many of you not being on campus, we recommend that you scan your handwritten notes and upload them to D2L. If you are ok with typing mathematical formulae using say Latex, you can hand in everything as a single jupyter notebook at D2L. The numerical exercise(s) should always be handed in as a jupyter notebook by the deadline at D2L. 
+
+=== Introduction to homework 10 ===
+
+This homework is optional but gives an extra score of 10% on top of
+all you have done throughout the semester. The exercises are
+essentially good old fashioned paper and pencil exercises and each
+covers different aspects of what has been done after spring break.
+The relevant reading background is marked in the different exercises (Taylor's text).
+
+===  Exercise 1 (10pt), new reference frame (Taylor chapter 8) ===
+
+
+Show that if one transforms to a reference frame where the total
+momentum is zero, $\bm{p}_1=-\bm{p}_2$, that the relative momentum
+$\bm{q}$ corresponds to either $\bm{p}_1$ or $-\bm{p}_2$. This
+means that in this frame the magnitude of $\bm{q}$ is one half the
+magnitude of $\bm{p}_1-\bm{p}_2$.
+
+=== Exercise 2 (10pt) Center of mass and relative coordinates (Taylor chapter 8) ===
+
+Given the center of mass and relative coordinates $\bm{R}$ and $\bm{r}$, respectively, for
+particles of mass $m_1$ and $m_2$, find the coordinates $\bm{r}_1$
+and $\bm{r}_2$ in terms of the masses, $\bm{R}$ and $\bm{r}$.
+
+
+=== Exercise 3 (30pt),  Two-body problems (Taylor chapter 8) ===
+
+Consider a particle of mass $m$ moving in a potential
+!bt
+\[
+V(r)=\alpha\ln(r/\alpha),
+\]
+!et
+where $\alpha$ is a constant.
+
+* 3a (5pt)  If the particle is moving in a circular orbit of radius $R$, find the angular frequency $\dot{\theta}$. Solve this by setting $F=-m\dot{\theta}^2r$ (force and acceleration point inward).
+* 3b (5pt) Express the angular momentum $L$ in terms of the constant $\alpha$, the mass $m$ and the radius $R$. Also express $R$ in terms of $L$, $\alpha$ and $m$.
+* 3c (5pt) Sketch the effective radial potential, $V_{\rm eff}(r)$, for a particle with angular momentum $L$. (No longer necessarily moving in a circular orbit.)
+* 3d (5pt)  Find the position of the minimum of $V_{\rm eff}$ in terms of $L$, $\alpha$ and $m$, then compare to the result of (3b).
+* 3e (5pt)  What is the effective spring constant for a particle at the minimum of $V_{\rm eff}$? Express your answer in terms of $L$, $m$ and $\alpha$. 
+* 3f (5pt)  What is the angular frequency, $\omega$, for small oscillations of $r$ about the $R_{\rm min}$?  Express your answer in terms of $\dot{\theta}$ from part (3a).
+
+
+
+
+=== Exercise 4 (10pt) Non-inertial frames (Taylor chapter 9) ===
+
+A high-speed cannon shoots a projectile with an initial velocity of
+1000 m/s in the east direction. The cannon is situated in
+Minneapolis (latitude of 45 degrees) The projectile velocity is
+nearly horizontal and it hits the ground after a distance $x=3000$
+  m. Find the alteration of the point of impact in the north-south
+  ($y$) direction due to the Coriolis force. Assume the effect is
+  small so that you can approximate the eastward ($x$) component of
+  the velocity as being constant. Be sure to indicate whether the
+  deflection is north or south.
+
+As a hint, if you let $y$ be the north-south direction the equation of motions with the Coriolis force reads
+
+!bt
+\[
+\frac{dv_y}{dt}= -2\Omega_zv_x + 2\Omega_xv_z,
+\]
+!et
+with the angular velocity $\Omega_z=\Omega_{\mathrm{Earth}}/\sqrt{2}$ and $\Omega_x=0$.
+Integrate up and the find the velocity in the $y$-direction and the corresponding displacement. 
+
+
+
+=== Exercise 5 (10pt), Lagrangian formalism (Taylor chapters 6-7)  ===
+
+Consider a mass $m$ connected to a spring with spring constant $k$. Rather than being fixed, the other end of the spring oscillates with frequency $\omega$ and amplitude $A$. For a generalized coordinate, use the displacement of the mass from its relaxed position and call it $y=x-\ell-A\cos\omega t$. In this system the potential energy of the spring is $ky^2/2$.
+
+* 5a (5pt) Write the kinetic energy in terms of the generalized coordinate
+* 5b (5pt) Write down the Lagrangian and find the equations of motion for $y$
+
+
+=== Exercise 6 (30pt), Pendulum and Lagrangians (Taylor chapters 6-7) ===
+
+
+Consider a pendulum of length $\ell$ with all the mass $m$ at its end. The pendulum is allowed to swing freely in both directions. Using $\phi$ to describe the azimuthal angle about the $z$ axis and $\theta$ to measure the angular deviation of the pendulum from the downward direction, address the following questions:
+
+* 6a (5pt) Write the Lagrangian using $\theta$ and $\phi$ as generalized coordinates.
+* 6b (5pt) Write the equations of motion for $\theta$ and $\phi$.
+* 6c (5pt) Rewrite the equations of motion for $\theta$ using angular momentum conservation to eliminate the reference to $\phi$.
+* 6d (5pt) Find the value of $L$ required for the stable orbit to be at $\theta=45^\circ$.
+* 6e (10pt)  For the steady orbit found in (f) consider small perturbations of the orbit. Find the frequency with which the pendulum oscillates around $\theta=45^\circ$.
+
+
