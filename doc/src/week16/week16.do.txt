@@ -1,4 +1,4 @@
-TITLE: PHY321: Variational calculus
+TITLE: PHY321: Variational calculus and Summary of Course
 AUTHOR: "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/" {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and Facility for Rare Ion Beams (FRIB), Michigan State University, USA & Department of Physics, University of Oslo, Norway
 DATE: today
 
@@ -9,636 +9,21 @@ DATE: today
 
 === Monday ===
 
-* Euler-Lagrange equations and the Lagrangian with examples
-* Principle of Least Action, watch "Feynman Lecture":"https://www.feynmanlectures.caltech.edu/II_19.html".
-* Discussions of second midterm, see codes right after this slide.
+* Variational Calculus, Lagrangians and examples
 
-"See video from Monday April 12, with discussions of part 1 of the midterm":"https://mediaspace.msu.edu/media/t/1_glmwe3s1"
+_Additional HW 10 available_ at URL:"https://mhjensen.github.io/Physics321/doc/Homeworks/hw10/html/hw10.html"
 
-_Reading suggestion_: Taylor sections 6.3-6.4
+_Reading suggestion_: Taylor chapter 7
 
 
 === Wednesday ===
 
-* Lagrangian formalism, constrained and unconstrained motion
-* Discussions of second midterm, see codes right after this slide.
+* Variational Calculus, Lagrangians and examples
+* Summary of course
 
-"See video from Wednesday April 14, with discussion of part 2 of the midterm":"https://mediaspace.msu.edu/media/t/1_foeveqvo"
-_Reading suggestion_: Taylor sections 7.1-7.4
+_Reading suggestion_: Taylor chapter 7
 
-===  Friday ===
 
-* Variational Calculus with examples
-* Discussions of second midterm, see codes right after this slide.
-
-_Reading suggestion_: Taylor sections 7.5-7.8
-
-_Additional HW 10 available_ at URL:"https://mhjensen.github.io/Physics321/doc/Homeworks/hw10/html/hw10.html"
-
-!split
-=====   Second midterm, Angular Momentum and Kepler's Laws =====
-
-!bc pycod
-%matplotlib inline
-
-# let's start by importing useful packages we are familiar with
-import numpy as np
-from math import *
-import matplotlib.pyplot as plt
-import seaborn as sns
-import math 
-
-#Velocity-Verlet Method
-newDeltaT = 0.001
-#set up arrays 
-tfinal = 10 # in years
-n = ceil(tfinal/newDeltaT)
-# set up arrays for time t, velocity v, and position r
-t = np.zeros(n)
-v = np.zeros((n,2))
-r = np.zeros((n,2))
-#newa = np.zeros((n,2))
-# Initial conditions as compact 2-dimensional arrays
-r0 = np.array([1.0,0.0])
-v0 = np.array([0.0,2*pi])
-#newa0 = np.array(-Fourpi2*newr0)
-r[0] = r0
-v[0] = v0
-#newa[0] = newa0
-Fourpi2 = 4*pi*pi
-# Start integrating using Euler's method
-for i in range(n-1):
-    # Set up the accelerationn
-    # Here you could have defined your own function for this
-    rabs = sqrt(sum(r[i]*r[i]))
-    a = -Fourpi2*r[i]/(rabs**3)
-    # update velocity, time and position using Euler's forward method
-    r[i+1] = r[i] + newDeltaT*v[i] + ((newDeltaT**2)/2)*(a)
-    rabs = sqrt(sum(r[i+1]*r[i+1]))
-    agh_a = -4*(pi**2)*r[i+1]/(rabs**3)
-    v[i+1] = v[i] + newDeltaT*(0.5)*(a + agh_a)
-    t[i+1] = t[i] + newDeltaT
-sns.set()
-plt.plot(r[:,0], r[:,1])
-
-!ec
-
-!split
-===== The Angular momentum Part =====
-
-!bc pycod
-
-def AreaCalc(rad1,rad2):
-    rad1n = np.linalg.norm(rad1)
-    rad2n = np.linalg.norm(rad2)
-    theta1 = math.atan(abs(rad1[1]/rad1[0]))
-    theta2 = math.atan(abs(rad2[1]/rad2[0]))
-    radn = 0.5*(rad1n+rad2n)
-    delta_theta = np.abs(theta1 - theta2)
-    return 0.5*delta_theta*radn**2
-
-!ec
-
-!bc pycod
-def AngMomentum(rad,vel):
-    radn = np.linalg.norm(rad)
-    veln = np.linalg.norm(vel)
-    rad = rad/radn
-    vel = vel/veln
-    dotprod = rad[0]*vel[0]+rad[1]*vel[1]
-    theta = math.acos(dotprod)
-    return radn*veln*np.sin(theta)
-!ec
-
-!bc pycod
-AreaVal = np.zeros(len(t))
-AreaVal[0] = 0
-AngMo = np.zeros(len(t))  
-AngMo[0] = AngMomentum(r[0,:],v[0,:])
-for i in range(0,len(t)-1):
-    AreaVal[i+1] = AreaVal[i] + AreaCalc(r[i,:],r[i+1,:])
-    AngMo[i+1] = AngMomentum(r[i+1,:],v[i+1,:])
-
-fig, ax = plt.subplots(2,1,figsize=(12,6))
-ax[0].plot(t,AreaVal,label='Area')
-ax[0].set_title('Sweeped Area vs time')
-ax[0].set_xlabel('t [yr]')
-ax[0].set_ylabel('Area Sweeped in AU^2')
-
-ax[1].plot(t,AngMo,label='Angular Momentum')
-ax[1].set_title('Angular Momentum vs time')
-ax[1].set_xlabel('t [yr]')
-plt.tight_layout()
-!ec
-
-
-!split
-===== Building a code for the solar system, gravitational force and constants =====
-
-We start with a simpler case first, the Earth-Sun system  in two dimensions only.  The gravitational force $F_G$ is  
-!bt
-  \[
-      F=\frac{GM_{\odot}M_E}{r^2},
-  \]
-!et
-where $G$ is the gravitational constant, 
-!bt
-\[
-M_E=6\times 10^{24}\mathrm{Kg},
-\]
-!et 
-the mass of Earth, 
-!bt
-\[
-M_{\odot}=2\times 10^{30}\mathrm{Kg}, 
-\]
-!et
-the mass of the Sun and 
-!bt
-\[
-r=1.5\times 10^{11}\mathrm{m}, 
-\]
-!et
-is the distance between Earth and the Sun. The latter defines what we call an astronomical unit _AU_.
-
-From Newton's second law we have then for the $x$ direction
-
-!bt
-  \[
-   \frac{d^2x}{dt^2}=\frac{F_{x}}{M_E},
-  \]
-!et
-
-and
-
-!bt
-  \[
-   \frac{d^2y}{dt^2}=\frac{F_{y}}{M_E},
-  \]
-!et 
-for the $y$ direction.
-
-
-
-!split
-===== Building a code for the solar system, force equations =====
-
-Introducing $x=r\cos{(\theta)}$, $y=r\sin{(\theta)}$ and
-!bt
-\[
-r = \sqrt{x^2+y^2},
-\]
-!et 
-
-we can rewrite 
-
-!bt
-  \[
-   F_{x}=-\frac{GM_{\odot}M_E}{r^2}\cos{(\theta)}=-\frac{GM_{\odot}M_E}{r^3}x,
-  \]
-!et
-
-and
-
-!bt
-  \[
-     F_{y}=-\frac{GM_{\odot}M_E}{r^2}\sin{(\theta)}=-\frac{GM_{\odot}M_E}{r^3}y,
-  \]
-!et 
-
-for the $y$ direction.
-
-
-
-!split
-===== Building a code for the solar system, coupled equations =====
-
-
-We can rewrite these two equations
-!bt
-  \[
-   F_{x}=-\frac{GM_{\odot}M_E}{r^2}\cos{(\theta)}=-\frac{GM_{\odot}M_E}{r^3}x,
-  \]
-!et
-
-and
-
-!bt
-  \[
-     F_{y}=-\frac{GM_{\odot}M_E}{r^2}\sin{(\theta)}=-\frac{GM_{\odot}M_E}{r^3}y,
-  \]
-!et 
-
-as four first-order coupled differential equations
-
-!bt
-\[
-   \frac{dv_x}{dt}=-\frac{GM_{\odot}}{r^3}x,
-\]
-!et
-
-!bt
-\[
-   \frac{dx}{dt}=v_x,
-\]
-!et
-
-!bt
-\[
-   \frac{dv_y}{dt}=-\frac{GM_{\odot}}{r^3}y,
-\]
-!et
-
-!bt
-\[
-   \frac{dy}{dt}=v_y.
-\]
-!et
-
-
-
-
-!split
-===== Building a code for the solar system, final coupled equations =====
-
-
-The four coupled differential equations
-
-!bt
-\[
-   \frac{dv_x}{dt}=-\frac{GM_{\odot}}{r^3}x,
-\]
-!et
-
-!bt
-\[
-   \frac{dx}{dt}=v_x,
-\]
-!et
-
-!bt
-\[
-   \frac{dv_y}{dt}=-\frac{GM_{\odot}}{r^3}y,
-\]
-!et
-
-!bt
-\[
-   \frac{dy}{dt}=v_y,
-\]
-!et
-
-can be turned into dimensionless equations (as we did in project 2) or we can introduce astronomical units with $1$ AU = $1.5\times 10^{11}$. 
-
-Using the equations from circular motion (with $r =1\mathrm{AU}$) 
-
-!bt
-\[
-\frac{M_E v^2}{r} = F = \frac{GM_{\odot}M_E}{r^2},
-\]
-!et 
-
-we have
-
-!bt
-\[
-GM_{\odot}=v^2r,
-\]
-!et  
-
-and using that the velocity of Earth (assuming circular motion) is
-$v = 2\pi r/\mathrm{yr}=2\pi\mathrm{AU}/\mathrm{yr}$, we have
-
-!bt
-\[
-GM_{\odot}= v^2r = 4\pi^2 \frac{(\mathrm{AU})^3}{\mathrm{yr}^2}.
-\]
-!et 
-
-
-
-
-!split
-===== Building a code for the solar system, discretized equations =====
-
-The four coupled differential equations can then be discretized using the Euler-Cromer method as (with step length $h$)
-!bt
-\[
-   v_{x,i+1}=v_{x,i}-h\frac{4\pi^2}{r_i^3}x_i,
-\]
-!et
-
-!bt
-\[
-   x_{i+1}=x_i+hv_{x,i+1},
-\]
-!et
-
-!bt
-\[
-   v_{y,i+1}=v_{y,i}-h\frac{4\pi^2}{r_i^3}y_i,
-\]
-!et
-
-!bt
-\[
-   y_{i+1}=y_i+hv_{y,i+1},
-\]
-!et
-
-
-
-
-!split
-===== Building a code for the solar system, adding Jupiter =====
-
-It is rather straightforward to add a new planet, say Jupiter.
-Jupiter has mass
-!bt
-\[
-M_J=1.9\times 10^{27}\mathrm{kg},
-\]
-!et
-and distance to the Sun of $5.2$ AU. 
-The additional gravitational force the Earth feels from Jupiter in the $x$-direction is
-!bt
-  \[
-   F_{x}^{EJ}=-\frac{GM_JM_E}{r_{EJ}^3}(x_E-x_J),
-  \]
-!et
-where $E$ stands for Earth, $J$ for Jupiter, $r_{EJ}$ is distance between Earth and Jupiter
-!bt
-\[
-r_{EJ} = \sqrt{(x_E-x_J)^2+(y_E-y_J)^2},
-\]
-!et
-and $x_E$ and $y_E$ are the $x$ and $y$ coordinates of Earth, respectively, and 
-$x_J$ and $y_J$ are the $x$ and $y$ coordinates of Jupiter, respectively.
-The $x$-component of the velocity of Earth changes thus to
-!bt
-\[
-   \frac{dv_x^E}{dt}=-\frac{GM_{\odot}}{r^3}x_E-\frac{GM_J}{r_{EJ}^3}(x_E-x_J).
-\]
-!et
-
-
-
-!split
-===== Building a code for the solar system, adding Jupiter =====
-
-We can rewrite 
-!bt
-\[
-   \frac{dv_x^E}{dt}=-\frac{GM_{\odot}}{r^3}x_E-\frac{GM_J}{r_{EJ}^3}(x_E-x_J).
-\]
-!et
-
-to
-
-!bt
-\[
-   \frac{dv_x^E}{dt}=-\frac{4\pi^2}{r^3}x_E-\frac{4\pi^2M_J/M_{\odot}}{r_{EJ}^3}(x_E-x_J),
-\]
-!et
-
-where we used 
-
-!bt
-\[
-GM_J = GM_{\odot}\left(\frac{M_J}{M_{\odot}}\right)=4\pi^2 \frac{M_J}{M_{\odot}}.
-\]
-!et
-
-Similarly, for the velocity in $y$-direction we have 
-
-!bt
-\[
-   \frac{dv_y^E}{dt}=-\frac{4\pi^2}{r^3}y_E-\frac{4\pi^2M_J/M_{\odot}}{r_{EJ}^3}(y_E-y_J).
-\]
-!et
-
-Similar expressions apply for Jupiter. The equations for $x$ and $y$ 
-derivatives are unchanged. This equations are similar for all other planets and as we will see later, it will be convenient to object orient this part when we program the full solar system.
-
-
-
-!split
-===== How can I get the initial velocities and positions of the planets =====
-!bblock
-"NASA":"http://www.nasa.gov/index.html" has an excellent site at URL:"http://ssd.jpl.nasa.gov/horizons.cgi#top".
-From there you can extract initial conditions in order to start your differential equation solver.
-At the above website you need to change from _OBSERVER_ to _VECTOR_ and then write in the planet you are interested in.
-The generated data contain the $x$, $y$ and $z$ values as well as their corresponding velocities. The velocities are in units of AU per day.
-Alternatively they can be obtained in terms of km and km/s. 
-
-For the first simple system involving the Earth and the Sun, you could just initialize the position with say $x=1$ AU
-and $y=0$ AU. 
-!eblock
-
-
-!split
-===== Code Example =====
-
-!bc pycod
-import matplotlib.pyplot as plt
-import numpy as np
-import math
-%matplotlib inline
-
-def solarsystem_j_scaled(f = 1, tf = 100, dt = .01):
-    m_j = 1.9 * 10**27 * f
-    m_e = 6 * 10 ** 24
-    m_s = 2 * 10 ** 30
-
-    def get_accel(m1,m2,r1,r2):
-        '''
-        Given a masses and locations m1, m2, r1, r2
-        Returns the force between the two masses, 
-        f = [fx, fy]
-        '''
-        dist = r1-r2
-        dist_sun = np.sqrt((r1[0])**2 + (r1[1])**2)
-        distance = np.sqrt((r1[0]-r2[0])**2 + (r1[1]-r2[1])**2)
-        a = -4*math.pi**2*r1/dist_sun**3-4*math.pi**2*dist*(m2/m_s)/distance**3
-        return a
-    
-    r_s = np.array([0,0])
-    n = math.ceil(tf/dt)
-    print('Integration points: ', n)
-    
-    # set up arrays for time t, velocity v, and position r
-    t = np.zeros(n)
-    v_j = np.zeros((n,2))
-    r_j = np.zeros((n,2))
-    r_j[0] = np.array([0, 5.2])
-    v_j[0] = np.array([-2.76, 0])
-    
-    v_e = np.zeros((n,2))
-    r_e = np.zeros((n,2))
-    r_e[0] = np.array([1, 0])
-    v_e[0] = np.array([0, 6.28])
-    
-    for i in range(n-1):
-        accel_earth = get_accel(m_e, m_j, r_e[i], r_j[i])
-        accel_jupyter = get_accel(m_j, m_e, r_j[i], r_e[i])
-        
-        r_e[i+1] = r_e[i] + dt*v_e[i]+.5*dt**2*accel_earth
-        r_j[i+1] = r_j[i] + dt*v_j[i]+.5*dt**2*accel_jupyter
-        
-        # Update forces, accel
-        accel_earth_2 = get_accel(m_e, m_j, r_e[i+1], r_j[i+1])
-        accel_jupyter_2 = get_accel(m_j, m_e, r_j[i+1], r_e[i+1])
-        
-        v_e[i+1] = v_e[i] + 1/2*dt*(accel_earth + accel_earth_2)
-        v_j[i+1] = v_j[i] + 1/2*dt*(accel_jupyter + accel_jupyter_2)
-        
-        t[i+1] = t[i] + dt
-    
-    plt.plot(r_e[:, 0], r_e[:, 1], color = 'green')
-    plt.plot(r_j[:, 0], r_j[:, 1], color = 'blue')
-    plt.scatter(0,0,color = 'red')
-
-!ec
-
-!split
-===== Running the Code  =====
-
-!bc pycod
-solarsystem_j_scaled(f = 1, tf = 20, dt = 1)
-!ec
-
-
-!bc pycod
-solarsystem_j_scaled(f = 1, tf = 300, dt = .1)
-!ec
-
-!bc pycod
-solarsystem_j_scaled(f = 1, tf = 300, dt = .001)
-!ec
-
-Changing the mass factor
-!bc pycod
-solarsystem_j_scaled(f = 1000, tf = 3, dt = .001)
-!ec
-
-
-!split
-===== A summary of Part I =====
-
-!bc pycod
-# let's start by importing useful packages we are familiar with
-import numpy as np
-from math import *
-import matplotlib.pyplot as plt
-import seaborn as sns
-import math 
-
-#Velocity-Verlet Method
-DeltaT = 0.001
-#set up arrays 
-tfinal = 100 # in years
-n = ceil(tfinal/DeltaT)
-# set up arrays for time t, velocity v, and position r
-t = np.zeros(n)
-v = np.zeros((n,2))
-r = np.zeros((n,2))
-# Initial conditions as compact 2-dimensional arrays. Here: circular orbit conditions.
-r0 = np.array([1.0,0.0])
-v0 = np.array([0.0,2*pi])
-r[0] = r0
-v[0] = v0
-Fourpi2 = 4*pi*pi
-# Start integrating using the Velocity-Verlet method
-for i in range(n-1):
-    # Set up the accelerationn
-    rabs = sqrt(sum(r[i]*r[i]))
-    a = -Fourpi2*r[i]/(rabs**3)
-    # update velocity, time and position using the Velocity-Verlet  method
-    r[i+1] = r[i] + DeltaT*v[i] + ((DeltaT**2)/2)*(a)
-    rabs = sqrt(sum(r[i+1]*r[i+1]))
-    anew = -4*(pi**2)*r[i+1]/(rabs**3)
-    v[i+1] = v[i] + DeltaT*(0.5)*(a + anew)
-    t[i+1] = t[i] + DeltaT
-sns.set()
-plt.plot(r[:,0], r[:,1])
-
-
-# We check that the total energy is conserved. For a circular orbit, potential and kinetic energy do not change since the radius is a constant. 
-
-# Note that we have set the mass of the Earth = 1
-def kinetic_energy(v):
-    KE = []
-    step = len(t)
-    for i in range(step):
-        KE.append(0)
-        KE[i] += 0.5 *np.sum(v[i]*v[i])
-    return np.array(KE)
-
-
-# Note that G x Mass_sun = 4*pi*pi and the mass of the Earth = 1
-# Note also that if you change the exponent in the force you need also to change the potential energy!
-def pot():
-    Pot = []
-    step = len(t)
-    for i in range(step):
-        Pot.append(0)
-        Pot[i] +=  - 4*pi*pi/ sqrt(np.sum(r[i]*r[i]))
-    return np.array(Pot)
-
-fig, ax = plt.subplots(1,1,figsize=(12,6))
-ax.plot(t,kinetic_energy(v)+pot(),label='Total')
-ax.plot(t,kinetic_energy(v),label='Kinetic')
-ax.plot(t,pot(),label='Potential')
-ax.set_title('Energy vs time')
-ax.set_xlabel('t [yr]')
-ax.legend()
-ax.set_ylabel(r'E')
-
-
-# With the same initial conditions we use Kepler's second law (see Taylor section 3.4) to show that angular momentum is conserved. 
-
-
-def AreaCalc(rad1,rad2):
-    rad1n = np.linalg.norm(rad1)
-    rad2n = np.linalg.norm(rad2)
-    theta1 = math.atan(abs(rad1[1]/rad1[0]))
-    theta2 = math.atan(abs(rad2[1]/rad2[0]))
-    radn = 0.5*(rad1n+rad2n)
-    delta_theta = np.abs(theta1 - theta2)
-    return 0.5*delta_theta*radn**2
-
-def AngMomentum(rad,vel):
-    radn = np.linalg.norm(rad)
-    veln = np.linalg.norm(vel)
-    rad = rad/radn
-    vel = vel/veln
-    dotprod = rad[0]*vel[0]+rad[1]*vel[1]
-    theta = math.acos(dotprod)
-    return radn*veln*np.sin(theta)
-
-
-AreaVal = np.zeros(len(t))
-AreaVal[0] = 0
-AngMo = np.zeros(len(t))  
-AngMo[0] = AngMomentum(r[0,:],v[0,:])
-
-for i in range(0,len(t)-1):
-    AreaVal[i+1] = AreaVal[i] + AreaCalc(r[i,:],r[i+1,:])
-    AngMo[i+1] = AngMomentum(r[i+1,:],v[i+1,:])
-
-fig, ax = plt.subplots(2,1,figsize=(12,6))
-ax[0].plot(t,AreaVal,label='Area')
-ax[0].set_title('Sweeped Area vs time')
-ax[0].set_xlabel('t [yr]')
-ax[0].set_ylabel('Area Sweeped in AU^2')
-
-ax[1].plot(t,AngMo,label='Angular Momentum')
-ax[1].set_title('Angular Momentum vs time')
-ax[1].set_xlabel('t [yr]')
-plt.tight_layout()
-
-
-!ec
 
 
 !split
@@ -2242,3 +1627,74 @@ instance, you may need to write the Lagrangian in terms of angles.
 
 
 
+
+!split
+===== What? Me worry? No final traditional exam in this course! =====
+FIGURE: [figures/exam1.jpeg, width=500 frac=0.6]
+
+
+!split
+===== What did I learn in school this year? =====
+
+
+Does this figure that match the experiences you have made this semester?
+FIGURE: [figures/exam2.jpg, width=500 frac=0.7]
+
+!split
+===== Topics we have covered this year =====
+
+* How to derive equations of motion based on forces
+* Forces, work, energy, angular momentum, linear momentum and conservation laws
+* Various types of motions, falling objects, objects moving in various fields
+* Analysing energy diagrams and defining effective potential
+* Small oscillations, Harmonic oscillator potential and equations of motion
+* Transformation of variables that allow for analytical solutions, example two-body problems
+* Central forces and two-body problems, center-of-mass and relative coordinates as reference frame
+* Two-body scattering problems, classical scattering cross section
+* Variational calculus and Lagrangian formalism
+* Deriving equations of motion from Lagrangian formalism only
+* Lagrangian formalism with constraints
+
+!split
+===== And how to solve these problems =====
+
+We have studied many systems numerically, from falling objects with and without friction/air resistance, small oscillations (harmonic oscillator), gravitational problems and other central force problems, rotations and the classical pendulum.
+* Euler-Cromer and Velocity-Verlet as energy conserving algorithms (time-independent forces)
+* Runge-Kutta family of algorithms for time-dependent forces
+* Numerical integration using the Trapezoidal, midpoint and Simpson's rule.
+
+!split
+===== One program to rule them all? =====
+
+!bc pycod 
+DeltaT = 0.001
+#set up arrays 
+tfinal = 10 # in years
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, a, v, and x
+t = np.zeros(n)
+v = np.zeros((n,3))
+r = np.zeros((n,3))
+# Initial conditions as compact 3-dimensional arrays
+r0 = np.array([1.0,0.0,0.0])
+v0 = np.array([0.0,2*pi,0.0])
+r[0] = r0
+v[0] = v0
+# Start integrating using Euler's method
+for i in range(n-1):
+    # Set up the acceleration for force that depends only on position
+    a =  Force(r)/mass
+    # update velocity, time and position using the Euler-Cromer forward
+    v[i+1] = v[i] + DeltaT*a
+    r[i+1] = r[i] + DeltaT*v[i]
+    t[i+1] = t[i] + DeltaT
+!ec
+
+
+The overarching idea is that as soon as we have analyzed the forces at play, we can reuse our programs (algorithms) with new forces, without having to recur to the few analytical cases we can solve.
+
+
+!split
+=====  Best wishes to you all and thanks so much for your heroic efforts this semester =====
+
+FIGURE: [figures/Nebbdyr2.png, width=500 frac=0.6]
