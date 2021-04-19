@@ -1664,6 +1664,7 @@ FIGURE: [figures/exam2.jpg, width=500 frac=0.7]
 * Deriving equations of motion from Lagrangian formalism only
 * Lagrangian formalism with constraints
 
+
 !split
 ===== And how to solve these problems =====
 
@@ -1701,6 +1702,50 @@ for i in range(n-1):
 
 
 The overarching idea is that as soon as we have analyzed the forces at play, we can reuse our programs (algorithms) with new forces, without having to recur to the few analytical cases we can solve.
+
+
+
+!split
+===== Learning outcomes =====
+
+After the course you should:
+
+o be able to analyze forces that act on objects, apply Newton’s laws to determine the equations of motion, and solve these analytically and numerically,
+o Know about  inertial frames and their relation to accelerating and rotating frames (non-inertial frames)
+o Know about forces, work, energy, angular momentum, linear momentum and conservation laws
+o Know about  various types of motions, falling objects, objects moving in various fields
+o Know how to analyze energy diagrams and defining effective potential
+o Have knowledge about small oscillations, Harmonic oscillator potential and equations of motion
+o Have knowledge about transformation of variables that allow for analytical solutions, example two-body problems
+o Have knowledge about central forces and two-body problems, center-of-mass and relative coordinates as reference frame
+o Have knowledge about two-body scattering problems, classical scattering cross section
+o Have knowledge about Variational calculus and Lagrangian formalism
+o Know how to derive the equations of motion from the Lagrangian formalism with and without constraints (Lagrangian multipliers)
+
+!split
+=====  Competences and Skills =====
+
+To solve many of these problems, we have through different midterms and weekly exercises studied many systems numerically, from falling objects with and without friction/air resistance, small oscillations (harmonic oscillator), gravitational problems and other central force problems, rotations and the classical pendulum. To solve these systems, we have applied different algorithms for solving differential equations. These are
+o Euler-Cromer and Velocity-Verlet as energy conserving algorithms (time-independent forces)
+o Runge-Kutta family of algorithms for time-dependent forces
+We have also, in connection with for example the work-energy theorem studied methods for evaluating integrals. These are (although we never wrote codes in exercises/midterms)
+o Numerical integration using the Trapezoidal, midpoint and Simpson's rule.
+
+
+!split
+=====  Computations? Why? =====
+
+You should also have acquired skills in structuring a numerical project, as well as having developed a critical understanding of the pros and cons of the methods and an understanding of their limits and what can go wrong.  Computing means solving scientific problems using computers. It covers numerical as well as symbolic computing. Computing is also about developing an understanding of the scientific process by enhancing algorithmic thinking when solving problems.  Computing competence has
+always been a central part of the science and engineering education.
+In particular, some of the competences that are important in the development of your own understanding of
+computations, we would like to emphasize
+o derivation, verification, and implementation of algorithms
+o understanding what can go wrong with algorithms
+o overview of important, known algorithms for solving mechanics problems (To a extent large differential equations and integration)
+o understanding how algorithms are used to solve mathematical problems
+o Making science (your results) reproducible
+o algorithmic thinking for gaining deeper insights about scientific problems
+
 
 
 !split
