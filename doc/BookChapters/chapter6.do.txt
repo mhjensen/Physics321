@@ -3521,9 +3521,9 @@ A = - \frac{\mu\alpha}{L^2} - \frac{2E}{\alpha + \sqrt{\alpha^2 + 2\frac{L^2E}{\
 \]
 !et
 
-=== Exercise 2 (20pt) Inverse-square force ===
+=== Exercise: Inverse-square force ===
 
-Consider again the same effective potential as in exercise 1. This leads to an attractive inverse-square-law force, $F=-\alpha/r^2$. Consider a particle of mass $m$ with angular momentum $L$. Taylor sections 8.4-8.7 are relevant background material.  See also the harmonic oscillator potential from hw8. The equation of motion for the radial degrees of freedom is (see also hw8) in the center-of-mass frame in two dimensions with $x=r\cos{(\phi)}$ and $y=r\sin{(\phi)}$ and
+Consider again the same effective potential as in the previous exercise. This leads to an attractive inverse-square-law force, $F=-\alpha/r^2$. Consider a particle of mass $m$ with angular momentum $L$. Taylor sections 8.4-8.7 are relevant background material.  See also the harmonic oscillator potential from hw8. The equation of motion for the radial degrees of freedom is (see also hw8) in the center-of-mass frame in two dimensions with $x=r\cos{(\phi)}$ and $y=r\sin{(\phi)}$ and
 $r\in [0,\infty)$, $\phi\in [0,2\pi]$ and $r=\sqrt{x^2+y^2}$ are given by
 !bt
 \[
@@ -3539,7 +3539,7 @@ and
 Here $V(r)$ is any central force which depends only on the relative coordinate.
 
 
-* 2a (5pt)  Find the radius of a circular orbit by solving for the position of the minimum of the effective potential. 
+Find the radius of a circular orbit by solving for the position of the minimum of the effective potential. 
 
 !bt
 \begin{align}
@@ -3550,7 +3550,7 @@ Here $V(r)$ is any central force which depends only on the relative coordinate.
 \end{align}
 !et
 
-* 2b (5pt) At the minimum, the radial velocity is zero and it is only the "centripetal velocity":"https://en.wikipedia.org/wiki/Centripetal_force" which is nonzero. This implies that $\ddot{r}=0$.  What is the angular frequency, $\dot{\theta}$, of the orbit? Solve this by setting $\ddot{r}=0=F/m+\dot{\theta}^2r$.
+At the minimum, the radial velocity is zero and it is only the "centripetal velocity":"https://en.wikipedia.org/wiki/Centripetal_force" which is nonzero. This implies that $\ddot{r}=0$.  What is the angular frequency, $\dot{\theta}$, of the orbit? Solve this by setting $\ddot{r}=0=F/m+\dot{\theta}^2r$.
 
 !bt
 \begin{align}
@@ -3564,7 +3564,7 @@ Here $V(r)$ is any central force which depends only on the relative coordinate.
 \end{align}
 !et
 
-* 2c (5pt) Find the effective spring constant for the particle at the minimum.
+Find the effective spring constant for the particle at the minimum.
 
 We have shown in class that from the taylor expansion, we have
 
@@ -3585,7 +3585,7 @@ k & = \frac{d^2V_{\text{eff}}}{dr^2}
 \end{align}
 !et
 
-* 2d (5pt) What is the angular frequency for small vibrations about the minimum? How does this compare with the answer to (3b)?
+What is the angular frequency for small vibrations about the minimum? How does this compare with the answer to (3b)?
 
 For small deviations $\delta r$ of $r$,
 
@@ -3612,7 +3612,7 @@ where
 This is in fact equal to the expression for $\dot{\theta}$. This means that small perturbations oscillate in sync with the orbit and this traces out an ellipse with a very small eccentricity, a very nice physical result.
 
 
-=== Exercise 3, Inverse-square force again (10pt) ===
+=== Exercise: Inverse-square force again ===
 Consider again a  particle of mass $m$ in the same attractive potential, $U(r)=-\alpha/r$, with angular momentum $L$ with just the right energy so that
 
 !bt
@@ -3634,7 +3634,7 @@ r=\frac{2r_0}{1+\cos\theta},~~~r_0=\frac{L^2}{2m\alpha}.
 !et
 
 
-* 3a (5pt) Show that for this case the total energy $E$ approaches zero.
+Show that for this case the total energy $E$ approaches zero.
 
 !bt
 \begin{align}
@@ -3659,7 +3659,7 @@ E & = - \frac{\alpha}{r} + \frac{1}{2} m \left(  (\dot{\theta}r)^2+\dot{r}^2\rig
 \end{align}
 !et
 
-* 3b (5pt) With zero energy $E=0$, write this trajectory in a more recognizable parabolic form, that is express $x_0$ and $R$ in terms of $r_0$ using 
+With zero energy $E=0$, write this trajectory in a more recognizable parabolic form, that is express $x_0$ and $R$ in terms of $r_0$ using 
 
 !bt
 \[
@@ -3718,7 +3718,7 @@ x = r_0 - \frac{y^2}{4r_0}
 !et
 
 
-=== Exercise 4, parabolic and hyperbolic orbits (10pt) ===
+=== Exercise: Parabolic and hyperbolic orbits ===
 
 The solution to the radial function for an inverse-square-law force, see for example Taylor equation (8.59) or the equation above, is
 !bt
@@ -3814,9 +3814,9 @@ we can rewrite the above equation as
 which is nothing but the equation for a hyperbola.
 
 
-===  Exercise 5, Testing orbit types (50 pt) ===
+===  Exercise: Testing orbit types ===
 
-In this exercise we can use the program for $r(\phi)$ we developed in hw8. We will use an inverse-square-law force as in exercises 1, 2, 3 and 4. The aim is to see that the orbits we get for $E<0$ become ellipses (or circles), parabola for $E=0$ and hyperbola for $E>0$.  An example code is shown here.
+In this exercise we can use the program for $r(\phi)$ we developed in hw8. We will use an inverse-square-law force as in the previous four exercises. The aim is to see that the orbits we get for $E<0$ become ellipses (or circles), parabola for $E=0$ and hyperbola for $E>0$.  An example code is shown here.
 
 Here we have defined the constants $L=m=\alpha=1$. Feel free to set new values. _You need also to set the initial conditions_ in order to study the different types of orbits. It may be useful to plot the potential here and find the values for the initial conditions that fit $E<0$, $E=0$ and $E>0$. 
 
@@ -3873,7 +3873,7 @@ plt.show()
 
 Run your code and study and discuss the situations where you have
 elliptical, parabolic and hyperbolic orbits. Discuss the physics of
-these cases. The results from exercises 1, 2, 3 and 4 may be useful
+these cases. The results from the four previous exercises 4 may be useful
 here.  In the code here we have chosen initial conditions which correspond to circular motion.
 This corresponds to
 !bt
@@ -3882,113 +3882,52 @@ r_{\mathrm{min}} = \frac{L^2}{m\alpha}.
 \]
 !et
 
-Note well that the velocity is now the radial velocity. If we want to study the angular velocity we would need to add the equations for this quantity. The solution to exercises 1-4 give you the minimum $r$ values needed to find the elliptical, parabolic and hyperbolic orbits. For elliptical orbits you should have  $\frac{L^2}{2m\alpha} < r_{\mathrm{min}} <\frac{L^2}{m\alpha}$. For parabolic orbits $r_{\mathrm{min}} =\frac{L^2}{m\alpha}$ and for hyperbolic orbits we have $0<r_{\mathrm{min}} <\frac{L^2}{m\alpha}$. Try out these different initial conditions in order to test these different types of motion.
-
-
-===  Additional Bonus Exercise (10pt) ===
-
-You don't need to do this exercise, but it gives you a bonus score of 10 points.
-
-This time the additional bonus exercise is a simple survey. We are now moving
-into our last month  and we would very much have your feedback on how
-things are functioning so that we can improve and correct. 
-
-* Is the weekly load with paper and pencil exercises and the numerical exercises reasonable?
-* Is there enough material (lectures and lecture material) to get you started with the exercises?  We are thinking of both the paper and pencil and the numerical exercises?
-* Is the pace during the lectures reasonable? And do the lectures link well with the exercises?
-* In the beginning there will always be some elements of repetition of material many of you have seen before. Do you find the choice of material the first 4 weeks adequate? Too easy? Too difficult?
-* For those of you who have taken CMSE 201 Introduction to Computational Modeling, do you feel the material taught there links well with the exercises you have done in this course? Is there is something we are missing?
-* Any other topic you would like to comment on?
+Note well that the velocity is now the radial velocity. If we want to
+study the angular velocity we would need to add the equations for this
+quantity. The solution to exercises 1-4 give you the minimum $r$
+values needed to find the elliptical, parabolic and hyperbolic
+orbits. For elliptical orbits you should have $\frac{L^2}{2m\alpha} <
+r_{\mathrm{min}} <\frac{L^2}{m\alpha}$. For parabolic orbits
+$r_{\mathrm{min}} =\frac{L^2}{m\alpha}$ and for hyperbolic orbits we
+have $0<r_{\mathrm{min}} <\frac{L^2}{m\alpha}$. Try out these
+different initial conditions in order to test these different types of
+motion.
 
 
 
 
+===  Exercise: New reference frame ===
 
 
+Show that if one transforms to a reference frame where the total
+momentum is zero, $\bm{p}_1=-\bm{p}_2$, that the relative momentum
+$\bm{q}$ corresponds to either $\bm{p}_1$ or $-\bm{p}_2$. This
+means that in this frame the magnitude of $\bm{q}$ is one half the
+magnitude of $\bm{p}_1-\bm{p}_2$.
+
+=== Exercise: Center of mass and relative coordinates  ===
+
+Given the center of mass and relative coordinates $\bm{R}$ and $\bm{r}$, respectively, for
+particles of mass $m_1$ and $m_2$, find the coordinates $\bm{r}_1$
+and $\bm{r}_2$ in terms of the masses, $\bm{R}$ and $\bm{r}$.
 
 
-=== Classical Mechanics Extra Credit Assignment: Scientific Writing and attending Talks ===
+=== Exercise: Two-body problems  ===
 
-The following gives you an opportunity to earn _five extra credit
-points_ on each of the remaining homeworks and _ten extra credit points_
-on the midterms and finals.  This assignment also covers an aspect of
-the scientific process that is not taught in most undergraduate
-programs: scientific writing.  Writing scientific reports is how
-scientist communicate their results to the rest of the field.  Knowing
-how to assemble a well written scientific report will greatly benefit
-you in you upper level classes, in graduate school, and in the work
-place.
+Consider a particle of mass $m$ moving in a potential
+!bt
+\[
+V(r)=\alpha\ln(r/\alpha),
+\]
+!et
+where $\alpha$ is a constant.
 
-The full information on extra credits is found at URL:"https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/". There you will also find examples on how to write a scientific article. 
-Below you can also find a description on how to gain extra credits by attending scientific talks.
-
-
-This assignment allows you to gain extra credit points by practicing
-your scientific writing.  For each of the remaining homeworks you can
-submit the specified section of a scientific report (written about the
-numerical aspect of the homework) for five extra credit points on the
-assignment.  For the two midterms and the final, submitting a full
-scientific report covering the numerical analysis problem will be
-worth ten extra points.  For credit the grader must be able to tell
-that you put effort into the assignment (i.e. well written, well
-formatted, etc.).  If you are unfamiliar with writing scientific
-reports, "see the information here":"https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/IntroductionScientificWriting.md"
-
-The following table explains what aspect of a scientific report is due
-with which homework.  You can submit the assignment in any format you
-like, in the same document as your homework, or in a different one.
-Remember to cite any external references you use and include a
-reference list.  There are no length requirements, but make sure what
-you turn in is complete and through.  If you have any questions,
-please contact Julie Butler at butler@frib.msu.edu.
-
-|-------------------------------------------------|
-| HW/Project | Due Date | Extra Credit Assignment |
-|-----------------------------------------------|
-| HW 3       | 2-8      | Abstract                |
-| HW 4       | 2-15     | Introduction            |
-| HW 5       | 2-22     | Methods                 |
-| HW 6       | 3-1      | Results and Discussion  |
-| _Midterm 1_ |  _3-12_    | *Full Written Report*     |
-| HW 7       | 3-22     | Abstract                |
-| HW 8       | 3-29     | Introduction            |
-| HW 9       | 4-5      | Results and Discussion  |
-| _Midterm 2_ | _4-16_    | *Full Written Report*     |
-|HW 10       | 4-26     | Abstract                |
-| _Final_   | _4-30_     | *Full Written Report*     |
-|--------------------------------------------------|
-
-
-You can also gain extra credits if you attend scientific talks.
-This is described here.
-
-
-=== Integrating Classwork With Research ===
-
-This opportunity will allow you to earn up to 5 extra credit points on a Homework per week. These points can push you above 100% or help make up for missed exercises.
-In order to earn all points you must:
-
-o Attend an MSU research talk (recommended research oriented Clubs is  provided below)
-o Summarize the talk using at least 150 words
-o Turn in the summary along with your Homework.
-
-Approved talks:
-Talks given by researchers through the following clubs:
-* Research and Idea Sharing Enterprise (RAISE)​: Meets Wednesday Nights Society for Physics Students (SPS)​: Meets Monday Nights
-* Astronomy Club​: Meets Monday Nights
-* Facility For Rare Isotope Beam (FRIB) Seminars: ​Occur multiple times a week
-
-
-If you have any questions please consult Jeremy Rebenstock, rebensto@msu.edu.
-
-All the material on extra credits is at URL:"https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/". 
-
-
-
-
-
-
-
+* (a) If the particle is moving in a circular orbit of radius $R$, find the angular frequency $\dot{\theta}$. Solve this by setting $F=-m\dot{\theta}^2r$ (force and acceleration point inward).
+* (b) Express the angular momentum $L$ in terms of the constant $\alpha$, the mass $m$ and the radius $R$. Also express $R$ in terms of $L$, $\alpha$ and $m$.
+* (c) Sketch the effective radial potential, $V_{\rm eff}(r)$, for a particle with angular momentum $L$. (No longer necessarily moving in a circular orbit.)
+* (d) Find the position of the minimum of $V_{\rm eff}$ in terms of $L$, $\alpha$ and $m$, then compare to the result of (b).
+* (e)  What is the effective spring constant for a particle at the minimum of $V_{\rm eff}$? Express your answer in terms of $L$, $m$ and $\alpha$. 
+* (f)   What is the angular frequency, $\omega$, for small oscillations of $r$ about the $R_{\rm min}$?  Express your answer in terms of $\dot{\theta}$ from part (3a).
 
 
 

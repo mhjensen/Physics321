@@ -1828,14 +1828,1307 @@ The Moon more strongly affects tides than the Sun.
 
 
 
+## Exercises
+
+
+### The Earth-Sun System
+
+We start with a simpler case first, the Earth-Sun system  in two dimensions only.  The gravitational force $F_G$ on the earth from the sun is
+
+$$
+\boldsymbol{F}_G=-\frac{GM_{\odot}M_E}{r^3}\boldsymbol{r},
+$$
+
+where $G$ is the gravitational constant,
+
+$$
+M_E=6\times 10^{24}\mathrm{Kg},
+$$
+
+the mass of Earth,
+
+$$
+M_{\odot}=2\times 10^{30}\mathrm{Kg},
+$$
+
+the mass of the Sun and
+
+$$
+r=1.5\times 10^{11}\mathrm{m},
+$$
+
+is the distance between Earth and the Sun. The latter defines what we call an astronomical unit **AU**.
+From Newton's second law we have then for the $x$ direction
+
+$$
+\frac{d^2x}{dt^2}=-\frac{F_{x}}{M_E},
+$$
+
+and
+
+$$
+\frac{d^2y}{dt^2}=-\frac{F_{y}}{M_E},
+$$
+
+for the $y$ direction.
+
+Here we will use  that  $x=r\cos{(\theta)}$, $y=r\sin{(\theta)}$ and
+
+$$
+r = \sqrt{x^2+y^2}.
+$$
+
+We can rewrite these equations
+
+$$
+F_{x}=-\frac{GM_{\odot}M_E}{r^2}\cos{(\theta)}=-\frac{GM_{\odot}M_E}{r^3}x,
+$$
+
+and
+
+$$
+F_{y}=-\frac{GM_{\odot}M_E}{r^2}\sin{(\theta)}=-\frac{GM_{\odot}M_E}{r^3}y,
+$$
+
+as four first-order coupled differential equations
+
+$$
+\frac{dv_x}{dt}=-\frac{GM_{\odot}}{r^3}x,
+$$
+
+and
+
+$$
+\frac{dx}{dt}=v_x,
+$$
+
+and
+
+$$
+\frac{dv_y}{dt}=-\frac{GM_{\odot}}{r^3}y,
+$$
+
+and
+
+$$
+\frac{dy}{dt}=v_y.
+$$
+
+The four coupled differential equations
+
+$$
+\frac{dv_x}{dt}=-\frac{GM_{\odot}}{r^3}x,
+$$
+
+and
+
+$$
+\frac{dx}{dt}=v_x,
+$$
+
+and
+
+$$
+\frac{dv_y}{dt}=-\frac{GM_{\odot}}{r^3}y,
+$$
+
+and
+
+$$
+\frac{dy}{dt}=v_y,
+$$
+
+can be turned into dimensionless equations or we can introduce astronomical units with $1$ AU = $1.5\times 10^{11}$. 
+
+Using the equations from circular motion (with $r =1\mathrm{AU}$)
+
+$$
+\frac{M_E v^2}{r} = F = \frac{GM_{\odot}M_E}{r^2},
+$$
+
+we have
+
+$$
+GM_{\odot}=v^2r,
+$$
+
+and using that the velocity of Earth (assuming circular motion) is
+$v = 2\pi r/\mathrm{yr}=2\pi\mathrm{AU}/\mathrm{yr}$, we have
+
+$$
+GM_{\odot}= v^2r = 4\pi^2 \frac{(\mathrm{AU})^3}{\mathrm{yr}^2}.
+$$
+
+The four coupled differential equations can then be discretized using Euler's method as (with step length $h$)
+
+$$
+v_{x,i+1}=v_{x,i}-h\frac{4\pi^2}{r_i^3}x_i,
+$$
+
+and
+
+$$
+x_{i+1}=x_i+hv_{x,i},
+$$
+
+and
+
+$$
+v_{y,i+1}=v_{y,i}-h\frac{4\pi^2}{r_i^3}y_i,
+$$
+
+and
+
+$$
+y_{i+1}=y_i+hv_{y,i},
+$$
+
+The code here implements Euler's method for the Earth-Sun system using a more compact way of representing the vectors. Alternatively, you could have spelled out all the variables $v_x$, $v_y$, $x$ and $y$ as one-dimensional arrays.
+
+# Common imports
+import numpy as np
+import pandas as pd
+from math import *
+import matplotlib.pyplot as plt
+import os
+
+# Where to save the figures and data files
+PROJECT_ROOT_DIR = "Results"
+FIGURE_ID = "Results/FigureFiles"
+DATA_ID = "DataFiles/"
+
+if not os.path.exists(PROJECT_ROOT_DIR):
+    os.mkdir(PROJECT_ROOT_DIR)
+
+if not os.path.exists(FIGURE_ID):
+    os.makedirs(FIGURE_ID)
+
+if not os.path.exists(DATA_ID):
+    os.makedirs(DATA_ID)
+
+def image_path(fig_id):
+    return os.path.join(FIGURE_ID, fig_id)
+
+def data_path(dat_id):
+    return os.path.join(DATA_ID, dat_id)
+
+def save_fig(fig_id):
+    plt.savefig(image_path(fig_id) + ".png", format='png')
+
+
+DeltaT = 0.01
+#set up arrays 
+tfinal = 10 # in years
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, a, v, and x
+t = np.zeros(n)
+v = np.zeros((n,2))
+r = np.zeros((n,2))
+# Initial conditions as compact 2-dimensional arrays
+r0 = np.array([1.0,0.0])
+v0 = np.array([0.0,2*pi])
+r[0] = r0
+v[0] = v0
+Fourpi2 = 4*pi*pi
+# Start integrating using Euler's method
+for i in range(n-1):
+    # Set up the acceleration
+    # Here you could have defined your own function for this
+    rabs = sqrt(sum(r[i]*r[i]))
+    a =  -Fourpi2*r[i]/(rabs**3)
+    # update velocity, time and position using Euler's forward method
+    v[i+1] = v[i] + DeltaT*a
+    r[i+1] = r[i] + DeltaT*v[i]
+    t[i+1] = t[i] + DeltaT
+# Plot position as function of time    
+fig, ax = plt.subplots()
+#ax.set_xlim(0, tfinal)
+ax.set_xlabel('x[AU]')
+ax.set_ylabel('y[AU]')
+ax.plot(r[:,0], r[:,1])
+fig.tight_layout()
+save_fig("EarthSunEuler")
+plt.show()
+
+We notice here that Euler's method doesn't give a stable orbit with for example $\Delta t =0.01$. It
+means that we cannot trust Euler's method. Euler's method does not conserve energy. It is an
+example of an integrator which is not
+[symplectic](https://en.wikipedia.org/wiki/Symplectic_integrator).
+
+Here we present thus two methods, which with simple changes allow us
+to avoid these pitfalls. The simplest possible extension is the
+so-called Euler-Cromer method.  The changes we need to make to our
+code are indeed marginal here.  We need simply to replace
+
+    r[i+1] = r[i] + DeltaT*v[i]
+
+in the above code with the velocity at the new time $t_{i+1}$
+
+    r[i+1] = r[i] + DeltaT*v[i+1]
+
+By this simple caveat we get stable orbits.  Below we derive the
+Euler-Cromer method as well as one of the most utlized algorithms for
+solving the above type of problems, the so-called Velocity-Verlet
+method.
+
+
+Let us repeat Euler's method.
+We have a differential equation
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto19"></div>
+
+$$
+\begin{equation}
+  y'(t_i)=f(t_i,y_i)   
+\label{_auto19} \tag{31}
+\end{equation}
+$$
+
+and if we truncate at the first derivative, we have from the Taylor expansion
+
+<!-- Equation labels as ordinary links -->
+<div id="eq:euler"></div>
+
+$$
+\begin{equation}
+   y_{i+1}=y(t_i) + (\Delta t) f(t_i,y_i) + O(\Delta t^2), \label{eq:euler} \tag{32}
+\end{equation}
+$$
+
+which when complemented with $t_{i+1}=t_i+\Delta t$ forms
+the algorithm for the well-known Euler method. 
+Note that at every step we make an approximation error
+of the order of $O(\Delta t^2)$, however the total error is the sum over all
+steps $N=(b-a)/(\Delta t)$ for $t\in [a,b]$, yielding thus a global error which goes like
+$NO(\Delta t^2)\approx O(\Delta t)$. 
+
+To make Euler's method more precise we can obviously
+decrease $\Delta t$ (increase $N$), but this can lead to loss of numerical precision.
+Euler's method is not recommended for precision calculation,
+although it is handy to use in order to get a first
+view on how a solution may look like.
+
+Euler's method is asymmetric in time, since it uses information about the derivative at the beginning
+of the time interval. This means that we evaluate the position at $y_1$ using the velocity
+at $v_0$. A simple variation is to determine $x_{n+1}$ using the velocity at
+$v_{n+1}$, that is (in a slightly more generalized form)
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto20"></div>
+
+$$
+\begin{equation} 
+   y_{n+1}=y_{n}+ v_{n+1}+O(\Delta t^2)
+\label{_auto20} \tag{33}
+\end{equation}
+$$
+
+and
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto21"></div>
+
+$$
+\begin{equation}
+   v_{n+1}=v_{n}+(\Delta t) a_{n}+O(\Delta t^2).
+\label{_auto21} \tag{34}
+\end{equation}
+$$
+
+The acceleration $a_n$ is a function of $a_n(y_n, v_n, t_n)$ and needs to be evaluated
+as well. This is the Euler-Cromer method. It is easy to change the above code and see that with the same 
+time step we get stable results.
+
+
+Let us stay with $x$ (position) and $v$ (velocity) as the quantities we are interested in.
+
+We have the Taylor expansion for the position given by
+
+$$
+x_{i+1} = x_i+(\Delta t)v_i+\frac{(\Delta t)^2}{2}a_i+O((\Delta t)^3).
+$$
+
+The corresponding expansion for the velocity is
+
+$$
+v_{i+1} = v_i+(\Delta t)a_i+\frac{(\Delta t)^2}{2}v^{(2)}_i+O((\Delta t)^3).
+$$
+
+Via Newton's second law we have normally an analytical expression for the derivative of the velocity, namely
+
+$$
+a_i= \frac{d^2 x}{dt^2}\vert_{i}=\frac{d v}{dt}\vert_{i}= \frac{F(x_i,v_i,t_i)}{m}.
+$$
+
+If we add to this the corresponding expansion for the derivative of the velocity
+
+$$
+v^{(1)}_{i+1} = a_{i+1}= a_i+(\Delta t)v^{(2)}_i+O((\Delta t)^2)=a_i+(\Delta t)v^{(2)}_i+O((\Delta t)^2),
+$$
+
+and retain only terms up to the second derivative of the velocity since our error goes as $O(h^3)$, we have
+
+$$
+(\Delta t)v^{(2)}_i\approx a_{i+1}-a_i.
+$$
+
+We can then rewrite the Taylor expansion for the velocity as
+
+$$
+v_{i+1} = v_i+\frac{(\Delta t)}{2}\left( a_{i+1}+a_{i}\right)+O((\Delta t)^3).
+$$
+
+Our final equations for the position and the velocity become then
+
+$$
+x_{i+1} = x_i+(\Delta t)v_i+\frac{(\Delta t)^2}{2}a_{i}+O((\Delta t)^3),
+$$
+
+and
+
+$$
+v_{i+1} = v_i+\frac{(\Delta t)}{2}\left(a_{i+1}+a_{i}\right)+O((\Delta t)^3).
+$$
+
+Note well that the term $a_{i+1}$ depends on the position at $x_{i+1}$. This means that you need to calculate 
+the position at the updated time $t_{i+1}$ before the computing the next velocity.  Note also that the derivative of the velocity at the time
+$t_i$ used in the updating of the position can be reused in the calculation of the velocity update as well. 
+
+We can now easily add the Verlet method to our original code as
+
+DeltaT = 0.01
+#set up arrays 
+tfinal = 10
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, a, v, and x
+t = np.zeros(n)
+v = np.zeros((n,2))
+r = np.zeros((n,2))
+# Initial conditions as compact 2-dimensional arrays
+r0 = np.array([1.0,0.0])
+v0 = np.array([0.0,2*pi])
+r[0] = r0
+v[0] = v0
+Fourpi2 = 4*pi*pi
+# Start integrating using the Velocity-Verlet  method
+for i in range(n-1):
+    # Set up forces, air resistance FD, note now that we need the norm of the vecto
+    # Here you could have defined your own function for this
+    rabs = sqrt(sum(r[i]*r[i]))
+    a =  -Fourpi2*r[i]/(rabs**3)
+    # update velocity, time and position using the Velocity-Verlet method
+    r[i+1] = r[i] + DeltaT*v[i]+0.5*(DeltaT**2)*a
+    rabs = sqrt(sum(r[i+1]*r[i+1]))
+    anew = -4*(pi**2)*r[i+1]/(rabs**3)
+    v[i+1] = v[i] + 0.5*DeltaT*(a+anew)
+    t[i+1] = t[i] + DeltaT
+# Plot position as function of time    
+fig, ax = plt.subplots()
+ax.set_xlabel('x[AU]')
+ax.set_ylabel('y[AU]')
+ax.plot(r[:,0], r[:,1])
+fig.tight_layout()
+save_fig("EarthSunVV")
+plt.show()
+
+You can easily generalize the calculation of the forces by defining a function
+which takes in as input the various variables. We leave this as a challenge to you.
+
+Running the above code for various time steps we see that the Velocity-Verlet is fully stable for various time steps.
+
+We can also play around with different initial conditions in order to find the escape velocity from an orbit around the sun with distance one astronomical unit, 1 AU. The theoretical value for the escape velocity, is given by
+
+$$
+v = \sqrt{8\pi^2}{r},
+$$
+
+and with $r=1$ AU, this means that the escape velocity is $2\pi\sqrt{2}$ AU/yr. To obtain this we required that the kinetic energy of Earth equals the potential energy given by the gravitational force.
+
+Setting
+
+$$
+\frac{1}{2}M_{\mathrm{Earth}}v^2=\frac{GM_{\odot}}{r},
+$$
+
+and with $GM_{\odot}=4\pi^2$ we obtain the above relation for the velocity. Setting an initial velocity say equal to $9$ in the above code, yields a planet (Earth) which escapes a stable orbit around the sun, as seen by running the code here.
+
+DeltaT = 0.01
+#set up arrays 
+tfinal = 100
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, a, v, and x
+t = np.zeros(n)
+v = np.zeros((n,2))
+r = np.zeros((n,2))
+# Initial conditions as compact 2-dimensional arrays
+r0 = np.array([1.0,0.0])
+# setting initial velocity larger than escape velocity
+v0 = np.array([0.0,9.0])
+r[0] = r0
+v[0] = v0
+Fourpi2 = 4*pi*pi
+# Start integrating using the Velocity-Verlet  method
+for i in range(n-1):
+    # Set up forces, air resistance FD, note now that we need the norm of the vecto
+    # Here you could have defined your own function for this
+    rabs = sqrt(sum(r[i]*r[i]))
+    a =  -Fourpi2*r[i]/(rabs**3)
+    # update velocity, time and position using the Velocity-Verlet method
+    r[i+1] = r[i] + DeltaT*v[i]+0.5*(DeltaT**2)*a
+    rabs = sqrt(sum(r[i+1]*r[i+1]))
+    anew = -4*(pi**2)*r[i+1]/(rabs**3)
+    v[i+1] = v[i] + 0.5*DeltaT*(a+anew)
+    t[i+1] = t[i] + DeltaT
+# Plot position as function of time    
+fig, ax = plt.subplots()
+ax.set_xlabel('x[AU]')
+ax.set_ylabel('y[AU]')
+ax.plot(r[:,0], r[:,1])
+fig.tight_layout()
+save_fig("EscapeEarthSunVV")
+plt.show()
+
+### Testing Energy conservation
+
+The code here implements Euler's method for the Earth-Sun system using
+a more compact way of representing the vectors. Alternatively, you
+could have spelled out all the variables $v_x$, $v_y$, $x$ and $y$ as
+one-dimensional arrays.  It tests conservation of potential and
+kinetic energy as functions of time, in addition to the total energy,
+again as function of time
+
+**Note**: in all codes we have used scaled equations so that the gravitational constant times the mass of the sum is given by $4\pi^2$ and the mass of the earth is set to **one** in the calculations of kinetic and potential energies. Else, we would get very large results.
+
+# Common imports
+import numpy as np
+import pandas as pd
+from math import *
+import matplotlib.pyplot as plt
+import os
+
+# Where to save the figures and data files
+PROJECT_ROOT_DIR = "Results"
+FIGURE_ID = "Results/FigureFiles"
+DATA_ID = "DataFiles/"
+
+if not os.path.exists(PROJECT_ROOT_DIR):
+    os.mkdir(PROJECT_ROOT_DIR)
+
+if not os.path.exists(FIGURE_ID):
+    os.makedirs(FIGURE_ID)
+
+if not os.path.exists(DATA_ID):
+    os.makedirs(DATA_ID)
+
+def image_path(fig_id):
+    return os.path.join(FIGURE_ID, fig_id)
+
+def data_path(dat_id):
+    return os.path.join(DATA_ID, dat_id)
+
+def save_fig(fig_id):
+    plt.savefig(image_path(fig_id) + ".png", format='png')
+
+# Initial values, time step, positions and velocites
+
+DeltaT = 0.0001
+#set up arrays 
+tfinal = 100 # in years
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, a, v, and x
+t = np.zeros(n)
+v = np.zeros((n,2))
+r = np.zeros((n,2))
+
+# setting up the kinetic, potential and total energy, note only functions of time
+EKinetic = np.zeros(n)
+EPotential = np.zeros(n)
+ETotal = np.zeros(n)
+
+# Initial conditions as compact 2-dimensional arrays
+
+
+r0 = np.array([1.0,0.0])
+v0 = np.array([0.0,2*pi])
+r[0] = r0
+v[0] = v0
+Fourpi2 = 4*pi*pi
+# Setting up variables for the calculation of energies
+#  distance that defines rabs in potential energy
+rabs0 = sqrt(sum(r[0]*r[0]))
+#  Initial kinetic energy. Note that we skip the mass of the Earth here, that is MassEarth=1 in all codes
+EKinetic[0] = 0.5*sum(v0*v0)
+#  Initial potential energy  (note negative sign, why?)
+EPotential[0] = -4*pi*pi/rabs0
+#  Initial total energy 
+ETotal[0] = EPotential[0]+EKinetic[0]
+# Start integrating using Euler's method
+for i in range(n-1):
+    # Set up the acceleration
+    # Here you could have defined your own function for this
+    rabs = sqrt(sum(r[i]*r[i]))
+    a =  -Fourpi2*r[i]/(rabs**3)
+    # update Energies, velocity, time and position using Euler's forward method
+    v[i+1] = v[i] + DeltaT*a
+    r[i+1] = r[i] + DeltaT*v[i]
+    t[i+1] = t[i] + DeltaT
+    EKinetic[i+1] = 0.5*sum(v[i+1]*v[i+1])
+    EPotential[i+1] = -4*pi*pi/sqrt(sum(r[i+1]*r[i+1]))
+    ETotal[i+1] = EPotential[i+1]+EKinetic[i+1]
+# Plot energies as functions of time    
+
+fig, axs = plt.subplots(3, 1)
+axs[0].plot(t, EKinetic)
+axs[0].set_xlim(0, tfinal)
+axs[0].set_ylabel('Kinetic energy')
+axs[1].plot(t, EPotential)
+axs[1].set_ylabel('Potential Energy')
+axs[2].plot(t, ETotal)
+axs[2].set_xlabel('Time [yr]')
+axs[2].set_ylabel('Total Energy')
+fig.tight_layout()
+save_fig("EarthSunEuler")
+plt.show()
+
+We see very clearly that Euler's method does not conserve energy!! Try to reduce the time step $\Delta t$. What do you see?
+
+
+With the Euler-Cromer method, the only thing we need is to update the
+position at a time $t+1$ with the update velocity from the same
+time. Thus, the change in the code is extremely simply, and **energy is
+suddenly conserved**. Note that the error runs like $O(\Delta t)$ and
+this is why we see the larger oscillations. But within this
+oscillating energy envelope, we see that the energies swing between a
+max and a min value and never exceed these values.
+
+# Common imports
+import numpy as np
+import pandas as pd
+from math import *
+import matplotlib.pyplot as plt
+import os
+
+# Where to save the figures and data files
+PROJECT_ROOT_DIR = "Results"
+FIGURE_ID = "Results/FigureFiles"
+DATA_ID = "DataFiles/"
+
+if not os.path.exists(PROJECT_ROOT_DIR):
+    os.mkdir(PROJECT_ROOT_DIR)
+
+if not os.path.exists(FIGURE_ID):
+    os.makedirs(FIGURE_ID)
+
+if not os.path.exists(DATA_ID):
+    os.makedirs(DATA_ID)
+
+def image_path(fig_id):
+    return os.path.join(FIGURE_ID, fig_id)
+
+def data_path(dat_id):
+    return os.path.join(DATA_ID, dat_id)
+
+def save_fig(fig_id):
+    plt.savefig(image_path(fig_id) + ".png", format='png')
+
+# Initial values, time step, positions and velocites
+
+DeltaT = 0.0001
+#set up arrays 
+tfinal = 100 # in years
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, a, v, and x
+t = np.zeros(n)
+v = np.zeros((n,2))
+r = np.zeros((n,2))
+
+# setting up the kinetic, potential and total energy, note only functions of time
+EKinetic = np.zeros(n)
+EPotential = np.zeros(n)
+ETotal = np.zeros(n)
+
+# Initial conditions as compact 2-dimensional arrays
+
+
+r0 = np.array([1.0,0.0])
+v0 = np.array([0.0,2*pi])
+r[0] = r0
+v[0] = v0
+Fourpi2 = 4*pi*pi
+# Setting up variables for the calculation of energies
+#  distance that defines rabs in potential energy
+rabs0 = sqrt(sum(r[0]*r[0]))
+#  Initial kinetic energy. Note that we skip the mass of the Earth here, that is MassEarth=1 in all codes
+EKinetic[0] = 0.5*sum(v0*v0)
+#  Initial potential energy 
+EPotential[0] = -4*pi*pi/rabs0
+#  Initial total energy 
+ETotal[0] = EPotential[0]+EKinetic[0]
+# Start integrating using Euler's method
+for i in range(n-1):
+    # Set up the acceleration
+    # Here you could have defined your own function for this
+    rabs = sqrt(sum(r[i]*r[i]))
+    a =  -Fourpi2*r[i]/(rabs**3)
+    # update velocity, time and position using Euler's forward method
+    v[i+1] = v[i] + DeltaT*a
+#   Only change when we add the Euler-Cromer method    
+    r[i+1] = r[i] + DeltaT*v[i+1]
+    t[i+1] = t[i] + DeltaT
+    EKinetic[i+1] = 0.5*sum(v[i+1]*v[i+1])
+    EPotential[i+1] = -4*pi*pi/sqrt(sum(r[i+1]*r[i+1]))
+    ETotal[i+1] = EPotential[i+1]+EKinetic[i+1]
+# Plot energies as functions of time    
+
+fig, axs = plt.subplots(3, 1)
+axs[0].plot(t, EKinetic)
+axs[0].set_xlim(0, tfinal)
+axs[0].set_ylabel('Kinetic energy')
+axs[1].plot(t, EPotential)
+axs[1].set_ylabel('Potential Energy')
+axs[2].plot(t, ETotal)
+axs[2].set_xlabel('Time [yr]')
+axs[2].set_ylabel('Total Energy')
+fig.tight_layout()
+save_fig("EarthSunEulerCromer")
+plt.show()
+
+### Adding the  velocity Verlet method
+
+Our final equations for the position and the velocity become then
+
+$$
+x_{i+1} = x_i+(\Delta t)v_i+\frac{(\Delta t)^2}{2}a_{i}+O((\Delta t)^3),
+$$
+
+and
+
+$$
+v_{i+1} = v_i+\frac{(\Delta t)}{2}\left(a_{i+1}+a_{i}\right)+O((\Delta t)^3).
+$$
+
+Note well that the term $a_{i+1}$ depends on the position at $x_{i+1}$. This means that you need to calculate 
+the position at the updated time $t_{i+1}$ before the computing the next velocity.  Note also that the derivative of the velocity at the time
+$t_i$ used in the updating of the position can be reused in the calculation of the velocity update as well. 
+
+
+
+We can now easily add the Verlet method to our original code as
+
+DeltaT = 0.001
+#set up arrays 
+tfinal = 100
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, a, v, and x
+t = np.zeros(n)
+v = np.zeros((n,2))
+r = np.zeros((n,2))
+# Initial conditions as compact 2-dimensional arrays
+r0 = np.array([1.0,0.0])
+v0 = np.array([0.0,2*pi])
+r[0] = r0
+v[0] = v0
+Fourpi2 = 4*pi*pi
+
+# setting up the kinetic, potential and total energy, note only functions of time
+EKinetic = np.zeros(n)
+EPotential = np.zeros(n)
+ETotal = np.zeros(n)
+
+# Setting up variables for the calculation of energies
+#  distance that defines rabs in potential energy
+rabs0 = sqrt(sum(r[0]*r[0]))
+#  Initial kinetic energy. Note that we skip the mass of the Earth here, that is MassEarth=1 in all codes
+EKinetic[0] = 0.5*sum(v0*v0)
+#  Initial potential energy 
+EPotential[0] = -4*pi*pi/rabs0
+#  Initial total energy 
+ETotal[0] = EPotential[0]+EKinetic[0]
+
+# Start integrating using the Velocity-Verlet  method
+for i in range(n-1):
+    # Set up forces, air resistance FD, note now that we need the norm of the vecto
+    # Here you could have defined your own function for this
+    rabs = sqrt(sum(r[i]*r[i]))
+    a =  -Fourpi2*r[i]/(rabs**3)
+    # update velocity, time and position using the Velocity-Verlet method
+    r[i+1] = r[i] + DeltaT*v[i]+0.5*(DeltaT**2)*a
+    rabs = sqrt(sum(r[i+1]*r[i+1]))
+    anew = -4*(pi**2)*r[i+1]/(rabs**3)
+    v[i+1] = v[i] + 0.5*DeltaT*(a+anew)
+    t[i+1] = t[i] + DeltaT
+    EKinetic[i+1] = 0.5*sum(v[i+1]*v[i+1])
+    EPotential[i+1] = -4*pi*pi/sqrt(sum(r[i+1]*r[i+1]))
+    ETotal[i+1] = EPotential[i+1]+EKinetic[i+1]
+# Plot energies as functions of time    
+
+fig, axs = plt.subplots(3, 1)
+axs[0].plot(t, EKinetic)
+axs[0].set_xlim(0, tfinal)
+axs[0].set_ylabel('Kinetic energy')
+axs[1].plot(t, EPotential)
+axs[1].set_ylabel('Potential Energy')
+axs[2].plot(t, ETotal)
+axs[2].set_xlabel('Time [yr]')
+axs[2].set_ylabel('Total Energy')
+fig.tight_layout()
+save_fig("EarthSunVelocityVerlet")
+plt.show()
+
+And we see that due to the smaller truncation error that energy conservation is improved as a function of time.
+Try out different time steps $\Delta t$ and see if the results improve or worsen.
 
 
 
 
 
+### Exercise: Center-of-Mass and Relative Coordinates and Reference Frames
+
+We define the two-body center-of-mass coordinate and relative coordinate by expressing the trajectories for
+$\boldsymbol{r}_1$ and $\boldsymbol{r}_2$ into the center-of-mass coordinate
+$\boldsymbol{R}_{\rm cm}$
+
+$$
+\boldsymbol{R}_{\rm cm}\equiv\frac{m_1\boldsymbol{r}_1+m_2\boldsymbol{r}_2}{m_1+m_2},
+$$
+
+and the relative coordinate
+
+$$
+\boldsymbol{r}\equiv\boldsymbol{r}_1-\boldsymbol{r_2}.
+$$
+
+Here, we assume the two particles interact only with one another, so $\boldsymbol{F}_{12}=-\boldsymbol{F}_{21}$ (where $\boldsymbol{F}_{ij}$ is the force on $i$ due to $j$.
+
+* 2a (5pt) Show that the equations of motion then become $\ddot{\boldsymbol{R}}_{\rm cm}=0$ and $\mu\ddot{\boldsymbol{r}}=\boldsymbol{F}_{12}$, with the reduced mass $\mu=m_1m_2/(m_1+m_2)$.
+
+The first expression simply states that the center of mass coordinate $\boldsymbol{R}_{\rm cm}$ moves at a fixed velocity. The second expression can be rewritten in terms of the reduced mass $\mu$.
+
+Let us first start with some basic definitions. We have the center of mass coordinate $\boldsymbol{R}$ defined as (for two particles)
+
+$$
+\boldsymbol{R}=\frac{m_1\boldsymbol{r}_1+m_2\boldsymbol{r}_2}{M},
+$$
+
+where $m_1$ and $m_2$ are the masses of the two objects and $\boldsymbol{r}_1$ and $\boldsymbol{r}_2$ their respective positions defined according to a chosen origin. Here $M=m_1+m_2$ is the total mass.
+
+The relative position is defined as
+
+$$
+\boldsymbol{r} =\boldsymbol{r}_1-\boldsymbol{r}_2,
+$$
+
+and we then define $\boldsymbol{r}_1$ and $\boldsymbol{r}_2$ in terms of the relative and center of mass positions as
+
+$$
+\boldsymbol{r}_1=\boldsymbol{R}+\frac{m_2}{M}\boldsymbol{r},
+$$
+
+and
+
+$$
+\boldsymbol{r}_2=\boldsymbol{R}-\frac{m_1}{M}\boldsymbol{r},
+$$
+
+The total linear momentum is then defined as
+
+$$
+\boldsymbol{P}=\sum_{i=1}^Nm_i\frac{\boldsymbol{r}_i}{dt},
+$$
+
+where $N=2$ in our case. With the above definition of the center of mass position, we see that we can rewrite the total linear momentum as (multiplying the center of mass position with $M$)
+
+$$
+\boldsymbol{P}=M\frac{d\boldsymbol{R}}{dt}=M\dot{\boldsymbol{R}}.
+$$
+
+This result is also an answer to a part of exercise 2b, see below.
+
+The net force acting on the system is given by the time derivative of the linear momentum (assuming mass is time independent)
+and we have
+
+$$
+\boldsymbol{F}^{\mathrm{net}}=\dot{\boldsymbol{P}}=M\ddot{\boldsymbol{R}}.
+$$
+
+The net force acting on the system is given by the sum of the forces acting on the two object, that is we have
+
+$$
+\boldsymbol{F}^{\mathrm{net}}=\boldsymbol{F}_1+\boldsymbol{F}_2=\dot{\boldsymbol{P}}=M\ddot{\boldsymbol{R}}.
+$$
+
+In our case the forces are given by the internal forces only. The force acting on object $1$ is thus $\boldsymbol{F}_{12}$ and the one acting on object $2$ is $\boldsymbol{F}_{12}$. We have also defined that $\boldsymbol{F}_{12}=-\boldsymbol{F}_{21}$. This means thar we have
+
+$$
+\boldsymbol{F}_1+\boldsymbol{F}_2=\boldsymbol{F}_{12}+\boldsymbol{F}_{21}=0=\dot{\boldsymbol{P}}=M\ddot{\boldsymbol{R}},
+$$
+
+which is what we wanted to show. The center of mass velocity is thus a constant of the motion. We could also define the so-called center of mass reference frame where we simply set $\boldsymbol{R}=0$.
+
+This has also another important consequence for our forces. If we assume that our force depends only on the positions, it means that the gradient of the potential with respect to the center of mass position is zero, that is
+
+$$
+M\ddot{d\boldsymbol{R}}=-\boldsymbol{\nabla}_{\boldsymbol{R}}V =0!
+$$
+
+An alternative way is
+
+$$
+\begin{eqnarray}
+\ddot{\boldsymbol{R}}_{\rm cm}&=&\frac{1}{m_1+m_2}\left\{m_1\ddot{\boldsymbol{r}}_1+m_2\ddot{\boldsymbol{r}}_2\right\}\\
+\nonumber
+&=&\frac{1}{m_1+m_2}\left\{\boldsymbol{F}_{12}+\boldsymbol{F}_{21}\right\}=0.\\
+\ddot{\boldsymbol{r}}&=&\ddot{\boldsymbol{r}}_1-\ddot{\boldsymbol{r}}_2=\left(\frac{\boldsymbol{F}_{12}}{m_1}-\frac{\boldsymbol{F}_{21}}{m_2}\right)\\
+\nonumber
+&=&\left(\frac{1}{m_1}+\frac{1}{m_2}\right)\boldsymbol{F}_{12}.
+\end{eqnarray}
+$$
+
+The first expression simply states that the center of mass coordinate
+$\boldsymbol{R}_{\rm cm}$ moves at a fixed velocity. The second expression
+can be rewritten in terms of the reduced mass $\mu$.
+
+$$
+\begin{eqnarray}
+\mu \ddot{\boldsymbol{r}}&=&\boldsymbol{F}_{12},\\
+\frac{1}{\mu}&=&\frac{1}{m_1}+\frac{1}{m_2},~~~~\mu=\frac{m_1m_2}{m_1+m_2}.
+\end{eqnarray}
+$$
+
+Thus, one can treat the trajectory as a one-body problem where the
+reduced mass is $\mu$, and a second trivial problem for the center of
+mass. The reduced mass is especially convenient when one is
+considering gravitational problems, as we have seen during the lectures of weeks 11-13.
 
 
-* 2d (10pt) With the solutions for $x$ and $y$, and $r^2=x^2+y^2$ and the definitions $\alpha=\frac{A^2+B^2+C^2+D^2}{2}$, $\beta=\frac{A^2-B^2+C^2-D^2}{2}$ and $\gamma=AB+CD$, show that
+
+
+* 2b (5pt) Show that the linear momenta for the center-of-mass $\boldsymbol{P}$ motion and the relative motion $\boldsymbol{q}$ are given by $\boldsymbol{P}=M\dot{\boldsymbol{R}}_{\rm cm}$ with $M=m_1+m_2$ and $\boldsymbol{q}=\mu\dot{\boldsymbol{r}}$.  The linear momentum of the relative motion is defined $\boldsymbol{q} = (m_2\boldsymbol{p}_1-m_1\boldsymbol{p}_2)/(m_1+m_2)$.
+
+In 2a we showed, as an intermediate step that the total linear momentum is given by
+
+$$
+\boldsymbol{P}=\sum_{i=1}^Nm_i\frac{d\boldsymbol{r}_i}{dt}=M\dot{\boldsymbol{R}}.
+$$
+
+For the relative momentum $\boldsymbol{q}$, we have that the time derivative of $\boldsymbol{r}$ is
+
+$$
+\dot{\boldsymbol{r}} =\dot{\boldsymbol{r}}_1-\dot{\boldsymbol{r}}_2,
+$$
+
+We now also that the momenta $\boldsymbol{p}_1=m_1\dot{\boldsymbol{r}}_1$ and
+$\boldsymbol{p}_2=m_2\dot{\boldsymbol{r}}_2$. Using these expressions we can rewrite
+
+$$
+\dot{\boldsymbol{r}} =\frac{\boldsymbol{p}_1}{m_1}-\frac{\boldsymbol{p}_2}{m_2},
+$$
+
+which we can rewrite as
+
+$$
+\dot{\boldsymbol{r}} =\frac{m_2\boldsymbol{p}_1-m_1\boldsymbol{p}_2}{m_1m_2},
+$$
+
+and dividing both sides with $M$ we have
+
+$$
+\frac{m_1m_2}{M}\dot{\boldsymbol{r}} =\frac{m_2\boldsymbol{p}_1-m_1\boldsymbol{p}_2}{M}.
+$$
+
+Introducing the reduced mass $\mu=m_1m_2/M$ we have finally
+
+$$
+\mu\dot{\boldsymbol{r}} =\frac{m_2\boldsymbol{p}_1-m_1\boldsymbol{p}_2}{M}.
+$$
+
+And $\mu\dot{\boldsymbol{r}}$ defines the relative momentum $\boldsymbol{q}=\mu\dot{\boldsymbol{r}}$. 
+
+When we introduce the Lagrangian formalism we will see that it is much easier to derive these equations.
+
+* 2c (5pt) Show then that the  kinetic energy for two objects can then be written as
+
+$$
+K=\frac{P^2}{2M}+\frac{q^2}{2\mu}.
+$$
+
+Here we just need to use our definitions of kinetic energy in terms of the coordinates $\boldsymbol{r}_1$ and $\boldsymbol{r}_2$.
+
+We have that
+
+$$
+K=\frac{p_1^2}{2m_1}+\frac{p_2^2}{2m_2},
+$$
+
+and with $\boldsymbol{p}_1=m_1\dot{\boldsymbol{r}}_1$ and $\boldsymbol{p}_2=m_2\dot{\boldsymbol{r}}_2$ and using
+
+$$
+\dot{\boldsymbol{r}}_1=\dot{\boldsymbol{R}}+\frac{m_2}{M}\dot{\boldsymbol{r}},
+$$
+
+and
+
+$$
+\dot{\boldsymbol{r}}_2=\dot{\boldsymbol{R}}-\frac{m_1}{M}\dot{\boldsymbol{r}},
+$$
+
+we obtain (after squaring the expressions for $\dot{\boldsymbol{r}}_1$ and $\dot{\boldsymbol{r}}_2$) we have
+
+$$
+K=\frac{(m_1+m_2)\dot{\boldsymbol{R}}^2}{2}+\frac{(m_1+m_2)m_1m_2\dot{\boldsymbol{r}}^2}{2M^2},
+$$
+
+which we simplify to
+
+$$
+K=\frac{\dot{\boldsymbol{P}}^2}{2M}+\frac{\mu\dot{\boldsymbol{q}}^2}{2},
+$$
+
+which is what we wanted to show.
+
+* 2d (5pt) Show that the total angular momentum for two-particles in the center-of-mass frame $\boldsymbol{R}=0$, is given by
+
+$$
+\boldsymbol{L}=\boldsymbol{r}\times \mu\dot{\boldsymbol{r}}.
+$$
+
+Here we need again that
+
+$$
+\boldsymbol{r} =\boldsymbol{r}_1-\boldsymbol{r}_2,
+$$
+
+and we then define $\boldsymbol{r}_1$ and $\boldsymbol{r}_2$ in terms of the relative and center of mass positions with $\boldsymbol{R}=0$
+
+$$
+\boldsymbol{r}_1=\frac{m_2}{M}\boldsymbol{r},
+$$
+
+and
+
+$$
+\boldsymbol{r}_2=-\frac{m_1}{M}\boldsymbol{r},
+$$
+
+The angular momentum (the total one) is the sum of the individual angular momenta (see homework 4) and we have
+
+$$
+\boldsymbol{L} = \boldsymbol{r}_1 \times \boldsymbol{p}_1+\boldsymbol{r}_2 \times \boldsymbol{p}_2,
+$$
+
+and using that $m_1\dot{\boldsymbol{r}}_1=\boldsymbol{p}_1$ and $m_2\dot{\boldsymbol{r}}_2=\boldsymbol{p}_2$ we have
+
+$$
+\boldsymbol{L} = m_1\boldsymbol{r}_1 \times \dot{\boldsymbol{r}}_1+m_2\boldsymbol{r}_2 \times \dot{\boldsymbol{r}}_2.
+$$
+
+Inserting the equations for $\boldsymbol{r}_1$ and $\boldsymbol{r}_2$ in terms of the relative motion, we have
+
+$$
+\boldsymbol{L} = m_1 \frac{m_2}{M}\boldsymbol{r}\times\frac{m_2}{M}\boldsymbol{r} +m_2 \frac{m_1}{M}\boldsymbol{r} \times \frac{m_1}{M}\dot{\boldsymbol{r}}.
+$$
+
+We see that can rewrite this equation as
+
+$$
+\boldsymbol{L}=\boldsymbol{r}\times \mu\dot{\boldsymbol{r}},
+$$
+
+which is what we wanted to derive.
+
+
+
+
+### Exercise: Conservation of Energy
+
+The equations of motion in the center-of-mass frame in two dimensions with $x=r\cos{(\phi)}$ and $y=r\sin{(\phi)}$ and
+$r\in [0,\infty)$, $\phi\in [0,2\pi]$ and $r=\sqrt{x^2+y^2}$ are given by
+
+$$
+\mu \ddot{r}=-\frac{dV(r)}{dr}+\mu r\dot{\phi}^2,
+$$
+
+and
+
+$$
+\dot{\phi}=\frac{L}{\mu r^2}.
+$$
+
+Here $V(r)$ is any central force which depends only on the relative coordinate.
+* 1a (5pt) Show that you can rewrite the radial equation in terms of an effective potential $V_{\mathrm{eff}}(r)=V(r)+L^2/(2\mu r^2)$. 
+
+Here we use that
+
+$$
+\dot{\phi}=\frac{L}{\mu r^2}.
+$$
+
+and rewrite the above equation of motion as
+
+$$
+\mu \ddot{r}=-\frac{dV(r)}{dr}+\frac{L^2}{\mu r^3}.
+$$
+
+If we now define an effective potential
+
+$$
+V_{\mathrm{eff}}=V(r)+\frac{L^2}{2\mu r^2},
+$$
+
+we can rewrite our equation of motion in terms of
+
+$$
+\mu \ddot{r}=-\frac{dV_{\mathrm{eff}}(r)}{dr}=-\frac{dV(r)}{dr}+\frac{L^2}{\mu r^3}.
+$$
+
+The addition due to the angular momentum comes from the kinetic energy
+when we rewrote it in terms of polar coordinates. It introduces a
+so-called centrifugal barrier due to the angular momentum. This
+centrifugal barrier pushes the object farther away from the origin.
+
+Alternatively,
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto22"></div>
+
+$$
+\begin{equation}
+-\frac{dV_{\text{eff}}(r)}{dr} = \mu \ddot{r}  =-\frac{dV(r)}{dr}+\mu\dot{\phi}^2r
+\label{_auto22} \tag{35}
+\end{equation}
+$$
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto23"></div>
+
+$$
+\begin{equation} 
+-\frac{dV_{\text{eff}}(r)}{dr}  = -\frac{dV(r)}{dr}+\mu\left( \frac{L}{\mu r^2}\right) ^2r
+\label{_auto23} \tag{36}
+\end{equation}
+$$
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto24"></div>
+
+$$
+\begin{equation} 
+ = -\frac{dV(r)}{dr}+\mu\frac{L^2}{\mu}r^{-3}
+\label{_auto24} \tag{37}
+\end{equation}
+$$
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto25"></div>
+
+$$
+\begin{equation} 
+ = -\frac{d\left(  V(r)+\frac{1}{2} \frac{L^2}{\mu r^2}\right) }{dr}.
+\label{_auto25} \tag{38}
+\end{equation}
+$$
+
+Integrating we obtain
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto26"></div>
+
+$$
+\begin{equation}
+V_{\text{eff}}(r) = V(r) + \frac{L^2}{2\mu r^2} + C
+\label{_auto26} \tag{39}
+\end{equation}
+$$
+
+Imposing  the extra condition that $V_{\text{eff}}(r\rightarrow \infty) = V(r\rightarrow \infty)$,
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto27"></div>
+
+$$
+\begin{equation}
+V_{\text{eff}}(r) = V(r) + \frac{L^2}{2\mu r^2}
+\label{_auto27} \tag{40}
+\end{equation}
+$$
+
+Write out the final differential equation for the radial degrees of freedom when we specify that $V(r)=-\alpha/r$.  Plot the effective potential. You can choose values for $\alpha$ and $L$ and discuss (see Taylor section 8.4 and example 8.2) the physics of the system for two energies, one larger than zero and one smaller than zero. This is similar to what you did in the first midterm, except that the potential is different.
+
+We insert now the explicit potential form $V(r)=-\alpha/r$. This gives us the following equation of motion
+
+$$
+\mu \ddot{r}=-\frac{dV_{\mathrm{eff}}(r)}{dr}=-\frac{d(-\alpha/r)}{dr}+\frac{L^2}{\mu r^3}=-\frac{\alpha}{r^2}+\frac{L^2}{\mu r^3}.
+$$
+
+The following code plots this effective potential for a simple choice of parameters, with a standard gravitational potential $-\alpha/r$. Here we have chosen $L=m=\alpha=1$.
+
+# Common imports
+import numpy as np
+from math import *
+import matplotlib.pyplot as plt
+
+Deltax = 0.01
+#set up arrays
+xinitial = 0.3
+xfinal = 5.0
+alpha = 1.0   # spring constant
+m = 1.0   # mass, you can change these
+AngMom = 1.0  #  The angular momentum
+n = ceil((xfinal-xinitial)/Deltax)
+x = np.zeros(n)
+for i in range(n):
+    x[i] = xinitial+i*Deltax
+V = np.zeros(n)
+V = -alpha/x+0.5*AngMom*AngMom/(m*x*x)
+# Plot potential
+fig, ax = plt.subplots()
+ax.set_xlabel('r[m]')
+ax.set_ylabel('V[J]')
+ax.plot(x, V)
+fig.tight_layout()
+plt.show()
+
+If we select a potential energy below zero (and not necessarily one
+which corresponds to the minimum point), the object will oscillate
+between two values of $r$, a value $r_{\mathrm{min}}$ and a value
+$r_{\mathrm{max}}$. We can assume that for example the kinetic energy
+is zero at these two points. The object will thus oscillate back and
+forth between these two points. As we will see in connection with the
+solution of the equations of motion, this case corresponds to
+elliptical orbits. If we select $r$ equal to the minimum of the
+potential and use initial conditions for the velocity that correspond
+to circular motion, the object will have a constant value of $r$ given
+by the value at the minimum and the orbit is a circle.
+
+If we select a potential energy larger than zero, then, since the
+kinetic energy is always larger or equal to zero, the object will move
+away from the origin. See also the discussion in Taylor, sections 8.4-8.6.
+
+### Exercise: Harmonic oscillator again
+
+Consider a particle of mass $m$ in a $2$-dimensional harmonic oscillator with potential
+
+$$
+V(r)=\frac{1}{2}kr^2=\frac{1}{2}k(x^2+y^2).
+$$
+
+We assume the orbit has a final non-zero angular momentum $L$.  The
+effective potential looks like that of a harmonic oscillator for large
+$r$, but for small $r$, the centrifugal potential repels the particle
+from the origin. The combination of the two potentials has a minimum
+for at some radius $r_{\rm min}$.
+
+
+Set up the effective potential and plot it. Find $r_{\rm min}$ and $\dot{\phi}$. Show that the latter is given by $\dot{\phi}=\sqrt{k/m}$.  At $r_{\rm min}$ the particle does not accelerate and $r$ stays constant and the motion is circular. With fixed $k$ and $m$, which parameter can we adjust to change the value of $r$ at $r_{\rm min}$?
+
+We consider the effective potential. The radius of a circular orbit is at the minimum of the potential (where the effective force is zero).
+The potential is plotted here with the parameters $k=m=1.0$ and $L=1.0$.
+
+# Common imports
+import numpy as np
+from math import *
+import matplotlib.pyplot as plt
+
+Deltax = 0.01
+#set up arrays
+xinitial = 0.5
+xfinal = 3.0
+k = 1.0   # spring constant
+m = 1.0   # mass, you can change these
+AngMom = 1.0  #  The angular momentum
+n = ceil((xfinal-xinitial)/Deltax)
+x = np.zeros(n)
+for i in range(n):
+    x[i] = xinitial+i*Deltax
+V = np.zeros(n)
+V = 0.5*k*x*x+0.5*AngMom*AngMom/(m*x*x)
+# Plot potential
+fig, ax = plt.subplots()
+ax.set_xlabel('r[m]')
+ax.set_ylabel('V[J]')
+ax.plot(x, V)
+fig.tight_layout()
+plt.show()
+
+We have an effective potential
+
+$$
+\begin{eqnarray*}
+V_{\rm eff}&=&\frac{1}{2}kr^2+\frac{L^2}{2mr^2}
+\end{eqnarray*}
+$$
+
+The effective potential looks like that of a harmonic oscillator for
+large $r$, but for small $r$, the centrifugal potential repels the
+particle from the origin. The combination of the two potentials has a
+minimum for at some radius $r_{\rm min}$.
+
+$$
+\begin{eqnarray*}
+0&=&kr_{\rm min}-\frac{L^2}{mr_{\rm min}^3},\\
+r_{\rm min}&=&\left(\frac{L^2}{mk}\right)^{1/4},\\
+\dot{\theta}&=&\frac{L}{mr_{\rm min}^2}=\sqrt{k/m}.
+\end{eqnarray*}
+$$
+
+For particles at $r_{\rm min}$ with $\dot{r}=0$, the particle does not
+accelerate and $r$ stays constant, i.e. a circular orbit. The radius
+of the circular orbit can be adjusted by changing the angular momentum
+$L$.
+
+For the above parameters this minimum is at $r_{\rm min}=1$.
+
+
+
+Now consider small vibrations about $r_{\rm min}$. The effective spring constant is the curvature of the effective potential.  Use the curvature at $r_{\rm min}$ to find the effective spring constant (hint, look at  exercise 4 in homework 6) $k_{\mathrm{eff}}$. Show also that $\omega=\sqrt{k_{\mathrm{eff}}/m}=2\dot{\phi}$
+
+$$
+\begin{eqnarray*}
+k_{\rm eff}&=&\left.\frac{d^2}{dr^2}V_{\rm eff}(r)\right|_{r=r_{\rm min}}=k+\frac{3L^2}{mr_{\rm min}^4}\\
+&=&4k,\\
+\omega&=&\sqrt{k_{\rm eff}/m}=2\sqrt{k/m}=2\dot{\theta}.
+\end{eqnarray*}
+$$
+
+Because the radius oscillates with twice the angular frequency,
+the orbit has two places where $r$ reaches a minimum in one
+cycle. This differs from the inverse-square force where there is one
+minimum in an orbit. One can show that the orbit for the harmonic
+oscillator is also elliptical, but in this case the center of the
+potential is at the center of the ellipse, not at one of the foci.
+
+
+
+
+The solution to the equations of motion in Cartesian coordinates is simple. The $x$ and $y$ equations of motion separate, and we have $\ddot{x}=-kx/m$ and $\ddot{y}=-ky/m$. The harmonic oscillator is indeed a system where the degrees of freedom separate and we can find analytical solutions. Define a natural frequency $\omega_0=\sqrt{k/m}$ and show that (where $A$, $B$, $C$ and $D$ are arbitrary constants defined by the initial conditions)
+
+$$
+\begin{eqnarray*}
+x&=&A\cos\omega_0 t+B\sin\omega_0 t,\\
+y&=&C\cos\omega_0 t+D\sin\omega_0 t.
+\end{eqnarray*}
+$$
+
+The solution is also simple to write down exactly in Cartesian coordinates. The $x$ and $y$ equations of motion separate,
+
+$$
+\begin{eqnarray*}
+\ddot{x}&=&-kx,\\
+\ddot{y}&=&-ky.
+\end{eqnarray*}
+$$
+
+We know from our studies of the harmonic oscillator that the general solution can be expressed as
+
+$$
+\begin{eqnarray*}
+x&=&A\cos\omega_0 t+B\sin\omega_0 t,\\
+y&=&C\cos\omega_0 t+D\sin\omega_0 t.
+\end{eqnarray*}
+$$
+
+With the solutions for $x$ and $y$, and $r^2=x^2+y^2$ and the definitions $\alpha=\frac{A^2+B^2+C^2+D^2}{2}$, $\beta=\frac{A^2-B^2+C^2-D^2}{2}$ and $\gamma=AB+CD$, show that
 
 $$
 r^2=\alpha+(\beta^2+\gamma^2)^{1/2}\cos(2\omega_0 t-\delta),
@@ -1850,102 +3143,12 @@ $$
 We start with $r^2 & = x^2+y^2$ and square the above analytical solutions and   after some **exciting algebraic manipulations** we arrive at
 
 <!-- Equation labels as ordinary links -->
-<div id="_auto19"></div>
+<div id="_auto28"></div>
 
 $$
 \begin{equation}
 r^2  = x^2+y^2
-\label{_auto19} \tag{31}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto20"></div>
-
-$$
-\begin{equation}  
- = \left(  A\cos\omega_0 t+B\sin\omega_0 t\right) ^2 + \left(  C\cos\omega_0 t+D\sin\omega_0 t\right) ^2
-\label{_auto20} \tag{32}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto21"></div>
-
-$$
-\begin{equation}  
- = A^2\cos^2\omega_0 t+B^2\sin^2\omega_0 t + 2AB\sin\omega_0 t \cos\omega_0 t + C^2\cos^2\omega_0 t+D^2\sin^2\omega_0 t + 2CD\sin\omega_0 t \cos\omega_0 t
-\label{_auto21} \tag{33}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto22"></div>
-
-$$
-\begin{equation} 
- = (A^2+C^2)\cos^2\omega_0 t + (B^2+D^2)\sin^2\omega_0 t + 2(AC + BD)\sin\omega_0 t \cos\omega_0 t
-\label{_auto22} \tag{34}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto23"></div>
-
-$$
-\begin{equation} 
- = (B^2+D^2) + (A^2+C^2-B^2-D^2)\cos^2\omega_0 t + 2(AC + BD)2\sin2\omega_0 t
-\label{_auto23} \tag{35}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto24"></div>
-
-$$
-\begin{equation} 
- = (B^2+D^2) + (A^2+C^2-B^2-D^2)\frac{1+\cos{2\omega_0 t}}{2} + 2(AC + BD)\frac{1}{2}\sin2\omega_0 t
-\label{_auto24} \tag{36}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto25"></div>
-
-$$
-\begin{equation} 
- = \frac{2B^2+2D^2+A^2+C^2-B^2-D^2}{2} + (A^2+C^2-B^2-D^2)\frac{\cos{2\omega_0 t}}{2} + (AC + BD)\sin2\omega_0 t
-\label{_auto25} \tag{37}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto26"></div>
-
-$$
-\begin{equation} 
- = \frac{B^2+D^2+A^2+C^2}{2} + \frac{A^2+C^2-B^2-D^2}{2}\cos{2\omega_0 t} + (AC + BD)\sin2\omega_0 t
-\label{_auto26} \tag{38}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto27"></div>
-
-$$
-\begin{equation} 
- = \alpha + \beta\cos{2\omega_0 t} + \gamma\sin2\omega_0 t
-\label{_auto27} \tag{39}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto28"></div>
-
-$$
-\begin{equation} 
- = \alpha + \sqrt{\beta^2+\gamma^2}\left( \frac{\beta}{\sqrt{\beta^2+\gamma^2}}\cos{2\omega_0 t} + \frac{\gamma}{\sqrt{\beta^2+\gamma^2}}\sin2\omega_0 t\right) 
-\label{_auto28} \tag{40}
+\label{_auto28} \tag{41}
 \end{equation}
 $$
 
@@ -1953,9 +3156,9 @@ $$
 <div id="_auto29"></div>
 
 $$
-\begin{equation} 
- = \alpha + \sqrt{\beta^2+\gamma^2}\left( \cos{\delta}\cos{2\omega_0 t} + \sin{\delta}\sin2\omega_0 t\right) 
-\label{_auto29} \tag{41}
+\begin{equation}  
+ = \left(  A\cos\omega_0 t+B\sin\omega_0 t\right) ^2 + \left(  C\cos\omega_0 t+D\sin\omega_0 t\right) ^2
+\label{_auto29} \tag{42}
 \end{equation}
 $$
 
@@ -1963,9 +3166,99 @@ $$
 <div id="_auto30"></div>
 
 $$
+\begin{equation}  
+ = A^2\cos^2\omega_0 t+B^2\sin^2\omega_0 t + 2AB\sin\omega_0 t \cos\omega_0 t + C^2\cos^2\omega_0 t+D^2\sin^2\omega_0 t + 2CD\sin\omega_0 t \cos\omega_0 t
+\label{_auto30} \tag{43}
+\end{equation}
+$$
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto31"></div>
+
+$$
+\begin{equation} 
+ = (A^2+C^2)\cos^2\omega_0 t + (B^2+D^2)\sin^2\omega_0 t + 2(AC + BD)\sin\omega_0 t \cos\omega_0 t
+\label{_auto31} \tag{44}
+\end{equation}
+$$
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto32"></div>
+
+$$
+\begin{equation} 
+ = (B^2+D^2) + (A^2+C^2-B^2-D^2)\cos^2\omega_0 t + 2(AC + BD)2\sin2\omega_0 t
+\label{_auto32} \tag{45}
+\end{equation}
+$$
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto33"></div>
+
+$$
+\begin{equation} 
+ = (B^2+D^2) + (A^2+C^2-B^2-D^2)\frac{1+\cos{2\omega_0 t}}{2} + 2(AC + BD)\frac{1}{2}\sin2\omega_0 t
+\label{_auto33} \tag{46}
+\end{equation}
+$$
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto34"></div>
+
+$$
+\begin{equation} 
+ = \frac{2B^2+2D^2+A^2+C^2-B^2-D^2}{2} + (A^2+C^2-B^2-D^2)\frac{\cos{2\omega_0 t}}{2} + (AC + BD)\sin2\omega_0 t
+\label{_auto34} \tag{47}
+\end{equation}
+$$
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto35"></div>
+
+$$
+\begin{equation} 
+ = \frac{B^2+D^2+A^2+C^2}{2} + \frac{A^2+C^2-B^2-D^2}{2}\cos{2\omega_0 t} + (AC + BD)\sin2\omega_0 t
+\label{_auto35} \tag{48}
+\end{equation}
+$$
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto36"></div>
+
+$$
+\begin{equation} 
+ = \alpha + \beta\cos{2\omega_0 t} + \gamma\sin2\omega_0 t
+\label{_auto36} \tag{49}
+\end{equation}
+$$
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto37"></div>
+
+$$
+\begin{equation} 
+ = \alpha + \sqrt{\beta^2+\gamma^2}\left( \frac{\beta}{\sqrt{\beta^2+\gamma^2}}\cos{2\omega_0 t} + \frac{\gamma}{\sqrt{\beta^2+\gamma^2}}\sin2\omega_0 t\right) 
+\label{_auto37} \tag{50}
+\end{equation}
+$$
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto38"></div>
+
+$$
+\begin{equation} 
+ = \alpha + \sqrt{\beta^2+\gamma^2}\left( \cos{\delta}\cos{2\omega_0 t} + \sin{\delta}\sin2\omega_0 t\right) 
+\label{_auto38} \tag{51}
+\end{equation}
+$$
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto39"></div>
+
+$$
 \begin{equation} 
  = \alpha + \sqrt{\beta^2+\gamma^2}\cos{\left( 2\omega_0 t - \delta\right) },
-\label{_auto30} \tag{42}
+\label{_auto39} \tag{52}
 \end{equation}
 $$
 
@@ -1975,7 +3268,182 @@ which is what we wanted to show.
 
 
 
-### Exercise 4, equations for an ellipse (10pt)
+
+
+### Exercise: Numerical Solution of the Harmonic Oscillator
+
+Using the code we developed in homeworks 5 and/or 6 for the Earth-Sun system, we can solve the above harmonic oscillator problem in two dimensions using our code from this homework. We need however to change the acceleration from the gravitational force to the one given by the harmonic oscillator potential.
+
+
+* 3a (20pt) Use for example the  code in the exercise set to set up the acceleration and use the initial conditions fixed by for example $r_{\rm min}$ from exercise 2. Which value should the initial velocity take if you place yourself at $r_{\rm min}$ and you require a circular motion? Hint: see the first midterm, part 2. There you used the centripetal acceleration.  
+
+Instead of solving the equations in the cartesian frame we will now rewrite the above code in terms of the radial degrees of freedom only. Our differential equation is now
+
+$$
+\mu \ddot{r}=-\frac{dV(r)}{dr}+\mu\dot{\phi}^2,
+$$
+
+and
+
+$$
+\dot{\phi}=\frac{L}{\mu r^2}.
+$$
+
+* 3b (20pt) We will use $r_{\rm min}$ to fix a value of $L$, as seen in exercise 2. This fixes also $\dot{\phi}$. Write a code which now implements the radial equation for $r$ using the same $r_{\rm min}$ as you did in 3a. Compare the results with those from 3a with the same initial conditions. Do they agree? Use only one set of initial conditions.
+
+The code here finds the solution for $x$ and $y$ using the code we
+developed in homework 5 and 6 and the midterm.  Note that this code is
+tailored to run in Cartesian coordinates. There is thus no angular
+momentum dependent term.
+
+Here we have chosen initial conditions that
+correspond to the minimum of the effective potential
+$r_{\mathrm{min}}$. We have chosen $x_0=r_{\mathrm{min}}$ and
+$y_0=0$. Similarly, we use the centripetal acceleration to determine
+the initial velocity so that we have a circular motion (see back to the
+last question of the midterm). This means that we set the centripetal
+acceleration $v^2/r$ equal to the force from the harmonic oscillator $-k\boldsymbol{r}$. Taking the
+magnitude of $\boldsymbol{r}$ we have then
+$v^2/r=k/mr$, which gives $v=\pm\omega_0r$. 
+
+Since the code here solves the equations of motion in cartesian
+coordinates and the harmonic oscillator potential leads to forces in
+the $x$- and $y$-directions that are decoupled, we have to select the initial velocities and positions so that we don't get that for example $y(t)=0$.
+
+We set $x_0$ to be different from zero and $v_{y0}$ to be different from zero.
+
+
+# Common imports
+import numpy as np
+import pandas as pd
+from math import *
+import matplotlib.pyplot as plt
+import os
+
+# Where to save the figures and data files
+PROJECT_ROOT_DIR = "Results"
+FIGURE_ID = "Results/FigureFiles"
+DATA_ID = "DataFiles/"
+
+if not os.path.exists(PROJECT_ROOT_DIR):
+    os.mkdir(PROJECT_ROOT_DIR)
+
+if not os.path.exists(FIGURE_ID):
+    os.makedirs(FIGURE_ID)
+
+if not os.path.exists(DATA_ID):
+    os.makedirs(DATA_ID)
+
+def image_path(fig_id):
+    return os.path.join(FIGURE_ID, fig_id)
+
+def data_path(dat_id):
+    return os.path.join(DATA_ID, dat_id)
+
+def save_fig(fig_id):
+    plt.savefig(image_path(fig_id) + ".png", format='png')
+
+DeltaT = 0.001
+#set up arrays 
+tfinal = 10.0
+n = ceil(tfinal/DeltaT)
+# set up arrays
+t = np.zeros(n)
+v = np.zeros((n,2))
+r = np.zeros((n,2))
+radius = np.zeros(n)
+# Constants of the model
+k = 1.0   # spring constant
+m = 1.0   # mass, you can change these
+omega02 = k/m  # Frequency
+AngMom = 1.0  #  The angular momentum
+# Potential minimum
+rmin = (AngMom*AngMom/k/m)**0.25
+# Initial conditions as compact 2-dimensional arrays, x0=rmin and y0 = 0
+x0 = rmin; y0= 0.0
+r0 = np.array([x0,y0])
+vy0 = sqrt(omega02)*rmin; vx0 = 0.0
+v0 = np.array([vx0,vy0])
+r[0] = r0
+v[0] = v0
+# Start integrating using the Velocity-Verlet  method
+for i in range(n-1):
+    # Set up the acceleration
+    a =  -r[i]*omega02  
+    # update velocity, time and position using the Velocity-Verlet method
+    r[i+1] = r[i] + DeltaT*v[i]+0.5*(DeltaT**2)*a
+    anew = -r[i+1]*omega02  
+    v[i+1] = v[i] + 0.5*DeltaT*(a+anew)
+    t[i+1] = t[i] + DeltaT
+# Plot position as function of time
+radius = np.sqrt(r[:,0]**2+r[:,1]**2)
+fig, ax = plt.subplots(3,1)
+ax[0].set_xlabel('time')
+ax[0].set_ylabel('radius squared')
+ax[0].plot(t,r[:,0]**2+r[:,1]**2)
+ax[1].set_xlabel('time')
+ax[1].set_ylabel('x position')
+ax[1].plot(t,r[:,0])
+ax[2].set_xlabel('time')
+ax[2].set_ylabel('y position')
+ax[2].plot(t,r[:,1])
+
+fig.tight_layout()
+save_fig("2DimHOVV")
+plt.show()
+
+We see that the radius (to within a given error), we obtain a constant radius.
+
+
+The following code shows first how we can solve this problem using the radial degrees of freedom only.
+Here we need to add the explicit centrifugal barrier.  Note that the variable $r$ depends only on time. There is no $x$ and $y$ directions
+since we have transformed the equations to polar coordinates.
+
+DeltaT = 0.01
+#set up arrays 
+tfinal = 10.0
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, v and r
+t = np.zeros(n)
+v = np.zeros(n)
+r = np.zeros(n)
+E = np.zeros(n)
+# Constants of the model
+AngMom = 1.0  #  The angular momentum
+m = 1.0
+k = 1.0
+omega02 = k/m
+c1 = AngMom*AngMom/(m*m)
+c2 = AngMom*AngMom/m
+rmin = (AngMom*AngMom/k/m)**0.25
+# Initial conditions
+r0 = rmin
+v0 = 0.0
+r[0] = r0
+v[0] = v0
+E[0] = 0.5*m*v0*v0+0.5*k*r0*r0+0.5*c2/(r0*r0)
+# Start integrating using the Velocity-Verlet  method
+for i in range(n-1):
+    # Set up acceleration
+    a = -r[i]*omega02+c1/(r[i]**3)    
+    # update velocity, time and position using the Velocity-Verlet method
+    r[i+1] = r[i] + DeltaT*v[i]+0.5*(DeltaT**2)*a
+    anew = -r[i+1]*omega02+c1/(r[i+1]**3)
+    v[i+1] = v[i] + 0.5*DeltaT*(a+anew)
+    t[i+1] = t[i] + DeltaT
+    E[i+1] = 0.5*m*v[i+1]*v[i+1]+0.5*k*r[i+1]*r[i+1]+0.5*c2/(r[i+1]*r[i+1])
+    # Plot position as function of time
+fig, ax = plt.subplots(2,1)
+ax[0].set_xlabel('time')
+ax[0].set_ylabel('radius')
+ax[0].plot(t,r)
+ax[1].set_xlabel('time')
+ax[1].set_ylabel('Energy')
+ax[1].plot(t,E)
+save_fig("RadialHOVV")
+plt.show()
+
+### Exercise: Equations for an ellipse
 
 Consider an ellipse defined by the sum of the distances from the two foci being $2D$, which expressed in a Cartesian coordinates with the middle of the ellipse being at the origin becomes
 
@@ -2011,6 +3479,7 @@ where the last line is indeed the equation for an ellipse.
 
 
 
+### Exercise: Attractive Potential
 
 Consider a particle in an attractive potential
 
@@ -2035,10 +3504,10 @@ $$
 Find the value of $A$. Hint: Use the fact that at $r_{\rm min}$
 there is no radial kinetic energy and $E=-\alpha/r_{\rm min}+L^2/2mr_{\rm min}^2$.
 
-At  $r_{\mathrm{min}}$  and $r_{\mathrm{max}}$ , all the kinetic energy is stored in the velocity in the direction perpendicular to $r$  since the radial velocity is set to zero . We can calculate using angular momentum and from there, find  𝐴  in terms of the energy  𝐸  which is constant. But first, we need to find  𝑟min  from the conservation of energy:
+At  $r_{\mathrm{min}}$  and $r_{\mathrm{max}}$ , all the kinetic energy is stored in the velocity in the direction perpendicular to $r$  since the radial velocity is set to zero . We can calculate using angular momentum and from there, find  𝐴  in terms of the energy  $E$  which is constant. But first, we need to find $r_{\mathrm{min}}$  from the conservation of energy (noting that the radial velocity $\ddot{r}$ at the mininum is zero):
 
 $$
-E = U(r) + \frac{1}{2} \mu(v_{\perp}^2 + v_{\parallel})
+E = U(r) + \frac{1}{2} \mu(\ddot{r}^2 + (r\ddot{\phi})^2)
 \\
 E = \frac{-\alpha}{r_{\min}} + \frac{1}{2} \mu\left( \frac{L}{\mu r_{\min}}\right) ^2
 \\
@@ -2052,14 +3521,14 @@ $$
 Since we're looking for the minimum, the  ±  sign must be negative (then  𝑟min  will not be negative since  𝐸<0 ). Therefore, we have
 
 $$
-frac{1}{\frac{\mu\alpha}{L^2}+A} = -\frac{\alpha}{2E} - \frac{1}{2} \sqrt{\frac{\alpha^2}{E^2} + 2\frac{L^2}{E\mu}}
+\frac{1}{\frac{\mu\alpha}{L^2}+A} = -\frac{\alpha}{2E} - \frac{1}{2} \sqrt{\frac{\alpha^2}{E^2} + 2\frac{L^2}{E\mu}}
 \\
 A = - \frac{\mu\alpha}{L^2} - \frac{2E}{\alpha + \sqrt{\alpha^2 + 2\frac{L^2E}{\mu}}}
 $$
 
-### Exercise 2 (20pt) Inverse-square force
+### Exercise: Inverse-square force
 
-Consider again the same effective potential as in exercise 1. This leads to an attractive inverse-square-law force, $F=-\alpha/r^2$. Consider a particle of mass $m$ with angular momentum $L$. Taylor sections 8.4-8.7 are relevant background material.  See also the harmonic oscillator potential from hw8. The equation of motion for the radial degrees of freedom is (see also hw8) in the center-of-mass frame in two dimensions with $x=r\cos{(\phi)}$ and $y=r\sin{(\phi)}$ and
+Consider again the same effective potential as in the previous exercise. This leads to an attractive inverse-square-law force, $F=-\alpha/r^2$. Consider a particle of mass $m$ with angular momentum $L$. Taylor sections 8.4-8.7 are relevant background material.  See also the harmonic oscillator potential from hw8. The equation of motion for the radial degrees of freedom is (see also hw8) in the center-of-mass frame in two dimensions with $x=r\cos{(\phi)}$ and $y=r\sin{(\phi)}$ and
 $r\in [0,\infty)$, $\phi\in [0,2\pi]$ and $r=\sqrt{x^2+y^2}$ are given by
 
 $$
@@ -2075,99 +3544,15 @@ $$
 Here $V(r)$ is any central force which depends only on the relative coordinate.
 
 
-* 2a (5pt)  Find the radius of a circular orbit by solving for the position of the minimum of the effective potential.
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto31"></div>
-
-$$
-\begin{equation}
-\frac{1}{m}\frac{dV(r)}{dr}  = r\dot{\phi}^2
-\label{_auto31} \tag{43}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto32"></div>
-
-$$
-\begin{equation}  \frac{1}{m}\left( -\frac{-\alpha}{r^2}\right)   = r \frac{L^2}{m^2r^4}
-\label{_auto32} \tag{44}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto33"></div>
-
-$$
-\begin{equation}  \frac{\alpha}{mr^2}  = \frac{L^2}{m^2r^3}
-\label{_auto33} \tag{45}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto34"></div>
-
-$$
-\begin{equation}  r  = \frac{L^2}{m\alpha}
-\label{_auto34} \tag{46}
-\end{equation}
-$$
-
-* 2b (5pt) At the minimum, the radial velocity is zero and it is only the [centripetal velocity](https://en.wikipedia.org/wiki/Centripetal_force) which is nonzero. This implies that $\ddot{r}=0$.  What is the angular frequency, $\dot{\theta}$, of the orbit? Solve this by setting $\ddot{r}=0=F/m+\dot{\theta}^2r$.
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto35"></div>
-
-$$
-\begin{equation}
-\dot{\theta}^2 r  = - \frac{F}{m}
-\label{_auto35} \tag{47}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto36"></div>
-
-$$
-\begin{equation}  \dot{\theta}^2 r  = - \frac{-\frac{\alpha}{r^2}}{m}
-\label{_auto36} \tag{48}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto37"></div>
-
-$$
-\begin{equation}  \dot{\theta}^2  = \frac{\alpha}{mr^3}
-\label{_auto37} \tag{49}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto38"></div>
-
-$$
-\begin{equation}  \dot{\theta}  = \pm \sqrt{\frac{\alpha}{mr^3}}
-\label{_auto38} \tag{50}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto39"></div>
-
-$$
-\begin{equation}  \dot{\theta}  = \pm \sqrt{\frac{\alpha}{m\frac{L^6}{m^3\alpha^3}}}
-\label{_auto39} \tag{51}
-\end{equation}
-$$
+Find the radius of a circular orbit by solving for the position of the minimum of the effective potential.
 
 <!-- Equation labels as ordinary links -->
 <div id="_auto40"></div>
 
 $$
-\begin{equation}  \dot{\theta}  = \pm \sqrt{\frac{\alpha^4m^2}{L^6}}
-\label{_auto40} \tag{52}
+\begin{equation}
+\frac{1}{m}\frac{dV(r)}{dr}  = r\dot{\phi}^2
+\label{_auto40} \tag{53}
 \end{equation}
 $$
 
@@ -2175,12 +3560,96 @@ $$
 <div id="_auto41"></div>
 
 $$
-\begin{equation}  \dot{\theta}  = \pm \frac{\alpha^2m}{L^3}
-\label{_auto41} \tag{53}
+\begin{equation}  \frac{1}{m}\left( -\frac{-\alpha}{r^2}\right)   = r \frac{L^2}{m^2r^4}
+\label{_auto41} \tag{54}
 \end{equation}
 $$
 
-* 2c (5pt) Find the effective spring constant for the particle at the minimum.
+<!-- Equation labels as ordinary links -->
+<div id="_auto42"></div>
+
+$$
+\begin{equation}  \frac{\alpha}{mr^2}  = \frac{L^2}{m^2r^3}
+\label{_auto42} \tag{55}
+\end{equation}
+$$
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto43"></div>
+
+$$
+\begin{equation}  r  = \frac{L^2}{m\alpha}
+\label{_auto43} \tag{56}
+\end{equation}
+$$
+
+At the minimum, the radial velocity is zero and it is only the [centripetal velocity](https://en.wikipedia.org/wiki/Centripetal_force) which is nonzero. This implies that $\ddot{r}=0$.  What is the angular frequency, $\dot{\theta}$, of the orbit? Solve this by setting $\ddot{r}=0=F/m+\dot{\theta}^2r$.
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto44"></div>
+
+$$
+\begin{equation}
+\dot{\theta}^2 r  = - \frac{F}{m}
+\label{_auto44} \tag{57}
+\end{equation}
+$$
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto45"></div>
+
+$$
+\begin{equation}  \dot{\theta}^2 r  = - \frac{-\frac{\alpha}{r^2}}{m}
+\label{_auto45} \tag{58}
+\end{equation}
+$$
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto46"></div>
+
+$$
+\begin{equation}  \dot{\theta}^2  = \frac{\alpha}{mr^3}
+\label{_auto46} \tag{59}
+\end{equation}
+$$
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto47"></div>
+
+$$
+\begin{equation}  \dot{\theta}  = \pm \sqrt{\frac{\alpha}{mr^3}}
+\label{_auto47} \tag{60}
+\end{equation}
+$$
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto48"></div>
+
+$$
+\begin{equation}  \dot{\theta}  = \pm \sqrt{\frac{\alpha}{m\frac{L^6}{m^3\alpha^3}}}
+\label{_auto48} \tag{61}
+\end{equation}
+$$
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto49"></div>
+
+$$
+\begin{equation}  \dot{\theta}  = \pm \sqrt{\frac{\alpha^4m^2}{L^6}}
+\label{_auto49} \tag{62}
+\end{equation}
+$$
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto50"></div>
+
+$$
+\begin{equation}  \dot{\theta}  = \pm \frac{\alpha^2m}{L^3}
+\label{_auto50} \tag{63}
+\end{equation}
+$$
+
+Find the effective spring constant for the particle at the minimum.
 
 We have shown in class that from the taylor expansion, we have
 
@@ -2191,61 +3660,61 @@ $$
 Therefore, all we have to do is find the second derivative of $V_{\text{eff}}$ around the minimum point of $V_{\text{eff}}$ where $\dot{r} = \ddot{r} = 0$.
 
 <!-- Equation labels as ordinary links -->
-<div id="_auto42"></div>
+<div id="_auto51"></div>
 
 $$
 \begin{equation}
 k  = \frac{d^2V_{\text{eff}}}{dr^2}
-\label{_auto42} \tag{54}
+\label{_auto51} \tag{64}
 \end{equation}
 $$
 
 <!-- Equation labels as ordinary links -->
-<div id="_auto43"></div>
+<div id="_auto52"></div>
 
 $$
 \begin{equation}   = \frac{d^2\left( -\frac{\alpha}{r} + \frac{1}{2} \frac{L^2}{mr^2}\right) }{dr^2}
-\label{_auto43} \tag{55}
+\label{_auto52} \tag{65}
 \end{equation}
 $$
 
 <!-- Equation labels as ordinary links -->
-<div id="_auto44"></div>
+<div id="_auto53"></div>
 
 $$
 \begin{equation}   = -\frac{2\alpha}{r^3} + \frac{3L^2}{mr^4}
-\label{_auto44} \tag{56}
+\label{_auto53} \tag{66}
 \end{equation}
 $$
 
 <!-- Equation labels as ordinary links -->
-<div id="_auto45"></div>
+<div id="_auto54"></div>
 
 $$
 \begin{equation}   = -\frac{2\alpha}{\frac{L^6}{m^3\alpha^3}} + \frac{3L^2}{m\frac{L^8}{m^4\alpha^4}}
-\label{_auto45} \tag{57}
+\label{_auto54} \tag{67}
 \end{equation}
 $$
 
 <!-- Equation labels as ordinary links -->
-<div id="_auto46"></div>
+<div id="_auto55"></div>
 
 $$
 \begin{equation}   = -\frac{2m^3\alpha^4}{L^6} + \frac{3m^3\alpha^4}{L^6}
-\label{_auto46} \tag{58}
+\label{_auto55} \tag{68}
 \end{equation}
 $$
 
 <!-- Equation labels as ordinary links -->
-<div id="_auto47"></div>
+<div id="_auto56"></div>
 
 $$
 \begin{equation}   = \frac{m^3\alpha^4}{L^6}
-\label{_auto47} \tag{59}
+\label{_auto56} \tag{69}
 \end{equation}
 $$
 
-* 2d (5pt) What is the angular frequency for small vibrations about the minimum? How does this compare with the answer to (3b)?
+What is the angular frequency for small vibrations about the minimum? How does this compare with the answer to (3b)?
 
 For small deviations $\delta r$ of $r$,
 
@@ -2262,37 +3731,37 @@ $$
 where
 
 <!-- Equation labels as ordinary links -->
-<div id="_auto48"></div>
+<div id="_auto57"></div>
 
 $$
 \begin{equation}
 \omega =  \sqrt{\frac{k}{m}}
-\label{_auto48} \tag{60}
+\label{_auto57} \tag{70}
 \end{equation}
 $$
 
 <!-- Equation labels as ordinary links -->
-<div id="_auto49"></div>
+<div id="_auto58"></div>
 
 $$
 \begin{equation}   = \sqrt{\frac{m^2\alpha^4}{L^6}} 
-\label{_auto49} \tag{61}
+\label{_auto58} \tag{71}
 \end{equation}
 $$
 
 <!-- Equation labels as ordinary links -->
-<div id="_auto50"></div>
+<div id="_auto59"></div>
 
 $$
 \begin{equation}   = \frac{m\alpha^2}{L^3}
-\label{_auto50} \tag{62}
+\label{_auto59} \tag{72}
 \end{equation}
 $$
 
 This is in fact equal to the expression for $\dot{\theta}$. This means that small perturbations oscillate in sync with the orbit and this traces out an ellipse with a very small eccentricity, a very nice physical result.
 
 
-### Exercise 3, Inverse-square force again (10pt)
+### Exercise: Inverse-square force again
 
 Consider again a  particle of mass $m$ in the same attractive potential, $U(r)=-\alpha/r$, with angular momentum $L$ with just the right energy so that
 
@@ -2312,101 +3781,15 @@ $$
 r=\frac{2r_0}{1+\cos\theta},~~~r_0=\frac{L^2}{2m\alpha}.
 $$
 
-* 3a (5pt) Show that for this case the total energy $E$ approaches zero.
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto51"></div>
-
-$$
-\begin{equation}
-E  = - \frac{\alpha}{r} + \frac{1}{2} m \left(  (\dot{\theta}r)^2+\dot{r}^2\right) 
-\label{_auto51} \tag{63}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto52"></div>
-
-$$
-\begin{equation}   = - \frac{\alpha}{r} + \frac{1}{2} m \left[  \left( \frac{L}{mr^2}r\right) ^2+\left( \frac{dr}{d\theta}\dot{\theta}\right) ^2\right] 
-\label{_auto52} \tag{64}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto53"></div>
-
-$$
-\begin{equation}   = - \frac{\alpha}{2r_0}(1+\cos\theta) + \frac{1}{2} m \left[  \left( \frac{L(1+\cos\theta)}{2mr_0}\right) ^2+\left( 2r_0\frac{-1}{(1+\cos\theta)^2}(-\sin\theta)\frac{L}{mr^2}\right) ^2\right] 
-\label{_auto53} \tag{65}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto54"></div>
-
-$$
-\begin{equation}   = - \frac{\alpha}{2r_0}(1+\cos\theta) + \frac{1}{2} m \left[  \left( \frac{L(1+\cos\theta)}{2mr_0}\right) ^2+\left( 2r_0\frac{-1}{(1+\cos\theta)^2}(-\sin\theta)\frac{L(1+\cos\theta)^2}{4mr_0^2}\right) ^2\right] 
-\label{_auto54} \tag{66}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto55"></div>
-
-$$
-\begin{equation}   = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
-\frac{1}{2} m \left[  \left( \frac{L(1+\cos\theta)}{2mr_0}\right) ^2+\left( \sin\theta\frac{L}{2mr_0}\right) ^2\right] 
-\label{_auto55} \tag{67}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto56"></div>
-
-$$
-\begin{equation}   = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
-\frac{1}{2} m \left[  \left( \frac{L(1+\cos\theta)}{2mr_0}\right) ^2+\left( \sin\theta\frac{L}{2mr_0}\right) ^2\right] 
-\label{_auto56} \tag{68}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto57"></div>
-
-$$
-\begin{equation}   = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
-\frac{1}{2} m \frac{L^2}{4m^2r_0^2} \left[  \left( 1+\cos\theta\right) ^2+\left( \sin\theta\right) ^2\right] 
-\label{_auto57} \tag{69}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto58"></div>
-
-$$
-\begin{equation}   = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
-\frac{1}{2} \frac{L^2}{4mr_0^2} \left(  1 + \cos^2\theta + 2\cos \theta + \sin^2\theta\right) 
-\label{_auto58} \tag{70}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto59"></div>
-
-$$
-\begin{equation}   = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
-\frac{1}{2} \frac{L^2}{4mr_0^2} \left(  2 + 2\cos \theta \right) 
-\label{_auto59} \tag{71}
-\end{equation}
-$$
+Show that for this case the total energy $E$ approaches zero.
 
 <!-- Equation labels as ordinary links -->
 <div id="_auto60"></div>
 
 $$
-\begin{equation}   = (1+\cos\theta) \left( - \frac{\alpha}{2r_0} + \frac{L^2}{4mr_0^2}\right) 
-\label{_auto60} \tag{72}
+\begin{equation}
+E  = - \frac{\alpha}{r} + \frac{1}{2} m \left(  (\dot{\theta}r)^2+\dot{r}^2\right) 
+\label{_auto60} \tag{73}
 \end{equation}
 $$
 
@@ -2414,8 +3797,8 @@ $$
 <div id="_auto61"></div>
 
 $$
-\begin{equation}   = (1+\cos\theta) \left( - \frac{\alpha}{2\frac{L^2}{2m\alpha}} + \frac{L^2}{4m\frac{L^4}{4m^2\alpha^2}}\right) 
-\label{_auto61} \tag{73}
+\begin{equation}   = - \frac{\alpha}{r} + \frac{1}{2} m \left[  \left( \frac{L}{mr^2}r\right) ^2+\left( \frac{dr}{d\theta}\dot{\theta}\right) ^2\right] 
+\label{_auto61} \tag{74}
 \end{equation}
 $$
 
@@ -2423,8 +3806,8 @@ $$
 <div id="_auto62"></div>
 
 $$
-\begin{equation}   = (1+\cos\theta) \left( - \frac{m\alpha^2}{L^2} + \frac{m\alpha^2}{L^2}\right) 
-\label{_auto62} \tag{74}
+\begin{equation}   = - \frac{\alpha}{2r_0}(1+\cos\theta) + \frac{1}{2} m \left[  \left( \frac{L(1+\cos\theta)}{2mr_0}\right) ^2+\left( 2r_0\frac{-1}{(1+\cos\theta)^2}(-\sin\theta)\frac{L}{mr^2}\right) ^2\right] 
+\label{_auto62} \tag{75}
 \end{equation}
 $$
 
@@ -2432,12 +3815,98 @@ $$
 <div id="_auto63"></div>
 
 $$
-\begin{equation}   = 0
-\label{_auto63} \tag{75}
+\begin{equation}   = - \frac{\alpha}{2r_0}(1+\cos\theta) + \frac{1}{2} m \left[  \left( \frac{L(1+\cos\theta)}{2mr_0}\right) ^2+\left( 2r_0\frac{-1}{(1+\cos\theta)^2}(-\sin\theta)\frac{L(1+\cos\theta)^2}{4mr_0^2}\right) ^2\right] 
+\label{_auto63} \tag{76}
 \end{equation}
 $$
 
-* 3b (5pt) With zero energy $E=0$, write this trajectory in a more recognizable parabolic form, that is express $x_0$ and $R$ in terms of $r_0$ using
+<!-- Equation labels as ordinary links -->
+<div id="_auto64"></div>
+
+$$
+\begin{equation}   = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
+\frac{1}{2} m \left[  \left( \frac{L(1+\cos\theta)}{2mr_0}\right) ^2+\left( \sin\theta\frac{L}{2mr_0}\right) ^2\right] 
+\label{_auto64} \tag{77}
+\end{equation}
+$$
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto65"></div>
+
+$$
+\begin{equation}   = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
+\frac{1}{2} m \left[  \left( \frac{L(1+\cos\theta)}{2mr_0}\right) ^2+\left( \sin\theta\frac{L}{2mr_0}\right) ^2\right] 
+\label{_auto65} \tag{78}
+\end{equation}
+$$
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto66"></div>
+
+$$
+\begin{equation}   = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
+\frac{1}{2} m \frac{L^2}{4m^2r_0^2} \left[  \left( 1+\cos\theta\right) ^2+\left( \sin\theta\right) ^2\right] 
+\label{_auto66} \tag{79}
+\end{equation}
+$$
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto67"></div>
+
+$$
+\begin{equation}   = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
+\frac{1}{2} \frac{L^2}{4mr_0^2} \left(  1 + \cos^2\theta + 2\cos \theta + \sin^2\theta\right) 
+\label{_auto67} \tag{80}
+\end{equation}
+$$
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto68"></div>
+
+$$
+\begin{equation}   = - \frac{\alpha}{2r_0}(1+\cos\theta) + 
+\frac{1}{2} \frac{L^2}{4mr_0^2} \left(  2 + 2\cos \theta \right) 
+\label{_auto68} \tag{81}
+\end{equation}
+$$
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto69"></div>
+
+$$
+\begin{equation}   = (1+\cos\theta) \left( - \frac{\alpha}{2r_0} + \frac{L^2}{4mr_0^2}\right) 
+\label{_auto69} \tag{82}
+\end{equation}
+$$
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto70"></div>
+
+$$
+\begin{equation}   = (1+\cos\theta) \left( - \frac{\alpha}{2\frac{L^2}{2m\alpha}} + \frac{L^2}{4m\frac{L^4}{4m^2\alpha^2}}\right) 
+\label{_auto70} \tag{83}
+\end{equation}
+$$
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto71"></div>
+
+$$
+\begin{equation}   = (1+\cos\theta) \left( - \frac{m\alpha^2}{L^2} + \frac{m\alpha^2}{L^2}\right) 
+\label{_auto71} \tag{84}
+\end{equation}
+$$
+
+<!-- Equation labels as ordinary links -->
+<div id="_auto72"></div>
+
+$$
+\begin{equation}   = 0
+\label{_auto72} \tag{85}
+\end{equation}
+$$
+
+With zero energy $E=0$, write this trajectory in a more recognizable parabolic form, that is express $x_0$ and $R$ in terms of $r_0$ using
 
 $$
 x=x_0-\frac{y^2}{R}.
@@ -2446,179 +3915,63 @@ $$
 We have that
 
 <!-- Equation labels as ordinary links -->
-<div id="_auto64"></div>
+<div id="_auto73"></div>
 
 $$
 \begin{equation}
 x  = r \cos\theta
-\label{_auto64} \tag{76}
+\label{_auto73} \tag{86}
 \end{equation}
 $$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto65"></div>
-
-$$
-\begin{equation} 
-y  = r \sin \theta,
-\label{_auto65} \tag{77}
-\end{equation}
-$$
-
-we obtain
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto66"></div>
-
-$$
-\begin{equation}
-y  = r \sin\theta
-\label{_auto66} \tag{78}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto67"></div>
-
-$$
-\begin{equation} 
- = \frac{2r_0}{1+\cos\theta}\sin\theta
-\label{_auto67} \tag{79}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto68"></div>
-
-$$
-\begin{equation} 
- = \frac{2r_0}{1-\cos^2\theta}\sin\theta(1-\cos\theta)
-\label{_auto68} \tag{80}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto69"></div>
-
-$$
-\begin{equation} 
- = \frac{2r_0(1-\cos\theta)}{\sin\theta},
-\label{_auto69} \tag{81}
-\end{equation}
-$$
-
-and
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto70"></div>
-
-$$
-\begin{equation}
-x  = r \sin\theta
-\label{_auto70} \tag{82}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto71"></div>
-
-$$
-\begin{equation} 
- = \frac{2r_0}{1+\cos\theta}\cos\theta
-\label{_auto71} \tag{83}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto72"></div>
-
-$$
-\begin{equation} 
- = \frac{2r_0}{1-\cos^2\theta}\cos\theta(1-\cos\theta)
-\label{_auto72} \tag{84}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto73"></div>
-
-$$
-\begin{equation} 
- = \frac{2r_0(\cos\theta-\cos^2\theta)}{\sin^2 \theta}.
-\label{_auto73} \tag{85}
-\end{equation}
-$$
-
-Here  we notice that the denominator of $x$ is the square of the denominator of $y$. We also have
-
-$$
-y^2 = \frac{4r_0^2(1-2\cos\theta+\cos^2\theta)}{\sin^2\theta}.
-$$
-
-Let try to add them such that $\cos\theta$ cancels out, that is
 
 <!-- Equation labels as ordinary links -->
 <div id="_auto74"></div>
 
 $$
-\begin{equation}
-x + \frac{y^2}{4r_0}  = \frac{2r_0(\cos\theta-\cos^2\theta)}{\sin^2 \theta} + \frac{4r_0^2(1-2\cos\theta+\cos^2\theta)}{\sin^2\theta}\frac{1}{4r_0}
-\label{_auto74} \tag{86}
+\begin{equation} 
+y  = r \sin \theta.
+\label{_auto74} \tag{87}
 \end{equation}
 $$
 
-<!-- Equation labels as ordinary links -->
-<div id="_auto75"></div>
+Using the general solution with eccintricity $\epsilon=1$, we have
 
 $$
-\begin{equation}   = \frac{r_0}{\sin^2\theta}\left(  2\cos\theta-2\cos^2\theta + 1 - 2\cos\theta + \cos^2\theta\right) 
-\label{_auto75} \tag{87}
-\end{equation}
+r(\theta)=\frac{c}{1+\cos\theta},
 $$
 
-<!-- Equation labels as ordinary links -->
-<div id="_auto76"></div>
+and multiplying both sides with $1+\cos\theta$ and using that $x=r\cos\theta$,
 
 $$
-\begin{equation}   = \frac{r_0}{\sin^2\theta}\left(  -2\cos^2\theta + 1 + \cos^2\theta\right) 
-\label{_auto76} \tag{88}
-\end{equation}
+r = c -x,
 $$
 
-<!-- Equation labels as ordinary links -->
-<div id="_auto77"></div>
+and using that $r^2=x^2+y^2$, we square both sides
 
 $$
-\begin{equation}   = \frac{r_0}{\sin^2\theta}\left(  1 - \cos^2\theta\right) 
-\label{_auto77} \tag{89}
-\end{equation}
+r^2 = x^2+y^2=c^2 +x^2-2cx,
 $$
 
-<!-- Equation labels as ordinary links -->
-<div id="_auto78"></div>
+leading to
 
 $$
-\begin{equation}   = \frac{r_0}{\sin^2\theta}\left(  \sin^2\theta\right) 
-\label{_auto78} \tag{90}
-\end{equation}
+y^2=c^2-2cx,
 $$
 
-<!-- Equation labels as ordinary links -->
-<div id="_auto79"></div>
+and using that we defined
 
 $$
-\begin{equation}   = r_0
-\label{_auto79} \tag{91}
-\end{equation}
+c=2r_0=\frac{L^2}{m\alpha},
 $$
 
-Thus, we have
+we divide by $2c$ 
+and we get the final answer
 
 $$
 x = r_0 - \frac{y^2}{4r_0}
 $$
 
-### Exercise 4, parabolic and hyperbolic orbits (10pt)
+### Exercise: Parabolic and hyperbolic orbits
 
 The solution to the radial function for an inverse-square-law force, see for example Taylor equation (8.59) or the equation above, is
 
@@ -2636,320 +3989,205 @@ $$
 For a hyperbola, identify the constants $\alpha$, $\beta$ and $\delta$ in terms of the constants $c$ and $\epsilon$ for $r(\phi)$.
 
 <!-- Equation labels as ordinary links -->
-<div id="_auto80"></div>
+<div id="_auto75"></div>
 
 $$
 \begin{equation}
 x  = r\cos\phi
-\label{_auto80} \tag{92}
+\label{_auto75} \tag{88}
 \end{equation}
 $$
 
 <!-- Equation labels as ordinary links -->
-<div id="_auto81"></div>
+<div id="_auto76"></div>
 
 $$
 \begin{equation}   = \frac{c\cos\phi}{1+\epsilon\cos\phi}
-\label{_auto81} \tag{93}
+\label{_auto76} \tag{89}
 \end{equation}
 $$
 
 <!-- Equation labels as ordinary links -->
-<div id="_auto82"></div>
+<div id="_auto77"></div>
 
 $$
 \begin{equation}
 y  = r\sin\phi 
-\label{_auto82} \tag{94}
+\label{_auto77} \tag{90}
 \end{equation}
 $$
 
 <!-- Equation labels as ordinary links -->
-<div id="_auto83"></div>
+<div id="_auto78"></div>
 
 $$
 \begin{equation}   = \frac{c\sin\phi}{1+\epsilon\cos\phi}
-\label{_auto83} \tag{95}
+\label{_auto78} \tag{91}
 \end{equation}
 $$
 
-Therefore,
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto84"></div>
+Here $\epsilon>1$.  We use our equation for $r$, multiply with the denominator $1+\epsilon\cos\phi$ on both sides and have
 
 $$
-\begin{equation}
-\frac{(x-\delta)^2}{\alpha^2} - \frac{y^2}{\beta^2} 
- = \frac{(\frac{c\cos\phi-\delta(1+\epsilon\cos\phi)}{1+\epsilon\cos\phi})^2}{\alpha^2} - \frac{(\frac{c\sin\phi}{1+\epsilon\cos\phi})^2}{\beta^2}
-\label{_auto84} \tag{96}
-\end{equation}
+r(1+\epsilon\cos\phi)=c,
 $$
 
-<!-- Equation labels as ordinary links -->
-<div id="_auto85"></div>
+use $x=r\cos\phi$ and square and use that $r^2=x^2+y^2$ and we have
 
 $$
-\begin{equation}   = \frac{\beta^2 c^2\cos^2\phi + \beta^2\delta^2 + \beta^2\delta^2 \epsilon^2 \cos^2 \phi - 2\beta^2\delta c \cos\phi - 2 \beta^2\delta c \epsilon \cos^2 \phi + 2\beta^2\delta^2 \epsilon \cos \phi - \alpha^2 c^2 \sin^2 \phi}{\alpha^2\beta^2(1 + 2\epsilon\cos\phi + \epsilon^2\cos^2\phi)}
-\label{_auto85} \tag{97}
-\end{equation}
+r^2=x^2+y^2=c^2+\epsilon^2x^2-2cx\epsilon,
 $$
 
-<!-- Equation labels as ordinary links -->
-<div id="_auto86"></div>
+and reorder
 
 $$
-\begin{equation}   = \frac{
-\beta^2\cos^2\phi (c^2 + \delta^2 \epsilon^2 - 2 \delta c \epsilon) - \alpha^2 c^2 \sin^2 \phi + \beta^2\delta^2 + 2\beta^2\delta \cos\phi (-c + \delta \epsilon)
-}{\alpha^2\beta^2(1 + 2\epsilon\cos\phi + \epsilon^2\cos^2\phi)}
-\label{_auto86} \tag{98}
-\end{equation}
+x^2(\epsilon^2-1)-y^2-2cx\epsilon= -c^2.
 $$
 
-<!-- Equation labels as ordinary links -->
-<div id="_auto87"></div>
+We complete the square in $x$ by adding and subtracting on both sides $\epsilon^2c^2/(\epsilon^2-1)$
+and we obtain
 
 $$
-\begin{equation}   = \frac{
-(\beta^2\delta^2 - \alpha^2 c^2)
- + 2\beta^2\delta \cos\phi (\delta \epsilon-c)
- + \cos^2\phi (\beta^2c^2 + \beta^2\delta^2 \epsilon^2 - 2\beta^2 \delta c \epsilon + \alpha^2 c^2)
-}{\alpha^2\beta^2(1 + 2\epsilon\cos\phi + \epsilon^2\cos^2\phi)}
-\label{_auto87} \tag{99}
-\end{equation}
+(\epsilon^2-1)(x-\delta)^2-y^2= -c^2+\frac{\epsilon^2c^2}{\epsilon^2-1}.
 $$
 
-<!-- Equation labels as ordinary links -->
-<div id="_auto88"></div>
+Here we have defined
 
 $$
-\begin{equation}   = 1
-\label{_auto88} \tag{100}
-\end{equation}
+\delta = \frac{c\epsilon}{\epsilon^2-1},
 $$
 
-We can seperate this into several equations:
+and introducing the constants
 
 $$
-\frac{\beta^2\delta^2 - \alpha^2 c^2}{\alpha^2\beta^2} = 1
-\\ \frac{2\beta^2\delta \cos\phi (\delta \epsilon-c)}{\alpha^2\beta^2} = 2\epsilon\cos\phi
-\\ \frac{\cos^2\phi (\beta^2c^2 + \beta^2\delta^2 \epsilon^2 - 2\beta^2 \delta c \epsilon + \alpha^2 c^2)}{\alpha^2\beta^2} = \epsilon^2\cos^2\phi
+\alpha = \frac{c}{\epsilon^2-1},
 $$
 
-These can further be simplified:
+and
 
 $$
-\frac{\delta^2}{\alpha^2} - \frac{c^2}{\beta^2} = 1
-\\
-\frac{\delta^2\epsilon}{\alpha^2} - \frac{\delta c}{\beta^2} = \epsilon
-\\
-\frac{c^2}{\alpha^2} + \frac{\delta^2\epsilon^2}{\alpha^2} - 2\frac{\delta c \epsilon}{\alpha^2} + \frac{c^2}{\beta^2}
-= \epsilon^2
+\beta = \frac{c}{\sqrt{\epsilon^2-1}},
 $$
 
-Now, all we have to do is solve these three equations for the three unknowns $\alpha$, $\beta$, and $\gamma$:
-
-From the first equation, we have
+we can rewrite the above equation as
 
 $$
-\frac{1}{\beta^2} = \frac{\delta^2}{c^2\alpha^2} - \frac{1}{c^2}
+\frac{(x-\delta)^2}{\alpha^2}-\frac{y^2}{\beta^2}=1,
 $$
 
-Therefore,
-
-$$
-\frac{\delta^2\epsilon}{\alpha^2} - \left(  \frac{\delta^2}{c^2\alpha^2} - \frac{1}{c^2} \right) \delta c = 
-\frac{\delta^2\epsilon}{\alpha^2} - \frac{\delta^3}{c\alpha^2} + \frac{\delta}{c}
-= \epsilon
-\\
-\frac{c^2}{\alpha^2} + \frac{\delta^2\epsilon^2}{\alpha^2} - 2\frac{\delta c \epsilon}{\alpha^2} + c^2\left(  \frac{\delta^2}{c^2\alpha^2} - \frac{1}{c^2} \right)  =
-\frac{c^2}{\alpha^2} + \frac{\delta^2\epsilon^2}{\alpha^2} - 2\frac{\delta c \epsilon}{\alpha^2}
-+ \frac{\delta^2}{\alpha^2} - 1
-= \epsilon^2
-$$
-
-From here  we obtain
-
-$$
-\frac{1}{\alpha^2} = \frac{\epsilon-\frac{\delta}{c}}{\delta^2\epsilon - \frac{\delta^3}{c}} = \frac{1}{\delta^2}\frac{\epsilon-\frac{\delta}{c}}{\epsilon-\frac{\delta}{c}}
-$$
-
-This means we have two possibilities: either $\delta^2 = \alpha^2$ or $\delta = c$. Since the first option would mean $\beta \rightarrow \pm \infty$, the second option must be true. Hence,
-
-$$
-\frac{c^2}{\alpha^2} + \frac{c^2\epsilon^2}{\alpha^2} - 2\frac{c^2 \epsilon}{\alpha^2}
-+ \frac{c^2}{\alpha^2} - 1
-= \epsilon^2
-\\
-\frac{c^2}{\alpha^2} (1 + \epsilon^2 - 2 \epsilon) = 1 + \epsilon^2
-\\ \frac{c^2}{\alpha^2} = \frac{1 + \epsilon^2}{(1-\epsilon)^2}
-\\ \alpha = \pm c \sqrt{\frac{(1-\epsilon)^2}{1 + \epsilon^2}}.
-$$
-
-And we have
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto89"></div>
-
-$$
-\begin{equation}
-\beta  = \pm \sqrt{\frac{1}{\frac{\delta^2}{c^2\alpha^2} - \frac{1}{c^2}}}
-\label{_auto89} \tag{101}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto90"></div>
-
-$$
-\begin{equation}   = \pm \sqrt{\frac{1}{\frac{1 + \epsilon^2}{(1-\epsilon)^2} - \frac{1}{c^2}}}
-\label{_auto90} \tag{102}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto91"></div>
-
-$$
-\begin{equation}   = \pm c \sqrt{\frac{1}{\frac{1 + \epsilon^2}{1-2\epsilon+\epsilon^2} - \frac{1-2\epsilon+\epsilon^2}{1-2\epsilon+\epsilon^2}}}
-\label{_auto91} \tag{103}
-\end{equation}
-$$
-
-<!-- Equation labels as ordinary links -->
-<div id="_auto92"></div>
-
-$$
-\begin{equation}   = \pm c \sqrt{\frac{(1-\epsilon)^2}{2\epsilon}}
-\label{_auto92} \tag{104}
-\end{equation}
-$$
-
-Summing up, we have
-
-$$
-\delta = c
-\\
-\alpha = \pm c \sqrt{\frac{(1-\epsilon)^2}{1 + \epsilon^2}}
-\\
-\beta = \pm c \sqrt{\frac{(1-\epsilon)^2}{2\epsilon}}
-$$
-
-## Different Potential
-
-Let us now try another potential, given by
-
-$$
-V(r) = \beta r,
-$$
-
-where $\beta$ is constant we assume is larger than zero. This type of potential has played an importan role in modeling confinement of quarks in non-relativistic models for the interactions among quarks, see for example <https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.44.1369> 
+which is nothing but the equation for a hyperbola.
 
 
-Adding the angular momentum part, we obtain the effective potential
+### Exercise: Testing orbit types
 
-$$
-V_{\mathrm{eff}}(r) = \beta r+\frac{L^2}{2\mu r^2},
-$$
+In this exercise we can use the program for $r(\phi)$ we developed in hw8. We will use an inverse-square-law force as in the previous four exercises. The aim is to see that the orbits we get for $E<0$ become ellipses (or circles), parabola for $E=0$ and hyperbola for $E>0$.  An example code is shown here.
 
-and taking the derivative with respect to $r$, we get the radial force
-
-$$
-F_r=-\frac{dV_{\mathrm{eff}}(r)}{dr} = -\beta+\frac{L^2}{\mu r^3}.
-$$
-
-It gives us in turn a radial acceleration $a_r$
-
-$$
-a_r= -\frac{\beta}{\mu}+\frac{L^2}{\mu^2 r^3}.
-$$
-
-This is the equation we need to include in our code. I have not been able to find out if there is an analytical solution to the above equation. If you can find one, there is a reward of $50$ USD to the first one who finds. Numerically life is very easy, we just define a new acceleration, as seen below.
-
-
-
-First however, we plot the effective potential in order to get a feeling of what we may expect.
-
-The following code plots this effective potential for a simple choice of parameters, with a potential $\beta r $. Here we have chosen $L=m=\beta=1$.
+Here we have defined the constants $L=m=\alpha=1$. Feel free to set new values. **You need also to set the initial conditions** in order to study the different types of orbits. It may be useful to plot the potential here and find the values for the initial conditions that fit $E<0$, $E=0$ and $E>0$.
 
 # Common imports
 import numpy as np
+import pandas as pd
 from math import *
 import matplotlib.pyplot as plt
-
-Deltax = 0.01
-#set up arrays
-xinitial = 0.3
-xfinal = 5.0
-beta = 1.0   # spring constant
-m = 1.0   # mass, you can change these
-AngMom = 1.0  #  The angular momentum
-n = ceil((xfinal-xinitial)/Deltax)
-x = np.zeros(n)
-for i in range(n):
-    x[i] = xinitial+i*Deltax
-V = np.zeros(n)
-V = beta*x+0.5*AngMom*AngMom/(m*x*x)
-# Plot potential
-fig, ax = plt.subplots()
-ax.set_xlabel('r[m]')
-ax.set_ylabel('V[J]')
-ax.plot(x, V)
-fig.tight_layout()
-plt.show()
-
-We take now the derivative of the effective potential in order to find its minimum, that is
-
-$$
-\frac{dV_{\mathrm{eff}}(r)}{dr} = \beta-\frac{L^2}{\mu r^3}=0,
-$$
-
-which gives us $r_{\mathrm{min}}$
-
-$$
-r_{\mathrm{min}}=\left [\frac{L^2}{\beta \mu}\right ]^{1/3}.
-$$
-
-With the above choice of parameters this gives $r_{\mathrm{min}}=1$. 
-
-In the code here we solve the equations of motion and find the time-evolution of the radius $r$.
-
+# Simple Gravitational Force   -alpha/r
+    
 DeltaT = 0.01
 #set up arrays 
-tfinal = 8.0
+tfinal = 100.0
 n = ceil(tfinal/DeltaT)
 # set up arrays for t, v and r
 t = np.zeros(n)
 v = np.zeros(n)
 r = np.zeros(n)
 # Constants of the model, setting all variables to one for simplicity
-beta = 1.0
+alpha = 1.0
 AngMom = 1.0  #  The angular momentum
 m = 1.0  # scale mass to one
 c1 = AngMom*AngMom/(m*m)
 c2 = AngMom*AngMom/m
-rmin = (AngMom*AngMom/m/beta)**(1./3.)
-# Initial conditions, place yourself at the potential min
-r0 = rmin
-v0 = 0.0  # starts at rest
+# You need to specify the initial conditions
+# Here we have chosen the conditions which lead to circular orbit and thereby a constant r
+r0 = (AngMom*AngMom/m/alpha)
+v0 = 0.0
 r[0] = r0
 v[0] = v0
 # Start integrating using the Velocity-Verlet  method
 for i in range(n-1):
     # Set up acceleration
-    a = -beta+c1/(r[i]**3)
+    a = -alpha/(r[i]**2)+c1/(r[i]**3)
     # update velocity, time and position using the Velocity-Verlet method
     r[i+1] = r[i] + DeltaT*v[i]+0.5*(DeltaT**2)*a
-    anew = -beta+c1/(r[i+1]**3)
+    anew = -alpha/(r[i+1]**2)+c1/(r[i+1]**3)
     v[i+1] = v[i] + 0.5*DeltaT*(a+anew)
     t[i+1] = t[i] + DeltaT
-#plotting
-plt.xlabel('time')
-plt.ylabel('radius')
-plt.plot(t,r)
-save_fig("LinearPotential")
+    # Plot position as function of time
+fig, ax = plt.subplots(2,1)
+ax[0].set_xlabel('time')
+ax[0].set_ylabel('radius')
+ax[0].plot(t,r)
+ax[1].set_xlabel('time')
+ax[1].set_ylabel('Velocity')
+ax[1].plot(t,v)
+
 plt.show()
 
-We see that if we run with the initial condition corresponding to a circular orbit, our radius stays constant as function of time. 
+Run your code and study and discuss the situations where you have
+elliptical, parabolic and hyperbolic orbits. Discuss the physics of
+these cases. The results from the four previous exercises 4 may be useful
+here.  In the code here we have chosen initial conditions which correspond to circular motion.
+This corresponds to
 
-What kind of orbits do we have here? Will it be bounded or unbounded?
+$$
+r_{\mathrm{min}} = \frac{L^2}{m\alpha}.
+$$
+
+Note well that the velocity is now the radial velocity. If we want to
+study the angular velocity we would need to add the equations for this
+quantity. The solution to exercises 1-4 give you the minimum $r$
+values needed to find the elliptical, parabolic and hyperbolic
+orbits. For elliptical orbits you should have $\frac{L^2}{2m\alpha} <
+r_{\mathrm{min}} <\frac{L^2}{m\alpha}$. For parabolic orbits
+$r_{\mathrm{min}} =\frac{L^2}{m\alpha}$ and for hyperbolic orbits we
+have $0<r_{\mathrm{min}} <\frac{L^2}{m\alpha}$. Try out these
+different initial conditions in order to test these different types of
+motion.
+
+
+
+
+### Exercise: New reference frame
+
+Show that if one transforms to a reference frame where the total
+momentum is zero, $\boldsymbol{p}_1=-\boldsymbol{p}_2$, that the relative momentum
+$\boldsymbol{q}$ corresponds to either $\boldsymbol{p}_1$ or $-\boldsymbol{p}_2$. This
+means that in this frame the magnitude of $\boldsymbol{q}$ is one half the
+magnitude of $\boldsymbol{p}_1-\boldsymbol{p}_2$.
+
+### Exercise: Center of mass and relative coordinates
+
+Given the center of mass and relative coordinates $\boldsymbol{R}$ and $\boldsymbol{r}$, respectively, for
+particles of mass $m_1$ and $m_2$, find the coordinates $\boldsymbol{r}_1$
+and $\boldsymbol{r}_2$ in terms of the masses, $\boldsymbol{R}$ and $\boldsymbol{r}$.
+
+
+### Exercise: Two-body problems
+
+Consider a particle of mass $m$ moving in a potential
+
+$$
+V(r)=\alpha\ln(r/\alpha),
+$$
+
+where $\alpha$ is a constant.
+
+* (a) If the particle is moving in a circular orbit of radius $R$, find the angular frequency $\dot{\theta}$. Solve this by setting $F=-m\dot{\theta}^2r$ (force and acceleration point inward).
+
+* (b) Express the angular momentum $L$ in terms of the constant $\alpha$, the mass $m$ and the radius $R$. Also express $R$ in terms of $L$, $\alpha$ and $m$.
+
+* (c) Sketch the effective radial potential, $V_{\rm eff}(r)$, for a particle with angular momentum $L$. (No longer necessarily moving in a circular orbit.)
+
+* (d) Find the position of the minimum of $V_{\rm eff}$ in terms of $L$, $\alpha$ and $m$, then compare to the result of (b).
+
+* (e)  What is the effective spring constant for a particle at the minimum of $V_{\rm eff}$? Express your answer in terms of $L$, $m$ and $\alpha$. 
+
+* (f)   What is the angular frequency, $\omega$, for small oscillations of $r$ about the $R_{\rm min}$?  Express your answer in terms of $\dot{\theta}$ from part (3a).
