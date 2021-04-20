@@ -105,24 +105,31 @@ There is no video of Friday's session since the lecture was organized in breakou
 
 ### Week 13, March 29-April 2, 2020
 - Monday 3/29: Central force problems, summary and discussion of two-body scattering problems. 9th homework, due April  5.  Video of lecture at https://mediaspace.msu.edu/media/t/1_6ryr6atu and handwriten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesMarch29.pdf
-- Wednesday 3/31: Two-body scattering. Taylor chapter 14 covers parts of the material. 
-- Friday 4/2:  Two-body scattering (Taylor chapter 14). Second midterm available April 5/6, due Friday April 16.  
+- Wednesday 3/31: Two-body scattering. Taylor chapter 14 covers parts of the material.  Video of lecture at https://mediaspace.msu.edu/media/t/1_0wmrw1ag and handwriten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesMarch31.pdf
+- Friday 4/2:  Two-body scattering (Taylor chapter 14). Second midterm available Saturday April 3 at 2pm, due April 18.  Video of lecture at https://mediaspace.msu.edu/media/t/1_cnm2f4uq and handwriten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesApril2.pdf
 - Solutions to homework 8 at https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionhw8.ipynb
 
 ### Week 14, April 5-9, 2021
-- Monday 4/5: Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. 
-- Wednesday 4/7: Variational Calculus, chapter 6 of Taylor  
-- Friday 4/9: Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. 
+- Monday 4/5: Wrapping up two-body scattering and begin Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. Video of Lecture https://mediaspace.msu.edu/media/t/1_6xf80nmu and handwriten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesApril5.pdf
+- Wednesday 4/7: Variational Calculus, chapter 6 of Taylor. Video of Lecture at https://mediaspace.msu.edu/media/t/1_puzmqtxj and handwriten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesApril7.pdf
+- Friday 4/9: Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. Video of Lecture at https://mediaspace.msu.edu/media/t/1_rp854yf0 and handwriten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesApril9.pdf
+- Solution hw 9 as Jupyter notebook at: https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionhw9.ipynb
+
 ### Week 15, April  12-16, 2021
-- Monday 4/12: Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. 
-- Wednesday 4/14: Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. 
-- Friday 4/16: Euler-Lagrange equations and Lagrangian formalism. Taylor chapter 6 and lecture notes. Deadline 2nd midterm at midnight.
+- Monday 4/12: Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. Video at https://mediaspace.msu.edu/media/t/1_glmwe3s1 and handwriten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesApril12.pdf
+- Wednesday 4/14: Variational calculus and the Euler-Lagrange equations, chapters 6-7 of Taylor and lecture notes.  Video of Lecture at https://mediaspace.msu.edu/media/t/1_foeveqvo and handwriten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesApril14.pdf 
+- Friday 4/16: Euler-Lagrange equations and Lagrangian formalism. Taylor chapters 6-7 and lecture notes. Deadline 2nd midterm at midnight of April 18. Video of lecture at https://mediaspace.msu.edu/media/t/1_9tdk8c94 and handwriten notes at https://github.com/mhjensen/Physics321\
+/blob/master/doc/HandWrittenNotes/Spring2021/NotesApril16.pdf 
+
 ### Week 16, April 19-23, 2021
-- Monday 4/19:  Langrangian formalism, discussion of examples. Taylor chapters 6 and 7. 10th homework as extra assignments, due April 26. 
+- Monday 4/19:  Langrangian formalism, discussion of examples. Taylor chapters 6 and 7. 10th homework as extra assignments, due April 26. Video of Lecture at https://mediaspace.msu.edu/media/t/1_o0e6xygq and handwriten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesApril19.pdf 
 - Wednesday 4/21: Lagrangian formalism, examples such as the linear chain and double pendulum. Summary and discussions of final exam project. _Final exam project project, due April 30_   
 - Friday 4/23:  Study day
 ### Week 17, April 26- April 30, 2021, Finals week
+
 - Final Exam:  The final exam will be a project similar to the two midterm projects. Deadline April 30. We will have Q/A sessions Monday 26 and Wednesday 28 at 2.30pm to 4pm. Other sessions can always be arranged. 
+
+
 
 
 ## Learning outcomes
@@ -157,11 +164,5 @@ computations, we would like to emphasize
 - understanding how algorithms are used to solve mathematical problems
 - Making science (your results) reproducible
 - algorithmic thinking for gaining deeper insights about scientific problems
-
-
-
-
-
-
 
 
