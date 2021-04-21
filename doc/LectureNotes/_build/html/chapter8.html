@@ -156,7 +156,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="chapter6.html">
-   2. Two-body problems and Gravitational Forces
+   2. Two-body problems, from the Gravitational Force to Two-body Scattering
   </a>
  </li>
  <li class="toctree-l1">
@@ -283,6 +283,18 @@
   <a class="reference internal nav-link" href="#small-vibrations-and-normal-modes">
    4.3. Small Vibrations and Normal Modes
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#coupled-springs">
+     4.3.1. Coupled Springs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#double-pendulum">
+     4.3.2. Double Pendulum
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conservation-laws">
@@ -1070,6 +1082,8 @@ coordinate system where the motion is simple for each coordinate. This
 involves finding the direction, or the linear combination of <span class="math notranslate nohighlight">\(x_i\)</span>
 that form the coordinates <span class="math notranslate nohighlight">\(q_i\)</span> in which the motion is that of a
 single oscillator in each coordinate.</p>
+<div class="section" id="coupled-springs">
+<h3><span class="section-number">4.3.1. </span>Coupled Springs<a class="headerlink" href="#coupled-springs" title="Permalink to this headline">¶</a></h3>
 <p>For a first example, we consider a system of springs, where we write
 the Lagrangian, then find the normal modes. For the second example, a
 double pendulum is considered. In this case, one must first make a
@@ -1202,6 +1216,9 @@ oscillates independently in a simple manner, one can better understand
 the motion. Further, the frequencies of these modes represent the
 natural resonant frequencies of the system. This is important in the
 construction of many structures, such as bridges or vehicles.</p>
+</div>
+<div class="section" id="double-pendulum">
+<h3><span class="section-number">4.3.2. </span>Double Pendulum<a class="headerlink" href="#double-pendulum" title="Permalink to this headline">¶</a></h3>
 <p>Consider a double pendulum confined to the <span class="math notranslate nohighlight">\(x-y\)</span> plane, where <span class="math notranslate nohighlight">\(y\)</span> is
 vertical. A mass <span class="math notranslate nohighlight">\(m\)</span> is connected to the ceiling with a massless
 string of length <span class="math notranslate nohighlight">\(\ell\)</span>. A second mass <span class="math notranslate nohighlight">\(m\)</span> hangs from the first mass
@@ -1322,16 +1339,15 @@ M\ddot{q}&amp;=&amp;-Kq,
 <span class="math notranslate nohighlight">\(n-\)</span>dimensional vector and <span class="math notranslate nohighlight">\(M\)</span> and <span class="math notranslate nohighlight">\(k\)</span> are <span class="math notranslate nohighlight">\(n\times n\)</span> matrices. In
 the double pendulum example, the dimensionality is 2 and the <span class="math notranslate nohighlight">\(q\)</span>
 refers to the <span class="math notranslate nohighlight">\(\theta_1\)</span> and <span class="math notranslate nohighlight">\(\theta_2\)</span>, and the matrices for <span class="math notranslate nohighlight">\(M\)</span> and
-<span class="math notranslate nohighlight">\(K\)</span> can be read off (add ref).</p>
+<span class="math notranslate nohighlight">\(K\)</span> can be read off as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\begin{eqnarray*}
-M&amp;=&amp;\left(\begin{array}{cc}
-2&amp;1\\
-1&amp;1\end{array}\right)~,\hspace*{40pt} K=\left(\begin{array}{cc}
-2\omega_0^2&amp;0\\
-0&amp;\omega_0^2\end{array}\right).
-\end{eqnarray*}
+M=\begin{bmatrix} 2&amp;1\\ 1&amp;1\end{bmatrix},
+\end{split}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+K=\begin{bmatrix} 2\omega_0^2&amp;0\\ 0&amp;\omega_0^2\end{bmatrix}.
 \end{split}\]</div>
 <p>Multiplying both sides of the equation by the inverse matrix <span class="math notranslate nohighlight">\(M^{-1}\)</span>,</p>
 <div class="math notranslate nohighlight">
@@ -1419,6 +1435,7 @@ the problem numerically due to the messiness of the algebra. The main
 programming languages all have packages which readily diagonalize
 matrices and find eigenvectors and eigenvalues.</p>
 </div>
+</div>
 <div class="section" id="conservation-laws">
 <h2><span class="section-number">4.4. </span>Conservation Laws<a class="headerlink" href="#conservation-laws" title="Permalink to this headline">¶</a></h2>
 <p>Energy is conserved only when the Lagrangian has no explicit
@@ -1467,7 +1484,7 @@ T=\sum_{ij}A_{ij}(q)\dot{q}_i\dot{q}_j,
 \label{_auto11} \tag{11}
 \end{equation}
 \]</div>
-<p>the Hamiltonian becomes</p>
+<p>the expression for the energy  becomes</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray}

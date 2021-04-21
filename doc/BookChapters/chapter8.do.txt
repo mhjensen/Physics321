@@ -936,6 +936,7 @@ outward indefinitely.
 
 
 
+
 ===== Small Vibrations and Normal Modes =====
 
 Two examples are provided for solving for normal modes. These are
@@ -962,6 +963,9 @@ coordinate system where the motion is simple for each coordinate. This
 involves finding the direction, or the linear combination of $x_i$
 that form the coordinates $q_i$ in which the motion is that of a
 single oscillator in each coordinate.
+
+
+=== Coupled Springs ===
 
 For a first example, we consider a system of springs, where we write
 the Lagrangian, then find the normal modes. For the second example, a
@@ -1110,6 +1114,7 @@ the motion. Further, the frequencies of these modes represent the
 natural resonant frequencies of the system. This is important in the
 construction of many structures, such as bridges or vehicles.
 
+=== Double Pendulum ===
 
 Consider a double pendulum confined to the $x-y$ plane, where $y$ is
 vertical. A mass $m$ is connected to the ceiling with a massless
@@ -1248,16 +1253,20 @@ a form that looks like the spring equation. However, $q$ is an
 $n-$dimensional vector and $M$ and $k$ are $n\times n$ matrices. In
 the double pendulum example, the dimensionality is 2 and the $q$
 refers to the $\theta_1$ and $\theta_2$, and the matrices for $M$ and
-$K$ can be read off (add ref).
+$K$ can be read off as
 
 !bt
-\begin{eqnarray*}
-M&=&\left(\begin{array}{cc}
-2&1\\
-1&1\end{array}\right)~,\hspace*{40pt} K=\left(\begin{array}{cc}
-2\omega_0^2&0\\
-0&\omega_0^2\end{array}\right).
-\end{eqnarray*}
+\[
+M=\begin{bmatrix} 2&1\\ 1&1\end{bmatrix},
+\]
+!et
+
+and
+
+!bt
+\[
+K=\begin{bmatrix} 2\omega_0^2&0\\ 0&\omega_0^2\end{bmatrix}.
+\]
 !et
 
 Multiplying both sides of the equation by the inverse matrix $M^{-1}$,
@@ -1409,7 +1418,7 @@ T=\sum_{ij}A_{ij}(q)\dot{q}_i\dot{q}_j,
 \end{equation}
 !et
 
-the Hamiltonian becomes
+the expression for the energy  becomes
 
 !bt
 \begin{eqnarray}
@@ -1513,3 +1522,7 @@ instance, you may need to write the Lagrangian in terms of angles.
 # Add material about non-inertial frames
 # Double pendulum and Foucalt's pendulum
 # Revisit oscillations and example on earthquake models
+
+
+
+
