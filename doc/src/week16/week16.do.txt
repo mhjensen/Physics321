@@ -768,6 +768,9 @@ The Euler-Lagrange equations then become
 \end{eqnarray*}
 !et
 
+!split
+===== Example, guessing =====
+
 Here, we will guess at the form of the solution,
 
 !bt
@@ -796,6 +799,10 @@ y=\tilde{\lambda}+a\cosh[(x-x_0)/a].
 \]
 !et
 
+!split
+===== Example, getting there =====
+
+
 One must find $\tilde{\lambda}$, $x_0$ and $a$ to satisfy three
 conditions, $y(x=0)=0$, $y(x=x_f)=y_f$ and that the length is $L$. For
 a hanging chain $a$ is positive. A solution with negative $a$ would
@@ -806,7 +813,7 @@ $g$. Thus, the shape of the chain would be the same if you took it to
 the moon. These solutions are known as "catenaries":"http://en.wikipedia.org/wiki/Catenary}{http://en.wikipedia.org/wiki/Catenary".
 
 
-
+!split
 ===== Lagrangians =====
 
 Lagrangians represent a powerful method for solving problems that
@@ -817,6 +824,10 @@ generalized coordinate might be the angle describing the position of a
 pendulum. This one angle takes the place of using $x$ and $y$ to
 describe the position of the pendulum, then applying a clumsy
 constraint.
+
+
+!split
+===== Equations of Motions  =====
 
 The Lagrangian equations of motion can be derived from a principle of
 least action, where the action $S$ is defined as
@@ -847,6 +858,10 @@ equations of motion,
 \end{equation}
 !et
 
+!split
+===== Two simple Examples =====
+
+
 We begin with two simple examples, neither of which gains from the Lagrangian approach.
 
 
@@ -875,8 +890,8 @@ m\ell^2\ddot{\theta}&=&-mg\ell\sin\theta,\\
 !et
 
 
-
-=== Proving Lagrange's Equations of Motion from Newton's Laws ===
+!split
+===== Proving Lagrange's Equations of Motion from Newton's Laws =====
 
 Lagrange's equations of motion can only be applied for the following conditions:
 
@@ -887,6 +902,9 @@ Lagrange's equations of motion can only be applied for the following conditions:
 * Any constraints used to reduce the number of degrees of freedom are functions of $\bm{q}$, but not of $\dot{\bm{q}}$.
 * The motion is not dissipative (no damping or friction).
 
+
+!split
+===== Proving Lagrange's Equations of Motion from Newton's Laws =====
 
 Going forward with the proof, consider $x_i(q_1,q_2\cdots,t)$ and look
 at the l.h.s. of Lagrange's equations of motion.
@@ -915,6 +933,9 @@ $x$. Continuing with taking the derivative of $U$,
 -\frac{\partial U}{\partial\dot{q}_j}&=&-\sum_i\frac{\partial U}{\partial x_i}\frac{\partial x_i}{\partial\dot{q}_j}=0.
 \end{eqnarray}
 !et
+
+!split
+===== Proving Lagrange's Equations of Motion from Newton's Laws, continued =====
 
 In the first line above we used the fact that $U$ does not depend on $\dot{x}$ then we used the second condition that $x$ does not depend on $\dot{q}$. Adding the two pieces together, then taking the derivative w.r.t. time,
 
@@ -950,7 +971,8 @@ see that the bottom expressions above are identical,
 !et
 
 
-=== Lagrangian Examples ===
+!split
+===== Lagrangian Examples =====
 
 Two examples are presented here. In the first, there are two
 generalized coordinates, but the two equations of motion can be
@@ -969,6 +991,9 @@ r=\sqrt{x^2+y^2}=z\tan \alpha.
 
 Find the equations of motion for a particle of mass $m$ moving along the surface under the influence of a constant gravitational force, $-mg\hat{z}$. For generalized coordinates use the azimuthal angle $\phi$ and $r$.
 
+
+!split
+===== Cone Example =====
 
 The kinetic energy is 
 
@@ -999,6 +1024,9 @@ so Lagrange's equations give
 !et
 
 
+!split
+===== More on the Cone Example =====
+
 The first equation is a statement of the conservation of angular
 momentum with $L=mr^2\dot{\theta}$, so the second equation can also be
 expressed as
@@ -1009,6 +1037,10 @@ expressed as
 \]
 !et
 
+
+!split
+===== Sliding Bead =====
+
 A bead slides along a wire bent in the shape of a parabola, 
 
 !bt
@@ -1016,6 +1048,8 @@ A bead slides along a wire bent in the shape of a parabola,
 z=\frac{1}{2}kr^2,~~r^2=x^2+y^2.
 \]
 !et
+
+
 
 Also, the parabolic wire is rotating about the $z$ axis with angular
 velocity $\omega$. Derive the equations of motion. Are there any
@@ -1040,6 +1074,9 @@ U&=&mgkr^2/2.
 \end{eqnarray*}
 !et
 
+!split
+===== And then the Equations of Motion =====
+
 
 The equations of motion are then
 
@@ -1057,7 +1094,7 @@ needs to have $gk>\omega^2$. If $\omega^2>gk$ the bead will move
 outward indefinitely.
 
 
-
+!split
 ===== Small Vibrations and Normal Modes =====
 
 Two examples are provided for solving for normal modes. These are
@@ -1085,8 +1122,8 @@ involves finding the direction, or the linear combination of $x_i$
 that form the coordinates $q_i$ in which the motion is that of a
 single oscillator in each coordinate.
 
-
-=== Coupled Springs ===
+!split
+===== Coupled Springs =====
 
 For a first example, we consider a system of springs, where we write
 the Lagrangian, then find the normal modes. For the second example, a
@@ -1103,6 +1140,8 @@ velocity. One can also describe these as normal modes, but acknowledge
 that their characteristic frequency is zero, as there are no restoring
 forces.
 
+!split
+===== Coupled Springs, Part 1 =====
 
 Consider two springs, whose relaxed lengths are $\ell$, connected to three masses as depicted in the figure here. Describe the two normal modes of the motion. We can write the Lagrangian as
 
@@ -1124,6 +1163,10 @@ m\ddot{x}_3&=&-k(x_3-x_2+\ell).
 \end{eqnarray*}
 !et
 
+
+!split
+===== Coupled Springs, Part 2 =====
+
 This is a bit complicated because the center-of-mass motion does not easily separate from the three equations. Instead, choose the following coordinates,
 
 !bt
@@ -1133,6 +1176,9 @@ q_1&=&x_1-x_2+\ell,\\
 q_3&=&x_3-x_2-\ell.
 \end{eqnarray*}
 !et
+
+!split
+===== Coupled Springs, Part 3 =====
 
 
 In these coordinates the potential energy only involves two coordinates,
@@ -1153,6 +1199,10 @@ x_2&=&(4X-q_1-q_3)/4,\\
 x_3&=&(3q_3-q_1+4\ell+4X)/4.
 \end{eqnarray*}
 !et
+
+
+!split
+===== Coupled Springs, Part 4 =====
 
 The kinetic energy and Lagrangian are them
 
@@ -1178,6 +1228,11 @@ The three equations of motion are then,
 \end{eqnarray*}
 !et
 
+
+!split
+===== Coupled Springs, Part 5 =====
+
+
 The last equation simply states that the center-of-mass velocity is
 fixed. One could obtain the same result by summing the equations of
 motion for $x_1$, $2x_2$ and $x_3$ above. The second two equations are
@@ -1202,6 +1257,11 @@ the equations of motion,
 \end{eqnarray*}
 !et
 
+
+!split
+===== Coupled Springs, Part 6 =====
+
+
 This is two equations and two unknowns, $\omega^2$ and
 $A/B$. Substituting for $A/B$ gives a quadratic equation,
 
@@ -1221,6 +1281,9 @@ The two solutions are
 \end{eqnarray*}
 !et
 
+!split
+===== Coupled Springs, Part 7 =====
+
 The first solution corresponds to the two outer masses moving in
 opposite directions, in sync, with the middle mass fixed. The second
 solution has both outer masses moving in the same direction, but with
@@ -1235,7 +1298,8 @@ the motion. Further, the frequencies of these modes represent the
 natural resonant frequencies of the system. This is important in the
 construction of many structures, such as bridges or vehicles.
 
-=== Double Pendulum ===
+!split
+===== Double Pendulum, Part 1 =====
 
 Consider a double pendulum confined to the $x-y$ plane, where $y$ is
 vertical. A mass $m$ is connected to the ceiling with a massless
@@ -1247,6 +1311,8 @@ motion, both for arbitrary angles and in the small-angle
 approximation. Finally, express the equations of motion in the limit
 of small oscillations.
 
+!split
+===== Double Pendulum, Part 2 =====
 
 The kinetic and potential energies are:
 
@@ -1261,6 +1327,10 @@ U&=&mg\ell(1-\cos\theta_1)+mg\left[\ell(1-\cos\theta_1)+\ell(1-\cos\theta_2)\rig
 &=&mg\ell(3-2\cos\theta_1-\cos\theta_2)
 \end{eqnarray*}
 !et
+
+
+!split
+===== Double Pendulum, Part 3 =====
 
 Lagrange's equations for $\theta_1$ lead to
 
@@ -1286,6 +1356,10 @@ m\ell^2\dot{\theta}_1\dot{\theta}_2\sin(\theta_1-\theta_2)-mg\ell\sin\theta_2,\\
 \end{eqnarray*}
 !et
 
+!split
+===== Double Pendulum, Part 4 =====
+
+
 For small oscillations, one can only consider terms linear in $\theta_1$ and $\theta_2$ or their derivatives,
 
 !bt
@@ -1299,6 +1373,10 @@ For small oscillations, one can only consider terms linear in $\theta_1$ and $\t
 To find the solutions, assume they are of the form
 $\theta_1=Ae^{i\omega t}, \theta_2=Be^{i\omega t}$. Solve for $\omega$
 and $A/B$, noting that $B$ is arbitrary.
+
+!split
+===== Double Pendulum, Part 5 =====
+
 
 Plug in the desired form and find
 
@@ -1318,6 +1396,11 @@ it is the same as $A/B$ for arbitrary $B$. This gives the equations
 \omega^2A+\omega^2&=&\omega_0^2.
 \end{eqnarray*}
 !et
+
+
+!split
+===== Double Pendulum, Part 6 =====
+
 
 This is two equations and two unknowns. Solving them leads to a
 quadratic equation with solutions
@@ -1341,6 +1424,10 @@ constants. For the angles $\theta_1$ and $\theta_2$ are:
 \end{eqnarray*}
 !et
 
+!split
+===== Double Pendulum, Part 7 =====
+
+
 One can also express the solution in vector notation, with the vectors
 having arbitrary amplitudes $A_+$ and $A_-$,
 
@@ -1357,6 +1444,8 @@ Here, the upper/lower components of the vector describe
 $\theta_1/\theta_2$ respectively.
 
 
+!split
+===== Double Pendulum, Part 8 =====
 
 
 These problems can be treated as linear algebra exercises. Linear
@@ -1390,6 +1479,11 @@ K=\begin{bmatrix} 2\omega_0^2&0\\ 0&\omega_0^2\end{bmatrix}.
 \]
 !et
 
+
+!split
+===== Double Pendulum, Part 9 =====
+
+
 Multiplying both sides of the equation by the inverse matrix $M^{-1}$,
 
 !bt
@@ -1410,6 +1504,10 @@ M^{-1}K&=&\left(\begin{array}{cc}
 -2&2\end{array}\right)\omega_0^2.
 \end{eqnarray*}
 !et
+
+!split
+===== Double Pendulum, Part 10 =====
+
 
 One can find a transformation, basically a rotation, that transforms
 to a frame where $M^{-1}K$ is diagonal. In this coordinate system the
@@ -1447,6 +1545,11 @@ motion as an eigenvalue problem,
 \end{eqnarray}
 !et
 
+
+!split
+===== Double Pendulum, Part 11 =====
+
+
 In the coordinate system where $M^{-1}K$ is diagonal, and the forms
 for $u_i$ are simple this requires that in that system, the diagonal
 elements of $M^{-1}K$ are the eigenvalues, $\omega_i^2$. For each
@@ -1474,6 +1577,11 @@ A_{11}A_{22}-\lambda A_{11}-\lambda A_{22}+\lambda^2-A_{21}A_{12}&=&0.
 \end{eqnarray}
 !et
 
+
+!split
+===== Double Pendulum, Part 12 =====
+
+
 One can solve a quadratic equation for $\lambda$, which gives two
 eigenvalues corresponding to $\omega_+^2$ and $\omega_-^2$ found
 above. Choosing one of the eigenvalues, one can insert one of the
@@ -1490,7 +1598,7 @@ programming languages all have packages which readily diagonalize
 matrices and find eigenvectors and eigenvalues.
 
 
-
+!split
 ===== Conservation Laws =====
 
 Energy is conserved only when the Lagrangian has no explicit
@@ -1519,6 +1627,9 @@ equations,
 &=&0.
 \end{eqnarray}
 !et
+
+!split
+===== Convervation Laws, part 2 =====
 
 These steps assumed that $L$ had no explicit time dependence, i.e. $L$
 is a function of $q$ and $\dot{q}$, but not of $t$.
@@ -1549,6 +1660,10 @@ H&=&\sum_{ij}2A_{ij}(q)\dot{q}_i\dot{q}_j-\sum_{ij}A_{ij}(q)\dot{q}_i\dot{q}_j+V
 \end{eqnarray}
 !et
 
+!split
+===== Convervation Laws, part 3 =====
+
+
 The proof that $H$ equals the energy hinged on the fact that the
 kinetic energy was quadratic in $\dot{q}$. This can be attributed to
 time-reversal symmetry. Because the Cartesian coordinates $x_i$ do not
@@ -1556,6 +1671,11 @@ depend on $\dot{q}_i$ or on time, $\dot{x}_i=(\partial x_i/\partial
 q_j)\dot{q}_j$. Thus, the kinetic energy, $T=m\dot{x}_i^2/2$, should
 be proportional to two powers of $\dot{q}$, which validates the
 assumption above.
+
+
+!split
+===== Convervation Laws, part 4 =====
+
 
 Here, energy conservation is predicated on the Lagrangian not having
 an explicit time dependence. Without an explicit time dependence the
@@ -1588,6 +1708,10 @@ not on the angle, Lagrange's equations become
 \end{eqnarray}
 !et
 
+!split
+===== Convervation Laws, part 4 =====
+
+
 The second equation implies that $mr^2\dot{\theta}$ is a
 constant. Indeed, it is the angular momentum which is conserved for a
 radial force. Here, the conservation of angular momentum is associated
@@ -1612,6 +1736,10 @@ see that the quantity $\partial L/\partial\dot{q}_i$ is conserved,
 \frac{d}{dt}\frac{\partial L}{\partial\dot{q}_i}=0.
 \end{equation}
 !et
+
+!split
+===== Convervation Laws, Another Example =====
+
 
 Another easy example is in Cartesian coordinates where the potential
 depends only on $x$ and $y$ but not on $z$. In that case, there is a
