@@ -142,6 +142,11 @@ Automatically generated HTML file from DocOnce source
               ('Learning outcomes', 2, None, 'learning-outcomes'),
               ('Competences and Skills', 2, None, 'competences-and-skills'),
               ('Computations? Why?', 2, None, 'computations-why'),
+              ('Procrastination... the curse of all?',
+               2,
+               None,
+               'procrastination-the-curse-of-all'),
+              ('However ...', 2, None, 'however'),
               ('Best wishes to you all and thanks so much for your heroic '
                'efforts this semester',
                2,
@@ -228,6 +233,8 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="#learning-outcomes" style="font-size: 80%;"><b>Learning outcomes</b></a></li>
      <!-- navigation toc: --> <li><a href="#competences-and-skills" style="font-size: 80%;"><b>Competences and Skills</b></a></li>
      <!-- navigation toc: --> <li><a href="#computations-why" style="font-size: 80%;"><b>Computations? Why?</b></a></li>
+     <!-- navigation toc: --> <li><a href="#procrastination-the-curse-of-all" style="font-size: 80%;"><b>Procrastination... the curse of all?</b></a></li>
+     <!-- navigation toc: --> <li><a href="#however" style="font-size: 80%;"><b>However ...</b></a></li>
      <!-- navigation toc: --> <li><a href="#best-wishes-to-you-all-and-thanks-so-much-for-your-heroic-efforts-this-semester" style="font-size: 80%;"><b>Best wishes to you all and thanks so much for your heroic efforts this semester</b></a></li>
 
         </ul>
@@ -262,7 +269,7 @@ MathJax.Hub.Config({
 <center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
 <br>
 <p>
-<center><h4>Apr 19, 2021</h4></center> <!-- date -->
+<center><h4>Apr 20, 2021</h4></center> <!-- date -->
 <br>
 <p>
 <!-- potential-jumbotron-button -->
@@ -319,15 +326,15 @@ problems where the quantity to be minimized or maximized is an integral.
 
 <p>
 The usual minimization problem one faces involves taking a function
-\( {\cal L}(x) \), then finding the single value \( x \) for which \( {\cal L} \)
+\( \cal{L}(x) \), then finding the single value \( x \) for which \( \cal{L} \)
 is either a maximum or minimum. In multivariate calculus one also
 learns to solve problems where you minimize for multiple variables,
-\( {\cal L}(x_1,x_2,\cdots x_n) \), and finding the points \( (x_1\cdots
+\( \cal{L}(x_1,x_2,\cdots x_n) \), and finding the points \( (x_1\cdots
 y_n) \) in an \( n \)-dimensional space that maximize or minimize the
 function. Here, we consider what seems to be a much more ambitious
-problem. Imagine you have a function \( {\cal L}(x(t),\dot{x}(t),t) \),
+problem. Imagine you have a function \( \cal{L}(x(t),\dot{x}(t),t) \),
 and you wish to find the extrema for an infinite number of values of
-\( x \), i.e. \( x \) at each point \( t \). The function \( {\cal L} \) will not only
+\( x \), i.e. \( x \) at each point \( t \). The function \( \cal{L} \) will not only
 depend on \( x \) at each point \( t \), but also on the slope at each point,
 plus an additional dependence on \( t \). Note we are NOT finding an
 optimum value of \( t \), we are finding the set of optimum values of \( x \)
@@ -342,7 +349,7 @@ at each point \( t \), or equivalently, finding the function \( x(t) \).
 One treats the function \( x(t) \) as being unknown while minimizing the action
 
 $$
-S=\int_{t_1}^{t_2}dt~{\cal L}(x(t),\dot{x}(t),t).
+S=\int_{t_1}^{t_2}dt~\cal{L}(x(t),\dot{x}(t),t).
 $$
 
 <p>
@@ -352,7 +359,7 @@ assume that \( x(t_1) \) and \( x(t_2) \) are fixed, and that that we will
 only consider variations of \( x \) between the boundaries. The dependence
 on the derivative, \( \dot{x}=dx/dt \), is crucial because otherwise the
 solution would involve simply finding the one value of \( x \) that
-minimized \( {\cal L} \), and \( x(t) \) would equal a constant if there were no
+minimized \( \cal{L} \), and \( x(t) \) would equal a constant if there were no
 explicit \( t \) dependence. Furthermore, \( x \) wouldn't need to be
 continuous at the boundary.
 
@@ -364,12 +371,12 @@ continuous at the boundary.
 <p>
 In the general case we have an integral of the type
 $$ 
-S[q]= \int_{t_1}^{t_2} {\cal L}(q(t),\dot{q}(t),t)dt,
+S[q]= \int_{t_1}^{t_2} \cal{L}(q(t),\dot{q}(t),t)dt,
 $$
 
 <p>
 where \( S \) is the quantity which is sought minimized or maximized.  The
-problem is that although \( {\cal L} \)  is a function of the general variables
+problem is that although \( \cal{L} \)  is a function of the general variables
 \( q(t),\dot{q}(t),t \) (note our change of variables), the exact dependence of \( q \) on \( t \) is not known.
 This means again that even though the integral has fixed limits \( t_1 \)
 and \( t_2 \), the path of integration is not known. In our case the unknown
@@ -428,14 +435,14 @@ We choose \( q(t,\alpha=0) \) as the unkonwn path  that will minimize \( S \).  
 We have
 
 $$
-S[q(\alpha)]= \int_{t_1}^{t_2} {\cal L}(q(t,\alpha),\dot{q}(t,\alpha),t)dt.
+S[q(\alpha)]= \int_{t_1}^{t_2} \cal{L}(q(t,\alpha),\dot{q}(t,\alpha),t)dt.
 $$
 
 <p>
 The condition for an extreme of
 
 $$
-S[q(\alpha)]= \int_{t_1}^{t_2} {\cal L}(q(t,\alpha),\dot{q}(t,\alpha),t)dt,
+S[q(\alpha)]= \int_{t_1}^{t_2} \cal{L}(q(t,\alpha),\dot{q}(t,\alpha),t)dt,
 $$
 
 <p>
@@ -454,7 +461,7 @@ $$
 The \( \alpha \) dependence is contained in \( q(t,\alpha) \) and \( \dot{q}(t,\alpha) \) meaning that
 
 $$
-\left[\frac{\partial  E[q(\alpha)]}{\partial \alpha}\right]=\int_{t_1}^{t_2} \left( \frac{\partial {\cal l}}{\partial q}\frac{\partial q}{\partial \alpha}+\frac{\partial {\cal L}}{\partial \dot{q}}\frac{\partial \dot{q}}{\partial \alpha}\right)dt.
+\left[\frac{\partial  E[q(\alpha)]}{\partial \alpha}\right]=\int_{t_1}^{t_2} \left( \frac{\partial \cal{l}}{\partial q}\frac{\partial q}{\partial \alpha}+\frac{\partial \cal{L}}{\partial \dot{q}}\frac{\partial \dot{q}}{\partial \alpha}\right)dt.
 $$
 
 We have defined
@@ -492,22 +499,22 @@ $$
 in the integral gives
 
 $$
-\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]=\int_{t_1}^{t_2} \left( \frac{\partial {\cal L}}{\partial q}\eta(t)+\frac{\partial {\cal L}}{\partial \dot{q}}\frac{d(\eta(t))}{dt}\right)dt.
+\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]=\int_{t_1}^{t_2} \left( \frac{\partial \cal{L}}{\partial q}\eta(t)+\frac{\partial \cal{L}}{\partial \dot{q}}\frac{d(\eta(t))}{dt}\right)dt.
 $$
 
 <p>
 Integrating the second term by parts
 
 $$
-\int_{t_1}^{t_2} \frac{\partial {\cal L}}{\partial \dot{q}}\frac{d(\eta(t))}{dt}dt =\eta(t)\frac{\partial {\cal L}}{\partial \dot{q}}|_{t_1}^{t_2}-
-\int_a^b \eta(t)\frac{d}{dx}\frac{\partial {\cal L}}{\partial \dot{q}}dt,
+\int_{t_1}^{t_2} \frac{\partial \cal{L}}{\partial \dot{q}}\frac{d(\eta(t))}{dt}dt =\eta(t)\frac{\partial \cal{L}}{\partial \dot{q}}|_{t_1}^{t_2}-
+\int_a^b \eta(t)\frac{d}{dx}\frac{\partial \cal{L}}{\partial \dot{q}}dt,
 $$
 
 <p>
 and since the first term dissappears due to \( \eta(a)=\eta(b)=0 \), we obtain
 
 $$
-\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]=\int_{t_1}^{t_2} \left( \frac{\partial {\cal L}}{\partial q}-\frac{d}{dx}\frac{\partial {\cal L}}{\partial \dot{q}}
+\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]=\int_{t_1}^{t_2} \left( \frac{\partial \cal{L}}{\partial q}-\frac{d}{dx}\frac{\partial \cal{L}}{\partial \dot{q}}
 \right)\eta(t)dt=0.
 $$
 
@@ -520,15 +527,15 @@ $$
 The latter can be written as
 
 $$
-\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]_{\alpha=0}=\int_{t_1}^{t_2} \left( \frac{\partial {\cal L}}{\partial q}-\frac{d}{\
-dx}\frac{\partial {\cal L}}{\partial \dot{q}}\right)\delta q(t)dt=\delta S = 0.
+\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]_{\alpha=0}=\int_{t_1}^{t_2} \left( \frac{\partial \cal{L}}{\partial q}-\frac{d}{\
+dx}\frac{\partial \cal{L}}{\partial \dot{q}}\right)\delta q(t)dt=\delta S = 0.
 $$
 
 <p>
 The condition for a stationary value is thus a partial differential equation
 
 $$
-\frac{\partial {\cal L}}{\partial q}-\frac{d}{dx}\frac{\partial {\cal L}}{\partial \dot{q}}=0,
+\frac{\partial \cal{L}}{\partial q}-\frac{d}{dx}\frac{\partial \cal{L}}{\partial \dot{q}}=0,
 $$
 
 <p>
@@ -2105,10 +2112,30 @@ computations, we would like to emphasize
 
 <!-- !split -->
 
+<h2 id="procrastination-the-curse-of-all" class="anchor">Procrastination... the curse of all?  </h2>
+<br /><br /><center><p><img src="figures/procrast.jpg" align="bottom" width=700></p></center><br /><br />
+<a href="https://www.youtube.com/watch?v=arj7oStGLkU" target="_self">Enjoy this video</a>
+
+<p>
+<a href="http://www.nytimes.com/2016/01/17/opinion/sunday/why-i-taught-myself-to-procrastinate.html?_r=0" target="_self">And research shows that procrastinating enhances creativity!!</a>
+
+<p>
+<!-- !split -->
+
+<h2 id="however" class="anchor">However ... </h2>
+
+<p>
+Since grades are due on May 5, we need to have a hard deadline for the final exam, April 30 at midnight.
+
+<p>
+<!-- !split -->
+
 <h2 id="best-wishes-to-you-all-and-thanks-so-much-for-your-heroic-efforts-this-semester" class="anchor">Best wishes to you all and thanks so much for your heroic efforts this semester </h2>
 
 <p>
 <br /><br /><center><p><img src="figures/Nebbdyr2.png" align="bottom" width=500></p></center><br /><br />
+
+<p>
 
 <!-- ------------------- end of main content --------------- -->
 

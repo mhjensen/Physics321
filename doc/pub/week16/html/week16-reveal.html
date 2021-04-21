@@ -148,7 +148,7 @@ MathJax.Hub.Config({
 <center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
 <br>
 <p>&nbsp;<br>
-<center><h4>Apr 19, 2021</h4></center> <!-- date -->
+<center><h4>Apr 20, 2021</h4></center> <!-- date -->
 <br>
 <p>
 
@@ -210,15 +210,15 @@ problems where the quantity to be minimized or maximized is an integral.
 
 <p>
 The usual minimization problem one faces involves taking a function
-\( {\cal L}(x) \), then finding the single value \( x \) for which \( {\cal L} \)
+\( \cal{L}(x) \), then finding the single value \( x \) for which \( \cal{L} \)
 is either a maximum or minimum. In multivariate calculus one also
 learns to solve problems where you minimize for multiple variables,
-\( {\cal L}(x_1,x_2,\cdots x_n) \), and finding the points \( (x_1\cdots
+\( \cal{L}(x_1,x_2,\cdots x_n) \), and finding the points \( (x_1\cdots
 y_n) \) in an \( n \)-dimensional space that maximize or minimize the
 function. Here, we consider what seems to be a much more ambitious
-problem. Imagine you have a function \( {\cal L}(x(t),\dot{x}(t),t) \),
+problem. Imagine you have a function \( \cal{L}(x(t),\dot{x}(t),t) \),
 and you wish to find the extrema for an infinite number of values of
-\( x \), i.e. \( x \) at each point \( t \). The function \( {\cal L} \) will not only
+\( x \), i.e. \( x \) at each point \( t \). The function \( \cal{L} \) will not only
 depend on \( x \) at each point \( t \), but also on the slope at each point,
 plus an additional dependence on \( t \). Note we are NOT finding an
 optimum value of \( t \), we are finding the set of optimum values of \( x \)
@@ -234,7 +234,7 @@ One treats the function \( x(t) \) as being unknown while minimizing the action
 
 <p>&nbsp;<br>
 $$
-S=\int_{t_1}^{t_2}dt~{\cal L}(x(t),\dot{x}(t),t).
+S=\int_{t_1}^{t_2}dt~\cal{L}(x(t),\dot{x}(t),t).
 $$
 <p>&nbsp;<br>
 
@@ -245,7 +245,7 @@ assume that \( x(t_1) \) and \( x(t_2) \) are fixed, and that that we will
 only consider variations of \( x \) between the boundaries. The dependence
 on the derivative, \( \dot{x}=dx/dt \), is crucial because otherwise the
 solution would involve simply finding the one value of \( x \) that
-minimized \( {\cal L} \), and \( x(t) \) would equal a constant if there were no
+minimized \( \cal{L} \), and \( x(t) \) would equal a constant if there were no
 explicit \( t \) dependence. Furthermore, \( x \) wouldn't need to be
 continuous at the boundary.
 </section>
@@ -258,13 +258,13 @@ continuous at the boundary.
 In the general case we have an integral of the type
 <p>&nbsp;<br>
 $$ 
-S[q]= \int_{t_1}^{t_2} {\cal L}(q(t),\dot{q}(t),t)dt,
+S[q]= \int_{t_1}^{t_2} \cal{L}(q(t),\dot{q}(t),t)dt,
 $$
 <p>&nbsp;<br>
 
 <p>
 where \( S \) is the quantity which is sought minimized or maximized.  The
-problem is that although \( {\cal L} \)  is a function of the general variables
+problem is that although \( \cal{L} \)  is a function of the general variables
 \( q(t),\dot{q}(t),t \) (note our change of variables), the exact dependence of \( q \) on \( t \) is not known.
 This means again that even though the integral has fixed limits \( t_1 \)
 and \( t_2 \), the path of integration is not known. In our case the unknown
@@ -330,7 +330,7 @@ We have
 
 <p>&nbsp;<br>
 $$
-S[q(\alpha)]= \int_{t_1}^{t_2} {\cal L}(q(t,\alpha),\dot{q}(t,\alpha),t)dt.
+S[q(\alpha)]= \int_{t_1}^{t_2} \cal{L}(q(t,\alpha),\dot{q}(t,\alpha),t)dt.
 $$
 <p>&nbsp;<br>
 
@@ -339,7 +339,7 @@ The condition for an extreme of
 
 <p>&nbsp;<br>
 $$
-S[q(\alpha)]= \int_{t_1}^{t_2} {\cal L}(q(t,\alpha),\dot{q}(t,\alpha),t)dt,
+S[q(\alpha)]= \int_{t_1}^{t_2} \cal{L}(q(t,\alpha),\dot{q}(t,\alpha),t)dt,
 $$
 <p>&nbsp;<br>
 
@@ -362,7 +362,7 @@ The \( \alpha \) dependence is contained in \( q(t,\alpha) \) and \( \dot{q}(t,\
 
 <p>&nbsp;<br>
 $$
-\left[\frac{\partial  E[q(\alpha)]}{\partial \alpha}\right]=\int_{t_1}^{t_2} \left( \frac{\partial {\cal l}}{\partial q}\frac{\partial q}{\partial \alpha}+\frac{\partial {\cal L}}{\partial \dot{q}}\frac{\partial \dot{q}}{\partial \alpha}\right)dt.
+\left[\frac{\partial  E[q(\alpha)]}{\partial \alpha}\right]=\int_{t_1}^{t_2} \left( \frac{\partial \cal{l}}{\partial q}\frac{\partial q}{\partial \alpha}+\frac{\partial \cal{L}}{\partial \dot{q}}\frac{\partial \dot{q}}{\partial \alpha}\right)dt.
 $$
 <p>&nbsp;<br>
 
@@ -410,7 +410,7 @@ in the integral gives
 
 <p>&nbsp;<br>
 $$
-\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]=\int_{t_1}^{t_2} \left( \frac{\partial {\cal L}}{\partial q}\eta(t)+\frac{\partial {\cal L}}{\partial \dot{q}}\frac{d(\eta(t))}{dt}\right)dt.
+\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]=\int_{t_1}^{t_2} \left( \frac{\partial \cal{L}}{\partial q}\eta(t)+\frac{\partial \cal{L}}{\partial \dot{q}}\frac{d(\eta(t))}{dt}\right)dt.
 $$
 <p>&nbsp;<br>
 
@@ -419,8 +419,8 @@ Integrating the second term by parts
 
 <p>&nbsp;<br>
 $$
-\int_{t_1}^{t_2} \frac{\partial {\cal L}}{\partial \dot{q}}\frac{d(\eta(t))}{dt}dt =\eta(t)\frac{\partial {\cal L}}{\partial \dot{q}}|_{t_1}^{t_2}-
-\int_a^b \eta(t)\frac{d}{dx}\frac{\partial {\cal L}}{\partial \dot{q}}dt,
+\int_{t_1}^{t_2} \frac{\partial \cal{L}}{\partial \dot{q}}\frac{d(\eta(t))}{dt}dt =\eta(t)\frac{\partial \cal{L}}{\partial \dot{q}}|_{t_1}^{t_2}-
+\int_a^b \eta(t)\frac{d}{dx}\frac{\partial \cal{L}}{\partial \dot{q}}dt,
 $$
 <p>&nbsp;<br>
 
@@ -429,7 +429,7 @@ and since the first term dissappears due to \( \eta(a)=\eta(b)=0 \), we obtain
 
 <p>&nbsp;<br>
 $$
-\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]=\int_{t_1}^{t_2} \left( \frac{\partial {\cal L}}{\partial q}-\frac{d}{dx}\frac{\partial {\cal L}}{\partial \dot{q}}
+\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]=\int_{t_1}^{t_2} \left( \frac{\partial \cal{L}}{\partial q}-\frac{d}{dx}\frac{\partial \cal{L}}{\partial \dot{q}}
 \right)\eta(t)dt=0.
 $$
 <p>&nbsp;<br>
@@ -444,8 +444,8 @@ The latter can be written as
 
 <p>&nbsp;<br>
 $$
-\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]_{\alpha=0}=\int_{t_1}^{t_2} \left( \frac{\partial {\cal L}}{\partial q}-\frac{d}{\
-dx}\frac{\partial {\cal L}}{\partial \dot{q}}\right)\delta q(t)dt=\delta S = 0.
+\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]_{\alpha=0}=\int_{t_1}^{t_2} \left( \frac{\partial \cal{L}}{\partial q}-\frac{d}{\
+dx}\frac{\partial \cal{L}}{\partial \dot{q}}\right)\delta q(t)dt=\delta S = 0.
 $$
 <p>&nbsp;<br>
 
@@ -454,7 +454,7 @@ The condition for a stationary value is thus a partial differential equation
 
 <p>&nbsp;<br>
 $$
-\frac{\partial {\cal L}}{\partial q}-\frac{d}{dx}\frac{\partial {\cal L}}{\partial \dot{q}}=0,
+\frac{\partial \cal{L}}{\partial q}-\frac{d}{dx}\frac{\partial \cal{L}}{\partial \dot{q}}=0,
 $$
 <p>&nbsp;<br>
 
@@ -2227,6 +2227,24 @@ computations, we would like to emphasize
 <p><li> Making science (your results) reproducible</li>
 <p><li> algorithmic thinking for gaining deeper insights about scientific problems</li>
 </ol>
+</section>
+
+
+<section>
+<h2 id="procrastination-the-curse-of-all">Procrastination... the curse of all?  </h2>
+<br /><br /><center><p><img src="figures/procrast.jpg" align="bottom" width=700></p></center><br /><br />
+<a href="https://www.youtube.com/watch?v=arj7oStGLkU" target="_blank">Enjoy this video</a>
+
+<p>
+<a href="http://www.nytimes.com/2016/01/17/opinion/sunday/why-i-taught-myself-to-procrastinate.html?_r=0" target="_blank">And research shows that procrastinating enhances creativity!!</a>
+</section>
+
+
+<section>
+<h2 id="however">However ... </h2>
+
+<p>
+Since grades are due on May 5, we need to have a hard deadline for the final exam, April 30 at midnight.
 </section>
 
 
