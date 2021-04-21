@@ -123,11 +123,12 @@ There is no video of Friday's session since the lecture was organized in breakou
 
 ### Week 16, April 19-23, 2021
 - Monday 4/19:  Langrangian formalism, discussion of examples. Taylor chapters 6 and 7. 10th homework as extra assignments, due April 26. Video of Lecture at https://mediaspace.msu.edu/media/t/1_o0e6xygq and handwriten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesApril19.pdf 
-- Wednesday 4/21: Lagrangian formalism, examples such as the linear chain and double pendulum. Summary and discussions of final exam project. _Final exam project project, due April 30_   
-- Friday 4/23:  Study day
+- Wednesday 4/21: Lagrangian formalism, examples such as the linear chain and double pendulum. Summary and discussions of final exam project. Video of Lecture at https://mediaspace.msu.edu/media/t/1_q2jqoj6z and handwriten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2021/NotesApril21.pdf. Final exam project project due April 30. 
+- Friday 4/23:  Study day. Zoom session 3pm-5pm.
+
 ### Week 17, April 26- April 30, 2021, Finals week
 
-- Final Exam:  The final exam will be a project similar to the two midterm projects. Deadline April 30. We will have Q/A sessions Monday 26 and Wednesday 28 at 2.30pm to 4pm. Other sessions can always be arranged. 
+- Final Exam:  The final exam will be a project similar to the two midterm projects. Deadline April 30. We will have Q/A sessions Monday 26, Wednesday 28, and April 30 at 3pm to 5pm. Other sessions can always be arranged. 
 
 
 
