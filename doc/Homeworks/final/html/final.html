@@ -156,14 +156,14 @@ famous Lennard-Jones potential,
 
 $$
 \begin{equation}
-    V(r) = 4\varepsilon((\frac{\sigma}{r})^{12} - (\frac{\sigma}{r})^6), \label{eq:lj}
+    V(r) = 4\varepsilon\left((\frac{\sigma}{r})^{12} - (\frac{\sigma}{r})^6\right), \label{eq:lj}
 \end{equation}
 $$
 
 <p>
 where \( r \) is the distance between two atoms,
 \( r=\vert\boldsymbol{r}_i-\boldsymbol{r}_j\vert \), that is the norm of the relative
-distance vector \( \boldsymbol{r} \). The quantities \( \sigma \) and \( varepsilon \) are
+distance vector \( \boldsymbol{r} \). The quantities \( \sigma \) and \( \varepsilon \) are
 parameters which determine which chemical compound is modelled. This
 potential is a good approximation for noble gases like helium, neon, argon and other.
 
@@ -188,15 +188,15 @@ Then we switch our attention to the equations of motion.
 </ul>
 
 $$
-  \frac{d^2\boldsymbol{r}_i}{dt^2} = \frac{24\varepsilon}{m} \sum_{j \neq i} (2(\frac{\sigma}{\vert\boldsymbol{r}_i-\boldsymbol{r}_j}\vert)^{12}-(\frac{\sigma}{\vert\boldsymbol{r}_i-\boldsymbol{r}_j}\vert)^6)\frac{\boldsymbol{r}_i-\boldsymbol{r}_j}{\vert\boldsymbol{r}_i-\boldsymbol{r}_j\vert^2}.
+  \frac{d^2\boldsymbol{r}_i}{dt^2} = \frac{24\varepsilon}{m} \sum_{j \neq i} \left(2(\frac{\sigma}{\vert\boldsymbol{r}_i-\boldsymbol{r}_j}\vert)^{12}-(\frac{\sigma}{\vert\boldsymbol{r}_i-\boldsymbol{r}_j}\vert)^6\left)\frac{\boldsymbol{r}_i-\boldsymbol{r}_j}{\vert\boldsymbol{r}_i-\boldsymbol{r}_j\vert^2}.
 $$
 
 <p>
 Numerical accuracy is reduced when computing with values which are
 many orders of magnitude apart. This is often an issue in physics, and
 molecular dynamics is no exception. For example, the mass of argon is
-smaller than $10^{-25}$kg, while typical length scales are
-on the order of nanometers, $10^{-9}$m.
+smaller than $10e-25$kg, while typical length scales are
+on the order of nanometers, $10e-9$m.
 
 <p>
 The remedy is to change units so that most quantities are close to
@@ -209,18 +209,15 @@ are the typical scales for length and energy.
 
 $$
 \begin{equation}
-\frac{d^2\boldsymbol{r}_i\,'}{{dt'^2}} = 24 \sum_{j \neq i} (2\vert\boldsymbol{r}_i\,'-\boldsymbol{r}_j\,'\vert^{-12}-\vert\boldsymbol{r}_i\,'-\boldsymbol{r}_j\,\vert^{-6})\frac{\boldsymbol{r}_i\,'-\boldsymbol{r}_j\,'}{\vert\boldsymbol{r}_i\,'-\boldsymbol{r}_j\,'\vert^2}, \label{eq:undim}
+\frac{d^2\boldsymbol{r}_i\,'}{{dt'^2}} = 24 \sum_{j \neq i} \left(2\vert\boldsymbol{r}_i\,'-\boldsymbol{r}_j\,'\vert^{-12}-\vert\boldsymbol{r}_i\,'-\boldsymbol{r}_j\,\vert^{-6})\frac{\boldsymbol{r}_i\,'-\boldsymbol{r}_j\,'\right}{\vert\boldsymbol{r}_i\,'-\boldsymbol{r}_j\,'\vert^2}, \label{eq:undim}
 \end{equation}
 $$
 
 
 <ul>
-<li> <b>1k (5pt):</b> What is the characteristic time scale \( \tau \), and what is its value for argon, which has \( \sigma=3.405 \)&#197; ($1 \mathrm{&#197;}=1e-10$m), \( m = 39.95u \) with ($1u=1.66e-27$kg) and $\varepsilon=1.0318e-2$eV 1eV=$1.602e-19$J)?</li>
+<li> <b>1k (5pt):</b> What is the characteristic time scale \( \tau \), and what is its value for argon, which has \( \sigma=3.405 \)&#197; (1&#197;$=1e-10$m), \( m = 39.95u \) (with $1u=1.66e-27$kg) and $\varepsilon=1.0318e-2$eV (1eV=$1.602e-19$J)?</li>
 </ul>
 
-\end{enumerate}
-
-<p>
 We switch now to a numerical procedure and study the simulation of two interacting atoms.
 
 <ul>

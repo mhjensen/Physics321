@@ -43,13 +43,13 @@ famous Lennard-Jones potential,
 
 !bt
 \begin{equation}
-    V(r) = 4\varepsilon((\frac{\sigma}{r})^{12} - (\frac{\sigma}{r})^6), label{eq:lj}
+    V(r) = 4\varepsilon\left((\frac{\sigma}{r})^{12} - (\frac{\sigma}{r})^6\right), label{eq:lj}
 \end{equation}
 !et
 
 where $r$ is the distance between two atoms,
 $r=\vert\bm{r}_i-\bm{r}_j\vert$, that is the norm of the relative
-distance vector $\bm{r}$. The quantities $\sigma$ and $varepsilon$ are
+distance vector $\bm{r}$. The quantities $\sigma$ and $\varepsilon$ are
 parameters which determine which chemical compound is modelled. This
 potential is a good approximation for noble gases like helium, neon, argon and other.
 
@@ -70,7 +70,7 @@ Then we switch our attention to the equations of motion.
 * _1i (5pt):_ Show that the equation of motion for atom $i$ is
 !bt
 \[
-  \frac{d^2\bm{r}_i}{dt^2} = \frac{24\varepsilon}{m} \sum_{j \neq i} (2(\frac{\sigma}{\vert\bm{r}_i-\bm{r}_j}\vert)^{12}-(\frac{\sigma}{\vert\bm{r}_i-\bm{r}_j}\vert)^6)\frac{\bm{r}_i-\bm{r}_j}{\vert\bm{r}_i-\bm{r}_j\vert^2}.
+  \frac{d^2\bm{r}_i}{dt^2} = \frac{24\varepsilon}{m} \sum_{j \neq i} \left(2(\frac{\sigma}{\vert\bm{r}_i-\bm{r}_j}\vert)^{12}-(\frac{\sigma}{\vert\bm{r}_i-\bm{r}_j}\vert)^6\left)\frac{\bm{r}_i-\bm{r}_j}{\vert\bm{r}_i-\bm{r}_j\vert^2}.
 \]
 !et
 
@@ -79,8 +79,8 @@ Then we switch our attention to the equations of motion.
 Numerical accuracy is reduced when computing with values which are
 many orders of magnitude apart. This is often an issue in physics, and
 molecular dynamics is no exception. For example, the mass of argon is
-smaller than $10^{-25}$kg, while typical length scales are
-on the order of nanometers, $10^{-9}$m.
+smaller than $10e-25$kg, while typical length scales are
+on the order of nanometers, $10e-9$m.
 
 The remedy is to change units so that most quantities are close to
 $1$. From (ref{eq:lj}) it is clear that $\sigma$ and $\varepsilon$
@@ -89,11 +89,11 @@ are the typical scales for length and energy.
 * _1j (5pt):_ Introduce the scaled coordinates $\bm{r}_i\,'=\bm{r}_i/\sigma$ and show that the equation of motion can be rewritten in terms of these coordinates as (where $t'=t/\tau$ for a suitable choice of $\tau$.)
 !bt
 \begin{equation}
-\frac{d^2\bm{r}_i\,'}{{dt'^2}} = 24 \sum_{j \neq i} (2\vert\bm{r}_i\,'-\bm{r}_j\,'\vert^{-12}-\vert\bm{r}_i\,'-\bm{r}_j\,\vert^{-6})\frac{\bm{r}_i\,'-\bm{r}_j\,'}{\vert\bm{r}_i\,'-\bm{r}_j\,'\vert^2}, label{eq:undim}
+\frac{d^2\bm{r}_i\,'}{{dt'^2}} = 24 \sum_{j \neq i} \left(2\vert\bm{r}_i\,'-\bm{r}_j\,'\vert^{-12}-\vert\bm{r}_i\,'-\bm{r}_j\,\vert^{-6})\frac{\bm{r}_i\,'-\bm{r}_j\,'\right}{\vert\bm{r}_i\,'-\bm{r}_j\,'\vert^2}, label{eq:undim}
 \end{equation}
 !et
-* _1k (5pt):_ What is the characteristic time scale $\tau$, and what is its value for argon, which has $\sigma=3.405$Å ($1 \mathrm{Å}=1e-10$m), $m = 39.95u$ with ($1u=1.66e-27$kg) and $\varepsilon=1.0318e-2$eV 1eV=$1.602e-19$J)?
-\end{enumerate}
+* _1k (5pt):_ What is the characteristic time scale $\tau$, and what is its value for argon, which has $\sigma=3.405$Å (1Å$=1e-10$m), $m = 39.95u$ (with $1u=1.66e-27$kg) and $\varepsilon=1.0318e-2$eV (1eV=$1.602e-19$J)?
+
 
 
 We switch now to a numerical procedure and study the simulation of two interacting atoms.
