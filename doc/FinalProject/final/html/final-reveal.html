@@ -157,7 +157,7 @@ MathJax.Hub.Config({
 <p><li> How do I(we)  hand in?  Due to the extraordinary situation we are in now, the final projec should be handed in fully via D2L. You can scan your handwritten notes and upload to D2L or you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical part should always be handed in as a jupyter notebook.</li>
 </ol>
 
-<h3 id="introduction-to-the-final-project-total-score-150-points">Introduction to the final project, total score: 150  points </h3>
+<h3 id="introduction-to-the-final-project-total-score-120-points">Introduction to the final project, total score: 120  points </h3>
 
 <p>
 The relevant reading background is
@@ -173,7 +173,7 @@ discussed during the semester. You should feel free to use either
 paper and pencil and/or symbolic software (sympy, Mathematica or
 similar) for the non-computational exercises.
 
-<h3 id="exercise-1-two-body-problems-and-conservative-forces-total-90pt">Exercise 1, Two-body Problems and Conservative Forces (total 90pt) </h3>
+<h3 id="exercise-1-two-body-problems-and-conservative-forces-total-75pt">Exercise 1, Two-body Problems and Conservative Forces (total 75pt) </h3>
 
 <p>
 The relevant material from Taylor are chapters 4 and 8. Homework sets 6-9 and the chapters on <a href="https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter4.html" target="_blank">forces</a> and <a href="https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter6.html" target="_blank">two-body problems</a> from the lecture notes may also be of use.
@@ -218,19 +218,17 @@ We start first with a basic study of the potential
 <ul>
 <p><li> <b>1a (5pt):</b> Plot the potential as a function of \( r \) with \( \varepsilon=1 \) and \( \sigma=1 \), for example for \( r \in [0.9,3] \).</li>
 <p><li> <b>1b (5pt):</b> The behaviour of \( V(r) \) is vastly different for \( r < \sigma \) and \( r > \sigma \). Which term in the potential, <a href="#mjx-eqn-1">(1)</a>, dominates in each case and what is the effect?</li>
-<p><li> <b>1c (5pt):</b> Find and characterise the equilibrium points of the potential.</li>
+<p><li> <b>1c (5pt):</b> Find and characterize the equilibrium points of the potential.</li>
 <p><li> <b>1d (5pt):</b> Describe qualitatively the motion of two atoms which start at rest separated by a distance of \( {1.5}\sigma \). What if they start with a separation of \( {0.95}\sigma \)?  (Hint: use the graph of the potential.)</li>
-<p><li> <b>1e (5pt):</b> Describe the shape of the potential close to the stable equilibrium point. Can you think of other force(s) with the same behaviour?</li>
 </ul>
 <p>
 
 Then we switch our attention to the equations of motion.
 
 <ul>
-<p><li> <b>1f (5pt):</b> Find the force on atom \( i \) at position \( \boldsymbol{r}_i \) from atom \( j \) at position \( \boldsymbol{r}_j \).</li>
-<p><li> <b>1g (5pt):</b>  Is this a conservative force? Show that the <b>curl</b> is zero.</li>
-<p><li> <b>1h (5pt):</b>  Are linear and angular momentum conserved? You need to show this by calculating the relevant quantities.</li>
-<p><li> <b>1i (5pt):</b> Show that the equation of motion for atom \( i \) is</li>
+<p><li> <b>1e (5pt):</b> Find the force on atom \( i \) at position \( \boldsymbol{r}_i \) from atom \( j \) at position \( \boldsymbol{r}_j \). Is this a conservative force?</li>
+<p><li> <b>1f (5pt):</b>  Are linear and angular momentum conserved? You need to show this by calculating the relevant quantities.</li>
+<p><li> <b>1g (5pt):</b> Show that the equation of motion for atom \( i \) is</li>
 </ul>
 <p>&nbsp;<br>
 $$
@@ -251,7 +249,7 @@ The remedy is to change units so that most quantities are close to
 are the typical scales for length and energy.
 
 <ul>
-<p><li> <b>1j (5pt):</b> Introduce the scaled coordinates \( \boldsymbol{r}_i\,'=\boldsymbol{r}_i/\sigma \) and show that the equation of motion can be rewritten in terms of these coordinates as (where \( t'=t/\tau \) for a suitable choice of \( \tau \).)</li>
+<p><li> <b>1h (5pt):</b> Introduce the scaled coordinates \( \boldsymbol{r}_i\,'=\boldsymbol{r}_i/\sigma \) and show that the equation of motion can be rewritten in terms of these coordinates as (where \( t'=t/\tau \) for a suitable choice of \( \tau \).)</li>
 </ul>
 <p>&nbsp;<br>
 $$
@@ -263,21 +261,20 @@ $$
 
 
 <ul>
-<p><li> <b>1k (5pt):</b> What is the characteristic time scale \( \tau \), and what is its value for argon, which has \( \sigma=3.405 \)&#197; (1&#197;=1E-10m), \( m = 39.95u \) (with 1u=1.66E-27kg) and \( \varepsilon=1.0318 \) E-2eV (1eV=1.602E-19J)?</li>
+<p><li> <b>1i (5pt):</b> What is the characteristic time scale \( \tau \), and what is its value for argon, which has \( \sigma=3.405 \)&#197; (1&#197;=1E-10m), \( m = 39.95u \) (with 1u=1.66E-27kg) and \( \varepsilon=1.0318 \) E-2eV (1eV=1.602E-19J)?</li>
 </ul>
 <p>
 
 We switch now to a numerical procedure and study the simulation of two interacting atoms.
 
 <ul>
-<p><li> <b>1l (10pt):</b> Write a function which solves <a href="#mjx-eqn-2">(2)</a> for two atoms and finds the positions and velocities of the atoms as a function of time. Implement either the Euler-Cromer or the Velocity-Verlet method to solve the equations od motion.</li>
-<p><li> <b>1m (5pt):</b> Simulate the motion of two atoms which start at rest separated by a distance of \( {1.5}\sigma \). Use \( \Delta t'={0.01} \), simulate until \( t'=5 \) and integrate with one of the above methods.</li>
-<p><li> <b>1n (5pt):</b> Plot the distance between the atoms as a function of time. How does the motion fit with your expectations?</li>
-<p><li> <b>1o (5pt):</b> Repeat the previous tasks, but now with an initial separation of \( 0.95\sigma \). Explain your results.</li>
-<p><li> <b>1p (10pt):</b> Compute and plot the kinetic, potential and total energy as a function of time for. Should the total energy be conserved? Why, or why not? Does your program fulfil this? If not, what could be the cause?</li>
+<p><li> <b>1j (10pt):</b> Write a function which solves <a href="#mjx-eqn-2">(2)</a> for two atoms and find the positions and velocities of the atoms as a function of time. Implement either the Euler-Cromer or the Velocity-Verlet method to solve the equations od motion.</li>
+<p><li> <b>1k (5pt):</b> Simulate the motion of two atoms which start at rest separated by a distance of \( {1.5}\sigma \). Use \( \Delta t'={0.01} \), simulate until \( t'=5 \) and integrate with one of the above methods. Plot the distance between the atoms as a function of time. How does the motion fit with your expectations?</li>
+<p><li> <b>1l (5pt):</b> Repeat the previous tasks, but now with an initial separation of \( 0.95\sigma \). Explain your results.</li>
+<p><li> <b>1m (10pt):</b> Compute and plot the kinetic, potential and total energy as a function of time for. Should the total energy be conserved? Why, or why not?</li> 
 </ul>
 
-<h3 id="exercise-2-coupled-harmonic-oscillators-60pt">Exercise 2, Coupled Harmonic Oscillators (60pt) </h3>
+<h3 id="exercise-2-coupled-harmonic-oscillators-45pt">Exercise 2, Coupled Harmonic Oscillators (45pt) </h3>
 
 <p>
 The relevant chapters from Taylor are chapters 5-7 and the lectures notes on <a href="https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter5.html" target="_blank">harmonic oscillations</a> and the <a href="https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter8.html" target="_blank">Lagrangian Formalism and Calculus of Variations</a>. Your codes from homework sets 5-8 and the first midterm may also be of interest.
@@ -288,9 +285,9 @@ spring constant \( k \). A second identical mass \( m \) is connected to the
 first mass by an identical spring. Motion is confined to the \( x \) direction only.
 
 <ul>
-<p><li> <b>2a (10pt):</b> Make a drawing of the system, set up forces and define variables \( x_1 \) and \( x_2 \) for the two masses.</li>
-<p><li> <b>2b (10pt):</b> Write the Lagrangian in terms of the positions of the two masses \( x_1 \) and \( x_2 \).</li>
-<p><li> <b>2c (10pt):</b> Use the Euler-Lagrange equations to find the  equations of motion.</li>
+<p><li> <b>2a (5pt):</b> Make a drawing of the system, set up forces and define variables \( x_1 \) and \( x_2 \) for the two masses.</li>
+<p><li> <b>2b (5pt):</b> Write the Lagrangian in terms of the positions of the two masses \( x_1 \) and \( x_2 \).</li>
+<p><li> <b>2c (5pt):</b> Use the Euler-Lagrange equations to find the analytical expressions for the  equations of motion.</li>
 <p><li> <b>2d (10pt):</b> Find the analytical  solutions using a guess of  the type</li>
 </ul>
 <p>&nbsp;<br>
