@@ -195,8 +195,8 @@ $$
 Numerical accuracy is reduced when computing with values which are
 many orders of magnitude apart. This is often an issue in physics, and
 molecular dynamics is no exception. For example, the mass of argon is
-smaller than $10e-25$kg, while typical length scales are
-on the order of nanometers, $10e-9$m.
+smaller than 10E-25kg, while typical length scales are
+on the order of nanometers, 10E-9m.
 
 <p>
 The remedy is to change units so that most quantities are close to
@@ -215,18 +215,17 @@ $$
 
 
 <ul>
-<li> <b>1k (5pt):</b> What is the characteristic time scale \( \tau \), and what is its value for argon, which has $\sigma=$3.405&#197; (1&#197;=1E-10m), \( m = 39.95u \) (with 1u=1.66E-27kg) and $\varepsilon=$1.0318E-2eV (1eV=1.602E-19J)?</li>
+<li> <b>1k (5pt):</b> What is the characteristic time scale \( \tau \), and what is its value for argon, which has \( \sigma=3.405 \)&#197; (1&#197;=1E-10m), \( m = 39.95u \) (with 1u=1.66E-27kg) and $\varepsilon=$1.0318E-2eV (1eV=1.602E-19J)?</li>
 </ul>
 
 We switch now to a numerical procedure and study the simulation of two interacting atoms.
 
 <ul>
-<li> <b>1l (5pt):</b> Write a function which solves \eqref{eq:undim} for two atoms and finds the positions and velocities of the atoms as a function of time. Implement either the Euler-Cromer or the Velocity-Verlet method to solve the equations od motion.</li>
+<li> <b>1l (10pt):</b> Write a function which solves \eqref{eq:undim} for two atoms and finds the positions and velocities of the atoms as a function of time. Implement either the Euler-Cromer or the Velocity-Verlet method to solve the equations od motion.</li>
 <li> <b>1m (5pt):</b> Simulate the motion of two atoms which start at rest separated by a distance of \( {1.5}\sigma \). Use \( \Delta t'={0.01} \), simulate until \( t'=5 \) and integrate with one of the above methods.</li>
-<li> <b>1n (5pt):</b> Plot the distance between the atoms as a function of time.</li>
-<li> <b>1o (5pt):</b> How does the motion fit with your expectations?</li>
-<li> <b>1p (5pt):</b> Repeat the previous tasks, but now with an initial separation of \( 0.95\sigma \). Explain your results.</li>
-<li> <b>1q (5pt):</b> Compute and plot the kinetic, potential and total energy as a function of time for. Should the total energy be conserved? Why, or why not? Does your program fulfil this? If not, what could be the cause?</li>
+<li> <b>1n (5pt):</b> Plot the distance between the atoms as a function of time. How does the motion fit with your expectations?</li>
+<li> <b>1o (5pt):</b> Repeat the previous tasks, but now with an initial separation of \( 0.95\sigma \). Explain your results.</li>
+<li> <b>1p (10pt):</b> Compute and plot the kinetic, potential and total energy as a function of time for. Should the total energy be conserved? Why, or why not? Does your program fulfil this? If not, what could be the cause?</li>
 </ul>
 
 <h3 id="exercise-2-coupled-harmonic-oscillators">Exercise 2, Coupled Harmonic Oscillators </h3>

@@ -223,8 +223,8 @@ Then we switch our attention to the equations of motion.
 Numerical accuracy is reduced when computing with values which are
 many orders of magnitude apart. This is often an issue in physics, and
 molecular dynamics is no exception. For example, the mass of argon is
-smaller than $10e-25$kg, while typical length scales are
-on the order of nanometers, $10e-9$m.
+smaller than 10E-25kg, while typical length scales are
+on the order of nanometers, 10E-9m.
 
 The remedy is to change units so that most quantities are close to
 $1$. From (\ref{eq:lj}) it is clear that $\sigma$ and $\varepsilon$
@@ -239,23 +239,21 @@ are the typical scales for length and energy.
 \frac{d^2\bm{r}_i\,'}{{dt'^2}} = 24 \sum_{j \neq i} \left(2\vert\bm{r}_i\,'-\bm{r}_j\,'\vert^{-12}-\vert\bm{r}_i\,'-\bm{r}_j\,\vert^{-6}\right)\frac{\bm{r}_i\,'-\bm{r}_j\,'}{\vert\bm{r}_i\,'-\bm{r}_j\,'\vert^2}, \label{eq:undim}
 \end{equation}
 \begin{itemize}
-\item \textbf{1k (5pt):} What is the characteristic time scale $\tau$, and what is its value for argon, which has $\sigma=$3.405Å (1Å=1E-10m), $m = 39.95u$ (with 1u=1.66E-27kg) and $\varepsilon=$1.0318E-2eV (1eV=1.602E-19J)?
+\item \textbf{1k (5pt):} What is the characteristic time scale $\tau$, and what is its value for argon, which has $\sigma=3.405$Å (1Å=1E-10m), $m = 39.95u$ (with 1u=1.66E-27kg) and $\varepsilon=$1.0318E-2eV (1eV=1.602E-19J)?
 \end{itemize}
 
 \noindent
 We switch now to a numerical procedure and study the simulation of two interacting atoms.
 \begin{itemize}
-\item \textbf{1l (5pt):} Write a function which solves (\ref{eq:undim}) for two atoms and finds the positions and velocities of the atoms as a function of time. Implement either the Euler-Cromer or the Velocity-Verlet method to solve the equations od motion.
+\item \textbf{1l (10pt):} Write a function which solves (\ref{eq:undim}) for two atoms and finds the positions and velocities of the atoms as a function of time. Implement either the Euler-Cromer or the Velocity-Verlet method to solve the equations od motion.
 
 \item \textbf{1m (5pt):} Simulate the motion of two atoms which start at rest separated by a distance of ${1.5}\sigma$. Use $\Delta t'={0.01}$, simulate until $t'=5$ and integrate with one of the above methods.
 
-\item \textbf{1n (5pt):} Plot the distance between the atoms as a function of time.
+\item \textbf{1n (5pt):} Plot the distance between the atoms as a function of time. How does the motion fit with your expectations?
 
-\item \textbf{1o (5pt):} How does the motion fit with your expectations?
+\item \textbf{1o (5pt):} Repeat the previous tasks, but now with an initial separation of $0.95\sigma$. Explain your results.
 
-\item \textbf{1p (5pt):} Repeat the previous tasks, but now with an initial separation of $0.95\sigma$. Explain your results.
-
-\item \textbf{1q (5pt):} Compute and plot the kinetic, potential and total energy as a function of time for. Should the total energy be conserved? Why, or why not? Does your program fulfil this? If not, what could be the cause?
+\item \textbf{1p (10pt):} Compute and plot the kinetic, potential and total energy as a function of time for. Should the total energy be conserved? Why, or why not? Does your program fulfil this? If not, what could be the cause?
 \end{itemize}
 
 \noindent
