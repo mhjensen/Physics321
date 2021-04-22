@@ -67,7 +67,7 @@ cp $name.tex ${name}.tex
 
 
 # Publish
-dest=../../../FinalProject/
+dest=../../../Homeworks/
 if [ ! -d $dest/$name ]; then
 mkdir $dest/$name
 mkdir $dest/$name/pdf
