@@ -46,21 +46,6 @@ final,                   % draft: marks overfull hboxes, figures with paths
 
 \setcounter{tocdepth}{2}  % levels in table of contents
 
-% Tricks for having figures close to where they are defined:
-% 1. define less restrictive rules for where to put figures
-\setcounter{topnumber}{2}
-\setcounter{bottomnumber}{2}
-\setcounter{totalnumber}{4}
-\renewcommand{\topfraction}{0.95}
-\renewcommand{\bottomfraction}{0.95}
-\renewcommand{\textfraction}{0}
-\renewcommand{\floatpagefraction}{0.75}
-% floatpagefraction must always be less than topfraction!
-% 2. ensure all figures are flushed before next section
-\usepackage[section]{placeins}
-% 3. enable begin{figure}[H] (often leads to ugly pagebreaks)
-%\usepackage{float}\restylefloat{figure}
-
 % prevent orhpans and widows
 \clubpenalty = 10000
 \widowpenalty = 10000
@@ -95,7 +80,7 @@ final,                   % draft: marks overfull hboxes, figures with paths
 \begin{center}
 {\LARGE\bf
 \begin{spacing}{1.25}
-PHY321: Classical Mechanics 1
+PHY321 Classical Mechanics 1
 \end{spacing}
 }
 \end{center}
@@ -103,25 +88,27 @@ PHY321: Classical Mechanics 1
 % ----------------- author(s) -------------------------
 
 \begin{center}
-{\bf Final  project, due Friday May 1${}^{}$} \\ [0mm]
+{\bf Final  project, due Friday April 30}
 \end{center}
 
-\begin{center}
+    \begin{center}
 % List of all institutions:
+\centerline{{\small midnight (1159pm)}}
 \end{center}
     
 % ----------------- end author(s) -------------------------
 
 % --- begin date ---
 \begin{center}
-Apr 24, 2020
+Apr 22, 2021
 \end{center}
 % --- end date ---
 
 \vspace{1cm}
 
 
-\paragraph{Practicalities about  homeworks and projects.}
+\subsection*{Practicalities about  homeworks and projects}
+
 \begin{enumerate}
 \item You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. \textbf{Remember to write your name(s)}!
 
@@ -129,171 +116,241 @@ Apr 24, 2020
 \end{enumerate}
 
 \noindent
-\paragraph{Introduction to the final project, total score: 160  points.}
+\paragraph{Introduction to the final project, total score: 150  points.}
 The relevant reading background is
 \begin{enumerate}
-\item chapters 2-9 and 14 of Taylor
+\item chapters 2-8 and 14 of Taylor
 
 \item lecture notes throughout the semester and previous homework and midterm projects.
 \end{enumerate}
 
 \noindent
-The final project aims at covering most of the topics we have discussed during the semester. As a physical system to discuss many of the principles we have discussed during the semester, we will use what in the literature is called the \textbf{mathematical pendulum} and variants thereof. 
-
-\paragraph{Exercise 1: Mathematical pendulum.}
-A mathematical pendulum consists of a point mass $m$ suspended by a massless thread/rod of length $l$ in a gravitational field, as shown in the figure here. The constraining force is labeled by $\bm{T}$
-and the gravitational force is labeled $\bm{F}_g$.
-
+The final project aims at covering most of the topics we have
+discussed during the semester. You should feel free to use either
+paper and pencil and/or symbolic software (sympy, Mathematica or
+similar) for the non-computational exercises.
 
 
-\vspace{6mm}
+\paragraph{Exercise 1, Two-body Problems and Conservative Forces (total 90pt).}
+The relevant material from Taylor are chapters 4 and 8. Homework sets 6-9 and the chapters on \href{{https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter4.html}}{forces} and \href{{https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter6.html}}{two-body problems} from the lecture notes may also be of use. 
 
-% inline figure
-\centerline{\includegraphics[width=0.6\linewidth]{figures/Simplependulum.png}}
+This exercise is a follow-up of hw6. There we studied the so-called
+Lennard-Jones potential which is widely used in molecular dynamics
+calculations. This potential is based on parametrizations from
+expertiments. In molecular dynamics calculations the assumption is
+that atoms move according to the laws of Newton, given the correct
+model for interactions. We can say then that quantum-mechanical
+degrees of freedom stemming from the interactions between electrons
+and protons in an atom, are parametrized in terms of an effective
+potential.
 
-\vspace{6mm}
+We will limit ourselves to a two-body problem.
 
+The goal of this exercise is to model a gas of argon atoms (here two
+atoms only interacting), where the atoms interact according to the
+famous Lennard-Jones potential,
 
+\begin{equation}
+    V(r) = 4\varepsilon\left((\frac{\sigma}{r})^{12} - (\frac{\sigma}{r})^6\right), \label{eq:lj}
+\end{equation}
 
-We assume that the length $l$ is constant and we define the coordinates involved as
+where $r$ is the distance between two atoms,
+$r=\vert\bm{r}_i-\bm{r}_j\vert$, that is the norm of the relative
+distance vector $\bm{r}$. The quantities $\sigma$ and $\varepsilon$ are
+parameters which determine which chemical compound is modelled. This
+potential is a good approximation for noble gases like helium, neon, argon and other.
 
-\[
-\bm{r} = l\sin(\phi)\bm{\hat{x}}+l\cos(\phi)\bm{\hat{y}},
-\]
-where $\bm{\hat{x}}$ and $\bm{\hat{y}}$ are the unit vectors in the $x$ and $y$ directions, respectively.
+We start first with a basic study of the potential
 
 \begin{itemize}
-\item \textbf{1a (10pt):} Set up the forces acting on the system and show that the equation of motion is $m\ddot{\bm{r}}=\bm{F}_g+\bm{T}$.
+\item \textbf{1a (5pt):} Plot the potential as a function of $r$ with $\varepsilon=1$ and $\sigma=1$, for example for $r \in [0.9,3]$.
 
-\item \textbf{1b (10pt):} Show that you can rewrite the above equation of motion as two independent equations of motion, one for $\phi$ and one for the constraining force. Show that these equations are $\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}$ with $\omega_0^2=g/l$ and $T=ml\dot{\phi}^2+mg\cos{(\phi)}$.
+\item \textbf{1b (5pt):} The behaviour of $V(r)$ is vastly different for $r < \sigma$ and $r > \sigma$. Which term in the potential, (\ref{eq:lj}), dominates in each case and what is the effect?
+
+\item \textbf{1c (5pt):} Find and characterise the equilibrium points of the potential.
+
+\item \textbf{1d (5pt):} Describe qualitatively the motion of two atoms which start at rest separated by a distance of ${1.5}\sigma$. What if they start with a separation of ${0.95}\sigma$?  (Hint: use the graph of the potential.)
+
+\item \textbf{1e (5pt):} Describe the shape of the potential close to the stable equilibrium point. Can you think of other force(s) with the same behaviour?
 \end{itemize}
 
 \noindent
-The equation for $\phi$ is a second-order differential equation
-\[
-\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}.
-\]
-
-This equation can be solved analytically if we assume that the angle $\phi$ is very small. Then we can approximate our equation as
-
-\[
-\ddot{\phi}(t)=-\omega_0^2\phi(t).
-\]
+Then we switch our attention to the equations of motion.
 
 \begin{itemize}
-\item \textbf{1c (10pt):} Find the analytical solution for the last equation. Hint, look back at the solutions for the simple harmonic oscillator problem in one dimension in for example homework 6.
-\end{itemize}
+\item \textbf{1f (5pt):} Find the force on atom $i$ at position $\bm{r}_i$ from atom $j$ at position $\bm{r}_j$.
 
-\noindent
-For our numerical treatment of the full second-order differential  equation, we can proceed as we have done before and split the second-order differential in two first-order differential equations
-as shown here
+\item \textbf{1g (5pt):}  Is this a conservative force? Show that the \textbf{curl} is zero.
 
-\[
-\frac{d\dot{\phi}}{dt}=-\omega_0^2\sin{(\phi)}.
-\]
+\item \textbf{1h (5pt):}  Are linear and angular momentum conserved? You need to show this by calculating the relevant quantities.
 
-and
-
-\[
-\frac{d\phi}{dt}=\dot{\phi}.
-\]
-
-
-\begin{itemize}
-\item \textbf{1d (10pt):} Scale the equations in terms of a dimensionless time $\hat{t}=\omega_0t$. Choose between the Euler-Cromer, the Velocity-Verlet or the Runge-Kutta to fourth order and \textbf{write down} the algorithm for solving the last two equations numerically. Explain briefly your choice of numerical algorithm. Hint, look back at what you did in homework 6 and the two midterms.
-
-\item \textbf{1e (10pt):} Choose initial conditions and compare your numerical solution with the analytical one. For which range of angles $\phi$ (determined by your initial conditions) are the analytical solutions comparable to your numerical results? Discuss the implications of your results.
-
-\item \textbf{1f (10pt):} Find the expressions for the kinetic and potential energies in terms of the variables $r$ and $\phi$. Remember that $r=l$ and is a constant throughout the calculations. In your code, check then whether energy is conserved by calculating the total energy, the kinetic and potential energies ad functions of time. Discuss your results. Do you expect energy to be conserved? 
-
-\item \textbf{1g (10pt):} With the potential $V$  and kinetic $T$ energies, define the Lagrangian for the mathematical pendulum discussed here. Add the constraint $r=l$ via a Lagrange multiplier $\lambda$ and derive the equations of motion. Show that these result in  $\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}$ with $\omega_0^2=g/l$ and $\lambda=ml\dot{\phi}^2+mg\cos{(\phi)}$.  How would you interpret $\lambda$? 
-\end{itemize}
-
-\noindent
-\paragraph{Exercise 2: Rotating Pendulum in a Gravitational Field.}
-Assume now that the same pendulum is rotating in the gravitational field with a constant angular velocity $\Omega$ as shown in the figure here, with a constant angle $\phi$.
-
-
-\vspace{6mm}
-
-% inline figure
-\centerline{\includegraphics[width=0.6\linewidth]{figures/Rotatingpendulum.png}}
-
-\vspace{6mm}
-
-
-
-From our discussions on rotating frames, the acceleration for an object in the rotating fram $S$  is given by
-\[
-m\bm{a}_{S}=\bm{F}+m\bm{r}\times\dot{\bm{\Omega}}+2m\bm{v}_S\times\bm{\Omega}+m(\bm{\Omega}\times\bm{r}_s)\times\bm{\Omega}.
-\]
-
-The position the mass of the pendulum is $\bm{r}_S$. Recall also that the length $l$ is constant.
-
-We have the Coriolis force
-\[
-\bm{F}_{\mathrm{Coriolis}}=2m\bm{v}_S\times\bm{\Omega},
-\]
-while the last term is the standard centrifugal force
-
-\[
-\bm{F}_{\mathrm{Centrifugal}}=m\left(\bm{\Omega}\times\bm{r}_S\right)\times\bm{\Omega}.
-\]
-
-In this exercise  we will assume that the angular acceleration of the rotating frame and the position $\bm{r}_S$ are  constant quantities, that is their time derivatives are zero. Moreover, we assume the angle $\phi$ does not change as function of time.
-
-\begin{itemize}
-\item \textbf{2a (10pt):} Set up the forces acting on the mass and show that, since $\Omega$ is constant
+\item \textbf{1i (5pt):} Show that the equation of motion for atom $i$ is
 \end{itemize}
 
 \noindent
 \[
-m\bm{a}_{S}=0=\bm{T}+m\bm{g}+m(\bm{\Omega}\times\bm{r}_S)\times\bm{\Omega}.
+  \frac{d^2\bm{r}_i}{dt^2} = \frac{24\varepsilon}{m} \sum_{j \neq i} \left(2(\frac{\sigma}{\vert\bm{r}_i-\bm{r}_j}\vert)^{12}-(\frac{\sigma}{\vert\bm{r}_i-\bm{r}_j}\vert)^6\right)\frac{\bm{r}_i-\bm{r}_j}{\vert\bm{r}_i-\bm{r}_j\vert^2}.
 \]
 
-Discuss why you don't include the Coriolis term and only the centrifugal force.
 
+
+Numerical accuracy is reduced when computing with values which are
+many orders of magnitude apart. This is often an issue in physics, and
+molecular dynamics is no exception. For example, the mass of argon is
+smaller than 10E-25kg, while typical length scales are
+on the order of nanometers, 10E-9m.
+
+The remedy is to change units so that most quantities are close to
+$1$. From (\ref{eq:lj}) it is clear that $\sigma$ and $\varepsilon$
+are the typical scales for length and energy.
 
 \begin{itemize}
-\item \textbf{2b (10pt):} Use the last equation to show that, for $\Omega^2 \ge g/l$  the angle $\phi$ is given by
+\item \textbf{1j (5pt):} Introduce the scaled coordinates $\bm{r}_i\,'=\bm{r}_i/\sigma$ and show that the equation of motion can be rewritten in terms of these coordinates as (where $t'=t/\tau$ for a suitable choice of $\tau$.)
 \end{itemize}
 
 \noindent
-\[
-\phi=\mathrm{arccos}\left(\frac{g}{l\Omega^2}\right).
-\]
-
+\begin{equation}
+\frac{d^2\bm{r}_i\,'}{{dt'^2}} = 24 \sum_{j \neq i} \left(2\vert\bm{r}_i\,'-\bm{r}_j\,'\vert^{-12}-\vert\bm{r}_i\,'-\bm{r}_j\,\vert^{-6}\right)\frac{\bm{r}_i\,'-\bm{r}_j\,'}{\vert\bm{r}_i\,'-\bm{r}_j\,'\vert^2}, \label{eq:undim}
+\end{equation}
 \begin{itemize}
-\item \textbf{2c (10pt):} Plot $\phi$ as function of $g/l\Omega^2$ and study the limits $\Omega\rightarrow \infty$ and $\Omega\rightarrow 0$. Discuss  the possibility that $\Omega^2 < g/l$. Discuss the implications of your results. 
+\item \textbf{1k (5pt):} What is the characteristic time scale $\tau$, and what is its value for argon, which has $\sigma=3.405$Å (1Å=1E-10m), $m = 39.95u$ (with 1u=1.66E-27kg) and $\varepsilon=1.0318$ E-2eV (1eV=1.602E-19J)?
 \end{itemize}
 
 \noindent
-\paragraph{Exercise 3, Coupled Harmonic Oscillators.}
+We switch now to a numerical procedure and study the simulation of two interacting atoms.
+\begin{itemize}
+\item \textbf{1l (10pt):} Write a function which solves (\ref{eq:undim}) for two atoms and finds the positions and velocities of the atoms as a function of time. Implement either the Euler-Cromer or the Velocity-Verlet method to solve the equations od motion.
+
+\item \textbf{1m (5pt):} Simulate the motion of two atoms which start at rest separated by a distance of ${1.5}\sigma$. Use $\Delta t'={0.01}$, simulate until $t'=5$ and integrate with one of the above methods.
+
+\item \textbf{1n (5pt):} Plot the distance between the atoms as a function of time. How does the motion fit with your expectations?
+
+\item \textbf{1o (5pt):} Repeat the previous tasks, but now with an initial separation of $0.95\sigma$. Explain your results.
+
+\item \textbf{1p (10pt):} Compute and plot the kinetic, potential and total energy as a function of time for. Should the total energy be conserved? Why, or why not? Does your program fulfil this? If not, what could be the cause?
+\end{itemize}
+
+\noindent
+\paragraph{Exercise 2, Coupled Harmonic Oscillators (60pt).}
+The relevant chapters from Taylor are chapters 5-7 and the lectures notes on \href{{https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter5.html}}{harmonic oscillations} and the \href{{https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter8.html}}{Lagrangian Formalism and Calculus of Variations}. Your codes from homework sets 5-8 and the first midterm may also be of interest.
+
 Consider a mass $m$ that is connected to a wall by a spring with
 spring constant $k$. A second identical mass $m$ is connected to the
 first mass by an identical spring. Motion is confined to the $x$ direction only.
 
 \begin{itemize}
-\item \textbf{3a (10pt):} Make a drawing of the system, set up forces and define variables $x_1$ and $x_2$ for the two masses.
+\item \textbf{2a (10pt):} Make a drawing of the system, set up forces and define variables $x_1$ and $x_2$ for the two masses.
 
-\item \textbf{3b (10pt):} Write the Lagrangian in terms of the positions of the two masses $x_1$ and $x_2$.
+\item \textbf{2b (10pt):} Write the Lagrangian in terms of the positions of the two masses $x_1$ and $x_2$.
 
-\item \textbf{3c (10pt):} Use the Euler-Lagrange equations to find the  equations of motion.
+\item \textbf{2c (10pt):} Use the Euler-Lagrange equations to find the  equations of motion.
 
-\item \textbf{3d (10pt):} Find the analytical  solutions of the type
+\item \textbf{2d (10pt):} Find the analytical  solutions using a guess of  the type
 \end{itemize}
 
 \noindent
-\begin{eqnarray*}
-x_1&=&Ae^{i\omega t},~~~x_2=Be^{i\omega t}.
-\end{eqnarray*}
+\[
+x_1=Ae^{i\omega t},~~~x_2=Be^{i\omega t}.
+\]
 Solve for $A/B$ and $\omega$. Express your answers in terms of $\omega_0^2=k/m$.
 
 \begin{itemize}
-\item \textbf{3e (20pt):} Write now a program which solves these two coupled differential equations for $x_1$ and $x_2$. Compute the positions $x_1$ and $x_2$ by choosing your initial conditions and compare with the analytical answers from 3d.   
+\item \textbf{2e (20pt):} Write now a program which solves these two coupled differential equations for $x_1$ and $x_2$. Compute the positions $x_1$ and $x_2$ by choosing your initial conditions and compare with the analytical answers from 2d.   
 \end{itemize}
 
 \noindent
+\paragraph{Classical Mechanics Extra Credit Assignment: Scientific Writing and attending Talks.}
+The following gives you an opportunity to earn \textbf{five extra credit
+points} on each of the remaining homeworks and \textbf{ten extra credit points}
+on the midterms and finals.  This assignment also covers an aspect of
+the scientific process that is not taught in most undergraduate
+programs: scientific writing.  Writing scientific reports is how
+scientist communicate their results to the rest of the field.  Knowing
+how to assemble a well written scientific report will greatly benefit
+you in you upper level classes, in graduate school, and in the work
+place.
+
+The full information on extra credits is found at \href{{https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/}}{\nolinkurl{https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/}}. There you will also find examples on how to write a scientific article. 
+Below you can also find a description on how to gain extra credits by attending scientific talks.
+
+
+This assignment allows you to gain extra credit points by practicing
+your scientific writing.  For each of the remaining homeworks you can
+submit the specified section of a scientific report (written about the
+numerical aspect of the homework) for five extra credit points on the
+assignment.  For the two midterms and the final, submitting a full
+scientific report covering the numerical analysis problem will be
+worth ten extra points.  For credit the grader must be able to tell
+that you put effort into the assignment (i.e.~well written, well
+formatted, etc.).  If you are unfamiliar with writing scientific
+reports, \href{{https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/IntroductionScientificWriting.md}}{see the information here}
+
+The following table explains what aspect of a scientific report is due
+with which homework.  You can submit the assignment in any format you
+like, in the same document as your homework, or in a different one.
+Remember to cite any external references you use and include a
+reference list.  There are no length requirements, but make sure what
+you turn in is complete and through.  If you have any questions,
+please contact Julie Butler at butler@frib.msu.edu.
+
+
+\begin{quote}
+\begin{tabular}{ccc}
+\hline
+\multicolumn{1}{c}{ HW/Project } & \multicolumn{1}{c}{ Due Date } & \multicolumn{1}{c}{ Extra Credit Assignment } \\
+\hline
+HW 3               & 2-8           & Abstract                   \\
+HW 4               & 2-15          & Introduction               \\
+HW 5               & 2-22          & Methods                    \\
+HW 6               & 3-1           & Results and Discussion     \\
+\textbf{Midterm 1} & \textbf{3-12} & \emph{Full Written Report} \\
+HW 7               & 3-22          & Abstract                   \\
+HW 8               & 3-29          & Introduction               \\
+HW 9               & 4-5           & Results and Discussion     \\
+\textbf{Midterm 2} & \textbf{4-16} & \emph{Full Written Report} \\
+HW 10              & 4-26          & Abstract                   \\
+\textbf{Final}     & \textbf{4-30} & \emph{Full Written Report} \\
+\hline
+\end{tabular}
+\end{quote}
+
+\noindent
+
+You can also gain extra credits if you attend scientific talks.
+This is described here.
+
+
+\paragraph{Integrating Classwork With Research.}
+This opportunity will allow you to earn up to 5 extra credit points on a Homework per week. These points can push you above 100\% or help make up for missed exercises.
+In order to earn all points you must:
+
+\begin{enumerate}
+\item Attend an MSU research talk (recommended research oriented Clubs is  provided below)
+
+\item Summarize the talk using at least 150 words
+
+\item Turn in the summary along with your Homework.
+\end{enumerate}
+
+\noindent
+Approved talks:
+Talks given by researchers through the following clubs:
+\begin{itemize}
+\item Research and Idea Sharing Enterprise (RAISE)​: Meets Wednesday Nights Society for Physics Students (SPS)​: Meets Monday Nights
+
+\item Astronomy Club​: Meets Monday Nights
+
+\item Facility For Rare Isotope Beam (FRIB) Seminars: ​Occur multiple times a week
+\end{itemize}
+
+\noindent
+If you have any questions please consult Jeremy Rebenstock, rebensto@msu.edu.
+
+All the material on extra credits is at \href{{https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/}}{\nolinkurl{https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/}}. 
+
+
+
+
 
 % ------------------- end of main content ---------------
 
