@@ -25,13 +25,13 @@ similar) for the non-computational exercises.
 
 The relevant material from Taylor are chapters 4 and 8. Homework sets 6-9 and the chapters on "forces":"https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter4.html" and "two-body problems":"https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter6.html" from the lecture notes may also be of use. 
 
-This exercise is a follow-up of hw6. There we studied the so-called
+This exercise and the next are  follow-ups of hw6. There we studied the so-called
 Lennard-Jones potential which is widely used in molecular dynamics
 calculations. This potential is based on parametrizations from
 expertiments. In molecular dynamics calculations the assumption is
 that atoms move according to the laws of Newton, given the correct
 model for interactions. We can say then that quantum-mechanical
-degrees of freedom stemming from the interactions between electrons
+degrees of freedom stemming from complicated interactions between electrons
 and protons in an atom, are parametrized in terms of an effective
 potential.
 
@@ -72,6 +72,10 @@ Then we switch our attention to the equations of motion.
 !et
 
 
+=== Exercise 2, Two-body Problems and Conservative Forces, Numerical Studies (40pt) ===
+
+In this exercise we will solve the previous equations of motion numerically and study the solutions.
+Here you can use the same codes you developed in homework sets 5-9 and the second midterm.
 
 Numerical accuracy is reduced when computing with values which are
 many orders of magnitude apart. This is often an issue in physics, and
@@ -83,29 +87,29 @@ The remedy is to change units so that most quantities are close to
 $1$. From (ref{eq:lj}) it is clear that $\sigma$ and $\varepsilon$
 are the typical scales for length and energy.
 
-* _1h (5pt):_ Introduce the scaled coordinates $\bm{r}_i\,'=\bm{r}_i/\sigma$ and show that the equation of motion can be rewritten in terms of these coordinates as (where $t'=t/\tau$ for a suitable choice of $\tau$.)
+* _2a (5pt):_ Introduce the scaled coordinates $\bm{r}_i\,'=\bm{r}_i/\sigma$ and show that the equation of motion can be rewritten in terms of these coordinates as (where $t'=t/\tau$ for a suitable choice of $\tau$.)
 !bt
 \begin{equation}
 \frac{d^2\bm{r}_i\,'}{{dt'^2}} = 24 \sum_{j \neq i} \left(2\vert\bm{r}_i\,'-\bm{r}_j\,'\vert^{-12}-\vert\bm{r}_i\,'-\bm{r}_j\,\vert^{-6}\right)\frac{\bm{r}_i\,'-\bm{r}_j\,'}{\vert\bm{r}_i\,'-\bm{r}_j\,'\vert^2}, label{eq:undim}
 \end{equation}
 !et
-* _1i (5pt):_ What is the characteristic time scale $\tau$, and what is its value for argon, which has $\sigma=3.405$Å (1Å=1E-10m), $m = 39.95u$ (with 1u=1.66E-27kg) and $\varepsilon=1.0318$ E-2eV (1eV=1.602E-19J)?
+* _2b (5pt):_ What is the characteristic time scale $\tau$, and what is its value for argon, which has $\sigma=3.405$Å (1Å=1E-10m), $m = 39.95u$ (with 1u=1.66E-27kg) and $\varepsilon=1.0318$ E-2eV (1eV=1.602E-19J)?
 
 
 
 We switch now to a numerical procedure and study the simulation of two interacting atoms.
-* _1j (10pt):_ Write a function which solves (ref{eq:undim}) for two atoms and find the positions and velocities of the atoms as a function of time. Implement either the Euler-Cromer or the Velocity-Verlet method to solve the equations od motion.
+* _2c (10pt):_ Write a function which solves (ref{eq:undim}) for two atoms and find the positions and velocities of the atoms as a function of time. Implement either the Euler-Cromer or the Velocity-Verlet method to solve the equations od motion (you can reuse your codes from homework sets 5-9 or the second midterm).
 
 
-* _1k (5pt):_ Simulate the motion of two atoms which start at rest separated by a distance of ${1.5}\sigma$. Use $\Delta t'={0.01}$, simulate until $t'=5$ and integrate with one of the above methods. Plot the distance between the atoms as a function of time. How does the motion fit with your expectations?
-* _1l (5pt):_ Repeat the previous tasks, but now with an initial separation of $0.95\sigma$. Explain your results.
-* _1m (10pt):_ Compute and plot the kinetic, potential and total energy as a function of time for. Should the total energy be conserved? Why, or why not? 
+* _2d (5pt):_ Simulate the motion of two atoms which start at rest separated by a distance of ${1.5}\sigma$. Use $\Delta t'={0.01}$, simulate until $t'=5$ and integrate with one of the above methods. Plot the distance between the atoms as a function of time. How does the motion fit with your expectations?
+* _2e (5pt):_ Repeat the previous tasks, but now with an initial separation of $0.95\sigma$. Explain your results.
+* _2f (10pt):_ Compute and plot the kinetic, potential and total energy as a function of time for. Should the total energy be conserved? Why, or why not? 
 
 
 
 
 
-=== Exercise 2, Coupled Harmonic Oscillators (45pt) ===
+=== Exercise 3, Coupled Harmonic Oscillators (45pt) ===
 
 The relevant chapters from Taylor are chapters 5-7 and the lectures notes on "harmonic oscillations":"https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter5.html" and the "Lagrangian Formalism and Calculus of Variations":"https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter8.html". Your codes from homework sets 5-8 and the first midterm may also be of interest.
 
@@ -113,10 +117,10 @@ Consider a mass $m$ that is connected to a wall by a spring with
 spring constant $k$. A second identical mass $m$ is connected to the
 first mass by an identical spring. Motion is confined to the $x$ direction only.
 
-* _2a (5pt):_ Make a drawing of the system, set up forces and define variables $x_1$ and $x_2$ for the two masses.
-* _2b (5pt):_ Write the Lagrangian in terms of the positions of the two masses $x_1$ and $x_2$.
-* _2c (5pt):_ Use the Euler-Lagrange equations to find the analytical expressions for the  equations of motion.
-* _2d (10pt):_ Find the analytical  solutions using a guess of  the type
+* _3a (5pt):_ Make a drawing of the system, set up forces and define variables $x_1$ and $x_2$ for the two masses.
+* _3b (5pt):_ Write the Lagrangian in terms of the positions of the two masses $x_1$ and $x_2$.
+* _3c (5pt):_ Use the Euler-Lagrange equations to find the analytical expressions for the  equations of motion.
+* _3d (10pt):_ Find the analytical  solutions using a guess of  the type
 !bt
 \[
 x_1=Ae^{i\omega t},~~~x_2=Be^{i\omega t}.
@@ -124,7 +128,7 @@ x_1=Ae^{i\omega t},~~~x_2=Be^{i\omega t}.
 !et
 Solve for $A/B$ and $\omega$. Express your answers in terms of $\omega_0^2=k/m$.
 
-* _2e (20pt):_ Write now a program which solves these two coupled differential equations for $x_1$ and $x_2$. Compute the positions $x_1$ and $x_2$ by choosing your initial conditions and compare with the analytical answers from 2d.   
+* _3e (20pt):_ Write now a program which solves these two coupled differential equations for $x_1$ and $x_2$. Compute the positions $x_1$ and $x_2$ by choosing your initial conditions and compare with the analytical answers from 3d.   
 
 
 

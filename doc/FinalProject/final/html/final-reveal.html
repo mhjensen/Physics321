@@ -147,7 +147,7 @@ MathJax.Hub.Config({
 <center><b>midnight (1159pm)</b></center>
 <br>
 <p>&nbsp;<br>
-<center><h4>Apr 22, 2021</h4></center> <!-- date -->
+<center><h4>Apr 23, 2021</h4></center> <!-- date -->
 <br>
 
 <h2 id="practicalities-about-homeworks-and-projects">Practicalities about  homeworks and projects </h2>
@@ -179,13 +179,13 @@ similar) for the non-computational exercises.
 The relevant material from Taylor are chapters 4 and 8. Homework sets 6-9 and the chapters on <a href="https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter4.html" target="_blank">forces</a> and <a href="https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter6.html" target="_blank">two-body problems</a> from the lecture notes may also be of use.
 
 <p>
-This exercise is a follow-up of hw6. There we studied the so-called
+This exercise and the next are  follow-ups of hw6. There we studied the so-called
 Lennard-Jones potential which is widely used in molecular dynamics
 calculations. This potential is based on parametrizations from
 expertiments. In molecular dynamics calculations the assumption is
 that atoms move according to the laws of Newton, given the correct
 model for interactions. We can say then that quantum-mechanical
-degrees of freedom stemming from the interactions between electrons
+degrees of freedom stemming from complicated interactions between electrons
 and protons in an atom, are parametrized in terms of an effective
 potential.
 
@@ -236,6 +236,12 @@ $$
 $$
 <p>&nbsp;<br>
 
+<h3 id="exercise-2-two-body-problems-and-conservative-forces-numerical-studies-40pt">Exercise 2, Two-body Problems and Conservative Forces, Numerical Studies (40pt) </h3>
+
+<p>
+In this exercise we will solve the previous equations of motion numerically and study the solutions.
+Here you can use the same codes you developed in homework sets 5-9 and the second midterm.
+
 <p>
 Numerical accuracy is reduced when computing with values which are
 many orders of magnitude apart. This is often an issue in physics, and
@@ -249,7 +255,7 @@ The remedy is to change units so that most quantities are close to
 are the typical scales for length and energy.
 
 <ul>
-<p><li> <b>1h (5pt):</b> Introduce the scaled coordinates \( \boldsymbol{r}_i\,'=\boldsymbol{r}_i/\sigma \) and show that the equation of motion can be rewritten in terms of these coordinates as (where \( t'=t/\tau \) for a suitable choice of \( \tau \).)</li>
+<p><li> <b>2a (5pt):</b> Introduce the scaled coordinates \( \boldsymbol{r}_i\,'=\boldsymbol{r}_i/\sigma \) and show that the equation of motion can be rewritten in terms of these coordinates as (where \( t'=t/\tau \) for a suitable choice of \( \tau \).)</li>
 </ul>
 <p>&nbsp;<br>
 $$
@@ -261,20 +267,20 @@ $$
 
 
 <ul>
-<p><li> <b>1i (5pt):</b> What is the characteristic time scale \( \tau \), and what is its value for argon, which has \( \sigma=3.405 \)&#197; (1&#197;=1E-10m), \( m = 39.95u \) (with 1u=1.66E-27kg) and \( \varepsilon=1.0318 \) E-2eV (1eV=1.602E-19J)?</li>
+<p><li> <b>2b (5pt):</b> What is the characteristic time scale \( \tau \), and what is its value for argon, which has \( \sigma=3.405 \)&#197; (1&#197;=1E-10m), \( m = 39.95u \) (with 1u=1.66E-27kg) and \( \varepsilon=1.0318 \) E-2eV (1eV=1.602E-19J)?</li>
 </ul>
 <p>
 
 We switch now to a numerical procedure and study the simulation of two interacting atoms.
 
 <ul>
-<p><li> <b>1j (10pt):</b> Write a function which solves <a href="#mjx-eqn-2">(2)</a> for two atoms and find the positions and velocities of the atoms as a function of time. Implement either the Euler-Cromer or the Velocity-Verlet method to solve the equations od motion.</li>
-<p><li> <b>1k (5pt):</b> Simulate the motion of two atoms which start at rest separated by a distance of \( {1.5}\sigma \). Use \( \Delta t'={0.01} \), simulate until \( t'=5 \) and integrate with one of the above methods. Plot the distance between the atoms as a function of time. How does the motion fit with your expectations?</li>
-<p><li> <b>1l (5pt):</b> Repeat the previous tasks, but now with an initial separation of \( 0.95\sigma \). Explain your results.</li>
-<p><li> <b>1m (10pt):</b> Compute and plot the kinetic, potential and total energy as a function of time for. Should the total energy be conserved? Why, or why not?</li> 
+<p><li> <b>2c (10pt):</b> Write a function which solves <a href="#mjx-eqn-2">(2)</a> for two atoms and find the positions and velocities of the atoms as a function of time. Implement either the Euler-Cromer or the Velocity-Verlet method to solve the equations od motion (you can reuse your codes from homework sets 5-9 or the second midterm).</li>
+<p><li> <b>2d (5pt):</b> Simulate the motion of two atoms which start at rest separated by a distance of \( {1.5}\sigma \). Use \( \Delta t'={0.01} \), simulate until \( t'=5 \) and integrate with one of the above methods. Plot the distance between the atoms as a function of time. How does the motion fit with your expectations?</li>
+<p><li> <b>2e (5pt):</b> Repeat the previous tasks, but now with an initial separation of \( 0.95\sigma \). Explain your results.</li>
+<p><li> <b>2f (10pt):</b> Compute and plot the kinetic, potential and total energy as a function of time for. Should the total energy be conserved? Why, or why not?</li> 
 </ul>
 
-<h3 id="exercise-2-coupled-harmonic-oscillators-45pt">Exercise 2, Coupled Harmonic Oscillators (45pt) </h3>
+<h3 id="exercise-3-coupled-harmonic-oscillators-45pt">Exercise 3, Coupled Harmonic Oscillators (45pt) </h3>
 
 <p>
 The relevant chapters from Taylor are chapters 5-7 and the lectures notes on <a href="https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter5.html" target="_blank">harmonic oscillations</a> and the <a href="https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter8.html" target="_blank">Lagrangian Formalism and Calculus of Variations</a>. Your codes from homework sets 5-8 and the first midterm may also be of interest.
@@ -285,10 +291,10 @@ spring constant \( k \). A second identical mass \( m \) is connected to the
 first mass by an identical spring. Motion is confined to the \( x \) direction only.
 
 <ul>
-<p><li> <b>2a (5pt):</b> Make a drawing of the system, set up forces and define variables \( x_1 \) and \( x_2 \) for the two masses.</li>
-<p><li> <b>2b (5pt):</b> Write the Lagrangian in terms of the positions of the two masses \( x_1 \) and \( x_2 \).</li>
-<p><li> <b>2c (5pt):</b> Use the Euler-Lagrange equations to find the analytical expressions for the  equations of motion.</li>
-<p><li> <b>2d (10pt):</b> Find the analytical  solutions using a guess of  the type</li>
+<p><li> <b>3a (5pt):</b> Make a drawing of the system, set up forces and define variables \( x_1 \) and \( x_2 \) for the two masses.</li>
+<p><li> <b>3b (5pt):</b> Write the Lagrangian in terms of the positions of the two masses \( x_1 \) and \( x_2 \).</li>
+<p><li> <b>3c (5pt):</b> Use the Euler-Lagrange equations to find the analytical expressions for the  equations of motion.</li>
+<p><li> <b>3d (10pt):</b> Find the analytical  solutions using a guess of  the type</li>
 </ul>
 <p>&nbsp;<br>
 $$
@@ -299,7 +305,7 @@ $$
 Solve for \( A/B \) and \( \omega \). Express your answers in terms of \( \omega_0^2=k/m \).
 
 <ul>
-<p><li> <b>2e (20pt):</b> Write now a program which solves these two coupled differential equations for \( x_1 \) and \( x_2 \). Compute the positions \( x_1 \) and \( x_2 \) by choosing your initial conditions and compare with the analytical answers from 2d.</li>   
+<p><li> <b>3e (20pt):</b> Write now a program which solves these two coupled differential equations for \( x_1 \) and \( x_2 \). Compute the positions \( x_1 \) and \( x_2 \) by choosing your initial conditions and compare with the analytical answers from 3d.</li>   
 </ul>
 
 <h3 id="classical-mechanics-extra-credit-assignment-scientific-writing-and-attending-talks">Classical Mechanics Extra Credit Assignment: Scientific Writing and attending Talks </h3>
