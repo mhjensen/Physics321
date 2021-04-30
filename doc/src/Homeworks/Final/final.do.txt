@@ -23,7 +23,7 @@ similar) for the non-computational exercises.
 
 === Exercise 1, Two-body Problems and Conservative Forces (total 35pt) ===
 
-The relevant material from Taylor are chapters 4 and 8. Homework sets 6-9 and the chapters on "forces":"https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter4.html" and "two-body problems":"https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter6.html" from the lecture notes may also be of use. 
+The relevant material from Taylor are chapters 4 and 8. Homework sets 4, 6-9 and the chapters on "forces":"https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter4.html" and "two-body problems":"https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter6.html" from the lecture notes may also be of use. 
 
 This exercise and the next are  follow-ups of hw6. There we studied the so-called
 Lennard-Jones potential which is widely used in molecular dynamics
@@ -63,7 +63,7 @@ We start first with a basic study of the potential
 Then we switch our attention to the equations of motion.
 
 * _1e (5pt):_ Find the force on atom $i$ at position $\bm{r}_i$ from atom $j$ at position $\bm{r}_j$. Is this a conservative force?
-* _1f (5pt):_  Are linear and angular momentum conserved? You need to show this by calculating the relevant quantities.
+* _1f (5pt):_  Are linear and angular momentum conserved? You need to show this by calculating the relevant quantities. Hint: see homework set 4 and exercise 2.
 * _1g (5pt):_ Show that the equation of motion for atom $i$ is
 !bt
 \[
@@ -90,7 +90,7 @@ are the typical scales for length and energy.
 * _2a (5pt):_ Introduce the scaled coordinates $\bm{r}_i\,'=\bm{r}_i/\sigma$ and show that the equation of motion can be rewritten in terms of these coordinates as (where $t'=t/\tau$ for a suitable choice of $\tau$.)
 !bt
 \begin{equation}
-\frac{d^2\bm{r}_i\,'}{{dt'^2}} = 24 \sum_{j \neq i} \left(2\vert\bm{r}_i\,'-\bm{r}_j\,'\vert^{-12}-\vert\bm{r}_i\,'-\bm{r}_j\,\vert^{-6}\right)\frac{\bm{r}_i\,'-\bm{r}_j\,'}{\vert\bm{r}_i\,'-\bm{r}_j\,'\vert^2}, label{eq:undim}
+\frac{d^2\bm{r}_i\,'}{{dt'^2}} = 24 \sum_{j \neq i} \left(2\vert\bm{r}_i\,'-\bm{r}_j\,'\vert^{-12}-\vert\bm{r}_i\,'-\bm{r}_j\,'\vert^{-6}\right)\frac{\bm{r}_i\,'-\bm{r}_j\,'}{\vert\bm{r}_i\,'-\bm{r}_j\,'\vert^2}, label{eq:undim}
 \end{equation}
 !et
 * _2b (5pt):_ What is the characteristic time scale $\tau$, and what is its value for argon, which has $\sigma=3.405$Å (1Å=1E-10m), $m = 39.95u$ (with 1u=1.66E-27kg) and $\varepsilon=1.0318$ E-2eV (1eV=1.602E-19J)?
