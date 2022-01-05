@@ -1,6 +1,7 @@
 <!--
-Automatically generated HTML file from DocOnce source
+HTML file automatically generated from DocOnce source
 (https://github.com/doconce/doconce/)
+doconce format html course.do.txt 
 -->
 <html>
 <head>
@@ -8,16 +9,9 @@ Automatically generated HTML file from DocOnce source
 <meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="Overview of course material: Physics 321, Classical Mechanics">
-
 <title>Overview of course material: Physics 321, Classical Mechanics</title>
-
-
 <style type="text/css">
 /* blueish style */
-
-/* Color definitions:  https://www.december.com/html/spec/color0.html
-   CSS examples:       https://www.w3schools.com/css/css_examples.asp */
-
 body {
   margin-top: 1.0em;
   background-color: #ffffff;
@@ -27,18 +21,98 @@ body {
 h1 { font-size: 1.8em; color: #1e36ce; }
 h2 { font-size: 1.6em; color: #1e36ce; }
 h3 { font-size: 1.4em; color: #1e36ce; }
+h4 { font-size: 1.2em; color: #1e36ce; }
 a { color: #1e36ce; text-decoration:none; }
 tt { font-family: "Courier New", Courier; }
-/* pre style removed because it will interfer with pygments */
 p { text-indent: 0px; }
 hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
 p.caption { width: 80%; font-style: normal; text-align: left; }
-hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa; }
+/* pre style removed because it will interfer with pygments */
+div.highlight {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    line-height: 1.21429em;
+}
+div.cell {
+    width: 100%;
+    padding: 5px 5px 5px 0;
+    margin: 0;
+    outline: none;
+}
+div.input {
+    page-break-inside: avoid;
+    box-orient: horizontal;
+    box-align: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+div.inner_cell {
+    box-orient: vertical;
+    box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    box-flex: 1;
+    flex: 1;
+}
+div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 4px;
+    background: #f7f7f7;
+    line-height: 1.21429em;
+}
+div.input_area > div.highlight {
+    margin: .4em;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+}
+div.output_wrapper {
+    position: relative;
+    box-orient: vertical;
+    box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.output {
+    box-orient: vertical;
+    box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+div.output_area {
+    padding: 0;
+    page-break-inside: avoid;
+    box-orient: horizontal;
+    box-align: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+div.output_subarea {
+    padding: .4em .4em 0 .4em;
+    box-flex: 1;
+    flex: 1;
+}
+div.output_text {
+    text-align: left;
+    color: #000;
+    line-height: 1.21429em;
+}
 div { text-align: justify; text-justify: inter-word; }
+.tab {
+  padding-left: 1.5em;
+}
+div.toc p,a {
+  line-height: 1.3;
+  margin-top: 1.1;
+  margin-bottom: 1.1;
+}
 </style>
-
-
 </head>
 
 <!-- tocinfo
@@ -51,75 +125,81 @@ div { text-align: justify; text-justify: inter-word; }
                1,
                None,
                'classical-mechanics-notes'),
-              ('Week 2 January 11-15: Introduction to the course, Review and '
-               'Reading Week',
+              ('Week 2 January 10-14: Introduction to the course, simple '
+               'motion problems and forces',
                2,
                None,
-               'week-2-january-11-15-introduction-to-the-course-review-and-reading-week'),
-              ('Week 3 January 18-22: From simple motion problems to forces, '
+               'week-2-january-10-14-introduction-to-the-course-simple-motion-problems-and-forces'),
+              ('Week 3 January 17-21: From simple motion problems to forces, '
                'analytical and numerical approaches',
                2,
                None,
-               'week-3-january-18-22-from-simple-motion-problems-to-forces-analytical-and-numerical-approaches'),
-              ('Week 4 January 25-29: Forces, Analytical Studies, Simple '
+               'week-3-january-17-21-from-simple-motion-problems-to-forces-analytical-and-numerical-approaches'),
+              ('Week 4 January 24-28: Forces, Analytical Studies, Simple '
                'Experiments and Numerical Approaches',
                2,
                None,
-               'week-4-january-25-29-forces-analytical-studies-simple-experiments-and-numerical-approaches'),
-              ('Week 5 February 1-5: Additional motion examples and forces. '
-               'Work and Energy',
+               'week-4-january-24-28-forces-analytical-studies-simple-experiments-and-numerical-approaches'),
+              ('Week 5 January 31-February 4: Additional motion examples and '
+               'forces. Work and Energy',
                2,
                None,
-               'week-5-february-1-5-additional-motion-examples-and-forces-work-and-energy'),
-              ('Week 6 February 8-12: Conservative Forces, Momentum and '
+               'week-5-january-31-february-4-additional-motion-examples-and-forces-work-and-energy'),
+              ('Week 6 February 7-11: Conservative Forces, Momentum and '
                'Angular Momentum conservation',
                2,
                None,
-               'week-6-february-8-12-conservative-forces-momentum-and-angular-momentum-conservation'),
-              ('Week 7 February 15-19: Conservation laws',
+               'week-6-february-7-11-conservative-forces-momentum-and-angular-momentum-conservation'),
+              ('Week 7 February 14-18: Conservation laws',
                2,
                None,
-               'week-7-february-15-19-conservation-laws'),
-              ('Week 8 February 22-26: Harmonic Oscillations',
+               'week-7-february-14-18-conservation-laws'),
+              ('Week 8 February 21-25: Harmonic Oscillations',
                2,
                None,
-               'week-8-february-22-26-harmonic-oscillations'),
-              ('Week 9 March 1-5: Harmonic oscillations and damped motion',
+               'week-8-february-21-25-harmonic-oscillations'),
+              ('Week 9 February 28-March 4: Harmonic oscillations and damped '
+               'motion',
                2,
                None,
-               'week-9-march-1-5-harmonic-oscillations-and-damped-motion'),
-              ('Week 10 March 8-12: Fourier Series and start Two-body problems '
-               'and Central Forces',
+               'week-9-february-28-march-4-harmonic-oscillations-and-damped-motion'),
+              ('Week 10 March 7-11: Spring break',
                2,
                None,
-               'week-10-march-8-12-fourier-series-and-start-two-body-problems-and-central-forces'),
-              ('Week 11 March 15-19: Two-body problems and Central Forces',
+               'week-10-march-7-11-spring-break'),
+              ('Week 11 March 14-18: Fourier Series and start Two-body '
+               'problems and Central Forces',
                2,
                None,
-               'week-11-march-15-19-two-body-problems-and-central-forces'),
-              ('Week 12 March 22-26: Two-body problems and Central Forces',
+               'week-11-march-14-18-fourier-series-and-start-two-body-problems-and-central-forces'),
+              ('Week 12 March 21-28: Two-body problems and Central Forces',
                2,
                None,
-               'week-12-march-22-26-two-body-problems-and-central-forces'),
-              ('Week 13 March 29-April 2: Two-body problems and scattering',
+               'week-12-march-21-28-two-body-problems-and-central-forces'),
+              ('Week 13 March 28- April 1: Two-body problems and Central '
+               'Forces',
                2,
                None,
-               'week-13-march-29-april-2-two-body-problems-and-scattering'),
-              ('Week 14 April 5-9:  Two-body scattering and Lagrangians and '
+               'week-13-march-28-april-1-two-body-problems-and-central-forces'),
+              ('Week 14 April 4-8: Two-body problems and scattering',
+               2,
+               None,
+               'week-14-april-4-8-two-body-problems-and-scattering'),
+              ('Week 15 April 11-15:  Two-body scattering and Lagrangians and '
                'the Calculus of Variations',
                2,
                None,
-               'week-14-april-5-9-two-body-scattering-and-lagrangians-and-the-calculus-of-variations'),
-              ('Week 15 April 12-16: Lagrangians and the Calculus of '
+               'week-15-april-11-15-two-body-scattering-and-lagrangians-and-the-calculus-of-variations'),
+              ('Week 16 April 18-22: Lagrangians and the Calculus of '
                'Variations',
                2,
                None,
-               'week-15-april-12-16-lagrangians-and-the-calculus-of-variations'),
-              ('Week 16 April 19-23: Lagrangians and the Calculus of '
+               'week-16-april-18-22-lagrangians-and-the-calculus-of-variations'),
+              ('Week 17 April 25-29: Lagrangians and the Calculus of '
                'Variations and summary of course',
                2,
                None,
-               'week-16-april-19-23-lagrangians-and-the-calculus-of-variations-and-summary-of-course'),
+               'week-17-april-25-29-lagrangians-and-the-calculus-of-variations-and-summary-of-course'),
               ('First homework set, week 2 (Available January 8, due January '
                '25)',
                3,
@@ -185,900 +265,638 @@ div { text-align: justify; text-justify: inter-word; }
 end of tocinfo -->
 
 <body>
-
-    
 <!-- ------------------- main content ---------------------- -->
+<center>
+<h1>Overview of course material: Physics 321, Classical Mechanics</h1>
+</center>  <!-- document title -->
 
-
-
-<center><h1>Overview of course material: Physics 321, Classical Mechanics</h1></center>  <!-- document title -->
-
-<p>
 <!-- author(s): Department of Physics and Astronomy, Michigan State University, USA -->
-
 <center>
 <b>Department of Physics and Astronomy, Michigan State University, USA</b> 
 </center>
-
-<p>
 <!-- institution(s) -->
-
 <br>
-
 <h2 id="lecture-notes-as-jupyter-book">Lecture notes as Jupyter-book </h2>
 
 <ul>
  <li> <a href="https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html" target="_self">The Jupyter-Book</a></li>
 </ul>
-
-The teaching material is produced in various formats for printing and on-screen reading.
-
+<p>The teaching material is produced in various formats for printing and on-screen reading.</p>
 <h1 id="classical-mechanics-notes">Classical Mechanics  Notes </h1>
-
-<h2 id="week-2-january-11-15-introduction-to-the-course-review-and-reading-week">Week 2 January 11-15: Introduction to the course, Review and Reading Week </h2>
+<h2 id="week-2-january-10-14-introduction-to-the-course-simple-motion-problems-and-forces">Week 2 January 10-14: Introduction to the course, simple motion problems and forces </h2>
 
 <ul>
  <li> LaTeX PDF:</li>
-
 <ul>
    <li> For printing:</li>
-
 <ul>
      <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week2/pdf/week2.pdf" target="_self">Standard one-page format</a></li>
 </ul>
-
 </ul>
-
  <li> HTML:</li>
-
 <ul>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html" target="_self">Plain html</a></li>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week2/html/week2-reveal.html" target="_self">reveal.js beige slide style</a></li>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week2/html/week2-bs.html" target="_self">Bootstrap  slide style, easy for reading on mobile devices</a></li>
 </ul>
-
  <li> iPython notebook:</li>
-
 <ul>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week2/ipynb/week2.ipynb" target="_self">ipynb file</a></li>
 </ul>
-
 </ul>
-
-<h2 id="week-3-january-18-22-from-simple-motion-problems-to-forces-analytical-and-numerical-approaches">Week 3 January 18-22: From simple motion problems to forces, analytical and numerical approaches </h2>
+<h2 id="week-3-january-17-21-from-simple-motion-problems-to-forces-analytical-and-numerical-approaches">Week 3 January 17-21: From simple motion problems to forces, analytical and numerical approaches </h2>
 
 <ul>
  <li> LaTeX PDF:</li>
-
 <ul>
    <li> For printing:</li>
-
 <ul>
      <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week3/pdf/week3.pdf" target="_self">Standard one-page format</a></li>
 </ul>
-
 </ul>
-
  <li> HTML:</li>
-
 <ul>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week3/html/week3.html" target="_self">Plain html</a></li>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week3/html/week3-reveal.html" target="_self">reveal.js beige slide style</a></li>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week3/html/week3-bs.html" target="_self">Bootstrap  slide style, easy for reading on mobile devices</a></li>
 </ul>
-
  <li> iPython notebook:</li>
-
 <ul>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week3/ipynb/week3.ipynb" target="_self">ipynb file</a></li>
 </ul>
-
 </ul>
-
-<h2 id="week-4-january-25-29-forces-analytical-studies-simple-experiments-and-numerical-approaches">Week 4 January 25-29: Forces, Analytical Studies, Simple Experiments and Numerical Approaches </h2>
+<h2 id="week-4-january-24-28-forces-analytical-studies-simple-experiments-and-numerical-approaches">Week 4 January 24-28: Forces, Analytical Studies, Simple Experiments and Numerical Approaches </h2>
 
 <ul>
  <li> LaTeX PDF:</li>
-
 <ul>
    <li> For printing:</li>
-
 <ul>
      <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week4/pdf/week4.pdf" target="_self">Standard one-page format</a></li>
 </ul>
-
 </ul>
-
  <li> HTML:</li>
-
 <ul>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week4/html/week4.html" target="_self">Plain html</a></li>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week4/html/week4-reveal.html" target="_self">reveal.js beige slide style</a></li>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week4/html/week4-bs.html" target="_self">Bootstrap  slide style, easy for reading on mobile devices</a></li>
 </ul>
-
  <li> iPython notebook:</li>
-
 <ul>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week4/ipynb/week4.ipynb" target="_self">ipynb file</a></li>
 </ul>
-
 </ul>
-
-<h2 id="week-5-february-1-5-additional-motion-examples-and-forces-work-and-energy">Week 5 February 1-5: Additional motion examples and forces. Work and Energy </h2>
+<h2 id="week-5-january-31-february-4-additional-motion-examples-and-forces-work-and-energy">Week 5 January 31-February 4: Additional motion examples and forces. Work and Energy </h2>
 
 <ul>
  <li> LaTeX PDF:</li>
-
 <ul>
    <li> For printing:</li>
-
 <ul>
      <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week5/pdf/week5.pdf" target="_self">Standard one-page format</a></li>
 </ul>
-
 </ul>
-
  <li> HTML:</li>
-
 <ul>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week5/html/week5.html" target="_self">Plain html</a></li>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week5/html/week5-reveal.html" target="_self">reveal.js beige slide style</a></li>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week5/html/week5-bs.html" target="_self">Bootstrap  slide style, easy for reading on mobile devices</a></li>
 </ul>
-
  <li> iPython notebook:</li>
-
 <ul>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week5/ipynb/week5.ipynb" target="_self">ipynb file</a></li>
 </ul>
-
 </ul>
-
-<h2 id="week-6-february-8-12-conservative-forces-momentum-and-angular-momentum-conservation">Week 6 February 8-12: Conservative Forces, Momentum and Angular Momentum conservation </h2>
+<h2 id="week-6-february-7-11-conservative-forces-momentum-and-angular-momentum-conservation">Week 6 February 7-11: Conservative Forces, Momentum and Angular Momentum conservation </h2>
 
 <ul>
  <li> LaTeX PDF:</li>
-
 <ul>
    <li> For printing:</li>
-
 <ul>
      <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week6/pdf/week6.pdf" target="_self">Standard one-page format</a></li>
 </ul>
-
 </ul>
-
  <li> HTML:</li>
-
 <ul>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week6/html/week6.html" target="_self">Plain html</a></li>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week6/html/week6-reveal.html" target="_self">reveal.js beige slide style</a></li>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week6/html/week6-bs.html" target="_self">Bootstrap  slide style, easy for reading on mobile devices</a></li>
 </ul>
-
  <li> iPython notebook:</li>
-
 <ul>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week6/ipynb/week6.ipynb" target="_self">ipynb file</a></li>
 </ul>
-
 </ul>
-
-<h2 id="week-7-february-15-19-conservation-laws">Week 7 February 15-19: Conservation laws </h2>
+<h2 id="week-7-february-14-18-conservation-laws">Week 7 February 14-18: Conservation laws </h2>
 
 <ul>
  <li> LaTeX PDF:</li>
-
 <ul>
    <li> For printing:</li>
-
 <ul>
      <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week7/pdf/week7.pdf" target="_self">Standard one-page format</a></li>
 </ul>
-
 </ul>
-
  <li> HTML:</li>
-
 <ul>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week7/html/week7.html" target="_self">Plain html</a></li>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week7/html/week7-reveal.html" target="_self">reveal.js beige slide style</a></li>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week7/html/week7-bs.html" target="_self">Bootstrap  slide style, easy for reading on mobile devices</a></li>
 </ul>
-
  <li> iPython notebook:</li>
-
 <ul>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week7/ipynb/week7.ipynb" target="_self">ipynb file</a></li>
 </ul>
-
 </ul>
-
-<h2 id="week-8-february-22-26-harmonic-oscillations">Week 8 February 22-26: Harmonic Oscillations </h2>
+<h2 id="week-8-february-21-25-harmonic-oscillations">Week 8 February 21-25: Harmonic Oscillations </h2>
 
 <ul>
  <li> LaTeX PDF:</li>
-
 <ul>
    <li> For printing:</li>
-
 <ul>
      <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week8/pdf/week8.pdf" target="_self">Standard one-page format</a></li>
 </ul>
-
 </ul>
-
  <li> HTML:</li>
-
 <ul>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week8/html/week8.html" target="_self">Plain html</a></li>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week8/html/week8-reveal.html" target="_self">reveal.js beige slide style</a></li>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week8/html/week8-bs.html" target="_self">Bootstrap  slide style, easy for reading on mobile devices</a></li>
 </ul>
-
  <li> iPython notebook:</li>
-
 <ul>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week8/ipynb/week8.ipynb" target="_self">ipynb file</a></li>
 </ul>
-
 </ul>
-
-<h2 id="week-9-march-1-5-harmonic-oscillations-and-damped-motion">Week 9 March 1-5: Harmonic oscillations and damped motion </h2>
+<h2 id="week-9-february-28-march-4-harmonic-oscillations-and-damped-motion">Week 9 February 28-March 4: Harmonic oscillations and damped motion </h2>
 
 <ul>
  <li> LaTeX PDF:</li>
-
 <ul>
    <li> For printing:</li>
-
 <ul>
      <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week9/pdf/week9.pdf" target="_self">Standard one-page format</a></li>
 </ul>
-
 </ul>
-
  <li> HTML:</li>
-
 <ul>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week9/html/week9.html" target="_self">Plain html</a></li>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week9/html/week9-reveal.html" target="_self">reveal.js beige slide style</a></li>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week9/html/week9-bs.html" target="_self">Bootstrap  slide style, easy for reading on mobile devices</a></li>
 </ul>
-
  <li> iPython notebook:</li>
-
 <ul>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week9/ipynb/week9.ipynb" target="_self">ipynb file</a></li>
 </ul>
-
 </ul>
-
-<h2 id="week-10-march-8-12-fourier-series-and-start-two-body-problems-and-central-forces">Week 10 March 8-12: Fourier Series and start Two-body problems and Central Forces </h2>
+<h2 id="week-10-march-7-11-spring-break">Week 10 March 7-11: Spring break </h2>
 
 <ul>
  <li> LaTeX PDF:</li>
-
 <ul>
    <li> For printing:</li>
-
 <ul>
      <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week10/pdf/week10.pdf" target="_self">Standard one-page format</a></li>
 </ul>
-
 </ul>
-
  <li> HTML:</li>
-
 <ul>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week10/html/week10.html" target="_self">Plain html</a></li>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week10/html/week10-reveal.html" target="_self">reveal.js beige slide style</a></li>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week10/html/week10-bs.html" target="_self">Bootstrap  slide style, easy for reading on mobile devices</a></li>
 </ul>
-
  <li> iPython notebook:</li>
-
 <ul>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week10/ipynb/week10.ipynb" target="_self">ipynb file</a></li>
 </ul>
-
 </ul>
-
-<h2 id="week-11-march-15-19-two-body-problems-and-central-forces">Week 11 March 15-19: Two-body problems and Central Forces </h2>
+<h2 id="week-11-march-14-18-fourier-series-and-start-two-body-problems-and-central-forces">Week 11 March 14-18: Fourier Series and start Two-body problems and Central Forces </h2>
 
 <ul>
  <li> LaTeX PDF:</li>
-
 <ul>
    <li> For printing:</li>
-
 <ul>
      <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week11/pdf/week11.pdf" target="_self">Standard one-page format</a></li>
 </ul>
-
 </ul>
-
  <li> HTML:</li>
-
 <ul>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week11/html/week11.html" target="_self">Plain html</a></li>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week11/html/week11-reveal.html" target="_self">reveal.js beige slide style</a></li>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week11/html/week11-bs.html" target="_self">Bootstrap  slide style, easy for reading on mobile devices</a></li>
 </ul>
-
  <li> iPython notebook:</li>
-
 <ul>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week11/ipynb/week11.ipynb" target="_self">ipynb file</a></li>
 </ul>
-
 </ul>
-
-<h2 id="week-12-march-22-26-two-body-problems-and-central-forces">Week 12 March 22-26: Two-body problems and Central Forces </h2>
+<h2 id="week-12-march-21-28-two-body-problems-and-central-forces">Week 12 March 21-28: Two-body problems and Central Forces </h2>
 
 <ul>
  <li> LaTeX PDF:</li>
-
 <ul>
    <li> For printing:</li>
-
 <ul>
      <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week12/pdf/week12.pdf" target="_self">Standard one-page format</a></li>
 </ul>
-
 </ul>
-
  <li> HTML:</li>
-
 <ul>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week12/html/week12.html" target="_self">Plain html</a></li>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week12/html/week12-reveal.html" target="_self">reveal.js beige slide style</a></li>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week12/html/week12-bs.html" target="_self">Bootstrap  slide style, easy for reading on mobile devices</a></li>
 </ul>
-
  <li> iPython notebook:</li>
-
 <ul>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week12/ipynb/week12.ipynb" target="_self">ipynb file</a></li>
 </ul>
-
 </ul>
-
-<h2 id="week-13-march-29-april-2-two-body-problems-and-scattering">Week 13 March 29-April 2: Two-body problems and scattering </h2>
+<h2 id="week-13-march-28-april-1-two-body-problems-and-central-forces">Week 13 March 28- April 1: Two-body problems and Central Forces </h2>
 
 <ul>
  <li> LaTeX PDF:</li>
-
 <ul>
    <li> For printing:</li>
-
 <ul>
      <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week13/pdf/week13.pdf" target="_self">Standard one-page format</a></li>
 </ul>
-
 </ul>
-
  <li> HTML:</li>
-
 <ul>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week13/html/week13.html" target="_self">Plain html</a></li>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week13/html/week13-reveal.html" target="_self">reveal.js beige slide style</a></li>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week13/html/week13-bs.html" target="_self">Bootstrap  slide style, easy for reading on mobile devices</a></li>
 </ul>
-
  <li> iPython notebook:</li>
-
 <ul>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week13/ipynb/week13.ipynb" target="_self">ipynb file</a></li>
 </ul>
-
 </ul>
-
-<h2 id="week-14-april-5-9-two-body-scattering-and-lagrangians-and-the-calculus-of-variations">Week 14 April 5-9:  Two-body scattering and Lagrangians and the Calculus of Variations </h2>
+<h2 id="week-14-april-4-8-two-body-problems-and-scattering">Week 14 April 4-8: Two-body problems and scattering </h2>
 
 <ul>
  <li> LaTeX PDF:</li>
-
 <ul>
    <li> For printing:</li>
-
 <ul>
      <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week14/pdf/week14.pdf" target="_self">Standard one-page format</a></li>
 </ul>
-
 </ul>
-
  <li> HTML:</li>
-
 <ul>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week14/html/week14.html" target="_self">Plain html</a></li>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week14/html/week14-reveal.html" target="_self">reveal.js beige slide style</a></li>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week14/html/week14-bs.html" target="_self">Bootstrap  slide style, easy for reading on mobile devices</a></li>
 </ul>
-
  <li> iPython notebook:</li>
-
 <ul>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week14/ipynb/week14.ipynb" target="_self">ipynb file</a></li>
 </ul>
-
 </ul>
-
-<h2 id="week-15-april-12-16-lagrangians-and-the-calculus-of-variations">Week 15 April 12-16: Lagrangians and the Calculus of Variations </h2>
+<h2 id="week-15-april-11-15-two-body-scattering-and-lagrangians-and-the-calculus-of-variations">Week 15 April 11-15:  Two-body scattering and Lagrangians and the Calculus of Variations </h2>
 
 <ul>
  <li> LaTeX PDF:</li>
-
 <ul>
    <li> For printing:</li>
-
 <ul>
      <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week15/pdf/week15.pdf" target="_self">Standard one-page format</a></li>
 </ul>
-
 </ul>
-
  <li> HTML:</li>
-
 <ul>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week15/html/week15.html" target="_self">Plain html</a></li>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week15/html/week15-reveal.html" target="_self">reveal.js beige slide style</a></li>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week15/html/week15-bs.html" target="_self">Bootstrap  slide style, easy for reading on mobile devices</a></li>
 </ul>
-
  <li> iPython notebook:</li>
-
 <ul>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week15/ipynb/week15.ipynb" target="_self">ipynb file</a></li>
 </ul>
-
 </ul>
-
-<h2 id="week-16-april-19-23-lagrangians-and-the-calculus-of-variations-and-summary-of-course">Week 16 April 19-23: Lagrangians and the Calculus of Variations and summary of course </h2>
+<h2 id="week-16-april-18-22-lagrangians-and-the-calculus-of-variations">Week 16 April 18-22: Lagrangians and the Calculus of Variations </h2>
 
 <ul>
  <li> LaTeX PDF:</li>
-
 <ul>
    <li> For printing:</li>
-
 <ul>
      <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week16/pdf/week16.pdf" target="_self">Standard one-page format</a></li>
 </ul>
-
 </ul>
-
  <li> HTML:</li>
-
 <ul>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week16/html/week16.html" target="_self">Plain html</a></li>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week16/html/week16-reveal.html" target="_self">reveal.js beige slide style</a></li>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week16/html/week16-bs.html" target="_self">Bootstrap  slide style, easy for reading on mobile devices</a></li>
 </ul>
-
  <li> iPython notebook:</li>
-
 <ul>
    <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week16/ipynb/week16.ipynb" target="_self">ipynb file</a></li>
 </ul>
-
 </ul>
-
-<h3 id="first-homework-set-week-2-available-january-8-due-january-25">First homework set, week 2 (Available January 8, due January 25) </h3>
+<h2 id="week-17-april-25-29-lagrangians-and-the-calculus-of-variations-and-summary-of-course">Week 17 April 25-29: Lagrangians and the Calculus of Variations and summary of course </h2>
 
 <ul>
+ <li> LaTeX PDF:</li>
+<ul>
+   <li> For printing:</li>
+<ul>
+     <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week17/pdf/week17.pdf" target="_self">Standard one-page format</a></li>
+</ul>
+</ul>
+ <li> HTML:</li>
+<ul>
+   <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week17/html/week17.html" target="_self">Plain html</a></li>
+   <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week17/html/week17-reveal.html" target="_self">reveal.js beige slide style</a></li>
+   <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week17/html/week17-bs.html" target="_self">Bootstrap  slide style, easy for reading on mobile devices</a></li>
+</ul>
+ <li> iPython notebook:</li>
+<ul>
+   <li> <a href="http://mhjensen.github.io/Physics321/doc/pub/week17/ipynb/week17.ipynb" target="_self">ipynb file</a></li>
+</ul>
+</ul>
+<h3 id="first-homework-set-week-2-available-january-8-due-january-25">First homework set, week 2 (Available January 8, due January 25) </h3>
+<ul>
  <li> LaTeX and PDF:</li>
-
 <ul>
      <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw1/pdf/hw1.tex" target="_self">LaTex file</a></li>
      <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw1/pdf/hw1.pdf" target="_self">PDF file</a></li>
 </ul>
-
  <li> HTML:</li>
-
 <ul>
    <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw1/html/hw1.html" target="_self">Plain html</a></li>
    <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw1/html/hw1-bs.html" target="_self">Bootstrap  slide style, easy for reading on mobile devices</a></li>
 </ul>
-
  <li> Jupyter notebook:</li>
-
 <ul>
     <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw1/ipynb/hw1.ipynb" target="_self">The notebook</a></li>
 </ul>
-
  <li> Solution as Jupyter notebook:</li>
-
 <ul>
     <li> <a href="https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionhw1.ipynb" target="_self">Homework1 Solution</a></li>
 </ul>
-
 </ul>
-
 <h3 id="second-homework-set-week-3-available-january-22-due-february-1">Second homework set, week 3 (Available January 22, due February 1) </h3>
-
 <ul>
  <li> LaTeX and PDF:</li>
-
 <ul>
      <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw2/pdf/hw2.tex" target="_self">LaTex file</a></li>
      <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw2/pdf/hw2.pdf" target="_self">PDF file</a></li>
 </ul>
-
  <li> HTML:</li>
-
 <ul>
    <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw2/html/hw2.html" target="_self">Plain html</a></li>
    <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw2/html/hw2-bs.html" target="_self">Bootstrap  slide style, easy for reading on mobile devices</a></li>
 </ul>
-
  <li> Jupyter notebook:</li>
-
 <ul>
     <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw2/ipynb/hw2.ipynb" target="_self">The notebook</a></li>
 </ul>
-
  <li> Solution for coding part as  Jupyter notebook:</li>
-
 <ul>
     <li> <a href="https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionhw2.ipynb" target="_self">Homework2 Solution</a></li>
 </ul>
-
  <li> Solution for analytical part as handwritten note:</li>
-
 <ul>
     <li> <a href="https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/SolutionHW2Spring2021.pdf" target="_self">Homework2 Solution</a></li>
 </ul>
-
 </ul>
-
 <h3 id="third-homework-set-week-4-available-january-29-due-february-8">Third homework set, week 4 (Available January 29, due February 8) </h3>
-
 <ul>
  <li> LaTeX and PDF:</li>
-
 <ul>
      <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw3/pdf/hw3.tex" target="_self">LaTex file</a></li>
      <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw3/pdf/hw3.pdf" target="_self">PDF file</a></li>
 </ul>
-
  <li> HTML:</li>
-
 <ul>
    <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw3/html/hw3.html" target="_self">Plain html</a></li>
    <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw3/html/hw3-bs.html" target="_self">Bootstrap  slide style, easy for reading on mobile devices</a></li>
 </ul>
-
  <li> Jupyter notebook:</li>
-
 <ul>
     <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw3/ipynb/hw3.ipynb" target="_self">The notebook</a></li>
 </ul>
-
  <li> Solution as Jupyter notebook:</li>
-
 <ul>
     <li> <a href="https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionhw3.ipynb" target="_self">Homework3 Solution</a></li>
 </ul>
-
 </ul>
-
 <h3 id="fourth-homework-set-week-5-available-february-5-due-february-15">Fourth homework set, week 5 (Available February 5, due February 15) </h3>
-
 <ul>
  <li> LaTeX and PDF:</li>
-
 <ul>
      <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw4/pdf/hw4.tex" target="_self">LaTex file</a></li>
      <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw4/pdf/hw4.pdf" target="_self">PDF file</a></li>
 </ul>
-
  <li> HTML:</li>
-
 <ul>
    <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw4/html/hw4.html" target="_self">Plain html</a></li>
    <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw4/html/hw4-bs.html" target="_self">Bootstrap  slide style, easy for reading on mobile devices</a></li>
 </ul>
-
  <li> Jupyter notebook:</li>
-
 <ul>
     <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw4/ipynb/hw4.ipynb" target="_self">The notebook</a></li>
 </ul>
-
  <li> Solution as Jupyter notebook:</li>
-
 <ul>
     <li> <a href="https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionhw4.ipynb" target="_self">Homework4 Solution</a></li>
 </ul>
-
 </ul>
-
 <h3 id="fifth-homework-set-week-7-available-february-12-due-february-22">Fifth homework set, week 7 (Available February 12, due February 22) </h3>
-
 <ul>
  <li> LaTeX and PDF:</li>
-
 <ul>
      <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw5/pdf/hw5.tex" target="_self">LaTex file</a></li>
      <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw5/pdf/hw5.pdf" target="_self">PDF file</a></li>
 </ul>
-
  <li> HTML:</li>
-
 <ul>
    <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw5/html/hw5.html" target="_self">Plain html</a></li>
    <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw5/html/hw5-bs.html" target="_self">Bootstrap  slide style, easy for reading on mobile devices</a></li>
 </ul>
-
  <li> Jupyter notebook:</li>
-
 <ul>
     <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw5/ipynb/hw5.ipynb" target="_self">The notebook</a></li>
 </ul>
-
  <li> Solution as Jupyter notebook:</li>
-
 <ul>
     <li> <a href="https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionhw5.ipynb" target="_self">Homework5 Solution</a></li>
 </ul>
-
 </ul>
-
 <h3 id="sixth-homework-set-week-8-available-february-21-due-march-1">Sixth homework set, week 8 (Available February 21, due March 1) </h3>
-
 <ul>
  <li> LaTeX and PDF:</li>
-
 <ul>
      <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw6/pdf/hw6.tex" target="_self">LaTex file</a></li>
      <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw6/pdf/hw6.pdf" target="_self">PDF file</a></li>
 </ul>
-
  <li> HTML:</li>
-
 <ul>
    <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw6/html/hw6.html" target="_self">Plain html</a></li>
    <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw6/html/hw6-bs.html" target="_self">Bootstrap  slide style, easy for reading on mobile devices</a></li>
 </ul>
-
  <li> Jupyter notebook:</li>
-
 <ul>
     <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw6/ipynb/hw6.ipynb" target="_self">The notebook</a></li>
 </ul>
-
  <li> Solution as Jupyter notebook:</li>
-
 <ul>
     <li> <a href="https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionhwx.ipynb" target="_self">Homework6 Solution</a></li>
 </ul>
-
 </ul>
-
 <h3 id="seventh-homework-set-week-11-available-march-13-due-march-22">Seventh homework set, week 11 (Available March 13, due March 22) </h3>
-
 <ul>
  <li> LaTeX and PDF:</li>
-
 <ul>
      <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw7/pdf/hw7.tex" target="_self">LaTex file</a></li>
      <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw7/pdf/hw7.pdf" target="_self">PDF file</a></li>
 </ul>
-
  <li> HTML:</li>
-
 <ul>
    <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw7/html/hw7.html" target="_self">Plain html</a></li>
    <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw7/html/hw7-bs.html" target="_self">Bootstrap  slide style, easy for reading on mobile devices</a></li>
 </ul>
-
  <li> Jupyter notebook:</li>
-
 <ul>
     <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw7/ipynb/hw7.ipynb" target="_self">The notebook</a></li>
 </ul>
-
  <li> Solution as Jupyter notebook:</li>
-
 <ul>
     <li> <a href="https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionhw7.ipynb" target="_self">Homework7 Solution</a></li>
 </ul>
-
 </ul>
-
 <h3 id="eighth-homework-set-week-13-available-march-21-due-march-29">Eighth homework set, week 13 (Available March 21, due March 29) </h3>
-
 <ul>
  <li> LaTeX and PDF:</li>
-
 <ul>
      <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw8/pdf/hw8.tex" target="_self">LaTex file</a></li>
      <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw8/pdf/hw8.pdf" target="_self">PDF file</a></li>
 </ul>
-
  <li> HTML:</li>
-
 <ul>
    <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw8/html/hw8.html" target="_self">Plain html</a></li>
    <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw8/html/hw8-bs.html" target="_self">Bootstrap  slide style, easy for reading on mobile devices</a></li>
 </ul>
-
  <li> Jupyter notebook:</li>
-
 <ul>
     <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw8/ipynb/hw8.ipynb" target="_self">The notebook</a></li>
 </ul>
-
  <li> Solution as Jupyter notebook:</li>
-
 <ul>
     <li> <a href="https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionhw8.ipynb" target="_self">Homework8 Solution</a></li>
 </ul>
-
 </ul>
-
 <h3 id="ninth-homework-set-week-14-available-march-28-due-april-5">Ninth homework set, week 14 (Available March 28, due April 5) </h3>
-
 <ul>
  <li> LaTeX and PDF:</li>
-
 <ul>
      <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw9/pdf/hw9.tex" target="_self">LaTex file</a></li>
      <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw9/pdf/hw9.pdf" target="_self">PDF file</a></li>
 </ul>
-
  <li> HTML:</li>
-
 <ul>
    <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw9/html/hw9.html" target="_self">Plain html</a></li>
    <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw9/html/hw9-bs.html" target="_self">Bootstrap  slide style, easy for reading on mobile devices</a></li>
 </ul>
-
  <li> Jupyter notebook:</li>
-
 <ul>
     <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw9/ipynb/hw9.ipynb" target="_self">The notebook</a></li>
 </ul>
-
  <li> Solution as Jupyter notebook:</li>
-
 <ul>
     <li> <a href="https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionhw9.ipynb" target="_self">Homework9 Solution</a></li>
 </ul>
-
 </ul>
-
 <h3 id="tenth-homework-set-week-16-available-april-16-due-april-26">Tenth homework set, week 16 (Available April 16, due April 26) </h3>
-
 <ul>
  <li> LaTeX and PDF:</li>
-
 <ul>
      <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw10/pdf/hw10.tex" target="_self">LaTex file</a></li>
      <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw10/pdf/hw10.pdf" target="_self">PDF file</a></li>
 </ul>
-
  <li> HTML:</li>
-
 <ul>
    <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw10/html/hw10.html" target="_self">Plain html</a></li>
    <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw10/html/hw10-bs.html" target="_self">Bootstrap  slide style, easy for reading on mobile devices</a></li>
 </ul>
-
  <li> Jupyter notebook:</li>
-
 <ul>
     <li> <a href="https://mhjensen.github.io/Physics321/doc/Homeworks/hw10/ipynb/hw10.ipynb" target="_self">The notebook</a></li>
 </ul>
-
  <li> Solution as Jupyter notebook:</li>
-
 <ul>
     <li> <a href="https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionhwx.ipynb" target="_self">Homework10 Solution</a></li>
 </ul>
-
 </ul>
-
 <h3 id="first-midterm-project-week-9-available-february-27-small-update-on-score-2-28-due-march-12">First midterm project, week 9 (Available February 27(small update on score 2/28), due March 12) </h3>
-
 <ul>
  <li> LaTeX and PDF:</li>
-
 <ul>
      <li> <a href="https://mhjensen.github.io/Physics321/doc/MidTermProjects/Firstmidterm2021/pdf/Firstmidterm2021.tex" target="_self">LaTex file</a></li>
      <li> <a href="https://mhjensen.github.io/Physics321/doc/MidTermProjects/Firstmidterm2021/pdf/Firstmidterm2021.pdf" target="_self">PDF file</a></li>
 </ul>
-
  <li> HTML:</li>
-
 <ul>
    <li> <a href="https://mhjensen.github.io/Physics321/doc/MidTermProjects/Firstmidterm2021/html/Firstmidterm2021.html" target="_self">Plain html</a></li>
    <li> <a href="https://mhjensen.github.io/Physics321/doc/MidTermProjects/Firstmidterm2021/html/Firstmidterm2021-bs.html" target="_self">Bootstrap  slide style, easy for reading on mobile devices</a></li>
 </ul>
-
  <li> Jupyter notebook:</li>
-
 <ul>
     <li> <a href="https://mhjensen.github.io/Physics321/doc/MidTermProjects/Firstmidterm2021/ipynb/Firstmidterm2021.ipynb" target="_self">The notebook</a></li>
 </ul>
-
  <li> Solution as Jupyter notebook:</li>
-
 <ul>
     <li> <a href="https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/SolutionFirstMid.ipynb" target="_self">Midterm 1,  Solution available March 18</a></li>
 </ul>
-
 </ul>
-
 <h3 id="second-midterm-project-week-15-available-april-4-5-due-april-18">Second midterm project, week 15 (Available April 4/5, due April 18) </h3>
-
 <ul>
  <li> LaTeX and PDF:</li>
-
 <ul>
      <li> <a href="https://mhjensen.github.io/Physics321/doc/MidTermProjects/Secondmidterm2021/pdf/Secondmidterm2021.tex" target="_self">LaTex file</a></li>
      <li> <a href="https://mhjensen.github.io/Physics321/doc/MidTermProjects/Secondmidterm2021/pdf/Secondmidterm2021.pdf" target="_self">PDF file</a></li>
 </ul>
-
  <li> HTML:</li>
-
 <ul>
    <li> <a href="https://mhjensen.github.io/Physics321/doc/MidTermProjects/Secondmidterm2021/html/Secondmidterm2021.html" target="_self">Plain html</a></li>
    <li> <a href="https://mhjensen.github.io/Physics321/doc/MidTermProjects/Secondmidterm2021/html/Secondmidterm2021-bs.html" target="_self">Bootstrap  slide style, easy for reading on mobile devices</a></li>
 </ul>
-
  <li> Jupyter notebook:</li>
-
 <ul>
     <li> <a href="https://mhjensen.github.io/Physics321/doc/MidTermProjects/Secondmidterm2021/ipynb/Secondmidterm2021.ipynb" target="_self">The notebook</a></li>
 </ul>
-
  <li> Solution as Jupyter notebook:</li>
-
 <ul>
     <li> <a href="https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/solutionSecondmidterm2021x.ipynb" target="_self">Midterm 2,  Solution available April 28</a></li>
 </ul>
-
 </ul>
-
 <h3 id="final-project-week-17-available-april-23-due-april-30">Final project, week 17 (Available April 23, due April 30) </h3>
-
 <ul>
  <li> LaTeX and PDF:</li>
-
 <ul>
      <li> <a href="https://mhjensen.github.io/Physics321/doc/FinalProject/final/pdf/final.tex" target="_self">LaTex file</a></li>
      <li> <a href="https://mhjensen.github.io/Physics321/doc/FinalProject/final/pdf/final.pdf" target="_self">PDF file</a></li>
 </ul>
-
  <li> HTML:</li>
-
 <ul>
    <li> <a href="https://mhjensen.github.io/Physics321/doc/FinalProject/final/html/final.html" target="_self">Plain html</a></li>
    <li> <a href="https://mhjensen.github.io/Physics321/doc/FinalProject/final/html/final-bs.html" target="_self">Bootstrap  slide style, easy for reading on mobile devices</a></li>
 </ul>
-
  <li> Jupyter notebook:</li>
-
 <ul>
     <li> <a href="https://mhjensen.github.io/Physics321/doc/FinalProject/final/ipynb/final.ipynb" target="_self">The notebook</a></li>
 </ul>
-
  <li> Solution as Jupyter notebook:</li>
-
 <ul>
     <li> <a href="https://github.com/mhjensen/Physics321/blob/master/doc/src/Homeworks/Solutions/final.ipynb" target="_self">Final Project,  Solution available May 10</a></li>
 </ul>
-
 </ul>
-
-
 <!-- ------------------- end of main content --------------- -->
-
-
 </body>
 </html>
-    
 
