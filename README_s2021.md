@@ -1,4 +1,4 @@
-# PHY321, Classical Mechanics I, Michigan State University, Spring 2022
+# PHY321, Classical Mechanics I, Michigan State University, Spring 2021
 
 _Due to the present COVID-19 situation, all lectures are digital via zoom_.
 All
@@ -7,9 +7,12 @@ posted immediately after the lecture. The learning material contains
 also videos you can watch before the regular lectures. Feel free to
 comment on the material and send us feedback.
 
-The first week starts on Monday January 10. This week is dedicated to a
+The first week starts on Monday January 11. This week is dedicated to a
 review of learning material and reminder on programming aspects,
 useful tools, where to find information and much more.
+
+_Our first regular teaching day is  Wednesday January 20 at 3pm_.  We look
+forward to meet you all and hope you will enjoy the course.
 
 We have also created a Slack channel, see 
 https://join.slack.com/t/physics321msu/shared_invite/zt-lkk1d8ow-TfGnTeH647zlonyHFOg~Dw
@@ -50,7 +53,7 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Learning Assistant | Email |
 |--------------|------| 
-|  |  | 
+| _Jeremy Rebenstock_ | rebensto@msu.edu | 
 
 | Office Hours Jeremy Rebenstock   |  
 |--------------------|
@@ -68,10 +71,10 @@ Here you will find a general overview of the course, with learning outcomes, tea
 | Activity | Percentage of total score |
 |------|-----|
 |Homeworks, 9 in total and due Mondays the week after | 20% |
-| First Midterm Project, _due Friday March  4_ | 25% |
-| Second  Midterm Project, _due  Friday April 1_ | 25% |
-| Final Exam project, _due Friday May 6_ |  30%  |
-| Extra Credit Assignment, homework 10,  (Due Monday  April 29)| 10% |
+| First Midterm Project, _due Friday March  12_ | 25% |
+| Second  Midterm Project, _due  Friday April 18_ | 25% |
+| Final Exam project, _due Friday April 30_ |  30%  |
+| Extra Credit Assignment, homework 10,  (Due Monday  April 26)| 10% |
 
 | Grading scale | | | | | | | 
 |-----|-----|-------|------|--------|--------|--------|
