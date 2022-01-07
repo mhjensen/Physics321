@@ -48,7 +48,7 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Lectures |   |    |   Location |
 |---------|----|----|----|
-| Monday 3:00-3:50pm| Wednesday 3:00-3:50pm | Friday 3:00-3:50pm | Room 1202 new STEM building |
+| Monday 3:00-3:50pm| Wednesday 3:00-3:50pm | Friday 3:00-3:50pm | Room 1202 new STEM building and digital |
 
 
 |  Instructor  | Email | Office  | Office phone/cellphone  |
@@ -67,22 +67,31 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Office Hours Julie Butler |    
 |------------------|
-| Wednesday   | 10-11.30am |
-| Thursday   | 10-11.30am |
+| Wednesday   | 10-11.30am, BPS 1248 |
+| Thursday   | 10-11.30am, digital via zoom |
 
 
 | Learning Assistant | Email |
 |--------------|------| 
-|  |  | 
+| _Abbey Fallon_ |  | 
 
-| Office Hours Jeremy Rebenstock   |  
+| Office Hours Abbey Fallon   |  
 |--------------------|
-| Tuesday 1230pm-2pm  |
+| TBA  |
+
+
+| Learning Assistant | Email |
+|--------------|------| 
+| _George McLure_ |  | 
+
+| Office Hours George McLure   |  
+|--------------------|
+| TBA  |
 
 
 | Additional Class |    Location |
 |---|----|
-| TBA, if wanted | Digital via zoom|
+| TBA, if wanted | |
 
 
 
