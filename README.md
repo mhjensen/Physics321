@@ -1,18 +1,41 @@
 # PHY321, Classical Mechanics I, Michigan State University, Spring 2022
 
-_Due to the present COVID-19 situation, all lectures are digital via zoom_.
-All
-videos and handwritten notes are in D2L and linked to below here. The lecture videos are
-posted immediately after the lecture. The learning material contains
-also videos you can watch before the regular lectures. Feel free to
-comment on the material and send us feedback.
 
-The first week starts on Monday January 10. This week is dedicated to a
-review of learning material and reminder on programming aspects,
-useful tools, where to find information and much more.
+We have planned this class as a flipped class where we would like to
+- use Mondays as regular lecture days
+- Wednesdays as a mix of lectures and problem solving (or just one of them depending on needs and feedback from you). The first two weeks we will lecture both Monday and Wednesday.
+- Fridays are planned as flipped classes, with problem solving and more.
+
+We will have at our disposal room 1202 in the new STEM building.
+
+You have probably seen that MSU plans to have most lectures in an
+online format the first three weeks. Since we have a lots of space in
+the new STEM building, we believe there is no problem in having
+in-person lectures.
+
+This means that for those of you who want and can
+attend, we will have in-person lectures starting on Monday January
+10. However, the lectures will be available online as well via
+zoom. This will be done throughout the semester. It means that if you
+cannot be there physically (for many reasons, you can always attend
+via zoom. All lectures will be recorded and uploaded and made
+available to you via D2L and MSU media space and the website of the
+course.
+
+
+We will thus have in-person classes and the lectures/sessions will be
+- made available to everybody via zoom as we teach (hybrid mode), you can attend from wherever you want. Zoom has also a live transcripts f the direct lecture;
+- the videos will be posted right afterwards in case you could not attend (that is the video of the actual lecture, it is like a kind of podcast with movie). You can thus review the material which was discussed in peace whenever you want;
+- We use always a whiteboard (iPad) instead of a blackboard and these handwritten notes are also posted after the lectures;
+- We have  extensive online material, lecture notes, exercises, projects and more, see the GitHub site of the course at
+https://github.com/mhjensen/Physics321, see https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter1.html for the online textbook land https://mhjensen.github.io/Physics321/doc/web/course.html for the weekly material.
+We are making revision for  the material for 2022 (coming soon, end of Friday/early Saturday);
+- we are going to make shorter videos which cover various topics and how to solve different exercises and more. They will be posted as we move on during the semester;~
+
 
 We have also created a Slack channel, see 
-https://join.slack.com/t/physics321msu/shared_invite/zt-lkk1d8ow-TfGnTeH647zlonyHFOg~Dw
+https://join.slack.com/t/classicalmech-rg52464/shared_invite/zt-11lsnqzdc-XXV4KD_xtXKvhAy1a9kcyw
+
 
 Similarly, we would appreciate it if you could fill in the survey here
 https://docs.google.com/forms/d/1pBpu8spHQaRM0vsL0ljTI1_lwclUg3UBeNBhnDE97-Q/edit
@@ -25,12 +48,12 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Lectures |   |    |   Location |
 |---------|----|----|----|
-| Monday 3:00-3:50pm| Wednesday 3:00-3:50pm | Friday 3:00-3:50pm | Digital via zoom |
+| Monday 3:00-3:50pm| Wednesday 3:00-3:50pm | Friday 3:00-3:50pm | Room 1202 new STEM building |
 
 
 |  Instructor  | Email | Office  | Office phone/cellphone  |
 |--------------|------|-----|----| 
-| _Morten Hjorth-Jensen_ https://github.com/mhjensen | hjensen@msu.edu | Office: NSCL/FRIB 2131 | 5179087290/5172491375/+47-48257387 |
+| _Morten Hjorth-Jensen_ https://github.com/mhjensen | hjensen@msu.edu | Office: NSCL/FRIB 2131 | 5179087290/5172491375/ |
 
 
 
@@ -40,12 +63,12 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Homework Grader | Email | 
 |--------------|------| 
-| _Julie Butler_ | butler@frib.msu.edu |
+| _Julie Butler_ | butle222@msu.edu |
 
 | Office Hours Julie Butler |    
 |------------------|
-| Monday  2pm-3pm   | 
-| Thursday 11am-12pm   | 
+| Wednesday   | 10-11.30am |
+| Thursday   | 10-11.30am |
 
 
 | Learning Assistant | Email |
