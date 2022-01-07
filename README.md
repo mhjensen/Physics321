@@ -60,8 +60,8 @@ Here you will find a general overview of the course, with learning outcomes, tea
 |--------------|------| 
 | _Julie Butler_ | butle222@msu.edu |
 
-| Office Hours Julie Butler |    
-|------------------|
+| Office Hours Julie Butler |    |
+|---------|---------|
 | Wednesday   | 10-11.30am, BPS 1248 |
 | Thursday   | 10-11.30am, digital via zoom |
 
