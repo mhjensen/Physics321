@@ -17,28 +17,23 @@ This means that for those of you who want and can
 attend, we will have in-person lectures starting on Monday January
 10. However, the lectures will be available online as well via
 zoom. This will be done throughout the semester. It means that if you
-cannot be there physically (for many reasons, you can always attend
+cannot be there physically (for many reasons), you can always attend
 via zoom. All lectures will be recorded and uploaded and made
 available to you via D2L and MSU media space and the website of the
-course.
+course. 
 
 
 We will thus have in-person classes and the lectures/sessions will be
-- made available to everybody via zoom as we teach (hybrid mode), you can attend from wherever you want. Zoom has also a live transcripts f the direct lecture;
+- made available to everybody via zoom as we teach (hybrid mode), you can attend from wherever you want. Zoom has also  live transcripts of the direct lecture;
 - the videos will be posted right afterwards in case you could not attend (that is the video of the actual lecture, it is like a kind of podcast with movie). You can thus review the material which was discussed in peace whenever you want;
 - We use always a whiteboard (iPad) instead of a blackboard and these handwritten notes are also posted after the lectures;
 - We have  extensive online material, lecture notes, exercises, projects and more, see the GitHub site of the course at
 https://github.com/mhjensen/Physics321, see https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter1.html for the online textbook land https://mhjensen.github.io/Physics321/doc/web/course.html for the weekly material.
-We are making revision for  the material for 2022 (coming soon, end of Friday/early Saturday);
-- we are going to make shorter videos which cover various topics and how to solve different exercises and more. They will be posted as we move on during the semester;~
+- We are going to make shorter videos which cover various topics and how to solve different exercises and more. They will be posted as we move on during the semester;
 
 
 We have also created a Slack channel, see 
 https://join.slack.com/t/classicalmech-rg52464/shared_invite/zt-11lsnqzdc-XXV4KD_xtXKvhAy1a9kcyw
-
-
-Similarly, we would appreciate it if you could fill in the survey here
-https://docs.google.com/forms/d/1pBpu8spHQaRM0vsL0ljTI1_lwclUg3UBeNBhnDE97-Q/edit
 
 
 
