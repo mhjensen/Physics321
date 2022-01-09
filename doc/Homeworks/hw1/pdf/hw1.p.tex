@@ -3,8 +3,33 @@
 %% (https://github.com/doconce/doconce/)
 %% doconce format latex hw1.do.txt --minted_latex_style=trac --latex_admon=paragraph --no_mako
 %%
+% #ifdef PTEX2TEX_EXPLANATION
+%%
+%% The file follows the ptex2tex extended LaTeX format, see
+%% ptex2tex: https://code.google.com/p/ptex2tex/
+%%
+%% Run
+%%      ptex2tex myfile
+%% or
+%%      doconce ptex2tex myfile
+%%
+%% to turn myfile.p.tex into an ordinary LaTeX file myfile.tex.
+%% (The ptex2tex program: https://code.google.com/p/ptex2tex)
+%% Many preprocess options can be added to ptex2tex or doconce ptex2tex
+%%
+%%      ptex2tex -DMINTED myfile
+%%      doconce ptex2tex myfile envir=minted
+%%
+%% ptex2tex will typeset code environments according to a global or local
+%% .ptex2tex.cfg configure file. doconce ptex2tex will typeset code
+%% according to options on the command line (just type doconce ptex2tex to
+%% see examples). If doconce ptex2tex has envir=minted, it enables the
+%% minted style without needing -DMINTED.
+% #endif
 
+% #define PREAMBLE
 
+% #ifdef PREAMBLE
 %-------------------- begin preamble ----------------------
 
 \documentclass[%
@@ -20,9 +45,11 @@ final,                   % draft: marks overfull hboxes, figures with paths
 
 \usepackage[pdftex]{graphicx}
 
-\usepackage{fancyvrb} % packages needed for verbatim environments
+\usepackage{ptex2tex}
+% #ifdef MINTED
 \usepackage{minted}
 \usemintedstyle{default}
+% #endif
 
 \usepackage[T1]{fontenc}
 %\usepackage[latin1]{inputenc}
@@ -69,6 +96,7 @@ final,                   % draft: marks overfull hboxes, figures with paths
 \begin{document}
 
 % matching end for #ifdef PREAMBLE
+% #endif
 
 \newcommand{\exercisesection}[1]{\subsection*{#1}}
 
@@ -190,12 +218,12 @@ Here are some of the basic packages we will be using this week
 
 
 
-\begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
+\bpycod
 import numpy as np 
 import matplotlib.pyplot as plt
 %matplotlib inline
 
-\end{minted}
+\epycod
 
 
 The first exercise here deals with simply getting familiar with vectors and matrices.
@@ -218,13 +246,13 @@ We will be working with vectors and matrices to get you familiar with them
 
 
 
-\begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
+\bpycod
 V1 = np.array([1,2,3])
 V2 = np.array([4,5,6])
 print("V1: ", V1)
 print("V2: ", V2)
 
-\end{minted}
+\epycod
 
 
 If this is not too familiar, here's a useful link for creating vectors in python
@@ -252,20 +280,20 @@ The following code prints the first two exercises
 
 
 
-\begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
+\bpycod
 print(V1-V2)
 print(V2-V1)
 
-\end{minted}
+\epycod
 
 
 For the dot product of V1 and V2 below we can use the \textbf{dot} function of \textbf{numpy} as follows
 
 
-\begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
+\bpycod
 print(V1.dot(V2))
 
-\end{minted}
+\epycod
 
 As a small challenge try to write your own function for the \textbf{dot} product of two vectors.
 
@@ -283,7 +311,7 @@ have already imported)
 
 
 
-\begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
+\bpycod
 M1 = np.matrix([[1,2,3],
              [4,5,6],
              [7,8,9]])
@@ -294,16 +322,16 @@ M3 = np.matrix([[9,8,7],
              [4,5,6],
              [7,6,9]])
 
-\end{minted}
+\epycod
 
 
 Matrices can be added in the same way vectors are added in python as shown here
 
 
-\begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
+\bpycod
 print("M1+M3: ", M1+M3)
 
-\end{minted}
+\epycod
 
 What happens if we try to do $M1+M2$?
 
@@ -326,7 +354,7 @@ To perform a matrix-vector multiplication of the above type, the following pytho
 
 
 
-\begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
+\bpycod
 import numpy as np
 #We define a  3 dimensional vector with random numbers
 n = 3
@@ -340,7 +368,7 @@ print(R)
 b = R @ a.T
 print(b)
 
-\end{minted}
+\epycod
 
 
 That's enough vectors and matrices for now. Let's move on to some physics problems! Yes, the actual subject we are studying for. 
@@ -376,7 +404,7 @@ The following example code may help here
 
 
 
-\begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
+\bpycod
 # we just initialize time and position
 x = np.array([10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0])
 t = np.array([1.85, 2.87, 3.78, 4.65, 5.50, 6.32, 7.14, 7.96, 8.79, 9.69])
@@ -386,7 +414,7 @@ plt.ylabel("Position x[m]")
 plt.title("Usain Bolt's world record run")
 plt.show()
 
-\end{minted}
+\epycod
 
 
 \begin{itemize}
@@ -401,5 +429,7 @@ plt.show()
 
 % ------------------- end of main content ---------------
 
+% #ifdef PREAMBLE
 \end{document}
+% #endif
 

@@ -1,16 +1,16 @@
 TITLE: PHY321: Classical Mechanics 1
-AUTHOR: Homework 1, due Monday  January  25 (midnight) 
+AUTHOR: Homework 1, due January 21 (midnight) 
 DATE: today
 
 ===  Practicalities about  homeworks and projects ===
 
 o You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. _Remember to write your name(s)_!
-o Homeworks are available approximately ten days before the  deadline. 
-o How do I(we)  hand in?  You can hand in the paper and pencil exercises as a scanned document. For this homework this applies to exercises 1-6. You should upload the scan to D2L. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise (exercise 7 here) should always be handed in as a jupyter notebook by the deadline at D2L. 
+o Homeworks (final version) are available approximately ten days before the  deadline. 
+o How do I(we)  hand in?  You can hand in the paper and pencil exercises as a scanned document. For this homework this applies to exercises 1-5. You should upload the scan to D2L. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise (exercise 6 here) should always be handed in as a jupyter notebook by the deadline at D2L. 
 
 
 
-=== Exercise 1 (10 pt), math reminder, properties of exponential function  ===
+=== Exercise 1 (12 pt), math reminder, properties of exponential function  ===
 
 The first exercise is meant to remind ourselves about properties of
 the exponential function and imaginary numbers. This is highly
@@ -18,14 +18,14 @@ relevant later in this course when we start analyzing oscillatory
 motion and some wave mechanics. As physicists we should thus feel comfortable with expressions that
 include $\exp{(\imath\omega t)}$. Here $t$ could be interpreted as time and $\omega$ as a frequency and $\imath$ is the imaginary unit number.
 
-* 1a (2pt): Perform Taylor expansions in powers of $\omega t$ of the functions $\cos{(\omega t)}$ and $\sin{(\omega t)}$.
-* 1b (2pt): Perform a Taylor expansion of $\exp{(i\omega t)}$.
+* 1a (3pt): Perform Taylor expansions in powers of $\omega t$ of the functions $\cos{(\omega t)}$ and $\sin{(\omega t)}$.
+* 1b (3pt): Perform a Taylor expansion of $\exp{(i\omega t)}$.
 * 1c (3pt): Using parts (a) and (b) here, show that $\exp{(\imath\omega t)}=\cos{(\omega t)}+\imath\sin{(\omega t)}$.
 * 1d (3pt): Show that $\ln{(−1)} = \imath\pi$.
 
-=== Exercise 2 (10 pt), Vector algebra  ===
+=== Exercise 2 (12 pt), Vector algebra  ===
 
-* 2a (4pt) One of the many uses of the scalar product is to find the angle between two given vectors. Find the angle between the vectors $\bm{a}=(1,2,4)$ and $\bm{b}=(4,2,1)$ by evaluating their scalar product.
+* 2a (6pt) One of the many uses of the scalar product is to find the angle between two given vectors. Find the angle between the vectors $\bm{a}=(1,2,4)$ and $\bm{b}=(4,2,1)$ by evaluating their scalar product.
 * 2b (6pt) For a cube with sides of length 1, one vertex at the origin, and sides along the $x$, $y$, and $z$ axes, the vector of the body diagonal from the origin can be written $\bm{a}=(1, 1, 1)$ and the vector of the face diagonal in the $xy$ plane from the origin is $\bm{b}=(1,1,0)$. Find first the lengths of the body diagonal and the face diagonal. Use then part (2a) to find the angle between the body diagonal and the face diagonal.
 
 === Exercise 3 (10 pt), More vector mathematics ===
@@ -42,25 +42,8 @@ include $\exp{(\imath\omega t)}$. Here $t$ could be interpreted as time and $\om
 === Exercise 5 (10 pt), Area of triangle and law of sines ===
 Exercise 1.18 in the textbook of Taylor, Classical Mechanics. Part (1.18a) gives 5pt and part (1.18b) gives also 5pt.
 
-=== Exercise 6 (10pt), Matrices and rotations in the $xy$ plane ===
-The rotation of a three-dimensional  vector $\bm{a}=(a_x,a_y,a_z)$ in the $xy$ plane around an angle $\phi$ results in a new vector $\bm{b}=(b_x,b_y,b_z)$.  This operation can be expressed in terms of linear algebra as a matrix (the rotation matrix) multiplied with a vector. We can write this as
-!bt
-\[
-\begin{bmatrix} b_x \\ b_y \\ b_z \end{bmatrix} = \begin{bmatrix} \cos{\phi} & \sin{\phi} & 0 \\ -\sin{\phi} & \cos{\phi} & 0 \\ 0 & 0 & 1\end{bmatrix}\begin{bmatrix} a_x \\ a_y \\ a_z \end{bmatrix}.
-\]
-!et
-We can write this in a more compact form as $\bm{b} = \bm{R}\bm{a}$, where the rotation matrix is defined as
-!bt
-\[
-\bm{R} = \begin{bmatrix} \cos{\phi} & \sin{\phi} & 0 \\ -\sin{\phi} & \cos{\phi} & 0 \\ 0 & 0 & 1\end{bmatrix}.
-\]
-!et
 
-* 6a (4pt) Find the transpose of the matrix $\bm{R}$. We label this as $\bm{R}^T$.
-* 6b (4pt)  This matrix is a so-called unitary/orthogonal matrix.  Show that $\bm{R}^T\bm{R}= \bm{I}$ where $\bm{I}$ is the so-called identity matrix with ones only along the diagonal. How would you interpret this result? For example, are scalar products changed under this transformations?
-* 6c (2pt) Find the matrix for rotating a coordinate system by $90$ degrees about the $x$-axis.
-
-===  Exercise 7 (40pt), Numerical elements, getting started with some simple data ===
+===  Exercise 6 (40pt), Numerical elements, getting started with some simple data ===
 
 _This exercise should be handed in as a jupyter-notebook_ at D2L. Remember to write your name(s). 
 

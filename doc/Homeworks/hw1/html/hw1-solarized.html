@@ -1,21 +1,18 @@
 <!--
-Automatically generated HTML file from DocOnce source
-(https://github.com/hplgit/doconce/)
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html hw1.do.txt --pygments_html_style=perldoc --html_style=solarized3 --html_links_in_new_window --html_output=hw1-solarized --no_mako
 -->
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="PHY321: Classical Mechanics 1">
-
 <title>PHY321: Classical Mechanics 1</title>
-
-
-<link href="https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_styles/style_solarized_box/css/solarized_light_code.css" rel="stylesheet" type="text/css" title="light"/>
-<script src="https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_styles/style_solarized_box/js/highlight.pack.js"></script>
+<link href="https://cdn.rawgit.com/doconce/doconce/master/bundled/html_styles/style_solarized_box/css/solarized_light_code.css" rel="stylesheet" type="text/css" title="light"/>
+<script src="https://cdn.rawgit.com/doconce/doconce/master/bundled/html_styles/style_solarized_box/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-
 <link href="https://thomasf.github.io/solarized-css/solarized-light.min.css" rel="stylesheet">
 <style type="text/css">
 h1 {color: #b58900;}  /* yellow */
@@ -26,11 +23,16 @@ pre {
   border: 0pt solid #93a1a1;
   box-shadow: none;
 }
-
 div { text-align: justify; text-justify: inter-word; }
+.tab {
+  padding-left: 1.5em;
+}
+div.toc p,a {
+  line-height: 1.3;
+  margin-top: 1.1;
+  margin-bottom: 1.1;
+}
 </style>
-
-
 </head>
 
 <!-- tocinfo
@@ -38,34 +40,33 @@ div { text-align: justify; text-justify: inter-word; }
  'sections': [('Practicalities about  homeworks and projects',
                3,
                None,
-               '___sec0'),
-              ('Exercise 1 (10 pt), math reminder, properties of exponential '
+               'practicalities-about-homeworks-and-projects'),
+              ('Exercise 1 (12 pt), math reminder, properties of exponential '
                'function',
                3,
                None,
-               '___sec1'),
-              ('Exercise 2 (10 pt), Vector algebra', 3, None, '___sec2'),
+               'exercise-1-12-pt-math-reminder-properties-of-exponential-function'),
+              ('Exercise 2 (12 pt), Vector algebra',
+               3,
+               None,
+               'exercise-2-12-pt-vector-algebra'),
               ('Exercise 3 (10 pt), More vector mathematics',
                3,
                None,
-               '___sec3'),
+               'exercise-3-10-pt-more-vector-mathematics'),
               ('Exercise 4 (10 pt), Algebra of cross products',
                3,
                None,
-               '___sec4'),
+               'exercise-4-10-pt-algebra-of-cross-products'),
               ('Exercise 5 (10 pt), Area of triangle and law of sines',
                3,
                None,
-               '___sec5'),
-              ('Exercise 6 (10pt), Matrices and rotations in the $xy$ plane',
-               3,
-               None,
-               '___sec6'),
-              ('Exercise 7 (40pt), Numerical elements, getting started with '
+               'exercise-5-10-pt-area-of-triangle-and-law-of-sines'),
+              ('Exercise 6 (40pt), Numerical elements, getting started with '
                'some simple data',
                3,
                None,
-               '___sec7')]}
+               'exercise-6-40pt-numerical-elements-getting-started-with-some-simple-data')]}
 end of tocinfo -->
 
 <body>
@@ -85,130 +86,111 @@ MathJax.Hub.Config({
 </script>
 
 
-
-    
 <!-- ------------------- main content ---------------------- -->
-
-
-
-<center><h1>PHY321: Classical Mechanics 1</h1></center>  <!-- document title -->
-
-<p>
-<!-- author(s): Homework 1, due Monday  January  25 (midnight) -->
-
 <center>
-<b>Homework 1, due Monday  January  25 (midnight)</b> 
+<h1>PHY321: Classical Mechanics 1</h1>
+</center>  <!-- document title -->
+
+<!-- author(s): Homework 1, due January 21 (midnight) -->
+<center>
+<b>Homework 1, due January 21 (midnight)</b> 
 </center>
-
-<p>
 <!-- institution(s) -->
-
 <br>
-<p>
-<center><h4>Jan 22, 2021</h4></center> <!-- date -->
+<center>
+<h4>Jan 8, 2022</h4>
+</center> <!-- date -->
 <br>
-
-<h3 id="___sec0">Practicalities about  homeworks and projects </h3>
+<h3 id="practicalities-about-homeworks-and-projects">Practicalities about  homeworks and projects </h3>
 
 <ol>
 <li> You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. <b>Remember to write your name(s)</b>!</li>
-<li> Homeworks are available approximately ten days before the  deadline.</li> 
-<li> How do I(we)  hand in?  You can hand in the paper and pencil exercises as a scanned document. For this homework this applies to exercises 1-6. You should upload the scan to D2L. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise (exercise 7 here) should always be handed in as a jupyter notebook by the deadline at D2L.</li> 
+<li> Homeworks (final version) are available approximately ten days before the  deadline.</li> 
+<li> How do I(we)  hand in?  You can hand in the paper and pencil exercises as a scanned document. For this homework this applies to exercises 1-5. You should upload the scan to D2L. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise (exercise 6 here) should always be handed in as a jupyter notebook by the deadline at D2L.</li> 
 </ol>
+<h3 id="exercise-1-12-pt-math-reminder-properties-of-exponential-function">Exercise 1 (12 pt), math reminder, properties of exponential function  </h3>
 
-<h3 id="___sec1">Exercise 1 (10 pt), math reminder, properties of exponential function  </h3>
-
-<p>
-The first exercise is meant to remind ourselves about properties of
+<p>The first exercise is meant to remind ourselves about properties of
 the exponential function and imaginary numbers. This is highly
 relevant later in this course when we start analyzing oscillatory
 motion and some wave mechanics. As physicists we should thus feel comfortable with expressions that
 include \( \exp{(\imath\omega t)} \). Here \( t \) could be interpreted as time and \( \omega \) as a frequency and \( \imath \) is the imaginary unit number.
+</p>
 
 <ul>
-<li> 1a (2pt): Perform Taylor expansions in powers of \( \omega t \) of the functions \( \cos{(\omega t)} \) and \( \sin{(\omega t)} \).</li>
-<li> 1b (2pt): Perform a Taylor expansion of \( \exp{(i\omega t)} \).</li>
+<li> 1a (3pt): Perform Taylor expansions in powers of \( \omega t \) of the functions \( \cos{(\omega t)} \) and \( \sin{(\omega t)} \).</li>
+<li> 1b (3pt): Perform a Taylor expansion of \( \exp{(i\omega t)} \).</li>
 <li> 1c (3pt): Using parts (a) and (b) here, show that \( \exp{(\imath\omega t)}=\cos{(\omega t)}+\imath\sin{(\omega t)} \).</li>
 <li> 1d (3pt): Show that \( \ln{(&#8722;1)} = \imath\pi \).</li>
 </ul>
-
-<h3 id="___sec2">Exercise 2 (10 pt), Vector algebra  </h3>
+<h3 id="exercise-2-12-pt-vector-algebra">Exercise 2 (12 pt), Vector algebra  </h3>
 
 <ul>
-<li> 2a (4pt) One of the many uses of the scalar product is to find the angle between two given vectors. Find the angle between the vectors \( \boldsymbol{a}=(1,2,4) \) and \( \boldsymbol{b}=(4,2,1) \) by evaluating their scalar product.</li>
+<li> 2a (6pt) One of the many uses of the scalar product is to find the angle between two given vectors. Find the angle between the vectors \( \boldsymbol{a}=(1,2,4) \) and \( \boldsymbol{b}=(4,2,1) \) by evaluating their scalar product.</li>
 <li> 2b (6pt) For a cube with sides of length 1, one vertex at the origin, and sides along the \( x \), \( y \), and \( z \) axes, the vector of the body diagonal from the origin can be written \( \boldsymbol{a}=(1, 1, 1) \) and the vector of the face diagonal in the \( xy \) plane from the origin is \( \boldsymbol{b}=(1,1,0) \). Find first the lengths of the body diagonal and the face diagonal. Use then part (2a) to find the angle between the body diagonal and the face diagonal.</li>
 </ul>
-
-<h3 id="___sec3">Exercise 3 (10 pt), More vector mathematics </h3>
+<h3 id="exercise-3-10-pt-more-vector-mathematics">Exercise 3 (10 pt), More vector mathematics </h3>
 
 <ul>
 <li> 3a (5pt) Show (using the fact that multiplication of reals is distributive) that \( \boldsymbol{a}(\boldsymbol{b}+\boldsymbol{c})=\boldsymbol{a}\boldsymbol{b}+\boldsymbol{a}\boldsymbol{c} \).</li>
 <li> 3b (5pt) Show that (using product rule for differentiating reals)  \( \frac{d}{dt}(\boldsymbol{a}\boldsymbol{b})=\boldsymbol{a}\frac{d\boldsymbol{b}}{dt}+\boldsymbol{b}\frac{d\boldsymbol{a}}{dt} \)</li>
 </ul>
-
-<h3 id="___sec4">Exercise 4 (10 pt), Algebra of cross products  </h3>
+<h3 id="exercise-4-10-pt-algebra-of-cross-products">Exercise 4 (10 pt), Algebra of cross products  </h3>
 
 <ul>
 <li> 4a (5pt) Show that the cross products are distribuitive \( \boldsymbol{a}\times(\boldsymbol{b}+\boldsymbol{c})=\boldsymbol{a}\times\boldsymbol{b}+\boldsymbol{a}\times\boldsymbol{c} \).</li>
 <li> 4b (5pt) Show that \( \frac{d}{dt}(\boldsymbol{a}\times\boldsymbol{b})=\boldsymbol{a}\times\frac{d\boldsymbol{b}}{dt}+\frac{d\boldsymbol{a}}{dt}\times \boldsymbol{b} \). Be careful with the order of factors</li> 
 </ul>
+<h3 id="exercise-5-10-pt-area-of-triangle-and-law-of-sines">Exercise 5 (10 pt), Area of triangle and law of sines </h3>
+<p>Exercise 1.18 in the textbook of Taylor, Classical Mechanics. Part (1.18a) gives 5pt and part (1.18b) gives also 5pt.</p>
+<h3 id="exercise-6-40pt-numerical-elements-getting-started-with-some-simple-data">Exercise 6 (40pt), Numerical elements, getting started with some simple data </h3>
 
-<h3 id="___sec5">Exercise 5 (10 pt), Area of triangle and law of sines </h3>
+<p><b>This exercise should be handed in as a jupyter-notebook</b> at D2L. Remember to write your name(s). </p>
 
-Exercise 1.18 in the textbook of Taylor, Classical Mechanics. Part (1.18a) gives 5pt and part (1.18b) gives also 5pt.
-
-<h3 id="___sec6">Exercise 6 (10pt), Matrices and rotations in the \( xy \) plane </h3>
-
-The rotation of a three-dimensional  vector \( \boldsymbol{a}=(a_x,a_y,a_z) \) in the \( xy \) plane around an angle \( \phi \) results in a new vector \( \boldsymbol{b}=(b_x,b_y,b_z) \).  This operation can be expressed in terms of linear algebra as a matrix (the rotation matrix) multiplied with a vector. We can write this as
-$$
-\begin{bmatrix} b_x \\ b_y \\ b_z \end{bmatrix} = \begin{bmatrix} \cos{\phi} & \sin{\phi} & 0 \\ -\sin{\phi} & \cos{\phi} & 0 \\ 0 & 0 & 1\end{bmatrix}\begin{bmatrix} a_x \\ a_y \\ a_z \end{bmatrix}.
-$$
-
-We can write this in a more compact form as \( \boldsymbol{b} = \boldsymbol{R}\boldsymbol{a} \), where the rotation matrix is defined as
-$$
-\boldsymbol{R} = \begin{bmatrix} \cos{\phi} & \sin{\phi} & 0 \\ -\sin{\phi} & \cos{\phi} & 0 \\ 0 & 0 & 1\end{bmatrix}.
-$$
-
-
-<ul>
-<li> 6a (4pt) Find the transpose of the matrix \( \boldsymbol{R} \). We label this as \( \boldsymbol{R}^T \).</li>
-<li> 6b (4pt)  This matrix is a so-called unitary/orthogonal matrix.  Show that \( \boldsymbol{R}^T\boldsymbol{R}= \boldsymbol{I} \) where \( \boldsymbol{I} \) is the so-called identity matrix with ones only along the diagonal. How would you interpret this result? For example, are scalar products changed under this transformations?</li>
-<li> 6c (2pt) Find the matrix for rotating a coordinate system by \( 90 \) degrees about the \( x \)-axis.</li>
-</ul>
-
-<h3 id="___sec7">Exercise 7 (40pt), Numerical elements, getting started with some simple data </h3>
-
-<p>
-<b>This exercise should be handed in as a jupyter-notebook</b> at D2L. Remember to write your name(s).
-
-<p>
-Our first numerical attempt will involve reading data from file or
+<p>Our first numerical attempt will involve reading data from file or
 just setting up two vectors, one for position and one for time. Our data are from 
 <a href="https://www.youtube.com/watch?v=93dC0o2aHto" target="_blank">Usain Bolt's world record 100m during the olympic games in Beijing in
 2008</a>. The data show the time used in units of 10m (see below). Before we however
 venture into this, we need to repeat some basic Python syntax with an
 emphasis on
+</p>
 
 <ul>
 <li> basic Python syntax for arrays</li>
 <li> define and operate on vectors and matrices in Python</li>
 <li> create plots for motion in 1D space</li>
 </ul>
-
-For more information, see the <a href="https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html" target="_blank">introductory slides</a>.
+<p>For more information, see the <a href="https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html" target="_blank">introductory slides</a>.
 Here are some of the basic packages we will be using this week
-<p>
+</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span> 
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="line-height: 125%;"><span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span> 
 <span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
 %matplotlib inline
-</pre></div>
-<p>
-The first exercise here deals with simply getting familiar with vectors and matrices.
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-We will be working with vectors and matrices to get you familiar with them
+<p>The first exercise here deals with simply getting familiar with vectors and matrices.</p>
+
+<p>We will be working with vectors and matrices to get you familiar with them</p>
 
 <ol>
 <li> Initalize two three-dimensional \( xyz \) vectors in the below cell using np.array([x,y,z]). Vectors are represented through arrays in python</li>
@@ -217,23 +199,38 @@ We will be working with vectors and matrices to get you familiar with them
 <li> Print both vectors to make sure your code is working properly.</li>
 </ol>
 
-<p>
-
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span>V1 = np.array([<span style="color: #B452CD">1</span>,<span style="color: #B452CD">2</span>,<span style="color: #B452CD">3</span>])
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="line-height: 125%;">V1 = np.array([<span style="color: #B452CD">1</span>,<span style="color: #B452CD">2</span>,<span style="color: #B452CD">3</span>])
 V2 = np.array([<span style="color: #B452CD">4</span>,<span style="color: #B452CD">5</span>,<span style="color: #B452CD">6</span>])
 <span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;V1: &quot;</span>, V1)
 <span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;V2: &quot;</span>, V2)
-</pre></div>
-<p>
-If this is not too familiar, here's a useful link for creating vectors in python
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>If this is not too familiar, here's a useful link for creating vectors in python
 <a href="https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html" target="_blank"><tt>https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html</tt></a>. Alternatively, look up the <a href="https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html" target="_blank">introductory slides</a>.
+</p>
 
-<p>
-Now lets do some basic mathematics with vectors.
+<p>Now lets do some basic mathematics with vectors.</p>
 
-<p>
-Compute and print the following, and double check with hand calculations:
+<p>Compute and print the following, and double check with hand calculations:</p>
 
 <ul>
 <li> 7a (2pt)  Calculate \( \boldsymbol{V}_1-\boldsymbol{V}_2 \).</li>
@@ -241,37 +238,74 @@ Compute and print the following, and double check with hand calculations:
 <li> 7c (2pt) Calculate the dot product \( \boldsymbol{V}_1\boldsymbol{V}_2 \).</li>
 <li> 7d (2pt) Calculate the cross product \( \boldsymbol{V}_1\times\boldsymbol{V}_2 \).</li>
 </ul>
-
-Here is some useful explanation on numpy array operations if you feel a bit confused by what is happening,
+<p>Here is some useful explanation on numpy array operations if you feel a bit confused by what is happening,
 see <a href="https://www.pluralsight.com/guides/overview-basic-numpy-operations" target="_blank"><tt>https://www.pluralsight.com/guides/overview-basic-numpy-operations</tt></a>.
+</p>
 
-<p>
-The following code prints the first two exercises
-<p>
+<p>The following code prints the first two exercises</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span><span style="color: #658b00">print</span>(V1-V2)
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="line-height: 125%;"><span style="color: #658b00">print</span>(V1-V2)
 <span style="color: #658b00">print</span>(V2-V1)
-</pre></div>
-<p>
-For the dot product of V1 and V2 below we can use the <b>dot</b> function of <b>numpy</b> as follows
-<p>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>For the dot product of V1 and V2 below we can use the <b>dot</b> function of <b>numpy</b> as follows</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span><span style="color: #658b00">print</span>(V1.dot(V2))
-</pre></div>
-<p>
-As a small challenge try to write your own function for the <b>dot</b> product of two vectors.
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="line-height: 125%;"><span style="color: #658b00">print</span>(V1.dot(V2))
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-Matrices can be created in a similar fashion in python.  In this
+<p>As a small challenge try to write your own function for the <b>dot</b> product of two vectors.</p>
+
+<p>Matrices can be created in a similar fashion in python.  In this
 language we can work with them through the package numpy (which we
 have already imported)
+</p>
 
-<p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span>M1 = np.matrix([[<span style="color: #B452CD">1</span>,<span style="color: #B452CD">2</span>,<span style="color: #B452CD">3</span>],
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="line-height: 125%;">M1 = np.matrix([[<span style="color: #B452CD">1</span>,<span style="color: #B452CD">2</span>,<span style="color: #B452CD">3</span>],
              [<span style="color: #B452CD">4</span>,<span style="color: #B452CD">5</span>,<span style="color: #B452CD">6</span>],
              [<span style="color: #B452CD">7</span>,<span style="color: #B452CD">8</span>,<span style="color: #B452CD">9</span>]])
 M2 = np.matrix([[<span style="color: #B452CD">1</span>,<span style="color: #B452CD">2</span>],
@@ -280,26 +314,59 @@ M2 = np.matrix([[<span style="color: #B452CD">1</span>,<span style="color: #B452
 M3 = np.matrix([[<span style="color: #B452CD">9</span>,<span style="color: #B452CD">8</span>,<span style="color: #B452CD">7</span>],
              [<span style="color: #B452CD">4</span>,<span style="color: #B452CD">5</span>,<span style="color: #B452CD">6</span>],
              [<span style="color: #B452CD">7</span>,<span style="color: #B452CD">6</span>,<span style="color: #B452CD">9</span>]])
-</pre></div>
-<p>
-Matrices can be added in the same way vectors are added in python as shown here
-<p>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>Matrices can be added in the same way vectors are added in python as shown here</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span><span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;M1+M3: &quot;</span>, M1+M3)
-</pre></div>
-<p>
-What happens if we try to do \( M1+M2 \)?
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="line-height: 125%;"><span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;M1+M3: &quot;</span>, M1+M3)
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>What happens if we try to do \( M1+M2 \)?</p>
 
 <ul>
 <li> 7e (4pt) Let us go back to exercise 6. Define a vector \( \boldsymbol{a}=(1,0,0) \) and set the angle \( \phi \) in the rotation matrix (rotation in the \( xy \) plane) to \( 45 \) degrees. Set up the matrix \( \boldsymbol{R} \) and find the vector \( \boldsymbol{b}=\boldsymbol{R}\boldsymbol{a} \).</li>
 </ul>
-
-To perform a matrix-vector multiplication of the above type, the following python code may be of use. Here we just define a random vector and a random \( 3\times 3 \) matrix
-<p>
+<p>To perform a matrix-vector multiplication of the above type, the following python code may be of use. Here we just define a random vector and a random \( 3\times 3 \) matrix</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="line-height: 125%;"><span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
 <span style="color: #228B22">#We define a  3 dimensional vector with random numbers</span>
 n = <span style="color: #B452CD">3</span>
 a = np.random.rand(n)
@@ -311,15 +378,26 @@ R = np.random.rand(n, n)
 <span style="color: #228B22"># perform a matrix-vector multiplication. Note that we need to transpose the vector and the odd way to indicate a multiplication with @</span>
 b = R @ a.T
 <span style="color: #658b00">print</span>(b)
-</pre></div>
-<p>
-That's enough vectors and matrices for now. Let's move on to some physics problems! Yes, the actual subject we are studying for.
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-We can opt for two different ways of handling the data. The data is listed in the table here and represents the total time Usain Bolt used in steps of  10 meters of distance. The label \( i \) is just a counter and we start from zero since Python arrays are by default set from zero. The variable \( t \) is time in seconds and \( x \) is the position in meters.
+<p>That's enough vectors and matrices for now. Let's move on to some physics problems! Yes, the actual subject we are studying for. </p>
 
-<p>
-<table border="1">
+<p>We can opt for two different ways of handling the data. The data is listed in the table here and represents the total time Usain Bolt used in steps of  10 meters of distance. The label \( i \) is just a counter and we start from zero since Python arrays are by default set from zero. The variable \( t \) is time in seconds and \( x \) is the position in meters.</p>
+
+<table class="dotable" border="1">
 <thead>
 <tr><th align="center"> i  </th> <th align="center"> 0  </th> <th align="center"> 1  </th> <th align="center"> 2  </th> <th align="center"> 3  </th> <th align="center"> 4  </th> <th align="center"> 5  </th> <th align="center"> 6  </th> <th align="center"> 7  </th> <th align="center"> 8  </th> <th align="center"> 9  </th> </tr>
 </thead>
@@ -328,15 +406,19 @@ We can opt for two different ways of handling the data. The data is listed in th
 <tr><td align="center">   t[s]    </td> <td align="center">   1.85    </td> <td align="center">   2.87    </td> <td align="center">   3.78    </td> <td align="center">   4.65    </td> <td align="center">   5.50    </td> <td align="center">   6.32    </td> <td align="center">   7.14    </td> <td align="center">   7.96    </td> <td align="center">   8.79    </td> <td align="center">   9.69    </td> </tr>
 </tbody>
 </table>
+
 <ul>
 <li> 7f (4pt) You can here make a file with the above data and read them in and set up two vectors, one for time and one for position. Alternatively, you can just set up these two vectors directly and define two vectors in your Python code.</li>
 </ul>
-
-The following example code may help here
-<p>
+<p>The following example code may help here</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span><span style="color: #228B22"># we just initialize time and position</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="line-height: 125%;"><span style="color: #228B22"># we just initialize time and position</span>
 x = np.array([<span style="color: #B452CD">10.0</span>, <span style="color: #B452CD">20.0</span>, <span style="color: #B452CD">30.0</span>, <span style="color: #B452CD">40.0</span>, <span style="color: #B452CD">50.0</span>, <span style="color: #B452CD">60.0</span>, <span style="color: #B452CD">70.0</span>, <span style="color: #B452CD">80.0</span>, <span style="color: #B452CD">90.0</span>, <span style="color: #B452CD">100.0</span>])
 t = np.array([<span style="color: #B452CD">1.85</span>, <span style="color: #B452CD">2.87</span>, <span style="color: #B452CD">3.78</span>, <span style="color: #B452CD">4.65</span>, <span style="color: #B452CD">5.50</span>, <span style="color: #B452CD">6.32</span>, <span style="color: #B452CD">7.14</span>, <span style="color: #B452CD">7.96</span>, <span style="color: #B452CD">8.79</span>, <span style="color: #B452CD">9.69</span>])
 plt.plot(t,x, color=<span style="color: #CD5555">&#39;black&#39;</span>)
@@ -344,18 +426,28 @@ plt.xlabel(<span style="color: #CD5555">&quot;Time t[s]&quot;</span>)
 plt.ylabel(<span style="color: #CD5555">&quot;Position x[m]&quot;</span>)
 plt.title(<span style="color: #CD5555">&quot;Usain Bolt&#39;s world record run&quot;</span>)
 plt.show()
-</pre></div>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <ul>
 <li> 7g (4pt) Plot the position as function of time</li>
 <li> 7h (10pt) Compute thereafter the mean velocity for every interval \( i \) and the total velocity (from \( i=0 \) to the given interval \( i \)) for each interval and plot these two quantities as function of time. Comment your results.</li>
 <li> 7i (10pt) Finally, compute and plot the mean acceleration for each interval and the total acceleration. Again, comment your results. Can you see whether he slowed down during the last meters?</li> 
 </ul>
-
-
 <!-- ------------------- end of main content --------------- -->
-
-
 </body>
 </html>
-    
 
