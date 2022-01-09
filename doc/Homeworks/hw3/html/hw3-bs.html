@@ -1,6 +1,7 @@
 <!--
-Automatically generated HTML file from DocOnce source
+HTML file automatically generated from DocOnce source
 (https://github.com/doconce/doconce/)
+doconce format html hw3.do.txt --html_style=bootstrap --pygments_html_style=default --html_admon=bootstrap_panel --html_output=hw3-bs --no_mako
 -->
 <html>
 <head>
@@ -8,24 +9,20 @@ Automatically generated HTML file from DocOnce source
 <meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="PHY321: Classical Mechanics 1">
-
 <title>PHY321: Classical Mechanics 1</title>
-
 <!-- Bootstrap style: bootstrap -->
+<!-- doconce format html hw3.do.txt --html_style=bootstrap --pygments_html_style=default --html_admon=bootstrap_panel --html_output=hw3-bs --no_mako -->
 <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 <!-- not necessary
 <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 -->
-
 <style type="text/css">
-
 /* Add scrollbar to dropdown menus in bootstrap navigation bar */
 .dropdown-menu {
    height: auto;
    max-height: 400px;
    overflow-x: hidden;
 }
-
 /* Adds an invisible element before each target to offset for the navigation
    bar */
 .anchor::before {
@@ -35,8 +32,6 @@ Automatically generated HTML file from DocOnce source
   margin:-50px 0 0; /* negative fixed header height */
 }
 </style>
-
-
 </head>
 
 <!-- tocinfo
@@ -103,8 +98,6 @@ MathJax.Hub.Config({
 </script>
 
 
-
-    
 <!-- Bootstrap navigation bar -->
 <div class="navbar navbar-default navbar-fixed-top">
   <div class="navbar-header">
@@ -113,9 +106,8 @@ MathJax.Hub.Config({
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="hw3-bs.html">PHY321: Classical Mechanics 1</a>
+    <a class="navbar-brand" href="w3-bs.html">PHY321: Classical Mechanics 1</a>
   </div>
-
   <div class="navbar-collapse collapse navbar-responsive-collapse">
     <ul class="nav navbar-nav navbar-right">
       <li class="dropdown">
@@ -138,35 +130,27 @@ MathJax.Hub.Config({
   </div>
 </div>
 </div> <!-- end of navigation bar -->
-
 <div class="container">
-
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
-
 <!-- ------------------- main content ---------------------- -->
-
-
-
 <div class="jumbotron">
-<center><h1>PHY321: Classical Mechanics 1</h1></center>  <!-- document title -->
-
-<p>
-<!-- author(s): Homework 3, due Monday February 8 -->
-
 <center>
-<b>Homework 3, due Monday February 8</b> 
+<h1>PHY321: Classical Mechanics 1</h1>
+</center>  <!-- document title -->
+
+<!-- author(s): Homework 3, dueFebruary 4 -->
+<center>
+<b>Homework 3, dueFebruary 4</b> 
 </center>
-
-<p>
 <!-- institution(s) -->
+<br>
+<center>
+<h4>Jan 8, 2022</h4>
+</center> <!-- date -->
+<br>
 
-<br>
-<p>
-<center><h4>Feb 7, 2021</h4></center> <!-- date -->
-<br>
-<p>
+
 </div> <!-- end jumbotron -->
-
 <h3 id="practicalities-about-homeworks-and-projects" class="anchor">Practicalities about  homeworks and projects </h3>
 
 <ol>
@@ -174,26 +158,22 @@ MathJax.Hub.Config({
 <li> Homeworks are available ten days  before the deadline.</li> 
 <li> How do I(we)  hand in?  You can hand in the paper and pencil exercises as a  scanned document. For this homework this applies to exercises 1-5. Alternatively, you can hand in everything (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise(s) (exercise 6 here) should always be handed in as a jupyter notebook by the deadline at D2L.</li> 
 </ol>
-
 <h3 id="introduction-to-homework-3" class="anchor">Introduction to homework 3 </h3>
 
-<p>
-This week's sets of classical pen and paper and computational
+<p>This week's sets of classical pen and paper and computational
 exercises deal with the motion of different objects under the
 influence of various forces. The relevant reading background is
-
+</p>
 <ol>
 <li> chapter 2 of Taylor (there are many good examples there) and</li>
 <li> chapters 5-7 of Malthe-S&#248;renssen.</li>
 </ol>
-
-In both textbooks there are many nice worked out
+<p>In both textbooks there are many nice worked out
 examples. Malthe-S&#248;renssen's text contains also several coding
 examples you may find useful.
+</p>
 
-<p>
-There are several pedagogical aims we have in mind with these exercises:
-
+<p>There are several pedagogical aims we have in mind with these exercises:</p>
 <ol>
 <li> Get practice in setting up and analyzing a physical problem, finding the forces and the relevant equations to solve;</li>
 <li> Analyze the results and ask yourself whether they make sense or not;</li>
@@ -202,200 +182,187 @@ There are several pedagogical aims we have in mind with these exercises:
 <li> Getting used to studying physical problems using all possible tools, from paper and pencil to numerical solutions;</li>
 <li> Then analyze the results and ask yourself whether they make sense or not.</li>
 </ol>
-
-The above steps outline important elements of our understanding of the
+<p>The above steps outline important elements of our understanding of the
 scientific method. Furthermore, there are also explicit coding skills
 we aim at such as setting up arrays, solving differential equations
 numerically and plotting your results.  Coding practice is also an
 important aspect. The more we practice the better we get (hopefully).
 From a numerical mathematics point of view, we will solve the differential
 equations using Euler's method (forward Euler).
+</p>
 
-<p>
-The code we will develop can be reused as a basis for coming homeworks. We can
+<p>The code we will develop can be reused as a basis for coming homeworks. We can
 also extend the numerical solver we write here to include other methods (later) like
 the modified Euler method (Euler-Cromer, midpoint Euler) and more
 advanced methods like the family of Runge-Kutta methods and the Velocity-Verlet method.
+</p>
 
-<p>
-At the end of this course, we will thus have developed a larger code
+<p>At the end of this course, we will thus have developed a larger code
 (or set of codes) which will allow us to study different numerical
 methods (integration and differential equations) as well as being able
 to study different physical systems. Combined with analytical skills,
 the hope is that this can allow us to explore interesting and
 realistic physics problems. By doing so, the hope is that can lead to
 deeper insights about the laws of motion which govern a system.
+</p>
 
-<p>
-And hopefully you can reuse many of the above solvers in other courses (our ideal).
+<p>And hopefully you can reuse many of the above solvers in other courses (our ideal).</p>
 
-<p>
-Enough talk!  Here we go and best wishes.
-
+<p>Enough talk!  Here we go and best wishes.</p>
 <h3 id="exercise-1-20-pt-electron-moving-into-an-electric-field" class="anchor">Exercise 1 (20 pt), Electron moving into an electric field  </h3>
 
-<p>
-An electron is sent through a varying electrical
+<p>An electron is sent through a varying electrical
 field. Initially, the electron is moving in the \( x \)-direction with a velocity
 \( v_x = 100 \) m/s. The electron enters the field when it passes the origin. The field
 varies with time, causing an acceleration of the electron that varies in time
+</p>
 $$
 \boldsymbol{a}(t)=\left(−20 \mathrm{m/s}^2 −10\mathrm{m/s}^3t\right) \boldsymbol{e}_y
 $$
-
 
 <ul>
 <li> 1a (4pt) Find the velocity as a function of time for the electron.</li>
 <li> 1b (4pt)  Find the position as a function of time for the electron.</li>
 </ul>
-
-The field is only acting inside a box of length \( L = 2m \).
-
+<p>The field is only acting inside a box of length \( L = 2m \).</p>
 <ul>
 <li> 1c (4pt)  How long time is the electron inside the field?</li>
 <li> 1d (4pt)  What is the displacement in the \( y \)-direction when the electron leaves the box. (We call this the deflection of the electron).</li>
 <li> 1e (4pt)  Find the angle the velocity vector forms with the horizontal axis as the electron leaves the box.</li>
 </ul>
-
 <h3 id="exercise-2-10-pt-drag-force" class="anchor">Exercise 2 (10 pt), Drag force </h3>
 
-<p>
-Taylor exercise 2.3
-
+<p>Taylor exercise 2.3</p>
 <h3 id="exercise-3-10-pt-falling-object" class="anchor">Exercise 3 (10 pt), Falling object  </h3>
 
-<p>
-Taylor exercise 2.6
-
+<p>Taylor exercise 2.6</p>
 <h3 id="exercise-4-10-pt-and-then-a-cyclist" class="anchor">Exercise 4 (10 pt), and then a cyclist  </h3>
 
-<p>
-Taylor exercise 2.26
-
+<p>Taylor exercise 2.26</p>
 <h3 id="exercise-5-10-pt-back-to-a-falling-ball-and-preparing-for-the-numerical-exercise" class="anchor">Exercise 5 (10 pt), back to a falling ball and preparing for the numerical exercise  </h3>
 
-<p>
 <b>Useful material: Malthe-S&#248;renssen chapter 7.5 and Taylor chapter 2.4.</b>
 
-<p>
-In this example we study the motion of an object subject to a constant force, a velocity dependent
+<p>In this example we study the motion of an object subject to a constant force, a velocity dependent
 force. We will  reuse the code we develop here in homework 4 for a position-dependent force.
+</p>
 
-<p>
-Here we limit ourselves to a ball that is thrown from a height \( h \)
+<p>Here we limit ourselves to a ball that is thrown from a height \( h \)
 above the ground with an initial velocity
 \( \boldsymbol{v}_0 \) at time \( t=t_0 \). We assume the air resistance is proportional  to the square velocity, Together with the gravitational force these are the forces acting on our system.
 <b>Note that due to the specific velocity dependence, we cannot find an analytical solution for motion in the \( x \) and \( y \) directions, see the discussion in Taylor after eq. (2.61).</b>
-In order to find an analytical solution we need to assume that the object is falling in the \( y \)-direction (negative direction) only.
+In order to find an analytical solution we need to assume that the object is falling in the \( y \)-direction (negative direction) only. 
+</p>
 
-<p>
-The position of the ball as function of time is  \( \boldsymbol{r}(t) \) where \( t \) is time.
+<p>The position of the ball as function of time is  \( \boldsymbol{r}(t) \) where \( t \) is time.
  The position is measured with respect to a coordinate system with origin at the floor.
+</p>
 
-<p>
-We assume we have an initial position \( \boldsymbol{r}(t_0)=h\boldsymbol{e}_y \) and an initial velocity \( \boldsymbol{v}_0=v_{x,0}\boldsymbol{e}_x+v_{y,0}\boldsymbol{e}_y \).
+<p>We assume we have an initial position \( \boldsymbol{r}(t_0)=h\boldsymbol{e}_y \) and an initial velocity \( \boldsymbol{v}_0=v_{x,0}\boldsymbol{e}_x+v_{y,0}\boldsymbol{e}_y \).</p>
 
-<p>
-In this exercise we assume the system is influenced by the gravitational force
+<p>In this exercise we assume the system is influenced by the gravitational force</p>
 $$
 \boldsymbol{G}=-mg\boldsymbol{e}_y
 $$
 
-and an air resistance given by a square law
+<p>and an air resistance given by a square law</p>
 $$
 -Dv\boldsymbol{v}.
 $$
 
-<p>
-The analytical expressions for velocity and position as functions of
+<p>The analytical expressions for velocity and position as functions of
 time will be used to compare with the numerical results in exercise 6.
+</p>
 
 <ul>
 <li> 5a (3pt) Identify the forces acting on the ball and set up a diagram with the forces acting on the ball. Find the acceleration of the falling ball.</li> 
 <li> 5b (4pt) Assume now that the object is falling only in the \( y \)-direction (negative direction). Integrate the acceleration from an initial time \( t_0 \) to a final time \( t \) and find the velocity. In Taylor equations (2.52) to (2.58) you will find a very good discussion of this.</li>
 <li> 5c (4pt) Find thereafter the position as function of time starting with an initial time \( t_0 \). Find the time it takes to hit the floor.  Here you will find it convenient to set the initial velocity in the \( y \)-direction to zero. Taylor equations (2.52)-(2.58) should contain all relevant information for solving this part as well.</li>
 </ul>
-
-We will use the above analytical results in our numerical calculations in exercise 6. The analytical solution in the \( y \)-direction only will serve as a test for our numerical solution.
-
+<p>We will use the above analytical results in our numerical calculations in exercise 6. The analytical solution in the \( y \)-direction only will serve as a test for our numerical solution.</p>
 <h3 id="exercise-6-40pt-numerical-elements-solving-exercise-5-numerically-and-adding-the-bouncing-from-the-floor" class="anchor">Exercise 6 (40pt), Numerical elements, solving exercise 5 numerically and adding the bouncing from the floor </h3>
 
-<p>
-<b>This exercise should be handed in as a jupyter-notebook</b> at D2L. Remember to write your name(s).
+<p><b>This exercise should be handed in as a jupyter-notebook</b> at D2L. Remember to write your name(s). </p>
 
-<p>
-Last week we:
-
+<p>Last week we:</p>
 <ol>
 <li> Gained more practice with plotting in Python</li>
 <li> Became familiar with arrays and representing vectors with such objects</li>
 </ol>
-
-This week we will:
-
+<p>This week we will:</p>
 <ol>
 <li> Learn and utilize Euler's Method to find the position and the velocity</li>
 <li> Compare analytical and computational solutions</li> 
 <li> Add additional forces to our model</li>
 </ol>
 
-<p>
-
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #408080; font-style: italic"># let&#39;s start by importing useful packages we are familiar with</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic"># let&#39;s start by importing useful packages we are familiar with</span>
 <span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
 <span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
 <span style="color: #666666">%</span>matplotlib inline
-</pre></div>
-<p>
-We will choose the following values
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+<p>We will choose the following values</p>
 <ol>
 <li> mass \( m=0,2 \) kg</li>
 <li> accelleration (gravity) \( g=9.81 \) m/s$^{2}$.</li>
 <li> initial position is the height \( h=2 \) m</li>
 <li> initial velocities \( v_{x,0}=v_{y,0}=10 \) m/s</li>
 </ol>
-
-Can you find a reasonable value for the drag coefficient \( D \)?
+<p>Can you find a reasonable value for the drag coefficient \( D \)?
 You need also to define an initial time and 
 the step size \( \Delta t \). We can define the step size \( \Delta t \) as the difference between any
 two neighboring values in time (time steps) that we analyze within
 some range. It can be determined by dividing the interval we are
 analyzing, which in our case is time \( t_{\mathrm{final}}-t_0 \), by the number of steps we
 are taking \( (N) \). This gives us a step size \( \Delta t = \dfrac{t_{\mathrm{final}}-t_0}{N} \).
+</p>
 
-<p>
-With these preliminaries we are now ready to plot our results from exercise 5.
+<p>With these preliminaries we are now ready to plot our results from exercise 5.</p>
 
 <ul>
 <li> 6a (10pt) Set up arrays for time, velocity, acceleration and positions for the results from exercise 5. Define an initial and final time. Choose the final time to be the time when the ball hits the ground for the first time. Make a plot of the position and velocity as functions of time.  Here you could set the initial velocity in the \( y \)-direction to zero and use the result from exercise 5. Else you need to try different initial times using the result from exercise 5 as a starting guess.  It is not critical if you don't reach the ground when the initial velocity in the \( y \)-direction is not zero.</li>
 </ul>
-
-We move now to the numerical solution of the differential equations as discussed in the <a href="https://mhjensen.github.io/Physics321/doc/pub/motion/html/motion.html" target="_self">lecture notes</a> or Malthe-S&#248;renssen chapter 7.5.
+<p>We move now to the numerical solution of the differential equations as discussed in the <a href="https://mhjensen.github.io/Physics321/doc/pub/motion/html/motion.html" target="_self">lecture notes</a> or Malthe-S&#248;renssen chapter 7.5.
 Let us remind ourselves about  Euler's Method.
+</p>
 
-<p>
-Suppose we know \( f(t) \) and its derivative \( f'(t) \). To find \( f(t+\Delta t) \) at the next step, \( t+\Delta t \),
+<p>Suppose we know \( f(t) \) and its derivative \( f'(t) \). To find \( f(t+\Delta t) \) at the next step, \( t+\Delta t \),
 we can consider the Taylor expansion:
+</p>
 
-<p>
 \( f(t+\Delta t) = f(t) + \dfrac{(\Delta t)f'(t)}{1!} + \dfrac{(\Delta t)^2f''(t)}{2!} + ... \)
 
-<p>
-If we ignore the \( f'' \) term and higher derivatives, we obtain
+<p>If we ignore the \( f'' \) term and higher derivatives, we obtain</p>
 
-<p>
 \( f(t+\Delta t) \approx f(t) + (\Delta t)f'(t) \).
 
-<p>
-This approximation is the basis of Euler's method, and the Taylor
+<p>This approximation is the basis of Euler's method, and the Taylor
 expansion suggests that it will have errors of \( O(\Delta t^2) \).  Thus, one
 would expect it to work better, the smaller the step size \( h \) that you
-use. In our case the step size is \( \Delta t \).
+use. In our case the step size is \( \Delta t \). 
+</p>
 
-<p>
-In setting up our code we need to
+<p>In setting up our code we need to</p>
 
 <ol>
  <li> Define and obtain all initial values, constants, and time to be analyzed with step sizes as done above (you can use the same values)</li>
@@ -404,16 +371,12 @@ In setting up our code we need to
  <li> Calculate the new acceleration \( a_{i+1} \).</li>
  <li> Repeat steps 2-4 for all time steps within a loop.</li>
 </ol>
-
 <li> 6b (20 pt) Write a code which implements Euler's method and compute numerically and plot the position and velocity as functions of time for various values of \( \Delta t \). Comment your results.
-
-<p></li>
+</li>
 <li> 6c (10pt) Compare your numerically obtained positions and velocities with the analytical results from exercise 5. In order to do this, you need to take out the motion in the \( x \)-direction. Comment again your results.
-
 <h3 id="classical-mechanics-extra-credit-assignment-scientific-writing-and-attending-talks" class="anchor">Classical Mechanics Extra Credit Assignment: Scientific Writing and attending Talks </h3>
 
-<p>
-The following gives you an opportunity to earn <b>five extra credit
+<p>The following gives you an opportunity to earn <b>five extra credit
 points</b> on each of the remaining homeworks and <b>ten extra credit points</b>
 on the midterms and finals.  This assignment also covers an aspect of
 the scientific process that is not taught in most undergraduate
@@ -422,13 +385,13 @@ scientist communicate their results to the rest of the field.  Knowing
 how to assemble a well written scientific report will greatly benefit
 you in you upper level classes, in graduate school, and in the work
 place.
+</p>
 
-<p>
-The full information on extra credits is found at <a href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/" target="_self"><tt>https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/</tt></a>. There you will also find examples on how to write a scientific article. 
+<p>The full information on extra credits is found at <a href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/" target="_self"><tt>https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/</tt></a>. There you will also find examples on how to write a scientific article. 
 Below you can also find a description on how to gain extra credits by attending scientific talks.
+</p>
 
-<p>
-This assignment allows you to gain extra credit points by practicing
+<p>This assignment allows you to gain extra credit points by practicing
 your scientific writing.  For each of the remaining homeworks you can
 submit the specified section of a scientific report (written about the
 numerical aspect of the homework) for five extra credit points on the
@@ -438,87 +401,75 @@ worth ten extra points.  For credit the grader must be able to tell
 that you put effort into the assignment (i.e. well written, well
 formatted, etc.).  If you are unfamiliar with writing scientific
 reports, <a href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/IntroductionScientificWriting.md" target="_self">see the information here</a>
+</p>
 
-<p>
-The following table explains what aspect of a scientific report is due
+<p>The following table explains what aspect of a scientific report is due
 with which homework.  You can submit the assignment in any format you
 like, in the same document as your homework, or in a different one.
 Remember to cite any external references you use and include a
 reference list.  There are no length requirements, but make sure what
 you turn in is complete and through.  If you have any questions,
 please contact Julie Butler at butler@frib.msu.edu.
-
-<p>
+</p>
 
 <div class="row">
   <div class="col-xs-6">
-    <table class="table table-striped table-hover table-condensed">
+    <table class="dotable table-striped table-hover table-condensed">
 <thead>
-<tr><td align="center"><b>   HW/Project   </b></td> <td align="center"><b>  Due Date </b></td> <td align="center"><b>  Extra Credit Assignment   </b></td> </tr>
+<tr><td align="center"><b>   HW/Project   </b></td> <td align="center"><b> Due Date </b></td> <td align="center"><b>  Extra Credit Assignment   </b></td> </tr>
 </thead>
 <tbody>
-<tr><td align="center">   HW 3                </td> <td align="center">   2-8            </td> <td align="center">   Abstract                        </td> </tr>
-<tr><td align="center">   HW 4                </td> <td align="center">   2-15           </td> <td align="center">   Introduction                    </td> </tr>
-<tr><td align="center">   HW 5                </td> <td align="center">   2-22           </td> <td align="center">   Methods                         </td> </tr>
-<tr><td align="center">   HW 6                </td> <td align="center">   3-1            </td> <td align="center">   Results and Discussion          </td> </tr>
-<tr><td align="center">   <b>Midterm 1</b>    </td> <td align="center">   <b>3-12</b>    </td> <td align="center">   <em>Full Written Report</em>    </td> </tr>
-<tr><td align="center">   HW 7                </td> <td align="center">   3-22           </td> <td align="center">   Abstract                        </td> </tr>
-<tr><td align="center">   HW 8                </td> <td align="center">   3-29           </td> <td align="center">   Introduction                    </td> </tr>
-<tr><td align="center">   HW 9                </td> <td align="center">   4-5            </td> <td align="center">   Results and Discussion          </td> </tr>
-<tr><td align="center">   <b>Midterm 2        </td> <td align="center">   </b> _4-16_    </td> <td align="center">   <em>Full Written Report</em>    </td> </tr>
-<tr><td align="center">   HW 10               </td> <td align="center">   4-26           </td> <td align="center">   Abstract                        </td> </tr>
-<tr><td align="center">   <b>Final</b>        </td> <td align="center">   <b>4-30</b>    </td> <td align="center">   <em>Full Written Report</em>    </td> </tr>
+<tr><td align="center">   HW 3                </td> <td align="center">   2-4           </td> <td align="center">   Abstract                        </td> </tr>
+<tr><td align="center">   HW 4                </td> <td align="center">   2-11          </td> <td align="center">   Introduction                    </td> </tr>
+<tr><td align="center">   HW 5                </td> <td align="center">   2-18          </td> <td align="center">   Methods                         </td> </tr>
+<tr><td align="center">   HW 6                </td> <td align="center">   3-18          </td> <td align="center">   Results and Discussion          </td> </tr>
+<tr><td align="center">   <b>Midterm 1</b>    </td> <td align="center">   <b>3-4</b>    </td> <td align="center">   <em>Full Written Report</em>    </td> </tr>
+<tr><td align="center">   HW 7                </td> <td align="center">   3-25          </td> <td align="center">   Abstract                        </td> </tr>
+<tr><td align="center">   HW 8                </td> <td align="center">   4-15          </td> <td align="center">   Introduction                    </td> </tr>
+<tr><td align="center">   HW 9                </td> <td align="center">   4-22          </td> <td align="center">   Results and Discussion          </td> </tr>
+<tr><td align="center">   <b>Midterm 2        </td> <td align="center">   </b> _4-8_    </td> <td align="center">   <em>Full Written Report</em>    </td> </tr>
+<tr><td align="center">   HW 10               </td> <td align="center">   4-29          </td> <td align="center">   Abstract                        </td> </tr>
+<tr><td align="center">   <b>Final</b>        </td> <td align="center">   <b>5-6</b>    </td> <td align="center">   <em>Full Written Report</em>    </td> </tr>
 </tbody>
     </table>
   </div> <!-- col-xs-6 -->
 </div> <!-- cell row -->
-<p>
-You can also gain extra credits if you attend scientific talks.
-This is described here.
 
+<p>You can also gain extra credits if you attend scientific talks.
+This is described here.
+</p>
 <h3 id="integrating-classwork-with-research" class="anchor">Integrating Classwork With Research </h3>
 
-<p>
-This opportunity will allow you to earn up to 5 extra credit points on a Homework per week. These points can push you above 100% or help make up for missed exercises.
+<p>This opportunity will allow you to earn up to 5 extra credit points on a Homework per week. These points can push you above 100% or help make up for missed exercises.
 In order to earn all points you must:
-
-<p></li>
-
+</p>
+</li>
 <ol>
 <li> Attend an MSU research talk (recommended research oriented Clubs is  provided below)</li>
 <li> Summarize the talk using at least 150 words</li>
 <li> Turn in the summary along with your Homework.</li>
 </ol>
-
-Approved talks:
+<p>Approved talks:
 Talks given by researchers through the following clubs:
-
+</p>
 <ul>
 <li> Research and Idea Sharing Enterprise (RAISE)&#8203;: Meets Wednesday Nights Society for Physics Students (SPS)&#8203;: Meets Monday Nights</li>
 <li> Astronomy Club&#8203;: Meets Monday Nights</li>
 <li> Facility For Rare Isotope Beam (FRIB) Seminars: &#8203;Occur multiple times a week</li>
 </ul>
+<p>If you have any questions please consult Jeremy Rebenstock, rebensto@msu.edu.</p>
 
-If you have any questions please consult Jeremy Rebenstock, rebensto@msu.edu.
-
-<p>
-All the material on extra credits is at <a href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/" target="_self"><tt>https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/</tt></a>. 
-
+<p>All the material on extra credits is at <a href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/" target="_self"><tt>https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/</tt></a>. </p>
 <!-- ------------------- end of main content --------------- -->
-
 </div>  <!-- end container -->
 <!-- include javascript, jQuery *first* -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-
 <!-- Bootstrap footer
 <footer>
 <a href="https://..."><img width="250" align=right src="https://..."></a>
 </footer>
 -->
-
-
 </body>
 </html>
-    
 
