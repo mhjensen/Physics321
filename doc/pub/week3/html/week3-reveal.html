@@ -1,19 +1,18 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html week3-reveal.html week3-reveal reveal --html_slide_theme=beige
+-->
 <!DOCTYPE html>
-
+<html>
+<head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="PHY321: Review of Vectors, Math and first Numerical Examples for simple Motion Problems">
+<meta name="description" content="PHY321: Motion examples, Forces, Newton's Laws and Motion Example">
+<title>PHY321: Motion examples, Forces, Newton's Laws and Motion Example</title>
 
-<title>PHY321: Review of Vectors, Math and first Numerical Examples for simple Motion Problems</title>
-
-
-
-
-
-
-
-<!-- reveal.js: http://lab.hakim.se/reveal-js/ -->
+<!-- reveal.js: https://lab.hakim.se/reveal-js/ -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -55,34 +54,79 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 </script>
 
 <style type="text/css">
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    p.caption { width: 80%; font-size: 60%; font-style: italic; text-align: left; }
-    hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .reveal .alert-text-small   { font-size: 80%;  }
-    .reveal .alert-text-large   { font-size: 130%; }
-    .reveal .alert-text-normal  { font-size: 90%;  }
-    .reveal .alert {
-             padding:8px 35px 8px 14px; margin-bottom:18px;
-             text-shadow:0 1px 0 rgba(255,255,255,0.5);
-             border:5px solid #bababa;
-             -webkit-border-radius: 14px; -moz-border-radius: 14px;
-             border-radius:14px;
-             background-position: 10px 10px;
-             background-repeat: no-repeat;
-             background-size: 38px;
-             padding-left: 30px; /* 55px; if icon */
-     }
-     .reveal .alert-block {padding-top:14px; padding-bottom:14px}
-     .reveal .alert-block > p, .alert-block > ul {margin-bottom:1em}
-     /*.reveal .alert li {margin-top: 1em}*/
-     .reveal .alert-block p+p {margin-top:5px}
-     /*.reveal .alert-notice { background-image: url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_notice.png); }
-     .reveal .alert-summary  { background-image:url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_summary.png); }
-     .reveal .alert-warning { background-image: url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_warning.png); }
-     .reveal .alert-question {background-image:url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_question.png); } */
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-size: 60%; font-style: italic; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+.reveal .alert-text-small   { font-size: 80%;  }
+.reveal .alert-text-large   { font-size: 130%; }
+.reveal .alert-text-normal  { font-size: 90%;  }
+.reveal .alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:5px solid #bababa;
+  -webkit-border-radius: 14px; -moz-border-radius: 14px;
+  border-radius:14px;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 30px; /* 55px; if icon */
+}
+.reveal .alert-block {padding-top:14px; padding-bottom:14px}
+.reveal .alert-block > p, .alert-block > ul {margin-bottom:1em}
+/*.reveal .alert li {margin-top: 1em}*/
+.reveal .alert-block p+p {margin-top:5px}
+/*.reveal .alert-notice { background-image: url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_notice.png); }
+.reveal .alert-summary  { background-image:url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_summary.png); }
+.reveal .alert-warning { background-image: url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_warning.png); }
+.reveal .alert-question {background-image:url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_question.png); } */
+/* Override reveal.js table border */
+.reveal table td {
+  border: 0;
+}
 
+<style type="text/css">
+/* Override h1, h2, ... styles */
+h1 { font-size: 2.8em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.4em; }
+h4 { font-size: 1.3em; }
+h1, h2, h3, h4 { font-weight: bold; line-height: 1.2; }
+body { overflow: auto; } /* vertical scrolling */
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-size: 60%; font-style: italic; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+.slide .alert-text-small   { font-size: 80%;  }
+.slide .alert-text-large   { font-size: 130%; }
+.slide .alert-text-normal  { font-size: 90%;  }
+.slide .alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:5px solid #bababa;
+    -webkit-border-radius:14px; -moz-border-radius:14px;
+  border-radius:14px
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 30px; /* 55px; if icon */
+}
+.slide .alert-block {padding-top:14px; padding-bottom:14px}
+.slide .alert-block > p, .alert-block > ul {margin-bottom:0}
+/*.slide .alert li {margin-top: 1em}*/
+.deck .alert-block p+p {margin-top:5px}
+/*.slide .alert-notice { background-image: url(https://hplgit.github.io/doconce/
+bundled/html_images//small_gray_notice.png); }
+.slide .alert-summary  { background-image:url(https://hplgit.github.io/doconce/
+bundled/html_images//small_gray_summary.png); }
+.slide .alert-warning { background-image: url(https://hplgit.github.io/doconce/
+bundled/html_images//small_gray_warning.png); }
+.slide .alert-question {background-image:url(https://hplgit.github.io/doconce/
+bundled/html_images/small_gray_question.png); } */
+.dotable table, .dotable th, .dotable tr, .dotable tr td {
+  border: 2px solid black;
+  border-collapse: collapse;
+  padding: 2px;
+}
 </style>
-
 
 
 <!-- Styles for table layout of slides -->
@@ -97,12 +141,9 @@ td.padding {
 
 </head>
 
+
 <body>
 <div class="reveal">
-
-<!-- Any section element inside the <div class="slides"> container
-     is displayed as a slide -->
-
 <div class="slides">
 
 
@@ -123,97 +164,191 @@ MathJax.Hub.Config({
 
 
 
-    
-
-
 
 <section>
 <!-- ------------------- main content ---------------------- -->
+<center>
+<h1 style="text-align: center;">PHY321: Motion examples, Forces, Newton's Laws and Motion Example</h1>
+</center>  <!-- document title -->
 
-
-
-<center><h1 style="text-align: center;">PHY321: Review of Vectors, Math and first Numerical Examples for simple Motion Problems</h1></center>  <!-- document title -->
-
-<p>
 <!-- author(s): <a href="http://mhjgit.github.io/info/doc/web/" target="_blank">Morten Hjorth-Jensen</a> -->
-
 <center>
 <b><a href="http://mhjgit.github.io/info/doc/web/" target="_blank">Morten Hjorth-Jensen</a></b> [1, 2]
 </center>
-
-<p>&nbsp;<br>
 <!-- institution(s) -->
+<center>
+[1] <b>Department of Physics and Astronomy and Facility for Rare Ion Beams (FRIB), Michigan State University, USA</b>
+</center>
+<center>
+[2] <b>Department of Physics, University of Oslo, Norway</b>
+</center>
+<br>
+<center>
+<h4>Jan 8, 2022</h4>
+</center> <!-- date -->
+<br>
 
-<center>[1] <b>Department of Physics and Astronomy and Facility for Rare Ion Beams (FRIB), Michigan State University, USA</b></center>
-<center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
-<br>
-<p>&nbsp;<br>
-<center><h4>Jan 20, 2021</h4></center> <!-- date -->
-<br>
-<p>
 
 <center style="font-size:80%">
-<!-- copyright --> &copy; 1999-2021, "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/". Released under CC Attribution-NonCommercial 4.0 license
+<!-- copyright --> &copy; 1999-2022, "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/". Released under CC Attribution-NonCommercial 4.0 license
 </center>
 </section>
 
-
 <section>
-<h2 id="___sec0">Aims and Overarching Motivation </h2>
+<h2 id="aims-and-overarching-motivation">Aims and Overarching Motivation </h2>
+<h3 id="monday">Monday </h3>
 
-<h3 id="___sec1">Wednesday </h3>
+<p>We try to finalize the discussion on falling objects and numerical aspects thereof.</p>
 
-<p>
-On Wednesday the 20th we will mainly go through the overview material from week 2, January 11-15.  See the learning material fro week 2 at for example <a href="https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2-bs.html" target="_blank"><tt>https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2-bs.html</tt></a>.
+<p>Recommended reading: Taylor 1.3</p>
+<h3 id="wednesday">Wednesday </h3>
 
-<h3 id="___sec2">Friday </h3>
+<p>We revisit Newton's laws and discuss how to analyze a problem.</p>
 
-<p>
-We start studying the problem of a  falling object and use this to introduce numerical aspects.
+<p>Recommended reading: Taylor 1.4 and 1.5</p>
+<h3 id="friday">Friday </h3>
+
+<p>We discuss several examples and try to wrap up the discussions on Newton's laws.</p>
+
+<p>Recommended reading: Taylor 1.4-1.6 and 2.1-2.2 as examples of motion problems.</p>
 </section>
 
+<section>
+<h2 id="basic-steps-of-scientific-investigations">Basic Steps of Scientific Investigations </h2>
+
+<p>Last week we discussed several basi elements of the scientific method. We repeat them here.</p>
+
+<p>An overarching aim in this course is to give you a deeper
+understanding of the scientific method. The problems we study will all
+involve cases where we can apply classical mechanics. In our previous
+material we already assumed that we had a model for the motion of an
+object.  Alternatively we could have data from experiment (like Usain
+Bolt's 100m world record run in 2008).  Or we could have performed
+ourselves an experiment and we want to understand which forces are at
+play and whether these forces can be understood in terms of
+fundamental forces.
+</p>
+
+<p>Our first step consists in identifying the problem. What we sketch
+here may include a mix of experiment and theoretical simulations, or
+just experiment or only theory.
+</p>
+</section>
 
 <section>
-<h2 id="___sec3">Falling baseball in one dimension </h2>
+<h2 id="identifying-our-system">Identifying our System </h2>
 
+<p>Here we can ask questions like</p>
+<ol>
+<p><li> What kind of object is moving</li>
+<p><li> What kind of data do we have</li>
+<p><li> How do we measure position, velocity, acceleration etc</li>
+<p><li> Which initial conditions influence our system</li>
+<p><li> Other aspects which allow us to identify the system</li>
+</ol>
+</section>
+
+<section>
+<h2 id="defining-a-model">Defining a Model </h2>
+
+<p>With our eventual data and observations we would now like to develop a
+model for the system. In the end we want obviously to be able to
+understand which forces are at play and how they influence our
+specific system. That is, can we extract some deeper insights about a
+system?
+</p>
+
+<p>We need then to</p>
+<ol>
+<p><li> Find the forces that act on our system</li>
+<p><li> Introduce models for the forces</li>
+<p><li> Identify the equations which can govern the system (Newton's second law for example)</li>
+<p><li> More elements we deem important for defining our model</li>
+</ol>
+</section>
+
+<section>
+<h2 id="solving-the-equations">Solving the Equations </h2>
+
+<p>With the model at hand, we can then solve the equations. In classical mechanics we normally end up  with solving sets of coupled ordinary differential equations or partial differential equations.</p>
+<ol>
+<p><li> Using Newton's second law we have equations of the type \( \boldsymbol{F}=m\boldsymbol{a}=md\boldsymbol{v}/dt \)</li>
+<p><li> We need to  define the initial conditions (typically the initial velocity and position as functions of time) and/or initial conditions and boundary conditions</li>
+<p><li> The solution of the equations give us then the position, the velocity and other time-dependent quantities which may specify the motion of a given object.</li>
+</ol>
 <p>
-We anticipate the mathematical model to come and assume that we have a
+<p>We are not yet done. With our lovely solvers, we need to start thinking.</p>
+</section>
+
+<section>
+<h2 id="analyze">Analyze </h2>
+
+<p>Now it is time to ask the big questions. What do our results mean? Can we give a simple interpretation in terms of fundamental laws?  What do our results mean? Are they correct?
+Thus, typical questions we may ask are
+</p>
+<ol>
+<p><li> Are our results for say \( \boldsymbol{r}(t) \) valid?  Do we trust what we did?  Can you validate and verify the correctness of your results?</li>
+<p><li> Evaluate the answers and their implications</li>
+<p><li> Compare with experimental data if possible. Does our model make sense?</li>
+<p><li> and obviously many other questions.</li>
+</ol>
+<p>
+<p>The analysis stage feeds back to the first stage. It may happen that
+the data we had were not good enough, there could be large statistical
+uncertainties. We may need to collect more data or perhaps we did a
+sloppy job in identifying the degrees of freedom.
+</p>
+
+<p>All these steps are essential elements in a scientific
+enquiry. Hopefully, through a mix of numerical simulations, analytical
+calculations and experiments we may gain a deeper insight about the
+physics of a specific system.
+</p>
+</section>
+
+<section>
+<h2 id="falling-baseball-in-one-dimension">Falling baseball in one dimension </h2>
+
+<p>We anticipate the mathematical model to come and assume that we have a
 model for the motion of a falling baseball without air resistance.
 Our system (the baseball) is at an initial height \( y_0 \) (which we will
 specify in the program below) at the initial time \( t_0=0 \). In our program example here we will plot the position in steps of \( \Delta t \) up to a final time \( t_f \). 
 The mathematical formula for the position \( y(t) \) as function of time \( t \) is 
+</p>
 <p>&nbsp;<br>
 $$
 y(t) = y_0-\frac{1}{2}gt^2,
 $$
 <p>&nbsp;<br>
 
-where $g=9.80665=0.980655\times 10^1$m/s${}^2$ is a constant representing the standard acceleration due to gravity.
+<p>where $g=9.80665=0.980655\times 10^1$m/s${}^2$ is a constant representing the standard acceleration due to gravity.
 We have here adopted the conventional standard value. This does not take into account other effects, such as buoyancy or drag.
 Furthermore, we stop when the ball hits the ground, which takes place at
+</p>
 <p>&nbsp;<br>
 $$
 y(t) = 0= y_0-\frac{1}{2}gt^2,
 $$
 <p>&nbsp;<br>
 
-which gives us a final time \( t_f=\sqrt{2y_0/g} \).
+<p>which gives us a final time \( t_f=\sqrt{2y_0/g} \). </p>
 
-<p>
-As of now we simply assume that   we know the formula for the falling object. Afterwards, we will derive it.
+<p>As of now we simply assume that   we know the formula for the falling object. Afterwards, we will derive it.</p>
 </section>
 
-
 <section>
-<h2 id="___sec4">Our Python Encounter </h2>
+<h2 id="our-python-encounter">Our Python Encounter </h2>
 
-<p>
-We start with preparing folders for storing our calculations, figures and if needed, specific data files we use as input or output files.
+<p>We start with preparing folders for storing our calculations, figures and if needed, specific data files we use as input or output files.</p>
 
-<p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #228B22"># Common imports</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="font-size: 80%; line-height: 125%;"><span style="color: #228B22"># Common imports</span>
 <span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
 <span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">pandas</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">pd</span>
 <span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
@@ -244,18 +379,36 @@ DATA_ID = <span style="color: #CD5555">&quot;DataFiles/&quot;</span>
 
 <span style="color: #228B22">#in case we have an input file we wish to read in</span>
 <span style="color: #228B22">#infile = open(data_path(&quot;MassEval2016.dat&quot;),&#39;r&#39;)</span>
-</pre></div>
-<p>
-You could also define a function for making our plots. You
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>You could also define a function for making our plots. You
 can obviously avoid this and simply set up various <b>matplotlib</b>
 commands every time you need them. You may however find it convenient
 to collect all such commands in one function and simply call this
 function.
+</p>
 
-<p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">pylab</span> <span style="color: #8B008B; font-weight: bold">import</span> plt, mpl
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="font-size: 80%; line-height: 125%;"><span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">pylab</span> <span style="color: #8B008B; font-weight: bold">import</span> plt, mpl
 plt.style.use(<span style="color: #CD5555">&#39;seaborn&#39;</span>)
 mpl.rcParams[<span style="color: #CD5555">&#39;font.family&#39;</span>] = <span style="color: #CD5555">&#39;serif&#39;</span>
 
@@ -266,14 +419,31 @@ mpl.rcParams[<span style="color: #CD5555">&#39;font.family&#39;</span>] = <span 
         plt.xlabel(axlabels[<span style="color: #B452CD">0</span>])
         plt.ylabel(axlabels[<span style="color: #B452CD">1</span>])
     plt.legend(loc=<span style="color: #B452CD">0</span>)
-</pre></div>
-<p>
-Thereafter we start setting up the code for the falling object.
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
+<p>Thereafter we start setting up the code for the falling object.</p>
+
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span>%matplotlib inline
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="font-size: 80%; line-height: 125%;">%matplotlib inline
 <span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.patches</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">mpatches</span>
 
 g = <span style="color: #B452CD">9.80655</span> <span style="color: #228B22">#m/s^2</span>
@@ -283,7 +453,7 @@ DeltaT = <span style="color: #B452CD">0.1</span>  <span style="color: #228B22">#
 tfinal = np.sqrt(<span style="color: #B452CD">2.0</span>*y_0/g)
 <span style="color: #228B22">#set up arrays </span>
 t = np.arange(<span style="color: #B452CD">0</span>,tfinal,DeltaT)
-y =y_0 -g*.<span style="color: #B452CD">5</span>*t**<span style="color: #B452CD">2</span>
+y =y_0 -g*<span style="color: #B452CD">.5</span>*t**<span style="color: #B452CD">2</span>
 <span style="color: #228B22"># Then make a nice printout in table form using Pandas</span>
 <span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">pandas</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">pd</span>
 <span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">IPython.display</span> <span style="color: #8B008B; font-weight: bold">import</span> display
@@ -301,39 +471,52 @@ plt.xlabel(<span style="color: #CD5555">&quot;t[s]&quot;</span>)
 plt.ylabel(<span style="color: #CD5555">&quot;y[m]&quot;</span>)
 save_fig(<span style="color: #CD5555">&quot;FallingBaseball&quot;</span>)
 plt.show()
-</pre></div>
-<p>
-Here we used <b>pandas</b> (see below) to systemize the output of the position as function of time.
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>Here we used <b>pandas</b> (see below) to systemize the output of the position as function of time.</p>
 </section>
 
-
 <section>
-<h2 id="___sec5">Average quantities </h2>
-We define now the average velocity as
+<h2 id="average-quantities">Average quantities </h2>
+<p>We define now the average velocity as</p>
 <p>&nbsp;<br>
 $$
 \overline{v}(t) = \frac{y(t+\Delta t)-y(t)}{\Delta t}.
 $$
 <p>&nbsp;<br>
 
-In the code we have set the time step \( \Delta t \) to a given value. We could define it in terms of the number of points \( n \) as
+<p>In the code we have set the time step \( \Delta t \) to a given value. We could define it in terms of the number of points \( n \) as</p>
 <p>&nbsp;<br>
 $$
-\Delta t = \frac{t_{\mathrm{final}-}t_{\mathrm{initial}}}{n+1}.
+\Delta t = \frac{t_{\mathrm{final}-}t_{\mathrm{initial}}}{n}.
 $$
 <p>&nbsp;<br>
 
-<p>
-Since we have discretized the variables, we introduce the counter \( i \) and let \( y(t)\rightarrow y(t_i)=y_i \) and \( t\rightarrow t_i \)
+<p>Since we have discretized the variables, we introduce the counter \( i \) and let \( y(t)\rightarrow y(t_i)=y_i \) and \( t\rightarrow t_i \)
 with \( i=0,1,\dots, n \). This gives us the following shorthand notations that we will use for the rest of this course. We define
+</p>
 <p>&nbsp;<br>
 $$
 y_i = y(t_i),\hspace{0.2cm} i=0,1,2,\dots,n.
 $$
 <p>&nbsp;<br>
 
-This applies to other variables which depend on say time. Examples are the velocities, accelerations, momenta etc.
+<p>This applies to other variables which depend on say time. Examples are the velocities, accelerations, momenta etc.
 Furthermore we use the shorthand
+</p>
 <p>&nbsp;<br>
 $$
 y_{i\pm 1} = y(t_i\pm \Delta t),\hspace{0.12cm} i=0,1,2,\dots,n.
@@ -341,153 +524,151 @@ $$
 <p>&nbsp;<br>
 </section>
 
-
 <section>
-<h2 id="___sec6">Compact equations </h2>
-We can then rewrite in a more compact form the average velocity as
+<h2 id="compact-equations">Compact equations </h2>
+<p>We can then rewrite in a more compact form the average velocity as</p>
 <p>&nbsp;<br>
 $$
 \overline{v}_i = \frac{y_{i+1}-y_{i}}{\Delta t}.
 $$
 <p>&nbsp;<br>
 
-The velocity is defined as the change in position per unit time.
+<p>The velocity is defined as the change in position per unit time.
 In the limit \( \Delta t \rightarrow 0 \) this defines the instantaneous velocity, which is nothing but the slope of the position at a time \( t \).
 We have thus
+</p>
 <p>&nbsp;<br>
 $$
 v(t) = \frac{dy}{dt}=\lim_{\Delta t \rightarrow 0}\frac{y(t+\Delta t)-y(t)}{\Delta t}.
 $$
 <p>&nbsp;<br>
 
-Similarly, we can define the average acceleration as the change in velocity per unit time as
+<p>Similarly, we can define the average acceleration as the change in velocity per unit time as</p>
 <p>&nbsp;<br>
 $$
 \overline{a}_i = \frac{v_{i+1}-v_{i}}{\Delta t},
 $$
 <p>&nbsp;<br>
 
-resulting in the instantaneous acceleration
+<p>resulting in the instantaneous acceleration</p>
 <p>&nbsp;<br>
 $$
 a(t) = \frac{dv}{dt}=\lim_{\Delta t\rightarrow 0}\frac{v(t+\Delta t)-v(t)}{\Delta t}.
 $$
 <p>&nbsp;<br>
 
-<p>
-<b>A note on notations</b>: When writing for example the velocity as \( v(t) \) we are then referring to the continuous and instantaneous value. A subscript like
+<p><b>A note on notations</b>: When writing for example the velocity as \( v(t) \) we are then referring to the continuous and instantaneous value. A subscript like
 \( v_i \) refers always to the discretized values.
+</p>
 </section>
 
-
 <section>
-<h2 id="___sec7">A differential equation </h2>
-We can rewrite the instantaneous acceleration as
+<h2 id="a-differential-equation">A differential equation </h2>
+<p>We can rewrite the instantaneous acceleration as</p>
 <p>&nbsp;<br>
 $$
 a(t) = \frac{dv}{dt}=\frac{d}{dt}\frac{dy}{dt}=\frac{d^2y}{dt^2}.
 $$
 <p>&nbsp;<br>
 
-This forms the starting point for our definition of forces later. It is a famous second-order differential equation. If the acceleration is constant we can now recover the formula for the falling ball we started with.
+<p>This forms the starting point for our definition of forces later. It is a famous second-order differential equation. If the acceleration is constant we can now recover the formula for the falling ball we started with.
 The acceleration can depend on the position and the velocity. To be more formal we should then write the above differential equation as
+</p>
 <p>&nbsp;<br>
 $$
 \frac{d^2y}{dt^2}=a(t,y(t),\frac{dy}{dt}).
 $$
 <p>&nbsp;<br>
 
-<p>
-With given initial conditions for \( y(t_0) \) and \( v(t_0) \) we can then
+<p>With given initial conditions for \( y(t_0) \) and \( v(t_0) \) we can then
 integrate the above equation and find the velocities and positions at
 a given time \( t \).
+</p>
 
-<p>
-If we multiply with mass, we have one of the famous expressions for Newton's second law,
+<p>If we multiply with mass, we have one of the famous expressions for Newton's second law,</p>
 <p>&nbsp;<br>
 $$
 F(y,v,t)=m\frac{d^2y}{dt^2}=ma(t,y(t),\frac{dy}{dt}),
 $$
 <p>&nbsp;<br>
 
-where \( F \) is the force acting on an object with mass \( m \). We see that it also has the right dimension, mass times length divided by time squared.
+<p>where \( F \) is the force acting on an object with mass \( m \). We see that it also has the right dimension, mass times length divided by time squared.
 We will come back to this soon.
+</p>
 </section>
 
-
 <section>
-<h2 id="___sec8">Integrating our equations </h2>
+<h2 id="integrating-our-equations">Integrating our equations </h2>
 
-<p>
-Formally we can then, starting with the acceleration (suppose we have measured it, how could we do that?)
+<p>Formally we can then, starting with the acceleration (suppose we have measured it, how could we do that?)
 compute say the height of a building.  To see this we perform the following integrations from an initial time \( t_0 \)  to a given time \( t \)
+</p>
 <p>&nbsp;<br>
 $$
 \int_{t_0}^t dt a(t) = \int_{t_0}^t dt \frac{dv}{dt} = v(t)-v(t_0),
 $$
 <p>&nbsp;<br>
 
-or as 
+<p>or as </p>
 <p>&nbsp;<br>
 $$
 v(t)=v(t_0)+\int_{t_0}^t dt a(t).
 $$
 <p>&nbsp;<br>
 
-<p>
-When we know the velocity as function of time, we can find the position as function of time starting from the defintion of velocity as the derivative with respect to time, that is we have
+<p>When we know the velocity as function of time, we can find the position as function of time starting from the defintion of velocity as the derivative with respect to time, that is we have</p>
 <p>&nbsp;<br>
 $$
 \int_{t_0}^t dt v(t) = \int_{t_0}^t dt \frac{dy}{dt} = y(t)-y(t_0),
 $$
 <p>&nbsp;<br>
 
-or as 
+<p>or as </p>
 <p>&nbsp;<br>
 $$
 y(t)=y(t_0)+\int_{t_0}^t dt v(t).
 $$
 <p>&nbsp;<br>
 
-<p>
-These equations define what is called the integration method for
+<p>These equations define what is called the integration method for
 finding the position and the velocity as functions of time. There is
 no loss of generality if we extend these equations to more than one
 spatial dimension.
+</p>
 </section>
 
-
 <section>
-<h2 id="___sec9">Constant acceleration case, the velocity </h2>
-Let us compute the velocity using the constant value for the acceleration given by \( -g \). We have
+<h2 id="constant-acceleration-case-the-velocity">Constant acceleration case, the velocity </h2>
+
+<p>Let us compute the velocity using the constant value for the acceleration given by \( -g \). We have</p>
 <p>&nbsp;<br>
 $$
 v(t)=v(t_0)+\int_{t_0}^t dt a(t)=v(t_0)+\int_{t_0}^t dt (-g).
 $$
 <p>&nbsp;<br>
 
-Using our initial time as $t_0=0$s and setting the initial velocity $v(t_0)=v_0=0$m/s we get when integrating
+<p>Using our initial time as $t_0=0$s and setting the initial velocity $v(t_0)=v_0=0$m/s we get when integrating</p>
 <p>&nbsp;<br>
 $$
 v(t)=-gt.
 $$
 <p>&nbsp;<br>
 
-The more general case is
+<p>The more general case is</p>
 <p>&nbsp;<br>
 $$
 v(t)=v_0-g(t-t_0).
 $$
 <p>&nbsp;<br>
 
-We can then integrate the velocity and obtain the final formula for the position as function of time through
+<p>We can then integrate the velocity and obtain the final formula for the position as function of time through</p>
 <p>&nbsp;<br>
 $$
 y(t)=y(t_0)+\int_{t_0}^t dt v(t)=y_0+\int_{t_0}^t dt v(t)=y_0+\int_{t_0}^t dt (-gt),
 $$
 <p>&nbsp;<br>
 
-With $y_0=10$m and $t_0=0$s, we obtain the equation we started with
+<p>With $y_0=10$m and $t_0=0$s, we obtain the equation we started with</p>
 <p>&nbsp;<br>
 $$
 y(t)=10-\frac{1}{2}gt^2.
@@ -495,114 +676,127 @@ $$
 <p>&nbsp;<br>
 </section>
 
-
 <section>
-<h2 id="___sec10">Computing the averages </h2>
-After this mathematical background we are now ready to compute the mean velocity using our data.
-<p>
+<h2 id="computing-the-averages">Computing the averages </h2>
+<p>After this mathematical background we are now ready to compute the mean velocity using our data.</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #228B22"># Now we can compute the mean velocity using our data</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="font-size: 80%; line-height: 125%;"><span style="color: #228B22"># Now we can compute the mean velocity using our data</span>
 <span style="color: #228B22"># We define first an array Vaverage</span>
 n = np.size(t)
 Vaverage = np.zeros(n)
-<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">1</span>,n-<span style="color: #B452CD">1</span>):
-    Vaverage[i] = (y[i+<span style="color: #B452CD">1</span>]-y[i])/DeltaT
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">1</span>,n):
+    Vaverage[i] = (y[i]-y[i-<span style="color: #B452CD">1</span>])/DeltaT
 <span style="color: #228B22"># Now we can compute the mean accelearatio using our data</span>
 <span style="color: #228B22"># We define first an array Aaverage</span>
 n = np.size(t)
 Aaverage = np.zeros(n)
 Aaverage[<span style="color: #B452CD">0</span>] = -g
-<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">1</span>,n-<span style="color: #B452CD">1</span>):
-    Aaverage[i] = (Vaverage[i+<span style="color: #B452CD">1</span>]-Vaverage[i])/DeltaT
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">1</span>,n):
+    Aaverage[i] = (Vaverage[i]-Vaverage[i-<span style="color: #B452CD">1</span>])/DeltaT
 data = {<span style="color: #CD5555">&#39;t[s]&#39;</span>: t,
         <span style="color: #CD5555">&#39;y[m]&#39;</span>: y,
         <span style="color: #CD5555">&#39;v[m/s]&#39;</span>: Vaverage,
         <span style="color: #CD5555">&#39;a[m/s^2]&#39;</span>: Aaverage
         }
 NewData = pd.DataFrame(data)
-display(NewData[<span style="color: #B452CD">0</span>:n-<span style="color: #B452CD">2</span>])
-</pre></div>
-<p>
-Note that we don't print the last values!
+display(NewData[<span style="color: #B452CD">0</span>:n])
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>Note that we used the previous value in the computation of the average velocities and accelerations. We did this since we wanted to compute the value for \( i=1 \) as well. </p>
 </section>
 
-
 <section>
-<h2 id="___sec11">Including Air Resistance in our model </h2>
+<h2 id="including-air-resistance-in-our-model">Including Air Resistance in our model </h2>
 
-<p>
-In our discussions till now of the falling baseball, we have ignored
+<p>In our discussions till now of the falling baseball, we have ignored
 air resistance and simply assumed that our system is only influenced
 by the gravitational force.  We will postpone the derivation of air
 resistance till later, after our discussion of Newton's laws and
 forces.
+</p>
 
-<p>
-For our discussions here it suffices to state that the accelerations is now modified to
+<p>For our discussions here it suffices to state that the accelerations is now modified to</p>
 <p>&nbsp;<br>
 $$
 \boldsymbol{a}(t) = -g +D\boldsymbol{v}(t)\vert v(t)\vert,
 $$
 <p>&nbsp;<br>
 
-where \( \vert v(t)\vert \) is the absolute value of the velocity and \( D \) is a constant which pertains to the specific object we are studying.
+<p>where \( \vert v(t)\vert \) is the absolute value of the velocity and \( D \) is a constant which pertains to the specific object we are studying.
 Since we are dealing with motion in one dimension, we can simplify the above to
+</p>
 <p>&nbsp;<br>
 $$
 a(t) = -g +Dv^2(t). 
 $$
 <p>&nbsp;<br>
 
-We can rewrite this as a differential equation
+<p>We can rewrite this as a differential equation</p>
 <p>&nbsp;<br>
 $$
 a(t) = \frac{dv}{dt}=\frac{d^2y}{dt^2}= -g +Dv^2(t). 
 $$
 <p>&nbsp;<br>
 
-<p>
-Using the integral equations discussed above we can integrate twice
+<p>Using the integral equations discussed above we can integrate twice
 and obtain first the velocity as function of time and thereafter the
 position as function of time.
+</p>
 
-<p>
-For this particular case, we can actually obtain an analytical
+<p>For this particular case, we can actually obtain an analytical
 solution for the velocity and for the position. Here we will first
 compute the solutions analytically, thereafter we will derive Euler's
 method for solving these differential equations numerically.
+</p>
 </section>
 
-
 <section>
-<h2 id="___sec12">Analytical solutions </h2>
+<h2 id="analytical-solutions">Analytical solutions </h2>
 
-<p>
-For simplicity let us just write \( v(t) \) as \( v \). We have
+<p>For simplicity let us just write \( v(t) \) as \( v \). We have</p>
 <p>&nbsp;<br>
 $$
 \frac{dv}{dt}= -g +Dv^2(t). 
 $$
 <p>&nbsp;<br>
 
-<p>
-We can solve this using the technique of separation of variables. We
+<p>We can solve this using the technique of separation of variables. We
 isolate on the left all terms that involve \( v \) and on the right all
 terms that involve time. We get then
+</p>
 <p>&nbsp;<br>
 $$
 \frac{dv}{g -Dv^2(t) }= -dt,
 $$
 <p>&nbsp;<br>
 
-<p>
-We scale now the equation to the left by introducing a constant
+<p>We scale now the equation to the left by introducing a constant
 \( v_T=\sqrt{g/D} \). This constant has dimension length/time. Can you
 show this?
+</p>
 
-<p>
-Next we integrate the left-hand side (lhs) from \( v_0=0 \) m/s to \( v \) and
+<p>Next we integrate the left-hand side (lhs) from \( v_0=0 \) m/s to \( v \) and
 the right-hand side (rhs) from \( t_0=0 \) to \( t \) and obtain
+</p>
 
 <p>&nbsp;<br>
 $$
@@ -610,14 +804,14 @@ $$
 $$
 <p>&nbsp;<br>
 
-We can reorganize these equations as
+<p>We can reorganize these equations as</p>
 <p>&nbsp;<br>
 $$
 v_T\mathrm{arctanh}(\frac{v}{v_T})  =-gt,
 $$
 <p>&nbsp;<br>
 
-which gives us \( v \) as function of time
+<p>which gives us \( v \) as function of time</p>
 <p>&nbsp;<br>
 $$
 v(t)=v_T\tanh{-(\frac{gt}{v_T})}.
@@ -625,83 +819,81 @@ $$
 <p>&nbsp;<br>
 </section>
 
-
 <section>
-<h2 id="___sec13">Finding the final height </h2>
-With the velocity we can then find the height \( y(t) \) by integrating yet another time, that is
+<h2 id="finding-the-final-height">Finding the final height </h2>
+<p>With the velocity we can then find the height \( y(t) \) by integrating yet another time, that is</p>
 <p>&nbsp;<br>
 $$
 y(t)=y(t_0)+\int_{t_0}^t dt v(t)=\int_{0}^t dt[v_T\tanh{-(\frac{gt}{v_T})}]. 
 $$
 <p>&nbsp;<br>
 
-This integral is a little bit trickier but we can look it up in a table over 
+<p>This integral is a little bit trickier but we can look it up in a table over 
 known integrals and we get
+</p>
 <p>&nbsp;<br>
 $$
 y(t)=y(t_0)-\frac{v_T^2}{g}\log{[\cosh{(\frac{gt}{v_T})}]}.
 $$
 <p>&nbsp;<br>
 
-Alternatively we could have used the symbolic Python package <b>Sympy</b>  (example will be inserted later).
+<p>Alternatively we could have used the symbolic Python package <b>Sympy</b>.</p>
 
-<p>
-In most cases however, we need to revert to numerical solutions.
+<p>In most cases however, we need to revert to numerical solutions. </p>
 </section>
 
-
 <section>
-<h2 id="___sec14">Our first attempt at solving differential equations </h2>
+<h2 id="our-first-attempt-at-solving-differential-equations">Our first attempt at solving differential equations </h2>
 
-<p>
-Here we will try the simplest possible approach to solving the second-order differential 
+<p>Here we will try the simplest possible approach to solving the second-order differential 
 equation
+</p>
 <p>&nbsp;<br>
 $$
 a(t) =\frac{d^2y}{dt^2}= -g +Dv^2(t). 
 $$
 <p>&nbsp;<br>
 
-We rewrite it as two coupled first-order equations (this is a standard approach)
+<p>We rewrite it as two coupled first-order equations (this is a standard approach)</p>
 <p>&nbsp;<br>
 $$
 \frac{dy}{dt} = v(t),
 $$
 <p>&nbsp;<br>
 
-with initial condition \( y(t_0)=y_0 \) and 
+<p>with initial condition \( y(t_0)=y_0 \) and </p>
 <p>&nbsp;<br>
 $$
 a(t) =\frac{dv}{dt}= -g +Dv^2(t),
 $$
 <p>&nbsp;<br>
 
-with initial condition \( v(t_0)=v_0 \).
+<p>with initial condition \( v(t_0)=v_0 \).</p>
 
-<p>
-Many of the algorithms for solving differential equations start with simple Taylor equations.
+<p>Many of the algorithms for solving differential equations start with simple Taylor equations.
 If we now Taylor expand \( y \) and \( v \) around a value \( t+\Delta t \) we have
+</p>
 <p>&nbsp;<br>
 $$
 y(t+\Delta t) = y(t)+\Delta t \frac{dy}{dt}+\frac{\Delta t^2}{2!} \frac{d^2y}{dt^2}+O(\Delta t^3),
 $$
 <p>&nbsp;<br>
 
-and
+<p>and</p>
 <p>&nbsp;<br>
 $$
 v(t+\Delta t) = v(t)+\Delta t \frac{dv}{dt}+\frac{\Delta t^2}{2!} \frac{d^2v}{dt^2}+O(\Delta t^3).
 $$
 <p>&nbsp;<br>
 
-Using the fact that \( dy/dt = v \) and \( dv/dt=a \) and keeping only terms up to \( \Delta t \) we have
+<p>Using the fact that \( dy/dt = v \) and \( dv/dt=a \) and keeping only terms up to \( \Delta t \) we have</p>
 <p>&nbsp;<br>
 $$
 y(t+\Delta t) = y(t)+\Delta t v(t)+O(\Delta t^2),
 $$
 <p>&nbsp;<br>
 
-and
+<p>and</p>
 <p>&nbsp;<br>
 $$
 v(t+\Delta t) = v(t)+\Delta t a(t)+O(\Delta t^2).
@@ -709,14 +901,13 @@ $$
 <p>&nbsp;<br>
 </section>
 
-
 <section>
-<h2 id="___sec15">Discretizing our equations </h2>
+<h2 id="discretizing-our-equations">Discretizing our equations </h2>
 
-<p>
-Using our discretized versions of the equations with for example
+<p>Using our discretized versions of the equations with for example
 \( y_{i}=y(t_i) \) and \( y_{i\pm 1}=y(t_i+\Delta t) \), we can rewrite the
 above equations as (and truncating at \( \Delta t \))
+</p>
 
 <p>&nbsp;<br>
 $$
@@ -724,99 +915,224 @@ y_{i+1} = y_i+\Delta t v_i,
 $$
 <p>&nbsp;<br>
 
-and
+<p>and</p>
 <p>&nbsp;<br>
 $$
 v_{i+1} = v_i+\Delta t a_i.
 $$
 <p>&nbsp;<br>
 
-These are the famous Euler equations (forward Euler).
+<p>These are the famous Euler equations (forward Euler).</p>
 
-<p>
-To solve these equations numerically we start at a time \( t_0 \) and simply integrate up these equations to a final time \( t_f \),
+<p>To solve these equations numerically we start at a time \( t_0 \) and simply integrate up these equations to a final time \( t_f \),
 The step size \( \Delta t \) is an input  parameter in our code.
 You can define it directly in the code below as
-<p>
+</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span>DeltaT = <span style="color: #B452CD">0.1</span>
-</pre></div>
-<p>
-With a given final time <b>tfinal</b>  we can then find the number of integration points via the <b>ceil</b> function included in the <b>math</b> package of Python
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="font-size: 80%; line-height: 125%;">DeltaT = <span style="color: #B452CD">0.1</span>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>With a given final time <b>tfinal</b>  we can then find the number of integration points via the <b>ceil</b> function included in the <b>math</b> package of Python
 as
-<p>
+</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #228B22">#define final time, assuming that initial time is zero</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="font-size: 80%; line-height: 125%;"><span style="color: #228B22">#define final time, assuming that initial time is zero</span>
 <span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> ceil
 tfinal = <span style="color: #B452CD">0.5</span>
 n = ceil(tfinal/DeltaT)
 <span style="color: #658b00">print</span>(n)
-</pre></div>
-<p>
-The <b>ceil</b> function returns the smallest integer not less than the input in say
-<p>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>The <b>ceil</b> function returns the smallest integer not less than the input in say</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span>x = <span style="color: #B452CD">21.15</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="font-size: 80%; line-height: 125%;">x = <span style="color: #B452CD">21.15</span>
 <span style="color: #658b00">print</span>(ceil(x))
-</pre></div>
-<p>
-which in the case here is 22.
-<p>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>which in the case here is 22.</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span>x = <span style="color: #B452CD">21.75</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="font-size: 80%; line-height: 125%;">x = <span style="color: #B452CD">21.75</span>
 <span style="color: #658b00">print</span>(ceil(x))
-</pre></div>
-<p>
-which also yields 22. The  <b>floor</b> function in the <b>math</b> package
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>which also yields 22. The  <b>floor</b> function in the <b>math</b> package
 is used to return the closest integer value which is less than or equal to the specified expression or value.
 Compare the previous result to the usage of <b>floor</b>
-<p>
+</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> floor
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="font-size: 80%; line-height: 125%;"><span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> floor
 x = <span style="color: #B452CD">21.75</span>
 <span style="color: #658b00">print</span>(floor(x))
-</pre></div>
-<p>
-Alternatively, we can define ourselves the number of integration(mesh) points. In this case we could have
-<p>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>Alternatively, we can define ourselves the number of integration(mesh) points. In this case we could have</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span>n = <span style="color: #B452CD">10</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="font-size: 80%; line-height: 125%;">n = <span style="color: #B452CD">10</span>
 tinitial = <span style="color: #B452CD">0.0</span>
 tfinal = <span style="color: #B452CD">0.5</span>
 DeltaT = (tfinal-tinitial)/(n)
 <span style="color: #658b00">print</span>(DeltaT)
-</pre></div>
-<p>
-Since we will set up one-dimensional arrays that contain the values of
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>Since we will set up one-dimensional arrays that contain the values of
 various variables like time, position, velocity, acceleration etc, we
 need to know the value of \( n \), the number of data points (or
 integration or mesh points).  With \( n \) we can initialize a given array
 by setting all elelements to zero, as done here
+</p>
 
-<p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #228B22"># define array a</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="font-size: 80%; line-height: 125%;"><span style="color: #228B22"># define array a</span>
 a = np.zeros(n)
 <span style="color: #658b00">print</span>(a)
-</pre></div>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </section>
 
-
 <section>
-<h2 id="___sec16">Code for implementing Euler's method </h2>
-In the code here we implement this simple Eurler scheme choosing a value for \( D=0.0245 \) m/s.
+<h2 id="code-for-implementing-euler-s-method">Code for implementing Euler's method </h2>
+<p>In the code here we implement this simple Eurler scheme choosing a value for \( D=0.0245 \) m/s. </p>
 
-<p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #228B22"># Common imports</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="font-size: 80%; line-height: 125%;"><span style="color: #228B22"># Common imports</span>
 <span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
 <span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">pandas</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">pd</span>
 <span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> *
@@ -898,19 +1214,31 @@ axs[<span style="color: #B452CD">2</span>].set_ylabel(<span style="color: #CD555
 fig.tight_layout()
 save_fig(<span style="color: #CD5555">&quot;EulerIntegration&quot;</span>)
 plt.show()
-</pre></div>
-<p>
-Try different values for \( \Delta t \) and study the difference between the exact solution and the numerical solution.
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>Try different values for \( \Delta t \) and study the difference between the exact solution and the numerical solution.</p>
 </section>
 
-
 <section>
-<h2 id="___sec17">Simple extension, the Euler-Cromer method </h2>
+<h2 id="simple-extension-the-euler-cromer-method">Simple extension, the Euler-Cromer method </h2>
 
-<p>
-The Euler-Cromer method is a simple variant of the standard Euler
+<p>The Euler-Cromer method is a simple variant of the standard Euler
 method. We use the newly updated velocity \( v_{i+1} \) as an input to the
 new position, that is, instead of
+</p>
 
 <p>&nbsp;<br>
 $$
@@ -918,40 +1246,186 @@ y_{i+1} = y_i+\Delta t v_i,
 $$
 <p>&nbsp;<br>
 
-and
+<p>and</p>
 <p>&nbsp;<br>
 $$
 v_{i+1} = v_i+\Delta t a_i,
 $$
 <p>&nbsp;<br>
 
-we use now the newly calculate for \( v_{i+1} \) as input to \( y_{i+1} \), that is 
+<p>we use now the newly calculate for \( v_{i+1} \) as input to \( y_{i+1} \), that is 
 we compute first 
+</p>
 <p>&nbsp;<br>
 $$
 v_{i+1} = v_i+\Delta t a_i,
 $$
 <p>&nbsp;<br>
 
-and then
+<p>and then</p>
 <p>&nbsp;<br>
 $$
 y_{i+1} = y_i+\Delta t v_{i+1},
 $$
 <p>&nbsp;<br>
 
-<p>
-Implementing the Euler-Cromer method yields a simple change to the previous code. We only need to change the following line in the loop over time
+<p>Implementing the Euler-Cromer method yields a simple change to the previous code. We only need to change the following line in the loop over time
 steps
-<p>
+</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="font-size: 80%; line-height: 125%;"><span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
     <span style="color: #228B22"># more codes in between here</span>
     v[i+<span style="color: #B452CD">1</span>] = v[i] + DeltaT*a[i]
     y[i+<span style="color: #B452CD">1</span>] = y[i] + DeltaT*v[i+<span style="color: #B452CD">1</span>]
     <span style="color: #228B22"># more code</span>
-</pre></div>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2 id="newton-s-laws">Newton's Laws </h2>
+
+<p>Let us now remind ourselves of Newton's laws, since these are the laws of motion we will study in this course.</p>
+
+<p>When analyzing a physical system we normally start with distinguishing between the object we are studying (we will label this in more general terms as our <b>system</b>) and how this system interacts with the environment (which often means everything else!)</p>
+
+<p>In our investigations we will thus analyze a specific physics problem in terms of the system and the environment.
+In doing so we need to identify the forces that act on the system and assume that the
+forces acting on the system must have a source, an identifiable cause in
+the environment.
+</p>
+
+<p>A force acting on for example a falling object must be related to an interaction with something in the environment.
+This also means that we do not consider internal forces. The latter are forces between
+one part of the object and another part. In this course we will mainly focus on external forces.
+</p>
+
+<p>Forces are either contact forces or long-range forces.</p>
+
+<p>Contact forces, as evident from the name, are forces that occur at the contact between
+the system and the environment. Well-known long-range forces are the gravitional force and the electromagnetic force.
+</p>
+</section>
+
+<section>
+<h2 id="setting-up-a-model-for-forces-acting-on-an-object">Setting up a model for forces acting on an object </h2>
+
+<p>In order to set up the forces which act on an object, the following steps may be useful</p>
+<ol>
+<p><li> Divide the problem into system and environment.</li>
+<p><li> Draw a figure of the object and everything in contact with the object.</li>
+<p><li> Draw a closed curve around the system.</li>
+<p><li> Find contact points&#8212;these are the points where contact forces may act.</li>
+<p><li> Give names and symbols to all the contact forces.</li>
+<p><li> Identify the long-range forces.</li>
+<p><li> Make a drawing of the object. Draw the forces as arrows, vectors, starting from where the force is acting. The direction of the vector(s) indicates the (positive) direction of the force. Try to make the length of the arrow indicate the relative magnitude of the forces.</li>
+<p><li> Draw in the axes of the coordinate system. It is often convenient to make one axis parallel to the direction of motion. When you choose the direction of the axis you also choose the positive direction for the axis.</li>
+</ol>
+</section>
+
+<section>
+<h2 id="newton-s-laws-the-second-one-first">Newton's Laws, the Second one first </h2>
+
+<p>Newton&#8217;s second law of motion: The force \( \boldsymbol{F} \) on an object of inertial mass \( m \)
+is related to the acceleration a of the object through
+</p>
+<p>&nbsp;<br>
+$$
+\boldsymbol{F} = m\boldsymbol{a},
+$$
+<p>&nbsp;<br>
+
+<p>where \( \boldsymbol{a} \) is the acceleration.</p>
+
+<p>Newton&#8217;s laws of motion are laws of nature that have been found by experimental
+investigations and have been shown to hold up to continued experimental investigations.
+Newton&#8217;s laws are valid over a wide range of length- and time-scales. We
+use Newton&#8217;s laws of motion to describe everything from the motion of atoms to the
+motion of galaxies.
+</p>
+
+<p>The second law is a vector equation with the acceleration having the same
+direction as the force. The acceleration is proportional to the force via the mass \( m \) of the system under study.
+</p>
+
+<p>Newton&#8217;s second law introduces a new property of an object, the so-called 
+inertial mass \( m \). We determine the inertial mass of an object by measuring the
+acceleration for a given applied force.
+</p>
+</section>
+
+<section>
+<h2 id="then-the-first-law">Then the First Law </h2>
+
+<p>What happens if the net external force on a body is zero? Applying Newton&#8217;s second
+law, we find:
+</p>
+<p>&nbsp;<br>
+$$
+\boldsymbol{F} = 0 = m\boldsymbol{a},
+$$
+<p>&nbsp;<br>
+
+<p>which gives using the definition of the acceleration</p>
+<p>&nbsp;<br>
+$$
+\boldsymbol{a} = \frac{d\boldsymbol{v}}{dt}=0.
+$$
+<p>&nbsp;<br>
+
+<p>The acceleration is zero, which means that the velocity of the object is constant. This
+is often referred to as Newton&#8217;s first law. An object in a state of uniform motion tends to remain in
+that state unless an external force changes its state of motion.
+Why do we need a separate law for this? Is it not simply a special case of Newton&#8217;s
+second law? Yes, Newton&#8217;s first law can be deduced from the second law as we have
+illustrated. However, the first law is often used for a different purpose: Newton&#8217;s
+First Law tells us about the limit of applicability of Newton&#8217;s Second law. Newton&#8217;s
+Second law can only be used in reference systems where the First law is obeyed. But
+is not the First law always valid? No! The First law is only valid in reference systems
+that are not accelerated. If you observe the motion of a ball from an accelerating
+car, the ball will appear to accelerate even if there are no forces acting on it. We call
+systems that are not accelerating inertial systems, and Newton&#8217;s first law is often
+called the law of inertia. Newton&#8217;s first and second laws of motion are only valid in
+inertial systems. 
+</p>
+
+<p>A system is an inertial system if it is not accelerated. It means that the reference system
+must not be accelerating linearly or rotating. Unfortunately, this means that most
+systems we know are not really inertial systems. For example, the surface of the
+Earth is clearly not an inertial system, because the Earth is rotating. The Earth is also
+not an inertial system, because it ismoving in a curved path around the Sun. However,
+even if the surface of the Earth is not strictly an inertial system, it may be considered
+to be approximately an inertial system for many laboratory-size experiments.
+</p>
+</section>
+
+<section>
+<h2 id="and-finally-the-third-law">And finally the Third Law </h2>
+
+<p>If there is a force from object A on object B, there is also a force from object B on object A.
+This fundamental principle of interactions is called Newton&#8217;s third law. We do not
+know of any force that do not obey this law: All forces appear in pairs. Newton&#8217;s
+third law is usually formulated as: For every action there is an equal and opposite
+reaction.
+</p>
 </section>
 
 
@@ -967,124 +1441,124 @@ steps
 // https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({
 
-    // Display navigation controls in the bottom right corner
-    controls: true,
+  // Display navigation controls in the bottom right corner
+  controls: true,
 
-    // Display progress bar (below the horiz. slider)
-    progress: true,
+  // Display progress bar (below the horiz. slider)
+  progress: true,
 
-    // Display the page number of the current slide
-    slideNumber: true,
+  // Display the page number of the current slide
+  slideNumber: true,
 
-    // Push each slide change to the browser history
-    history: false,
+  // Push each slide change to the browser history
+  history: false,
 
-    // Enable keyboard shortcuts for navigation
-    keyboard: true,
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
 
-    // Enable the slide overview mode
-    overview: true,
+  // Enable the slide overview mode
+  overview: true,
 
-    // Vertical centering of slides
-    //center: true,
-    center: false,
+  // Vertical centering of slides
+  //center: true,
+  center: false,
 
-    // Enables touch navigation on devices with touch input
-    touch: true,
+  // Enables touch navigation on devices with touch input
+  touch: true,
 
-    // Loop the presentation
-    loop: false,
+  // Loop the presentation
+  loop: false,
 
-    // Change the presentation direction to be RTL
-    rtl: false,
+  // Change the presentation direction to be RTL
+  rtl: false,
 
-    // Turns fragments on and off globally
-    fragments: true,
+  // Turns fragments on and off globally
+  fragments: true,
 
-    // Flags if the presentation is running in an embedded mode,
-    // i.e. contained within a limited portion of the screen
-    embedded: false,
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
 
-    // Number of milliseconds between automatically proceeding to the
-    // next slide, disabled when set to 0, this value can be overwritten
-    // by using a data-autoslide attribute on your slides
-    autoSlide: 0,
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
 
-    // Stop auto-sliding after user input
-    autoSlideStoppable: true,
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
 
-    // Enable slide navigation via mouse wheel
-    mouseWheel: false,
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
 
-    // Hides the address bar on mobile devices
-    hideAddressBar: true,
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
 
-    // Opens links in an iframe preview overlay
-    previewLinks: false,
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
 
-    // Transition style
-    transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
+  // Transition style
+  transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-    // Transition speed
-    transitionSpeed: 'default', // default/fast/slow
+  // Transition speed
+  transitionSpeed: 'default', // default/fast/slow
 
-    // Transition style for full page slide backgrounds
-    backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
+  // Transition style for full page slide backgrounds
+  backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
 
-    // Number of slides away from the current that are visible
-    viewDistance: 3,
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
 
-    // Parallax background image
+  // Parallax background image
     //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
 
-    // Parallax background size
-    //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+  // Parallax background size
+  //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
 
-    theme: Reveal.getQueryHash().theme, // available themes are in reveal.js/css/theme
-    transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+  theme: Reveal.getQueryHash().theme, // available themes are in reveal.js/css/theme
+    transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/none
 
 });
 
 Reveal.initialize({
-    dependencies: [
-        // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
-        { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+  dependencies: [
+      // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+      { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
 
-        // Interpret Markdown in <section> elements
-        { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-        { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      // Interpret Markdown in <section> elements
+      { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 
-        // Syntax highlight for <code> elements
-        { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      // Syntax highlight for <code> elements
+      { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 
-        // Zoom in and out with Alt+click
-        { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      // Zoom in and out with Alt+click
+      { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 
-        // Speaker notes
-        { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+      // Speaker notes
+      { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
 
-        // Remote control your reveal.js presentation using a touch device
-        //{ src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } },
+      // Remote control your reveal.js presentation using a touch device
+      //{ src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } },
 
-        // MathJax
-        //{ src: 'reveal.js/plugin/math/math.js', async: true }
-    ]
+      // MathJax
+      //{ src: 'reveal.js/plugin/math/math.js', async: true }
+  ]
 });
 
 Reveal.initialize({
 
-    // The "normal" size of the presentation, aspect ratio will be preserved
-    // when the presentation is scaled to fit different resolutions. Can be
-    // specified using percentage units.
-    width: 1170,  // original: 960,
-    height: 700,
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 1170,  // original: 960,
+  height: 700,
 
-    // Factor of the display size that should remain empty around the content
-    margin: 0.1,
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
 
-    // Bounds for smallest/largest possible scale to apply to content
-    minScale: 0.2,
-    maxScale: 1.0
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.0
 
 });
 </script>
@@ -1093,7 +1567,8 @@ Reveal.initialize({
 <div style="position: absolute; bottom: 0px; left: 0; margin-left: 0px">
 <img src="somelogo.png">
 </div>
-     end footer logo -->
+   end footer logo -->
+
 
 
 

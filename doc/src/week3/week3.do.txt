@@ -1,4 +1,4 @@
-TITLE: PHY321: Review of Vectors, Math and first Numerical Examples for simple Motion Problems
+TITLE: PHY321: Motion examples, Forces, Newton's Laws and Motion Example
 AUTHOR: "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/" {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and Facility for Rare Ion Beams (FRIB), Michigan State University, USA & Department of Physics, University of Oslo, Norway
 DATE: today
 
@@ -6,13 +6,101 @@ DATE: today
 !split
 =====   Aims and Overarching Motivation =====
 
+=== Monday ===
+
+We try to finalize the discussion on falling objects and numerical aspects thereof.
+
+Recommended reading: Taylor 1.3
+
 === Wednesday ===
 
-On Wednesday the 20th we will mainly go through the overview material from week 2, January 11-15.  See the learning material fro week 2 at for example URL:"https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2-bs.html".
+We revisit Newton's laws and discuss how to analyze a problem.
+
+Recommended reading: Taylor 1.4 and 1.5
 
 ===  Friday ===
 
-We start studying the problem of a  falling object and use this to introduce numerical aspects.
+We discuss several examples and try to wrap up the discussions on Newton's laws.
+
+Recommended reading: Taylor 1.4-1.6 and 2.1-2.2 as examples of motion problems.
+
+
+
+!split
+===== Basic Steps of Scientific Investigations =====
+
+Last week we discussed several basi elements of the scientific method. We repeat them here.
+
+An overarching aim in this course is to give you a deeper
+understanding of the scientific method. The problems we study will all
+involve cases where we can apply classical mechanics. In our previous
+material we already assumed that we had a model for the motion of an
+object.  Alternatively we could have data from experiment (like Usain
+Bolt's 100m world record run in 2008).  Or we could have performed
+ourselves an experiment and we want to understand which forces are at
+play and whether these forces can be understood in terms of
+fundamental forces.
+
+Our first step consists in identifying the problem. What we sketch
+here may include a mix of experiment and theoretical simulations, or
+just experiment or only theory.
+
+!split
+===== Identifying our System =====
+
+Here we can ask questions like
+o What kind of object is moving
+o What kind of data do we have
+o How do we measure position, velocity, acceleration etc
+o Which initial conditions influence our system
+o Other aspects which allow us to identify the system
+
+!split
+===== Defining a Model =====
+
+With our eventual data and observations we would now like to develop a
+model for the system. In the end we want obviously to be able to
+understand which forces are at play and how they influence our
+specific system. That is, can we extract some deeper insights about a
+system?
+
+We need then to
+o Find the forces that act on our system
+o Introduce models for the forces
+o Identify the equations which can govern the system (Newton's second law for example)
+o More elements we deem important for defining our model
+
+!split
+===== Solving the Equations =====
+
+With the model at hand, we can then solve the equations. In classical mechanics we normally end up  with solving sets of coupled ordinary differential equations or partial differential equations.
+o Using Newton's second law we have equations of the type $\bm{F}=m\bm{a}=md\bm{v}/dt$
+o We need to  define the initial conditions (typically the initial velocity and position as functions of time) and/or initial conditions and boundary conditions
+o The solution of the equations give us then the position, the velocity and other time-dependent quantities which may specify the motion of a given object.
+
+
+We are not yet done. With our lovely solvers, we need to start thinking.
+
+!split
+===== Analyze =====
+
+Now it is time to ask the big questions. What do our results mean? Can we give a simple interpretation in terms of fundamental laws?  What do our results mean? Are they correct?
+Thus, typical questions we may ask are
+o Are our results for say $\bm{r}(t)$ valid?  Do we trust what we did?  Can you validate and verify the correctness of your results?
+o Evaluate the answers and their implications
+o Compare with experimental data if possible. Does our model make sense?
+o and obviously many other questions.
+
+The analysis stage feeds back to the first stage. It may happen that
+the data we had were not good enough, there could be large statistical
+uncertainties. We may need to collect more data or perhaps we did a
+sloppy job in identifying the degrees of freedom.
+
+All these steps are essential elements in a scientific
+enquiry. Hopefully, through a mix of numerical simulations, analytical
+calculations and experiments we may gain a deeper insight about the
+physics of a specific system.
+
 
 !split
 ===== Falling baseball in one dimension =====
@@ -148,7 +236,7 @@ We define now the average velocity as
 In the code we have set the time step $\Delta t$ to a given value. We could define it in terms of the number of points $n$ as
 !bt
 \[
-\Delta t = \frac{t_{\mathrm{final}-}t_{\mathrm{initial}}}{n+1}.
+\Delta t = \frac{t_{\mathrm{final}-}t_{\mathrm{initial}}}{n}.
 \]
 !et
 
@@ -266,6 +354,7 @@ spatial dimension.
 
 !split
 ===== Constant acceleration case, the velocity =====
+
 Let us compute the velocity using the constant value for the acceleration given by $-g$. We have
 !bt
 \[
@@ -307,25 +396,25 @@ After this mathematical background we are now ready to compute the mean velocity
 # We define first an array Vaverage
 n = np.size(t)
 Vaverage = np.zeros(n)
-for i in range(1,n-1):
-    Vaverage[i] = (y[i+1]-y[i])/DeltaT
+for i in range(1,n):
+    Vaverage[i] = (y[i]-y[i-1])/DeltaT
 # Now we can compute the mean accelearatio using our data
 # We define first an array Aaverage
 n = np.size(t)
 Aaverage = np.zeros(n)
 Aaverage[0] = -g
-for i in range(1,n-1):
-    Aaverage[i] = (Vaverage[i+1]-Vaverage[i])/DeltaT
+for i in range(1,n):
+    Aaverage[i] = (Vaverage[i]-Vaverage[i-1])/DeltaT
 data = {'t[s]': t,
         'y[m]': y,
         'v[m/s]': Vaverage,
         'a[m/s^2]': Aaverage
         }
 NewData = pd.DataFrame(data)
-display(NewData[0:n-2])
+display(NewData[0:n])
 !ec
 
-Note that we don't print the last values! 
+Note that we used the previous value in the computation of the average velocities and accelerations. We did this since we wanted to compute the value for $i=1$ as well. 
 
 
 
@@ -427,7 +516,7 @@ known integrals and we get
 y(t)=y(t_0)-\frac{v_T^2}{g}\log{[\cosh{(\frac{gt}{v_T})}]}.
 \]
 !et
-Alternatively we could have used the symbolic Python package _Sympy_  (example will be inserted later). 
+Alternatively we could have used the symbolic Python package _Sympy_.
 
 In most cases however, we need to revert to numerical solutions. 
 
@@ -703,6 +792,124 @@ for i in range(n-1):
 
 
 
+
+
+
+
+!split
+===== Newton's Laws =====
+
+Let us now remind ourselves of Newton's laws, since these are the laws of motion we will study in this course.
+
+
+When analyzing a physical system we normally start with distinguishing between the object we are studying (we will label this in more general terms as our _system_) and how this system interacts with the environment (which often means everything else!)
+
+In our investigations we will thus analyze a specific physics problem in terms of the system and the environment.
+In doing so we need to identify the forces that act on the system and assume that the
+forces acting on the system must have a source, an identifiable cause in
+the environment.
+
+A force acting on for example a falling object must be related to an interaction with something in the environment.
+This also means that we do not consider internal forces. The latter are forces between
+one part of the object and another part. In this course we will mainly focus on external forces.
+
+Forces are either contact forces or long-range forces.
+
+Contact forces, as evident from the name, are forces that occur at the contact between
+the system and the environment. Well-known long-range forces are the gravitional force and the electromagnetic force.
+
+
+!split
+===== Setting up a model for forces acting on an object =====
+
+In order to set up the forces which act on an object, the following steps may be useful
+o Divide the problem into system and environment.
+o Draw a figure of the object and everything in contact with the object.
+o Draw a closed curve around the system.
+o Find contact points—these are the points where contact forces may act.
+o Give names and symbols to all the contact forces.
+o Identify the long-range forces.
+o Make a drawing of the object. Draw the forces as arrows, vectors, starting from where the force is acting. The direction of the vector(s) indicates the (positive) direction of the force. Try to make the length of the arrow indicate the relative magnitude of the forces.
+o Draw in the axes of the coordinate system. It is often convenient to make one axis parallel to the direction of motion. When you choose the direction of the axis you also choose the positive direction for the axis.
+
+
+!split
+===== Newton's Laws, the Second one first =====
+
+
+Newton’s second law of motion: The force $\bm{F}$ on an object of inertial mass $m$
+is related to the acceleration a of the object through
+!bt
+\[
+\bm{F} = m\bm{a},
+\]
+!et
+where $\bm{a}$ is the acceleration.
+
+Newton’s laws of motion are laws of nature that have been found by experimental
+investigations and have been shown to hold up to continued experimental investigations.
+Newton’s laws are valid over a wide range of length- and time-scales. We
+use Newton’s laws of motion to describe everything from the motion of atoms to the
+motion of galaxies.
+
+The second law is a vector equation with the acceleration having the same
+direction as the force. The acceleration is proportional to the force via the mass $m$ of the system under study.
+
+
+Newton’s second law introduces a new property of an object, the so-called 
+inertial mass $m$. We determine the inertial mass of an object by measuring the
+acceleration for a given applied force.
+
+
+!split
+===== Then the First Law =====
+
+
+What happens if the net external force on a body is zero? Applying Newton’s second
+law, we find:
+!bt
+\[
+\bm{F} = 0 = m\bm{a},
+\]
+!et
+which gives using the definition of the acceleration
+!bt
+\[
+\bm{a} = \frac{d\bm{v}}{dt}=0.
+\]
+!et
+The acceleration is zero, which means that the velocity of the object is constant. This
+is often referred to as Newton’s first law. An object in a state of uniform motion tends to remain in
+that state unless an external force changes its state of motion.
+Why do we need a separate law for this? Is it not simply a special case of Newton’s
+second law? Yes, Newton’s first law can be deduced from the second law as we have
+illustrated. However, the first law is often used for a different purpose: Newton’s
+First Law tells us about the limit of applicability of Newton’s Second law. Newton’s
+Second law can only be used in reference systems where the First law is obeyed. But
+is not the First law always valid? No! The First law is only valid in reference systems
+that are not accelerated. If you observe the motion of a ball from an accelerating
+car, the ball will appear to accelerate even if there are no forces acting on it. We call
+systems that are not accelerating inertial systems, and Newton’s first law is often
+called the law of inertia. Newton’s first and second laws of motion are only valid in
+inertial systems. 
+
+A system is an inertial system if it is not accelerated. It means that the reference system
+must not be accelerating linearly or rotating. Unfortunately, this means that most
+systems we know are not really inertial systems. For example, the surface of the
+Earth is clearly not an inertial system, because the Earth is rotating. The Earth is also
+not an inertial system, because it ismoving in a curved path around the Sun. However,
+even if the surface of the Earth is not strictly an inertial system, it may be considered
+to be approximately an inertial system for many laboratory-size experiments.
+
+!split
+===== And finally the Third Law =====
+
+
+If there is a force from object A on object B, there is also a force from object B on object A.
+This fundamental principle of interactions is called Newton’s third law. We do not
+know of any force that do not obey this law: All forces appear in pairs. Newton’s
+third law is usually formulated as: For every action there is an equal and opposite
+reaction.
 
 
 
