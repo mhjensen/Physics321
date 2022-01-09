@@ -94,11 +94,11 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Activity | Percentage of total score |
 |------|-----|
-|Homeworks, 9 in total and due Mondays the week after | 20% |
+|Homeworks, 9 in total and due Fridayss the week after | 20% |
 | First Midterm Project, _due Friday March  4_ | 25% |
-| Second  Midterm Project, _due  Friday April 1_ | 25% |
+| Second  Midterm Project, _due  Friday April 8_ | 25% |
 | Final Exam project, _due Friday May 6_ |  30%  |
-| Extra Credit Assignment, homework 10,  (Due Monday  April 29)| 10% |
+| Extra Credit Assignment, homework 10,  (due Friday  April 29)| 10% |
 
 | Grading scale | | | | | | | 
 |-----|-----|-------|------|--------|--------|--------|
@@ -120,49 +120,49 @@ Weekly mails (Fridays) with updates, plans for lectures etc will be sent to ever
 - Monday 1/10: Introduction to the course and reminder  on vectors, space, time and motion, JRT chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). Python programming reminder, elements from CMSE 201 and how they are used in this course. Installing software (anaconda). See slides at https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). 
 AMS chapters 2 and 4 are very useful. 1st homework due January 19.
 - Wednesday 1/12: Forces and Newton's laws of motion. Free fall problems. JRT chapter 1.4 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). AMS chapters 2 and 4 are very useful
-- Friday: Discussions and problem solving
+- Friday 1/14: Discussions and problem solving and discussion of first homework
 
 ###  Week 3, January 17-21, 2022
 
-- MOnday 1/17: MLK day, no classes
+- Monday 1/17: MLK day, no classes
 - Wednesday 1/19: Motion and forces, Newton's laws, examples
-- Friday 1/29: Motion and forces, Newton's laws, examples.
+- Friday 1/21: Motion and forces, Newton's laws, examples. Problems solving. Deadline first homework. 
 - Good reads are Taylor chapters 1.4, 1.5, 1.6, 2.1-2.4 and AMS chapters 4.2 and  5 and and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week3/html/week3.html).
 
 
 ### Week 4, January 24-28, 2022
-- Monday 1/24: We discuss various forces and their pertinent equations of motion. Recommended reading: Taylor 2.1-2.4. Malthe-Sørenssen chapter 6-7 contains many examples. We will cover in particular a falling object in two dimensions with linear air resistance relevant for homework 3.
+- Monday 1/24: We discuss various forces and their pertinent equations of motion. Recommended reading: Taylor 2.1-2.4. Malthe-Sørenssen chapter 6-7 contains many examples. We will cover in particular a falling object in two dimensions with linear air resistance relevant for homework 3. Deadline homework 1
 - Wednesday 1/26: We discuss other force models with examples such as the gravitational force and a spring force. See Malthe-Sørenssen chapter 7.3-7.5. We start also our discussion of energy and work, see Taylor 4.1
-- Friday 1/28:  We discuss several examples of energy and work. Taylor 4.1-4.3. 
+- Friday 1/28:  We discuss several examples of energy and work. Taylor 4.1-4.3. Problem solving. Deadline second homework. 
 
 ### Week 5, January 31- February 4, 2022
 - Monday 1/31: More on Conservation laws, momentum conservation, 4th homework, due February 15
 - Wednesday 2/2: Examples of applications of conservation laws, angular momentum conservation. 
-- Friday 2/4:  Conservation laws and further examples. 
+- Friday 2/4:  Conservation laws and further examples.  Problem solving. Deadline third homework.
 - Good reads are Taylor sections 3.1-3.5 and 4.1-4.3 and AMS chapters 10-14.
 
 ### Week 6, February 7-11, 2022
 - Monday 2/7: Conservation laws. Introducing the Velocity Verlet algorithm and the Earth Sun problem
 - Wednesday 2/9: Examples of application of conservations laws (see chapter 4 of Taylor). 
-- Friday 2/11: Conservative forces, summary plus discussion of homeworks. 
+- Friday 2/11: Conservative forces, summary plus discussion of homeworks. Problem solving. Deadline fourth homework.
 
 ### Week 7, February 14-18, 2022
 - Monday 2/14: Oscillations, mathematical details, the sliding block and energy conservation
 - Wednesday 2/16:  Oscillations, damped motion and more mathematical details. Taylor chapter 5.1 and 5.2. 
-- Friday 2/18: Oscillations, resonances and more on damped motion
-- First midterm project, available Feb 27/28 and due March 12, 2022
+- Friday 2/18: Oscillations, resonances and more on damped motion. Deadline  fifth homework.
+- First midterm project, available Feb 21 and due March 4, 2022
 - Good reads are chapter 5 of Taylor on oscillations. 
 
 ### Week 8, February 21-25
 - Monday 2/21: Damped Oscillations, driven oscillations and resonances.
 - Wednesday 2/23:  Resonances
-- Friday 3/5: Resonances and start discussion of Fourier series. Discussion of first midterm.
+- Friday 2/25: Resonances and start discussion of Fourier series. Discussion of first midterm.
 - Good reads are sections 5.4-5.7 of Taylor on oscillations. 
 
 ### Week 9, February 28- March 4, 2022
-- Monday 2/28: Fourier series and oscillations. Discussion of first midterm.  
-- Wednesday 3/2: Discussions  of oscillations and time-dependent forces. 
-- Friday 3/4:  Discussion  of first midterm and summary of oscillations.
+- Monday 2/28: Fourier series and oscillations. 
+- Wednesday 3/2: Discussions  of oscillations and time-dependent forces.  Discussion of first midterm.  
+- Friday 3/4:  Discussion  of first midterm and summary of oscillations. Deadline for first midterm.
 - Good reads are sections 5.7-5.8 and  8.2-8.4 of Taylor and Lecture notes 
 
 ### Week 10 Spring break, no lectures
@@ -170,37 +170,43 @@ AMS chapters 2 and 4 are very useful. 1st homework due January 19.
 ### Week 11, March  14-18, 2022
 - Monday 3/14:  Gravity and central force problems, center of mass coordinates. Lecture notes and Taylor chapter 8. 
 - Wednesday 3/16: Gravity and central force problems. 
-- Friday 3/18:  Gravity and central force problems, centrifugal barriers. 
+- Friday 3/18:  Gravity and central force problems, centrifugal barriers. Deadline sixth homework.
 
 ### Week 12, March 21-25, 2022
 - Monday 3/21: Gravity and central force problems, elliptical orbits and Kepler's laws
 - Wednesday 3/23: Gravity and central force problems, elliptical orbits. 
-- Friday 3/25:  Elliptical orbits, examples and two-body scattering problems.  
+- Friday 3/25:  Elliptical orbits, examples and two-body scattering problems.  Deadline seventh homework.
 
 
 ### Week 13, March 28-April 1, 2020
 - Monday 3/28: Central force problems, summary and discussion of two-body scattering problems. 
 - Wednesday 3/30: Two-body scattering. Taylor chapter 14 covers parts of the material.  
-- Friday 4/1:  Two-body scattering (Taylor chapter 14). 
+- Friday 4/1:  Two-body scattering (Taylor chapter 14).  Discussion of second midterm
 
 ### Week 14, April 4-8, 2022
 - Monday 4/4: Wrapping up two-body scattering and begin Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. 
 - Wednesday 4/6: Variational Calculus, chapter 6 of Taylor. 
-- Friday 4/8: Variational calculus and the Euler-Lagrange equations
+- Friday 4/8: Variational calculus and the Euler-Lagrange equations. Deadline second midterm
 
 ### Week 15, April  11-15, 2022
 - Monday 4/11: Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. 
 - Wednesday 4/14: Variational calculus and the Euler-Lagrange equations, chapters 6-7 of Taylor and lecture notes.  
-- Friday 4/16: Euler-Lagrange equations and Lagrangian formalism. Taylor chapters 6-7 and lecture notes. 
+- Friday 4/16: Euler-Lagrange equations and Lagrangian formalism. Taylor chapters 6-7 and lecture notes. Deadline eigth homework.
 
 
 ### Week 16, April 18-24, 2022
 - Monday 4/18:  Langrangian formalism, discussion of examples. Taylor chapters 6 and 7. 
 - Wednesday 4/20: Lagrangian formalism, examples such as the linear chain and double pendulum. 
-- Friday 4/22:  TBA
+- Friday 4/22:  TBA. Deadline ninth homework.
 
-### Week 17, April 26- April 30, 2022, Finals week
-TBA
+### Week 17, April 25- April 29, 2022
+- Monday 4/25:  TBA
+- Wednesday 4/27: TBA
+- Friday 4/29:  Summary of course and discussion of final exam project. Additional homework ten.
+
+
+### Week 18, May 2-6, 2022
+Depending on your availability, we can have at least two sessions in order to discuss the final project.
 - Final Exam:  The final exam will be a project similar to the two midterm projects. Deadline May 6.
 
 
