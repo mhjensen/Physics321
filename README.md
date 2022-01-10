@@ -67,7 +67,7 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Learning Assistant | Email | Office Hour | Zoom Link |
 |--------------------|-------|-------------|-----------|
-| _Abbey Fallon _ | fallona1@msu.edu | Thursday 12:30-1:30pm | https://msu.zoom.us/j/95324154476 (passcode: phy321) |
+| _Abbey Fallon_ | fallona1@msu.edu | Thursday 12:30-1:30pm | https://msu.zoom.us/j/95324154476 (passcode: phy321) |
 | _George McClure_ | mcclur97@msu.edu | Tuesday 2-3pm | https://msu.zoom.us/j/92372186803 (passcode: phy321) |
 
 
