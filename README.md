@@ -60,28 +60,15 @@ Here you will find a general overview of the course, with learning outcomes, tea
 |--------------|------| 
 | _Julie Butler_ | butle222@msu.edu |
 
-| Office Hours Julie Butler |    |
-|---------|---------|
-| Wednesday   | 10-11.30am, BPS 1248 |
-| Thursday   | 10-11.30am, digital via zoom |
+| Office Hours Julie Butler | Times | Location | 
+|---------------------------|-------|----------|
+| Wednesday | 10-11:30am | In person, BPS 1248 |
+| Thursday | 10-11:30am | Virtual, https://msu.zoom.us/j/91499308414 (passcode: phy321) |
 
-
-| Learning Assistant | Email |
-|--------------|------| 
-| _Abbey Fallon_ | fallona1@msu.edu | 
-
-| Office Hours Abbey Fallon   |  
-|--------------------|
-| TBA  |
-
-
-| Learning Assistant | Email |
-|--------------|------| 
-| _George McClure_ | mcclur97@msu.edu | 
-
-| Office Hours George McClure   |  
-|--------------------|
-| TBA  |
+| Learning Assistant | Email | Office Hour | Zoom Link |
+|--------------------|-------|-------------|-----------|
+| _Abbey Fallon _ | fallona1@msu.edu | Thursday 12:30-1:30pm | https://msu.zoom.us/j/95324154476 (passcode: phy321) |
+| _George McClure_ | mcclur97@msu.edu | Tuesday 2-3pm | https://msu.zoom.us/j/92372186803 (passcode: phy321) |
 
 
 | Additional Class |    Location |
