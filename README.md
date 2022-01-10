@@ -118,7 +118,7 @@ Weekly mails (Fridays) with updates, plans for lectures etc will be sent to ever
 ###  Week 2, January 10-14, 2022
 
 - Monday 1/10: Introduction to the course and reminder  on vectors, space, time and motion, JRT chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). Python programming reminder, elements from CMSE 201 and how they are used in this course. Installing software (anaconda). See slides at https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). 
-AMS chapters 2 and 4 are very useful. 1st homework due January 19.
+AMS chapters 2 and 4 are very useful. 1st homework due January 21.
 - Wednesday 1/12: Forces and Newton's laws of motion. Free fall problems. JRT chapter 1.4 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). AMS chapters 2 and 4 are very useful
 - Friday 1/14: Discussions and problem solving and discussion of first homework
 
