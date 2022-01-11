@@ -263,13 +263,13 @@ Now lets do some basic mathematics with vectors.
 Compute and print the following, and double check with hand calculations:
 
 \begin{itemize}
-\item 7a (2pt)  Calculate $\bm{V}_1-\bm{V}_2$.
+\item 6a (2pt)  Calculate $\bm{V}_1-\bm{V}_2$.
 
-\item 7b (2pt)  Calculate $\bm{V}_2-\bm{V}_1$.
+\item 6b (2pt)  Calculate $\bm{V}_2-\bm{V}_1$.
 
-\item 7c (2pt) Calculate the dot product $\bm{V}_1\bm{V}_2$.
+\item 6c (2pt) Calculate the dot product $\bm{V}_1\bm{V}_2$.
 
-\item 7d (2pt) Calculate the cross product $\bm{V}_1\times\bm{V}_2$.
+\item 6d (2pt) Calculate the cross product $\bm{V}_1\times\bm{V}_2$.
 \end{itemize}
 
 \noindent
@@ -335,42 +335,6 @@ print("M1+M3: ", M1+M3)
 
 What happens if we try to do $M1+M2$?
 
-\begin{itemize}
-\item 7e (4pt) Let us go back to exercise 6. Define a vector $\bm{a}=(1,0,0)$ and set the angle $\phi$ in the rotation matrix (rotation in the $xy$ plane) to $45$ degrees. Set up the matrix $\bm{R}$ and find the vector $\bm{b}=\bm{R}\bm{a}$.
-\end{itemize}
-
-\noindent
-To perform a matrix-vector multiplication of the above type, the following python code may be of use. Here we just define a random vector and a random $3\times 3$ matrix
-
-
-
-
-
-
-
-
-
-
-
-
-
-\bpycod
-import numpy as np
-#We define a  3 dimensional vector with random numbers
-n = 3
-a = np.random.rand(n)
-# define a matrix of dimension 3 x 3 and set all elements to random numbers with x \in [0, 1]
-R = np.random.rand(n, n)
-#print the vector and the matrix
-print(a)
-print(R)
-# perform a matrix-vector multiplication. Note that we need to transpose the vector and the odd way to indicate a multiplication with @
-b = R @ a.T
-print(b)
-
-\epycod
-
-
 That's enough vectors and matrices for now. Let's move on to some physics problems! Yes, the actual subject we are studying for. 
 
 We can opt for two different ways of handling the data. The data is listed in the table here and represents the total time Usain Bolt used in steps of  10 meters of distance. The label $i$ is just a counter and we start from zero since Python arrays are by default set from zero. The variable $t$ is time in seconds and $x$ is the position in meters.
@@ -390,7 +354,7 @@ t[s] & 1.85 & 2.87 & 3.78 & 4.65 & 5.50 & 6.32 & 7.14 & 7.96 & 8.79 & 9.69 \\
 
 \noindent
 \begin{itemize}
-\item 7f (4pt) You can here make a file with the above data and read them in and set up two vectors, one for time and one for position. Alternatively, you can just set up these two vectors directly and define two vectors in your Python code.
+\item 6e (6pt) You can here make a file with the above data and read them in and set up two vectors, one for time and one for position. Alternatively, you can just set up these two vectors directly and define two vectors in your Python code.
 \end{itemize}
 
 \noindent
@@ -418,11 +382,11 @@ plt.show()
 
 
 \begin{itemize}
-\item 7g (4pt) Plot the position as function of time
+\item 6f (6pt) Plot the position as function of time
 
-\item 7h (10pt) Compute thereafter the mean velocity for every interval $i$ and the total velocity (from $i=0$ to the given interval $i$) for each interval and plot these two quantities as function of time. Comment your results.
+\item 6g (10pt) Compute thereafter the mean velocity for every interval $i$ and the total velocity (from $i=0$ to the given interval $i$) for each interval and plot these two quantities as function of time. Comment your results.
 
-\item 7i (10pt) Finally, compute and plot the mean acceleration for each interval and the total acceleration. Again, comment your results. Can you see whether he slowed down during the last meters? 
+\item 6h (10pt) Finally, compute and plot the mean acceleration for each interval and the total acceleration. Again, comment your results. Can you see whether he slowed down during the last meters? 
 \end{itemize}
 
 \noindent

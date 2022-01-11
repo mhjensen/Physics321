@@ -233,10 +233,10 @@ V2 = np.array([<span style="color: #B452CD">4</span>,<span style="color: #B452CD
 <p>Compute and print the following, and double check with hand calculations:</p>
 
 <ul>
-<li> 7a (2pt)  Calculate \( \boldsymbol{V}_1-\boldsymbol{V}_2 \).</li>
-<li> 7b (2pt)  Calculate \( \boldsymbol{V}_2-\boldsymbol{V}_1 \).</li>
-<li> 7c (2pt) Calculate the dot product \( \boldsymbol{V}_1\boldsymbol{V}_2 \).</li>
-<li> 7d (2pt) Calculate the cross product \( \boldsymbol{V}_1\times\boldsymbol{V}_2 \).</li>
+<li> 6a (2pt)  Calculate \( \boldsymbol{V}_1-\boldsymbol{V}_2 \).</li>
+<li> 6b (2pt)  Calculate \( \boldsymbol{V}_2-\boldsymbol{V}_1 \).</li>
+<li> 6c (2pt) Calculate the dot product \( \boldsymbol{V}_1\boldsymbol{V}_2 \).</li>
+<li> 6d (2pt) Calculate the cross product \( \boldsymbol{V}_1\times\boldsymbol{V}_2 \).</li>
 </ul>
 <p>Here is some useful explanation on numpy array operations if you feel a bit confused by what is happening,
 see <a href="https://www.pluralsight.com/guides/overview-basic-numpy-operations" target="_blank"><tt>https://www.pluralsight.com/guides/overview-basic-numpy-operations</tt></a>.
@@ -355,44 +355,6 @@ M3 = np.matrix([[<span style="color: #B452CD">9</span>,<span style="color: #B452
 
 <p>What happens if we try to do \( M1+M2 \)?</p>
 
-<ul>
-<li> 7e (4pt) Let us go back to exercise 6. Define a vector \( \boldsymbol{a}=(1,0,0) \) and set the angle \( \phi \) in the rotation matrix (rotation in the \( xy \) plane) to \( 45 \) degrees. Set up the matrix \( \boldsymbol{R} \) and find the vector \( \boldsymbol{b}=\boldsymbol{R}\boldsymbol{a} \).</li>
-</ul>
-<p>To perform a matrix-vector multiplication of the above type, the following python code may be of use. Here we just define a random vector and a random \( 3\times 3 \) matrix</p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="cell border-box-sizing code_cell rendered">
-  <div class="input">
-    <div class="inner_cell">
-      <div class="input_area">
-        <div class="highlight" style="background: #eeeedd">
-  <pre style="line-height: 125%;"><span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
-<span style="color: #228B22">#We define a  3 dimensional vector with random numbers</span>
-n = <span style="color: #B452CD">3</span>
-a = np.random.rand(n)
-<span style="color: #228B22"># define a matrix of dimension 3 x 3 and set all elements to random numbers with x \in [0, 1]</span>
-R = np.random.rand(n, n)
-<span style="color: #228B22">#print the vector and the matrix</span>
-<span style="color: #658b00">print</span>(a)
-<span style="color: #658b00">print</span>(R)
-<span style="color: #228B22"># perform a matrix-vector multiplication. Note that we need to transpose the vector and the odd way to indicate a multiplication with @</span>
-b = R @ a.T
-<span style="color: #658b00">print</span>(b)
-</pre>
-</div>
-      </div>
-    </div>
-  </div>
-  <div class="output_wrapper">
-    <div class="output">
-      <div class="output_area">
-        <div class="output_subarea output_stream output_stdout output_text">          
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <p>That's enough vectors and matrices for now. Let's move on to some physics problems! Yes, the actual subject we are studying for. </p>
 
 <p>We can opt for two different ways of handling the data. The data is listed in the table here and represents the total time Usain Bolt used in steps of  10 meters of distance. The label \( i \) is just a counter and we start from zero since Python arrays are by default set from zero. The variable \( t \) is time in seconds and \( x \) is the position in meters.</p>
@@ -408,7 +370,7 @@ b = R @ a.T
 </table>
 
 <ul>
-<li> 7f (4pt) You can here make a file with the above data and read them in and set up two vectors, one for time and one for position. Alternatively, you can just set up these two vectors directly and define two vectors in your Python code.</li>
+<li> 6e (6pt) You can here make a file with the above data and read them in and set up two vectors, one for time and one for position. Alternatively, you can just set up these two vectors directly and define two vectors in your Python code.</li>
 </ul>
 <p>The following example code may help here</p>
 
@@ -443,9 +405,9 @@ plt.show()
 
 
 <ul>
-<li> 7g (4pt) Plot the position as function of time</li>
-<li> 7h (10pt) Compute thereafter the mean velocity for every interval \( i \) and the total velocity (from \( i=0 \) to the given interval \( i \)) for each interval and plot these two quantities as function of time. Comment your results.</li>
-<li> 7i (10pt) Finally, compute and plot the mean acceleration for each interval and the total acceleration. Again, comment your results. Can you see whether he slowed down during the last meters?</li> 
+<li> 6f (6pt) Plot the position as function of time</li>
+<li> 6g (10pt) Compute thereafter the mean velocity for every interval \( i \) and the total velocity (from \( i=0 \) to the given interval \( i \)) for each interval and plot these two quantities as function of time. Comment your results.</li>
+<li> 6h (10pt) Finally, compute and plot the mean acceleration for each interval and the total acceleration. Again, comment your results. Can you see whether he slowed down during the last meters?</li> 
 </ul>
 <!-- ------------------- end of main content --------------- -->
 </body>

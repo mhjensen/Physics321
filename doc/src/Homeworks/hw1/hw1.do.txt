@@ -91,10 +91,10 @@ Now lets do some basic mathematics with vectors.
 
 Compute and print the following, and double check with hand calculations:
 
-* 7a (2pt)  Calculate $\bm{V}_1-\bm{V}_2$.
-* 7b (2pt)  Calculate $\bm{V}_2-\bm{V}_1$.
-* 7c (2pt) Calculate the dot product $\bm{V}_1\bm{V}_2$.
-* 7d (2pt) Calculate the cross product $\bm{V}_1\times\bm{V}_2$.
+* 6a (2pt)  Calculate $\bm{V}_1-\bm{V}_2$.
+* 6b (2pt)  Calculate $\bm{V}_2-\bm{V}_1$.
+* 6c (2pt) Calculate the dot product $\bm{V}_1\bm{V}_2$.
+* 6d (2pt) Calculate the cross product $\bm{V}_1\times\bm{V}_2$.
 
 Here is some useful explanation on numpy array operations if you feel a bit confused by what is happening,
 see URL:"https://www.pluralsight.com/guides/overview-basic-numpy-operations".
@@ -134,23 +134,7 @@ print("M1+M3: ", M1+M3)
 !ec
 What happens if we try to do $M1+M2$?
 
-* 7e (4pt) Let us go back to exercise 6. Define a vector $\bm{a}=(1,0,0)$ and set the angle $\phi$ in the rotation matrix (rotation in the $xy$ plane) to $45$ degrees. Set up the matrix $\bm{R}$ and find the vector $\bm{b}=\bm{R}\bm{a}$.
 
-To perform a matrix-vector multiplication of the above type, the following python code may be of use. Here we just define a random vector and a random $3\times 3$ matrix
-!bc pycod
-import numpy as np
-#We define a  3 dimensional vector with random numbers
-n = 3
-a = np.random.rand(n)
-# define a matrix of dimension 3 x 3 and set all elements to random numbers with x \in [0, 1]
-R = np.random.rand(n, n)
-#print the vector and the matrix
-print(a)
-print(R)
-# perform a matrix-vector multiplication. Note that we need to transpose the vector and the odd way to indicate a multiplication with @
-b = R @ a.T
-print(b)
-!ec
 
 That's enough vectors and matrices for now. Let's move on to some physics problems! Yes, the actual subject we are studying for. 
 
@@ -164,7 +148,7 @@ We can opt for two different ways of handling the data. The data is listed in th
 | t[s] | 1.85 | 2.87 | 3.78 |  4.65 | 5.50 | 6.32 | 7.14 | 7.96 | 8.79 | 9.69 |
 |-------------------------------------------|
 
-* 7f (4pt) You can here make a file with the above data and read them in and set up two vectors, one for time and one for position. Alternatively, you can just set up these two vectors directly and define two vectors in your Python code.
+* 6e (6pt) You can here make a file with the above data and read them in and set up two vectors, one for time and one for position. Alternatively, you can just set up these two vectors directly and define two vectors in your Python code.
 
 The following example code may help here
 !bc pycod
@@ -178,6 +162,6 @@ plt.title("Usain Bolt's world record run")
 plt.show()
 !ec
 
-* 7g (4pt) Plot the position as function of time
-* 7h (10pt) Compute thereafter the mean velocity for every interval $i$ and the total velocity (from $i=0$ to the given interval $i$) for each interval and plot these two quantities as function of time. Comment your results.
-* 7i (10pt) Finally, compute and plot the mean acceleration for each interval and the total acceleration. Again, comment your results. Can you see whether he slowed down during the last meters? 
+* 6f (6pt) Plot the position as function of time
+* 6g (10pt) Compute thereafter the mean velocity for every interval $i$ and the total velocity (from $i=0$ to the given interval $i$) for each interval and plot these two quantities as function of time. Comment your results.
+* 6h (10pt) Finally, compute and plot the mean acceleration for each interval and the total acceleration. Again, comment your results. Can you see whether he slowed down during the last meters? 
