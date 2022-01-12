@@ -107,8 +107,10 @@ Weekly mails (Fridays) with updates, plans for lectures etc will be sent to ever
 - Monday 1/10: Introduction to the course and reminder  on vectors, space, time and motion, JRT chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). Python programming reminder, elements from CMSE 201 and how they are used in this course. Installing software (anaconda). See slides at https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). 
 AMS chapters 2 and 4 are very useful. 1st homework due January 21.
 Video of lecture at https://mediaspace.msu.edu/media/t/1_ronomlmv
-Handwritten notes from lecture at https://github.com/mhjensen/Physics321/tree/master/doc/HandWrittenNotes/Spring2022
-- Wednesday 1/12: Forces and Newton's laws of motion. Free fall problems. JRT chapter 1.4 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). AMS chapters 2 and 4 are very useful
+Handwritten notes from lecture at https://github.com/mhjensen/Physics321/tree/master/doc/HandWrittenNotes/Spring2022/NotesJanuary10.pdf
+- Wednesday 1/12: Forces and Newton's laws of motion. Free fall problems. JRT chapter 1.4 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). AMS chapters 2 and 4 are very useful.
+Video of lecture January 12 at https://mediaspace.msu.edu/media/t/1_yfmpmg57
+Handwritten notes at https://github.com/mhjensen/Physics321/tree/master/doc/HandWrittenNotes/Spring2022/NotesJanuary12.pdf
 - Friday 1/14: Discussions and problem solving and discussion of first homework
 
 ###  Week 3, January 17-21, 2022
