@@ -2483,22 +2483,22 @@ We will come back to this soon.
 compute say the height of a building.  To see this we perform the following integrations from an initial time \( t_0 \)  to a given time \( t \)
 </p>
 $$
-\int_{t_0}^t dt a(t) = \int_{t_0}^t dt \frac{dv}{dt} = v(t)-v(t_0),
+\int_{t_0}^t dt' a(t') = \int_{t_0}^t dt' \frac{dv}{dt'} = v(t)-v(t_0),
 $$
 
 <p>or as </p>
 $$
-v(t)=v(t_0)+\int_{t_0}^t dt a(t).
+v(t)=v(t_0)+\int_{t_0}^t dt' a(t').
 $$
 
 <p>When we know the velocity as function of time, we can find the position as function of time starting from the defintion of velocity as the derivative with respect to time, that is we have</p>
 $$
-\int_{t_0}^t dt v(t) = \int_{t_0}^t dt \frac{dy}{dt} = y(t)-y(t_0),
+\int_{t_0}^t dt' v(t') = \int_{t_0}^t dt' \frac{dy}{dt'} = y(t)-y(t_0),
 $$
 
 <p>or as </p>
 $$
-y(t)=y(t_0)+\int_{t_0}^t dt v(t).
+y(t)=y(t_0)+\int_{t_0}^t dt' v(t').
 $$
 
 <p>These equations define what is called the integration method for
@@ -2511,7 +2511,7 @@ spatial dimension.
 <h2 id="constant-acceleration-case-the-velocity">Constant acceleration case, the velocity </h2>
 <p>Let us compute the velocity using the constant value for the acceleration given by \( -g \). We have</p>
 $$
-v(t)=v(t_0)+\int_{t_0}^t dt a(t)=v(t_0)+\int_{t_0}^t dt (-g).
+v(t)=v(t_0)+\int_{t_0}^t dt' a(t')=v(t_0)+\int_{t_0}^t dt' (-g).
 $$
 
 <p>Using our initial time as $t_0=0$s and setting the initial velocity $v(t_0)=v_0=0$m/s we get when integrating</p>
@@ -2526,7 +2526,7 @@ $$
 
 <p>We can then integrate the velocity and obtain the final formula for the position as function of time through</p>
 $$
-y(t)=y(t_0)+\int_{t_0}^t dt v(t)=y_0+\int_{t_0}^t dt v(t)=y_0+\int_{t_0}^t dt (-gt),
+y(t)=y(t_0)+\int_{t_0}^t dt' v(t')=y_0+\int_{t_0}^t dt' v(t')=y_0+\int_{t_0}^t dt' (-gt'),
 $$
 
 <p>With $y_0=10$m and $t_0=0$s, we obtain the equation we started with</p>

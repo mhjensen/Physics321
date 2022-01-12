@@ -1680,13 +1680,13 @@ Formally we can then, starting with the acceleration (suppose we have measured i
 compute say the height of a building.  To see this we perform the following integrations from an initial time $t_0$  to a given time $t$
 !bt
 \[
-\int_{t_0}^t dt a(t) = \int_{t_0}^t dt \frac{dv}{dt} = v(t)-v(t_0),
+\int_{t_0}^t dt' a(t') = \int_{t_0}^t dt' \frac{dv}{dt'} = v(t)-v(t_0),
 \]
 !et
 or as 
 !bt
 \[
-v(t)=v(t_0)+\int_{t_0}^t dt a(t).
+v(t)=v(t_0)+\int_{t_0}^t dt' a(t').
 \]
 !et
 
@@ -1694,13 +1694,13 @@ v(t)=v(t_0)+\int_{t_0}^t dt a(t).
 When we know the velocity as function of time, we can find the position as function of time starting from the defintion of velocity as the derivative with respect to time, that is we have
 !bt
 \[
-\int_{t_0}^t dt v(t) = \int_{t_0}^t dt \frac{dy}{dt} = y(t)-y(t_0),
+\int_{t_0}^t dt' v(t') = \int_{t_0}^t dt' \frac{dy}{dt'} = y(t)-y(t_0),
 \]
 !et
 or as 
 !bt
 \[
-y(t)=y(t_0)+\int_{t_0}^t dt v(t).
+y(t)=y(t_0)+\int_{t_0}^t dt' v(t').
 \]
 !et
 
@@ -1714,7 +1714,7 @@ spatial dimension.
 Let us compute the velocity using the constant value for the acceleration given by $-g$. We have
 !bt
 \[
-v(t)=v(t_0)+\int_{t_0}^t dt a(t)=v(t_0)+\int_{t_0}^t dt (-g).
+v(t)=v(t_0)+\int_{t_0}^t dt' a(t')=v(t_0)+\int_{t_0}^t dt' (-g).
 \]
 !et
 Using our initial time as $t_0=0$s and setting the initial velocity $v(t_0)=v_0=0$m/s we get when integrating
@@ -1732,7 +1732,7 @@ v(t)=v_0-g(t-t_0).
 We can then integrate the velocity and obtain the final formula for the position as function of time through
 !bt
 \[
-y(t)=y(t_0)+\int_{t_0}^t dt v(t)=y_0+\int_{t_0}^t dt v(t)=y_0+\int_{t_0}^t dt (-gt),
+y(t)=y(t_0)+\int_{t_0}^t dt' v(t')=y_0+\int_{t_0}^t dt' v(t')=y_0+\int_{t_0}^t dt' (-gt'),
 \]
 !et
 With $y_0=10$m and $t_0=0$s, we obtain the equation we started with
