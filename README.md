@@ -1,7 +1,7 @@
 # PHY321, Classical Mechanics I, Michigan State University, Spring 2022
 
 
-We have planned this class as a flipped class where we would like to
+We have planned this class as a flipped class where we would like 
 - use Mondays as regular lecture days
 - Wednesdays as a mix of lectures and problem solving (or just one of them depending on needs and feedback from you). The first two weeks we will lecture both Monday and Wednesday.
 - Fridays are planned as flipped classes, with problem solving and more.
