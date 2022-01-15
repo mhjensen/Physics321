@@ -111,7 +111,7 @@ Handwritten notes from lecture at https://github.com/mhjensen/Physics321/tree/ma
 - Wednesday 1/12: Forces and Newton's laws of motion. Free fall problems. JRT chapter 1.4 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). AMS chapters 2 and 4 are very useful.
 Video of lecture January 12 at https://mediaspace.msu.edu/media/t/1_yfmpmg57
 Handwritten notes at https://github.com/mhjensen/Physics321/tree/master/doc/HandWrittenNotes/Spring2022/NotesJanuary12.pdf
-- Friday 1/14: Discussions and problem solving and discussion of first homework
+- Friday 1/14: Discussions and problem solving and discussion of first homework. The first ten minutes were recorded and the video can be found at https://mediaspace.msu.edu/media/t/1_7gxzfsr9
 
 ###  Week 3, January 17-21, 2022
 
