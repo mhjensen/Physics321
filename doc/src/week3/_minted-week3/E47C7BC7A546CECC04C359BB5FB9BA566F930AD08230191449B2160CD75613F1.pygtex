@@ -1,0 +1,22 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{c+c1}{\PYGZsh{} Now we can compute the mean velocity using our data}
+\PYG{c+c1}{\PYGZsh{} We define first an array Vaverage}
+\PYG{n}{n} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{size}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)}
+\PYG{n}{Vaverage} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{n}\PYG{p}{)}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{n}\PYG{p}{):}
+    \PYG{n}{Vaverage}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{p}{(}\PYG{n}{y}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{n}{y}\PYG{p}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{])}\PYG{o}{/}\PYG{n}{DeltaT}
+\PYG{c+c1}{\PYGZsh{} Now we can compute the mean accelearatio using our data}
+\PYG{c+c1}{\PYGZsh{} We define first an array Aaverage}
+\PYG{n}{n} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{size}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)}
+\PYG{n}{Aaverage} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{n}\PYG{p}{)}
+\PYG{n}{Aaverage}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{g}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{n}\PYG{p}{):}
+    \PYG{n}{Aaverage}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{p}{(}\PYG{n}{Vaverage}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{n}{Vaverage}\PYG{p}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{])}\PYG{o}{/}\PYG{n}{DeltaT}
+\PYG{n}{data} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}t[s]\PYGZsq{}}\PYG{p}{:} \PYG{n}{t}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}y[m]\PYGZsq{}}\PYG{p}{:} \PYG{n}{y}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}v[m/s]\PYGZsq{}}\PYG{p}{:} \PYG{n}{Vaverage}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}a[m/s\PYGZca{}2]\PYGZsq{}}\PYG{p}{:} \PYG{n}{Aaverage}
+        \PYG{p}{\PYGZcb{}}
+\PYG{n}{NewData} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{DataFrame}\PYG{p}{(}\PYG{n}{data}\PYG{p}{)}
+\PYG{n}{display}\PYG{p}{(}\PYG{n}{NewData}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{:}\PYG{n}{n}\PYG{p}{])}
+\end{Verbatim}

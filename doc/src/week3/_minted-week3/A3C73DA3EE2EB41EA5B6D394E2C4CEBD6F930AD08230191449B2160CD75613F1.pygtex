@@ -1,0 +1,84 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{c+c1}{\PYGZsh{} Common imports}
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+\PYG{k+kn}{import} \PYG{n+nn}{pandas} \PYG{k}{as} \PYG{n+nn}{pd}
+\PYG{k+kn}{from} \PYG{n+nn}{math} \PYG{k+kn}{import} \PYG{o}{*}
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib.pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+\PYG{k+kn}{import} \PYG{n+nn}{os}
+
+\PYG{c+c1}{\PYGZsh{} Where to save the figures and data files}
+\PYG{n}{PROJECT\PYGZus{}ROOT\PYGZus{}DIR} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}Results\PYGZdq{}}
+\PYG{n}{FIGURE\PYGZus{}ID} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}Results/FigureFiles\PYGZdq{}}
+\PYG{n}{DATA\PYGZus{}ID} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}DataFiles/\PYGZdq{}}
+
+\PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{exists}\PYG{p}{(}\PYG{n}{PROJECT\PYGZus{}ROOT\PYGZus{}DIR}\PYG{p}{):}
+    \PYG{n}{os}\PYG{o}{.}\PYG{n}{mkdir}\PYG{p}{(}\PYG{n}{PROJECT\PYGZus{}ROOT\PYGZus{}DIR}\PYG{p}{)}
+
+\PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{exists}\PYG{p}{(}\PYG{n}{FIGURE\PYGZus{}ID}\PYG{p}{):}
+    \PYG{n}{os}\PYG{o}{.}\PYG{n}{makedirs}\PYG{p}{(}\PYG{n}{FIGURE\PYGZus{}ID}\PYG{p}{)}
+
+\PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{exists}\PYG{p}{(}\PYG{n}{DATA\PYGZus{}ID}\PYG{p}{):}
+    \PYG{n}{os}\PYG{o}{.}\PYG{n}{makedirs}\PYG{p}{(}\PYG{n}{DATA\PYGZus{}ID}\PYG{p}{)}
+
+\PYG{k}{def} \PYG{n+nf}{image\PYGZus{}path}\PYG{p}{(}\PYG{n}{fig\PYGZus{}id}\PYG{p}{):}
+    \PYG{k}{return} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{n}{FIGURE\PYGZus{}ID}\PYG{p}{,} \PYG{n}{fig\PYGZus{}id}\PYG{p}{)}
+
+\PYG{k}{def} \PYG{n+nf}{data\PYGZus{}path}\PYG{p}{(}\PYG{n}{dat\PYGZus{}id}\PYG{p}{):}
+    \PYG{k}{return} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{n}{DATA\PYGZus{}ID}\PYG{p}{,} \PYG{n}{dat\PYGZus{}id}\PYG{p}{)}
+
+\PYG{k}{def} \PYG{n+nf}{save\PYGZus{}fig}\PYG{p}{(}\PYG{n}{fig\PYGZus{}id}\PYG{p}{):}
+    \PYG{n}{plt}\PYG{o}{.}\PYG{n}{savefig}\PYG{p}{(}\PYG{n}{image\PYGZus{}path}\PYG{p}{(}\PYG{n}{fig\PYGZus{}id}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{}.png\PYGZdq{}}\PYG{p}{,} \PYG{n+nb}{format}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}png\PYGZsq{}}\PYG{p}{)}
+
+
+\PYG{n}{g} \PYG{o}{=} \PYG{l+m+mf}{9.80655} \PYG{c+c1}{\PYGZsh{}m/s\PYGZca{}2}
+\PYG{n}{D} \PYG{o}{=} \PYG{l+m+mf}{0.00245} \PYG{c+c1}{\PYGZsh{}m/s}
+\PYG{n}{DeltaT} \PYG{o}{=} \PYG{l+m+mf}{0.1}
+\PYG{c+c1}{\PYGZsh{}set up arrays}
+\PYG{n}{tfinal} \PYG{o}{=} \PYG{l+m+mf}{0.5}
+\PYG{n}{n} \PYG{o}{=} \PYG{n}{ceil}\PYG{p}{(}\PYG{n}{tfinal}\PYG{o}{/}\PYG{n}{DeltaT}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} define scaling constant vT}
+\PYG{n}{vT} \PYG{o}{=} \PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{g}\PYG{o}{/}\PYG{n}{D}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} set up arrays for t, a, v, and y and we can compare our results with analytical ones}
+\PYG{n}{t} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{n}\PYG{p}{)}
+\PYG{n}{a} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{n}\PYG{p}{)}
+\PYG{n}{v} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{n}\PYG{p}{)}
+\PYG{n}{y} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{n}\PYG{p}{)}
+\PYG{n}{yanalytic} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{n}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} Initial conditions}
+\PYG{n}{v}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mf}{0.0}  \PYG{c+c1}{\PYGZsh{}m/s}
+\PYG{n}{y}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mf}{10.0} \PYG{c+c1}{\PYGZsh{}m}
+\PYG{n}{yanalytic}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{y}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+\PYG{c+c1}{\PYGZsh{} Start integrating using Euler\PYGZsq{}s method}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{n}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{):}
+    \PYG{c+c1}{\PYGZsh{} expression for acceleration}
+    \PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{g} \PYG{o}{+} \PYG{n}{D}\PYG{o}{*}\PYG{n}{v}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{*}\PYG{n}{v}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}
+    \PYG{c+c1}{\PYGZsh{} update velocity and position}
+    \PYG{n}{y}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{y}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{+} \PYG{n}{DeltaT}\PYG{o}{*}\PYG{n}{v}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}
+    \PYG{n}{v}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{v}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{+} \PYG{n}{DeltaT}\PYG{o}{*}\PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}
+    \PYG{c+c1}{\PYGZsh{} update time to next time step and compute analytical answer}
+    \PYG{n}{t}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{t}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{+} \PYG{n}{DeltaT}
+    \PYG{n}{yanalytic}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{y}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{p}{(}\PYG{n}{vT}\PYG{o}{*}\PYG{n}{vT}\PYG{o}{/}\PYG{n}{g}\PYG{p}{)}\PYG{o}{*}\PYG{n}{log}\PYG{p}{(}\PYG{n}{cosh}\PYG{p}{(}\PYG{n}{g}\PYG{o}{*}\PYG{n}{t}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{/}\PYG{n}{vT}\PYG{p}{))}
+    \PYG{k}{if} \PYG{p}{(} \PYG{n}{y}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{\PYGZlt{}} \PYG{l+m+mf}{0.0}\PYG{p}{):}
+        \PYG{k}{break}
+\PYG{n}{a}\PYG{p}{[}\PYG{n}{n}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{g} \PYG{o}{+} \PYG{n}{D}\PYG{o}{*}\PYG{n}{v}\PYG{p}{[}\PYG{n}{n}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{*}\PYG{n}{v}\PYG{p}{[}\PYG{n}{n}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}
+\PYG{n}{data} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}t[s]\PYGZsq{}}\PYG{p}{:} \PYG{n}{t}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}y[m]\PYGZsq{}}\PYG{p}{:} \PYG{n}{y}\PYG{o}{\PYGZhy{}}\PYG{n}{yanalytic}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}v[m/s]\PYGZsq{}}\PYG{p}{:} \PYG{n}{v}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}a[m/s\PYGZca{}2]\PYGZsq{}}\PYG{p}{:} \PYG{n}{a}
+        \PYG{p}{\PYGZcb{}}
+\PYG{n}{NewData} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{DataFrame}\PYG{p}{(}\PYG{n}{data}\PYG{p}{)}
+\PYG{n}{display}\PYG{p}{(}\PYG{n}{NewData}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{}finally we plot the data}
+\PYG{n}{fig}\PYG{p}{,} \PYG{n}{axs} \PYG{o}{=} \PYG{n}{plt}\PYG{o}{.}\PYG{n}{subplots}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{n}{axs}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,} \PYG{n}{y}\PYG{p}{,} \PYG{n}{t}\PYG{p}{,} \PYG{n}{yanalytic}\PYG{p}{)}
+\PYG{n}{axs}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}xlim}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{tfinal}\PYG{p}{)}
+\PYG{n}{axs}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}ylabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}y and exact\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{axs}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,} \PYG{n}{v}\PYG{p}{)}
+\PYG{n}{axs}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}ylabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}v[m/s]\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{axs}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,} \PYG{n}{a}\PYG{p}{)}
+\PYG{n}{axs}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}xlabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}time[s]\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{axs}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}ylabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}a[m/s\PYGZca{}2]\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{fig}\PYG{o}{.}\PYG{n}{tight\PYGZus{}layout}\PYG{p}{()}
+\PYG{n}{save\PYGZus{}fig}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}EulerIntegration\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{show}\PYG{p}{()}
+\end{Verbatim}
