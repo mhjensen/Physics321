@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3. Simple Motion problems and Reminder on Newton’s Laws &#8212; Classical mechanics</title>
     
-  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -34,22 +31,21 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -59,14 +55,17 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="4. Work, Energy, Momentum and Conservation laws" href="chapter4.html" />
     <link rel="prev" title="2. Classical Mechanics, Mathematics and Numerical background" href="chapter2.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
 
-
-
+    <!-- Google Analytics -->
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -75,32 +74,36 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Classical mechanics</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Classical mechanics</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
    PHY321 Classical Mechanics I, Michigan State University, Spring 2021
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   About the course
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="schedule.html">
    Teaching schedule with links to material
@@ -117,12 +120,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Introductory Material
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter1.html">
    1. Introduction
@@ -144,34 +147,35 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Advanced Topics
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter5.html">
-   1. Harmonic Oscillations
+   5. Harmonic Oscillations
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="chapter6.html">
-   2. Two-body problems and Gravitational Forces
+   6. Two-body problems, from the Gravitational Force to Two-body Scattering
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="chapter7.html">
-   3. Non-inertial Frames, Translation and Rotating Coordinate Systems
+   7. Non-inertial Frames, Translation and Rotating Coordinate Systems
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="chapter8.html">
-   4. Variational Calculus and Lagrangian Formalism
+   8. Variational Calculus and Lagrangian Formalism
   </a>
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -215,32 +219,31 @@
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
             <!-- Source interaction buttons -->
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#basic-steps-of-scientific-investigations">
    3.1. Basic Steps of Scientific Investigations
@@ -393,17 +396,184 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Simple Motion problems and Reminder on Newton’s Laws</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-steps-of-scientific-investigations">
+   3.1. Basic Steps of Scientific Investigations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identifying-our-system">
+     3.1.1. Identifying our System
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#defining-a-model">
+     3.1.2. Defining a Model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solving-the-equations">
+     3.1.3. Solving the Equations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analyze">
+     3.1.4. Analyze
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#newton-s-laws">
+   3.2. Newton’s Laws
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#then-the-first-law">
+     3.2.1. Then the First Law
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#and-finally-the-third-law">
+     3.2.2. And finally the Third Law
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#falling-baseball-in-one-dimension">
+   3.3. Falling baseball in one dimension
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compact-equations">
+     3.3.1. Compact equations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integrating-our-equations">
+     3.3.2. Integrating our equations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computing-the-averages">
+     3.3.3. Computing the averages
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#including-air-resistance-in-our-model">
+   3.4. Including Air Resistance in our model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#our-first-attempt-at-solving-differential-equations">
+   3.5. Our first attempt at solving differential equations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discretizing-our-equations">
+     3.5.1. Discretizing our equations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simple-extension-the-euler-cromer-method">
+     3.5.2. Simple extension, the Euler-Cromer method
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#air-resistance-in-one-dimension">
+   3.6. Air Resistance in One Dimension
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ways-of-solving-these-equations">
+   3.7. Ways of solving these equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#differential-equations-contn">
+   3.8. Differential Equations, contn
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motion-in-a-magnetic-field">
+   3.9. Motion in a Magnetic Field
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summarizing-the-various-motion-problems">
+   3.10. Summarizing the various motion problems
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   3.11. Exercises
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#electron-moving-into-an-electric-field">
+     3.11.1. Electron moving into an electric field
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#drag-force">
+     3.11.2. Drag force
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#falling-object">
+     3.11.3. Falling object
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#motion-of-a-cyclist">
+     3.11.4. Motion of a cyclist
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#falling-ball-and-preparing-for-the-numerical-exercise">
+     3.11.5. Falling ball and preparing for the numerical exercise
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numerical-elements-solving-the-previous-exercise-numerically-and-adding-the-bouncing-from-the-floor">
+     3.11.6. Numerical elements, solving the previous exercise  numerically and adding the bouncing from the floor
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <div class="section" id="simple-motion-problems-and-reminder-on-newton-s-laws">
+  <div class="tex2jax_ignore mathjax_ignore section" id="simple-motion-problems-and-reminder-on-newton-s-laws">
 <h1><span class="section-number">3. </span>Simple Motion problems and Reminder on Newton’s Laws<a class="headerlink" href="#simple-motion-problems-and-reminder-on-newton-s-laws" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="basic-steps-of-scientific-investigations">
 <h2><span class="section-number">3.1. </span>Basic Steps of Scientific Investigations<a class="headerlink" href="#basic-steps-of-scientific-investigations" title="Permalink to this headline">¶</a></h2>
@@ -620,6 +790,55 @@ y(t) = 0= y_0-\frac{1}{2}gt^2,
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;inline&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Common imports</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="nn">File ~/.local/share/virtualenvs/doc-a-kErR6F/lib/python3.9/site-packages/IPython/core/interactiveshell.py:2204,</span> in <span class="ni">InteractiveShell.run_line_magic</span><span class="nt">(self, magic_name, line, _stack_depth)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2202</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;local_ns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_local_scope</span><span class="p">(</span><span class="n">stack_depth</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2203</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2204</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2205</span> <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File ~/.local/share/virtualenvs/doc-a-kErR6F/lib/python3.9/site-packages/IPython/core/magics/pylab.py:99,</span> in <span class="ni">PylabMagics.matplotlib</span><span class="nt">(self, line)</span>
+<span class="g g-Whitespace">     </span><span class="mi">97</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Available matplotlib backends: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">backends_list</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">99</span>     <span class="n">gui</span><span class="p">,</span> <span class="n">backend</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">enable_matplotlib</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">100</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_show_matplotlib_backend</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="p">,</span> <span class="n">backend</span><span class="p">)</span>
+
+<span class="nn">File ~/.local/share/virtualenvs/doc-a-kErR6F/lib/python3.9/site-packages/IPython/core/interactiveshell.py:3327,</span> in <span class="ni">InteractiveShell.enable_matplotlib</span><span class="nt">(self, gui)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3306</span> <span class="sd">&quot;&quot;&quot;Enable interactive matplotlib and inline figure support.</span>
+<span class="g g-Whitespace">   </span><span class="mi">3307</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">3308</span><span class="sd"> This takes the following steps:</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3324</span><span class="sd">     display figures inline.</span>
+<span class="g g-Whitespace">   </span><span class="mi">3325</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">3326</span> <span class="kn">from</span> <span class="nn">IPython.core</span> <span class="kn">import</span> <span class="n">pylabtools</span> <span class="k">as</span> <span class="n">pt</span>
+<span class="ne">-&gt; </span><span class="mi">3327</span> <span class="kn">from</span> <span class="nn">matplotlib_inline.backend_inline</span> <span class="kn">import</span> <span class="n">configure_inline_support</span>
+<span class="g g-Whitespace">   </span><span class="mi">3328</span> <span class="n">gui</span><span class="p">,</span> <span class="n">backend</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">find_gui_and_backend</span><span class="p">(</span><span class="n">gui</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pylab_gui_select</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3330</span> <span class="k">if</span> <span class="n">gui</span> <span class="o">!=</span> <span class="s1">&#39;inline&#39;</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3331</span>     <span class="c1"># If we have our first gui selection, store it</span>
+
+<span class="n">File</span> <span class="o">~/.</span><span class="n">local</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">virtualenvs</span><span class="o">/</span><span class="n">doc</span><span class="o">-</span><span class="n">a</span><span class="o">-</span><span class="n">kErR6F</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib_inline</span><span class="o">/</span><span class="n">backend_inline</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="sd">&quot;&quot;&quot;A matplotlib backend for publishing figures via display_data&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Copyright (c) IPython Development Team.</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Distributed under the terms of the BSD 3-Clause License.</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">matplotlib.backends.backend_agg</span> <span class="kn">import</span> <span class="p">(</span>  <span class="c1"># noqa</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">new_figure_manager</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="n">FigureCanvasAgg</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="n">new_figure_manager_given_figure</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">colors</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>You could also define a function for making our plots. You
 can obviously avoid this and simply set up various <strong>matplotlib</strong>
@@ -656,7 +875,7 @@ function.</p>
 <span class="n">tfinal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="o">*</span><span class="n">y_0</span><span class="o">/</span><span class="n">g</span><span class="p">)</span>
 <span class="c1">#set up arrays </span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">tfinal</span><span class="p">,</span><span class="n">DeltaT</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span><span class="n">y_0</span> <span class="o">-</span><span class="n">g</span><span class="o">*.</span><span class="mi">5</span><span class="o">*</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">y</span> <span class="o">=</span><span class="n">y_0</span> <span class="o">-</span><span class="n">g</span><span class="o">*</span><span class="mf">.5</span><span class="o">*</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span>
 <span class="c1"># Then make a nice printout in table form using Pandas</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
@@ -676,109 +895,6 @@ function.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>t[s]</th>
-      <th>y[m]</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0.0</td>
-      <td>10.000000</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>0.1</td>
-      <td>9.950967</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0.2</td>
-      <td>9.803869</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0.3</td>
-      <td>9.558705</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.4</td>
-      <td>9.215476</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>0.5</td>
-      <td>8.774181</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>0.6</td>
-      <td>8.234821</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>0.7</td>
-      <td>7.597395</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>0.8</td>
-      <td>6.861904</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>0.9</td>
-      <td>6.028347</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>1.0</td>
-      <td>5.096725</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>1.1</td>
-      <td>4.067037</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>1.2</td>
-      <td>2.939284</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>1.3</td>
-      <td>1.713465</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>1.4</td>
-      <td>0.389581</td>
-    </tr>
-  </tbody>
-</table>
-</div></div><img alt="_images/chapter3_15_1.png" src="_images/chapter3_15_1.png" />
 </div>
 </div>
 <p>Here we used <strong>pandas</strong> (see below) to systemize the output of the position as function of time.</p>
@@ -933,126 +1049,6 @@ y(t)=10-\frac{1}{2}gt^2.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>t[s]</th>
-      <th>y[m]</th>
-      <th>v[m/s]</th>
-      <th>a[m/s^2]</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0.0</td>
-      <td>10.000000</td>
-      <td>0.000000</td>
-      <td>-9.80655</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>0.1</td>
-      <td>9.950967</td>
-      <td>-1.470982</td>
-      <td>-9.80655</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0.2</td>
-      <td>9.803869</td>
-      <td>-2.451638</td>
-      <td>-9.80655</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0.3</td>
-      <td>9.558705</td>
-      <td>-3.432292</td>
-      <td>-9.80655</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.4</td>
-      <td>9.215476</td>
-      <td>-4.412948</td>
-      <td>-9.80655</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>0.5</td>
-      <td>8.774181</td>
-      <td>-5.393602</td>
-      <td>-9.80655</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>0.6</td>
-      <td>8.234821</td>
-      <td>-6.374258</td>
-      <td>-9.80655</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>0.7</td>
-      <td>7.597395</td>
-      <td>-7.354913</td>
-      <td>-9.80655</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>0.8</td>
-      <td>6.861904</td>
-      <td>-8.335567</td>
-      <td>-9.80655</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>0.9</td>
-      <td>6.028347</td>
-      <td>-9.316222</td>
-      <td>-9.80655</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>1.0</td>
-      <td>5.096725</td>
-      <td>-10.296878</td>
-      <td>-9.80655</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>1.1</td>
-      <td>4.067037</td>
-      <td>-11.277533</td>
-      <td>-9.80655</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>1.2</td>
-      <td>2.939284</td>
-      <td>-12.258187</td>
-      <td>-9.80655</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Note that we don’t print the last values!</p>
 </div>
@@ -1209,11 +1205,6 @@ as</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
-</pre></div>
-</div>
-</div>
 </div>
 <p>The <strong>ceil</strong> function returns the smallest integer not less than the input in say</p>
 <div class="cell docutils container">
@@ -1223,22 +1214,12 @@ as</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22
-</pre></div>
-</div>
-</div>
 </div>
 <p>which in the case here is 22.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">21.75</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ceil</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22
 </pre></div>
 </div>
 </div>
@@ -1254,11 +1235,6 @@ Compare the previous result to the usage of <strong>floor</strong></p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>21
-</pre></div>
-</div>
-</div>
 </div>
 <p>Alternatively, we can define ourselves the number of integration(mesh) points. In this case we could have</p>
 <div class="cell docutils container">
@@ -1268,11 +1244,6 @@ Compare the previous result to the usage of <strong>floor</strong></p>
 <span class="n">tfinal</span> <span class="o">=</span> <span class="mf">0.5</span>
 <span class="n">DeltaT</span> <span class="o">=</span> <span class="p">(</span><span class="n">tfinal</span><span class="o">-</span><span class="n">tinitial</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">DeltaT</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.05
 </pre></div>
 </div>
 </div>
@@ -1287,11 +1258,6 @@ by setting all elelements to zero, as done here</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define array a</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
 </pre></div>
 </div>
 </div>
@@ -1383,71 +1349,6 @@ by setting all elelements to zero, as done here</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>t[s]</th>
-      <th>y[m]</th>
-      <th>v[m/s]</th>
-      <th>a[m/s^2]</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0.0</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>-9.806550</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>0.1</td>
-      <td>0.049031</td>
-      <td>-0.980655</td>
-      <td>-9.804194</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0.2</td>
-      <td>0.098034</td>
-      <td>-1.961074</td>
-      <td>-9.797128</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0.3</td>
-      <td>0.146963</td>
-      <td>-2.940787</td>
-      <td>-9.785362</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.4</td>
-      <td>0.195770</td>
-      <td>-3.919323</td>
-      <td>-9.768915</td>
-    </tr>
-  </tbody>
-</table>
-</div></div><img alt="_images/chapter3_111_1.png" src="_images/chapter3_111_1.png" />
 </div>
 </div>
 <p>Try different values for <span class="math notranslate nohighlight">\(\Delta t\)</span> and study the difference between the exact solution and the numerical solution.</p>
@@ -2173,17 +2074,6 @@ In order to compare our code with analytical results, we will thus study the pro
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">14</span><span class="o">-</span><span class="mi">847092</span><span class="n">aec374</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ax</span> <span class="o">=</span> <span class="o">-</span><span class="n">D</span><span class="o">*</span><span class="n">vx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="nb">abs</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">/</span><span class="n">m</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ay</span> <span class="o">=</span> <span class="o">-</span><span class="n">g</span> <span class="o">-</span> <span class="n">D</span><span class="o">*</span><span class="n">vy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="nb">abs</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">/</span><span class="n">m</span>
-
-<span class="ne">NameError</span>: name &#39;vx&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <p>Integrate the acceleration from an initial time <span class="math notranslate nohighlight">\(t_0\)</span> to a final time <span class="math notranslate nohighlight">\(t\)</span> and find the velocity.</p>
 <p>We reduce our problem to a one-dimensional in the <span class="math notranslate nohighlight">\(y\)</span>-direction only since for the two-dimensional motion we cannot find an analtical solution. For one dimension however, we have an analytical solution.
@@ -2685,36 +2575,42 @@ Furthermore, you will note that for larger values of <span class="math notransla
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="chapter2.html" title="previous page"><span class="section-number">2. </span>Classical Mechanics, Mathematics and Numerical background</a>
-    <a class='right-next' id="next-link" href="chapter4.html" title="next page"><span class="section-number">4. </span>Work, Energy, Momentum and Conservation laws</a>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="chapter2.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2. </span>Classical Mechanics, Mathematics and Numerical background</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="chapter4.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Work, Energy, Momentum and Conservation laws</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Morten Hjorth-Jensen and Scott Pratt<br/>
-        
-            &copy; Copyright 2020.<br/>
-      </p>
-    </div>
-  </footer>
+    <footer class="footer">
+  <p>
+    
+      By Morten Hjorth-Jensen and Scott Pratt<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-    
-  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
   </body>
 </html>

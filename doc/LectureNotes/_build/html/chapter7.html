@@ -5,9 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3. Non-inertial Frames, Translation and Rotating Coordinate Systems &#8212; Classical mechanics</title>
+    <title>7. Non-inertial Frames, Translation and Rotating Coordinate Systems &#8212; Classical mechanics</title>
     
-  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -34,22 +31,21 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -57,16 +53,19 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="4. Variational Calculus and Lagrangian Formalism" href="chapter8.html" />
-    <link rel="prev" title="2. Two-body problems, from the Gravitational Force to Two-body Scattering" href="chapter6.html" />
-
+    <link rel="next" title="8. Variational Calculus and Lagrangian Formalism" href="chapter8.html" />
+    <link rel="prev" title="6. Two-body problems, from the Gravitational Force to Two-body Scattering" href="chapter6.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
 
-
-
+    <!-- Google Analytics -->
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -75,32 +74,36 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Classical mechanics</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Classical mechanics</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
    PHY321 Classical Mechanics I, Michigan State University, Spring 2021
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   About the course
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="schedule.html">
    Teaching schedule with links to material
@@ -117,12 +120,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Introductory Material
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter1.html">
    1. Introduction
@@ -144,34 +147,35 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Advanced Topics
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter5.html">
-   1. Harmonic Oscillations
+   5. Harmonic Oscillations
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="chapter6.html">
-   2. Two-body problems, from the Gravitational Force to Two-body Scattering
+   6. Two-body problems, from the Gravitational Force to Two-body Scattering
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   3. Non-inertial Frames, Translation and Rotating Coordinate Systems
+   7. Non-inertial Frames, Translation and Rotating Coordinate Systems
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="chapter8.html">
-   4. Variational Calculus and Lagrangian Formalism
+   8. Variational Calculus and Lagrangian Formalism
   </a>
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -215,88 +219,146 @@
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
             <!-- Source interaction buttons -->
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#galilean-transformations">
-   3.1. Galilean Transformations
+   7.1. Galilean Transformations
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#accelerating-frames-no-rotation">
-   3.2. Accelerating Frames (No Rotation)
+   7.2. Accelerating Frames (No Rotation)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#rotating-frames">
-   3.3. Rotating Frames
+   7.3. Rotating Frames
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#effective-potential-and-centrifugal-force">
-     3.3.1. Effective potential and Centrifugal force
+     7.3.1. Effective potential and Centrifugal force
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#coriolis-force-and-falling-objects">
-   3.4. Coriolis Force and Falling Objects
+   7.4. Coriolis Force and Falling Objects
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#accelerating-and-rotating-frames">
-   3.5. Accelerating and Rotating Frames
+   7.5. Accelerating and Rotating Frames
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-foucault-pendulum">
-   3.6. The Foucault Pendulum
+   7.6. The Foucault Pendulum
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#euler-s-theorem-from-a-linear-algebra-perspective">
-   3.7. Euler’s Theorem from a Linear Algebra Perspective
+   7.7. Euler’s Theorem from a Linear Algebra Perspective
   </a>
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Non-inertial Frames, Translation and Rotating Coordinate Systems</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#galilean-transformations">
+   7.1. Galilean Transformations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accelerating-frames-no-rotation">
+   7.2. Accelerating Frames (No Rotation)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rotating-frames">
+   7.3. Rotating Frames
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#effective-potential-and-centrifugal-force">
+     7.3.1. Effective potential and Centrifugal force
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#coriolis-force-and-falling-objects">
+   7.4. Coriolis Force and Falling Objects
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accelerating-and-rotating-frames">
+   7.5. Accelerating and Rotating Frames
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-foucault-pendulum">
+   7.6. The Foucault Pendulum
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#euler-s-theorem-from-a-linear-algebra-perspective">
+   7.7. Euler’s Theorem from a Linear Algebra Perspective
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <div class="section" id="non-inertial-frames-translation-and-rotating-coordinate-systems">
-<h1><span class="section-number">3. </span>Non-inertial Frames, Translation and Rotating Coordinate Systems<a class="headerlink" href="#non-inertial-frames-translation-and-rotating-coordinate-systems" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="non-inertial-frames-translation-and-rotating-coordinate-systems">
+<h1><span class="section-number">7. </span>Non-inertial Frames, Translation and Rotating Coordinate Systems<a class="headerlink" href="#non-inertial-frames-translation-and-rotating-coordinate-systems" title="Permalink to this headline">¶</a></h1>
 <p>Let us quickly remind ourselves about the definition of a so-called <strong>inertial frame of reference</strong>.</p>
 <p>An inertial frame of reference in classical physics (and in special
 relativity as well) possesses the property that in this frame of reference a
@@ -334,7 +396,7 @@ frames is the centrifugal effect, or centrifugal force. We will here,
 in addition to the abovementioned example of the Coriolis effect study
 a classic case in classical mechanics, namely Focoault’s pendulum.</p>
 <div class="section" id="galilean-transformations">
-<h2><span class="section-number">3.1. </span>Galilean Transformations<a class="headerlink" href="#galilean-transformations" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.1. </span>Galilean Transformations<a class="headerlink" href="#galilean-transformations" title="Permalink to this headline">¶</a></h2>
 <p>In many of the examples studied till now we have restricted our
 attention to the motion of a particle (or a system of particles) as
 seen from an inertial frame of reference. An inertial reference frame
@@ -404,7 +466,7 @@ discussion here with a classic in classical mechanics, namely
 Focault’s pendulum.</p>
 </div>
 <div class="section" id="accelerating-frames-no-rotation">
-<h2><span class="section-number">3.2. </span>Accelerating Frames (No Rotation)<a class="headerlink" href="#accelerating-frames-no-rotation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.2. </span>Accelerating Frames (No Rotation)<a class="headerlink" href="#accelerating-frames-no-rotation" title="Permalink to this headline">¶</a></h2>
 <p>We consider first the effect of uniformly accelerating reference
 frames.  We will hereafter label this frame with a subscript
 <span class="math notranslate nohighlight">\(S\)</span>. Assume now that this reference systems accelerates with an
@@ -466,7 +528,7 @@ often also called an inertial force or an effective force.</p>
 <p><strong>Add example about pendulum in train car</strong></p>
 </div>
 <div class="section" id="rotating-frames">
-<h2><span class="section-number">3.3. </span>Rotating Frames<a class="headerlink" href="#rotating-frames" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.3. </span>Rotating Frames<a class="headerlink" href="#rotating-frames" title="Permalink to this headline">¶</a></h2>
 <p>If you are on Earth’s surface and if your reference frame is fixed
 with the surface, this is an example of an accelerating frame, where
 the acceleration, as we will show below,  is <span class="math notranslate nohighlight">\(\Omega^2 r\)</span>, where
@@ -635,7 +697,7 @@ m\boldsymbol{a}_{S}=\boldsymbol{F}+m\dot{\boldsymbol{r}\times\boldsymbol{\Omega}
 \]</div>
 <p>In our discussions below we will assume that the angular acceleration of the rotating frame is zero and focus only on the Coriolis force and the centrifugal force.</p>
 <div class="section" id="effective-potential-and-centrifugal-force">
-<h3><span class="section-number">3.3.1. </span>Effective potential and Centrifugal force<a class="headerlink" href="#effective-potential-and-centrifugal-force" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.3.1. </span>Effective potential and Centrifugal force<a class="headerlink" href="#effective-potential-and-centrifugal-force" title="Permalink to this headline">¶</a></h3>
 <p>Suppose we can ignore the Coriolis force. If we focus only on the
 centrifugal force we have an additional force</p>
 <div class="math notranslate nohighlight">
@@ -764,7 +826,7 @@ which is one degree in latitude below the Equator. Chimborazo is about
 </div>
 </div>
 <div class="section" id="coriolis-force-and-falling-objects">
-<h2><span class="section-number">3.4. </span>Coriolis Force and Falling Objects<a class="headerlink" href="#coriolis-force-and-falling-objects" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.4. </span>Coriolis Force and Falling Objects<a class="headerlink" href="#coriolis-force-and-falling-objects" title="Permalink to this headline">¶</a></h2>
 <p>The Coriolis force is given by</p>
 <div class="math notranslate nohighlight">
 \[
@@ -841,7 +903,7 @@ t&amp;=&amp;\sqrt{2h/g}=10.1~{\rm s},\\
 \end{split}\]</div>
 </div>
 <div class="section" id="accelerating-and-rotating-frames">
-<h2><span class="section-number">3.5. </span>Accelerating and Rotating Frames<a class="headerlink" href="#accelerating-and-rotating-frames" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.5. </span>Accelerating and Rotating Frames<a class="headerlink" href="#accelerating-and-rotating-frames" title="Permalink to this headline">¶</a></h2>
 <p>It is now simple to bring together the equations for an accelerating and rotating frame. Using our results we have the equations of motion for an object in an accelerating and rotating frame with respect to an inertial frame</p>
 <div class="math notranslate nohighlight">
 \[
@@ -850,7 +912,7 @@ m\ddot{\boldsymbol{r}}_{S}=\boldsymbol{F}+m\boldsymbol{r}\times\dot{\boldsymbol{
 <p>where the last term is the acceleration of the accelerating frame seen from the  inertial frame.</p>
 </div>
 <div class="section" id="the-foucault-pendulum">
-<h2><span class="section-number">3.6. </span>The Foucault Pendulum<a class="headerlink" href="#the-foucault-pendulum" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.6. </span>The Foucault Pendulum<a class="headerlink" href="#the-foucault-pendulum" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Foucault_pendulum">Foucault
 Pendulum</a> is simply
 a regular pendulum moving in both horizontal directions, and with the
@@ -985,7 +1047,7 @@ pendulum motions that resemble ellipses rather than simple
 back-and-forth motion.</p>
 </div>
 <div class="section" id="euler-s-theorem-from-a-linear-algebra-perspective">
-<h2><span class="section-number">3.7. </span>Euler’s Theorem from a Linear Algebra Perspective<a class="headerlink" href="#euler-s-theorem-from-a-linear-algebra-perspective" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.7. </span>Euler’s Theorem from a Linear Algebra Perspective<a class="headerlink" href="#euler-s-theorem-from-a-linear-algebra-perspective" title="Permalink to this headline">¶</a></h2>
 <p><strong>this material will be added soon</strong></p>
 </div>
 </div>
@@ -1012,36 +1074,42 @@ back-and-forth motion.</p>
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="chapter6.html" title="previous page"><span class="section-number">2. </span>Two-body problems, from the Gravitational Force to Two-body Scattering</a>
-    <a class='right-next' id="next-link" href="chapter8.html" title="next page"><span class="section-number">4. </span>Variational Calculus and Lagrangian Formalism</a>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="chapter6.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">6. </span>Two-body problems, from the Gravitational Force to Two-body Scattering</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="chapter8.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Variational Calculus and Lagrangian Formalism</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Morten Hjorth-Jensen and Scott Pratt<br/>
-        
-            &copy; Copyright 2020.<br/>
-      </p>
-    </div>
-  </footer>
+    <footer class="footer">
+  <p>
+    
+      By Morten Hjorth-Jensen and Scott Pratt<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-    
-  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
   </body>
 </html>
