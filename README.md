@@ -100,7 +100,7 @@ _Additional textbooks_:
 - _Lecture notes_: Posted lecture notes are in the doc/pub folder here or at https://mhjensen.github.io/Physics321/doc/web/course.html for easier viewing. They are not meant to be a replacement for textbook. These notes are updated on a weekly basis and a _git pull_ should thus always give you the latest update. 
 
 ##  Teaching schedule with links to material
-Weekly mails (Fridays) with updates, plans for lectures etc will be sent to everybody. We use D2L as discussion forum as well.
+Weekly mails (Weekends/Mondays) with updates, plans for lectures etc will be sent to everybody. 
 
 ###  Week 2, January 10-14, 2022
 
