@@ -11,6 +11,8 @@ Video of lecture January 12 at https://mediaspace.msu.edu/media/t/1_yfmpmg57
 Handwritten notes at https://github.com/mhjensen/Physics321/tree/master/doc/HandWrittenNotes/Spring2022/NotesJanuary12.pdf
 - Friday 1/14: Discussions and problem solving and discussion of first homework. The first ten minutes were recorded and the video can be found at https://mediaspace.msu.edu/media/t/1_7gxzfsr9
 
+
+
 ###  Week 3, January 17-21, 2022
 
 - Monday 1/17: MLK day, no classes
@@ -131,3 +133,10 @@ computations, we would like to emphasize
 - understanding how algorithms are used to solve mathematical problems
 - Making science (your results) reproducible
 - algorithmic thinking for gaining deeper insights about scientific problems
+
+
+
+
+
+
+
