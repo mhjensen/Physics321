@@ -129,6 +129,20 @@ div.toc p,a {
               ('Defining a Model', 2, None, 'defining-a-model'),
               ('Solving the Equations', 2, None, 'solving-the-equations'),
               ('Analyze', 2, None, 'analyze'),
+              ("Newton's Laws", 2, None, 'newton-s-laws'),
+              ('Setting up a model for forces acting on an object',
+               2,
+               None,
+               'setting-up-a-model-for-forces-acting-on-an-object'),
+              ("Newton's Laws, the Second one first",
+               2,
+               None,
+               'newton-s-laws-the-second-one-first'),
+              ('Then the First Law', 2, None, 'then-the-first-law'),
+              ('And finally the Third Law',
+               2,
+               None,
+               'and-finally-the-third-law'),
               ('Falling baseball in one dimension',
                2,
                None,
@@ -167,21 +181,7 @@ div.toc p,a {
               ('Simple extension, the Euler-Cromer method',
                2,
                None,
-               'simple-extension-the-euler-cromer-method'),
-              ("Newton's Laws", 2, None, 'newton-s-laws'),
-              ('Setting up a model for forces acting on an object',
-               2,
-               None,
-               'setting-up-a-model-for-forces-acting-on-an-object'),
-              ("Newton's Laws, the Second one first",
-               2,
-               None,
-               'newton-s-laws-the-second-one-first'),
-              ('Then the First Law', 2, None, 'then-the-first-law'),
-              ('And finally the Third Law',
-               2,
-               None,
-               'and-finally-the-third-law')]}
+               'simple-extension-the-euler-cromer-method')]}
 end of tocinfo -->
 
 <body>
@@ -323,6 +323,122 @@ sloppy job in identifying the degrees of freedom.
 enquiry. Hopefully, through a mix of numerical simulations, analytical
 calculations and experiments we may gain a deeper insight about the
 physics of a specific system.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="newton-s-laws">Newton's Laws </h2>
+
+<p>Let us now remind ourselves of Newton's laws, since these are the laws of motion we will study in this course.</p>
+
+<p>When analyzing a physical system we normally start with distinguishing between the object we are studying (we will label this in more general terms as our <b>system</b>) and how this system interacts with the environment (which often means everything else!)</p>
+
+<p>In our investigations we will thus analyze a specific physics problem in terms of the system and the environment.
+In doing so we need to identify the forces that act on the system and assume that the
+forces acting on the system must have a source, an identifiable cause in
+the environment.
+</p>
+
+<p>A force acting on for example a falling object must be related to an interaction with something in the environment.
+This also means that we do not consider internal forces. The latter are forces between
+one part of the object and another part. In this course we will mainly focus on external forces.
+</p>
+
+<p>Forces are either contact forces or long-range forces.</p>
+
+<p>Contact forces, as evident from the name, are forces that occur at the contact between
+the system and the environment. Well-known long-range forces are the gravitional force and the electromagnetic force.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="setting-up-a-model-for-forces-acting-on-an-object">Setting up a model for forces acting on an object </h2>
+
+<p>In order to set up the forces which act on an object, the following steps may be useful</p>
+<ol>
+<li> Divide the problem into system and environment.</li>
+<li> Draw a figure of the object and everything in contact with the object.</li>
+<li> Draw a closed curve around the system.</li>
+<li> Find contact points&#8212;these are the points where contact forces may act.</li>
+<li> Give names and symbols to all the contact forces.</li>
+<li> Identify the long-range forces.</li>
+<li> Make a drawing of the object. Draw the forces as arrows, vectors, starting from where the force is acting. The direction of the vector(s) indicates the (positive) direction of the force. Try to make the length of the arrow indicate the relative magnitude of the forces.</li>
+<li> Draw in the axes of the coordinate system. It is often convenient to make one axis parallel to the direction of motion. When you choose the direction of the axis you also choose the positive direction for the axis.</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="newton-s-laws-the-second-one-first">Newton's Laws, the Second one first </h2>
+
+<p>Newton&#8217;s second law of motion: The force \( \boldsymbol{F} \) on an object of inertial mass \( m \)
+is related to the acceleration a of the object through
+</p>
+$$
+\boldsymbol{F} = m\boldsymbol{a},
+$$
+
+<p>where \( \boldsymbol{a} \) is the acceleration.</p>
+
+<p>Newton&#8217;s laws of motion are laws of nature that have been found by experimental
+investigations and have been shown to hold up to continued experimental investigations.
+Newton&#8217;s laws are valid over a wide range of length- and time-scales. We
+use Newton&#8217;s laws of motion to describe everything from the motion of atoms to the
+motion of galaxies.
+</p>
+
+<p>The second law is a vector equation with the acceleration having the same
+direction as the force. The acceleration is proportional to the force via the mass \( m \) of the system under study.
+</p>
+
+<p>Newton&#8217;s second law introduces a new property of an object, the so-called 
+inertial mass \( m \). We determine the inertial mass of an object by measuring the
+acceleration for a given applied force.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="then-the-first-law">Then the First Law </h2>
+
+<p>What happens if the net external force on a body is zero? Applying Newton&#8217;s second
+law, we find:
+</p>
+$$
+\boldsymbol{F} = 0 = m\boldsymbol{a},
+$$
+
+<p>which gives using the definition of the acceleration</p>
+$$
+\boldsymbol{a} = \frac{d\boldsymbol{v}}{dt}=0.
+$$
+
+<p>The acceleration is zero, which means that the velocity of the object is constant. This
+is often referred to as Newton&#8217;s first law. An object in a state of uniform motion tends to remain in
+that state unless an external force changes its state of motion.
+Why do we need a separate law for this? Is it not simply a special case of Newton&#8217;s
+second law? Yes, Newton&#8217;s first law can be deduced from the second law as we have
+illustrated. However, the first law is often used for a different purpose: Newton&#8217;s
+First Law tells us about the limit of applicability of Newton&#8217;s Second law. Newton&#8217;s
+Second law can only be used in reference systems where the First law is obeyed. But
+is not the First law always valid? No! The First law is only valid in reference systems
+that are not accelerated. If you observe the motion of a ball from an accelerating
+car, the ball will appear to accelerate even if there are no forces acting on it. We call
+systems that are not accelerating inertial systems, and Newton&#8217;s first law is often
+called the law of inertia. Newton&#8217;s first and second laws of motion are only valid in
+inertial systems. 
+</p>
+
+<p>A system is an inertial system if it is not accelerated. It means that the reference system
+must not be accelerating linearly or rotating. Unfortunately, this means that most
+systems we know are not really inertial systems. For example, the surface of the
+Earth is clearly not an inertial system, because the Earth is rotating. The Earth is also
+not an inertial system, because it ismoving in a curved path around the Sun. However,
+even if the surface of the Earth is not strictly an inertial system, it may be considered
+to be approximately an inertial system for many laboratory-size experiments.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="and-finally-the-third-law">And finally the Third Law </h2>
+
+<p>If there is a force from object A on object B, there is also a force from object B on object A.
+This fundamental principle of interactions is called Newton&#8217;s third law. We do not
+know of any force that do not obey this law: All forces appear in pairs. Newton&#8217;s
+third law is usually formulated as: For every action there is an equal and opposite
+reaction.
 </p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -1219,122 +1335,6 @@ steps
   </div>
 </div>
 
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="newton-s-laws">Newton's Laws </h2>
-
-<p>Let us now remind ourselves of Newton's laws, since these are the laws of motion we will study in this course.</p>
-
-<p>When analyzing a physical system we normally start with distinguishing between the object we are studying (we will label this in more general terms as our <b>system</b>) and how this system interacts with the environment (which often means everything else!)</p>
-
-<p>In our investigations we will thus analyze a specific physics problem in terms of the system and the environment.
-In doing so we need to identify the forces that act on the system and assume that the
-forces acting on the system must have a source, an identifiable cause in
-the environment.
-</p>
-
-<p>A force acting on for example a falling object must be related to an interaction with something in the environment.
-This also means that we do not consider internal forces. The latter are forces between
-one part of the object and another part. In this course we will mainly focus on external forces.
-</p>
-
-<p>Forces are either contact forces or long-range forces.</p>
-
-<p>Contact forces, as evident from the name, are forces that occur at the contact between
-the system and the environment. Well-known long-range forces are the gravitional force and the electromagnetic force.
-</p>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="setting-up-a-model-for-forces-acting-on-an-object">Setting up a model for forces acting on an object </h2>
-
-<p>In order to set up the forces which act on an object, the following steps may be useful</p>
-<ol>
-<li> Divide the problem into system and environment.</li>
-<li> Draw a figure of the object and everything in contact with the object.</li>
-<li> Draw a closed curve around the system.</li>
-<li> Find contact points&#8212;these are the points where contact forces may act.</li>
-<li> Give names and symbols to all the contact forces.</li>
-<li> Identify the long-range forces.</li>
-<li> Make a drawing of the object. Draw the forces as arrows, vectors, starting from where the force is acting. The direction of the vector(s) indicates the (positive) direction of the force. Try to make the length of the arrow indicate the relative magnitude of the forces.</li>
-<li> Draw in the axes of the coordinate system. It is often convenient to make one axis parallel to the direction of motion. When you choose the direction of the axis you also choose the positive direction for the axis.</li>
-</ol>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="newton-s-laws-the-second-one-first">Newton's Laws, the Second one first </h2>
-
-<p>Newton&#8217;s second law of motion: The force \( \boldsymbol{F} \) on an object of inertial mass \( m \)
-is related to the acceleration a of the object through
-</p>
-$$
-\boldsymbol{F} = m\boldsymbol{a},
-$$
-
-<p>where \( \boldsymbol{a} \) is the acceleration.</p>
-
-<p>Newton&#8217;s laws of motion are laws of nature that have been found by experimental
-investigations and have been shown to hold up to continued experimental investigations.
-Newton&#8217;s laws are valid over a wide range of length- and time-scales. We
-use Newton&#8217;s laws of motion to describe everything from the motion of atoms to the
-motion of galaxies.
-</p>
-
-<p>The second law is a vector equation with the acceleration having the same
-direction as the force. The acceleration is proportional to the force via the mass \( m \) of the system under study.
-</p>
-
-<p>Newton&#8217;s second law introduces a new property of an object, the so-called 
-inertial mass \( m \). We determine the inertial mass of an object by measuring the
-acceleration for a given applied force.
-</p>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="then-the-first-law">Then the First Law </h2>
-
-<p>What happens if the net external force on a body is zero? Applying Newton&#8217;s second
-law, we find:
-</p>
-$$
-\boldsymbol{F} = 0 = m\boldsymbol{a},
-$$
-
-<p>which gives using the definition of the acceleration</p>
-$$
-\boldsymbol{a} = \frac{d\boldsymbol{v}}{dt}=0.
-$$
-
-<p>The acceleration is zero, which means that the velocity of the object is constant. This
-is often referred to as Newton&#8217;s first law. An object in a state of uniform motion tends to remain in
-that state unless an external force changes its state of motion.
-Why do we need a separate law for this? Is it not simply a special case of Newton&#8217;s
-second law? Yes, Newton&#8217;s first law can be deduced from the second law as we have
-illustrated. However, the first law is often used for a different purpose: Newton&#8217;s
-First Law tells us about the limit of applicability of Newton&#8217;s Second law. Newton&#8217;s
-Second law can only be used in reference systems where the First law is obeyed. But
-is not the First law always valid? No! The First law is only valid in reference systems
-that are not accelerated. If you observe the motion of a ball from an accelerating
-car, the ball will appear to accelerate even if there are no forces acting on it. We call
-systems that are not accelerating inertial systems, and Newton&#8217;s first law is often
-called the law of inertia. Newton&#8217;s first and second laws of motion are only valid in
-inertial systems. 
-</p>
-
-<p>A system is an inertial system if it is not accelerated. It means that the reference system
-must not be accelerating linearly or rotating. Unfortunately, this means that most
-systems we know are not really inertial systems. For example, the surface of the
-Earth is clearly not an inertial system, because the Earth is rotating. The Earth is also
-not an inertial system, because it ismoving in a curved path around the Sun. However,
-even if the surface of the Earth is not strictly an inertial system, it may be considered
-to be approximately an inertial system for many laboratory-size experiments.
-</p>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="and-finally-the-third-law">And finally the Third Law </h2>
-
-<p>If there is a force from object A on object B, there is also a force from object B on object A.
-This fundamental principle of interactions is called Newton&#8217;s third law. We do not
-know of any force that do not obey this law: All forces appear in pairs. Newton&#8217;s
-third law is usually formulated as: For every action there is an equal and opposite
-reaction.
-</p>
 
 <!-- ------------------- end of main content --------------- -->
 <center style="font-size:80%">

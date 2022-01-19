@@ -104,6 +104,126 @@ calculations and experiments we may gain a deeper insight about the
 physics of a specific system.
 
 
+
+
+
+!split
+===== Newton's Laws =====
+
+Let us now remind ourselves of Newton's laws, since these are the laws of motion we will study in this course.
+
+
+When analyzing a physical system we normally start with distinguishing between the object we are studying (we will label this in more general terms as our _system_) and how this system interacts with the environment (which often means everything else!)
+
+In our investigations we will thus analyze a specific physics problem in terms of the system and the environment.
+In doing so we need to identify the forces that act on the system and assume that the
+forces acting on the system must have a source, an identifiable cause in
+the environment.
+
+A force acting on for example a falling object must be related to an interaction with something in the environment.
+This also means that we do not consider internal forces. The latter are forces between
+one part of the object and another part. In this course we will mainly focus on external forces.
+
+Forces are either contact forces or long-range forces.
+
+Contact forces, as evident from the name, are forces that occur at the contact between
+the system and the environment. Well-known long-range forces are the gravitional force and the electromagnetic force.
+
+
+!split
+===== Setting up a model for forces acting on an object =====
+
+In order to set up the forces which act on an object, the following steps may be useful
+o Divide the problem into system and environment.
+o Draw a figure of the object and everything in contact with the object.
+o Draw a closed curve around the system.
+o Find contact points—these are the points where contact forces may act.
+o Give names and symbols to all the contact forces.
+o Identify the long-range forces.
+o Make a drawing of the object. Draw the forces as arrows, vectors, starting from where the force is acting. The direction of the vector(s) indicates the (positive) direction of the force. Try to make the length of the arrow indicate the relative magnitude of the forces.
+o Draw in the axes of the coordinate system. It is often convenient to make one axis parallel to the direction of motion. When you choose the direction of the axis you also choose the positive direction for the axis.
+
+
+!split
+===== Newton's Laws, the Second one first =====
+
+
+Newton’s second law of motion: The force $\bm{F}$ on an object of inertial mass $m$
+is related to the acceleration a of the object through
+!bt
+\[
+\bm{F} = m\bm{a},
+\]
+!et
+where $\bm{a}$ is the acceleration.
+
+Newton’s laws of motion are laws of nature that have been found by experimental
+investigations and have been shown to hold up to continued experimental investigations.
+Newton’s laws are valid over a wide range of length- and time-scales. We
+use Newton’s laws of motion to describe everything from the motion of atoms to the
+motion of galaxies.
+
+The second law is a vector equation with the acceleration having the same
+direction as the force. The acceleration is proportional to the force via the mass $m$ of the system under study.
+
+
+Newton’s second law introduces a new property of an object, the so-called 
+inertial mass $m$. We determine the inertial mass of an object by measuring the
+acceleration for a given applied force.
+
+
+!split
+===== Then the First Law =====
+
+
+What happens if the net external force on a body is zero? Applying Newton’s second
+law, we find:
+!bt
+\[
+\bm{F} = 0 = m\bm{a},
+\]
+!et
+which gives using the definition of the acceleration
+!bt
+\[
+\bm{a} = \frac{d\bm{v}}{dt}=0.
+\]
+!et
+The acceleration is zero, which means that the velocity of the object is constant. This
+is often referred to as Newton’s first law. An object in a state of uniform motion tends to remain in
+that state unless an external force changes its state of motion.
+Why do we need a separate law for this? Is it not simply a special case of Newton’s
+second law? Yes, Newton’s first law can be deduced from the second law as we have
+illustrated. However, the first law is often used for a different purpose: Newton’s
+First Law tells us about the limit of applicability of Newton’s Second law. Newton’s
+Second law can only be used in reference systems where the First law is obeyed. But
+is not the First law always valid? No! The First law is only valid in reference systems
+that are not accelerated. If you observe the motion of a ball from an accelerating
+car, the ball will appear to accelerate even if there are no forces acting on it. We call
+systems that are not accelerating inertial systems, and Newton’s first law is often
+called the law of inertia. Newton’s first and second laws of motion are only valid in
+inertial systems. 
+
+A system is an inertial system if it is not accelerated. It means that the reference system
+must not be accelerating linearly or rotating. Unfortunately, this means that most
+systems we know are not really inertial systems. For example, the surface of the
+Earth is clearly not an inertial system, because the Earth is rotating. The Earth is also
+not an inertial system, because it ismoving in a curved path around the Sun. However,
+even if the surface of the Earth is not strictly an inertial system, it may be considered
+to be approximately an inertial system for many laboratory-size experiments.
+
+!split
+===== And finally the Third Law =====
+
+
+If there is a force from object A on object B, there is also a force from object B on object A.
+This fundamental principle of interactions is called Newton’s third law. We do not
+know of any force that do not obey this law: All forces appear in pairs. Newton’s
+third law is usually formulated as: For every action there is an equal and opposite
+reaction.
+
+
+
 !split
 ===== Falling baseball in one dimension =====
 
@@ -792,126 +912,6 @@ for i in range(n-1):
 
 
 
-
-
-
-
-
-
-!split
-===== Newton's Laws =====
-
-Let us now remind ourselves of Newton's laws, since these are the laws of motion we will study in this course.
-
-
-When analyzing a physical system we normally start with distinguishing between the object we are studying (we will label this in more general terms as our _system_) and how this system interacts with the environment (which often means everything else!)
-
-In our investigations we will thus analyze a specific physics problem in terms of the system and the environment.
-In doing so we need to identify the forces that act on the system and assume that the
-forces acting on the system must have a source, an identifiable cause in
-the environment.
-
-A force acting on for example a falling object must be related to an interaction with something in the environment.
-This also means that we do not consider internal forces. The latter are forces between
-one part of the object and another part. In this course we will mainly focus on external forces.
-
-Forces are either contact forces or long-range forces.
-
-Contact forces, as evident from the name, are forces that occur at the contact between
-the system and the environment. Well-known long-range forces are the gravitional force and the electromagnetic force.
-
-
-!split
-===== Setting up a model for forces acting on an object =====
-
-In order to set up the forces which act on an object, the following steps may be useful
-o Divide the problem into system and environment.
-o Draw a figure of the object and everything in contact with the object.
-o Draw a closed curve around the system.
-o Find contact points—these are the points where contact forces may act.
-o Give names and symbols to all the contact forces.
-o Identify the long-range forces.
-o Make a drawing of the object. Draw the forces as arrows, vectors, starting from where the force is acting. The direction of the vector(s) indicates the (positive) direction of the force. Try to make the length of the arrow indicate the relative magnitude of the forces.
-o Draw in the axes of the coordinate system. It is often convenient to make one axis parallel to the direction of motion. When you choose the direction of the axis you also choose the positive direction for the axis.
-
-
-!split
-===== Newton's Laws, the Second one first =====
-
-
-Newton’s second law of motion: The force $\bm{F}$ on an object of inertial mass $m$
-is related to the acceleration a of the object through
-!bt
-\[
-\bm{F} = m\bm{a},
-\]
-!et
-where $\bm{a}$ is the acceleration.
-
-Newton’s laws of motion are laws of nature that have been found by experimental
-investigations and have been shown to hold up to continued experimental investigations.
-Newton’s laws are valid over a wide range of length- and time-scales. We
-use Newton’s laws of motion to describe everything from the motion of atoms to the
-motion of galaxies.
-
-The second law is a vector equation with the acceleration having the same
-direction as the force. The acceleration is proportional to the force via the mass $m$ of the system under study.
-
-
-Newton’s second law introduces a new property of an object, the so-called 
-inertial mass $m$. We determine the inertial mass of an object by measuring the
-acceleration for a given applied force.
-
-
-!split
-===== Then the First Law =====
-
-
-What happens if the net external force on a body is zero? Applying Newton’s second
-law, we find:
-!bt
-\[
-\bm{F} = 0 = m\bm{a},
-\]
-!et
-which gives using the definition of the acceleration
-!bt
-\[
-\bm{a} = \frac{d\bm{v}}{dt}=0.
-\]
-!et
-The acceleration is zero, which means that the velocity of the object is constant. This
-is often referred to as Newton’s first law. An object in a state of uniform motion tends to remain in
-that state unless an external force changes its state of motion.
-Why do we need a separate law for this? Is it not simply a special case of Newton’s
-second law? Yes, Newton’s first law can be deduced from the second law as we have
-illustrated. However, the first law is often used for a different purpose: Newton’s
-First Law tells us about the limit of applicability of Newton’s Second law. Newton’s
-Second law can only be used in reference systems where the First law is obeyed. But
-is not the First law always valid? No! The First law is only valid in reference systems
-that are not accelerated. If you observe the motion of a ball from an accelerating
-car, the ball will appear to accelerate even if there are no forces acting on it. We call
-systems that are not accelerating inertial systems, and Newton’s first law is often
-called the law of inertia. Newton’s first and second laws of motion are only valid in
-inertial systems. 
-
-A system is an inertial system if it is not accelerated. It means that the reference system
-must not be accelerating linearly or rotating. Unfortunately, this means that most
-systems we know are not really inertial systems. For example, the surface of the
-Earth is clearly not an inertial system, because the Earth is rotating. The Earth is also
-not an inertial system, because it ismoving in a curved path around the Sun. However,
-even if the surface of the Earth is not strictly an inertial system, it may be considered
-to be approximately an inertial system for many laboratory-size experiments.
-
-!split
-===== And finally the Third Law =====
-
-
-If there is a force from object A on object B, there is also a force from object B on object A.
-This fundamental principle of interactions is called Newton’s third law. We do not
-know of any force that do not obey this law: All forces appear in pairs. Newton’s
-third law is usually formulated as: For every action there is an equal and opposite
-reaction.
 
 
 
