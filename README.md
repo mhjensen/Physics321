@@ -187,7 +187,7 @@ Handwritten notes at https://github.com/mhjensen/Physics321/tree/master/doc/Hand
 - Friday 4/16: Euler-Lagrange equations and Lagrangian formalism. Taylor chapters 6-7 and lecture notes. Deadline eigth homework.
 
 
-### Week 16, April 18-24, 2022
+### Week 16, April 18-22, 2022
 - Monday 4/18:  Langrangian formalism, discussion of examples. Taylor chapters 6 and 7. 
 - Wednesday 4/20: Lagrangian formalism, examples such as the linear chain and double pendulum. 
 - Friday 4/22:  TBA. Deadline ninth homework.
