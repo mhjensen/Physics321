@@ -118,7 +118,7 @@ Handwritten notes at https://github.com/mhjensen/Physics321/tree/master/doc/Hand
 - Monday 1/17: MLK day, no classes
 - Wednesday 1/19: Motion and forces, Newton's laws, examples.
   - Handwritten notes from lecture at https://github.com/mhjensen/Physics321/tree/master/doc/HandWrittenNotes/Spring2022/NotesJanuary19.pdf
-  - Video of lecture January 19 (no subtitles) at https://mediaspace.msu.edu/media/t/1_amp782uz
+  - Video of lecture January 19 (no subtitles) at https://mediaspace.msu.edu/media/t/1_amp782uz. Video with subtitles at https://youtu.be/csjr4c_6A7c
 - Friday 1/21: Motion and forces, Newton's laws, examples. Problems solving. Deadline first homework. 
 - Good reads are Taylor chapters 1.4, 1.5, 1.6, 2.1-2.4 and AMS chapters 4.2 and  5 and and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week3/html/week3.html).
 
