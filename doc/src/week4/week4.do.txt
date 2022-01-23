@@ -1,4 +1,4 @@
-TITLE: PHY321: Motion examples, Forces, Newton's Laws and Motion Example
+TITLE: PHY321: More on Motion and Forces with examples, begin Work and Energy  discussion
 AUTHOR: "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/" {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and Facility for Rare Ion Beams (FRIB), Michigan State University, USA & Department of Physics, University of Oslo, Norway
 DATE: today
 
@@ -6,656 +6,673 @@ DATE: today
 !split
 =====   Aims and Overarching Motivation =====
 
-=== Monday ===
+=== Monday January 24, Lecture and examples ===
 
-We try to finalize the discussion we started last Friday on falling objects and numerical aspects thereof.
-If we get time, we start with a discussion of forces as well.
+We discuss various forces and their pertinent equations of motion
 
-Recommended reading: Taylor 1.3
+Recommended reading: Taylor 2.1-2.4. Malthe-Sørenssen chapters 6 and 7 contain many interesting examples with codes and solutions.
+We will cover in particular a falling object in two dimensions with linear air resistance relevant for homework 3. 
 
-=== Wednesday ===
+=== Wednesday, Lecture and Examples ===
 
-We revisit Newton's laws and discuss how to analyze a problem.
+We discuss other force models with examples such as the gravitational
+force and a spring force. See Malthe-Sørenssen chapter 7.3-7.5. We
+start our discussion of energy and work, see Taylor 4.1
 
-Recommended reading: Taylor 1.4 and 1.5
+We discuss also exercises 5 and 6 from homework 2. We will continue with this on Friday.
 
-===  Friday ===
+===  Friday, summary and work on weekly assignments ===
 
-We discuss several examples and try to wrap up the discussions on Newton's laws.
+We discuss examples of energy and work, see Taylor 4.1-4.3 the first 20 minutes. Thereafter we solve exercises.
 
-Recommended reading: Taylor 1.4-1.6 and 2.1-2.2 as examples of motion problems.
+
+
 
 
 
 !split
-===== Basic Steps of Scientific Investigations =====
+===== Air Resistance in One Dimension =====
 
-Last week we discussed several basi elements of the scientific method. We repeat them here.
-
-An overarching aim in this course is to give you a deeper
-understanding of the scientific method. The problems we study will all
-involve cases where we can apply classical mechanics. In our previous
-material we already assumed that we had a model for the motion of an
-object.  Alternatively we could have data from experiment (like Usain
-Bolt's 100m world record run in 2008).  Or we could have performed
-ourselves an experiment and we want to understand which forces are at
-play and whether these forces can be understood in terms of
-fundamental forces.
-
-Our first step consists in identifying the problem. What we sketch
-here may include a mix of experiment and theoretical simulations, or
-just experiment or only theory.
-
-!split
-===== Identifying our System =====
-
-Here we can ask questions like
-o What kind of object is moving
-o What kind of data do we have
-o How do we measure position, velocity, acceleration etc
-o Which initial conditions influence our system
-o Other aspects which allow us to identify the system
-
-!split
-===== Defining a Model =====
-
-With our eventual data and observations we would now like to develop a
-model for the system. In the end we want obviously to be able to
-understand which forces are at play and how they influence our
-specific system. That is, can we extract some deeper insights about a
-system?
-
-We need then to
-o Find the forces that act on our system
-o Introduce models for the forces
-o Identify the equations which can govern the system (Newton's second law for example)
-o More elements we deem important for defining our model
-
-!split
-===== Solving the Equations =====
-
-With the model at hand, we can then solve the equations. In classical mechanics we normally end up  with solving sets of coupled ordinary differential equations or partial differential equations.
-o Using Newton's second law we have equations of the type $\bm{F}=m\bm{a}=md\bm{v}/dt$
-o We need to  define the initial conditions (typically the initial velocity and position as functions of time) and/or initial conditions and boundary conditions
-o The solution of the equations give us then the position, the velocity and other time-dependent quantities which may specify the motion of a given object.
+Last week we considered the motion of a falling object with air
+resistance. Here we look at both a quadratic in velocity resistance
+and linear in velocity.  But first we give a qualitative argument
+about the mathematical expression for the air resistance we used last
+Friday.  The discussion here is also contained in the "video on how to make a model for a drag force":"https://youtu.be/DRTmLZYdTFY".
 
 
-We are not yet done. With our lovely solvers, we need to start thinking.
+Air resistance tends to scale as the square of the velocity. This is
+in contrast to many problems chosen for textbooks, where it is linear
+in the velocity. The choice of a linear dependence is motivated by
+mathematical simplicity (it keeps the differential equation linear)
+rather than by physics. One can see that the force should be quadratic
+in velocity by considering the momentum imparted on the air
+molecules. If an object sweeps through a volume $dV$ of air in time
+$dt$, the momentum imparted on the air is
 
-!split
-===== Analyze =====
-
-Now it is time to ask the big questions. What do our results mean? Can we give a simple interpretation in terms of fundamental laws?  What do our results mean? Are they correct?
-Thus, typical questions we may ask are
-o Are our results for say $\bm{r}(t)$ valid?  Do we trust what we did?  Can you validate and verify the correctness of your results?
-o Evaluate the answers and their implications
-o Compare with experimental data if possible. Does our model make sense?
-o and obviously many other questions.
-
-The analysis stage feeds back to the first stage. It may happen that
-the data we had were not good enough, there could be large statistical
-uncertainties. We may need to collect more data or perhaps we did a
-sloppy job in identifying the degrees of freedom.
-
-All these steps are essential elements in a scientific
-enquiry. Hopefully, through a mix of numerical simulations, analytical
-calculations and experiments we may gain a deeper insight about the
-physics of a specific system.
-
-
-!split
-===== Falling baseball in one dimension =====
-
-We anticipate the mathematical model to come and assume that we have a
-model for the motion of a falling baseball without air resistance.
-Our system (the baseball) is at an initial height $y_0$ (which we will
-specify in the program below) at the initial time $t_0=0$. In our program example here we will plot the position in steps of $\Delta t$ up to a final time $t_f$. 
-The mathematical formula for the position $y(t)$ as function of time $t$ is 
 !bt
-\[
-y(t) = y_0-\frac{1}{2}gt^2,
-\]
+\begin{equation}
+dP=\rho_m dV v,
+\end{equation}
 !et
-where $g=9.80665=0.980655\times 10^1$m/s${}^2$ is a constant representing the standard acceleration due to gravity.
-We have here adopted the conventional standard value. This does not take into account other effects, such as buoyancy or drag.
-Furthermore, we stop when the ball hits the ground, which takes place at
-!bt
-\[
-y(t) = 0= y_0-\frac{1}{2}gt^2,
-\]
-!et
-which gives us a final time $t_f=\sqrt{2y_0/g}$. 
 
-As of now we simply assume that   we know the formula for the falling object. Afterwards, we will derive it.
+where $v$ is the velocity of the object and $\rho_m$ is the mass
+density of the air. If the molecules bounce back as opposed to stop
+you would double the size of the term. The opposite value of the
+momentum is imparted onto the object itself. Geometrically, the
+differential volume is
+
+!bt
+\begin{equation}
+dV=Avdt,
+\end{equation}
+!et
+
+where $A$ is the cross-sectional area and $vdt$ is the distance the
+object moved in time $dt$.
 
 !split
-=====  Our Python Encounter =====
+===== Resulting Acceleration =====
+Plugging this into the expression above,
 
-We start with preparing folders for storing our calculations, figures and if needed, specific data files we use as input or output files.
+!bt
+\begin{equation}
+\frac{dP}{dt}=-\rho_m A v^2.
+\end{equation}
+!et
 
-!bc pycod
-# Common imports
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import os
+This is the force felt by the particle, and is opposite to its
+direction of motion. Now, because air doesn't stop when it hits an
+object, but flows around the best it can, the actual force is reduced
+by a dimensionless factor $c_W$, called the drag coefficient.
 
-# Where to save the figures and data files
-PROJECT_ROOT_DIR = "Results"
-FIGURE_ID = "Results/FigureFiles"
-DATA_ID = "DataFiles/"
+!bt
+\begin{equation}
+F_{\rm drag}=-c_W\rho_m Av^2,
+\end{equation}
+!et
 
-if not os.path.exists(PROJECT_ROOT_DIR):
-    os.mkdir(PROJECT_ROOT_DIR)
+and the acceleration is
 
-if not os.path.exists(FIGURE_ID):
-    os.makedirs(FIGURE_ID)
+!bt
+\begin{eqnarray}
+\frac{dv}{dt}=-\frac{c_W\rho_mA}{m}v^2.
+\end{eqnarray}
+!et
 
-if not os.path.exists(DATA_ID):
-    os.makedirs(DATA_ID)
+For a particle with initial velocity $v_0$, one can separate the $dt$
+to one side of the equation, and move everything with $v$s to the
+other side. We did this in our discussion of simple motion and will not repeat it here.
 
-def image_path(fig_id):
-    return os.path.join(FIGURE_ID, fig_id)
+On more general terms,
+for many systems, e.g. an automobile, there are multiple sources of
+resistance. In addition to wind resistance, where the force is
+proportional to $v^2$, there are dissipative effects of the tires on
+the pavement, and in the axel and drive train. These other forces can
+have components that scale proportional to $v$, and components that
+are independent of $v$. Those independent of $v$, e.g. the usual
+$f=\mu_K N$ frictional force you consider in your first Physics courses, only set in
+once the object is actually moving. As speeds become higher, the $v^2$
+components begin to dominate relative to the others. For automobiles
+at freeway speeds, the $v^2$ terms are largely responsible for the
+loss of efficiency. To travel a distance $L$ at fixed speed $v$, the
+energy/work required to overcome the dissipative forces are $fL$,
+which for a force of the form $f=\alpha v^n$ becomes
+!bt
+\begin{eqnarray}
+W=\int dx~f=\alpha v^n L.
+\end{eqnarray}
+!et
+For $n=0$ the work is
+independent of speed, but for the wind resistance, where $n=2$,
+slowing down is essential if one wishes to reduce fuel consumption. It
+is also important to consider that engines are designed to be most
+efficient at a chosen range of power output. Thus, some cars will get
+better mileage at higher speeds (They perform better at 50 mph than at
+5 mph) despite the considerations mentioned above.
 
-def data_path(dat_id):
-    return os.path.join(DATA_ID, dat_id)
-
-def save_fig(fig_id):
-    plt.savefig(image_path(fig_id) + ".png", format='png')
-
-#in case we have an input file we wish to read in
-#infile = open(data_path("MassEval2016.dat"),'r')
-!ec
-
-
-You could also define a function for making our plots. You
-can obviously avoid this and simply set up various _matplotlib_
-commands every time you need them. You may however find it convenient
-to collect all such commands in one function and simply call this
-function.
-
-!bc pycod 
-from pylab import plt, mpl
-plt.style.use('seaborn')
-mpl.rcParams['font.family'] = 'serif'
-
-def MakePlot(x,y, styles, labels, axlabels):
-    plt.figure(figsize=(10,6))
-    for i in range(len(x)):
-        plt.plot(x[i], y[i], styles[i], label = labels[i])
-        plt.xlabel(axlabels[0])
-        plt.ylabel(axlabels[1])
-    plt.legend(loc=0)
-!ec
+!split
+===== Going Ballistic, Projectile Motion or a Softer Approach, Falling Raindrops =====
 
 
+As an example of Newton's Laws we consider projectile motion (or a
+falling raindrop or a ball we throw up in the air) with a drag force. Even though air resistance is
+largely proportional to the square of the velocity, we will consider
+the drag force to be linear to the velocity, $\bm{F}=-m\gamma\bm{v}$,
+for the purposes of this exercise.
 
-Thereafter we start setting up the code for the falling object.
+Such a dependence can be extracted from experimental data for objects moving at low velocities, see for example Malthe-Sørenssen chapter 5.6.
 
-!bc pycod
-%matplotlib inline
-import matplotlib.patches as mpatches
+We will here focus on a two-dimensional problem.
 
-g = 9.80655 #m/s^2
-y_0 = 10.0 # initial position in meters
-DeltaT = 0.1  # time step
-# final time when y = 0, t = sqrt(2*10/g)
-tfinal = np.sqrt(2.0*y_0/g)
-#set up arrays 
-t = np.arange(0,tfinal,DeltaT)
-y =y_0 -g*.5*t**2
-# Then make a nice printout in table form using Pandas
-import pandas as pd
-from IPython.display import display
-data = {'t[s]': t,
-        'y[m]': y
-        }
-RawData = pd.DataFrame(data)
-display(RawData)
-plt.style.use('ggplot')
-plt.figure(figsize=(8,8))
-plt.scatter(t, y, color = 'b')
-blue_patch = mpatches.Patch(color = 'b', label = 'Height y as function of  time t')
-plt.legend(handles=[blue_patch])
-plt.xlabel("t[s]")
-plt.ylabel("y[m]")
-save_fig("FallingBaseball")
-plt.show()
-!ec
+!split
+===== Two-dimensional falling object =====
 
-Here we used _pandas_ (see below) to systemize the output of the position as function of time.
+The acceleration for a projectile moving upwards,
+$\bm{a}=\bm{F}/m$, becomes
+
+!bt
+\begin{eqnarray}
+\frac{dv_x}{dt}=-\gamma v_x,\\
+\nonumber
+\frac{dv_y}{dt}=-\gamma v_y-g,
+\end{eqnarray}
+!et
+and $\gamma$ has dimensions of inverse time. 
+
+If you on the other hand have a falling raindrop, how do these equations change? See for example Figure 2.1 in Taylor.
+Let us stay with a ball which is thrown up in the air at $t=0$. 
+
+!split
+===== Ways of solving these equations =====
+
+We will go over two different ways to solve this equation. The first
+by direct integration, and the second as a differential equation. To
+do this by direct integration, one simply multiplies both sides of the
+equations above by $dt$, then divide by the appropriate factors so
+that the $v$s are all on one side of the equation and the $dt$ is on
+the other. For the $x$ motion one finds an easily integrable equation,
+
+!bt
+\begin{eqnarray}
+\frac{dv_x}{v_x}&=&-\gamma dt,\\
+\nonumber
+\int_{v_{0x}}^{v_{x}}\frac{dv_x}{v_x}&=&-\gamma\int_0^{t}dt,\\
+\nonumber
+\ln\left(\frac{v_{x}}{v_{0x}}\right)&=&-\gamma t,\\
+\nonumber
+v_{x}(t)&=&v_{0x}e^{-\gamma t}.
+\end{eqnarray}
+!et
+
+This is very much the result you would have written down
+by inspection. For the $y$-component of the velocity,
+
+!bt
+\begin{eqnarray}
+\frac{dv_y}{v_y+g/\gamma}&=&-\gamma dt\\
+\nonumber
+\ln\left(\frac{v_{y}+g/\gamma}{v_{0y}-g/\gamma}\right)&=&-\gamma t_f,\\
+\nonumber
+v_{fy}&=&-\frac{g}{\gamma}+\left(v_{0y}+\frac{g}{\gamma}\right)e^{-\gamma t}.
+\end{eqnarray}
+!et
+
+Whereas $v_x$ starts at some value and decays
+exponentially to zero, $v_y$ decays exponentially to the terminal
+velocity, $v_t=-g/\gamma$.
+
+!split
+===== Solving as differential equations =====
+
+Although this direct integration is simpler than the method we invoke
+below, the method below will come in useful for some slightly more
+difficult differential equations in the future. The differential
+equation for $v_x$ is straight-forward to solve. Because it is  a first
+order differential euqation there is one arbitrary constant, $A$, and by inspection the
+solution is
+
+!bt
+\begin{equation}
+v_x=Ae^{-\gamma t}.
+\end{equation}
+!et
+
+The arbitrary constants for equations of motion are usually determined
+by the initial conditions, or more generally boundary conditions. By
+inspection $A=v_{0x}$, the initial $x$ component of the velocity.
 
 
 !split
-===== Average quantities =====
-We define now the average velocity as
-!bt
-\[
-\overline{v}(t) = \frac{y(t+\Delta t)-y(t)}{\Delta t}.
-\]
-!et
-In the code we have set the time step $\Delta t$ to a given value. We could define it in terms of the number of points $n$ as
-!bt
-\[
-\Delta t = \frac{t_{\mathrm{final}-}t_{\mathrm{initial}}}{n}.
-\]
-!et
+===== Differential Equations, contn =====
+The differential equation for $v_y$ is a bit more complicated due to
+the presence of $g$. Differential equations where all the terms are
+linearly proportional to a function, in this case $v_y$, or to
+derivatives of the function, e.g., $v_y$, $dv_y/dt$,
+$d^2v_y/dt^2\cdots$, are called linear differential equations. If
+there are terms proportional to $v^2$, as would happen if the drag
+forces were proportional to the square of the velocity, the
+differential equation is not longer linear. Because this expression
+has only one derivative in $v$ it is a first-order linear differential
+equation. If a term were added proportional to $d^2v/dt^2$ it would be
+a second-order differential equation.  In this case we have a term
+completely independent of $v$, the gravitational acceleration $g$, and
+the usual strategy is to first rewrite the equation with all the
+linear terms on one side of the equal sign,
 
-Since we have discretized the variables, we introduce the counter $i$ and let $y(t)\rightarrow y(t_i)=y_i$ and $t\rightarrow t_i$
-with $i=0,1,\dots, n$. This gives us the following shorthand notations that we will use for the rest of this course. We define
 !bt
-\[
-y_i = y(t_i),\hspace{0.2cm} i=0,1,2,\dots,n.
-\]
-!et
-This applies to other variables which depend on say time. Examples are the velocities, accelerations, momenta etc.
-Furthermore we use the shorthand
-!bt
-\[
-y_{i\pm 1} = y(t_i\pm \Delta t),\hspace{0.12cm} i=0,1,2,\dots,n.
-\]
+\begin{equation}
+\frac{dv_y}{dt}+\gamma v_y=-g.
+\end{equation}
 !et
 
 !split
-===== Compact equations =====
-We can then rewrite in a more compact form the average velocity as
+===== Splitting into two parts =====
+
+Now, the solution to the equation can be broken into two
+parts. Because this is a first-order differential equation we know
+that there will be one arbitrary constant. Physically, the arbitrary
+constant will be determined by setting the initial velocity, though it
+could be determined by setting the velocity at any given time. Like
+most differential equations, solutions are not ``solved''. Instead,
+one guesses at a form, then shows the guess is correct. For these
+types of equations, one first tries to find a single solution,
+i.e. one with no arbitrary constants. This is called the {\it
+particular} solution, $y_p(t)$, though it should really be called
+``a'' particular solution because there are an infinite number of such
+solutions. One then finds a solution to the {\it homogenous} equation,
+which is the equation with zero on the right-hand side,
+
 !bt
-\[
-\overline{v}_i = \frac{y_{i+1}-y_{i}}{\Delta t}.
-\]
-!et
-The velocity is defined as the change in position per unit time.
-In the limit $\Delta t \rightarrow 0$ this defines the instantaneous velocity, which is nothing but the slope of the position at a time $t$.
-We have thus
-!bt
-\[
-v(t) = \frac{dy}{dt}=\lim_{\Delta t \rightarrow 0}\frac{y(t+\Delta t)-y(t)}{\Delta t}.
-\]
-!et
-Similarly, we can define the average acceleration as the change in velocity per unit time as
-!bt
-\[
-\overline{a}_i = \frac{v_{i+1}-v_{i}}{\Delta t},
-\]
-!et
-resulting in the instantaneous acceleration
-!bt
-\[
-a(t) = \frac{dv}{dt}=\lim_{\Delta t\rightarrow 0}\frac{v(t+\Delta t)-v(t)}{\Delta t}.
-\]
+\begin{equation}
+\frac{dv_{y,h}}{dt}+\gamma v_{y,h}=0.
+\end{equation}
 !et
 
-_A note on notations_: When writing for example the velocity as $v(t)$ we are then referring to the continuous and instantaneous value. A subscript like
-$v_i$ refers always to the discretized values.
+Homogenous solutions will have arbitrary constants. 
+
+The particular solution will solve the same equation as the original
+general equation
+
+!bt
+\begin{equation}
+\frac{dv_{y,p}}{dt}+\gamma v_{y,p}=-g.
+\end{equation}
+!et
+
+However, we don't need find one with arbitrary constants. Hence, it is
+called a _particular_ solution.
+
+The sum of the two,
+
+!bt
+\begin{equation}
+v_y=v_{y,p}+v_{y,h},
+\end{equation}
+!et
+
+is a solution of the total equation because of the linear nature of
+the differential equation. One has now found a *general* solution
+encompassing all solutions, because it both satisfies the general
+equation (like the particular solution), and has an arbitrary constant
+that can be adjusted to fit any initial condition (like the homogeneous
+solution). If the equations were not linear, that is if there were terms
+such as $v_y^2$ or $v_y\dot{v}_y$, this technique would not work.
 
 !split
-===== A differential equation =====
-We can rewrite the instantaneous acceleration as
+===== More details =====
+
+Returning to the example above, the homogenous solution is the same as
+that for $v_x$, because there was no gravitational acceleration in
+that case,
+
 !bt
-\[
-a(t) = \frac{dv}{dt}=\frac{d}{dt}\frac{dy}{dt}=\frac{d^2y}{dt^2}.
-\]
+\begin{equation}
+v_{y,h}=Be^{-\gamma t}.
+\end{equation}
 !et
-This forms the starting point for our definition of forces later. It is a famous second-order differential equation. If the acceleration is constant we can now recover the formula for the falling ball we started with.
-The acceleration can depend on the position and the velocity. To be more formal we should then write the above differential equation as
+In this case a particular solution is one with constant velocity,
+
 !bt
-\[
-\frac{d^2y}{dt^2}=a(t,y(t),\frac{dy}{dt}).
-\]
+\begin{equation}
+v_{y,p}=-g/\gamma.
+\end{equation}
+!et
+Note that this is the terminal velocity of a particle falling from a
+great height. The general solution is thus,
+
+!bt
+\begin{equation}
+v_y=Be^{-\gamma t}-g/\gamma,
+\end{equation}
 !et
 
-With given initial conditions for $y(t_0)$ and $v(t_0)$ we can then
-integrate the above equation and find the velocities and positions at
-a given time $t$.
+and one can find $B$ from the initial velocity,
 
-If we multiply with mass, we have one of the famous expressions for Newton's second law,
 !bt
-\[
-F(y,v,t)=m\frac{d^2y}{dt^2}=ma(t,y(t),\frac{dy}{dt}),
-\]
+\begin{equation}
+v_{0y}=B-g/\gamma,~~~B=v_{0y}+g/\gamma.
+\end{equation}
 !et
-where $F$ is the force acting on an object with mass $m$. We see that it also has the right dimension, mass times length divided by time squared.
-We will come back to this soon.
+Plugging in the expression for $B$ gives the $y$ motion given the initial velocity,
+
+!bt
+\begin{equation}
+v_y=(v_{0y}+g/\gamma)e^{-\gamma t}-g/\gamma.
+\end{equation}
+!et
+It is easy to see that this solution has $v_y=v_{0y}$ when $t=0$ and
+$v_y=-g/\gamma$ when $t\rightarrow\infty$.
+
+One can also integrate the two equations to find the coordinates $x$
+and $y$ as functions of $t$,
+
+!bt
+\begin{eqnarray}
+x&=&\int_0^t dt'~v_{0x}(t')=\frac{v_{0x}}{\gamma}\left(1-e^{-\gamma t}\right),\\
+\nonumber
+y&=&\int_0^t dt'~v_{0y}(t')=-\frac{gt}{\gamma}+\frac{v_{0y}+g/\gamma}{\gamma}\left(1-e^{-\gamma t}\right).
+\end{eqnarray}
+!et
+
+If the question was to find the position at a time $t$, we would be
+finished. However, the more common goal in a projectile equation
+problem is to find the range, i.e. the distance $x$ at which $y$
+returns to zero. For the case without a drag force this was much
+simpler. The solution for the $y$ coordinate would have been
+$y=v_{0y}t-gt^2/2$. One would solve for $t$ to make $y=0$, which would
+be $t=2v_{0y}/g$, then plug that value for $t$ into $x=v_{0x}t$ to
+find $x=2v_{0x}v_{0y}/g=v_0\sin(2\theta_0)/g$. One follows the same
+steps here, except that the expression for $y(t)$ is more
+complicated. Searching for the time where $y=0$, and we get
+
+!bt
+\begin{equation}
+0=-\frac{gt}{\gamma}+\frac{v_{0y}+g/\gamma}{\gamma}\left(1-e^{-\gamma t}\right).
+\end{equation}
+!et
+
+This cannot be inverted into a simple expression $t=\cdots$. Such
+expressions are known as ``transcendental equations'', and are not the
+rare instance, but are the norm. In the days before computers, one
+might plot the right-hand side of the above graphically as
+a function of time, then find the point where it crosses zero.
+
+Now, the most common way to solve for an equation of the above type
+would be to apply Newton's method numerically. This involves the
+following algorithm for finding solutions of some equation $F(t)=0$.
+
+o First guess a value for the time, $t_{\rm guess}$.
+o Calculate $F$ and its derivative, $F(t_{\rm guess})$ and $F'(t_{\rm guess})$. 
+o Unless you guessed perfectly, $F\ne 0$, and assuming that $\Delta F\approx F'\Delta t$, one would choose 
+o $\Delta t=-F(t_{\rm guess})/F'(t_{\rm guess})$.
+o Now repeat step 1, but with $t_{\rm guess}\rightarrow t_{\rm guess}+\Delta t$.
+
+
+If the $F(t)$ were perfectly linear in $t$, one would find $t$ in one
+step. Instead, one typically finds a value of $t$ that is closer to
+the final answer than $t_{\rm guess}$. One breaks the loop once one
+finds $F$ within some acceptable tolerance of zero. A program to do
+this will be added shortly.
 
 !split
-===== Integrating our equations =====
+===== Motion in a Magnetic Field =====
 
-Formally we can then, starting with the acceleration (suppose we have measured it, how could we do that?)
-compute say the height of a building.  To see this we perform the following integrations from an initial time $t_0$  to a given time $t$
+This case is just another example of motion under a specific force.
+
+Another example of a velocity-dependent force is magnetism,
 !bt
-\[
-\int_{t_0}^t dt a(t) = \int_{t_0}^t dt \frac{dv}{dt} = v(t)-v(t_0),
-\]
-!et
-or as 
-!bt
-\[
-v(t)=v(t_0)+\int_{t_0}^t dt a(t).
-\]
+\begin{eqnarray}
+\bm{F}&=&q\bm{v}\times\bm{B},\\
+\nonumber
+F_i&=&q\sum_{jk}\epsilon_{ijk}v_jB_k.
+\end{eqnarray}
 !et
 
-
-When we know the velocity as function of time, we can find the position as function of time starting from the defintion of velocity as the derivative with respect to time, that is we have
-!bt
-\[
-\int_{t_0}^t dt v(t) = \int_{t_0}^t dt \frac{dy}{dt} = y(t)-y(t_0),
-\]
-!et
-or as 
-!bt
-\[
-y(t)=y(t_0)+\int_{t_0}^t dt v(t).
-\]
-!et
-
-These equations define what is called the integration method for
-finding the position and the velocity as functions of time. There is
-no loss of generality if we extend these equations to more than one
-spatial dimension.
-
-!split
-===== Constant acceleration case, the velocity =====
-
-Let us compute the velocity using the constant value for the acceleration given by $-g$. We have
-!bt
-\[
-v(t)=v(t_0)+\int_{t_0}^t dt a(t)=v(t_0)+\int_{t_0}^t dt (-g).
-\]
-!et
-Using our initial time as $t_0=0$s and setting the initial velocity $v(t_0)=v_0=0$m/s we get when integrating
-!bt
-\[
-v(t)=-gt.
-\]
-!et
-The more general case is
-!bt
-\[
-v(t)=v_0-g(t-t_0).
-\]
-!et
-We can then integrate the velocity and obtain the final formula for the position as function of time through
-!bt
-\[
-y(t)=y(t_0)+\int_{t_0}^t dt v(t)=y_0+\int_{t_0}^t dt v(t)=y_0+\int_{t_0}^t dt (-gt),
-\]
-!et
-With $y_0=10$m and $t_0=0$s, we obtain the equation we started with
-!bt
-\[
-y(t)=10-\frac{1}{2}gt^2.
-\]
-!et
-
-
-
-!split
-===== Computing the averages =====
-After this mathematical background we are now ready to compute the mean velocity using our data.
-!bc pycod
-# Now we can compute the mean velocity using our data
-# We define first an array Vaverage
-n = np.size(t)
-Vaverage = np.zeros(n)
-for i in range(1,n):
-    Vaverage[i] = (y[i]-y[i-1])/DeltaT
-# Now we can compute the mean accelearatio using our data
-# We define first an array Aaverage
-n = np.size(t)
-Aaverage = np.zeros(n)
-Aaverage[0] = -g
-for i in range(1,n):
-    Aaverage[i] = (Vaverage[i]-Vaverage[i-1])/DeltaT
-data = {'t[s]': t,
-        'y[m]': y,
-        'v[m/s]': Vaverage,
-        'a[m/s^2]': Aaverage
-        }
-NewData = pd.DataFrame(data)
-display(NewData[0:n])
-!ec
-
-Note that we used the previous value in the computation of the average velocities and accelerations. We did this since we wanted to compute the value for $i=1$ as well. 
-
-
-
-!split
-===== Including Air Resistance in our model =====
-
-In our discussions till now of the falling baseball, we have ignored
-air resistance and simply assumed that our system is only influenced
-by the gravitational force.  We will postpone the derivation of air
-resistance till later, after our discussion of Newton's laws and
-forces.
-
-For our discussions here it suffices to state that the accelerations is now modified to
-!bt
-\[
-\bm{a}(t) = -g +D\bm{v}(t)\vert v(t)\vert,
-\]
-!et
-where $\vert v(t)\vert$ is the absolute value of the velocity and $D$ is a constant which pertains to the specific object we are studying.
-Since we are dealing with motion in one dimension, we can simplify the above to
-!bt
-\[
-a(t) = -g +Dv^2(t). 
-\]
-!et
-We can rewrite this as a differential equation
-!bt
-\[
-a(t) = \frac{dv}{dt}=\frac{d^2y}{dt^2}= -g +Dv^2(t). 
-\]
-!et
-
-Using the integral equations discussed above we can integrate twice
-and obtain first the velocity as function of time and thereafter the
-position as function of time.
-
-For this particular case, we can actually obtain an analytical
-solution for the velocity and for the position. Here we will first
-compute the solutions analytically, thereafter we will derive Euler's
-method for solving these differential equations numerically.
-
-!split
-===== Analytical solutions =====
-
-For simplicity let us just write $v(t)$ as $v$. We have
-!bt
-\[
-\frac{dv}{dt}= -g +Dv^2(t). 
-\]
-!et
-
-We can solve this using the technique of separation of variables. We
-isolate on the left all terms that involve $v$ and on the right all
-terms that involve time. We get then
-!bt
-\[
-\frac{dv}{g -Dv^2(t) }= -dt,
-\]
-!et
-
-We scale now the equation to the left by introducing a constant
-$v_T=\sqrt{g/D}$. This constant has dimension length/time. Can you
-show this?
-
-Next we integrate the left-hand side (lhs) from $v_0=0$ m/s to $v$ and
-the right-hand side (rhs) from $t_0=0$ to $t$ and obtain
+For a uniform field in the $z$ direction $\bm{B}=B\hat{z}$, the force can only have $x$ and $y$ components,
 
 !bt
-\[
-\int_{0}^v\frac{dv}{g -Dv^2(t) }= \frac{v_T}{g}\mathrm{arctanh}(\frac{v}{v_T})  =-\int_0^tdt = -t. 
-\]
-!et
-We can reorganize these equations as
-!bt
-\[
-v_T\mathrm{arctanh}(\frac{v}{v_T})  =-gt,
-\]
-!et
-which gives us $v$ as function of time
-!bt
-\[
-v(t)=v_T\tanh{-(\frac{gt}{v_T})}.
-\]
+\begin{eqnarray}
+F_x&=&qBv_y\\
+\nonumber
+F_y&=&-qBv_x.
+\end{eqnarray}
 !et
 
+The differential equations are
 
-!split
-===== Finding the final height =====
-With the velocity we can then find the height $y(t)$ by integrating yet another time, that is
 !bt
-\[
-y(t)=y(t_0)+\int_{t_0}^t dt v(t)=\int_{0}^t dt[v_T\tanh{-(\frac{gt}{v_T})}]. 
-\]
+\begin{eqnarray}
+\dot{v}_x&=&\omega_c v_y,\omega_c= qB/m\\
+\nonumber
+\dot{v}_y&=&-\omega_c v_x.
+\end{eqnarray}
 !et
-This integral is a little bit trickier but we can look it up in a table over 
-known integrals and we get
+One can solve the equations by taking time derivatives of either equation, then substituting into the other equation,
 !bt
-\[
-y(t)=y(t_0)-\frac{v_T^2}{g}\log{[\cosh{(\frac{gt}{v_T})}]}.
-\]
+\begin{eqnarray}
+\ddot{v}_x=\omega_c\dot{v_y}=-\omega_c^2v_x,\\
+\nonumber
+\ddot{v}_y&=&-\omega_c\dot{v}_x=-\omega_cv_y.
+\end{eqnarray}
 !et
-Alternatively we could have used the symbolic Python package _Sympy_.
 
-In most cases however, we need to revert to numerical solutions. 
+The solution to these equations can be seen by inspection,
+!bt
+\begin{eqnarray}
+v_x&=&A\sin(\omega_ct+\phi),\\
+\nonumber
+v_y&=&A\cos(\omega_ct+\phi).
+\end{eqnarray}
+!et
+
+One can integrate the equations to find the positions as a function of time,
+!bt
+\begin{eqnarray}
+x-x_0&=&\int_{x_0}^x dx=\int_0^t dt v(t)\\
+\nonumber
+&=&\frac{-A}{\omega_c}\cos(\omega_ct+\phi),\\
+\nonumber
+y-y_0&=&\frac{A}{\omega_c}\sin(\omega_ct+\phi).
+\end{eqnarray}
+!et
+The trajectory is a circle centered at $x_0,y_0$ with amplitude $A$ rotating in the clockwise direction.
+
+The equations of motion for the $z$ motion are
+!bt
+\begin{equation}
+\dot{v_z}=0,
+\end{equation}
+!et
+which leads to
+!bt
+\begin{equation}
+z-z_0=V_zt.
+\end{equation}
+!et
+Added onto the circle, the motion is helical.
+
+Note that the kinetic energy,
+!bt
+\begin{equation}
+T=\frac{1}{2}m(v_x^2+v_y^2+v_z^2)=\frac{1}{2}m(\omega_c^2A^2+V_z^2),
+\end{equation}
+!et
+is constant. This is because the force is perpendicular to the
+velocity, so that in any differential time element $dt$ the work done
+on the particle $\bm{F}\cdot{dr}=dt\bm{F}\cdot{v}=0$.
+
+One should think about the implications of a velocity dependent
+force. Suppose one had a constant magnetic field in deep space. If a
+particle came through with velocity $v_0$, it would undergo cyclotron
+motion with radius $R=v_0/\omega_c$. However, if it were still its
+motion would remain fixed. Now, suppose an observer looked at the
+particle in one reference frame where the particle was moving, then
+changed their velocity so that the particle's velocity appeared to be
+zero. The motion would change from circular to fixed. Is this
+possible?
+
+The solution to the puzzle above relies on understanding
+relativity. Imagine that the first observer believes $\bm{B}\ne 0$ and
+that the electric field $\bm{E}=0$. If the observer then changes
+reference frames by accelerating to a velocity $\bm{v}$, in the new
+frame $\bm{B}$ and $\bm{E}$ both change. If the observer moved to the
+frame where the charge, originally moving with a small velocity $v$,
+is now at rest, the new electric field is indeed $\bm{v}\times\bm{B}$,
+which then leads to the same acceleration as one had before. If the
+velocity is not small compared to the speed of light, additional
+$\gamma$ factors come into play,
+$\gamma=1/\sqrt{1-(v/c)^2}$. Relativistic motion will not be
+considered in this course.
+
 
 
 !split
-===== Our first attempt at solving differential equations =====
+===== Sliding Block tied to a Wall =====
 
-Here we will try the simplest possible approach to solving the second-order differential 
-equation
-!bt
-\[
-a(t) =\frac{d^2y}{dt^2}= -g +Dv^2(t). 
-\]
-!et
-We rewrite it as two coupled first-order equations (this is a standard approach)
-!bt
-\[
-\frac{dy}{dt} = v(t),
-\]
-!et
-with initial condition $y(t_0)=y_0$ and 
-!bt
-\[
-a(t) =\frac{dv}{dt}= -g +Dv^2(t),
-\]
-!et
-with initial condition $v(t_0)=v_0$.
+Another classical case is that of simple harmonic oscillations, here
+represented by a block sliding on a horizontal frictionless
+surface. The block is tied to a wall with a spring. If the spring is
+not compressed or stretched too far, the force on the block at a given
+position $x$ is
 
-Many of the algorithms for solving differential equations start with simple Taylor equations.
-If we now Taylor expand $y$ and $v$ around a value $t+\Delta t$ we have
+!bt
+  \[
+      F=-kx.
+  \]
+!et
+
+!split
+===== Back and Forth, Sliding Block with no friction =====
+
+The negative sign means that the force acts to restore the object to an equilibrium position. Newton's equation of motion for this idealized system is then 
+
+!bt
+  \[
+    m\frac{d^2x}{dt^2}=-kx,
+  \]
+!et
+or we could rephrase it as
+!bt
+  \[
+   \frac{d^2x}{dt^2}=-\frac{k}{m}x=-\omega_0^2x,
+    label{eq:newton1}
+  \]
+!et
+with the angular frequency $\omega_0^2=k/m$. 
+
+We will derive the above force when we start studying _harmonic oscillations_. 
+
+!split
+===== Final rewrite =====
+
+With the position $x(t)$ and the velocity  $v(t)=dx/dt$ we can reformulate Newton's equation in the following way
+!bt
+  \[
+      \frac{dx(t)}{dt}=v(t),
+  \]
+!et
+  and
+!bt
+  \[
+      \frac{dv(t)}{dt}=-\omega_0^2x(t).
+  \]
+!et
+
+With initial conditions $x(t_0)=x_0$ and $v(t_0)=v_0$ we can in turn solve the differential equations. 
+
+!split
+=====  Analytical Solution =====
+
+The above differential equation has the advantage that it can be
+solved analytically with general solutions on the form
+
+
+!bt
+  \[
+     x(t)=A\cos{\omega_0t}+B\sin{\omega_0t},
+  \]
+!et
+and
+
+!bt
+  \[
+     v(t)=-\omega_0 A\sin{\omega_0t}+\omega_0 B\cos{\omega_0t},
+  \]
+!et
+
+
+
+where $A$ and $B$ are constants to be determined from the initial conditions.
+
+This provides in turn an important test for the numerical solution and
+the development of a program for more complicated cases which cannot
+be solved analytically.
+
+We will discuss the above equations in more detail when we discuss harmonic oscillations.
+
+
+
+!split
+=====  Summarizing the various motion problems 1 =====
+
+The examples we have discussed above were included in order to
+illustrate various methods (which depend on the specific problem) to
+find the solutions of the equations of motion.
+We have solved the equations of motion in the following ways:
+
+!bblock Solve the differential equations analytically
+We did this for example with the following object in one or two dimensions or the sliding block. 
+Here we had for example an equation set like
 !bt
 \[
-y(t+\Delta t) = y(t)+\Delta t \frac{dy}{dt}+\frac{\Delta t^2}{2!} \frac{d^2y}{dt^2}+O(\Delta t^3),
+\frac{dv_x}{dt}=-\gamma v_x,
 \]
 !et
 and
 !bt
 \[
-v(t+\Delta t) = v(t)+\Delta t \frac{dv}{dt}+\frac{\Delta t^2}{2!} \frac{d^2v}{dt^2}+O(\Delta t^3).
+\frac{dv_y}{dt}=-\gamma v_y-g,
 \]
 !et
-Using the fact that $dy/dt = v$ and $dv/dt=a$ and keeping only terms up to $\Delta t$ we have
-!bt
-\[
-y(t+\Delta t) = y(t)+\Delta t v(t)+O(\Delta t^2),
-\]
-!et
-and
-!bt
-\[
-v(t+\Delta t) = v(t)+\Delta t a(t)+O(\Delta t^2).
-\]
-!et
+and $\gamma$ has dimension of inverse time. 
 
-!split
-===== Discretizing our equations =====
-
-Using our discretized versions of the equations with for example
-$y_{i}=y(t_i)$ and $y_{i\pm 1}=y(t_i+\Delta t)$, we can rewrite the
-above equations as (and truncating at $\Delta t$)
-
-!bt
-\[
-y_{i+1} = y_i+\Delta t v_i,
-\]
-!et
-and
-!bt
-\[
-v_{i+1} = v_i+\Delta t a_i.
-\]
-!et
-These are the famous Euler equations (forward Euler).
-
-To solve these equations numerically we start at a time $t_0$ and simply integrate up these equations to a final time $t_f$,
-The step size $\Delta t$ is an input  parameter in our code.
-You can define it directly in the code below as
-!bc pycod
-DeltaT = 0.1
-!ec
-With a given final time _tfinal_  we can then find the number of integration points via the _ceil_ function included in the _math_ package of Python
-as
-!bc pycod
-#define final time, assuming that initial time is zero
-from math import ceil
-tfinal = 0.5
-n = ceil(tfinal/DeltaT)
-print(n)
-!ec
-The _ceil_ function returns the smallest integer not less than the input in say
-!bc pycod
-x = 21.15
-print(ceil(x))
-!ec
-which in the case here is 22.
-!bc pycod
-x = 21.75
-print(ceil(x))
-!ec
-which also yields 22. The  _floor_ function in the _math_ package
-is used to return the closest integer value which is less than or equal to the specified expression or value.
-Compare the previous result to the usage of _floor_
-!bc pycod
-from math import floor
-x = 21.75
-print(floor(x))
-!ec
-
-
-
-Alternatively, we can define ourselves the number of integration(mesh) points. In this case we could have
-!bc pycod
-n = 10
-tinitial = 0.0
-tfinal = 0.5
-DeltaT = (tfinal-tinitial)/(n)
-print(DeltaT)
-!ec
-
-Since we will set up one-dimensional arrays that contain the values of
-various variables like time, position, velocity, acceleration etc, we
-need to know the value of $n$, the number of data points (or
-integration or mesh points).  With $n$ we can initialize a given array
-by setting all elelements to zero, as done here
-
-!bc pycod
-# define array a
-a = np.zeros(n)
-print(a)
-!ec
-
-
+!eblock
 
 
 !split
-===== Code for implementing Euler's method =====
-In the code here we implement this simple Eurler scheme choosing a value for $D=0.0245$ m/s. 
+=====  Summarizing the various motion problems 2 =====
 
+
+!bblock Integrate the equations
+We could also integrate directly in case we can separate the degrees of freedom in a an easy way. Take for example one of the equations in the previous slide
+!bt
+\[
+\frac{dv_x}{dt}=-\gamma v_x,
+\]
+!et
+which we can rewrite in terms of a left-hand side which depends only on the velocity and a right-hand side which depends only on time
+!bt
+\[
+\frac{dv_x}{v_x}=-\gamma dt.
+\]
+!et
+Integrating we have (since we can separate $v_x$ and $t$)
+!bt
+\[
+\int_{v_0}^{v_t}\frac{dv_x}{v_x}=-\int_{t_0}^{t_f}\gamma dt,
+\]
+!et
+where $v_f$ is the velocity at a final time and $t_f$ is the final time.
+In this case we found, after having integrated the above two sides that
+!bt
+\[
+v_f(t)=v_0\exp{-\gamma t}.
+\]
+!et
+
+!eblock
+
+
+!split
+=====  Summarizing the various motion problems 3 =====
+
+
+!bblock Solve the differential equations numerically
+
+Finally, using for example Euler's method, we can solve the
+differential equations numerically. If we can compare our numerical
+solutions with analytical solutions, we have an extra check of our
+numerical approaches.
+
+The example code on the next slide is relevant for homework 3. Here we deal with a falling object in two dimensions. Except for the derivations above with an
+air resistance which is linear in the velocity, homework 3 uses a quadratic velocity dependence.
+
+!eblock
+
+!split
+===== Code example using Euler's methods =====
+
+_Note_: this code needs some additional expressions and will not run 
 !bc pycod
 # Common imports
 import numpy as np
@@ -663,254 +680,739 @@ import pandas as pd
 from math import *
 import matplotlib.pyplot as plt
 import os
+from pylab import plt, mpl
+plt.style.use('seaborn')
+mpl.rcParams['font.family'] = 'serif'
 
-# Where to save the figures and data files
-PROJECT_ROOT_DIR = "Results"
-FIGURE_ID = "Results/FigureFiles"
-DATA_ID = "DataFiles/"
-
-if not os.path.exists(PROJECT_ROOT_DIR):
-    os.mkdir(PROJECT_ROOT_DIR)
-
-if not os.path.exists(FIGURE_ID):
-    os.makedirs(FIGURE_ID)
-
-if not os.path.exists(DATA_ID):
-    os.makedirs(DATA_ID)
-
-def image_path(fig_id):
-    return os.path.join(FIGURE_ID, fig_id)
-
-def data_path(dat_id):
-    return os.path.join(DATA_ID, dat_id)
-
-def save_fig(fig_id):
-    plt.savefig(image_path(fig_id) + ".png", format='png')
-
-
+#define the gravitational acceleration
 g = 9.80655 #m/s^2
-D = 0.00245 #m/s
-DeltaT = 0.1
-#set up arrays 
-tfinal = 0.5
+# The mass and the drag constant D
+D = 0.00245 #mass/length   kg/m
+m = 0.2 #kg, mass of falling object
+DeltaT = 0.001
+#set up final time, here just a number we have chosen
+tfinal = 1.0
+# set up number of points for all variables
 n = ceil(tfinal/DeltaT)
-# define scaling constant vT
-vT = sqrt(g/D)
-# set up arrays for t, a, v, and y and we can compare our results with analytical ones
+# set up arrays for t, a, v, and y and arrays for analytical results
+# Note the brute force setting up of arrays for x and y, vx, vy, ax and ay
+# For hw3 you should think of using the 2-dim vectors you used in homework 2
 t = np.zeros(n)
-a = np.zeros(n)
-v = np.zeros(n)
+vy = np.zeros(n)
 y = np.zeros(n)
-yanalytic = np.zeros(n)
+vx = np.zeros(n)
+x = np.zeros(n)
 # Initial conditions
-v[0] = 0.0  #m/s
+vx[0] = 10.0 #m/s
+vy[0] = 0.0  #m/s
 y[0] = 10.0 #m
-yanalytic[0] = y[0]
+x[0] = 0.0 #m
 # Start integrating using Euler's method
 for i in range(n-1):
-    # expression for acceleration
-    a[i] = -g + D*v[i]*v[i]
+    # expression for acceleration, note the absolute value and division by mass
+#    ax = You need to set up the expression for force and thereby the acceleration in the x-direction
+#    ay = You need to set up the expression for force and thereby the acceleration in the y-direction
     # update velocity and position
-    y[i+1] = y[i] + DeltaT*v[i]
-    v[i+1] = v[i] + DeltaT*a[i]
+    vx[i+1] = vx[i] + DeltaT*ax
+    x[i+1] = x[i] + DeltaT*vx[i]
+    vy[i+1] = vy[i] + DeltaT*ay
+    y[i+1] = y[i] + DeltaT*vy[i]
     # update time to next time step and compute analytical answer
     t[i+1] = t[i] + DeltaT
-    yanalytic[i+1] = y[0]-(vT*vT/g)*log(cosh(g*t[i+1]/vT))
-    if ( y[i+1] < 0.0):
+#  Here you need to set up the analytical solution for y(t) and x(t)
+
+if ( y[i+1] < 0.0):
         break
-a[n-1] = -g + D*v[n-1]*v[n-1]
 data = {'t[s]': t,
-        'y[m]': y-yanalytic,
-        'v[m/s]': v,
-        'a[m/s^2]': a
-        }
+        'Relative error in y': abs((y-yanalytic)/yanalytic),
+        'vy[m/s]': vy,
+        'Relative error in x': abs((x-xanalytic)/xanalytic),
+        'vx[m/s]': vx
+}
 NewData = pd.DataFrame(data)
 display(NewData)
-#finally we plot the data
-fig, axs = plt.subplots(3, 1)
-axs[0].plot(t, y, t, yanalytic)
+# save to file
+NewData.to_csv(outfile, index=False)
+#then plot
+fig, axs = plt.subplots(4, 1)
+axs[0].plot(t, y)
 axs[0].set_xlim(0, tfinal)
-axs[0].set_ylabel('y and exact')
-axs[1].plot(t, v)
-axs[1].set_ylabel('v[m/s]')
-axs[2].plot(t, a)
-axs[2].set_xlabel('time[s]')
-axs[2].set_ylabel('a[m/s^2]')
+axs[0].set_ylabel('y')
+axs[1].plot(t, vy)
+axs[1].set_ylabel('vy[m/s]')
+axs[1].set_xlabel('time[s]')
+axs[2].plot(t, x)
+axs[2].set_xlim(0, tfinal)
+axs[2].set_ylabel('x')
+axs[3].plot(t, vx)
+axs[3].set_ylabel('vx[m/s]')
+axs[3].set_xlabel('time[s]')
 fig.tight_layout()
-save_fig("EulerIntegration")
 plt.show()
 !ec
 
 
-Try different values for $\Delta t$ and study the difference between the exact solution and the numerical solution.
 
 !split
-===== Simple extension, the Euler-Cromer method =====
+===== Work, Energy, Momentum and Conservation laws =====
 
-The Euler-Cromer method is a simple variant of the standard Euler
-method. We use the newly updated velocity $v_{i+1}$ as an input to the
-new position, that is, instead of
+The previous three cases have shown us how to use Newton’s laws of
+motion to determine the motion of an object based on the forces acting
+on it. For two of the cases there is an underlying assumption that we can find an analytical solution to a continuous problem.
+With a continuous problem we mean a problem where the various variables can take any value within a finite or infinite interval. 
+
+Unfortunately, in many cases we
+cannot find an exact solution to the equations of motion we get from
+Newton’s second law. The numerical approach, where we discretize the continuous problem, allows us however to study a much richer set of problems.
+For problems involving Newton's laws and the various equations of motion we encounter, solving the equations numerically, is the standard approach.
+
+It allows us to focus on the underlying forces. Often we end up using the same numerical algorithm for different problems.
+
+Here we introduce a commonly used technique that allows us to find the
+velocity as a function of position without finding the position as a
+function of time—an alternate form of Newton’s second law. The method
+is based on a simple principle: Instead of solving the equations of
+motion directly, we integrate the equations of motion. Such a method
+is called an integration method. 
+
+This allows us also to introduce the _work-energy_ theorem. This
+theorem lets us find the velocity as a function of position for
+an object even in cases when we cannot solve the equations of
+motion. This introduces us to the concept of work and kinetic energy,
+which is the  energy related to the motion of an object.
+
+And finally, later, we will link the work-energy theorem with the principle of conservation of energy.
+
+!split
+=====  The Work-Energy Theorem =====
+
+Let us define the kinetic energy $K$ with a given velocity $\bm{v}$
+!bt
+\[
+K=\frac{1}{2}mv^2,
+\]
+!et
+where $m$ is the mass of the object we are considering.
+We assume also that there is a force $\bm{F}$ acting on the given object
 
 !bt
 \[
-y_{i+1} = y_i+\Delta t v_i,
+\bm{F}=\bm{F}(\bm{r},\bm{v},t),
 \]
 !et
-and
+with $\bm{r}$ the position and $t$ the time.
+In general we assume the force is a function of all these variables.
+Many of the more central forces in Nature however, depende only on the
+position. Examples are the gravitational force and the force derived
+from the Coulomb potential in electromagnetism.
+
+!split
+===== Rewriting the Kinetic Energy =====
+
+Let us study the derivative of the kinetic energy with respect to time $t$. Its continuous form is
 !bt
 \[
-v_{i+1} = v_i+\Delta t a_i,
-\]
-!et
-we use now the newly calculate for $v_{i+1}$ as input to $y_{i+1}$, that is 
-we compute first 
-!bt
-\[
-v_{i+1} = v_i+\Delta t a_i,
-\]
-!et
-and then
-!bt
-\[
-y_{i+1} = y_i+\Delta t v_{i+1},
+\frac{dK}{dt}=\frac{1}{2}m\frac{d\bm{v}\cdot\bm{v}}{dt}. 
 \]
 !et
 
-Implementing the Euler-Cromer method yields a simple change to the previous code. We only need to change the following line in the loop over time
-steps
+Using our results from exercise 3 of homework 1, we can write the derivative of a vector dot product as
+
+!bt
+\[
+\frac{dK}{dt}=\frac{1}{2}m\frac{d\bm{v}\cdot\bm{v}}{dt}= \frac{1}{2}m\left(\frac{d\bm{v}}{dt}\cdot\bm{v}+\bm{v}\cdot\frac{d\bm{v}}{dt}\right)=m\frac{d\bm{v}}{dt}\cdot\bm{v}. 
+\]
+!et
+
+We know also that the acceleration is defined as
+!bt
+\[
+\bm{a}=\frac{\bm{F}}{m}=\frac{d\bm{v}}{dt}.
+\]
+!et
+
+We can then rewrite the equation for the derivative of the kinetic energy as 
+!bt
+\[
+\frac{dK}{dt}=m\frac{d\bm{v}}{dt}\bm{v}=\bm{F}\frac{d\bm{r}}{dt}, 
+\]
+!et
+where we defined the velocity as the derivative of the position with respect to time.
+
+!split
+===== Discretizing =====
+
+Let us now discretize the above equation by letting the instantaneous terms be replaced by a discrete quantity, that is
+we let $dK\rightarrow \Delta K$, $dt\rightarrow \Delta t$, $d\bm{r}\rightarrow \Delta \bm{r}$ and $d\bm{v}\rightarrow \Delta \bm{v}$.
+
+We have then
+
+!bt
+\[
+\frac{\Delta K}{\Delta t}=m\frac{\Delta \bm{v}}{\Delta t}\bm{v}=\bm{F}\frac{\Delta \bm{r}}{\Delta t}, 
+\]
+!et
+or by multiplying out $\Delta t$ we have
+!bt
+\[
+\Delta K=\bm{F}\Delta \bm{r}. 
+\]
+!et
+
+We define this quantity as the _work_ done by the force $\bm{F}$
+during the displacement $\Delta \bm{r}$. If we study the dimensionality
+of this problem we have mass times length squared divided by time
+squared, or just dimension energy.
+
+
+!split
+===== Difference in kinetic energy =====
+
+If we now define a series of such displacements $\Delta\bm{r}$ we have a difference in kinetic energy at a final position $\bm{r}_n$ and an 
+initial position $\bm{r}_0$ given by
+!bt
+\[
+\Delta K=\frac{1}{2}mv_n^2-\frac{1}{2}mv_0^2=\sum_{i=0}^n\bm{F}_i\Delta \bm{r},
+\]
+!et
+where $\bm{F}_i$ are the forces acting at every position $\bm{r}_i$.
+
+The work done by acting with a force on a set of displacements can
+then be as expressed as the difference between the initial and final
+kinetic energies.
+
+This defines the _work-energy_ theorem.
+
+!split
+===== From the discrete version to the continuous version =====
+
+If we take the limit $\Delta \bm{r}\rightarrow 0$, we can rewrite the sum over the various displacements in terms of an integral, that is
+!bt
+\[
+\Delta K=\frac{1}{2}mv_n^2-\frac{1}{2}mv_0^2=\sum_{i=0}^n\bm{F}_i\Delta \bm{r}\rightarrow \int_{\bm{r}_0}^{\bm{r}_n}\bm{F}(\bm{r},\bm{v},t)d\bm{r}.
+\]
+!et
+
+This integral defines a path integral since it will depend on the given path we take between the two end points. We will replace the limits with the symbol $c$ in order to indicate that we take a specific countour in space when the force acts on the system. That is the work $W_{n0}$ between two points $\bm{r}_n$ and $\bm{r}_0$ is labeled as
+!bt
+\[
+W_{n0}=\frac{1}{2}mv_n^2-\frac{1}{2}mv_0^2=\int_{c}\bm{F}(\bm{r},\bm{v},t)d\bm{r}.
+\]
+!et
+
+Note that if the force is perpendicular to the displacement, then the force does not affect the kinetic energy.
+
+Let us now study some examples of forces and how to find the velocity from the integration over a given path.
+
+Thereafter we study how to  evaluate an integral numerically.
+
+
+!split
+===== Studying the Work-energy Theorem numerically =====
+
+In order to study the work- energy, we will normally need to perform
+a numerical integration, unless we can integrate analytically. Here we
+present some of the simpler  methods such as the _rectangle_ rule, the _trapezoidal_ rule and higher-order methods like the Simpson family of methods.
+
+
+
+
+!split
+===== Example of an Electron moving along a Surface =====
+
+As an example, let us consider the following case.
+We have  classical electron which moves in the $x$-direction along a surface. The force from the surface is
+!bt
+\[
+\bm{F}(x)=-F_0\sin{(\frac{2\pi x}{b})}\bm{e}_1.
+\]
+!et
+The constant $b$ represents the distance between atoms at the surface of the material, $F_0$ is a constant and $x$ is the position of the electron.
+
+
+Using the work-energy theorem we can find the work $W$ done when moving an electron from a position $x_0$ to a final position $x$ through the
+ integral
+!bt
+\[
+W=\int_{x_0}^x \bm{F}(x')dx' =  -\int_{x_0}^x F_0\sin{(\frac{2\pi x'}{b})} dx', 
+\]
+!et
+which results in
+!bt
+\[
+W=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right].
+\]
+!et
+
+!split
+===== Finding the Velocity =====
+
+If we now use the work-energy theorem we can find the the velocity at a final position $x$ by setting up
+the differences in kinetic energies between the final position and the initial position $x_0$.
+
+We have that the work done by the force is given by the difference in kinetic energies as
+!bt
+\[
+W=\frac{1}{2}m\left(v^2(x)-v^2(x_0)\right)=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right],
+\]
+!et
+and labeling $v(x_0)=v_0$ (and assuming we know the initial velocity) we have
+!bt
+\[
+v(x)=\pm \sqrt{v_0^2+\frac{F_0b}{m\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right]},
+\]
+!et
+
+
+Choosing $x_0=0$m and $v_0=0$m/s we can simplify the above equation to
+!bt
+\[
+v(x)=\pm \sqrt{\frac{F_0b}{m\pi}\left[\cos{(\frac{2\pi x}{b})}-1\right]},
+\]
+!et
+
+
+!split
+===== Harmonic Oscillations =====
+
+Another well-known force (and we will derive when we come to Harmonic
+Oscillations) is the case of a sliding block attached to a wall
+through a spring. The block is attached to a spring with spring
+constant $k$. The other end of the spring is attached to the wall at
+the origin $x=0$.  We assume the spring has an equilibrium length
+$L_0$.
+
+The force $F_x$ from the spring on the block is then
+!bt
+\[
+F_x=-k(x-L_0).
+\]
+!et
+The position $x$ where the spring force is zero is called the equilibrium position. In our case this is
+$x=L_0$.
+
+We can now compute the work done by this force when we move our block from an initial position $x_0$ to a final position $x$
+!bt
+\[
+W=\int_{x_0}^{x}F_xdx'=-k\int_{x_0}^{x}(x'-L_0)dx'=\frac{1}{2}k(x_0-L_0)^2-\frac{1}{2}k(x-L_0)^2.
+\]
+!et
+If we now bring back the definition of the work-energy theorem in terms of the kinetic energy we have
+
+!bt
+\[
+W=\frac{1}{2}mv^2(x)-\frac{1}{2}mv_0^2=\frac{1}{2}k(x_0-L_0)^2-\frac{1}{2}k(x-L_0)^2,
+\]
+!et
+which we rewrite as
+
+!bt
+\[
+\frac{1}{2}mv^2(x)+\frac{1}{2}k(x-L_0)^2=\frac{1}{2}mv_0^2+\frac{1}{2}k(x_0-L_0)^2.
+\]
+!et
+
+What does this mean? The total energy, which is the sum of potential and kinetic energy, is conserved.
+Wow, this sounds interesting. We will analyze this next week in more detail when we study energy, momentum and angular momentum conservation.
+
+
+!split
+===== Numerical Integration =====
+
+This material is optional. We will not cover this in the lectures and we will not use it in exercises or exams.
+It is included here for the same of completeness.
+
+Let us now see how we could have solved the above integral numerically.
+
+
+There are several numerical algorithms for finding an integral
+numerically. The more familiar ones like the rectangular rule or the
+trapezoidal rule have simple geometric interpretations.
+
+Let us look at the mathematical details of what are called equal-step methods, also known as Newton-Cotes quadrature.
+
+!split
+===== Newton-Cotes Quadrature or equal-step methods =====
+!bblock
+The integral 
+!bt
+\begin{equation}
+   I=\int_a^bf(x) dx
+   label{eq:integraldef}
+\end{equation}
+!et
+has a very simple meaning. The integral is the
+area enscribed by the function $f(x)$ starting from $x=a$ to  $x=b$. It is subdivided in several smaller areas whose evaluation is to  be approximated by different techniques. The areas under the curve can for example  be approximated by rectangular boxes or trapezoids. 
+!eblock
+
+!split 
+===== Basic philosophy of equal-step methods =====
+!bblock
+In considering equal step  methods, our basic approach is that of approximating
+a function $f(x)$ with a polynomial of at most 
+degree $N-1$, given $N$ integration points. If our polynomial is of degree $1$,
+the function will be approximated with $f(x)\approx a_0+a_1x$. 
+!eblock
+
+!split 
+===== Simple algorithm for equal step methods =====
+The algorithm for these integration methods  is rather simple, and the number of approximations perhaps  unlimited!
+
+* Choose a step size $h=(b-a)/N$  where $N$ is the number of steps and $a$ and $b$ the lower and upper limits of integration.
+
+* With a given step length we rewrite the integral as  
+!bt 
+\begin{equation*}     
+\int_a^bf(x) dx= \int_a^{a+h}f(x)dx + \int_{a+h}^{a+2h}f(x)dx+\dots \int_{b-h}^{b}f(x)dx.
+\end{equation*}
+!et
+* The strategy then is to find a reliable polynomial approximation   for $f(x)$ in the various intervals.  Choosing a given approximation for  $f(x)$, we obtain a specific approximation to the  integral.
+
+* With this approximation to $f(x)$ we perform the integration by computing the integrals over all subintervals.
+
+!split 
+===== Simple algorithm for equal step methods =====
+
+One possible strategy then is to find a reliable polynomial expansion for $f(x)$ in the smaller
+subintervals. Consider for example evaluating
+!bt
+\begin{equation*}
+   \int_a^{a+2h}f(x)dx, 
+\end{equation*}
+!et
+which we rewrite as
+!bt
+\begin{equation}
+\int_a^{a+2h}f(x)dx=\int_{x_0-h}^{x_0+h}f(x)dx.
+label{eq:hhint}
+\end{equation}
+!et
+We have chosen a midpoint $x_0$ and have defined $x_0=a+h$.
+
+
+
+!split 
+===== The rectangle method =====
+
+A very simple approach is the so-called midpoint or rectangle method.
+In this case the integration area is split in a given number of rectangles with length $h$ and height given by the mid-point value of the function.  This gives the following simple rule for approximating an integral
+!bt
+\begin{equation}
+I=\int_a^bf(x) dx \approx  h\sum_{i=1}^N f(x_{i-1/2}), 
+label{eq:rectangle}
+\end{equation}
+!et
+where $f(x_{i-1/2})$ is the midpoint value of $f$ for a given rectangle. We will discuss its truncation 
+error below.  It is easy to implement this algorithm,  as shown below
+
+!split 
+===== Truncation error for the rectangular rule  =====
+
+The correct mathematical expression for the local error for the rectangular rule $R_i(h)$ for element $i$ is
+
+!bt
+\begin{equation*}
+\int_{-h}^hf(x)dx - R_i(h)=-\frac{h^3}{24}f^{(2)}(\xi),
+\end{equation*}
+!et
+and the global error reads
+!bt
+\begin{equation*}
+\int_a^bf(x)dx -R_h(f)=-\frac{b-a}{24}h^2f^{(2)}(\xi),
+\end{equation*}
+!et
+where $R_h$ is the result obtained with rectangular rule and $\xi \in [a,b]$.
+
+
+!split
+===== Codes for the Rectangular rule =====
+
+We go back to our simple example above and set $F_0=b=1$ and choose $x_0=0$ and $x=1/2$, and have
+!bt
+\[
+W=\frac{1}{\pi}.
+\]
+!et
+The code here computes the integral using the rectangle rule and $n=100$ integration points we have a relative error of
+$10^{-5}$. 
 !bc pycod
-for i in range(n-1):
-    # more codes in between here
-    v[i+1] = v[i] + DeltaT*a[i]
-    y[i+1] = y[i] + DeltaT*v[i+1]
-    # more code
+from math import sin, pi
+import numpy as np
+from sympy import Symbol, integrate
+# function for the Rectangular rule                                                                                        
+def Rectangular(a,b,f,n):
+   h = (b-a)/float(n)
+   s = 0
+   for i in range(0,n,1):
+       x = (i+0.5)*h
+       s = s+ f(x)
+   return h*s
+# function to integrate
+def function(x):
+    return sin(2*pi*x)
+# define integration limits and integration points                                                                         
+a = 0.0; b = 0.5;
+n = 100
+Exact = 1./pi
+print("Relative error= ", abs( (Rectangular(a,b,function,n)-Exact)/Exact))
 !ec
 
 
+!split 
+===== The trapezoidal rule =====
 
-
-
-
-
-
-
-
-
-
-!split
-===== Newton's Laws =====
-
-Let us now remind ourselves of Newton's laws, since these are the laws of motion we will study in this course.
-
-
-When analyzing a physical system we normally start with distinguishing between the object we are studying (we will label this in more general terms as our _system_) and how this system interacts with the environment (which often means everything else!)
-
-In our investigations we will thus analyze a specific physics problem in terms of the system and the environment.
-In doing so we need to identify the forces that act on the system and assume that the
-forces acting on the system must have a source, an identifiable cause in
-the environment.
-
-A force acting on for example a falling object must be related to an interaction with something in the environment.
-This also means that we do not consider internal forces. The latter are forces between
-one part of the object and another part. In this course we will mainly focus on external forces.
-
-Forces are either contact forces or long-range forces.
-
-Contact forces, as evident from the name, are forces that occur at the contact between
-the system and the environment. Well-known long-range forces are the gravitional force and the electromagnetic force.
-
-
-!split
-===== Setting up a model for forces acting on an object =====
-
-In order to set up the forces which act on an object, the following steps may be useful
-o Divide the problem into system and environment.
-o Draw a figure of the object and everything in contact with the object.
-o Draw a closed curve around the system.
-o Find contact points—these are the points where contact forces may act.
-o Give names and symbols to all the contact forces.
-o Identify the long-range forces.
-o Make a drawing of the object. Draw the forces as arrows, vectors, starting from where the force is acting. The direction of the vector(s) indicates the (positive) direction of the force. Try to make the length of the arrow indicate the relative magnitude of the forces.
-o Draw in the axes of the coordinate system. It is often convenient to make one axis parallel to the direction of motion. When you choose the direction of the axis you also choose the positive direction for the axis.
-
-
-!split
-===== Newton's Laws, the Second one first =====
-
-
-Newton’s second law of motion: The force $\bm{F}$ on an object of inertial mass $m$
-is related to the acceleration a of the object through
+The other integral gives
 !bt
-\[
-\bm{F} = m\bm{a},
-\]
+\begin{equation*}
+\int_{x_0-h}^{x_0}f(x)dx=\frac{h}{2}\left(f(x_0) + f(x_0-h)\right)+O(h^3),
+\end{equation*}
 !et
-where $\bm{a}$ is the acceleration.
+and adding up we obtain
+!bt
+\begin{equation}
+   \int_{x_0-h}^{x_0+h}f(x)dx=\frac{h}{2}\left(f(x_0+h) + 2f(x_0) + f(x_0-h)\right)+O(h^3),
+   label{eq:trapez}
+\end{equation}
+!et
+which is the well-known trapezoidal rule.  Concerning the error in the approximation made,
+$O(h^3)=O((b-a)^3/N^3)$, you should  note 
+that this is the local error.  Since we are splitting the integral from
+$a$ to $b$ in $N$ pieces, we will have to perform approximately $N$ 
+such operations.
 
-Newton’s laws of motion are laws of nature that have been found by experimental
-investigations and have been shown to hold up to continued experimental investigations.
-Newton’s laws are valid over a wide range of length- and time-scales. We
-use Newton’s laws of motion to describe everything from the motion of atoms to the
-motion of galaxies.
+This means that the *global error* goes like $\approx O(h^2)$. 
+The trapezoidal reads then
+!bt
+\begin{equation}
+   I=\int_a^bf(x) dx=h\left(f(a)/2 + f(a+h) +f(a+2h)+
+                          \dots +f(b-h)+ f_{b}/2\right),
+   label{eq:trapez1}
+\end{equation}
+!et
+with a global error which goes like $O(h^2)$. 
 
-The second law is a vector equation with the acceleration having the same
-direction as the force. The acceleration is proportional to the force via the mass $m$ of the system under study.
+Hereafter we use the shorthand notations $f_{-h}=f(x_0-h)$, $f_{0}=f(x_0)$
+and $f_{h}=f(x_0+h)$.
+
+!split 
+===== Error in the trapezoidal rule =====
+
+The correct mathematical expression for the local error for the trapezoidal rule is
+!bt
+\begin{equation*}
+\int_a^bf(x)dx -\frac{b-a}{2}\left[f(a)+f(b)\right]=-\frac{h^3}{12}f^{(2)}(\xi),
+\end{equation*}
+!et
+and the global error reads
+!bt
+\begin{equation*}
+\int_a^bf(x)dx -T_h(f)=-\frac{b-a}{12}h^2f^{(2)}(\xi),
+\end{equation*}
+!et
+where $T_h$ is the trapezoidal result and $\xi \in [a,b]$.
 
 
-Newton’s second law introduces a new property of an object, the so-called 
-inertial mass $m$. We determine the inertial mass of an object by measuring the
-acceleration for a given applied force.
+!split 
+===== Algorithm for the trapezoidal rule =====
+!bblock
+The trapezoidal rule is easy to  implement numerically 
+through the following simple algorithm
+
+  * Choose the number of mesh points and fix the step length.
+
+  * calculate $f(a)$ and $f(b)$ and multiply with $h/2$.
+
+  * Perform a loop over $n=1$ to $n-1$ ($f(a)$ and $f(b)$ are known) and sum up  the terms $f(a+h) +f(a+2h)+f(a+3h)+\dots +f(b-h)$. Each step in the loop  corresponds to a given value $a+nh$.
+
+  * Multiply the final result by $h$ and add $hf(a)/2$ and $hf(b)/2$.
+
+!eblock
+
 
 
 !split
-===== Then the First Law =====
+===== Trapezoidal Rule =====
 
+We use the same function and integrate now using the trapoezoidal rule.
 
-What happens if the net external force on a body is zero? Applying Newton’s second
-law, we find:
-!bt
-\[
-\bm{F} = 0 = m\bm{a},
-\]
-!et
-which gives using the definition of the acceleration
-!bt
-\[
-\bm{a} = \frac{d\bm{v}}{dt}=0.
-\]
-!et
-The acceleration is zero, which means that the velocity of the object is constant. This
-is often referred to as Newton’s first law. An object in a state of uniform motion tends to remain in
-that state unless an external force changes its state of motion.
-Why do we need a separate law for this? Is it not simply a special case of Newton’s
-second law? Yes, Newton’s first law can be deduced from the second law as we have
-illustrated. However, the first law is often used for a different purpose: Newton’s
-First Law tells us about the limit of applicability of Newton’s Second law. Newton’s
-Second law can only be used in reference systems where the First law is obeyed. But
-is not the First law always valid? No! The First law is only valid in reference systems
-that are not accelerated. If you observe the motion of a ball from an accelerating
-car, the ball will appear to accelerate even if there are no forces acting on it. We call
-systems that are not accelerating inertial systems, and Newton’s first law is often
-called the law of inertia. Newton’s first and second laws of motion are only valid in
-inertial systems. 
+!bc pycod
+import numpy as np
+from sympy import Symbol, integrate
+# function for the trapezoidal rule
+def Trapez(a,b,f,n):
+   h = (b-a)/float(n)
+   s = 0
+   x = a
+   for i in range(1,n,1):
+       x = x+h
+       s = s+ f(x)
+   s = 0.5*(f(a)+f(b)) +s
+   return h*s
+# function to integrate
+def function(x):
+    return sin(2*pi*x)
+# define integration limits and integration points                                                                         
+a = 0.0; b = 0.5;
+n = 100
+Exact = 1./pi
+print("Relative error= ", abs( (Trapez(a,b,function,n)-Exact)/Exact))
 
-A system is an inertial system if it is not accelerated. It means that the reference system
-must not be accelerating linearly or rotating. Unfortunately, this means that most
-systems we know are not really inertial systems. For example, the surface of the
-Earth is clearly not an inertial system, because the Earth is rotating. The Earth is also
-not an inertial system, because it ismoving in a curved path around the Sun. However,
-even if the surface of the Earth is not strictly an inertial system, it may be considered
-to be approximately an inertial system for many laboratory-size experiments.
+!ec
+
 
 !split
-===== And finally the Third Law =====
+===== Simpsons' rule =====
+
+Instead of using the above first-order polynomials 
+approximations for $f$, we attempt at using a second-order polynomials.
+In this case we need three points in order to define a second-order 
+polynomial approximation
+!bt
+\begin{equation*}
+f(x) \approx P_2(x)=a_0+a_1x+a_2x^2.
+\end{equation*}
+!et
+Using again Lagrange's interpolation formula we have
+!bt
+\begin{equation*}
+     P_2(x)=\frac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2-x_1)}y_2+
+            \frac{(x-x_0)(x-x_2)}{(x_1-x_0)(x_1-x_2)}y_1+
+            \frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}y_0.
+\end{equation*}
+!et
+Inserting this formula in the integral of Eq.  (ref{eq:hhint}) we obtain
+!bt
+\begin{equation*}
+   \int_{-h}^{+h}f(x)dx=\frac{h}{3}\left(f_h + 4f_0 + f_{-h}\right)+O(h^5),
+\end{equation*}
+!et
+which is Simpson's rule. 
 
 
-If there is a force from object A on object B, there is also a force from object B on object A.
-This fundamental principle of interactions is called Newton’s third law. We do not
-know of any force that do not obey this law: All forces appear in pairs. Newton’s
-third law is usually formulated as: For every action there is an equal and opposite
-reaction.
+!split 
+===== Simpson's rule =====
+Note that the improved accuracy in the evaluation of
+the derivatives gives a better error approximation, $O(h^5)$ vs.\ $O(h^3)$ .
+But this is again the *local error approximation*. 
+Using Simpson's rule we can easily compute
+the integral     of Eq.  (ref{eq:integraldef}) to be
+!bt
+\begin{equation}
+   I=\int_a^bf(x) dx=\frac{h}{3}\left(f(a) + 4f(a+h) +2f(a+2h)+
+                          \dots +4f(b-h)+ f_{b}\right),
+   label{eq:simpson}
+\end{equation}
+!et
+with a global error which goes like $O(h^4)$. 
+
+
+!split 
+===== Mathematical expressions for the truncation error =====
+More formal expressions for the local and global errors are for the local error
+!bt
+\begin{equation*}
+\int_a^bf(x)dx -\frac{b-a}{6}\left[f(a)+4f((a+b)/2)+f(b)\right]=-\frac{h^5}{90}f^{(4)}(\xi),
+\end{equation*}
+!et
+and for the global error
+!bt
+\begin{equation*}
+\int_a^bf(x)dx -S_h(f)=-\frac{b-a}{180}h^4f^{(4)}(\xi).
+\end{equation*}
+!et
+with $\xi\in[a,b]$ and $S_h$ the results obtained with Simpson's method.
+
+
+!split 
+===== Algorithm for Simpson's rule =====
+The method 
+can easily be implemented numerically through the following simple algorithm
+
+  * Choose the number of mesh points and fix the step.
+
+  * calculate $f(a)$ and $f(b)$
+
+  * Perform a loop over $n=1$ to $n-1$ ($f(a)$ and $f(b)$ are known) and sum up   the terms $4f(a+h) +2f(a+2h)+4f(a+3h)+\dots +4f(b-h)$. Each step in the loop  corresponds to a given value $a+nh$. Odd values of $n$ give $4$ as factor  while even values yield $2$ as factor.
+
+  * Multiply the final result by $\frac{h}{3}$.
+
+
+!split
+===== Code example =====
+!bc pycod
+from math import sin, pi
+import numpy as np
+from sympy import Symbol, integrate
+# function for the trapezoidal rule                                                                                        
+def Simpson(a,b,f,n):
+   h = (b-a)/float(n)
+   sum = f(a)/float(2);
+   for i in range(1,n):
+       sum = sum + f(a+i*h)*(3+(-1)**(i+1))
+   sum = sum + f(b)/float(2)
+   return sum*h/3.0
+# function to integrate                                                                                                    
+def function(x):
+    return sin(2*pi*x)
+# define integration limits and integration points                                                                         
+a = 0.0; b = 0.5;
+n = 100
+Exact = 1./pi
+print("Relative error= ", abs( (Simpson(a,b,function,n)-Exact)/Exact))
+!ec
+We see that Simpson's rule gives a much better estimation of the relative error with the same amount of points as we had for the Rectangle rule and the Trapezoidal rule.     
+
+
+
+!split
+=====  Symbolic integration =====
+
+We could also use the symbolic mathematics. Here Python comes to our rescue with "SymPy":"https://www.sympy.org/en/index.html", which is a Python library for symbolic mathematics.
+
+Here's an example on how you could use _Sympy_ where we compare the symbolic calculation with an
+integration of a function $f(x)$ by the Trapezoidal rule.
+Here we show an
+example code that evaluates  the integral
+$\int_0^1 dx x^2 = 1/3$.
+The following code for  the trapezoidal rule allows you  to plot the relative error by comparing with the exact result. By increasing to $10^8$ points one arrives at a region where numerical errors start to accumulate.
+!bc pycod
+from math import log10
+import numpy as np
+from sympy import Symbol, integrate
+import matplotlib.pyplot as plt
+# function for the trapezoidal rule
+def Trapez(a,b,f,n):
+   h = (b-a)/float(n)
+   s = 0
+   x = a
+   for i in range(1,n,1):
+       x = x+h
+       s = s+ f(x)
+   s = 0.5*(f(a)+f(b)) +s
+   return h*s
+#  function to compute pi
+def function(x):
+    return x*x
+# define integration limits
+a = 0.0;  b = 1.0;
+# find result from sympy
+# define x as a symbol to be used by sympy
+x = Symbol('x')
+exact = integrate(function(x), (x, a, b))
+# set up the arrays for plotting the relative error
+n = np.zeros(9); y = np.zeros(9);
+# find the relative error as function of integration points
+for i in range(1, 8, 1):
+    npts = 10**i
+    result = Trapez(a,b,function,npts)
+    RelativeError = abs((exact-result)/exact)
+    n[i] = log10(npts); y[i] = log10(RelativeError);
+plt.plot(n,y, 'ro')
+plt.xlabel('n')
+plt.ylabel('Relative error')
+plt.show()
+!ec
+
 
 
 
