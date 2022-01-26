@@ -132,6 +132,7 @@ Handwritten notes at https://github.com/mhjensen/Physics321/tree/master/doc/Hand
  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesJanuary24.pdf
 - Wednesday 1/26: We discuss other force models with examples such as the gravitational force and a spring force. See Malthe-Sørenssen chapter 7.3-7.5. We start also our discussion of energy and work, see Taylor 4.1
  - Video of lecture without subtitles at https://mediaspace.msu.edu/media/t/1_2bque87y and subtitles at https://youtu.be/ZO7oC9PRXsw
+ - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesJanuary26.pdf
 - Friday 1/28:  We discuss several examples of energy and work. Taylor 4.1-4.3. Problem solving. Deadline second homework. 
 
 ### Week 5, January 31- February 4, 2022
