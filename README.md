@@ -134,7 +134,7 @@ Handwritten notes at https://github.com/mhjensen/Physics321/tree/master/doc/Hand
  - Video of lecture without subtitles at https://mediaspace.msu.edu/media/t/1_2bque87y and subtitles at https://youtu.be/ZO7oC9PRXsw
  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesJanuary26.pdf
 - Friday 1/28:  We discuss several examples of energy and work. Taylor 4.1-4.3. Problem solving. Deadline second homework. 
- - Video of lecture without subtitles at https://mediaspace.msu.edu/media/t/1_hvcxnd7s. and with subtitles at 
+ - Video of lecture without subtitles at https://mediaspace.msu.edu/media/t/1_hvcxnd7s. and with subtitles at https://youtu.be/MGafb3QOkwI
  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesJanuary28.pdf
 
 ### Week 5, January 31- February 4, 2022
