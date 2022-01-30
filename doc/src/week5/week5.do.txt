@@ -3,6 +3,27 @@ AUTHOR: "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/" {copyrigh
 DATE: today
 
 
+=== Monday ===
+
+Short repetition from last week. Discussion of momentum and angular momentum.
+Reading suggestion: Taylor sections 3.1-3.4
+
+=== Wednesday ===
+
+More on angular momentum, Taylor sections 3.4 and 3.5. Discussion of potential energy and conservative forces.
+Reading suggestions: Taylor section 4.2
+
+===  Friday ===
+
+Conservative forces and potential energy. Reading suggestion: Taylor sections 4.2-4.4
+
+If you wish to read more about conservative forces or not, Feyman's lectures from 1963 are quite interesting.
+He states for example that _All fundamental forces in nature appear to be conservative_.
+This statement was made while developing his argument that *there are no nonconservative forces*.
+You may enjoy the link to "Feynman's lecture":"http://www.feynmanlectures.caltech.edu/I_14.html".
+
+
+
 !split
 =====   Aims and Overarching Motivation =====
 
@@ -26,729 +47,6 @@ We discuss also exercise 5 from homework 2.
 We discuss several examples of energy and work. Taylor 4.1-4.3.
 
 
-
-
-
-
-!split
-===== Air Resistance in One Dimension =====
-
-Last week we considered the motion of a falling object with air
-resistance. Here we look at both a quadratic in velocity resistance
-and linear in velocity.  But first we give a qualitative argument
-about the mathematical expression for the air resistance we used last
-Friday.
-
-
-Air resistance tends to scale as the square of the velocity. This is
-in contrast to many problems chosen for textbooks, where it is linear
-in the velocity. The choice of a linear dependence is motivated by
-mathematical simplicity (it keeps the differential equation linear)
-rather than by physics. One can see that the force should be quadratic
-in velocity by considering the momentum imparted on the air
-molecules. If an object sweeps through a volume $dV$ of air in time
-$dt$, the momentum imparted on the air is
-
-!bt
-\begin{equation}
-dP=\rho_m dV v,
-\end{equation}
-!et
-
-where $v$ is the velocity of the object and $\rho_m$ is the mass
-density of the air. If the molecules bounce back as opposed to stop
-you would double the size of the term. The opposite value of the
-momentum is imparted onto the object itself. Geometrically, the
-differential volume is
-
-!bt
-\begin{equation}
-dV=Avdt,
-\end{equation}
-!et
-
-where $A$ is the cross-sectional area and $vdt$ is the distance the
-object moved in time $dt$.
-
-!split
-===== Resulting Acceleration =====
-Plugging this into the expression above,
-
-!bt
-\begin{equation}
-\frac{dP}{dt}=-\rho_m A v^2.
-\end{equation}
-!et
-
-This is the force felt by the particle, and is opposite to its
-direction of motion. Now, because air doesn't stop when it hits an
-object, but flows around the best it can, the actual force is reduced
-by a dimensionless factor $c_W$, called the drag coefficient.
-
-!bt
-\begin{equation}
-F_{\rm drag}=-c_W\rho_m Av^2,
-\end{equation}
-!et
-
-and the acceleration is
-
-!bt
-\begin{eqnarray}
-\frac{dv}{dt}=-\frac{c_W\rho_mA}{m}v^2.
-\end{eqnarray}
-!et
-
-For a particle with initial velocity $v_0$, one can separate the $dt$
-to one side of the equation, and move everything with $v$s to the
-other side. We did this in our discussion of simple motion and will not repeat it here.
-
-On more general terms,
-for many systems, e.g. an automobile, there are multiple sources of
-resistance. In addition to wind resistance, where the force is
-proportional to $v^2$, there are dissipative effects of the tires on
-the pavement, and in the axel and drive train. These other forces can
-have components that scale proportional to $v$, and components that
-are independent of $v$. Those independent of $v$, e.g. the usual
-$f=\mu_K N$ frictional force you consider in your first Physics courses, only set in
-once the object is actually moving. As speeds become higher, the $v^2$
-components begin to dominate relative to the others. For automobiles
-at freeway speeds, the $v^2$ terms are largely responsible for the
-loss of efficiency. To travel a distance $L$ at fixed speed $v$, the
-energy/work required to overcome the dissipative forces are $fL$,
-which for a force of the form $f=\alpha v^n$ becomes
-!bt
-\begin{eqnarray}
-W=\int dx~f=\alpha v^n L.
-\end{eqnarray}
-!et
-For $n=0$ the work is
-independent of speed, but for the wind resistance, where $n=2$,
-slowing down is essential if one wishes to reduce fuel consumption. It
-is also important to consider that engines are designed to be most
-efficient at a chosen range of power output. Thus, some cars will get
-better mileage at higher speeds (They perform better at 50 mph than at
-5 mph) despite the considerations mentioned above.
-
-!split
-===== Going Ballistic, Projectile Motion or a Softer Approach, Falling Raindrops =====
-
-
-As an example of Newton's Laws we consider projectile motion (or a
-falling raindrop or a ball we throw up in the air) with a drag force. Even though air resistance is
-largely proportional to the square of the velocity, we will consider
-the drag force to be linear to the velocity, $\bm{F}=-m\gamma\bm{v}$,
-for the purposes of this exercise.
-
-Such a dependence can be extracted from experimental data for objects moving at low velocities, see for example Malthe-Sørenssen chapter 5.6.
-
-We will here focus on a two-dimensional problem.
-
-!split
-===== Two-dimensional falling object =====
-
-The acceleration for a projectile moving upwards,
-$\bm{a}=\bm{F}/m$, becomes
-
-!bt
-\begin{eqnarray}
-\frac{dv_x}{dt}=-\gamma v_x,\\
-\nonumber
-\frac{dv_y}{dt}=-\gamma v_y-g,
-\end{eqnarray}
-!et
-and $\gamma$ has dimensions of inverse time. 
-
-If you on the other hand have a falling raindrop, how do these equations change? See for example Figure 2.1 in Taylor.
-Let us stay with a ball which is thrown up in the air at $t=0$. 
-
-!split
-===== Ways of solving these equations =====
-
-We will go over two different ways to solve this equation. The first
-by direct integration, and the second as a differential equation. To
-do this by direct integration, one simply multiplies both sides of the
-equations above by $dt$, then divide by the appropriate factors so
-that the $v$s are all on one side of the equation and the $dt$ is on
-the other. For the $x$ motion one finds an easily integrable equation,
-
-!bt
-\begin{eqnarray}
-\frac{dv_x}{v_x}&=&-\gamma dt,\\
-\nonumber
-\int_{v_{0x}}^{v_{x}}\frac{dv_x}{v_x}&=&-\gamma\int_0^{t}dt,\\
-\nonumber
-\ln\left(\frac{v_{x}}{v_{0x}}\right)&=&-\gamma t,\\
-\nonumber
-v_{x}(t)&=&v_{0x}e^{-\gamma t}.
-\end{eqnarray}
-!et
-
-This is very much the result you would have written down
-by inspection. For the $y$-component of the velocity,
-
-!bt
-\begin{eqnarray}
-\frac{dv_y}{v_y+g/\gamma}&=&-\gamma dt\\
-\nonumber
-\ln\left(\frac{v_{y}+g/\gamma}{v_{0y}-g/\gamma}\right)&=&-\gamma t_f,\\
-\nonumber
-v_{fy}&=&-\frac{g}{\gamma}+\left(v_{0y}+\frac{g}{\gamma}\right)e^{-\gamma t}.
-\end{eqnarray}
-!et
-
-Whereas $v_x$ starts at some value and decays
-exponentially to zero, $v_y$ decays exponentially to the terminal
-velocity, $v_t=-g/\gamma$.
-
-!split
-===== Solving as differential equations =====
-
-Although this direct integration is simpler than the method we invoke
-below, the method below will come in useful for some slightly more
-difficult differential equations in the future. The differential
-equation for $v_x$ is straight-forward to solve. Because it is first
-order there is one arbitrary constant, $A$, and by inspection the
-solution is
-
-!bt
-\begin{equation}
-v_x=Ae^{-\gamma t}.
-\end{equation}
-!et
-
-The arbitrary constants for equations of motion are usually determined
-by the initial conditions, or more generally boundary conditions. By
-inspection $A=v_{0x}$, the initial $x$ component of the velocity.
-
-
-!split
-===== Differential Equations, contn =====
-The differential equation for $v_y$ is a bit more complicated due to
-the presence of $g$. Differential equations where all the terms are
-linearly proportional to a function, in this case $v_y$, or to
-derivatives of the function, e.g., $v_y$, $dv_y/dt$,
-$d^2v_y/dt^2\cdots$, are called linear differential equations. If
-there are terms proportional to $v^2$, as would happen if the drag
-force were proportional to the square of the velocity, the
-differential equation is not longer linear. Because this expression
-has only one derivative in $v$ it is a first-order linear differential
-equation. If a term were added proportional to $d^2v/dt^2$ it would be
-a second-order differential equation.  In this case we have a term
-completely independent of $v$, the gravitational acceleration $g$, and
-the usual strategy is to first rewrite the equation with all the
-linear terms on one side of the equal sign,
-
-!bt
-\begin{equation}
-\frac{dv_y}{dt}+\gamma v_y=-g.
-\end{equation}
-!et
-
-!split
-===== Splitting into two parts =====
-
-Now, the solution to the equation can be broken into two
-parts. Because this is a first-order differential equation we know
-that there will be one arbitrary constant. Physically, the arbitrary
-constant will be determined by setting the initial velocity, though it
-could be determined by setting the velocity at any given time. Like
-most differential equations, solutions are not ``solved''. Instead,
-one guesses at a form, then shows the guess is correct. For these
-types of equations, one first tries to find a single solution,
-i.e. one with no arbitrary constants. This is called the {\it
-particular} solution, $y_p(t)$, though it should really be called
-``a'' particular solution because there are an infinite number of such
-solutions. One then finds a solution to the {\it homogenous} equation,
-which is the equation with zero on the right-hand side,
-
-!bt
-\begin{equation}
-\frac{dv_{y,h}}{dt}+\gamma v_{y,h}=0.
-\end{equation}
-!et
-
-Homogenous solutions will have arbitrary constants. 
-
-The particular solution will solve the same equation as the original
-general equation
-
-!bt
-\begin{equation}
-\frac{dv_{y,p}}{dt}+\gamma v_{y,p}=-g.
-\end{equation}
-!et
-
-However, we don't need find one with arbitrary constants. Hence, it is
-called a _particular_ solution.
-
-The sum of the two,
-
-!bt
-\begin{equation}
-v_y=v_{y,p}+v_{y,h},
-\end{equation}
-!et
-
-is a solution of the total equation because of the linear nature of
-the differential equation. One has now found a *general* solution
-encompassing all solutions, because it both satisfies the general
-equation (like the particular solution), and has an arbitrary constant
-that can be adjusted to fit any initial condition (like the homogeneous
-solution). If the equations were not linear, that is if there were terms
-such as $v_y^2$ or $v_y\dot{v}_y$, this technique would not work.
-
-!split
-===== More details =====
-
-Returning to the example above, the homogenous solution is the same as
-that for $v_x$, because there was no gravitational acceleration in
-that case,
-
-!bt
-\begin{equation}
-v_{y,h}=Be^{-\gamma t}.
-\end{equation}
-!et
-In this case a particular solution is one with constant velocity,
-
-!bt
-\begin{equation}
-v_{y,p}=-g/\gamma.
-\end{equation}
-!et
-Note that this is the terminal velocity of a particle falling from a
-great height. The general solution is thus,
-
-!bt
-\begin{equation}
-v_y=Be^{-\gamma t}-g/\gamma,
-\end{equation}
-!et
-
-and one can find $B$ from the initial velocity,
-
-!bt
-\begin{equation}
-v_{0y}=B-g/\gamma,~~~B=v_{0y}+g/\gamma.
-\end{equation}
-!et
-Plugging in the expression for $B$ gives the $y$ motion given the initial velocity,
-
-!bt
-\begin{equation}
-v_y=(v_{0y}+g/\gamma)e^{-\gamma t}-g/\gamma.
-\end{equation}
-!et
-It is easy to see that this solution has $v_y=v_{0y}$ when $t=0$ and
-$v_y=-g/\gamma$ when $t\rightarrow\infty$.
-
-One can also integrate the two equations to find the coordinates $x$
-and $y$ as functions of $t$,
-
-!bt
-\begin{eqnarray}
-x&=&\int_0^t dt'~v_{0x}(t')=\frac{v_{0x}}{\gamma}\left(1-e^{-\gamma t}\right),\\
-\nonumber
-y&=&\int_0^t dt'~v_{0y}(t')=-\frac{gt}{\gamma}+\frac{v_{0y}+g/\gamma}{\gamma}\left(1-e^{-\gamma t}\right).
-\end{eqnarray}
-!et
-
-If the question was to find the position at a time $t$, we would be
-finished. However, the more common goal in a projectile equation
-problem is to find the range, i.e. the distance $x$ at which $y$
-returns to zero. For the case without a drag force this was much
-simpler. The solution for the $y$ coordinate would have been
-$y=v_{0y}t-gt^2/2$. One would solve for $t$ to make $y=0$, which would
-be $t=2v_{0y}/g$, then plug that value for $t$ into $x=v_{0x}t$ to
-find $x=2v_{0x}v_{0y}/g=v_0\sin(2\theta_0)/g$. One follows the same
-steps here, except that the expression for $y(t)$ is more
-complicated. Searching for the time where $y=0$, and we get
-
-!bt
-\begin{equation}
-0=-\frac{gt}{\gamma}+\frac{v_{0y}+g/\gamma}{\gamma}\left(1-e^{-\gamma t}\right).
-\end{equation}
-!et
-
-This cannot be inverted into a simple expression $t=\cdots$. Such
-expressions are known as ``transcendental equations'', and are not the
-rare instance, but are the norm. In the days before computers, one
-might plot the right-hand side of the above graphically as
-a function of time, then find the point where it crosses zero.
-
-Now, the most common way to solve for an equation of the above type
-would be to apply Newton's method numerically. This involves the
-following algorithm for finding solutions of some equation $F(t)=0$.
-
-o First guess a value for the time, $t_{\rm guess}$.
-o Calculate $F$ and its derivative, $F(t_{\rm guess})$ and $F'(t_{\rm guess})$. 
-o Unless you guessed perfectly, $F\ne 0$, and assuming that $\Delta F\approx F'\Delta t$, one would choose 
-o $\Delta t=-F(t_{\rm guess})/F'(t_{\rm guess})$.
-o Now repeat step 1, but with $t_{\rm guess}\rightarrow t_{\rm guess}+\Delta t$.
-
-
-If the $F(t)$ were perfectly linear in $t$, one would find $t$ in one
-step. Instead, one typically finds a value of $t$ that is closer to
-the final answer than $t_{\rm guess}$. One breaks the loop once one
-finds $F$ within some acceptable tolerance of zero. A program to do
-this will be added shortly.
-
-!split
-===== Motion in a Magnetic Field =====
-
-
-Another example of a velocity-dependent force is magnetism,
-!bt
-\begin{eqnarray}
-\bm{F}&=&q\bm{v}\times\bm{B},\\
-\nonumber
-F_i&=&q\sum_{jk}\epsilon_{ijk}v_jB_k.
-\end{eqnarray}
-!et
-
-For a uniform field in the $z$ direction $\bm{B}=B\hat{z}$, the force can only have $x$ and $y$ components,
-
-!bt
-\begin{eqnarray}
-F_x&=&qBv_y\\
-\nonumber
-F_y&=&-qBv_x.
-\end{eqnarray}
-!et
-
-The differential equations are
-
-!bt
-\begin{eqnarray}
-\dot{v}_x&=&\omega_c v_y,\omega_c= qB/m\\
-\nonumber
-\dot{v}_y&=&-\omega_c v_x.
-\end{eqnarray}
-!et
-One can solve the equations by taking time derivatives of either equation, then substituting into the other equation,
-!bt
-\begin{eqnarray}
-\ddot{v}_x=\omega_c\dot{v_y}=-\omega_c^2v_x,\\
-\nonumber
-\ddot{v}_y&=&-\omega_c\dot{v}_x=-\omega_cv_y.
-\end{eqnarray}
-!et
-
-The solution to these equations can be seen by inspection,
-!bt
-\begin{eqnarray}
-v_x&=&A\sin(\omega_ct+\phi),\\
-\nonumber
-v_y&=&A\cos(\omega_ct+\phi).
-\end{eqnarray}
-!et
-
-One can integrate the equations to find the positions as a function of time,
-!bt
-\begin{eqnarray}
-x-x_0&=&\int_{x_0}^x dx=\int_0^t dt v(t)\\
-\nonumber
-&=&\frac{-A}{\omega_c}\cos(\omega_ct+\phi),\\
-\nonumber
-y-y_0&=&\frac{A}{\omega_c}\sin(\omega_ct+\phi).
-\end{eqnarray}
-!et
-The trajectory is a circle centered at $x_0,y_0$ with amplitude $A$ rotating in the clockwise direction.
-
-The equations of motion for the $z$ motion are
-!bt
-\begin{equation}
-\dot{v_z}=0,
-\end{equation}
-!et
-which leads to
-!bt
-\begin{equation}
-z-z_0=V_zt.
-\end{equation}
-!et
-Added onto the circle, the motion is helical.
-
-Note that the kinetic energy,
-!bt
-\begin{equation}
-T=\frac{1}{2}m(v_x^2+v_y^2+v_z^2)=\frac{1}{2}m(\omega_c^2A^2+V_z^2),
-\end{equation}
-!et
-is constant. This is because the force is perpendicular to the
-velocity, so that in any differential time element $dt$ the work done
-on the particle $\bm{F}\cdot{dr}=dt\bm{F}\cdot{v}=0$.
-
-One should think about the implications of a velocity dependent
-force. Suppose one had a constant magnetic field in deep space. If a
-particle came through with velocity $v_0$, it would undergo cyclotron
-motion with radius $R=v_0/\omega_c$. However, if it were still its
-motion would remain fixed. Now, suppose an observer looked at the
-particle in one reference frame where the particle was moving, then
-changed their velocity so that the particle's velocity appeared to be
-zero. The motion would change from circular to fixed. Is this
-possible?
-
-The solution to the puzzle above relies on understanding
-relativity. Imagine that the first observer believes $\bm{B}\ne 0$ and
-that the electric field $\bm{E}=0$. If the observer then changes
-reference frames by accelerating to a velocity $\bm{v}$, in the new
-frame $\bm{B}$ and $\bm{E}$ both change. If the observer moved to the
-frame where the charge, originally moving with a small velocity $v$,
-is now at rest, the new electric field is indeed $\bm{v}\times\bm{B}$,
-which then leads to the same acceleration as one had before. If the
-velocity is not small compared to the speed of light, additional
-$\gamma$ factors come into play,
-$\gamma=1/\sqrt{1-(v/c)^2}$. Relativistic motion will not be
-considered in this course.
-
-
-
-!split
-===== Sliding Block tied to a Wall =====
-
-Another classical case is that of simple harmonic oscillations, here
-represented by a block sliding on a horizontal frictionless
-surface. The block is tied to a wall with a spring. If the spring is
-not compressed or stretched too far, the force on the block at a given
-position $x$ is
-
-!bt
-  \[
-      F=-kx.
-  \]
-!et
-
-!split
-===== Back and Forth, Sliding Block with no friction =====
-
-The negative sign means that the force acts to restore the object to an equilibrium position. Newton's equation of motion for this idealized system is then 
-
-!bt
-  \[
-    m\frac{d^2x}{dt^2}=-kx,
-  \]
-!et
-or we could rephrase it as
-!bt
-  \[
-   \frac{d^2x}{dt^2}=-\frac{k}{m}x=-\omega_0^2x,
-    label{eq:newton1}
-  \]
-!et
-with the angular frequency $\omega_0^2=k/m$. 
-
-We will derive the above force when we start studying _harmonic oscillations_. 
-
-!split
-===== Final rewrite =====
-
-With the position $x(t)$ and the velocity  $v(t)=dx/dt$ we can reformulate Newton's equation in the following way
-!bt
-  \[
-      \frac{dx(t)}{dt}=v(t),
-  \]
-!et
-  and
-!bt
-  \[
-      \frac{dv(t)}{dt}=-\omega_0^2x(t).
-  \]
-!et
-
-With initial conditions $x(t_0)=x_0$ and $v(t_0)=v_0$ we can in turn solve the differential equations. 
-
-!split
-=====  Analytical Solution =====
-
-The above differential equation has the advantage that it can be
-solved analytically with general solutions on the form
-
-
-!bt
-  \[
-     x(t)=A\cos{\omega_0t}+B\sin{\omega_0t},
-  \]
-!et
-and
-
-!bt
-  \[
-     v(t)=-\omega_0 A\sin{\omega_0t}+\omega_0 B\cos{\omega_0t},
-  \]
-!et
-
-
-
-where $A$ and $B$ are constants to be determined from the initial conditions.
-
-This provides in turn an important test for the numerical solution and
-the development of a program for more complicated cases which cannot
-be solved analytically.
-
-We will discuss the above equations in more detail when we discuss harmonic oscillations.
-
-
-
-!split
-=====  Summarizing the various motion problems 1 =====
-
-The examples we have discussed above were included in order to
-illustrate various methods (which depend on the specific problem) to
-find the solutions of the equations of motion.
-We have solved the equations of motion in the following ways:
-
-!bblock Solve the differential equations analytically
-We did this for example with the following object in one or two dimensions or the sliding block. 
-Here we had for example an equation set like
-!bt
-\[
-\frac{dv_x}{dt}=-\gamma v_x,
-\]
-!et
-and
-!bt
-\[
-\frac{dv_y}{dt}=-\gamma v_y-g,
-\]
-!et
-and $\gamma$ has dimension of inverse time. 
-
-!eblock
-
-
-!split
-=====  Summarizing the various motion problems 2 =====
-
-
-!bblock Integrate the equations
-We could also in case we can separate the degrees of freedom integrate. Take for example one of the equations in the previous slide
-!bt
-\[
-\frac{dv_x}{dt}=-\gamma v_x,
-\]
-!et
-which we can rewrite in terms of a left-hand side which depends only on the velocity and a right-hand side which depends only on time
-!bt
-\[
-\frac{dv_x}{v_x}=-\gamma dt.
-\]
-!et
-Integrating we have (since we can separate $v_x$ and $t$)
-!bt
-\[
-\int_{v_0}^{v_t}\frac{dv_x}{v_x}=-\int_{t_0}^{t_f}\gamma dt,
-\]
-!et
-where $v_f$ is the velocity at a final time and $t_f$ is the final time.
-In this case we found, after having integrated the above two sides that
-!bt
-\[
-v_f(t)=v_0\exp{-\gamma t}.
-\]
-!et
-
-!eblock
-
-
-!split
-=====  Summarizing the various motion problems 3 =====
-
-
-!bblock Solve the differential equations numerically
-
-Finally, using for example Euler's method, we can solve the
-differential equations numerically. If we can compare our numerical
-solutions with analytical solutions, we have an extra check of our
-numerical approaches.
-
-The example code on the next slide is relevant for homework 3. Here we deal with a falling object in two dimensions. Except for the derivations above with an
-air resistance which is linear in the velocity, homework 3 uses a quadratic velocity dependence.
-
-!eblock
-
-!split
-===== Code example using Euler's methods =====
-
-_Note_: this code needs some additional expressions and will not run 
-!bc pycod
-# Common imports
-import numpy as np
-import pandas as pd
-from math import *
-import matplotlib.pyplot as plt
-import os
-from pylab import plt, mpl
-plt.style.use('seaborn')
-mpl.rcParams['font.family'] = 'serif'
-
-#define the gravitational acceleration
-g = 9.80655 #m/s^2
-# The mass and the drag constant D
-D = 0.00245 #mass/length   kg/m
-m = 0.2 #kg, mass of falling object
-DeltaT = 0.001
-#set up final time, here just a number we have chosen
-tfinal = 1.0
-# set up number of points for all variables
-n = ceil(tfinal/DeltaT)
-# set up arrays for t, a, v, and y and arrays for analytical results
-# Note the brute force setting up of arrays for x and y, vx, vy, ax and ay
-# For hw3 you should think of using the 2-dim vectors you used in homework 2
-t = np.zeros(n)
-vy = np.zeros(n)
-y = np.zeros(n)
-vx = np.zeros(n)
-x = np.zeros(n)
-# Initial conditions
-vx[0] = 10.0 #m/s
-vy[0] = 0.0  #m/s
-y[0] = 10.0 #m
-x[0] = 0.0 #m
-# Start integrating using Euler's method
-for i in range(n-1):
-    # expression for acceleration, note the absolute value and division by mass
-#    ax = You need to set up the expression for force and thereby the acceleration in the x-direction
-#    ay = You need to set up the expression for force and thereby the acceleration in the y-direction
-    # update velocity and position
-    vx[i+1] = vx[i] + DeltaT*ax
-    x[i+1] = x[i] + DeltaT*vx[i]
-    vy[i+1] = vy[i] + DeltaT*ay
-    y[i+1] = y[i] + DeltaT*vy[i]
-    # update time to next time step and compute analytical answer
-    t[i+1] = t[i] + DeltaT
-#  Here you need to set up the analytical solution for y(t) and x(t)
-
-if ( y[i+1] < 0.0):
-        break
-data = {'t[s]': t,
-        'Relative error in y': abs((y-yanalytic)/yanalytic),
-        'vy[m/s]': vy,
-        'Relative error in x': abs((x-xanalytic)/xanalytic),
-        'vx[m/s]': vx
-}
-NewData = pd.DataFrame(data)
-display(NewData)
-# save to file
-NewData.to_csv(outfile, index=False)
-#then plot
-fig, axs = plt.subplots(4, 1)
-axs[0].plot(t, y)
-axs[0].set_xlim(0, tfinal)
-axs[0].set_ylabel('y')
-axs[1].plot(t, vy)
-axs[1].set_ylabel('vy[m/s]')
-axs[1].set_xlabel('time[s]')
-axs[2].plot(t, x)
-axs[2].set_xlim(0, tfinal)
-axs[2].set_ylabel('x')
-axs[3].plot(t, vx)
-axs[3].set_ylabel('vx[m/s]')
-axs[3].set_xlabel('time[s]')
-fig.tight_layout()
-plt.show()
-!ec
 
 
 
@@ -1015,399 +313,816 @@ What does this mean? The total energy, which is the sum of potential and kinetic
 Wow, this sounds interesting. We will analyze this next week in more detail when we study energy, momentum and angular momentum conservation.
 
 
-!split
-===== Numerical Integration =====
-
-Let us now see how we could have solved the above integral numerically.
 
 
-There are several numerical algorithms for finding an integral
-numerically. The more familiar ones like the rectangular rule or the
-trapezoidal rule have simple geometric interpretations.
-
-Let us look at the mathematical details of what are called equal-step methods, also known as Newton-Cotes quadrature.
-
-!split
-===== Newton-Cotes Quadrature or equal-step methods =====
-!bblock
-The integral 
-!bt
-\begin{equation}
-   I=\int_a^bf(x) dx
-   label{eq:integraldef}
-\end{equation}
-!et
-has a very simple meaning. The integral is the
-area enscribed by the function $f(x)$ starting from $x=a$ to  $x=b$. It is subdivided in several smaller areas whose evaluation is to  be approximated by different techniques. The areas under the curve can for example  be approximated by rectangular boxes or trapezoids. 
-!eblock
-
-!split 
-===== Basic philosophy of equal-step methods =====
-!bblock
-In considering equal step  methods, our basic approach is that of approximating
-a function $f(x)$ with a polynomial of at most 
-degree $N-1$, given $N$ integration points. If our polynomial is of degree $1$,
-the function will be approximated with $f(x)\approx a_0+a_1x$. 
-!eblock
-
-!split 
-===== Simple algorithm for equal step methods =====
-The algorithm for these integration methods  is rather simple, and the number of approximations perhaps  unlimited!
-
-* Choose a step size $h=(b-a)/N$  where $N$ is the number of steps and $a$ and $b$ the lower and upper limits of integration.
-
-* With a given step length we rewrite the integral as  
-!bt 
-\begin{equation*}     
-\int_a^bf(x) dx= \int_a^{a+h}f(x)dx + \int_{a+h}^{a+2h}f(x)dx+\dots \int_{b-h}^{b}f(x)dx.
-\end{equation*}
-!et
-* The strategy then is to find a reliable polynomial approximation   for $f(x)$ in the various intervals.  Choosing a given approximation for  $f(x)$, we obtain a specific approximation to the  integral.
-
-* With this approximation to $f(x)$ we perform the integration by computing the integrals over all subintervals.
-
-!split 
-===== Simple algorithm for equal step methods =====
-
-One possible strategy then is to find a reliable polynomial expansion for $f(x)$ in the smaller
-subintervals. Consider for example evaluating
-!bt
-\begin{equation*}
-   \int_a^{a+2h}f(x)dx, 
-\end{equation*}
-!et
-which we rewrite as
-!bt
-\begin{equation}
-\int_a^{a+2h}f(x)dx=\int_{x_0-h}^{x_0+h}f(x)dx.
-label{eq:hhint}
-\end{equation}
-!et
-We have chosen a midpoint $x_0$ and have defined $x_0=a+h$.
-
-
-
-!split 
-===== The rectangle method =====
-
-A very simple approach is the so-called midpoint or rectangle method.
-In this case the integration area is split in a given number of rectangles with length $h$ and height given by the mid-point value of the function.  This gives the following simple rule for approximating an integral
-!bt
-\begin{equation}
-I=\int_a^bf(x) dx \approx  h\sum_{i=1}^N f(x_{i-1/2}), 
-label{eq:rectangle}
-\end{equation}
-!et
-where $f(x_{i-1/2})$ is the midpoint value of $f$ for a given rectangle. We will discuss its truncation 
-error below.  It is easy to implement this algorithm,  as shown below
-
-!split 
-===== Truncation error for the rectangular rule  =====
-
-The correct mathematical expression for the local error for the rectangular rule $R_i(h)$ for element $i$ is
-
-!bt
-\begin{equation*}
-\int_{-h}^hf(x)dx - R_i(h)=-\frac{h^3}{24}f^{(2)}(\xi),
-\end{equation*}
-!et
-and the global error reads
-!bt
-\begin{equation*}
-\int_a^bf(x)dx -R_h(f)=-\frac{b-a}{24}h^2f^{(2)}(\xi),
-\end{equation*}
-!et
-where $R_h$ is the result obtained with rectangular rule and $\xi \in [a,b]$.
 
 
 !split
-===== Codes for the Rectangular rule =====
+===== Work-Energy Theorem and Energy Conservation  =====
 
-We go back to our simple example above and set $F_0=b=1$ and choose $x_0=0$ and $x=1/2$, and have
+We have made the observation that energy was conserved for a force which
+depends only on the position.
+In particular we considered a force acting on a block 
+attached to a spring with spring
+constant $k$. The other end of the spring was attached to the wall.  
+
+The force $F_x$ from the spring on the block was defined as
 !bt
 \[
-W=\frac{1}{\pi}.
+F_x=-kx.
 \]
 !et
-The code here computes the integral using the rectangle rule and $n=100$ integration points we have a relative error of
-$10^{-5}$. 
-!bc pycod
-from math import sin, pi
-import numpy as np
-from sympy import Symbol, integrate
-# function for the Rectangular rule                                                                                        
-def Rectangular(a,b,f,n):
-   h = (b-a)/float(n)
-   s = 0
-   for i in range(0,n,1):
-       x = (i+0.5)*h
-       s = s+ f(x)
-   return h*s
-# function to integrate
-def function(x):
-    return sin(2*pi*x)
-# define integration limits and integration points                                                                         
-a = 0.0; b = 0.5;
-n = 100
-Exact = 1./pi
-print("Relative error= ", abs( (Rectangular(a,b,function,n)-Exact)/Exact))
-!ec
 
-
-!split 
-===== The trapezoidal rule =====
-
-The other integral gives
+The work done on the block due to a displacement from a position $x_0$ to $x$ 
 !bt
-\begin{equation*}
-\int_{x_0-h}^{x_0}f(x)dx=\frac{h}{2}\left(f(x_0) + f(x_0-h)\right)+O(h^3),
-\end{equation*}
+\[
+W=\int_{x_0}^{x}F_xdx'=\frac{1}{2}kx_0^2-\frac{1}{2}kx^2.
+\]
 !et
-and adding up we obtain
+
+
+!split
+===== Conservation of energy =====
+With the definition of the work-energy theorem in terms of the kinetic energy we obtained
+
+!bt
+\[
+W=\frac{1}{2}mv^2(x)-\frac{1}{2}mv_0^2=\frac{1}{2}kx_0^2-\frac{1}{2}kx^2,
+\]
+!et
+which we rewrote as
+
+!bt
+\[
+\frac{1}{2}mv^2(x)+\frac{1}{2}kx^2=\frac{1}{2}mv_0^2+\frac{1}{2}kx_0^2.
+\]
+!et
+
+The total energy, which is the sum of potential and kinetic energy, is conserved.
+We will analyze this interesting result now in more detail when we study energy, momentum and angular momentum conservation.
+
+But before we start with energy conservation, conservative forces and potential energies, we need to revisit our definitions of momentum and angular momentum.
+
+
+
+!split
+===== What is a Conservative Force? =====
+
+A conservative force is a force whose property is that the total work
+done in moving an object between two points is independent of the
+taken path. This means that the work on an object under the influence
+of a conservative force, is independent on the path of the object. It
+depends only on the spatial degrees of freedom and it is possible to
+assign a numerical value for the potential at any point. It leads to
+conservation of energy. The gravitational force is an example of a
+conservative force.
+
+
+!split
+===== Two important conditions =====
+
+First, a conservative force depends only on the spatial degrees of freedom. This is a necessary condition for obtaining a path integral which is independent of path.
+The  important condition for the final work to be independent of the path is that the _curl_ of the force is zero, that
+is
+!bt
+\[
+\bm{\nabla} \times \bm{F}=0
+\]
+!et
+
+!split
+===== Work-energy theorem to show that energy is conserved with a conservative force =====
+
+The work-energy theorem states that the work done $W$ by a force $\bm{F}$ that moves an object from a position $\bm{r}_0$ to a new position $\bm{r}_1$
+!bt
+\[
+W=\int_{\bm{r}_0}^{\bm{r}_1}\bm{F}\bm{dr}=\frac{1}{2}mv_1^2-\frac{1}{2}mv_0^2,
+\]
+!et
+where $v_1^2$ is the velocity squared at a time $t_1$ and $v_0^2$ the corresponding quantity at a time $t_0$.
+The work done is thus the difference in kinetic energies. We can rewrite the above equation as
+!bt
+\[
+\frac{1}{2}mv_1^2=\int_{\bm{r}_0}^{\bm{r}_1}\bm{F}\bm{dr}+\frac{1}{2}mv_0^2,
+\]
+!et
+that is the final kinetic energy is equal to the initial kinetic energy plus the work done by the force over a given path from a  position $\bm{r}_0$ at time $t_0$ to a final position position $\bm{r}_1$ at a later time $t_1$.
+
+
+
+
+!split
+===== Conservation of Momentum =====
+
+Before we move on however, we need to remind ourselves about important aspects like the linear momentum and angular momentum. After these considerations, we move back to more details about conservatives forces.
+
+
+Assume we have $N$ objects, each with velocity $\bm{v}_i$ with
+$i=1,2,\dots,N$ and mass $m_i$. The momentum of each object is
+$\bm{p}_i=m\bm{v}_i$ and the total linear (or mechanical) momentum is
+defined as
+
+!bt
+\[
+\bm{P}=\sum_{i=1}^N\bm{p}_i=\sum_{i=1}^Nm_i\bm{v}_i,
+\]
+!et
+
+
+!split
+===== Two objects first =====
+
+Let us assume we have two objects only that interact with each other and are influenced by an external force.
+
+We define also the total net force acting on object 1 as 
+
+!bt
+\[
+\bm{F}_1^{\mathrm{net}}=\bm{F}_1^{\mathrm{ext}}+\bm{F}_{12},
+\]
+!et
+
+where $\bm{F}_1^{\mathrm{ext}}$ is the external force
+(for example the force due to an electron moving in an electromagnetic field) and $\bm{F}_{12}$ is the
+force between object one and two. Similarly for object 2 we have
+
+
+!bt
+\[
+\bm{F}_2^{\mathrm{net}}=\bm{F}_2^{\mathrm{ext}}+\bm{F}_{21}.
+\]
+!et
+
+!split
+===== Newton's Third Law =====
+
+Newton's third law which we met earlier states that _for every action there is an equal and opposite reaction_.
+It is more accurately stated as
+
+_if two bodies exert forces on each other, these forces are equal in magnitude and opposite in direction_.
+
+This means that for two bodies $i$ and $j$, if the force on $i$ due to $j$ is called $\bm{F}_{ij}$, then 
+
 !bt
 \begin{equation}
-   \int_{x_0-h}^{x_0+h}f(x)dx=\frac{h}{2}\left(f(x_0+h) + 2f(x_0) + f(x_0-h)\right)+O(h^3),
-   label{eq:trapez}
+\bm{F}_{ij}=-\bm{F}_{ji}. 
 \end{equation}
 !et
-which is the well-known trapezoidal rule.  Concerning the error in the approximation made,
-$O(h^3)=O((b-a)^3/N^3)$, you should  note 
-that this is the local error.  Since we are splitting the integral from
-$a$ to $b$ in $N$ pieces, we will have to perform approximately $N$ 
-such operations.
 
-This means that the *global error* goes like $\approx O(h^2)$. 
-The trapezoidal reads then
+
+For the abovementioned two objects we have thus $\bm{F}_{12}=-\bm{F}_{21}$.
+
+
+!split
+===== Newton's Second Law and Momentum =====
+
+With the net forces acting on each object we can now related the momentum to the forces via
+
+!bt
+\[
+\bm{F}_1^{\mathrm{net}}=m_1\bm{a}_i=m_1\frac{d\bm{v}_i}{dt}=\bm{F}_1^{\mathrm{ext}}+\bm{F}_{12},
+\]
+!et
+
+and 
+
+!bt
+\[
+\bm{F}_2^{\mathrm{net}}=m_2\bm{a}_2=m_1\frac{d\bm{v}_i}{dt}=\bm{F}_2^{\mathrm{ext}}+\bm{F}_{21}.
+\]
+!et
+
+Recalling our definition for the linear momentum we have then
+
+!bt
+\[
+\frac{d\bm{p}_1}{dt}=\bm{F}_1^{\mathrm{ext}}+\bm{F}_{12},
+\]
+!et
+
+and 
+
+!bt
+\[
+\frac{d\bm{p}_2}{dt}=\bm{F}_2^{\mathrm{ext}}+\bm{F}_{21}.
+\]
+!et
+
+
+!split
+===== The total Momentum =====
+
+The total momentum $\bm{P}$ is defined as the sum of the individual momenta, meaning that we can rewrite
+
+!bt
+\[
+\bm{F}_1^{\mathrm{net}}+\bm{F}_2^{\mathrm{net}}=\frac{d\bm{p}_1}{dt}+\frac{d\bm{p}_2}{dt}=\frac{d\bm{P}}{dt},
+\]
+!et
+
+that is the derivate with respect to time of the total momentum. If we now
+write the net forces as sums of the external plus internal forces
+between the objects we have
+
+!bt
+\[
+\frac{d\bm{P}}{dt}=\bm{F}_1^{\mathrm{ext}}+\bm{F}_{12}+\bm{F}_2^{\mathrm{ext}}+\bm{F}_{21}=\bm{F}_1^{\mathrm{ext}}+\bm{F}_2^{\mathrm{ext}}.
+\]
+!et
+
+The derivative of the total momentum is just _the sum of the external
+forces_. If we assume that the external forces are zero and that only
+internal (here two-body forces) are at play, we obtain the important
+result that the derivative of the total momentum is zero. This means
+again that the total momentum is a constant of the motion and
+conserved quantity. This is a very important result that we will use
+in many applications to come.
+
+
+
+
+!split
+===== Newton's Second Law =====
+
+Let us now general to several objects $N$ and let us also assume that there are no external forces. We will label such a system as _an isolated system_. 
+
+
+Newton's second law, $\bm{F}=m\bm{a}$, can be written for a particle $i$ as
+
 !bt
 \begin{equation}
-   I=\int_a^bf(x) dx=h\left(f(a)/2 + f(a+h) +f(a+2h)+
-                          \dots +f(b-h)+ f_{b}/2\right),
-   label{eq:trapez1}
+\bm{F}_i=\sum_{j\ne i}^N \bm{F}_{ij}=m_i\bm{a}_i,
 \end{equation}
 !et
-with a global error which goes like $O(h^2)$. 
 
-Hereafter we use the shorthand notations $f_{-h}=f(x_0-h)$, $f_{0}=f(x_0)$
-and $f_{h}=f(x_0+h)$.
+where $\bm{F}_i$ (a single subscript) denotes the net force acting on $i$ from the other objects/particles.
+Because the mass of $i$ is fixed and we assume it does not change with time, one can see that
 
-!split 
-===== Error in the trapezoidal rule =====
-
-The correct mathematical expression for the local error for the trapezoidal rule is
-!bt
-\begin{equation*}
-\int_a^bf(x)dx -\frac{b-a}{2}\left[f(a)+f(b)\right]=-\frac{h^3}{12}f^{(2)}(\xi),
-\end{equation*}
-!et
-and the global error reads
-!bt
-\begin{equation*}
-\int_a^bf(x)dx -T_h(f)=-\frac{b-a}{12}h^2f^{(2)}(\xi),
-\end{equation*}
-!et
-where $T_h$ is the trapezoidal result and $\xi \in [a,b]$.
-
-
-!split 
-===== Algorithm for the trapezoidal rule =====
-!bblock
-The trapezoidal rule is easy to  implement numerically 
-through the following simple algorithm
-
-  * Choose the number of mesh points and fix the step length.
-
-  * calculate $f(a)$ and $f(b)$ and multiply with $h/2$.
-
-  * Perform a loop over $n=1$ to $n-1$ ($f(a)$ and $f(b)$ are known) and sum up  the terms $f(a+h) +f(a+2h)+f(a+3h)+\dots +f(b-h)$. Each step in the loop  corresponds to a given value $a+nh$.
-
-  * Multiply the final result by $h$ and add $hf(a)/2$ and $hf(b)/2$.
-
-!eblock
-
-
-
-!split
-===== Trapezoidal Rule =====
-
-We use the same function and integrate now using the trapoezoidal rule.
-
-!bc pycod
-import numpy as np
-from sympy import Symbol, integrate
-# function for the trapezoidal rule
-def Trapez(a,b,f,n):
-   h = (b-a)/float(n)
-   s = 0
-   x = a
-   for i in range(1,n,1):
-       x = x+h
-       s = s+ f(x)
-   s = 0.5*(f(a)+f(b)) +s
-   return h*s
-# function to integrate
-def function(x):
-    return sin(2*pi*x)
-# define integration limits and integration points                                                                         
-a = 0.0; b = 0.5;
-n = 100
-Exact = 1./pi
-print("Relative error= ", abs( (Trapez(a,b,function,n)-Exact)/Exact))
-
-!ec
-
-
-!split
-===== Simpsons' rule =====
-
-Instead of using the above first-order polynomials 
-approximations for $f$, we attempt at using a second-order polynomials.
-In this case we need three points in order to define a second-order 
-polynomial approximation
-!bt
-\begin{equation*}
-f(x) \approx P_2(x)=a_0+a_1x+a_2x^2.
-\end{equation*}
-!et
-Using again Lagrange's interpolation formula we have
-!bt
-\begin{equation*}
-     P_2(x)=\frac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2-x_1)}y_2+
-            \frac{(x-x_0)(x-x_2)}{(x_1-x_0)(x_1-x_2)}y_1+
-            \frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}y_0.
-\end{equation*}
-!et
-Inserting this formula in the integral of Eq.  (ref{eq:hhint}) we obtain
-!bt
-\begin{equation*}
-   \int_{-h}^{+h}f(x)dx=\frac{h}{3}\left(f_h + 4f_0 + f_{-h}\right)+O(h^5),
-\end{equation*}
-!et
-which is Simpson's rule. 
-
-
-!split 
-===== Simpson's rule =====
-Note that the improved accuracy in the evaluation of
-the derivatives gives a better error approximation, $O(h^5)$ vs.\ $O(h^3)$ .
-But this is again the *local error approximation*. 
-Using Simpson's rule we can easily compute
-the integral     of Eq.  (ref{eq:integraldef}) to be
 !bt
 \begin{equation}
-   I=\int_a^bf(x) dx=\frac{h}{3}\left(f(a) + 4f(a+h) +2f(a+2h)+
-                          \dots +4f(b-h)+ f_{b}\right),
-   label{eq:simpson}
+\bm{F}_i=\frac{d}{dt}m_i\bm{v}_i=\sum_{j\ne i}^N\bm{F}_{ij}.
 \end{equation}
 !et
-with a global error which goes like $O(h^4)$. 
-
-
-!split 
-===== Mathematical expressions for the truncation error =====
-More formal expressions for the local and global errors are for the local error
-!bt
-\begin{equation*}
-\int_a^bf(x)dx -\frac{b-a}{6}\left[f(a)+4f((a+b)/2)+f(b)\right]=-\frac{h^5}{90}f^{(4)}(\xi),
-\end{equation*}
-!et
-and for the global error
-!bt
-\begin{equation*}
-\int_a^bf(x)dx -S_h(f)=-\frac{b-a}{180}h^4f^{(4)}(\xi).
-\end{equation*}
-!et
-with $\xi\in[a,b]$ and $S_h$ the results obtained with Simpson's method.
-
-
-!split 
-===== Algorithm for Simpson's rule =====
-The method 
-can easily be implemented numerically through the following simple algorithm
-
-  * Choose the number of mesh points and fix the step.
-
-  * calculate $f(a)$ and $f(b)$
-
-  * Perform a loop over $n=1$ to $n-1$ ($f(a)$ and $f(b)$ are known) and sum up   the terms $4f(a+h) +2f(a+2h)+4f(a+3h)+\dots +4f(b-h)$. Each step in the loop  corresponds to a given value $a+nh$. Odd values of $n$ give $4$ as factor  while even values yield $2$ as factor.
-
-  * Multiply the final result by $\frac{h}{3}$.
 
 
 !split
-===== Code example =====
-!bc pycod
-from math import sin, pi
-import numpy as np
-from sympy import Symbol, integrate
-# function for the trapezoidal rule                                                                                        
-def Simpson(a,b,f,n):
-   h = (b-a)/float(n)
-   sum = f(a)/float(2);
-   for i in range(1,n):
-       sum = sum + f(a+i*h)*(3+(-1)**(i+1))
-   sum = sum + f(b)/float(2)
-   return sum*h/3.0
-# function to integrate                                                                                                    
-def function(x):
-    return sin(2*pi*x)
-# define integration limits and integration points                                                                         
-a = 0.0; b = 0.5;
-n = 100
-Exact = 1./pi
-print("Relative error= ", abs( (Simpson(a,b,function,n)-Exact)/Exact))
-!ec
-We see that Simpson's rule gives a much better estimation of the relative error with the same amount of points as we had for the Rectangle rule and the Trapezoidal rule.     
+===== Summing over all Objects/Particles =====
+
+Now, one can sum over all the objects/particles and obtain
+
+!bt
+\[
+\frac{d}{dt}\sum_i m_iv_i=\sum_{ij, i\ne j}^N\bm{F}_{ij}=0.
+\]
+!et
+
+How did we arrive at the last step?  We rewrote the double sum as
+
+!bt
+\[
+\sum_{ij, i\ne j}^N\bm{F}_{ij}=\sum_i^N\sum_{j>i}\left(\bm{F}_{ij}+\bm{F}_{ji}\right),
+\]
+!et
+
+and using Newton's third law which states that
+$\bm{F}_{ij}=-\bm{F}_{ji}$, we obtain that the net sum over all  the two-particle
+forces is zero when we only consider so-called _internal forces_.
+Stated differently, the last step made use of the fact that for every
+term $ij$, there is an equivalent term $ji$ with opposite
+force. Because the momentum is defined as $m\bm{v}$, for a system of
+particles, we have thus
+
+!bt
+\begin{equation}
+\frac{d}{dt}\sum_im_i\bm{v}_i=0,~~{\rm for~isolated~particles}.
+\end{equation}
+!et
+
+!split
+===== Conservation of total Momentum =====
+
+By "isolated" one means that the only force acting on any particle $i$
+are those originating from other particles in the sum, i.e. ``no
+external'' forces. Thus, Newton's third law leads to the conservation
+of total momentum,
+
+!bt
+\[
+\bm{P}=\sum_i m_i\bm{v}_i,
+\]
+!et
+and we have
+!bt
+\[
+\frac{d}{dt}\bm{P}=0.
+\]
+!et
+
+
+!split
+===== Example: Rocket Science =====
+
+Consider a rocket of mass $M$ moving with velocity $v$. After a
+brief instant, the velocity of the rocket is $v+\Delta v$ and the mass
+is $M-\Delta M$. Momentum conservation gives
+
+
+!bt
+\begin{eqnarray*}
+Mv&=&(M-\Delta M)(v+\Delta v)+\Delta M(v-v_e)\\
+0&=&-\Delta Mv+M\Delta v+\Delta M(v-v_e),\\
+0&=&M\Delta v-\Delta Mv_e.
+\end{eqnarray*}
+!et
+
+In the second step we ignored the term $\Delta M\Delta v$ because it is doubly small. The last equation gives
+
+!bt
+\begin{eqnarray}
+\Delta v&=&\frac{v_e}{M}\Delta M,\\
+\nonumber
+\frac{dv}{dt}&=&\frac{v_e}{M}\frac{dM}{dt}.
+\end{eqnarray}
+!et
+
+!split
+===== Integrating the Equations =====
+
+Integrating the expression with lower limits $v_0=0$ and $M_0$, one finds
+
+!bt
+\begin{eqnarray*}
+v&=&v_e\int_{M_0}^M \frac{dM'}{M'}\\
+v&=&v_e\ln(M/M_0)\\
+&=&v_e\ln[(M_0-\alpha t)/M_0].
+\end{eqnarray*}
+!et
+
+Because the total momentum of an isolated system is constant, one can
+also quickly see that the center of mass of an isolated system is also
+constant. The center of mass is the average position of a set of
+masses weighted by the mass,
+
+!bt
+\begin{equation}
+\bar{x}=\frac{\sum_im_ix_i}{\sum_i m_i}.
+\end{equation}
+!et
+
+!split
+===== Rate of Change =====
+
+The rate of change of $\bar{x}$ is
+
+!bt
+\[
+\dot{\bar{x}}=\frac{1}{M}\sum_i m_i\dot{x}_i=\frac{1}{M}P_x.
+\]
+!et
+
+Thus if the total momentum is constant the center of mass moves at a
+constant velocity, and if the total momentum is zero the center of
+mass is fixed.
+
+
+!split
+===== Conservation of Angular Momentum =====
+
+
+The angular momentum is defined as
+
+!bt
+\begin{equation}
+\bm{L}=\bm{r}\times\bm{p}=m\bm{r}\times\bm{v}.
+\end{equation}
+!et
+
+It means that the angular momentum is perpendicular to the plane defined by position $\bm{r}$ and the momentum $\bm{p}$ via $\bm{r}\times \bm{p}$. 
+
+!split
+===== Rate of Change of Angular Momentum =====
+
+The rate of change of the angular momentum is
+
+!bt
+\[
+\frac{d\bm{L}}{dt}=m\bm{v}\times\bm{v}+m\bm{r}\times\dot{\bm{v}}=\bm{r}\times{\bm{F}}
+\]
+!et
+
+The first term is zero because $\bm{v}$ is parallel to itself, and the
+second term defines the so-called torque. If $\bm{F}$ is parallel to $\bm{r}$ then the torque is zero and we say that angular momentum is conserved.
+
+
+
+If the force is not radial, $\bm{r}\times\bm{F}\ne 0$ as above, and angular momentum is no longer conserved,
+
+!bt
+\begin{equation}
+\frac{d\bm{L}}{dt}=\bm{r}\times\bm{F}\equiv\bm{\tau},
+\end{equation}
+!et
+
+where $\bm{\tau}$ is the torque.
+
+
+!split
+===== The Torque, Example 1 (hw 4, exercise 4) =====
+
+Let us assume we have an initial position $\bm{r}_0=x_0\bm{e}_1+y_0\bm{e}_2$ at a time $t_0=0$.
+We add now a force in the positive $x$-direction
+!bt
+\[
+\bm{F}=F_x\bm{e}_1=\frac{d\bm{p}}{dt},
+\]
+!et
+where we used the force as defined by the time derivative of the momentum.
+
+We can use this force (and its pertinent acceleration) to find the velocity via the relation
+!bt
+\[
+\bm{v}(t)=\bm{v}_0+\int_{t_0}^t\bm{a}dt',
+\]
+!et
+and with $\bm{v}_0=0$ we have
+!bt
+\[
+\bm{v}(t)=\int_{t_0}^t\frac{\bm{F}}{m}dt',
+\]
+!et
+where $m$ is the mass of the object.
+
+!split
+===== The Torque, Example 1 (hw 4, exercise 4) =====
+
+Since the force acts only in the $x$-direction, we have after integration
+!bt
+\[
+\bm{v}(t)=\frac{\bm{F}}{m}t=\frac{F_x}{m}t\bm{e}_1=v_x(t)\bm{e}_1.
+\]
+!et
+
+The momentum is in turn given by $\bm{p}=p_x\bm{e}_1=mv_x\bm{e}_1=F_xt\bm{e}_1$.
+
+Integrating over time again we find the final position as (note the force depends only on the $x$-direction)
+!bt
+\[
+\bm{r}(t)=(x_0+\frac{1}{2}\frac{F_x}{m}t^2) \bm{e}_1+y_0\bm{e}_2.
+\]
+!et
+There is no change in the position in the $y$-direction since the force acts only in the $x$-direction.
+
+!split
+===== The Torque, Example 1 (hw 4, exercise 4) =====
+
+We can now compute the angular momentum given by
+!bt
+\[
+\bm{l}=\bm{r}\times\bm{p}=\left[(x_0+\frac{1}{2}\frac{F_x}{m}t^2) \bm{e}_1+y_0\bm{e}_2\right]\times F_xt\bm{e}_1.
+\]
+!et
+Computing the cross product we find
+
+!bt
+\[
+\bm{l}=-y_0F_xt\bm{e}_3=-y_0F_xt\bm{e}_z.
+\]
+!et
+The torque is the time derivative of the angular momentum and we have
+
+!bt
+\[
+\bm{\tau}=-y_0F_x\bm{e}_3=-y_0F_x\bm{e}_z.
+\]
+!et
+The torque is non-zero and angular momentum is not conserved.
+
+
+!split
+===== The Torque, Example 2 =====
+
+One can write the torque about a given axis, which we will denote as $\hat{z}$, in polar coordinates, where
+
+!bt
+\begin{eqnarray}
+x&=&r\sin\theta\cos\phi,~~y=r\sin\theta\cos\phi,~~z=r\cos\theta,
+\end{eqnarray}
+!et
+to find the $z$ component of the torque,
+
+!bt
+\begin{eqnarray}
+\tau_z&=&xF_y-yF_x\\
+\nonumber
+&=&-r\sin\theta\left\{\cos\phi \partial_y-\sin\phi \partial_x\right\}V(x,y,z).
+\end{eqnarray}
+!et
+
+
+!split
+===== Chain Rule and Partial Derivatives =====
+
+One can use the chain rule to write the partial derivative w.r.t. $\phi$ (keeping $r$ and $\theta$ fixed),
+
+!bt
+\begin{eqnarray}
+\partial_\phi&=&\frac{\partial x}{\partial\phi}\partial_x+\frac{\partial_y}{\partial\phi}\partial_y
++\frac{\partial z}{\partial\phi}\partial_z\\
+\nonumber
+&=&-r\sin\theta\sin\phi\partial_x+\sin\theta\cos\phi\partial_y.
+\end{eqnarray}
+!et
+
+Combining the two equations,
+
+!bt
+\begin{eqnarray}
+\tau_z&=&-\partial_\phi V(r,\theta,\phi).
+\end{eqnarray}
+!et
+
+Thus, if the potential is independent of the azimuthal angle $\phi$,
+there is no torque about the $z$ axis and $L_z$ is conserved.
+
 
 
 
 !split
-=====  Symbolic integration =====
+===== System of Isolated Particles =====
 
-We could also use the symbolic mathematics. Here Python comes to our rescue with "SymPy":"https://www.sympy.org/en/index.html", which is a Python library for symbolic mathematics.
+For a system of isolated particles, one can write
 
-Here's an example on how you could use _Sympy_ where we compare the symbolic calculation with an
-integration of a function $f(x)$ by the Trapezoidal rule.
-Here we show an
-example code that evaluates  the integral
-$\int_0^1 dx x^2 = 1/3$.
-The following code for  the trapezoidal rule allows you  to plot the relative error by comparing with the exact result. By increasing to $10^8$ points one arrives at a region where numerical errors start to accumulate.
-!bc pycod
-from math import log10
-import numpy as np
-from sympy import Symbol, integrate
-import matplotlib.pyplot as plt
-# function for the trapezoidal rule
-def Trapez(a,b,f,n):
-   h = (b-a)/float(n)
-   s = 0
-   x = a
-   for i in range(1,n,1):
-       x = x+h
-       s = s+ f(x)
-   s = 0.5*(f(a)+f(b)) +s
-   return h*s
-#  function to compute pi
-def function(x):
-    return x*x
-# define integration limits
-a = 0.0;  b = 1.0;
-# find result from sympy
-# define x as a symbol to be used by sympy
-x = Symbol('x')
-exact = integrate(function(x), (x, a, b))
-# set up the arrays for plotting the relative error
-n = np.zeros(9); y = np.zeros(9);
-# find the relative error as function of integration points
-for i in range(1, 8, 1):
-    npts = 10**i
-    result = Trapez(a,b,function,npts)
-    RelativeError = abs((exact-result)/exact)
-    n[i] = log10(npts); y[i] = log10(RelativeError);
-plt.plot(n,y, 'ro')
-plt.xlabel('n')
-plt.ylabel('Relative error')
-plt.show()
-!ec
+
+!bt
+\begin{eqnarray}
+\frac{d}{dt}\sum_i\bm{L}_i&=&\sum_{i\ne j}\bm{r}_i\times \bm{F}_{ij}\\
+\nonumber
+&=&\frac{1}{2}\sum_{i\ne j} \bm{r}_i\times \bm{F}_{ij}+\bm{r}_j\times\bm{F}_{ji}\\
+\nonumber
+&=&\frac{1}{2}\sum_{i\ne j} (\bm{r}_i-\bm{r}_j)\times\bm{F}_{ij}=0,
+\end{eqnarray}
+!et
+
+where the last step used Newton's third law,
+$\bm{F}_{ij}=-\bm{F}_{ji}$. If the forces between the particles are
+radial, i.e. $\bm{F}_{ij} ~||~ (\bm{r}_i-\bm{r}_j)$, then each term in
+the sum is zero and the net angular momentum is fixed. Otherwise, you
+could imagine an isolated system that would start spinning
+spontaneously.
+
+
+
+!split
+===== Work, Energy, Momentum and Conservation laws =====
+
+Energy conservation is most convenient as a strategy for addressing
+problems where time does not appear. For example, a particle goes
+from position $x_0$ with speed $v_0$, to position $x_f$; what is its
+new speed? However, it can also be applied to problems where time
+does appear, such as in solving for the trajectory $x(t)$, or
+equivalently $t(x)$.
+
+
+
+
+!split
+===== Energy Conservation =====
+Energy is conserved in the case where the potential energy, $V(\bm{r})$, depends only on position, and not on time. The force is determined by $V$,
+!bt
+\begin{equation}
+\bm{F}(\bm{r})=-\bm{\nabla} V(\bm{r}).
+\end{equation}
+!et
+
+
+
+
+!split
+===== Conservative forces =====
+
+We say a force is conservative if it satisfies the following conditions:
+o The force $\bm{F}$ acting on an object only depends on the position $\bm{r}$, that is $\bm{F}=\bm{F}(\bm{r})$.
+o For any two points $\bm{r}_1$ and $\bm{r}_2$, the work done by the force $\bm{F}$ on the displacement between these two points is independent of the path taken.
+o Finally, the _curl_ of the force is zero $\bm{\nabla}\times\bm{F}=0$.
+
+
+!split
+===== Forces and Potentials =====
+
+The energy $E$ of a given system is defined as the sum of kinetic and potential energies,
+!bt
+\[
+E=K+V(\bm{r}).
+\]
+!et
+
+We define the potential energy at a point $\bm{r}$ as the negative work done from a starting point $\bm{r}_0$ to a final point $\bm{r}$ 
+
+!bt
+\[
+V(\bm{r})=-W(\bm{r}_0\rightarrow\bm{r})= -\int_{\bm{r}_0}^{\bm{r}}d\bm{r}'\bm{F}(\bm{r}').
+\]
+!et
+If the potential depends on the path taken between these two points there is no unique potential.
+
+
+!split
+===== Example (relevant for homework 5) =====
+
+We study a classical electron which moves in the $x$-direction along a surface. The force from the surface is
+!bt
+\[
+\bm{F}(x)=-F_0\sin{(\frac{2\pi x}{b})}\bm{e}_1.
+\]
+!et
+The constant $b$ represents the distance between atoms at the surface of the material, $F_0$ is a constant and $x$ is the position of the electron.
+
+This is indeed a conservative force since it depends only on position
+and its _curl_ is zero, that is $-\bm{\nabla}\times \bm{F}=0$. This means that energy is conserved and the
+integral over the work done by the force is independent of the path
+taken. We will come back to this in more detail next week.
+
+!split
+===== Example Continues =====
+
+
+Using the work-energy theorem we can find the work $W$ done when
+moving an electron from a position $x_0$ to a final position $x$
+through the integral
+
+!bt
+\[
+W=-\int_{x_0}^x \bm{F}(x')dx' =  \int_{x_0}^x F_0\sin{(\frac{2\pi x'}{b})} dx',
+\]
+!et
+which results in
+!bt
+\[
+W=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right].
+\]
+!et
+Since this is related to the change in kinetic energy we have, with $v_0$ being the initial velocity at a  time $t_0$,
+!bt
+\[
+v  = \pm\sqrt{\frac{2}{m}\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right]+v_0^2}.
+\]
+!et
+
+!split
+===== The potential energy from this example =====
+
+The potential energy, due to energy conservation is
+!bt
+\[
+V(x)=V(x_0)+\frac{1}{2}mv_0^2-\frac{1}{2}mv^2,
+\]
+!et
+with $v$ given by the velocity from above.
+
+We can now, in order to find a more explicit expression for the
+potential energy at a given value $x$, define a zero level value for
+the potential. The potential is defined, using the work-energy
+theorem, as
+
+
+!bt
+\[
+V(x)=V(x_0)+\int_{x_0}^x (-F(x'))dx',
+\]
+!et
+
+and if you recall the definition of the indefinite integral, we can rewrite this as
+
+!bt
+\[
+V(x)=\int (-F(x'))dx'+C,
+\]
+!et
+
+where $C$ is an undefined constant. The force is defined as the
+gradient of the potential, and in that case the undefined constant
+vanishes. The constant does not affect the force we derive from the
+potential.
+
+We have then
+!bt
+\[
+V(x)=V(x_0)-\int_{x_0}^x \bm{F}(x')dx',
+\]
+!et
+which results in
+!bt
+\[
+V(x)=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right]+V(x_0).
+\]
+!et
+We can now define
+!bt
+\[
+\frac{F_0b}{2\pi}\cos{(\frac{2\pi x_0}{b})}=V(x_0),
+\]
+!et
+which gives 
+!bt
+\[
+V(x)=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}\right].
+\]
+!et
+
+!split
+===== Force and Potential =====
+
+We have defined work as the energy resulting from a net force acting
+on an object (or sseveral objects), that is
+
+!bt
+\[
+W(\bm{r}\rightarrow \bm{r}+d\bm{r})= \bm{F}(\bm{r})d\bm{r}.
+\]
+!et
+
+If we write out this for each component we have
+
+!bt
+\[
+W(\bm{r}\rightarrow \bm{r}+d\bm{r})=\bm{F}(\bm{r})d\bm{r}=F_xdx+F_ydy+F_zdz.
+\]
+!et
+
+The work done from an initial position to a final one defines also the difference in potential energies
+
+!bt
+\[
+W(\bm{r}\rightarrow \bm{r}+d\bm{r})=-\left[V(\bm{r}+d\bm{r})-V(\bm{r})\right].
+\]
+!et
+
+!split
+=====  Getting to $\bm{F}(\bm{r})=-\bm{\nabla} V(\bm{r})$ =====
+
+We can write out the differences in potential energies as
+
+!bt
+\[
+V(\bm{r}+d\bm{r})-V(\bm{r})=V(x+dx,y+dy,z+dz)-V(x,y,z)=dV,
+\]
+!et
+and using the expression the differential of a multi-variable function $f(x,y,z)$ 
+!bt
+\[
+df=\frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy+\frac{\partial f}{\partial z}dz,
+\]
+!et
+we can write the expression for the work done as
+!bt
+\[
+W(\bm{r}\rightarrow \bm{r}+d\bm{r})=-dV=-\left[\frac{\partial V}{\partial x}dx+\frac{\partial V}{\partial y}dy+\frac{\partial V}{\partial z}dz \right].
+\]
+!et
+
+!split
+===== Final expression =====
+
+Comparing the last equation with 
+!bt
+\[
+W(\bm{r}\rightarrow \bm{r}+d\bm{r})=F_xdx+F_ydy+F_zdz,
+\]
+!et
+we have
+!bt
+\[
+F_xdx+F_ydy+F_zdz=-\left[\frac{\partial V}{\partial x}dx+\frac{\partial V}{\partial y}dy+\frac{\partial V}{\partial z}dz \right],
+\]
+!et
+
+leading to
+!bt
+\[
+F_x=-\frac{\partial V}{\partial x},
+\]
+!et
+and
+!bt
+\[
+F_y=-\frac{\partial V}{\partial y},
+\]
+!et
+and
+!bt
+\[
+F_z=-\frac{\partial V}{\partial z},
+\]
+!et
+or just
+!bt
+\[
+\bm{F}=-\frac{\partial V}{\partial x}\bm{e}_1-\frac{\partial V}{\partial y}\bm{e}_2-\frac{\partial V}{\partial z}\bm{e}_3=-\bm{\nabla}V(\bm{r}).
+\]
+!et
+And this connection is the one we wanted to show.
+
+
 
 
 
