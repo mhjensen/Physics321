@@ -138,7 +138,7 @@ Handwritten notes at https://github.com/mhjensen/Physics321/tree/master/doc/Hand
  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesJanuary28.pdf
 
 ### Week 5, January 31- February 4, 2022
-- Monday 1/31: More on Conservation laws, momentum conservation, 4th homework, due February 15
+- Monday 1/31: Work energy theorem, conservative forces and momentum conservation, 4th homework available
 - Wednesday 2/2: Examples of applications of conservation laws, angular momentum conservation. 
 - Friday 2/4:  Conservation laws and further examples.  Problem solving. Deadline third homework.
 - Good reads are Taylor sections 3.1-3.5 and 4.1-4.3 and AMS chapters 10-14.
