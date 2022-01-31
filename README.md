@@ -127,15 +127,15 @@ Handwritten notes at https://github.com/mhjensen/Physics321/tree/master/doc/Hand
 
 ### Week 4, January 24-28, 2022
 - Monday 1/24: We discuss various forces and their pertinent equations of motion. Recommended reading: Taylor 2.1-2.4. Malthe-Sørenssen chapter 6-7 contains many examples. We will cover in particular a falling object in two dimensions with linear air resistance relevant for homework 3.
- - Video of lecture without subtitles at https://mediaspace.msu.edu/media/t/1_zjvy3kot
- - Video with subtitles at https://youtu.be/2kMAmoYxOZQ
- - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesJanuary24.pdf
+  - Video of lecture without subtitles at https://mediaspace.msu.edu/media/t/1_zjvy3kot
+  - Video with subtitles at https://youtu.be/2kMAmoYxOZQ
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesJanuary24.pdf
 - Wednesday 1/26: We discuss other force models with examples such as the gravitational force and a spring force. See Malthe-Sørenssen chapter 7.3-7.5. We start also our discussion of energy and work, see Taylor 4.1
- - Video of lecture without subtitles at https://mediaspace.msu.edu/media/t/1_2bque87y and subtitles at https://youtu.be/ZO7oC9PRXsw
- - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesJanuary26.pdf
+  - Video of lecture without subtitles at https://mediaspace.msu.edu/media/t/1_2bque87y and subtitles at https://youtu.be/ZO7oC9PRXsw
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesJanuary26.pdf
 - Friday 1/28:  We discuss several examples of energy and work. Taylor 4.1-4.3. Problem solving. Deadline second homework. 
- - Video of lecture without subtitles at https://mediaspace.msu.edu/media/t/1_hvcxnd7s. and with subtitles at https://youtu.be/MGafb3QOkwI
- - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesJanuary28.pdf
+  - Video of lecture without subtitles at https://mediaspace.msu.edu/media/t/1_hvcxnd7s. and with subtitles at https://youtu.be/MGafb3QOkwI
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesJanuary28.pdf
 
 ### Week 5, January 31- February 4, 2022
 - Monday 1/31: Work energy theorem, conservative forces and momentum conservation, 4th homework available
