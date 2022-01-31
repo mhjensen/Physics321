@@ -1,0 +1,386 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html hw4.do.txt --html_style=bootstrap --pygments_html_style=default --html_admon=bootstrap_panel --html_output=hw4-bs --no_mako
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="PHY321: Classical Mechanics 1">
+<title>PHY321: Classical Mechanics 1</title>
+<!-- Bootstrap style: bootstrap -->
+<!-- doconce format html hw4.do.txt --html_style=bootstrap --pygments_html_style=default --html_admon=bootstrap_panel --html_output=hw4-bs --no_mako -->
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+<style type="text/css">
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+</head>
+
+<!-- tocinfo
+{'highest level': 3,
+ 'sections': [('Practicalities about  homeworks and projects',
+               3,
+               None,
+               'practicalities-about-homeworks-and-projects'),
+              ('Introduction to homework 4',
+               3,
+               None,
+               'introduction-to-homework-4'),
+              ('Exercise 1 (10 pt), Conservation laws, Energy and momentum',
+               3,
+               None,
+               'exercise-1-10-pt-conservation-laws-energy-and-momentum'),
+              ('Exercise 2 (10 pt), Conservation of angular momentum',
+               3,
+               None,
+               'exercise-2-10-pt-conservation-of-angular-momentum'),
+              ('Exercise 3 (10pt), Example of potential',
+               3,
+               None,
+               'exercise-3-10pt-example-of-potential'),
+              ('Exercise 4 (15pt), Angular momentum case',
+               3,
+               None,
+               'exercise-4-15pt-angular-momentum-case'),
+              ('Exercise 5 (15pt), forces  and potentials',
+               3,
+               None,
+               'exercise-5-15pt-forces-and-potentials'),
+              ('Exercise 6 (40pt), Bouncing object',
+               3,
+               None,
+               'exercise-6-40pt-bouncing-object'),
+              ('Classical Mechanics Extra Credit Assignment: Scientific '
+               'Writing and attending Talks',
+               3,
+               None,
+               'classical-mechanics-extra-credit-assignment-scientific-writing-and-attending-talks'),
+              ('Integrating Classwork With Research',
+               3,
+               None,
+               'integrating-classwork-with-research')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="w4-bs.html">PHY321: Classical Mechanics 1</a>
+  </div>
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="#practicalities-about-homeworks-and-projects" style="font-size: 80%;">Practicalities about  homeworks and projects</a></li>
+     <!-- navigation toc: --> <li><a href="#introduction-to-homework-4" style="font-size: 80%;">Introduction to homework 4</a></li>
+     <!-- navigation toc: --> <li><a href="#exercise-1-10-pt-conservation-laws-energy-and-momentum" style="font-size: 80%;">Exercise 1 (10 pt), Conservation laws, Energy and momentum</a></li>
+     <!-- navigation toc: --> <li><a href="#exercise-2-10-pt-conservation-of-angular-momentum" style="font-size: 80%;">Exercise 2 (10 pt), Conservation of angular momentum</a></li>
+     <!-- navigation toc: --> <li><a href="#exercise-3-10pt-example-of-potential" style="font-size: 80%;">Exercise 3 (10pt), Example of potential</a></li>
+     <!-- navigation toc: --> <li><a href="#exercise-4-15pt-angular-momentum-case" style="font-size: 80%;">Exercise 4 (15pt), Angular momentum case</a></li>
+     <!-- navigation toc: --> <li><a href="#exercise-5-15pt-forces-and-potentials" style="font-size: 80%;">Exercise 5 (15pt), forces  and potentials</a></li>
+     <!-- navigation toc: --> <li><a href="#exercise-6-40pt-bouncing-object" style="font-size: 80%;">Exercise 6 (40pt), Bouncing object</a></li>
+     <!-- navigation toc: --> <li><a href="#classical-mechanics-extra-credit-assignment-scientific-writing-and-attending-talks" style="font-size: 80%;">Classical Mechanics Extra Credit Assignment: Scientific Writing and attending Talks</a></li>
+     <!-- navigation toc: --> <li><a href="#integrating-classwork-with-research" style="font-size: 80%;">Integrating Classwork With Research</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+<div class="container">
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+<!-- ------------------- main content ---------------------- -->
+<div class="jumbotron">
+<center>
+<h1>PHY321: Classical Mechanics 1</h1>
+</center>  <!-- document title -->
+
+<!-- author(s): Homework 4, due Friday  February 11 -->
+<center>
+<b>Homework 4, due Friday  February 11</b> 
+</center>
+<!-- institution(s) -->
+<br>
+<center>
+<h4>Jan 31, 2022</h4>
+</center> <!-- date -->
+<br>
+
+
+</div> <!-- end jumbotron -->
+<h3 id="practicalities-about-homeworks-and-projects" class="anchor">Practicalities about  homeworks and projects </h3>
+
+<ol>
+<li> You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. <b>Remember to write your name(s)</b>!</li>
+<li> Homeworks are available ten days before the deadline.</li>
+<li> How do I(we)  hand in?  You can hand in the paper and pencil exercises as a scanned document. For this homework this applies to exercises 1-5. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise(s) (exercise 6 here) should always be handed in as a jupyter notebook by the deadline at D2L.</li> 
+</ol>
+<h3 id="introduction-to-homework-4" class="anchor">Introduction to homework 4 </h3>
+
+<p>This week's sets of classical pen and paper and computational
+exercises deal with simple motion problems and conservation laws;
+energy, momentum and angular momentum. These conservation laws are
+central in Physics and understanding them properly lays the foundation
+for understanding and analyzing more complicated physics problems.
+</p>
+
+<p>The relevant reading background is</p>
+<ol>
+<li> chapters 3, 4.1, 4.2 and 4.3 of Taylor (there are many good examples there) and</li>
+<li> chapters 10-13 of Malthe-S&#248;renssen.</li>
+</ol>
+<p>In both textbooks there are many nice worked out examples. Malthe-S&#248;renssen's text contains also several coding examples you may find useful. </p>
+
+<p>The numerical homework focuses on another motion problem where you can
+use the code you developed in homework 3, almost entirely. Please take
+a look at the posted solution (jupyter-notebook) for homework 3. You
+need only to change the forces at play. The numerical problem this time is based
+on your code from homework 3 and we will try to make the motion of a falling object in two dimensions more realistic by allowing to bounce up again due to a normal force from the floor. 
+</p>
+<h3 id="exercise-1-10-pt-conservation-laws-energy-and-momentum" class="anchor">Exercise 1 (10 pt), Conservation laws, Energy and momentum </h3>
+
+<ul>
+<li> 1a (2pt) How do we define a conservative force?</li>
+<li> 1b (4pt) Use the work-energy theorem to show that energy is conserved with a conservative force.</li>
+<li> 1c (4pt) Assume that you have only internal two-body forces acting on \( N \) objects in an isolated system. The force from object \( i \) on object \( j \) is \( \boldsymbol{F}_{ij} \). Show that the linear momentum is conserved.</li>
+</ul>
+<h3 id="exercise-2-10-pt-conservation-of-angular-momentum" class="anchor">Exercise 2 (10 pt), Conservation of angular momentum </h3>
+
+<ul>
+<li> 2a (2pt) Define angular momentum and the torque for a single object with external forces only.</li> 
+<li> 2b (4pt) Define angular momentum and the torque for a system with \( N \) objects/particles  with external and internal forces. The force from object \( i \) on object \( j \) is \( \boldsymbol{F}_{ij} \).</li>
+<li> 2c (4pt) With internal forces only, what is the mathematical form of the forces that allows for angular momentum to be conserved?</li> 
+</ul>
+<h3 id="exercise-3-10pt-example-of-potential" class="anchor">Exercise 3 (10pt), Example of potential </h3>
+
+<p>Consider a particle of mass \( m \) moving according to the potential</p>
+$$
+V(x,y,z)=A\exp\left\{-\frac{x^2+z^2}{2a^2}\right\}.
+$$
+
+
+<ul>
+<li> 3a (2pt) Is energy conserved? If so, why?</li> 
+<li> 3b (4pt) Which of  the quantities, \( p_x,p_y,p_z \) are conserved?</li>
+<li> 3c (4pt) Which of  the quantities, \( L_x,L_y,L_z \) are conserved?</li>
+</ul>
+<h3 id="exercise-4-15pt-angular-momentum-case" class="anchor">Exercise 4 (15pt), Angular momentum case </h3>
+
+<p>At \( t=0 \) we have a single object with position \( \boldsymbol{r}_0=x_0\boldsymbol{e}_x+y_0\boldsymbol{e}_y \).We add also a force in the \( x \)-direction at \( t=0 \). We assume that the object is at rest at \( t=0 \). </p>
+$$
+\boldsymbol{F} = F\boldsymbol{e}_x.
+$$
+
+
+<ul>
+<li> 4a (5pt) Find the velocity and momentum at a given time \( t \) by integrating over time with the above initial conditions.</li>
+<li> 4b (5pt) Find also the position at a time \( t \).</li> 
+<li> 4c (5pt) Use the position and the momentum to find the angular momentum and the torque. Is angular momentum conserved?</li>
+</ul>
+<h3 id="exercise-5-15pt-forces-and-potentials" class="anchor">Exercise 5 (15pt), forces  and potentials  </h3>
+
+<p>A particle of mass \( m \) has velocity \( v=\alpha/x \), where \( x \) is its displacement.</p>
+
+<ul>
+<li> 5a (5pt) Find the force \( F(x) \) responsible for the motion.</li>
+</ul>
+<p>A particle is thereafter under the influence of a force \( F=-kx+kx^3/\alpha^2 \), where \( k \) and \( \alpha \) are constants and \( k \) is positive.</p>
+
+<ul>
+<li> 5b (5pt) Determine \( U(x) \)  and discuss the motion. It can be convenient here to make a sketch/plot of the potential as function of \( x \).</li>
+<li> 5c (5pt)  What happens when the energy of the particle is \( E=(1/4)k\alpha^2 \)? Hint: what is the maximum value of the potential energy?</li>
+</ul>
+<h3 id="exercise-6-40pt-bouncing-object" class="anchor">Exercise 6 (40pt), Bouncing object </h3>
+
+<p>This exercise builds on the code you wrote for solving homework 3.
+There we introduced gravity and air resistance and studied their
+effects via a constant acceleration due to gravity and the force
+arising from air resistance. But what happens when the ball hits the
+floor? What if we would like to simulate the normal force from the
+floor acting on the ball?  This exercise shows how we can include more
+complicated forces with no pain! And the force we include here is an
+example of a case where analytical solutions may either be difficult
+to find or we cannot find an analytical solution at all.
+</p>
+
+<p>We need then to include a force model for the normal force from the
+floor on the ball. The simplest approach to such a system is to
+introduce a contact force model represented by a spring model.  We
+model the interaction between the floor and the ball as a single
+spring. But the normal force is zero when there is no contact. Here we
+define a simple model that allows us to include such effects in our
+models.
+</p>
+
+<p>The normal force from the floor on the ball is represented by a spring force. This
+is a strong simplification of the actual deformation process occurring at the contact
+between the ball and the floor due to the deformation of both the ball and the floor.
+</p>
+
+<p>The deformed region corresponds roughly to the region of <b>overlap</b> between the
+ball and the floor. The depth of this region is \( \Delta y = R &#8722; y(t) \), where \( R \)
+is the radius of the ball. This is supposed to represent the compression of the spring.
+Our model for the normal force acting on the ball is then
+</p>
+$$
+\boldsymbol{N} = −k (R − y(t)) \boldsymbol{e}_y. 
+$$
+
+<p>The normal force must act upward when \( y < R \),
+hence the sign must be negative.
+However, we must also ensure that the normal force only acts when the ball is in
+contact with the floor, otherwise the normal force is zero. The full formation of the
+normal force is therefore
+</p>
+$$
+\boldsymbol{N} = −k (R − y(t)) \boldsymbol{e}_y, 
+$$
+
+<p>when \( y(t) < R \) and zero when \( y(t) \le R \).
+In the numerical calculations you can choose \( R=0.1 \) m and the spring constant \( k=1000 \) N/m.
+</p>
+
+<ul>
+<li> 6a (10pt) Identify the forces acting on the ball and set up a diagram with the forces acting on the ball. Find the acceleration of the falling ball now with the normal force as well.</li>
+<li> 6b (30pt) Choose a large enough final time so you can study the ball bouncing up and down several times. Add the normal force and compute the height of the ball as function of time with and without air resistance. Comment your results.</li>
+</ul>
+<h3 id="classical-mechanics-extra-credit-assignment-scientific-writing-and-attending-talks" class="anchor">Classical Mechanics Extra Credit Assignment: Scientific Writing and attending Talks </h3>
+
+<p>The following gives you an opportunity to earn <b>five extra credit
+points</b> on each of the remaining homeworks and <b>ten extra credit points</b>
+on the midterms and finals.  This assignment also covers an aspect of
+the scientific process that is not taught in most undergraduate
+programs: scientific writing.  Writing scientific reports is how
+scientist communicate their results to the rest of the field.  Knowing
+how to assemble a well written scientific report will greatly benefit
+you in you upper level classes, in graduate school, and in the work
+place.
+</p>
+
+<p>The full information on extra credits is found at <a href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/" target="_self"><tt>https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/</tt></a>. There you will also find examples on how to write a scientific article. 
+Below you can also find a description on how to gain extra credits by attending scientific talks.
+</p>
+
+<p>This assignment allows you to gain extra credit points by practicing
+your scientific writing.  For each of the remaining homeworks you can
+submit the specified section of a scientific report (written about the
+numerical aspect of the homework) for five extra credit points on the
+assignment.  For the two midterms and the final, submitting a full
+scientific report covering the numerical analysis problem will be
+worth ten extra points.  For credit the grader must be able to tell
+that you put effort into the assignment (i.e. well written, well
+formatted, etc.).  If you are unfamiliar with writing scientific
+reports, <a href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/IntroductionScientificWriting.md" target="_self">see the information here</a>
+</p>
+
+<p>The following table explains what aspect of a scientific report is due
+with which homework.  You can submit the assignment in any format you
+like, in the same document as your homework, or in a different one.
+Remember to cite any external references you use and include a
+reference list.  There are no length requirements, but make sure what
+you turn in is complete and through.  If you have any questions,
+please contact Julie Butler at butler@frib.msu.edu.
+</p>
+
+<div class="row">
+  <div class="col-xs-6">
+    <table class="dotable table-striped table-hover table-condensed">
+<thead>
+<tr><td align="center"><b>   HW/Project   </b></td> <td align="center"><b>  Due Date </b></td> <td align="center"><b>  Extra Credit Assignment   </b></td> </tr>
+</thead>
+<tbody>
+<tr><td align="center">   HW 3                </td> <td align="center">   2-8            </td> <td align="center">   Abstract                        </td> </tr>
+<tr><td align="center">   HW 4                </td> <td align="center">   2-15           </td> <td align="center">   Introduction                    </td> </tr>
+<tr><td align="center">   HW 5                </td> <td align="center">   2-22           </td> <td align="center">   Methods                         </td> </tr>
+<tr><td align="center">   HW 6                </td> <td align="center">   3-1            </td> <td align="center">   Results and Discussion          </td> </tr>
+<tr><td align="center">   <b>Midterm 1</b>    </td> <td align="center">   <b>3-12</b>    </td> <td align="center">   <em>Full Written Report</em>    </td> </tr>
+<tr><td align="center">   HW 7                </td> <td align="center">   3-22           </td> <td align="center">   Abstract                        </td> </tr>
+<tr><td align="center">   HW 8                </td> <td align="center">   3-29           </td> <td align="center">   Introduction                    </td> </tr>
+<tr><td align="center">   HW 9                </td> <td align="center">   4-5            </td> <td align="center">   Results and Discussion          </td> </tr>
+<tr><td align="center">   <b>Midterm 2        </td> <td align="center">   </b> _4-16_    </td> <td align="center">   <em>Full Written Report</em>    </td> </tr>
+<tr><td align="center">   HW 10               </td> <td align="center">   4-26           </td> <td align="center">   Abstract                        </td> </tr>
+<tr><td align="center">   <b>Final</b>        </td> <td align="center">   <b>4-30</b>    </td> <td align="center">   <em>Full Written Report</em>    </td> </tr>
+</tbody>
+    </table>
+  </div> <!-- col-xs-6 -->
+</div> <!-- cell row -->
+
+<p>You can also gain extra credits if you attend scientific talks.
+This is described here.
+</p>
+<h3 id="integrating-classwork-with-research" class="anchor">Integrating Classwork With Research </h3>
+
+<p>This opportunity will allow you to earn up to 5 extra credit points on a Homework per week. These points can push you above 100% or help make up for missed exercises.
+In order to earn all points you must:
+</p>
+
+<ol>
+<li> Attend an MSU research talk (recommended research oriented Clubs is  provided below)</li>
+<li> Summarize the talk using at least 150 words</li>
+<li> Turn in the summary along with your Homework.</li>
+</ol>
+<p>Approved talks:
+Talks given by researchers through the following clubs:
+</p>
+<ul>
+<li> Research and Idea Sharing Enterprise (RAISE)&#8203;: Meets Wednesday Nights Society for Physics Students (SPS)&#8203;: Meets Monday Nights</li>
+<li> Astronomy Club&#8203;: Meets Monday Nights</li>
+<li> Facility For Rare Isotope Beam (FRIB) Seminars: &#8203;Occur multiple times a week</li>
+</ul>
+<p>If you have any questions please consult Jeremy Rebenstock, rebensto@msu.edu.</p>
+
+<p>All the material on extra credits is at <a href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/" target="_self"><tt>https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/</tt></a>. </p>
+<!-- ------------------- end of main content --------------- -->
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<!-- Bootstrap footer
+<footer>
+<a href="https://..."><img width="250" align=right src="https://..."></a>
+</footer>
+-->
+</body>
+</html>
+
