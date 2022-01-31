@@ -11,23 +11,32 @@ Video of lecture January 12 at https://mediaspace.msu.edu/media/t/1_yfmpmg57 wit
 Handwritten notes at https://github.com/mhjensen/Physics321/tree/master/doc/HandWrittenNotes/Spring2022/NotesJanuary12.pdf
 - Friday 1/14: Discussions and problem solving and discussion of first homework. The first ten minutes were recorded and the video can be found at https://mediaspace.msu.edu/media/t/1_7gxzfsr9
 
-
-
 ###  Week 3, January 17-21, 2022
 
 - Monday 1/17: MLK day, no classes
-- Wednesday 1/19: Motion and forces, Newton's laws, examples
-- Friday 1/21: Motion and forces, Newton's laws, examples. Problems solving. Deadline first homework. 
+- Wednesday 1/19: Motion and forces, Newton's laws, examples.
+  - Handwritten notes from lecture at https://github.com/mhjensen/Physics321/tree/master/doc/HandWrittenNotes/Spring2022/NotesJanuary19.pdf
+  - Video of lecture January 19 (no subtitles) at https://mediaspace.msu.edu/media/t/1_amp782uz. Video with subtitles at https://youtu.be/csjr4c_6A7c
+- Friday 1/21: Motion and forces, Newton's laws, examples. Problems solving. Deadline first homework.
+  - Video of first 25 minutes at https://www.youtube.com/watch?v=gNbTBqOajus.
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesJanuary21.pdf from first 25 minutes
 - Good reads are Taylor chapters 1.4, 1.5, 1.6, 2.1-2.4 and AMS chapters 4.2 and  5 and and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week3/html/week3.html).
 
 
 ### Week 4, January 24-28, 2022
-- Monday 1/24: We discuss various forces and their pertinent equations of motion. Recommended reading: Taylor 2.1-2.4. Malthe-Sørenssen chapter 6-7 contains many examples. We will cover in particular a falling object in two dimensions with linear air resistance relevant for homework 3. Deadline homework 1
+- Monday 1/24: We discuss various forces and their pertinent equations of motion. Recommended reading: Taylor 2.1-2.4. Malthe-Sørenssen chapter 6-7 contains many examples. We will cover in particular a falling object in two dimensions with linear air resistance relevant for homework 3.
+ - Video of lecture without subtitles at https://mediaspace.msu.edu/media/t/1_zjvy3kot
+ - Video with subtitles at https://youtu.be/2kMAmoYxOZQ
+ - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesJanuary24.pdf
 - Wednesday 1/26: We discuss other force models with examples such as the gravitational force and a spring force. See Malthe-Sørenssen chapter 7.3-7.5. We start also our discussion of energy and work, see Taylor 4.1
+ - Video of lecture without subtitles at https://mediaspace.msu.edu/media/t/1_2bque87y and subtitles at https://youtu.be/ZO7oC9PRXsw
+ - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesJanuary26.pdf
 - Friday 1/28:  We discuss several examples of energy and work. Taylor 4.1-4.3. Problem solving. Deadline second homework. 
+ - Video of lecture without subtitles at https://mediaspace.msu.edu/media/t/1_hvcxnd7s. and with subtitles at https://youtu.be/MGafb3QOkwI
+ - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesJanuary28.pdf
 
 ### Week 5, January 31- February 4, 2022
-- Monday 1/31: More on Conservation laws, momentum conservation, 4th homework, due February 15
+- Monday 1/31: Work energy theorem, conservative forces and momentum conservation, 4th homework available
 - Wednesday 2/2: Examples of applications of conservation laws, angular momentum conservation. 
 - Friday 2/4:  Conservation laws and further examples.  Problem solving. Deadline third homework.
 - Good reads are Taylor sections 3.1-3.5 and 4.1-4.3 and AMS chapters 10-14.
@@ -36,6 +45,7 @@ Handwritten notes at https://github.com/mhjensen/Physics321/tree/master/doc/Hand
 - Monday 2/7: Conservation laws. Introducing the Velocity Verlet algorithm and the Earth Sun problem
 - Wednesday 2/9: Examples of application of conservations laws (see chapter 4 of Taylor). 
 - Friday 2/11: Conservative forces, summary plus discussion of homeworks. Problem solving. Deadline fourth homework.
+
 
 ### Week 7, February 14-18, 2022
 - Monday 2/14: Oscillations, mathematical details, the sliding block and energy conservation
@@ -133,6 +143,8 @@ computations, we would like to emphasize
 - understanding how algorithms are used to solve mathematical problems
 - Making science (your results) reproducible
 - algorithmic thinking for gaining deeper insights about scientific problems
+
+
 
 
 
