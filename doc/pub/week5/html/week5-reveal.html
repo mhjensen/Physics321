@@ -181,7 +181,7 @@ MathJax.Hub.Config({
 </center>
 <br>
 <center>
-<h4>Jan 31, 2022</h4>
+<h4>Feb 2, 2022</h4>
 </center> <!-- date -->
 <br>
 
@@ -200,14 +200,12 @@ Reading suggestion: Taylor sections 3.1-3.4 and 4.1-4.3
 </p>
 <h3 id="wednesday">Wednesday </h3>
 
-<p>More on angular momentum, Taylor sections 3.4 and 3.5. Discussion of potential energy and conservative forces.
-Reading suggestions: Taylor section 4.2
+<p>Examples and conservation of  angular momentum, Taylor sections 3.4 and 3.5. 
+Discussion of exercises 5 and 6. This is also the assignment for Friday's session.
 </p>
 <h3 id="friday">Friday </h3>
 
-<p>Conservative forces and potential energy. Reading suggestion: Taylor sections 4.2-4.4
-Solution of exercises and discussion of homework 3.
-</p>
+<p>Solution of exercises and discussion of homework 3. Focus is exercises 5 and 6, see end of these slides.</p>
 
 <p>If you wish to read more about conservative forces or not, Feyman's lectures from 1963 are quite interesting.
 He states for example that <b>All fundamental forces in nature appear to be conservative</b>.
@@ -1107,9 +1105,9 @@ $$
 \begin{eqnarray}
 \frac{d}{dt}\sum_i\boldsymbol{L}_i&=&\sum_{i\ne j}\boldsymbol{r}_i\times \boldsymbol{F}_{ij}\\
 \nonumber
-&=&\frac{1}{2}\sum_{i\ne j} \boldsymbol{r}_i\times \boldsymbol{F}_{ij}+\boldsymbol{r}_j\times\boldsymbol{F}_{ji}\\
+&=&\frac{1}{2}\sum_{ij, i\ne j} \boldsymbol{r}_i\times \boldsymbol{F}_{ij}+\boldsymbol{r}_j\times\boldsymbol{F}_{ji}\\
 \nonumber
-&=&\frac{1}{2}\sum_{i\ne j} (\boldsymbol{r}_i-\boldsymbol{r}_j)\times\boldsymbol{F}_{ij}=0,
+&=&\frac{1}{2}\sum_{ij, i\ne j} (\boldsymbol{r}_i-\boldsymbol{r}_j)\times\boldsymbol{F}_{ij}=0,
 \end{eqnarray}
 $$
 <p>&nbsp;<br>
@@ -1124,279 +1122,189 @@ spontaneously.
 </section>
 
 <section>
-<h2 id="work-energy-momentum-and-conservation-laws">Work, Energy, Momentum and Conservation laws </h2>
+<h2 id="homework-3-exercises-5-and-6-numerical-solution">Homework 3, exercises 5 and 6, numerical solution </h2>
 
-<p>Energy conservation is most convenient as a strategy for addressing
-problems where time does not appear. For example, a particle goes
-from position \( x_0 \) with speed \( v_0 \), to position \( x_f \); what is its
-new speed? However, it can also be applied to problems where time
-does appear, such as in solving for the trajectory \( x(t) \), or
-equivalently \( t(x) \).
-</p>
-</section>
 
-<section>
-<h2 id="energy-conservation">Energy Conservation </h2>
-<p>Energy is conserved in the case where the potential energy, \( V(\boldsymbol{r}) \), depends only on position, and not on time. The force is determined by \( V \),</p>
-<p>&nbsp;<br>
-$$
-\begin{equation}
-\boldsymbol{F}(\boldsymbol{r})=-\boldsymbol{\nabla} V(\boldsymbol{r}).
-\tag{8}
-\end{equation}
-$$
-<p>&nbsp;<br>
-</section>
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="font-size: 80%; line-height: 125%;"><span style="color: #228B22"># let&#39;s start by importing useful packages we are familiar with</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
+%matplotlib inline
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<section>
-<h2 id="conservative-forces">Conservative forces </h2>
-
-<p>We say a force is conservative if it satisfies the following conditions:</p>
+<p>We will choose the following values</p>
 <ol>
-<p><li> The force \( \boldsymbol{F} \) acting on an object only depends on the position \( \boldsymbol{r} \), that is \( \boldsymbol{F}=\boldsymbol{F}(\boldsymbol{r}) \).</li>
-<p><li> For any two points \( \boldsymbol{r}_1 \) and \( \boldsymbol{r}_2 \), the work done by the force \( \boldsymbol{F} \) on the displacement between these two points is independent of the path taken.</li>
-<p><li> Finally, the <b>curl</b> of the force is zero \( \boldsymbol{\nabla}\times\boldsymbol{F}=0 \).</li>
+<p><li> mass \( m=0,2 \) kg</li>
+<p><li> accelleration (gravity) \( g=9.81 \) m/s$^{2}$.</li>
+<p><li> initial position is the height \( h=2 \) m</li>
+<p><li> initial velocities \( v_{x,0}=v_{y,0}=10 \) m/s</li>
 </ol>
-</section>
-
-<section>
-<h2 id="forces-and-potentials">Forces and Potentials </h2>
-
-<p>The energy \( E \) of a given system is defined as the sum of kinetic and potential energies,</p>
-<p>&nbsp;<br>
-$$
-E=K+V(\boldsymbol{r}).
-$$
-<p>&nbsp;<br>
-
-<p>We define the potential energy at a point \( \boldsymbol{r} \) as the negative work done from a starting point \( \boldsymbol{r}_0 \) to a final point \( \boldsymbol{r} \) </p>
-
-<p>&nbsp;<br>
-$$
-V(\boldsymbol{r})=-W(\boldsymbol{r}_0\rightarrow\boldsymbol{r})= -\int_{\boldsymbol{r}_0}^{\boldsymbol{r}}d\boldsymbol{r}'\boldsymbol{F}(\boldsymbol{r}').
-$$
-<p>&nbsp;<br>
-
-<p>If the potential depends on the path taken between these two points there is no unique potential.</p>
-</section>
-
-<section>
-<h2 id="example-relevant-for-homework-5">Example (relevant for homework 5) </h2>
-
-<p>We study a classical electron which moves in the \( x \)-direction along a surface. The force from the surface is</p>
-<p>&nbsp;<br>
-$$
-\boldsymbol{F}(x)=-F_0\sin{(\frac{2\pi x}{b})}\boldsymbol{e}_1.
-$$
-<p>&nbsp;<br>
-
-<p>The constant \( b \) represents the distance between atoms at the surface of the material, \( F_0 \) is a constant and \( x \) is the position of the electron.</p>
-
-<p>This is indeed a conservative force since it depends only on position
-and its <b>curl</b> is zero, that is \( -\boldsymbol{\nabla}\times \boldsymbol{F}=0 \). This means that energy is conserved and the
-integral over the work done by the force is independent of the path
-taken. We will come back to this in more detail next week.
-</p>
-</section>
-
-<section>
-<h2 id="example-continues">Example Continues </h2>
-
-<p>Using the work-energy theorem we can find the work \( W \) done when
-moving an electron from a position \( x_0 \) to a final position \( x \)
-through the integral
+<p>
+<p>You need also to define an initial time and 
+the step size \( \Delta t \). We can define the step size \( \Delta t \) as the difference between any
+two neighboring values in time (time steps) that we analyze within
+some range. It can be determined by dividing the interval we are
+analyzing, which in our case is time \( t_{\mathrm{final}}-t_0 \), by the number of steps we
+are taking \( (N) \). This gives us a step size \( \Delta t = \dfrac{t_{\mathrm{final}}-t_0}{N} \).
 </p>
 
-<p>&nbsp;<br>
-$$
-W=-\int_{x_0}^x \boldsymbol{F}(x')dx' =  \int_{x_0}^x F_0\sin{(\frac{2\pi x'}{b})} dx',
-$$
-<p>&nbsp;<br>
+<p>With these preliminaries we are now ready to plot our results from exercise 5.</p>
 
-<p>which results in</p>
-<p>&nbsp;<br>
-$$
-W=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right].
-$$
-<p>&nbsp;<br>
+<p>In setting up our code we need to</p>
 
-<p>Since this is related to the change in kinetic energy we have, with \( v_0 \) being the initial velocity at a  time \( t_0 \),</p>
-<p>&nbsp;<br>
-$$
-v  = \pm\sqrt{\frac{2}{m}\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right]+v_0^2}.
-$$
-<p>&nbsp;<br>
-</section>
+<ol>
+<p><li> Define and obtain all initial values, constants, and time to be analyzed with step sizes as done above (you can use the same values)</li>
+<p><li> Calculate the velocity using \( v_{i+1} = v_{i} + (\Delta t)*a_{i} \)</li>
+<p><li> Calculate the position using \( pos_{i+1} = r_{i} + (\Delta t)*v_{i} \)</li>
+<p><li> Calculate the new acceleration \( a_{i+1} \).</li>
+<p><li> Repeat steps 2-4 for all time steps within a loop.</li>
+</ol>
+<p>
 
-<section>
-<h2 id="the-potential-energy-from-this-example">The potential energy from this example </h2>
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="font-size: 80%; line-height: 125%;"><span style="color: #228B22"># Exercise 6, hw3, brute force way with declaration of vx, vy, x and y</span>
+<span style="color: #228B22"># Common imports</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">pandas</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">pd</span>
+<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> *
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">os</span>
 
-<p>The potential energy, due to energy conservation is</p>
-<p>&nbsp;<br>
-$$
-V(x)=V(x_0)+\frac{1}{2}mv_0^2-\frac{1}{2}mv^2,
-$$
-<p>&nbsp;<br>
+<span style="color: #228B22"># Where to save the figures and data files</span>
+PROJECT_ROOT_DIR = <span style="color: #CD5555">&quot;Results&quot;</span>
+FIGURE_ID = <span style="color: #CD5555">&quot;Results/FigureFiles&quot;</span>
+DATA_ID = <span style="color: #CD5555">&quot;DataFiles/&quot;</span>
 
-<p>with \( v \) given by the velocity from above.</p>
+<span style="color: #8B008B; font-weight: bold">if</span> <span style="color: #8B008B">not</span> os.path.exists(PROJECT_ROOT_DIR):
+    os.mkdir(PROJECT_ROOT_DIR)
 
-<p>We can now, in order to find a more explicit expression for the
-potential energy at a given value \( x \), define a zero level value for
-the potential. The potential is defined, using the work-energy
-theorem, as
-</p>
+<span style="color: #8B008B; font-weight: bold">if</span> <span style="color: #8B008B">not</span> os.path.exists(FIGURE_ID):
+    os.makedirs(FIGURE_ID)
 
-<p>&nbsp;<br>
-$$
-V(x)=V(x_0)+\int_{x_0}^x (-F(x'))dx',
-$$
-<p>&nbsp;<br>
+<span style="color: #8B008B; font-weight: bold">if</span> <span style="color: #8B008B">not</span> os.path.exists(DATA_ID):
+    os.makedirs(DATA_ID)
 
-<p>and if you recall the definition of the indefinite integral, we can rewrite this as</p>
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">image_path</span>(fig_id):
+    <span style="color: #8B008B; font-weight: bold">return</span> os.path.join(FIGURE_ID, fig_id)
 
-<p>&nbsp;<br>
-$$
-V(x)=\int (-F(x'))dx'+C,
-$$
-<p>&nbsp;<br>
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">data_path</span>(dat_id):
+    <span style="color: #8B008B; font-weight: bold">return</span> os.path.join(DATA_ID, dat_id)
 
-<p>where \( C \) is an undefined constant. The force is defined as the
-gradient of the potential, and in that case the undefined constant
-vanishes. The constant does not affect the force we derive from the
-potential.
-</p>
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">save_fig</span>(fig_id):
+    plt.savefig(image_path(fig_id) + <span style="color: #CD5555">&quot;.png&quot;</span>, <span style="color: #658b00">format</span>=<span style="color: #CD5555">&#39;png&#39;</span>)
 
-<p>We have then</p>
-<p>&nbsp;<br>
-$$
-V(x)=V(x_0)-\int_{x_0}^x \boldsymbol{F}(x')dx',
-$$
-<p>&nbsp;<br>
+<span style="color: #228B22"># Output file</span>
+outfile = <span style="color: #658b00">open</span>(data_path(<span style="color: #CD5555">&quot;Eulerresults.dat&quot;</span>),<span style="color: #CD5555">&#39;w&#39;</span>)
 
-<p>which results in</p>
-<p>&nbsp;<br>
-$$
-V(x)=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right]+V(x_0).
-$$
-<p>&nbsp;<br>
+<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">pylab</span> <span style="color: #8B008B; font-weight: bold">import</span> plt, mpl
+plt.style.use(<span style="color: #CD5555">&#39;seaborn&#39;</span>)
+mpl.rcParams[<span style="color: #CD5555">&#39;font.family&#39;</span>] = <span style="color: #CD5555">&#39;serif&#39;</span>
 
-<p>We can now define</p>
-<p>&nbsp;<br>
-$$
-\frac{F_0b}{2\pi}\cos{(\frac{2\pi x_0}{b})}=V(x_0),
-$$
-<p>&nbsp;<br>
 
-<p>which gives </p>
-<p>&nbsp;<br>
-$$
-V(x)=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}\right].
-$$
-<p>&nbsp;<br>
-</section>
-
-<section>
-<h2 id="force-and-potential">Force and Potential </h2>
-
-<p>We have defined work as the energy resulting from a net force acting
-on an object (or sseveral objects), that is
-</p>
-
-<p>&nbsp;<br>
-$$
-W(\boldsymbol{r}\rightarrow \boldsymbol{r}+d\boldsymbol{r})= \boldsymbol{F}(\boldsymbol{r})d\boldsymbol{r}.
-$$
-<p>&nbsp;<br>
-
-<p>If we write out this for each component we have</p>
-
-<p>&nbsp;<br>
-$$
-W(\boldsymbol{r}\rightarrow \boldsymbol{r}+d\boldsymbol{r})=\boldsymbol{F}(\boldsymbol{r})d\boldsymbol{r}=F_xdx+F_ydy+F_zdz.
-$$
-<p>&nbsp;<br>
-
-<p>The work done from an initial position to a final one defines also the difference in potential energies</p>
-
-<p>&nbsp;<br>
-$$
-W(\boldsymbol{r}\rightarrow \boldsymbol{r}+d\boldsymbol{r})=-\left[V(\boldsymbol{r}+d\boldsymbol{r})-V(\boldsymbol{r})\right].
-$$
-<p>&nbsp;<br>
-</section>
-
-<section>
-<h2 id="getting-to-boldsymbol-f-boldsymbol-r-boldsymbol-nabla-v-boldsymbol-r">Getting to \( \boldsymbol{F}(\boldsymbol{r})=-\boldsymbol{\nabla} V(\boldsymbol{r}) \) </h2>
-
-<p>We can write out the differences in potential energies as</p>
-
-<p>&nbsp;<br>
-$$
-V(\boldsymbol{r}+d\boldsymbol{r})-V(\boldsymbol{r})=V(x+dx,y+dy,z+dz)-V(x,y,z)=dV,
-$$
-<p>&nbsp;<br>
-
-<p>and using the expression the differential of a multi-variable function \( f(x,y,z) \) </p>
-<p>&nbsp;<br>
-$$
-df=\frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy+\frac{\partial f}{\partial z}dz,
-$$
-<p>&nbsp;<br>
-
-<p>we can write the expression for the work done as</p>
-<p>&nbsp;<br>
-$$
-W(\boldsymbol{r}\rightarrow \boldsymbol{r}+d\boldsymbol{r})=-dV=-\left[\frac{\partial V}{\partial x}dx+\frac{\partial V}{\partial y}dy+\frac{\partial V}{\partial z}dz \right].
-$$
-<p>&nbsp;<br>
-</section>
-
-<section>
-<h2 id="final-expression">Final expression </h2>
-
-<p>Comparing the last equation with </p>
-<p>&nbsp;<br>
-$$
-W(\boldsymbol{r}\rightarrow \boldsymbol{r}+d\boldsymbol{r})=F_xdx+F_ydy+F_zdz,
-$$
-<p>&nbsp;<br>
-
-<p>we have</p>
-<p>&nbsp;<br>
-$$
-F_xdx+F_ydy+F_zdz=-\left[\frac{\partial V}{\partial x}dx+\frac{\partial V}{\partial y}dy+\frac{\partial V}{\partial z}dz \right],
-$$
-<p>&nbsp;<br>
-
-<p>leading to</p>
-<p>&nbsp;<br>
-$$
-F_x=-\frac{\partial V}{\partial x},
-$$
-<p>&nbsp;<br>
-
-<p>and</p>
-<p>&nbsp;<br>
-$$
-F_y=-\frac{\partial V}{\partial y},
-$$
-<p>&nbsp;<br>
-
-<p>and</p>
-<p>&nbsp;<br>
-$$
-F_z=-\frac{\partial V}{\partial z},
-$$
-<p>&nbsp;<br>
-
-<p>or just</p>
-<p>&nbsp;<br>
-$$
-\boldsymbol{F}=-\frac{\partial V}{\partial x}\boldsymbol{e}_1-\frac{\partial V}{\partial y}\boldsymbol{e}_2-\frac{\partial V}{\partial z}\boldsymbol{e}_3=-\boldsymbol{\nabla}V(\boldsymbol{r}).
-$$
-<p>&nbsp;<br>
-
-<p>And this connection is the one we wanted to show.</p>
+g = <span style="color: #B452CD">9.80655</span> <span style="color: #228B22">#m/s^2</span>
+<span style="color: #228B22"># The mass and the drag constant D</span>
+D = <span style="color: #B452CD">0.00245</span> <span style="color: #228B22">#mass/length   kg/m</span>
+m = <span style="color: #B452CD">0.2</span> <span style="color: #228B22">#kg, mass of falling object</span>
+DeltaT = <span style="color: #B452CD">0.001</span>
+<span style="color: #228B22">#set up arrays </span>
+tfinal = <span style="color: #B452CD">1.4</span>
+<span style="color: #228B22"># set up number of points for all variables</span>
+n = ceil(tfinal/DeltaT)
+<span style="color: #228B22"># define scaling constant vT used in analytical solution</span>
+vT = sqrt(m*g/D)
+<span style="color: #228B22"># set up arrays for t, a, v, and y and arrays for analytical results</span>
+<span style="color: #228B22">#brute force setting up of arrays for x and y, vx, vy, ax and ay</span>
+t = np.zeros(n)
+vy = np.zeros(n)
+y = np.zeros(n)
+vx = np.zeros(n)
+x = np.zeros(n)
+yanalytic = np.zeros(n)
+<span style="color: #228B22"># Initial conditions, note that these correspond to an object falling in the y-direction only.</span>
+vx[<span style="color: #B452CD">0</span>] = <span style="color: #B452CD">0.0</span> <span style="color: #228B22">#m/s</span>
+vy[<span style="color: #B452CD">0</span>] = <span style="color: #B452CD">0.0</span>  <span style="color: #228B22">#m/s</span>
+y[<span style="color: #B452CD">0</span>] = <span style="color: #B452CD">10.0</span> <span style="color: #228B22">#m</span>
+x[<span style="color: #B452CD">0</span>] = <span style="color: #B452CD">0.0</span> <span style="color: #228B22">#m</span>
+yanalytic[<span style="color: #B452CD">0</span>] = y[<span style="color: #B452CD">0</span>]
+<span style="color: #228B22"># Start integrating using Euler&#39;s method</span>
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
+    <span style="color: #228B22"># expression for acceleration, note the absolute value and division by mass</span>
+    ax = -D*vx[i]*sqrt(vx[i]**<span style="color: #B452CD">2</span>+vy[i]**<span style="color: #B452CD">2</span>)/m
+    ay = -g + D*vy[i]*sqrt(vx[i]**<span style="color: #B452CD">2</span>+vy[i]**<span style="color: #B452CD">2</span>)/m
+    <span style="color: #228B22"># update velocity and position</span>
+    vx[i+<span style="color: #B452CD">1</span>] = vx[i] + DeltaT*ax
+    x[i+<span style="color: #B452CD">1</span>] = x[i] + DeltaT*vx[i]
+    vy[i+<span style="color: #B452CD">1</span>] = vy[i] + DeltaT*ay
+    y[i+<span style="color: #B452CD">1</span>] = y[i] + DeltaT*vy[i]
+    <span style="color: #228B22"># update time to next time step and compute analytical answer</span>
+    t[i+<span style="color: #B452CD">1</span>] = t[i] + DeltaT
+    yanalytic[i+<span style="color: #B452CD">1</span>] = y[<span style="color: #B452CD">0</span>]-(vT*vT/g)*log(cosh(g*t[i+<span style="color: #B452CD">1</span>]/vT))+vy[<span style="color: #B452CD">0</span>]*t[i+<span style="color: #B452CD">1</span>]
+    <span style="color: #8B008B; font-weight: bold">if</span> ( y[i+<span style="color: #B452CD">1</span>] &lt; <span style="color: #B452CD">0.0</span>):
+        <span style="color: #8B008B; font-weight: bold">break</span>
+data = {<span style="color: #CD5555">&#39;t[s]&#39;</span>: t,
+        <span style="color: #CD5555">&#39;Relative error in y&#39;</span>: <span style="color: #658b00">abs</span>((y-yanalytic)/yanalytic),
+        <span style="color: #CD5555">&#39;vy[m/s]&#39;</span>: vy,
+        <span style="color: #CD5555">&#39;x[m]&#39;</span>: x,
+        <span style="color: #CD5555">&#39;vx[m/s]&#39;</span>: vx
+}
+NewData = pd.DataFrame(data)
+display(NewData)
+<span style="color: #228B22"># save to file</span>
+NewData.to_csv(outfile, index=<span style="color: #8B008B; font-weight: bold">False</span>)
+<span style="color: #228B22">#then plot</span>
+fig, axs = plt.subplots(<span style="color: #B452CD">4</span>, <span style="color: #B452CD">1</span>)
+axs[<span style="color: #B452CD">0</span>].plot(t, y)
+axs[<span style="color: #B452CD">0</span>].set_xlim(<span style="color: #B452CD">0</span>, tfinal)
+axs[<span style="color: #B452CD">0</span>].set_ylabel(<span style="color: #CD5555">&#39;y&#39;</span>)
+axs[<span style="color: #B452CD">1</span>].plot(t, vy)
+axs[<span style="color: #B452CD">1</span>].set_ylabel(<span style="color: #CD5555">&#39;vy[m/s]&#39;</span>)
+axs[<span style="color: #B452CD">1</span>].set_xlabel(<span style="color: #CD5555">&#39;time[s]&#39;</span>)
+axs[<span style="color: #B452CD">2</span>].plot(t, x)
+axs[<span style="color: #B452CD">2</span>].set_xlim(<span style="color: #B452CD">0</span>, tfinal)
+axs[<span style="color: #B452CD">2</span>].set_ylabel(<span style="color: #CD5555">&#39;x&#39;</span>)
+axs[<span style="color: #B452CD">3</span>].plot(t, vx)
+axs[<span style="color: #B452CD">3</span>].set_ylabel(<span style="color: #CD5555">&#39;vx[m/s]&#39;</span>)
+axs[<span style="color: #B452CD">3</span>].set_xlabel(<span style="color: #CD5555">&#39;time[s]&#39;</span>)
+fig.tight_layout()
+save_fig(<span style="color: #CD5555">&quot;EulerIntegration&quot;</span>)
+plt.show()
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </section>
 
 

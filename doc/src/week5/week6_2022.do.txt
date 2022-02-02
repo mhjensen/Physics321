@@ -13,12 +13,13 @@ Reading suggestion: Taylor sections 3.1-3.4 and 4.1-4.3
 
 === Wednesday ===
 
-Examples and conservation of  angular momentum, Taylor sections 3.4 and 3.5. 
-Discussion of exercises 5 and 6. This is also the assignment for Friday's session.
+More on angular momentum, Taylor sections 3.4 and 3.5. Discussion of potential energy and conservative forces.
+Reading suggestions: Taylor section 4.2
 
 ===  Friday ===
 
-Solution of exercises and discussion of homework 3. Focus is exercises 5 and 6, see end of these slides.
+Conservative forces and potential energy. Reading suggestion: Taylor sections 4.2-4.4
+Solution of exercises and discussion of homework 3.
 
 If you wish to read more about conservative forces or not, Feyman's lectures from 1963 are quite interesting.
 He states for example that _All fundamental forces in nature appear to be conservative_.
@@ -834,9 +835,9 @@ For a system of isolated particles, one can write
 \begin{eqnarray}
 \frac{d}{dt}\sum_i\bm{L}_i&=&\sum_{i\ne j}\bm{r}_i\times \bm{F}_{ij}\\
 \nonumber
-&=&\frac{1}{2}\sum_{ij, i\ne j} \bm{r}_i\times \bm{F}_{ij}+\bm{r}_j\times\bm{F}_{ji}\\
+&=&\frac{1}{2}\sum_{i\ne j} \bm{r}_i\times \bm{F}_{ij}+\bm{r}_j\times\bm{F}_{ji}\\
 \nonumber
-&=&\frac{1}{2}\sum_{ij, i\ne j} (\bm{r}_i-\bm{r}_j)\times\bm{F}_{ij}=0,
+&=&\frac{1}{2}\sum_{i\ne j} (\bm{r}_i-\bm{r}_j)\times\bm{F}_{ij}=0,
 \end{eqnarray}
 !et
 
@@ -847,156 +848,260 @@ the sum is zero and the net angular momentum is fixed. Otherwise, you
 could imagine an isolated system that would start spinning
 spontaneously.
 
+
+
 !split
-===== Homework 3, exercises 5 and 6, numerical solution =====
+===== Work, Energy, Momentum and Conservation laws =====
+
+Energy conservation is most convenient as a strategy for addressing
+problems where time does not appear. For example, a particle goes
+from position $x_0$ with speed $v_0$, to position $x_f$; what is its
+new speed? However, it can also be applied to problems where time
+does appear, such as in solving for the trajectory $x(t)$, or
+equivalently $t(x)$.
 
 
 
-!bc pycod
-# let's start by importing useful packages we are familiar with
-import numpy as np
-import matplotlib.pyplot as plt
-%matplotlib inline
-!ec
 
-We will choose the following values
-o mass $m=0,2$ kg
-o accelleration (gravity) $g=9.81$ m/s$^{2}$.
-o initial position is the height $h=2$ m
-o initial velocities $v_{x,0}=v_{y,0}=10$ m/s
-
-You need also to define an initial time and 
-the step size $\Delta t$. We can define the step size $\Delta t$ as the difference between any
-two neighboring values in time (time steps) that we analyze within
-some range. It can be determined by dividing the interval we are
-analyzing, which in our case is time $t_{\mathrm{final}}-t_0$, by the number of steps we
-are taking $(N)$. This gives us a step size $\Delta t = \dfrac{t_{\mathrm{final}}-t_0}{N}$.
-
-With these preliminaries we are now ready to plot our results from exercise 5.
+!split
+===== Energy Conservation =====
+Energy is conserved in the case where the potential energy, $V(\bm{r})$, depends only on position, and not on time. The force is determined by $V$,
+!bt
+\begin{equation}
+\bm{F}(\bm{r})=-\bm{\nabla} V(\bm{r}).
+\end{equation}
+!et
 
 
 
-In setting up our code we need to
 
-o  Define and obtain all initial values, constants, and time to be analyzed with step sizes as done above (you can use the same values)
+!split
+===== Conservative forces =====
 
-o  Calculate the velocity using $v_{i+1} = v_{i} + (\Delta t)*a_{i}$
-
-o  Calculate the position using $pos_{i+1} = r_{i} + (\Delta t)*v_{i}$
-
-o  Calculate the new acceleration $a_{i+1}$.
-
-o  Repeat steps 2-4 for all time steps within a loop.
+We say a force is conservative if it satisfies the following conditions:
+o The force $\bm{F}$ acting on an object only depends on the position $\bm{r}$, that is $\bm{F}=\bm{F}(\bm{r})$.
+o For any two points $\bm{r}_1$ and $\bm{r}_2$, the work done by the force $\bm{F}$ on the displacement between these two points is independent of the path taken.
+o Finally, the _curl_ of the force is zero $\bm{\nabla}\times\bm{F}=0$.
 
 
-!bc pycod
-# Exercise 6, hw3, brute force way with declaration of vx, vy, x and y
-# Common imports
-import numpy as np
-import pandas as pd
-from math import *
-import matplotlib.pyplot as plt
-import os
+!split
+===== Forces and Potentials =====
 
-# Where to save the figures and data files
-PROJECT_ROOT_DIR = "Results"
-FIGURE_ID = "Results/FigureFiles"
-DATA_ID = "DataFiles/"
+The energy $E$ of a given system is defined as the sum of kinetic and potential energies,
+!bt
+\[
+E=K+V(\bm{r}).
+\]
+!et
 
-if not os.path.exists(PROJECT_ROOT_DIR):
-    os.mkdir(PROJECT_ROOT_DIR)
+We define the potential energy at a point $\bm{r}$ as the negative work done from a starting point $\bm{r}_0$ to a final point $\bm{r}$ 
 
-if not os.path.exists(FIGURE_ID):
-    os.makedirs(FIGURE_ID)
-
-if not os.path.exists(DATA_ID):
-    os.makedirs(DATA_ID)
-
-def image_path(fig_id):
-    return os.path.join(FIGURE_ID, fig_id)
-
-def data_path(dat_id):
-    return os.path.join(DATA_ID, dat_id)
-
-def save_fig(fig_id):
-    plt.savefig(image_path(fig_id) + ".png", format='png')
-
-# Output file
-outfile = open(data_path("Eulerresults.dat"),'w')
-
-from pylab import plt, mpl
-plt.style.use('seaborn')
-mpl.rcParams['font.family'] = 'serif'
+!bt
+\[
+V(\bm{r})=-W(\bm{r}_0\rightarrow\bm{r})= -\int_{\bm{r}_0}^{\bm{r}}d\bm{r}'\bm{F}(\bm{r}').
+\]
+!et
+If the potential depends on the path taken between these two points there is no unique potential.
 
 
-g = 9.80655 #m/s^2
-# The mass and the drag constant D
-D = 0.00245 #mass/length   kg/m
-m = 0.2 #kg, mass of falling object
-DeltaT = 0.001
-#set up arrays 
-tfinal = 1.4
-# set up number of points for all variables
-n = ceil(tfinal/DeltaT)
-# define scaling constant vT used in analytical solution
-vT = sqrt(m*g/D)
-# set up arrays for t, a, v, and y and arrays for analytical results
-#brute force setting up of arrays for x and y, vx, vy, ax and ay
-t = np.zeros(n)
-vy = np.zeros(n)
-y = np.zeros(n)
-vx = np.zeros(n)
-x = np.zeros(n)
-yanalytic = np.zeros(n)
-# Initial conditions, note that these correspond to an object falling in the y-direction only.
-vx[0] = 0.0 #m/s
-vy[0] = 0.0  #m/s
-y[0] = 10.0 #m
-x[0] = 0.0 #m
-yanalytic[0] = y[0]
-# Start integrating using Euler's method
-for i in range(n-1):
-    # expression for acceleration, note the absolute value and division by mass
-    ax = -D*vx[i]*sqrt(vx[i]**2+vy[i]**2)/m
-    ay = -g + D*vy[i]*sqrt(vx[i]**2+vy[i]**2)/m
-    # update velocity and position
-    vx[i+1] = vx[i] + DeltaT*ax
-    x[i+1] = x[i] + DeltaT*vx[i]
-    vy[i+1] = vy[i] + DeltaT*ay
-    y[i+1] = y[i] + DeltaT*vy[i]
-    # update time to next time step and compute analytical answer
-    t[i+1] = t[i] + DeltaT
-    yanalytic[i+1] = y[0]-(vT*vT/g)*log(cosh(g*t[i+1]/vT))+vy[0]*t[i+1]
-    if ( y[i+1] < 0.0):
-        break
-data = {'t[s]': t,
-        'Relative error in y': abs((y-yanalytic)/yanalytic),
-        'vy[m/s]': vy,
-        'x[m]': x,
-        'vx[m/s]': vx
-}
-NewData = pd.DataFrame(data)
-display(NewData)
-# save to file
-NewData.to_csv(outfile, index=False)
-#then plot
-fig, axs = plt.subplots(4, 1)
-axs[0].plot(t, y)
-axs[0].set_xlim(0, tfinal)
-axs[0].set_ylabel('y')
-axs[1].plot(t, vy)
-axs[1].set_ylabel('vy[m/s]')
-axs[1].set_xlabel('time[s]')
-axs[2].plot(t, x)
-axs[2].set_xlim(0, tfinal)
-axs[2].set_ylabel('x')
-axs[3].plot(t, vx)
-axs[3].set_ylabel('vx[m/s]')
-axs[3].set_xlabel('time[s]')
-fig.tight_layout()
-save_fig("EulerIntegration")
-plt.show()
+!split
+===== Example (relevant for homework 5) =====
+
+We study a classical electron which moves in the $x$-direction along a surface. The force from the surface is
+!bt
+\[
+\bm{F}(x)=-F_0\sin{(\frac{2\pi x}{b})}\bm{e}_1.
+\]
+!et
+The constant $b$ represents the distance between atoms at the surface of the material, $F_0$ is a constant and $x$ is the position of the electron.
+
+This is indeed a conservative force since it depends only on position
+and its _curl_ is zero, that is $-\bm{\nabla}\times \bm{F}=0$. This means that energy is conserved and the
+integral over the work done by the force is independent of the path
+taken. We will come back to this in more detail next week.
+
+!split
+===== Example Continues =====
+
+
+Using the work-energy theorem we can find the work $W$ done when
+moving an electron from a position $x_0$ to a final position $x$
+through the integral
+
+!bt
+\[
+W=-\int_{x_0}^x \bm{F}(x')dx' =  \int_{x_0}^x F_0\sin{(\frac{2\pi x'}{b})} dx',
+\]
+!et
+which results in
+!bt
+\[
+W=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right].
+\]
+!et
+Since this is related to the change in kinetic energy we have, with $v_0$ being the initial velocity at a  time $t_0$,
+!bt
+\[
+v  = \pm\sqrt{\frac{2}{m}\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right]+v_0^2}.
+\]
+!et
+
+!split
+===== The potential energy from this example =====
+
+The potential energy, due to energy conservation is
+!bt
+\[
+V(x)=V(x_0)+\frac{1}{2}mv_0^2-\frac{1}{2}mv^2,
+\]
+!et
+with $v$ given by the velocity from above.
+
+We can now, in order to find a more explicit expression for the
+potential energy at a given value $x$, define a zero level value for
+the potential. The potential is defined, using the work-energy
+theorem, as
+
+
+!bt
+\[
+V(x)=V(x_0)+\int_{x_0}^x (-F(x'))dx',
+\]
+!et
+
+and if you recall the definition of the indefinite integral, we can rewrite this as
+
+!bt
+\[
+V(x)=\int (-F(x'))dx'+C,
+\]
+!et
+
+where $C$ is an undefined constant. The force is defined as the
+gradient of the potential, and in that case the undefined constant
+vanishes. The constant does not affect the force we derive from the
+potential.
+
+We have then
+!bt
+\[
+V(x)=V(x_0)-\int_{x_0}^x \bm{F}(x')dx',
+\]
+!et
+which results in
+!bt
+\[
+V(x)=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right]+V(x_0).
+\]
+!et
+We can now define
+!bt
+\[
+\frac{F_0b}{2\pi}\cos{(\frac{2\pi x_0}{b})}=V(x_0),
+\]
+!et
+which gives 
+!bt
+\[
+V(x)=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}\right].
+\]
+!et
+
+!split
+===== Force and Potential =====
+
+We have defined work as the energy resulting from a net force acting
+on an object (or sseveral objects), that is
+
+!bt
+\[
+W(\bm{r}\rightarrow \bm{r}+d\bm{r})= \bm{F}(\bm{r})d\bm{r}.
+\]
+!et
+
+If we write out this for each component we have
+
+!bt
+\[
+W(\bm{r}\rightarrow \bm{r}+d\bm{r})=\bm{F}(\bm{r})d\bm{r}=F_xdx+F_ydy+F_zdz.
+\]
+!et
+
+The work done from an initial position to a final one defines also the difference in potential energies
+
+!bt
+\[
+W(\bm{r}\rightarrow \bm{r}+d\bm{r})=-\left[V(\bm{r}+d\bm{r})-V(\bm{r})\right].
+\]
+!et
+
+!split
+=====  Getting to $\bm{F}(\bm{r})=-\bm{\nabla} V(\bm{r})$ =====
+
+We can write out the differences in potential energies as
+
+!bt
+\[
+V(\bm{r}+d\bm{r})-V(\bm{r})=V(x+dx,y+dy,z+dz)-V(x,y,z)=dV,
+\]
+!et
+and using the expression the differential of a multi-variable function $f(x,y,z)$ 
+!bt
+\[
+df=\frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy+\frac{\partial f}{\partial z}dz,
+\]
+!et
+we can write the expression for the work done as
+!bt
+\[
+W(\bm{r}\rightarrow \bm{r}+d\bm{r})=-dV=-\left[\frac{\partial V}{\partial x}dx+\frac{\partial V}{\partial y}dy+\frac{\partial V}{\partial z}dz \right].
+\]
+!et
+
+!split
+===== Final expression =====
+
+Comparing the last equation with 
+!bt
+\[
+W(\bm{r}\rightarrow \bm{r}+d\bm{r})=F_xdx+F_ydy+F_zdz,
+\]
+!et
+we have
+!bt
+\[
+F_xdx+F_ydy+F_zdz=-\left[\frac{\partial V}{\partial x}dx+\frac{\partial V}{\partial y}dy+\frac{\partial V}{\partial z}dz \right],
+\]
+!et
+
+leading to
+!bt
+\[
+F_x=-\frac{\partial V}{\partial x},
+\]
+!et
+and
+!bt
+\[
+F_y=-\frac{\partial V}{\partial y},
+\]
+!et
+and
+!bt
+\[
+F_z=-\frac{\partial V}{\partial z},
+\]
+!et
+or just
+!bt
+\[
+\bm{F}=-\frac{\partial V}{\partial x}\bm{e}_1-\frac{\partial V}{\partial y}\bm{e}_2-\frac{\partial V}{\partial z}\bm{e}_3=-\bm{\nabla}V(\bm{r}).
+\]
+!et
+And this connection is the one we wanted to show.
 
 
 
-!ec
+
+
+
