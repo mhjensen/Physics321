@@ -1288,7 +1288,7 @@ r[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> r
 v[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> v0
 <span style="color: #408080; font-style: italic"># Start integrating using Euler&#39;s method</span>
 <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
-    <span style="color: #408080; font-style: italic"># Set up forces, air resistance FD, not now that we need the norm of the vector</span>
+    <span style="color: #408080; font-style: italic"># Set up forces, air resistance FD, note now that we need the norm of the vector</span>
     <span style="color: #408080; font-style: italic"># Here you could have defined your own function for this</span>
     vabs <span style="color: #666666">=</span> sqrt(<span style="color: #008000">sum</span>(v[i]<span style="color: #666666">*</span>v[i]))
     FD <span style="color: #666666">=</span> <span style="color: #666666">-</span>D<span style="color: #666666">*</span>v[i]<span style="color: #666666">*</span>vabs

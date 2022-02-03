@@ -1062,7 +1062,7 @@ r[0] = r0
 v[0] = v0
 # Start integrating using Euler's method
 for i in range(n-1):
-    # Set up forces, air resistance FD, not now that we need the norm of the vector
+    # Set up forces, air resistance FD, note now that we need the norm of the vector
     # Here you could have defined your own function for this
     vabs = sqrt(sum(v[i]*v[i]))
     FD = -D*v[i]*vabs
