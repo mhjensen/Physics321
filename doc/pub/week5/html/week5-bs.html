@@ -141,7 +141,11 @@ doconce format html week5.do.txt --html_style=bootstrap --pygments_html_style=de
               ('Homework 3, exercises 5 and 6, numerical solution',
                2,
                None,
-               'homework-3-exercises-5-and-6-numerical-solution')]}
+               'homework-3-exercises-5-and-6-numerical-solution'),
+              ('A more compact version of the code',
+               2,
+               None,
+               'a-more-compact-version-of-the-code')]}
 end of tocinfo -->
 
 <body>
@@ -215,6 +219,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="#chain-rule-and-partial-derivatives" style="font-size: 80%;"><b>Chain Rule and Partial Derivatives</b></a></li>
      <!-- navigation toc: --> <li><a href="#system-of-isolated-particles" style="font-size: 80%;"><b>System of Isolated Particles</b></a></li>
      <!-- navigation toc: --> <li><a href="#homework-3-exercises-5-and-6-numerical-solution" style="font-size: 80%;"><b>Homework 3, exercises 5 and 6, numerical solution</b></a></li>
+     <!-- navigation toc: --> <li><a href="#a-more-compact-version-of-the-code" style="font-size: 80%;"><b>A more compact version of the code</b></a></li>
 
         </ul>
       </li>
@@ -240,7 +245,7 @@ MathJax.Hub.Config({
 </center>
 <br>
 <center>
-<h4>Feb 2, 2022</h4>
+<h4>Feb 3, 2022</h4>
 </center> <!-- date -->
 <br>
 
@@ -1205,6 +1210,119 @@ plt<span style="color: #666666">.</span>show()
     </div>
   </div>
 </div>
+
+
+<!-- !split -->
+<h2 id="a-more-compact-version-of-the-code" class="anchor">A more compact version of the code </h2>
+
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic"># Exercise 6, hw3, smarter way with declaration of vx, vy, x and y</span>
+<span style="color: #408080; font-style: italic"># Common imports</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">pandas</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">pd</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #666666">*</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">os</span>
+
+<span style="color: #408080; font-style: italic"># Where to save the figures and data files</span>
+PROJECT_ROOT_DIR <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Results&quot;</span>
+FIGURE_ID <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Results/FigureFiles&quot;</span>
+DATA_ID <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;DataFiles/&quot;</span>
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>exists(PROJECT_ROOT_DIR):
+    os<span style="color: #666666">.</span>mkdir(PROJECT_ROOT_DIR)
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>exists(FIGURE_ID):
+    os<span style="color: #666666">.</span>makedirs(FIGURE_ID)
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>exists(DATA_ID):
+    os<span style="color: #666666">.</span>makedirs(DATA_ID)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">image_path</span>(fig_id):
+    <span style="color: #008000; font-weight: bold">return</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>join(FIGURE_ID, fig_id)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">data_path</span>(dat_id):
+    <span style="color: #008000; font-weight: bold">return</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>join(DATA_ID, dat_id)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">save_fig</span>(fig_id):
+    plt<span style="color: #666666">.</span>savefig(image_path(fig_id) <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;.png&quot;</span>, <span style="color: #008000">format</span><span style="color: #666666">=</span><span style="color: #BA2121">&#39;png&#39;</span>)
+
+
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">pylab</span> <span style="color: #008000; font-weight: bold">import</span> plt, mpl
+plt<span style="color: #666666">.</span>style<span style="color: #666666">.</span>use(<span style="color: #BA2121">&#39;seaborn&#39;</span>)
+mpl<span style="color: #666666">.</span>rcParams[<span style="color: #BA2121">&#39;font.family&#39;</span>] <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;serif&#39;</span>
+
+g <span style="color: #666666">=</span> <span style="color: #666666">9.80655</span> <span style="color: #408080; font-style: italic">#m/s^2 g to 6 leading digits after decimal point</span>
+D <span style="color: #666666">=</span> <span style="color: #666666">0.00245</span> <span style="color: #408080; font-style: italic">#m/s</span>
+m <span style="color: #666666">=</span> <span style="color: #666666">0.2</span> <span style="color: #408080; font-style: italic"># kg</span>
+<span style="color: #408080; font-style: italic"># Define Gravitational force as a vector in x and y. It is a constant</span>
+G <span style="color: #666666">=</span> <span style="color: #666666">-</span>m<span style="color: #666666">*</span>g<span style="color: #666666">*</span>np<span style="color: #666666">.</span>array([<span style="color: #666666">0.0</span>,<span style="color: #666666">1</span>])
+DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.01</span>
+<span style="color: #408080; font-style: italic">#set up arrays </span>
+tfinal <span style="color: #666666">=</span> <span style="color: #666666">1.3</span>
+n <span style="color: #666666">=</span> ceil(tfinal<span style="color: #666666">/</span>DeltaT)
+<span style="color: #408080; font-style: italic"># set up arrays for t, a, v, and x</span>
+t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+v <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((n,<span style="color: #666666">2</span>))
+r <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((n,<span style="color: #666666">2</span>))
+<span style="color: #408080; font-style: italic"># Initial conditions as compact 2-dimensional arrays</span>
+r0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">0.0</span>,<span style="color: #666666">10.0</span>])
+v0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">10.0</span>,<span style="color: #666666">0.0</span>])
+r[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> r0
+v[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> v0
+<span style="color: #408080; font-style: italic"># Start integrating using Euler&#39;s method</span>
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
+    <span style="color: #408080; font-style: italic"># Set up forces, air resistance FD, not now that we need the norm of the vector</span>
+    <span style="color: #408080; font-style: italic"># Here you could have defined your own function for this</span>
+    vabs <span style="color: #666666">=</span> sqrt(<span style="color: #008000">sum</span>(v[i]<span style="color: #666666">*</span>v[i]))
+    FD <span style="color: #666666">=</span> <span style="color: #666666">-</span>D<span style="color: #666666">*</span>v[i]<span style="color: #666666">*</span>vabs
+    <span style="color: #408080; font-style: italic"># Final net forces acting on falling object</span>
+    Fnet <span style="color: #666666">=</span> FD<span style="color: #666666">+</span>G
+    <span style="color: #408080; font-style: italic"># The accelration at a given time t_i</span>
+    a <span style="color: #666666">=</span> Fnet<span style="color: #666666">/</span>m
+    <span style="color: #408080; font-style: italic"># update velocity, time and position using Euler&#39;s method</span>
+    v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>a
+    r[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> r[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>v[i]
+    t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i] <span style="color: #666666">+</span> DeltaT
+
+fig, axs <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots(<span style="color: #666666">4</span>, <span style="color: #666666">1</span>)
+axs[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>plot(t, r[:,<span style="color: #666666">1</span>])
+axs[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>set_xlim(<span style="color: #666666">0</span>, tfinal)
+axs[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;y&#39;</span>)
+axs[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>plot(t, v[:,<span style="color: #666666">1</span>])
+axs[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;vy[m/s]&#39;</span>)
+axs[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;time[s]&#39;</span>)
+axs[<span style="color: #666666">2</span>]<span style="color: #666666">.</span>plot(t, r[:,<span style="color: #666666">0</span>])
+axs[<span style="color: #666666">2</span>]<span style="color: #666666">.</span>set_xlim(<span style="color: #666666">0</span>, tfinal)
+axs[<span style="color: #666666">2</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;x&#39;</span>)
+axs[<span style="color: #666666">3</span>]<span style="color: #666666">.</span>plot(t, v[:,<span style="color: #666666">0</span>])
+axs[<span style="color: #666666">3</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;vx[m/s]&#39;</span>)
+axs[<span style="color: #666666">3</span>]<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;time[s]&#39;</span>)
+
+fig<span style="color: #666666">.</span>tight_layout()
+save_fig(<span style="color: #BA2121">&quot;EulerIntegration&quot;</span>)
+plt<span style="color: #666666">.</span>show()
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <!-- ------------------- end of main content --------------- -->
 </div>  <!-- end container -->
