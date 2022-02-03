@@ -958,7 +958,7 @@ yanalytic[0] = y[0]
 for i in range(n-1):
     # expression for acceleration, note the absolute value and division by mass
     ax = -D*vx[i]*sqrt(vx[i]**2+vy[i]**2)/m
-    ay = -g + D*vy[i]*sqrt(vx[i]**2+vy[i]**2)/m
+    ay = -g - D*vy[i]*sqrt(vx[i]**2+vy[i]**2)/m
     # update velocity and position
     vx[i+1] = vx[i] + DeltaT*ax
     x[i+1] = x[i] + DeltaT*vx[i]

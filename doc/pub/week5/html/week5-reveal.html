@@ -1253,7 +1253,7 @@ yanalytic[<span style="color: #B452CD">0</span>] = y[<span style="color: #B452CD
 <span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
     <span style="color: #228B22"># expression for acceleration, note the absolute value and division by mass</span>
     ax = -D*vx[i]*sqrt(vx[i]**<span style="color: #B452CD">2</span>+vy[i]**<span style="color: #B452CD">2</span>)/m
-    ay = -g + D*vy[i]*sqrt(vx[i]**<span style="color: #B452CD">2</span>+vy[i]**<span style="color: #B452CD">2</span>)/m
+    ay = -g - D*vy[i]*sqrt(vx[i]**<span style="color: #B452CD">2</span>+vy[i]**<span style="color: #B452CD">2</span>)/m
     <span style="color: #228B22"># update velocity and position</span>
     vx[i+<span style="color: #B452CD">1</span>] = vx[i] + DeltaT*ax
     x[i+<span style="color: #B452CD">1</span>] = x[i] + DeltaT*vx[i]
