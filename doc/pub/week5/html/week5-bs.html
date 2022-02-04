@@ -245,7 +245,7 @@ MathJax.Hub.Config({
 </center>
 <br>
 <center>
-<h4>Feb 3, 2022</h4>
+<h4>Feb 4, 2022</h4>
 </center> <!-- date -->
 <br>
 
@@ -1157,6 +1157,7 @@ yanalytic[<span style="color: #666666">0</span>] <span style="color: #666666">=<
 <span style="color: #408080; font-style: italic"># Start integrating using Euler&#39;s method</span>
 <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
     <span style="color: #408080; font-style: italic"># expression for acceleration, note the absolute value and division by mass</span>
+<span style="color: #408080; font-style: italic"># Note: you need to think of the sign for the drag force as function of the velocity vector </span>
     ax <span style="color: #666666">=</span> <span style="color: #666666">-</span>D<span style="color: #666666">*</span>vx[i]<span style="color: #666666">*</span>sqrt(vx[i]<span style="color: #666666">**2+</span>vy[i]<span style="color: #666666">**2</span>)<span style="color: #666666">/</span>m
     ay <span style="color: #666666">=</span> <span style="color: #666666">-</span>g <span style="color: #666666">-</span> D<span style="color: #666666">*</span>vy[i]<span style="color: #666666">*</span>sqrt(vx[i]<span style="color: #666666">**2+</span>vy[i]<span style="color: #666666">**2</span>)<span style="color: #666666">/</span>m
     <span style="color: #408080; font-style: italic"># update velocity and position</span>
@@ -1281,6 +1282,7 @@ v[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> v
     <span style="color: #408080; font-style: italic"># Set up forces, air resistance FD, note now that we need the norm of the vector</span>
     <span style="color: #408080; font-style: italic"># Here you could have defined your own function for this</span>
     vabs <span style="color: #666666">=</span> sqrt(<span style="color: #008000">sum</span>(v[i]<span style="color: #666666">*</span>v[i]))
+<span style="color: #408080; font-style: italic"># Note: you need to think of the sign for the drag force </span>
     FD <span style="color: #666666">=</span> <span style="color: #666666">-</span>D<span style="color: #666666">*</span>v[i]<span style="color: #666666">*</span>vabs
     <span style="color: #408080; font-style: italic"># Final net forces acting on falling object</span>
     Fnet <span style="color: #666666">=</span> FD<span style="color: #666666">+</span>G

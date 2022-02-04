@@ -957,6 +957,7 @@ yanalytic[0] = y[0]
 # Start integrating using Euler's method
 for i in range(n-1):
     # expression for acceleration, note the absolute value and division by mass
+# Note: you need to think of the sign for the drag force as function of the velocity vector 
     ax = -D*vx[i]*sqrt(vx[i]**2+vy[i]**2)/m
     ay = -g - D*vy[i]*sqrt(vx[i]**2+vy[i]**2)/m
     # update velocity and position
@@ -1065,6 +1066,7 @@ for i in range(n-1):
     # Set up forces, air resistance FD, note now that we need the norm of the vector
     # Here you could have defined your own function for this
     vabs = sqrt(sum(v[i]*v[i]))
+# Note: you need to think of the sign for the drag force 
     FD = -D*v[i]*vabs
     # Final net forces acting on falling object
     Fnet = FD+G
