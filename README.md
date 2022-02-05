@@ -152,6 +152,7 @@ AMS chapters 2 and 4 are very useful. 1st homework due January 21.
   - Video of lecture with subtitles at https://youtu.be/1qFEX5g6MlY
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesFebruary2.pdf
 - Friday 2/4:  Conservation laws and further examples.  Problem solving. Deadline third homework.
+  - Short video for flipped class at https://youtu.be/qGNBEGKr6uU
 - Good reads are Taylor sections 3.1-3.5 and 4.1-4.3 and AMS chapters 10-14.
 
 ### Week 6, February 7-11, 2022
