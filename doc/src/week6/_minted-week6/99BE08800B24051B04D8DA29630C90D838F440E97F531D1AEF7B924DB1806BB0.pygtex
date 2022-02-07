@@ -1,0 +1,36 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{n}{DeltaT} \PYG{o}{=} \PYG{l+m+mf}{0.01}
+\PYG{c+c1}{\PYGZsh{}set up arrays}
+\PYG{n}{tfinal} \PYG{o}{=} \PYG{l+m+mi}{10} \PYG{c+c1}{\PYGZsh{} in years}
+\PYG{n}{n} \PYG{o}{=} \PYG{n}{ceil}\PYG{p}{(}\PYG{n}{tfinal}\PYG{o}{/}\PYG{n}{DeltaT}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} set up arrays for t, a, v, and x}
+\PYG{n}{t} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{n}\PYG{p}{)}
+\PYG{n}{v} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{((}\PYG{n}{n}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{))}
+\PYG{n}{r} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{((}\PYG{n}{n}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{))}
+\PYG{c+c1}{\PYGZsh{} Initial conditions as compact 2\PYGZhy{}dimensional arrays}
+\PYG{n}{r0} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{([}\PYG{l+m+mf}{1.0}\PYG{p}{,}\PYG{l+m+mf}{0.0}\PYG{p}{])}
+\PYG{n}{v0} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{([}\PYG{l+m+mf}{0.0}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{pi}\PYG{p}{])}
+\PYG{n}{r}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{r0}
+\PYG{n}{v}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{v0}
+\PYG{n}{Fourpi2} \PYG{o}{=} \PYG{l+m+mi}{4}\PYG{o}{*}\PYG{n}{pi}\PYG{o}{*}\PYG{n}{pi}
+\PYG{c+c1}{\PYGZsh{} Start integrating using the Velocity\PYGZhy{}Verlet  method}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{n}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{):}
+    \PYG{c+c1}{\PYGZsh{} Set up forces, air resistance FD, note now that we need the norm of the vecto}
+    \PYG{c+c1}{\PYGZsh{} Here you could have defined your own function for this}
+    \PYG{n}{rabs} \PYG{o}{=} \PYG{n}{sqrt}\PYG{p}{(}\PYG{n+nb}{sum}\PYG{p}{(}\PYG{n}{r}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{*}\PYG{n}{r}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]))}
+    \PYG{n}{a} \PYG{o}{=}  \PYG{o}{\PYGZhy{}}\PYG{n}{Fourpi2}\PYG{o}{*}\PYG{n}{r}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{/}\PYG{p}{(}\PYG{n}{rabs}\PYG{o}{**}\PYG{l+m+mi}{3}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} update velocity, time and position using the Velocity\PYGZhy{}Verlet method}
+    \PYG{n}{r}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{r}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{+} \PYG{n}{DeltaT}\PYG{o}{*}\PYG{n}{v}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{+}\PYG{l+m+mf}{0.5}\PYG{o}{*}\PYG{p}{(}\PYG{n}{DeltaT}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{o}{*}\PYG{n}{a}
+    \PYG{n}{rabs} \PYG{o}{=} \PYG{n}{sqrt}\PYG{p}{(}\PYG{n+nb}{sum}\PYG{p}{(}\PYG{n}{r}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{*}\PYG{n}{r}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]))}
+    \PYG{n}{anew} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{4}\PYG{o}{*}\PYG{p}{(}\PYG{n}{pi}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{o}{*}\PYG{n}{r}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{/}\PYG{p}{(}\PYG{n}{rabs}\PYG{o}{**}\PYG{l+m+mi}{3}\PYG{p}{)}
+    \PYG{n}{v}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{v}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{+} \PYG{l+m+mf}{0.5}\PYG{o}{*}\PYG{n}{DeltaT}\PYG{o}{*}\PYG{p}{(}\PYG{n}{a}\PYG{o}{+}\PYG{n}{anew}\PYG{p}{)}
+    \PYG{n}{t}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{t}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{+} \PYG{n}{DeltaT}
+\PYG{c+c1}{\PYGZsh{} Plot position as function of time}
+\PYG{n}{fig}\PYG{p}{,} \PYG{n}{ax} \PYG{o}{=} \PYG{n}{plt}\PYG{o}{.}\PYG{n}{subplots}\PYG{p}{()}
+\PYG{n}{ax}\PYG{o}{.}\PYG{n}{set\PYGZus{}ylabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}y[AU]\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{ax}\PYG{o}{.}\PYG{n}{set\PYGZus{}xlabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}x[AU]\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{ax}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{r}\PYG{p}{[:,}\PYG{l+m+mi}{0}\PYG{p}{],} \PYG{n}{r}\PYG{p}{[:,}\PYG{l+m+mi}{1}\PYG{p}{])}
+\PYG{n}{fig}\PYG{o}{.}\PYG{n}{tight\PYGZus{}layout}\PYG{p}{()}
+\PYG{n}{save\PYGZus{}fig}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}EarthSunVV\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{show}\PYG{p}{()}
+\end{Verbatim}
