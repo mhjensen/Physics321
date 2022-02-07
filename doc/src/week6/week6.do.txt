@@ -8,70 +8,33 @@ DATE: today
 
 === Monday ===
 
-Short repetition from last week. Discussion of momentum and angular momentum.
-Reading suggestion: Taylor sections 3.1-3.4
+Short repetition from last week. Discussion of momentum and angular momentum conservation.
+Reading suggestion: Taylor sections 3.4 and 3.5 and chapter 4.
 
 === Wednesday ===
 
-More on angular momentum, Taylor sections 3.4 and 3.5. Discussion of potential energy and conservative forces.
-Reading suggestions: Taylor section 4.2
+Examples of application of conservations laws (see chapter 4 of Taylor) and exercises (see next slide).
+Introducing the Velocity Verlet algorithm and the Earth Sun problem for homework 5.
 
-===  Friday ===
+===  Friday 2/11 ===
 
-Conservative forces and potential energy. Reading suggestion: Taylor sections 4.2-4.4
+Conservative forces and discussion of homework exercises. Problem solving. Deadline fourth homework.
 
-If you wish to read more about conservative forces or not, Feyman's lectures from 1963 are quite interesting.
-He states for example that _All fundamental forces in nature appear to be conservative_.
-This statement was made while developing his argument that *there are no nonconservative forces*.
-You may enjoy the link to "Feynman's lecture":"http://www.feynmanlectures.caltech.edu/I_14.html".
-
-
-
-!split
-===== Work-Energy Theorem and Energy Conservation  =====
-
-Last week (Friday) we observed that energy was conserved for a force which
-depends only on the position.
-In particular we considered a force acting on a block 
-attached to a spring with spring
-constant $k$. The other end of the spring was attached to the wall.  
-
-The force $F_x$ from the spring on the block was defined as
-!bt
-\[
-F_x=-kx.
-\]
-!et
-
-The work done on the block due to a displacement from a position $x_0$ to $x$ 
-!bt
-\[
-W=\int_{x_0}^{x}F_xdx'=\frac{1}{2}kx_0^2-\frac{1}{2}kx^2.
-\]
-!et
+!bblock Reading suggestions
+Taylor chapter 4 is the essential reading.
+See also chapter 7 of Malthe-Sørenssen (in particule section 7.5) for exercise 6 in homework 4
+!eblock
 
 
 !split
-===== Conservation of energy =====
-With the definition of the work-energy theorem in terms of the kinetic energy we obtained
+===== Exercises for Wednesdays after lecture part =====
 
-!bt
-\[
-W=\frac{1}{2}mv^2(x)-\frac{1}{2}mv_0^2=\frac{1}{2}kx_0^2-\frac{1}{2}kx^2,
-\]
-!et
-which we rewrote as
 
-!bt
-\[
-\frac{1}{2}mv^2(x)+\frac{1}{2}kx^2=\frac{1}{2}mv_0^2+\frac{1}{2}kx_0^2.
-\]
-!et
+!split
+===== One Figure to Rule All Forces (thx to Julie) =====
 
-The total energy, which is the sum of potential and kinetic energy, is conserved.
-We will analyze this interesting result now in more detail when we study energy, momentum and angular momentum conservation.
+FIGURE: [figslides/ClassicalMechanicsJulie.png, width=600 frac=0.8]  
 
-But before we start with energy conservation, conservative forces and potential energies, we need to revisit our definitions of momentum and angular momentum.
 
 
 
@@ -97,124 +60,6 @@ is
 !bt
 \[
 \bm{\nabla} \times \bm{F}=0
-\]
-!et
-
-!split
-===== Work-energy theorem to show that energy is conserved with a conservative force =====
-
-The work-energy theorem states that the work done $W$ by a force $\bm{F}$ that moves an object from a position $\bm{r}_0$ to a new position $\bm{r}_1$
-!bt
-\[
-W=\int_{\bm{r}_0}^{\bm{r}_1}\bm{F}\bm{dr}=\frac{1}{2}mv_1^2-\frac{1}{2}mv_0^2,
-\]
-!et
-where $v_1^2$ is the velocity squared at a time $t_1$ and $v_0^2$ the corresponding quantity at a time $t_0$.
-The work done is thus the difference in kinetic energies. We can rewrite the above equation as
-!bt
-\[
-\frac{1}{2}mv_1^2=\int_{\bm{r}_0}^{\bm{r}_1}\bm{F}\bm{dr}+\frac{1}{2}mv_0^2,
-\]
-!et
-that is the final kinetic energy is equal to the initial kinetic energy plus the work done by the force over a given path from a  position $\bm{r}_0$ at time $t_0$ to a final position position $\bm{r}_1$ at a later time $t_1$.
-
-
-
-
-!split
-===== Conservation of Momentum =====
-
-Before we move on however, we need to remind ourselves about important aspects like the linear momentum and angular momentum. After these considerations, we move back to more details about conservatives forces.
-
-
-Assume we have $N$ objects, each with velocity $\bm{v}_i$ with
-$i=1,2,\dots,N$ and mass $m_i$. The momentum of each object is
-$\bm{p}_i=m\bm{v}_i$ and the total linear (or mechanical) momentum is
-defined as
-
-!bt
-\[
-\bm{P}=\sum_{i=1}^N\bm{p}_i=\sum_{i=1}^Nm_i\bm{v}_i,
-\]
-!et
-
-
-!split
-===== Two objects first =====
-
-Let us assume we have two objects only that interact with each other and are influenced by an external force.
-
-We define also the total net force acting on object 1 as 
-
-!bt
-\[
-\bm{F}_1^{\mathrm{net}}=\bm{F}_1^{\mathrm{ext}}+\bm{F}_{12},
-\]
-!et
-
-where $\bm{F}_1^{\mathrm{ext}}$ is the external force
-(for example the force due to an electron moving in an electromagnetic field) and $\bm{F}_{12}$ is the
-force between object one and two. Similarly for object 2 we have
-
-
-!bt
-\[
-\bm{F}_2^{\mathrm{net}}=\bm{F}_2^{\mathrm{ext}}+\bm{F}_{21}.
-\]
-!et
-
-!split
-===== Newton's Third Law =====
-
-Newton's third law which we met earlier states that _for every action there is an equal and opposite reaction_.
-It is more accurately stated as
-
-_if two bodies exert forces on each other, these forces are equal in magnitude and opposite in direction_.
-
-This means that for two bodies $i$ and $j$, if the force on $i$ due to $j$ is called $\bm{F}_{ij}$, then 
-
-!bt
-\begin{equation}
-\bm{F}_{ij}=-\bm{F}_{ji}. 
-\end{equation}
-!et
-
-
-For the abovementioned two objects we have thus $\bm{F}_{12}=-\bm{F}_{21}$.
-
-
-!split
-===== Newton's Second Law and Momentum =====
-
-With the net forces acting on each object we can now related the momentum to the forces via
-
-!bt
-\[
-\bm{F}_1^{\mathrm{net}}=m_1\bm{a}_i=m_1\frac{d\bm{v}_i}{dt}=\bm{F}_1^{\mathrm{ext}}+\bm{F}_{12},
-\]
-!et
-
-and 
-
-!bt
-\[
-\bm{F}_2^{\mathrm{net}}=m_2\bm{a}_2=m_1\frac{d\bm{v}_i}{dt}=\bm{F}_2^{\mathrm{ext}}+\bm{F}_{21}.
-\]
-!et
-
-Recalling our definition for the linear momentum we have then
-
-!bt
-\[
-\frac{d\bm{p}_1}{dt}=\bm{F}_1^{\mathrm{ext}}+\bm{F}_{12},
-\]
-!et
-
-and 
-
-!bt
-\[
-\frac{d\bm{p}_2}{dt}=\bm{F}_2^{\mathrm{ext}}+\bm{F}_{21}.
 \]
 !et
 
@@ -328,71 +173,6 @@ and we have
 \]
 !et
 
-
-!split
-===== Example: Rocket Science =====
-
-Consider a rocket of mass $M$ moving with velocity $v$. After a
-brief instant, the velocity of the rocket is $v+\Delta v$ and the mass
-is $M-\Delta M$. Momentum conservation gives
-
-
-!bt
-\begin{eqnarray*}
-Mv&=&(M-\Delta M)(v+\Delta v)+\Delta M(v-v_e)\\
-0&=&-\Delta Mv+M\Delta v+\Delta M(v-v_e),\\
-0&=&M\Delta v-\Delta Mv_e.
-\end{eqnarray*}
-!et
-
-In the second step we ignored the term $\Delta M\Delta v$ because it is doubly small. The last equation gives
-
-!bt
-\begin{eqnarray}
-\Delta v&=&\frac{v_e}{M}\Delta M,\\
-\nonumber
-\frac{dv}{dt}&=&\frac{v_e}{M}\frac{dM}{dt}.
-\end{eqnarray}
-!et
-
-!split
-===== Integrating the Equations =====
-
-Integrating the expression with lower limits $v_0=0$ and $M_0$, one finds
-
-!bt
-\begin{eqnarray*}
-v&=&v_e\int_{M_0}^M \frac{dM'}{M'}\\
-v&=&v_e\ln(M/M_0)\\
-&=&v_e\ln[(M_0-\alpha t)/M_0].
-\end{eqnarray*}
-!et
-
-Because the total momentum of an isolated system is constant, one can
-also quickly see that the center of mass of an isolated system is also
-constant. The center of mass is the average position of a set of
-masses weighted by the mass,
-
-!bt
-\begin{equation}
-\bar{x}=\frac{\sum_im_ix_i}{\sum_i m_i}.
-\end{equation}
-!et
-
-!split
-===== Rate of Change =====
-
-The rate of change of $\bar{x}$ is
-
-!bt
-\[
-\dot{\bar{x}}=\frac{1}{M}\sum_i m_i\dot{x}_i=\frac{1}{M}P_x.
-\]
-!et
-
-Thus if the total momentum is constant the center of mass moves at a
-constant velocity, and if the total momentum is zero the center of
-mass is fixed.
 
 
 !split
@@ -833,3 +613,752 @@ or just
 And this connection is the one we wanted to show.
 
 
+
+
+
+
+!split
+===== Net Energy  =====
+
+The net energy, $E=V+K$ where $K$ is the kinetic energy, is then conserved,
+
+!bt
+\begin{eqnarray}
+\frac{d}{dt}(K+V)&=&\frac{d}{dt}\left(\frac{m}{2}(v_x^2+v_y^2+v_z^2)+V(\bm{r})\right)\\
+\nonumber
+&=&m\left(v_x\frac{dv_x}{dt}+v_y\frac{dv_y}{dt}+v_z\frac{dv_z}{dt}\right)
++\partial_xV\frac{dx}{dt}+\partial_yV\frac{dy}{dt}+\partial_zV\frac{dz}{dt}\\
+\nonumber
+&=&v_xF_x+v_yF_y+v_zF_z-F_xv_x-F_yv_y-F_zv_z=0.
+\end{eqnarray}
+!et
+
+
+!split
+===== In Vector Notation  =====
+
+The same proof can be written more compactly with vector notation,
+
+!bt
+\begin{eqnarray}
+\frac{d}{dt}\left(\frac{m}{2}v^2+V(\bm{r})\right)
+&=&m\bm{v}\cdot\dot{\bm{v}}+\bm{\nabla} V(\bm{r})\cdot\dot{\bm{r}}\\
+\nonumber
+&=&\bm{v}\cdot\bm{F}-\bm{F}\cdot\bm{v}=0.
+\end{eqnarray}
+!et
+
+Inverting the expression for kinetic energy,
+!bt
+\begin{equation}
+v=\sqrt{2K/m}=\sqrt{2(E-V)/m},
+\end{equation}
+!et
+
+allows one to solve for the one-dimensional trajectory $x(t)$, by finding $t(x)$,
+
+!bt
+\begin{equation}
+t=\int_{x_0}^x \frac{dx'}{v(x')}=\int_{x_0}^x\frac{dx'}{\sqrt{2(E-V(x'))/m}}.
+\end{equation}
+!et
+
+Note this would be much more difficult in higher dimensions, because
+you would have to determine which points, $x,y,z$, the particles might
+reach in the trajectory, whereas in one dimension you can typically
+tell by simply seeing whether the kinetic energy is positive at every
+point between the old position and the new position.
+
+
+
+!split
+===== The Earth-Sun system =====
+
+We will now venture into a study of a system which is energy
+conserving. The aim is to see if we (since it is not possible to solve
+the general equations analytically) we can develop stable numerical
+algorithms whose results we can trust!
+
+We solve the equations of motion numerically. We will also compute
+quantities like the energy numerically.
+
+We start with a simpler case first, the Earth-Sun system  in two dimensions only.  The gravitational force $F_G$ on the earth from the sun is  
+!bt
+\[
+\bm{F}_G=-\frac{GM_{\odot}M_E}{r^3}\bm{r},
+\]
+!et
+where $G$ is the gravitational constant, 
+!bt
+\[
+M_E=6\times 10^{24}\mathrm{Kg},
+\]
+!et 
+the mass of Earth, 
+!bt
+\[
+M_{\odot}=2\times 10^{30}\mathrm{Kg}, 
+\]
+!et
+the mass of the Sun and 
+!bt
+\[
+r=1.5\times 10^{11}\mathrm{m}, 
+\]
+!et
+is the distance between Earth and the Sun. The latter defines what we call an astronomical unit _AU_.
+
+
+!split
+===== The Earth-Sun system, Newton's Laws =====
+
+From Newton's second law we have then for the $x$ direction
+!bt
+\[
+\frac{d^2x}{dt^2}=-\frac{F_{x}}{M_E},
+\]
+!et
+and
+!bt
+\[
+\frac{d^2y}{dt^2}=-\frac{F_{y}}{M_E},
+\]
+!et 
+for the $y$ direction.
+
+Here we will use  that  $x=r\cos{(\theta)}$, $y=r\sin{(\theta)}$ and
+!bt
+\[
+r = \sqrt{x^2+y^2}.
+\]
+!et 
+We can rewrite 
+!bt
+\[
+F_{x}=-\frac{GM_{\odot}M_E}{r^2}\cos{(\theta)}=-\frac{GM_{\odot}M_E}{r^3}x,
+\]
+!et
+and
+!bt
+\[
+F_{y}=-\frac{GM_{\odot}M_E}{r^2}\sin{(\theta)}=-\frac{GM_{\odot}M_E}{r^3}y,
+\]
+!et 
+for the $y$ direction.
+
+!split
+===== The Earth-Sun system, rewriting the Equations =====
+
+We can rewrite these two equations
+!bt
+\[
+F_{x}=-\frac{GM_{\odot}M_E}{r^2}\cos{(\theta)}=-\frac{GM_{\odot}M_E}{r^3}x,
+\]
+!et
+and
+!bt
+\[
+F_{y}=-\frac{GM_{\odot}M_E}{r^2}\sin{(\theta)}=-\frac{GM_{\odot}M_E}{r^3}y,
+\]
+!et 
+as four first-order coupled differential equations
+!bt
+\[
+\frac{dv_x}{dt}=-\frac{GM_{\odot}}{r^3}x,
+\]
+!et
+!bt
+\[
+\frac{dx}{dt}=v_x,
+\]
+!et
+!bt
+\[
+\frac{dv_y}{dt}=-\frac{GM_{\odot}}{r^3}y,
+\]
+!et
+!bt
+\[
+\frac{dy}{dt}=v_y.
+\]
+!et
+
+
+
+!split
+===== Building a code for the solar system, final coupled equations =====
+
+The four coupled differential equations
+!bt
+\[
+\frac{dv_x}{dt}=-\frac{GM_{\odot}}{r^3}x,
+\]
+!et
+!bt
+\[
+\frac{dx}{dt}=v_x,
+\]
+!et
+!bt
+\[
+\frac{dv_y}{dt}=-\frac{GM_{\odot}}{r^3}y,
+\]
+!et
+!bt
+\[
+\frac{dy}{dt}=v_y,
+\]
+!et
+can be turned into dimensionless equations or we can introduce astronomical units with $1$ AU = $1.5\times 10^{11}$. 
+
+Using the equations from circular motion (with $r =1\mathrm{AU}$) 
+!bt
+\[
+\frac{M_E v^2}{r} = F = \frac{GM_{\odot}M_E}{r^2},
+\]
+!et 
+we have
+!bt
+\[
+GM_{\odot}=v^2r,
+\]
+!et  
+and using that the velocity of Earth (assuming circular motion) is
+$v = 2\pi r/\mathrm{yr}=2\pi\mathrm{AU}/\mathrm{yr}$, we have
+!bt
+\[
+GM_{\odot}= v^2r = 4\pi^2 \frac{(\mathrm{AU})^3}{\mathrm{yr}^2}.
+\]
+!et 
+
+
+
+!split
+===== Building a code for the solar system, discretized equations =====
+
+The four coupled differential equations can then be discretized using Euler's method as (with step length $h$)
+!bt
+\[
+v_{x,i+1}=v_{x,i}-h\frac{4\pi^2}{r_i^3}x_i,
+\]
+!et
+!bt
+\[
+x_{i+1}=x_i+hv_{x,i},
+\]
+!et
+!bt
+\[
+v_{y,i+1}=v_{y,i}-h\frac{4\pi^2}{r_i^3}y_i,
+\]
+!et
+!bt
+\[
+y_{i+1}=y_i+hv_{y,i},
+\]
+!et
+
+
+!split
+===== Code Example with Euler's Method =====
+
+The code here implements Euler's method for the Earth-Sun system using a more compact way of representing the vectors. Alternatively, you could have spelled out all the variables $v_x$, $v_y$, $x$ and $y$ as one-dimensional arrays. 
+
+!bc pycod
+# Common imports
+import numpy as np
+import pandas as pd
+from math import *
+import matplotlib.pyplot as plt
+import os
+
+# Where to save the figures and data files
+PROJECT_ROOT_DIR = "Results"
+FIGURE_ID = "Results/FigureFiles"
+DATA_ID = "DataFiles/"
+
+if not os.path.exists(PROJECT_ROOT_DIR):
+    os.mkdir(PROJECT_ROOT_DIR)
+
+if not os.path.exists(FIGURE_ID):
+    os.makedirs(FIGURE_ID)
+
+if not os.path.exists(DATA_ID):
+    os.makedirs(DATA_ID)
+
+def image_path(fig_id):
+    return os.path.join(FIGURE_ID, fig_id)
+
+def data_path(dat_id):
+    return os.path.join(DATA_ID, dat_id)
+
+def save_fig(fig_id):
+    plt.savefig(image_path(fig_id) + ".png", format='png')
+
+
+DeltaT = 0.001
+#set up arrays 
+tfinal = 10 # in years
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, a, v, and x
+t = np.zeros(n)
+v = np.zeros((n,2))
+r = np.zeros((n,2))
+# Initial conditions as compact 2-dimensional arrays
+r0 = np.array([1.0,0.0])
+v0 = np.array([0.0,2*pi])
+r[0] = r0
+v[0] = v0
+Fourpi2 = 4*pi*pi
+# Start integrating using Euler's method
+for i in range(n-1):
+    # Set up the acceleration
+    # Here you could have defined your own function for this
+    rabs = sqrt(sum(r[i]*r[i]))
+    a =  -Fourpi2*r[i]/(rabs**3)
+    # update velocity, time and position using Euler's forward method
+    v[i+1] = v[i] + DeltaT*a
+    r[i+1] = r[i] + DeltaT*v[i]
+    t[i+1] = t[i] + DeltaT
+# Plot position as function of time    
+fig, ax = plt.subplots()
+#ax.set_xlim(0, tfinal)
+ax.set_ylabel('y[AU]')
+ax.set_xlabel('x[AU]')
+ax.plot(r[:,0], r[:,1])
+fig.tight_layout()
+save_fig("EarthSunEuler")
+plt.show()
+!ec
+
+
+!split
+===== Problems with Euler's Method =====
+
+We notice here that Euler's method doesn't give a stable orbit. It
+means that we cannot trust Euler's method. In a deeper way, as we will
+see in homework 5, Euler's method does not conserve energy. It is an
+example of an integrator which is not
+"symplectic":"https://en.wikipedia.org/wiki/Symplectic_integrator".
+
+Here we present thus two methods, which with simple changes allow us to avoid these pitfalls. The simplest possible extension is the so-called Euler-Cromer method.
+The changes we need to make to our code are indeed marginal here.
+We need simply to replace
+!bc pycod
+    r[i+1] = r[i] + DeltaT*v[i]
+!ec
+in the above code with the velocity at the new time $t_{i+1}$
+!bc pycod
+    r[i+1] = r[i] + DeltaT*v[i+1]
+!ec
+
+By this simple caveat we get stable orbits.
+Below we derive the Euler-Cromer method as well as one of the most utlized algorithms for sovling the above type of problems, the so-called Velocity-Verlet method. 
+
+!split
+===== Deriving the Euler-Cromer Method =====
+
+Let us repeat Euler's method.
+We have a differential equation
+!bt
+\begin{equation}
+y'(t_i)=f(t_i,y_i)   
+\end{equation}
+!et
+and if we truncate at the first derivative, we have from the Taylor expansion
+!bt
+\begin{equation}
+y_{i+1}=y(t_i) + (\Delta t) f(t_i,y_i) + O(\Delta t^2), label{eq:euler}
+\end{equation}
+!et
+which when complemented with $t_{i+1}=t_i+\Delta t$ forms
+the algorithm for the well-known Euler method. 
+Note that at every step we make an approximation error
+of the order of $O(\Delta t^2)$, however the total error is the sum over all
+steps $N=(b-a)/(\Delta t)$ for $t\in [a,b]$, yielding thus a global error which goes like
+$NO(\Delta t^2)\approx O(\Delta t)$. 
+
+To make Euler's method more precise we can obviously
+decrease $\Delta t$ (increase $N$), but this can lead to loss of numerical precision.
+Euler's method is not recommended for precision calculation,
+although it is handy to use in order to get a first
+view on how a solution may look like.
+
+Euler's method is asymmetric in time, since it uses information about the derivative at the beginning
+of the time interval. This means that we evaluate the position at $y_1$ using the velocity
+at $v_0$. A simple variation is to determine $x_{n+1}$ using the velocity at
+$v_{n+1}$, that is (in a slightly more generalized form)
+!bt
+\begin{equation} 
+y_{n+1}=y_{n}+ v_{n+1}+O(\Delta t^2)
+\end{equation}
+!et
+and 
+!bt
+\begin{equation}
+v_{n+1}=v_{n}+(\Delta t) a_{n}+O(\Delta t^2).
+\end{equation}
+!et
+The acceleration $a_n$ is a function of $a_n(y_n, v_n, t_n)$ and needs to be evaluated
+as well. This is the Euler-Cromer method.
+
+_Exercise_: go back to the above code with Euler's method and add the Euler-Cromer method. 
+
+
+!split
+===== Deriving the Velocity-Verlet Method =====
+
+Let us stay with $x$ (position) and $v$ (velocity) as the quantities we are interested in.
+
+We have the Taylor expansion for the position given by
+!bt
+\[
+x_{i+1} = x_i+(\Delta t)v_i+\frac{(\Delta t)^2}{2}a_i+O((\Delta t)^3).
+\]
+!et
+The corresponding expansion for the velocity is 
+!bt
+\[
+v_{i+1} = v_i+(\Delta t)a_i+\frac{(\Delta t)^2}{2}v^{(2)}_i+O((\Delta t)^3).
+\]
+!et
+Via Newton's second law we have normally an analytical expression for the derivative of the velocity, namely
+!bt
+\[
+a_i= \frac{d^2 x}{dt^2}\vert_{i}=\frac{d v}{dt}\vert_{i}= \frac{F(x_i,v_i,t_i)}{m}.
+\]
+!et
+
+
+If we add to this the corresponding expansion for the derivative of the velocity 
+!bt
+\[
+v^{(1)}_{i+1} = a_{i+1}= a_i+(\Delta t)v^{(2)}_i+O((\Delta t)^2)=a_i+(\Delta t)v^{(2)}_i+O((\Delta t)^2), 
+\]
+!et
+and retain only terms up to the second derivative of the velocity since our error goes as $O(h^3)$, we have
+!bt
+\[
+(\Delta t)v^{(2)}_i\approx a_{i+1}-a_i.
+\]
+!et
+We can then rewrite the Taylor expansion for the velocity as  
+!bt
+\[
+v_{i+1} = v_i+\frac{(\Delta t)}{2}\left( a_{i+1}+a_{i}\right)+O((\Delta t)^3).
+\]
+!et
+
+
+
+
+!split
+===== The velocity Verlet method =====
+
+Our final equations for the position and the velocity become then 
+!bt
+\[
+x_{i+1} = x_i+(\Delta t)v_i+\frac{(\Delta t)^2}{2}a_{i}+O((\Delta t)^3),
+\]
+!et
+and
+!bt
+\[
+v_{i+1} = v_i+\frac{(\Delta t)}{2}\left(a_{i+1}+a_{i}\right)+O((\Delta t)^3). 
+\]
+!et
+Note well that the term $a_{i+1}$ depends on the position at $x_{i+1}$. This means that you need to calculate 
+the position at the updated time $t_{i+1}$ before the computing the next velocity.  Note also that the derivative of the velocity at the time
+$t_i$ used in the updating of the position can be reused in the calculation of the velocity update as well. 
+
+
+!split
+===== Adding the Velocity-Verlet Method =====
+
+We can now easily add the Verlet method to our original code as
+!bc pycod
+DeltaT = 0.01
+#set up arrays 
+tfinal = 10 # in years
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, a, v, and x
+t = np.zeros(n)
+v = np.zeros((n,2))
+r = np.zeros((n,2))
+# Initial conditions as compact 2-dimensional arrays
+r0 = np.array([1.0,0.0])
+v0 = np.array([0.0,2*pi])
+r[0] = r0
+v[0] = v0
+Fourpi2 = 4*pi*pi
+# Start integrating using the Velocity-Verlet  method
+for i in range(n-1):
+    # Set up forces, air resistance FD, note now that we need the norm of the vecto
+    # Here you could have defined your own function for this
+    rabs = sqrt(sum(r[i]*r[i]))
+    a =  -Fourpi2*r[i]/(rabs**3)
+    # update velocity, time and position using the Velocity-Verlet method
+    r[i+1] = r[i] + DeltaT*v[i]+0.5*(DeltaT**2)*a
+    rabs = sqrt(sum(r[i+1]*r[i+1]))
+    anew = -4*(pi**2)*r[i+1]/(rabs**3)
+    v[i+1] = v[i] + 0.5*DeltaT*(a+anew)
+    t[i+1] = t[i] + DeltaT
+# Plot position as function of time    
+fig, ax = plt.subplots()
+ax.set_ylabel('y[AU]')
+ax.set_xlabel('x[AU]')
+ax.plot(r[:,0], r[:,1])
+fig.tight_layout()
+save_fig("EarthSunVV")
+plt.show()
+!ec
+
+You can easily generalize the calculation of the forces by defining a function
+which takes in as input the various variables. We leave this as a challenge to you.
+
+
+
+
+!split
+===== Additional Material: Link between Line Integrals and Conservative forces =====
+
+
+The concept of line integrals plays an important role in our discussion of energy conservation,
+our definition of potentials and conservative forces.
+
+Let us remind ourselves of some the basic elements (most of you may
+have seen this in a calculus course under the general topic of vector
+fields).
+
+We define a path integration $C$, that is we integrate
+from a point $\bm{r}_1$ to a point $\bm{r}_2$. 
+Let us assume that the path $C$ is represented by an arc length $s$. In three dimension we have the following representation of $C$
+!bt
+\[
+\bm{r}(s)=x(s)\bm{e}_1+y(s)\bm{e}_2+z(s)\bm{e}_3,
+\]
+!et
+then our integral of a function $f(x,y,z)$ along the path $C$ is defined as 
+!bt
+\[
+\int_Cf(x,y,z)ds=\int_a^bf\left(x(s),y(s),z(s)\right)ds,
+\]
+!et
+where the initial and final points are $a$ and $b$, respectively.
+!split
+===== Exactness and Independence of Path =====
+
+With the definition of a line integral, we can in tunrn set up the
+theorem of independence of integration path.
+
+Let us define
+$f(x,y,z)$, $g(x,y,z)$ and $h(x,y,z)$ to be functions which are
+defined and continuous in a domain $D$ in space. Then a line integral
+like the above is said to be independent of path in $D$, if for every
+pair of endpoints $a$ and $b$ in $D$ the value of the integral is the
+same for all paths $C$ in $D$ starting from a point $a$ and ending in
+a point $b$. The integral depends thus only on the integration limits
+and not on the path.
+
+!split
+===== Differential Forms =====
+
+An expression of the form
+!bt
+\[
+fdx+gdy+hdz,
+\]
+!et
+where $f$, $g$ and $h$ are functions defined in $D$, is a called a first-order differential form
+in three variables.
+The form is said to be exact if it is the differential
+!bt
+\[
+du= \frac{\partial u}{\partial x}dx+\frac{\partial u}{\partial y}dy+\frac{\partial u}{\partial z}dz,
+\]
+!et
+of a differentiable function $u(x,y,z)$ everywhere in $D$, that is
+!bt
+\[
+du=fdx+gdy+hdz.
+\]
+!et
+It is said to be exact if and only if we can then set
+!bt
+\[
+f=\frac{\partial u}{\partial x},
+\]
+!et
+and
+!bt
+\[
+g=\frac{\partial u}{\partial y},
+\]
+!et
+and
+!bt
+\[
+h=\frac{\partial u}{\partial z},
+\]
+!et
+everywhere in the domain $D$.
+
+!split
+=====  In Vector Language =====
+
+In vector language the above means that the differential form 
+!bt
+\[
+fdx+gdy+hdz,
+\]
+!et
+is exact in $D$ if and only if the vector function (it could be a force, or velocity, acceleration or other vectors we encounter in this course)
+!bt
+\[
+\bm{F}=f\bm{e}_1+g\bm{e}_2+h\bm{e}_3,
+\]
+!et
+is the gradient of a function $u(x,y,z)$
+!bt
+\[
+\bm{v}=\bm{\nabla}u=\frac{\partial u}{\partial x}\bm{e}_1+\frac{\partial u}{\partial y}\bm{e}_2+\frac{\partial u}{\partial z}\bm{e}_3.
+\]
+!et
+
+!split
+===== Path Independence Theorem =====
+
+If this is the case, we can state the path independence theorem which
+states that with functions $f(x,y,z)$, $g(x,y,z)$ and $h(x,y,z)$ that fulfill the above
+exactness conditions,  the line integral
+
+!bt
+\[
+\int_C\left(fdx+gdy+hdz\right),
+\]
+!et
+is independent of path in $D$ if and only if the differential form under the integral sign is exact in $D$.
+
+This is the path independence theorem. 
+
+We will not give a proof of the theorem. You can find this in any vector analysis chapter in a mathematics textbook.
+
+We note however that the path integral from a point $p$ to a final point $q$ is given by
+!bt
+\[
+\int_p^q\left(fdx+gdy+hdz\right)=\int_p^q\left(\frac{\partial u}{\partial x}dx+\frac{\partial u}{\partial y}dy+\frac{\partial u}{\partial z}dz\right)=\int_p^qdu.
+\]
+!et
+
+Assume now that we have a dependence on a variable $s$ for $x$, $y$ and $z$. We have then
+!bt
+\[
+\int_p^qdu=\int_{s_1}^{s_2}\frac{du}{ds}ds = u(x(s),y(s),z(s))\vert_{s=s_1}^{s=s_2}=u(q)-u(p).
+\]
+!et
+
+
+
+This last equation
+!bt
+\[
+\int_p^q\left(fdx+gdy+hdz\right)=u(q)-u(p),
+\]
+!et
+is the analogue of the usual formula
+!bt
+\[
+\int_a^bf(x)dx=F(x)\vert_a^b=F(b)-F(a),
+\]
+!et
+with $F'(x)=f(x)$.
+
+!split
+===== Work-Energy Theorem again =====
+
+We remember that a the work done by a force
+$\bm{F}=f\bm{e}_1+g\bm{e}_2+h\bm{e}_3$ on a displacemnt $d\bm{r}$
+is
+!bt
+\[
+W=\int_C\bm{F}d\bm{r}=\int_C(fdx+gdy+hdz).
+\]
+!et
+
+From the path independence theorem, we know that this has to result in
+the difference between the two endpoints only. This is exact if and
+only if the force is the force $\bm{F}$ is the gradient of a scalar
+function $u$. We call this scalar function, which depends only the
+positions $x,y,z$ for the potential energy $V(x,y,z)=V(\bm{r})$.
+
+We have thus
+!bt
+\[
+\bm{F}(\bm{r})\propto \bm{\nabla}V(\bm{r}),
+\]
+!et
+and we define  this as
+!bt
+\[
+\bm{F}(\bm{r})= -\bm{\nabla}V(\bm{r}).
+\]
+!et
+
+Such a force is called _a conservative force_. The above expression can be used to demonstrate
+energy conservation.
+
+!split
+===== Additional Theorem =====
+
+Finally we can define the criterion for exactness and independence of
+path. This theorem states that if $f(x,y,z)$, $g(x,y,z)$ and
+$h(x,y,z)$ are continuous functions with continuous first partial derivatives in the domain $D$,
+then the line integral
+!bt
+\[
+\int_C\left(fdx+gdy+hdz\right),
+\]
+!et
+is independent of path in $D$ when
+
+!bt
+\[
+\frac{\partial h}{\partial y}=\frac{\partial g}{\partial z},
+\]
+!et
+and
+!bt
+\[
+\frac{\partial f}{\partial z}=\frac{\partial h}{\partial x},
+\]
+!et
+and
+!bt
+\[
+\frac{\partial g}{\partial x}=\frac{\partial f}{\partial y}.
+\]
+!et
+
+This leads to the _curl_ of $\bm{F}$ being zero
+!bt
+\[
+\bm{\nabla}\times\bm{F}=\bm{\nabla}\times\left(-\bm{\nabla}V(\bm{r})\right)=0!
+\]
+!et
+
+!split
+===== Summarizing =====
+
+A conservative force $\bm{F}$ is a defined as the partial derivative of a scalar potential which depends only on the position,
+!bt
+\[
+\bm{F}(\bm{r})= -\bm{\nabla}V(\bm{r}).
+\]
+!et
+
+This leads to conservation of energy and a path independent line integral as long as the curl of the force is zero, that is
+!bt
+\[
+\bm{\nabla}\times\bm{F}=\bm{\nabla}\times\left(-\bm{\nabla}V(\bm{r})\right)=0.
+\]
+!et
