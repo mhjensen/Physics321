@@ -1,0 +1,464 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html hw5.do.txt --pygments_html_style=perldoc --html_style=solarized3 --html_links_in_new_window --html_output=hw5-solarized --no_mako
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="PHY321: Classical Mechanics 1">
+<title>PHY321: Classical Mechanics 1</title>
+<link href="https://cdn.rawgit.com/doconce/doconce/master/bundled/html_styles/style_solarized_box/css/solarized_light_code.css" rel="stylesheet" type="text/css" title="light"/>
+<script src="https://cdn.rawgit.com/doconce/doconce/master/bundled/html_styles/style_solarized_box/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<link href="https://thomasf.github.io/solarized-css/solarized-light.min.css" rel="stylesheet">
+<style type="text/css">
+h1 {color: #b58900;}  /* yellow */
+/* h1 {color: #cb4b16;}  orange */
+/* h1 {color: #d33682;}  magenta, the original choice of thomasf */
+code { padding: 0px; background-color: inherit; }
+pre {
+  border: 0pt solid #93a1a1;
+  box-shadow: none;
+}
+div { text-align: justify; text-justify: inter-word; }
+.tab {
+  padding-left: 1.5em;
+}
+div.toc p,a {
+  line-height: 1.3;
+  margin-top: 1.1;
+  margin-bottom: 1.1;
+}
+</style>
+</head>
+
+<!-- tocinfo
+{'highest level': 3,
+ 'sections': [('Practicalities about  homeworks and projects',
+               3,
+               None,
+               'practicalities-about-homeworks-and-projects'),
+              ('Introduction to homework 5',
+               3,
+               None,
+               'introduction-to-homework-5'),
+              ('Exercise 1 (15 pt), Work-energy theorem and conservation laws',
+               3,
+               None,
+               'exercise-1-15-pt-work-energy-theorem-and-conservation-laws'),
+              ('Exsercise 2 (15pt), Rocket, Momentum and mass',
+               3,
+               None,
+               'exsercise-2-15pt-rocket-momentum-and-mass'),
+              ('Exercise 3 (10pt), More Rockets',
+               3,
+               None,
+               'exercise-3-10pt-more-rockets'),
+              ('Exercise 4 (10pt), Center of mass',
+               3,
+               None,
+               'exercise-4-10pt-center-of-mass'),
+              ('Exercise 5 (10pt), Warming up for the Earth-Sun system, '
+               'Scaling the Equations',
+               3,
+               None,
+               'exercise-5-10pt-warming-up-for-the-earth-sun-system-scaling-the-equations'),
+              ('Exercise 6 (40pt), Numerical elements, solving exercise 5 '
+               'numerically',
+               3,
+               None,
+               'exercise-6-40pt-numerical-elements-solving-exercise-5-numerically'),
+              ('Classical Mechanics Extra Credit Assignment: Scientific '
+               'Writing and attending Talks',
+               3,
+               None,
+               'classical-mechanics-extra-credit-assignment-scientific-writing-and-attending-talks'),
+              ('Integrating Classwork With Research',
+               3,
+               None,
+               'integrating-classwork-with-research')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- ------------------- main content ---------------------- -->
+<center>
+<h1>PHY321: Classical Mechanics 1</h1>
+</center>  <!-- document title -->
+
+<!-- author(s): Homework 5, due Friday   February 18 -->
+<center>
+<b>Homework 5, due Friday   February 18</b> 
+</center>
+<!-- institution(s) -->
+<br>
+<center>
+<h4>Feb 6, 2022</h4>
+</center> <!-- date -->
+<br>
+<h3 id="practicalities-about-homeworks-and-projects">Practicalities about  homeworks and projects </h3>
+
+<ol>
+<li> You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. <b>Remember to write your name(s)</b>!</li>
+<li> Homeworks are available ten days before the deadline.</li>
+<li> How do I(we)  hand in?  You can hand in the paper and pencil exercises as a scanned document. For this homework this applies to exercises 1-5. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise(s) (exercise 6 here) should always be handed in as a jupyter notebook by the deadline at D2L.</li> 
+</ol>
+<h3 id="introduction-to-homework-5">Introduction to homework 5 </h3>
+
+<p>This week's sets of classical pen and paper and computational
+exercises are a continuation of the topics from the previous homework
+set and lectures from the last two weeks. We keep dealing with simple
+motion problems and conservation laws; energy, momentum and angular
+momentum. These conservation laws are central in Physics and
+understanding them properly lays the foundation for understanding and
+analyzing more complicated physics problems.
+</p>
+
+<p>The relevant reading background is</p>
+<ol>
+<li> chapters 3 and 4 of Taylor (there are many good examples there) and</li>
+<li> chapters 10-14 of Malthe-S&#248;renssen.</li>
+</ol>
+<p>In both textbooks there are many nice worked out examples. Malthe-S&#248;renssen's text contains also several coding examples you may find useful. </p>
+
+<p>The numerical homework focuses on another motion problem where you can
+use the code you developed in homework sets 3 and 4, almost entirely. Please take
+a look at the posted solutions (jupyter-notebook) for homework sets 3 and 4. You
+need only to change the forces at play. The problem at hand is a
+classic, the gravitational force acting between the Sun and the
+Earth. Here you will notice also that the standard Euler-integration
+algorithm is not the best choice and we will introduce the so-called
+Euler-Cromer method and the Velocity-Verlet method. These methods will
+give much more stable numerical results with only few additions to
+your code.
+</p>
+
+<p>The code you develop here will also be reused when we analyze energy
+conservation in homework set 6. And for those of you doing the honors
+project, it serves as a starting point for the solar system variant.
+</p>
+<h3 id="exercise-1-15-pt-work-energy-theorem-and-conservation-laws">Exercise 1 (15 pt), Work-energy theorem and conservation laws </h3>
+
+<p>This exercise was partly discussed during the lectures of the week of February 8-12, see <a href="https://mhjensen.github.io/Physics321/doc/pub/week6/html/week6.html" target="_blank"><tt>https://mhjensen.github.io/Physics321/doc/pub/week6/html/week6.html</tt></a>.</p>
+
+<p>We will study a classical electron which moves in the \( x \)-direction along a surface. The force from the surface is</p>
+$$
+\boldsymbol{F}(x)=-F_0\sin{(\frac{2\pi x}{b})}\boldsymbol{e}_x.
+$$
+
+<p>The constant \( b \) represents the distance between atoms at the surface of the material, \( F_0 \) is a constant and \( x \) is the position of the electron.</p>
+
+<ul>
+<li> 1a (2pt) Is this a conservative force? And if so, what does that imply?</li>
+<li> 1b (4pt) Use the work-energy theorem to find the velocity \( v(x) \).</li> 
+<li> 1c (4pt) With the above expression for the force, find the potential energy.</li>
+<li> 1d (5pt) Make a plot of the potential energy and discuss the equilibrium points where the force on the electron is zero. Discuss the physical interpretation of stable and unstable equilibrium points. Use energy conservation. Recommended read here  is Malthe-S&#248;renssen chapter 11.3.2.</li>
+</ul>
+<h3 id="exsercise-2-15pt-rocket-momentum-and-mass">Exsercise 2 (15pt), Rocket, Momentum and mass </h3>
+
+<p>Taylor exercise 3.11.   This exercise is meant to illustrate momentum conservation or not. 
+This exercise was partly discussed during the lectures, see the notes from the week of February 8-12 on <a href="https://mhjensen.github.io/Physics321/doc/pub/week6/html/week6.html" target="_blank">Energy and Momentum etc, see the part on Momentum conservation</a>. Taylor's chapter 3.2 covers also this example.
+</p>
+<h3 id="exercise-3-10pt-more-rockets">Exercise 3 (10pt), More Rockets </h3>
+
+<p>Taylor exercises 3.13 (5pt) and 3.14 (5pt). This is a continuation of
+the previous exercise and most of the relevant background material can
+be found in Taylor chapter 3.2.
+</p>
+<h3 id="exercise-4-10pt-center-of-mass">Exercise 4 (10pt), Center of mass  </h3>
+
+<p>Taylor exercise 3.20. Here Taylor's chapter 3.3 can be of use. This
+relation will turn out to be very useful when we discuss systems of
+many classical particles.
+</p>
+<h3 id="exercise-5-10pt-warming-up-for-the-earth-sun-system-scaling-the-equations">Exercise 5 (10pt), Warming up for the Earth-Sun system, Scaling the Equations  </h3>
+
+<p>The aim of this exercise (as well as the next) is to study the motion
+of objects under the influence of the gravitational force.  We will
+limit ourselves to the Earth-Sun system. Here we will scale the
+equations and sketch our first algorithm for solving the equations,
+namely using Euler's method again, as we did in homework sets 3 and 4.  This part
+together with the numerical part forms also the entry point for the
+solar system honors project. Furthermore, we will reuse parts of these
+results when analyzing energy conservation in homework 6.
+</p>
+
+<p>We will limit ourselves (in order to test the algorithm) to a
+hypothetical solar system with the Earth only orbiting around the sun.
+The only force in the problem is gravity. Newton's law of gravitation
+is given by a force \( F_G \)
+</p>
+
+$$
+F_G=\frac{GM_{\odot}M_{\mathrm{Earth}}}{r^2},
+$$
+
+<p>where \( M_{\odot} \) is the mass of the Sun and \( M_{\mathrm{Earth}} \) is
+the mass of the Earth. The gravitational constant is \( G \) and \( r \) is
+the distance between the Earth and the Sun.  The Sun
+has a mass which is much larger than that of the Earth. We can
+therefore safely neglect the motion of the Sun in this problem.
+</p>
+
+<p>We assume that the orbit of the Earth around the Sun 
+is co-planar, and we take this to be the \( xy \)-plane.
+Using Newton's second law of motion we get the following equations
+</p>
+$$
+\frac{d^2x}{dt^2}=\frac{F_{G,x}}{M_{\mathrm{Earth}}},
+$$
+
+<p>and</p>
+$$
+\frac{d^2y}{dt^2}=\frac{F_{G,y}}{M_{\mathrm{Earth}}},
+$$
+
+<p>where \( F_{G,x} \) and \( F_{G,y} \) are the \( x \) and \( y \) components of the
+gravitational force.
+</p>
+
+<p>We will use so-called astronomical units when rewriting our equations.
+Using astronomical units (AU as abbreviation)it means that one
+astronomical unit of length, known as 1 AU, is the average distance
+between the Sun and Earth, that is \( 1 \) AU = \( 1.5\times 10^{11} \) m.  It
+can also be convenient to use years instead of seconds since years
+match better the time evolution of the solar system. The mass of the
+Sun is \( M_{\mathrm{sun}}=M_{\odot}=2\times 10^{30} \) kg. The mass of
+Earth is \( M_{\mathrm{Earth}}=6\times 10^{24} \) kg with a distance 1AU.
+</p>
+
+<p>In setting up the equations we limit ourselves to a co-planar
+motion and use only the \( x \) and \( y \) coordinates. But you should feel
+free to extend your equations to three dimensions, it is not very
+difficult and the data from NASA are all in three dimensions.
+</p>
+
+<p><a href="http://www.nasa.gov/index.html" target="_blank">NASA</a> has an excellent site at <a href="http://ssd.jpl.nasa.gov/horizons.cgi#top" target="_blank"><tt>http://ssd.jpl.nasa.gov/horizons.cgi#top</tt></a>.
+From there you can extract initial conditions in order to start your differential equation solver.
+At the above website you need to change from <b>OBSERVER</b> to <b>VECTOR</b> and then write in the planet you are interested in.
+The generated data contain the \( x \), \( y \) and \( z \) values as well as their corresponding velocities. The velocities are in units of AU per day.
+Alternatively they can be obtained in terms of km and km/s. 
+</p>
+
+<p>For the system below involving only the Earth and the Sun, you
+could just initialize the position with say \( x=1 \) AU and \( y=0 \) AU.
+</p>
+
+<p>We assume that mass units can be obtained by using the fact that
+Earth's orbit is almost circular around the Sun.
+</p>
+
+<p>For circular motion we know that the force must obey the following relation</p>
+$$
+F_G= \frac{M_{\mathrm{Earth}}v^2}{r}=\frac{GM_{\odot}M_{\mathrm{Earth}}}{r^2},
+$$
+
+<p>where \( v \) is the velocity of Earth. 
+The latter equation can be used to show that
+</p>
+$$
+v^2r=GM_{\odot}=4\pi^2\mathrm{AU}^3/\mathrm{yr}^2.
+$$
+
+<ul>
+<li> 5a (5pt) Show how to derive the last equation and use this to scale the differential equations, getting thus rid of the constant \( G \) and the two masses. Split the differential equations for the motion in the \( x \) and \( y \) directions in terms of four coupled differential equations.</li>
+<li> 5b (5pt)  Discretize the above differential equations and set up an algorithm for solving these equations using Euler's forward algorithm and the so-called velocity Verlet method <a href="https://mhjensen.github.io/Physics321/doc/pub/week7/html/week7.html" target="_blank">discussed in the lecture notes</a>. Here you can reuse what you did in homework sets 3 and 4.</li>
+</ul>
+<h3 id="exercise-6-40pt-numerical-elements-solving-exercise-5-numerically">Exercise 6 (40pt), Numerical elements, solving exercise 5 numerically  </h3>
+
+<p><b>This exercise should be handed in as a jupyter-notebook</b> at D2L. Remember to write your name(s). </p>
+
+<p>In homework sets 3 and 4 we:</p>
+<ol>
+<li> studied  Euler's Method to find the position and the velocity of a falling object, including air resistance and gravity</li>
+<li> and added additional forces to our model and studied a bouncing ball.</li>
+</ol>
+<p>This week we will reuse our code from homework 4 (exercises 6)
+and replace the air resistance and force from the ground with the
+gravitational force. Then we will study the stability of the system as function of initial conditions and the time step length.
+</p>
+
+<p>We start by importing some standard packages</p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="line-height: 125%;"><span style="color: #228B22"># let&#39;s start by importing useful packages we are familiar with</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
+<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> *
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
+%matplotlib inline
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<ul>
+<li> 6a (30 pt)  Write then a program which solves the above differential equations for the Earth-Sun system using Euler's  method and the velocity Verlet method.  Find out which initial value for the velocity that gives a circular orbit and test the stability of your algorithm as function of different time steps \( \Delta t \).  Make a plot of the results you obtain for the position of the Earth (plot the \( x \) and \( y \) values and/or if you prefer to use three dimensions the \( z \)-value as well) orbiting  the Sun. Discuss eventual differences between the Verlet algorithm and the Euler algorithm.</li> 
+<li> 6b (10pt) Consider then a planet which begins at a distance of 1 AU from the sun. Find out by trial and error what the initial velocity must be in order for the planet to escape from the sun.  Can you find an exact answer?  How does that match your numerical results?</li>
+</ul>
+<p>Here we add a code-example which may aid in the above studies using Euler's forward method.</p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="line-height: 125%;">DeltaT = <span style="color: #B452CD">0.001</span>
+<span style="color: #228B22">#set up arrays </span>
+tfinal = <span style="color: #B452CD">10</span> <span style="color: #228B22"># in years</span>
+n = ceil(tfinal/DeltaT)
+<span style="color: #228B22"># set up arrays for time t, velocity v, and position r</span>
+t = np.zeros(n)
+v = np.zeros((n,<span style="color: #B452CD">2</span>))
+r = np.zeros((n,<span style="color: #B452CD">2</span>))
+<span style="color: #228B22"># Initial conditions as compact 2-dimensional arrays</span>
+r0 = np.array([<span style="color: #B452CD">1.0</span>,<span style="color: #B452CD">0.0</span>])
+v0 = np.array([<span style="color: #B452CD">0.0</span>,<span style="color: #B452CD">2</span>*pi])
+r[<span style="color: #B452CD">0</span>] = r0
+v[<span style="color: #B452CD">0</span>] = v0
+Fourpi2 = <span style="color: #B452CD">4</span>*pi*pi
+<span style="color: #228B22"># Start integrating using Euler&#39;s method</span>
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
+    <span style="color: #228B22"># Set up the acceleration</span>
+    <span style="color: #228B22"># Here you could have defined your own function for this</span>
+    rabs = sqrt(<span style="color: #658b00">sum</span>(r[i]*r[i]))
+    a =  -Fourpi2*r[i]/(rabs**<span style="color: #B452CD">3</span>)
+    <span style="color: #228B22"># update velocity, time and position using Euler&#39;s forward method</span>
+    v[i+<span style="color: #B452CD">1</span>] = v[i] + DeltaT*a
+    r[i+<span style="color: #B452CD">1</span>] = r[i] + DeltaT*v[i]
+    t[i+<span style="color: #B452CD">1</span>] = t[i] + DeltaT
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<h3 id="classical-mechanics-extra-credit-assignment-scientific-writing-and-attending-talks">Classical Mechanics Extra Credit Assignment: Scientific Writing and attending Talks </h3>
+
+<p>The following gives you an opportunity to earn <b>five extra credit
+points</b> on each of the remaining homeworks and <b>ten extra credit points</b>
+on the midterms and finals.  This assignment also covers an aspect of
+the scientific process that is not taught in most undergraduate
+programs: scientific writing.  Writing scientific reports is how
+scientist communicate their results to the rest of the field.  Knowing
+how to assemble a well written scientific report will greatly benefit
+you in you upper level classes, in graduate school, and in the work
+place.
+</p>
+
+<p>The full information on extra credits is found at <a href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/" target="_blank"><tt>https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/</tt></a>. There you will also find examples on how to write a scientific article. 
+Below you can also find a description on how to gain extra credits by attending scientific talks.
+</p>
+
+<p>This assignment allows you to gain extra credit points by practicing
+your scientific writing.  For each of the remaining homeworks you can
+submit the specified section of a scientific report (written about the
+numerical aspect of the homework) for five extra credit points on the
+assignment.  For the two midterms and the final, submitting a full
+scientific report covering the numerical analysis problem will be
+worth ten extra points.  For credit the grader must be able to tell
+that you put effort into the assignment (i.e. well written, well
+formatted, etc.).  If you are unfamiliar with writing scientific
+reports, <a href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/IntroductionScientificWriting.md" target="_blank">see the information here</a>
+</p>
+
+<p>The following table explains what aspect of a scientific report is due
+with which homework.  You can submit the assignment in any format you
+like, in the same document as your homework, or in a different one.
+Remember to cite any external references you use and include a
+reference list.  There are no length requirements, but make sure what
+you turn in is complete and through.  If you have any questions,
+please contact Julie Butler at butler@frib.msu.edu.
+</p>
+
+<table class="dotable" border="1">
+<thead>
+<tr><th align="center">   HW/Project   </th> <th align="center">  Due Date </th> <th align="center">  Extra Credit Assignment   </th> </tr>
+</thead>
+<tbody>
+<tr><td align="center">   HW 3                </td> <td align="center">   2-8            </td> <td align="center">   Abstract                        </td> </tr>
+<tr><td align="center">   HW 4                </td> <td align="center">   2-15           </td> <td align="center">   Introduction                    </td> </tr>
+<tr><td align="center">   HW 5                </td> <td align="center">   2-22           </td> <td align="center">   Methods                         </td> </tr>
+<tr><td align="center">   HW 6                </td> <td align="center">   3-1            </td> <td align="center">   Results and Discussion          </td> </tr>
+<tr><td align="center">   <b>Midterm 1</b>    </td> <td align="center">   <b>3-12</b>    </td> <td align="center">   <em>Full Written Report</em>    </td> </tr>
+<tr><td align="center">   HW 7                </td> <td align="center">   3-22           </td> <td align="center">   Abstract                        </td> </tr>
+<tr><td align="center">   HW 8                </td> <td align="center">   3-29           </td> <td align="center">   Introduction                    </td> </tr>
+<tr><td align="center">   HW 9                </td> <td align="center">   4-5            </td> <td align="center">   Results and Discussion          </td> </tr>
+<tr><td align="center">   <b>Midterm 2        </td> <td align="center">   </b> _4-16_    </td> <td align="center">   <em>Full Written Report</em>    </td> </tr>
+<tr><td align="center">   HW 10               </td> <td align="center">   4-26           </td> <td align="center">   Abstract                        </td> </tr>
+<tr><td align="center">   <b>Final</b>        </td> <td align="center">   <b>4-30</b>    </td> <td align="center">   <em>Full Written Report</em>    </td> </tr>
+</tbody>
+</table>
+
+<p>You can also gain extra credits if you attend scientific talks.
+This is described here.
+</p>
+<h3 id="integrating-classwork-with-research">Integrating Classwork With Research </h3>
+
+<p>This opportunity will allow you to earn up to 5 extra credit points on a Homework per week. These points can push you above 100% or help make up for missed exercises.
+In order to earn all points you must:
+</p>
+
+<ol>
+<li> Attend an MSU research talk (recommended research oriented Clubs is  provided below)</li>
+<li> Summarize the talk using at least 150 words</li>
+<li> Turn in the summary along with your Homework.</li>
+</ol>
+<p>Approved talks:
+Talks given by researchers through the following clubs:
+</p>
+<ul>
+<li> Research and Idea Sharing Enterprise (RAISE)&#8203;: Meets Wednesday Nights Society for Physics Students (SPS)&#8203;: Meets Monday Nights</li>
+<li> Astronomy Club&#8203;: Meets Monday Nights</li>
+<li> Facility For Rare Isotope Beam (FRIB) Seminars: &#8203;Occur multiple times a week</li>
+</ul>
+<p>If you have any questions please consult Jeremy Rebenstock, rebensto@msu.edu.</p>
+
+<p>All the material on extra credits is at <a href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/" target="_blank"><tt>https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/</tt></a>. </p>
+
+<!-- ------------------- end of main content --------------- -->
+</body>
+</html>
+
