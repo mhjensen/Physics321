@@ -86,11 +86,6 @@ doconce format html week6.do.txt --html_style=bootstrap --pygments_html_style=de
                2,
                None,
                'the-torque-example-1-hw-4-exercise-4'),
-              ('The Torque, Example 2', 2, None, 'the-torque-example-2'),
-              ('Chain Rule and Partial Derivatives',
-               2,
-               None,
-               'chain-rule-and-partial-derivatives'),
               ('System of Isolated Particles',
                2,
                None,
@@ -121,6 +116,11 @@ doconce format html week6.do.txt --html_style=bootstrap --pygments_html_style=de
               ('Final expression', 2, None, 'final-expression'),
               ('Net Energy', 2, None, 'net-energy'),
               ('In Vector Notation', 2, None, 'in-vector-notation'),
+              ('The Torque, Example 2', 2, None, 'the-torque-example-2'),
+              ('Chain Rule and Partial Derivatives',
+               2,
+               None,
+               'chain-rule-and-partial-derivatives'),
               ('The Earth-Sun system', 2, None, 'the-earth-sun-system'),
               ("The Earth-Sun system, Newton's Laws",
                2,
@@ -234,8 +234,6 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="#the-torque-example-1-hw-4-exercise-4" style="font-size: 80%;"><b>The Torque, Example 1 (hw 4, exercise 4)</b></a></li>
      <!-- navigation toc: --> <li><a href="#the-torque-example-1-hw-4-exercise-4" style="font-size: 80%;"><b>The Torque, Example 1 (hw 4, exercise 4)</b></a></li>
      <!-- navigation toc: --> <li><a href="#the-torque-example-1-hw-4-exercise-4" style="font-size: 80%;"><b>The Torque, Example 1 (hw 4, exercise 4)</b></a></li>
-     <!-- navigation toc: --> <li><a href="#the-torque-example-2" style="font-size: 80%;"><b>The Torque, Example 2</b></a></li>
-     <!-- navigation toc: --> <li><a href="#chain-rule-and-partial-derivatives" style="font-size: 80%;"><b>Chain Rule and Partial Derivatives</b></a></li>
      <!-- navigation toc: --> <li><a href="#system-of-isolated-particles" style="font-size: 80%;"><b>System of Isolated Particles</b></a></li>
      <!-- navigation toc: --> <li><a href="#work-energy-momentum-and-conservation-laws" style="font-size: 80%;"><b>Work, Energy, Momentum and Conservation laws</b></a></li>
      <!-- navigation toc: --> <li><a href="#energy-conservation" style="font-size: 80%;"><b>Energy Conservation</b></a></li>
@@ -249,6 +247,8 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="#final-expression" style="font-size: 80%;"><b>Final expression</b></a></li>
      <!-- navigation toc: --> <li><a href="#net-energy" style="font-size: 80%;"><b>Net Energy</b></a></li>
      <!-- navigation toc: --> <li><a href="#in-vector-notation" style="font-size: 80%;"><b>In Vector Notation</b></a></li>
+     <!-- navigation toc: --> <li><a href="#the-torque-example-2" style="font-size: 80%;"><b>The Torque, Example 2</b></a></li>
+     <!-- navigation toc: --> <li><a href="#chain-rule-and-partial-derivatives" style="font-size: 80%;"><b>Chain Rule and Partial Derivatives</b></a></li>
      <!-- navigation toc: --> <li><a href="#the-earth-sun-system" style="font-size: 80%;"><b>The Earth-Sun system</b></a></li>
      <!-- navigation toc: --> <li><a href="#the-earth-sun-system-newton-s-laws" style="font-size: 80%;"><b>The Earth-Sun system, Newton's Laws</b></a></li>
      <!-- navigation toc: --> <li><a href="#the-earth-sun-system-rewriting-the-equations" style="font-size: 80%;"><b>The Earth-Sun system, rewriting the Equations</b></a></li>
@@ -598,54 +598,6 @@ $$
 <p>The torque is non-zero and angular momentum is not conserved.</p>
 
 <!-- !split -->
-<h2 id="the-torque-example-2" class="anchor">The Torque, Example 2 </h2>
-
-<p>One can write the torque about a given axis, which we will denote as \( \hat{z} \), in polar coordinates, where</p>
-
-$$
-\begin{eqnarray}
-x&=&r\sin\theta\cos\phi,~~y=r\sin\theta\cos\phi,~~z=r\cos\theta,
-\end{eqnarray}
-$$
-
-<p>to find the \( z \) component of the torque,</p>
-
-$$
-\begin{eqnarray}
-\tau_z&=&xF_y-yF_x\\
-\nonumber
-&=&-r\sin\theta\left\{\cos\phi \partial_y-\sin\phi \partial_x\right\}V(x,y,z).
-\end{eqnarray}
-$$
-
-
-<!-- !split -->
-<h2 id="chain-rule-and-partial-derivatives" class="anchor">Chain Rule and Partial Derivatives </h2>
-
-<p>One can use the chain rule to write the partial derivative w.r.t. \( \phi \) (keeping \( r \) and \( \theta \) fixed),</p>
-
-$$
-\begin{eqnarray}
-\partial_\phi&=&\frac{\partial x}{\partial\phi}\partial_x+\frac{\partial_y}{\partial\phi}\partial_y
-+\frac{\partial z}{\partial\phi}\partial_z\\
-\nonumber
-&=&-r\sin\theta\sin\phi\partial_x+\sin\theta\cos\phi\partial_y.
-\end{eqnarray}
-$$
-
-<p>Combining the two equations,</p>
-
-$$
-\begin{eqnarray}
-\tau_z&=&-\partial_\phi V(r,\theta,\phi).
-\end{eqnarray}
-$$
-
-<p>Thus, if the potential is independent of the azimuthal angle \( \phi \),
-there is no torque about the \( z \) axis and \( L_z \) is conserved.
-</p>
-
-<!-- !split -->
 <h2 id="system-of-isolated-particles" class="anchor">System of Isolated Particles </h2>
 
 <p>For a system of isolated particles, one can write</p>
@@ -939,6 +891,54 @@ you would have to determine which points, \( x,y,z \), the particles might
 reach in the trajectory, whereas in one dimension you can typically
 tell by simply seeing whether the kinetic energy is positive at every
 point between the old position and the new position.
+</p>
+
+<!-- !split -->
+<h2 id="the-torque-example-2" class="anchor">The Torque, Example 2 </h2>
+
+<p>One can write the torque about a given axis, which we will denote as \( \hat{z} \), in polar coordinates, where</p>
+
+$$
+\begin{eqnarray}
+x&=&r\sin\theta\cos\phi,~~y=r\sin\theta\sin\phi,~~z=r\cos\theta,
+\end{eqnarray}
+$$
+
+<p>to find the \( z \) component of the torque,</p>
+
+$$
+\begin{eqnarray}
+\tau_z&=&xF_y-yF_x\\
+\nonumber
+&=&-r\sin\theta\left\{\cos\phi \partial_y-\sin\phi \partial_x\right\}V(x,y,z).
+\end{eqnarray}
+$$
+
+
+<!-- !split -->
+<h2 id="chain-rule-and-partial-derivatives" class="anchor">Chain Rule and Partial Derivatives </h2>
+
+<p>One can use the chain rule to write the partial derivative w.r.t. \( \phi \) (keeping \( r \) and \( \theta \) fixed),</p>
+
+$$
+\begin{eqnarray}
+\partial_\phi&=&\frac{\partial x}{\partial\phi}\partial_x+\frac{\partial_y}{\partial\phi}\partial_y
++\frac{\partial z}{\partial\phi}\partial_z\\
+\nonumber
+&=&-r\sin\theta\sin\phi\partial_x+\sin\theta\cos\phi\partial_y.
+\end{eqnarray}
+$$
+
+<p>Combining the two equations,</p>
+
+$$
+\begin{eqnarray}
+\tau_z&=&-\partial_\phi V(r,\theta,\phi).
+\end{eqnarray}
+$$
+
+<p>Thus, if the potential is independent of the azimuthal angle \( \phi \),
+there is no torque about the \( z \) axis and \( L_z \) is conserved.
 </p>
 
 <!-- !split -->

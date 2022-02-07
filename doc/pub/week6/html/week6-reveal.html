@@ -540,63 +540,6 @@ $$
 </section>
 
 <section>
-<h2 id="the-torque-example-2">The Torque, Example 2 </h2>
-
-<p>One can write the torque about a given axis, which we will denote as \( \hat{z} \), in polar coordinates, where</p>
-
-<p>&nbsp;<br>
-$$
-\begin{eqnarray}
-x&=&r\sin\theta\cos\phi,~~y=r\sin\theta\cos\phi,~~z=r\cos\theta,
-\end{eqnarray}
-$$
-<p>&nbsp;<br>
-
-<p>to find the \( z \) component of the torque,</p>
-
-<p>&nbsp;<br>
-$$
-\begin{eqnarray}
-\tau_z&=&xF_y-yF_x\\
-\nonumber
-&=&-r\sin\theta\left\{\cos\phi \partial_y-\sin\phi \partial_x\right\}V(x,y,z).
-\end{eqnarray}
-$$
-<p>&nbsp;<br>
-</section>
-
-<section>
-<h2 id="chain-rule-and-partial-derivatives">Chain Rule and Partial Derivatives </h2>
-
-<p>One can use the chain rule to write the partial derivative w.r.t. \( \phi \) (keeping \( r \) and \( \theta \) fixed),</p>
-
-<p>&nbsp;<br>
-$$
-\begin{eqnarray}
-\partial_\phi&=&\frac{\partial x}{\partial\phi}\partial_x+\frac{\partial_y}{\partial\phi}\partial_y
-+\frac{\partial z}{\partial\phi}\partial_z\\
-\nonumber
-&=&-r\sin\theta\sin\phi\partial_x+\sin\theta\cos\phi\partial_y.
-\end{eqnarray}
-$$
-<p>&nbsp;<br>
-
-<p>Combining the two equations,</p>
-
-<p>&nbsp;<br>
-$$
-\begin{eqnarray}
-\tau_z&=&-\partial_\phi V(r,\theta,\phi).
-\end{eqnarray}
-$$
-<p>&nbsp;<br>
-
-<p>Thus, if the potential is independent of the azimuthal angle \( \phi \),
-there is no torque about the \( z \) axis and \( L_z \) is conserved.
-</p>
-</section>
-
-<section>
 <h2 id="system-of-isolated-particles">System of Isolated Particles </h2>
 
 <p>For a system of isolated particles, one can write</p>
@@ -959,6 +902,63 @@ you would have to determine which points, \( x,y,z \), the particles might
 reach in the trajectory, whereas in one dimension you can typically
 tell by simply seeing whether the kinetic energy is positive at every
 point between the old position and the new position.
+</p>
+</section>
+
+<section>
+<h2 id="the-torque-example-2">The Torque, Example 2 </h2>
+
+<p>One can write the torque about a given axis, which we will denote as \( \hat{z} \), in polar coordinates, where</p>
+
+<p>&nbsp;<br>
+$$
+\begin{eqnarray}
+x&=&r\sin\theta\cos\phi,~~y=r\sin\theta\sin\phi,~~z=r\cos\theta,
+\end{eqnarray}
+$$
+<p>&nbsp;<br>
+
+<p>to find the \( z \) component of the torque,</p>
+
+<p>&nbsp;<br>
+$$
+\begin{eqnarray}
+\tau_z&=&xF_y-yF_x\\
+\nonumber
+&=&-r\sin\theta\left\{\cos\phi \partial_y-\sin\phi \partial_x\right\}V(x,y,z).
+\end{eqnarray}
+$$
+<p>&nbsp;<br>
+</section>
+
+<section>
+<h2 id="chain-rule-and-partial-derivatives">Chain Rule and Partial Derivatives </h2>
+
+<p>One can use the chain rule to write the partial derivative w.r.t. \( \phi \) (keeping \( r \) and \( \theta \) fixed),</p>
+
+<p>&nbsp;<br>
+$$
+\begin{eqnarray}
+\partial_\phi&=&\frac{\partial x}{\partial\phi}\partial_x+\frac{\partial_y}{\partial\phi}\partial_y
++\frac{\partial z}{\partial\phi}\partial_z\\
+\nonumber
+&=&-r\sin\theta\sin\phi\partial_x+\sin\theta\cos\phi\partial_y.
+\end{eqnarray}
+$$
+<p>&nbsp;<br>
+
+<p>Combining the two equations,</p>
+
+<p>&nbsp;<br>
+$$
+\begin{eqnarray}
+\tau_z&=&-\partial_\phi V(r,\theta,\phi).
+\end{eqnarray}
+$$
+<p>&nbsp;<br>
+
+<p>Thus, if the potential is independent of the azimuthal angle \( \phi \),
+there is no torque about the \( z \) axis and \( L_z \) is conserved.
 </p>
 </section>
 
