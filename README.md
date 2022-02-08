@@ -157,11 +157,11 @@ AMS chapters 2 and 4 are very useful. 1st homework due January 21.
 - Solution third assignment at https://github.com/mhjensen/Physics321/tree/master/doc/Homeworks/hw3/solution
 
 ### Week 6, February 7-11, 2022
-- Monday 2/7: Conservation laws. Introducing the Velocity Verlet algorithm and the Earth Sun problem
+- Monday 2/7: Conservation laws and examples.
   - Video with subtitles at https://youtu.be/3CdlX6iDUnY
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesFebruary7.pdf
 - Wednesday 2/9: Examples of application of conservations laws (see chapter 4 of Taylor). 
-- Friday 2/11: Conservative forces and discussion of homework exercises. Problem solving. Deadline fourth homework.
+- Friday 2/11: The Earth-Sun problem and discussion of fourth homework. Deadline fourth homework.
 - Taylor chapter 4 is the essential reading. See also chapter 7 of Malthe-Sørenssen for exercise 6 in homework 4
 
 ### Week 7, February 14-18, 2022
