@@ -164,6 +164,8 @@ AMS chapters 2 and 4 are very useful. 1st homework due January 21.
   - Video with subtitles at https://youtu.be/d9Ibsy6y23Q
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesFebruary9.pdf
 - Friday 2/11: The Earth-Sun problem and discussion of fourth homework. Deadline fourth homework.
+  - Video of first part at https://youtu.be/9q_UUSXdIfA
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesFebruary11.pdf
 - Taylor chapter 4 is the essential reading. See also chapter 7 of Malthe-Sørenssen for exercise 6 in homework 4
 
 ### Week 7, February 14-18, 2022
