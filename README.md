@@ -177,7 +177,6 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 - Friday 2/18:  Working on the Earth-Sun problem and hw 5.
   - Reading suggestions: Taylor chapters 3 and 4 and lecture notes
 
-- Good reads are chapter 5 of Taylor on oscillations. 
 
 ### Week 8, February 21-25
 - Monday 2/21: Damped Oscillations, driven oscillations and resonances.
