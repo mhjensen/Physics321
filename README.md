@@ -169,10 +169,14 @@ AMS chapters 2 and 4 are very useful. 1st homework due January 21.
 - Taylor chapter 4 is the essential reading. See also chapter 7 of Malthe-Sørenssen for exercise 6 in homework 4
 
 ### Week 7, February 14-18, 2022
-- Monday 2/14: Oscillations, mathematical details, the sliding block and energy conservation
-- Wednesday 2/16:  Oscillations, damped motion and more mathematical details. Taylor chapter 5.1 and 5.2. 
-- Friday 2/18: Oscillations, resonances and more on damped motion. Deadline  fifth homework.
-- First midterm project, available Feb 21 and due March 4, 2022
+- Monday 2/14: Discussion of conditions for conservative forces and summing up our
+discussion on conservative forces. Discussion of potential surfaces and their interpretations.  Start discussion of harmonic oscillations.
+  - Reading suggestion: Taylor sections 4.6, 4.9, 4.10 and 5.1 and 5.2 on harmonic oscillations and lecture notes
+- Wednesday 2/16: The Earth-Sun problem and energy-conserving algorithms and how to encode in more efficient ways various algorithms for solving the equations of motion (Euler, Euler-Cromer and Velocity Verlet).
+  - Reading suggestions: Taylor section 4.8 and lecture notes
+- Friday 2/18:  Working on the Earth-Sun problem and hw 5.
+  - Reading suggestions: Taylor chapters 3 and 4 and lecture notes
+
 - Good reads are chapter 5 of Taylor on oscillations. 
 
 ### Week 8, February 21-25
@@ -180,7 +184,7 @@ AMS chapters 2 and 4 are very useful. 1st homework due January 21.
 - Wednesday 2/23:  Resonances
 - Friday 2/25: Resonances and start discussion of Fourier series. Discussion of first midterm.
 - Good reads are sections 5.4-5.7 of Taylor on oscillations. 
-
+- First midterm project, available Feb 21 and due March 4, 2022
 ### Week 9, February 28- March 4, 2022
 - Monday 2/28: Fourier series and oscillations. 
 - Wednesday 3/2: Discussions  of oscillations and time-dependent forces.  Discussion of first midterm.  
