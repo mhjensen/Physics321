@@ -43,11 +43,11 @@ doconce format html week7.do.txt --html_style=bootstrap --pygments_html_style=de
               ('Monday', 3, None, 'monday'),
               ('Wednesday', 3, None, 'wednesday'),
               ('Friday', 3, None, 'friday'),
-              ('Additional Material: Link between Line Integrals and '
-               'Conservative forces',
+              ('The curl of a force and link between Line Integrals and '
+               'conservative forces',
                2,
                None,
-               'additional-material-link-between-line-integrals-and-conservative-forces'),
+               'the-curl-of-a-force-and-link-between-line-integrals-and-conservative-forces'),
               ('Exactness and Independence of Path',
                2,
                None,
@@ -64,6 +64,27 @@ doconce format html week7.do.txt --html_style=bootstrap --pygments_html_style=de
                'work-energy-theorem-again'),
               ('Additional Theorem', 2, None, 'additional-theorem'),
               ('Summarizing', 2, None, 'summarizing'),
+              ('Graphing the potential energy and what we can learn from that',
+               2,
+               None,
+               'graphing-the-potential-energy-and-what-we-can-learn-from-that'),
+              ('Making the plot', 2, None, 'making-the-plot'),
+              ('Interpreting the results', 2, None, 'interpreting-the-results'),
+              ('Final interpretations', 2, None, 'final-interpretations'),
+              ('Harmonic Oscillator', 2, None, 'harmonic-oscillator'),
+              ('Harmonic Oscillator, deriving the Equations',
+               2,
+               None,
+               'harmonic-oscillator-deriving-the-equations'),
+              ('Analyzing the equations', 2, None, 'analyzing-the-equations'),
+              ('Checking the Solution', 2, None, 'checking-the-solution'),
+              ('Initial condition example',
+               2,
+               None,
+               'initial-condition-example'),
+              ('Math Digression', 2, None, 'math-digression'),
+              ('More Math Manipulations', 2, None, 'more-math-manipulations'),
+              ('Energy Conservation', 2, None, 'energy-conservation'),
               ('The Earth-Sun system', 2, None, 'the-earth-sun-system'),
               ("The Earth-Sun system, Newton's Laws",
                2,
@@ -143,7 +164,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="#monday" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Monday</a></li>
      <!-- navigation toc: --> <li><a href="#wednesday" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Wednesday</a></li>
      <!-- navigation toc: --> <li><a href="#friday" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Friday</a></li>
-     <!-- navigation toc: --> <li><a href="#additional-material-link-between-line-integrals-and-conservative-forces" style="font-size: 80%;"><b>Additional Material: Link between Line Integrals and Conservative forces</b></a></li>
+     <!-- navigation toc: --> <li><a href="#the-curl-of-a-force-and-link-between-line-integrals-and-conservative-forces" style="font-size: 80%;"><b>The curl of a force and link between Line Integrals and conservative forces</b></a></li>
      <!-- navigation toc: --> <li><a href="#exactness-and-independence-of-path" style="font-size: 80%;"><b>Exactness and Independence of Path</b></a></li>
      <!-- navigation toc: --> <li><a href="#differential-forms" style="font-size: 80%;"><b>Differential Forms</b></a></li>
      <!-- navigation toc: --> <li><a href="#in-vector-language" style="font-size: 80%;"><b>In Vector Language</b></a></li>
@@ -151,6 +172,18 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="#work-energy-theorem-again" style="font-size: 80%;"><b>Work-Energy Theorem again</b></a></li>
      <!-- navigation toc: --> <li><a href="#additional-theorem" style="font-size: 80%;"><b>Additional Theorem</b></a></li>
      <!-- navigation toc: --> <li><a href="#summarizing" style="font-size: 80%;"><b>Summarizing</b></a></li>
+     <!-- navigation toc: --> <li><a href="#graphing-the-potential-energy-and-what-we-can-learn-from-that" style="font-size: 80%;"><b>Graphing the potential energy and what we can learn from that</b></a></li>
+     <!-- navigation toc: --> <li><a href="#making-the-plot" style="font-size: 80%;"><b>Making the plot</b></a></li>
+     <!-- navigation toc: --> <li><a href="#interpreting-the-results" style="font-size: 80%;"><b>Interpreting the results</b></a></li>
+     <!-- navigation toc: --> <li><a href="#final-interpretations" style="font-size: 80%;"><b>Final interpretations</b></a></li>
+     <!-- navigation toc: --> <li><a href="#harmonic-oscillator" style="font-size: 80%;"><b>Harmonic Oscillator</b></a></li>
+     <!-- navigation toc: --> <li><a href="#harmonic-oscillator-deriving-the-equations" style="font-size: 80%;"><b>Harmonic Oscillator, deriving the Equations</b></a></li>
+     <!-- navigation toc: --> <li><a href="#analyzing-the-equations" style="font-size: 80%;"><b>Analyzing the equations</b></a></li>
+     <!-- navigation toc: --> <li><a href="#checking-the-solution" style="font-size: 80%;"><b>Checking the Solution</b></a></li>
+     <!-- navigation toc: --> <li><a href="#initial-condition-example" style="font-size: 80%;"><b>Initial condition example</b></a></li>
+     <!-- navigation toc: --> <li><a href="#math-digression" style="font-size: 80%;"><b>Math Digression</b></a></li>
+     <!-- navigation toc: --> <li><a href="#more-math-manipulations" style="font-size: 80%;"><b>More Math Manipulations</b></a></li>
+     <!-- navigation toc: --> <li><a href="#energy-conservation" style="font-size: 80%;"><b>Energy Conservation</b></a></li>
      <!-- navigation toc: --> <li><a href="#the-earth-sun-system" style="font-size: 80%;"><b>The Earth-Sun system</b></a></li>
      <!-- navigation toc: --> <li><a href="#the-earth-sun-system-newton-s-laws" style="font-size: 80%;"><b>The Earth-Sun system, Newton's Laws</b></a></li>
      <!-- navigation toc: --> <li><a href="#the-earth-sun-system-rewriting-the-equations" style="font-size: 80%;"><b>The Earth-Sun system, rewriting the Equations</b></a></li>
@@ -203,22 +236,22 @@ MathJax.Hub.Config({
 
 <p>Discussion of conditions for conservative forces and summing up our
 discussion on conservative forces. Discussion of potential surfaces
-and their interpretations.  Start discussion of hamronic oscillations.
+and their interpretations.  Start discussion of harmonic oscillations.
 </p>
 
-<p>and the Earth-Sun gravitional
-force example.  <b>Reading suggestion</b>: Taylor sections 4.3, 4.4 and 4.8.
-</p>
+<p><b>Reading suggestion</b>: Taylor sections 4.6, 4.9, 4.10 and 5.1 and 5.2 on harmonic oscillations.</p>
 <h3 id="wednesday" class="anchor">Wednesday </h3>
 
-<p>The Earth sun problem and energy-conserving algorithms and how to encode in more efficient ways</p>
+<p>The Earth-Sun problem and energy-conserving algorithms and how to encode in more efficient ways various algorithms for solving the equations of motion (Euler, Euler-Cromer and Velocity Verlet).</p>
 
-<p><b>Reading suggestions</b>: Taylor section 4.6, 4.8 and 4.9.</p>
+<p><b>Reading suggestions</b>: Taylor section 4.8 and these notes</p>
 <h3 id="friday" class="anchor">Friday </h3>
-<p>Working on the Earth-Sun,  conservative forces and potential energy and solution of hw 5.</p>
+<p>Working on the Earth-Sun,  conservative forces and potential energy and solution of hw 5.
+<b>Reading suggestions:</b> Taylor chapters 3 and 4 and these notes.
+</p>
 
 <!-- !split -->
-<h2 id="additional-material-link-between-line-integrals-and-conservative-forces" class="anchor">Additional Material: Link between Line Integrals and Conservative forces </h2>
+<h2 id="the-curl-of-a-force-and-link-between-line-integrals-and-conservative-forces" class="anchor">The curl of a force and link between Line Integrals and conservative forces </h2>
 
 <p>The concept of line integrals plays an important role in our discussion of energy conservation,
 our definition of potentials and conservative forces.
@@ -436,6 +469,312 @@ $$
 \boldsymbol{\nabla}\times\boldsymbol{F}=\boldsymbol{\nabla}\times\left(-\boldsymbol{\nabla}V(\boldsymbol{r})\right)=0.
 $$
 
+
+<!-- !split -->
+<h2 id="graphing-the-potential-energy-and-what-we-can-learn-from-that" class="anchor">Graphing the potential energy and what we can learn from that </h2>
+
+<p>This is taken from homework 4, exercises 5.</p>
+
+<p>A particle is under the influence of a force \( F=-kx+kx^3/\alpha^2 \), where \( k \) and \( \alpha \) are constants and \( k \) is positive.</p>
+
+<p>Determine \( V(x) \) and discuss the motion. It can be convenient here to
+make a sketch/plot of the potential as function of \( x \).
+</p>
+
+<p>We assume that the potential is zero at say \( x=0 \). Integrating the force from zero to \( x \) gives</p>
+$$
+V(x) = -\int_0^x F(x')dx'=\frac{kx^2}{2}-\frac{kx^4}{4\alpha^2}.
+$$
+
+
+<!-- !split -->
+<h2 id="making-the-plot" class="anchor">Making the plot </h2>
+
+<p>The following code plots the potential. We have chosen values of \( \alpha=k=1.0 \). Feel free to experiment with other values. We plot \( V(x) \) for a domain of \( x\in [-2,2] \). </p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">math</span>
+
+x0<span style="color: #666666">=</span> <span style="color: #666666">-2.0</span>
+xn <span style="color: #666666">=</span> <span style="color: #666666">2.1</span>
+Deltax <span style="color: #666666">=</span> <span style="color: #666666">0.1</span>
+alpha <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>
+k <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>
+<span style="color: #408080; font-style: italic">#set up arrays</span>
+x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>arange(x0,xn,Deltax)
+n <span style="color: #666666">=</span> np<span style="color: #666666">.</span>size(x)
+V <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+V <span style="color: #666666">=</span> <span style="color: #666666">0.5*</span>k<span style="color: #666666">*</span>x<span style="color: #666666">*</span>x<span style="color: #666666">-0.25*</span>k<span style="color: #666666">*</span>(x<span style="color: #666666">**4</span>)<span style="color: #666666">/</span>(alpha<span style="color: #666666">*</span>alpha)
+plt<span style="color: #666666">.</span>plot(x, V)
+plt<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">&quot;x&quot;</span>)
+plt<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">&quot;V&quot;</span>)
+plt<span style="color: #666666">.</span>show()
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- !split -->
+<h2 id="interpreting-the-results" class="anchor">Interpreting the results </h2>
+
+<p>From the plot here (with the chosen parameters) </p>
+<ol>
+<li> we see that with a given initial velocity we can overcome the potential energy barrier</li>
+</ol>
+<p>and leave the potential well for good.</p>
+<ol>
+<li> If the initial velocity is smaller (see next exercise) than a certain value, it will remain trapped in the potential well and oscillate back and forth around \( x=0 \). This is where the potential has its minimum value.</li> 
+<li> If the kinetic energy at \( x=0 \) equals the maximum potential energy, the object will oscillate back and forth between the minimum potential energy at \( x=0 \) and the turning points where the kinetic energy turns zero. These are the so-called non-equilibrium points.</li> 
+</ol>
+<!-- !split -->
+<h2 id="final-interpretations" class="anchor">Final interpretations </h2>
+
+<p>What happens when the energy of the particle is \( E=(1/4)k\alpha^2 \)? Hint: what is the maximum value of the potential energy?</p>
+
+<p>From the figure we see that
+the potential has a minimum at at \( x=0 \) then rises until \( x=\alpha \) before falling off again. The maximum
+potential, \( V(x\pm \alpha) = k\alpha^2/4 \). If the energy is higher, the particle cannot be contained in the
+well. The turning points are thus defined by \( x=\pm \alpha \). And from the previous plot you can easily see that this is the case (\( \alpha=1 \) in the abovementioned Python code). 
+</p>
+
+<!-- !split -->
+<h2 id="harmonic-oscillator" class="anchor">Harmonic Oscillator </h2>
+
+<p>The harmonic oscillator is omnipresent in physics. Although you may think 
+of this as being related to springs, it, or an equivalent
+mathematical representation, appears in just about any problem where a
+mode is sitting near its potential energy minimum. At that point,
+\( \partial_x V(x)=0 \), and the first non-zero term (aside from a
+constant) in the potential energy is that of a harmonic oscillator. In
+a solid, sound modes (phonons) are built on a picture of coupled
+harmonic oscillators, and in relativistic field theory the fundamental
+interactions are also built on coupled oscillators positioned
+infinitesimally close to one another in space. The phenomena of a
+resonance of an oscillator driven at a fixed frequency plays out
+repeatedly in atomic, nuclear and high-energy physics, when quantum
+mechanically the evolution of a state oscillates according to
+\( e^{-iEt} \) and exciting discrete quantum states has very similar
+mathematics as exciting discrete states of an oscillator.
+</p>
+
+<!-- !split -->
+<h2 id="harmonic-oscillator-deriving-the-equations" class="anchor">Harmonic Oscillator, deriving the Equations </h2>
+
+<p>The potential energy for a single particle as a function of its
+position \( x \) can be written as a Taylor expansion about some point
+\( b \) (we are considering a one-dimensional problem here)
+</p>
+
+$$
+\begin{equation}
+V(x)=V(b)+(x-b)\frac{dV(x)}{dx}\vert_{b}+\frac{1}{2!}(x-b)^2\frac{d^2V(x)}{dx^2}\vert_{b}
++\frac{1}{3!}(x-b)^3V(x)^{(3)}\vert_{b}+\cdots
+\label{_auto1}
+\end{equation}
+$$
+
+<p>If the position \( b \) is at the minimum of the resonance, the first two non-zero terms of the potential are</p>
+
+$$
+\begin{align}
+V(x)\approx& V(b)+\frac{1}{2!}(x-b)^2\frac{d^2V(x)}{dx^2}\vert_{b},
+\label{_auto2}\\
+\nonumber
+=&V(b)+\frac{1}{2}k(x-b)^2,~~~~k\equiv \frac{d^2V(x)}{dx^2}\vert_{b},\\
+\nonumber
+F=&-\frac{dV(x)}{dx}=-k(x-b).
+\end{align}
+$$
+
+
+<!-- !split -->
+<h2 id="analyzing-the-equations" class="anchor">Analyzing the equations </h2>
+
+<p>Our equation of motion is, with the only force given by the one-dimensional spring force,</p>
+
+$$
+m\frac{d^2x}{dt^2}=-kx.
+$$
+
+<p>Defining the natural frequency \( \omega_0^2=k/m \) we can rewrite this equation as</p>
+$$
+\frac{d^2x}{dt^2}=-\omega_0^2x.
+$$
+
+<p>We call this a natural frequency since it is defined by the constants that describe our system, the spring constant \( k \) and the mass \( m \) of the object.</p>
+
+<p>We can as usual split this equation of motion into one equation for the derivative of the velocity and </p>
+$$
+\frac{dv}{dt}=-\omega_0^2x,
+$$
+
+<p>and</p>
+$$
+\frac{dx}{dt}=v.
+$$
+
+<p>The solution to the equations of motion is given by</p>
+$$
+x(t) = A\cos{(\omega_0 t)}+B\sin{(\omega_0 t)},
+$$
+
+<p>where \( A \) and \( B \) are in general complex constants to be determined by the initial conditions.</p>
+
+<!-- !split -->
+<h2 id="checking-the-solution" class="anchor">Checking the Solution </h2>
+
+<p>Inserting the solution into the equation of motion we have</p>
+$$
+\frac{d^2x}{dt^2}=-\omega_0^2x, 
+$$
+
+<p>we have</p>
+$$
+\frac{d^2x}{dt^2} = -A\omega_0^2\cos{(\omega_0 t)}-B\omega_0^2\sin{(\omega_0 t)},
+$$
+
+<p>and the right-hand side is just \( -\omega_0^2 x(t) \). Thus, inserting the solution into the differential equation shows that we obtain the same original differential equation.</p>
+
+<!-- !split -->
+<h2 id="initial-condition-example" class="anchor">Initial condition example </h2>
+
+<p>Let us assume that our initial time $t_0=0$s and that the initial position \( x(t_0)=x_0 \) and that \( v_0=0 \) (we skip units here).
+This gives us
+</p>
+$$
+x(t=0) = x_0 =A,
+$$
+
+<p>and it leaves \( B \) undetermined. Taking the derivative of \( x \) we obtain the velocity</p>
+$$
+v(t) = -A\omega_0\sin{(\omega_0 t)}+B\omega_0\cos{(\omega_0 t)},
+$$
+
+<p>and with </p>
+$$
+v(t=0) = 0=B,
+$$
+
+<p>we see that our solution with these initial conditions becomes</p>
+$$
+x(t) = x_0\cos{(\omega_0 t)}.
+$$
+
+
+<!-- !split -->
+<h2 id="math-digression" class="anchor">Math Digression </h2>
+
+<p>From our first homework (exercise 1) we have that (we switch to \( \omega \) instead of \( \omega_0 \))</p>
+$$
+\cos{(\omega t)} = \sum_{n=0}^{\infty}\left(-1\right)^n \frac{(\omega t)^{2n}}{(2n)!},
+$$
+
+<p>and </p>
+$$
+\sin{(\omega t)} = \sum_{n=0}^{\infty}\left(-1\right)^n \frac{(\omega t)^{2n+1}}{(2n+1)!},
+$$
+
+<p>and that we could  write</p>
+$$
+\exp{(\pm\imath\omega t)} = \cos{(\omega t)}+\pm\imath\sin{(\omega t)}.
+$$
+
+<p>This means (show this) that we can write our solution in terms of new constant \( C \) and \( D \) as</p>
+
+$$
+x(t)=C\exp{(\imath\omega t)}+D\exp{(-\imath\omega t)}.
+$$
+
+<p>To see the relation between these two forms we note that we can write our original
+solution \( x(t) = A\cos{(\omega t)}+B\sin{(\omega t)} \) as
+</p>
+
+$$
+x(t) = (C+D)\cos{(\omega t)}+\imath(C-D)\sin{(\omega t)},
+$$
+
+<p>meaning that we have \( A=C+D \) and \( B=\imath(C-D) \).</p>
+
+<!-- !split -->
+<h2 id="more-math-manipulations" class="anchor">More Math Manipulations </h2>
+
+<p>We can also rewrite the solution in a simpler way.  We define a new
+constant \( A=\sqrt{B_1^2+B_2^2} \) which can be thought as the hypotenuse
+of a right-angle triangle with sides \( B_1 \) and \( B_2 \) and
+\( B_1=A\cos{(\delta)} \) and \( B_2=A\sin{(\delta)} \).
+</p>
+
+<p>We have then</p>
+$$
+x(t) = A\left[\frac{B_1}{A}\cos{(\omega t)}+\frac{B_2}{A}\sin{(\omega t)}\right],
+$$
+
+<p>which becomes</p>
+$$
+x(t) = A\left[\cos{(\delta)}\cos{(\omega t)}+\sin{(\delta)}\sin{(\omega t)}\right],
+$$
+
+<p>and using the trigonometric relations for addition of angles we have</p>
+$$
+x(t) = A\cos{(\omega t-\delta)},
+$$
+
+<p>where \( \delta \) is a so-called phase shift.</p>
+
+<!-- !split -->
+<h2 id="energy-conservation" class="anchor">Energy Conservation </h2>
+
+<p>Our energy is given by the kinetic energy and the harmonic oscillator potential energy, that is we have (for a one-dimensional harmonic oscillator potential)</p>
+$$
+E=\frac{1}{2}mv^2+\frac{1}{2}kx^2.
+$$
+
+<p>We assume that we have initial conditions \( v_0=0 \) (no kinetic energy) and \( x(t=0)=x_0 \).
+With these initial conditions we have
+</p>
+$$
+x(t) = x_0\cos{(\omega_0 t)},
+$$
+
+<p>and the velocity is given by</p>
+$$
+v(t) = -x_0\omega_0\sin{(\omega_0 t)},
+$$
+
+<p>The energy is conserved (as we have discussed before) and at \( t=t_0=0 \) we have thus</p>
+$$
+E_0=\frac{1}{2}kx_0^2.
+$$
+
+<p>At a time \( t\ne 0 \) we have</p>
+$$
+E(t)=\frac{1}{2}mv^2+\frac{1}{2}kx^2=\frac{1}{2}mx_0^2\omega_0^2\sin^2{(\omega_0 t)}+\frac{1}{2}kx_0^2\cos^2{(\omega_0 t)},
+$$
+
+<p>Recalling that \( \omega_0^2=k/m \) we get</p>
+$$
+E(t)=\frac{1}{2}kx_0^2\sin^2{(\omega_0 t)}+\frac{1}{2}kx_0^2\cos^2{(\omega_0 t)}=\frac{1}{2}kx_0^2=E_0.
+$$
+
+<p>Energy is thus conserved</p>
 
 <!-- !split -->
 <h2 id="the-earth-sun-system" class="anchor">The Earth-Sun system </h2>
@@ -762,7 +1101,7 @@ We have a differential equation
 $$
 \begin{equation}
 y'(t_i)=f(t_i,y_i)   
-\label{_auto1}
+\label{_auto3}
 \end{equation}
 $$
 
@@ -796,7 +1135,7 @@ at \( v_0 \). A simple variation is to determine \( x_{n+1} \) using the velocit
 $$
 \begin{equation} 
 y_{n+1}=y_{n}+ v_{n+1}+O(\Delta t^2)
-\label{_auto2}
+\label{_auto4}
 \end{equation}
 $$
 
@@ -804,7 +1143,7 @@ $$
 $$
 \begin{equation}
 v_{n+1}=v_{n}+(\Delta t) a_{n}+O(\Delta t^2).
-\label{_auto3}
+\label{_auto5}
 \end{equation}
 $$
 
