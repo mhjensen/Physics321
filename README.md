@@ -167,7 +167,7 @@ AMS chapters 2 and 4 are very useful. 1st homework due January 21.
   - Video of first part at https://youtu.be/9q_UUSXdIfA
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesFebruary11.pdf
 - Taylor chapter 4 is the essential reading. See also chapter 7 of Malthe-Sørenssen for exercise 6 in homework 4
-
+- Solution fourth assignment at https://github.com/mhjensen/Physics321/tree/master/doc/Homeworks/hw4/solution
 ### Week 7, February 14-18, 2022
 - Monday 2/14: Discussion of conditions for conservative forces and summing up our
 discussion on conservative forces. Discussion of potential surfaces and their interpretations.  Start discussion of harmonic oscillations.
