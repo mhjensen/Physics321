@@ -163,7 +163,7 @@ AMS chapters 2 and 4 are very useful. 1st homework due January 21.
 - Wednesday 2/9: Examples of application of conservations laws (see chapter 4 of Taylor).
   - Video with subtitles at https://youtu.be/d9Ibsy6y23Q
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesFebruary9.pdf
-- Friday 2/11: The Earth-Sun problem and discussion of fourth homework. Deadline fourth homework.
+- Friday 2/11: Discussion of fourth homework. Deadline fourth homework.
   - Video of first part at https://youtu.be/9q_UUSXdIfA
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesFebruary11.pdf
 - Taylor chapter 4 is the essential reading. See also chapter 7 of Malthe-Sørenssen for exercise 6 in homework 4
@@ -172,6 +172,8 @@ AMS chapters 2 and 4 are very useful. 1st homework due January 21.
 - Monday 2/14: Discussion of conditions for conservative forces and summing up our
 discussion on conservative forces. Discussion of potential surfaces and their interpretations.  Start discussion of harmonic oscillations.
   - Reading suggestion: Taylor sections 4.6, 4.9, 4.10 and 5.1 and 5.2 on harmonic oscillations and lecture notes
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesFebruary14.pdf
+  - Video of lecture at https://youtu.be/
 - Wednesday 2/16: The Earth-Sun problem and energy-conserving algorithms and how to encode in more efficient ways various algorithms for solving the equations of motion (Euler, Euler-Cromer and Velocity Verlet).
   - Reading suggestions: Taylor section 4.8 and lecture notes
 - Friday 2/18:  Working on the Earth-Sun problem and hw 5.
