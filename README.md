@@ -181,8 +181,8 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 
 
 ### Week 8, February 21-25
-- Monday 2/21: Damped Oscillations, driven oscillations and resonances.
-- Wednesday 2/23:  Resonances
+- Monday 2/21: Harmonic oscillations and Damped Oscillations. Reading suggestions Taylor 5.1-5.3
+- Wednesday 2/23:  Driven oscillations
 - Friday 2/25: Resonances and start discussion of Fourier series. Discussion of first midterm.
 - Good reads are sections 5.4-5.7 of Taylor on oscillations. 
 - First midterm project, available Feb 21 and due March 4, 2022
