@@ -71,9 +71,9 @@ Here you will find a general overview of the course, with learning outcomes, tea
 | _George McClure_ | mcclur97@msu.edu | Tuesday 2-3pm | https://msu.zoom.us/j/92372186803 (passcode: phy321) |
 
 
-| Additional Class |    Location |
+| Additional office hours|  Zoom link |
 |---|----|
-| TBA, if wanted | |
+| Tuesdays and Thursdays 9pm-10pm | https://msu.zoom.us/j/99175597088?pwd=NXVzTVczekphd21tUi9qYU94czhVQT09 Passcode: 334331|
 
 
 
