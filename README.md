@@ -180,7 +180,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Reading suggestions: Taylor section 4.8 and lecture notes
 - Friday 2/18:  Working on the Earth-Sun problem and hw 5.
   - Reading suggestions: Taylor chapters 3 and 4 and lecture notes
-  - Video of first ten minutes at 
+  - Video of first ten minutes at https://youtu.be/vGBrB4b-ILo
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesFebruary18.pdf  
 
 
