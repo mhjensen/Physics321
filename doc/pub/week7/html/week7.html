@@ -100,6 +100,32 @@ div.output_text {
     color: #000;
     line-height: 1.21429em;
 }
+.alert-text-small   { font-size: 80%;  }
+.alert-text-large   { font-size: 130%; }
+.alert-text-normal  { font-size: 90%;  }
+.alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:1px solid #bababa;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  color: #555;
+  background-color: #f8f8f8;
+  background-position: 10px 5px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 55px;
+  width: 75%;
+ }
+.alert-block {padding-top:14px; padding-bottom:14px}
+.alert-block > p, .alert-block > ul {margin-bottom:1em}
+.alert li {margin-top: 1em}
+.alert-block p+p {margin-top:5px}
+.alert-notice { background-image: url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_notice.png); }
+.alert-summary  { background-image:url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_summary.png); }
+.alert-warning { background-image: url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_warning.png); }
+.alert-question {background-image:url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_question.png); }
 div { text-align: justify; text-justify: inter-word; }
 .tab {
   padding-left: 1.5em;
@@ -189,7 +215,17 @@ div.toc p,a {
               ('Adding the Velocity-Verlet Method',
                2,
                None,
-               'adding-the-velocity-verlet-method')]}
+               'adding-the-velocity-verlet-method'),
+              ('Hints for exercises 2 and 3',
+               2,
+               None,
+               'hints-for-exercises-2-and-3'),
+              ('Exercise 2', 2, None, 'exercise-2'),
+              ('Exercise 3, more rockets', 2, None, 'exercise-3-more-rockets'),
+              ('Some more manipulations which have to be done',
+               2,
+               None,
+               'some-more-manipulations-which-have-to-be-done')]}
 end of tocinfo -->
 
 <body>
@@ -227,7 +263,7 @@ MathJax.Hub.Config({
 </center>
 <br>
 <center>
-<h4>Feb 16, 2022</h4>
+<h4>Feb 18, 2022</h4>
 </center> <!-- date -->
 <br>
 
@@ -250,9 +286,9 @@ and their interpretations.
 </ul>
 <p><b>Reading suggestions</b>: Taylor section 4.8 and these notes</p>
 <h3 id="friday-february-18">Friday February 18 </h3>
-<p>Working on the Earth-Sun problem and hw 5.
-<b>Reading suggestions:</b> Taylor chapters 3 and 4 and these notes.
-</p>
+<p>Working on the Earth-Sun problem and hw 5. Hints on various exercises.</p>
+
+<p><b>Reading suggestions:</b> Taylor chapters 3 and 4 and these notes.</p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="the-curl-of-a-force-and-link-between-line-integrals-and-conservative-forces">The curl of a force and link between Line Integrals and conservative forces </h2>
@@ -1053,6 +1089,97 @@ plt<span style="color: #666666">.</span>show()
 <p>You can easily generalize the calculation of the forces by defining a function
 which takes in as input the various variables. We leave this as a challenge to you.
 </p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="hints-for-exercises-2-and-3">Hints for exercises 2 and 3 </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Taylor exercise 3.11:</b>
+<p>
+<p>This exercise is discussed in Taylor's chapter 3.2.</p>
+
+<p>Consider the rocket of mass \( M \) moving with velocity \( v \). After a
+brief instant, the velocity of the rocket is \( v+\Delta v \) and the mass
+is \( M-\Delta M \). Momentum conservation gives
+</p>
+
+$$
+\begin{eqnarray*}
+Mv&=&(M-\Delta M)(v+\Delta v)+\Delta M(v-v_e)\\
+0&=&-\Delta Mv+M\Delta v+\Delta M(v-v_e),\\
+0&=&M\Delta v-\Delta Mv_e.
+\end{eqnarray*}
+$$
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="exercise-2">Exercise 2 </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>In the second step we ignored the term \( \Delta M\Delta v \) since we
+can assume it is small. The last equation gives
+</p>
+
+$$
+\begin{eqnarray}
+\Delta v&=&\frac{v_e}{M}\Delta M,\\
+\nonumber
+\frac{dv}{dt}dt&=&\frac{v_e}{M}dM.
+\end{eqnarray}
+$$
+
+<p>Here we let \( \Delta v\rightarrow dv \) and \( \Delta M\rightarrow dM \).
+We have also assumed that \( M(t) = M_0-kt \). 
+Integrating the expression with lower limits \( v_0=0 \) and \( M_0 \), one finds
+</p>
+
+$$
+\begin{eqnarray*}
+v&=&v_e\int_{M_0}^M \frac{dM'}{M'}\\
+v&=&v_e\ln(M/M_0)\\
+&=&v_e\ln[(M_0-k t)/M_0].
+\end{eqnarray*}
+$$
+
+<p>We have ignored gravity here. If we add gravity as the external force, we get when integrating an additional terms \( -gt \), that is</p>
+$$
+v(t)=v_e\ln[(M_0-k t)/M_0]-gt.
+$$
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="exercise-3-more-rockets">Exercise 3, more rockets </h2>
+
+<p>This is a continuation of the previous exercise and most of the relevant background material can be found in Taylor chapter 3.2. </p>
+
+<p>Taking the velocity from the previous exercise and integrating over time we find the height</p>
+$$
+y(t) = y(t_0=0)+\int_0^tv(t')dt'.
+$$
+
+<p>You need to insert \( v(t) \) from the previous exercise</p>
+
+<p>To do the integral over time we recall that \( M(t)=M_0-\Delta M t \). We assumed that \( \Delta M=k \) is a constant.
+We use that \( M_0-M=kt \) and assume that mass decreases by a constant \( k \) times time \( t \).
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="some-more-manipulations-which-have-to-be-done">Some more manipulations which have to be done </h2>
+
+<p>We will need  to compute an integral which goes like</p>
+$$
+\int_0^t \ln{M(t')}dt' = \int_0^t \ln{(M_0-kt')}dt'.
+$$
+
+<p>and defining the variable \( u=M_0-kt' \), with \( du=-kdt' \) and the new limits \( M_0 \) when \( t=0 \) and \( M_0-kt \) when time is equal to \( t \), we have</p>
+$$
+\int_0^t \ln{M(t')}dt' = \int_0^t \ln{(M_0-kt')}dt'=-\frac{1}{k}\int_{M_0}^{M_0-kt} \ln{(u)}du=-\frac{1}{k}\left[u\ln{(u)}-u\right]_{M_0}^{M_0-kt}.
+$$
+
 
 <!-- ------------------- end of main content --------------- -->
 <center style="font-size:80%">
