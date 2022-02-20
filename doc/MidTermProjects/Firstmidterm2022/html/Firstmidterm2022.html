@@ -118,16 +118,20 @@ div.toc p,a {
                3,
                None,
                'practicalities-about-homeworks-and-projects'),
-              ('Introduction to the first midterm project, total score 100 '
+              ('Introduction to the first midterm project, total score 140 '
                'points',
                3,
                None,
-               'introduction-to-the-first-midterm-project-total-score-100-points'),
+               'introduction-to-the-first-midterm-project-total-score-140-points'),
               ('Part 1, Particle in a one-dimensional  potential',
                3,
                None,
                'part-1-particle-in-a-one-dimensional-potential'),
               ('Part 2, two dimensions', 3, None, 'part-2-two-dimensions'),
+              ('Part 3, a potential with confinement',
+               3,
+               None,
+               'part-3-a-potential-with-confinement'),
               ('Classical Mechanics Extra Credit Assignment: Scientific '
                'Writing and attending Talks',
                3,
@@ -168,7 +172,7 @@ MathJax.Hub.Config({
 <!-- institution(s) -->
 <br>
 <center>
-<h4>Feb 19, 2022</h4>
+<h4>Feb 20, 2022</h4>
 </center> <!-- date -->
 <br>
 <h3 id="practicalities-about-homeworks-and-projects">Practicalities about  homeworks and projects </h3>
@@ -177,7 +181,7 @@ MathJax.Hub.Config({
 <li> You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. <b>Remember to write your name(s)</b>!</li>
 <li> How do I(we)  hand in?  You can hand in the paper and pencil exercises as a hand-written document. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical part should always be handed in as a jupyter notebook by the deadline at D2L.</li> 
 </ol>
-<h3 id="introduction-to-the-first-midterm-project-total-score-100-points">Introduction to the first midterm project, total score 100 points </h3>
+<h3 id="introduction-to-the-first-midterm-project-total-score-140-points">Introduction to the first midterm project, total score 140 points </h3>
 
 <p>The relevant reading background is</p>
 <ol>
@@ -209,7 +213,7 @@ $$
 <li> (5pt) Use the above potential to set up the total forces acting on the particle.  Find the acceleration acting on the particle. Is this a conservative force? Calculate also the <b>curl</b> of the force  \( \boldsymbol{\nabla}\times \boldsymbol{F} \) in order to validate your conclusion.</li> 
 <li> (5pt) Are linear momentum and angular momentum conserved? You need to show this by calculating the quantities.</li>
 <li> (10pt) Write a numerical algorithm to find the position and velocity of the particle at a time \( t+\Delta t \) given the position and velocity at a time \( t \). Here you can use either the standard forward Euler, or the Euler-Cromer or the Velocity Verlet algorithms.   You need to justify your choice here (hint: consider energy conservation).</li>
-<li> (10pt) Use now your program to find the position of the particle as function of time from \( t=0 \) to \( t=30 \) s using a mass  \( m=1.0 \) kg, the parameter \( V_0=1 \) J and \( d=0.1 \) m. Make a plot of three distinct positions with initial conditions \( x_0=d \) and \( v_0=0.5 \) m/s, \( x_0=d \) and \( v_0=1.5 \) m/s, and \( x_0=d \) and \( v_0=2.5 \) m/s. Plot also the velocity.  Perform calculations with and without the term \( x^4 \) in the potential. Do you see a difference? Compare and discuss the results obtained with the Velocity Verlet algorithm and the Euler-Cromer algorithm.</li> 
+<li> (10pt) Use now your program to find the position of the particle as function of time from \( t=0 \) to \( t=30 \) s using a mass  \( m=1.0 \) kg, the parameter \( V_0=1 \) J and \( d=0.1 \) m. Make a plot of three distinct positions with initial conditions \( x_0=d \) and \( v_0=0.5 \) m/s, \( x_0=d \) and \( v_0=1.5 \) m/s, and \( x_0=d \) and \( v_0=2.5 \) m/s. Plot also the velocity.  Perform calculations with and without the term \( x^4 \) in the potential. Do you see a difference?</li> 
 <li> (10pt) Describe the behavior of the particle for the three initial conditions  and sketch the motion in an energy diagram. Is energy conserved in your simulations?</li>
 </ol>
 <h3 id="part-2-two-dimensions">Part 2, two dimensions </h3>
@@ -227,6 +231,22 @@ $$
 <li> (10pt) Plot the motion of a particle starting in \( \boldsymbol{r}_0=(d,0) \) from \( t=0 \) s to \( t=20 \) s for the initial velocities \( \boldsymbol{v}_0=(0,0.5) \) m/s, \( \boldsymbol{v}_0=(0,1) \) m/s, and \( \boldsymbol{v}_0=(0,1.5) \) m/s. The parameters \( d \) and \( V_0 \) are as before.</li>
 <li> (5pt) Is energy conserved?</li> 
 <li> (10pt) Can you choose initial conditions \( r_0 \) and \( v_0 \) in such a manner that the particle moves in a circular orbit with a constant radius? If so, what initial conditions are those? Plot the motion for these conditions.</li>
+</ol>
+<h3 id="part-3-a-potential-with-confinement">Part 3, a potential with confinement </h3>
+
+<p>In the final part we are going to study a new potential. This potential contains the basic mathematical components needed to describe the confinement of quarks through a term \( \kappa x \). The aim of this exercise is to try to develop your intuition about the motion of physical objects due to specific forces. Then we will test our intution by running simulations. The potential, in one dimension only is defined for \( x\in [0.2,\infty) \).  It reads</p>
+
+$$
+V(x) = -\frac{\gamma}{x}+\frac{\delta}{x^2}+\kappa x,
+$$
+
+<p>where the last term is the one which ensures confinement of for example quarks.</p>
+
+<ol>
+<li> (5pt) Plot the potential for \( x\in [0.2,10] \) and set \( \gamma=10 \), \( \delta = 3 \) and \( \kappa =1 \). Find the value of \( x \) where the potential has a minimum.</li>
+<li> (5pt) Show that this potential leads to an energy conserving force by calculating the _curl_of the resulting force.</li>
+<li> (10pt) Assume now that at \( x=2 \) the particle moving in this potential is at rest, that is its velocity is zero. Find the total energy and describe what kind of motion you can expect. The point \( x=2 \) is a so-called turning point. Can you find the other turning point where the kinetic energy is zero. If you keep increasing \( x \), will the particle ever be able to escape the potential well?</li>
+<li> (20pt) Finally we will now change our program (using either the Euler-Cromer or the Velocity-Verlet method) and compute the position and the velocity as functions of time using the force computed from the above potential. Use as initial condition at time \( t=0 \) that the particle is \( x_0=2 \) and has initial velocity \( v_0=0 \). Test numerically that energy is conserved as function of time. And test that the particle moves according to your analysis from the previous exercise.</li>
 </ol>
 <h3 id="classical-mechanics-extra-credit-assignment-scientific-writing-and-attending-talks">Classical Mechanics Extra Credit Assignment: Scientific Writing and attending Talks </h3>
 
