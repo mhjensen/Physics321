@@ -187,6 +187,8 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 
 ### Week 8, February 21-25
 - Monday 2/21: Harmonic oscillations and Damped Oscillations. Reading suggestions Taylor 5.1-5.3
+  - Video of Lecture at https://youtu.be/hdDXRG6quaY
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesFebruary21.pdf    
 - Wednesday 2/23:  Driven oscillations
 - Friday 2/25: Resonances and start discussion of Fourier series. Discussion of first midterm.
 - Good reads are sections 5.4-5.7 of Taylor on oscillations. 
