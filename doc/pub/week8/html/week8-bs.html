@@ -69,6 +69,15 @@ doconce format html week8.do.txt --html_style=bootstrap --pygments_html_style=de
               ('Simple trick', 2, None, 'simple-trick'),
               ('Last step', 2, None, 'last-step'),
               ('Damped Oscillators', 2, None, 'damped-oscillators'),
+              ('Our Sliding Block Code', 2, None, 'our-sliding-block-code'),
+              ('Harmonic Oscillator, Sliding Block',
+               2,
+               None,
+               'harmonic-oscillator-sliding-block'),
+              ('Harmonic Oscillator, Sliding Block, Numerical Aspects',
+               2,
+               None,
+               'harmonic-oscillator-sliding-block-numerical-aspects'),
               ('Harmonic Oscillator,  Damping',
                2,
                None,
@@ -116,16 +125,7 @@ doconce format html week8.do.txt --html_style=bootstrap --pygments_html_style=de
               ('Resonance Widths; the $Q$ factor',
                2,
                None,
-               'resonance-widths-the-q-factor'),
-              ('Our Sliding Block Code', 2, None, 'our-sliding-block-code'),
-              ('Harmonic Oscillator, Sliding Block',
-               2,
-               None,
-               'harmonic-oscillator-sliding-block'),
-              ('Harmonic Oscillator, Sliding Block, Numerical Aspects',
-               2,
-               None,
-               'harmonic-oscillator-sliding-block-numerical-aspects')]}
+               'resonance-widths-the-q-factor')]}
 end of tocinfo -->
 
 <body>
@@ -178,6 +178,9 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="#simple-trick" style="font-size: 80%;"><b>Simple trick</b></a></li>
      <!-- navigation toc: --> <li><a href="#last-step" style="font-size: 80%;"><b>Last step</b></a></li>
      <!-- navigation toc: --> <li><a href="#damped-oscillators" style="font-size: 80%;"><b>Damped Oscillators</b></a></li>
+     <!-- navigation toc: --> <li><a href="#our-sliding-block-code" style="font-size: 80%;"><b>Our Sliding Block Code</b></a></li>
+     <!-- navigation toc: --> <li><a href="#harmonic-oscillator-sliding-block" style="font-size: 80%;"><b>Harmonic Oscillator, Sliding Block</b></a></li>
+     <!-- navigation toc: --> <li><a href="#harmonic-oscillator-sliding-block-numerical-aspects" style="font-size: 80%;"><b>Harmonic Oscillator, Sliding Block, Numerical Aspects</b></a></li>
      <!-- navigation toc: --> <li><a href="#harmonic-oscillator-damping" style="font-size: 80%;"><b>Harmonic Oscillator,  Damping</b></a></li>
      <!-- navigation toc: --> <li><a href="#harmonic-oscillator-solutions-of-damped-motion" style="font-size: 80%;"><b>Harmonic Oscillator,  Solutions of Damped Motion</b></a></li>
      <!-- navigation toc: --> <li><a href="#underdamped-beta-omega-0" style="font-size: 80%;"><b>Underdamped: \( \beta<\omega_0 \)</b></a></li>
@@ -190,9 +193,6 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="#alternative-derivation-for-driven-oscillators" style="font-size: 80%;"><b>Alternative Derivation for Driven Oscillators</b></a></li>
      <!-- navigation toc: --> <li><a href="#damped-and-driven-oscillator" style="font-size: 80%;"><b>Damped and Driven Oscillator</b></a></li>
      <!-- navigation toc: --> <li><a href="#resonance-widths-the-q-factor" style="font-size: 80%;"><b>Resonance Widths; the \( Q \) factor</b></a></li>
-     <!-- navigation toc: --> <li><a href="#our-sliding-block-code" style="font-size: 80%;"><b>Our Sliding Block Code</b></a></li>
-     <!-- navigation toc: --> <li><a href="#harmonic-oscillator-sliding-block" style="font-size: 80%;"><b>Harmonic Oscillator, Sliding Block</b></a></li>
-     <!-- navigation toc: --> <li><a href="#harmonic-oscillator-sliding-block-numerical-aspects" style="font-size: 80%;"><b>Harmonic Oscillator, Sliding Block, Numerical Aspects</b></a></li>
 
         </ul>
       </li>
@@ -221,7 +221,7 @@ MathJax.Hub.Config({
 </center>
 <br>
 <center>
-<h4>Feb 22, 2022</h4>
+<h4>Feb 23, 2022</h4>
 </center> <!-- date -->
 <br>
 
@@ -642,7 +642,152 @@ $$
 
 
 <!-- !split -->
+<h2 id="our-sliding-block-code" class="anchor">Our Sliding Block Code </h2>
+<p>Let us first study the numerical solution, thereafter we switch to the analytical analysis.</p>
+
+<p>We study first the case without additional friction term and scale our equation
+in terms of a dimensionless time \( \tau \).
+</p>
+
+<p>Let us remind ourselves about the differential equation we want to solve (the general case with damping due to friction)</p>
+$$
+m\frac{d^2x}{dt^2} + b\frac{dx}{dt}+kx(t) =0.
+$$
+
+<p>We divide by \( m \) and introduce \( \omega_0^2=\sqrt{k/m} \) and obtain</p>
+$$
+\frac{d^2x}{dt^2} + \frac{b}{m}\frac{dx}{dt}+\omega_0^2x(t) =0.
+$$
+
+
+<!-- !split -->
+<h2 id="harmonic-oscillator-sliding-block" class="anchor">Harmonic Oscillator, Sliding Block </h2>
+
+<p>Thereafter we introduce a dimensionless time \( \tau = t\omega_0 \) (check
+that the dimensionality is correct) and rewrite our equation as
+</p>
+
+$$
+\frac{d^2x}{d\tau^2} + \frac{b}{m\omega_0}\frac{dx}{d\tau}+x(\tau) =0,
+$$
+
+<p>which gives us</p>
+$$
+\frac{d^2x}{d\tau^2} + \frac{b}{m\omega_0}\frac{dx}{d\tau}+x(\tau) =0.
+$$
+
+
+<!-- !split -->
+<h2 id="harmonic-oscillator-sliding-block-numerical-aspects" class="anchor">Harmonic Oscillator, Sliding Block, Numerical Aspects </h2>
+
+<p>We then define \( \gamma = b/(2m\omega_0) \) and rewrite our equations as</p>
+$$
+\frac{d^2x}{d\tau^2} + 2\gamma\frac{dx}{d\tau}+x(\tau) =0.
+$$
+
+<p>This is the equation we will code below. The first version employs the Euler-Cromer method.</p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic"># Common imports</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">pandas</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">pd</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #666666">*</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">os</span>
+
+<span style="color: #408080; font-style: italic"># Where to save the figures and data files</span>
+PROJECT_ROOT_DIR <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Results&quot;</span>
+FIGURE_ID <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Results/FigureFiles&quot;</span>
+DATA_ID <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;DataFiles/&quot;</span>
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>exists(PROJECT_ROOT_DIR):
+    os<span style="color: #666666">.</span>mkdir(PROJECT_ROOT_DIR)
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>exists(FIGURE_ID):
+    os<span style="color: #666666">.</span>makedirs(FIGURE_ID)
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>exists(DATA_ID):
+    os<span style="color: #666666">.</span>makedirs(DATA_ID)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">image_path</span>(fig_id):
+    <span style="color: #008000; font-weight: bold">return</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>join(FIGURE_ID, fig_id)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">data_path</span>(dat_id):
+    <span style="color: #008000; font-weight: bold">return</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>join(DATA_ID, dat_id)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">save_fig</span>(fig_id):
+    plt<span style="color: #666666">.</span>savefig(image_path(fig_id) <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;.png&quot;</span>, <span style="color: #008000">format</span><span style="color: #666666">=</span><span style="color: #BA2121">&#39;png&#39;</span>)
+
+
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">pylab</span> <span style="color: #008000; font-weight: bold">import</span> plt, mpl
+plt<span style="color: #666666">.</span>style<span style="color: #666666">.</span>use(<span style="color: #BA2121">&#39;seaborn&#39;</span>)
+mpl<span style="color: #666666">.</span>rcParams[<span style="color: #BA2121">&#39;font.family&#39;</span>] <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;serif&#39;</span>
+
+DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.001</span>
+<span style="color: #408080; font-style: italic">#set up arrays </span>
+tfinal <span style="color: #666666">=</span> <span style="color: #666666">20</span> <span style="color: #408080; font-style: italic"># in dimensionless time</span>
+n <span style="color: #666666">=</span> ceil(tfinal<span style="color: #666666">/</span>DeltaT)
+<span style="color: #408080; font-style: italic"># set up arrays for t, v, and x</span>
+t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+v <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+<span style="color: #408080; font-style: italic"># Initial conditions as simple one-dimensional arrays of time</span>
+x0 <span style="color: #666666">=</span>  <span style="color: #666666">1.0</span> 
+v0 <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
+x[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> x0
+v[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> v0
+gamma <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
+<span style="color: #408080; font-style: italic"># Start integrating using Euler-Cromer&#39;s method</span>
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
+    <span style="color: #408080; font-style: italic"># Set up the acceleration</span>
+    <span style="color: #408080; font-style: italic"># Here you could have defined your own function for this</span>
+    a <span style="color: #666666">=</span>  <span style="color: #666666">-2*</span>gamma<span style="color: #666666">*</span>v[i]<span style="color: #666666">-</span>x[i]
+    <span style="color: #408080; font-style: italic"># update velocity, time and position</span>
+    v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>a
+    x[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> x[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>v[i<span style="color: #666666">+1</span>]
+    t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i] <span style="color: #666666">+</span> DeltaT
+<span style="color: #408080; font-style: italic"># Plot position as function of time    </span>
+fig, ax <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots()
+<span style="color: #408080; font-style: italic">#ax.set_xlim(0, tfinal)</span>
+ax<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;x[m]&#39;</span>)
+ax<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;t[s]&#39;</span>)
+ax<span style="color: #666666">.</span>plot(t, x)
+fig<span style="color: #666666">.</span>tight_layout()
+save_fig(<span style="color: #BA2121">&quot;BlockEulerCromer&quot;</span>)
+plt<span style="color: #666666">.</span>show()
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>When setting up the value of \( \gamma \) we see that for \( \gamma=0 \) we get the simple oscillatory motion with no damping.
+Choosing \( \gamma < 1 \) leads to the classical underdamped case with oscillatory motion, but where the motion comes to an end.
+</p>
+
+<p>Choosing \( \gamma =1 \) leads to what normally is called critical damping and \( \gamma> 1 \) leads to critical overdamping.
+Try it out and try also to change the initial position and velocity. Setting \( \gamma=1 \)
+yields a situation, as discussed above, where the solution approaches quickly zero and does not oscillate. With zero initial velocity it will never cross zero. 
+</p>
+
+<!-- !split -->
 <h2 id="harmonic-oscillator-damping" class="anchor">Harmonic Oscillator,  Damping </h2>
+
+<p>Let us now focus on the analytical solution.</p>
 
 <p>Just to make the solution a bit less messy, we rewrite this equation as</p>
 
@@ -1119,147 +1264,6 @@ Q\equiv \frac{\omega_0}{2\beta}.
 \end{equation}
 $$
 
-
-<!-- !split -->
-<h2 id="our-sliding-block-code" class="anchor">Our Sliding Block Code </h2>
-<p>Here we study first the case without additional friction term and scale our equation
-in terms of a dimensionless time \( \tau \).
-</p>
-
-<p>Let us remind ourselves about the differential equation we want to solve (the general case with damping due to friction)</p>
-$$
-m\frac{d^2x}{dt^2} + b\frac{dx}{dt}+kx(t) =0.
-$$
-
-<p>We divide by \( m \) and introduce \( \omega_0^2=\sqrt{k/m} \) and obtain</p>
-$$
-\frac{d^2x}{dt^2} + \frac{b}{m}\frac{dx}{dt}+\omega_0^2x(t) =0.
-$$
-
-
-<!-- !split -->
-<h2 id="harmonic-oscillator-sliding-block" class="anchor">Harmonic Oscillator, Sliding Block </h2>
-
-<p>Thereafter we introduce a dimensionless time \( \tau = t\omega_0 \) (check
-that the dimensionality is correct) and rewrite our equation as
-</p>
-
-$$
-\frac{d^2x}{d\tau^2} + \frac{b}{m\omega_0}\frac{dx}{d\tau}+x(\tau) =0,
-$$
-
-<p>which gives us</p>
-$$
-\frac{d^2x}{d\tau^2} + \frac{b}{m\omega_0}\frac{dx}{d\tau}+x(\tau) =0.
-$$
-
-
-<!-- !split -->
-<h2 id="harmonic-oscillator-sliding-block-numerical-aspects" class="anchor">Harmonic Oscillator, Sliding Block, Numerical Aspects </h2>
-
-<p>We then define \( \gamma = b/(2m\omega_0) \) and rewrite our equations as</p>
-$$
-\frac{d^2x}{d\tau^2} + 2\gamma\frac{dx}{d\tau}+x(\tau) =0.
-$$
-
-<p>This is the equation we will code below. The first version employs the Euler-Cromer method.</p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="cell border-box-sizing code_cell rendered">
-  <div class="input">
-    <div class="inner_cell">
-      <div class="input_area">
-        <div class="highlight" style="background: #f8f8f8">
-  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic"># Common imports</span>
-<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
-<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">pandas</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">pd</span>
-<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #666666">*</span>
-<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
-<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">os</span>
-
-<span style="color: #408080; font-style: italic"># Where to save the figures and data files</span>
-PROJECT_ROOT_DIR <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Results&quot;</span>
-FIGURE_ID <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Results/FigureFiles&quot;</span>
-DATA_ID <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;DataFiles/&quot;</span>
-
-<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>exists(PROJECT_ROOT_DIR):
-    os<span style="color: #666666">.</span>mkdir(PROJECT_ROOT_DIR)
-
-<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>exists(FIGURE_ID):
-    os<span style="color: #666666">.</span>makedirs(FIGURE_ID)
-
-<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>exists(DATA_ID):
-    os<span style="color: #666666">.</span>makedirs(DATA_ID)
-
-<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">image_path</span>(fig_id):
-    <span style="color: #008000; font-weight: bold">return</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>join(FIGURE_ID, fig_id)
-
-<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">data_path</span>(dat_id):
-    <span style="color: #008000; font-weight: bold">return</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>join(DATA_ID, dat_id)
-
-<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">save_fig</span>(fig_id):
-    plt<span style="color: #666666">.</span>savefig(image_path(fig_id) <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;.png&quot;</span>, <span style="color: #008000">format</span><span style="color: #666666">=</span><span style="color: #BA2121">&#39;png&#39;</span>)
-
-
-<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">pylab</span> <span style="color: #008000; font-weight: bold">import</span> plt, mpl
-plt<span style="color: #666666">.</span>style<span style="color: #666666">.</span>use(<span style="color: #BA2121">&#39;seaborn&#39;</span>)
-mpl<span style="color: #666666">.</span>rcParams[<span style="color: #BA2121">&#39;font.family&#39;</span>] <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;serif&#39;</span>
-
-DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.001</span>
-<span style="color: #408080; font-style: italic">#set up arrays </span>
-tfinal <span style="color: #666666">=</span> <span style="color: #666666">20</span> <span style="color: #408080; font-style: italic"># in dimensionless time</span>
-n <span style="color: #666666">=</span> ceil(tfinal<span style="color: #666666">/</span>DeltaT)
-<span style="color: #408080; font-style: italic"># set up arrays for t, v, and x</span>
-t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
-v <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
-x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
-<span style="color: #408080; font-style: italic"># Initial conditions as simple one-dimensional arrays of time</span>
-x0 <span style="color: #666666">=</span>  <span style="color: #666666">1.0</span> 
-v0 <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
-x[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> x0
-v[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> v0
-gamma <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
-<span style="color: #408080; font-style: italic"># Start integrating using Euler-Cromer&#39;s method</span>
-<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
-    <span style="color: #408080; font-style: italic"># Set up the acceleration</span>
-    <span style="color: #408080; font-style: italic"># Here you could have defined your own function for this</span>
-    a <span style="color: #666666">=</span>  <span style="color: #666666">-2*</span>gamma<span style="color: #666666">*</span>v[i]<span style="color: #666666">-</span>x[i]
-    <span style="color: #408080; font-style: italic"># update velocity, time and position</span>
-    v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>a
-    x[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> x[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>v[i<span style="color: #666666">+1</span>]
-    t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i] <span style="color: #666666">+</span> DeltaT
-<span style="color: #408080; font-style: italic"># Plot position as function of time    </span>
-fig, ax <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots()
-<span style="color: #408080; font-style: italic">#ax.set_xlim(0, tfinal)</span>
-ax<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;x[m]&#39;</span>)
-ax<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;t[s]&#39;</span>)
-ax<span style="color: #666666">.</span>plot(t, x)
-fig<span style="color: #666666">.</span>tight_layout()
-save_fig(<span style="color: #BA2121">&quot;BlockEulerCromer&quot;</span>)
-plt<span style="color: #666666">.</span>show()
-</pre>
-</div>
-      </div>
-    </div>
-  </div>
-  <div class="output_wrapper">
-    <div class="output">
-      <div class="output_area">
-        <div class="output_subarea output_stream output_stdout output_text">          
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<p>When setting up the value of \( \gamma \) we see that for \( \gamma=0 \) we get the simple oscillatory motion with no damping.
-Choosing \( \gamma < 1 \) leads to the classical underdamped case with oscillatory motion, but where the motion comes to an end.
-</p>
-
-<p>Choosing \( \gamma =1 \) leads to what normally is called critical damping and \( \gamma> 1 \) leads to critical overdamping.
-Try it out and try also to change the initial position and velocity. Setting \( \gamma=1 \)
-yields a situation, as discussed above, where the solution approaches quickly zero and does not oscillate. With zero initial velocity it will never cross zero. 
-</p>
 
 <!-- ------------------- end of main content --------------- -->
 </div>  <!-- end container -->
