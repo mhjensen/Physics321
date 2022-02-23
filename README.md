@@ -190,6 +190,8 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Video of Lecture at https://youtu.be/hdDXRG6quaY
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesFebruary21.pdf    
 - Wednesday 2/23:  Driven oscillations
+  - Video of Lecture at https://youtu.be/62jCazmBQS8
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesFebruary23.pdf    
 - Friday 2/25: Resonances and start discussion of Fourier series. Discussion of first midterm.
 - Good reads are sections 5.4-5.7 of Taylor on oscillations. 
 - First midterm project, available Feb 21 and due March 4, 2022
