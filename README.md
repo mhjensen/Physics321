@@ -189,17 +189,18 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 - Monday 2/21: Harmonic oscillations and Damped Oscillations. Reading suggestions Taylor 5.1-5.3
   - Video of Lecture at https://youtu.be/hdDXRG6quaY
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesFebruary21.pdf    
-- Wednesday 2/23:  Driven oscillations
+- Wednesday 2/23:  Damped  oscillations
   - Video of Lecture at https://youtu.be/62jCazmBQS8
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesFebruary23.pdf    
-- Friday 2/25: Resonances and start discussion of Fourier series. Discussion of first midterm.
+- Friday 2/25: Discussion of first midterm.
 - Good reads are sections 5.4-5.7 of Taylor on oscillations. 
 - First midterm project, available Feb 21 and due March 4, 2022
 ### Week 9, February 28- March 4, 2022
-- Monday 2/28: Fourier series and oscillations. 
+- Monday 2/28: Damped and driven oscillations
+  - Video of lecture at https://youtu.be/kt4LYyJc_aE
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesFebruary28.pdf    
 - Wednesday 3/2: Discussions  of oscillations and time-dependent forces.  Discussion of first midterm.  
-- Friday 3/4:  Discussion  of first midterm and summary of oscillations. Deadline for first midterm.
-- Good reads are sections 5.7-5.8 and  8.2-8.4 of Taylor and Lecture notes 
+- Friday 3/4:  Discussion  of first midterm. Deadline for first midterm.
 
 ### Week 10 Spring break, no lectures
 
