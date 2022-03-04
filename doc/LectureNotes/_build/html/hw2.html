@@ -1,0 +1,683 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10. PHY321: Classical Mechanics 1 &#8212; Classical mechanics</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="11. PHY321: Classical Mechanics 1" href="hw3.html" />
+    <link rel="prev" title="9. PHY321: Classical Mechanics 1" href="hw1.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Classical mechanics</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   PHY321 Classical Mechanics I, Michigan State University, Spring 2021
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  About the course
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="schedule.html">
+   Teaching schedule with links to material
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="teachers.html">
+   Teachers and Grading
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="textbooks.html">
+   Textbooks
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Introductory Material
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter1.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter2.html">
+   2. Classical Mechanics, Mathematics and Numerical background
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter3.html">
+   3. Simple Motion problems and Reminder on Newton’s Laws
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter4.html">
+   4. Work, Energy, Momentum and Conservation laws
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Advanced Topics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter5.html">
+   5. Harmonic Oscillations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter6.html">
+   6. Two-body problems, from the Gravitational Force to Two-body Scattering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter7.html">
+   7. Non-inertial Frames, Translation and Rotating Coordinate Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter8.html">
+   8. Variational Calculus and Lagrangian Formalism
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Weekly assignments, midterms and final projects with solutions
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="hw1.html">
+   9. PHY321: Classical Mechanics 1
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   10. PHY321: Classical Mechanics 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hw3.html">
+   11. PHY321: Classical Mechanics 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hw4.html">
+   12. PHY321: Classical Mechanics 1
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/hw2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practicalities-about-homeworks-and-projects">
+   10.1. Practicalities about  homeworks and projects
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1-10-pt-forces-discussion-questions-test-your-intuition">
+   10.2. Exercise 1 (10 pt), Forces, discussion questions, test your intuition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2-10-pt-setting-up-forces-newton-s-second-law">
+   10.3. Exercise 2 (10 pt), setting up forces, Newton’s second law
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-3-10-pt-space-shuttle-with-air-resistance">
+   10.4. Exercise 3 (10 pt), Space shuttle with air resistance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-4-15-pt-now-hitting-a-golf-ball">
+   10.5. Exercise 4 (15 pt), now hitting a golf ball
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-5-15-pt-hitting-a-puck-instead">
+   10.6. Exercise 5 (15 pt), hitting a puck instead
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-6-40pt-numerical-elements-moving-to-more-than-one-dimension">
+   10.7. Exercise 6 (40pt), Numerical elements, moving to more than one dimension
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <!-- HTML file automatically generated from DocOnce source (https://github.com/doconce/doconce/)
+doconce format html hw2.do.txt --no_mako -->
+<!-- dom:TITLE: PHY321: Classical Mechanics 1 --><div class="tex2jax_ignore mathjax_ignore section" id="phy321-classical-mechanics-1">
+<h1><span class="section-number">10. </span>PHY321: Classical Mechanics 1<a class="headerlink" href="#phy321-classical-mechanics-1" title="Permalink to this headline">¶</a></h1>
+<p><strong>Homework 2, due January 28 (Midnight)</strong></p>
+<p>Date: <strong>Jan 18, 2022</strong></p>
+<div class="section" id="practicalities-about-homeworks-and-projects">
+<h2><span class="section-number">10.1. </span>Practicalities about  homeworks and projects<a class="headerlink" href="#practicalities-about-homeworks-and-projects" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. <strong>Remember to write your name(s)</strong>!</p></li>
+<li><p>Homeworks are available 10 days  before the deadline.</p></li>
+<li><p>How do I(we)  hand in?  You can hand in the paper and pencil exercises as a  scanned  document. For this homework this applies to exercises 1-5. The scanned document should be uploaded to D2L. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise(s) (exercise 6 here) should always be handed in as a jupyter notebook by the deadline at D2L.</p></li>
+</ol>
+</div>
+<div class="section" id="exercise-1-10-pt-forces-discussion-questions-test-your-intuition">
+<h2><span class="section-number">10.2. </span>Exercise 1 (10 pt), Forces, discussion questions, test your intuition<a class="headerlink" href="#exercise-1-10-pt-forces-discussion-questions-test-your-intuition" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>1a (2pt) Single force. Can an object affected only by a single force have zero acceleration?</p></li>
+<li><p>1b (2pt) Zero velocity. If you throw a ball vertically it has zero velocity at its maximum point. Does it also have zero acceleration at this point?</p></li>
+<li><p>1c (3pt) Acceleration of gravity. You measure the acceleration of gravity in an elevator moving at a velocity of 9.8m/s downwards. What will you measure?</p></li>
+<li><p>1d (3pt) Air resistance. You throw a ball straight up and measure the velocity as it passes you on its way down. Will the velocity be larger, the same, or smaller if you did the same experiment in vacuum?</p></li>
+</ul>
+</div>
+<div class="section" id="exercise-2-10-pt-setting-up-forces-newton-s-second-law">
+<h2><span class="section-number">10.3. </span>Exercise 2 (10 pt), setting up forces, Newton’s second law<a class="headerlink" href="#exercise-2-10-pt-setting-up-forces-newton-s-second-law" title="Permalink to this headline">¶</a></h2>
+<p>Useful material here to read is</p>
+<ol class="simple">
+<li><p>Taylor chapters 1.3 and 1.4 and</p></li>
+<li><p>Malthe-Sørenssen chapters 5.1, 5.2 and 5.3</p></li>
+</ol>
+<p>A person jumps from an airplane, falling freely for several seconds before the person pulls the cord of her parachute and the parachute unfolds.</p>
+<ul class="simple">
+<li><p>2a (3pt)  Identify the forces acting on the parachuter and draw a free-body diagram of the parachuter before the person has pulled the cord.</p></li>
+<li><p>2b (3pt)  Identify the forces acting on the parachuter and draw a free-body diagram of the parachuter after the person has pulled the cord.</p></li>
+<li><p>2c (4pt)  Sketch the net force acting on the parachuter as a function of time, F(t).</p></li>
+</ul>
+</div>
+<div class="section" id="exercise-3-10-pt-space-shuttle-with-air-resistance">
+<h2><span class="section-number">10.4. </span>Exercise 3 (10 pt), Space shuttle with air resistance<a class="headerlink" href="#exercise-3-10-pt-space-shuttle-with-air-resistance" title="Permalink to this headline">¶</a></h2>
+<p>Useful material here to read is</p>
+<ol class="simple">
+<li><p>Malthe-Sørenssen chapters 5.1, 5.2 and 5.3</p></li>
+</ol>
+<p>During lift-off of the space shuttle the engines provide a force of <span class="math notranslate nohighlight">\(35\times 10^{6}\)</span> N. The mass of the shuttle is approximately
+<span class="math notranslate nohighlight">\(2\times 10^6\)</span> kg.</p>
+<ul class="simple">
+<li><p>3a (3pt) Draw a free-body diagram of the space shuttle immediately after lift-off.</p></li>
+<li><p>3b (3pt)  Find an expression for the acceleration of the space shuttle immediately after lift-off.</p></li>
+</ul>
+<p>Let us assume that the force from the engines is constant, and that the mass of the
+space shuttle does not change significantly over the first 20 s.</p>
+<ul class="simple">
+<li><p>3c (4pt) Find the velocity and position of the space shuttle after 20 s if you ignore air resistance.</p></li>
+</ul>
+</div>
+<div class="section" id="exercise-4-15-pt-now-hitting-a-golf-ball">
+<h2><span class="section-number">10.5. </span>Exercise 4 (15 pt), now hitting a golf ball<a class="headerlink" href="#exercise-4-15-pt-now-hitting-a-golf-ball" title="Permalink to this headline">¶</a></h2>
+<p>Useful material here to read is</p>
+<ol class="simple">
+<li><p>Taylor chapters 1.3-1.6 and</p></li>
+<li><p>Malthe-Sørenssen chapter 6.3-6.4 and 7.1-7.3</p></li>
+</ol>
+<p><strong>Taylor exercise 1.35</strong>. The formulae you obtain here will be useful for the numerical exercises below (see exercise 6 below).</p>
+</div>
+<div class="section" id="exercise-5-15-pt-hitting-a-puck-instead">
+<h2><span class="section-number">10.6. </span>Exercise 5 (15 pt), hitting a puck instead<a class="headerlink" href="#exercise-5-15-pt-hitting-a-puck-instead" title="Permalink to this headline">¶</a></h2>
+<p>Taylor exercise 1.38.</p>
+</div>
+<div class="section" id="exercise-6-40pt-numerical-elements-moving-to-more-than-one-dimension">
+<h2><span class="section-number">10.7. </span>Exercise 6 (40pt), Numerical elements, moving to more than one dimension<a class="headerlink" href="#exercise-6-40pt-numerical-elements-moving-to-more-than-one-dimension" title="Permalink to this headline">¶</a></h2>
+<p><strong>This exercise should be handed in as a jupyter-notebook</strong> at D2L. Remember to write your name(s).</p>
+<p>Last week we:</p>
+<ol class="simple">
+<li><p>Analytically mapped 1D motion over some time</p></li>
+<li><p>Gained practice with functions</p></li>
+<li><p>Reviewed vectors and matrices in Python</p></li>
+</ol>
+<p>This week we will:</p>
+<ol class="simple">
+<li><p>Practice using Python syntax and variable manipulation</p></li>
+<li><p>Utilize analytical solutions to create more refined functions</p></li>
+<li><p>Work in two, three or even higher dimensions</p></li>
+</ol>
+<p>This material will then serve as background for the numerical part of homework 3. The first part is a simple warm-up, with hints and suggestions you can use for the code to write below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="c1"># As usual, here are some useful packages we will be using. Feel free to use more and experiment as you wish.</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits</span> <span class="kn">import</span> <span class="n">mplot3d</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<p>In class (the falling baseball example) we used an  analytical expression for the height of a falling ball.
+In the first homework we used instead the position from experiment (Usain Bolt’s 100m record run) and stored this
+information with one-dimensional arrays in Python.</p>
+<p>Let us get some practice with this. The cell below creates two arrays,
+one containing the times to be analyzed and the other containing the <span class="math notranslate nohighlight">\(x\)</span>
+and <span class="math notranslate nohighlight">\(y\)</span> components of the position vector at each point in time.  This is a two-dimensional object. The
+second array is initially empty. Then we define  the initial
+position to be <span class="math notranslate nohighlight">\(x=2\)</span> and <span class="math notranslate nohighlight">\(y=1\)</span>. Take a look at the code and comments
+to get an understanding of what is happening. Feel free to play around with it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tf</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1">#length of value to be analyzed</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">.001</span> <span class="c1"># step sizes</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="n">tf</span><span class="p">,</span><span class="n">dt</span><span class="p">)</span> <span class="c1"># Creates an evenly spaced time array going from 0 to 3.999, with step sizes .001</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="mi">2</span><span class="p">))</span> <span class="c1"># Creates an empty array of [x,y] arrays (our vectors). Array size is same as the one for time.</span>
+<span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">]</span> <span class="c1"># This sets the inital position to be x = 2 and y = 1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below we are printing specific values of our array to see what is being
+stored where. The first number in the array <span class="math notranslate nohighlight">\(r[]\)</span> represents which array
+iteration we are looking at, while the number after the  represents
+which listed number in the array iteration we are getting back.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Prints the first array</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">,:])</span> <span class="c1"># Same as above, these commands are interchangeable</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2. 1.]
+[2. 1.]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">3999</span><span class="p">])</span> <span class="c1"># Prints the 4000th array</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0. 0.]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Prints the first value of the first array</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># Prints the second value of first array</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Prints the first value of all the arrays</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+[2. 0. 0. ... 0. 0. 0.]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then try running this cell. Notice how it gives an error since we did not implement a third dimension into our arrays</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">jy</span><span class="o">/</span><span class="n">g42mrgv128v34gnnhxwk9nrc0000gp</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_5844</span><span class="o">/</span><span class="mf">1390605958.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="ne">IndexError</span>: index 2 is out of bounds for axis 1 with size 2
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the cell below we want to manipulate the arrays.
+In this example we make each vector’s <span class="math notranslate nohighlight">\(x\)</span> component valued the same as their respective vector’s position in the iteration and the <span class="math notranslate nohighlight">\(y\)</span> value will be twice that value, except for  the first vector, which we have already set.
+That is we have <span class="math notranslate nohighlight">\(p[0] = [2,1], p[1] = [1,2], p[2] = [2,4], p[3] = [3,6], ...\)</span></p>
+<p>Here we set up an array for <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3999</span><span class="p">):</span>
+    <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">]</span>
+<span class="c1"># Checker cell to make sure your code is performing correctly</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3999</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="mf">2.0</span><span class="p">:</span>
+            <span class="n">c</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="mf">1.0</span><span class="p">:</span>
+            <span class="n">c</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="mf">1.0</span><span class="o">*</span><span class="n">i</span><span class="p">:</span>
+            <span class="n">c</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">i</span><span class="p">:</span>
+            <span class="n">c</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Success!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There is an error in your code&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You could also think of an alternative way of storing the above information. Feel free to explore how to store
+multidimensional objects.</p>
+<p>Last week we studied Usain Bolt’s 100m run and in class we studied a falling baseball. We made basic plots of the baseball
+moving in one dimension. This week we will be working with a three-dimensional variant. This will be useful for our next homeworks and numerical projects.</p>
+<p>Assume we have a soccer ball moving in three dimensions with the following trajectory:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(x(t) = 10t\cos{45^{\circ}} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y(t) = 10t\sin{45^{\circ}} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z(t) = 10t - \dfrac{9.81}{2}t^2\)</span></p></li>
+</ol>
+<p>Now let us create a three-dimensional (3D) plot using these equations. In the cell below
+we write the equations into their respective labels. We fix a final time in the code below.</p>
+<p>Important Concept: Numpy comes with many mathematical packages, some
+of them being the trigonometric functions sine, cosine, tangent. We
+are going to utilize these this week. Additionally, these functions
+work with radians, so we will also be using a function from Numpy that
+converts degrees to radians.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tf</span> <span class="o">=</span> <span class="mf">2.04</span>  <span class="c1"># The final time to be evaluated</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># The time step size</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">tf</span><span class="p">,</span><span class="n">dt</span><span class="p">)</span> <span class="c1"># The time array</span>
+<span class="n">theta_deg</span> <span class="o">=</span> <span class="mi">45</span> <span class="c1"># Degrees</span>
+<span class="n">theta_rad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">theta_deg</span><span class="p">)</span> <span class="c1"># Converts degrees to their radian counterparts</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">t</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta_rad</span><span class="p">)</span> <span class="c1"># Equation for our x component, utilizing np.cos() and our calculated radians</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">t</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta_rad</span><span class="p">)</span> <span class="c1"># Put the y equation here</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">t</span><span class="o">-</span><span class="mf">9.81</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="c1"># Put the z equation here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then we plot it</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Once you have entered the proper equations in the cell above, run this cell to plot in 3D</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>6a (8pt) How would you express <span class="math notranslate nohighlight">\(x(t)\)</span>, <span class="math notranslate nohighlight">\(y(t)\)</span>, <span class="math notranslate nohighlight">\(z(t)\)</span> for this problem as a single vector, <span class="math notranslate nohighlight">\(\boldsymbol{r}(t)\)</span>?</p></li>
+</ul>
+<p>Then run the code and plot using the array <span class="math notranslate nohighlight">\(r\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Run this code to plot using our r array </span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">r</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>6b (8pt) What do you think the benefits and/or disadvantages are from expressing our three equations as a single array/vector? This can be both from a computational and physics stand point. Use the <strong>Numpy</strong> package to also print the maximum <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span> components from <span class="math notranslate nohighlight">\(\boldsymbol{r}\)</span>.</p></li>
+</ul>
+<p>Complete Exercise 4 above (Taylor exercise 1.35) before moving further. (Recall that the golf ball was hit due east at an angle <span class="math notranslate nohighlight">\(\theta\)</span> with respect to the horizontal, and the coordinate directions are <span class="math notranslate nohighlight">\(x\)</span> measured east, <span class="math notranslate nohighlight">\(y\)</span> north, and <span class="math notranslate nohighlight">\(z\)</span> vertically up.)</p>
+<ul class="simple">
+<li><p>6c (8pt) What is the analytical solution for our theoretical golf ball’s position <span class="math notranslate nohighlight">\(\boldsymbol{r}(t)\)</span> over time from Exercise 4?  Also what is the formula for the time <span class="math notranslate nohighlight">\(t_f\)</span> when the golf ball hits the ground? Use this to develop a program with a function called for example Golfball that utilizes our analytical solutions. This program should take in an initial velocity and the angle <span class="math notranslate nohighlight">\(\theta\)</span> that the golfball was hit with in degrees. It should also produce  a 3D graph of the motion. You need also to find the maximum values for <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span>.</p></li>
+<li><p>6d (8pt) Given initial values of <span class="math notranslate nohighlight">\(v_i = 90 m/s\)</span>, <span class="math notranslate nohighlight">\(\theta = 30^{\circ}\)</span>, what would our maximum x, y and z components be?</p></li>
+<li><p>6e (8pt) Given initial values of <span class="math notranslate nohighlight">\(v_i = 45 m/s\)</span>, <span class="math notranslate nohighlight">\(\theta = 45^{\circ}\)</span>, what would our maximum x, y and z components be?</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="hw1.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">9. </span>PHY321: Classical Mechanics 1</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="hw3.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">11. </span>PHY321: Classical Mechanics 1</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Morten Hjorth-Jensen and Scott Pratt<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

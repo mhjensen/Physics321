@@ -1,0 +1,154 @@
+##  Teaching schedule with links to material
+
+###  Week 2, January 10-14, 2022
+
+- Monday 1/10: Introduction to the course and reminder  on vectors, space, time and motion, JRT chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). Python programming reminder, elements from CMSE 201 and how they are used in this course. Installing software (anaconda). See slides at https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). 
+AMS chapters 2 and 4 are very useful. 1st homework due January 21.
+Video of lecture at https://mediaspace.msu.edu/media/t/1_ronomlmv without subtitles. Lecture video with subtitles at https://youtu.be/v2kSDkzBXqM
+Handwritten notes from lecture at https://github.com/mhjensen/Physics321/tree/master/doc/HandWrittenNotes/Spring2022/NotesJanuary10.pdf
+- Wednesday 1/12: Forces and Newton's laws of motion. Free fall problems. JRT chapter 1.4 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). AMS chapters 2 and 4 are very useful.
+Video of lecture January 12 at https://mediaspace.msu.edu/media/t/1_yfmpmg57 without subtitles. Lecture video with subtitles at https://youtu.be/eAGq310mMVc
+Handwritten notes at https://github.com/mhjensen/Physics321/tree/master/doc/HandWrittenNotes/Spring2022/NotesJanuary12.pdf
+- Friday 1/14: Discussions and problem solving and discussion of first homework. The first ten minutes were recorded and the video can be found at https://mediaspace.msu.edu/media/t/1_7gxzfsr9
+
+###  Week 3, January 17-21, 2022
+
+- Monday 1/17: MLK day, no classes
+- Wednesday 1/19: Motion and forces, Newton's laws, examples.
+  - Handwritten notes from lecture at https://github.com/mhjensen/Physics321/tree/master/doc/HandWrittenNotes/Spring2022/NotesJanuary19.pdf
+  - Video of lecture January 19 (no subtitles) at https://mediaspace.msu.edu/media/t/1_amp782uz. Video with subtitles at https://youtu.be/csjr4c_6A7c
+- Friday 1/21: Motion and forces, Newton's laws, examples. Problems solving. Deadline first homework.
+  - Video of first 25 minutes at https://www.youtube.com/watch?v=gNbTBqOajus.
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesJanuary21.pdf from first 25 minutes
+- Good reads are Taylor chapters 1.4, 1.5, 1.6, 2.1-2.4 and AMS chapters 4.2 and  5 and and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week3/html/week3.html).
+
+
+### Week 4, January 24-28, 2022
+- Monday 1/24: We discuss various forces and their pertinent equations of motion. Recommended reading: Taylor 2.1-2.4. Malthe-Sørenssen chapter 6-7 contains many examples. We will cover in particular a falling object in two dimensions with linear air resistance relevant for homework 3.
+ - Video of lecture without subtitles at https://mediaspace.msu.edu/media/t/1_zjvy3kot
+ - Video with subtitles at https://youtu.be/2kMAmoYxOZQ
+ - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesJanuary24.pdf
+- Wednesday 1/26: We discuss other force models with examples such as the gravitational force and a spring force. See Malthe-Sørenssen chapter 7.3-7.5. We start also our discussion of energy and work, see Taylor 4.1
+ - Video of lecture without subtitles at https://mediaspace.msu.edu/media/t/1_2bque87y and subtitles at https://youtu.be/ZO7oC9PRXsw
+ - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesJanuary26.pdf
+- Friday 1/28:  We discuss several examples of energy and work. Taylor 4.1-4.3. Problem solving. Deadline second homework. 
+ - Video of lecture without subtitles at https://mediaspace.msu.edu/media/t/1_hvcxnd7s. and with subtitles at https://youtu.be/MGafb3QOkwI
+ - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesJanuary28.pdf
+
+### Week 5, January 31- February 4, 2022
+- Monday 1/31: Work energy theorem, conservative forces and momentum conservation, 4th homework available
+- Wednesday 2/2: Examples of applications of conservation laws, angular momentum conservation. 
+- Friday 2/4:  Conservation laws and further examples.  Problem solving. Deadline third homework.
+- Good reads are Taylor sections 3.1-3.5 and 4.1-4.3 and AMS chapters 10-14.
+
+### Week 6, February 7-11, 2022
+- Monday 2/7: Conservation laws. Introducing the Velocity Verlet algorithm and the Earth Sun problem
+- Wednesday 2/9: Examples of application of conservations laws (see chapter 4 of Taylor). 
+- Friday 2/11: Conservative forces, summary plus discussion of homeworks. Problem solving. Deadline fourth homework.
+
+
+### Week 7, February 14-18, 2022
+- Monday 2/14: Oscillations, mathematical details, the sliding block and energy conservation
+- Wednesday 2/16:  Oscillations, damped motion and more mathematical details. Taylor chapter 5.1 and 5.2. 
+- Friday 2/18: Oscillations, resonances and more on damped motion. Deadline  fifth homework.
+- First midterm project, available Feb 21 and due March 4, 2022
+- Good reads are chapter 5 of Taylor on oscillations. 
+
+### Week 8, February 21-25
+- Monday 2/21: Damped Oscillations, driven oscillations and resonances.
+- Wednesday 2/23:  Resonances
+- Friday 2/25: Resonances and start discussion of Fourier series. Discussion of first midterm.
+- Good reads are sections 5.4-5.7 of Taylor on oscillations. 
+
+### Week 9, February 28- March 4, 2022
+- Monday 2/28: Fourier series and oscillations. 
+- Wednesday 3/2: Discussions  of oscillations and time-dependent forces.  Discussion of first midterm.  
+- Friday 3/4:  Discussion  of first midterm and summary of oscillations. Deadline for first midterm.
+- Good reads are sections 5.7-5.8 and  8.2-8.4 of Taylor and Lecture notes 
+
+### Week 10 Spring break, no lectures
+
+### Week 11, March  14-18, 2022
+- Monday 3/14:  Gravity and central force problems, center of mass coordinates. Lecture notes and Taylor chapter 8. 
+- Wednesday 3/16: Gravity and central force problems. 
+- Friday 3/18:  Gravity and central force problems, centrifugal barriers. Deadline sixth homework.
+
+### Week 12, March 21-25, 2022
+- Monday 3/21: Gravity and central force problems, elliptical orbits and Kepler's laws
+- Wednesday 3/23: Gravity and central force problems, elliptical orbits. 
+- Friday 3/25:  Elliptical orbits, examples and two-body scattering problems.  Deadline seventh homework.
+
+
+### Week 13, March 28-April 1, 2020
+- Monday 3/28: Central force problems, summary and discussion of two-body scattering problems. 
+- Wednesday 3/30: Two-body scattering. Taylor chapter 14 covers parts of the material.  
+- Friday 4/1:  Two-body scattering (Taylor chapter 14).  Discussion of second midterm
+
+### Week 14, April 4-8, 2022
+- Monday 4/4: Wrapping up two-body scattering and begin Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. 
+- Wednesday 4/6: Variational Calculus, chapter 6 of Taylor. 
+- Friday 4/8: Variational calculus and the Euler-Lagrange equations. Deadline second midterm
+
+### Week 15, April  11-15, 2022
+- Monday 4/11: Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. 
+- Wednesday 4/14: Variational calculus and the Euler-Lagrange equations, chapters 6-7 of Taylor and lecture notes.  
+- Friday 4/16: Euler-Lagrange equations and Lagrangian formalism. Taylor chapters 6-7 and lecture notes. Deadline eigth homework.
+
+
+### Week 16, April 18-24, 2022
+- Monday 4/18:  Langrangian formalism, discussion of examples. Taylor chapters 6 and 7. 
+- Wednesday 4/20: Lagrangian formalism, examples such as the linear chain and double pendulum. 
+- Friday 4/22:  TBA. Deadline ninth homework.
+
+### Week 17, April 25- April 29, 2022
+- Monday 4/25:  TBA
+- Wednesday 4/27: TBA
+- Friday 4/29:  Summary of course and discussion of final exam project. Additional homework ten.
+
+
+### Week 18, May 2-6, 2022
+Depending on your availability, we can have at least two sessions in order to discuss the final project.
+- Final Exam:  The final exam will be a project similar to the two midterm projects. Deadline May 6.
+
+
+## Learning outcomes
+
+After the course you should:
+
+- be able to analyze forces that act on objects, apply Newton’s laws to determine the equations of motion, and solve these analytically and numerically,
+- Know about  inertial frames and their relation to accelerating and rotating frames (non-inertial frames)
+- Know about forces, work, energy, angular momentum, linear momentum and conservation laws
+- Know about  various types of motions, falling objects, objects moving in various fields
+- Know how to analyze energy diagrams and defining effective potential
+- Have knowledge about small oscillations, Harmonic oscillator potential and equations of motion
+- Have knowledge about transformation of variables that allow for analytical solutions, example two-body problems
+- Have knowledge about central forces and two-body problems, center-of-mass and relative coordinates as reference frame
+- Have knowledge about two-body scattering problems, classical scattering cross section
+- Have knowledge about Variational calculus and Lagrangian formalism
+- Know how to derive the equations of motion from the Lagrangian formalism with and without constraints (Lagrangian multipliers)
+
+To solve many of these problems, we have through different projects and weekly exercises studied many systems numerically, from falling objects with and without friction/air resistance, small oscillations (harmonic oscillator), gravitational problems and other central force problems, rotations and the classical pendulum. To solve these systems, we have applied different algorithms for solving differential equations. These are
+- Euler-Cromer and Velocity-Verlet as energy conserving algorithms (time-independent forces)
+- Runge-Kutta family of algorithms for time-dependent forces
+We have also, in connection with for example the work-energy theorem studied methods for evaluating integrals. These are
+- Numerical integration using the Trapezoidal, midpoint and Simpson's rule.
+
+You should also have acquired skills in structuring a numerical project, as well as having developed a critical understanding of the pros and cons of the methods and an understanding of their limits and what can go wrong.  Computing means solving scientific problems using computers. It covers numerical as well as symbolic computing. Computing is also about developing an understanding of the scientific process by enhancing algorithmic thinking when solving problems.  Computing competence has
+always been a central part of the science and engineering education.
+In particular, some of the competences that are important in the development of your own understanding of
+computations, we would like to emphasize
+- derivation, verification, and implementation of algorithms
+- understanding what can go wrong with algorithms
+- overview of important, known algorithms for solving mechanics problems (To a extent large differential equations and integration)
+- understanding how algorithms are used to solve mathematical problems
+- Making science (your results) reproducible
+- algorithmic thinking for gaining deeper insights about scientific problems
+
+
+
+
+
+
+
+
+

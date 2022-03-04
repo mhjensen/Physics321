@@ -1,0 +1,1824 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. Classical Mechanics, Mathematics and Numerical background &#8212; Classical mechanics</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3. Simple Motion problems and Reminder on Newton’s Laws" href="chapter3.html" />
+    <link rel="prev" title="1. Introduction" href="chapter1.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Classical mechanics</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   PHY321 Classical Mechanics I, Michigan State University, Spring 2021
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  About the course
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="schedule.html">
+   Teaching schedule with links to material
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="teachers.html">
+   Teachers and Grading
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="textbooks.html">
+   Textbooks
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Introductory Material
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter1.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. Classical Mechanics, Mathematics and Numerical background
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter3.html">
+   3. Simple Motion problems and Reminder on Newton’s Laws
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter4.html">
+   4. Work, Energy, Momentum and Conservation laws
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Advanced Topics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter5.html">
+   5. Harmonic Oscillations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter6.html">
+   6. Two-body problems, from the Gravitational Force to Two-body Scattering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter7.html">
+   7. Non-inertial Frames, Translation and Rotating Coordinate Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter8.html">
+   8. Variational Calculus and Lagrangian Formalism
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Weekly assignments, midterms and final projects with solutions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="hw1.html">
+   9. PHY321: Classical Mechanics 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hw2.html">
+   10. PHY321: Classical Mechanics 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hw3.html">
+   11. PHY321: Classical Mechanics 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hw4.html">
+   12. PHY321: Classical Mechanics 1
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/chapter2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   2.1. Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reminder-on-vectors-and-other-mathematical-quantities">
+   2.2. Reminder on vectors and other mathematical quantities
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scalars-vectors-and-matrices">
+   2.3. Scalars, Vectors and Matrices
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#polar-coordinates">
+     2.3.1. Polar Coordinates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unit-vectors">
+     2.3.2. Unit Vectors
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vector-operations-scalar-product-or-dot-product">
+   2.4. Vector Operations, Scalar Product (or dot product)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#digression-linear-algebra-notation-for-vectors">
+   2.5. Digression, Linear Algebra Notation for Vectors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vector-product-or-cross-product-of-vectors-boldsymbol-a-and-boldsymbol-b">
+   2.6. Vector Product (or cross product) of vectors
+   <span class="math notranslate nohighlight">
+    \(\boldsymbol{a}\)
+   </span>
+   and
+   <span class="math notranslate nohighlight">
+    \(\boldsymbol{b}\)
+   </span>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pseudo-vectors">
+     2.6.1. Pseudo-vectors
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#differentiation-of-a-vector-with-respect-to-a-scalar">
+   2.7. Differentiation of a vector with respect to a scalar
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gradient-operator-nabla">
+     2.7.1. Gradient operator
+     <span class="math notranslate nohighlight">
+      \(\nabla\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-curl">
+     2.7.2. The curl
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-laplacian">
+     2.7.3. The Laplacian
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-identities">
+     2.7.4. Some identities
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-useful-relations">
+     2.7.5. More useful relations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gauss-s-theorem">
+     2.7.6. Gauss’s Theorem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#and-stokes-s-theorem">
+     2.7.7. and Stokes’s Theorem
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-matrix-features">
+   2.8. Basic Matrix Features
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-famous-matrices">
+     2.8.1. Some famous Matrices
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rotations">
+   2.9. Rotations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tensors">
+     2.9.1. Tensors
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numerical-elements">
+   2.10. Numerical Elements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-well-known-example-to-illustrate-many-of-the-above-concepts">
+   2.11. A well-known example to illustrate many of the above concepts
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analyzing-the-above-example">
+     2.11.1. Analyzing the above example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-practicalities-software-and-needed-installations">
+   2.12. Python practicalities, Software and needed installations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-installers">
+     2.12.1. Python installers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#useful-python-libraries">
+   2.13. Useful Python libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numpy-examples-and-important-matrix-and-vector-handling-packages">
+   2.14. Numpy examples and Important Matrix and vector handling packages
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matrices-in-python">
+     2.14.1. Matrices in Python
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#meet-the-pandas">
+     2.14.2. Meet the Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-git-and-github-gitlab-and-similar">
+   2.15. Introduction to Git and GitHub/GitLab and similar
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#useful-git-and-github-links">
+     2.15.1. Useful Git and GitHub links
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="classical-mechanics-mathematics-and-numerical-background">
+<h1><span class="section-number">2. </span>Classical Mechanics, Mathematics and Numerical background<a class="headerlink" href="#classical-mechanics-mathematics-and-numerical-background" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2><span class="section-number">2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Classical mechanics is a topic which has been taught intensively over
+several centuries. It is, with its many variants and ways of
+presenting the educational material, normally the first <strong>real</strong> physics
+course many of us meet and it lays the foundation for further physics
+studies. Many of the equations and ways of reasoning about the
+underlying laws of motion and pertinent forces, shape our approaches and understanding
+of the scientific method and discourse, as well as the way we develop our insights
+and deeper understanding about physical systems.</p>
+<p>There is a wealth of
+well-tested (from both a physics point of view and a pedagogical
+standpoint) exercises and problems which can be solved
+analytically. However, many of these problems represent idealized and
+less realistic situations.  The large majority of these problems are
+solved by paper and pencil and are traditionally aimed
+at what we normally refer to as continuous models from which we may find an analytical solution.  As a consequence,
+when teaching mechanics, it implies that we can seldomly venture beyond an idealized case
+in order to develop our understandings and insights about the
+underlying forces and laws of motion.</p>
+<p>We aim at changing this here by introducing throughout the course what
+we will call a <strong>computational path</strong>, where with computations we mean
+solving scientific problems with all possible tools and means, from
+plain paper an pencil exercises, via symbolic calculations to writing
+a code and running a program to solve a specific
+problem. Mathematically this normally means that we move from a
+continuous problem to a discretized one. This appproach enables us to
+solve a much broader class of problems.
+In mechanics this means, since we often rephrase the physical problems in terms of differential equations, that we can in most settings reuse the same program with some minimal changes.</p>
+</div>
+<div class="section" id="reminder-on-vectors-and-other-mathematical-quantities">
+<h2><span class="section-number">2.2. </span>Reminder on vectors and other mathematical quantities<a class="headerlink" href="#reminder-on-vectors-and-other-mathematical-quantities" title="Permalink to this headline">¶</a></h2>
+<p>Our studies will start with the motion of different types of objects
+such as a falling ball, a runner, a bicycle etc etc. It means that an
+object’s position in space varies with time.
+In order to study such systems we need to define</p>
+<ul class="simple">
+<li><p>choice of origin</p></li>
+<li><p>choice of the direction of the axes</p></li>
+<li><p>choice of positive direction (left-handed or right-handed system of reference)</p></li>
+<li><p>choice of units and dimensions</p></li>
+</ul>
+<p>These choices lead to some important questions such as</p>
+<ul class="simple">
+<li><p>is the  physics of a system independent of the origin of the axes?</p></li>
+<li><p>is the  physics independent of the directions of the axes, that is are there privileged axes?</p></li>
+<li><p>is the physics independent of the orientation of system?</p></li>
+<li><p>is the physics independent of the scale of the length?</p></li>
+</ul>
+<p>Throughout this course we will use the standardized SI units. The standard unit for length is thus one meter 1m, for mass
+one kilogram 1kg, for time one second 1s, for force one Newton 1kgm/s<span class="math notranslate nohighlight">\(^2\)</span> and for energy 1 Joule 1kgm<span class="math notranslate nohighlight">\(^2\)</span>s<span class="math notranslate nohighlight">\(^{-2}\)</span>.</p>
+<p>We will use the following notations for various variables (vectors are always boldfaced in these lecture notes):</p>
+<ul class="simple">
+<li><p>position <span class="math notranslate nohighlight">\(\boldsymbol{r}\)</span>, in one dimention we will normally just use <span class="math notranslate nohighlight">\(x\)</span>,</p></li>
+<li><p>mass <span class="math notranslate nohighlight">\(m\)</span>,</p></li>
+<li><p>time <span class="math notranslate nohighlight">\(t\)</span>,</p></li>
+<li><p>velocity <span class="math notranslate nohighlight">\(\boldsymbol{v}\)</span> or just <span class="math notranslate nohighlight">\(v\)</span> in one dimension,</p></li>
+<li><p>acceleration <span class="math notranslate nohighlight">\(\boldsymbol{a}\)</span> or just <span class="math notranslate nohighlight">\(a\)</span> in one dimension,</p></li>
+<li><p>momentum <span class="math notranslate nohighlight">\(\boldsymbol{p}\)</span> or just <span class="math notranslate nohighlight">\(p\)</span> in one dimension,</p></li>
+<li><p>kinetic energy <span class="math notranslate nohighlight">\(K\)</span>,</p></li>
+<li><p>potential energy <span class="math notranslate nohighlight">\(V\)</span> and</p></li>
+<li><p>frequency <span class="math notranslate nohighlight">\(\omega\)</span>.</p></li>
+</ul>
+<p>More variables will be defined as we need them.</p>
+<p>It is also important to keep track of dimensionalities. Don’t mix this
+up with a chosen unit for a given variable. We mark the dimensionality
+in these lectures as <span class="math notranslate nohighlight">\([a]\)</span>, where <span class="math notranslate nohighlight">\(a\)</span> is the quantity we are
+interested in. Thus</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\([\boldsymbol{r}]=\)</span> length</p></li>
+<li><p><span class="math notranslate nohighlight">\([m]=\)</span> mass</p></li>
+<li><p><span class="math notranslate nohighlight">\([K]=\)</span> energy</p></li>
+<li><p><span class="math notranslate nohighlight">\([t]=\)</span> time</p></li>
+<li><p><span class="math notranslate nohighlight">\([\boldsymbol{v}]=\)</span> length over time</p></li>
+<li><p><span class="math notranslate nohighlight">\([\boldsymbol{a}]=\)</span> length over time squared</p></li>
+<li><p><span class="math notranslate nohighlight">\([\boldsymbol{p}]=\)</span> mass times length over time</p></li>
+<li><p><span class="math notranslate nohighlight">\([\omega]=\)</span> 1/time</p></li>
+</ul>
+</div>
+<div class="section" id="scalars-vectors-and-matrices">
+<h2><span class="section-number">2.3. </span>Scalars, Vectors and Matrices<a class="headerlink" href="#scalars-vectors-and-matrices" title="Permalink to this headline">¶</a></h2>
+<p>A scalar is something with a value that is independent of coordinate
+system. Examples are mass, or the relative time between events. A
+vector has magnitude and direction. Under rotation, the magnitude
+stays the same but the direction changes. Scalars have no spatial
+index, whereas a three-dimensional vector has 3 indices, e.g. the
+position <span class="math notranslate nohighlight">\(\boldsymbol{r}\)</span> has components <span class="math notranslate nohighlight">\(r_1,r_2,r_3\)</span>, which are often
+referred to as <span class="math notranslate nohighlight">\(x,y,z\)</span>.</p>
+<p>There are several categories of changes of coordinate system. The
+observer can translate the origin, might move with a different
+velocity, or might rotate her/his coordinate axes. For instance, a
+particle’s position vector changes when the origin is translated, but
+its velocity does not. When you study relativity you will find that
+quantities you thought of as scalars, such as time or an electric
+potential, are actually parts of four-dimensional vectors and that
+changes of the velocity of the reference frame act in a similar way to
+rotations.</p>
+<p>In addition to vectors and scalars, there are matrices, which have two
+indices. One also has objects with 3 or four indices. These are called
+tensors of rank <span class="math notranslate nohighlight">\(n\)</span>, where <span class="math notranslate nohighlight">\(n\)</span> is the number of indices. A matrix is a
+rank-two tensor. The Levi-Civita symbol, <span class="math notranslate nohighlight">\(\epsilon_{ijk}\)</span> used for
+cross products of vectors, is a tensor of rank three.</p>
+<p>In these lectures we will use boldfaced lower-case letters to label a
+vector. A vector <span class="math notranslate nohighlight">\(\boldsymbol{a}\)</span> in three dimensions is thus defined as</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{a} =(a_x,a_y, a_z),
+\]</div>
+<p>and using the unit vectors (see below) in a cartesian system we have</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{a} = a_x\boldsymbol{e}_1+a_y\boldsymbol{e}_2+a_z\boldsymbol{e}_3,
+\]</div>
+<p>where the unit vectors have magnitude <span class="math notranslate nohighlight">\(\vert\boldsymbol{e}_i\vert = 1\)</span> with
+<span class="math notranslate nohighlight">\(i=1=x\)</span>, <span class="math notranslate nohighlight">\(i=2=y\)</span> and <span class="math notranslate nohighlight">\(i=3=z\)</span>. Some authors use letters
+<span class="math notranslate nohighlight">\(\boldsymbol{i}=\boldsymbol{e}_1\)</span>, <span class="math notranslate nohighlight">\(\boldsymbol{j}=\boldsymbol{e}_2\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{k}=\boldsymbol{e}_3\)</span>.</p>
+<p>Alternatively, you may also encounter the above vector as</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{a} = a_1\boldsymbol{e}_1+a_2\boldsymbol{e}_2+a_3\boldsymbol{e}_3.
+\]</div>
+<p>Here we have used that <span class="math notranslate nohighlight">\(a_1=a_x\)</span>, <span class="math notranslate nohighlight">\(a_2=a_y\)</span> and <span class="math notranslate nohighlight">\(a_3=a_z\)</span>. Such a
+notation is sometimes more convenient if we wish to represent vector
+operations in a mathematically more compact way, see below here. We may also find this useful if  we want the different
+components to represent other coordinate systems that the Cartesian one. A typical example would be going from a Cartesian representation to a spherical basis. We will encounter such cases many times in this course.</p>
+<p>We use lower-case letters for vectors and upper-case letters for matrices. Vectors and matrices are always boldfaced.</p>
+<div class="section" id="polar-coordinates">
+<h3><span class="section-number">2.3.1. </span>Polar Coordinates<a class="headerlink" href="#polar-coordinates" title="Permalink to this headline">¶</a></h3>
+<p>As an example, consider a two-dimensional Cartesian system with a vector <span class="math notranslate nohighlight">\(\boldsymbol{r}=(x,y)\)</span>.
+Our vector is then written as</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{r} = x\boldsymbol{e}_1+y\boldsymbol{e}_2.
+\]</div>
+<p>Transforming to polar coordinates with the radius <span class="math notranslate nohighlight">\(\rho\in [0,\infty)\)</span>
+and the angle <span class="math notranslate nohighlight">\(\phi \in [0,2\pi]\)</span> we have the familiar transformations</p>
+<div class="math notranslate nohighlight">
+\[
+x = \rho \cos{\phi} \hspace{0.5cm}   y = \rho \sin{\phi},
+\]</div>
+<p>and the inverse relations</p>
+<div class="math notranslate nohighlight">
+\[
+\rho =\sqrt{x^2+y^2} \hspace{0.5cm}   \phi = \mathrm{arctan}(\frac{y}{x}).
+\]</div>
+<p>We can rewrite the vector <span class="math notranslate nohighlight">\(\boldsymbol{a}\)</span> in terms of <span class="math notranslate nohighlight">\(\rho\)</span> and <span class="math notranslate nohighlight">\(\phi\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{a} = \rho \cos{\phi}\boldsymbol{e}_1+\rho \sin{\phi}\boldsymbol{e}_2,
+\]</div>
+<p>and we define the new unit vectors as <span class="math notranslate nohighlight">\(\boldsymbol{e}'_1=\cos{\phi}\boldsymbol{e}_1\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{e}'_2=\sin{\phi}\boldsymbol{e}_2\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{a}' = \rho\boldsymbol{e}'_1+\rho \boldsymbol{e}'_2.
+\]</div>
+<p>Below we will show that the norms of this vector in a Cartesian basis and a Polar basis are equal.</p>
+</div>
+<div class="section" id="unit-vectors">
+<h3><span class="section-number">2.3.2. </span>Unit Vectors<a class="headerlink" href="#unit-vectors" title="Permalink to this headline">¶</a></h3>
+<p>Also known as basis vectors, unit vectors point in the direction of
+the coordinate axes, have unit norm, and are orthogonal to one
+another. Sometimes this is referred to as an orthonormal basis,</p>
+<!-- Equation labels as ordinary links -->
+<div id="_auto1"></div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation}
+\boldsymbol{e}_i\cdot\boldsymbol{e}_j=\delta_{ij}=\begin{bmatrix}
+1 &amp; 0 &amp; 0\\
+0&amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 1
+\end{bmatrix}.
+\label{_auto1} \tag{1}
+\end{equation}
+\end{split}\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\delta_{ij}\)</span> is unity when <span class="math notranslate nohighlight">\(i=j\)</span> and is zero otherwise. This is
+called the unit matrix, because you can multiply it with any other
+matrix and not change the matrix. The <strong>dot</strong> denotes the dot product,
+<span class="math notranslate nohighlight">\(\boldsymbol{a}\cdot\boldsymbol{b}=a_1b_1+a_2b_2+a_3b_3=|a||b|\cos\theta_{ab}\)</span>. Sometimes
+the unit vectors are called <span class="math notranslate nohighlight">\(\hat{x}\)</span>, <span class="math notranslate nohighlight">\(\hat{y}\)</span> and
+<span class="math notranslate nohighlight">\(\hat{z}\)</span>.</p>
+<p>Vectors can be decomposed in terms of unit vectors,</p>
+<!-- Equation labels as ordinary links -->
+<div id="_auto2"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\boldsymbol{r}=r_1\hat{e}_1+r_2\hat{e}_2+r_3\hat{e}_3.
+\label{_auto2} \tag{2}
+\end{equation}
+\]</div>
+<p>The vector components <span class="math notranslate nohighlight">\(r_1\)</span>, <span class="math notranslate nohighlight">\(r_2\)</span> and <span class="math notranslate nohighlight">\(r_3\)</span> might be
+called <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span> for a displacement. Another way to write this is to define the vector <span class="math notranslate nohighlight">\(\boldsymbol{r}=(x,y,z)\)</span>.</p>
+<p>Similarly, for the velocity we will use in this course the components  <span class="math notranslate nohighlight">\(\boldsymbol{v}=(v_x, v_y,v_z\)</span>. The accelaration is then given by <span class="math notranslate nohighlight">\(\boldsymbol{a}=(a_x,a_y,a_z)\)</span>.</p>
+<p>As mentioned above, repeated indices infer sums.
+This means that when you encounter an expression like the one on the left-hand side here, it stands actually for a sum (right-hand side)</p>
+<div class="math notranslate nohighlight">
+\[
+x_iy_i=\sum_i x_iy_i=\boldsymbol{x}\cdot\boldsymbol{y}.
+\]</div>
+<p>We will in our lectures seldom use this notation and rather spell out the summations.  This inferred summation over indices is normally called <a class="reference external" href="https://en.wikipedia.org/wiki/Einstein_notation">Einstein summation convention</a>.</p>
+</div>
+</div>
+<div class="section" id="vector-operations-scalar-product-or-dot-product">
+<h2><span class="section-number">2.4. </span>Vector Operations, Scalar Product (or dot product)<a class="headerlink" href="#vector-operations-scalar-product-or-dot-product" title="Permalink to this headline">¶</a></h2>
+<p>For two vectors <span class="math notranslate nohighlight">\(\boldsymbol{a}\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{b}\)</span> we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+\boldsymbol{a}\cdot\boldsymbol{b}&amp;=&amp;\sum_ia_ib_i=|a||b|\cos\theta_{ab},\\
+|a|&amp;\equiv&amp; \sqrt{\boldsymbol{a}\cdot\boldsymbol{a}},
+\end{eqnarray*}
+\end{split}\]</div>
+<p>or with a norm-2 notation</p>
+<div class="math notranslate nohighlight">
+\[
+|a|\equiv \vert\vert \boldsymbol{a}\vert\vert_2=\sqrt{\sum_i a_i^2}.
+\]</div>
+<p>Not of all of you are familiar with linear algebra. Numerically we will always deal with arrays and the dot product vector is given by the product of the transposed vector multiplied with the other vector, that is we have</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{a}^T\boldsymbol{b}=\sum_i a_ib_i=|a||b|\cos\theta_{ab}.
+\]</div>
+<p>The superscript <span class="math notranslate nohighlight">\(T\)</span> represents the transposition operations.</p>
+</div>
+<div class="section" id="digression-linear-algebra-notation-for-vectors">
+<h2><span class="section-number">2.5. </span>Digression, Linear Algebra Notation for Vectors<a class="headerlink" href="#digression-linear-algebra-notation-for-vectors" title="Permalink to this headline">¶</a></h2>
+<p>As an example, consider a three-dimensional velocity defined by a vector <span class="math notranslate nohighlight">\(\boldsymbol{v}=(v_x,v_y,v_z)\)</span>. For those of you familiar with linear algebra, we would write this quantity as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\boldsymbol{v}=\begin{bmatrix} v_x\\ v_y \\ v_z \end{bmatrix},
+\end{split}\]</div>
+<p>and the transpose as</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{v}^T=\begin{bmatrix} v_x &amp; v_y &amp;v_z \end{bmatrix}.
+\]</div>
+<p>The norm is</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{v}^T\boldsymbol{v}=v_x^2+v_y^2+v_z^2,
+\]</div>
+<p>as it should.</p>
+<p>Since we will use Python as a programming language throughout this course, the above vector, using the package <strong>numpy</strong> (see discussions below), can be written as</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="c1"># Define the values of vx, vy and vz</span>
+<span class="n">vx</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">vy</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">vz</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">vx</span><span class="p">,</span> <span class="n">vy</span><span class="p">,</span> <span class="n">vz</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="c1"># The print the transpose of v</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0. 1. 0.]
+[0. 1. 0.]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Try to figure out how to calculate the norm with <strong>numpy</strong>.
+We will come back to <strong>numpy</strong> in the examples below.</p>
+<p>As an example, consider our transformation of a two-dimensional Cartesian vector <span class="math notranslate nohighlight">\(\boldsymbol{r}\)</span> to polar coordinates.
+We had</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{r} = x\boldsymbol{e}_1+y\boldsymbol{e}_2.
+\]</div>
+<p>Transforming to polar coordinates with the radius <span class="math notranslate nohighlight">\(\rho\in [0,\infty)\)</span>
+and the angle <span class="math notranslate nohighlight">\(\phi \in [0,2\pi]\)</span> we have</p>
+<div class="math notranslate nohighlight">
+\[
+x = \rho \cos{\phi} \hspace{0.5cm}   y = \rho \sin{\phi}.
+\]</div>
+<p>We can write this</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\boldsymbol{r} = \begin{bmatrix} x \\ y \end{bmatrix}= \begin{bmatrix} \rho \cos{\phi}  \\ \rho \sin{\phi}  \end{bmatrix}.
+\end{split}\]</div>
+<p>The norm in Cartesian coordinates is <span class="math notranslate nohighlight">\(\boldsymbol{r}\cdot\boldsymbol{r}=x^2+y^2\)</span> and
+using Polar coordinates we have
+<span class="math notranslate nohighlight">\(\rho^2(\cos{\phi})^2+\rho^2(\cos{\phi})^2=\rho^2\)</span>, which shows that
+the norm is conserved since we have <span class="math notranslate nohighlight">\(\rho = \sqrt{x^2+y^2}\)</span>. A
+transformation to a new basis should not change the norm.</p>
+</div>
+<div class="section" id="vector-product-or-cross-product-of-vectors-boldsymbol-a-and-boldsymbol-b">
+<h2><span class="section-number">2.6. </span>Vector Product (or cross product) of vectors <span class="math notranslate nohighlight">\(\boldsymbol{a}\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{b}\)</span><a class="headerlink" href="#vector-product-or-cross-product-of-vectors-boldsymbol-a-and-boldsymbol-b" title="Permalink to this headline">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+\boldsymbol{c}&amp;=&amp;\boldsymbol{a}\times\boldsymbol{b},\\
+c_i&amp;=&amp;\epsilon_{ijk}a_jb_k.
+\end{eqnarray*}
+\end{split}\]</div>
+<p>Here <span class="math notranslate nohighlight">\(\epsilon\)</span> is the third-rank anti-symmetric tensor, also known as
+the Levi-Civita symbol. It is <span class="math notranslate nohighlight">\(\pm 1\)</span> only if all three indices are
+different, and is zero otherwise. The choice of <span class="math notranslate nohighlight">\(\pm 1\)</span> depends on
+whether the indices are an even or odd permutation of the original
+symbols. The permutation <span class="math notranslate nohighlight">\(xyz\)</span> or <span class="math notranslate nohighlight">\(123\)</span> is considered to be <span class="math notranslate nohighlight">\(+1\)</span>. Its elements are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray}
+\epsilon_{ijk}&amp;=&amp;-\epsilon_{ikj}=-\epsilon_{jik}=-\epsilon_{kji}\\
+\nonumber
+\epsilon_{123}&amp;=&amp;\epsilon_{231}=\epsilon_{312}=1,\\
+\nonumber
+\epsilon_{213}&amp;=&amp;\epsilon_{132}=\epsilon_{321}=-1,\\
+\nonumber
+\epsilon_{iij}&amp;=&amp;\epsilon_{iji}=\epsilon_{jii}=0.
+\end{eqnarray}
+\end{split}\]</div>
+<p>You may have met cross-products when studying magnetic
+fields. Because the matrix is anti-symmetric, switching the <span class="math notranslate nohighlight">\(x\)</span> and
+<span class="math notranslate nohighlight">\(y\)</span> axes (or any two axes) flips the sign. If the coordinate system is
+right-handed, meaning the <span class="math notranslate nohighlight">\(xyz\)</span> axes satisfy
+<span class="math notranslate nohighlight">\(\hat{x}\times\hat{y}=\hat{z}\)</span>, where you can point along the <span class="math notranslate nohighlight">\(x\)</span> axis
+with your extended right index finger, the <span class="math notranslate nohighlight">\(y\)</span> axis with your
+contracted middle finger and the <span class="math notranslate nohighlight">\(z\)</span> axis with your extended
+thumb. Switching to a left-handed system flips the sign of the vector
+<span class="math notranslate nohighlight">\(\boldsymbol{c}=\boldsymbol{a}\times\boldsymbol{b}\)</span>.</p>
+<p>Note that
+<span class="math notranslate nohighlight">\(\boldsymbol{a}\times\boldsymbol{b}=-\boldsymbol{b}\times\boldsymbol{a}\)</span>. The vector <span class="math notranslate nohighlight">\(\boldsymbol{c}\)</span> is
+perpendicular to both <span class="math notranslate nohighlight">\(\boldsymbol{a}\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{b}\)</span> and the magnitude of
+<span class="math notranslate nohighlight">\(\boldsymbol{c}\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[
+|c|=|a||b|\sin{\theta_{ab}}.
+\]</div>
+<div class="section" id="pseudo-vectors">
+<h3><span class="section-number">2.6.1. </span>Pseudo-vectors<a class="headerlink" href="#pseudo-vectors" title="Permalink to this headline">¶</a></h3>
+<p>Vectors obtained by the cross product of two real vectors are called
+pseudo-vectors because the assignment of their direction can be
+arbitrarily flipped by defining the Levi-Civita symbol to be based on
+left-handed rules. Examples are the magnetic field and angular
+momentum. If the direction of a real vector prefers the right-handed
+over the left-handed direction, that constitutes a violation of
+parity. For instance, one can polarize the spins (angular momentum) of
+nuclei with a magnetic field so that the spins preferentially point
+along the direction of the magnetic field. This does not violate
+parity because both are pseudo-vectors. Now assume these polarized
+nuclei decay and that electrons are one of the products. If these
+electrons prefer to exit the decay parallel vs. antiparallel to the
+polarizing magnetic field, this constitutes parity violation because
+the direction of the outgoing electron momenta are a real vector. This
+is precisely what is observed in weak decays.</p>
+</div>
+</div>
+<div class="section" id="differentiation-of-a-vector-with-respect-to-a-scalar">
+<h2><span class="section-number">2.7. </span>Differentiation of a vector with respect to a scalar<a class="headerlink" href="#differentiation-of-a-vector-with-respect-to-a-scalar" title="Permalink to this headline">¶</a></h2>
+<p>As an  example, consider the
+acceleration <span class="math notranslate nohighlight">\(\boldsymbol{a}\)</span>, which is given by the change in velocity per unit time, <span class="math notranslate nohighlight">\(\boldsymbol{a}=d\boldsymbol{v}/dt\)</span>
+with components</p>
+<div class="math notranslate nohighlight">
+\[
+a_i = (d\boldsymbol{v}/dt)_i=\frac{dv_i}{dt}.
+\]</div>
+<p>Here <span class="math notranslate nohighlight">\(i=x,y,z\)</span> or <span class="math notranslate nohighlight">\(i=1,2,3\)</span> if we are in three dimensions.</p>
+<div class="section" id="gradient-operator-nabla">
+<h3><span class="section-number">2.7.1. </span>Gradient operator <span class="math notranslate nohighlight">\(\nabla\)</span><a class="headerlink" href="#gradient-operator-nabla" title="Permalink to this headline">¶</a></h3>
+<p>This represents  the derivatives <span class="math notranslate nohighlight">\(\partial/\partial
+x\)</span>, <span class="math notranslate nohighlight">\(\partial/\partial y\)</span> and <span class="math notranslate nohighlight">\(\partial/\partial z\)</span>. An often used shorthand is  <span class="math notranslate nohighlight">\(\partial_x=\partial/\partial_x\)</span>.</p>
+<p>The gradient of a scalar function of position and time
+<span class="math notranslate nohighlight">\(\Phi(x,y,z)=\Phi(\boldsymbol{r},t)\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{\nabla}~\Phi,
+\]</div>
+<p>with components <span class="math notranslate nohighlight">\(i\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+(\nabla\Phi(x,y,z,t))_i=\partial/\partial r_i\Phi(\boldsymbol{r},t)=\partial_i\Phi(\boldsymbol{r},t).
+\]</div>
+<p>Note that the gradient is a vector.</p>
+<p>Taking the dot product of the gradient with a vector, normally called the divergence,
+we have</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{div} \boldsymbol{a}, \nabla\cdot\boldsymbol{a}=\sum_i \partial_i a_i.
+\]</div>
+<p>Note that the divergence is a scalar.</p>
+</div>
+<div class="section" id="the-curl">
+<h3><span class="section-number">2.7.2. </span>The curl<a class="headerlink" href="#the-curl" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>curl</strong> of a vector is defined as
+<span class="math notranslate nohighlight">\(\nabla\times\boldsymbol{a}\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+{\rm\bf curl}~\boldsymbol{a},
+\]</div>
+<p>with components</p>
+<div class="math notranslate nohighlight">
+\[
+(\boldsymbol{\nabla}\times\boldsymbol{a})_i=\epsilon_{ijk}\partial_j a_k(\boldsymbol{r},t).
+\]</div>
+</div>
+<div class="section" id="the-laplacian">
+<h3><span class="section-number">2.7.3. </span>The Laplacian<a class="headerlink" href="#the-laplacian" title="Permalink to this headline">¶</a></h3>
+<p>The Laplacian is referred to as <span class="math notranslate nohighlight">\(\nabla^2\)</span> and is defined as</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{\nabla}^2=\boldsymbol{\nabla}\cdot\boldsymbol{\nabla}=\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2}.
+\]</div>
+<p>Question: is the Laplacian a scalar or a vector?</p>
+</div>
+<div class="section" id="some-identities">
+<h3><span class="section-number">2.7.4. </span>Some identities<a class="headerlink" href="#some-identities" title="Permalink to this headline">¶</a></h3>
+<p>Here we simply state these, but you may wish to prove a few. They are useful for this class and will be essential when you study electromagnetism.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray}
+\boldsymbol{a}\cdot(\boldsymbol{b}\times\boldsymbol{c})&amp;=&amp;\boldsymbol{b}\cdot(\boldsymbol{c}\times\boldsymbol{a})=\boldsymbol{c}\cdot(\boldsymbol{a}\times\boldsymbol{b})\\
+\nonumber
+\boldsymbol{a}\times(\boldsymbol{b}\times\boldsymbol{c})&amp;=&amp;(\boldsymbol{a}\cdot\boldsymbol{c})\boldsymbol{b}-(\boldsymbol{a}\cdot\boldsymbol{b})\boldsymbol{c}\\
+\nonumber
+(\boldsymbol{a}\times\boldsymbol{b})\cdot(\boldsymbol{c}\times\boldsymbol{d})&amp;=&amp;(\boldsymbol{a}\cdot\boldsymbol{c})(\boldsymbol{b}\cdot\boldsymbol{d})
+-(\boldsymbol{a}\cdot\boldsymbol{d})(\boldsymbol{b}\cdot\boldsymbol{c})
+\end{eqnarray}
+\end{split}\]</div>
+</div>
+<div class="section" id="more-useful-relations">
+<h3><span class="section-number">2.7.5. </span>More useful relations<a class="headerlink" href="#more-useful-relations" title="Permalink to this headline">¶</a></h3>
+<p>Using the fact that multiplication of reals is distributive we can show that</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{a}(\boldsymbol{b}+\boldsymbol{c})=\boldsymbol{a}\boldsymbol{b}+\boldsymbol{a}\boldsymbol{c},
+\]</div>
+<p>Similarly we can also show that (using product rule for differentiating reals)</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dt}(\boldsymbol{a}\boldsymbol{b})=\boldsymbol{a}\frac{d\boldsymbol{b}}{dt}+\boldsymbol{b}\frac{d\boldsymbol{a}}{dt}.
+\]</div>
+<p>We can repeat these operations for the cross products and show that they are distribuitive</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{a}\times(\boldsymbol{b}+\boldsymbol{c})=\boldsymbol{a}\times\boldsymbol{b}+\boldsymbol{a}\times\boldsymbol{c}.
+\]</div>
+<p>We have also that</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dt}(\boldsymbol{a}\times\boldsymbol{b})=\boldsymbol{a}\times\frac{d\boldsymbol{b}}{dt}+\boldsymbol{b}\times\frac{d\boldsymbol{a}}{dt}.
+\]</div>
+</div>
+<div class="section" id="gauss-s-theorem">
+<h3><span class="section-number">2.7.6. </span>Gauss’s Theorem<a class="headerlink" href="#gauss-s-theorem" title="Permalink to this headline">¶</a></h3>
+<p>For an integral over a volume <span class="math notranslate nohighlight">\(V\)</span> confined by a surface <span class="math notranslate nohighlight">\(S\)</span>, Gauss’s theorem gives</p>
+<div class="math notranslate nohighlight">
+\[
+\int_V dv~\nabla\cdot\boldsymbol{A}=\int_Sd\boldsymbol{S}\cdot\boldsymbol{A}.
+\]</div>
+<p>For a closed path <span class="math notranslate nohighlight">\(C\)</span> which carves out some area <span class="math notranslate nohighlight">\(S\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+\int_C d\boldsymbol{\ell}\cdot\boldsymbol{A}=\int_Sd\boldsymbol{s} \cdot(\nabla\times\boldsymbol{A})
+\]</div>
+</div>
+<div class="section" id="and-stokes-s-theorem">
+<h3><span class="section-number">2.7.7. </span>and Stokes’s Theorem<a class="headerlink" href="#and-stokes-s-theorem" title="Permalink to this headline">¶</a></h3>
+<p>Stoke’s law can be understood by considering a small rectangle,
+<span class="math notranslate nohighlight">\(-\Delta x&lt;x&lt;\Delta x\)</span>, <span class="math notranslate nohighlight">\(-\Delta y&lt;y&lt;\Delta y\)</span>. The path integral
+around the edges is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray}
+\int_C d\boldsymbol{\ell}\cdot\boldsymbol{A}&amp;=&amp;2\Delta y[A_y(\Delta x,0)-A_y(-\Delta x,0)]-2\Delta x[A_x(0,\Delta y)-A_x(0,-\Delta y)]\\
+\nonumber
+&amp;=&amp;4\Delta x\Delta y\left\{
+\frac{A_y(\Delta x,0)-A_y(-\Delta x,0)}{2\Delta x}-\frac{A_x(0,\Delta y)-A_x(0,-\Delta y)}{2\Delta y}\right\}\\
+\nonumber
+&amp;=&amp;4\Delta x\Delta y\left\{\frac{\partial A_y}{\partial x}-\frac{\partial A_x}{\partial y}\right\}\\
+&amp;=&amp;\Delta S \cdot \nabla\times\boldsymbol{A}.
+\end{eqnarray}
+\end{split}\]</div>
+<p>Here <span class="math notranslate nohighlight">\(\Delta S\)</span> is the area of the surface element.</p>
+</div>
+</div>
+<div class="section" id="basic-matrix-features">
+<h2><span class="section-number">2.8. </span>Basic Matrix Features<a class="headerlink" href="#basic-matrix-features" title="Permalink to this headline">¶</a></h2>
+<p><strong>Note</strong>: The material on matrices is optional and will not be used much
+(except for illustrations at the very end on garmonic oscillations)
+since most of you have not yet taken a course on linear algebra. The
+material is however included here for the sake of completeness.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{A} =
+      \begin{bmatrix} a_{11} &amp; a_{12} &amp; a_{13} &amp; a_{14} \\
+                                 a_{21} &amp; a_{22} &amp; a_{23} &amp; a_{24} \\
+                                   a_{31} &amp; a_{32} &amp; a_{33} &amp; a_{34} \\
+                                  a_{41} &amp; a_{42} &amp; a_{43} &amp; a_{44}
+             \end{bmatrix}\qquad
+\mathbf{I} =
+      \begin{bmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\
+                                 0 &amp; 1 &amp; 0 &amp; 0 \\
+                                 0 &amp; 0 &amp; 1 &amp; 0 \\
+                                 0 &amp; 0 &amp; 0 &amp; 1
+             \end{bmatrix}
+\end{split}\]</div>
+<p>The inverse of a matrix is defined by</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{A}^{-1} \cdot \mathbf{A} = I
+\]</div>
+<table border="1">
+<thead>
+<tr><th align="center">              Relations               </th> <th align="center">      Name     </th> <th align="center">                            matrix elements                            </th> </tr>
+</thead>
+<tbody>
+<tr><td align="center">   $A = A^{T}$                               </td> <td align="center">   symmetric          </td> <td align="center">   $a_{ij} = a_{ji}$                                                          </td> </tr>
+<tr><td align="center">   $A = \left (A^{T} \right )^{-1}$          </td> <td align="center">   real orthogonal    </td> <td align="center">   $\sum_k a_{ik} a_{jk} = \sum_k a_{ki} a_{kj} = \delta_{ij}$                </td> </tr>
+<tr><td align="center">   $A = A^{ * }$                             </td> <td align="center">   real matrix        </td> <td align="center">   $a_{ij} = a_{ij}^{ * }$                                                    </td> </tr>
+<tr><td align="center">   $A = A^{\dagger}$                         </td> <td align="center">   hermitian          </td> <td align="center">   $a_{ij} = a_{ji}^{ * }$                                                    </td> </tr>
+<tr><td align="center">   $A = \left (A^{\dagger} \right )^{-1}$    </td> <td align="center">   unitary            </td> <td align="center">   $\sum_k a_{ik} a_{jk}^{ * } = \sum_k a_{ki}^{ * } a_{kj} = \delta_{ij}$    </td> </tr>
+</tbody>
+</table>
+<div class="section" id="some-famous-matrices">
+<h3><span class="section-number">2.8.1. </span>Some famous Matrices<a class="headerlink" href="#some-famous-matrices" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Diagonal if <span class="math notranslate nohighlight">\(a_{ij}=0\)</span> for <span class="math notranslate nohighlight">\(i\ne j\)</span></p></li>
+<li><p>Upper triangular if <span class="math notranslate nohighlight">\(a_{ij}=0\)</span> for <span class="math notranslate nohighlight">\(i &gt; j\)</span></p></li>
+<li><p>Lower triangular if <span class="math notranslate nohighlight">\(a_{ij}=0\)</span> for <span class="math notranslate nohighlight">\(i &lt; j\)</span></p></li>
+<li><p>Upper Hessenberg if <span class="math notranslate nohighlight">\(a_{ij}=0\)</span> for <span class="math notranslate nohighlight">\(i &gt; j+1\)</span></p></li>
+<li><p>Lower Hessenberg if <span class="math notranslate nohighlight">\(a_{ij}=0\)</span> for <span class="math notranslate nohighlight">\(i &lt; j+1\)</span></p></li>
+<li><p>Tridiagonal if <span class="math notranslate nohighlight">\(a_{ij}=0\)</span> for <span class="math notranslate nohighlight">\(|i -j| &gt; 1\)</span></p></li>
+<li><p>Lower banded with bandwidth <span class="math notranslate nohighlight">\(p\)</span>: <span class="math notranslate nohighlight">\(a_{ij}=0\)</span> for <span class="math notranslate nohighlight">\(i &gt; j+p\)</span></p></li>
+<li><p>Upper banded with bandwidth <span class="math notranslate nohighlight">\(p\)</span>: <span class="math notranslate nohighlight">\(a_{ij}=0\)</span> for <span class="math notranslate nohighlight">\(i &lt; j+p\)</span></p></li>
+<li><p>Banded, block upper triangular, block lower triangular….</p></li>
+</ul>
+<p>For an <span class="math notranslate nohighlight">\(N\times N\)</span> matrix  <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> the following properties are all equivalent</p>
+<ul class="simple">
+<li><p>If the inverse of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> exists, <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is nonsingular.</p></li>
+<li><p>The equation <span class="math notranslate nohighlight">\(\mathbf{Ax}=0\)</span> implies <span class="math notranslate nohighlight">\(\mathbf{x}=0\)</span>.</p></li>
+<li><p>The rows of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> form a basis of <span class="math notranslate nohighlight">\(R^N\)</span>.</p></li>
+<li><p>The columns of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> form a basis of <span class="math notranslate nohighlight">\(R^N\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is a product of elementary matrices.</p></li>
+<li><p><span class="math notranslate nohighlight">\(0\)</span> is not eigenvalue of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="rotations">
+<h2><span class="section-number">2.9. </span>Rotations<a class="headerlink" href="#rotations" title="Permalink to this headline">¶</a></h2>
+<p>Here, we use rotations as an example of matrices and their operations. One can consider a different orthonormal basis <span class="math notranslate nohighlight">\(\hat{e}'_1\)</span>, <span class="math notranslate nohighlight">\(\hat{e}'_2\)</span> and <span class="math notranslate nohighlight">\(\hat{e}'_3\)</span>. The same vector <span class="math notranslate nohighlight">\(\boldsymbol{r}\)</span> mentioned above can also be expressed in the new basis,</p>
+<!-- Equation labels as ordinary links -->
+<div id="_auto3"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\boldsymbol{r}=r'_1\hat{e}'_1+r'_2\hat{e}'_2+r'_3\hat{e}'_3.
+\label{_auto3} \tag{3}
+\end{equation}
+\]</div>
+<p>Even though it is the same vector, the components have changed. Each
+new unit vector <span class="math notranslate nohighlight">\(\hat{e}'_i\)</span> can be expressed as a linear sum of the
+previous vectors,</p>
+<!-- Equation labels as ordinary links -->
+<div id="_auto4"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\hat{e}'_i=\sum_j U_{ij}\hat{e}_j,
+\label{_auto4} \tag{4}
+\end{equation}
+\]</div>
+<p>and the matrix <span class="math notranslate nohighlight">\(U\)</span> can be found by taking the dot product of both sides with <span class="math notranslate nohighlight">\(\hat{e}_k\)</span>,</p>
+<!-- Equation labels as ordinary links -->
+<div id="eq:lambda_angles"></div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray}
+\nonumber
+\hat{e}_k\cdot\hat{e}'_i&amp;=&amp;\sum_jU_{ij}\hat{e}_k\cdot\hat{e}_j\\
+\label{eq:lambda_angles} \tag{5}
+\hat{e}_k\cdot\hat{e}'_i&amp;=&amp;\sum_jU_{ij}\delta_{jk}=U_{ik}.
+\end{eqnarray}
+\end{split}\]</div>
+<p>Thus, the matrix lambda has components <span class="math notranslate nohighlight">\(U_{ij}\)</span> that are equal to the
+cosine of the angle between new unit vector <span class="math notranslate nohighlight">\(\hat{e}'_i\)</span> and the old
+unit vector <span class="math notranslate nohighlight">\(\hat{e}_j\)</span>.</p>
+<!-- Equation labels as ordinary links -->
+<div id="_auto5"></div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation}
+U = \begin{bmatrix}
+\hat{e}'_1\cdot\hat{e}_1&amp; \hat{e}'_1\cdot\hat{e}_2&amp; \hat{e}'_1\cdot\hat{e}_3\\
+\hat{e}'_2\cdot\hat{e}_1&amp; \hat{e}'_2\cdot\hat{e}_2&amp; \hat{e}'_2\cdot\hat{e}_3\\
+\hat{e}'_3\cdot\hat{e}_1&amp; \hat{e}'_3\cdot\hat{e}_2&amp; \hat{e}'_3\cdot\hat{e}_3
+\end{bmatrix},~~~~~U_{ij}=\hat{e}'_i\cdot\hat{e}_j=\cos\theta_{ij}.
+\label{_auto5} \tag{6}
+\end{equation}
+\end{split}\]</div>
+<p>Note that the matrix is not symmetric, <span class="math notranslate nohighlight">\(U_{ij}\ne U_{ji}\)</span>. One can also look at the inverse transformation, by switching the primed and unprimed coordinates,</p>
+<!-- Equation labels as ordinary links -->
+<div id="eq:inverseU"></div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray}
+\label{eq:inverseU} \tag{7}
+\hat{e}_i&amp;=&amp;\sum_jU^{-1}_{ij}\hat{e}'_j,\\
+\nonumber
+U^{-1}_{ij}&amp;=&amp;\hat{e}_i\cdot\hat{e}'_j=U_{ji}.
+\end{eqnarray}
+\end{split}\]</div>
+<p>The definition of transpose of a matrix, <span class="math notranslate nohighlight">\(M^{t}_{ij}=M_{ji}\)</span>, allows one to state this as</p>
+<!-- Equation labels as ordinary links -->
+<div id="eq:transposedef"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{eqnarray}
+\label{eq:transposedef} \tag{8}
+U^{-1}&amp;=&amp;U^{t}.
+\end{eqnarray}
+\]</div>
+<div class="section" id="tensors">
+<h3><span class="section-number">2.9.1. </span>Tensors<a class="headerlink" href="#tensors" title="Permalink to this headline">¶</a></h3>
+<p>A tensor obeying Eq. (<a class="reference external" href="#eq:transposedef">8</a>) defines what is known as
+a unitary, or orthogonal, transformation.</p>
+<p>The matrix <span class="math notranslate nohighlight">\(U\)</span> can be used to transform any vector to the new basis. Consider a vector</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray}
+\boldsymbol{r}&amp;=&amp;r_1\hat{e}_1+r_2\hat{e}_2+r_3\hat{e}_3\\
+\nonumber
+&amp;=&amp;r'_1\hat{e}'_1+r'_2\hat{e}'_2+r'_3\hat{e}'_3.
+\end{eqnarray}
+\end{split}\]</div>
+<p>This is the same vector expressed as a sum over two different sets of
+basis vectors. The coefficients <span class="math notranslate nohighlight">\(r_i\)</span> and <span class="math notranslate nohighlight">\(r'_i\)</span> represent components
+of the same vector. The relation between them can be found by taking
+the dot product of each side with one of the unit vectors,
+<span class="math notranslate nohighlight">\(\hat{e}_i\)</span>, which gives</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{eqnarray}
+r_i&amp;=&amp;\sum_j \hat{e}_i\cdot\hat{e}'_j~r'_j.
+\end{eqnarray}
+\]</div>
+<p>Using Eq. (<a class="reference external" href="#eq:inverseU">7</a>) one can see that the transformation of <span class="math notranslate nohighlight">\(r\)</span> can be also written in terms of <span class="math notranslate nohighlight">\(U\)</span>,</p>
+<!-- Equation labels as ordinary links -->
+<div id="eq:rotateR"></div>
+<div class="math notranslate nohighlight">
+\[
+\begin{eqnarray}
+\label{eq:rotateR} \tag{9}
+r_i&amp;=&amp;\sum_jU^{-1}_{ij}~r'_j.
+\end{eqnarray}
+\]</div>
+<p>Thus, the matrix that transforms the coordinates of the unit vectors,
+Eq. (<a class="reference external" href="#eq:inverseU">7</a>) is the same one that transforms the
+coordinates of a vector, Eq. (<a class="reference external" href="#eq:rotateR">9</a>).</p>
+<p>As a small exercise, find the rotation matrix <span class="math notranslate nohighlight">\(U\)</span> for finding the
+components in the primed coordinate system given from those in the
+unprimed system, given that the unit vectors in the new system are
+found by rotating the coordinate system by and angle <span class="math notranslate nohighlight">\(\phi\)</span> about the
+<span class="math notranslate nohighlight">\(z\)</span> axis.</p>
+<p>In this case</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray*}
+\hat{e}'_1&amp;=&amp;\cos\phi \hat{e}_1-\sin\phi\hat{e}_2,\\
+\hat{e}'_2&amp;=&amp;\sin\phi\hat{e}_1+\cos\phi\hat{e}_2,\\
+\hat{e}'_3&amp;=&amp;\hat{e}_3.
+\end{eqnarray*}
+\end{split}\]</div>
+<p>By inspecting Eq. (<a class="reference external" href="#eq:lambda_angles">5</a>), we get</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+U=\left(\begin{array}{ccc}
+\cos\phi&amp;-\sin\phi&amp;0\\
+\sin\phi&amp;\cos\phi&amp;0\\
+0&amp;0&amp;1\end{array}\right).
+\end{split}\]</div>
+<p>Under a unitary transformation <span class="math notranslate nohighlight">\(U\)</span> (or basis transformation) scalars
+are unchanged, whereas vectors <span class="math notranslate nohighlight">\(\boldsymbol{r}\)</span> and matrices <span class="math notranslate nohighlight">\(M\)</span> change as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray}
+r'_i&amp;=&amp;U_{ij}~ r_j, ~~({\rm sum~inferred})\\
+\nonumber
+M'_{ij}&amp;=&amp;U_{ik}M_{km}U^{-1}_{mj}.
+\end{eqnarray}
+\end{split}\]</div>
+<p>Physical quantities with no spatial indices are scalars (or
+pseudoscalars if they depend on right-handed vs. left-handed
+coordinate systems), and are unchanged by unitary
+transformations. This includes quantities like the trace of a matrix,
+the matrix itself had indices but none remain after performing the
+trace.</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{eqnarray}
+{\rm Tr} M&amp;\equiv&amp; M_{ii}.
+\end{eqnarray}
+\]</div>
+<p>Because there are no remaining indices, one expects it to be a scalar. Indeed one can see this,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray}
+{\rm Tr} M'&amp;=&amp;U_{ij}M_{jm}U^{-1}_{mi}\\
+\nonumber
+&amp;=&amp;M_{jm}U^{-1}_{mi}U_{ij}\\
+\nonumber
+&amp;=&amp;M_{jm}\delta_{mj}\\
+\nonumber
+&amp;=&amp;M_{jj}={\rm Tr} M.
+\end{eqnarray}
+\end{split}\]</div>
+<p>A similar example is the determinant of a matrix, which is also a scalar.</p>
+</div>
+</div>
+<div class="section" id="numerical-elements">
+<h2><span class="section-number">2.10. </span>Numerical Elements<a class="headerlink" href="#numerical-elements" title="Permalink to this headline">¶</a></h2>
+<p>Numerical algorithms call for approximate discrete models and much of
+the development of methods for continuous models are nowadays being
+replaced by methods for discrete models in science and industry,
+simply because <strong>much larger classes of problems can be addressed</strong> with
+discrete models, often by simpler and more generic methodologies.</p>
+<p>As we will see throughout this course, when properly scaling the equations at hand,
+discrete models open up for more advanced abstractions and the possibility to
+study  real life systems, with the added bonus that we can explore and
+deepen our basic understanding of various physical systems</p>
+<p>Analytical solutions are as important as before. In addition, such
+solutions provide us with invaluable benchmarks and tests for our
+discrete models. Such benchmarks, as we will see below, allow us
+to discuss possible sources of errors and their behaviors.  And
+finally, since most of our models are based on various algorithms from
+numerical mathematics, we have a unique oppotunity to gain a deeper
+understanding of the mathematical approaches we are using.</p>
+<p>With computing and data science as important elements in essentially
+all aspects of a modern society, we could  then try to define Computing as
+<strong>solving scientific problems using all possible tools, including
+symbolic computing, computers and numerical algorithms, and analytical
+paper and pencil solutions</strong>.
+Computing provides us with the tools to develope our own understanding of the scientific method by enhancing algorithmic thinking.</p>
+<p>The way we will teach this course reflects this definition of
+computing. The course contains both classical paper and pencil
+exercises as well as computational projects and exercises. The hope is
+that this will allow you to explore the physics of systems governed by
+the degrees of freedom of classical mechanics at a deeper level, and
+that these insights about the scientific method will help you to
+develop a better understanding of how the underlying forces and
+equations of motion and how they impact a given system.</p>
+<p>Furthermore,
+by introducing various numerical methods via computational projects
+and exercises, we aim at developing your competences and skills about
+these topics.</p>
+<p>These competences will enable you to</p>
+<ul class="simple">
+<li><p>understand how algorithms are used to solve mathematical problems,</p></li>
+<li><p>derive, verify, and implement algorithms,</p></li>
+<li><p>understand what can go wrong with algorithms,</p></li>
+<li><p>use these algorithms to construct reproducible scientific outcomes and to engage in science in ethical ways, and</p></li>
+<li><p>think algorithmically for the purposes of gaining deeper insights about scientific problems.</p></li>
+</ul>
+<p>All these elements are central for maturing and gaining a better understanding of the modern scientific process <em>per se</em>.</p>
+<p>The power of the scientific method lies in identifying a given problem
+as a special case of an abstract class of problems, identifying
+general solution methods for this class of problems, and applying a
+general method to the specific problem (applying means, in the case of
+computing, calculations by pen and paper, symbolic computing, or
+numerical computing by ready-made and/or self-written software). This
+generic view on problems and methods is particularly important for
+understanding how to apply available, generic software to solve a
+particular problem.</p>
+<p><em>However, verification of algorithms and understanding their limitations requires much of the classical knowledge about continuous models.</em></p>
+</div>
+<div class="section" id="a-well-known-example-to-illustrate-many-of-the-above-concepts">
+<h2><span class="section-number">2.11. </span>A well-known example to illustrate many of the above concepts<a class="headerlink" href="#a-well-known-example-to-illustrate-many-of-the-above-concepts" title="Permalink to this headline">¶</a></h2>
+<p>Before we venture into a reminder on Python and mechanics relevant applications, let us briefly outline some of the
+abovementioned topics using an example many of you may have seen before in for example CMSE201.
+A simple algorithm for integration is the Trapezoidal rule.
+Integration of a function <span class="math notranslate nohighlight">\(f(x)\)</span> by the Trapezoidal Rule is given by following algorithm for an interval <span class="math notranslate nohighlight">\(x \in [a,b]\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b(f(x) dx = \frac{1}{2}\left [f(a)+2f(a+h)+\dots+2f(b-h)+f(b)\right] +O(h^2),
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(h\)</span> is the so-called stepsize defined by the number of integration points <span class="math notranslate nohighlight">\(N\)</span> as <span class="math notranslate nohighlight">\(h=(b-a)/(n)\)</span>.
+Python offers an  extremely versatile programming  environment, allowing for
+the inclusion of analytical studies in a numerical program. Here we show an
+example code with the <strong>trapezoidal rule</strong>. We use also <strong>SymPy</strong> to evaluate the exact value of the integral and compute the absolute error
+with respect to the numerically evaluated one of the integral
+<span class="math notranslate nohighlight">\(\int_0^1 dx x^2 = 1/3\)</span>.
+The following code for  the trapezoidal rule allows you  to plot the relative error by comparing with the exact result. By increasing to <span class="math notranslate nohighlight">\(10^8\)</span> points one arrives at a region where numerical errors start to accumulate.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">log10</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">integrate</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="c1"># function for the trapezoidal rule</span>
+<span class="k">def</span> <span class="nf">Trapez</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+   <span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+   <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+   <span class="n">x</span> <span class="o">=</span> <span class="n">a</span>
+   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+       <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="n">h</span>
+       <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+   <span class="n">s</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">))</span> <span class="o">+</span><span class="n">s</span>
+   <span class="k">return</span> <span class="n">h</span><span class="o">*</span><span class="n">s</span>
+<span class="c1">#  function to compute pi</span>
+<span class="k">def</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
+<span class="c1"># define integration limits</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>  <span class="n">b</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+<span class="c1"># find result from sympy</span>
+<span class="c1"># define x as a symbol to be used by sympy</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">exact</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">function</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+<span class="c1"># set up the arrays for plotting the relative error</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">9</span><span class="p">);</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">9</span><span class="p">);</span>
+<span class="c1"># find the relative error as function of integration points</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">npts</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="n">i</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">Trapez</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">function</span><span class="p">,</span><span class="n">npts</span><span class="p">)</span>
+    <span class="n">RelativeError</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">((</span><span class="n">exact</span><span class="o">-</span><span class="n">result</span><span class="p">)</span><span class="o">/</span><span class="n">exact</span><span class="p">)</span>
+    <span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">log10</span><span class="p">(</span><span class="n">npts</span><span class="p">);</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">log10</span><span class="p">(</span><span class="n">RelativeError</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Relative error&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">jy</span><span class="o">/</span><span class="n">g42mrgv128v34gnnhxwk9nrc0000gp</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_5693</span><span class="o">/</span><span class="mf">58726795.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">log10</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">integrate</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># function for the trapezoidal rule</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;sympy&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="analyzing-the-above-example">
+<h3><span class="section-number">2.11.1. </span>Analyzing the above example<a class="headerlink" href="#analyzing-the-above-example" title="Permalink to this headline">¶</a></h3>
+<p>This example shows the potential of combining numerical algorithms
+with symbolic calculations, allowing us to</p>
+<ul class="simple">
+<li><p>Validate and verify  their  algorithms.</p></li>
+<li><p>Including concepts like unit testing, one has the possibility to test and test several or all parts of the code.</p></li>
+<li><p>Validation and verification are then included <em>naturally</em> and one can develop a better attitude to what is meant with an ethically sound scientific approach.</p></li>
+<li><p>The above example allows the student to also test the mathematical error of the algorithm for the trapezoidal rule by changing the number of integration points. The students get <strong>trained from day one to think error analysis</strong>.</p></li>
+<li><p>With a Jupyter notebook you can keep exploring similar examples and turn them in as your own notebooks.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="python-practicalities-software-and-needed-installations">
+<h2><span class="section-number">2.12. </span>Python practicalities, Software and needed installations<a class="headerlink" href="#python-practicalities-software-and-needed-installations" title="Permalink to this headline">¶</a></h2>
+<p>We will make extensive use of Python as programming language and its
+myriad of available libraries.  You will find
+Jupyter notebooks invaluable in your work.</p>
+<p>If you have Python installed (we strongly recommend Python3) and you feel
+pretty familiar with installing different packages, we recommend that
+you install the following Python packages via <strong>pip</strong> as</p>
+<ol class="simple">
+<li><p>pip install numpy scipy matplotlib ipython scikit-learn mglearn sympy pandas pillow</p></li>
+</ol>
+<p>For Python3, replace <strong>pip</strong> with <strong>pip3</strong>.</p>
+<p>For OSX users we recommend, after having installed Xcode, to
+install <strong>brew</strong>. Brew allows for a seamless installation of additional
+software via for example</p>
+<ol class="simple">
+<li><p>brew install python3</p></li>
+</ol>
+<p>For Linux users, with its variety of distributions like for example the widely popular Ubuntu distribution,
+you can use <strong>pip</strong> as well and simply install Python as</p>
+<ol class="simple">
+<li><p>sudo apt-get install python3  (or python for pyhton2.7)</p></li>
+</ol>
+<p>etc etc.</p>
+<div class="section" id="python-installers">
+<h3><span class="section-number">2.12.1. </span>Python installers<a class="headerlink" href="#python-installers" title="Permalink to this headline">¶</a></h3>
+<p>If you don’t want to perform these operations separately and venture
+into the hassle of exploring how to set up dependencies and paths, we
+recommend two widely used distrubutions which set up all relevant
+dependencies for Python, namely</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.anaconda.com/">Anaconda</a>,</p></li>
+</ul>
+<p>which is an open source
+distribution of the Python and R programming languages for large-scale
+data processing, predictive analytics, and scientific computing, that
+aims to simplify package management and deployment. Package versions
+are managed by the package management system <strong>conda</strong>.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.enthought.com/product/canopy/">Enthought canopy</a></p></li>
+</ul>
+<p>is a Python
+distribution for scientific and analytic computing distribution and
+analysis environment, available for free and under a commercial
+license.</p>
+<p>Furthermore, <a class="reference external" href="https://colab.research.google.com/notebooks/welcome.ipynb">Google’s Colab</a> is a free Jupyter notebook environment that requires
+no setup and runs entirely in the cloud. Try it out!</p>
+</div>
+</div>
+<div class="section" id="useful-python-libraries">
+<h2><span class="section-number">2.13. </span>Useful Python libraries<a class="headerlink" href="#useful-python-libraries" title="Permalink to this headline">¶</a></h2>
+<p>Here we list several useful Python libraries we strongly recommend (if you use anaconda many of these are already there)</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.numpy.org/">NumPy</a> is a highly popular library for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays</p></li>
+<li><p><a class="reference external" href="https://pandas.pydata.org/">The pandas</a> library provides high-performance, easy-to-use data structures and data analysis tools</p></li>
+<li><p><a class="reference external" href="http://xarray.pydata.org/en/stable/">Xarray</a> is a Python package that makes working with labelled multi-dimensional arrays simple, efficient, and fun!</p></li>
+<li><p><a class="reference external" href="https://www.scipy.org/">Scipy</a> (pronounced “Sigh Pie”) is a Python-based ecosystem of open-source software for mathematics, science, and engineering.</p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/">Matplotlib</a> is a Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms.</p></li>
+<li><p><a class="reference external" href="https://github.com/HIPS/autograd">Autograd</a> can automatically differentiate native Python and Numpy code. It can handle a large subset of Python’s features, including loops, ifs, recursion and closures, and it can even take derivatives of derivatives of derivatives</p></li>
+<li><p><a class="reference external" href="https://www.sympy.org/en/index.html">SymPy</a> is a Python library for symbolic mathematics.</p></li>
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/">scikit-learn</a> has simple and efficient tools for machine learning, data mining and data analysis</p></li>
+<li><p><a class="reference external" href="https://www.tensorflow.org/">TensorFlow</a> is a Python library for fast numerical computing created and released by Google</p></li>
+<li><p><a class="reference external" href="https://keras.io/">Keras</a> is a high-level neural networks API, written in Python and capable of running on top of TensorFlow, CNTK, or Theano</p></li>
+<li><p>And many more such as <a class="reference external" href="https://pytorch.org/">pytorch</a>,  <a class="reference external" href="https://pypi.org/project/Theano/">Theano</a> etc</p></li>
+</ul>
+<p>Your jupyter notebook can easily be
+converted into a nicely rendered <strong>PDF</strong> file or a Latex file for
+further processing. For example, convert to latex as</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    pycod jupyter nbconvert filename.ipynb --to latex 
+</pre></div>
+</div>
+<p>And to add more versatility, the Python package <a class="reference external" href="http://www.sympy.org/en/index.html">SymPy</a> is a Python library for symbolic mathematics. It aims to become a full-featured computer algebra system (CAS)  and is entirely written in Python.</p>
+</div>
+<div class="section" id="numpy-examples-and-important-matrix-and-vector-handling-packages">
+<h2><span class="section-number">2.14. </span>Numpy examples and Important Matrix and vector handling packages<a class="headerlink" href="#numpy-examples-and-important-matrix-and-vector-handling-packages" title="Permalink to this headline">¶</a></h2>
+<p>There are several central software libraries for linear algebra and eigenvalue problems. Several of the more
+popular ones have been wrapped into ofter software packages like those from the widely used text <strong>Numerical Recipes</strong>. The original source codes in many of the available packages are often taken from the widely used
+software package LAPACK, which follows two other popular packages
+developed in the 1970s, namely EISPACK and LINPACK.  We describe them shortly here.</p>
+<ul class="simple">
+<li><p>LINPACK: package for linear equations and least square problems.</p></li>
+<li><p>LAPACK:package for solving symmetric, unsymmetric and generalized eigenvalue problems. From LAPACK’s website <a class="reference external" href="http://www.netlib.org">http://www.netlib.org</a> it is possible to download for free all source codes from this library. Both C/C++ and Fortran versions are available.</p></li>
+<li><p>BLAS (I, II and III): (Basic Linear Algebra Subprograms) are routines that provide standard building blocks for performing basic vector and matrix operations. Blas I is vector operations, II vector-matrix operations and III matrix-matrix operations. Highly parallelized and efficient codes, all available for download from <a class="reference external" href="http://www.netlib.org">http://www.netlib.org</a>.</p></li>
+</ul>
+<p><a class="reference external" href="http://www.numpy.org/">Numpy</a> provides an easy way to handle arrays in Python. The standard way to import this library is as</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here follows a simple example where we set up an array of ten elements, all determined by random numbers drawn according to the normal distribution,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We defined a vector <span class="math notranslate nohighlight">\(x\)</span> with <span class="math notranslate nohighlight">\(n=10\)</span> elements with its values given by the Normal distribution <span class="math notranslate nohighlight">\(N(0,1)\)</span>.
+Another alternative is to declare a vector as follows</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we have defined a vector with three elements, with <span class="math notranslate nohighlight">\(x_0=1\)</span>, <span class="math notranslate nohighlight">\(x_1=2\)</span> and <span class="math notranslate nohighlight">\(x_2=3\)</span>. Note that both Python and C++
+start numbering array elements from <span class="math notranslate nohighlight">\(0\)</span> and on. This means that a vector with <span class="math notranslate nohighlight">\(n\)</span> elements has a sequence of entities <span class="math notranslate nohighlight">\(x_0, x_1, x_2, \dots, x_{n-1}\)</span>. We could also let (recommended) Numpy to compute the logarithms of a specific array as</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the last example we used Numpy’s unary function <span class="math notranslate nohighlight">\(np.log\)</span>. This function is
+highly tuned to compute array elements since the code is vectorized
+and does not require looping. We normaly recommend that you use the
+Numpy intrinsic functions instead of the corresponding <strong>log</strong> function
+from Python’s <strong>math</strong> module. The looping is done explicitely by the
+<strong>np.log</strong> function. The alternative, and slower way to compute the
+logarithms of a vector would be to write</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">log</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)):</span>
+    <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We note that our code is much longer already and we need to import the <strong>log</strong> function from the <strong>math</strong> module.
+The attentive reader will also notice that the output is <span class="math notranslate nohighlight">\([1, 1, 2]\)</span>. Python interprets automagically our numbers as integers (like the <strong>automatic</strong> keyword in C++). To change this we could define our array elements to be double precision numbers as</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>or simply write them as double precision numbers (Python uses 64 bits as default for floating point type variables), that is</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To check the number of bytes (remember that one byte contains eight bits for double precision variables), you can use simple use the <strong>itemsize</strong> functionality (the array <span class="math notranslate nohighlight">\(x\)</span> is actually an object which inherits the functionalities defined in Numpy) as</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">itemsize</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="matrices-in-python">
+<h3><span class="section-number">2.14.1. </span>Matrices in Python<a class="headerlink" href="#matrices-in-python" title="Permalink to this headline">¶</a></h3>
+<p>Having defined vectors, we are now ready to try out matrices. We can
+define a <span class="math notranslate nohighlight">\(3 \times 3 \)</span> real matrix <span class="math notranslate nohighlight">\(\hat{A}\)</span> as (recall that we user
+lowercase letters for vectors and uppercase letters for matrices)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="p">[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">11.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">]</span> <span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we use the <strong>shape</strong> function we would get <span class="math notranslate nohighlight">\((3, 3)\)</span> as output, that is verifying that our matrix is a <span class="math notranslate nohighlight">\(3\times 3\)</span> matrix. We can slice the matrix and print for example the first column (Python organized matrix elements in a row-major order, see below) as</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="p">[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">11.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">]</span> <span class="p">]))</span>
+<span class="c1"># print the first column, row-major order and elements start with 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can continue this was by printing out other columns or rows. The example here prints out the second column</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="p">[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">11.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">]</span> <span class="p">]))</span>
+<span class="c1"># print the first column, row-major order and elements start with 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">,:])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Numpy contains many other functionalities that allow us to slice, subdivide etc etc arrays. We strongly recommend that you look up the <a class="reference external" href="http://www.numpy.org/">Numpy website for more details</a>. Useful functions when defining a matrix are the <strong>np.zeros</strong> function which declares a matrix of a given dimension and sets all elements to zero</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="c1"># define a matrix of dimension 10 x 10 and set all elements to zero</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>or initializing all elements to</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="c1"># define a matrix of dimension 10 x 10 and set all elements to one</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>or as unitarily distributed random numbers (see the material on random number generators in the statistics part)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="c1"># define a matrix of dimension 10 x 10 and set all elements to random numbers with x \in [0, 1]</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="meet-the-pandas">
+<h3><span class="section-number">2.14.2. </span>Meet the Pandas<a class="headerlink" href="#meet-the-pandas" title="Permalink to this headline">¶</a></h3>
+<p>Another useful Python package is
+<a class="reference external" href="https://pandas.pydata.org/">pandas</a>, which is an open source library
+providing high-performance, easy-to-use data structures and data
+analysis tools for Python. <strong>pandas</strong> stands for panel data, a term borrowed from econometrics and is an efficient library for data analysis with an emphasis on tabular data.</p>
+<p><strong>pandas</strong> has two major classes, the <strong>DataFrame</strong> class with
+two-dimensional data objects and tabular data organized in columns and
+the class <strong>Series</strong> with a focus on one-dimensional data objects. Both
+classes allow you to index data easily as we will see in the examples
+below.  <strong>pandas</strong> allows you also to perform mathematical operations on
+the data, spanning from simple reshapings of vectors and matrices to
+statistical operations.</p>
+<p>The following simple example shows how we can, in an easy way make
+tables of our data. Here we define a data set which includes names,
+place of birth and date of birth, and displays the data in an easy to
+read way. We will see repeated use of <strong>pandas</strong>, in particular in
+connection with classification of data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;First Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Frodo&quot;</span><span class="p">,</span> <span class="s2">&quot;Bilbo&quot;</span><span class="p">,</span> <span class="s2">&quot;Aragorn II&quot;</span><span class="p">,</span> <span class="s2">&quot;Samwise&quot;</span><span class="p">],</span>
+        <span class="s1">&#39;Last Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Baggins&quot;</span><span class="p">,</span> <span class="s2">&quot;Baggins&quot;</span><span class="p">,</span><span class="s2">&quot;Elessar&quot;</span><span class="p">,</span><span class="s2">&quot;Gamgee&quot;</span><span class="p">],</span>
+        <span class="s1">&#39;Place of birth&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Shire&quot;</span><span class="p">,</span> <span class="s2">&quot;Shire&quot;</span><span class="p">,</span> <span class="s2">&quot;Eriador&quot;</span><span class="p">,</span> <span class="s2">&quot;Shire&quot;</span><span class="p">],</span>
+        <span class="s1">&#39;Date of Birth T.A.&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2968</span><span class="p">,</span> <span class="mi">2890</span><span class="p">,</span> <span class="mi">2931</span><span class="p">,</span> <span class="mi">2980</span><span class="p">]</span>
+        <span class="p">}</span>
+<span class="n">data_pandas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">data_pandas</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above we have imported <strong>pandas</strong> with the shorthand <strong>pd</strong>, the latter has become the standard way we import <strong>pandas</strong>. We make then a list of various variables
+and reorganize the above lists into a <strong>DataFrame</strong> and then print out  a neat table with specific column labels as <em>Name</em>, <em>place of birth</em> and <em>date of birth</em>.
+Displaying these results, we see that the indices are given by the default numbers from zero to three.
+<strong>pandas</strong> is extremely flexible and we can easily change the above indices by defining a new type of indexing as</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_pandas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Frodo&#39;</span><span class="p">,</span><span class="s1">&#39;Bilbo&#39;</span><span class="p">,</span><span class="s1">&#39;Aragorn&#39;</span><span class="p">,</span><span class="s1">&#39;Sam&#39;</span><span class="p">])</span>
+<span class="n">display</span><span class="p">(</span><span class="n">data_pandas</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Thereafter we display the content of the row which begins with the index <strong>Aragorn</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">data_pandas</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Aragorn&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can easily append data to this, for example</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_hobbit</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;First Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Peregrin&quot;</span><span class="p">],</span>
+              <span class="s1">&#39;Last Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Took&quot;</span><span class="p">],</span>
+              <span class="s1">&#39;Place of birth&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Shire&quot;</span><span class="p">],</span>
+              <span class="s1">&#39;Date of Birth T.A.&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2990</span><span class="p">]</span>
+              <span class="p">}</span>
+<span class="n">data_pandas</span><span class="o">=</span><span class="n">data_pandas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">new_hobbit</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Pippin&#39;</span><span class="p">]))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">data_pandas</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here are other examples where we use the <strong>DataFrame</strong> functionality to handle arrays, now with more interesting features for us, namely numbers. We set up a matrix
+of dimensionality <span class="math notranslate nohighlight">\(10\times 5\)</span> and compute the mean value and standard deviation of each column. Similarly, we can perform mathematial operations like squaring the matrix elements and many other operations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="c1"># setting up a 10 x 5 matrix</span>
+<span class="n">rows</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span><span class="n">cols</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Thereafter we can select specific columns only and plot final results</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;First&#39;</span><span class="p">,</span> <span class="s1">&#39;Second&#39;</span><span class="p">,</span> <span class="s1">&#39;Third&#39;</span><span class="p">,</span> <span class="s1">&#39;Fourth&#39;</span><span class="p">,</span> <span class="s1">&#39;Fifth&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Second&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+
+<span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="n">plt</span><span class="p">,</span> <span class="n">mpl</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;seaborn&#39;</span><span class="p">)</span>
+<span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.family&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;serif&#39;</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lw</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">rot</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can produce a <span class="math notranslate nohighlight">\(4\times 4\)</span> matrix</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>and many other operations.</p>
+<p>The <strong>Series</strong> class is another important class included in
+<strong>pandas</strong>. You can view it as a specialization of <strong>DataFrame</strong> but where
+we have just a single column of data. It shares many of the same
+features as <strong>DataFrame</strong>. As with <strong>DataFrame</strong>, most operations are
+vectorized, achieving thereby a high performance when dealing with
+computations of arrays, in particular labeled arrays.  As we will see
+below it leads also to a very concice code close to the mathematical
+operations we may be interested in.  For multidimensional arrays, we
+recommend strongly
+<a class="reference external" href="http://xarray.pydata.org/en/stable/">xarray</a>. <strong>xarray</strong> has much of
+the same flexibility as <strong>pandas</strong>, but allows for the extension to
+higher dimensions than two.</p>
+</div>
+</div>
+<div class="section" id="introduction-to-git-and-github-gitlab-and-similar">
+<h2><span class="section-number">2.15. </span>Introduction to Git and GitHub/GitLab and similar<a class="headerlink" href="#introduction-to-git-and-github-gitlab-and-similar" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://git-scm.com/">Git</a> is a distributed version-control system
+for tracking changes in any set of files, originally designed for
+coordinating work among programmers cooperating on source code during
+software development.</p>
+<p>The <a class="reference external" href="https://git-scm.com/doc">reference document and videos here</a>
+give you an excellent introduction to the <strong>git</strong>.</p>
+<p>We believe you will find version-control software very useful in your work.</p>
+<p>All teaching material related to this course is open and freely
+available via the GitHub site of the course. The video here gives a
+short intro to
+<a class="reference external" href="https://www.youtube.com/watch/w3jLJU7DT5E?reload=9">GitHub</a>.</p>
+<p>See also the <a class="reference external" href="https://mediaspace.msu.edu/media/t/1_8mgx3cyf">overview video on Git and GitHub</a>.</p>
+<div class="section" id="useful-git-and-github-links">
+<h3><span class="section-number">2.15.1. </span>Useful Git and GitHub links<a class="headerlink" href="#useful-git-and-github-links" title="Permalink to this headline">¶</a></h3>
+<p>These are a couple references that we have found useful (git commands, markdown, GitPages):</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet</a></p></li>
+<li><p><a class="reference external" href="https://education.github.com/git-cheat-sheet-education.pdf">https://education.github.com/git-cheat-sheet-education.pdf</a></p></li>
+<li><p><a class="reference external" href="https://guides.github.com/features/pages/">https://guides.github.com/features/pages/</a></p></li>
+</ul>
+<p>When dealing with homeworks, at some point you would need to use an
+editor, or an integrated development envinroment (IDE). As an IDE, we
+would like to recommend <strong>anaconda</strong> since we end up using
+jupyter-notebooks.  <strong>anaconda</strong> runs on all known operating systems.</p>
+<p>If you prefer editing <strong>Python</strong> codes, there are several excellent cross-platform editors.
+If you are in a Windows environment, <strong>word</strong> is the classical text editor.</p>
+<p>There is however a wealth of text editors and/ord IDEs that run on all operating
+systems and functions well with Python.  Some of the more popular ones  are</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://atom.io/">Atom</a></p></li>
+<li><p><a class="reference external" href="https://www.sublimetext.com/">Sublime</a></p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="chapter1.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">1. </span>Introduction</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="chapter3.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">3. </span>Simple Motion problems and Reminder on Newton’s Laws</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Morten Hjorth-Jensen and Scott Pratt<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

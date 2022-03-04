@@ -1,0 +1,598 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>12. PHY321: Classical Mechanics 1 &#8212; Classical mechanics</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="11. PHY321: Classical Mechanics 1" href="hw3.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Classical mechanics</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   PHY321 Classical Mechanics I, Michigan State University, Spring 2021
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  About the course
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="schedule.html">
+   Teaching schedule with links to material
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="teachers.html">
+   Teachers and Grading
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="textbooks.html">
+   Textbooks
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Introductory Material
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter1.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter2.html">
+   2. Classical Mechanics, Mathematics and Numerical background
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter3.html">
+   3. Simple Motion problems and Reminder on Newton’s Laws
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter4.html">
+   4. Work, Energy, Momentum and Conservation laws
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Advanced Topics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter5.html">
+   5. Harmonic Oscillations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter6.html">
+   6. Two-body problems, from the Gravitational Force to Two-body Scattering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter7.html">
+   7. Non-inertial Frames, Translation and Rotating Coordinate Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter8.html">
+   8. Variational Calculus and Lagrangian Formalism
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Weekly assignments, midterms and final projects with solutions
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="hw1.html">
+   9. PHY321: Classical Mechanics 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hw2.html">
+   10. PHY321: Classical Mechanics 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hw3.html">
+   11. PHY321: Classical Mechanics 1
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   12. PHY321: Classical Mechanics 1
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/hw4.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practicalities-about-homeworks-and-projects">
+   12.1. Practicalities about  homeworks and projects
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-homework-4">
+   12.2. Introduction to homework 4
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1-10-pt-conservation-laws-energy-and-momentum">
+   12.3. Exercise 1 (10 pt), Conservation laws, Energy and momentum
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2-10-pt-conservation-of-angular-momentum">
+   12.4. Exercise 2 (10 pt), Conservation of angular momentum
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-3-10pt-example-of-potential">
+   12.5. Exercise 3 (10pt), Example of potential
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-4-15pt-angular-momentum-case">
+   12.6. Exercise 4 (15pt), Angular momentum case
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-5-15pt-forces-and-potentials">
+   12.7. Exercise 5 (15pt), forces  and potentials
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-6-40pt-bouncing-object">
+   12.8. Exercise 6 (40pt), Bouncing object
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classical-mechanics-extra-credit-assignment-scientific-writing-and-attending-talks">
+   12.9. Classical Mechanics Extra Credit Assignment: Scientific Writing and attending Talks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integrating-classwork-with-research">
+   12.10. Integrating Classwork With Research
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <!-- HTML file automatically generated from DocOnce source (https://github.com/doconce/doconce/)
+doconce format html hw4.do.txt --no_mako -->
+<!-- dom:TITLE: PHY321: Classical Mechanics 1 --><div class="tex2jax_ignore mathjax_ignore section" id="phy321-classical-mechanics-1">
+<h1><span class="section-number">12. </span>PHY321: Classical Mechanics 1<a class="headerlink" href="#phy321-classical-mechanics-1" title="Permalink to this headline">¶</a></h1>
+<p><strong>Homework 4, due Friday  February 11</strong></p>
+<p>Date: <strong>Jan 31, 2022</strong></p>
+<div class="section" id="practicalities-about-homeworks-and-projects">
+<h2><span class="section-number">12.1. </span>Practicalities about  homeworks and projects<a class="headerlink" href="#practicalities-about-homeworks-and-projects" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. <strong>Remember to write your name(s)</strong>!</p></li>
+<li><p>Homeworks are available ten days before the deadline.</p></li>
+<li><p>How do I(we)  hand in?  You can hand in the paper and pencil exercises as a scanned document. For this homework this applies to exercises 1-5. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise(s) (exercise 6 here) should always be handed in as a jupyter notebook by the deadline at D2L.</p></li>
+</ol>
+</div>
+<div class="section" id="introduction-to-homework-4">
+<h2><span class="section-number">12.2. </span>Introduction to homework 4<a class="headerlink" href="#introduction-to-homework-4" title="Permalink to this headline">¶</a></h2>
+<p>This week’s sets of classical pen and paper and computational
+exercises deal with simple motion problems and conservation laws;
+energy, momentum and angular momentum. These conservation laws are
+central in Physics and understanding them properly lays the foundation
+for understanding and analyzing more complicated physics problems.</p>
+<p>The relevant reading background is</p>
+<ol class="simple">
+<li><p>chapters 3, 4.1, 4.2 and 4.3 of Taylor (there are many good examples there) and</p></li>
+<li><p>chapters 10-13 of Malthe-Sørenssen.</p></li>
+</ol>
+<p>In both textbooks there are many nice worked out examples. Malthe-Sørenssen’s text contains also several coding examples you may find useful.</p>
+<p>The numerical homework focuses on another motion problem where you can
+use the code you developed in homework 3, almost entirely. Please take
+a look at the posted solution (jupyter-notebook) for homework 3. You
+need only to change the forces at play. The numerical problem this time is based
+on your code from homework 3 and we will try to make the motion of a falling object in two dimensions more realistic by allowing to bounce up again due to a normal force from the floor.</p>
+</div>
+<div class="section" id="exercise-1-10-pt-conservation-laws-energy-and-momentum">
+<h2><span class="section-number">12.3. </span>Exercise 1 (10 pt), Conservation laws, Energy and momentum<a class="headerlink" href="#exercise-1-10-pt-conservation-laws-energy-and-momentum" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>1a (2pt) How do we define a conservative force?</p></li>
+<li><p>1b (4pt) Use the work-energy theorem to show that energy is conserved with a conservative force.</p></li>
+<li><p>1c (4pt) Assume that you have only internal two-body forces acting on <span class="math notranslate nohighlight">\(N\)</span> objects in an isolated system. The force from object <span class="math notranslate nohighlight">\(i\)</span> on object <span class="math notranslate nohighlight">\(j\)</span> is <span class="math notranslate nohighlight">\(\boldsymbol{F}_{ij}\)</span>. Show that the linear momentum is conserved.</p></li>
+</ul>
+</div>
+<div class="section" id="exercise-2-10-pt-conservation-of-angular-momentum">
+<h2><span class="section-number">12.4. </span>Exercise 2 (10 pt), Conservation of angular momentum<a class="headerlink" href="#exercise-2-10-pt-conservation-of-angular-momentum" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>2a (2pt) Define angular momentum and the torque for a single object with external forces only.</p></li>
+<li><p>2b (4pt) Define angular momentum and the torque for a system with <span class="math notranslate nohighlight">\(N\)</span> objects/particles  with external and internal forces. The force from object <span class="math notranslate nohighlight">\(i\)</span> on object <span class="math notranslate nohighlight">\(j\)</span> is <span class="math notranslate nohighlight">\(\boldsymbol{F}_{ij}\)</span>.</p></li>
+<li><p>2c (4pt) With internal forces only, what is the mathematical form of the forces that allows for angular momentum to be conserved?</p></li>
+</ul>
+</div>
+<div class="section" id="exercise-3-10pt-example-of-potential">
+<h2><span class="section-number">12.5. </span>Exercise 3 (10pt), Example of potential<a class="headerlink" href="#exercise-3-10pt-example-of-potential" title="Permalink to this headline">¶</a></h2>
+<p>Consider a particle of mass <span class="math notranslate nohighlight">\(m\)</span> moving according to the potential</p>
+<div class="math notranslate nohighlight">
+\[
+V(x,y,z)=A\exp\left\{-\frac{x^2+z^2}{2a^2}\right\}.
+\]</div>
+<ul class="simple">
+<li><p>3a (2pt) Is energy conserved? If so, why?</p></li>
+<li><p>3b (4pt) Which of  the quantities, <span class="math notranslate nohighlight">\(p_x,p_y,p_z\)</span> are conserved?</p></li>
+<li><p>3c (4pt) Which of  the quantities, <span class="math notranslate nohighlight">\(L_x,L_y,L_z\)</span> are conserved?</p></li>
+</ul>
+</div>
+<div class="section" id="exercise-4-15pt-angular-momentum-case">
+<h2><span class="section-number">12.6. </span>Exercise 4 (15pt), Angular momentum case<a class="headerlink" href="#exercise-4-15pt-angular-momentum-case" title="Permalink to this headline">¶</a></h2>
+<p>At <span class="math notranslate nohighlight">\(t=0\)</span> we have a single object with position <span class="math notranslate nohighlight">\(\boldsymbol{r}_0=x_0\boldsymbol{e}_x+y_0\boldsymbol{e}_y\)</span>.We add also a force in the <span class="math notranslate nohighlight">\(x\)</span>-direction at <span class="math notranslate nohighlight">\(t=0\)</span>. We assume that the object is at rest at <span class="math notranslate nohighlight">\(t=0\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{F} = F\boldsymbol{e}_x.
+\]</div>
+<ul class="simple">
+<li><p>4a (5pt) Find the velocity and momentum at a given time <span class="math notranslate nohighlight">\(t\)</span> by integrating over time with the above initial conditions.</p></li>
+<li><p>4b (5pt) Find also the position at a time <span class="math notranslate nohighlight">\(t\)</span>.</p></li>
+<li><p>4c (5pt) Use the position and the momentum to find the angular momentum and the torque. Is angular momentum conserved?</p></li>
+</ul>
+</div>
+<div class="section" id="exercise-5-15pt-forces-and-potentials">
+<h2><span class="section-number">12.7. </span>Exercise 5 (15pt), forces  and potentials<a class="headerlink" href="#exercise-5-15pt-forces-and-potentials" title="Permalink to this headline">¶</a></h2>
+<p>A particle of mass <span class="math notranslate nohighlight">\(m\)</span> has velocity <span class="math notranslate nohighlight">\(v=\alpha/x\)</span>, where <span class="math notranslate nohighlight">\(x\)</span> is its displacement.</p>
+<ul class="simple">
+<li><p>5a (5pt) Find the force <span class="math notranslate nohighlight">\(F(x)\)</span> responsible for the motion.</p></li>
+</ul>
+<p>A particle is thereafter under the influence of a force <span class="math notranslate nohighlight">\(F=-kx+kx^3/\alpha^2\)</span>, where <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(\alpha\)</span> are constants and <span class="math notranslate nohighlight">\(k\)</span> is positive.</p>
+<ul class="simple">
+<li><p>5b (5pt) Determine the potential <span class="math notranslate nohighlight">\(U(x)\)</span>  and discuss the motion. It can be convenient here to make a sketch/plot of the potential as function of <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
+<li><p>5c (5pt)  What happens when the energy of the particle is <span class="math notranslate nohighlight">\(E=(1/4)k\alpha^2\)</span>? Hint: what is the maximum value of the potential energy?</p></li>
+</ul>
+</div>
+<div class="section" id="exercise-6-40pt-bouncing-object">
+<h2><span class="section-number">12.8. </span>Exercise 6 (40pt), Bouncing object<a class="headerlink" href="#exercise-6-40pt-bouncing-object" title="Permalink to this headline">¶</a></h2>
+<p>This exercise builds on the code you wrote for solving homework 3.
+There we introduced gravity and air resistance and studied their
+effects via a constant acceleration due to gravity and the force
+arising from air resistance. But what happens when the ball hits the
+floor? What if we would like to simulate the normal force from the
+floor acting on the ball?  This exercise shows how we can include more
+complicated forces with no pain! And the force we include here is an
+example of a case where analytical solutions may either be difficult
+to find or we cannot find an analytical solution at all.</p>
+<p>We need then to include a force model for the normal force from the
+floor on the ball. The simplest approach to such a system is to
+introduce a contact force model represented by a spring model.  We
+model the interaction between the floor and the ball as a single
+spring. But the normal force is zero when there is no contact. Here we
+define a simple model that allows us to include such effects in our
+models.</p>
+<p>The normal force from the floor on the ball is represented by a spring force. This
+is a strong simplification of the actual deformation process occurring at the contact
+between the ball and the floor due to the deformation of both the ball and the floor.</p>
+<p>The deformed region corresponds roughly to the region of <strong>overlap</strong> between the
+ball and the floor. The depth of this region is <span class="math notranslate nohighlight">\(\Delta y = R − y(t)\)</span>, where <span class="math notranslate nohighlight">\(R\)</span>
+is the radius of the ball. This is supposed to represent the compression of the spring.
+Our model for the normal force acting on the ball is then</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{N} = −k (R − y(t)) \boldsymbol{e}_y.
+\]</div>
+<p>The normal force must act upward when <span class="math notranslate nohighlight">\(y &lt; R\)</span>,
+hence the sign must be negative.
+However, we must also ensure that the normal force only acts when the ball is in
+contact with the floor, otherwise the normal force is zero. The full formation of the
+normal force is therefore</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{N} = −k (R − y(t)) \boldsymbol{e}_y,
+\]</div>
+<p>when <span class="math notranslate nohighlight">\(y(t) &lt; R\)</span> and zero when <span class="math notranslate nohighlight">\(y(t) \le R\)</span>.
+In the numerical calculations you can choose <span class="math notranslate nohighlight">\(R=0.1\)</span> m and the spring constant <span class="math notranslate nohighlight">\(k=1000\)</span> N/m.</p>
+<ul class="simple">
+<li><p>6a (10pt) Identify the forces acting on the ball and set up a diagram with the forces acting on the ball. Find the acceleration of the falling ball now with the normal force as well.</p></li>
+<li><p>6b (30pt) Choose a large enough final time so you can study the ball bouncing up and down several times. Add the normal force and compute the height of the ball as function of time with and without air resistance. Comment your results.</p></li>
+</ul>
+</div>
+<div class="section" id="classical-mechanics-extra-credit-assignment-scientific-writing-and-attending-talks">
+<h2><span class="section-number">12.9. </span>Classical Mechanics Extra Credit Assignment: Scientific Writing and attending Talks<a class="headerlink" href="#classical-mechanics-extra-credit-assignment-scientific-writing-and-attending-talks" title="Permalink to this headline">¶</a></h2>
+<p>The following gives you an opportunity to earn <strong>five extra credit
+points</strong> on each of the remaining homeworks and <strong>ten extra credit points</strong>
+on the midterms and finals.  This assignment also covers an aspect of
+the scientific process that is not taught in most undergraduate
+programs: scientific writing.  Writing scientific reports is how
+scientist communicate their results to the rest of the field.  Knowing
+how to assemble a well written scientific report will greatly benefit
+you in you upper level classes, in graduate school, and in the work
+place.</p>
+<p>The full information on extra credits is found at <a class="reference external" href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/">https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/</a>. There you will also find examples on how to write a scientific article.
+Below you can also find a description on how to gain extra credits by attending scientific talks.</p>
+<p>This assignment allows you to gain extra credit points by practicing
+your scientific writing.  For each of the remaining homeworks you can
+submit the specified section of a scientific report (written about the
+numerical aspect of the homework) for five extra credit points on the
+assignment.  For the two midterms and the final, submitting a full
+scientific report covering the numerical analysis problem will be
+worth ten extra points.  For credit the grader must be able to tell
+that you put effort into the assignment (i.e. well written, well
+formatted, etc.).  If you are unfamiliar with writing scientific
+reports, <a class="reference external" href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/IntroductionScientificWriting.md">see the information here</a></p>
+<p>The following table explains what aspect of a scientific report is due
+with which homework.  You can submit the assignment in any format you
+like, in the same document as your homework, or in a different one.
+Remember to cite any external references you use and include a
+reference list.  There are no length requirements, but make sure what
+you turn in is complete and through.  If you have any questions,
+please contact Julie Butler at <a class="reference external" href="mailto:butler&#37;&#52;&#48;frib&#46;msu&#46;edu">butler<span>&#64;</span>frib<span>&#46;</span>msu<span>&#46;</span>edu</a>.</p>
+<table class="dotable" border="1">
+<thead>
+<tr><th align="center">  HW/Project </th> <th align="center"> Due Date</th> <th align="center">Extra Credit Assignment</th> </tr>
+</thead>
+<tbody>
+<tr><td align="center">   HW 3             </td> <td align="center">   2-8          </td> <td align="center">   Abstract                   </td> </tr>
+<tr><td align="center">   HW 4             </td> <td align="center">   2-15         </td> <td align="center">   Introduction               </td> </tr>
+<tr><td align="center">   HW 5             </td> <td align="center">   2-22         </td> <td align="center">   Methods                    </td> </tr>
+<tr><td align="center">   HW 6             </td> <td align="center">   3-1          </td> <td align="center">   Results and Discussion     </td> </tr>
+<tr><td align="center">   **Midterm 1**    </td> <td align="center">   **3-12**     </td> <td align="center">   *Full Written Report*      </td> </tr>
+<tr><td align="center">   HW 7             </td> <td align="center">   3-22         </td> <td align="center">   Abstract                   </td> </tr>
+<tr><td align="center">   HW 8             </td> <td align="center">   3-29         </td> <td align="center">   Introduction               </td> </tr>
+<tr><td align="center">   HW 9             </td> <td align="center">   4-5          </td> <td align="center">   Results and Discussion     </td> </tr>
+<tr><td align="center">   **Midterm 2      </td> <td align="center">   ** _4-16_    </td> <td align="center">   *Full Written Report*      </td> </tr>
+<tr><td align="center">   HW 10            </td> <td align="center">   4-26         </td> <td align="center">   Abstract                   </td> </tr>
+<tr><td align="center">   **Final**        </td> <td align="center">   **4-30**     </td> <td align="center">   *Full Written Report*      </td> </tr>
+</tbody>
+</table>
+<p>You can also gain extra credits if you attend scientific talks.
+This is described here.</p>
+</div>
+<div class="section" id="integrating-classwork-with-research">
+<h2><span class="section-number">12.10. </span>Integrating Classwork With Research<a class="headerlink" href="#integrating-classwork-with-research" title="Permalink to this headline">¶</a></h2>
+<p>This opportunity will allow you to earn up to 5 extra credit points on a Homework per week. These points can push you above 100% or help make up for missed exercises.
+In order to earn all points you must:</p>
+<ol class="simple">
+<li><p>Attend an MSU research talk (recommended research oriented Clubs is  provided below)</p></li>
+<li><p>Summarize the talk using at least 150 words</p></li>
+<li><p>Turn in the summary along with your Homework.</p></li>
+</ol>
+<p>Approved talks:
+Talks given by researchers through the following clubs:</p>
+<ul class="simple">
+<li><p>Research and Idea Sharing Enterprise (RAISE)​: Meets Wednesday Nights Society for Physics Students (SPS)​: Meets Monday Nights</p></li>
+<li><p>Astronomy Club​: Meets Monday Nights</p></li>
+<li><p>Facility For Rare Isotope Beam (FRIB) Seminars: ​Occur multiple times a week</p></li>
+</ul>
+<p>If you have any questions please consult Jeremy Rebenstock, <a class="reference external" href="mailto:rebensto&#37;&#52;&#48;msu&#46;edu">rebensto<span>&#64;</span>msu<span>&#46;</span>edu</a>.</p>
+<p>All the material on extra credits is at <a class="reference external" href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/">https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/</a>.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="hw3.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">11. </span>PHY321: Classical Mechanics 1</p>
+            </div>
+        </a>
+    </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Morten Hjorth-Jensen and Scott Pratt<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -1,0 +1,664 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11. PHY321: Classical Mechanics 1 &#8212; Classical mechanics</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="12. PHY321: Classical Mechanics 1" href="hw4.html" />
+    <link rel="prev" title="10. PHY321: Classical Mechanics 1" href="hw2.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Classical mechanics</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   PHY321 Classical Mechanics I, Michigan State University, Spring 2021
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  About the course
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="schedule.html">
+   Teaching schedule with links to material
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="teachers.html">
+   Teachers and Grading
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="textbooks.html">
+   Textbooks
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Introductory Material
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter1.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter2.html">
+   2. Classical Mechanics, Mathematics and Numerical background
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter3.html">
+   3. Simple Motion problems and Reminder on Newton’s Laws
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter4.html">
+   4. Work, Energy, Momentum and Conservation laws
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Advanced Topics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter5.html">
+   5. Harmonic Oscillations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter6.html">
+   6. Two-body problems, from the Gravitational Force to Two-body Scattering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter7.html">
+   7. Non-inertial Frames, Translation and Rotating Coordinate Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter8.html">
+   8. Variational Calculus and Lagrangian Formalism
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Weekly assignments, midterms and final projects with solutions
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="hw1.html">
+   9. PHY321: Classical Mechanics 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hw2.html">
+   10. PHY321: Classical Mechanics 1
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   11. PHY321: Classical Mechanics 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hw4.html">
+   12. PHY321: Classical Mechanics 1
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/hw3.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practicalities-about-homeworks-and-projects">
+   11.1. Practicalities about  homeworks and projects
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-homework-3">
+   11.2. Introduction to homework 3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1-20-pt-electron-moving-into-an-electric-field">
+   11.3. Exercise 1 (20 pt), Electron moving into an electric field
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2-10-pt-drag-force">
+   11.4. Exercise 2 (10 pt), Drag force
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-3-10-pt-falling-object">
+   11.5. Exercise 3 (10 pt), Falling object
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-4-10-pt-and-then-a-cyclist">
+   11.6. Exercise 4 (10 pt), and then a cyclist
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-5-10-pt-back-to-a-falling-ball-and-preparing-for-the-numerical-exercise">
+   11.7. Exercise 5 (10 pt), back to a falling ball and preparing for the numerical exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-6-40pt-numerical-elements-solving-exercise-5-numerically">
+   11.8. Exercise 6 (40pt), Numerical elements, solving exercise 5 numerically
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classical-mechanics-extra-credit-assignment-scientific-writing-and-attending-talks">
+   11.9. Classical Mechanics Extra Credit Assignment: Scientific Writing and attending Talks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integrating-classwork-with-research">
+   11.10. Integrating Classwork With Research
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <!-- HTML file automatically generated from DocOnce source (https://github.com/doconce/doconce/)
+doconce format html hw3.do.txt --no_mako -->
+<!-- dom:TITLE: PHY321: Classical Mechanics 1 --><div class="tex2jax_ignore mathjax_ignore section" id="phy321-classical-mechanics-1">
+<h1><span class="section-number">11. </span>PHY321: Classical Mechanics 1<a class="headerlink" href="#phy321-classical-mechanics-1" title="Permalink to this headline">¶</a></h1>
+<p><strong>Homework 3, due February 4</strong></p>
+<p>Date: <strong>Jan 31, 2022</strong></p>
+<div class="section" id="practicalities-about-homeworks-and-projects">
+<h2><span class="section-number">11.1. </span>Practicalities about  homeworks and projects<a class="headerlink" href="#practicalities-about-homeworks-and-projects" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. <strong>Remember to write your name(s)</strong>!</p></li>
+<li><p>Homeworks are available ten days  before the deadline.</p></li>
+<li><p>How do I(we)  hand in?  You can hand in the paper and pencil exercises as a  scanned document. For this homework this applies to exercises 1-5. Alternatively, you can hand in everything (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise(s) (exercise 6 here) should always be handed in as a jupyter notebook by the deadline at D2L.</p></li>
+</ol>
+</div>
+<div class="section" id="introduction-to-homework-3">
+<h2><span class="section-number">11.2. </span>Introduction to homework 3<a class="headerlink" href="#introduction-to-homework-3" title="Permalink to this headline">¶</a></h2>
+<p>This week’s sets of classical pen and paper and computational
+exercises deal with the motion of different objects under the
+influence of various forces. The relevant reading background is</p>
+<ol class="simple">
+<li><p>chapter 2 of Taylor (there are many good examples there) and</p></li>
+<li><p>chapters 5-7 of Malthe-Sørenssen.</p></li>
+</ol>
+<p>In both textbooks there are many nice worked out
+examples. Malthe-Sørenssen’s text contains also several coding
+examples you may find useful.</p>
+<p>There are several pedagogical aims we have in mind with these exercises:</p>
+<ol class="simple">
+<li><p>Get practice in setting up and analyzing a physical problem, finding the forces and the relevant equations to solve;</p></li>
+<li><p>Analyze the results and ask yourself whether they make sense or not;</p></li>
+<li><p>Finding analytical solutions to problems if possible and compare these with numerical results. This teaches us also how to understand errors in numerical calculations;</p></li>
+<li><p>Being able to solve (in mechanics these are the most common types of equations) numerically ordinary differential equations and compare the solutions where possible with analytical solutions;</p></li>
+<li><p>Getting used to studying physical problems using all possible tools, from paper and pencil to numerical solutions;</p></li>
+<li><p>Then analyze the results and ask yourself whether they make sense or not.</p></li>
+</ol>
+<p>The above steps outline important elements of our understanding of the
+scientific method. Furthermore, there are also explicit coding skills
+we aim at such as setting up arrays, solving differential equations
+numerically and plotting your results.  Coding practice is also an
+important aspect. The more we practice the better we get (hopefully).
+From a numerical mathematics point of view, we will solve the differential
+equations using Euler’s method (forward Euler).</p>
+<p>The code we will develop can be reused as a basis for coming homeworks. We can
+also extend the numerical solver we write here to include other methods (later) like
+the modified Euler method (Euler-Cromer, midpoint Euler) and more
+advanced methods like the family of Runge-Kutta methods and the Velocity-Verlet method.</p>
+<p>At the end of this course, we will thus have developed a larger code
+(or set of codes) which will allow us to study different numerical
+methods (integration and differential equations) as well as being able
+to study different physical systems. Combined with analytical skills,
+the hope is that this can allow us to explore interesting and
+realistic physics problems. By doing so, the hope is that can lead to
+deeper insights about the laws of motion which govern a system.</p>
+<p>And hopefully you can reuse many of the above solvers in other courses (our ideal).</p>
+</div>
+<div class="section" id="exercise-1-20-pt-electron-moving-into-an-electric-field">
+<h2><span class="section-number">11.3. </span>Exercise 1 (20 pt), Electron moving into an electric field<a class="headerlink" href="#exercise-1-20-pt-electron-moving-into-an-electric-field" title="Permalink to this headline">¶</a></h2>
+<p>An electron is sent through a varying electrical
+field. Initially, the electron is moving in the <span class="math notranslate nohighlight">\(x\)</span>-direction with a velocity
+<span class="math notranslate nohighlight">\(v_x = 100\)</span> m/s. The electron enters the field when it passes the origin. The field
+varies with time, causing an acceleration of the electron that varies in time</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{a}(t)=\left(−20 \mathrm{m/s}^2 −10\mathrm{m/s}^3t\right) \boldsymbol{e}_y
+\]</div>
+<ul class="simple">
+<li><p>1a (4pt) Find the velocity as a function of time for the electron.</p></li>
+<li><p>1b (4pt)  Find the position as a function of time for the electron.</p></li>
+</ul>
+<p>The field is only acting inside a box of length <span class="math notranslate nohighlight">\(L = 2m\)</span>.</p>
+<ul class="simple">
+<li><p>1c (4pt)  How long time is the electron inside the field?</p></li>
+<li><p>1d (4pt)  What is the displacement in the <span class="math notranslate nohighlight">\(y\)</span>-direction when the electron leaves the box. (We call this the deflection of the electron).</p></li>
+<li><p>1e (4pt)  Find the angle the velocity vector forms with the horizontal axis as the electron leaves the box.</p></li>
+</ul>
+</div>
+<div class="section" id="exercise-2-10-pt-drag-force">
+<h2><span class="section-number">11.4. </span>Exercise 2 (10 pt), Drag force<a class="headerlink" href="#exercise-2-10-pt-drag-force" title="Permalink to this headline">¶</a></h2>
+<p>Taylor exercise 2.3</p>
+</div>
+<div class="section" id="exercise-3-10-pt-falling-object">
+<h2><span class="section-number">11.5. </span>Exercise 3 (10 pt), Falling object<a class="headerlink" href="#exercise-3-10-pt-falling-object" title="Permalink to this headline">¶</a></h2>
+<p>Taylor exercise 2.6</p>
+</div>
+<div class="section" id="exercise-4-10-pt-and-then-a-cyclist">
+<h2><span class="section-number">11.6. </span>Exercise 4 (10 pt), and then a cyclist<a class="headerlink" href="#exercise-4-10-pt-and-then-a-cyclist" title="Permalink to this headline">¶</a></h2>
+<p>Taylor exercise 2.26</p>
+</div>
+<div class="section" id="exercise-5-10-pt-back-to-a-falling-ball-and-preparing-for-the-numerical-exercise">
+<h2><span class="section-number">11.7. </span>Exercise 5 (10 pt), back to a falling ball and preparing for the numerical exercise<a class="headerlink" href="#exercise-5-10-pt-back-to-a-falling-ball-and-preparing-for-the-numerical-exercise" title="Permalink to this headline">¶</a></h2>
+<p><strong>Useful material: Malthe-Sørenssen chapter 7.5 and Taylor chapter 2.4.</strong></p>
+<p>In this example we study the motion of an object subject to a constant force, a velocity dependent
+force. We will  reuse the code we develop here in homework 4 for a position-dependent force.</p>
+<p>Here we limit ourselves to a ball that is thrown from a height <span class="math notranslate nohighlight">\(h\)</span>
+above the ground with an initial velocity
+<span class="math notranslate nohighlight">\(\boldsymbol{v}_0\)</span> at time <span class="math notranslate nohighlight">\(t=t_0\)</span>. We assume the air resistance is proportional  to the square velocity, Together with the gravitational force these are the forces acting on our system.
+<strong>Note that due to the specific velocity dependence, we cannot find an analytical solution for motion in the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> directions, see the discussion in Taylor after eq. (2.61).</strong>
+In order to find an analytical solution we need to assume that the object is falling in the <span class="math notranslate nohighlight">\(y\)</span>-direction (negative direction) only.</p>
+<p>The position of the ball as function of time is  <span class="math notranslate nohighlight">\(\boldsymbol{r}(t)\)</span> where <span class="math notranslate nohighlight">\(t\)</span> is time.
+The position is measured with respect to a coordinate system with origin at the floor.</p>
+<p>We assume we have an initial position <span class="math notranslate nohighlight">\(\boldsymbol{r}(t_0)=h\boldsymbol{e}_y\)</span> and an initial velocity <span class="math notranslate nohighlight">\(\boldsymbol{v}_0=v_{x,0}\boldsymbol{e}_x+v_{y,0}\boldsymbol{e}_y\)</span>.</p>
+<p>In this exercise we assume the system is influenced by the gravitational force</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{G}=-mg\boldsymbol{e}_y
+\]</div>
+<p>and an air resistance given by a square law</p>
+<div class="math notranslate nohighlight">
+\[
+-Dv\boldsymbol{v}.
+\]</div>
+<p>The analytical expressions for velocity and position as functions of
+time will be used to compare with the numerical results in exercise 6.</p>
+<ul class="simple">
+<li><p>5a (3pt) Identify the forces acting on the ball and set up a diagram with the forces acting on the ball. Find the acceleration of the falling ball.</p></li>
+<li><p>5b (4pt) Assume now that the object is falling only in the <span class="math notranslate nohighlight">\(y\)</span>-direction (negative direction). Integrate the acceleration from an initial time <span class="math notranslate nohighlight">\(t_0\)</span> to a final time <span class="math notranslate nohighlight">\(t\)</span> and find the velocity. In Taylor equations (2.52) to (2.58) you will find a very good discussion of this.</p></li>
+<li><p>5c (4pt) Find thereafter the position as function of time starting with an initial time <span class="math notranslate nohighlight">\(t_0\)</span>. Find the time it takes to hit the floor.  Here you will find it convenient to set the initial velocity in the <span class="math notranslate nohighlight">\(y\)</span>-direction to zero. Taylor equations (2.52)-(2.58) should contain all relevant information for solving this part as well.</p></li>
+</ul>
+<p>We will use the above analytical results in our numerical calculations in exercise 6. The analytical solution in the <span class="math notranslate nohighlight">\(y\)</span>-direction only will serve as a test for our numerical solution.</p>
+</div>
+<div class="section" id="exercise-6-40pt-numerical-elements-solving-exercise-5-numerically">
+<h2><span class="section-number">11.8. </span>Exercise 6 (40pt), Numerical elements, solving exercise 5 numerically<a class="headerlink" href="#exercise-6-40pt-numerical-elements-solving-exercise-5-numerically" title="Permalink to this headline">¶</a></h2>
+<p><strong>This exercise should be handed in as a jupyter-notebook</strong> at D2L. Remember to write your name(s).</p>
+<p>Last week we:</p>
+<ol class="simple">
+<li><p>Gained more practice with plotting in Python</p></li>
+<li><p>Became familiar with arrays and representing vectors with such objects</p></li>
+</ol>
+<p>This week we will:</p>
+<ol class="simple">
+<li><p>Learn and utilize Euler’s Method to find the position and the velocity</p></li>
+<li><p>Compare analytical and computational solutions</p></li>
+<li><p>Add additional forces to our model</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="c1"># let&#39;s start by importing useful packages we are familiar with</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will choose the following values</p>
+<ol class="simple">
+<li><p>mass <span class="math notranslate nohighlight">\(m=0.2\)</span> kg</p></li>
+<li><p>accelleration (gravity) <span class="math notranslate nohighlight">\(g=9.81\)</span> m/s<span class="math notranslate nohighlight">\(^{2}\)</span>.</p></li>
+<li><p>initial position is the height <span class="math notranslate nohighlight">\(h=2\)</span> m</p></li>
+<li><p>initial velocities <span class="math notranslate nohighlight">\(v_{x,0}=v_{y,0}=10\)</span> m/s</p></li>
+</ol>
+<p>Can you find a reasonable value for the drag coefficient <span class="math notranslate nohighlight">\(D\)</span>?
+You need also to define an initial time and
+the step size <span class="math notranslate nohighlight">\(\Delta t\)</span>. We can define the step size <span class="math notranslate nohighlight">\(\Delta t\)</span> as the difference between any
+two neighboring values in time (time steps) that we analyze within
+some range. It can be determined by dividing the interval we are
+analyzing, which in our case is time <span class="math notranslate nohighlight">\(t_{\mathrm{final}}-t_0\)</span>, by the number of steps we
+are taking <span class="math notranslate nohighlight">\((N)\)</span>. This gives us a step size <span class="math notranslate nohighlight">\(\Delta t = \dfrac{t_{\mathrm{final}}-t_0}{N}\)</span>.</p>
+<p>With these preliminaries we are now ready to plot our results from exercise 5.</p>
+<ul class="simple">
+<li><p>6a (10pt) Set up arrays for time, velocity, acceleration and positions for the results from exercise 5. Define an initial and final time. Choose the final time to be the time when the ball hits the ground for the first time. Make a plot of the position and velocity as functions of time.  Here you could set the initial velocity in the <span class="math notranslate nohighlight">\(y\)</span>-direction to zero and use the result from exercise 5. Else you need to try different initial times using the result from exercise 5 as a starting guess.  It is not critical if you don’t reach the ground when the initial velocity in the <span class="math notranslate nohighlight">\(y\)</span>-direction is not zero.</p></li>
+</ul>
+<p>We move now to the numerical solution of the differential equations as discussed in the <a class="reference external" href="https://mhjensen.github.io/Physics321/doc/pub/motion/html/motion.html">lecture notes</a> or Malthe-Sørenssen chapter 7.5.
+Let us remind ourselves about  Euler’s Method.</p>
+<p>Suppose we know <span class="math notranslate nohighlight">\(f(t)\)</span> and its derivative <span class="math notranslate nohighlight">\(f'(t)\)</span>. To find <span class="math notranslate nohighlight">\(f(t+\Delta t)\)</span> at the next step, <span class="math notranslate nohighlight">\(t+\Delta t\)</span>,
+we can consider the Taylor expansion:</p>
+<p><span class="math notranslate nohighlight">\(f(t+\Delta t) = f(t) + \dfrac{(\Delta t)f'(t)}{1!} + \dfrac{(\Delta t)^2f''(t)}{2!} + ...\)</span></p>
+<p>If we ignore the <span class="math notranslate nohighlight">\(f''\)</span> term and higher derivatives, we obtain</p>
+<p><span class="math notranslate nohighlight">\(f(t+\Delta t) \approx f(t) + (\Delta t)f'(t)\)</span>.</p>
+<p>This approximation is the basis of Euler’s method, and the Taylor
+expansion suggests that it will have errors of <span class="math notranslate nohighlight">\(O(\Delta t^2)\)</span>.  Thus, one
+would expect it to work better, the smaller the step size <span class="math notranslate nohighlight">\(h\)</span> that you
+use. In our case the step size is <span class="math notranslate nohighlight">\(\Delta t\)</span>.</p>
+<p>In setting up our code we need to</p>
+<ol class="simple">
+<li><p>Define and obtain all initial values, constants, and time to be analyzed with step sizes as done above (you can use the same values)</p></li>
+<li><p>Calculate the velocity using <span class="math notranslate nohighlight">\(v_{i+1} = v_{i} + (\Delta t)*a_{i}\)</span></p></li>
+<li><p>Calculate the position using <span class="math notranslate nohighlight">\(pos_{i+1} = r_{i} + (\Delta t)*v_{i}\)</span></p></li>
+<li><p>Calculate the new acceleration <span class="math notranslate nohighlight">\(a_{i+1}\)</span>.</p></li>
+<li><p>Repeat steps 2-4 for all time steps within a loop.</p></li>
+</ol>
+<ul class="simple">
+<li><p>6b (20 pt) Write a code which implements Euler’s method and compute numerically and plot the position and velocity as functions of time for various values of <span class="math notranslate nohighlight">\(\Delta t\)</span>. Comment your results.</p></li>
+<li><p>6c (10pt) Compare your numerically obtained positions and velocities with the analytical results from exercise 5. In order to do this, you need to take out the motion in the <span class="math notranslate nohighlight">\(x\)</span>-direction. Comment again your results.</p></li>
+</ul>
+</div>
+<div class="section" id="classical-mechanics-extra-credit-assignment-scientific-writing-and-attending-talks">
+<h2><span class="section-number">11.9. </span>Classical Mechanics Extra Credit Assignment: Scientific Writing and attending Talks<a class="headerlink" href="#classical-mechanics-extra-credit-assignment-scientific-writing-and-attending-talks" title="Permalink to this headline">¶</a></h2>
+<p>The following gives you an opportunity to earn <strong>five extra credit
+points</strong> on each of the remaining homeworks and <strong>ten extra credit points</strong>
+on the midterms and finals.  This assignment also covers an aspect of
+the scientific process that is not taught in most undergraduate
+programs: scientific writing.  Writing scientific reports is how
+scientist communicate their results to the rest of the field.  Knowing
+how to assemble a well written scientific report will greatly benefit
+you in you upper level classes, in graduate school, and in the work
+place.</p>
+<p>The full information on extra credits is found at <a class="reference external" href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/">https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/</a>. There you will also find examples on how to write a scientific article.
+Below you can also find a description on how to gain extra credits by attending scientific talks.</p>
+<p>This assignment allows you to gain extra credit points by practicing
+your scientific writing.  For each of the remaining homeworks you can
+submit the specified section of a scientific report (written about the
+numerical aspect of the homework) for five extra credit points on the
+assignment.  For the two midterms and the final, submitting a full
+scientific report covering the numerical analysis problem will be
+worth ten extra points.  For credit the grader must be able to tell
+that you put effort into the assignment (i.e. well written, well
+formatted, etc.).  If you are unfamiliar with writing scientific
+reports, <a class="reference external" href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/IntroductionScientificWriting.md">see the information here</a></p>
+<p>The following table explains what aspect of a scientific report is due
+with which homework.  You can submit the assignment in any format you
+like, in the same document as your homework, or in a different one.
+Remember to cite any external references you use and include a
+reference list.  There are no length requirements, but make sure what
+you turn in is complete and through.  If you have any questions,
+please contact Julie Butler at <a class="reference external" href="mailto:butler&#37;&#52;&#48;frib&#46;msu&#46;edu">butler<span>&#64;</span>frib<span>&#46;</span>msu<span>&#46;</span>edu</a>.</p>
+<table class="dotable" border="1">
+<thead>
+<tr><th align="center">  HW/Project </th> <th align="center">Due Date</th> <th align="center">Extra Credit Assignment</th> </tr>
+</thead>
+<tbody>
+<tr><td align="center">   HW 3             </td> <td align="center">   2-4         </td> <td align="center">   Abstract                   </td> </tr>
+<tr><td align="center">   HW 4             </td> <td align="center">   2-11        </td> <td align="center">   Introduction               </td> </tr>
+<tr><td align="center">   HW 5             </td> <td align="center">   2-18        </td> <td align="center">   Methods                    </td> </tr>
+<tr><td align="center">   HW 6             </td> <td align="center">   3-18        </td> <td align="center">   Results and Discussion     </td> </tr>
+<tr><td align="center">   **Midterm 1**    </td> <td align="center">   **3-4**     </td> <td align="center">   *Full Written Report*      </td> </tr>
+<tr><td align="center">   HW 7             </td> <td align="center">   3-25        </td> <td align="center">   Abstract                   </td> </tr>
+<tr><td align="center">   HW 8             </td> <td align="center">   4-15        </td> <td align="center">   Introduction               </td> </tr>
+<tr><td align="center">   HW 9             </td> <td align="center">   4-22        </td> <td align="center">   Results and Discussion     </td> </tr>
+<tr><td align="center">   **Midterm 2      </td> <td align="center">   ** _4-8_    </td> <td align="center">   *Full Written Report*      </td> </tr>
+<tr><td align="center">   HW 10            </td> <td align="center">   4-29        </td> <td align="center">   Abstract                   </td> </tr>
+<tr><td align="center">   **Final**        </td> <td align="center">   **5-6**     </td> <td align="center">   *Full Written Report*      </td> </tr>
+</tbody>
+</table>
+<p>You can also gain extra credits if you attend scientific talks.
+This is described here.</p>
+</div>
+<div class="section" id="integrating-classwork-with-research">
+<h2><span class="section-number">11.10. </span>Integrating Classwork With Research<a class="headerlink" href="#integrating-classwork-with-research" title="Permalink to this headline">¶</a></h2>
+<p>This opportunity will allow you to earn up to 5 extra credit points on a Homework per week. These points can push you above 100% or help make up for missed exercises.
+In order to earn all points you must:</p>
+<ol class="simple">
+<li><p>Attend an MSU research talk (recommended research oriented Clubs is  provided below)</p></li>
+<li><p>Summarize the talk using at least 150 words</p></li>
+<li><p>Turn in the summary along with your Homework.</p></li>
+</ol>
+<p>Approved talks:
+Talks given by researchers through the following clubs:</p>
+<ul class="simple">
+<li><p>Research and Idea Sharing Enterprise (RAISE)​: Meets Wednesday Nights Society for Physics Students (SPS)​: Meets Monday Nights</p></li>
+<li><p>Astronomy Club​: Meets Monday Nights</p></li>
+<li><p>Facility For Rare Isotope Beam (FRIB) Seminars: ​Occur multiple times a week</p></li>
+</ul>
+<p>If you have any questions please consult Julie or Morten</p>
+<p>All the material on extra credits is at <a class="reference external" href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/">https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/</a>.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="hw2.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">10. </span>PHY321: Classical Mechanics 1</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="hw4.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">12. </span>PHY321: Classical Mechanics 1</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Morten Hjorth-Jensen and Scott Pratt<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
