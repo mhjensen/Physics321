@@ -1,7 +1,7 @@
 %%
 %% Automatically generated file from DocOnce source
-%% (https://github.com/hplgit/doconce/)
-%%
+%% (https://github.com/doconce/doconce/)
+%% doconce format latex hw3.do.txt --minted_latex_style=trac --latex_admon=paragraph --no_mako
 %%
 % #ifdef PTEX2TEX_EXPLANATION
 %%
@@ -120,7 +120,7 @@ PHY321: Classical Mechanics 1
 % ----------------- author(s) -------------------------
 
 \begin{center}
-{\bf Homework 3, due Monday February 8${}^{}$} \\ [0mm]
+{\bf Homework 3, due February 4${}^{}$} \\ [0mm]
 \end{center}
 
 \begin{center}
@@ -131,7 +131,7 @@ PHY321: Classical Mechanics 1
 
 % --- begin date ---
 \begin{center}
-Feb 7, 2021
+Jan 31, 2022
 \end{center}
 % --- end date ---
 
@@ -202,8 +202,6 @@ deeper insights about the laws of motion which govern a system.
 
 And hopefully you can reuse many of the above solvers in other courses (our ideal).
 
-Enough talk!  Here we go and best wishes.
-
 \paragraph{Exercise 1 (20 pt), Electron moving into an electric field.}
 An electron is sent through a varying electrical
 field. Initially, the electron is moving in the $x$-direction with a velocity
@@ -237,7 +235,6 @@ Taylor exercise 2.6
 
 \paragraph{Exercise 4 (10 pt), and then a cyclist.}
 Taylor exercise 2.26
-
 
 \paragraph{Exercise 5 (10 pt), back to a falling ball and preparing for the numerical exercise.}
 \textbf{Useful material: Malthe-Sørenssen chapter 7.5 and Taylor chapter 2.4.}
@@ -279,10 +276,7 @@ time will be used to compare with the numerical results in exercise 6.
 \noindent
 We will use the above analytical results in our numerical calculations in exercise 6. The analytical solution in the $y$-direction only will serve as a test for our numerical solution.
 
-
-
-
-\paragraph{Exercise 6 (40pt), Numerical elements, solving exercise 5 numerically and adding the bouncing from the floor.}
+\paragraph{Exercise 6 (40pt), Numerical elements, solving exercise 5 numerically.}
 \textbf{This exercise should be handed in as a jupyter-notebook} at D2L. Remember to write your name(s). 
 
 Last week we:
@@ -303,16 +297,23 @@ This week we will:
 \end{enumerate}
 
 \noindent
+
+
+
+
+
 \bpycod
 # let's start by importing useful packages we are familiar with
 import numpy as np
 import matplotlib.pyplot as plt
 %matplotlib inline
+
 \epycod
+
 
 We will choose the following values
 \begin{enumerate}
-\item mass $m=0,2$ kg
+\item mass $m=0.2$ kg
 
 \item accelleration (gravity) $g=9.81$ m/s$^{2}$.
 
@@ -373,9 +374,7 @@ In setting up our code we need to
 \item 6b (20 pt) Write a code which implements Euler's method and compute numerically and plot the position and velocity as functions of time for various values of $\Delta t$. Comment your results.
 
 
-
 \item 6c (10pt) Compare your numerically obtained positions and velocities with the analytical results from exercise 5. In order to do this, you need to take out the motion in the $x$-direction. Comment again your results.
-
 
 \paragraph{Classical Mechanics Extra Credit Assignment: Scientific Writing and attending Talks.}
 The following gives you an opportunity to earn \textbf{five extra credit
@@ -390,7 +389,6 @@ place.
 
 The full information on extra credits is found at \href{{https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/}}{\nolinkurl{https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/}}. There you will also find examples on how to write a scientific article. 
 Below you can also find a description on how to gain extra credits by attending scientific talks.
-
 
 This assignment allows you to gain extra credit points by practicing
 your scientific writing.  For each of the remaining homeworks you can
@@ -417,26 +415,24 @@ please contact Julie Butler at butler@frib.msu.edu.
 \hline
 \multicolumn{1}{c}{ HW/Project } & \multicolumn{1}{c}{ Due Date } & \multicolumn{1}{c}{ Extra Credit Assignment } \\
 \hline
-HW 3                       & 2-8                        & Abstract                   \\
-HW 4                       & 2-15                       & Introduction               \\
-HW 5                       & 2-22                       & Methods                    \\
-HW 6                       & 3-1                        & Results and Discussion     \\
-\textbf{Midterm 1}         & \textbf{3-12}              & \emph{Full Written Report} \\
-HW 7                       & 3-22                       & Abstract                   \\
-HW 8                       & 3-29                       & Introduction               \\
-HW 9                       & 4-5                        & Results and Discussion     \\
-\textbf{Midterm 2|} _4-16_ & \emph{Full Written Report} \\
-HW 10                      & 4-26                       & Abstract                   \\
-\textbf{Final}             & \textbf{4-30}              & \emph{Full Written Report} \\
+HW 3                      & 2-4                        & Abstract                   \\
+HW 4                      & 2-11                       & Introduction               \\
+HW 5                      & 2-18                       & Methods                    \\
+HW 6                      & 3-18                       & Results and Discussion     \\
+\textbf{Midterm 1}        & \textbf{3-4}               & \emph{Full Written Report} \\
+HW 7                      & 3-25                       & Abstract                   \\
+HW 8                      & 4-15                       & Introduction               \\
+HW 9                      & 4-22                       & Results and Discussion     \\
+\textbf{Midterm 2|} _4-8_ & \emph{Full Written Report} \\
+HW 10                     & 4-29                       & Abstract                   \\
+\textbf{Final}            & \textbf{5-6}               & \emph{Full Written Report} \\
 \hline
 \end{tabular}
 \end{quote}
 
 \noindent
-
 You can also gain extra credits if you attend scientific talks.
 This is described here.
-
 
 \paragraph{Integrating Classwork With Research.}
 This opportunity will allow you to earn up to 5 extra credit points on a Homework per week. These points can push you above 100\% or help make up for missed exercises.
@@ -462,7 +458,7 @@ Talks given by researchers through the following clubs:
 \end{itemize}
 
 \noindent
-If you have any questions please consult Jeremy Rebenstock, rebensto@msu.edu.
+If you have any questions please consult Julie or Morten
 
 All the material on extra credits is at \href{{https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/}}{\nolinkurl{https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/}}. 
 

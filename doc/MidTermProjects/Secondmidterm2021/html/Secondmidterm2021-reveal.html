@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="PHY321: Classical Mechanics 1">
+
+<title>PHY321: Classical Mechanics 1</title>
+
+
+
+
+
+
+
+<!-- reveal.js: https://lab.hakim.se/reveal-js/ -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<!--
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/beigesmall.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/solarized.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/serif.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/moon.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/darkgray.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/cbc.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simula.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/league.css" id="theme">
+-->
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+<!-- Printing and PDF exports -->
+<script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+
+<style type="text/css">
+    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    p.caption { width: 80%; font-size: 60%; font-style: italic; text-align: left; }
+    hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    .reveal .alert-text-small   { font-size: 80%;  }
+    .reveal .alert-text-large   { font-size: 130%; }
+    .reveal .alert-text-normal  { font-size: 90%;  }
+    .reveal .alert {
+             padding:8px 35px 8px 14px; margin-bottom:18px;
+             text-shadow:0 1px 0 rgba(255,255,255,0.5);
+             border:5px solid #bababa;
+             -webkit-border-radius: 14px; -moz-border-radius: 14px;
+             border-radius:14px;
+             background-position: 10px 10px;
+             background-repeat: no-repeat;
+             background-size: 38px;
+             padding-left: 30px; /* 55px; if icon */
+     }
+     .reveal .alert-block {padding-top:14px; padding-bottom:14px}
+     .reveal .alert-block > p, .alert-block > ul {margin-bottom:1em}
+     /*.reveal .alert li {margin-top: 1em}*/
+     .reveal .alert-block p+p {margin-top:5px}
+     /*.reveal .alert-notice { background-image: url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_notice.png); }
+     .reveal .alert-summary  { background-image:url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_summary.png); }
+     .reveal .alert-warning { background-image: url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_warning.png); }
+     .reveal .alert-question {background-image:url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_question.png); } */
+
+</style>
+
+
+
+<!-- Styles for table layout of slides -->
+<style type="text/css">
+td.padding {
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-right:50px;
+  padding-left:50px;
+}
+</style>
+
+</head>
+
+<body>
+<div class="reveal">
+
+<!-- Any section element inside the <div class="slides"> container
+     is displayed as a slide -->
+
+<div class="slides">
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+
+
+
+<section>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1 style="text-align: center;">PHY321: Classical Mechanics 1</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Second midterm project, due Sunday April 18 -->
+
+<center>
+<b>Second midterm project, due Sunday April 18</b> 
+</center>
+
+<p>&nbsp;<br>
+<!-- institution(s) -->
+
+<br>
+<p>&nbsp;<br>
+<center><h4>Apr 14, 2021</h4></center> <!-- date -->
+<br>
+
+<h3 id="practicalities-about-homeworks-and-projects">Practicalities about  homeworks and projects </h3>
+
+<ol>
+<p><li> You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. <b>Remember to write your name(s)</b>!</li>
+<p><li> How do I(we)  hand in?  Due to the extraordinary situation we are in now, the midterm should be handed in fully via D2L. You can scan your handwritten notes and upload to D2L or you can hand in everything (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical part should always be handed in as a jupyter notebook.</li>
+</ol>
+
+<h3 id="introduction-to-the-second-midterm-project-total-score-100-points">Introduction to the second midterm project, total score 100 points </h3>
+
+<p>
+In this midterm we will attempt at writing a program that simulates
+the solar system. We start with the Earth-Sun system we studied in
+homeworks 5 and 6 and study elliptical orbits and their properties. We test
+also elliptical orbits and their dependence on powers \( \beta \) of
+\( r^{\beta} \). We will test other aspects of the Earth-Sun system and
+link these to the theoretical discussion on two-body problems with
+central forces.
+
+<p>
+Thereafter we will add Jupiter to our system before we move on to including all planets of the solar system.
+attempt at making a code which simulates the solar system.
+
+<p>
+The relevant reading background is
+
+<ol>
+<p><li> chapter 8 of  Taylor.</li>
+<p><li> Lecture notes on central forces and two-body problems, see also the Jupyter-Book at <a href="https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/" target="_blank"><tt>https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/</tt></a> and go <a href="https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter6.html" target="_blank">Two-body problems, from the Gravitational Force to Two-body Scattering</a>.</li>
+<p><li> Homeworks 5-9</li>
+</ol>
+
+<h3 id="part-1-50pt-the-inverse-square-law-and-the-stability-of-planetary-orbits">Part 1 (50pt), the inverse-square law and the stability of planetary orbits </h3>
+
+<p>
+In homework 9 we studied an attractive potential
+<p>&nbsp;<br>
+$$
+V(r)=-\alpha/r,
+$$
+<p>&nbsp;<br>
+
+<p>
+where the quantity \( r \) is the absolute value of the relative position
+and \( \alpha \) is a constant.
+
+<p>
+When we rewrote the equations of motion in polar coordinates, we found the
+analytical solution to the radial equation of motion
+
+<p>&nbsp;<br>
+$$
+r(\phi) = \frac{c}{1+\epsilon\cos{(\phi)}},
+$$
+<p>&nbsp;<br>
+
+where \( c=L^2/\mu\alpha \), with
+the reduced mass \( \mu \) and the angular momentum \( L \), as
+discussed during the lectures. With the transformation of a two-body
+problem to the center-of-mass frame, the actual equations look like an
+<em>effective</em> one-body problem.
+
+<p>
+The quantity \( \epsilon \) is what we called the eccentricity. Since we
+will mainly study bounded orbits, we have \( 0 \le \epsilon < 1 \).  For
+the Earth, the orbit is indeed close to circular and at perihelion
+(the closest distance to the Sun), the Earth's center is about 0.98329
+astronomical units (AU) or 147,098,070 km from the Sun's center. For
+Earth, the orbital eccentricity is \( \epsilon\approx 0.0167 \). The outer
+planets have more elliptical orbits. For example, Mars has its
+perihelion at 206,655,215 km and its apehelion at 249,232,432 km.
+
+<p>
+In this part we will limit ourselves to the Earth-Sun system we
+studied in homeworks 5 and 6. You can reuse your code with either the
+Velocity-Verlet or the Euler-Cromer algorithms from homework 5 or 6.
+
+<p>
+This means also that \( \alpha=GM_{\odot}M_{\mathrm{Earth}} \). We will
+use \( \alpha \) as a shorthand in the equations here. Keep in mind that
+in homework 5 you scaled \( GM_{\odot}=4\pi^2 \) in your code.
+
+<p>
+The exercises here are all based on you analyzing the results from your code from homeworks 5, 6, 7 and 8.
+
+<p>
+As a reminder, we list the equations we studied in homeworks 5 and 6.
+Newton's law of gravitation is given by a force \( F_G \) (we assume this
+is the force acting on Earth from the Sun)
+
+<p>&nbsp;<br>
+$$
+F_G=-\frac{GM_{\odot}M_{\mathrm{Earth}}}{r^2},
+$$
+<p>&nbsp;<br>
+
+<p>
+where \( M_{\odot} \) is the mass of the Sun and \( M_{\mathrm{Earth}} \) is
+the mass of the Earth. The gravitational constant is \( G \) and \( r \) is
+the distance between the Earth and the Sun.  We assumed that the Sun
+has a mass which is much larger than that of the Earth. We could
+therefore safely neglect the motion of the Sun.
+
+<p>
+In homeworks 5 and 6 we assumed that the orbit of the Earth around the Sun 
+was co-planar, and we took this to be the \( xy \)-plane.
+Using Newton's second law of motion we got the following equations
+
+<p>&nbsp;<br>
+$$
+\frac{d^2x}{dt^2}=-\frac{F_{G,x}}{M_{\mathrm{Earth}}},
+$$
+<p>&nbsp;<br>
+
+and
+
+<p>&nbsp;<br>
+$$
+\frac{d^2y}{dt^2}=-\frac{F_{G,y}}{M_{\mathrm{Earth}}},
+$$
+<p>&nbsp;<br>
+
+<p>
+where \( F_{G,x} \) and \( F_{G,y} \) are the \( x \) and \( y \) components of the
+gravitational force.
+
+<p>
+You can obviously set \( \alpha=GM_{\odot}M_{\mathrm{Earth}} \) as we did in homeworks 5 and 6.
+
+<ul>
+<p><li> 1a (10pt) Use now your code from homework 5 (in cartesian coordinates). Start with a circular orbit (this corresponds to  setting \( \epsilon=0 \) for the equations in Polar coordinates), and plot \( x \) versus \( y \). How would you choose the initial conditions to obtain a circular orbit?  <b>Note</b> the your code will be run in Cartesian coordinates.</li>
+<p><li> 1b (10pt) Check that for the case of a circular orbit that both the kinetic and the potential energies are conserved. Why do we expect such a result if we have a circular orbit?</li> 
+<p><li> 1c (10pt) With the same initial conditions (circular orbit) use Kepler's second law (see Taylor section 3.4) to show that angular momentum is conserved. Compare the value you get with the angular momentum you get from a circular orbit.</li> 
+<p><li> 1d (10pt) Till now we have assumed that we have an inverse-square force \( F(r) = -\alpha/r^2 \). Let us rewrite this force as \( F(r) =-\alpha/r^{\beta} \) with \( \beta=[2,2.01,2.10,2.5,3.0,3.5] \). <b>Note</b>: in your code you are setting the force in say for example the \( x \)-direction (the same applies to the \( y \)- and/or eventual \( z \)-directions to \( F(r) = -(\alpha/r^3)x \). It means that when you study the dependence on the parameter \( \beta \), you need to add \( 1 \) to the power. Run your Sun-Earth code with these values of \( \beta \) and plot \( x \) versus \( y \) (you can use the same initial conditions or switch to eliptical orbits). Discuss your results. Can you use the observations of planetary motion to determine by what amount Nature deviates from a perfect inverse-square law?</li>
+<p><li> 1e (10pt) Consider now an elliptical orbit with an initial position 1 AU from the Sun and an initial  velocity of 5 AU/yr. Show that the total energy is a constant (the kinetic and potential energies will vary). Show also that the angular momentum is a constant. If you change the parameter \( \beta \) in \( F(r) = -\alpha/r^{\beta} \) from \( \beta=2 \) to \( \beta=3 \), are these quantities conserved?  Discuss your results. (Hint: relate your results to Kepler's laws).</li> 
+</ul>
+
+<h3 id="part-2-50pt-making-a-program-for-the-solar-system">Part 2 (50pt), making a program for the solar system </h3>
+
+<p>
+Our final aim is to write a code which includes the known planets of the solar system.
+
+<p>
+We will, as before, use so-called astronomical units when rewriting our equations. 
+Using astronomical units (AU as abbreviation)it means that 
+one astronomical unit of length, known as 1 AU, is the average distance between the Sun and Earth, that is
+\( 1 \) AU = \( 1.5\times 10^{11} \) m.  It can also be convenient to use years instead of seconds since years match
+better the time evolution of the solar system. The mass of the Sun is \( M_{\mathrm{sun}}=M_{\odot}=2\times 10^{30} \) kg. The masses of all relevant planets and their distances from the sun are listed in the table here in kg and AU.
+
+<p>
+<table border="1">
+<thead>
+<tr><th align="center"> Planet</th> <th align="center">                   Mass in kg                  </th> <th align="center">Distance to  sun in AU</th> </tr>
+</thead>
+<tbody>
+<tr><td align="center">   Earth      </td> <td align="center">   \( M_{\mathrm{Earth}}=6\times 10^{24} \) kg        </td> <td align="center">   1AU                       </td> </tr>
+<tr><td align="center">   Jupiter    </td> <td align="center">   \( M_{\mathrm{Jupiter}}=1.9\times 10^{27} \) kg    </td> <td align="center">   5.20 AU                   </td> </tr>
+<tr><td align="center">   Mars       </td> <td align="center">   \( M_{\mathrm{Mars}}=6.6\times 10^{23} \) kg       </td> <td align="center">   1.52 AU                   </td> </tr>
+<tr><td align="center">   Venus      </td> <td align="center">   \( M_{\mathrm{Venus}}=4.9\times 10^{24} \) kg      </td> <td align="center">   0.72 AU                   </td> </tr>
+<tr><td align="center">   Saturn     </td> <td align="center">   \( M_{\mathrm{Saturn}}=5.5\times 10^{26} \) kg     </td> <td align="center">   9.54 AU                   </td> </tr>
+<tr><td align="center">   Mercury    </td> <td align="center">   \( M_{\mathrm{Mercury}}=3.3\times 10^{23} \) kg    </td> <td align="center">   0.39 AU                   </td> </tr>
+<tr><td align="center">   Uranus     </td> <td align="center">   \( M_{\mathrm{Uranus}}=8.8\times 10^{25} \) kg     </td> <td align="center">   19.19 AU                  </td> </tr>
+<tr><td align="center">   Neptun     </td> <td align="center">   \( M_{\mathrm{Neptun}}=1.03\times 10^{26} \) kg    </td> <td align="center">   30.06 AU                  </td> </tr>
+<tr><td align="center">   Pluto      </td> <td align="center">   \( M_{\mathrm{Pluto}}=1.31\times 10^{22} \) kg     </td> <td align="center">   39.53 AU                  </td> </tr>
+</tbody>
+</table>
+<p>
+Pluto is no longer considered a planet, but we add it here for
+historical reasons. It is optional in this midterm project to include
+Pluto and eventual moons.
+
+<p>
+In setting up the equations we can limit ourselves to a co-planar
+motion and use only the \( x \) and \( y \) coordinates. But you should feel
+free to extend your equations to three dimensions, it is not very
+difficult and the data from NASA are all in three dimensions.
+You find these data at the 
+<a href="http://www.nasa.gov/index.html" target="_blank">NASA</a> has an excellent site at <a href="http://ssd.jpl.nasa.gov/horizons.cgi#top" target="_blank"><tt>http://ssd.jpl.nasa.gov/horizons.cgi#top</tt></a> site.
+
+<p>
+From there you can extract initial conditions in order to start your
+differential equation solver.  At the above website you need to change
+from <b>OBSERVER</b> to <b>VECTOR</b> and then write in the planet you are
+interested in.  The generated data contain the \( x \), \( y \) and \( z \) values
+as well as their corresponding velocities. The velocities are in units
+of AU per day.  Alternatively they can be obtained in terms of km and
+km/s.
+
+<p>
+We will start with  the three-body problem, still with the Sun kept
+fixed as the center of mass of the system but including Jupiter (the
+most massive planet in the solar system, having a mass that is
+approximately 1000 times smaller than that of the Sun) together with
+the Earth. This leads to a three-body problem. Without Jupiter, the
+Earth's motion is stable and unchanging with time. The aim here is to
+find out first how much Jupiter alters the Earth's motion.
+
+<p>
+The program you have developed in homeworks 5 and 6 can easily be modified by
+simply adding the magnitude of the force between the Earth and
+Jupiter.
+
+<p>
+This force is given again by
+
+<p>&nbsp;<br>
+$$
+F_{\mathrm{Earth-Jupiter}}=-\frac{GM_{\mathrm{Jupiter}}M_{\mathrm{Earth}}}{r_{\mathrm{Earth-Jupiter}}^2},
+$$
+<p>&nbsp;<br>
+
+<p>
+where \( M_{\mathrm{Jupiter}} \) is the mass of Jupyter and
+\( M_{\mathrm{Earth}} \) is the mass of the Earth.  The gravitational constant
+is \( G \) and \( r_{\mathrm{Earth-Jupiter}} \) is the distance between Earth
+and Jupiter.
+
+<p>
+We assume again that the orbits of the two planets are co-planar, and
+we take this to be the \( xy \)-plane (you can easily extend the equations
+to three dimensions, feel free to run your calculations in two or three dimensions).
+
+<ul>
+<p><li> 2a (20pt) Modify your coupled first-order differential equations from homework 5 in order to accomodate both the motion of the Earth and Jupiter by taking into account the distance in \( x \) and \( y \) between the Earth and Jupiter. Write out the differential equations for  Earth and Jupyter, keeping the Sun at rest (mass center of the system). Scale these equations in terms of Astronomical Units.</li>
+<p><li> 2b (10pt) Use either the Euler-Cromer or Velocity-Verlet algorithms to compute the positions of the Earth and Jupiter. Repeat the calculations by increasing the mass of Jupiter by a factor of 10, 100 and 1000 and plot the position of the Earth.  Discuss your results and study the stability of this three-body system as function of the chosen</li>
+</ul>
+<p>
+
+masses for Jupiter.
+
+<ul>
+<p><li> 2c (20pt) Since the Sun is much more massive than all the other planets, we will define the Sun as our center of mass and set its velocity and position to zero.  Our final task is to add the remaining known planets and simulate the solar system asfunction of time. Add gradually one planet at the time. Develop a code which simulates the solar system with the above planets and plot their orbits. Discuss your results.</li>
+</ul>
+
+<h3 id="classical-mechanics-extra-credit-assignment-scientific-writing-and-attending-talks">Classical Mechanics Extra Credit Assignment: Scientific Writing and attending Talks </h3>
+
+<p>
+The following gives you an opportunity to earn <b>five extra credit
+points</b> on each of the remaining homeworks and <b>ten extra credit points</b>
+on the midterms and finals.  This assignment also covers an aspect of
+the scientific process that is not taught in most undergraduate
+programs: scientific writing.  Writing scientific reports is how
+scientist communicate their results to the rest of the field.  Knowing
+how to assemble a well written scientific report will greatly benefit
+you in you upper level classes, in graduate school, and in the work
+place.
+
+<p>
+The full information on extra credits is found at <a href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/" target="_blank"><tt>https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/</tt></a>. There you will also find examples on how to write a scientific article. 
+Below you can also find a description on how to gain extra credits by attending scientific talks.
+
+<p>
+This assignment allows you to gain extra credit points by practicing
+your scientific writing.  For each of the remaining homeworks you can
+submit the specified section of a scientific report (written about the
+numerical aspect of the homework) for five extra credit points on the
+assignment.  For the two midterms and the final, submitting a full
+scientific report covering the numerical analysis problem will be
+worth ten extra points.  For credit the grader must be able to tell
+that you put effort into the assignment (i.e. well written, well
+formatted, etc.).  If you are unfamiliar with writing scientific
+reports, <a href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/IntroductionScientificWriting.md" target="_blank">see the information here</a>
+
+<p>
+The following table explains what aspect of a scientific report is due
+with which homework.  You can submit the assignment in any format you
+like, in the same document as your homework, or in a different one.
+Remember to cite any external references you use and include a
+reference list.  There are no length requirements, but make sure what
+you turn in is complete and through.  If you have any questions,
+please contact Julie Butler at butler@frib.msu.edu.
+
+<p>
+<table border="1">
+<thead>
+<tr><th align="center">   HW/Project   </th> <th align="center">  Due Date </th> <th align="center">  Extra Credit Assignment   </th> </tr>
+</thead>
+<tbody>
+<tr><td align="center">   HW 3                </td> <td align="center">   2-8            </td> <td align="center">   Abstract                        </td> </tr>
+<tr><td align="center">   HW 4                </td> <td align="center">   2-15           </td> <td align="center">   Introduction                    </td> </tr>
+<tr><td align="center">   HW 5                </td> <td align="center">   2-22           </td> <td align="center">   Methods                         </td> </tr>
+<tr><td align="center">   HW 6                </td> <td align="center">   3-1            </td> <td align="center">   Results and Discussion          </td> </tr>
+<tr><td align="center">   <b>Midterm 1</b>    </td> <td align="center">   <b>3-12</b>    </td> <td align="center">   <em>Full Written Report</em>    </td> </tr>
+<tr><td align="center">   HW 7                </td> <td align="center">   3-22           </td> <td align="center">   Abstract                        </td> </tr>
+<tr><td align="center">   HW 8                </td> <td align="center">   3-29           </td> <td align="center">   Introduction                    </td> </tr>
+<tr><td align="center">   HW 9                </td> <td align="center">   4-5            </td> <td align="center">   Results and Discussion          </td> </tr>
+<tr><td align="center">   <b>Midterm 2</b>    </td> <td align="center">   <b>4-16</b>    </td> <td align="center">   <em>Full Written Report</em>    </td> </tr>
+<tr><td align="center">   HW 10               </td> <td align="center">   4-26           </td> <td align="center">   Abstract                        </td> </tr>
+<tr><td align="center">   <b>Final</b>        </td> <td align="center">   <b>4-30</b>    </td> <td align="center">   <em>Full Written Report</em>    </td> </tr>
+</tbody>
+</table>
+<p>
+You can also gain extra credits if you attend scientific talks.
+This is described here.
+
+<h3 id="integrating-classwork-with-research">Integrating Classwork With Research </h3>
+
+<p>
+This opportunity will allow you to earn up to 5 extra credit points on a Homework per week. These points can push you above 100% or help make up for missed exercises.
+In order to earn all points you must:
+
+<ol>
+<p><li> Attend an MSU research talk (recommended research oriented Clubs is  provided below)</li>
+<p><li> Summarize the talk using at least 150 words</li>
+<p><li> Turn in the summary along with your Homework.</li>
+</ol>
+<p>
+
+Approved talks:
+Talks given by researchers through the following clubs:
+
+<ul>
+<p><li> Research and Idea Sharing Enterprise (RAISE)&#8203;: Meets Wednesday Nights Society for Physics Students (SPS)&#8203;: Meets Monday Nights</li>
+<p><li> Astronomy Club&#8203;: Meets Monday Nights</li>
+<p><li> Facility For Rare Isotope Beam (FRIB) Seminars: &#8203;Occur multiple times a week</li>
+</ul>
+<p>
+
+If you have any questions please consult Jeremy Rebenstock, rebensto@msu.edu.
+
+<p>
+All the material on extra credits is at <a href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/" target="_blank"><tt>https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/</tt></a>.
+</section>
+
+
+
+</div> <!-- class="slides" -->
+</div> <!-- class="reveal" -->
+
+<script src="reveal.js/lib/js/head.min.js"></script>
+<script src="reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+    // Display navigation controls in the bottom right corner
+    controls: true,
+
+    // Display progress bar (below the horiz. slider)
+    progress: true,
+
+    // Display the page number of the current slide
+    slideNumber: true,
+
+    // Push each slide change to the browser history
+    history: false,
+
+    // Enable keyboard shortcuts for navigation
+    keyboard: true,
+
+    // Enable the slide overview mode
+    overview: true,
+
+    // Vertical centering of slides
+    //center: true,
+    center: false,
+
+    // Enables touch navigation on devices with touch input
+    touch: true,
+
+    // Loop the presentation
+    loop: false,
+
+    // Change the presentation direction to be RTL
+    rtl: false,
+
+    // Turns fragments on and off globally
+    fragments: true,
+
+    // Flags if the presentation is running in an embedded mode,
+    // i.e. contained within a limited portion of the screen
+    embedded: false,
+
+    // Number of milliseconds between automatically proceeding to the
+    // next slide, disabled when set to 0, this value can be overwritten
+    // by using a data-autoslide attribute on your slides
+    autoSlide: 0,
+
+    // Stop auto-sliding after user input
+    autoSlideStoppable: true,
+
+    // Enable slide navigation via mouse wheel
+    mouseWheel: false,
+
+    // Hides the address bar on mobile devices
+    hideAddressBar: true,
+
+    // Opens links in an iframe preview overlay
+    previewLinks: false,
+
+    // Transition style
+    transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+    // Transition speed
+    transitionSpeed: 'default', // default/fast/slow
+
+    // Transition style for full page slide backgrounds
+    backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
+
+    // Number of slides away from the current that are visible
+    viewDistance: 3,
+
+    // Parallax background image
+    //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+    // Parallax background size
+    //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+
+    theme: Reveal.getQueryHash().theme, // available themes are in reveal.js/css/theme
+    transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+});
+
+Reveal.initialize({
+    dependencies: [
+        // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+        { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+        // Interpret Markdown in <section> elements
+        { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+        // Syntax highlight for <code> elements
+        { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+        // Zoom in and out with Alt+click
+        { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // Speaker notes
+        { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // Remote control your reveal.js presentation using a touch device
+        //{ src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // MathJax
+        //{ src: 'reveal.js/plugin/math/math.js', async: true }
+    ]
+});
+
+Reveal.initialize({
+
+    // The "normal" size of the presentation, aspect ratio will be preserved
+    // when the presentation is scaled to fit different resolutions. Can be
+    // specified using percentage units.
+    width: 1170,  // original: 960,
+    height: 700,
+
+    // Factor of the display size that should remain empty around the content
+    margin: 0.1,
+
+    // Bounds for smallest/largest possible scale to apply to content
+    minScale: 0.2,
+    maxScale: 1.0
+
+});
+</script>
+
+<!-- begin footer logo
+<div style="position: absolute; bottom: 0px; left: 0; margin-left: 0px">
+<img src="somelogo.png">
+</div>
+     end footer logo -->
+
+
+
+</body>
+</html>

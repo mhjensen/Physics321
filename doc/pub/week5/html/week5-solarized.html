@@ -1,21 +1,18 @@
 <!--
-Automatically generated HTML file from DocOnce source
+HTML file automatically generated from DocOnce source
 (https://github.com/doconce/doconce/)
+doconce format html week5.do.txt --pygments_html_style=perldoc --html_style=solarized3 --html_links_in_new_window --html_output=week5-solarized --no_mako
 -->
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="PHY321: More on Motion and Forces, begin Work and Energy  discussion">
-
-<title>PHY321: More on Motion and Forces, begin Work and Energy  discussion</title>
-
-
+<meta name="description" content="PHY321: Work and Energy  and conservation theorems">
+<title>PHY321: Work and Energy  and conservation theorems</title>
 <link href="https://cdn.rawgit.com/doconce/doconce/master/bundled/html_styles/style_solarized_box/css/solarized_light_code.css" rel="stylesheet" type="text/css" title="light"/>
 <script src="https://cdn.rawgit.com/doconce/doconce/master/bundled/html_styles/style_solarized_box/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-
 <link href="https://thomasf.github.io/solarized-css/solarized-light.min.css" rel="stylesheet">
 <style type="text/css">
 h1 {color: #b58900;}  /* yellow */
@@ -26,106 +23,27 @@ pre {
   border: 0pt solid #93a1a1;
   box-shadow: none;
 }
-.alert-text-small   { font-size: 80%;  }
-.alert-text-large   { font-size: 130%; }
-.alert-text-normal  { font-size: 90%;  }
-.alert {
-  padding:8px 35px 8px 14px; margin-bottom:18px;
-  text-shadow:0 1px 0 rgba(255,255,255,0.5);
-  border:1px solid #93a1a1;
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  color: #555;
-  background-color: #eee8d5;
-  background-position: 10px 5px;
-  background-repeat: no-repeat;
-  background-size: 38px;
-  padding-left: 55px;
-  width: 75%;
- }
-.alert-block {padding-top:14px; padding-bottom:14px}
-.alert-block > p, .alert-block > ul {margin-bottom:1em}
-.alert li {margin-top: 1em}
-.alert-block p+p {margin-top:5px}
-.alert-notice { background-image: url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_yellow_notice.png); }
-.alert-summary  { background-image:url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_yellow_summary.png); }
-.alert-warning { background-image: url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_yellow_warning.png); }
-.alert-question {background-image:url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_yellow_question.png); }
-
 div { text-align: justify; text-justify: inter-word; }
+.tab {
+  padding-left: 1.5em;
+}
+div.toc p,a {
+  line-height: 1.3;
+  margin-top: 1.1;
+  margin-bottom: 1.1;
+}
 </style>
-
-
 </head>
 
 <!-- tocinfo
 {'highest level': 2,
- 'sections': [('Aims and Overarching Motivation',
+ 'sections': [('Plans for the week January 31-February 4',
                2,
                None,
-               'aims-and-overarching-motivation'),
+               'plans-for-the-week-january-31-february-4'),
               ('Monday', 3, None, 'monday'),
               ('Wednesday', 3, None, 'wednesday'),
               ('Friday', 3, None, 'friday'),
-              ('Air Resistance in One Dimension',
-               2,
-               None,
-               'air-resistance-in-one-dimension'),
-              ('Resulting Acceleration', 2, None, 'resulting-acceleration'),
-              ('Going Ballistic, Projectile Motion or a Softer Approach, '
-               'Falling Raindrops',
-               2,
-               None,
-               'going-ballistic-projectile-motion-or-a-softer-approach-falling-raindrops'),
-              ('Two-dimensional falling object',
-               2,
-               None,
-               'two-dimensional-falling-object'),
-              ('Ways of solving these equations',
-               2,
-               None,
-               'ways-of-solving-these-equations'),
-              ('Solving as differential equations',
-               2,
-               None,
-               'solving-as-differential-equations'),
-              ('Differential Equations, contn',
-               2,
-               None,
-               'differential-equations-contn'),
-              ('Splitting into two parts', 2, None, 'splitting-into-two-parts'),
-              ('More details', 2, None, 'more-details'),
-              ('Motion in a Magnetic Field',
-               2,
-               None,
-               'motion-in-a-magnetic-field'),
-              ('Sliding Block tied to a Wall',
-               2,
-               None,
-               'sliding-block-tied-to-a-wall'),
-              ('Back and Forth, Sliding Block with no friction',
-               2,
-               None,
-               'back-and-forth-sliding-block-with-no-friction'),
-              ('Final rewrite', 2, None, 'final-rewrite'),
-              ('Analytical Solution', 2, None, 'analytical-solution'),
-              ('Summarizing the various motion problems 1',
-               2,
-               None,
-               'summarizing-the-various-motion-problems-1'),
-              ('Summarizing the various motion problems 2',
-               2,
-               None,
-               'summarizing-the-various-motion-problems-2'),
-              ('Summarizing the various motion problems 3',
-               2,
-               None,
-               'summarizing-the-various-motion-problems-3'),
-              ("Code example using Euler's methods",
-               2,
-               None,
-               'code-example-using-euler-s-methods'),
               ('Work, Energy, Momentum and Conservation laws',
                2,
                None,
@@ -154,54 +72,81 @@ div { text-align: justify; text-justify: inter-word; }
                'example-of-an-electron-moving-along-a-surface'),
               ('Finding the Velocity', 2, None, 'finding-the-velocity'),
               ('Harmonic Oscillations', 2, None, 'harmonic-oscillations'),
-              ('Numerical Integration', 2, None, 'numerical-integration'),
-              ('Newton-Cotes Quadrature or equal-step methods',
+              ('Work-Energy Theorem and Energy Conservation',
                2,
                None,
-               'newton-cotes-quadrature-or-equal-step-methods'),
-              ('Basic philosophy of equal-step methods',
+               'work-energy-theorem-and-energy-conservation'),
+              ('Conservation of energy', 2, None, 'conservation-of-energy'),
+              ('What is a Conservative Force?',
                2,
                None,
-               'basic-philosophy-of-equal-step-methods'),
-              ('Simple algorithm for equal step methods',
+               'what-is-a-conservative-force'),
+              ('Two important conditions', 2, None, 'two-important-conditions'),
+              ('Work-energy theorem to show that energy is conserved with a '
+               'conservative force',
                2,
                None,
-               'simple-algorithm-for-equal-step-methods'),
-              ('Simple algorithm for equal step methods',
+               'work-energy-theorem-to-show-that-energy-is-conserved-with-a-conservative-force'),
+              ('Conservation of Momentum', 2, None, 'conservation-of-momentum'),
+              ('Two objects first', 2, None, 'two-objects-first'),
+              ("Newton's Third Law", 2, None, 'newton-s-third-law'),
+              ("Newton's Second Law and Momentum",
                2,
                None,
-               'simple-algorithm-for-equal-step-methods'),
-              ('The rectangle method', 2, None, 'the-rectangle-method'),
-              ('Truncation error for the rectangular rule',
+               'newton-s-second-law-and-momentum'),
+              ('The total Momentum', 2, None, 'the-total-momentum'),
+              ("Newton's Second Law", 2, None, 'newton-s-second-law'),
+              ('Summing over all Objects/Particles',
                2,
                None,
-               'truncation-error-for-the-rectangular-rule'),
-              ('Codes for the Rectangular rule',
+               'summing-over-all-objects-particles'),
+              ('Conservation of total Momentum',
                2,
                None,
-               'codes-for-the-rectangular-rule'),
-              ('The trapezoidal rule', 2, None, 'the-trapezoidal-rule'),
-              ('Error in the trapezoidal rule',
+               'conservation-of-total-momentum'),
+              ('Example: Rocket Science', 2, None, 'example-rocket-science'),
+              ('Integrating the Equations',
                2,
                None,
-               'error-in-the-trapezoidal-rule'),
-              ('Algorithm for the trapezoidal rule',
+               'integrating-the-equations'),
+              ('Rate of Change', 2, None, 'rate-of-change'),
+              ('Conservation of Angular Momentum',
                2,
                None,
-               'algorithm-for-the-trapezoidal-rule'),
-              ('Trapezoidal Rule', 2, None, 'trapezoidal-rule'),
-              ("Simpsons' rule", 2, None, 'simpsons-rule'),
-              ("Simpson's rule", 2, None, 'simpson-s-rule'),
-              ('Mathematical expressions for the truncation error',
+               'conservation-of-angular-momentum'),
+              ('Rate of Change of Angular Momentum',
                2,
                None,
-               'mathematical-expressions-for-the-truncation-error'),
-              ("Algorithm for Simpson's rule",
+               'rate-of-change-of-angular-momentum'),
+              ('The Torque, Example 1 (hw 4, exercise 4)',
                2,
                None,
-               'algorithm-for-simpson-s-rule'),
-              ('Code example', 2, None, 'code-example'),
-              ('Symbolic integration', 2, None, 'symbolic-integration')]}
+               'the-torque-example-1-hw-4-exercise-4'),
+              ('The Torque, Example 1 (hw 4, exercise 4)',
+               2,
+               None,
+               'the-torque-example-1-hw-4-exercise-4'),
+              ('The Torque, Example 1 (hw 4, exercise 4)',
+               2,
+               None,
+               'the-torque-example-1-hw-4-exercise-4'),
+              ('The Torque, Example 2', 2, None, 'the-torque-example-2'),
+              ('Chain Rule and Partial Derivatives',
+               2,
+               None,
+               'chain-rule-and-partial-derivatives'),
+              ('System of Isolated Particles',
+               2,
+               None,
+               'system-of-isolated-particles'),
+              ('Homework 3, exercises 5 and 6, numerical solution',
+               2,
+               None,
+               'homework-3-exercises-5-and-6-numerical-solution'),
+              ('A more compact version of the code',
+               2,
+               None,
+               'a-more-compact-version-of-the-code')]}
 end of tocinfo -->
 
 <body>
@@ -221,843 +166,933 @@ MathJax.Hub.Config({
 </script>
 
 
-
-    
 <!-- ------------------- main content ---------------------- -->
-
-
-
-<center><h1>PHY321: More on Motion and Forces, begin Work and Energy  discussion</h1></center>  <!-- document title -->
-
-<p>
-<!-- author(s): <a href="http://mhjgit.github.io/info/doc/web/" target="_blank">Morten Hjorth-Jensen</a> -->
-
 <center>
-<b><a href="http://mhjgit.github.io/info/doc/web/" target="_blank">Morten Hjorth-Jensen</a></b> [1, 2]
+<h1>PHY321: Work and Energy  and conservation theorems</h1>
+</center>  <!-- document title -->
+
+<!-- author(s): <a href="http://mhjgit.github.io/info/doc/web/" target="_blank">Morten Hjorth-Jensen</a> -->
+<center>
+<b><a href="http://mhjgit.github.io/info/doc/web/" target="_blank">Morten Hjorth-Jensen</a></b> 
 </center>
-
-<p>
-<!-- institution(s) -->
-
-<center>[1] <b>Department of Physics and Astronomy and Facility for Rare Ion Beams (FRIB), Michigan State University, USA</b></center>
-<center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
+<!-- institution -->
+<center>
+<b>Department of Physics and Astronomy and Facility for Rare Ion Beams (FRIB), Michigan State University, USA</b>
+</center>
 <br>
-<p>
-<center><h4>Feb 5, 2021</h4></center> <!-- date -->
+<center>
+<h4>Feb 4, 2022</h4>
+</center> <!-- date -->
 <br>
-<p>
+
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="aims-and-overarching-motivation">Aims and Overarching Motivation </h2>
-
+<h2 id="plans-for-the-week-january-31-february-4">Plans for the week January 31-February 4 </h2>
 <h3 id="monday">Monday </h3>
 
-<p>
-We discuss various forces and their pertinent equations of motion
-
-<p>
-Recommended reading: Taylor 2.1-2.4. Malthe-S&#248;renssen chapter 6-7 contains many examples.
-We will cover in particular a falling object in two dimensions with linear air resistance relevant for homework 3.
-
+<p>Short repetition from last week on the work-energy theorem with examples. Discussion of momentum and angular momentum.
+Reading suggestion: Taylor sections 3.1-3.4 and 4.1-4.3
+</p>
 <h3 id="wednesday">Wednesday </h3>
 
-<p>
-We discuss other force models with examples such as the gravitational
-force and a spring force. See Malthe-S&#248;renssen chapter 7.3-7.5. We
-start our discussion of energy and work, see Taylor 4.1
-
-<p>
-We discuss also exercise 5 from homework 2.
-
+<p>Examples and conservation of  angular momentum, Taylor sections 3.4 and 3.5. 
+Discussion of exercises 5 and 6. This is also the assignment for Friday's session.
+</p>
 <h3 id="friday">Friday </h3>
 
-<p>
-We discuss several examples of energy and work. Taylor 4.1-4.3.
+<p>Solution of exercises and discussion of homework 3. Focus is exercises 5 and 6, see end of these slides.</p>
 
-<p>
+<p>If you wish to read more about conservative forces or not, Feyman's lectures from 1963 are quite interesting.
+He states for example that <b>All fundamental forces in nature appear to be conservative</b>.
+This statement was made while developing his argument that <em>there are no nonconservative forces</em>.
+You may enjoy the link to <a href="http://www.feynmanlectures.caltech.edu/I_14.html" target="_blank">Feynman's lecture</a>.
+</p>
+
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="work-energy-momentum-and-conservation-laws">Work, Energy, Momentum and Conservation laws </h2>
 
-<h2 id="air-resistance-in-one-dimension">Air Resistance in One Dimension </h2>
+<p>The systems we studied the first three weeks have shown us how to use Newton&#8217;s laws of
+motion to determine the motion of an object based on the forces acting
+on it. For some of the cases there is an underlying assumption that we can find an analytical solution to a continuous problem.
+With a continuous problem we mean a problem where the various variables can take any value within a finite or infinite interval. 
+</p>
 
-<p>
-Last week we considered the motion of a falling object with air
-resistance. Here we look at both a quadratic in velocity resistance
-and linear in velocity.  But first we give a qualitative argument
-about the mathematical expression for the air resistance we used last
-Friday.
+<p>Unfortunately, in many cases we
+cannot find an exact solution to the equations of motion we get from
+Newton&#8217;s second law. The numerical approach, where we discretize the continuous problem, allows us however to study a much richer set of problems.
+For problems involving Newton's laws and the various equations of motion we encounter, solving the equations numerically, is the standard approach.
+</p>
 
-<p>
-Air resistance tends to scale as the square of the velocity. This is
-in contrast to many problems chosen for textbooks, where it is linear
-in the velocity. The choice of a linear dependence is motivated by
-mathematical simplicity (it keeps the differential equation linear)
-rather than by physics. One can see that the force should be quadratic
-in velocity by considering the momentum imparted on the air
-molecules. If an object sweeps through a volume \( dV \) of air in time
-\( dt \), the momentum imparted on the air is
+<p>It allows us to focus on the underlying forces. Often we end up using the same numerical algorithm for different problems.</p>
+
+<p>Here we introduce a commonly used technique that allows us to find the
+velocity as a function of position without finding the position as a
+function of time&#8212;an alternate form of Newton&#8217;s second law. The method
+is based on a simple principle: Instead of solving the equations of
+motion directly, we integrate the equations of motion. Such a method
+is called an integration method. 
+</p>
+
+<p>This allows us also to introduce the <b>work-energy</b> theorem. This
+theorem allows us to find the velocity as a function of position for
+an object even in cases when we cannot solve the equations of
+motion. This introduces us to the concept of work and kinetic energy,
+an energy related to the motion of an object.
+</p>
+
+<p>And finally, we will link the work-energy theorem with the principle of conservation of energy.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="the-work-energy-theorem">The Work-Energy Theorem </h2>
+
+<p>Let us define the kinetic energy \( K \) with a given velocity \( \boldsymbol{v} \)</p>
+$$
+K=\frac{1}{2}mv^2,
+$$
+
+<p>where \( m \) is the mass of the object we are considering.
+We assume also that there is a force \( \boldsymbol{F} \) acting on the given object
+</p>
+
+$$
+\boldsymbol{F}=\boldsymbol{F}(\boldsymbol{r},\boldsymbol{v},t),
+$$
+
+<p>with \( \boldsymbol{r} \) the position and \( t \) the time.
+In general we assume the force is a function of all these variables.
+Many of the more central forces in Nature however, depende only on the
+position. Examples are the gravitational force and the force derived
+from the Coulomb potential in electromagnetism.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="rewriting-the-kinetic-energy">Rewriting the Kinetic Energy </h2>
+
+<p>Let us study the derivative of the kinetic energy with respect to time \( t \). Its continuous form is</p>
+$$
+\frac{dK}{dt}=\frac{1}{2}m\frac{d\boldsymbol{v}\cdot\boldsymbol{v}}{dt}. 
+$$
+
+<p>Using our results from exercise 3 of homework 1, we can write the derivative of a vector dot product as</p>
+
+$$
+\frac{dK}{dt}=\frac{1}{2}m\frac{d\boldsymbol{v}\cdot\boldsymbol{v}}{dt}= \frac{1}{2}m\left(\frac{d\boldsymbol{v}}{dt}\cdot\boldsymbol{v}+\boldsymbol{v}\cdot\frac{d\boldsymbol{v}}{dt}\right)=m\frac{d\boldsymbol{v}}{dt}\cdot\boldsymbol{v}. 
+$$
+
+<p>We know also that the acceleration is defined as</p>
+$$
+\boldsymbol{a}=\frac{\boldsymbol{F}}{m}=\frac{d\boldsymbol{v}}{dt}.
+$$
+
+<p>We can then rewrite the equation for the derivative of the kinetic energy as </p>
+$$
+\frac{dK}{dt}=m\frac{d\boldsymbol{v}}{dt}\boldsymbol{v}=\boldsymbol{F}\frac{d\boldsymbol{r}}{dt}, 
+$$
+
+<p>where we defined the velocity as the derivative of the position with respect to time.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="discretizing">Discretizing </h2>
+
+<p>Let us now discretize the above equation by letting the instantaneous terms be replaced by a discrete quantity, that is
+we let \( dK\rightarrow \Delta K \), \( dt\rightarrow \Delta t \), \( d\boldsymbol{r}\rightarrow \Delta \boldsymbol{r} \) and \( d\boldsymbol{v}\rightarrow \Delta \boldsymbol{v} \).
+</p>
+
+<p>We have then</p>
+
+$$
+\frac{\Delta K}{\Delta t}=m\frac{\Delta \boldsymbol{v}}{\Delta t}\boldsymbol{v}=\boldsymbol{F}\frac{\Delta \boldsymbol{r}}{\Delta t}, 
+$$
+
+<p>or by multiplying out \( \Delta t \) we have</p>
+$$
+\Delta K=\boldsymbol{F}\Delta \boldsymbol{r}. 
+$$
+
+<p>We define this quantity as the <b>work</b> done by the force \( \boldsymbol{F} \)
+during the displacement \( \Delta \boldsymbol{r} \). If we study the dimensionality
+of this problem we have mass times length squared divided by time
+squared, or just dimension energy.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="difference-in-kinetic-energy">Difference in kinetic energy </h2>
+
+<p>If we now define a series of such displacements \( \Delta\boldsymbol{r} \) we have a difference in kinetic energy at a final position \( \boldsymbol{r}_n \) and an 
+initial position \( \boldsymbol{r}_0 \) given by
+</p>
+$$
+\Delta K=\frac{1}{2}mv_n^2-\frac{1}{2}mv_0^2=\sum_{i=0}^n\boldsymbol{F}_i\Delta \boldsymbol{r},
+$$
+
+<p>where \( \boldsymbol{F}_i \) are the forces acting at every position \( \boldsymbol{r}_i \).</p>
+
+<p>The work done by acting with a force on a set of displacements can
+then be as expressed as the difference between the initial and final
+kinetic energies.
+</p>
+
+<p>This defines the <b>work-energy</b> theorem.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="from-the-discrete-version-to-the-continuous-version">From the discrete version to the continuous version </h2>
+
+<p>If we take the limit \( \Delta \boldsymbol{r}\rightarrow 0 \), we can rewrite the sum over the various displacements in terms of an integral, that is</p>
+$$
+\Delta K=\frac{1}{2}mv_n^2-\frac{1}{2}mv_0^2=\sum_{i=0}^n\boldsymbol{F}_i\Delta \boldsymbol{r}\rightarrow \int_{\boldsymbol{r}_0}^{\boldsymbol{r}_n}\boldsymbol{F}(\boldsymbol{r},\boldsymbol{v},t)d\boldsymbol{r}.
+$$
+
+<p>This integral defines a path integral since it will depend on the given path we take between the two end points. We will replace the limits with the symbol \( c \) in order to indicate that we take a specific countour in space when the force acts on the system. That is the work \( W_{n0} \) between two points \( \boldsymbol{r}_n \) and \( \boldsymbol{r}_0 \) is labeled as</p>
+$$
+W_{n0}=\frac{1}{2}mv_n^2-\frac{1}{2}mv_0^2=\int_{c}\boldsymbol{F}(\boldsymbol{r},\boldsymbol{v},t)d\boldsymbol{r}.
+$$
+
+<p>Note that if the force is perpendicular to the displacement, then the force does not affect the kinetic energy.</p>
+
+<p>Let us now study some examples of forces and how to find the velocity from the integration over a given path.</p>
+
+<p>Thereafter we study how to  evaluate an integral numerically.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="studying-the-work-energy-theorem-numerically">Studying the Work-energy Theorem numerically </h2>
+
+<p>In order to study the work- energy, we will normally need to perform
+a numerical integration, unless we can integrate analytically. Here we
+present some of the simpler  methods such as the <b>rectangle</b> rule, the <b>trapezoidal</b> rule and higher-order methods like the Simpson family of methods.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="example-of-an-electron-moving-along-a-surface">Example of an Electron moving along a Surface </h2>
+
+<p>As an example, let us consider the following case.
+We have  classical electron which moves in the \( x \)-direction along a surface. The force from the surface is
+</p>
+$$
+\boldsymbol{F}(x)=-F_0\sin{(\frac{2\pi x}{b})}\boldsymbol{e}_1.
+$$
+
+<p>The constant \( b \) represents the distance between atoms at the surface of the material, \( F_0 \) is a constant and \( x \) is the position of the electron.</p>
+
+<p>Using the work-energy theorem we can find the work \( W \) done when moving an electron from a position \( x_0 \) to a final position \( x \) through the
+ integral
+</p>
+$$
+W=\int_{x_0}^x \boldsymbol{F}(x')dx' =  -\int_{x_0}^x F_0\sin{(\frac{2\pi x'}{b})} dx', 
+$$
+
+<p>which results in</p>
+$$
+W=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right].
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="finding-the-velocity">Finding the Velocity </h2>
+
+<p>If we now use the work-energy theorem we can find the the velocity at a final position \( x \) by setting up
+the differences in kinetic energies between the final position and the initial position \( x_0 \).
+</p>
+
+<p>We have that the work done by the force is given by the difference in kinetic energies as</p>
+$$
+W=\frac{1}{2}m\left(v^2(x)-v^2(x_0)\right)=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right],
+$$
+
+<p>and labeling \( v(x_0)=v_0 \) (and assuming we know the initial velocity) we have</p>
+$$
+v(x)=\pm \sqrt{v_0^2+\frac{F_0b}{m\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right]},
+$$
+
+<p>Choosing $x_0=0$m and $v_0=0$m/s we can simplify the above equation to</p>
+$$
+v(x)=\pm \sqrt{\frac{F_0b}{m\pi}\left[\cos{(\frac{2\pi x}{b})}-1\right]},
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="harmonic-oscillations">Harmonic Oscillations </h2>
+
+<p>Another well-known force (and we will derive when we come to Harmonic
+Oscillations) is the case of a sliding block attached to a wall
+through a spring. The block is attached to a spring with spring
+constant \( k \). The other end of the spring is attached to the wall at
+the origin \( x=0 \).  We assume the spring has an equilibrium length
+\( L_0 \).
+</p>
+
+<p>The force \( F_x \) from the spring on the block is then</p>
+$$
+F_x=-k(x-L_0).
+$$
+
+<p>The position \( x \) where the spring force is zero is called the equilibrium position. In our case this is
+\( x=L_0 \).
+</p>
+
+<p>We can now compute the work done by this force when we move our block from an initial position \( x_0 \) to a final position \( x \)</p>
+$$
+W=\int_{x_0}^{x}F_xdx'=-k\int_{x_0}^{x}(x'-L_0)dx'=\frac{1}{2}k(x_0-L_0)^2-\frac{1}{2}k(x-L_0)^2.
+$$
+
+<p>If we now bring back the definition of the work-energy theorem in terms of the kinetic energy we have</p>
+
+$$
+W=\frac{1}{2}mv^2(x)-\frac{1}{2}mv_0^2=\frac{1}{2}k(x_0-L_0)^2-\frac{1}{2}k(x-L_0)^2,
+$$
+
+<p>which we rewrite as</p>
+
+$$
+\frac{1}{2}mv^2(x)+\frac{1}{2}k(x-L_0)^2=\frac{1}{2}mv_0^2+\frac{1}{2}k(x_0-L_0)^2.
+$$
+
+<p>What does this mean? The total energy, which is the sum of potential and kinetic energy, is conserved.
+Wow, this sounds interesting. We will analyze this next week in more detail when we study energy, momentum and angular momentum conservation.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="work-energy-theorem-and-energy-conservation">Work-Energy Theorem and Energy Conservation  </h2>
+
+<p>We have made the observation that energy was conserved for a force which
+depends only on the position.
+In particular we considered a force acting on a block 
+attached to a spring with a so-called spring
+constant \( k \). The other end of the spring was attached to the wall.  
+</p>
+
+<p>The force \( F_x \) from the spring on the block was defined as</p>
+$$
+F_x=-kx.
+$$
+
+<p>The work done on the block due to a displacement from a position \( x_0 \) to \( x \) </p>
+$$
+W=\int_{x_0}^{x}F_xdx'=\frac{1}{2}kx_0^2-\frac{1}{2}kx^2.
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="conservation-of-energy">Conservation of energy </h2>
+<p>With the definition of the work-energy theorem in terms of the kinetic energy we obtained</p>
+
+$$
+W=\frac{1}{2}mv^2(x)-\frac{1}{2}mv_0^2=\frac{1}{2}kx_0^2-\frac{1}{2}kx^2,
+$$
+
+<p>which we rewrote as</p>
+
+$$
+\frac{1}{2}mv^2(x)+\frac{1}{2}kx^2=\frac{1}{2}mv_0^2+\frac{1}{2}kx_0^2.
+$$
+
+<p>The total energy, which is the sum of potential and kinetic energy, is conserved.
+We will analyze this interesting result now in more detail when we study energy, momentum and angular momentum conservation.
+</p>
+
+<p>But before we start with energy conservation, conservative forces and potential energies, we need to revisit our definitions of momentum and angular momentum.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="what-is-a-conservative-force">What is a Conservative Force? </h2>
+
+<p>A conservative force is a force whose property is that the total work
+done in moving an object between two points is independent of the
+taken path. This means that the work on an object under the influence
+of a conservative force, is independent on the path of the object. It
+depends only on the spatial degrees of freedom and it is possible to
+assign a numerical value for the potential at any point. It leads to
+conservation of energy. The gravitational force is an example of a
+conservative force.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="two-important-conditions">Two important conditions </h2>
+
+<p>First, a conservative force depends only on the spatial degrees of freedom. This is a necessary condition for obtaining a path integral which is independent of path.
+The  important condition for the final work to be independent of the path is that the <b>curl</b> of the force is zero, that
+is
+</p>
+$$
+\boldsymbol{\nabla} \times \boldsymbol{F}=0
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="work-energy-theorem-to-show-that-energy-is-conserved-with-a-conservative-force">Work-energy theorem to show that energy is conserved with a conservative force </h2>
+
+<p>The work-energy theorem states that the work done \( W \) by a force \( \boldsymbol{F} \) that moves an object from a position \( \boldsymbol{r}_0 \) to a new position \( \boldsymbol{r}_1 \)</p>
+$$
+W=\int_{\boldsymbol{r}_0}^{\boldsymbol{r}_1}\boldsymbol{F}\boldsymbol{dr}=\frac{1}{2}mv_1^2-\frac{1}{2}mv_0^2,
+$$
+
+<p>where \( v_1^2 \) is the velocity squared at a time \( t_1 \) and \( v_0^2 \) the corresponding quantity at a time \( t_0 \).
+The work done is thus the difference in kinetic energies. We can rewrite the above equation as
+</p>
+$$
+\frac{1}{2}mv_1^2=\int_{\boldsymbol{r}_0}^{\boldsymbol{r}_1}\boldsymbol{F}\boldsymbol{dr}+\frac{1}{2}mv_0^2,
+$$
+
+<p>that is the final kinetic energy is equal to the initial kinetic energy plus the work done by the force over a given path from a  position \( \boldsymbol{r}_0 \) at time \( t_0 \) to a final position position \( \boldsymbol{r}_1 \) at a later time \( t_1 \).</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="conservation-of-momentum">Conservation of Momentum </h2>
+
+<p>Before we move on however, we need to remind ourselves about important aspects like the linear momentum and angular momentum. After these considerations, we move back to more details about conservatives forces.</p>
+
+<p>Assume we have \( N \) objects, each with velocity \( \boldsymbol{v}_i \) with
+\( i=1,2,\dots,N \) and mass \( m_i \). The momentum of each object is
+\( \boldsymbol{p}_i=m\boldsymbol{v}_i \) and the total linear (or mechanical) momentum is
+defined as
+</p>
+
+$$
+\boldsymbol{P}=\sum_{i=1}^N\boldsymbol{p}_i=\sum_{i=1}^Nm_i\boldsymbol{v}_i,
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="two-objects-first">Two objects first </h2>
+
+<p>Let us assume we have two objects only that interact with each other and are influenced by an external force.</p>
+
+<p>We define also the total net force acting on object 1 as </p>
+
+$$
+\boldsymbol{F}_1^{\mathrm{net}}=\boldsymbol{F}_1^{\mathrm{ext}}+\boldsymbol{F}_{12},
+$$
+
+<p>where \( \boldsymbol{F}_1^{\mathrm{ext}} \) is the external force
+(for example the force due to an electron moving in an electromagnetic field) and \( \boldsymbol{F}_{12} \) is the
+force between object one and two. Similarly for object 2 we have
+</p>
+
+$$
+\boldsymbol{F}_2^{\mathrm{net}}=\boldsymbol{F}_2^{\mathrm{ext}}+\boldsymbol{F}_{21}.
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="newton-s-third-law">Newton's Third Law </h2>
+
+<p>Newton's third law which we met earlier states that <b>for every action there is an equal and opposite reaction</b>.
+It is more accurately stated as
+</p>
+
+<b>if two bodies exert forces on each other, these forces are equal in magnitude and opposite in direction</b>.
+
+<p>This means that for two bodies \( i \) and \( j \), if the force on \( i \) due to \( j \) is called \( \boldsymbol{F}_{ij} \), then </p>
 
 $$
 \begin{equation}
-dP=\rho_m dV v,
+\boldsymbol{F}_{ij}=-\boldsymbol{F}_{ji}. 
 \label{_auto1}
 \end{equation}
 $$
 
-<p>
-where \( v \) is the velocity of the object and \( \rho_m \) is the mass
-density of the air. If the molecules bounce back as opposed to stop
-you would double the size of the term. The opposite value of the
-momentum is imparted onto the object itself. Geometrically, the
-differential volume is
+<p>For the abovementioned two objects we have thus \( \boldsymbol{F}_{12}=-\boldsymbol{F}_{21} \).</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="newton-s-second-law-and-momentum">Newton's Second Law and Momentum </h2>
+
+<p>With the net forces acting on each object we can now related the momentum to the forces via</p>
+
+$$
+\boldsymbol{F}_1^{\mathrm{net}}=m_1\boldsymbol{a}_i=m_1\frac{d\boldsymbol{v}_1}{dt}=\boldsymbol{F}_1^{\mathrm{ext}}+\boldsymbol{F}_{12},
+$$
+
+<p>and </p>
+
+$$
+\boldsymbol{F}_2^{\mathrm{net}}=m_2\boldsymbol{a}_2=m_2\frac{d\boldsymbol{v}_2}{dt}=\boldsymbol{F}_2^{\mathrm{ext}}+\boldsymbol{F}_{21}.
+$$
+
+<p>Recalling our definition for the linear momentum we have then</p>
+
+$$
+\frac{d\boldsymbol{p}_1}{dt}=\boldsymbol{F}_1^{\mathrm{ext}}+\boldsymbol{F}_{12},
+$$
+
+<p>and </p>
+
+$$
+\frac{d\boldsymbol{p}_2}{dt}=\boldsymbol{F}_2^{\mathrm{ext}}+\boldsymbol{F}_{21}.
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="the-total-momentum">The total Momentum </h2>
+
+<p>The total momentum \( \boldsymbol{P} \) is defined as the sum of the individual momenta, meaning that we can rewrite</p>
+
+$$
+\boldsymbol{F}_1^{\mathrm{net}}+\boldsymbol{F}_2^{\mathrm{net}}=\frac{d\boldsymbol{p}_1}{dt}+\frac{d\boldsymbol{p}_2}{dt}=\frac{d\boldsymbol{P}}{dt},
+$$
+
+<p>that is the derivate with respect to time of the total momentum. If we now
+write the net forces as sums of the external plus internal forces
+between the objects we have
+</p>
+
+$$
+\frac{d\boldsymbol{P}}{dt}=\boldsymbol{F}_1^{\mathrm{ext}}+\boldsymbol{F}_{12}+\boldsymbol{F}_2^{\mathrm{ext}}+\boldsymbol{F}_{21}=\boldsymbol{F}_1^{\mathrm{ext}}+\boldsymbol{F}_2^{\mathrm{ext}}.
+$$
+
+<p>The derivative of the total momentum is just <b>the sum of the external
+forces</b>. If we assume that the external forces are zero and that only
+internal (here two-body forces) are at play, we obtain the important
+result that the derivative of the total momentum is zero. This means
+again that the total momentum is a constant of the motion and
+conserved quantity. This is a very important result that we will use
+in many applications to come.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="newton-s-second-law">Newton's Second Law </h2>
+
+<p>Let us now general to several objects \( N \) and let us also assume that there are no external forces. We will label such a system as <b>an isolated system</b>. </p>
+
+<p>Newton's second law, \( \boldsymbol{F}=m\boldsymbol{a} \), can be written for a particle \( i \) as</p>
 
 $$
 \begin{equation}
-dV=Avdt,
+\boldsymbol{F}_i=\sum_{j\ne i}^N \boldsymbol{F}_{ij}=m_i\boldsymbol{a}_i,
 \label{_auto2}
 \end{equation}
 $$
 
-<p>
-where \( A \) is the cross-sectional area and \( vdt \) is the distance the
-object moved in time \( dt \).
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="resulting-acceleration">Resulting Acceleration </h2>
-Plugging this into the expression above,
+<p>where \( \boldsymbol{F}_i \) (a single subscript) denotes the net force acting on \( i \) from the other objects/particles.
+Because the mass of \( i \) is fixed and we assume it does not change with time, one can see that
+</p>
 
 $$
 \begin{equation}
-\frac{dP}{dt}=-\rho_m A v^2.
+\boldsymbol{F}_i=\frac{d}{dt}m_i\boldsymbol{v}_i=\sum_{j\ne i}^N\boldsymbol{F}_{ij}.
 \label{_auto3}
 \end{equation}
 $$
 
-<p>
-This is the force felt by the particle, and is opposite to its
-direction of motion. Now, because air doesn't stop when it hits an
-object, but flows around the best it can, the actual force is reduced
-by a dimensionless factor \( c_W \), called the drag coefficient.
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="summing-over-all-objects-particles">Summing over all Objects/Particles </h2>
+
+<p>Now, one can sum over all the objects/particles and obtain</p>
+
+$$
+\frac{d}{dt}\sum_i m_iv_i=\sum_{ij, i\ne j}^N\boldsymbol{F}_{ij}=0.
+$$
+
+<p>How did we arrive at the last step?  We rewrote the double sum as</p>
+
+$$
+\sum_{ij, i\ne j}^N\boldsymbol{F}_{ij}=\sum_i^N\sum_{j>i}\left(\boldsymbol{F}_{ij}+\boldsymbol{F}_{ji}\right),
+$$
+
+<p>and using Newton's third law which states that
+\( \boldsymbol{F}_{ij}=-\boldsymbol{F}_{ji} \), we obtain that the net sum over all  the two-particle
+forces is zero when we only consider so-called <b>internal forces</b>.
+Stated differently, the last step made use of the fact that for every
+term \( ij \), there is an equivalent term \( ji \) with opposite
+force. Because the momentum is defined as \( m\boldsymbol{v} \), for a system of
+particles, we have thus
+</p>
 
 $$
 \begin{equation}
-F_{\rm drag}=-c_W\rho_m Av^2,
+\frac{d}{dt}\sum_im_i\boldsymbol{v}_i=0,~~{\rm for~isolated~particles}.
 \label{_auto4}
 \end{equation}
 $$
 
-<p>
-and the acceleration is
 
-$$
-\begin{eqnarray}
-\frac{dv}{dt}=-\frac{c_W\rho_mA}{m}v^2.
-\end{eqnarray}
-$$
-
-<p>
-For a particle with initial velocity \( v_0 \), one can separate the \( dt \)
-to one side of the equation, and move everything with $v$s to the
-other side. We did this in our discussion of simple motion and will not repeat it here.
-
-<p>
-On more general terms,
-for many systems, e.g. an automobile, there are multiple sources of
-resistance. In addition to wind resistance, where the force is
-proportional to \( v^2 \), there are dissipative effects of the tires on
-the pavement, and in the axel and drive train. These other forces can
-have components that scale proportional to \( v \), and components that
-are independent of \( v \). Those independent of \( v \), e.g. the usual
-\( f=\mu_K N \) frictional force you consider in your first Physics courses, only set in
-once the object is actually moving. As speeds become higher, the \( v^2 \)
-components begin to dominate relative to the others. For automobiles
-at freeway speeds, the \( v^2 \) terms are largely responsible for the
-loss of efficiency. To travel a distance \( L \) at fixed speed \( v \), the
-energy/work required to overcome the dissipative forces are \( fL \),
-which for a force of the form \( f=\alpha v^n \) becomes
-$$
-\begin{eqnarray}
-W=\int dx~f=\alpha v^n L.
-\end{eqnarray}
-$$
-
-For \( n=0 \) the work is
-independent of speed, but for the wind resistance, where \( n=2 \),
-slowing down is essential if one wishes to reduce fuel consumption. It
-is also important to consider that engines are designed to be most
-efficient at a chosen range of power output. Thus, some cars will get
-better mileage at higher speeds (They perform better at 50 mph than at
-5 mph) despite the considerations mentioned above.
-
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="conservation-of-total-momentum">Conservation of total Momentum </h2>
 
-<h2 id="going-ballistic-projectile-motion-or-a-softer-approach-falling-raindrops">Going Ballistic, Projectile Motion or a Softer Approach, Falling Raindrops </h2>
+<p>By "isolated" one means that the only force acting on any particle \( i \)
+are those originating from other particles in the sum, i.e. &quot;no
+external&quot; forces. Thus, Newton's third law leads to the conservation
+of total momentum,
+</p>
 
-<p>
-As an example of Newton's Laws we consider projectile motion (or a
-falling raindrop or a ball we throw up in the air) with a drag force. Even though air resistance is
-largely proportional to the square of the velocity, we will consider
-the drag force to be linear to the velocity, \( \boldsymbol{F}=-m\gamma\boldsymbol{v} \),
-for the purposes of this exercise.
+$$
+\boldsymbol{P}=\sum_i m_i\boldsymbol{v}_i,
+$$
 
-<p>
-Such a dependence can be extracted from experimental data for objects moving at low velocities, see for example Malthe-S&#248;renssen chapter 5.6.
+<p>and we have</p>
+$$
+\frac{d}{dt}\boldsymbol{P}=0.
+$$
 
-<p>
-We will here focus on a two-dimensional problem.
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="example-rocket-science">Example: Rocket Science </h2>
 
-<h2 id="two-dimensional-falling-object">Two-dimensional falling object </h2>
+<p>Consider a rocket of mass \( M \) moving with velocity \( v \). After a
+brief instant, the velocity of the rocket is \( v+\Delta v \) and the mass
+is \( M-\Delta M \). Momentum conservation gives
+</p>
 
-<p>
-The acceleration for a projectile moving upwards,
-\( \boldsymbol{a}=\boldsymbol{F}/m \), becomes
+$$
+\begin{eqnarray*}
+Mv&=&(M-\Delta M)(v+\Delta v)+\Delta M(v-v_e)\\
+0&=&-\Delta Mv+M\Delta v+\Delta M(v-v_e),\\
+0&=&M\Delta v-\Delta Mv_e.
+\end{eqnarray*}
+$$
+
+<p>In the second step we ignored the term \( \Delta M\Delta v \) because it is doubly small. The last equation gives</p>
 
 $$
 \begin{eqnarray}
-\frac{dv_x}{dt}=-\gamma v_x,\\
+\Delta v&=&\frac{v_e}{M}\Delta M,\\
 \nonumber
-\frac{dv_y}{dt}=-\gamma v_y-g,
+\frac{dv}{dt}&=&\frac{v_e}{M}\frac{dM}{dt}.
 \end{eqnarray}
 $$
 
-and \( \gamma \) has dimensions of inverse time.
 
-<p>
-If you on the other hand have a falling raindrop, how do these equations change? See for example Figure 2.1 in Taylor.
-Let us stay with a ball which is thrown up in the air at \( t=0 \).
-
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="integrating-the-equations">Integrating the Equations </h2>
 
-<h2 id="ways-of-solving-these-equations">Ways of solving these equations </h2>
-
-<p>
-We will go over two different ways to solve this equation. The first
-by direct integration, and the second as a differential equation. To
-do this by direct integration, one simply multiplies both sides of the
-equations above by \( dt \), then divide by the appropriate factors so
-that the $v$s are all on one side of the equation and the \( dt \) is on
-the other. For the \( x \) motion one finds an easily integrable equation,
+<p>Integrating the expression with lower limits \( v_0=0 \) and \( M_0 \), one finds</p>
 
 $$
-\begin{eqnarray}
-\frac{dv_x}{v_x}&=&-\gamma dt,\\
-\nonumber
-\int_{v_{0x}}^{v_{x}}\frac{dv_x}{v_x}&=&-\gamma\int_0^{t}dt,\\
-\nonumber
-\ln\left(\frac{v_{x}}{v_{0x}}\right)&=&-\gamma t,\\
-\nonumber
-v_{x}(t)&=&v_{0x}e^{-\gamma t}.
-\end{eqnarray}
+\begin{eqnarray*}
+v&=&v_e\int_{M_0}^M \frac{dM'}{M'}\\
+v&=&v_e\ln(M/M_0)\\
+&=&v_e\ln[(M_0-\alpha t)/M_0].
+\end{eqnarray*}
 $$
 
-<p>
-This is very much the result you would have written down
-by inspection. For the \( y \)-component of the velocity,
-
-$$
-\begin{eqnarray}
-\frac{dv_y}{v_y+g/\gamma}&=&-\gamma dt\\
-\nonumber
-\ln\left(\frac{v_{y}+g/\gamma}{v_{0y}-g/\gamma}\right)&=&-\gamma t_f,\\
-\nonumber
-v_{fy}&=&-\frac{g}{\gamma}+\left(v_{0y}+\frac{g}{\gamma}\right)e^{-\gamma t}.
-\end{eqnarray}
-$$
-
-<p>
-Whereas \( v_x \) starts at some value and decays
-exponentially to zero, \( v_y \) decays exponentially to the terminal
-velocity, \( v_t=-g/\gamma \).
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="solving-as-differential-equations">Solving as differential equations </h2>
-
-<p>
-Although this direct integration is simpler than the method we invoke
-below, the method below will come in useful for some slightly more
-difficult differential equations in the future. The differential
-equation for \( v_x \) is straight-forward to solve. Because it is first
-order there is one arbitrary constant, \( A \), and by inspection the
-solution is
+<p>Because the total momentum of an isolated system is constant, one can
+also quickly see that the center of mass of an isolated system is also
+constant. The center of mass is the average position of a set of
+masses weighted by the mass,
+</p>
 
 $$
 \begin{equation}
-v_x=Ae^{-\gamma t}.
+\bar{x}=\frac{\sum_im_ix_i}{\sum_i m_i}.
 \label{_auto5}
 \end{equation}
 $$
 
-<p>
-The arbitrary constants for equations of motion are usually determined
-by the initial conditions, or more generally boundary conditions. By
-inspection \( A=v_{0x} \), the initial \( x \) component of the velocity.
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="rate-of-change">Rate of Change </h2>
 
-<h2 id="differential-equations-contn">Differential Equations, contn </h2>
-The differential equation for \( v_y \) is a bit more complicated due to
-the presence of \( g \). Differential equations where all the terms are
-linearly proportional to a function, in this case \( v_y \), or to
-derivatives of the function, e.g., \( v_y \), \( dv_y/dt \),
-\( d^2v_y/dt^2\cdots \), are called linear differential equations. If
-there are terms proportional to \( v^2 \), as would happen if the drag
-force were proportional to the square of the velocity, the
-differential equation is not longer linear. Because this expression
-has only one derivative in \( v \) it is a first-order linear differential
-equation. If a term were added proportional to \( d^2v/dt^2 \) it would be
-a second-order differential equation.  In this case we have a term
-completely independent of \( v \), the gravitational acceleration \( g \), and
-the usual strategy is to first rewrite the equation with all the
-linear terms on one side of the equal sign,
+<p>The rate of change of \( \bar{x} \) is</p>
+
+$$
+\dot{\bar{x}}=\frac{1}{M}\sum_i m_i\dot{x}_i=\frac{1}{M}P_x.
+$$
+
+<p>Thus if the total momentum is constant the center of mass moves at a
+constant velocity, and if the total momentum is zero the center of
+mass is fixed.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="conservation-of-angular-momentum">Conservation of Angular Momentum </h2>
+
+<p>The angular momentum is defined as</p>
 
 $$
 \begin{equation}
-\frac{dv_y}{dt}+\gamma v_y=-g.
+\boldsymbol{L}=\boldsymbol{r}\times\boldsymbol{p}=m\boldsymbol{r}\times\boldsymbol{v}.
 \label{_auto6}
 \end{equation}
 $$
 
-<p>
+<p>It means that the angular momentum is perpendicular to the plane defined by position \( \boldsymbol{r} \) and the momentum \( \boldsymbol{p} \) via \( \boldsymbol{r}\times \boldsymbol{p} \). </p>
+
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="rate-of-change-of-angular-momentum">Rate of Change of Angular Momentum </h2>
 
-<h2 id="splitting-into-two-parts">Splitting into two parts </h2>
+<p>The rate of change of the angular momentum is</p>
 
-<p>
-Now, the solution to the equation can be broken into two
-parts. Because this is a first-order differential equation we know
-that there will be one arbitrary constant. Physically, the arbitrary
-constant will be determined by setting the initial velocity, though it
-could be determined by setting the velocity at any given time. Like
-most differential equations, solutions are not &quot;solved&quot;. Instead,
-one guesses at a form, then shows the guess is correct. For these
-types of equations, one first tries to find a single solution,
-i.e. one with no arbitrary constants. This is called the {\it
-particular} solution, \( y_p(t) \), though it should really be called
-&quot;a&quot; particular solution because there are an infinite number of such
-solutions. One then finds a solution to the {\it homogenous} equation,
-which is the equation with zero on the right-hand side,
+$$
+\frac{d\boldsymbol{L}}{dt}=m\boldsymbol{v}\times\boldsymbol{v}+m\boldsymbol{r}\times\dot{\boldsymbol{v}}=\boldsymbol{r}\times{\boldsymbol{F}}
+$$
+
+<p>The first term is zero because \( \boldsymbol{v} \) is parallel to itself, and the
+second term defines the so-called torque. If \( \boldsymbol{F} \) is parallel to \( \boldsymbol{r} \) then the torque is zero and we say that angular momentum is conserved.
+</p>
+
+<p>If the force is not radial, \( \boldsymbol{r}\times\boldsymbol{F}\ne 0 \) as above, and angular momentum is no longer conserved,</p>
 
 $$
 \begin{equation}
-\frac{dv_{y,h}}{dt}+\gamma v_{y,h}=0.
+\frac{d\boldsymbol{L}}{dt}=\boldsymbol{r}\times\boldsymbol{F}\equiv\boldsymbol{\tau},
 \label{_auto7}
 \end{equation}
 $$
 
-<p>
-Homogenous solutions will have arbitrary constants.
+<p>where \( \boldsymbol{\tau} \) is the torque.</p>
 
-<p>
-The particular solution will solve the same equation as the original
-general equation
-
-$$
-\begin{equation}
-\frac{dv_{y,p}}{dt}+\gamma v_{y,p}=-g.
-\label{_auto8}
-\end{equation}
-$$
-
-<p>
-However, we don't need find one with arbitrary constants. Hence, it is
-called a <b>particular</b> solution.
-
-<p>
-The sum of the two,
-
-$$
-\begin{equation}
-v_y=v_{y,p}+v_{y,h},
-\label{_auto9}
-\end{equation}
-$$
-
-<p>
-is a solution of the total equation because of the linear nature of
-the differential equation. One has now found a <em>general</em> solution
-encompassing all solutions, because it both satisfies the general
-equation (like the particular solution), and has an arbitrary constant
-that can be adjusted to fit any initial condition (like the homogeneous
-solution). If the equations were not linear, that is if there were terms
-such as \( v_y^2 \) or \( v_y\dot{v}_y \), this technique would not work.
-
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="the-torque-example-1-hw-4-exercise-4">The Torque, Example 1 (hw 4, exercise 4) </h2>
 
-<h2 id="more-details">More details </h2>
-
-<p>
-Returning to the example above, the homogenous solution is the same as
-that for \( v_x \), because there was no gravitational acceleration in
-that case,
-
+<p>Let us assume we have an initial position \( \boldsymbol{r}_0=x_0\boldsymbol{e}_1+y_0\boldsymbol{e}_2 \) at a time \( t_0=0 \).
+We add now a force in the positive \( x \)-direction
+</p>
 $$
-\begin{equation}
-v_{y,h}=Be^{-\gamma t}.
-\label{_auto10}
-\end{equation}
+\boldsymbol{F}=F_x\boldsymbol{e}_1=\frac{d\boldsymbol{p}}{dt},
 $$
 
-In this case a particular solution is one with constant velocity,
+<p>where we used the force as defined by the time derivative of the momentum.</p>
 
+<p>We can use this force (and its pertinent acceleration) to find the velocity via the relation</p>
 $$
-\begin{equation}
-v_{y,p}=-g/\gamma.
-\label{_auto11}
-\end{equation}
+\boldsymbol{v}(t)=\boldsymbol{v}_0+\int_{t_0}^t\boldsymbol{a}dt',
 $$
 
-Note that this is the terminal velocity of a particle falling from a
-great height. The general solution is thus,
-
+<p>and with \( \boldsymbol{v}_0=0 \) we have</p>
 $$
-\begin{equation}
-v_y=Be^{-\gamma t}-g/\gamma,
-\label{_auto12}
-\end{equation}
+\boldsymbol{v}(t)=\int_{t_0}^t\frac{\boldsymbol{F}}{m}dt',
 $$
 
-<p>
-and one can find \( B \) from the initial velocity,
+<p>where \( m \) is the mass of the object.</p>
 
-$$
-\begin{equation}
-v_{0y}=B-g/\gamma,~~~B=v_{0y}+g/\gamma.
-\label{_auto13}
-\end{equation}
-$$
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="the-torque-example-1-hw-4-exercise-4">The Torque, Example 1 (hw 4, exercise 4) </h2>
 
-Plugging in the expression for \( B \) gives the \( y \) motion given the initial velocity,
-
+<p>Since the force acts only in the \( x \)-direction, we have after integration</p>
 $$
-\begin{equation}
-v_y=(v_{0y}+g/\gamma)e^{-\gamma t}-g/\gamma.
-\label{_auto14}
-\end{equation}
+\boldsymbol{v}(t)=\frac{\boldsymbol{F}}{m}t=\frac{F_x}{m}t\boldsymbol{e}_1=v_x(t)\boldsymbol{e}_1.
 $$
 
-It is easy to see that this solution has \( v_y=v_{0y} \) when \( t=0 \) and
-\( v_y=-g/\gamma \) when \( t\rightarrow\infty \).
+<p>The momentum is in turn given by \( \boldsymbol{p}=p_x\boldsymbol{e}_1=mv_x\boldsymbol{e}_1=F_xt\boldsymbol{e}_1 \).</p>
 
-<p>
-One can also integrate the two equations to find the coordinates \( x \)
-and \( y \) as functions of \( t \),
+<p>Integrating over time again we find the final position as (note the force depends only on the \( x \)-direction)</p>
+$$
+\boldsymbol{r}(t)=(x_0+\frac{1}{2}\frac{F_x}{m}t^2) \boldsymbol{e}_1+y_0\boldsymbol{e}_2.
+$$
+
+<p>There is no change in the position in the \( y \)-direction since the force acts only in the \( x \)-direction.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="the-torque-example-1-hw-4-exercise-4">The Torque, Example 1 (hw 4, exercise 4) </h2>
+
+<p>We can now compute the angular momentum given by</p>
+$$
+\boldsymbol{l}=\boldsymbol{r}\times\boldsymbol{p}=\left[(x_0+\frac{1}{2}\frac{F_x}{m}t^2) \boldsymbol{e}_1+y_0\boldsymbol{e}_2\right]\times F_xt\boldsymbol{e}_1.
+$$
+
+<p>Computing the cross product we find</p>
+
+$$
+\boldsymbol{l}=-y_0F_xt\boldsymbol{e}_3=-y_0F_xt\boldsymbol{e}_z.
+$$
+
+<p>The torque is the time derivative of the angular momentum and we have</p>
+
+$$
+\boldsymbol{\tau}=-y_0F_x\boldsymbol{e}_3=-y_0F_x\boldsymbol{e}_z.
+$$
+
+<p>The torque is non-zero and angular momentum is not conserved.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="the-torque-example-2">The Torque, Example 2 </h2>
+
+<p>One can write the torque about a given axis, which we will denote as \( \hat{z} \), in polar coordinates, where</p>
 
 $$
 \begin{eqnarray}
-x&=&\int_0^t dt'~v_{0x}(t')=\frac{v_{0x}}{\gamma}\left(1-e^{-\gamma t}\right),\\
-\nonumber
-y&=&\int_0^t dt'~v_{0y}(t')=-\frac{gt}{\gamma}+\frac{v_{0y}+g/\gamma}{\gamma}\left(1-e^{-\gamma t}\right).
+x&=&r\sin\theta\cos\phi,~~y=r\sin\theta\cos\phi,~~z=r\cos\theta,
 \end{eqnarray}
 $$
 
-<p>
-If the question was to find the position at a time \( t \), we would be
-finished. However, the more common goal in a projectile equation
-problem is to find the range, i.e. the distance \( x \) at which \( y \)
-returns to zero. For the case without a drag force this was much
-simpler. The solution for the \( y \) coordinate would have been
-\( y=v_{0y}t-gt^2/2 \). One would solve for \( t \) to make \( y=0 \), which would
-be \( t=2v_{0y}/g \), then plug that value for \( t \) into \( x=v_{0x}t \) to
-find \( x=2v_{0x}v_{0y}/g=v_0\sin(2\theta_0)/g \). One follows the same
-steps here, except that the expression for \( y(t) \) is more
-complicated. Searching for the time where \( y=0 \), and we get
-
-$$
-\begin{equation}
-0=-\frac{gt}{\gamma}+\frac{v_{0y}+g/\gamma}{\gamma}\left(1-e^{-\gamma t}\right).
-\label{_auto15}
-\end{equation}
-$$
-
-<p>
-This cannot be inverted into a simple expression \( t=\cdots \). Such
-expressions are known as &quot;transcendental equations&quot;, and are not the
-rare instance, but are the norm. In the days before computers, one
-might plot the right-hand side of the above graphically as
-a function of time, then find the point where it crosses zero.
-
-<p>
-Now, the most common way to solve for an equation of the above type
-would be to apply Newton's method numerically. This involves the
-following algorithm for finding solutions of some equation \( F(t)=0 \).
-
-<ol>
-<li> First guess a value for the time, \( t_{\rm guess} \).</li>
-<li> Calculate \( F \) and its derivative, \( F(t_{\rm guess}) \) and \( F'(t_{\rm guess}) \).</li> 
-<li> Unless you guessed perfectly, \( F\ne 0 \), and assuming that \( \Delta F\approx F'\Delta t \), one would choose</li> 
-<li> \( \Delta t=-F(t_{\rm guess})/F'(t_{\rm guess}) \).</li>
-<li> Now repeat step 1, but with \( t_{\rm guess}\rightarrow t_{\rm guess}+\Delta t \).</li>
-</ol>
-
-If the \( F(t) \) were perfectly linear in \( t \), one would find \( t \) in one
-step. Instead, one typically finds a value of \( t \) that is closer to
-the final answer than \( t_{\rm guess} \). One breaks the loop once one
-finds \( F \) within some acceptable tolerance of zero. A program to do
-this will be added shortly.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="motion-in-a-magnetic-field">Motion in a Magnetic Field </h2>
-
-<p>
-Another example of a velocity-dependent force is magnetism,
-$$
-\begin{eqnarray}
-\boldsymbol{F}&=&q\boldsymbol{v}\times\boldsymbol{B},\\
-\nonumber
-F_i&=&q\sum_{jk}\epsilon_{ijk}v_jB_k.
-\end{eqnarray}
-$$
-
-<p>
-For a uniform field in the \( z \) direction \( \boldsymbol{B}=B\hat{z} \), the force can only have \( x \) and \( y \) components,
+<p>to find the \( z \) component of the torque,</p>
 
 $$
 \begin{eqnarray}
-F_x&=&qBv_y\\
+\tau_z&=&xF_y-yF_x\\
 \nonumber
-F_y&=&-qBv_x.
+&=&-r\sin\theta\left\{\cos\phi \partial_y-\sin\phi \partial_x\right\}V(x,y,z).
 \end{eqnarray}
 $$
 
-<p>
-The differential equations are
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="chain-rule-and-partial-derivatives">Chain Rule and Partial Derivatives </h2>
+
+<p>One can use the chain rule to write the partial derivative w.r.t. \( \phi \) (keeping \( r \) and \( \theta \) fixed),</p>
 
 $$
 \begin{eqnarray}
-\dot{v}_x&=&\omega_c v_y,\omega_c= qB/m\\
+\partial_\phi&=&\frac{\partial x}{\partial\phi}\partial_x+\frac{\partial_y}{\partial\phi}\partial_y
++\frac{\partial z}{\partial\phi}\partial_z\\
 \nonumber
-\dot{v}_y&=&-\omega_c v_x.
+&=&-r\sin\theta\sin\phi\partial_x+\sin\theta\cos\phi\partial_y.
 \end{eqnarray}
 $$
 
-One can solve the equations by taking time derivatives of either equation, then substituting into the other equation,
+<p>Combining the two equations,</p>
+
 $$
 \begin{eqnarray}
-\ddot{v}_x=\omega_c\dot{v_y}=-\omega_c^2v_x,\\
-\nonumber
-\ddot{v}_y&=&-\omega_c\dot{v}_x=-\omega_cv_y.
+\tau_z&=&-\partial_\phi V(r,\theta,\phi).
 \end{eqnarray}
 $$
 
-<p>
-The solution to these equations can be seen by inspection,
+<p>Thus, if the potential is independent of the azimuthal angle \( \phi \),
+there is no torque about the \( z \) axis and \( L_z \) is conserved.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="system-of-isolated-particles">System of Isolated Particles </h2>
+
+<p>For a system of isolated particles, one can write</p>
+
 $$
 \begin{eqnarray}
-v_x&=&A\sin(\omega_ct+\phi),\\
+\frac{d}{dt}\sum_i\boldsymbol{L}_i&=&\sum_{i\ne j}\boldsymbol{r}_i\times \boldsymbol{F}_{ij}\\
 \nonumber
-v_y&=&A\cos(\omega_ct+\phi).
+&=&\frac{1}{2}\sum_{ij, i\ne j} \boldsymbol{r}_i\times \boldsymbol{F}_{ij}+\boldsymbol{r}_j\times\boldsymbol{F}_{ji}\\
+\nonumber
+&=&\frac{1}{2}\sum_{ij, i\ne j} (\boldsymbol{r}_i-\boldsymbol{r}_j)\times\boldsymbol{F}_{ij}=0,
 \end{eqnarray}
 $$
 
-<p>
-One can integrate the equations to find the positions as a function of time,
-$$
-\begin{eqnarray}
-x-x_0&=&\int_{x_0}^x dx=\int_0^t dt v(t)\\
-\nonumber
-&=&\frac{-A}{\omega_c}\cos(\omega_ct+\phi),\\
-\nonumber
-y-y_0&=&\frac{A}{\omega_c}\sin(\omega_ct+\phi).
-\end{eqnarray}
-$$
+<p>where the last step used Newton's third law,
+\( \boldsymbol{F}_{ij}=-\boldsymbol{F}_{ji} \). If the forces between the particles are
+radial, i.e. \( \boldsymbol{F}_{ij} ~||~ (\boldsymbol{r}_i-\boldsymbol{r}_j) \), then each term in
+the sum is zero and the net angular momentum is fixed. Otherwise, you
+could imagine an isolated system that would start spinning
+spontaneously.
+</p>
 
-The trajectory is a circle centered at \( x_0,y_0 \) with amplitude \( A \) rotating in the clockwise direction.
-
-<p>
-The equations of motion for the \( z \) motion are
-$$
-\begin{equation}
-\dot{v_z}=0,
-\label{_auto16}
-\end{equation}
-$$
-
-which leads to
-$$
-\begin{equation}
-z-z_0=V_zt.
-\label{_auto17}
-\end{equation}
-$$
-
-Added onto the circle, the motion is helical.
-
-<p>
-Note that the kinetic energy,
-$$
-\begin{equation}
-T=\frac{1}{2}m(v_x^2+v_y^2+v_z^2)=\frac{1}{2}m(\omega_c^2A^2+V_z^2),
-\label{_auto18}
-\end{equation}
-$$
-
-is constant. This is because the force is perpendicular to the
-velocity, so that in any differential time element \( dt \) the work done
-on the particle \( \boldsymbol{F}\cdot{dr}=dt\boldsymbol{F}\cdot{v}=0 \).
-
-<p>
-One should think about the implications of a velocity dependent
-force. Suppose one had a constant magnetic field in deep space. If a
-particle came through with velocity \( v_0 \), it would undergo cyclotron
-motion with radius \( R=v_0/\omega_c \). However, if it were still its
-motion would remain fixed. Now, suppose an observer looked at the
-particle in one reference frame where the particle was moving, then
-changed their velocity so that the particle's velocity appeared to be
-zero. The motion would change from circular to fixed. Is this
-possible?
-
-<p>
-The solution to the puzzle above relies on understanding
-relativity. Imagine that the first observer believes \( \boldsymbol{B}\ne 0 \) and
-that the electric field \( \boldsymbol{E}=0 \). If the observer then changes
-reference frames by accelerating to a velocity \( \boldsymbol{v} \), in the new
-frame \( \boldsymbol{B} \) and \( \boldsymbol{E} \) both change. If the observer moved to the
-frame where the charge, originally moving with a small velocity \( v \),
-is now at rest, the new electric field is indeed \( \boldsymbol{v}\times\boldsymbol{B} \),
-which then leads to the same acceleration as one had before. If the
-velocity is not small compared to the speed of light, additional
-\( \gamma \) factors come into play,
-\( \gamma=1/\sqrt{1-(v/c)^2} \). Relativistic motion will not be
-considered in this course.
-
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="homework-3-exercises-5-and-6-numerical-solution">Homework 3, exercises 5 and 6, numerical solution </h2>
 
-<h2 id="sliding-block-tied-to-a-wall">Sliding Block tied to a Wall </h2>
-
-<p>
-Another classical case is that of simple harmonic oscillations, here
-represented by a block sliding on a horizontal frictionless
-surface. The block is tied to a wall with a spring. If the spring is
-not compressed or stretched too far, the force on the block at a given
-position \( x \) is
-
-$$
-      F=-kx.
-  $$
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="back-and-forth-sliding-block-with-no-friction">Back and Forth, Sliding Block with no friction </h2>
-
-<p>
-The negative sign means that the force acts to restore the object to an equilibrium position. Newton's equation of motion for this idealized system is then 
-
-$$
-    m\frac{d^2x}{dt^2}=-kx,
-  $$
-
-or we could rephrase it as
-$$
-   \frac{d^2x}{dt^2}=-\frac{k}{m}x=-\omega_0^2x,
-\label{eq:newton1}
-  $$
-
-with the angular frequency \( \omega_0^2=k/m \).
-
-<p>
-We will derive the above force when we start studying <b>harmonic oscillations</b>.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="final-rewrite">Final rewrite </h2>
-
-<p>
-With the position \( x(t) \) and the velocity  \( v(t)=dx/dt \) we can reformulate Newton's equation in the following way
-$$
-      \frac{dx(t)}{dt}=v(t),
-  $$
-
-  and
-$$
-      \frac{dv(t)}{dt}=-\omega_0^2x(t).
-  $$
-
-<p>
-With initial conditions \( x(t_0)=x_0 \) and \( v(t_0)=v_0 \) we can in turn solve the differential equations.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="analytical-solution">Analytical Solution </h2>
-
-<p>
-The above differential equation has the advantage that it can be
-solved analytically with general solutions on the form
-
-$$
-     x(t)=A\cos{\omega_0t}+B\sin{\omega_0t},
-  $$
-
-and
-
-$$
-     v(t)=-\omega_0 A\sin{\omega_0t}+\omega_0 B\cos{\omega_0t},
-  $$
-
-<p>
-where \( A \) and \( B \) are constants to be determined from the initial conditions.
-
-<p>
-This provides in turn an important test for the numerical solution and
-the development of a program for more complicated cases which cannot
-be solved analytically.
-
-<p>
-We will discuss the above equations in more detail when we discuss harmonic oscillations.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="summarizing-the-various-motion-problems-1">Summarizing the various motion problems 1 </h2>
-
-<p>
-The examples we have discussed above were included in order to
-illustrate various methods (which depend on the specific problem) to
-find the solutions of the equations of motion.
-We have solved the equations of motion in the following ways:
-
-<p>
-<div class="alert alert-block alert-block alert-text-normal">
-<b>Solve the differential equations analytically</b>
-<p>
-We did this for example with the following object in one or two dimensions or the sliding block. 
-Here we had for example an equation set like
-$$
-\frac{dv_x}{dt}=-\gamma v_x,
-$$
-
-and
-$$
-\frac{dv_y}{dt}=-\gamma v_y-g,
-$$
-
-and \( \gamma \) has dimension of inverse time.
-
-
-</div>
-
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="summarizing-the-various-motion-problems-2">Summarizing the various motion problems 2 </h2>
-
-<p>
-<div class="alert alert-block alert-block alert-text-normal">
-<b>Integrate the equations</b>
-<p>
-We could also in case we can separate the degrees of freedom integrate. Take for example one of the equations in the previous slide
-$$
-\frac{dv_x}{dt}=-\gamma v_x,
-$$
-
-which we can rewrite in terms of a left-hand side which depends only on the velocity and a right-hand side which depends only on time
-$$
-\frac{dv_x}{v_x}=-\gamma dt.
-$$
-
-Integrating we have (since we can separate \( v_x \) and \( t \))
-$$
-\int_{v_0}^{v_t}\frac{dv_x}{v_x}=-\int_{t_0}^{t_f}\gamma dt,
-$$
-
-where \( v_f \) is the velocity at a final time and \( t_f \) is the final time.
-In this case we found, after having integrated the above two sides that
-$$
-v_f(t)=v_0\exp{-\gamma t}.
-$$
-
-
-</div>
-
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="summarizing-the-various-motion-problems-3">Summarizing the various motion problems 3 </h2>
-
-<p>
-<div class="alert alert-block alert-block alert-text-normal">
-<b>Solve the differential equations numerically</b>
-<p>
-
-<p>
-Finally, using for example Euler's method, we can solve the
-differential equations numerically. If we can compare our numerical
-solutions with analytical solutions, we have an extra check of our
-numerical approaches.
-
-<p>
-The example code on the next slide is relevant for homework 3. Here we deal with a falling object in two dimensions. Except for the derivations above with an
-air resistance which is linear in the velocity, homework 3 uses a quadratic velocity dependence.
-
-
-</div>
-
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="code-example-using-euler-s-methods">Code example using Euler's methods </h2>
-
-<p>
-<b>Note</b>: this code needs some additional expressions and will not run 
-<p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%;"><span></span><span style="color: #228B22"># Common imports</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="line-height: 125%;"><span style="color: #228B22"># let&#39;s start by importing useful packages we are familiar with</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
+%matplotlib inline
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>We will choose the following values</p>
+<ol>
+<li> mass \( m=0,2 \) kg</li>
+<li> accelleration (gravity) \( g=9.81 \) m/s$^{2}$.</li>
+<li> initial position is the height \( h=2 \) m</li>
+<li> initial velocities \( v_{x,0}=v_{y,0}=10 \) m/s</li>
+</ol>
+<p>You need also to define an initial time and 
+the step size \( \Delta t \). We can define the step size \( \Delta t \) as the difference between any
+two neighboring values in time (time steps) that we analyze within
+some range. It can be determined by dividing the interval we are
+analyzing, which in our case is time \( t_{\mathrm{final}}-t_0 \), by the number of steps we
+are taking \( (N) \). This gives us a step size \( \Delta t = \dfrac{t_{\mathrm{final}}-t_0}{N} \).
+</p>
+
+<p>With these preliminaries we are now ready to plot our results from exercise 5.</p>
+
+<p>In setting up our code we need to</p>
+
+<ol>
+<li> Define and obtain all initial values, constants, and time to be analyzed with step sizes as done above (you can use the same values)</li>
+<li> Calculate the velocity using \( v_{i+1} = v_{i} + (\Delta t)*a_{i} \)</li>
+<li> Calculate the position using \( pos_{i+1} = r_{i} + (\Delta t)*v_{i} \)</li>
+<li> Calculate the new acceleration \( a_{i+1} \).</li>
+<li> Repeat steps 2-4 for all time steps within a loop.</li>
+</ol>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="line-height: 125%;"><span style="color: #228B22"># Exercise 6, hw3, brute force way with declaration of vx, vy, x and y</span>
+<span style="color: #228B22"># Common imports</span>
 <span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
 <span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">pandas</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">pd</span>
 <span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> *
 <span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
 <span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">os</span>
+
+<span style="color: #228B22"># Where to save the figures and data files</span>
+PROJECT_ROOT_DIR = <span style="color: #CD5555">&quot;Results&quot;</span>
+FIGURE_ID = <span style="color: #CD5555">&quot;Results/FigureFiles&quot;</span>
+DATA_ID = <span style="color: #CD5555">&quot;DataFiles/&quot;</span>
+
+<span style="color: #8B008B; font-weight: bold">if</span> <span style="color: #8B008B">not</span> os.path.exists(PROJECT_ROOT_DIR):
+    os.mkdir(PROJECT_ROOT_DIR)
+
+<span style="color: #8B008B; font-weight: bold">if</span> <span style="color: #8B008B">not</span> os.path.exists(FIGURE_ID):
+    os.makedirs(FIGURE_ID)
+
+<span style="color: #8B008B; font-weight: bold">if</span> <span style="color: #8B008B">not</span> os.path.exists(DATA_ID):
+    os.makedirs(DATA_ID)
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">image_path</span>(fig_id):
+    <span style="color: #8B008B; font-weight: bold">return</span> os.path.join(FIGURE_ID, fig_id)
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">data_path</span>(dat_id):
+    <span style="color: #8B008B; font-weight: bold">return</span> os.path.join(DATA_ID, dat_id)
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">save_fig</span>(fig_id):
+    plt.savefig(image_path(fig_id) + <span style="color: #CD5555">&quot;.png&quot;</span>, <span style="color: #658b00">format</span>=<span style="color: #CD5555">&#39;png&#39;</span>)
+
+<span style="color: #228B22"># Output file</span>
+outfile = <span style="color: #658b00">open</span>(data_path(<span style="color: #CD5555">&quot;Eulerresults.dat&quot;</span>),<span style="color: #CD5555">&#39;w&#39;</span>)
+
 <span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">pylab</span> <span style="color: #8B008B; font-weight: bold">import</span> plt, mpl
 plt.style.use(<span style="color: #CD5555">&#39;seaborn&#39;</span>)
 mpl.rcParams[<span style="color: #CD5555">&#39;font.family&#39;</span>] = <span style="color: #CD5555">&#39;serif&#39;</span>
 
-<span style="color: #228B22">#define the gravitational acceleration</span>
+
 g = <span style="color: #B452CD">9.80655</span> <span style="color: #228B22">#m/s^2</span>
 <span style="color: #228B22"># The mass and the drag constant D</span>
 D = <span style="color: #B452CD">0.00245</span> <span style="color: #228B22">#mass/length   kg/m</span>
 m = <span style="color: #B452CD">0.2</span> <span style="color: #228B22">#kg, mass of falling object</span>
 DeltaT = <span style="color: #B452CD">0.001</span>
-<span style="color: #228B22">#set up final time, here just a number we have chosen</span>
-tfinal = <span style="color: #B452CD">1.0</span>
+<span style="color: #228B22">#set up arrays </span>
+tfinal = <span style="color: #B452CD">1.4</span>
 <span style="color: #228B22"># set up number of points for all variables</span>
 n = ceil(tfinal/DeltaT)
+<span style="color: #228B22"># define scaling constant vT used in analytical solution</span>
+vT = sqrt(m*g/D)
 <span style="color: #228B22"># set up arrays for t, a, v, and y and arrays for analytical results</span>
-<span style="color: #228B22"># Note the brute force setting up of arrays for x and y, vx, vy, ax and ay</span>
-<span style="color: #228B22"># For hw3 you should think of using the 2-dim vectors you used in homework 2</span>
+<span style="color: #228B22">#brute force setting up of arrays for x and y, vx, vy, ax and ay</span>
 t = np.zeros(n)
 vy = np.zeros(n)
 y = np.zeros(n)
 vx = np.zeros(n)
 x = np.zeros(n)
-<span style="color: #228B22"># Initial conditions</span>
-vx[<span style="color: #B452CD">0</span>] = <span style="color: #B452CD">10.0</span> <span style="color: #228B22">#m/s</span>
+yanalytic = np.zeros(n)
+<span style="color: #228B22"># Initial conditions, note that these correspond to an object falling in the y-direction only.</span>
+vx[<span style="color: #B452CD">0</span>] = <span style="color: #B452CD">0.0</span> <span style="color: #228B22">#m/s</span>
 vy[<span style="color: #B452CD">0</span>] = <span style="color: #B452CD">0.0</span>  <span style="color: #228B22">#m/s</span>
 y[<span style="color: #B452CD">0</span>] = <span style="color: #B452CD">10.0</span> <span style="color: #228B22">#m</span>
 x[<span style="color: #B452CD">0</span>] = <span style="color: #B452CD">0.0</span> <span style="color: #228B22">#m</span>
+yanalytic[<span style="color: #B452CD">0</span>] = y[<span style="color: #B452CD">0</span>]
 <span style="color: #228B22"># Start integrating using Euler&#39;s method</span>
 <span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
     <span style="color: #228B22"># expression for acceleration, note the absolute value and division by mass</span>
-<span style="color: #228B22">#    ax = You need to set up the expression for force and thereby the acceleration in the x-direction</span>
-<span style="color: #228B22">#    ay = You need to set up the expression for force and thereby the acceleration in the y-direction</span>
+<span style="color: #228B22"># Note: you need to think of the sign for the drag force as function of the velocity vector </span>
+    ax = -D*vx[i]*sqrt(vx[i]**<span style="color: #B452CD">2</span>+vy[i]**<span style="color: #B452CD">2</span>)/m
+    ay = -g - D*vy[i]*sqrt(vx[i]**<span style="color: #B452CD">2</span>+vy[i]**<span style="color: #B452CD">2</span>)/m
     <span style="color: #228B22"># update velocity and position</span>
     vx[i+<span style="color: #B452CD">1</span>] = vx[i] + DeltaT*ax
     x[i+<span style="color: #B452CD">1</span>] = x[i] + DeltaT*vx[i]
@@ -1065,14 +1100,13 @@ x[<span style="color: #B452CD">0</span>] = <span style="color: #B452CD">0.0</spa
     y[i+<span style="color: #B452CD">1</span>] = y[i] + DeltaT*vy[i]
     <span style="color: #228B22"># update time to next time step and compute analytical answer</span>
     t[i+<span style="color: #B452CD">1</span>] = t[i] + DeltaT
-<span style="color: #228B22">#  Here you need to set up the analytical solution for y(t) and x(t)</span>
-
-<span style="color: #8B008B; font-weight: bold">if</span> ( y[i+<span style="color: #B452CD">1</span>] &lt; <span style="color: #B452CD">0.0</span>):
+    yanalytic[i+<span style="color: #B452CD">1</span>] = y[<span style="color: #B452CD">0</span>]-(vT*vT/g)*log(cosh(g*t[i+<span style="color: #B452CD">1</span>]/vT))+vy[<span style="color: #B452CD">0</span>]*t[i+<span style="color: #B452CD">1</span>]
+    <span style="color: #8B008B; font-weight: bold">if</span> ( y[i+<span style="color: #B452CD">1</span>] &lt; <span style="color: #B452CD">0.0</span>):
         <span style="color: #8B008B; font-weight: bold">break</span>
 data = {<span style="color: #CD5555">&#39;t[s]&#39;</span>: t,
         <span style="color: #CD5555">&#39;Relative error in y&#39;</span>: <span style="color: #658b00">abs</span>((y-yanalytic)/yanalytic),
         <span style="color: #CD5555">&#39;vy[m/s]&#39;</span>: vy,
-        <span style="color: #CD5555">&#39;Relative error in x&#39;</span>: <span style="color: #658b00">abs</span>((x-xanalytic)/xanalytic),
+        <span style="color: #CD5555">&#39;x[m]&#39;</span>: x,
         <span style="color: #CD5555">&#39;vx[m/s]&#39;</span>: vx
 }
 NewData = pd.DataFrame(data)
@@ -1094,754 +1128,141 @@ axs[<span style="color: #B452CD">3</span>].plot(t, vx)
 axs[<span style="color: #B452CD">3</span>].set_ylabel(<span style="color: #CD5555">&#39;vx[m/s]&#39;</span>)
 axs[<span style="color: #B452CD">3</span>].set_xlabel(<span style="color: #CD5555">&#39;time[s]&#39;</span>)
 fig.tight_layout()
+save_fig(<span style="color: #CD5555">&quot;EulerIntegration&quot;</span>)
 plt.show()
-</pre></div>
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="work-energy-momentum-and-conservation-laws">Work, Energy, Momentum and Conservation laws </h2>
-
-<p>
-The previous three cases have shown us how to use Newton&#8217;s laws of
-motion to determine the motion of an object based on the forces acting
-on it. For two of the cases there is an underlying assumption that we can find an analytical solution to a continuous problem.
-With a continuous problem we mean a problem where the various variables can take any value within a finite or infinite interval.
-
-<p>
-Unfortunately, in many cases we
-cannot find an exact solution to the equations of motion we get from
-Newton&#8217;s second law. The numerical approach, where we discretize the continuous problem, allows us however to study a much richer set of problems.
-For problems involving Newton's laws and the various equations of motion we encounter, solving the equations numerically, is the standard approach.
-
-<p>
-It allows us to focus on the underlying forces. Often we end up using the same numerical algorithm for different problems.
-
-<p>
-Here we introduce a commonly used technique that allows us to find the
-velocity as a function of position without finding the position as a
-function of time&#8212;an alternate form of Newton&#8217;s second law. The method
-is based on a simple principle: Instead of solving the equations of
-motion directly, we integrate the equations of motion. Such a method
-is called an integration method.
-
-<p>
-This allows us also to introduce the <b>work-energy</b> theorem. This
-theorem allows us to find the velocity as a function of position for
-an object even in cases when we cannot solve the equations of
-motion. This introduces us to the concept of work and kinetic energy,
-an energy related to the motion of an object.
-
-<p>
-And finally, we will link the work-energy theorem with the principle of conservation of energy.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="the-work-energy-theorem">The Work-Energy Theorem </h2>
-
-<p>
-Let us define the kinetic energy \( K \) with a given velocity \( \boldsymbol{v} \)
-$$
-K=\frac{1}{2}mv^2,
-$$
-
-where \( m \) is the mass of the object we are considering.
-We assume also that there is a force \( \boldsymbol{F} \) acting on the given object
-
-$$
-\boldsymbol{F}=\boldsymbol{F}(\boldsymbol{r},\boldsymbol{v},t),
-$$
-
-with \( \boldsymbol{r} \) the position and \( t \) the time.
-In general we assume the force is a function of all these variables.
-Many of the more central forces in Nature however, depende only on the
-position. Examples are the gravitational force and the force derived
-from the Coulomb potential in electromagnetism.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="rewriting-the-kinetic-energy">Rewriting the Kinetic Energy </h2>
-
-<p>
-Let us study the derivative of the kinetic energy with respect to time \( t \). Its continuous form is
-$$
-\frac{dK}{dt}=\frac{1}{2}m\frac{d\boldsymbol{v}\cdot\boldsymbol{v}}{dt}. 
-$$
-
-<p>
-Using our results from exercise 3 of homework 1, we can write the derivative of a vector dot product as
-
-$$
-\frac{dK}{dt}=\frac{1}{2}m\frac{d\boldsymbol{v}\cdot\boldsymbol{v}}{dt}= \frac{1}{2}m\left(\frac{d\boldsymbol{v}}{dt}\cdot\boldsymbol{v}+\boldsymbol{v}\cdot\frac{d\boldsymbol{v}}{dt}\right)=m\frac{d\boldsymbol{v}}{dt}\cdot\boldsymbol{v}. 
-$$
-
-<p>
-We know also that the acceleration is defined as
-$$
-\boldsymbol{a}=\frac{\boldsymbol{F}}{m}=\frac{d\boldsymbol{v}}{dt}.
-$$
-
-<p>
-We can then rewrite the equation for the derivative of the kinetic energy as 
-$$
-\frac{dK}{dt}=m\frac{d\boldsymbol{v}}{dt}\boldsymbol{v}=\boldsymbol{F}\frac{d\boldsymbol{r}}{dt}, 
-$$
-
-where we defined the velocity as the derivative of the position with respect to time.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="discretizing">Discretizing </h2>
-
-<p>
-Let us now discretize the above equation by letting the instantaneous terms be replaced by a discrete quantity, that is
-we let \( dK\rightarrow \Delta K \), \( dt\rightarrow \Delta t \), \( d\boldsymbol{r}\rightarrow \Delta \boldsymbol{r} \) and \( d\boldsymbol{v}\rightarrow \Delta \boldsymbol{v} \).
-
-<p>
-We have then
-
-$$
-\frac{\Delta K}{\Delta t}=m\frac{\Delta \boldsymbol{v}}{\Delta t}\boldsymbol{v}=\boldsymbol{F}\frac{\Delta \boldsymbol{r}}{\Delta t}, 
-$$
-
-or by multiplying out \( \Delta t \) we have
-$$
-\Delta K=\boldsymbol{F}\Delta \boldsymbol{r}. 
-$$
-
-<p>
-We define this quantity as the <b>work</b> done by the force \( \boldsymbol{F} \)
-during the displacement \( \Delta \boldsymbol{r} \). If we study the dimensionality
-of this problem we have mass times length squared divided by time
-squared, or just dimension energy.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="difference-in-kinetic-energy">Difference in kinetic energy </h2>
-
-<p>
-If we now define a series of such displacements \( \Delta\boldsymbol{r} \) we have a difference in kinetic energy at a final position \( \boldsymbol{r}_n \) and an 
-initial position \( \boldsymbol{r}_0 \) given by
-$$
-\Delta K=\frac{1}{2}mv_n^2-\frac{1}{2}mv_0^2=\sum_{i=0}^n\boldsymbol{F}_i\Delta \boldsymbol{r},
-$$
-
-where \( \boldsymbol{F}_i \) are the forces acting at every position \( \boldsymbol{r}_i \).
-
-<p>
-The work done by acting with a force on a set of displacements can
-then be as expressed as the difference between the initial and final
-kinetic energies.
-
-<p>
-This defines the <b>work-energy</b> theorem.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="from-the-discrete-version-to-the-continuous-version">From the discrete version to the continuous version </h2>
-
-<p>
-If we take the limit \( \Delta \boldsymbol{r}\rightarrow 0 \), we can rewrite the sum over the various displacements in terms of an integral, that is
-$$
-\Delta K=\frac{1}{2}mv_n^2-\frac{1}{2}mv_0^2=\sum_{i=0}^n\boldsymbol{F}_i\Delta \boldsymbol{r}\rightarrow \int_{\boldsymbol{r}_0}^{\boldsymbol{r}_n}\boldsymbol{F}(\boldsymbol{r},\boldsymbol{v},t)d\boldsymbol{r}.
-$$
-
-<p>
-This integral defines a path integral since it will depend on the given path we take between the two end points. We will replace the limits with the symbol \( c \) in order to indicate that we take a specific countour in space when the force acts on the system. That is the work \( W_{n0} \) between two points \( \boldsymbol{r}_n \) and \( \boldsymbol{r}_0 \) is labeled as
-$$
-W_{n0}=\frac{1}{2}mv_n^2-\frac{1}{2}mv_0^2=\int_{c}\boldsymbol{F}(\boldsymbol{r},\boldsymbol{v},t)d\boldsymbol{r}.
-$$
-
-<p>
-Note that if the force is perpendicular to the displacement, then the force does not affect the kinetic energy.
-
-<p>
-Let us now study some examples of forces and how to find the velocity from the integration over a given path.
-
-<p>
-Thereafter we study how to  evaluate an integral numerically.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="studying-the-work-energy-theorem-numerically">Studying the Work-energy Theorem numerically </h2>
-
-<p>
-In order to study the work- energy, we will normally need to perform
-a numerical integration, unless we can integrate analytically. Here we
-present some of the simpler  methods such as the <b>rectangle</b> rule, the <b>trapezoidal</b> rule and higher-order methods like the Simpson family of methods.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="example-of-an-electron-moving-along-a-surface">Example of an Electron moving along a Surface </h2>
-
-<p>
-As an example, let us consider the following case.
-We have  classical electron which moves in the \( x \)-direction along a surface. The force from the surface is
-$$
-\boldsymbol{F}(x)=-F_0\sin{(\frac{2\pi x}{b})}\boldsymbol{e}_1.
-$$
-
-The constant \( b \) represents the distance between atoms at the surface of the material, \( F_0 \) is a constant and \( x \) is the position of the electron.
-
-<p>
-Using the work-energy theorem we can find the work \( W \) done when moving an electron from a position \( x_0 \) to a final position \( x \) through the
- integral
-$$
-W=\int_{x_0}^x \boldsymbol{F}(x')dx' =  -\int_{x_0}^x F_0\sin{(\frac{2\pi x'}{b})} dx', 
-$$
-
-which results in
-$$
-W=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right].
-$$
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="finding-the-velocity">Finding the Velocity </h2>
-
-<p>
-If we now use the work-energy theorem we can find the the velocity at a final position \( x \) by setting up
-the differences in kinetic energies between the final position and the initial position \( x_0 \).
-
-<p>
-We have that the work done by the force is given by the difference in kinetic energies as
-$$
-W=\frac{1}{2}m\left(v^2(x)-v^2(x_0)\right)=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right],
-$$
-
-and labeling \( v(x_0)=v_0 \) (and assuming we know the initial velocity) we have
-$$
-v(x)=\pm \sqrt{v_0^2+\frac{F_0b}{m\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right]},
-$$
-
-<p>
-Choosing $x_0=0$m and $v_0=0$m/s we can simplify the above equation to
-$$
-v(x)=\pm \sqrt{\frac{F_0b}{m\pi}\left[\cos{(\frac{2\pi x}{b})}-1\right]},
-$$
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="harmonic-oscillations">Harmonic Oscillations </h2>
-
-<p>
-Another well-known force (and we will derive when we come to Harmonic
-Oscillations) is the case of a sliding block attached to a wall
-through a spring. The block is attached to a spring with spring
-constant \( k \). The other end of the spring is attached to the wall at
-the origin \( x=0 \).  We assume the spring has an equilibrium length
-\( L_0 \).
-
-<p>
-The force \( F_x \) from the spring on the block is then
-$$
-F_x=-k(x-L_0).
-$$
-
-The position \( x \) where the spring force is zero is called the equilibrium position. In our case this is
-\( x=L_0 \).
-
-<p>
-We can now compute the work done by this force when we move our block from an initial position \( x_0 \) to a final position \( x \)
-$$
-W=\int_{x_0}^{x}F_xdx'=-k\int_{x_0}^{x}(x'-L_0)dx'=\frac{1}{2}k(x_0-L_0)^2-\frac{1}{2}k(x-L_0)^2.
-$$
-
-If we now bring back the definition of the work-energy theorem in terms of the kinetic energy we have
-
-$$
-W=\frac{1}{2}mv^2(x)-\frac{1}{2}mv_0^2=\frac{1}{2}k(x_0-L_0)^2-\frac{1}{2}k(x-L_0)^2,
-$$
-
-which we rewrite as
-
-$$
-\frac{1}{2}mv^2(x)+\frac{1}{2}k(x-L_0)^2=\frac{1}{2}mv_0^2+\frac{1}{2}k(x_0-L_0)^2.
-$$
-
-<p>
-What does this mean? The total energy, which is the sum of potential and kinetic energy, is conserved.
-Wow, this sounds interesting. We will analyze this next week in more detail when we study energy, momentum and angular momentum conservation.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="numerical-integration">Numerical Integration </h2>
-
-<p>
-Let us now see how we could have solved the above integral numerically.
-
-<p>
-There are several numerical algorithms for finding an integral
-numerically. The more familiar ones like the rectangular rule or the
-trapezoidal rule have simple geometric interpretations.
-
-<p>
-Let us look at the mathematical details of what are called equal-step methods, also known as Newton-Cotes quadrature.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="newton-cotes-quadrature-or-equal-step-methods">Newton-Cotes Quadrature or equal-step methods </h2>
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-The integral 
-$$
-\begin{equation}
-   I=\int_a^bf(x) dx
-\label{eq:integraldef}
-\end{equation}
-$$
-
-has a very simple meaning. The integral is the
-area enscribed by the function \( f(x) \) starting from \( x=a \) to  \( x=b \). It is subdivided in several smaller areas whose evaluation is to  be approximated by different techniques. The areas under the curve can for example  be approximated by rectangular boxes or trapezoids.
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 
-<p>
-<!-- !split  -->
-
-<h2 id="basic-philosophy-of-equal-step-methods">Basic philosophy of equal-step methods </h2>
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-In considering equal step  methods, our basic approach is that of approximating
-a function \( f(x) \) with a polynomial of at most 
-degree \( N-1 \), given \( N \) integration points. If our polynomial is of degree \( 1 \),
-the function will be approximated with \( f(x)\approx a_0+a_1x \).
-</div>
-
-
-<p>
-<!-- !split  -->
-
-<h2 id="simple-algorithm-for-equal-step-methods">Simple algorithm for equal step methods </h2>
-The algorithm for these integration methods  is rather simple, and the number of approximations perhaps  unlimited!
-
-<ul>
-<li> Choose a step size \( h=(b-a)/N \)  where \( N \) is the number of steps and \( a \) and \( b \) the lower and upper limits of integration.</li>
-<li> With a given step length we rewrite the integral as</li>  
-</ul>
-
-$$
-\begin{equation*}     
-\int_a^bf(x) dx= \int_a^{a+h}f(x)dx + \int_{a+h}^{a+2h}f(x)dx+\dots \int_{b-h}^{b}f(x)dx.
-\end{equation*}
-$$
-
-
-<ul>
-<li> The strategy then is to find a reliable polynomial approximation   for \( f(x) \) in the various intervals.  Choosing a given approximation for  \( f(x) \), we obtain a specific approximation to the  integral.</li>
-<li> With this approximation to \( f(x) \) we perform the integration by computing the integrals over all subintervals.</li>
-</ul>
-
-<!-- !split  -->
-
-<h2 id="simple-algorithm-for-equal-step-methods">Simple algorithm for equal step methods </h2>
-
-<p>
-One possible strategy then is to find a reliable polynomial expansion for \( f(x) \) in the smaller
-subintervals. Consider for example evaluating
-$$
-\begin{equation*}
-   \int_a^{a+2h}f(x)dx, 
-\end{equation*}
-$$
-
-which we rewrite as
-$$
-\begin{equation}
-\int_a^{a+2h}f(x)dx=\int_{x_0-h}^{x_0+h}f(x)dx.
-\label{eq:hhint}
-\end{equation}
-$$
-
-We have chosen a midpoint \( x_0 \) and have defined \( x_0=a+h \).
-
-<p>
-<!-- !split  -->
-
-<h2 id="the-rectangle-method">The rectangle method </h2>
-
-<p>
-A very simple approach is the so-called midpoint or rectangle method.
-In this case the integration area is split in a given number of rectangles with length \( h \) and height given by the mid-point value of the function.  This gives the following simple rule for approximating an integral
-$$
-\begin{equation}
-I=\int_a^bf(x) dx \approx  h\sum_{i=1}^N f(x_{i-1/2}), 
-\label{eq:rectangle}
-\end{equation}
-$$
-
-where \( f(x_{i-1/2}) \) is the midpoint value of \( f \) for a given rectangle. We will discuss its truncation 
-error below.  It is easy to implement this algorithm,  as shown below
-
-<p>
-<!-- !split  -->
-
-<h2 id="truncation-error-for-the-rectangular-rule">Truncation error for the rectangular rule  </h2>
-
-<p>
-The correct mathematical expression for the local error for the rectangular rule \( R_i(h) \) for element \( i \) is
-
-$$
-\begin{equation*}
-\int_{-h}^hf(x)dx - R_i(h)=-\frac{h^3}{24}f^{(2)}(\xi),
-\end{equation*}
-$$
-
-and the global error reads
-$$
-\begin{equation*}
-\int_a^bf(x)dx -R_h(f)=-\frac{b-a}{24}h^2f^{(2)}(\xi),
-\end{equation*}
-$$
-
-where \( R_h \) is the result obtained with rectangular rule and \( \xi \in [a,b] \).
-
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="a-more-compact-version-of-the-code">A more compact version of the code </h2>
 
-<h2 id="codes-for-the-rectangular-rule">Codes for the Rectangular rule </h2>
-
-<p>
-We go back to our simple example above and set \( F_0=b=1 \) and choose \( x_0=0 \) and \( x=1/2 \), and have
-$$
-W=\frac{1}{\pi}.
-$$
-
-The code here computes the integral using the rectangle rule and \( n=100 \) integration points we have a relative error of
-\( 10^{-5} \). 
-<p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%;"><span></span><span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> sin, pi
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="line-height: 125%;"><span style="color: #228B22"># Exercise 6, hw3, smarter way with declaration of vx, vy, x and y</span>
+<span style="color: #228B22"># Common imports</span>
 <span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
-<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">sympy</span> <span style="color: #8B008B; font-weight: bold">import</span> Symbol, integrate
-<span style="color: #228B22"># function for the Rectangular rule                                                                                        </span>
-<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">Rectangular</span>(a,b,f,n):
-   h = (b-a)/<span style="color: #658b00">float</span>(n)
-   s = <span style="color: #B452CD">0</span>
-   <span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">0</span>,n,<span style="color: #B452CD">1</span>):
-       x = (i+<span style="color: #B452CD">0.5</span>)*h
-       s = s+ f(x)
-   <span style="color: #8B008B; font-weight: bold">return</span> h*s
-<span style="color: #228B22"># function to integrate</span>
-<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">function</span>(x):
-    <span style="color: #8B008B; font-weight: bold">return</span> sin(<span style="color: #B452CD">2</span>*pi*x)
-<span style="color: #228B22"># define integration limits and integration points                                                                         </span>
-a = <span style="color: #B452CD">0.0</span>; b = <span style="color: #B452CD">0.5</span>;
-n = <span style="color: #B452CD">100</span>
-Exact = <span style="color: #B452CD">1.</span>/pi
-<span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;Relative error= &quot;</span>, <span style="color: #658b00">abs</span>( (Rectangular(a,b,function,n)-Exact)/Exact))
-</pre></div>
-<p>
-<!-- !split  -->
-
-<h2 id="the-trapezoidal-rule">The trapezoidal rule </h2>
-
-<p>
-The other integral gives
-$$
-\begin{equation*}
-\int_{x_0-h}^{x_0}f(x)dx=\frac{h}{2}\left(f(x_0) + f(x_0-h)\right)+O(h^3),
-\end{equation*}
-$$
-
-and adding up we obtain
-$$
-\begin{equation}
-   \int_{x_0-h}^{x_0+h}f(x)dx=\frac{h}{2}\left(f(x_0+h) + 2f(x_0) + f(x_0-h)\right)+O(h^3),
-\label{eq:trapez}
-\end{equation}
-$$
-
-which is the well-known trapezoidal rule.  Concerning the error in the approximation made,
-\( O(h^3)=O((b-a)^3/N^3) \), you should  note 
-that this is the local error.  Since we are splitting the integral from
-\( a \) to \( b \) in \( N \) pieces, we will have to perform approximately \( N \) 
-such operations.
-
-<p>
-This means that the <em>global error</em> goes like \( \approx O(h^2) \). 
-The trapezoidal reads then
-$$
-\begin{equation}
-   I=\int_a^bf(x) dx=h\left(f(a)/2 + f(a+h) +f(a+2h)+
-                          \dots +f(b-h)+ f_{b}/2\right),
-\label{eq:trapez1}
-\end{equation}
-$$
-
-with a global error which goes like \( O(h^2) \).
-
-<p>
-Hereafter we use the shorthand notations \( f_{-h}=f(x_0-h) \), \( f_{0}=f(x_0) \)
-and \( f_{h}=f(x_0+h) \).
-
-<p>
-<!-- !split  -->
-
-<h2 id="error-in-the-trapezoidal-rule">Error in the trapezoidal rule </h2>
-
-<p>
-The correct mathematical expression for the local error for the trapezoidal rule is
-$$
-\begin{equation*}
-\int_a^bf(x)dx -\frac{b-a}{2}\left[f(a)+f(b)\right]=-\frac{h^3}{12}f^{(2)}(\xi),
-\end{equation*}
-$$
-
-and the global error reads
-$$
-\begin{equation*}
-\int_a^bf(x)dx -T_h(f)=-\frac{b-a}{12}h^2f^{(2)}(\xi),
-\end{equation*}
-$$
-
-where \( T_h \) is the trapezoidal result and \( \xi \in [a,b] \).
-
-<p>
-<!-- !split  -->
-
-<h2 id="algorithm-for-the-trapezoidal-rule">Algorithm for the trapezoidal rule </h2>
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-The trapezoidal rule is easy to  implement numerically 
-through the following simple algorithm
-
-<ul>
-  <li> Choose the number of mesh points and fix the step length.</li>
-  <li> calculate \( f(a) \) and \( f(b) \) and multiply with \( h/2 \).</li>
-  <li> Perform a loop over \( n=1 \) to \( n-1 \) (\( f(a) \) and \( f(b) \) are known) and sum up  the terms \( f(a+h) +f(a+2h)+f(a+3h)+\dots +f(b-h) \). Each step in the loop  corresponds to a given value \( a+nh \).</li>
-  <li> Multiply the final result by \( h \) and add \( hf(a)/2 \) and \( hf(b)/2 \).</li>
-</ul>
-</div>
-
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="trapezoidal-rule">Trapezoidal Rule </h2>
-
-<p>
-We use the same function and integrate now using the trapoezoidal rule.
-
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%;"><span></span><span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
-<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">sympy</span> <span style="color: #8B008B; font-weight: bold">import</span> Symbol, integrate
-<span style="color: #228B22"># function for the trapezoidal rule</span>
-<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">Trapez</span>(a,b,f,n):
-   h = (b-a)/<span style="color: #658b00">float</span>(n)
-   s = <span style="color: #B452CD">0</span>
-   x = a
-   <span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">1</span>,n,<span style="color: #B452CD">1</span>):
-       x = x+h
-       s = s+ f(x)
-   s = <span style="color: #B452CD">0.5</span>*(f(a)+f(b)) +s
-   <span style="color: #8B008B; font-weight: bold">return</span> h*s
-<span style="color: #228B22"># function to integrate</span>
-<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">function</span>(x):
-    <span style="color: #8B008B; font-weight: bold">return</span> sin(<span style="color: #B452CD">2</span>*pi*x)
-<span style="color: #228B22"># define integration limits and integration points                                                                         </span>
-a = <span style="color: #B452CD">0.0</span>; b = <span style="color: #B452CD">0.5</span>;
-n = <span style="color: #B452CD">100</span>
-Exact = <span style="color: #B452CD">1.</span>/pi
-<span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;Relative error= &quot;</span>, <span style="color: #658b00">abs</span>( (Trapez(a,b,function,n)-Exact)/Exact))
-</pre></div>
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="simpsons-rule">Simpsons' rule </h2>
-
-<p>
-Instead of using the above first-order polynomials 
-approximations for \( f \), we attempt at using a second-order polynomials.
-In this case we need three points in order to define a second-order 
-polynomial approximation
-$$
-\begin{equation*}
-f(x) \approx P_2(x)=a_0+a_1x+a_2x^2.
-\end{equation*}
-$$
-
-Using again Lagrange's interpolation formula we have
-$$
-\begin{equation*}
-     P_2(x)=\frac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2-x_1)}y_2+
-            \frac{(x-x_0)(x-x_2)}{(x_1-x_0)(x_1-x_2)}y_1+
-            \frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}y_0.
-\end{equation*}
-$$
-
-Inserting this formula in the integral of Eq.  \eqref{eq:hhint} we obtain
-$$
-\begin{equation*}
-   \int_{-h}^{+h}f(x)dx=\frac{h}{3}\left(f_h + 4f_0 + f_{-h}\right)+O(h^5),
-\end{equation*}
-$$
-
-which is Simpson's rule.
-
-<p>
-<!-- !split  -->
-
-<h2 id="simpson-s-rule">Simpson's rule </h2>
-Note that the improved accuracy in the evaluation of
-the derivatives gives a better error approximation, \( O(h^5) \) vs.\ \( O(h^3) \) .
-But this is again the <em>local error approximation</em>. 
-Using Simpson's rule we can easily compute
-the integral     of Eq.  \eqref{eq:integraldef} to be
-$$
-\begin{equation}
-   I=\int_a^bf(x) dx=\frac{h}{3}\left(f(a) + 4f(a+h) +2f(a+2h)+
-                          \dots +4f(b-h)+ f_{b}\right),
-\label{eq:simpson}
-\end{equation}
-$$
-
-with a global error which goes like \( O(h^4) \).
-
-<p>
-<!-- !split  -->
-
-<h2 id="mathematical-expressions-for-the-truncation-error">Mathematical expressions for the truncation error </h2>
-More formal expressions for the local and global errors are for the local error
-$$
-\begin{equation*}
-\int_a^bf(x)dx -\frac{b-a}{6}\left[f(a)+4f((a+b)/2)+f(b)\right]=-\frac{h^5}{90}f^{(4)}(\xi),
-\end{equation*}
-$$
-
-and for the global error
-$$
-\begin{equation*}
-\int_a^bf(x)dx -S_h(f)=-\frac{b-a}{180}h^4f^{(4)}(\xi).
-\end{equation*}
-$$
-
-with \( \xi\in[a,b] \) and \( S_h \) the results obtained with Simpson's method.
-
-<p>
-<!-- !split  -->
-
-<h2 id="algorithm-for-simpson-s-rule">Algorithm for Simpson's rule </h2>
-The method 
-can easily be implemented numerically through the following simple algorithm
-
-<ul>
-  <li> Choose the number of mesh points and fix the step.</li>
-  <li> calculate \( f(a) \) and \( f(b) \)</li>
-  <li> Perform a loop over \( n=1 \) to \( n-1 \) (\( f(a) \) and \( f(b) \) are known) and sum up   the terms \( 4f(a+h) +2f(a+2h)+4f(a+3h)+\dots +4f(b-h) \). Each step in the loop  corresponds to a given value \( a+nh \). Odd values of \( n \) give \( 4 \) as factor  while even values yield \( 2 \) as factor.</li>
-  <li> Multiply the final result by \( \frac{h}{3} \).</li>
-</ul>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="code-example">Code example </h2>
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%;"><span></span><span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> sin, pi
-<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
-<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">sympy</span> <span style="color: #8B008B; font-weight: bold">import</span> Symbol, integrate
-<span style="color: #228B22"># function for the trapezoidal rule                                                                                        </span>
-<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">Simpson</span>(a,b,f,n):
-   h = (b-a)/<span style="color: #658b00">float</span>(n)
-   <span style="color: #658b00">sum</span> = f(a)/<span style="color: #658b00">float</span>(<span style="color: #B452CD">2</span>);
-   <span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">1</span>,n):
-       <span style="color: #658b00">sum</span> = <span style="color: #658b00">sum</span> + f(a+i*h)*(<span style="color: #B452CD">3</span>+(-<span style="color: #B452CD">1</span>)**(i+<span style="color: #B452CD">1</span>))
-   <span style="color: #658b00">sum</span> = <span style="color: #658b00">sum</span> + f(b)/<span style="color: #658b00">float</span>(<span style="color: #B452CD">2</span>)
-   <span style="color: #8B008B; font-weight: bold">return</span> <span style="color: #658b00">sum</span>*h/<span style="color: #B452CD">3.0</span>
-<span style="color: #228B22"># function to integrate                                                                                                    </span>
-<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">function</span>(x):
-    <span style="color: #8B008B; font-weight: bold">return</span> sin(<span style="color: #B452CD">2</span>*pi*x)
-<span style="color: #228B22"># define integration limits and integration points                                                                         </span>
-a = <span style="color: #B452CD">0.0</span>; b = <span style="color: #B452CD">0.5</span>;
-n = <span style="color: #B452CD">100</span>
-Exact = <span style="color: #B452CD">1.</span>/pi
-<span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;Relative error= &quot;</span>, <span style="color: #658b00">abs</span>( (Simpson(a,b,function,n)-Exact)/Exact))
-</pre></div>
-<p>
-We see that Simpson's rule gives a much better estimation of the relative error with the same amount of points as we had for the Rectangle rule and the Trapezoidal rule.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="symbolic-integration">Symbolic integration </h2>
-
-<p>
-We could also use the symbolic mathematics. Here Python comes to our rescue with <a href="https://www.sympy.org/en/index.html" target="_blank">SymPy</a>, which is a Python library for symbolic mathematics.
-
-<p>
-Here's an example on how you could use <b>Sympy</b> where we compare the symbolic calculation with an
-integration of a function \( f(x) \) by the Trapezoidal rule.
-Here we show an
-example code that evaluates  the integral
-\( \int_0^1 dx x^2 = 1/3 \).
-The following code for  the trapezoidal rule allows you  to plot the relative error by comparing with the exact result. By increasing to \( 10^8 \) points one arrives at a region where numerical errors start to accumulate.
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%;"><span></span><span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> log10
-<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
-<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">sympy</span> <span style="color: #8B008B; font-weight: bold">import</span> Symbol, integrate
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">pandas</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">pd</span>
+<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> *
 <span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
-<span style="color: #228B22"># function for the trapezoidal rule</span>
-<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">Trapez</span>(a,b,f,n):
-   h = (b-a)/<span style="color: #658b00">float</span>(n)
-   s = <span style="color: #B452CD">0</span>
-   x = a
-   <span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">1</span>,n,<span style="color: #B452CD">1</span>):
-       x = x+h
-       s = s+ f(x)
-   s = <span style="color: #B452CD">0.5</span>*(f(a)+f(b)) +s
-   <span style="color: #8B008B; font-weight: bold">return</span> h*s
-<span style="color: #228B22">#  function to compute pi</span>
-<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">function</span>(x):
-    <span style="color: #8B008B; font-weight: bold">return</span> x*x
-<span style="color: #228B22"># define integration limits</span>
-a = <span style="color: #B452CD">0.0</span>;  b = <span style="color: #B452CD">1.0</span>;
-<span style="color: #228B22"># find result from sympy</span>
-<span style="color: #228B22"># define x as a symbol to be used by sympy</span>
-x = Symbol(<span style="color: #CD5555">&#39;x&#39;</span>)
-exact = integrate(function(x), (x, a, b))
-<span style="color: #228B22"># set up the arrays for plotting the relative error</span>
-n = np.zeros(<span style="color: #B452CD">9</span>); y = np.zeros(<span style="color: #B452CD">9</span>);
-<span style="color: #228B22"># find the relative error as function of integration points</span>
-<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">1</span>, <span style="color: #B452CD">8</span>, <span style="color: #B452CD">1</span>):
-    npts = <span style="color: #B452CD">10</span>**i
-    result = Trapez(a,b,function,npts)
-    RelativeError = <span style="color: #658b00">abs</span>((exact-result)/exact)
-    n[i] = log10(npts); y[i] = log10(RelativeError);
-plt.plot(n,y, <span style="color: #CD5555">&#39;ro&#39;</span>)
-plt.xlabel(<span style="color: #CD5555">&#39;n&#39;</span>)
-plt.ylabel(<span style="color: #CD5555">&#39;Relative error&#39;</span>)
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">os</span>
+
+<span style="color: #228B22"># Where to save the figures and data files</span>
+PROJECT_ROOT_DIR = <span style="color: #CD5555">&quot;Results&quot;</span>
+FIGURE_ID = <span style="color: #CD5555">&quot;Results/FigureFiles&quot;</span>
+DATA_ID = <span style="color: #CD5555">&quot;DataFiles/&quot;</span>
+
+<span style="color: #8B008B; font-weight: bold">if</span> <span style="color: #8B008B">not</span> os.path.exists(PROJECT_ROOT_DIR):
+    os.mkdir(PROJECT_ROOT_DIR)
+
+<span style="color: #8B008B; font-weight: bold">if</span> <span style="color: #8B008B">not</span> os.path.exists(FIGURE_ID):
+    os.makedirs(FIGURE_ID)
+
+<span style="color: #8B008B; font-weight: bold">if</span> <span style="color: #8B008B">not</span> os.path.exists(DATA_ID):
+    os.makedirs(DATA_ID)
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">image_path</span>(fig_id):
+    <span style="color: #8B008B; font-weight: bold">return</span> os.path.join(FIGURE_ID, fig_id)
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">data_path</span>(dat_id):
+    <span style="color: #8B008B; font-weight: bold">return</span> os.path.join(DATA_ID, dat_id)
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">save_fig</span>(fig_id):
+    plt.savefig(image_path(fig_id) + <span style="color: #CD5555">&quot;.png&quot;</span>, <span style="color: #658b00">format</span>=<span style="color: #CD5555">&#39;png&#39;</span>)
+
+
+<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">pylab</span> <span style="color: #8B008B; font-weight: bold">import</span> plt, mpl
+plt.style.use(<span style="color: #CD5555">&#39;seaborn&#39;</span>)
+mpl.rcParams[<span style="color: #CD5555">&#39;font.family&#39;</span>] = <span style="color: #CD5555">&#39;serif&#39;</span>
+
+g = <span style="color: #B452CD">9.80655</span> <span style="color: #228B22">#m/s^2 g to 6 leading digits after decimal point</span>
+D = <span style="color: #B452CD">0.00245</span> <span style="color: #228B22">#m/s</span>
+m = <span style="color: #B452CD">0.2</span> <span style="color: #228B22"># kg</span>
+<span style="color: #228B22"># Define Gravitational force as a vector in x and y. It is a constant</span>
+G = -m*g*np.array([<span style="color: #B452CD">0.0</span>,<span style="color: #B452CD">1</span>])
+DeltaT = <span style="color: #B452CD">0.01</span>
+<span style="color: #228B22">#set up arrays </span>
+tfinal = <span style="color: #B452CD">1.3</span>
+n = ceil(tfinal/DeltaT)
+<span style="color: #228B22"># set up arrays for t, a, v, and x</span>
+t = np.zeros(n)
+v = np.zeros((n,<span style="color: #B452CD">2</span>))
+r = np.zeros((n,<span style="color: #B452CD">2</span>))
+<span style="color: #228B22"># Initial conditions as compact 2-dimensional arrays</span>
+r0 = np.array([<span style="color: #B452CD">0.0</span>,<span style="color: #B452CD">10.0</span>])
+v0 = np.array([<span style="color: #B452CD">10.0</span>,<span style="color: #B452CD">0.0</span>])
+r[<span style="color: #B452CD">0</span>] = r0
+v[<span style="color: #B452CD">0</span>] = v0
+<span style="color: #228B22"># Start integrating using Euler&#39;s method</span>
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
+    <span style="color: #228B22"># Set up forces, air resistance FD, note now that we need the norm of the vector</span>
+    <span style="color: #228B22"># Here you could have defined your own function for this</span>
+    vabs = sqrt(<span style="color: #658b00">sum</span>(v[i]*v[i]))
+<span style="color: #228B22"># Note: you need to think of the sign for the drag force </span>
+    FD = -D*v[i]*vabs
+    <span style="color: #228B22"># Final net forces acting on falling object</span>
+    Fnet = FD+G
+    <span style="color: #228B22"># The accelration at a given time t_i</span>
+    a = Fnet/m
+    <span style="color: #228B22"># update velocity, time and position using Euler&#39;s method</span>
+    v[i+<span style="color: #B452CD">1</span>] = v[i] + DeltaT*a
+    r[i+<span style="color: #B452CD">1</span>] = r[i] + DeltaT*v[i]
+    t[i+<span style="color: #B452CD">1</span>] = t[i] + DeltaT
+
+fig, axs = plt.subplots(<span style="color: #B452CD">4</span>, <span style="color: #B452CD">1</span>)
+axs[<span style="color: #B452CD">0</span>].plot(t, r[:,<span style="color: #B452CD">1</span>])
+axs[<span style="color: #B452CD">0</span>].set_xlim(<span style="color: #B452CD">0</span>, tfinal)
+axs[<span style="color: #B452CD">0</span>].set_ylabel(<span style="color: #CD5555">&#39;y&#39;</span>)
+axs[<span style="color: #B452CD">1</span>].plot(t, v[:,<span style="color: #B452CD">1</span>])
+axs[<span style="color: #B452CD">1</span>].set_ylabel(<span style="color: #CD5555">&#39;vy[m/s]&#39;</span>)
+axs[<span style="color: #B452CD">1</span>].set_xlabel(<span style="color: #CD5555">&#39;time[s]&#39;</span>)
+axs[<span style="color: #B452CD">2</span>].plot(t, r[:,<span style="color: #B452CD">0</span>])
+axs[<span style="color: #B452CD">2</span>].set_xlim(<span style="color: #B452CD">0</span>, tfinal)
+axs[<span style="color: #B452CD">2</span>].set_ylabel(<span style="color: #CD5555">&#39;x&#39;</span>)
+axs[<span style="color: #B452CD">3</span>].plot(t, v[:,<span style="color: #B452CD">0</span>])
+axs[<span style="color: #B452CD">3</span>].set_ylabel(<span style="color: #CD5555">&#39;vx[m/s]&#39;</span>)
+axs[<span style="color: #B452CD">3</span>].set_xlabel(<span style="color: #CD5555">&#39;time[s]&#39;</span>)
+
+fig.tight_layout()
+save_fig(<span style="color: #CD5555">&quot;EulerIntegration&quot;</span>)
 plt.show()
-</pre></div>
-<p>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <!-- ------------------- end of main content --------------- -->
-
-
 <center style="font-size:80%">
-<!-- copyright --> &copy; 1999-2021, "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/". Released under CC Attribution-NonCommercial 4.0 license
+<!-- copyright --> &copy; 1999-2022, "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/". Released under CC Attribution-NonCommercial 4.0 license
 </center>
-
-
 </body>
 </html>
-    
 

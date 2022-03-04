@@ -1,0 +1,662 @@
+TITLE: PHY321: Two-body scattering and Variational calculus
+AUTHOR: "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/" {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and Facility for Rare Ion Beams (FRIB), Michigan State University, USA & Department of Physics, University of Oslo, Norway
+DATE: today
+
+
+!split
+=====   Aims and Overarching Motivation =====
+
+
+=== Monday ===
+
+* Two-body scattering and "Rutherford scattering":"https://www.youtube.com/watch?v=dNp-vP17asI&ab_channel=TylerDeWitt".
+
+
+_Reading suggestion_: Taylor sections 14.1-14.6 and Lecture notes
+
+
+=== Wednesday ===
+
+* Lagrangian formalism, top down approach first and derivation of the Euler-Lagrange equations
+* Principle of Least Action, watch "Feynman Lecture":"https://www.feynmanlectures.caltech.edu/II_19.html".
+
+_Reading suggestion_: Taylor sections 6.1-6.3
+
+===  Friday ===
+
+* "Variational Calculus":"https://en.wikipedia.org/wiki/Calculus_of_variations"
+
+_Reading suggestion_: Taylor sections 6.3-6.4
+
+
+
+
+!split
+===== Scattering and Cross Sections =====
+
+Scattering experiments don't measure entire trajectories. For elastic
+collisions, they measure the distribution of final scattering angles
+at best. Most experiments use targets thin enough so that the number
+of scatterings is typically zero or one. The cross section, $\sigma$,
+describes the cross-sectional area for particles to scatter with an
+individual target atom or nucleus. Cross section measurements form the
+basis for MANY fields of physics. BThe cross section, and the
+differential cross section, encapsulates everything measurable for a
+collision where all that is measured is the final state, e.g. the
+outgoing particle had momentum $\bm{p}_f$. y studying cross sections,
+one can infer information about the potential interaction between the
+two particles. Inferring, or constraining, the potential from the
+cross section is a classic {\it inverse} problem. Collisions are
+either elastic or inelastic. Elastic collisions are those for which
+the two bodies are in the same internal state before and after the
+collision. If the collision excites one of the participants into a
+higher state, or transforms the particles into different species, or
+creates additional particles, the collision is inelastic. Here, we
+consider only elastic collisions.
+
+!split
+===== Scattering: Coulomb forces =====
+
+For Coulomb forces, the cross section is infinite because the range of
+the Coulomb force is infinite, but for interactions such as the strong
+interaction in nuclear or particle physics, there is no long-range
+force and cross-sections are finite. Even for Coulomb forces, the part
+of the cross section that corresponds to a specific scattering angle,
+$d\sigma/d\Omega$, which is a function of the scattering angle
+$\theta_s$ is still finite.
+
+If a particle travels through a thin target, the chance the particle
+scatters is $P_{\rm scatt}=\sigma dN/dA$, where $dN/dA$ is the number
+of scattering centers per area the particle encounters. If the density
+of the target is $\rho$ particles per volume, and if the thickness of
+the target is $t$, the areal density (number of target scatterers per
+area) is $dN/dA=\rho t$. Because one wishes to quantify the collisions
+independently of the target, experimentalists measure scattering
+probabilities, then divide by the areal density to obtain
+cross-sections,
+
+!bt
+\begin{eqnarray}
+\sigma=\frac{P_{\rm scatt}}{dN/dA}.
+\end{eqnarray}
+!et
+
+!split
+===== Scattering, more details =====
+
+Instead of merely stating that a particle collided, one can measure
+the probability the particle scattered by a given angle. The
+scattering angle $\theta_s$ is defined so that at zero the particle is
+unscattered and at $\theta_s=\pi$ the particle is scattered directly
+backward. Scattering angles are often described in the center-of-mass
+frame, but that is a detail we will neglect for this first discussion,
+where we will consider the scattering of particles moving classically
+under the influence of fixed potentials $U(\bm{r})$. Because the
+distribution of scattering angles can be measured, one expresses the
+differential cross section,
+
+!bt
+\begin{equation}
+\frac{d^2\sigma}{d\cos\theta_s~d\phi}.
+\end{equation}
+!et
+
+Usually, the literature expresses differential cross sections as
+
+!bt
+\begin{equation}
+d\sigma/d\Omega=\frac{d\sigma}{d\cos\theta d\phi}=\frac{1}{2\pi}\frac{d\sigma}{d\cos\theta},
+\end{equation}
+!et
+
+where the last equivalency is true when the scattering does not depend
+on the azimuthal angle $\phi$, as is the case for spherically
+symmetric potentials.
+
+The differential solid angle $d\Omega$ can be thought of as the area
+subtended by a measurement, $dA_d$, divided by $r^2$, where $r$ is the
+distance to the detector,
+
+!bt
+\begin{eqnarray}
+dA_d=r^2 d\Omega.
+\end{eqnarray}
+!et
+
+With this definition $d\sigma/d\Omega$ is independent of the distance
+from which one places the detector, or the size of the detector (as
+long as it is small).
+
+
+!split
+=====  Differential scattering cross sections =====
+
+Differential scattering cross sections are calculated by assuming a
+random distribution of impact parameters $b$. These represent the
+distance in the $xy$ plane for particles moving in the $z$ direction
+relative to the scattering center. An impact parameter $b=0$ refers to
+being aimed directly at the target's center. The impact parameter
+describes the transverse distance from the $z=0$ axis for the
+trajectory when it is still far away from the scattering center and
+has not yet passed it. The differential cross section can be expressed
+in terms of the impact parameter,
+
+!bt
+\begin{equation}
+d\sigma=2\pi bdb,
+\end{equation}
+!et
+
+which is the area of a thin ring of radius $b$ and thickness $db$. In
+classical physics, one can calculate the trajectory given the incoming
+kinetic energy $E$ and the impact parameter if one knows the mass and
+potential.
+
+
+!split
+===== More on Differential  Cross Sections =====
+
+From the trajectory, one then finds the scattering angle
+$\theta_s(b)$. The differential cross section is then
+
+!bt
+\begin{equation}
+\frac{d\sigma}{d\Omega}=\frac{1}{2\pi}\frac{d\sigma}{d\cos\theta_s}=b\frac{db}{d\cos\theta_s}=\frac{b}{(d/db)\cos\theta_s(b)}.
+\end{equation}
+!et
+
+Typically, one would calculate $\cos\theta_s$ and $(d/db)\cos\theta_s$
+as functions of $b$. This is sufficient to plot the differential cross
+section as a function of $\theta_s$.
+
+The total cross section is 
+
+!bt
+\begin{equation}
+\sigma_{\rm tot}=\int d\Omega\frac{d\sigma}{d\Omega}=2\pi\int d\cos\theta_s~\frac{d\sigma}{d\Omega}. 
+\end{equation}
+!et
+
+Even if the total cross section is infinite, e.g. Coulomb forces, one
+can still have a finite differential cross section as we will see
+later on.
+
+
+!split
+===== Rutherford Scattering =====
+
+This refers to the calculation of $d\sigma/d\Omega$ due to an inverse
+square force, $F_{12}=\pm\alpha/r^2$ for repulsive/attractive
+interaction. Rutherford compared the scattering of $\alpha$ particles
+($^4$He nuclei) off of a nucleus and found the scattering angle at
+which the formula began to fail. This corresponded to the impact
+parameter for which the trajectories would strike the nucleus. This
+provided the first measure of the size of the atomic nucleus. At the
+time, the distribution of the positive charge (the protons) was
+considered to be just as spread out amongst the atomic volume as the
+electrons. After Rutherford's experiment, it was clear that the radius
+of the nucleus tended to be roughly 4 orders of magnitude smaller than
+that of the atom, which is less than the size of a football relative
+to Spartan Stadium.
+
+
+!split
+===== Rutherford Scattering, more details =====
+
+
+
+In order to calculate differential cross section, we must find how the
+impact parameter is related to the scattering angle. This requires
+analysis of the trajectory. We consider our previous expression for
+the trajectory where we derived the elliptic form for the trajectory,
+For that case we considered an attractive
+force with the particle's energy being negative, i.e. it was
+bound. However, the same form will work for positive energy, and
+repulsive forces can be considered by simple flipping the sign of
+$\alpha$. For positive energies, the trajectories will be hyperbolas,
+rather than ellipses, with the asymptotes of the trajectories
+representing the directions of the incoming and outgoing
+tracks.
+
+!split
+===== Rutherford Scattering, final trajectories =====
+
+
+We have
+
+
+!bt
+\begin{equation}label{eq:ruthtraj}
+r=\frac{1}{\frac{m\alpha}{L^2}+A\cos\theta}.
+\end{equation}
+!et
+
+Once $A$ is large enough, which will happen when the energy is
+positive, the denominator will become negative for a range of
+$\theta$. This is because the scattered particle will never reach
+certain angles. The asymptotic angles $\theta'$ are those for which
+the denominator goes to zero,
+
+!bt
+\begin{equation}
+\cos\theta'=-\frac{m\alpha}{AL^2}.
+\end{equation}
+!et
+
+
+!split
+===== Rutherford Scattering, Closest Approach =====
+
+
+
+The trajectory's point of closest approach is at $\theta=0$ and the
+two angles $\theta'$, which have this value of $\cos\theta'$, are the
+angles of the incoming and outgoing particles. From
+Fig (_to come_), one can see that the scattering angle
+$\theta_s$ is given by,
+
+!bt
+\begin{eqnarray}
+label{eq:sthetover2}
+2\theta'-\pi&=&\theta_s,~~~\theta'=\frac{\pi}{2}+\frac{\theta_s}{2},\\
+\nonumber
+\sin(\theta_s/2)&=&-\cos\theta'\\
+\nonumber
+&=&\frac{m\alpha}{AL^2}.
+\end{eqnarray}
+!et
+
+Now that we have $\theta_s$ in terms of $m,\alpha,L$ and $A$, we wish
+to re-express $L$ and $A$ in terms of the impact parameter $b$ and the
+energy $E$. This will set us up to calculate the differential cross
+section, which requires knowing $db/d\theta_s$. It is easy to write
+the angular momentum as
+
+!bt
+\begin{equation}
+L^2=p_0^2b^2=2mEb^2.
+\end{equation}
+!et
+
+!split
+===== Rutherford Scattering, getting there =====
+
+
+Finding $A$ is more complicated. To accomplish this we realize that
+the point of closest approach occurs at $\theta=0$, so from
+Eq. (ref{eq:ruthtraj})
+
+!bt
+\begin{eqnarray}
+label{eq:rminofA}
+\frac{1}{r_{\rm min}}&=&\frac{m\alpha}{L^2}+A,\\
+\nonumber
+A&=&\frac{1}{r_{\rm min}}-\frac{m\alpha}{L^2}.
+\end{eqnarray}
+!et
+
+Next, $r_{\rm min}$ can be found in terms of the energy because at the
+point of closest approach the kinetic energy is due purely to the
+motion perpendicular to $\hat{r}$ and
+
+!bt
+\begin{equation}
+E=-\frac{\alpha}{r_{\rm min}}+\frac{L^2}{2mr_{\rm min}^2}.
+\end{equation}
+!et
+
+!split
+===== Rutherford Scattering, More Manipulations =====
+
+One can solve the quadratic equation for $1/r_{\rm min}$,
+
+!bt
+\begin{equation}
+\frac{1}{r_{\rm min}}=\frac{m\alpha}{L^2}+\sqrt{(m\alpha/L^2)^2+2mE/L^2}.
+\end{equation}
+!et
+
+We can plug the expression for $r_{\rm min}$ into the expression for $A$, Eq. (ref{eq:rminofA}),
+
+!bt
+\begin{equation}
+A=\sqrt{(m\alpha/L^2)^2+2mE/L^2}=\sqrt{(\alpha^2/(4E^2b^4)+1/b^2}
+\end{equation}
+!et
+
+
+!split
+===== Rutherford Scattering, final expression =====
+
+Finally, we insert the expression for $A$ into that for the scattering angle, Eq. (ref{eq:sthetover2}),
+
+!bt
+\begin{eqnarray}
+label{eq:scattangle}
+\sin(\theta_s/2)&=&\frac{m\alpha}{AL^2}\\
+\nonumber
+&=&\frac{a}{\sqrt{a^2+b^2}}, ~~a\equiv \frac{\alpha}{2E}
+\end{eqnarray}
+!et
+
+!split
+===== Rutherford Scattering, the Differential Cross Section =====
+
+
+
+The differential cross section can now be found by differentiating the
+expression for $\theta_s$ with $b$,
+
+!bt
+\begin{eqnarray}
+label{eq:rutherford}
+\frac{1}{2}\cos(\theta_s/2)d\theta_s&=&\frac{ab~db}{(a^2+b^2)^{3/2}}=\frac{bdb}{a^2}\sin^3(\theta_s/2),\\
+\nonumber
+d\sigma&=&2\pi bdb=\frac{\pi a^2}{\sin^3(\theta_s/2)}\cos(\theta_s/2)d\theta_s\\
+\nonumber
+&=&\frac{\pi a^2}{2\sin^4(\theta_s/2)}\sin\theta_s d\theta_s\\
+\nonumber
+\frac{d\sigma}{d\cos\theta_s}&=&\frac{\pi a^2}{2\sin^4(\theta_s/2)},\\
+\nonumber
+\frac{d\sigma}{d\Omega}&=&\frac{a^2}{4\sin^4(\theta_s/2)}.
+\end{eqnarray}
+!et
+
+where $a= \alpha/2E$. This the Rutherford formula for the differential
+cross section. It diverges as $\theta_s\rightarrow 0$ because
+scatterings with arbitrarily large impact parameters still scatter to
+arbitrarily small scattering angles. The expression for
+$d\sigma/d\Omega$ is the same whether the interaction is positive or
+negative.
+
+
+!split
+===== Rutherford Scattering, Example =====
+
+
+Consider a particle of mass $m$ and charge $z$ with kinetic energy $E$
+(Let it be the center-of-mass energy) incident on a heavy nucleus of
+mass $M$ and charge $Z$ and radius $R$. We want to find the angle at which the
+Rutherford scattering formula breaks down.
+
+Let $\alpha=Zze^2/(4\pi\epsilon_0)$. The scattering angle in Eq. (ref{eq:scattangle}) is 
+
+!bt
+\[
+\sin(\theta_s/2)=\frac{a}{\sqrt{a^2+b^2}}, ~~a\equiv \frac{\alpha}{2E}.
+\]
+!et
+
+The impact parameter $b$ for which the point of closest approach
+equals $R$ can be found by using angular momentum conservation,
+
+!bt
+\begin{eqnarray*}
+p_0b&=&b\sqrt{2mE}=Rp_f=R\sqrt{2m(E-\alpha/R)},\\
+b&=&R\frac{\sqrt{2m(E-\alpha/R)}}{\sqrt{2mE}}\\
+&=&R\sqrt{1-\frac{\alpha}{ER}}.
+\end{eqnarray*}
+!et
+
+
+!split
+===== Rutherford Scattering, Example, wrapping up =====
+
+
+
+Putting these together
+
+!bt
+\[
+\theta_s=2\sin^{-1}\left\{
+\frac{a}{\sqrt{a^2+R^2(1-\alpha/(RE))}}
+\right\},~~~a=\frac{\alpha}{2E}.
+\]
+!et
+
+It was from this departure of the experimentally measured
+$d\sigma/d\Omega$ from the Rutherford formula that allowed Rutherford
+to infer the radius of the gold nucleus, $R$.
+
+
+
+!split
+===== Variational Calculus =====
+
+The calculus of variations involves 
+problems where the quantity to be minimized or maximized is an integral. 
+
+
+The usual minimization problem one faces involves taking a function
+${\cal L}(x)$, then finding the single value $x$ for which ${\cal L}$
+is either a maximum or minimum. In multivariate calculus one also
+learns to solve problems where you minimize for multiple variables,
+${\cal L}(x_1,x_2,\cdots x_n)$, and finding the points $(x_1\cdots
+y_n)$ in an $n$-dimensional space that maximize or minimize the
+function. Here, we consider what seems to be a much more ambitious
+problem. Imagine you have a function ${\cal L}(x(t),\dot{x}(t),t)$,
+and you wish to find the extrema for an infinite number of values of
+$x$, i.e. $x$ at each point $t$. The function ${\cal L}$ will not only
+depend on $x$ at each point $t$, but also on the slope at each point,
+plus an additional dependence on $t$. Note we are NOT finding an
+optimum value of $t$, we are finding the set of optimum values of $x$
+at each point $t$, or equivalently, finding the function $x(t)$.
+
+
+!split
+===== Variational Calculus, introducing the action =====
+
+One treats the function $x(t)$ as being unknown while minimizing the action
+
+!bt
+\[
+S=\int_{t_1}^{t_2}dt~{\cal L}(x(t),\dot{x}(t),t).
+\]
+!et
+
+Thus, we are minimizing $S$ with respect to an infinite number of
+values of $x(t_i)$ at points $t_i$. As an additional criteria, we will
+assume that $x(t_1)$ and $x(t_2)$ are fixed, and that that we will
+only consider variations of $x$ between the boundaries. The dependence
+on the derivative, $\dot{x}=dx/dt$, is crucial because otherwise the
+solution would involve simply finding the one value of $x$ that
+minimized ${\cal L}$, and $x(t)$ would equal a constant if there were no
+explicit $t$ dependence. Furthermore, $x$ wouldn't need to be
+continuous at the boundary.
+
+
+!split
+===== Variational Calculus, general Action =====
+
+
+In the general case we have an integral of the type
+!bt
+\[ 
+S[q]= \int_{t_1}^{t_2} {\cal L}(q(t),\dot{q}(t),t)dt,
+\]
+!et
+
+where $S$ is the quantity which is sought minimized or maximized.  The
+problem is that although ${\cal L}$  is a function of the general variables
+$q(t),\dot{q}(t),t$ (note our change of variables), the exact dependence of $q$ on $t$ is not known.
+This means again that even though the integral has fixed limits $t_1$
+and $t_2$, the path of integration is not known. In our case the unknown
+quantities are the positions and general velocities of a given number
+of objects and we wish to choose an integration path which makes the
+functional $S[q]$ stationary. This means that we want to find minima,
+or maxima or saddle points. In physics we search normally for minima.
+Our task is therefore to find the minimum of $S[q]$ so that its
+variation $\delta S$ is zero subject to specific constraints.  The
+constraints can be treated via the technique of Lagrangian multipliers
+as we will see below.
+
+
+!split
+===== Variational Calculus, Optimal Path =====
+
+
+We assume the existence of an optimum path, that is a path for which
+$S[q]$ is stationary. There are infinitely many such paths.  The
+difference between two paths $\delta q$ is called the variation of
+$q$.
+
+We call the variation $\eta(t)$ and it is scaled by a factor $\alpha$.
+The function $\eta(t)$ is arbitrary except for
+
+!bt
+\[
+\eta(t_1)=\eta(t_2)=0,
+\]
+!et
+
+and we assume that we can model the change in $q$ as
+
+!bt
+\[
+q(t,\alpha) = q(t)+\alpha\eta(t),
+\]
+!et
+
+and
+
+!bt
+\[
+\delta q = q(t,\alpha) -q(t,0)=\alpha\eta(t).
+\]
+!et
+
+
+!split
+===== Variational Calculus, Condition for an Extreme Value =====
+
+
+We choose $q(t,\alpha=0)$ as the unkonwn path  that will minimize $S$.  The value
+$q(t,\alpha\ne 0)$  describes a neighbouring path.
+
+We have
+
+!bt
+\[
+S[q(\alpha)]= \int_{t_1}^{t_2} {\cal L}(q(t,\alpha),\dot{q}(t,\alpha),t)dt.
+\]
+!et
+
+
+The condition for an extreme of
+
+!bt
+\[
+S[q(\alpha)]= \int_{t_1}^{t_2} {\cal L}(q(t,\alpha),\dot{q}(t,\alpha),t)dt,
+\]
+!et
+
+is
+
+!bt
+\[
+\left[\frac{\partial  S[q(\alpha)]}{\partial t}\right]_{\alpha=0} =0.
+\]
+!et
+
+
+!split
+===== Variational Calculus. $\alpha$ Dependence =====
+
+
+The $\alpha$ dependence is contained in $q(t,\alpha)$ and $\dot{q}(t,\alpha)$ meaning that
+
+!bt
+\[
+\left[\frac{\partial  E[q(\alpha)]}{\partial \alpha}\right]=\int_{t_1}^{t_2} \left( \frac{\partial {\cal l}}{\partial q}\frac{\partial q}{\partial \alpha}+\frac{\partial {\cal L}}{\partial \dot{q}}\frac{\partial \dot{q}}{\partial \alpha}\right)dt.
+\]
+!et
+We have defined
+
+!bt
+\[
+\frac{\partial q(x,\alpha)}{\partial \alpha}=\eta(x)
+\]
+!et
+and thereby
+
+!bt
+\[
+\frac{\partial \dot{q}(t,\alpha)}{\partial \alpha}=\frac{d(\eta(t))}{dt}.
+\]
+!et
+
+
+
+!split
+===== INtegrating by Parts =====
+
+Using
+
+!bt
+\[
+\frac{\partial q(t,\alpha)}{\partial \alpha}=\eta(t),
+\]
+!et
+
+and
+
+!bt
+\[
+\frac{\partial \dot{q}(t,\alpha)}{\partial \alpha}=\frac{d(\eta(t))}{dt},
+\]
+!et
+
+in the integral gives
+
+!bt
+\[
+\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]=\int_{t_1}^{t_2} \left( \frac{\partial {\cal L}}{\partial q}\eta(t)+\frac{\partial {\cal L}}{\partial \dot{q}}\frac{d(\eta(t))}{dt}\right)dt.
+\]
+!et
+
+Integrating the second term by parts
+
+!bt
+\[
+\int_{t_1}^{t_2} \frac{\partial {\cal L}}{\partial \dot{q}}\frac{d(\eta(t))}{dt}dt =\eta(t)\frac{\partial {\cal L}}{\partial \dot{q}}|_{t_1}^{t_2}-
+\int_a^b \eta(t)\frac{d}{dx}\frac{\partial {\cal L}}{\partial \dot{q}}dt,
+\]
+!et
+
+
+and since the first term dissappears due to $\eta(a)=\eta(b)=0$, we obtain
+
+
+!bt
+\[
+\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]=\int_{t_1}^{t_2} \left( \frac{\partial {\cal L}}{\partial q}-\frac{d}{dx}\frac{\partial {\cal L}}{\partial \dot{q}}
+\right)\eta(t)dt=0.
+\]
+!et
+
+!split
+===== Euler-Lagrange Equations =====
+
+
+The latter can be written as
+
+!bt
+\[
+\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]_{\alpha=0}=\int_{t_1}^{t_2} \left( \frac{\partial {\cal L}}{\partial q}-\frac{d}{\
+dx}\frac{\partial {\cal L}}{\partial \dot{q}}\right)\delta q(t)dt=\delta S = 0.
+\]
+!et
+
+
+The condition for a stationary value is thus a partial differential equation
+
+!bt
+\[
+\frac{\partial {\cal L}}{\partial q}-\frac{d}{dx}\frac{\partial {\cal L}}{\partial \dot{q}}=0,
+\]
+!et
+
+known as the _Euler-Lagrange_ equation.
+
+
+

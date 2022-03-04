@@ -1,7 +1,7 @@
 %%
 %% Automatically generated file from DocOnce source
-%% (https://github.com/hplgit/doconce/)
-%%
+%% (https://github.com/doconce/doconce/)
+%% doconce format latex hw2.do.txt --minted_latex_style=trac --latex_admon=paragraph --no_mako
 %%
 
 
@@ -92,7 +92,7 @@ PHY321: Classical Mechanics 1
 % ----------------- author(s) -------------------------
 
 \begin{center}
-{\bf Homework 2, due Monday February 1 (Midnight)${}^{}$} \\ [0mm]
+{\bf Homework 2, due January 28 (Midnight)${}^{}$} \\ [0mm]
 \end{center}
 
 \begin{center}
@@ -103,7 +103,7 @@ PHY321: Classical Mechanics 1
 
 % --- begin date ---
 \begin{center}
-Jan 9, 2021
+Jan 18, 2022
 \end{center}
 % --- end date ---
 
@@ -141,11 +141,11 @@ Useful material here to read is
 \end{enumerate}
 
 \noindent
-A person jumps from an airplane, falling freely for several seconds before she pulls the cord of her parachute and the parachute unfolds.
+A person jumps from an airplane, falling freely for several seconds before the person pulls the cord of her parachute and the parachute unfolds.
 \begin{itemize}
-\item 2a (3pt)  Identify the forces acting on the parachuter and draw a free-body diagram of the parachuter before she has pulled the cord.
+\item 2a (3pt)  Identify the forces acting on the parachuter and draw a free-body diagram of the parachuter before the person has pulled the cord.
 
-\item 2b (3pt)  Identify the forces acting on the parachuter and draw a free-body diagram of the parachuter after she has pulled the cord.
+\item 2b (3pt)  Identify the forces acting on the parachuter and draw a free-body diagram of the parachuter after the person has pulled the cord.
 
 \item 2c (4pt)  Sketch the net force acting on the parachuter as a function of time, F(t).
 \end{itemize}
@@ -213,6 +213,13 @@ This week we will:
 \noindent
 This material will then serve as background for the numerical part of homework 3. The first part is a simple warm-up, with hints and suggestions you can use for the code to write below. 
 
+
+
+
+
+
+
+
 \begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 # As usual, here are some useful packages we will be using. Feel free to use more and experiment as you wish.
 
@@ -220,7 +227,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits import mplot3d
 %matplotlib inline
+
 \end{minted}
+
 
 In class (the falling baseball example) we used an  analytical expression for the height of a falling ball.
 In the first homework we used instead the position from experiment (Usain Bolt's 100m record run) and stored this
@@ -234,13 +243,20 @@ position to be $x=2$ and $y=1$. Take a look at the code and comments
 to get an understanding of what is happening. Feel free to play around with it.
 
 
+
+
+
+
+
 \begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 tf = 4 #length of value to be analyzed
 dt = .001 # step sizes
 t = np.arange(0.0,tf,dt) # Creates an evenly spaced time array going from 0 to 3.999, with step sizes .001
 p = np.zeros((len(t), 2)) # Creates an empty array of [x,y] arrays (our vectors). Array size is same as the one for time.
 p[0] = [2.0,1.0] # This sets the inital position to be x = 2 and y = 1
+
 \end{minted}
+
 
 Below we are printing specific values of our array to see what is being
 stored where. The first number in the array $r[]$ represents which array
@@ -248,31 +264,73 @@ iteration we are looking at, while the number after the  represents
 which listed number in the array iteration we are getting back. 
 
 
+
+
 \begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 print(p[0]) # Prints the first array
 print(p[0,:]) # Same as above, these commands are interchangeable 
+
 \end{minted}
+
+
+
 \begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 print(p[3999]) # Prints the 4000th array
+
 \end{minted}
+
+
+
 
 \begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 print(p[0,0]) # Prints the first value of the first array
+
 \end{minted}
+
+
+
+
 \begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 print(p[0,1]) # Prints the second value of first array
 print(p[:,0]) # Prints the first value of all the arrays
+
 \end{minted}
+
 Then try running this cell. Notice how it gives an error since we did not implement a third dimension into our arrays
+
+
 \begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 print(p[:,2])
+
 \end{minted}
+
 
 In the cell below we want to manipulate the arrays.
 In this example we make each vector's $x$ component valued the same as their respective vector's position in the iteration and the $y$ value will be twice that value, except for  the first vector, which we have already set. 
 That is we have $p[0] = [2,1], p[1] = [1,2], p[2] = [2,4], p[3] = [3,6], ...$
 
 Here we set up an array for $x$ and $y$ values. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 for i in range(1,3999):
     p[i] = [i,2*i]
@@ -294,11 +352,12 @@ if c == 0:
     print("Success!")
 else:
     print("There is an error in your code")
+
 \end{minted}
+
 
 You could also think of an alternative way of storing the above information. Feel free to explore how to store
 multidimensional objects. 
-
 
 Last week we studied Usain Bolt's 100m run and in class we studied a falling baseball. We made basic plots of the baseball
 moving in one dimension. This week we will be working with a three-dimensional variant. This will be useful for our next homeworks and numerical projects. 
@@ -324,6 +383,14 @@ work with radians, so we will also be using a function from Numpy that
 converts degrees to radians.
 
 
+
+
+
+
+
+
+
+
 \begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 tf = 2.04  # The final time to be evaluated
 dt = 0.1  # The time step size
@@ -333,8 +400,17 @@ theta_rad = np.radians(theta_deg) # Converts degrees to their radian counterpart
 x = 10*t*np.cos(theta_rad) # Equation for our x component, utilizing np.cos() and our calculated radians
 y = 10*t*np.sin(theta_rad) # Put the y equation here
 z = 10*t-9.81/2*t**2# Put the z equation here
+
 \end{minted}
+
 Then we plot it
+
+
+
+
+
+
+
 \begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 ## Once you have entered the proper equations in the cell above, run this cell to plot in 3D
 fig = plt.axes(projection='3d')
@@ -342,7 +418,9 @@ fig.set_xlabel('x')
 fig.set_ylabel('y')
 fig.set_zlabel('z')
 fig.scatter(x,y,z)
+
 \end{minted}
+
 
 \begin{itemize}
 \item 6a (8pt) How would you express $x(t)$, $y(t)$, $z(t)$ for this problem as a single vector, $\bm{r}(t)$?
@@ -350,6 +428,13 @@ fig.scatter(x,y,z)
 
 \noindent
 Then run the code and plot using the array $r$
+
+
+
+
+
+
+
 \begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 ## Run this code to plot using our r array 
 fig = plt.axes(projection='3d')
@@ -357,7 +442,9 @@ fig.set_xlabel('x')
 fig.set_ylabel('y')
 fig.set_zlabel('z')
 fig.scatter(r[0],r[1],r[2])
+
 \end{minted}
+
 
 \begin{itemize}
 \item 6b (8pt) What do you think the benefits and/or disadvantages are from expressing our three equations as a single array/vector? This can be both from a computational and physics stand point. Use the \textbf{Numpy} package to also print the maximum $x$, $y$ and $z$ components from $\bm{r}$.

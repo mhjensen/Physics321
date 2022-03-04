@@ -1,0 +1,399 @@
+%%
+%% Automatically generated file from DocOnce source
+%% (https://github.com/doconce/doconce/)
+%% doconce format latex hw1.do.txt --minted_latex_style=trac --latex_admon=paragraph --no_mako
+%%
+% #ifdef PTEX2TEX_EXPLANATION
+%%
+%% The file follows the ptex2tex extended LaTeX format, see
+%% ptex2tex: https://code.google.com/p/ptex2tex/
+%%
+%% Run
+%%      ptex2tex myfile
+%% or
+%%      doconce ptex2tex myfile
+%%
+%% to turn myfile.p.tex into an ordinary LaTeX file myfile.tex.
+%% (The ptex2tex program: https://code.google.com/p/ptex2tex)
+%% Many preprocess options can be added to ptex2tex or doconce ptex2tex
+%%
+%%      ptex2tex -DMINTED myfile
+%%      doconce ptex2tex myfile envir=minted
+%%
+%% ptex2tex will typeset code environments according to a global or local
+%% .ptex2tex.cfg configure file. doconce ptex2tex will typeset code
+%% according to options on the command line (just type doconce ptex2tex to
+%% see examples). If doconce ptex2tex has envir=minted, it enables the
+%% minted style without needing -DMINTED.
+% #endif
+
+% #define PREAMBLE
+
+% #ifdef PREAMBLE
+%-------------------- begin preamble ----------------------
+
+\documentclass[%
+oneside,                 % oneside: electronic viewing, twoside: printing
+final,                   % draft: marks overfull hboxes, figures with paths
+10pt]{article}
+
+\listfiles               %  print all files needed to compile this document
+
+\usepackage{relsize,makeidx,color,setspace,amsmath,amsfonts,amssymb}
+\usepackage[table]{xcolor}
+\usepackage{bm,ltablex,microtype}
+
+\usepackage[pdftex]{graphicx}
+
+\usepackage{ptex2tex}
+% #ifdef MINTED
+\usepackage{minted}
+\usemintedstyle{default}
+% #endif
+
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{lmodern}         % Latin Modern fonts derived from Computer Modern
+
+% Hyperlinks in PDF:
+\definecolor{linkcolor}{rgb}{0,0,0.4}
+\usepackage{hyperref}
+\hypersetup{
+    breaklinks=true,
+    colorlinks=true,
+    linkcolor=linkcolor,
+    urlcolor=linkcolor,
+    citecolor=black,
+    filecolor=black,
+    %filecolor=blue,
+    pdfmenubar=true,
+    pdftoolbar=true,
+    bookmarksdepth=3   % Uncomment (and tweak) for PDF bookmarks with more levels than the TOC
+    }
+%\hyperbaseurl{}   % hyperlinks are relative to this root
+
+\setcounter{tocdepth}{2}  % levels in table of contents
+
+% prevent orhpans and widows
+\clubpenalty = 10000
+\widowpenalty = 10000
+
+% --- end of standard preamble for documents ---
+
+
+% insert custom LaTeX commands...
+
+\raggedbottom
+\makeindex
+\usepackage[totoc]{idxlayout}   % for index in the toc
+\usepackage[nottoc]{tocbibind}  % for references/bibliography in the toc
+
+%-------------------- end preamble ----------------------
+
+\begin{document}
+
+% matching end for #ifdef PREAMBLE
+% #endif
+
+\newcommand{\exercisesection}[1]{\subsection*{#1}}
+
+
+% ------------------- main content ----------------------
+
+
+
+% ----------------- title -------------------------
+
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE\bf
+\begin{spacing}{1.25}
+PHY321: Classical Mechanics 1
+\end{spacing}
+}
+\end{center}
+
+% ----------------- author(s) -------------------------
+
+\begin{center}
+{\bf Homework 1, due January 21 (midnight)${}^{}$} \\ [0mm]
+\end{center}
+
+\begin{center}
+% List of all institutions:
+\end{center}
+    
+% ----------------- end author(s) -------------------------
+
+% --- begin date ---
+\begin{center}
+Jan 11, 2022
+\end{center}
+% --- end date ---
+
+\vspace{1cm}
+
+
+\paragraph{Practicalities about  homeworks and projects.}
+\begin{enumerate}
+\item You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. \textbf{Remember to write your name(s)}!
+
+\item Homeworks (final version) are available approximately ten days before the  deadline. 
+
+\item How do I(we)  hand in?  You can hand in the paper and pencil exercises as a scanned document. For this homework this applies to exercises 1-5. You should upload the scan to D2L. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise (exercise 6 here) should always be handed in as a jupyter notebook by the deadline at D2L. 
+\end{enumerate}
+
+\noindent
+\paragraph{Exercise 1 (12 pt), math reminder, properties of exponential function.}
+The first exercise is meant to remind ourselves about properties of
+the exponential function and imaginary numbers. This is highly
+relevant later in this course when we start analyzing oscillatory
+motion and some wave mechanics. As physicists we should thus feel comfortable with expressions that
+include $\exp{(\imath\omega t)}$. Here $t$ could be interpreted as time and $\omega$ as a frequency and $\imath$ is the imaginary unit number.
+
+\begin{itemize}
+\item 1a (3pt): Perform Taylor expansions in powers of $\omega t$ of the functions $\cos{(\omega t)}$ and $\sin{(\omega t)}$.
+
+\item 1b (3pt): Perform a Taylor expansion of $\exp{(i\omega t)}$.
+
+\item 1c (3pt): Using parts (a) and (b) here, show that $\exp{(\imath\omega t)}=\cos{(\omega t)}+\imath\sin{(\omega t)}$.
+
+\item 1d (3pt): Show that $\ln{(−1)} = \imath\pi$.
+\end{itemize}
+
+\noindent
+\paragraph{Exercise 2 (12 pt), Vector algebra.}
+\begin{itemize}
+\item 2a (6pt) One of the many uses of the scalar product is to find the angle between two given vectors. Find the angle between the vectors $\bm{a}=(1,2,4)$ and $\bm{b}=(4,2,1)$ by evaluating their scalar product.
+
+\item 2b (6pt) For a cube with sides of length 1, one vertex at the origin, and sides along the $x$, $y$, and $z$ axes, the vector of the body diagonal from the origin can be written $\bm{a}=(1, 1, 1)$ and the vector of the face diagonal in the $xy$ plane from the origin is $\bm{b}=(1,1,0)$. Find first the lengths of the body diagonal and the face diagonal. Use then part (2a) to find the angle between the body diagonal and the face diagonal.
+\end{itemize}
+
+\noindent
+\paragraph{Exercise 3 (10 pt), More vector mathematics.}
+\begin{itemize}
+\item 3a (5pt) Show (using the fact that multiplication of reals is distributive) that $\bm{a}(\bm{b}+\bm{c})=\bm{a}\bm{b}+\bm{a}\bm{c}$.
+
+\item 3b (5pt) Show that (using product rule for differentiating reals)  $\frac{d}{dt}(\bm{a}\bm{b})=\bm{a}\frac{d\bm{b}}{dt}+\bm{b}\frac{d\bm{a}}{dt}$
+\end{itemize}
+
+\noindent
+\paragraph{Exercise 4 (10 pt), Algebra of cross products.}
+\begin{itemize}
+\item 4a (5pt) Show that the cross products are distribuitive $\bm{a}\times(\bm{b}+\bm{c})=\bm{a}\times\bm{b}+\bm{a}\times\bm{c}$.
+
+\item 4b (5pt) Show that $\frac{d}{dt}(\bm{a}\times\bm{b})=\bm{a}\times\frac{d\bm{b}}{dt}+\frac{d\bm{a}}{dt}\times \bm{b}$. Be careful with the order of factors 
+\end{itemize}
+
+\noindent
+\paragraph{Exercise 5 (10 pt), Area of triangle and law of sines.}
+Exercise 1.18 in the textbook of Taylor, Classical Mechanics. Part (1.18a) gives 5pt and part (1.18b) gives also 5pt.
+
+\paragraph{Exercise 6 (40pt), Numerical elements, getting started with some simple data.}
+\textbf{This exercise should be handed in as a jupyter-notebook} at D2L. Remember to write your name(s). 
+
+Our first numerical attempt will involve reading data from file or
+just setting up two vectors, one for position and one for time. Our data are from 
+\href{{https://www.youtube.com/watch?v=93dC0o2aHto}}{Usain Bolt's world record 100m during the olympic games in Beijing in
+2008}. The data show the time used in units of 10m (see below). Before we however
+venture into this, we need to repeat some basic Python syntax with an
+emphasis on
+
+\begin{itemize}
+\item basic Python syntax for arrays
+
+\item define and operate on vectors and matrices in Python
+
+\item create plots for motion in 1D space
+\end{itemize}
+
+\noindent
+For more information, see the \href{{https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html}}{introductory slides}.
+Here are some of the basic packages we will be using this week
+
+
+
+
+\bpycod
+import numpy as np 
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+\epycod
+
+
+The first exercise here deals with simply getting familiar with vectors and matrices.
+
+We will be working with vectors and matrices to get you familiar with them
+
+\begin{enumerate}
+\item Initalize two three-dimensional $xyz$ vectors in the below cell using np.array([x,y,z]). Vectors are represented through arrays in python
+
+\item V1 should have x1=1, y1 =2, and z1=3. 
+
+\item Vector 2 should have x2=4, y2=5,  and z2=6. 
+
+\item Print both vectors to make sure your code is working properly.
+\end{enumerate}
+
+\noindent
+
+
+
+
+
+\bpycod
+V1 = np.array([1,2,3])
+V2 = np.array([4,5,6])
+print("V1: ", V1)
+print("V2: ", V2)
+
+\epycod
+
+
+If this is not too familiar, here's a useful link for creating vectors in python
+\href{{https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html}}{\nolinkurl{https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html}}. Alternatively, look up the \href{{https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html}}{introductory slides}.
+
+Now lets do some basic mathematics with vectors.
+
+Compute and print the following, and double check with hand calculations:
+
+\begin{itemize}
+\item 6a (2pt)  Calculate $\bm{V}_1-\bm{V}_2$.
+
+\item 6b (2pt)  Calculate $\bm{V}_2-\bm{V}_1$.
+
+\item 6c (2pt) Calculate the dot product $\bm{V}_1\bm{V}_2$.
+
+\item 6d (2pt) Calculate the cross product $\bm{V}_1\times\bm{V}_2$.
+\end{itemize}
+
+\noindent
+Here is some useful explanation on numpy array operations if you feel a bit confused by what is happening,
+see \href{{https://www.pluralsight.com/guides/overview-basic-numpy-operations}}{\nolinkurl{https://www.pluralsight.com/guides/overview-basic-numpy-operations}}.
+
+The following code prints the first two exercises
+
+
+
+\bpycod
+print(V1-V2)
+print(V2-V1)
+
+\epycod
+
+
+For the dot product of V1 and V2 below we can use the \textbf{dot} function of \textbf{numpy} as follows
+
+
+\bpycod
+print(V1.dot(V2))
+
+\epycod
+
+As a small challenge try to write your own function for the \textbf{dot} product of two vectors.
+
+Matrices can be created in a similar fashion in python.  In this
+language we can work with them through the package numpy (which we
+have already imported)
+
+
+
+
+
+
+
+
+
+
+
+\bpycod
+M1 = np.matrix([[1,2,3],
+             [4,5,6],
+             [7,8,9]])
+M2 = np.matrix([[1,2],
+             [3,4],
+             [5,6]])
+M3 = np.matrix([[9,8,7],
+             [4,5,6],
+             [7,6,9]])
+
+\epycod
+
+
+Matrices can be added in the same way vectors are added in python as shown here
+
+
+\bpycod
+print("M1+M3: ", M1+M3)
+
+\epycod
+
+What happens if we try to do $M1+M2$?
+
+That's enough vectors and matrices for now. Let's move on to some physics problems! Yes, the actual subject we are studying for. 
+
+We can opt for two different ways of handling the data. The data is listed in the table here and represents the total time Usain Bolt used in steps of  10 meters of distance. The label $i$ is just a counter and we start from zero since Python arrays are by default set from zero. The variable $t$ is time in seconds and $x$ is the position in meters.
+
+
+\begin{quote}
+\begin{tabular}{ccccccccccc}
+\hline
+\multicolumn{1}{c}{ i } & \multicolumn{1}{c}{ 0 } & \multicolumn{1}{c}{ 1 } & \multicolumn{1}{c}{ 2 } & \multicolumn{1}{c}{ 3 } & \multicolumn{1}{c}{ 4 } & \multicolumn{1}{c}{ 5 } & \multicolumn{1}{c}{ 6 } & \multicolumn{1}{c}{ 7 } & \multicolumn{1}{c}{ 8 } & \multicolumn{1}{c}{ 9 } \\
+\hline
+x[m] & 10   & 20   & 30   & 40   & 50   & 60   & 70   & 80   & 90   & 100  \\
+\hline
+t[s] & 1.85 & 2.87 & 3.78 & 4.65 & 5.50 & 6.32 & 7.14 & 7.96 & 8.79 & 9.69 \\
+\hline
+\end{tabular}
+\end{quote}
+
+\noindent
+\begin{itemize}
+\item 6e (6pt) You can here make a file with the above data and read them in and set up two vectors, one for time and one for position. Alternatively, you can just set up these two vectors directly and define two vectors in your Python code.
+\end{itemize}
+
+\noindent
+The following example code may help here
+
+
+
+
+
+
+
+
+
+\bpycod
+# we just initialize time and position
+x = np.array([10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0])
+t = np.array([1.85, 2.87, 3.78, 4.65, 5.50, 6.32, 7.14, 7.96, 8.79, 9.69])
+plt.plot(t,x, color='black')
+plt.xlabel("Time t[s]")
+plt.ylabel("Position x[m]")
+plt.title("Usain Bolt's world record run")
+plt.show()
+
+\epycod
+
+
+\begin{itemize}
+\item 6f (6pt) Plot the position as function of time
+
+\item 6g (10pt) Compute thereafter the mean velocity for every interval $i$ and the total velocity (from $i=0$ to the given interval $i$) for each interval and plot these two quantities as function of time. Comment your results.
+
+\item 6h (10pt) Finally, compute and plot the mean acceleration for each interval and the total acceleration. Again, comment your results. Can you see whether he slowed down during the last meters? 
+\end{itemize}
+
+\noindent
+
+% ------------------- end of main content ---------------
+
+% #ifdef PREAMBLE
+\end{document}
+% #endif
+

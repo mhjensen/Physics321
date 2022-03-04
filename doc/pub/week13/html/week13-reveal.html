@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="PHY321: Two-body problems, gravitational forces and two-body scattering">
+
+<title>PHY321: Two-body problems, gravitational forces and two-body scattering</title>
+
+
+
+
+
+
+
+<!-- reveal.js: https://lab.hakim.se/reveal-js/ -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<!--
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/beigesmall.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/solarized.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/serif.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/moon.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/darkgray.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/cbc.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simula.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/league.css" id="theme">
+-->
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+<!-- Printing and PDF exports -->
+<script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+
+<style type="text/css">
+    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    p.caption { width: 80%; font-size: 60%; font-style: italic; text-align: left; }
+    hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    .reveal .alert-text-small   { font-size: 80%;  }
+    .reveal .alert-text-large   { font-size: 130%; }
+    .reveal .alert-text-normal  { font-size: 90%;  }
+    .reveal .alert {
+             padding:8px 35px 8px 14px; margin-bottom:18px;
+             text-shadow:0 1px 0 rgba(255,255,255,0.5);
+             border:5px solid #bababa;
+             -webkit-border-radius: 14px; -moz-border-radius: 14px;
+             border-radius:14px;
+             background-position: 10px 10px;
+             background-repeat: no-repeat;
+             background-size: 38px;
+             padding-left: 30px; /* 55px; if icon */
+     }
+     .reveal .alert-block {padding-top:14px; padding-bottom:14px}
+     .reveal .alert-block > p, .alert-block > ul {margin-bottom:1em}
+     /*.reveal .alert li {margin-top: 1em}*/
+     .reveal .alert-block p+p {margin-top:5px}
+     /*.reveal .alert-notice { background-image: url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_notice.png); }
+     .reveal .alert-summary  { background-image:url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_summary.png); }
+     .reveal .alert-warning { background-image: url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_warning.png); }
+     .reveal .alert-question {background-image:url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_question.png); } */
+
+</style>
+
+
+
+<!-- Styles for table layout of slides -->
+<style type="text/css">
+td.padding {
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-right:50px;
+  padding-left:50px;
+}
+</style>
+
+</head>
+
+<body>
+<div class="reveal">
+
+<!-- Any section element inside the <div class="slides"> container
+     is displayed as a slide -->
+
+<div class="slides">
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+
+
+
+<section>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1 style="text-align: center;">PHY321: Two-body problems, gravitational forces and two-body scattering </h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): <a href="http://mhjgit.github.io/info/doc/web/" target="_blank">Morten Hjorth-Jensen</a> -->
+
+<center>
+<b><a href="http://mhjgit.github.io/info/doc/web/" target="_blank">Morten Hjorth-Jensen</a></b> [1, 2]
+</center>
+
+<p>&nbsp;<br>
+<!-- institution(s) -->
+
+<center>[1] <b>Department of Physics and Astronomy and Facility for Rare Ion Beams (FRIB), Michigan State University, USA</b></center>
+<center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
+<br>
+<p>&nbsp;<br>
+<center><h4>Apr 2, 2021</h4></center> <!-- date -->
+<br>
+<p>
+
+<center style="font-size:80%">
+<!-- copyright --> &copy; 1999-2021, "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/". Released under CC Attribution-NonCommercial 4.0 license
+</center>
+</section>
+
+
+<section>
+<h2 id="aims-and-overarching-motivation">Aims and Overarching Motivation </h2>
+
+<h3 id="monday">Monday </h3>
+
+<ol>
+<p><li> Physical interpretation of various orbit types and summary gravitational forces, examples on whiteboard and handwritten notes</li>
+<p><li> Start discussion two-body scattering</li>
+</ol>
+<p>
+
+<b>Reading suggestion</b>: Taylor chapter 8 and sections 14.1-14.2 and Lecture notes
+
+<h3 id="wednesday">Wednesday </h3>
+
+<ol>
+<p><li> Two-body scattering</li>
+</ol>
+<p>
+
+<b>Reading suggestion</b>: Taylor and sections 14.3-14.6
+
+<h3 id="friday">Friday </h3>
+
+<ol>
+<p><li> Two-body scattering</li>
+</ol>
+<p>
+
+<b>Reading suggestion</b>: Taylor and sections 14.3-14.6
+</section>
+
+
+<section>
+
+<h3 id="code-example-with-gravitional-force">Code example with gravitional force </h3>
+
+<p>
+The code example here is meant to illustrate how we can make a plot of
+the final orbit. We solve the equations in polar coordinates (the
+example here uses the minimum of the potential as initial value) and
+then we transform back to cartesian coordinates and plot \( x \) versus
+\( y \). We see that we get a perfect circle when we place ourselves at
+the minimum of the potential energy, as expected.
+</section>
+
+
+<section>
+<h2 id="plotting-the-potential-first">Plotting the potential first </h2>
+
+<p>
+The code here plots the effective potential
+
+<p>
+The following code plots this effective potential for a simple choice of parameters, with a standard gravitational potential \( -\alpha/r \). Here we have chosen \( L=m=\alpha=1 \). 
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%;"><span></span><span style="color: #228B22"># Common imports</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
+<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> *
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
+
+Deltax = <span style="color: #B452CD">0.01</span>
+<span style="color: #228B22">#set up arrays</span>
+xinitial = <span style="color: #B452CD">0.3</span>
+xfinal = <span style="color: #B452CD">5.0</span>
+alpha = <span style="color: #B452CD">1.0</span>   <span style="color: #228B22"># spring constant</span>
+m = <span style="color: #B452CD">1.0</span>   <span style="color: #228B22"># mass, you can change these</span>
+AngMom = <span style="color: #B452CD">1.0</span>  <span style="color: #228B22">#  The angular momentum</span>
+n = ceil((xfinal-xinitial)/Deltax)
+x = np.zeros(n)
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n):
+    x[i] = xinitial+i*Deltax
+V = np.zeros(n)
+V = -alpha/x+<span style="color: #B452CD">0.5</span>*AngMom*AngMom/(m*x*x)
+<span style="color: #228B22"># Plot potential</span>
+fig, ax = plt.subplots()
+ax.set_xlabel(<span style="color: #CD5555">&#39;r[m]&#39;</span>)
+ax.set_ylabel(<span style="color: #CD5555">&#39;V[J]&#39;</span>)
+ax.plot(x, V)
+fig.tight_layout()
+plt.show()
+</pre></div>
+</section>
+
+
+<section>
+<h2 id="solving-the-differential-equations-radial-degrees-of-freedom-only">Solving the differential equations, Radial Degrees of Freedom only  </h2>
+
+<p>
+This code and the subsequent one are relevant for homework 9 (the numerical exercise).
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%;"><span></span><span style="color: #228B22"># Simple Gravitational Force   -alpha/r</span>
+<span style="color: #228B22"># Common imports</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">pandas</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">pd</span>
+<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> *
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">os</span>
+
+<span style="color: #228B22"># Where to save the figures and data files</span>
+PROJECT_ROOT_DIR = <span style="color: #CD5555">&quot;Results&quot;</span>
+FIGURE_ID = <span style="color: #CD5555">&quot;Results/FigureFiles&quot;</span>
+DATA_ID = <span style="color: #CD5555">&quot;DataFiles/&quot;</span>
+
+<span style="color: #8B008B; font-weight: bold">if</span> <span style="color: #8B008B">not</span> os.path.exists(PROJECT_ROOT_DIR):
+    os.mkdir(PROJECT_ROOT_DIR)
+
+<span style="color: #8B008B; font-weight: bold">if</span> <span style="color: #8B008B">not</span> os.path.exists(FIGURE_ID):
+    os.makedirs(FIGURE_ID)
+
+<span style="color: #8B008B; font-weight: bold">if</span> <span style="color: #8B008B">not</span> os.path.exists(DATA_ID):
+    os.makedirs(DATA_ID)
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">image_path</span>(fig_id):
+    <span style="color: #8B008B; font-weight: bold">return</span> os.path.join(FIGURE_ID, fig_id)
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">data_path</span>(dat_id):
+    <span style="color: #8B008B; font-weight: bold">return</span> os.path.join(DATA_ID, dat_id)
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">save_fig</span>(fig_id):
+    plt.savefig(image_path(fig_id) + <span style="color: #CD5555">&quot;.png&quot;</span>, <span style="color: #658b00">format</span>=<span style="color: #CD5555">&#39;png&#39;</span>)
+
+
+    
+DeltaT = <span style="color: #B452CD">0.01</span>
+<span style="color: #228B22">#set up arrays </span>
+tfinal = <span style="color: #B452CD">8.0</span>
+n = ceil(tfinal/DeltaT)
+<span style="color: #228B22"># set up arrays for t, v and r</span>
+t = np.zeros(n)
+v = np.zeros(n)
+r = np.zeros(n)
+phi = np.zeros(n)
+x = np.zeros(n)
+y = np.zeros(n)
+<span style="color: #228B22"># Constants of the model, setting all variables to one for simplicity</span>
+alpha = <span style="color: #B452CD">1.0</span>
+AngMom = <span style="color: #B452CD">1.0</span>  <span style="color: #228B22">#  The angular momentum</span>
+m = <span style="color: #B452CD">1.0</span>  <span style="color: #228B22"># scale mass to one</span>
+c1 = AngMom*AngMom/(m*m)
+c2 = AngMom*AngMom/m
+rmin = (AngMom*AngMom/m/alpha)
+<span style="color: #228B22"># Initial conditions, place yourself at the potential min</span>
+r0 = rmin
+v0 = <span style="color: #B452CD">0.0</span>  <span style="color: #228B22"># starts at rest</span>
+r[<span style="color: #B452CD">0</span>] = r0
+v[<span style="color: #B452CD">0</span>] = v0
+phi[<span style="color: #B452CD">0</span>] = <span style="color: #B452CD">0.0</span>
+<span style="color: #228B22"># Start integrating using the Velocity-Verlet  method</span>
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
+    <span style="color: #228B22"># Set up acceleration</span>
+    a = -alpha/(r[i]**<span style="color: #B452CD">2</span>)+c1/(r[i]**<span style="color: #B452CD">3</span>)
+    <span style="color: #228B22"># update velocity, time and position using the Velocity-Verlet method</span>
+    r[i+<span style="color: #B452CD">1</span>] = r[i] + DeltaT*v[i]+<span style="color: #B452CD">0.5</span>*(DeltaT**<span style="color: #B452CD">2</span>)*a
+    anew = -alpha/(r[i+<span style="color: #B452CD">1</span>]**<span style="color: #B452CD">2</span>)+c1/(r[i+<span style="color: #B452CD">1</span>]**<span style="color: #B452CD">3</span>)
+    v[i+<span style="color: #B452CD">1</span>] = v[i] + <span style="color: #B452CD">0.5</span>*DeltaT*(a+anew)
+    t[i+<span style="color: #B452CD">1</span>] = t[i] + DeltaT
+    phi[i+<span style="color: #B452CD">1</span>] = t[i+<span style="color: #B452CD">1</span>]*c2/(r0**<span style="color: #B452CD">2</span>)
+<span style="color: #228B22"># Find cartesian coordinates for easy plot    </span>
+x = r*np.cos(phi)
+y = r*np.sin(phi)
+fig, ax = plt.subplots(<span style="color: #B452CD">3</span>,<span style="color: #B452CD">1</span>)
+ax[<span style="color: #B452CD">0</span>].set_xlabel(<span style="color: #CD5555">&#39;time&#39;</span>)
+ax[<span style="color: #B452CD">0</span>].set_ylabel(<span style="color: #CD5555">&#39;radius&#39;</span>)
+ax[<span style="color: #B452CD">0</span>].plot(t,r)
+ax[<span style="color: #B452CD">1</span>].set_xlabel(<span style="color: #CD5555">&#39;time&#39;</span>)
+ax[<span style="color: #B452CD">1</span>].set_ylabel(<span style="color: #CD5555">&#39;Angle $\cos{\phi}$&#39;</span>)
+ax[<span style="color: #B452CD">1</span>].plot(t,np.cos(phi))
+ax[<span style="color: #B452CD">2</span>].set_ylabel(<span style="color: #CD5555">&#39;y&#39;</span>)
+ax[<span style="color: #B452CD">2</span>].set_xlabel(<span style="color: #CD5555">&#39;x&#39;</span>)
+ax[<span style="color: #B452CD">2</span>].plot(x,y)
+
+save_fig(<span style="color: #CD5555">&quot;Phasespace&quot;</span>)
+plt.show()
+</pre></div>
+</section>
+
+
+<section>
+<h2 id="changing-initial-conditions">Changing initial conditions </h2>
+
+<p>
+Try to change the initial value for \( r \) and see what kind of orbits you get.
+In order to test different energies, it can be useful to look at the plot of the effective potential discussed above.
+
+<p>
+However, for orbits different from a circle the above code would need modifications in order to allow us to display say an ellipse. For the latter, it is much easier to run our code in cartesian coordinates, as done here. In this code we test also energy conservation and see that it is conserved to numerical precision. The code here is a simple extension of the code we developed for homework 4.
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%;"><span></span><span style="color: #228B22"># Common imports</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">pandas</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">pd</span>
+<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> *
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
+
+DeltaT = <span style="color: #B452CD">0.01</span>
+<span style="color: #228B22">#set up arrays </span>
+tfinal = <span style="color: #B452CD">10.0</span>
+n = ceil(tfinal/DeltaT)
+<span style="color: #228B22"># set up arrays</span>
+t = np.zeros(n)
+v = np.zeros((n,<span style="color: #B452CD">2</span>))
+r = np.zeros((n,<span style="color: #B452CD">2</span>))
+E = np.zeros(n)
+<span style="color: #228B22"># Constants of the model</span>
+m = <span style="color: #B452CD">1.0</span>   <span style="color: #228B22"># mass, you can change these</span>
+alpha = <span style="color: #B452CD">1.0</span>
+<span style="color: #228B22"># Initial conditions as compact 2-dimensional arrays</span>
+x0 = <span style="color: #B452CD">0.5</span>; y0= <span style="color: #B452CD">0.</span>
+r0 = np.array([x0,y0]) 
+v0 = np.array([<span style="color: #B452CD">0.0</span>,<span style="color: #B452CD">1.0</span>])
+r[<span style="color: #B452CD">0</span>] = r0
+v[<span style="color: #B452CD">0</span>] = v0
+rabs = sqrt(<span style="color: #658b00">sum</span>(r[<span style="color: #B452CD">0</span>]*r[<span style="color: #B452CD">0</span>]))
+E[<span style="color: #B452CD">0</span>] = <span style="color: #B452CD">0.5</span>*m*(v[<span style="color: #B452CD">0</span>,<span style="color: #B452CD">0</span>]**<span style="color: #B452CD">2</span>+v[<span style="color: #B452CD">0</span>,<span style="color: #B452CD">1</span>]**<span style="color: #B452CD">2</span>)-alpha/rabs
+<span style="color: #228B22"># Start integrating using the Velocity-Verlet  method</span>
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
+    <span style="color: #228B22"># Set up the acceleration</span>
+    rabs = sqrt(<span style="color: #658b00">sum</span>(r[i]*r[i]))
+    a =  -alpha*r[i]/(rabs**<span style="color: #B452CD">3</span>)
+    <span style="color: #228B22"># update velocity, time and position using the Velocity-Verlet method</span>
+    r[i+<span style="color: #B452CD">1</span>] = r[i] + DeltaT*v[i]+<span style="color: #B452CD">0.5</span>*(DeltaT**<span style="color: #B452CD">2</span>)*a
+    rabs = sqrt(<span style="color: #658b00">sum</span>(r[i+<span style="color: #B452CD">1</span>]*r[i+<span style="color: #B452CD">1</span>]))
+    anew = -alpha*r[i+<span style="color: #B452CD">1</span>]/(rabs**<span style="color: #B452CD">3</span>)
+    v[i+<span style="color: #B452CD">1</span>] = v[i] + <span style="color: #B452CD">0.5</span>*DeltaT*(a+anew)
+    E[i+<span style="color: #B452CD">1</span>] = <span style="color: #B452CD">0.5</span>*m*(v[i+<span style="color: #B452CD">1</span>,<span style="color: #B452CD">0</span>]**<span style="color: #B452CD">2</span>+v[i+<span style="color: #B452CD">1</span>,<span style="color: #B452CD">1</span>]**<span style="color: #B452CD">2</span>)-alpha/rabs
+    t[i+<span style="color: #B452CD">1</span>] = t[i] + DeltaT
+<span style="color: #228B22"># Plot position as function of time</span>
+fig, ax = plt.subplots(<span style="color: #B452CD">3</span>,<span style="color: #B452CD">1</span>)
+ax[<span style="color: #B452CD">0</span>].set_ylabel(<span style="color: #CD5555">&#39;y&#39;</span>)
+ax[<span style="color: #B452CD">0</span>].set_xlabel(<span style="color: #CD5555">&#39;x&#39;</span>)
+ax[<span style="color: #B452CD">0</span>].plot(r[:,<span style="color: #B452CD">0</span>],r[:,<span style="color: #B452CD">1</span>])
+ax[<span style="color: #B452CD">1</span>].set_xlabel(<span style="color: #CD5555">&#39;time&#39;</span>)
+ax[<span style="color: #B452CD">1</span>].set_ylabel(<span style="color: #CD5555">&#39;y position&#39;</span>)
+ax[<span style="color: #B452CD">1</span>].plot(t,r[:,<span style="color: #B452CD">0</span>])
+ax[<span style="color: #B452CD">2</span>].set_xlabel(<span style="color: #CD5555">&#39;time&#39;</span>)
+ax[<span style="color: #B452CD">2</span>].set_ylabel(<span style="color: #CD5555">&#39;y position&#39;</span>)
+ax[<span style="color: #B452CD">2</span>].plot(t,r[:,<span style="color: #B452CD">1</span>])
+
+fig.tight_layout()
+save_fig(<span style="color: #CD5555">&quot;2DimGravity&quot;</span>)
+plt.show()
+<span style="color: #658b00">print</span>(E)
+</pre></div>
+</section>
+
+
+<section>
+<h2 id="different-potential">Different Potential </h2>
+
+<p>
+Let us now try another potential, given by
+<p>&nbsp;<br>
+$$
+V(r) = \beta r,
+$$
+<p>&nbsp;<br>
+
+where \( \beta \) is constant we assume is larger than zero. This type of potential has played an importan role in modeling confinement of quarks in non-relativistic models for the interactions among quarks, see for example <a href="https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.44.1369" target="_blank"><tt>https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.44.1369</tt></a>
+
+<p>
+Adding the angular momentum part, we obtain the effective potential
+
+<p>&nbsp;<br>
+$$
+V_{\mathrm{eff}}(r) = \beta r+\frac{L^2}{2\mu r^2},
+$$
+<p>&nbsp;<br>
+
+<p>
+and taking the derivative with respect to \( r \), we get the radial force
+
+<p>&nbsp;<br>
+$$
+F_r=-\frac{dV_{\mathrm{eff}}(r)}{dr} = -\beta+\frac{L^2}{\mu r^3}.
+$$
+<p>&nbsp;<br>
+
+It gives us in turn a radial acceleration \( a_r \)
+<p>&nbsp;<br>
+$$
+a_r= -\frac{\beta}{\mu}+\frac{L^2}{\mu^2 r^3}.
+$$
+<p>&nbsp;<br>
+
+<p>
+This is the equation we need to include in our code. I have not been able to find out if there is an analytical solution to the above equation. If you can find one, there is a reward of \( 50 \) USD to the first one who finds. Numerically life is very easy, we just define a new acceleration, as seen below.
+</section>
+
+
+<section>
+<h2 id="plotting-the-effective-potential">Plotting the Effective Potential </h2>
+
+<p>
+First however, we plot the effective potential in order to get a feeling of what we may expect.
+
+<p>
+The following code plots this effective potential for a simple choice of parameters, with a potential \( \beta r  \). Here we have chosen \( L=m=\beta=1 \). 
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%;"><span></span><span style="color: #228B22"># Common imports</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
+<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> *
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
+
+Deltax = <span style="color: #B452CD">0.01</span>
+<span style="color: #228B22">#set up arrays</span>
+xinitial = <span style="color: #B452CD">0.3</span>
+xfinal = <span style="color: #B452CD">5.0</span>
+beta = <span style="color: #B452CD">1.0</span>   <span style="color: #228B22"># spring constant</span>
+m = <span style="color: #B452CD">1.0</span>   <span style="color: #228B22"># mass, you can change these</span>
+AngMom = <span style="color: #B452CD">1.0</span>  <span style="color: #228B22">#  The angular momentum</span>
+n = ceil((xfinal-xinitial)/Deltax)
+x = np.zeros(n)
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n):
+    x[i] = xinitial+i*Deltax
+V = np.zeros(n)
+V = beta*x+<span style="color: #B452CD">0.5</span>*AngMom*AngMom/(m*x*x)
+<span style="color: #228B22"># Plot potential</span>
+fig, ax = plt.subplots()
+ax.set_xlabel(<span style="color: #CD5555">&#39;r[m]&#39;</span>)
+ax.set_ylabel(<span style="color: #CD5555">&#39;V[J]&#39;</span>)
+ax.plot(x, V)
+fig.tight_layout()
+plt.show()
+</pre></div>
+</section>
+
+
+<section>
+<h2 id="finding-the-minimum-for-circular-orbits">Finding the Minimum for Circular Orbits </h2>
+
+<p>
+We take now the derivative of the effective potential in order to find its minimum, that is
+<p>&nbsp;<br>
+$$
+\frac{dV_{\mathrm{eff}}(r)}{dr} = \beta-\frac{L^2}{\mu r^3}=0,
+$$
+<p>&nbsp;<br>
+
+<p>
+which gives us \( r_{\mathrm{min}} \)
+
+<p>&nbsp;<br>
+$$
+r_{\mathrm{min}}=\left [\frac{L^2}{\beta \mu}\right ]^{1/3}.
+$$
+<p>&nbsp;<br>
+
+<p>
+With the above choice of parameters this gives \( r_{\mathrm{min}}=1 \).
+
+<p>
+In the code here we solve the equations of motion and find the time-evolution of the radius \( r \).
+</section>
+
+
+<section>
+<h2 id="numerical-studies">Numerical Studies </h2>
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%;"><span></span>DeltaT = <span style="color: #B452CD">0.01</span>
+<span style="color: #228B22">#set up arrays </span>
+tfinal = <span style="color: #B452CD">8.0</span>
+n = ceil(tfinal/DeltaT)
+<span style="color: #228B22"># set up arrays for t, v and r</span>
+t = np.zeros(n)
+v = np.zeros(n)
+r = np.zeros(n)
+<span style="color: #228B22"># Constants of the model, setting all variables to one for simplicity</span>
+beta = <span style="color: #B452CD">1.0</span>
+AngMom = <span style="color: #B452CD">1.0</span>  <span style="color: #228B22">#  The angular momentum</span>
+m = <span style="color: #B452CD">1.0</span>  <span style="color: #228B22"># scale mass to one</span>
+c1 = AngMom*AngMom/(m*m)
+c2 = AngMom*AngMom/m
+rmin = (AngMom*AngMom/m/beta)**(<span style="color: #B452CD">1.</span>/<span style="color: #B452CD">3.</span>)
+<span style="color: #228B22"># Initial conditions, place yourself at the potential min</span>
+r0 = rmin
+v0 = <span style="color: #B452CD">0.0</span>  <span style="color: #228B22"># starts at rest</span>
+r[<span style="color: #B452CD">0</span>] = r0
+v[<span style="color: #B452CD">0</span>] = v0
+<span style="color: #228B22"># Start integrating using the Velocity-Verlet  method</span>
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
+    <span style="color: #228B22"># Set up acceleration</span>
+    a = -beta+c1/(r[i]**<span style="color: #B452CD">3</span>)
+    <span style="color: #228B22"># update velocity, time and position using the Velocity-Verlet method</span>
+    r[i+<span style="color: #B452CD">1</span>] = r[i] + DeltaT*v[i]+<span style="color: #B452CD">0.5</span>*(DeltaT**<span style="color: #B452CD">2</span>)*a
+    anew = -beta+c1/(r[i+<span style="color: #B452CD">1</span>]**<span style="color: #B452CD">3</span>)
+    v[i+<span style="color: #B452CD">1</span>] = v[i] + <span style="color: #B452CD">0.5</span>*DeltaT*(a+anew)
+    t[i+<span style="color: #B452CD">1</span>] = t[i] + DeltaT
+<span style="color: #228B22">#plotting</span>
+plt.xlabel(<span style="color: #CD5555">&#39;time&#39;</span>)
+plt.ylabel(<span style="color: #CD5555">&#39;radius&#39;</span>)
+plt.plot(t,r)
+save_fig(<span style="color: #CD5555">&quot;LinearPotential&quot;</span>)
+plt.show()
+</pre></div>
+<p>
+We see that if we run with the initial condition corresponding to a circular orbit, our radius stays constant as function of time.
+</section>
+
+
+<section>
+<h2 id="scattering-and-cross-sections">Scattering and Cross Sections </h2>
+
+<p>
+Scattering experiments don't measure entire trajectories. For elastic
+collisions, they measure the distribution of final scattering angles
+at best. Most experiments use targets thin enough so that the number
+of scatterings is typically zero or one. The cross section, \( \sigma \),
+describes the cross-sectional area for particles to scatter with an
+individual target atom or nucleus. Cross section measurements form the
+basis for MANY fields of physics. BThe cross section, and the
+differential cross section, encapsulates everything measurable for a
+collision where all that is measured is the final state, e.g. the
+outgoing particle had momentum \( \boldsymbol{p}_f \). y studying cross sections,
+one can infer information about the potential interaction between the
+two particles. Inferring, or constraining, the potential from the
+cross section is a classic {\it inverse} problem. Collisions are
+either elastic or inelastic. Elastic collisions are those for which
+the two bodies are in the same internal state before and after the
+collision. If the collision excites one of the participants into a
+higher state, or transforms the particles into different species, or
+creates additional particles, the collision is inelastic. Here, we
+consider only elastic collisions.
+</section>
+
+
+<section>
+<h2 id="scattering-coulomb-forces">Scattering: Coulomb forces </h2>
+
+<p>
+For Coulomb forces, the cross section is infinite because the range of
+the Coulomb force is infinite, but for interactions such as the strong
+interaction in nuclear or particle physics, there is no long-range
+force and cross-sections are finite. Even for Coulomb forces, the part
+of the cross section that corresponds to a specific scattering angle,
+\( d\sigma/d\Omega \), which is a function of the scattering angle
+\( \theta_s \) is still finite.
+
+<p>
+If a particle travels through a thin target, the chance the particle
+scatters is \( P_{\rm scatt}=\sigma dN/dA \), where \( dN/dA \) is the number
+of scattering centers per area the particle encounters. If the density
+of the target is \( \rho \) particles per volume, and if the thickness of
+the target is \( t \), the areal density (number of target scatterers per
+area) is \( dN/dA=\rho t \). Because one wishes to quantify the collisions
+independently of the target, experimentalists measure scattering
+probabilities, then divide by the areal density to obtain
+cross-sections,
+
+<p>&nbsp;<br>
+$$
+\begin{eqnarray}
+\sigma=\frac{P_{\rm scatt}}{dN/dA}.
+\end{eqnarray}
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="scattering-more-details">Scattering, more details </h2>
+
+<p>
+Instead of merely stating that a particle collided, one can measure
+the probability the particle scattered by a given angle. The
+scattering angle \( \theta_s \) is defined so that at zero the particle is
+unscattered and at \( \theta_s=\pi \) the particle is scattered directly
+backward. Scattering angles are often described in the center-of-mass
+frame, but that is a detail we will neglect for this first discussion,
+where we will consider the scattering of particles moving classically
+under the influence of fixed potentials \( U(\boldsymbol{r}) \). Because the
+distribution of scattering angles can be measured, one expresses the
+differential cross section,
+
+<p>&nbsp;<br>
+$$
+\begin{equation}
+\frac{d^2\sigma}{d\cos\theta_s~d\phi}.
+\tag{1}
+\end{equation}
+$$
+<p>&nbsp;<br>
+
+<p>
+Usually, the literature expresses differential cross sections as
+
+<p>&nbsp;<br>
+$$
+\begin{equation}
+d\sigma/d\Omega=\frac{d\sigma}{d\cos\theta d\phi}=\frac{1}{2\pi}\frac{d\sigma}{d\cos\theta},
+\tag{2}
+\end{equation}
+$$
+<p>&nbsp;<br>
+
+<p>
+where the last equivalency is true when the scattering does not depend
+on the azimuthal angle \( \phi \), as is the case for spherically
+symmetric potentials.
+
+<p>
+The differential solid angle \( d\Omega \) can be thought of as the area
+subtended by a measurement, \( dA_d \), divided by \( r^2 \), where \( r \) is the
+distance to the detector,
+
+<p>&nbsp;<br>
+$$
+\begin{eqnarray}
+dA_d=r^2 d\Omega.
+\end{eqnarray}
+$$
+<p>&nbsp;<br>
+
+<p>
+With this definition \( d\sigma/d\Omega \) is independent of the distance
+from which one places the detector, or the size of the detector (as
+long as it is small).
+</section>
+
+
+<section>
+<h2 id="differential-scattering-cross-sections">Differential scattering cross sections </h2>
+
+<p>
+Differential scattering cross sections are calculated by assuming a
+random distribution of impact parameters \( b \). These represent the
+distance in the \( xy \) plane for particles moving in the \( z \) direction
+relative to the scattering center. An impact parameter \( b=0 \) refers to
+being aimed directly at the target's center. The impact parameter
+describes the transverse distance from the \( z=0 \) axis for the
+trajectory when it is still far away from the scattering center and
+has not yet passed it. The differential cross section can be expressed
+in terms of the impact parameter,
+
+<p>&nbsp;<br>
+$$
+\begin{equation}
+d\sigma=2\pi bdb,
+\tag{3}
+\end{equation}
+$$
+<p>&nbsp;<br>
+
+<p>
+which is the area of a thin ring of radius \( b \) and thickness \( db \). In
+classical physics, one can calculate the trajectory given the incoming
+kinetic energy \( E \) and the impact parameter if one knows the mass and
+potential.
+</section>
+
+
+<section>
+<h2 id="more-on-differential-cross-sections">More on Differential  Cross Sections </h2>
+
+<p>
+From the trajectory, one then finds the scattering angle
+\( \theta_s(b) \). The differential cross section is then
+
+<p>&nbsp;<br>
+$$
+\begin{equation}
+\frac{d\sigma}{d\Omega}=\frac{1}{2\pi}\frac{d\sigma}{d\cos\theta_s}=b\frac{db}{d\cos\theta_s}=\frac{b}{(d/db)\cos\theta_s(b)}.
+\tag{4}
+\end{equation}
+$$
+<p>&nbsp;<br>
+
+<p>
+Typically, one would calculate \( \cos\theta_s \) and \( (d/db)\cos\theta_s \)
+as functions of \( b \). This is sufficient to plot the differential cross
+section as a function of \( \theta_s \).
+
+<p>
+The total cross section is
+
+<p>&nbsp;<br>
+$$
+\begin{equation}
+\sigma_{\rm tot}=\int d\Omega\frac{d\sigma}{d\Omega}=2\pi\int d\cos\theta_s~\frac{d\sigma}{d\Omega}. 
+\tag{5}
+\end{equation}
+$$
+<p>&nbsp;<br>
+
+<p>
+Even if the total cross section is infinite, e.g. Coulomb forces, one
+can still have a finite differential cross section as we will see
+later on.
+</section>
+
+
+<section>
+<h2 id="rutherford-scattering">Rutherford Scattering </h2>
+
+<p>
+This refers to the calculation of \( d\sigma/d\Omega \) due to an inverse
+square force, \( F_{12}=\pm\alpha/r^2 \) for repulsive/attractive
+interaction. Rutherford compared the scattering of \( \alpha \) particles
+($^4$He nuclei) off of a nucleus and found the scattering angle at
+which the formula began to fail. This corresponded to the impact
+parameter for which the trajectories would strike the nucleus. This
+provided the first measure of the size of the atomic nucleus. At the
+time, the distribution of the positive charge (the protons) was
+considered to be just as spread out amongst the atomic volume as the
+electrons. After Rutherford's experiment, it was clear that the radius
+of the nucleus tended to be roughly 4 orders of magnitude smaller than
+that of the atom, which is less than the size of a football relative
+to Spartan Stadium.
+</section>
+
+
+<section>
+<h2 id="rutherford-scattering-more-details">Rutherford Scattering, more details </h2>
+
+<p>
+In order to calculate differential cross section, we must find how the
+impact parameter is related to the scattering angle. This requires
+analysis of the trajectory. We consider our previous expression for
+the trajectory where we derived the elliptic form for the trajectory,
+For that case we considered an attractive
+force with the particle's energy being negative, i.e. it was
+bound. However, the same form will work for positive energy, and
+repulsive forces can be considered by simple flipping the sign of
+\( \alpha \). For positive energies, the trajectories will be hyperbolas,
+rather than ellipses, with the asymptotes of the trajectories
+representing the directions of the incoming and outgoing
+tracks.
+</section>
+
+
+<section>
+<h2 id="rutherford-scattering-final-trajectories">Rutherford Scattering, final trajectories </h2>
+
+<p>
+We have
+
+<p>&nbsp;<br>
+$$
+\begin{equation}label{eq:ruthtraj}
+r=\frac{1}{\frac{m\alpha}{L^2}+A\cos\theta}.
+\end{equation}
+$$
+<p>&nbsp;<br>
+
+<p>
+Once \( A \) is large enough, which will happen when the energy is
+positive, the denominator will become negative for a range of
+\( \theta \). This is because the scattered particle will never reach
+certain angles. The asymptotic angles \( \theta' \) are those for which
+the denominator goes to zero,
+
+<p>&nbsp;<br>
+$$
+\begin{equation}
+\cos\theta'=-\frac{m\alpha}{AL^2}.
+\tag{6}
+\end{equation}
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="rutherford-scattering-closest-approach">Rutherford Scattering, Closest Approach </h2>
+
+<p>
+The trajectory's point of closest approach is at \( \theta=0 \) and the
+two angles \( \theta' \), which have this value of \( \cos\theta' \), are the
+angles of the incoming and outgoing particles. From
+Fig (<b>to come</b>), one can see that the scattering angle
+\( \theta_s \) is given by,
+
+<p>&nbsp;<br>
+$$
+\begin{eqnarray}
+\tag{7}
+2\theta'-\pi&=&\theta_s,~~~\theta'=\frac{\pi}{2}+\frac{\theta_s}{2},\\
+\nonumber
+\sin(\theta_s/2)&=&-\cos\theta'\\
+\nonumber
+&=&\frac{m\alpha}{AL^2}.
+\end{eqnarray}
+$$
+<p>&nbsp;<br>
+
+<p>
+Now that we have \( \theta_s \) in terms of \( m,\alpha,L \) and \( A \), we wish
+to re-express \( L \) and \( A \) in terms of the impact parameter \( b \) and the
+energy \( E \). This will set us up to calculate the differential cross
+section, which requires knowing \( db/d\theta_s \). It is easy to write
+the angular momentum as
+
+<p>&nbsp;<br>
+$$
+\begin{equation}
+L^2=p_0^2b^2=2mEb^2.
+\tag{8}
+\end{equation}
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="rutherford-scattering-getting-there">Rutherford Scattering, getting there </h2>
+
+<p>
+Finding \( A \) is more complicated. To accomplish this we realize that
+the point of closest approach occurs at \( \theta=0 \), so from
+Eq. \eqref{eq:ruthtraj}
+
+<p>&nbsp;<br>
+$$
+\begin{eqnarray}
+\tag{9}
+\frac{1}{r_{\rm min}}&=&\frac{m\alpha}{L^2}+A,\\
+\nonumber
+A&=&\frac{1}{r_{\rm min}}-\frac{m\alpha}{L^2}.
+\end{eqnarray}
+$$
+<p>&nbsp;<br>
+
+<p>
+Next, \( r_{\rm min} \) can be found in terms of the energy because at the
+point of closest approach the kinetic energy is due purely to the
+motion perpendicular to \( \hat{r} \) and
+
+<p>&nbsp;<br>
+$$
+\begin{equation}
+E=-\frac{\alpha}{r_{\rm min}}+\frac{L^2}{2mr_{\rm min}^2}.
+\tag{10}
+\end{equation}
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="rutherford-scattering-more-manipulations">Rutherford Scattering, More Manipulations </h2>
+
+<p>
+One can solve the quadratic equation for \( 1/r_{\rm min} \),
+
+<p>&nbsp;<br>
+$$
+\begin{equation}
+\frac{1}{r_{\rm min}}=\frac{m\alpha}{L^2}+\sqrt{(m\alpha/L^2)^2+2mE/L^2}.
+\tag{11}
+\end{equation}
+$$
+<p>&nbsp;<br>
+
+<p>
+We can plug the expression for \( r_{\rm min} \) into the expression for \( A \), Eq. <a href="#mjx-eqn-9">(9)</a>,
+
+<p>&nbsp;<br>
+$$
+\begin{equation}
+A=\sqrt{(m\alpha/L^2)^2+2mE/L^2}=\sqrt{(\alpha^2/(4E^2b^4)+1/b^2}
+\tag{12}
+\end{equation}
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="rutherford-scattering-final-expression">Rutherford Scattering, final expression </h2>
+
+<p>
+Finally, we insert the expression for \( A \) into that for the scattering angle, Eq. <a href="#mjx-eqn-7">(7)</a>,
+
+<p>&nbsp;<br>
+$$
+\begin{eqnarray}
+\tag{13}
+\sin(\theta_s/2)&=&\frac{m\alpha}{AL^2}\\
+\nonumber
+&=&\frac{a}{\sqrt{a^2+b^2}}, ~~a\equiv \frac{\alpha}{2E}
+\end{eqnarray}
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="rutherford-scattering-the-differential-cross-section">Rutherford Scattering, the Differential Cross Section </h2>
+
+<p>
+The differential cross section can now be found by differentiating the
+expression for \( \theta_s \) with \( b \),
+
+<p>&nbsp;<br>
+$$
+\begin{eqnarray}
+\tag{14}
+\frac{1}{2}\cos(\theta_s/2)d\theta_s&=&\frac{ab~db}{(a^2+b^2)^{3/2}}=\frac{bdb}{a^2}\sin^3(\theta_s/2),\\
+\nonumber
+d\sigma&=&2\pi bdb=\frac{\pi a^2}{\sin^3(\theta_s/2)}\cos(\theta_s/2)d\theta_s\\
+\nonumber
+&=&\frac{\pi a^2}{2\sin^4(\theta_s/2)}\sin\theta_s d\theta_s\\
+\nonumber
+\frac{d\sigma}{d\cos\theta_s}&=&\frac{\pi a^2}{2\sin^4(\theta_s/2)},\\
+\nonumber
+\frac{d\sigma}{d\Omega}&=&\frac{a^2}{4\sin^4(\theta_s/2)}.
+\end{eqnarray}
+$$
+<p>&nbsp;<br>
+
+<p>
+where \( a= \alpha/2E \). This the Rutherford formula for the differential
+cross section. It diverges as \( \theta_s\rightarrow 0 \) because
+scatterings with arbitrarily large impact parameters still scatter to
+arbitrarily small scattering angles. The expression for
+\( d\sigma/d\Omega \) is the same whether the interaction is positive or
+negative.
+</section>
+
+
+<section>
+<h2 id="rutherford-scattering-example">Rutherford Scattering, Example </h2>
+
+<p>
+Consider a particle of mass \( m \) and charge \( z \) with kinetic energy \( E \)
+(Let it be the center-of-mass energy) incident on a heavy nucleus of
+mass \( M \) and charge \( Z \) and radius \( R \). We want to find the angle at which the
+Rutherford scattering formula breaks down.
+
+<p>
+Let \( \alpha=Zze^2/(4\pi\epsilon_0) \). The scattering angle in Eq. <a href="#mjx-eqn-13">(13)</a> is
+
+<p>&nbsp;<br>
+$$
+\sin(\theta_s/2)=\frac{a}{\sqrt{a^2+b^2}}, ~~a\equiv \frac{\alpha}{2E}.
+$$
+<p>&nbsp;<br>
+
+<p>
+The impact parameter \( b \) for which the point of closest approach
+equals \( R \) can be found by using angular momentum conservation,
+
+<p>&nbsp;<br>
+$$
+\begin{eqnarray*}
+p_0b&=&b\sqrt{2mE}=Rp_f=R\sqrt{2m(E-\alpha/R)},\\
+b&=&R\frac{\sqrt{2m(E-\alpha/R)}}{\sqrt{2mE}}\\
+&=&R\sqrt{1-\frac{\alpha}{ER}}.
+\end{eqnarray*}
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="rutherford-scattering-example-wrapping-up">Rutherford Scattering, Example, wrapping up </h2>
+
+<p>
+Putting these together
+
+<p>&nbsp;<br>
+$$
+\theta_s=2\sin^{-1}\left\{
+\frac{a}{\sqrt{a^2+R^2(1-\alpha/(RE))}}
+\right\},~~~a=\frac{\alpha}{2E}.
+$$
+<p>&nbsp;<br>
+
+<p>
+It was from this departure of the experimentally measured
+\( d\sigma/d\Omega \) from the Rutherford formula that allowed Rutherford
+to infer the radius of the gold nucleus, \( R \).
+</section>
+
+
+<section>
+<h2 id="variational-calculus">Variational Calculus </h2>
+
+<p>
+The calculus of variations involves 
+problems where the quantity to be minimized or maximized is an integral.
+
+<p>
+The usual minimization problem one faces involves taking a function
+\( {\cal L}(x) \), then finding the single value \( x \) for which \( {\cal L} \)
+is either a maximum or minimum. In multivariate calculus one also
+learns to solve problems where you minimize for multiple variables,
+\( {\cal L}(x_1,x_2,\cdots x_n) \), and finding the points \( (x_1\cdots
+y_n) \) in an \( n \)-dimensional space that maximize or minimize the
+function. Here, we consider what seems to be a much more ambitious
+problem. Imagine you have a function \( {\cal L}(x(t),\dot{x}(t),t) \),
+and you wish to find the extrema for an infinite number of values of
+\( x \), i.e. \( x \) at each point \( t \). The function \( {\cal L} \) will not only
+depend on \( x \) at each point \( t \), but also on the slope at each point,
+plus an additional dependence on \( t \). Note we are NOT finding an
+optimum value of \( t \), we are finding the set of optimum values of \( x \)
+at each point \( t \), or equivalently, finding the function \( x(t) \).
+</section>
+
+
+<section>
+<h2 id="variational-calculus-introducing-the-action">Variational Calculus, introducing the action </h2>
+
+<p>
+One treats the function \( x(t) \) as being unknown while minimizing the action
+
+<p>&nbsp;<br>
+$$
+S=\int_{t_1}^{t_2}dt~{\cal L}(x(t),\dot{x}(t),t).
+$$
+<p>&nbsp;<br>
+
+<p>
+Thus, we are minimizing \( S \) with respect to an infinite number of
+values of \( x(t_i) \) at points \( t_i \). As an additional criteria, we will
+assume that \( x(t_1) \) and \( x(t_2) \) are fixed, and that that we will
+only consider variations of \( x \) between the boundaries. The dependence
+on the derivative, \( \dot{x}=dx/dt \), is crucial because otherwise the
+solution would involve simply finding the one value of \( x \) that
+minimized \( {\cal L} \), and \( x(t) \) would equal a constant if there were no
+explicit \( t \) dependence. Furthermore, \( x \) wouldn't need to be
+continuous at the boundary.
+</section>
+
+
+<section>
+<h2 id="variational-calculus-general-action">Variational Calculus, general Action </h2>
+
+<p>
+In the general case we have an integral of the type
+<p>&nbsp;<br>
+$$ 
+S[q]= \int_{t_1}^{t_2} {\cal L}(q(t),\dot{q}(t),t)dt,
+$$
+<p>&nbsp;<br>
+
+<p>
+where \( S \) is the quantity which is sought minimized or maximized.  The
+problem is that although \( {\cal L} \)  is a function of the general variables
+\( q(t),\dot{q}(t),t \) (note our change of variables), the exact dependence of \( q \) on \( t \) is not known.
+This means again that even though the integral has fixed limits \( t_1 \)
+and \( t_2 \), the path of integration is not known. In our case the unknown
+quantities are the positions and general velocities of a given number
+of objects and we wish to choose an integration path which makes the
+functional \( S[q] \) stationary. This means that we want to find minima,
+or maxima or saddle points. In physics we search normally for minima.
+Our task is therefore to find the minimum of \( S[q] \) so that its
+variation \( \delta S \) is zero subject to specific constraints.  The
+constraints can be treated via the technique of Lagrangian multipliers
+as we will see below.
+</section>
+
+
+<section>
+<h2 id="variational-calculus-optimal-path">Variational Calculus, Optimal Path </h2>
+
+<p>
+We assume the existence of an optimum path, that is a path for which
+\( S[q] \) is stationary. There are infinitely many such paths.  The
+difference between two paths \( \delta q \) is called the variation of
+\( q \).
+
+<p>
+We call the variation \( \eta(t) \) and it is scaled by a factor \( \alpha \).
+The function \( \eta(t) \) is arbitrary except for
+
+<p>&nbsp;<br>
+$$
+\eta(t_1)=\eta(t_2)=0,
+$$
+<p>&nbsp;<br>
+
+<p>
+and we assume that we can model the change in \( q \) as
+
+<p>&nbsp;<br>
+$$
+q(t,\alpha) = q(t)+\alpha\eta(t),
+$$
+<p>&nbsp;<br>
+
+<p>
+and
+
+<p>&nbsp;<br>
+$$
+\delta q = q(t,\alpha) -q(t,0)=\alpha\eta(t).
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="variational-calculus-condition-for-an-extreme-value">Variational Calculus, Condition for an Extreme Value </h2>
+
+<p>
+We choose \( q(t,\alpha=0) \) as the unkonwn path  that will minimize \( S \).  The value
+\( q(t,\alpha\ne 0) \)  describes a neighbouring path.
+
+<p>
+We have
+
+<p>&nbsp;<br>
+$$
+S[q(\alpha)]= \int_{t_1}^{t_2} {\cal L}(q(t,\alpha),\dot{q}(t,\alpha),t)dt.
+$$
+<p>&nbsp;<br>
+
+<p>
+The condition for an extreme of
+
+<p>&nbsp;<br>
+$$
+S[q(\alpha)]= \int_{t_1}^{t_2} {\cal L}(q(t,\alpha),\dot{q}(t,\alpha),t)dt,
+$$
+<p>&nbsp;<br>
+
+<p>
+is
+
+<p>&nbsp;<br>
+$$
+\left[\frac{\partial  S[q(\alpha)]}{\partial t}\right]_{\alpha=0} =0.
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="variational-calculus-alpha-dependence">Variational Calculus. \( \alpha \) Dependence </h2>
+
+<p>
+The \( \alpha \) dependence is contained in \( q(t,\alpha) \) and \( \dot{q}(t,\alpha) \) meaning that
+
+<p>&nbsp;<br>
+$$
+\left[\frac{\partial  E[q(\alpha)]}{\partial \alpha}\right]=\int_{t_1}^{t_2} \left( \frac{\partial {\cal l}}{\partial q}\frac{\partial q}{\partial \alpha}+\frac{\partial {\cal L}}{\partial \dot{q}}\frac{\partial \dot{q}}{\partial \alpha}\right)dt.
+$$
+<p>&nbsp;<br>
+
+We have defined
+
+<p>&nbsp;<br>
+$$
+\frac{\partial q(x,\alpha)}{\partial \alpha}=\eta(x)
+$$
+<p>&nbsp;<br>
+
+and thereby
+
+<p>&nbsp;<br>
+$$
+\frac{\partial \dot{q}(t,\alpha)}{\partial \alpha}=\frac{d(\eta(t))}{dt}.
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="integrating-by-parts">INtegrating by Parts </h2>
+
+<p>
+Using
+
+<p>&nbsp;<br>
+$$
+\frac{\partial q(t,\alpha)}{\partial \alpha}=\eta(t),
+$$
+<p>&nbsp;<br>
+
+<p>
+and
+
+<p>&nbsp;<br>
+$$
+\frac{\partial \dot{q}(t,\alpha)}{\partial \alpha}=\frac{d(\eta(t))}{dt},
+$$
+<p>&nbsp;<br>
+
+<p>
+in the integral gives
+
+<p>&nbsp;<br>
+$$
+\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]=\int_{t_1}^{t_2} \left( \frac{\partial {\cal L}}{\partial q}\eta(t)+\frac{\partial {\cal L}}{\partial \dot{q}}\frac{d(\eta(t))}{dt}\right)dt.
+$$
+<p>&nbsp;<br>
+
+<p>
+Integrating the second term by parts
+
+<p>&nbsp;<br>
+$$
+\int_{t_1}^{t_2} \frac{\partial {\cal L}}{\partial \dot{q}}\frac{d(\eta(t))}{dt}dt =\eta(t)\frac{\partial {\cal L}}{\partial \dot{q}}|_{t_1}^{t_2}-
+\int_a^b \eta(t)\frac{d}{dx}\frac{\partial {\cal L}}{\partial \dot{q}}dt,
+$$
+<p>&nbsp;<br>
+
+<p>
+and since the first term dissappears due to \( \eta(a)=\eta(b)=0 \), we obtain
+
+<p>&nbsp;<br>
+$$
+\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]=\int_{t_1}^{t_2} \left( \frac{\partial {\cal L}}{\partial q}-\frac{d}{dx}\frac{\partial {\cal L}}{\partial \dot{q}}
+\right)\eta(t)dt=0.
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="euler-lagrange-equations">Euler-Lagrange Equations </h2>
+
+<p>
+The latter can be written as
+
+<p>&nbsp;<br>
+$$
+\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]_{\alpha=0}=\int_{t_1}^{t_2} \left( \frac{\partial {\cal L}}{\partial q}-\frac{d}{\
+dx}\frac{\partial {\cal L}}{\partial \dot{q}}\right)\delta q(t)dt=\delta S = 0.
+$$
+<p>&nbsp;<br>
+
+<p>
+The condition for a stationary value is thus a partial differential equation
+
+<p>&nbsp;<br>
+$$
+\frac{\partial {\cal L}}{\partial q}-\frac{d}{dx}\frac{\partial {\cal L}}{\partial \dot{q}}=0,
+$$
+<p>&nbsp;<br>
+
+<p>
+known as the <b>Euler-Lagrange</b> equation.
+</section>
+
+
+
+</div> <!-- class="slides" -->
+</div> <!-- class="reveal" -->
+
+<script src="reveal.js/lib/js/head.min.js"></script>
+<script src="reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+    // Display navigation controls in the bottom right corner
+    controls: true,
+
+    // Display progress bar (below the horiz. slider)
+    progress: true,
+
+    // Display the page number of the current slide
+    slideNumber: true,
+
+    // Push each slide change to the browser history
+    history: false,
+
+    // Enable keyboard shortcuts for navigation
+    keyboard: true,
+
+    // Enable the slide overview mode
+    overview: true,
+
+    // Vertical centering of slides
+    //center: true,
+    center: false,
+
+    // Enables touch navigation on devices with touch input
+    touch: true,
+
+    // Loop the presentation
+    loop: false,
+
+    // Change the presentation direction to be RTL
+    rtl: false,
+
+    // Turns fragments on and off globally
+    fragments: true,
+
+    // Flags if the presentation is running in an embedded mode,
+    // i.e. contained within a limited portion of the screen
+    embedded: false,
+
+    // Number of milliseconds between automatically proceeding to the
+    // next slide, disabled when set to 0, this value can be overwritten
+    // by using a data-autoslide attribute on your slides
+    autoSlide: 0,
+
+    // Stop auto-sliding after user input
+    autoSlideStoppable: true,
+
+    // Enable slide navigation via mouse wheel
+    mouseWheel: false,
+
+    // Hides the address bar on mobile devices
+    hideAddressBar: true,
+
+    // Opens links in an iframe preview overlay
+    previewLinks: false,
+
+    // Transition style
+    transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+    // Transition speed
+    transitionSpeed: 'default', // default/fast/slow
+
+    // Transition style for full page slide backgrounds
+    backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
+
+    // Number of slides away from the current that are visible
+    viewDistance: 3,
+
+    // Parallax background image
+    //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+    // Parallax background size
+    //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+
+    theme: Reveal.getQueryHash().theme, // available themes are in reveal.js/css/theme
+    transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+});
+
+Reveal.initialize({
+    dependencies: [
+        // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+        { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+        // Interpret Markdown in <section> elements
+        { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+        // Syntax highlight for <code> elements
+        { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+        // Zoom in and out with Alt+click
+        { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // Speaker notes
+        { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // Remote control your reveal.js presentation using a touch device
+        //{ src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // MathJax
+        //{ src: 'reveal.js/plugin/math/math.js', async: true }
+    ]
+});
+
+Reveal.initialize({
+
+    // The "normal" size of the presentation, aspect ratio will be preserved
+    // when the presentation is scaled to fit different resolutions. Can be
+    // specified using percentage units.
+    width: 1170,  // original: 960,
+    height: 700,
+
+    // Factor of the display size that should remain empty around the content
+    margin: 0.1,
+
+    // Bounds for smallest/largest possible scale to apply to content
+    minScale: 0.2,
+    maxScale: 1.0
+
+});
+</script>
+
+<!-- begin footer logo
+<div style="position: absolute; bottom: 0px; left: 0; margin-left: 0px">
+<img src="somelogo.png">
+</div>
+     end footer logo -->
+
+
+
+</body>
+</html>

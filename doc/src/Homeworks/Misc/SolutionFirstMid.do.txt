@@ -1,0 +1,376 @@
+TITLE: PHY321: Classical Mechanics 1
+AUTHOR: First midterm project, due Wednesday March 12
+DATE: An attempt at a solution
+
+
+=== Part 1, Particle in a one-dimensional  potential ===
+
+We consider a particle (for example an atom) of mass $m$ moving in a one-dimensional potential,
+!bt
+\[
+V(x)=\frac{V_0}{d^4}\left(x^4-2x^2d^2+d^4\right).
+\]
+!et
+
+We will assume all other forces on the particle are small in
+comparison, and neglect them in our model.  The parameters $V_0$ and
+$d$ are known constants.
+
+o (5pt) Plot the potential and find the  equilibrium points (stable and unstable) by requiring that the first derivative of the potential is zero. Make an energy diagram (see for example Malthe-Sørenssen chapter 11.3) and mark the equilibrium points on the diagram and characterize their stability. The position of the particle is $x$. 
+
+
+We have chosen values $d=1$ and $V_0=4$. 
+The following Python code gives a plot of potential
+
+!bc pycod
+# Common imports
+import numpy as np
+from math import *
+import matplotlib.pyplot as plt
+
+Deltax = 0.01
+#set up arrays
+xinitial = -2.0
+xfinal = 2.0 
+n = ceil((xfinal-xinitial)/Deltax)
+x = np.zeros(n)
+for i in range(n):
+    x[i] = xinitial+i*Deltax
+V = np.zeros(n)
+# Initial conditions as compact 2-dimensional arrays
+d = 1.0
+V0 = 4.0
+V = (V0/d**4)*(x**4-2*x*x*d*d+d**4)
+# Plot potential as function of position    
+fig, ax = plt.subplots()
+#ax.set_xlim(0, tfinal)
+ax.set_xlabel('x')
+ax.set_ylabel('V')
+ax.plot(x, V)
+fig.tight_layout()
+plt.show()
+!ec
+
+When we take the derivative of the potential we have
+
+!bt
+\[
+\frac{dV}{dx} = \frac{V_0}{d^4}\left(4x^3-4xd^2\right).
+\]
+!et
+
+We see that we have minima or maxima when the derivative is zero. This leads to
+
+!bt
+\[
+\frac{V_0}{d^4}\left(4x^3-4xd^2\right)=0,
+\]
+!et
+
+which gives us as solutions $x=0$ and $x=\pm d$.
+
+Taking the second derivative we have that
+
+!bt
+\[
+\frac{d^2V}{dx^2} = \frac{V_0}{d^4}\left(12x^2-4d^2\right).
+\]
+!et
+
+If we use $x=\pm d$ we find that the second derivative is given by
+
+!bt
+\[
+\frac{d^2V}{dx^2}\vert_{x=\pm d} = \frac{8V_0}{d^2},
+\]
+!et
+
+and assuming $V_0 > 0$, these points corresponds to stable equilibrium
+points since the the second derivative is posit ive, meaning that
+$x=\pm d$ are minima. For $x=0$ we get
+
+!bt
+\[
+\frac{d^2V}{dx^2}\vert_{x=0} = -\frac{4V_0}{d^2},
+\]
+!et
+
+and our point represents a maximum and we $x=0$ is an unstable point.
+
+
+o (5pt) Choose two different energies that give two distinct types of motions, draw them into the energy diagram, and describe the motion in each case.
+
+We select an energy where the particle starts at a potential less then
+$V_0$. Therefore, it oscillates in its starting well.
+
+For the second energy, the particle starts at a potential greater than
+$V_0$. Therefore, it oscillates through one, goes over the hump at $x=0$
+and then oscillates the second well up to the same y-coordinate as
+the starting point. Then, it oscillates back to the original point.
+
+
+o (5pt) If the particle  starts at rest at $x=2d$, what is the velocity of the particle at the point $x=d$?
+
+Below we show that the above potential fulfills the requirements about
+being an energy conserving potential. Since energy is conserved, we
+must have that the sum of potential and kinetic energies in the two
+positions has to be conserved. We have At $x=2d$ we have that the
+velocity $v_{2d}=0$ (we skip units) and at $x=d$ we have the unknown
+velocity $v_d$. Inserting the values for the kinetic and potential
+energies we get
+
+
+!bt
+\[
+E_{2d}=0+V(x=2d)=9V_0=E_d=\frac{1}{2}mv^2_d+V(x=d)=\frac{1}{2}mv^2_d+0,
+\]
+!et
+
+which gives us
+
+!bt
+\[
+v_d=\pm 3\sqrt{\frac{2V_0}{m}}.
+\]
+!et
+
+
+o (5pt) If the particle  starts at $x=d$ with velocity $v_0$, how large must $v_0$ be for the  particle to reach the point $x=−d$?
+
+At $x=d$ the potential energy is zero. In order to reach the othr side
+of the well, the particle must have a kinetic energy which can
+overcome the potential energy at the hump at $x=0$. There the
+potential is $V_0$. Assuming that the velocity is zero there,
+conservation of energy gives us
+
+!bt
+\[
+E_{d}=\frac{1}{2}mv^2_d+=E_0=0+V_0,
+\]
+!et
+
+meaning we have
+
+!bt
+\[
+v_d=\pm\sqrt{\frac{2V_0}{m}}.
+\]
+!et
+
+
+
+
+o (5pt) Use the above potential to set up the total forces acting on the particle.  Find the acceleration acting on the particle. Is this a conservative force? Calculate also the _curl_ of the force  $\bm{\nabla}\times \bm{F}$ in order to validate your conclusion. 
+
+The potential depends only on position and the _curl_ of the force is
+zero. The latter is easily seen since the components of the _curl_ in
+the $x$-, $y$- and $z$-z directions are, respectively,
+
+!bt
+\[
+\frac{\partial F_y}{\partial z} -\frac{\partial F_z}{\partial y} =0,
+\]
+!et
+
+and
+
+!bt
+\[
+\frac{\partial F_x}{\partial z} -\frac{\partial F_z}{\partial x} =0,
+\]
+!et
+
+and
+
+!bt
+\[
+\frac{\partial F_x}{\partial y} -\frac{\partial F_y}{\partial x} =0,
+\]
+!et
+
+which means the _curl_ of the force is zero.
+
+
+o (5pt) Are linear momentum and angular momentum conserved? You need to show this by calculating the quantities.
+
+Because there only exists an external force, linear momentum is not
+conserved.  The time-derivative of the momentum $\bm{p}$ is given by
+
+!bt
+\[
+\frac{d\bm{p}}{dt}=\bm{F},
+\]
+!et
+
+and since the problem is a one-dimensional we have
+
+!bt
+\[
+\frac{dp}{dt}=F=-\frac{dV(x)}{dx}=-\frac{V_0}{d^4}\left(12x^2-4d^2\right).
+\]
+!et
+
+Linear momentum is thus not conserved. Angular momentum is defined as
+
+!bt
+\[
+\bm{l} = \bm{r}\times \bm{p}, 
+\]
+!et
+
+and its time derivative is
+
+!bt
+\[
+\frac{d\bm{l}}{dt} = \bm{r}\times \frac{d\bm{p}}{dt}=\bm{r} \times \bm{F}, 
+\]
+!et
+which gives us the following $x$, $y$ and $z$ components of the derivative of angular momentum
+(and since we are in one dimension only we have $y=z=0$ and $F_y=F_z=0$)
+!bt
+\[
+F_yz -F_zy =0,
+\]
+!et
+
+and
+
+!bt
+\[
+F_xz -F_zx =0,
+\]
+!et
+
+and
+
+!bt
+\[
+F_xy -F_yx =0.
+\]
+!et
+
+Angular momentum is thus conserved.
+
+
+o (10pt) Write a numerical algorithm to find the position and velocity of the particle at a time $t+\Delta t$ given the position and velocity at a time $t$. Here you can use either the standard forward Euler, or the Euler-Cromer or the Velocity Verlet algorithms.   You need to justify your choice here (hint: consider energy conservation).
+
+Since the force conserves energy, using either the Euler-Cromer or the
+Velocity Verlet method, preserves the energy as function of time. The
+Velocity Verlet method has also a better mathematical truncation error
+$O(\Delta t^3)$, to be compared with $O(\Delta t^2)$ in the
+Euler-Cromer method. The main difference is the new evaluation of the
+acceleration at a time $t+1$. Thus, the Velocity Verlet method is the
+preferred one here. The code examples in part 1 and part 2 focus on this latter method.
+
+Setting up such a code has been discussed during the lectures and we refer to the slides from week 7 and week 8 at
+URL:"" and URL:"", respectively.
+
+o (10pt) Use now your program to find the position of the particle as function of time from $t=0$ to $t=30$ s using a mass  $m=1.0$ kg, the parameter $V_0=1$ J and $d=0.1$ m. Make a plot of three distinct positions with initial conditions $x_0=d$ and $v_0=0.5$ m/s, $x_0=d$ and $v_0=1.5$ m/s, and $x_0=d$ and $v_0=2.5$ m/s. Plot also the velocity.  Perform calculations with and without the term $x^4$ in the potential. Do you see a difference? Compare and discuss the results obtained with the Velocity Verlet algorithm and the Euler-Cromer algorithm. 
+
+o (10pt) Describe the behavior of the particle for the three initial conditions  and sketch the motion in an energy diagram. Is energy conserved in your simulations?
+
+    We also see that the particle exhibits an oscillatory motion in all
+cases. In the first case $v_0=0.5$m/s, it oscillates around one
+potential well around a stable equilibrium point at $x=d$. For the
+other two cases ($v_0=$1.5m/s,2.5m/s), the particle exhibits an
+periodic oscillatory motion around the unstable equilbrium point and
+across both potential wells at $x=\pm d$. And the energy is
+conserved in all three initial cases.
+
+
+=== Part 2, two dimensions ===
+
+
+We move then to two dimensions. Our particle/object interacts with a surface potential given by
+!bt
+\[
+V(r)=\frac{V_0}{d^4}\left(r^4-2r^2d^2+d^4\right),
+\]
+!et
+where $r=\sqrt{x^2+y^2}$ is the distance to the origin.
+
+o (5pt) Show that the acceleration is now $\bm{a}=-\frac{4V_0}{md^4}\left(r^3-rd^2\right)\frac{\bm{r}}{r}$.
+
+We move then to two dimensions. Our particle/object interacts with a
+surface potential given by
+
+!bt
+\[
+V(r)=\frac{V_0}{d^4}\left(r^4-2r^2d^2+d^4\right),
+\]
+!et
+where $r=\sqrt{x^2+y^2}$ is the distance to the origin.
+
+The gradient of $r$ is thus
+!bt
+\[
+\bm{\nabla} r=\frac{\partial r}{\partial x}\bm{e}_1+\frac{\partial r}{\partial y}\bm{e}_2,
+\]
+!et
+which becomes
+!bt
+\[
+\bm{\nabla} r=\frac{x}{\sqrt{x^2+y^2}}\bm{e}_1+\frac{y}{\sqrt{x^2+y^2}}\bm{e}_2,
+\]
+!et
+or
+
+!bt
+\[
+\bm{\nabla} r=\frac{\bm{r}}{r}.
+\]
+!et
+
+The force is given by the negative gradient of the potential, that is
+
+!bt
+\[
+\bm{F}=-\bm{\nabla}V(\bm{r})=-\bm{\nabla}\left[\frac{V_0}{d^4}\left(r^4-2r^2d^2+d^4\right)\right],
+\]
+!et
+
+and using the chain rule and the above gradient of $r$, we have
+
+!bt
+\[
+\bm{F}=-\frac{V_0}{d^4}\left(4r^3-4rd^2\right)\frac{\bm{r}}{r},
+\]
+!et
+
+and dividing by the mass $m$ we find the acceleration
+
+!bt
+\[
+\bm{a}=-\frac{V_0}{md^4}\left(4r^3-4rd^2\right)\frac{\bm{r}}{r},
+\]
+!et
+
+
+
+
+o (10pt) Rewrite your program to find the velocity and position of the atom using the new expression for the force $\bm{F}$. Use vectorized expressions in your code as you did in homework 6 for the Earth-Sun system. See eventually the code from the "lectures":"https://mhjensen.github.io/Physics321/doc/pub/energyconserv/html/energyconserv.html".  We recommend to revisit the Earth-Sun problem from homework 6 since it has several similarities with the problem here.
+
+o (10pt) Plot the motion of a particle starting in $\bm{r}_0=(d,0)$ from $t=0$ s to $t=20$ s for the initial velocities $\bm{v}_0=(0,0.5)$ m/s, $\bm{v}_0=(0,1)$ m/s, and $\bm{v}_0=(0,1.5)$ m/s. The parameters $d$ and $V_0$ are as before.
+
+o (5pt) Is energy conserved? 
+
+o (10pt) Can you choose initial conditions $r_0$ and $v_0$ in such a manner that the particle moves in a circular orbit with a constant radius? If so, what initial conditions are those? Plot the motion for these conditions.
+
+
+From the centripetal force, we have (for a velocity perpendicular to the
+radius vector)
+
+!bt
+\begin{align}
+\frac{v^2}{r}\frac{\bm{r}}{r} & = \frac{4 V_0}{m d^4}(r^3 - r d^2) \frac{\bm{r}}{r}
+\\ v^2 & = \frac{4 V_0}{m d^4}(r^4 - r^2d^2)
+\\ v_0 & = \sqrt{\frac{4 V_0}{m d^4}(r_0^4 - r_0^2d^2)} \text{ for } r_0 \neq d
+\end{align}
+!et
+
+
+
+
+
+
+

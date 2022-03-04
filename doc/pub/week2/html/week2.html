@@ -1,36 +1,105 @@
 <!--
-Automatically generated HTML file from DocOnce source
-(https://github.com/hplgit/doconce/)
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html week2.do.txt --pygments_html_style=default --html_style=bloodish --html_links_in_new_window --html_output=week2 --no_mako
 -->
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="PHY321: Introduction to Classical Mechanics and plans for Spring 2021">
-
-<title>PHY321: Introduction to Classical Mechanics and plans for Spring 2021</title>
-
-
+<meta name="description" content="PHY321: Introduction to Classical Mechanics and plans for Spring 2022">
+<title>PHY321: Introduction to Classical Mechanics and plans for Spring 2022</title>
 <style type="text/css">
 /* bloodish style */
-
 body {
   font-family: Helvetica, Verdana, Arial, Sans-serif;
   color: #404040;
   background: #ffffff;
 }
-h1 { font-size: 1.8em;  color: #8A0808; }
-h2 { font-size: 1.6em;  color: #8A0808; }
-h3 { font-size: 1.4em;  color: #8A0808; }
-h4 { color: #8A0808; }
+h1 { font-size: 1.8em; color: #8A0808; }
+h2 { font-size: 1.6em; color: #8A0808; }
+h3 { font-size: 1.4em; color: #8A0808; }
+h4 { font-size: 1.2em; color: #8A0808; }
 a { color: #8A0808; text-decoration:none; }
 tt { font-family: "Courier New", Courier; }
-/* pre style removed because it will interfer with pygments */
 p { text-indent: 0px; }
 hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
 p.caption { width: 80%; font-style: normal; text-align: left; }
-hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa; }div.highlight {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    line-height: 1.21429em;
+}
+div.cell {
+    width: 100%;
+    padding: 5px 5px 5px 0;
+    margin: 0;
+    outline: none;
+}
+div.input {
+    page-break-inside: avoid;
+    box-orient: horizontal;
+    box-align: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+div.inner_cell {
+    box-orient: vertical;
+    box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    box-flex: 1;
+    flex: 1;
+}
+div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 4px;
+    background: #f7f7f7;
+    line-height: 1.21429em;
+}
+div.input_area > div.highlight {
+    margin: .4em;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+}
+div.output_wrapper {
+    position: relative;
+    box-orient: vertical;
+    box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.output {
+    box-orient: vertical;
+    box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+div.output_area {
+    padding: 0;
+    page-break-inside: avoid;
+    box-orient: horizontal;
+    box-align: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+div.output_subarea {
+    padding: .4em .4em 0 .4em;
+    box-flex: 1;
+    flex: 1;
+}
+div.output_text {
+    text-align: left;
+    color: #000;
+    line-height: 1.21429em;
+}
 .alert-text-small   { font-size: 80%;  }
 .alert-text-large   { font-size: 130%; }
 .alert-text-normal  { font-size: 90%;  }
@@ -53,106 +122,201 @@ hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
 .alert-block > p, .alert-block > ul {margin-bottom:1em}
 .alert li {margin-top: 1em}
 .alert-block p+p {margin-top:5px}
-.alert-notice { background-image: url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_gray_notice.png); }
-.alert-summary  { background-image:url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_gray_summary.png); }
-.alert-warning { background-image: url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_gray_warning.png); }
-.alert-question {background-image:url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_gray_question.png); }
-
+.alert-notice { background-image: url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_notice.png); }
+.alert-summary  { background-image:url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_summary.png); }
+.alert-warning { background-image: url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_warning.png); }
+.alert-question {background-image:url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_question.png); }
 div { text-align: justify; text-justify: inter-word; }
+.tab {
+  padding-left: 1.5em;
+}
+div.toc p,a {
+  line-height: 1.3;
+  margin-top: 1.1;
+  margin-bottom: 1.1;
+}
 </style>
-
-
 </head>
 
 <!-- tocinfo
 {'highest level': 2,
- 'sections': [('Aims and Overview', 2, None, '___sec0'),
-              ('Introduction to the course and where to find material',
+ 'sections': [('Aims and Overview of week 2: January 10-14',
                2,
                None,
-               '___sec1'),
-              ('Classical mechanics', 2, None, '___sec2'),
-              ('From Continuous to Discretized Approaches', 2, None, '___sec3'),
+               'aims-and-overview-of-week-2-january-10-14'),
+              ('Classical mechanics', 2, None, 'classical-mechanics'),
+              ('From Continuous to Discretized Approaches',
+               2,
+               None,
+               'from-continuous-to-discretized-approaches'),
               ('Space, Time, Motion, Reference Frames  and Reminder on vectors '
                'and other mathematical quantities',
                2,
                None,
-               '___sec4'),
-              ('Dimension, units and labels', 2, None, '___sec5'),
-              ('Dimensions and Units', 2, None, '___sec6'),
-              ('Scalars, Vectors and Matrices', 2, None, '___sec7'),
-              ('Definitions  of Vectors', 2, None, '___sec8'),
-              ('Other ways to define a Vector', 2, None, '___sec9'),
-              ('Polar Coordinates', 2, None, '___sec10'),
-              ('Unit Vectors', 2, None, '___sec11'),
-              ('Our definition of unit vectors', 2, None, '___sec12'),
-              ('More definitions, repeated indices', 2, None, '___sec13'),
+               'space-time-motion-reference-frames-and-reminder-on-vectors-and-other-mathematical-quantities'),
+              ('Dimension, units and labels',
+               2,
+               None,
+               'dimension-units-and-labels'),
+              ('Dimensions and Units', 2, None, 'dimensions-and-units'),
+              ('Scalars, Vectors and Matrices',
+               2,
+               None,
+               'scalars-vectors-and-matrices'),
+              ('Definitions  of Vectors', 2, None, 'definitions-of-vectors'),
+              ('Other ways to define a Vector',
+               2,
+               None,
+               'other-ways-to-define-a-vector'),
+              ('Polar Coordinates', 2, None, 'polar-coordinates'),
+              ('Unit Vectors', 2, None, 'unit-vectors'),
+              ('Our definition of unit vectors',
+               2,
+               None,
+               'our-definition-of-unit-vectors'),
+              ('More definitions, repeated indices',
+               2,
+               None,
+               'more-definitions-repeated-indices'),
               ('Vector Operations, Scalar Product (or dot product)',
                2,
                None,
-               '___sec14'),
+               'vector-operations-scalar-product-or-dot-product'),
               ('Digression, Linear Algebra Notation for Vectors',
                2,
                None,
-               '___sec15'),
-              ('Norm of a transformed Vector', 2, None, '___sec16'),
+               'digression-linear-algebra-notation-for-vectors'),
+              ('Norm of a transformed Vector',
+               2,
+               None,
+               'norm-of-a-transformed-vector'),
               ('Vector Product (or cross product) of vectors $\\boldsymbol{a}$ '
                'and $\\boldsymbol{b}$',
                2,
                None,
-               '___sec17'),
-              ('More on cross-products', 2, None, '___sec18'),
-              ('Pseudo-vectors', 2, None, '___sec19'),
+               'vector-product-or-cross-product-of-vectors-boldsymbol-a-and-boldsymbol-b'),
+              ('More on cross-products', 2, None, 'more-on-cross-products'),
+              ('Pseudo-vectors', 2, None, 'pseudo-vectors'),
               ('Differentiation of a vector with respect to a scalar',
                2,
                None,
-               '___sec20'),
-              ('Gradient operator $\\nabla$', 2, None, '___sec21'),
-              ('The curl', 2, None, '___sec22'),
-              ('The Laplacian', 2, None, '___sec23'),
-              ('Some identities', 2, None, '___sec24'),
-              ('More useful relations', 2, None, '___sec25'),
-              ("Gauss's Theorem", 2, None, '___sec26'),
-              ("and Stokes's Theorem", 2, None, '___sec27'),
-              ('Basic Matrix Features', 2, None, '___sec28'),
-              ('Inverse of a Matrix', 2, None, '___sec29'),
-              ('Some famous Matrices', 2, None, '___sec30'),
-              ('More Basic Matrix Features', 2, None, '___sec31'),
-              ('Rotations', 2, None, '___sec32'),
-              ('More on the matrix $U$', 2, None, '___sec33'),
-              ('Properties of the matrix $U$', 2, None, '___sec34'),
-              ('Tensors', 2, None, '___sec35'),
-              ('Rotation matrix', 2, None, '___sec36'),
-              ('Unitary Transformations', 2, None, '___sec37'),
-              ('Numerical Elements', 2, None, '___sec38'),
-              ('Computations and the Scientific Method', 2, None, '___sec39'),
-              ('Computational Competences', 2, None, '___sec40'),
+               'differentiation-of-a-vector-with-respect-to-a-scalar'),
+              ('Gradient operator $\\nabla$',
+               2,
+               None,
+               'gradient-operator-nabla'),
+              ('The curl', 2, None, 'the-curl'),
+              ('The Laplacian', 2, None, 'the-laplacian'),
+              ('Some identities', 2, None, 'some-identities'),
+              ('More useful relations', 2, None, 'more-useful-relations'),
+              ("Gauss's Theorem", 2, None, 'gauss-s-theorem'),
+              ("and Stokes's Theorem", 2, None, 'and-stokes-s-theorem'),
+              ('Basic Matrix Features', 2, None, 'basic-matrix-features'),
+              ('Inverse of a Matrix', 2, None, 'inverse-of-a-matrix'),
+              ('Some famous Matrices', 2, None, 'some-famous-matrices'),
+              ('More Basic Matrix Features',
+               2,
+               None,
+               'more-basic-matrix-features'),
+              ('Rotations', 2, None, 'rotations'),
+              ('More on the matrix $U$', 2, None, 'more-on-the-matrix-u'),
+              ('Properties of the matrix $U$',
+               2,
+               None,
+               'properties-of-the-matrix-u'),
+              ('Tensors', 2, None, 'tensors'),
+              ('Rotation matrix', 2, None, 'rotation-matrix'),
+              ('Unitary Transformations', 2, None, 'unitary-transformations'),
+              ('Numerical Elements', 2, None, 'numerical-elements'),
+              ('Computations and the Scientific Method',
+               2,
+               None,
+               'computations-and-the-scientific-method'),
+              ('Computational Competences',
+               2,
+               None,
+               'computational-competences'),
               ('A well-known example to illustrate many of the above concepts',
                2,
                None,
-               '___sec41'),
-              ('Analyzing the above example', 2, None, '___sec42'),
+               'a-well-known-example-to-illustrate-many-of-the-above-concepts'),
+              ('Analyzing the above example',
+               2,
+               None,
+               'analyzing-the-above-example'),
               ('Python practicalities, Software and needed installations',
                2,
                None,
-               '___sec43'),
-              ('Python installers', 2, None, '___sec44'),
-              ('Useful Python libraries', 2, None, '___sec45'),
+               'python-practicalities-software-and-needed-installations'),
+              ('Python installers', 2, None, 'python-installers'),
+              ('Useful Python libraries', 2, None, 'useful-python-libraries'),
               ('Numpy examples and Important Matrix and vector handling '
                'packages',
                2,
                None,
-               '___sec46'),
-              ('Numpy and arrays', 2, None, '___sec47'),
-              ('Matrices in Python', 2, None, '___sec48'),
-              ('Meet the Pandas', 2, None, '___sec49'),
+               'numpy-examples-and-important-matrix-and-vector-handling-packages'),
+              ('Numpy and arrays', 2, None, 'numpy-and-arrays'),
+              ('Matrices in Python', 2, None, 'matrices-in-python'),
+              ('Meet the Pandas', 2, None, 'meet-the-pandas'),
               ('Introduction to Git and GitHub/GitLab and similar',
                2,
                None,
-               '___sec50'),
-              ('GitHub, GitLab and many other', 2, None, '___sec51'),
-              ('Useful Git and GitHub links', 2, None, '___sec52'),
-              ('Useful IDEs and text editors', 2, None, '___sec53')]}
+               'introduction-to-git-and-github-gitlab-and-similar'),
+              ('GitHub, GitLab and many other',
+               2,
+               None,
+               'github-gitlab-and-many-other'),
+              ('Useful Git and GitHub links',
+               2,
+               None,
+               'useful-git-and-github-links'),
+              ('Useful IDEs and text editors',
+               2,
+               None,
+               'useful-ides-and-text-editors'),
+              ('Our first Physics encounter',
+               2,
+               None,
+               'our-first-physics-encounter'),
+              ('Falling baseball in one dimension',
+               2,
+               None,
+               'falling-baseball-in-one-dimension'),
+              ('Our Python Encounter', 2, None, 'our-python-encounter'),
+              ('Average quantities', 2, None, 'average-quantities'),
+              ('Compact equations', 2, None, 'compact-equations'),
+              ('A differential equation', 2, None, 'a-differential-equation'),
+              ('Integrating our equations',
+               2,
+               None,
+               'integrating-our-equations'),
+              ('Constant acceleration case, the velocity',
+               2,
+               None,
+               'constant-acceleration-case-the-velocity'),
+              ('Computing the averages', 2, None, 'computing-the-averages'),
+              ('Including Air Resistance in our model',
+               2,
+               None,
+               'including-air-resistance-in-our-model'),
+              ('Analytical solutions', 2, None, 'analytical-solutions'),
+              ('Finding the final height', 2, None, 'finding-the-final-height'),
+              ('Our first attempt at solving differential equations',
+               2,
+               None,
+               'our-first-attempt-at-solving-differential-equations'),
+              ('Discretizing our equations',
+               2,
+               None,
+               'discretizing-our-equations'),
+              ("Code for implementing Euler's method",
+               2,
+               None,
+               'code-for-implementing-euler-s-method'),
+              ('Simple extension, the Euler-Cromer method',
+               2,
+               None,
+               'simple-extension-the-euler-cromer-method')]}
 end of tocinfo -->
 
 <body>
@@ -172,82 +336,63 @@ MathJax.Hub.Config({
 </script>
 
 
-
-    
 <!-- ------------------- main content ---------------------- -->
+<center>
+<h1>PHY321: Introduction to Classical Mechanics and plans for Spring 2022</h1>
+</center>  <!-- document title -->
 
-
-
-<center><h1>PHY321: Introduction to Classical Mechanics and plans for Spring 2021</h1></center>  <!-- document title -->
-
-<p>
 <!-- author(s): <a href="http://mhjgit.github.io/info/doc/web/" target="_blank">Morten Hjorth-Jensen</a>, and Scott Pratt -->
-
 <center>
 <b><a href="http://mhjgit.github.io/info/doc/web/" target="_blank">Morten Hjorth-Jensen</a></b> [1, 2]
 </center>
-
 <center>
 <b>Scott Pratt</b> [1]
 </center>
-
-<p>
 <!-- institution(s) -->
+<center>
+[1] <b>Department of Physics and Astronomy and Facility for Rare Ion Beams (FRIB), Michigan State University, USA</b>
+</center>
+<center>
+[2] <b>Department of Physics, University of Oslo, Norway</b>
+</center>
+<br>
+<center>
+<h4>Jan 12, 2022</h4>
+</center> <!-- date -->
+<br>
 
-<center>[1] <b>Department of Physics and Astronomy and Facility for Rare Ion Beams (FRIB), Michigan State University, USA</b></center>
-<center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
-<br>
-<p>
-<center><h4>Jan 20, 2021</h4></center> <!-- date -->
-<br>
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="aims-and-overview-of-week-2-january-10-14">Aims and Overview of week 2: January 10-14 </h2>
 
-<h2 id="___sec0">Aims and Overview </h2>
-
-<p>
-The first week starts on Monday January 11. This week is dedicated to a
+<p>The first week starts on Monday January 10. This week is dedicated to a
 review of learning material and reminder on programming aspects,
-useful tools, where to find information and much more. There are no lectures during this week and the material here on vectors and Python programming will also be discussed during the week which begins with January 18. Feel free to look at the notes here before our first lecture on the 20th.
+useful tools, where to find information and much more. 
+</p>
 
 <ul>
 <li> Introduction to the course and reminder  on vectors, space, time and motion.</li>
 <li> Python programming reminder, elements from <a href="https://cmse.msu.edu/academics/undergraduate-program/undergraduate-courses/cmse-201-introduction-to-computational-modeling/" target="_blank">CMSE 201 INTRODUCTION TO COMPUTATIONAL MODELING</a> and how they are used in this course. Installing software (anaconda). .</li> 
 <li> Introduction to Git and GitHub. <a href="https://mediaspace.msu.edu/media/t/1_8mgx3cyf" target="_blank">Overview video on Git and GitHub</a>.</li>
 </ul>
+<p><b>Recommended reading</b>: John R. Taylor, Classical Mechanics (Univ. Sci. Books 2005), <a href="https://www.uscibooks.com/taylor2.htm" target="_blank"><tt>https://www.uscibooks.com/taylor2.htm</tt></a>, see also <a href="https://github.com/mhjensen/Physics321/tree/master/doc/Literature" target="_blank"><tt>https://github.com/mhjensen/Physics321/tree/master/doc/Literature</tt></a>. Chapters 1.2 and 1.3 of Taylor.</p>
 
-<b>Recommended reading</b>: John R. Taylor, Classical Mechanics (Univ. Sci. Books 2005), <a href="https://www.uscibooks.com/taylor2.htm" target="_blank"><tt>https://www.uscibooks.com/taylor2.htm</tt></a>, see also <a href="https://github.com/mhjensen/Physics321/tree/master/doc/Literature" target="_blank"><tt>https://github.com/mhjensen/Physics321/tree/master/doc/Literature</tt></a>. Chapters 1.2 and 1.3 of Taylor.
-
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="classical-mechanics">Classical mechanics </h2>
 
-<h2 id="___sec1">Introduction to the course and where to find material </h2>
-
-<p>
-<a href="https://mediaspace.msu.edu/media/t/1_zzl90pfu" target="_blank">Overview video</a>
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec2">Classical mechanics </h2>
-
-<p>
-Classical mechanics is a topic which has been taught intensively over
+<p>Classical mechanics is a topic which has been taught intensively over
 several centuries. It is, with its many variants and ways of
 presenting the educational material, normally the first <b>real</b> physics
 course many of us meet and it lays the foundation for further physics
 studies. Many of the equations and ways of reasoning about the
 underlying laws of motion and pertinent forces, shape our approaches and understanding
 of the scientific method and discourse, as well as the way we develop our insights
-and deeper understanding about physical systems.
+and deeper understanding about physical systems.  
+</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="from-continuous-to-discretized-approaches">From Continuous to Discretized Approaches </h2>
 
-<h2 id="___sec3">From Continuous to Discretized Approaches </h2>
-
-<p>
-There is a wealth of
+<p>There is a wealth of
 well-tested (from both a physics point of view and a pedagogical
 standpoint) exercises and problems which can be solved
 analytically. However, many of these problems represent idealized and
@@ -257,9 +402,9 @@ at what we normally refer to as continuous models from which we may find an anal
 when teaching mechanics, it implies that we can seldomly venture beyond an idealized case
 in order to develop our understandings and insights about the
 underlying forces and laws of motion.
+</p>
 
-<p>
-We aim at changing this here by introducing throughout the course what
+<p>We aim at changing this here by introducing throughout the course what
 we will call a <b>computational path</b>, where with computations we mean
 solving scientific problems with all possible tools and means, from
 plain paper an pencil exercises, via symbolic calculations to writing
@@ -267,18 +412,17 @@ a code and running a program to solve a specific
 problem. Mathematically this normally means that we move from a
 continuous problem to a discretized one. This appproach enables us to
 solve a much broader class of problems.
-In mechanics this means, since we often rephrase the physical problems in terms of differential equations, that we can in most settings reuse the same program with some minimal changes.
+In mechanics this means, since we often rephrase the physical problems in terms of differential equations, that we can in most settings reuse the same program with some minimal changes. 
+</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="space-time-motion-reference-frames-and-reminder-on-vectors-and-other-mathematical-quantities">Space, Time, Motion, Reference Frames  and Reminder on vectors and other mathematical quantities </h2>
 
-<h2 id="___sec4">Space, Time, Motion, Reference Frames  and Reminder on vectors and other mathematical quantities </h2>
-
-<p>
-Our studies will start with the motion of different types of objects
+<p>Our studies will start with the motion of different types of objects
 such as a falling ball, a runner, a bicycle etc etc. It means that an
 object's position in space varies with time.
 In order to study such systems we need to define
+</p>
 
 <ul>
 <li> choice of origin</li>
@@ -286,8 +430,7 @@ In order to study such systems we need to define
 <li> choice of positive direction (left-handed or right-handed system of reference)</li>
 <li> choice of units and dimensions</li>
 </ul>
-
-These choices lead to some important questions such as
+<p>These choices lead to some important questions such as</p>
 
 <ul>
 <li> is the  physics of a system independent of the origin of the axes?</li>
@@ -295,18 +438,14 @@ These choices lead to some important questions such as
 <li> is the physics independent of the orientation of system?</li>
 <li> is the physics independent of the scale of the length?</li>
 </ul>
-
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="dimension-units-and-labels">Dimension, units and labels </h2>
 
-<h2 id="___sec5">Dimension, units and labels </h2>
-
-<p>
-Throughout this course we will use the standardized SI units. The standard unit for length is thus one meter 1m, for mass
+<p>Throughout this course we will use the standardized SI units. The standard unit for length is thus one meter 1m, for mass
 one kilogram 1kg, for time one second 1s, for force one Newton 1kgm/s$^2$ and for energy 1 Joule 1kgm$^2$s$^{-2}$.
+</p>
 
-<p>
-We will use the following notations for various variables (vectors are always boldfaced in these lecture notes):
-
+<p>We will use the following notations for various variables (vectors are always boldfaced in these lecture notes):</p>
 <ul>
 <li> position \( \boldsymbol{r} \), in one dimention we will normally just use \( x \),</li>
 <li> mass \( m \),</li>
@@ -318,19 +457,16 @@ We will use the following notations for various variables (vectors are always bo
 <li> potential energy \( V \) and</li>
 <li> frequency \( \omega \).</li>
 </ul>
+<p>More variables will be defined as we need them.</p>
 
-More variables will be defined as we need them.
-
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="dimensions-and-units">Dimensions and Units </h2>
 
-<h2 id="___sec6">Dimensions and Units </h2>
-
-<p>
-It is also important to keep track of dimensionalities. Don't mix this
+<p>It is also important to keep track of dimensionalities. Don't mix this
 up with a chosen unit for a given variable. We mark the dimensionality
 in these lectures as \( [a] \), where \( a \) is the quantity we are
 interested in. Thus
+</p>
 
 <ul>
 <li> \( [\boldsymbol{r}]= \) length</li>
@@ -342,22 +478,19 @@ interested in. Thus
 <li> \( [\boldsymbol{p}]= \) mass times length over time</li>
 <li> \( [\omega]= \) 1/time</li>
 </ul>
-
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="scalars-vectors-and-matrices">Scalars, Vectors and Matrices </h2>
 
-<h2 id="___sec7">Scalars, Vectors and Matrices </h2>
-
-<p>
-A scalar is something with a value that is independent of coordinate
+<p>A scalar is something with a value that is independent of coordinate
 system. Examples are mass, or the relative time between events. A
 vector has magnitude and direction. Under rotation, the magnitude
 stays the same but the direction changes. Scalars have no spatial
 index, whereas a three-dimensional vector has 3 indices, e.g. the
 position \( \boldsymbol{r} \) has components \( r_1,r_2,r_3 \), which are often
 referred to as \( x,y,z \).
+</p>
 
-<p>
-There are several categories of changes of coordinate system. The
+<p>There are several categories of changes of coordinate system. The
 observer can translate the origin, might move with a different
 velocity, or might rotate her/his coordinate axes. For instance, a
 particle's position vector changes when the origin is translated, but
@@ -366,110 +499,97 @@ quantities you thought of as scalars, such as time or an electric
 potential, are actually parts of four-dimensional vectors and that
 changes of the velocity of the reference frame act in a similar way to
 rotations.
+</p>
 
-<p>
-In addition to vectors and scalars, there are matrices, which have two
+<p>In addition to vectors and scalars, there are matrices, which have two
 indices. One also has objects with 3 or four indices. These are called
 tensors of rank \( n \), where \( n \) is the number of indices. A matrix is a
 rank-two tensor. The Levi-Civita symbol, \( \epsilon_{ijk} \) used for
 cross products of vectors, is a tensor of rank three.
+</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="definitions-of-vectors">Definitions  of Vectors </h2>
 
-<h2 id="___sec8">Definitions  of Vectors </h2>
-
-<p>
-In these lectures we will use boldfaced lower-case letters to label a
+<p>In these lectures we will use boldfaced lower-case letters to label a
 vector. A vector \( \boldsymbol{a} \) in three dimensions is thus defined as
+</p>
 
 $$
 \boldsymbol{a} =(a_x,a_y, a_z),
 $$
 
-and using the unit vectors (see below) in a cartesian system we have
+<p>and using the unit vectors (see below) in a cartesian system we have</p>
 $$
 \boldsymbol{a} = a_x\boldsymbol{e}_1+a_y\boldsymbol{e}_2+a_z\boldsymbol{e}_3,
 $$
 
-<p>
-where the unit vectors have magnitude \( \vert\boldsymbol{e}_i\vert = 1 \) with
+<p>where the unit vectors have magnitude \( \vert\boldsymbol{e}_i\vert = 1 \) with
 \( i=1=x \), \( i=2=y \) and \( i=3=z \). Some authors use letters
 \( \boldsymbol{i}=\boldsymbol{e}_1 \), \( \boldsymbol{j}=\boldsymbol{e}_2 \) and \( \boldsymbol{k}=\boldsymbol{e}_3 \).
+</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="other-ways-to-define-a-vector">Other ways to define a Vector </h2>
 
-<h2 id="___sec9">Other ways to define a Vector </h2>
-
-<p>
-Alternatively, you may also encounter the above vector as
+<p>Alternatively, you may also encounter the above vector as</p>
 $$
 \boldsymbol{a} = a_1\boldsymbol{e}_1+a_2\boldsymbol{e}_2+a_3\boldsymbol{e}_3.
 $$
 
-<p>
-Here we have used that \( a_1=a_x \), \( a_2=a_y \) and \( a_3=a_z \). Such a
+<p>Here we have used that \( a_1=a_x \), \( a_2=a_y \) and \( a_3=a_z \). Such a
 notation is sometimes more convenient if we wish to represent vector
 operations in a mathematically more compact way, see below here. We may also find this useful if  we want the different
-components to represent other coordinate systems that the Cartesian one. A typical example would be going from a Cartesian representation to a spherical basis. We will encounter such cases many times in this course.
+components to represent other coordinate systems that the Cartesian one. A typical example would be going from a Cartesian representation to a spherical basis. We will encounter such cases many times in this course. 
+</p>
 
-<p>
-We use lower-case letters for vectors and upper-case letters for matrices. Vectors and matrices are always boldfaced.
+<p>We use lower-case letters for vectors and upper-case letters for matrices. Vectors and matrices are always boldfaced.</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="polar-coordinates">Polar Coordinates </h2>
 
-<h2 id="___sec10">Polar Coordinates </h2>
-
-<p>
-As an example, consider a two-dimensional Cartesian system with a vector \( \boldsymbol{r}=(x,y) \).
+<p>As an example, consider a two-dimensional Cartesian system with a vector \( \boldsymbol{r}=(x,y) \).
 Our vector is then written as
+</p>
 $$
 \boldsymbol{r} = x\boldsymbol{e}_1+y\boldsymbol{e}_2.
 $$
 
-<p>
-Transforming to polar coordinates with the radius \( \rho\in [0,\infty) \)
+<p>Transforming to polar coordinates with the radius \( \rho\in [0,\infty) \)
 and the angle \( \phi \in [0,2\pi] \) we have the familiar transformations
+</p>
 
 $$
 x = \rho \cos{\phi} \hspace{0.5cm}   y = \rho \sin{\phi},
 $$
 
-<p>
-and the inverse relations 
+<p>and the inverse relations </p>
 
 $$
 \rho =\sqrt{x^2+y^2} \hspace{0.5cm}   \phi = \mathrm{arctan}(\frac{y}{x}).
 $$
 
-<p>
-We can rewrite the vector \( \boldsymbol{a} \) in terms of \( \rho \) and \( \phi \) as
+<p>We can rewrite the vector \( \boldsymbol{a} \) in terms of \( \rho \) and \( \phi \) as</p>
 
 $$
 \boldsymbol{a} = \rho \cos{\phi}\boldsymbol{e}_1+\rho \sin{\phi}\boldsymbol{e}_2,
 $$
 
-<p>
-and we define the new unit vectors as \( \boldsymbol{e}'_1=\cos{\phi}\boldsymbol{e}_1 \) and \( \boldsymbol{e}'_2=\sin{\phi}\boldsymbol{e}_2 \), we have
+<p>and we define the new unit vectors as \( \boldsymbol{e}'_1=\cos{\phi}\boldsymbol{e}_1 \) and \( \boldsymbol{e}'_2=\sin{\phi}\boldsymbol{e}_2 \), we have</p>
 
 $$
 \boldsymbol{a}' = \rho\boldsymbol{e}'_1+\rho \boldsymbol{e}'_2.
 $$
 
-<p>
-Below we will show that the norms of this vector in a Cartesian basis and a Polar basis are equal.
+<p>Below we will show that the norms of this vector in a Cartesian basis and a Polar basis are equal.</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="unit-vectors">Unit Vectors </h2>
 
-<h2 id="___sec11">Unit Vectors </h2>
-
-<p>
-Also known as basis vectors, unit vectors point in the direction of
+<p>Also known as basis vectors, unit vectors point in the direction of
 the coordinate axes, have unit norm, and are orthogonal to one
 another. Sometimes this is referred to as an orthonormal basis,
+</p>
 
 $$
 \begin{equation}
@@ -482,21 +602,18 @@ $$
 \end{equation}
 $$
 
-<p>
-Here, \( \delta_{ij} \) is unity when \( i=j \) and is zero otherwise. This is
+<p>Here, \( \delta_{ij} \) is unity when \( i=j \) and is zero otherwise. This is
 called the unit matrix, because you can multiply it with any other
 matrix and not change the matrix. The <b>dot</b> denotes the dot product,
 \( \boldsymbol{a}\cdot\boldsymbol{b}=a_1b_1+a_2b_2+a_3b_3=|a||b|\cos\theta_{ab} \). Sometimes
 the unit vectors are called \( \hat{x} \), \( \hat{y} \) and
 \( \hat{z} \).
+</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="our-definition-of-unit-vectors">Our definition of unit vectors </h2>
 
-<h2 id="___sec12">Our definition of unit vectors </h2>
-
-<p>
-Vectors can be decomposed in terms of unit vectors,
+<p>Vectors can be decomposed in terms of unit vectors,</p>
 
 $$
 \begin{equation}
@@ -505,38 +622,30 @@ $$
 \end{equation}
 $$
 
-<p>
-The vector components \( r_1 \), \( r_2 \) and \( r_3 \) might be
+<p>The vector components \( r_1 \), \( r_2 \) and \( r_3 \) might be
 called \( x \), \( y \) and \( z \) for a displacement. Another way to write this is to define the vector \( \boldsymbol{r}=(x,y,z) \).
+</p>
 
-<p>
-Similarly, for the velocity we will use in this course the components  \( \boldsymbol{v}=(v_x, v_y,v_z \). The accelaration is then given by \( \boldsymbol{a}=(a_x,a_y,a_z) \).
+<p>Similarly, for the velocity we will use in this course the components  \( \boldsymbol{v}=(v_x, v_y,v_z \). The accelaration is then given by \( \boldsymbol{a}=(a_x,a_y,a_z) \).</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="more-definitions-repeated-indices">More definitions, repeated indices </h2>
 
-<h2 id="___sec13">More definitions, repeated indices </h2>
-
-<p>
-As mentioned above, repeated indices infer sums.
+<p>As mentioned above, repeated indices infer sums.
 This means that when you encounter an expression like the one on the left-hand side here, it stands actually for a sum (right-hand side)
+</p>
 
 $$
 x_iy_i=\sum_i x_iy_i=\boldsymbol{x}\cdot\boldsymbol{y}.
 $$
 
-<p>
-We will in our lectures seldom use this notation and rather spell out the summations.  This inferred summation over indices is normally called <a href="https://en.wikipedia.org/wiki/Einstein_notation" target="_blank">Einstein summation convention</a>.
+<p>We will in our lectures seldom use this notation and rather spell out the summations.  This inferred summation over indices is normally called <a href="https://en.wikipedia.org/wiki/Einstein_notation" target="_blank">Einstein summation convention</a>.</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="vector-operations-scalar-product-or-dot-product">Vector Operations, Scalar Product (or dot product) </h2>
 
-<h2 id="___sec14">Vector Operations, Scalar Product (or dot product) </h2>
+<p>For two vectors \( \boldsymbol{a} \) and \( \boldsymbol{b} \) we have</p>
 
-<p>
-For two vectors \( \boldsymbol{a} \) and \( \boldsymbol{b} \) we have
-
-<p>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -547,53 +656,50 @@ $$
 \end{eqnarray*}
 $$
 
-or with a norm-2 notation
+<p>or with a norm-2 notation</p>
 $$
 |a|\equiv \vert\vert \boldsymbol{a}\vert\vert_2=\sqrt{\sum_i a_i^2}.
 $$
 </div>
 
 
-<p>
-Not of all of you are familiar with linear algebra. Numerically we will always deal with arrays and the dot product vector is given by the product of the transposed vector multiplied with the other vector, that is we have
+<p>Not of all of you are familiar with linear algebra. Numerically we will always deal with arrays and the dot product vector is given by the product of the transposed vector multiplied with the other vector, that is we have</p>
 $$
 \boldsymbol{a}^T\boldsymbol{b}=\sum_i a_ib_i=|a||b|\cos\theta_{ab}.
 $$
 
-The superscript \( T \) represents the transposition operations.
+<p>The superscript \( T \) represents the transposition operations. </p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="digression-linear-algebra-notation-for-vectors">Digression, Linear Algebra Notation for Vectors </h2>
 
-<h2 id="___sec15">Digression, Linear Algebra Notation for Vectors </h2>
-
-<p>
-As an example, consider a three-dimensional velocity defined by a vector \( \boldsymbol{v}=(v_x,v_y,v_z) \). For those of you familiar with linear algebra, we would write this quantity as
+<p>As an example, consider a three-dimensional velocity defined by a vector \( \boldsymbol{v}=(v_x,v_y,v_z) \). For those of you familiar with linear algebra, we would write this quantity as</p>
 $$
 \boldsymbol{v}=\begin{bmatrix} v_x\\ v_y \\ v_z \end{bmatrix},
 $$
 
-<p>
-and the transpose as
+<p>and the transpose as</p>
 $$
 \boldsymbol{v}^T=\begin{bmatrix} v_x & v_y &v_z \end{bmatrix}.
 $$
 
-<p>
-The norm is
+<p>The norm is</p>
 $$
 \boldsymbol{v}^T\boldsymbol{v}=v_x^2+v_y^2+v_z^2,
 $$
 
-as it should.
+<p>as it should.</p>
 
-<p>
-Since we will use Python as a programming language throughout this course, the above vector, using the package <b>numpy</b> (see discussions below), can be written as
+<p>Since we will use Python as a programming language throughout this course, the above vector, using the package <b>numpy</b> (see discussions below), can be written as</p>
 
-<p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
 <span style="color: #408080; font-style: italic"># Define the values of vx, vy and vz</span>
 vx <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
 vy <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>
@@ -602,47 +708,57 @@ v <span style="color: #666666">=</span> np<span style="color: #666666">.</span>a
 <span style="color: #008000">print</span>(v)
 <span style="color: #408080; font-style: italic"># The print the transpose of v</span>
 <span style="color: #008000">print</span>(v<span style="color: #666666">.</span>T)
-</pre></div>
-<p>
-Try to figure out how to calculate the norm with <b>numpy</b>.
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>Try to figure out how to calculate the norm with <b>numpy</b>.
 We will come back to <b>numpy</b> in the examples below.
+</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="norm-of-a-transformed-vector">Norm of a transformed Vector </h2>
 
-<h2 id="___sec16">Norm of a transformed Vector </h2>
-
-<p>
-As an example, consider our transformation of a two-dimensional Cartesian vector \( \boldsymbol{r} \) to polar coordinates.
+<p>As an example, consider our transformation of a two-dimensional Cartesian vector \( \boldsymbol{r} \) to polar coordinates.
 We had
+</p>
 $$
 \boldsymbol{r} = x\boldsymbol{e}_1+y\boldsymbol{e}_2.
 $$
 
-<p>
-Transforming to polar coordinates with the radius \( \rho\in [0,\infty) \)
+<p>Transforming to polar coordinates with the radius \( \rho\in [0,\infty) \)
 and the angle \( \phi \in [0,2\pi] \) we have 
+</p>
 
 $$
 x = \rho \cos{\phi} \hspace{0.5cm}   y = \rho \sin{\phi}.
 $$
 
-We can write this 
+<p>We can write this </p>
 $$
 \boldsymbol{r} = \begin{bmatrix} x \\ y \end{bmatrix}= \begin{bmatrix} \rho \cos{\phi}  \\ \rho \sin{\phi}  \end{bmatrix}.
 $$
 
-<p>
-The norm in Cartesian coordinates is \( \boldsymbol{r}\cdot\boldsymbol{r}=x^2+y^2 \) and
+<p>The norm in Cartesian coordinates is \( \boldsymbol{r}\cdot\boldsymbol{r}=x^2+y^2 \) and
 using Polar coordinates we have
 \( \rho^2(\cos{\phi})^2+\rho^2(\cos{\phi})^2=\rho^2 \), which shows that
 the norm is conserved since we have \( \rho = \sqrt{x^2+y^2} \). A
 transformation to a new basis should not change the norm.
+</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec17">Vector Product (or cross product) of vectors \( \boldsymbol{a} \) and \( \boldsymbol{b} \) </h2>
+<h2 id="vector-product-or-cross-product-of-vectors-boldsymbol-a-and-boldsymbol-b">Vector Product (or cross product) of vectors \( \boldsymbol{a} \) and \( \boldsymbol{b} \) </h2>
 
 $$
 \begin{eqnarray*}
@@ -651,12 +767,12 @@ c_i&=&\epsilon_{ijk}a_jb_k.
 \end{eqnarray*}
 $$
 
-<p>
-Here \( \epsilon \) is the third-rank anti-symmetric tensor, also known as
+<p>Here \( \epsilon \) is the third-rank anti-symmetric tensor, also known as
 the Levi-Civita symbol. It is \( \pm 1 \) only if all three indices are
 different, and is zero otherwise. The choice of \( \pm 1 \) depends on
 whether the indices are an even or odd permutation of the original
 symbols. The permutation \( xyz \) or \( 123 \) is considered to be \( +1 \). Its elements are
+</p>
 
 $$
 \begin{eqnarray}
@@ -670,13 +786,11 @@ $$
 \end{eqnarray}
 $$
 
-<p>
+
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="more-on-cross-products">More on cross-products </h2>
 
-<h2 id="___sec18">More on cross-products </h2>
-
-<p>
-You may have met cross-products when studying magnetic
+<p>You may have met cross-products when studying magnetic
 fields. Because the matrix is anti-symmetric, switching the \( x \) and
 \( y \) axes (or any two axes) flips the sign. If the coordinate system is
 right-handed, meaning the \( xyz \) axes satisfy
@@ -685,24 +799,23 @@ with your extended right index finger, the \( y \) axis with your
 contracted middle finger and the \( z \) axis with your extended
 thumb. Switching to a left-handed system flips the sign of the vector
 \( \boldsymbol{c}=\boldsymbol{a}\times\boldsymbol{b} \).
+</p>
 
-<p>
-Note that
+<p>Note that
 \( \boldsymbol{a}\times\boldsymbol{b}=-\boldsymbol{b}\times\boldsymbol{a} \). The vector \( \boldsymbol{c} \) is
 perpendicular to both \( \boldsymbol{a} \) and \( \boldsymbol{b} \) and the magnitude of
 \( \boldsymbol{c} \) is given by
+</p>
 
 $$
 |c|=|a||b|\sin{\theta_{ab}}.
 $$
 
-<p>
+
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="pseudo-vectors">Pseudo-vectors </h2>
 
-<h2 id="___sec19">Pseudo-vectors </h2>
-
-<p>
-Vectors obtained by the cross product of two real vectors are called
+<p>Vectors obtained by the cross product of two real vectors are called
 pseudo-vectors because the assignment of their direction can be
 arbitrarily flipped by defining the Levi-Civita symbol to be based on
 left-handed rules. Examples are the magnetic field and angular
@@ -717,97 +830,84 @@ electrons prefer to exit the decay parallel vs. antiparallel to the
 polarizing magnetic field, this constitutes parity violation because
 the direction of the outgoing electron momenta are a real vector. This
 is precisely what is observed in weak decays.
+</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="differentiation-of-a-vector-with-respect-to-a-scalar">Differentiation of a vector with respect to a scalar </h2>
 
-<h2 id="___sec20">Differentiation of a vector with respect to a scalar </h2>
-
-<p>
-For example, the
+<p>For example, the
 acceleration \( \boldsymbol{a} \) is given by the change in velocity per unit time, \( \boldsymbol{a}=d\boldsymbol{v}/dt \)
 with components
+</p>
 $$
 a_i = (d\boldsymbol{v}/dt)_i=\frac{dv_i}{dt}.
 $$
 
-<p>
-Here \( i=x,y,z \) or \( i=1,2,3 \) if we are in three dimensions.
+<p>Here \( i=x,y,z \) or \( i=1,2,3 \) if we are in three dimensions.</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="gradient-operator-nabla">Gradient operator \( \nabla \) </h2>
 
-<h2 id="___sec21">Gradient operator \( \nabla \) </h2>
-
-<p>
-This represents  the derivatives \( \partial/\partial
+<p>This represents  the derivatives \( \partial/\partial
 x \), \( \partial/\partial y \) and \( \partial/\partial z \). An often used shorthand is  \( \partial_x=\partial/\partial_x \).
+</p>
 
-<p>
-The gradient of a scalar function of position and time
+<p>The gradient of a scalar function of position and time
 \( \Phi(x,y,z)=\Phi(\boldsymbol{r},t) \) is given by
+</p>
 
 $$
 \boldsymbol{\nabla}~\Phi, 
 $$
 
-with components \( i \)
+<p>with components \( i \)</p>
 $$
 (\nabla\Phi(x,y,z,t))_i=\partial/\partial r_i\Phi(\boldsymbol{r},t)=\partial_i\Phi(\boldsymbol{r},t).
 $$
 
-Note that the gradient is a vector.
+<p>Note that the gradient is a vector.</p>
 
-<p>
-Taking the dot product of the gradient with a vector, normally called the divergence,
+<p>Taking the dot product of the gradient with a vector, normally called the divergence,
 we have
+</p>
 $$
 \mathrm{div} \boldsymbol{a}, \nabla\cdot\boldsymbol{a}=\sum_i \partial_i a_i.
 $$
 
-<p>
-Note that the divergence is a scalar.
+<p>Note that the divergence is a scalar. </p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="the-curl">The curl </h2>
 
-<h2 id="___sec22">The curl </h2>
-
-<p>
-The <b>curl</b> of a vector is defined as
+<p>The <b>curl</b> of a vector is defined as
 \( \nabla\times\boldsymbol{a} \),
+</p>
 
 $$
 {\rm\bf curl}~\boldsymbol{a},
 $$
 
-with components
+<p>with components</p>
 $$
 (\boldsymbol{\nabla}\times\boldsymbol{a})_i=\epsilon_{ijk}\partial_j a_k(\boldsymbol{r},t).
 $$
 
-<p>
+
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="the-laplacian">The Laplacian </h2>
 
-<h2 id="___sec23">The Laplacian </h2>
-
-<p>
-The Laplacian is referred to as \( \nabla^2 \) and is defined as
+<p>The Laplacian is referred to as \( \nabla^2 \) and is defined as</p>
 
 $$
 \boldsymbol{\nabla}^2=\boldsymbol{\nabla}\cdot\boldsymbol{\nabla}=\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2}.
 $$
 
-<p>
-Question: is the Laplacian a scalar or a vector?
+<p>Question: is the Laplacian a scalar or a vector?</p>
 
-<p>
 <!-- !split  -->
+<h2 id="some-identities">Some identities </h2>
 
-<h2 id="___sec24">Some identities </h2>
-
-<p>
-Here we simply state these, but you may wish to prove a few. They are useful for this class and will be essential when you study electromagnetism.
+<p>Here we simply state these, but you may wish to prove a few. They are useful for this class and will be essential when you study electromagnetism.</p>
 
 $$
 \begin{eqnarray}
@@ -820,61 +920,54 @@ $$
 \end{eqnarray}
 $$
 
-<p>
+
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="more-useful-relations">More useful relations </h2>
 
-<h2 id="___sec25">More useful relations </h2>
-
-<p>
-Using the fact that multiplication of reals is distributive we can show that
+<p>Using the fact that multiplication of reals is distributive we can show that</p>
 $$
 \boldsymbol{a}(\boldsymbol{b}+\boldsymbol{c})=\boldsymbol{a}\boldsymbol{b}+\boldsymbol{a}\boldsymbol{c},
 $$
 
-Similarly we can also show that (using product rule for differentiating reals)
+<p>Similarly we can also show that (using product rule for differentiating reals)</p>
 $$
 \frac{d}{dt}(\boldsymbol{a}\boldsymbol{b})=\boldsymbol{a}\frac{d\boldsymbol{b}}{dt}+\boldsymbol{b}\frac{d\boldsymbol{a}}{dt}.
 $$
 
-<p>
-We can repeat these operations for the cross products and show that they are distribuitive
+<p>We can repeat these operations for the cross products and show that they are distribuitive</p>
 $$
 \boldsymbol{a}\times(\boldsymbol{b}+\boldsymbol{c})=\boldsymbol{a}\times\boldsymbol{b}+\boldsymbol{a}\times\boldsymbol{c}.
 $$
 
-We have also that
+<p>We have also that</p>
 $$
 \frac{d}{dt}(\boldsymbol{a}\times\boldsymbol{b})=\boldsymbol{a}\times\frac{d\boldsymbol{b}}{dt}+\boldsymbol{b}\times\frac{d\boldsymbol{a}}{dt}.
 $$
 
-<p>
+
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="gauss-s-theorem">Gauss's Theorem  </h2>
 
-<h2 id="___sec26">Gauss's Theorem  </h2>
-
-<p>
-For an integral over a volume \( V \) confined by a surface \( S \), Gauss's theorem gives
+<p>For an integral over a volume \( V \) confined by a surface \( S \), Gauss's theorem gives</p>
 
 $$
 \int_V dv~\nabla\cdot\boldsymbol{A}=\int_Sd\boldsymbol{S}\cdot\boldsymbol{A}.
 $$
 
-<p>
-For a closed path \( C \) which carves out some area \( S \), 
+<p>For a closed path \( C \) which carves out some area \( S \), </p>
 
 $$
 \int_C d\boldsymbol{\ell}\cdot\boldsymbol{A}=\int_Sd\boldsymbol{s} \cdot(\nabla\times\boldsymbol{A})
 $$
 
-<p>
+
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="and-stokes-s-theorem">and Stokes's Theorem </h2>
 
-<h2 id="___sec27">and Stokes's Theorem </h2>
-
-<p>
-Stoke's law can be understood by considering a small rectangle,
+<p>Stoke's law can be understood by considering a small rectangle,
 \( -\Delta x < x < \Delta x \), \( -\Delta y < y < \Delta y \). The path integral
 around the edges is
+</p>
 
 $$
 \begin{eqnarray}
@@ -888,19 +981,16 @@ $$
 \end{eqnarray}
 $$
 
-<p>
-Here \( \Delta S \) is the area of the surface element.
+<p>Here \( \Delta S \) is the area of the surface element.</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="basic-matrix-features">Basic Matrix Features </h2>
 
-<h2 id="___sec28">Basic Matrix Features </h2>
-
-<p>
-<b>Note</b>: The material on matrices is optional and will not be used much
+<p><b>Note</b>: The material on matrices is optional and will not be used much
 (except for illustrations at the very end on garmonic oscillations)
 since most of you have not yet taken a course on linear algebra. The
 material is however included here for the sake of completeness.
+</p>
 
 $$
  \mathbf{A} =
@@ -917,20 +1007,18 @@ $$
              \end{bmatrix}
 $$
 
-<p>
+
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="inverse-of-a-matrix">Inverse of a Matrix </h2>
 
-<h2 id="___sec29">Inverse of a Matrix </h2>
-
-<p>
-The inverse of a matrix is defined by
+<p>The inverse of a matrix is defined by</p>
 
 $$
 \mathbf{A}^{-1} \cdot \mathbf{A} = I
 $$
 
-<p>
-<table border="1">
+
+<table class="dotable" border="1">
 <thead>
 <tr><th align="center">                Relations                 </th> <th align="center">      Name     </th> <th align="center">                              matrix elements                              </th> </tr>
 </thead>
@@ -942,10 +1030,9 @@ $$
 <tr><td align="center">   \( A = \left (A^{\dagger} \right )^{-1} \)    </td> <td align="center">   unitary            </td> <td align="center">   \( \sum_k a_{ik} a_{jk}^{ * } = \sum_k a_{ki}^{ * } a_{kj} = \delta_{ij} \)    </td> </tr>
 </tbody>
 </table>
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec30">Some famous Matrices </h2>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="some-famous-matrices">Some famous Matrices </h2>
 
 <ul>
   <li> Diagonal if \( a_{ij}=0 \) for \( i\ne j \)</li>
@@ -958,16 +1045,13 @@ $$
   <li> Upper banded with bandwidth \( p \): \( a_{ij}=0 \) for \( i < j+p \)</li>
   <li> Banded, block upper triangular, block lower triangular....</li>
 </ul>
-
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="more-basic-matrix-features">More Basic Matrix Features </h2>
 
-<h2 id="___sec31">More Basic Matrix Features </h2>
-
-<p>
 <div class="alert alert-block alert-block alert-text-normal">
-<b>Some Equivalent Statements.</b>
+<b>Some Equivalent Statements</b>
 <p>
-For an \( N\times N \) matrix  \( \mathbf{A} \) the following properties are all equivalent
+<p>For an \( N\times N \) matrix  \( \mathbf{A} \) the following properties are all equivalent</p>
 
 <ul>
   <li> If the inverse of \( \mathbf{A} \) exists, \( \mathbf{A} \) is nonsingular.</li>
@@ -980,13 +1064,10 @@ For an \( N\times N \) matrix  \( \mathbf{A} \) the following properties are all
 </div>
 
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="rotations">Rotations </h2>
 
-<h2 id="___sec32">Rotations </h2>
-
-<p>
-Here, we use rotations as an example of matrices and their operations. One can consider a different orthonormal basis \( \hat{e}'_1 \), \( \hat{e}'_2 \) and \( \hat{e}'_3 \). The same vector \( \boldsymbol{r} \) mentioned above can also be expressed in the new basis,
+<p>Here, we use rotations as an example of matrices and their operations. One can consider a different orthonormal basis \( \hat{e}'_1 \), \( \hat{e}'_2 \) and \( \hat{e}'_3 \). The same vector \( \boldsymbol{r} \) mentioned above can also be expressed in the new basis,</p>
 
 $$
 \begin{equation}
@@ -995,10 +1076,10 @@ $$
 \end{equation}
 $$
 
-<p>
-Even though it is the same vector, the components have changed. Each
+<p>Even though it is the same vector, the components have changed. Each
 new unit vector \( \hat{e}'_i \) can be expressed as a linear sum of the
 previous vectors,
+</p>
 
 $$
 \begin{equation}
@@ -1007,8 +1088,7 @@ $$
 \end{equation}
 $$
 
-<p>
-and the matrix \( U \) can be found by taking the dot product of both sides with \( \hat{e}_k \),
+<p>and the matrix \( U \) can be found by taking the dot product of both sides with \( \hat{e}_k \),</p>
 
 $$
 \begin{eqnarray}
@@ -1019,15 +1099,14 @@ $$
 \end{eqnarray}
 $$
 
-<p>
+
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="more-on-the-matrix-u">More on the matrix \( U \) </h2>
 
-<h2 id="___sec33">More on the matrix \( U \) </h2>
-
-<p>
-Thus, the matrix lambda has components \( U_{ij} \) that are equal to the
+<p>Thus, the matrix lambda has components \( U_{ij} \) that are equal to the
 cosine of the angle between new unit vector \( \hat{e}'_i \) and the old
 unit vector \( \hat{e}_j \).
+</p>
 
 $$
 \begin{equation}
@@ -1040,13 +1119,11 @@ U = \begin{bmatrix}
 \end{equation}
 $$
 
-<p>
+
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="properties-of-the-matrix-u">Properties of the matrix \( U \) </h2>
 
-<h2 id="___sec34">Properties of the matrix \( U \) </h2>
-
-<p>
-Note that the matrix is not symmetric, \( U_{ij}\ne U_{ji} \). One can also look at the inverse transformation, by switching the primed and unprimed coordinates,
+<p>Note that the matrix is not symmetric, \( U_{ij}\ne U_{ji} \). One can also look at the inverse transformation, by switching the primed and unprimed coordinates,</p>
 
 $$
 \begin{eqnarray}
@@ -1057,8 +1134,7 @@ U^{-1}_{ij}&=&\hat{e}_i\cdot\hat{e}'_j=U_{ji}.
 \end{eqnarray}
 $$
 
-<p>
-The definition of transpose of a matrix, \( M^{t}_{ij}=M_{ji} \), allows one to state this as
+<p>The definition of transpose of a matrix, \( M^{t}_{ij}=M_{ji} \), allows one to state this as</p>
 
 $$
 \begin{eqnarray}
@@ -1067,17 +1143,15 @@ U^{-1}&=&U^{t}.
 \end{eqnarray}
 $$
 
-<p>
+
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="tensors">Tensors </h2>
 
-<h2 id="___sec35">Tensors </h2>
-
-<p>
-A tensor obeying Eq. \eqref{eq:transposedef} defines what is known as
+<p>A tensor obeying Eq. \eqref{eq:transposedef} defines what is known as
 a unitary, or orthogonal, transformation.
+</p>
 
-<p>
-The matrix \( U \) can be used to transform any vector to the new basis. Consider a vector
+<p>The matrix \( U \) can be used to transform any vector to the new basis. Consider a vector</p>
 
 $$
 \begin{eqnarray}
@@ -1087,12 +1161,12 @@ $$
 \end{eqnarray}
 $$
 
-<p>
-This is the same vector expressed as a sum over two different sets of
+<p>This is the same vector expressed as a sum over two different sets of
 basis vectors. The coefficients \( r_i \) and \( r'_i \) represent components
 of the same vector. The relation between them can be found by taking
 the dot product of each side with one of the unit vectors,
 \( \hat{e}_i \), which gives
+</p>
 
 $$
 \begin{eqnarray}
@@ -1100,8 +1174,7 @@ r_i&=&\sum_j \hat{e}_i\cdot\hat{e}'_j~r'_j.
 \end{eqnarray}
 $$
 
-<p>
-Using Eq. \eqref{eq:inverseU} one can see that the transformation of \( r \) can be also written in terms of \( U \),
+<p>Using Eq. \eqref{eq:inverseU} one can see that the transformation of \( r \) can be also written in terms of \( U \),</p>
 
 $$
 \begin{eqnarray}
@@ -1110,25 +1183,22 @@ r_i&=&\sum_jU^{-1}_{ij}~r'_j.
 \end{eqnarray}
 $$
 
-<p>
-Thus, the matrix that transforms the coordinates of the unit vectors,
+<p>Thus, the matrix that transforms the coordinates of the unit vectors,
 Eq. \eqref{eq:inverseU} is the same one that transforms the
 coordinates of a vector, Eq. \eqref{eq:rotateR}.
+</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="rotation-matrix">Rotation matrix </h2>
 
-<h2 id="___sec36">Rotation matrix </h2>
-
-<p>
-As a small exercise, find the rotation matrix \( U \) for finding the
+<p>As a small exercise, find the rotation matrix \( U \) for finding the
 components in the primed coordinate system given from those in the
 unprimed system, given that the unit vectors in the new system are
 found by rotating the coordinate system by and angle \( \phi \) about the
 \( z \) axis.
+</p>
 
-<p>
-In this case
+<p>In this case</p>
 
 $$
 \begin{eqnarray*}
@@ -1138,7 +1208,7 @@ $$
 \end{eqnarray*}
 $$
 
-By inspecting Eq. \eqref{eq:lambda_angles}, we get
+<p>By inspecting Eq. \eqref{eq:lambda_angles}, we get</p>
 
 $$
 U=\left(\begin{array}{ccc}
@@ -1147,14 +1217,13 @@ U=\left(\begin{array}{ccc}
 0&0&1\end{array}\right).
 $$
 
-<p>
+
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="unitary-transformations">Unitary Transformations </h2>
 
-<h2 id="___sec37">Unitary Transformations </h2>
-
-<p>
-Under a unitary transformation \( U \) (or basis transformation) scalars
+<p>Under a unitary transformation \( U \) (or basis transformation) scalars
 are unchanged, whereas vectors \( \boldsymbol{r} \) and matrices \( M \) change as
+</p>
 
 $$
 \begin{eqnarray}
@@ -1164,13 +1233,13 @@ M'_{ij}&=&U_{ik}M_{km}U^{-1}_{mj}.
 \end{eqnarray}
 $$
 
-<p>
-Physical quantities with no spatial indices are scalars (or
+<p>Physical quantities with no spatial indices are scalars (or
 pseudoscalars if they depend on right-handed vs. left-handed
 coordinate systems), and are unchanged by unitary
 transformations. This includes quantities like the trace of a matrix,
 the matrix itself had indices but none remain after performing the
 trace.
+</p>
 
 $$
 \begin{eqnarray}
@@ -1178,8 +1247,7 @@ $$
 \end{eqnarray}
 $$
 
-<p>
-Because there are no remaining indices, one expects it to be a scalar. Indeed one can see this,
+<p>Because there are no remaining indices, one expects it to be a scalar. Indeed one can see this,</p>
 
 $$
 \begin{eqnarray}
@@ -1193,51 +1261,45 @@ $$
 \end{eqnarray}
 $$
 
-<p>
-A similar example is the determinant of a matrix, which is also a scalar.
+<p>A similar example is the determinant of a matrix, which is also a scalar.</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="numerical-elements">Numerical Elements </h2>
 
-<h2 id="___sec38">Numerical Elements </h2>
-
-<p>
-Numerical algorithms call for approximate discrete models and much of
+<p>Numerical algorithms call for approximate discrete models and much of
 the development of methods for continuous models are nowadays being
 replaced by methods for discrete models in science and industry,
 simply because <b>much larger classes of problems can be addressed</b> with
 discrete models, often by simpler and more generic methodologies.
+</p>
 
-<p>
-As we will see throughout this course, when properly scaling the equations at hand,
+<p>As we will see throughout this course, when properly scaling the equations at hand,
 discrete models open up for more advanced abstractions and the possibility to
 study  real life systems, with the added bonus that we can explore and
 deepen our basic understanding of various physical systems
+</p>
 
-<p>
-Analytical solutions are as important as before. In addition, such
+<p>Analytical solutions are as important as before. In addition, such
 solutions provide us with invaluable benchmarks and tests for our
 discrete models. Such benchmarks, as we will see below, allow us 
 to discuss possible sources of errors and their behaviors.  And
 finally, since most of our models are based on various algorithms from
 numerical mathematics, we have a unique oppotunity to gain a deeper
 understanding of the mathematical approaches we are using.
+</p>
 
-<p>
-With computing and data science as important elements in essentially
+<p>With computing and data science as important elements in essentially
 all aspects of a modern society, we could  then try to define Computing as
 <b>solving scientific problems using all possible tools, including
 symbolic computing, computers and numerical algorithms, and analytical
 paper and pencil solutions</b>. 
 Computing provides us with the tools to develope our own understanding of the scientific method by enhancing algorithmic thinking.
+</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="computations-and-the-scientific-method">Computations and the Scientific Method </h2>
 
-<h2 id="___sec39">Computations and the Scientific Method </h2>
-
-<p>
-The way we will teach this course reflects this definition of
+<p>The way we will teach this course reflects this definition of
 computing. The course contains both classical paper and pencil
 exercises as well as computational projects and exercises. The hope is
 that this will allow you to explore the physics of systems governed by
@@ -1245,20 +1307,18 @@ the degrees of freedom of classical mechanics at a deeper level, and
 that these insights about the scientific method will help you to
 develop a better understanding of how the underlying forces and
 equations of motion and how they impact a given system.
+</p>
 
-<p>
-Furthermore,
+<p>Furthermore,
 by introducing various numerical methods via computational projects
 and exercises, we aim at developing your competences and skills about
 these topics.
+</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="computational-competences">Computational Competences </h2>
 
-<h2 id="___sec40">Computational Competences </h2>
-
-<p>
-These competences will enable you to
+<p>These competences will enable you to</p>
 
 <ul>
 <li> understand how algorithms are used to solve mathematical problems,</li>
@@ -1267,11 +1327,9 @@ These competences will enable you to
 <li> use these algorithms to construct reproducible scientific outcomes and to engage in science in ethical ways, and</li>
 <li> think algorithmically for the purposes of gaining deeper insights about scientific problems.</li>
 </ul>
+<p>All these elements are central for maturing and gaining a better understanding of the modern scientific process <em>per se</em>.</p>
 
-All these elements are central for maturing and gaining a better understanding of the modern scientific process <em>per se</em>.
-
-<p>
-The power of the scientific method lies in identifying a given problem
+<p>The power of the scientific method lies in identifying a given problem
 as a special case of an abstract class of problems, identifying
 general solution methods for this class of problems, and applying a
 general method to the specific problem (applying means, in the case of
@@ -1280,35 +1338,38 @@ numerical computing by ready-made and/or self-written software). This
 generic view on problems and methods is particularly important for
 understanding how to apply available, generic software to solve a
 particular problem.
+</p>
 
-<p>
 <em>However, verification of algorithms and understanding their limitations requires much of the classical knowledge about continuous models.</em>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="a-well-known-example-to-illustrate-many-of-the-above-concepts">A well-known example to illustrate many of the above concepts </h2>
 
-<h2 id="___sec41">A well-known example to illustrate many of the above concepts </h2>
-
-<p>
-Before we venture into a reminder on Python and mechanics relevant applications, let us briefly outline some of the
+<p>Before we venture into a reminder on Python and mechanics relevant applications, let us briefly outline some of the
 abovementioned topics using an example many of you may have seen before in for example CMSE201. 
 A simple algorithm for integration is the Trapezoidal rule. 
 Integration of a function \( f(x) \) by the Trapezoidal Rule is given by following algorithm for an interval \( x \in [a,b] \)
+</p>
 $$
   \int_a^b(f(x) dx = \frac{1}{2}\left [f(a)+2f(a+h)+\dots+2f(b-h)+f(b)\right] +O(h^2),
 $$
 
-where \( h \) is the so-called stepsize defined by the number of integration points \( N \) as \( h=(b-a)/(n) \).
+<p>where \( h \) is the so-called stepsize defined by the number of integration points \( N \) as \( h=(b-a)/(n) \).
 Python offers an  extremely versatile programming  environment, allowing for
 the inclusion of analytical studies in a numerical program. Here we show an
 example code with the <b>trapezoidal rule</b>. We use also <b>SymPy</b> to evaluate the exact value of the integral and compute the absolute error
 with respect to the numerically evaluated one of the integral
 \( \int_0^1 dx x^2 = 1/3 \).
 The following code for  the trapezoidal rule allows you  to plot the relative error by comparing with the exact result. By increasing to \( 10^8 \) points one arrives at a region where numerical errors start to accumulate.
-<p>
+</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> log10
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> log10
 <span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
 <span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">sympy</span> <span style="color: #008000; font-weight: bold">import</span> Symbol, integrate
 <span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
@@ -1343,15 +1404,28 @@ plt<span style="color: #666666">.</span>plot(n,y, <span style="color: #BA2121">&
 plt<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">&#39;n&#39;</span>)
 plt<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">&#39;Relative error&#39;</span>)
 plt<span style="color: #666666">.</span>show()
-</pre></div>
-<p>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="analyzing-the-above-example">Analyzing the above example </h2>
 
-<h2 id="___sec42">Analyzing the above example </h2>
-
-<p>
-This example shows the potential of combining numerical algorithms
+<p>This example shows the potential of combining numerical algorithms
 with symbolic calculations, allowing us to
+</p>
 
 <ul>
 <li> Validate and verify  their  algorithms.</li> 
@@ -1360,81 +1434,74 @@ with symbolic calculations, allowing us to
 <li> The above example allows the student to also test the mathematical error of the algorithm for the trapezoidal rule by changing the number of integration points. The students get <b>trained from day one to think error analysis</b>.</li> 
 <li> With a Jupyter notebook you can keep exploring similar examples and turn them in as your own notebooks.</li> 
 </ul>
-
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="python-practicalities-software-and-needed-installations">Python practicalities, Software and needed installations </h2>
 
-<h2 id="___sec43">Python practicalities, Software and needed installations </h2>
-
-<p>
-We will make extensive use of Python as programming language and its
+<p>We will make extensive use of Python as programming language and its
 myriad of available libraries.  You will find
-Jupyter notebooks invaluable in your work.
+Jupyter notebooks invaluable in your work.  
+</p>
 
-<p>
-If you have Python installed (we strongly recommend Python3) and you feel
+<p>If you have Python installed (we strongly recommend Python3) and you feel
 pretty familiar with installing different packages, we recommend that
 you install the following Python packages via <b>pip</b> as 
+</p>
 
 <ol>
 <li> pip install numpy scipy matplotlib ipython scikit-learn mglearn sympy pandas pillow</li> 
 </ol>
+<p>For Python3, replace <b>pip</b> with <b>pip3</b>.</p>
 
-For Python3, replace <b>pip</b> with <b>pip3</b>.
-
-<p>
-For OSX users we recommend, after having installed Xcode, to
+<p>For OSX users we recommend, after having installed Xcode, to
 install <b>brew</b>. Brew allows for a seamless installation of additional
 software via for example 
+</p>
 
 <ol>
 <li> brew install python3</li>
 </ol>
-
-For Linux users, with its variety of distributions like for example the widely popular Ubuntu distribution,
+<p>For Linux users, with its variety of distributions like for example the widely popular Ubuntu distribution,
 you can use <b>pip</b> as well and simply install Python as 
+</p>
 
 <ol>
 <li> sudo apt-get install python3  (or python for pyhton2.7)</li>
 </ol>
+<p>etc etc. </p>
+<h2 id="python-installers">Python installers </h2>
 
-etc etc.
-
-<h2 id="___sec44">Python installers </h2>
-
-<p>
-If you don't want to perform these operations separately and venture
+<p>If you don't want to perform these operations separately and venture
 into the hassle of exploring how to set up dependencies and paths, we
 recommend two widely used distrubutions which set up all relevant
 dependencies for Python, namely 
+</p>
 
 <ul>
 <li> <a href="https://docs.anaconda.com/" target="_blank">Anaconda</a>,</li> 
 </ul>
-
-which is an open source
+<p>which is an open source
 distribution of the Python and R programming languages for large-scale
 data processing, predictive analytics, and scientific computing, that
 aims to simplify package management and deployment. Package versions
 are managed by the package management system <b>conda</b>. 
+</p>
 
 <ul>
 <li> <a href="https://www.enthought.com/product/canopy/" target="_blank">Enthought canopy</a></li> 
 </ul>
-
-is a Python
+<p>is a Python
 distribution for scientific and analytic computing distribution and
 analysis environment, available for free and under a commercial
 license.
+</p>
 
-<p>
-Furthermore, <a href="https://colab.research.google.com/notebooks/welcome.ipynb" target="_blank">Google's Colab</a> is a free Jupyter notebook environment that requires 
+<p>Furthermore, <a href="https://colab.research.google.com/notebooks/welcome.ipynb" target="_blank">Google's Colab</a> is a free Jupyter notebook environment that requires 
 no setup and runs entirely in the cloud. Try it out!
+</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec45">Useful Python libraries </h2>
-Here we list several useful Python libraries we strongly recommend (if you use anaconda many of these are already there)
+<h2 id="useful-python-libraries">Useful Python libraries </h2>
+<p>Here we list several useful Python libraries we strongly recommend (if you use anaconda many of these are already there)</p>
 
 <ul>
 <li> <a href="https://www.numpy.org/" target="_blank">NumPy</a> is a highly popular library for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays</li>
@@ -1449,228 +1516,489 @@ Here we list several useful Python libraries we strongly recommend (if you use a
 <li> <a href="https://keras.io/" target="_blank">Keras</a> is a high-level neural networks API, written in Python and capable of running on top of TensorFlow, CNTK, or Theano</li>
 <li> And many more such as <a href="https://pytorch.org/" target="_blank">pytorch</a>,  <a href="https://pypi.org/project/Theano/" target="_blank">Theano</a> etc</li> 
 </ul>
-
-Your jupyter notebook can easily be
+<p>Your jupyter notebook can easily be
 converted into a nicely rendered <b>PDF</b> file or a Latex file for
-further processing. For example, convert to latex as
+further processing. For example, convert to latex as 
+</p>
 
-<p>
 
-<!-- code=text typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>pycod jupyter nbconvert filename.ipynb --to latex 
-</pre></div>
-<p>
-And to add more versatility, the Python package <a href="http://www.sympy.org/en/index.html" target="_blank">SymPy</a> is a Python library for symbolic mathematics. It aims to become a full-featured computer algebra system (CAS)  and is entirely written in Python.
+<!-- code=text (!bc dat) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;">pycod jupyter nbconvert filename.ipynb --to latex 
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
+<p>And to add more versatility, the Python package <a href="http://www.sympy.org/en/index.html" target="_blank">SymPy</a> is a Python library for symbolic mathematics. It aims to become a full-featured computer algebra system (CAS)  and is entirely written in Python. </p>
+
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="numpy-examples-and-important-matrix-and-vector-handling-packages">Numpy examples and Important Matrix and vector handling packages </h2>
 
-<h2 id="___sec46">Numpy examples and Important Matrix and vector handling packages </h2>
-
-<p>
-There are several central software libraries for linear algebra and eigenvalue problems. Several of the more
+<p>There are several central software libraries for linear algebra and eigenvalue problems. Several of the more
 popular ones have been wrapped into ofter software packages like those from the widely used text <b>Numerical Recipes</b>. The original source codes in many of the available packages are often taken from the widely used
 software package LAPACK, which follows two other popular packages
 developed in the 1970s, namely EISPACK and LINPACK.  We describe them shortly here.
+</p>
 
 <ul>
   <li> LINPACK: package for linear equations and least square problems.</li>
   <li> LAPACK:package for solving symmetric, unsymmetric and generalized eigenvalue problems. From LAPACK's website <a href="http://www.netlib.org" target="_blank"><tt>http://www.netlib.org</tt></a> it is possible to download for free all source codes from this library. Both C/C++ and Fortran versions are available.</li>
   <li> BLAS (I, II and III): (Basic Linear Algebra Subprograms) are routines that provide standard building blocks for performing basic vector and matrix operations. Blas I is vector operations, II vector-matrix operations and III matrix-matrix operations. Highly parallelized and efficient codes, all available for download from <a href="http://www.netlib.org" target="_blank"><tt>http://www.netlib.org</tt></a>.</li>
 </ul>
-
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="numpy-and-arrays">Numpy and arrays </h2>
 
-<h2 id="___sec47">Numpy and arrays </h2>
+<p><a href="http://www.numpy.org/" target="_blank">Numpy</a> provides an easy way to handle arrays in Python. The standard way to import this library is as</p>
 
-<p>
-<a href="http://www.numpy.org/" target="_blank">Numpy</a> provides an easy way to handle arrays in Python. The standard way to import this library is as
-
-<p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
-</pre></div>
-<p>
-Here follows a simple example where we set up an array of ten elements, all determined by random numbers drawn according to the normal distribution,
-<p>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>Here follows a simple example where we set up an array of ten elements, all determined by random numbers drawn according to the normal distribution,</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>n <span style="color: #666666">=</span> <span style="color: #666666">10</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;">n <span style="color: #666666">=</span> <span style="color: #666666">10</span>
 x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>random<span style="color: #666666">.</span>normal(size<span style="color: #666666">=</span>n)
 <span style="color: #008000">print</span>(x)
-</pre></div>
-<p>
-We defined a vector \( x \) with \( n=10 \) elements with its values given by the Normal distribution \( N(0,1) \).
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>We defined a vector \( x \) with \( n=10 \) elements with its values given by the Normal distribution \( N(0,1) \).
 Another alternative is to declare a vector as follows
-<p>
+</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
 x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">1</span>, <span style="color: #666666">2</span>, <span style="color: #666666">3</span>])
 <span style="color: #008000">print</span>(x)
-</pre></div>
-<p>
-Here we have defined a vector with three elements, with \( x_0=1 \), \( x_1=2 \) and \( x_2=3 \). Note that both Python and C++
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>Here we have defined a vector with three elements, with \( x_0=1 \), \( x_1=2 \) and \( x_2=3 \). Note that both Python and C++
 start numbering array elements from \( 0 \) and on. This means that a vector with \( n \) elements has a sequence of entities \( x_0, x_1, x_2, \dots, x_{n-1} \). We could also let (recommended) Numpy to compute the logarithms of a specific array as
-<p>
+</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
 x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>log(np<span style="color: #666666">.</span>array([<span style="color: #666666">4</span>, <span style="color: #666666">7</span>, <span style="color: #666666">8</span>]))
 <span style="color: #008000">print</span>(x)
-</pre></div>
-<p>
-In the last example we used Numpy's unary function \( np.log \). This function is
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>In the last example we used Numpy's unary function \( np.log \). This function is
 highly tuned to compute array elements since the code is vectorized
 and does not require looping. We normaly recommend that you use the
 Numpy intrinsic functions instead of the corresponding <b>log</b> function
 from Python's <b>math</b> module. The looping is done explicitely by the
 <b>np.log</b> function. The alternative, and slower way to compute the
 logarithms of a vector would be to write
+</p>
 
-<p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
 <span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> log
 x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">4</span>, <span style="color: #666666">7</span>, <span style="color: #666666">8</span>])
 <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">0</span>, <span style="color: #008000">len</span>(x)):
     x[i] <span style="color: #666666">=</span> log(x[i])
 <span style="color: #008000">print</span>(x)
-</pre></div>
-<p>
-We note that our code is much longer already and we need to import the <b>log</b> function from the <b>math</b> module. 
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>We note that our code is much longer already and we need to import the <b>log</b> function from the <b>math</b> module. 
 The attentive reader will also notice that the output is \( [1, 1, 2] \). Python interprets automagically our numbers as integers (like the <b>automatic</b> keyword in C++). To change this we could define our array elements to be double precision numbers as
-<p>
+</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
 x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>log(np<span style="color: #666666">.</span>array([<span style="color: #666666">4</span>, <span style="color: #666666">7</span>, <span style="color: #666666">8</span>], dtype <span style="color: #666666">=</span> np<span style="color: #666666">.</span>float64))
 <span style="color: #008000">print</span>(x)
-</pre></div>
-<p>
-or simply write them as double precision numbers (Python uses 64 bits as default for floating point type variables), that is
-<p>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>or simply write them as double precision numbers (Python uses 64 bits as default for floating point type variables), that is</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
 x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>log(np<span style="color: #666666">.</span>array([<span style="color: #666666">4.0</span>, <span style="color: #666666">7.0</span>, <span style="color: #666666">8.0</span>])
 <span style="color: #008000">print</span>(x)
-</pre></div>
-<p>
-To check the number of bytes (remember that one byte contains eight bits for double precision variables), you can use simple use the <b>itemsize</b> functionality (the array \( x \) is actually an object which inherits the functionalities defined in Numpy) as 
-<p>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>To check the number of bytes (remember that one byte contains eight bits for double precision variables), you can use simple use the <b>itemsize</b> functionality (the array \( x \) is actually an object which inherits the functionalities defined in Numpy) as </p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
 x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>log(np<span style="color: #666666">.</span>array([<span style="color: #666666">4.0</span>, <span style="color: #666666">7.0</span>, <span style="color: #666666">8.0</span>])
 <span style="color: #008000">print</span>(x<span style="color: #666666">.</span>itemsize)
-</pre></div>
-<p>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="matrices-in-python">Matrices in Python </h2>
 
-<h2 id="___sec48">Matrices in Python </h2>
-
-<p>
-Having defined vectors, we are now ready to try out matrices. We can
+<p>Having defined vectors, we are now ready to try out matrices. We can
 define a \( 3 \times 3  \) real matrix \( \hat{A} \) as (recall that we user
 lowercase letters for vectors and uppercase letters for matrices)
+</p>
 
-<p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
 A <span style="color: #666666">=</span> np<span style="color: #666666">.</span>log(np<span style="color: #666666">.</span>array([ [<span style="color: #666666">4.0</span>, <span style="color: #666666">7.0</span>, <span style="color: #666666">8.0</span>], [<span style="color: #666666">3.0</span>, <span style="color: #666666">10.0</span>, <span style="color: #666666">11.0</span>], [<span style="color: #666666">4.0</span>, <span style="color: #666666">5.0</span>, <span style="color: #666666">7.0</span>] ]))
 <span style="color: #008000">print</span>(A)
-</pre></div>
-<p>
-If we use the <b>shape</b> function we would get \( (3, 3) \) as output, that is verifying that our matrix is a \( 3\times 3 \) matrix. We can slice the matrix and print for example the first column (Python organized matrix elements in a row-major order, see below) as
-<p>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>If we use the <b>shape</b> function we would get \( (3, 3) \) as output, that is verifying that our matrix is a \( 3\times 3 \) matrix. We can slice the matrix and print for example the first column (Python organized matrix elements in a row-major order, see below) as</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
 A <span style="color: #666666">=</span> np<span style="color: #666666">.</span>log(np<span style="color: #666666">.</span>array([ [<span style="color: #666666">4.0</span>, <span style="color: #666666">7.0</span>, <span style="color: #666666">8.0</span>], [<span style="color: #666666">3.0</span>, <span style="color: #666666">10.0</span>, <span style="color: #666666">11.0</span>], [<span style="color: #666666">4.0</span>, <span style="color: #666666">5.0</span>, <span style="color: #666666">7.0</span>] ]))
 <span style="color: #408080; font-style: italic"># print the first column, row-major order and elements start with 0</span>
 <span style="color: #008000">print</span>(A[:,<span style="color: #666666">0</span>]) 
-</pre></div>
-<p>
-We can continue this was by printing out other columns or rows. The example here prints out the second column
-<p>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>We can continue this was by printing out other columns or rows. The example here prints out the second column</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
 A <span style="color: #666666">=</span> np<span style="color: #666666">.</span>log(np<span style="color: #666666">.</span>array([ [<span style="color: #666666">4.0</span>, <span style="color: #666666">7.0</span>, <span style="color: #666666">8.0</span>], [<span style="color: #666666">3.0</span>, <span style="color: #666666">10.0</span>, <span style="color: #666666">11.0</span>], [<span style="color: #666666">4.0</span>, <span style="color: #666666">5.0</span>, <span style="color: #666666">7.0</span>] ]))
 <span style="color: #408080; font-style: italic"># print the first column, row-major order and elements start with 0</span>
 <span style="color: #008000">print</span>(A[<span style="color: #666666">1</span>,:]) 
-</pre></div>
-<p>
-Numpy contains many other functionalities that allow us to slice, subdivide etc etc arrays. We strongly recommend that you look up the <a href="http://www.numpy.org/" target="_blank">Numpy website for more details</a>. Useful functions when defining a matrix are the <b>np.zeros</b> function which declares a matrix of a given dimension and sets all elements to zero
-<p>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>Numpy contains many other functionalities that allow us to slice, subdivide etc etc arrays. We strongly recommend that you look up the <a href="http://www.numpy.org/" target="_blank">Numpy website for more details</a>. Useful functions when defining a matrix are the <b>np.zeros</b> function which declares a matrix of a given dimension and sets all elements to zero</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
 n <span style="color: #666666">=</span> <span style="color: #666666">10</span>
 <span style="color: #408080; font-style: italic"># define a matrix of dimension 10 x 10 and set all elements to zero</span>
 A <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros( (n, n) )
 <span style="color: #008000">print</span>(A) 
-</pre></div>
-<p>
-or initializing all elements to 
-<p>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>or initializing all elements to </p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
 n <span style="color: #666666">=</span> <span style="color: #666666">10</span>
 <span style="color: #408080; font-style: italic"># define a matrix of dimension 10 x 10 and set all elements to one</span>
 A <span style="color: #666666">=</span> np<span style="color: #666666">.</span>ones( (n, n) )
 <span style="color: #008000">print</span>(A) 
-</pre></div>
-<p>
-or as unitarily distributed random numbers (see the material on random number generators in the statistics part)
-<p>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>or as unitarily distributed random numbers (see the material on random number generators in the statistics part)</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
 n <span style="color: #666666">=</span> <span style="color: #666666">10</span>
 <span style="color: #408080; font-style: italic"># define a matrix of dimension 10 x 10 and set all elements to random numbers with x \in [0, 1]</span>
 A <span style="color: #666666">=</span> np<span style="color: #666666">.</span>random<span style="color: #666666">.</span>rand(n, n)
 <span style="color: #008000">print</span>(A) 
-</pre></div>
-<p>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="meet-the-pandas">Meet the Pandas </h2>
 
-<h2 id="___sec49">Meet the Pandas </h2>
+<br/><br/>
+<center>
+<p><img src="fig/pandas.jpg" width="600" align="bottom"></p>
+</center>
+<br/><br/>
 
-<p>
-<br /><br /><center><p><img src="fig/pandas.jpg" align="bottom" width=600></p></center><br /><br />
-
-<p>
-Another useful Python package is
+<p>Another useful Python package is
 <a href="https://pandas.pydata.org/" target="_blank">pandas</a>, which is an open source library
 providing high-performance, easy-to-use data structures and data
 analysis tools for Python. <b>pandas</b> stands for panel data, a term borrowed from econometrics and is an efficient library for data analysis with an emphasis on tabular data.
+</p>
 
-<p>
-<b>pandas</b> has two major classes, the <b>DataFrame</b> class with
+<p><b>pandas</b> has two major classes, the <b>DataFrame</b> class with
 two-dimensional data objects and tabular data organized in columns and
 the class <b>Series</b> with a focus on one-dimensional data objects. Both
 classes allow you to index data easily as we will see in the examples
 below.  <b>pandas</b> allows you also to perform mathematical operations on
 the data, spanning from simple reshapings of vectors and matrices to
 statistical operations.
+</p>
 
-<p>
-The following simple example shows how we can, in an easy way make
+<p>The following simple example shows how we can, in an easy way make
 tables of our data. Here we define a data set which includes names,
 place of birth and date of birth, and displays the data in an easy to
 read way. We will see repeated use of <b>pandas</b>, in particular in
 connection with classification of data.
+</p>
 
-<p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">pandas</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">pd</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">pandas</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">pd</span>
 <span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">IPython.display</span> <span style="color: #008000; font-weight: bold">import</span> display
 data <span style="color: #666666">=</span> {<span style="color: #BA2121">&#39;First Name&#39;</span>: [<span style="color: #BA2121">&quot;Frodo&quot;</span>, <span style="color: #BA2121">&quot;Bilbo&quot;</span>, <span style="color: #BA2121">&quot;Aragorn II&quot;</span>, <span style="color: #BA2121">&quot;Samwise&quot;</span>],
         <span style="color: #BA2121">&#39;Last Name&#39;</span>: [<span style="color: #BA2121">&quot;Baggins&quot;</span>, <span style="color: #BA2121">&quot;Baggins&quot;</span>,<span style="color: #BA2121">&quot;Elessar&quot;</span>,<span style="color: #BA2121">&quot;Gamgee&quot;</span>],
@@ -1679,45 +2007,115 @@ data <span style="color: #666666">=</span> {<span style="color: #BA2121">&#39;Fi
         }
 data_pandas <span style="color: #666666">=</span> pd<span style="color: #666666">.</span>DataFrame(data)
 display(data_pandas)
-</pre></div>
-<p>
-In the above we have imported <b>pandas</b> with the shorthand <b>pd</b>, the latter has become the standard way we import <b>pandas</b>. We make then a list of various variables
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>In the above we have imported <b>pandas</b> with the shorthand <b>pd</b>, the latter has become the standard way we import <b>pandas</b>. We make then a list of various variables
 and reorganize the above lists into a <b>DataFrame</b> and then print out  a neat table with specific column labels as <em>Name</em>, <em>place of birth</em> and <em>date of birth</em>.
 Displaying these results, we see that the indices are given by the default numbers from zero to three.
 <b>pandas</b> is extremely flexible and we can easily change the above indices by defining a new type of indexing as
-<p>
+</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>data_pandas <span style="color: #666666">=</span> pd<span style="color: #666666">.</span>DataFrame(data,index<span style="color: #666666">=</span>[<span style="color: #BA2121">&#39;Frodo&#39;</span>,<span style="color: #BA2121">&#39;Bilbo&#39;</span>,<span style="color: #BA2121">&#39;Aragorn&#39;</span>,<span style="color: #BA2121">&#39;Sam&#39;</span>])
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;">data_pandas <span style="color: #666666">=</span> pd<span style="color: #666666">.</span>DataFrame(data,index<span style="color: #666666">=</span>[<span style="color: #BA2121">&#39;Frodo&#39;</span>,<span style="color: #BA2121">&#39;Bilbo&#39;</span>,<span style="color: #BA2121">&#39;Aragorn&#39;</span>,<span style="color: #BA2121">&#39;Sam&#39;</span>])
 display(data_pandas)
-</pre></div>
-<p>
-Thereafter we display the content of the row which begins with the index <b>Aragorn</b>
-<p>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>Thereafter we display the content of the row which begins with the index <b>Aragorn</b></p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>display(data_pandas<span style="color: #666666">.</span>loc[<span style="color: #BA2121">&#39;Aragorn&#39;</span>])
-</pre></div>
-<p>
-We can easily append data to this, for example
-<p>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;">display(data_pandas<span style="color: #666666">.</span>loc[<span style="color: #BA2121">&#39;Aragorn&#39;</span>])
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>We can easily append data to this, for example</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>new_hobbit <span style="color: #666666">=</span> {<span style="color: #BA2121">&#39;First Name&#39;</span>: [<span style="color: #BA2121">&quot;Peregrin&quot;</span>],
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;">new_hobbit <span style="color: #666666">=</span> {<span style="color: #BA2121">&#39;First Name&#39;</span>: [<span style="color: #BA2121">&quot;Peregrin&quot;</span>],
               <span style="color: #BA2121">&#39;Last Name&#39;</span>: [<span style="color: #BA2121">&quot;Took&quot;</span>],
               <span style="color: #BA2121">&#39;Place of birth&#39;</span>: [<span style="color: #BA2121">&quot;Shire&quot;</span>],
               <span style="color: #BA2121">&#39;Date of Birth T.A.&#39;</span>: [<span style="color: #666666">2990</span>]
               }
 data_pandas<span style="color: #666666">=</span>data_pandas<span style="color: #666666">.</span>append(pd<span style="color: #666666">.</span>DataFrame(new_hobbit, index<span style="color: #666666">=</span>[<span style="color: #BA2121">&#39;Pippin&#39;</span>]))
 display(data_pandas)
-</pre></div>
-<p>
-Here are other examples where we use the <b>DataFrame</b> functionality to handle arrays, now with more interesting features for us, namely numbers. We set up a matrix 
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>Here are other examples where we use the <b>DataFrame</b> functionality to handle arrays, now with more interesting features for us, namely numbers. We set up a matrix 
 of dimensionality \( 10\times 5 \) and compute the mean value and standard deviation of each column. Similarly, we can perform mathematial operations like squaring the matrix elements and many other operations. 
-<p>
+</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
 <span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">pandas</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">pd</span>
 <span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">IPython.display</span> <span style="color: #008000; font-weight: bold">import</span> display
 np<span style="color: #666666">.</span>random<span style="color: #666666">.</span>seed(<span style="color: #666666">100</span>)
@@ -1730,13 +2128,30 @@ display(df)
 <span style="color: #008000">print</span>(df<span style="color: #666666">.</span>mean())
 <span style="color: #008000">print</span>(df<span style="color: #666666">.</span>std())
 display(df<span style="color: #666666">**2</span>)
-</pre></div>
-<p>
-Thereafter we can select specific columns only and plot final results
-<p>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>Thereafter we can select specific columns only and plot final results</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>df<span style="color: #666666">.</span>columns <span style="color: #666666">=</span> [<span style="color: #BA2121">&#39;First&#39;</span>, <span style="color: #BA2121">&#39;Second&#39;</span>, <span style="color: #BA2121">&#39;Third&#39;</span>, <span style="color: #BA2121">&#39;Fourth&#39;</span>, <span style="color: #BA2121">&#39;Fifth&#39;</span>]
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;">df<span style="color: #666666">.</span>columns <span style="color: #666666">=</span> [<span style="color: #BA2121">&#39;First&#39;</span>, <span style="color: #BA2121">&#39;Second&#39;</span>, <span style="color: #BA2121">&#39;Third&#39;</span>, <span style="color: #BA2121">&#39;Fourth&#39;</span>, <span style="color: #BA2121">&#39;Fifth&#39;</span>]
 df<span style="color: #666666">.</span>index <span style="color: #666666">=</span> np<span style="color: #666666">.</span>arange(<span style="color: #666666">10</span>)
 
 display(df)
@@ -1754,22 +2169,51 @@ plt<span style="color: #666666">.</span>show()
 
 df<span style="color: #666666">.</span>plot<span style="color: #666666">.</span>bar(figsize<span style="color: #666666">=</span>(<span style="color: #666666">10</span>,<span style="color: #666666">6</span>), rot<span style="color: #666666">=15</span>)
 plt<span style="color: #666666">.</span>show()
-</pre></div>
-<p>
-We can produce a \( 4\times 4 \) matrix
-<p>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>We can produce a \( 4\times 4 \) matrix</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>b <span style="color: #666666">=</span> np<span style="color: #666666">.</span>arange(<span style="color: #666666">16</span>)<span style="color: #666666">.</span>reshape((<span style="color: #666666">4</span>,<span style="color: #666666">4</span>))
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;">b <span style="color: #666666">=</span> np<span style="color: #666666">.</span>arange(<span style="color: #666666">16</span>)<span style="color: #666666">.</span>reshape((<span style="color: #666666">4</span>,<span style="color: #666666">4</span>))
 <span style="color: #008000">print</span>(b)
 df1 <span style="color: #666666">=</span> pd<span style="color: #666666">.</span>DataFrame(b)
 <span style="color: #008000">print</span>(df1)
-</pre></div>
-<p>
-and many other operations.
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-The <b>Series</b> class is another important class included in
+<p>and many other operations. </p>
+
+<p>The <b>Series</b> class is another important class included in
 <b>pandas</b>. You can view it as a specialization of <b>DataFrame</b> but where
 we have just a single column of data. It shares many of the same
 features as <b>DataFrame</b>. As with <b>DataFrame</b>, most operations are
@@ -1781,91 +2225,971 @@ recommend strongly
 <a href="http://xarray.pydata.org/en/stable/" target="_blank">xarray</a>. <b>xarray</b> has much of
 the same flexibility as <b>pandas</b>, but allows for the extension to
 higher dimensions than two.
+</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="introduction-to-git-and-github-gitlab-and-similar">Introduction to Git and GitHub/GitLab and similar  </h2>
 
-<h2 id="___sec50">Introduction to Git and GitHub/GitLab and similar  </h2>
-
-<p>
-<a href="https://git-scm.com/" target="_blank">Git</a> is a distributed version-control system
+<p><a href="https://git-scm.com/" target="_blank">Git</a> is a distributed version-control system
 for tracking changes in any set of files, originally designed for
 coordinating work among programmers cooperating on source code during
 software development.
+</p>
 
-<p>
-The <a href="https://git-scm.com/doc" target="_blank">reference document and videos here</a>
+<p>The <a href="https://git-scm.com/doc" target="_blank">reference document and videos here</a>
 give you an excellent introduction to the <b>git</b>.
+</p>
 
-<p>
-We believe you will find version-control software very useful in your work.
+<p>We believe you will find version-control software very useful in your work. </p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="github-gitlab-and-many-other">GitHub, GitLab and many other </h2>
 
-<h2 id="___sec51">GitHub, GitLab and many other </h2>
-
-<p>
-<a href="https://github.com/" target="_blank">GitHub</a>, <a href="https://about.gitlab.com/" target="_blank">GitLab</a>, <a href="https://bitbucket.org/product?&aceid=&adposition=&adgroup=92266806717&campaign=1407243017&creative=414608923671&device=c&keyword=bitbucket&matchtype=e&network=g&placement=&ds_kids=p51241248597&ds_e=GOOGLE&ds_eid=700000001551985&ds_e1=GOOGLE&gclid=Cj0KCQiA6Or_BRC_ARIsAPzuer_yrxzs-R8KDVdF0-DduJR9hTBYcjdE8L9_CkA9eyz8XT7-3bFGOpQaAqe2EALw_wcB&gclsrc=aw.ds" target="_blank">Bitbucket</a> and other are code hosting platforms for
+<p><a href="https://github.com/" target="_blank">GitHub</a>, <a href="https://about.gitlab.com/" target="_blank">GitLab</a>, <a href="https://bitbucket.org/product?&aceid=&adposition=&adgroup=92266806717&campaign=1407243017&creative=414608923671&device=c&keyword=bitbucket&matchtype=e&network=g&placement=&ds_kids=p51241248597&ds_e=GOOGLE&ds_eid=700000001551985&ds_e1=GOOGLE&gclid=Cj0KCQiA6Or_BRC_ARIsAPzuer_yrxzs-R8KDVdF0-DduJR9hTBYcjdE8L9_CkA9eyz8XT7-3bFGOpQaAqe2EALw_wcB&gclsrc=aw.ds" target="_blank">Bitbucket</a> and other are code hosting platforms for
 version control and collaboration. They let you and others work
 together on projects from anywhere.
+</p>
 
-<p>
-All teaching material related to this course is open and freely
+<p>All teaching material related to this course is open and freely
 available via the GitHub site of the course. The video here gives a
 short intro to
 <a href="https://www.youtube.com/watch/w3jLJU7DT5E?reload=9" target="_blank">GitHub</a>.
+</p>
 
-<p>
-See also the <a href="https://mediaspace.msu.edu/media/t/1_8mgx3cyf" target="_blank">overview video on Git and GitHub</a>.
+<p>See also the <a href="https://mediaspace.msu.edu/media/t/1_8mgx3cyf" target="_blank">overview video on Git and GitHub</a>.</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="useful-git-and-github-links">Useful Git and GitHub links </h2>
 
-<h2 id="___sec52">Useful Git and GitHub links </h2>
-
-<p>
-These are a couple references that we have found useful (git commands, markdown, GitPages):
-
+<p>These are a couple references that we have found useful (git commands, markdown, GitPages):</p>
 <ul>
 <li> <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank"><tt>https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet</tt></a></li>
 <li> <a href="https://education.github.com/git-cheat-sheet-education.pdf" target="_blank"><tt>https://education.github.com/git-cheat-sheet-education.pdf</tt></a></li>
 <li> <a href="https://guides.github.com/features/pages/" target="_blank"><tt>https://guides.github.com/features/pages/</tt></a></li>
 </ul>
-
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="useful-ides-and-text-editors">Useful IDEs and text editors </h2>
 
-<h2 id="___sec53">Useful IDEs and text editors </h2>
-
-<p>
-When dealing with homeworks, at some point you would need to use an
+<p>When dealing with homeworks, at some point you would need to use an
 editor, or an integrated development envinroment (IDE). As an IDE, we
 would like to recommend <b>anaconda</b> since we end up using
 jupyter-notebooks.  <b>anaconda</b> runs on all known operating systems.
+</p>
 
-<p>
-If you prefer editing <b>Python</b> codes, there are several excellent cross-platform editors.
+<p>If you prefer editing <b>Python</b> codes, there are several excellent cross-platform editors.
 If you are in a Windows environment, <b>word</b> is the classical text editor.
+</p>
 
-<p>
-There is however a wealth of text editors and/ord IDEs that run on all operating
+<p>There is however a wealth of text editors and/ord IDEs that run on all operating
 systems and functions well with Python.  Some of the more popular ones  are
+</p>
 
 <ul>
 <li> <a href="https://atom.io/" target="_blank">Atom</a></li>
 <li> <a href="https://www.sublimetext.com/" target="_blank">Sublime</a></li>
 </ul>
+<h2 id="our-first-physics-encounter">Our first Physics encounter  </h2>
+
+<p>We start studying the problem of a  falling object and use this to introduce numerical aspects.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="falling-baseball-in-one-dimension">Falling baseball in one dimension </h2>
+
+<p>We anticipate the mathematical model to come and assume that we have a
+model for the motion of a falling baseball without air resistance.
+Our system (the baseball) is at an initial height \( y_0 \) (which we will
+specify in the program below) at the initial time \( t_0=0 \). In our program example here we will plot the position in steps of \( \Delta t \) up to a final time \( t_f \). 
+The mathematical formula for the position \( y(t) \) as function of time \( t \) is 
+</p>
+$$
+y(t) = y_0-\frac{1}{2}gt^2,
+$$
+
+<p>where $g=9.80665=0.980655\times 10^1$m/s${}^2$ is a constant representing the standard acceleration due to gravity.
+We have here adopted the conventional standard value. This does not take into account other effects, such as buoyancy or drag.
+Furthermore, we stop when the ball hits the ground, which takes place at
+</p>
+$$
+y(t) = 0= y_0-\frac{1}{2}gt^2,
+$$
+
+<p>which gives us a final time \( t_f=\sqrt{2y_0/g} \). </p>
+
+<p>As of now we simply assume that   we know the formula for the falling object. Afterwards, we will derive it.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="our-python-encounter">Our Python Encounter </h2>
+
+<p>We start with preparing folders for storing our calculations, figures and if needed, specific data files we use as input or output files.</p>
+
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic"># Common imports</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">pandas</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">pd</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">os</span>
+
+<span style="color: #408080; font-style: italic"># Where to save the figures and data files</span>
+PROJECT_ROOT_DIR <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Results&quot;</span>
+FIGURE_ID <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Results/FigureFiles&quot;</span>
+DATA_ID <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;DataFiles/&quot;</span>
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>exists(PROJECT_ROOT_DIR):
+    os<span style="color: #666666">.</span>mkdir(PROJECT_ROOT_DIR)
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>exists(FIGURE_ID):
+    os<span style="color: #666666">.</span>makedirs(FIGURE_ID)
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>exists(DATA_ID):
+    os<span style="color: #666666">.</span>makedirs(DATA_ID)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">image_path</span>(fig_id):
+    <span style="color: #008000; font-weight: bold">return</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>join(FIGURE_ID, fig_id)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">data_path</span>(dat_id):
+    <span style="color: #008000; font-weight: bold">return</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>join(DATA_ID, dat_id)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">save_fig</span>(fig_id):
+    plt<span style="color: #666666">.</span>savefig(image_path(fig_id) <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;.png&quot;</span>, <span style="color: #008000">format</span><span style="color: #666666">=</span><span style="color: #BA2121">&#39;png&#39;</span>)
+
+<span style="color: #408080; font-style: italic">#in case we have an input file we wish to read in</span>
+<span style="color: #408080; font-style: italic">#infile = open(data_path(&quot;MassEval2016.dat&quot;),&#39;r&#39;)</span>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>You could also define a function for making our plots. You
+can obviously avoid this and simply set up various <b>matplotlib</b>
+commands every time you need them. You may however find it convenient
+to collect all such commands in one function and simply call this
+function.
+</p>
+
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">pylab</span> <span style="color: #008000; font-weight: bold">import</span> plt, mpl
+plt<span style="color: #666666">.</span>style<span style="color: #666666">.</span>use(<span style="color: #BA2121">&#39;seaborn&#39;</span>)
+mpl<span style="color: #666666">.</span>rcParams[<span style="color: #BA2121">&#39;font.family&#39;</span>] <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;serif&#39;</span>
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">MakePlot</span>(x,y, styles, labels, axlabels):
+    plt<span style="color: #666666">.</span>figure(figsize<span style="color: #666666">=</span>(<span style="color: #666666">10</span>,<span style="color: #666666">6</span>))
+    <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #008000">len</span>(x)):
+        plt<span style="color: #666666">.</span>plot(x[i], y[i], styles[i], label <span style="color: #666666">=</span> labels[i])
+        plt<span style="color: #666666">.</span>xlabel(axlabels[<span style="color: #666666">0</span>])
+        plt<span style="color: #666666">.</span>ylabel(axlabels[<span style="color: #666666">1</span>])
+    plt<span style="color: #666666">.</span>legend(loc<span style="color: #666666">=0</span>)
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>Thereafter we start setting up the code for the falling object.</p>
+
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #666666">%</span>matplotlib inline
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.patches</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">mpatches</span>
+
+g <span style="color: #666666">=</span> <span style="color: #666666">9.80655</span> <span style="color: #408080; font-style: italic">#m/s^2</span>
+y_0 <span style="color: #666666">=</span> <span style="color: #666666">10.0</span> <span style="color: #408080; font-style: italic"># initial position in meters</span>
+DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.1</span>  <span style="color: #408080; font-style: italic"># time step</span>
+<span style="color: #408080; font-style: italic"># final time when y = 0, t = sqrt(2*10/g)</span>
+tfinal <span style="color: #666666">=</span> np<span style="color: #666666">.</span>sqrt(<span style="color: #666666">2.0*</span>y_0<span style="color: #666666">/</span>g)
+<span style="color: #408080; font-style: italic">#set up arrays </span>
+t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>arange(<span style="color: #666666">0</span>,tfinal,DeltaT)
+y <span style="color: #666666">=</span>y_0 <span style="color: #666666">-</span>g<span style="color: #666666">*.5*</span>t<span style="color: #666666">**2</span>
+<span style="color: #408080; font-style: italic"># Then make a nice printout in table form using Pandas</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">pandas</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">pd</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">IPython.display</span> <span style="color: #008000; font-weight: bold">import</span> display
+data <span style="color: #666666">=</span> {<span style="color: #BA2121">&#39;t[s]&#39;</span>: t,
+        <span style="color: #BA2121">&#39;y[m]&#39;</span>: y
+        }
+RawData <span style="color: #666666">=</span> pd<span style="color: #666666">.</span>DataFrame(data)
+display(RawData)
+plt<span style="color: #666666">.</span>style<span style="color: #666666">.</span>use(<span style="color: #BA2121">&#39;ggplot&#39;</span>)
+plt<span style="color: #666666">.</span>figure(figsize<span style="color: #666666">=</span>(<span style="color: #666666">8</span>,<span style="color: #666666">8</span>))
+plt<span style="color: #666666">.</span>scatter(t, y, color <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;b&#39;</span>)
+blue_patch <span style="color: #666666">=</span> mpatches<span style="color: #666666">.</span>Patch(color <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;b&#39;</span>, label <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;Height y as function of  time t&#39;</span>)
+plt<span style="color: #666666">.</span>legend(handles<span style="color: #666666">=</span>[blue_patch])
+plt<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">&quot;t[s]&quot;</span>)
+plt<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">&quot;y[m]&quot;</span>)
+save_fig(<span style="color: #BA2121">&quot;FallingBaseball&quot;</span>)
+plt<span style="color: #666666">.</span>show()
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>Here we used <b>pandas</b> (see below) to systemize the output of the position as function of time.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="average-quantities">Average quantities </h2>
+<p>We define now the average velocity as</p>
+$$
+\overline{v}(t) = \frac{y(t+\Delta t)-y(t)}{\Delta t}.
+$$
+
+<p>In the code we have set the time step \( \Delta t \) to a given value. We could define it in terms of the number of points \( n \) as</p>
+$$
+\Delta t = \frac{t_{\mathrm{final}-}t_{\mathrm{initial}}}{n}.
+$$
+
+<p>Since we have discretized the variables, we introduce the counter \( i \) and let \( y(t)\rightarrow y(t_i)=y_i \) and \( t\rightarrow t_i \)
+with \( i=0,1,\dots, n \). This gives us the following shorthand notations that we will use for the rest of this course. We define
+</p>
+$$
+y_i = y(t_i),\hspace{0.2cm} i=0,1,2,\dots,n.
+$$
+
+<p>This applies to other variables which depend on say time. Examples are the velocities, accelerations, momenta etc.
+Furthermore we use the shorthand
+</p>
+$$
+y_{i\pm 1} = y(t_i\pm \Delta t),\hspace{0.12cm} i=0,1,2,\dots,n.
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="compact-equations">Compact equations </h2>
+<p>We can then rewrite in a more compact form the average velocity as</p>
+$$
+\overline{v}_i = \frac{y_{i+1}-y_{i}}{\Delta t}.
+$$
+
+<p>The velocity is defined as the change in position per unit time.
+In the limit \( \Delta t \rightarrow 0 \) this defines the instantaneous velocity, which is nothing but the slope of the position at a time \( t \).
+We have thus
+</p>
+$$
+v(t) = \frac{dy}{dt}=\lim_{\Delta t \rightarrow 0}\frac{y(t+\Delta t)-y(t)}{\Delta t}.
+$$
+
+<p>Similarly, we can define the average acceleration as the change in velocity per unit time as</p>
+$$
+\overline{a}_i = \frac{v_{i+1}-v_{i}}{\Delta t},
+$$
+
+<p>resulting in the instantaneous acceleration</p>
+$$
+a(t) = \frac{dv}{dt}=\lim_{\Delta t\rightarrow 0}\frac{v(t+\Delta t)-v(t)}{\Delta t}.
+$$
+
+<p><b>A note on notations</b>: When writing for example the velocity as \( v(t) \) we are then referring to the continuous and instantaneous value. A subscript like
+\( v_i \) refers always to the discretized values.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="a-differential-equation">A differential equation </h2>
+<p>We can rewrite the instantaneous acceleration as</p>
+$$
+a(t) = \frac{dv}{dt}=\frac{d}{dt}\frac{dy}{dt}=\frac{d^2y}{dt^2}.
+$$
+
+<p>This forms the starting point for our definition of forces later. It is a famous second-order differential equation. If the acceleration is constant we can now recover the formula for the falling ball we started with.
+The acceleration can depend on the position and the velocity. To be more formal we should then write the above differential equation as
+</p>
+$$
+\frac{d^2y}{dt^2}=a(t,y(t),\frac{dy}{dt}).
+$$
+
+<p>With given initial conditions for \( y(t_0) \) and \( v(t_0) \) we can then
+integrate the above equation and find the velocities and positions at
+a given time \( t \).
+</p>
+
+<p>If we multiply with mass, we have one of the famous expressions for Newton's second law,</p>
+$$
+F(y,v,t)=m\frac{d^2y}{dt^2}=ma(t,y(t),\frac{dy}{dt}),
+$$
+
+<p>where \( F \) is the force acting on an object with mass \( m \). We see that it also has the right dimension, mass times length divided by time squared.
+We will come back to this soon.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="integrating-our-equations">Integrating our equations </h2>
+
+<p>Formally we can then, starting with the acceleration (suppose we have measured it, how could we do that?)
+compute say the height of a building.  To see this we perform the following integrations from an initial time \( t_0 \)  to a given time \( t \)
+</p>
+$$
+\int_{t_0}^t dt' a(t') = \int_{t_0}^t dt' \frac{dv}{dt'} = v(t)-v(t_0),
+$$
+
+<p>or as </p>
+$$
+v(t)=v(t_0)+\int_{t_0}^t dt' a(t').
+$$
+
+<p>When we know the velocity as function of time, we can find the position as function of time starting from the defintion of velocity as the derivative with respect to time, that is we have</p>
+$$
+\int_{t_0}^t dt' v(t') = \int_{t_0}^t dt' \frac{dy}{dt'} = y(t)-y(t_0),
+$$
+
+<p>or as </p>
+$$
+y(t)=y(t_0)+\int_{t_0}^t dt' v(t').
+$$
+
+<p>These equations define what is called the integration method for
+finding the position and the velocity as functions of time. There is
+no loss of generality if we extend these equations to more than one
+spatial dimension.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="constant-acceleration-case-the-velocity">Constant acceleration case, the velocity </h2>
+<p>Let us compute the velocity using the constant value for the acceleration given by \( -g \). We have</p>
+$$
+v(t)=v(t_0)+\int_{t_0}^t dt' a(t')=v(t_0)+\int_{t_0}^t dt' (-g).
+$$
+
+<p>Using our initial time as $t_0=0$s and setting the initial velocity $v(t_0)=v_0=0$m/s we get when integrating</p>
+$$
+v(t)=-gt.
+$$
+
+<p>The more general case is</p>
+$$
+v(t)=v_0-g(t-t_0).
+$$
+
+<p>We can then integrate the velocity and obtain the final formula for the position as function of time through</p>
+$$
+y(t)=y(t_0)+\int_{t_0}^t dt' v(t')=y_0+\int_{t_0}^t dt' v(t')=y_0+\int_{t_0}^t dt' (-gt'),
+$$
+
+<p>With $y_0=10$m and $t_0=0$s, we obtain the equation we started with</p>
+$$
+y(t)=10-\frac{1}{2}gt^2.
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="computing-the-averages">Computing the averages </h2>
+<p>After this mathematical background we are now ready to compute the mean velocity using our data.</p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic"># Now we can compute the mean velocity using our data</span>
+<span style="color: #408080; font-style: italic"># We define first an array Vaverage</span>
+n <span style="color: #666666">=</span> np<span style="color: #666666">.</span>size(t)
+Vaverage <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">1</span>,n<span style="color: #666666">-1</span>):
+    Vaverage[i] <span style="color: #666666">=</span> (y[i<span style="color: #666666">+1</span>]<span style="color: #666666">-</span>y[i])<span style="color: #666666">/</span>DeltaT
+<span style="color: #408080; font-style: italic"># Now we can compute the mean accelearatio using our data</span>
+<span style="color: #408080; font-style: italic"># We define first an array Aaverage</span>
+n <span style="color: #666666">=</span> np<span style="color: #666666">.</span>size(t)
+Aaverage <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+Aaverage[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> <span style="color: #666666">-</span>g
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">1</span>,n<span style="color: #666666">-1</span>):
+    Aaverage[i] <span style="color: #666666">=</span> (Vaverage[i<span style="color: #666666">+1</span>]<span style="color: #666666">-</span>Vaverage[i])<span style="color: #666666">/</span>DeltaT
+data <span style="color: #666666">=</span> {<span style="color: #BA2121">&#39;t[s]&#39;</span>: t,
+        <span style="color: #BA2121">&#39;y[m]&#39;</span>: y,
+        <span style="color: #BA2121">&#39;v[m/s]&#39;</span>: Vaverage,
+        <span style="color: #BA2121">&#39;a[m/s^2]&#39;</span>: Aaverage
+        }
+NewData <span style="color: #666666">=</span> pd<span style="color: #666666">.</span>DataFrame(data)
+display(NewData[<span style="color: #666666">0</span>:n<span style="color: #666666">-2</span>])
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>Note that we don't print the last values! </p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="including-air-resistance-in-our-model">Including Air Resistance in our model </h2>
+
+<p>In our discussions till now of the falling baseball, we have ignored
+air resistance and simply assumed that our system is only influenced
+by the gravitational force.  We will postpone the derivation of air
+resistance till later, after our discussion of Newton's laws and
+forces.
+</p>
+
+<p>For our discussions here it suffices to state that the accelerations is now modified to</p>
+$$
+\boldsymbol{a}(t) = -g +D\boldsymbol{v}(t)\vert v(t)\vert,
+$$
+
+<p>where \( \vert v(t)\vert \) is the absolute value of the velocity and \( D \) is a constant which pertains to the specific object we are studying.
+Since we are dealing with motion in one dimension, we can simplify the above to
+</p>
+$$
+a(t) = -g +Dv^2(t). 
+$$
+
+<p>We can rewrite this as a differential equation</p>
+$$
+a(t) = \frac{dv}{dt}=\frac{d^2y}{dt^2}= -g +Dv^2(t). 
+$$
+
+<p>Using the integral equations discussed above we can integrate twice
+and obtain first the velocity as function of time and thereafter the
+position as function of time.
+</p>
+
+<p>For this particular case, we can actually obtain an analytical
+solution for the velocity and for the position. Here we will first
+compute the solutions analytically, thereafter we will derive Euler's
+method for solving these differential equations numerically.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="analytical-solutions">Analytical solutions </h2>
+
+<p>For simplicity let us just write \( v(t) \) as \( v \). We have</p>
+$$
+\frac{dv}{dt}= -g +Dv^2(t). 
+$$
+
+<p>We can solve this using the technique of separation of variables. We
+isolate on the left all terms that involve \( v \) and on the right all
+terms that involve time. We get then
+</p>
+$$
+\frac{dv}{g -Dv^2(t) }= -dt,
+$$
+
+<p>We scale now the equation to the left by introducing a constant
+\( v_T=\sqrt{g/D} \). This constant has dimension length/time. Can you
+show this?
+</p>
+
+<p>Next we integrate the left-hand side (lhs) from \( v_0=0 \) m/s to \( v \) and
+the right-hand side (rhs) from \( t_0=0 \) to \( t \) and obtain
+</p>
+
+$$
+\int_{0}^v\frac{dv'}{g -D(v')^2(t) }= \frac{v_T}{g}\mathrm{arctanh}(\frac{v}{v_T})  =-\int_0^tdt' = -t. 
+$$
+
+<p>We can reorganize these equations as</p>
+$$
+v_T\mathrm{arctanh}(\frac{v}{v_T})  =-gt,
+$$
+
+<p>which gives us \( v \) as function of time</p>
+$$
+v(t)=v_T\tanh{-(\frac{gt}{v_T})}.
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="finding-the-final-height">Finding the final height </h2>
+<p>With the velocity we can then find the height \( y(t) \) by integrating yet another time, that is</p>
+$$
+y(t)=y(t_0)+\int_{t_0}^t dt' v(t')=\int_{0}^t dt'[v_T\tanh{-(\frac{gt'}{v_T})}]. 
+$$
+
+<p>This integral is trickier but we can look it up in a table over 
+known integrals and we get
+</p>
+$$
+y(t)=y(t_0)-\frac{v_T^2}{g}\log{[\cosh{(\frac{gt}{v_T})}]}.
+$$
+
+<p>Alternatively we could have used the symbolic Python package <b>Sympy</b>  (example will be inserted later). </p>
+
+<p>In most cases however, we need to revert to numerical solutions. </p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="our-first-attempt-at-solving-differential-equations">Our first attempt at solving differential equations </h2>
+
+<p>Here we will try the simplest possible approach to solving the second-order differential 
+equation
+</p>
+$$
+a(t) =\frac{d^2y}{dt^2}= -g +Dv^2(t). 
+$$
+
+<p>We rewrite it as two coupled first-order equations (this is a standard approach)</p>
+$$
+\frac{dy}{dt} = v(t),
+$$
+
+<p>with initial condition \( y(t_0)=y_0 \) and </p>
+$$
+a(t) =\frac{dv}{dt}= -g +Dv^2(t),
+$$
+
+<p>with initial condition \( v(t_0)=v_0 \).</p>
+
+<p>Many of the algorithms for solving differential equations start with simple Taylor equations.
+If we now Taylor expand \( y \) and \( v \) around a value \( t+\Delta t \) we have
+</p>
+$$
+y(t+\Delta t) = y(t)+\Delta t \frac{dy}{dt}+\frac{\Delta t^2}{2!} \frac{d^2y}{dt^2}+O(\Delta t^3),
+$$
+
+<p>and</p>
+$$
+v(t+\Delta t) = v(t)+\Delta t \frac{dv}{dt}+\frac{\Delta t^2}{2!} \frac{d^2v}{dt^2}+O(\Delta t^3).
+$$
+
+<p>Using the fact that \( dy/dt = v \) and \( dv/dt=a \) and keeping only terms up to \( \Delta t \) we have</p>
+$$
+y(t+\Delta t) = y(t)+\Delta t v(t)+O(\Delta t^2),
+$$
+
+<p>and</p>
+$$
+v(t+\Delta t) = v(t)+\Delta t a(t)+O(\Delta t^2).
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="discretizing-our-equations">Discretizing our equations </h2>
+
+<p>Using our discretized versions of the equations with for example
+\( y_{i}=y(t_i) \) and \( y_{i\pm 1}=y(t_i+\Delta t) \), we can rewrite the
+above equations as (and truncating at \( \Delta t \))
+</p>
+
+$$
+y_{i+1} = y_i+\Delta t v_i,
+$$
+
+<p>and</p>
+$$
+v_{i+1} = v_i+\Delta t a_i.
+$$
+
+<p>These are the famous Euler equations (forward Euler).</p>
+
+<p>To solve these equations numerically we start at a time \( t_0 \) and simply integrate up these equations to a final time \( t_f \),
+The step size \( \Delta t \) is an input  parameter in our code.
+You can define it directly in the code below as
+</p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;">DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.1</span>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>With a given final time <b>tfinal</b>  we can then find the number of integration points via the <b>ceil</b> function included in the <b>math</b> package of Python
+as
+</p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic">#define final time, assuming that initial time is zero</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> ceil
+tfinal <span style="color: #666666">=</span> <span style="color: #666666">0.5</span>
+n <span style="color: #666666">=</span> ceil(tfinal<span style="color: #666666">/</span>DeltaT)
+<span style="color: #008000">print</span>(n)
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>The <b>ceil</b> function returns the smallest integer not less than the input in say</p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;">x <span style="color: #666666">=</span> <span style="color: #666666">21.15</span>
+<span style="color: #008000">print</span>(ceil(x))
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>which in the case here is 22.</p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;">x <span style="color: #666666">=</span> <span style="color: #666666">21.75</span>
+<span style="color: #008000">print</span>(ceil(x))
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>which also yields 22. The  <b>floor</b> function in the <b>math</b> package
+is used to return the closest integer value which is less than or equal to the specified expression or value.
+Compare the previous result to the usage of <b>floor</b>
+</p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> floor
+x <span style="color: #666666">=</span> <span style="color: #666666">21.75</span>
+<span style="color: #008000">print</span>(floor(x))
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>Alternatively, we can define ourselves the number of integration(mesh) points. In this case we could have</p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;">n <span style="color: #666666">=</span> <span style="color: #666666">10</span>
+tinitial <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
+tfinal <span style="color: #666666">=</span> <span style="color: #666666">0.5</span>
+DeltaT <span style="color: #666666">=</span> (tfinal<span style="color: #666666">-</span>tinitial)<span style="color: #666666">/</span>(n)
+<span style="color: #008000">print</span>(DeltaT)
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>Since we will set up one-dimensional arrays that contain the values of
+various variables like time, position, velocity, acceleration etc, we
+need to know the value of \( n \), the number of data points (or
+integration or mesh points).  With \( n \) we can initialize a given array
+by setting all elelements to zero, as done here
+</p>
+
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic"># define array a</span>
+a <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+<span style="color: #008000">print</span>(a)
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="code-for-implementing-euler-s-method">Code for implementing Euler's method </h2>
+<p>In the code here we implement this simple Eurler scheme choosing a value for \( D=0.0245 \) m/s. </p>
+
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic"># Common imports</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">pandas</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">pd</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #666666">*</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">os</span>
+
+<span style="color: #408080; font-style: italic"># Where to save the figures and data files</span>
+PROJECT_ROOT_DIR <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Results&quot;</span>
+FIGURE_ID <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Results/FigureFiles&quot;</span>
+DATA_ID <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;DataFiles/&quot;</span>
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>exists(PROJECT_ROOT_DIR):
+    os<span style="color: #666666">.</span>mkdir(PROJECT_ROOT_DIR)
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>exists(FIGURE_ID):
+    os<span style="color: #666666">.</span>makedirs(FIGURE_ID)
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>exists(DATA_ID):
+    os<span style="color: #666666">.</span>makedirs(DATA_ID)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">image_path</span>(fig_id):
+    <span style="color: #008000; font-weight: bold">return</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>join(FIGURE_ID, fig_id)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">data_path</span>(dat_id):
+    <span style="color: #008000; font-weight: bold">return</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>join(DATA_ID, dat_id)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">save_fig</span>(fig_id):
+    plt<span style="color: #666666">.</span>savefig(image_path(fig_id) <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;.png&quot;</span>, <span style="color: #008000">format</span><span style="color: #666666">=</span><span style="color: #BA2121">&#39;png&#39;</span>)
+
+
+g <span style="color: #666666">=</span> <span style="color: #666666">9.80655</span> <span style="color: #408080; font-style: italic">#m/s^2</span>
+D <span style="color: #666666">=</span> <span style="color: #666666">0.00245</span> <span style="color: #408080; font-style: italic">#m/s</span>
+DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.1</span>
+<span style="color: #408080; font-style: italic">#set up arrays </span>
+tfinal <span style="color: #666666">=</span> <span style="color: #666666">0.5</span>
+n <span style="color: #666666">=</span> ceil(tfinal<span style="color: #666666">/</span>DeltaT)
+<span style="color: #408080; font-style: italic"># define scaling constant vT</span>
+vT <span style="color: #666666">=</span> sqrt(g<span style="color: #666666">/</span>D)
+<span style="color: #408080; font-style: italic"># set up arrays for t, a, v, and y and we can compare our results with analytical ones</span>
+t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+a <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+v <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+y <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+yanalytic <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+<span style="color: #408080; font-style: italic"># Initial conditions</span>
+v[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>  <span style="color: #408080; font-style: italic">#m/s</span>
+y[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> <span style="color: #666666">10.0</span> <span style="color: #408080; font-style: italic">#m</span>
+yanalytic[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> y[<span style="color: #666666">0</span>]
+<span style="color: #408080; font-style: italic"># Start integrating using Euler&#39;s method</span>
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
+    <span style="color: #408080; font-style: italic"># expression for acceleration</span>
+    a[i] <span style="color: #666666">=</span> <span style="color: #666666">-</span>g <span style="color: #666666">+</span> D<span style="color: #666666">*</span>v[i]<span style="color: #666666">*</span>v[i]
+    <span style="color: #408080; font-style: italic"># update velocity and position</span>
+    y[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> y[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>v[i]
+    v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>a[i]
+    <span style="color: #408080; font-style: italic"># update time to next time step and compute analytical answer</span>
+    t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i] <span style="color: #666666">+</span> DeltaT
+    yanalytic[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> y[<span style="color: #666666">0</span>]<span style="color: #666666">-</span>(vT<span style="color: #666666">*</span>vT<span style="color: #666666">/</span>g)<span style="color: #666666">*</span>log(cosh(g<span style="color: #666666">*</span>t[i<span style="color: #666666">+1</span>]<span style="color: #666666">/</span>vT))
+    <span style="color: #008000; font-weight: bold">if</span> ( y[i<span style="color: #666666">+1</span>] <span style="color: #666666">&lt;</span> <span style="color: #666666">0.0</span>):
+        <span style="color: #008000; font-weight: bold">break</span>
+a[n<span style="color: #666666">-1</span>] <span style="color: #666666">=</span> <span style="color: #666666">-</span>g <span style="color: #666666">+</span> D<span style="color: #666666">*</span>v[n<span style="color: #666666">-1</span>]<span style="color: #666666">*</span>v[n<span style="color: #666666">-1</span>]
+data <span style="color: #666666">=</span> {<span style="color: #BA2121">&#39;t[s]&#39;</span>: t,
+        <span style="color: #BA2121">&#39;y[m]&#39;</span>: y<span style="color: #666666">-</span>yanalytic,
+        <span style="color: #BA2121">&#39;v[m/s]&#39;</span>: v,
+        <span style="color: #BA2121">&#39;a[m/s^2]&#39;</span>: a
+        }
+NewData <span style="color: #666666">=</span> pd<span style="color: #666666">.</span>DataFrame(data)
+display(NewData)
+<span style="color: #408080; font-style: italic">#finally we plot the data</span>
+fig, axs <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots(<span style="color: #666666">3</span>, <span style="color: #666666">1</span>)
+axs[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>plot(t, y, t, yanalytic)
+axs[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>set_xlim(<span style="color: #666666">0</span>, tfinal)
+axs[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;y and exact&#39;</span>)
+axs[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>plot(t, v)
+axs[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;v[m/s]&#39;</span>)
+axs[<span style="color: #666666">2</span>]<span style="color: #666666">.</span>plot(t, a)
+axs[<span style="color: #666666">2</span>]<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;time[s]&#39;</span>)
+axs[<span style="color: #666666">2</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;a[m/s^2]&#39;</span>)
+fig<span style="color: #666666">.</span>tight_layout()
+save_fig(<span style="color: #BA2121">&quot;EulerIntegration&quot;</span>)
+plt<span style="color: #666666">.</span>show()
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>Try different values for \( \Delta t \) and study the difference between the exact solution and the numerical solution.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="simple-extension-the-euler-cromer-method">Simple extension, the Euler-Cromer method </h2>
+
+<p>The Euler-Cromer method is a simple variant of the standard Euler
+method. We use the newly updated velocity \( v_{i+1} \) as an input to the
+new position, that is, instead of
+</p>
+
+$$
+y_{i+1} = y_i+\Delta t v_i,
+$$
+
+<p>and</p>
+$$
+v_{i+1} = v_i+\Delta t a_i,
+$$
+
+<p>we use now the newly calculate for \( v_{i+1} \) as input to \( y_{i+1} \), that is 
+we compute first 
+</p>
+$$
+v_{i+1} = v_i+\Delta t a_i,
+$$
+
+<p>and then</p>
+$$
+y_{i+1} = y_i+\Delta t v_{i+1},
+$$
+
+<p>Implementing the Euler-Cromer method yields a simple change to the previous code. We only need to change the following line in the loop over time
+steps
+</p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
+    <span style="color: #408080; font-style: italic"># more codes in between here</span>
+    v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>a[i]
+    y[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> y[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>v[i<span style="color: #666666">+1</span>]
+    <span style="color: #408080; font-style: italic"># more code</span>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <!-- ------------------- end of main content --------------- -->
-
-
 <center style="font-size:80%">
-<!-- copyright --> &copy; 1999-2021, "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/". Released under CC Attribution-NonCommercial 4.0 license
+<!-- copyright --> &copy; 1999-2022, "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/". Released under CC Attribution-NonCommercial 4.0 license
 </center>
-
-
 </body>
 </html>
-    
 

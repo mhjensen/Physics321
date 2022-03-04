@@ -1,6 +1,7 @@
 <!--
-Automatically generated HTML file from DocOnce source
+HTML file automatically generated from DocOnce source
 (https://github.com/doconce/doconce/)
+doconce format html week9.do.txt --pygments_html_style=default --html_style=bloodish --html_links_in_new_window --html_output=week9 --no_mako
 -->
 <html>
 <head>
@@ -8,34 +9,107 @@ Automatically generated HTML file from DocOnce source
 <meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="PHY321: Harmonic Oscillations, Damping, Resonances and time-dependent Forces">
-
 <title>PHY321: Harmonic Oscillations, Damping, Resonances and time-dependent Forces</title>
-
-
 <style type="text/css">
 /* bloodish style */
-
 body {
   font-family: Helvetica, Verdana, Arial, Sans-serif;
   color: #404040;
   background: #ffffff;
 }
-h1 { font-size: 1.8em;  color: #8A0808; }
-h2 { font-size: 1.6em;  color: #8A0808; }
-h3 { font-size: 1.4em;  color: #8A0808; }
-h4 { color: #8A0808; }
+h1 { font-size: 1.8em; color: #8A0808; }
+h2 { font-size: 1.6em; color: #8A0808; }
+h3 { font-size: 1.4em; color: #8A0808; }
+h4 { font-size: 1.2em; color: #8A0808; }
 a { color: #8A0808; text-decoration:none; }
 tt { font-family: "Courier New", Courier; }
-/* pre style removed because it will interfer with pygments */
 p { text-indent: 0px; }
 hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
 p.caption { width: 80%; font-style: normal; text-align: left; }
-hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa; }div.highlight {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    line-height: 1.21429em;
+}
+div.cell {
+    width: 100%;
+    padding: 5px 5px 5px 0;
+    margin: 0;
+    outline: none;
+}
+div.input {
+    page-break-inside: avoid;
+    box-orient: horizontal;
+    box-align: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+div.inner_cell {
+    box-orient: vertical;
+    box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    box-flex: 1;
+    flex: 1;
+}
+div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 4px;
+    background: #f7f7f7;
+    line-height: 1.21429em;
+}
+div.input_area > div.highlight {
+    margin: .4em;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+}
+div.output_wrapper {
+    position: relative;
+    box-orient: vertical;
+    box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.output {
+    box-orient: vertical;
+    box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+div.output_area {
+    padding: 0;
+    page-break-inside: avoid;
+    box-orient: horizontal;
+    box-align: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+div.output_subarea {
+    padding: .4em .4em 0 .4em;
+    box-flex: 1;
+    flex: 1;
+}
+div.output_text {
+    text-align: left;
+    color: #000;
+    line-height: 1.21429em;
+}
 div { text-align: justify; text-justify: inter-word; }
+.tab {
+  padding-left: 1.5em;
+}
+div.toc p,a {
+  line-height: 1.3;
+  margin-top: 1.1;
+  margin-bottom: 1.1;
+}
 </style>
-
-
 </head>
 
 <!-- tocinfo
@@ -44,9 +118,9 @@ div { text-align: justify; text-justify: inter-word; }
                2,
                None,
                'aims-and-overarching-motivation'),
-              ('Monday', 3, None, 'monday'),
-              ('Wednesday', 3, None, 'wednesday'),
-              ('Friday', 3, None, 'friday'),
+              ('Monday, February 28', 3, None, 'monday-february-28'),
+              ('Wednesday, March 2', 3, None, 'wednesday-march-2'),
+              ('Friday, March 4', 3, None, 'friday-march-4'),
               ('Damped Oscillators', 2, None, 'damped-oscillators'),
               ('Harmonic Oscillator,  Damping',
                2,
@@ -59,15 +133,15 @@ div { text-align: justify; text-justify: inter-word; }
               ('Underdamped: $\\beta<\\omega_0$',
                2,
                None,
-               'underdamped-beta-omega_0'),
+               'underdamped-beta-omega-0'),
               ('Critical dampling: $\\beta=\\omega_0$',
                2,
                None,
-               'critical-dampling-beta-omega_0'),
+               'critical-dampling-beta-omega-0'),
               ('Overdamped: $\\beta>\\omega_0$',
                2,
                None,
-               'overdamped-beta-omega_0'),
+               'overdamped-beta-omega-0'),
               ('Harmonic Oscillator,  Solutions',
                2,
                None,
@@ -99,13 +173,7 @@ div { text-align: justify; text-justify: inter-word; }
               ('Differential Equations, Runge-Kutta methods',
                2,
                None,
-               'differential-equations-runge-kutta-methods'),
-              ('Principle of Superposition and Periodic Forces (Fourier '
-               'Transforms)',
-               2,
-               None,
-               'principle-of-superposition-and-periodic-forces-fourier-transforms'),
-              ('Fourier Series', 2, None, 'fourier-series')]}
+               'differential-equations-runge-kutta-methods')]}
 end of tocinfo -->
 
 <body>
@@ -125,58 +193,55 @@ MathJax.Hub.Config({
 </script>
 
 
-
-    
 <!-- ------------------- main content ---------------------- -->
+<center>
+<h1>PHY321: Harmonic Oscillations, Damping, Resonances and time-dependent Forces</h1>
+</center>  <!-- document title -->
 
-
-
-<center><h1>PHY321: Harmonic Oscillations, Damping, Resonances and time-dependent Forces</h1></center>  <!-- document title -->
-
-<p>
 <!-- author(s): <a href="http://mhjgit.github.io/info/doc/web/" target="_blank">Morten Hjorth-Jensen</a> -->
-
 <center>
 <b><a href="http://mhjgit.github.io/info/doc/web/" target="_blank">Morten Hjorth-Jensen</a></b> [1, 2]
 </center>
-
-<p>
 <!-- institution(s) -->
+<center>
+[1] <b>Department of Physics and Astronomy and Facility for Rare Ion Beams (FRIB), Michigan State University, USA</b>
+</center>
+<center>
+[2] <b>Department of Physics, University of Oslo, Norway</b>
+</center>
+<br>
+<center>
+<h4>Mar 3, 2022</h4>
+</center> <!-- date -->
+<br>
 
-<center>[1] <b>Department of Physics and Astronomy and Facility for Rare Ion Beams (FRIB), Michigan State University, USA</b></center>
-<center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
-<br>
-<p>
-<center><h4>Mar 13, 2021</h4></center> <!-- date -->
-<br>
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
 <h2 id="aims-and-overarching-motivation">Aims and Overarching Motivation </h2>
+<h3 id="monday-february-28">Monday, February 28 </h3>
 
-<h3 id="monday">Monday </h3>
+<p>Damped oscillations. Analytical and numerical solutions.</p>
+<ol>
+<li> <a href="https://youtu.be/kt4LYyJc_aE" target="_blank">Video of lecture</a></li>
+<li> <a href="https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesFebruary28.pdf" target="_blank">Handwritten notes</a></li>
+</ol>
+<p><b>Reading suggestion</b>: Taylor sections 5.4-5.5. See also slides from last week.</p>
+<h3 id="wednesday-march-2">Wednesday, March 2 </h3>
 
-<p>
-Damped oscillations. Analytical and numerical solutions
-<b>Reading suggestion</b>: Taylor sections 5.4-5.5.
+<p>Driven oscillations and resonances with examples. Discussion of first midterm. First part of Wednesday is a regular lecture. The second half is dedicated to the midterm.</p>
 
-<h3 id="wednesday">Wednesday </h3>
+<ol>
+<li> <a href="https://youtu.be/jQ-l6P3qW18" target="_blank">Video of lecture</a></li>
+<li> <a href="https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesMarch2.pdf" target="_blank">Handwritten notes</a></li>
+</ol>
+<p><b>Reading suggestion</b>: Taylor sections 5.5-5.6. </p>
+<h3 id="friday-march-4">Friday, March 4 </h3>
 
-No lecture, study day
+<p>Work on first midterm. Then spring break!</p>
 
-<h3 id="friday">Friday </h3>
-
-<p>
-Driven oscillations and resonances with examples.
-<b>Reading suggestion</b>: Taylor sections 5.5-5.6.
-
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
 <h2 id="damped-oscillators">Damped Oscillators </h2>
 
-<p>
-We consider only the case where the damping force is proportional to
+<p>We consider only the case where the damping force is proportional to
 the velocity. This is counter to dragging friction, where the force is
 proportional in strength to the normal force and independent of
 velocity, and is also inconsistent with wind resistance, where the
@@ -189,6 +254,7 @@ i.e. each term is of order \( x \), \( \dot{x} \), \( \ddot{x}\cdots \), or even
 terms with no mention of \( x \), and there are no terms such as \( x^2 \) or
 \( x\ddot{x} \). The equations of motion for a spring with damping force
 \( -b\dot{x} \) are
+</p>
 
 $$
 \begin{equation}
@@ -197,13 +263,11 @@ m\ddot{x}+b\dot{x}+kx=0.
 \end{equation}
 $$
 
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="harmonic-oscillator-damping">Harmonic Oscillator,  Damping </h2>
 
-<p>
-Just to make the solution a bit less messy, we rewrite this equation as
+<p>Just to make the solution a bit less messy, we rewrite this equation as</p>
 
 $$
 \begin{equation}
@@ -212,8 +276,7 @@ $$
 \end{equation}
 $$
 
-<p>
-Both \( \beta \) and \( \omega \) have dimensions of inverse time. To find solutions (see appendix C in the text) you must make an educated guess at the form of the solution. To do this, first realize that the solution will need an arbitrary normalization \( A \) because the equation is linear. Secondly, realize that if the form is
+<p>Both \( \beta \) and \( \omega \) have dimensions of inverse time. To find solutions (see appendix C in the text) you must make an educated guess at the form of the solution. To do this, first realize that the solution will need an arbitrary normalization \( A \) because the equation is linear. Secondly, realize that if the form is</p>
 
 $$
 \begin{equation}
@@ -222,10 +285,10 @@ x=Ae^{rt}
 \end{equation}
 $$
 
-<p>
-that each derivative simply brings out an extra power of \( r \). This
+<p>that each derivative simply brings out an extra power of \( r \). This
 means that the \( Ae^{rt} \) factors out and one can simply solve for an
 equation for \( r \). Plugging this form into Eq. \eqref{eq:dampeddiffyq},
+</p>
 
 $$
 \begin{equation}
@@ -234,13 +297,11 @@ r^2+2\beta r+\omega_0^2=0.
 \end{equation}
 $$
 
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="harmonic-oscillator-solutions-of-damped-motion">Harmonic Oscillator,  Solutions of Damped Motion </h2>
 
-<p>
-Because this is a quadratic equation there will be two solutions,
+<p>Because this is a quadratic equation there will be two solutions,</p>
 
 $$
 \begin{equation}
@@ -249,10 +310,10 @@ r=-\beta\pm\sqrt{\beta^2-\omega_0^2}.
 \end{equation}
 $$
 
-<p>
-We refer to the two solutions as \( r_1 \) and \( r_2 \) corresponding to the
+<p>We refer to the two solutions as \( r_1 \) and \( r_2 \) corresponding to the
 \( + \) and \( - \) roots. As expected, there should be two arbitrary
 constants involved in the solution,
+</p>
 
 $$
 \begin{equation}
@@ -261,21 +322,19 @@ x=A_1e^{r_1t}+A_2e^{r_2t},
 \end{equation}
 $$
 
-<p>
-where the coefficients \( A_1 \) and \( A_2 \) are determined by initial
+<p>where the coefficients \( A_1 \) and \( A_2 \) are determined by initial
 conditions.
+</p>
 
-<p>
-The roots listed above, \( \sqrt{\omega_0^2-\beta_0^2} \), will be
+<p>The roots listed above, \( \sqrt{\omega_0^2-\beta_0^2} \), will be
 imaginary if the damping is small and \( \beta < \omega_0 \). In that case,
 \( r \) is complex and the factor \( \exp{(rt)} \) will have some oscillatory
 behavior. If the roots are real, there will only be exponentially
 decaying solutions. There are three cases:
+</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="underdamped-beta-omega_0">Underdamped: \( \beta < \omega_0 \) </h2>
+<h2 id="underdamped-beta-omega-0">Underdamped: \( \beta < \omega_0 \) </h2>
 
 $$
 \begin{eqnarray}
@@ -285,12 +344,12 @@ x&=&A_1e^{-\beta t}e^{i\omega't}+A_2e^{-\beta t}e^{-i\omega't},~~\omega'\equiv\s
 \end{eqnarray}
 $$
 
-<p>
-Here we have made use of the identity
+<p>Here we have made use of the identity
 \( e^{i\omega't}=\cos\omega't+i\sin\omega't \). Because the constants are
 arbitrary, and because the real and imaginary parts are both solutions
 individually, we can simply consider the real part of the solution
 alone:
+</p>
 
 $$
 \begin{eqnarray}
@@ -301,17 +360,16 @@ x&=&B_1e^{-\beta t}\cos\omega't+B_2e^{-\beta t}\sin\omega't,\\
 \end{eqnarray}
 $$
 
-<p>
+
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="critical-dampling-beta-omega-0">Critical dampling: \( \beta=\omega_0 \) </h2>
 
-<h2 id="critical-dampling-beta-omega_0">Critical dampling: \( \beta=\omega_0 \) </h2>
-
-<p>
-In this case the two terms involving \( r_1 \) and \( r_2 \) are identical
+<p>In this case the two terms involving \( r_1 \) and \( r_2 \) are identical
 because \( \omega'=0 \). Because we need to arbitrary constants, there
 needs to be another solution. This is found by simply guessing, or by
 taking the limit of \( \omega'\rightarrow 0 \) from the underdamped
 solution. The solution is then
+</p>
 
 $$
 \begin{equation}
@@ -320,16 +378,14 @@ x=Ae^{-\beta t}+Bte^{-\beta t}.
 \end{equation}
 $$
 
-<p>
-The critically damped solution is interesting because the solution
+<p>The critically damped solution is interesting because the solution
 approaches zero quickly, but does not oscillate. For a problem with
 zero initial velocity, the solution never crosses zero. This is a good
 choice for designing shock absorbers or swinging doors.
+</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="overdamped-beta-omega_0">Overdamped: \( \beta>\omega_0 \) </h2>
+<h2 id="overdamped-beta-omega-0">Overdamped: \( \beta>\omega_0 \) </h2>
 
 $$
 \begin{eqnarray}
@@ -337,17 +393,16 @@ x&=&A_1\exp{-(\beta+\sqrt{\beta^2-\omega_0^2})t}+A_2\exp{-(\beta-\sqrt{\beta^2-\
 \end{eqnarray}
 $$
 
-<p>
-This solution will also never pass the origin more than once, and then
+<p>This solution will also never pass the origin more than once, and then
 only if the initial velocity is strong and initially toward zero.
+</p>
 
-<p>
-Given \( b \), \( m \) and \( \omega_0 \), find \( x(t) \) for a particle whose
+<p>Given \( b \), \( m \) and \( \omega_0 \), find \( x(t) \) for a particle whose
 initial position is \( x=0 \) and has initial velocity \( v_0 \) (assuming an
 underdamped solution).
+</p>
 
-<p>
-The solution is of the form,
+<p>The solution is of the form,</p>
 
 $$
 \begin{eqnarray*}
@@ -357,20 +412,17 @@ x&=&e^{-\beta t}\left[A_1\cos(\omega' t)+A_2\sin\omega't\right],\\
 \end{eqnarray*}
 $$
 
-<p>
-From the initial conditions, \( A_1=0 \) because \( x(0)=0 \) and \( \omega'A_2=v_0 \). So 
+<p>From the initial conditions, \( A_1=0 \) because \( x(0)=0 \) and \( \omega'A_2=v_0 \). So </p>
 
 $$
 x=\frac{v_0}{\omega'}e^{-\beta t}\sin\omega't.
 $$
 
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="harmonic-oscillator-solutions">Harmonic Oscillator,  Solutions </h2>
 
-<p>
-Consider a single solution with no arbitrary constants, which we will
+<p>Consider a single solution with no arbitrary constants, which we will
 call a <b>particular solution</b>, \( x_p(t) \). It should be emphasized
 that this is <b>A</b> particular solution, because there exists an
 infinite number of such solutions because the general solution should
@@ -393,14 +445,12 @@ simply adjusting the new constants such that \( A'+A_p=A \) and
 \( B'+B_p=B \). Thus, the choice of \( A_p \) and \( B_p \) are irrelevant, and
 when choosing the particular solution it is best to make the simplest
 choice possible.
+</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
 <h2 id="harmonic-oscillator-particular-solution">Harmonic Oscillator,  Particular Solution </h2>
 
-<p>
-To find a particular solution, one first guesses at the form,
+<p>To find a particular solution, one first guesses at the form,</p>
 
 $$
 \begin{equation}
@@ -409,8 +459,7 @@ x_p(t)=D\cos(\omega t-\delta),
 \end{equation}
 $$
 
-<p>
-and rewrite the differential equation as
+<p>and rewrite the differential equation as</p>
 
 $$
 \begin{equation}
@@ -419,8 +468,7 @@ D\left\{-\omega^2\cos(\omega t-\delta)-2\beta\omega\sin(\omega t-\delta)+\omega_
 \end{equation}
 $$
 
-<p>
-One can now use angle addition formulas to get
+<p>One can now use angle addition formulas to get</p>
 
 $$
 \begin{eqnarray}
@@ -431,8 +479,7 @@ D\left\{(-\omega^2\cos\delta+2\beta\omega\sin\delta+\omega_0^2\cos\delta)\cos(\o
 \end{eqnarray}
 $$
 
-<p>
-Both the \( \cos \) and \( \sin \) terms need to equate if the expression is to hold at all times. Thus, this becomes two equations
+<p>Both the \( \cos \) and \( \sin \) terms need to equate if the expression is to hold at all times. Thus, this becomes two equations</p>
 
 $$
 \begin{eqnarray}
@@ -442,8 +489,7 @@ D\left\{-\omega^2\cos\delta+2\beta\omega\sin\delta+\omega_0^2\cos\delta\right\}&
 \end{eqnarray}
 $$
 
-<p>
-After dividing by \( \cos\delta \), the lower expression leads to
+<p>After dividing by \( \cos\delta \), the lower expression leads to</p>
 
 $$
 \begin{equation}
@@ -452,13 +498,11 @@ $$
 \end{equation}
 $$
 
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="solving-with-driven-oscillations">Solving with Driven Oscillations </h2>
 
-<p>
-Using the identities \( \tan^2+1=\csc^2 \) and \( \sin^2+\cos^2=1 \), one can also express \( \sin\delta \) and \( \cos\delta \),
+<p>Using the identities \( \tan^2+1=\csc^2 \) and \( \sin^2+\cos^2=1 \), one can also express \( \sin\delta \) and \( \cos\delta \),</p>
 
 $$
 \begin{eqnarray}
@@ -468,8 +512,7 @@ $$
 \end{eqnarray}
 $$
 
-<p>
-Inserting the expressions for \( \cos\delta \) and \( \sin\delta \) into the expression for \( D \),
+<p>Inserting the expressions for \( \cos\delta \) and \( \sin\delta \) into the expression for \( D \),</p>
 
 $$
 \begin{equation}
@@ -478,29 +521,26 @@ D=\frac{F_0/m}{\sqrt{(\omega_0^2-\omega^2)^2+4\omega^2\beta^2}}.
 \end{equation}
 $$
 
-<p>
-For a given initial condition, e.g. initial displacement and velocity,
+<p>For a given initial condition, e.g. initial displacement and velocity,
 one must add the homogenous solution then solve for the two arbitrary
 constants. However, because the homogenous solutions decay with time
 as \( e^{-\beta t} \), the particular solution is all that remains at
 large times, and is therefore the steady state solution. Because the
 arbitrary constants are all in the homogenous solution, all memory of
 the initial conditions are lost at large times, \( t>>1/\beta \).
+</p>
 
-<p>
-The amplitude of the motion, \( D \), is linearly proportional to the
+<p>The amplitude of the motion, \( D \), is linearly proportional to the
 driving force (\( F_0/m \)), but also depends on the driving frequency
 \( \omega \). For small \( \beta \) the maximum will occur at
 \( \omega=\omega_0 \). This is referred to as a resonance. In the limit
 \( \beta\rightarrow 0 \) the amplitude at resonance approaches infinity.
+</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
 <h2 id="alternative-derivation-for-driven-oscillators">Alternative Derivation for Driven Oscillators </h2>
 
-<p>
-Here, we derive the same expressions as in Equations \eqref{eq:partform} and \eqref{eq:Ddrive} but express the driving forces as
+<p>Here, we derive the same expressions as in Equations \eqref{eq:partform} and \eqref{eq:Ddrive} but express the driving forces as</p>
 
 $$
 \begin{eqnarray}
@@ -508,7 +548,7 @@ F(t)&=&F_0e^{i\omega t},
 \end{eqnarray}
 $$
 
-rather than as \( F_0\cos\omega t \). The real part of \( F \) is the same as before. For the differential equation,
+<p>rather than as \( F_0\cos\omega t \). The real part of \( F \) is the same as before. For the differential equation,</p>
 
 $$
 \begin{eqnarray}
@@ -517,8 +557,7 @@ $$
 \end{eqnarray}
 $$
 
-<p>
-one can treat \( x(t) \) as an imaginary function. Because the operations
+<p>one can treat \( x(t) \) as an imaginary function. Because the operations
 \( d^2/dt^2 \) and \( d/dt \) are real and thus do not mix the real and
 imaginary parts of \( x(t) \), Eq. \eqref{eq:compdrive} is effectively 2
 equations. Because \( e^{\omega t}=\cos\omega t+i\sin\omega t \), the real
@@ -528,9 +567,9 @@ case where the driving force is \( F_0\sin\omega t \). It is rather easy
 to solve for the complex \( x \) in this case, and by taking the real part
 of the solution, one finds the answer for the \( \cos\omega t \) driving
 force.
+</p>
 
-<p>
-We assume a simple form for the particular solution
+<p>We assume a simple form for the particular solution</p>
 
 $$
 \begin{equation}
@@ -539,11 +578,9 @@ x_p=De^{i\omega t},
 \end{equation}
 $$
 
-<p>
-where \( D \) is a complex constant.
+<p>where \( D \) is a complex constant.</p>
 
-<p>
-From Eq. \eqref{eq:compdrive} one inserts the form for \( x_p \) above to get
+<p>From Eq. \eqref{eq:compdrive} one inserts the form for \( x_p \) above to get</p>
 
 $$
 \begin{eqnarray}
@@ -553,8 +590,7 @@ D=\frac{F_0/m}{(\omega_0^2-\omega^2)+2i\beta\omega}.
 \end{eqnarray}
 $$
 
-<p>
-The norm and phase for \( D=|D|e^{-i\delta} \) can be read by inspection,
+<p>The norm and phase for \( D=|D|e^{-i\delta} \) can be read by inspection,</p>
 
 $$
 \begin{equation}
@@ -563,8 +599,7 @@ $$
 \end{equation}
 $$
 
-<p>
-This is the same expression for \( \delta \) as before. One then finds \( x_p(t) \),
+<p>This is the same expression for \( \delta \) as before. One then finds \( x_p(t) \),</p>
 
 $$
 \begin{eqnarray}
@@ -575,8 +610,9 @@ x_p(t)&=&\Re\frac{(F_0/m)e^{i\omega t-i\delta}}{\sqrt{(\omega_0^2-\omega^2)^2+4\
 \end{eqnarray}
 $$
 
-This is the same answer as before.
+<p>This is the same answer as before.
 If one wished to solve for the case where \( F(t)= F_0\sin\omega t \), the imaginary part of the solution would work
+</p>
 
 $$
 \begin{eqnarray}
@@ -587,16 +623,13 @@ x_p(t)&=&\Im\frac{(F_0/m)e^{i\omega t-i\delta}}{\sqrt{(\omega_0^2-\omega^2)^2+4\
 \end{eqnarray}
 $$
 
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="damped-and-driven-oscillator">Damped and Driven Oscillator  </h2>
 
-<p>
-Consider the damped and driven harmonic oscillator worked out above. Given \( F_0, m,\beta \) and \( \omega_0 \), solve for the complete solution \( x(t) \) for the case where \( F=F_0\sin\omega t \) with initial conditions \( x(t=0)=0 \) and \( v(t=0)=0 \). Assume the underdamped case.
+<p>Consider the damped and driven harmonic oscillator worked out above. Given \( F_0, m,\beta \) and \( \omega_0 \), solve for the complete solution \( x(t) \) for the case where \( F=F_0\sin\omega t \) with initial conditions \( x(t=0)=0 \) and \( v(t=0)=0 \). Assume the underdamped case.</p>
 
-<p>
-The general solution including the arbitrary constants includes both the homogenous and particular solutions,
+<p>The general solution including the arbitrary constants includes both the homogenous and particular solutions,</p>
 
 $$
 \begin{eqnarray*}
@@ -605,12 +638,12 @@ x(t)&=&\frac{F_0}{m}\frac{\sin(\omega t-\delta)}{\sqrt{(\omega_0^2-\omega^2)^2+4
 \end{eqnarray*}
 $$
 
-<p>
-The quantities \( \delta \) and \( \omega' \) are given earlier, \( \omega'=\sqrt{\omega_0^2-\beta^2},
+<p>The quantities \( \delta \) and \( \omega' \) are given earlier, \( \omega'=\sqrt{\omega_0^2-\beta^2},
 \delta=\tan^{-1}(2\beta\omega/(\omega_0^2-\omega^2) \). Here, solving
 the problem means finding the arbitrary constants \( A \) and
 \( B \). Satisfying the initial conditions for the initial position and
 velocity:
+</p>
 
 $$
 \begin{eqnarray*}
@@ -620,8 +653,7 @@ v(t=0)=0&=&\omega\eta\cos\delta-\beta A+\omega'B,\\
 \end{eqnarray*}
 $$
 
-<p>
-The problem is now reduced to 2 equations and 2 unknowns, \( A \) and \( B \). The solution is
+<p>The problem is now reduced to 2 equations and 2 unknowns, \( A \) and \( B \). The solution is</p>
 
 $$
 \begin{eqnarray}
@@ -629,13 +661,11 @@ A&=& \eta\sin\delta ,~~~B=\frac{-\omega\eta\cos\delta+\beta\eta\sin\delta}{\omeg
 \end{eqnarray}
 $$
 
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="resonance-widths-the-q-factor">Resonance Widths; the \( Q \) factor </h2>
 
-<p>
-From above, the particular solution for a driving force, \( F=F_0\cos\omega t \), is
+<p>From above, the particular solution for a driving force, \( F=F_0\cos\omega t \), is</p>
 
 $$
 \begin{eqnarray}
@@ -645,14 +675,14 @@ x_p(t)&=&\frac{F_0/m}{\sqrt{(\omega_0^2-\omega^2)^2+4\omega^2\beta^2}}\cos(\omeg
 \end{eqnarray}
 $$
 
-<p>
-If one fixes the driving frequency \( \omega \) and adjusts the
+<p>If one fixes the driving frequency \( \omega \) and adjusts the
 fundamental frequency \( \omega_0=\sqrt{k/m} \), the maximum amplitude
 occurs when \( \omega_0=\omega \) because that is when the term from the
 denominator \( (\omega_0^2-\omega^2)^2+4\omega^2\beta^2 \) is at a
 minimum. This is akin to dialing into a radio station. However, if one
 fixes \( \omega_0 \) and adjusts the driving frequency one minimize with
 respect to \( \omega \), e.g. set
+</p>
 
 $$
 \begin{equation}
@@ -661,10 +691,10 @@ $$
 \end{equation}
 $$
 
-<p>
-and one finds that the maximum amplitude occurs when
+<p>and one finds that the maximum amplitude occurs when
 \( \omega=\sqrt{\omega_0^2-2\beta^2} \). If \( \beta \) is small relative to
 \( \omega_0 \), one can simply state that the maximum amplitude is
+</p>
 
 $$
 \begin{equation}
@@ -680,8 +710,7 @@ $$
 \end{eqnarray}
 $$
 
-<p>
-For small damping this occurs when \( \omega=\omega_0\pm \beta \), so the \( FWHM\approx 2\beta \). For the purposes of tuning to a specific frequency, one wants the width to be as small as possible. The ratio of \( \omega_0 \) to \( FWHM \) is known as the <a href="https://en.wikipedia.org/wiki/Q_factor" target="_blank">quality factor</a>, or \( Q \) factor,
+<p>For small damping this occurs when \( \omega=\omega_0\pm \beta \), so the \( FWHM\approx 2\beta \). For the purposes of tuning to a specific frequency, one wants the width to be as small as possible. The ratio of \( \omega_0 \) to \( FWHM \) is known as the <a href="https://en.wikipedia.org/wiki/Q_factor" target="_blank">quality factor</a>, or \( Q \) factor,</p>
 
 $$
 \begin{equation}
@@ -690,72 +719,74 @@ Q\equiv \frac{\omega_0}{2\beta}.
 \end{equation}
 $$
 
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="numerical-studies-of-driven-oscillations">Numerical Studies of Driven Oscillations </h2>
 
-<p>
-Solving the problem of driven oscillations numerically gives us much
+<p>Solving the problem of driven oscillations numerically gives us much
 more flexibility to study different types of driving forces. We can
 reuse our earlier code by simply adding a driving force. If we stay in
 the \( x \)-direction only this can be easily done by adding a term
 \( F_{\mathrm{ext}}(x,t) \). Note that we have kept it rather general
 here, allowing for both a spatial and a temporal dependence.
+</p>
 
-<p>
-Before we dive into the code, we need to briefly remind ourselves
+<p>Before we dive into the code, we need to briefly remind ourselves
 about the equations we started with for the case with damping, namely
+</p>
 
 $$
 m\frac{d^2x}{dt^2} + b\frac{dx}{dt}+kx(t) =0,
 $$
 
-<p>
-with no external force applied to the system.
+<p>with no external force applied to the system.</p>
 
-<p>
-Let us now for simplicty assume that our external force is given by
+<p>Let us now for simplicty assume that our external force is given by</p>
 
 $$
 F_{\mathrm{ext}}(t) = F_0\cos{(\omega t)},
 $$
 
-where \( F_0 \) is a constant (what is its dimension?) and \( \omega \) is the frequency of the applied external driving force.
+<p>where \( F_0 \) is a constant (what is its dimension?) and \( \omega \) is the frequency of the applied external driving force.
 <b>Small question:</b> would you expect energy to be conserved now?
+</p>
 
-<p>
-Introducing the external force into our lovely differential equation
+<p>Introducing the external force into our lovely differential equation
 and dividing by \( m \) and introducing \( \omega_0^2=\sqrt{k/m} \) we have
+</p>
 $$
 \frac{d^2x}{dt^2} + \frac{b}{m}\frac{dx}{dt}+\omega_0^2x(t) =\frac{F_0}{m}\cos{(\omega t)},
 $$
 
-<p>
-Thereafter we introduce a dimensionless time \( \tau = t\omega_0 \)
+<p>Thereafter we introduce a dimensionless time \( \tau = t\omega_0 \)
 and a dimensionless frequency \( \tilde{\omega}=\omega/\omega_0 \). We have then
+</p>
 $$
 \frac{d^2x}{d\tau^2} + \frac{b}{m\omega_0}\frac{dx}{d\tau}+x(\tau) =\frac{F_0}{m\omega_0^2}\cos{(\tilde{\omega}\tau)},
 $$
 
-Introducing a new amplitude \( \tilde{F} =F_0/(m\omega_0^2) \) (check dimensionality again) we have
+<p>Introducing a new amplitude \( \tilde{F} =F_0/(m\omega_0^2) \) (check dimensionality again) we have</p>
 $$
 \frac{d^2x}{d\tau^2} + \frac{b}{m\omega_0}\frac{dx}{d\tau}+x(\tau) =\tilde{F}\cos{(\tilde{\omega}\tau)}.
 $$
 
-<p>
-Our final step, as we did in the case of various types of damping, is
+<p>Our final step, as we did in the case of various types of damping, is
 to define \( \gamma = b/(2m\omega_0) \) and rewrite our equations as
+</p>
 $$
 \frac{d^2x}{d\tau^2} + 2\gamma\frac{dx}{d\tau}+x(\tau) =\tilde{F}\cos{(\tilde{\omega}\tau)}.
 $$
 
-This is the equation we will code below using the Euler-Cromer method.
+<p>This is the equation we will code below using the Euler-Cromer method. </p>
 
-<p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #408080; font-style: italic"># Common imports</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic"># Common imports</span>
 <span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
 <span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">pandas</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">pd</span>
 <span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #666666">*</span>
@@ -823,31 +854,41 @@ ax<span style="color: #666666">.</span>plot(t, x)
 fig<span style="color: #666666">.</span>tight_layout()
 save_fig(<span style="color: #BA2121">&quot;ForcedBlockEulerCromer&quot;</span>)
 plt<span style="color: #666666">.</span>show()
-</pre></div>
-<p>
-In the above example we have focused on the Euler-Cromer method. This
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>In the above example we have focused on the Euler-Cromer method. This
 method has a local truncation error which is proportional to \( \Delta t^2 \)
 and thereby a global error which is proportional to \( \Delta t \).
 We can improve this by using the Runge-Kutta family of
 methods. The widely popular Runge-Kutta to fourth order or just <b>RK4</b>
 has indeed a much better truncation error. The RK4 method has a global
 error which is proportional to \( \Delta t \).
+</p>
 
-<p>
-Let us revisit this method and see how we can implement it for the above example.
+<p>Let us revisit this method and see how we can implement it for the above example.</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
 <h2 id="differential-equations-runge-kutta-methods">Differential Equations, Runge-Kutta methods </h2>
 
-<p>
-Runge-Kutta (RK) methods are based on Taylor expansion formulae, but yield
+<p>Runge-Kutta (RK) methods are based on Taylor expansion formulae, but yield
 in general better algorithms for solutions of an ordinary differential equation.
 The basic philosophy is that it provides an intermediate step in the computation of \( y_{i+1} \).
+</p>
 
-<p>
-To see this, consider first the following definitions
+<p>To see this, consider first the following definitions</p>
 $$
 \begin{equation}
 \frac{dy}{dt}=f(t,y),  
@@ -855,7 +896,7 @@ $$
 \end{equation} 
 $$
 
-and 
+<p>and </p>
 $$
 \begin{equation}
 y(t)=\int f(t,y) dt,  
@@ -863,7 +904,7 @@ y(t)=\int f(t,y) dt,
 \end{equation} 
 $$
 
-and 
+<p>and </p>
 $$
 \begin{equation}
 y_{i+1}=y_i+ \int_{t_i}^{t_{i+1}} f(t,y) dt.
@@ -871,8 +912,7 @@ y_{i+1}=y_i+ \int_{t_i}^{t_{i+1}} f(t,y) dt.
 \end{equation}
 $$
 
-<p>
-To demonstrate the philosophy behind RK methods, let us consider
+<p>To demonstrate the philosophy behind RK methods, let us consider
 the second-order RK method, RK2.
 The first approximation consists in Taylor expanding \( f(t,y) \)
 around the center of the integration interval \( t_i \) to \( t_{i+1} \),
@@ -880,6 +920,7 @@ that is, at \( t_i+h/2 \), \( h \) being the step.
 Using the midpoint formula for an integral, 
 defining \( y(t_i+h/2) = y_{i+1/2} \) and   
 \( t_i+h/2 = t_{i+1/2} \), we obtain
+</p>
 $$
 \begin{equation}
 \int_{t_i}^{t_{i+1}} f(t,y) dt \approx hf(t_{i+1/2},y_{i+1/2}) +O(h^3).
@@ -887,7 +928,7 @@ $$
 \end{equation} 
 $$
 
-This means in turn that we have
+<p>This means in turn that we have</p>
 $$
 \begin{equation}
 y_{i+1}=y_i + hf(t_{i+1/2},y_{i+1/2}) +O(h^3).
@@ -895,9 +936,9 @@ y_{i+1}=y_i + hf(t_{i+1/2},y_{i+1/2}) +O(h^3).
 \end{equation}
 $$
 
-<p>
-However, we do not know the value of   \( y_{i+1/2} \). Here comes thus the next approximation, namely, we use Euler's
+<p>However, we do not know the value of   \( y_{i+1/2} \). Here comes thus the next approximation, namely, we use Euler's
 method to approximate \( y_{i+1/2} \). We have then
+</p>
 $$
 \begin{equation}
 y_{(i+1/2)}=y_i + \frac{h}{2}\frac{dy}{dt}=y(t_i) + \frac{h}{2}f(t_i,y_i).
@@ -905,8 +946,9 @@ y_{(i+1/2)}=y_i + \frac{h}{2}\frac{dy}{dt}=y(t_i) + \frac{h}{2}f(t_i,y_i).
 \end{equation}
 $$
 
-This means that we can define the following algorithm for 
+<p>This means that we can define the following algorithm for 
 the second-order Runge-Kutta method, RK2.
+</p>
 $$
 \begin{equation} 
 k_1=hf(t_i,y_i),
@@ -921,7 +963,7 @@ k_2=hf(t_{i+1/2},y_i+k_1/2),
 \end{equation}
 $$
 
-with the final value
+<p>with the final value</p>
 $$
 \begin{equation} 
 y_{i+i}\approx y_i + k_2 +O(h^3). 
@@ -929,15 +971,14 @@ y_{i+i}\approx y_i + k_2 +O(h^3).
 \end{equation}
 $$
 
-<p>
-The difference between the previous one-step methods 
+<p>The difference between the previous one-step methods 
 is that we now need an intermediate step in our evaluation,
 namely \( t_i+h/2 = t_{(i+1/2)} \) where we evaluate the derivative \( f \). 
 This involves more operations, but the gain is a better stability
 in the solution.
+</p>
 
-<p>
-The fourth-order Runge-Kutta, RK4, has the following algorithm
+<p>The fourth-order Runge-Kutta, RK4, has the following algorithm</p>
 $$
 k_1=hf(t_i,y_i) \hspace{0.5cm}   k_2=hf(t_i+h/2,y_i+k_1/2)
 $$
@@ -946,17 +987,17 @@ $$
 k_3=hf(t_i+h/2,y_i+k_2/2)\hspace{0.5cm}   k_4=hf(t_i+h,y_i+k_3)
 $$
 
-with the final result
+<p>with the final result</p>
 $$
 y_{i+1}=y_i +\frac{1}{6}\left( k_1 +2k_2+2k_3+k_4\right).
 $$
 
-Thus, the algorithm consists in first calculating \( k_1 \) 
+<p>Thus, the algorithm consists in first calculating \( k_1 \) 
 with \( t_i \), \( y_1 \) and \( f \) as inputs. Thereafter, we increase the step
 size by \( h/2 \) and calculate \( k_2 \), then \( k_3 \) and finally \( k_4 \). The global error goes as \( O(h^4) \).
+</p>
 
-<p>
-However, at this stage, if we keep adding different methods in our
+<p>However, at this stage, if we keep adding different methods in our
 main program, the code will quickly become messy and ugly. Before we
 proceed thus, we will now introduce functions that enbody the various
 methods for solving differential equations. This means that we can
@@ -967,57 +1008,128 @@ interest in terms of functions. To see this, let us bring up the code
 we developed above for the simple sliding block, but now only with the simple forward Euler method. We introduce
 two functions, one for the simple Euler method and one for the
 force.
+</p>
 
-<p>
-Note that here the forward Euler method does not know the specific force function to be called.
+<p>Note that here the forward Euler method does not know the specific force function to be called.
 It receives just an input the name. We can easily change the force by adding another function.
-<p>
+</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">ForwardEuler</span>(v,x,t,n,Force):
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">ForwardEuler</span>(v,x,t,n,Force):
     <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
         v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>Force(v[i],x[i],t[i])
         x[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> x[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>v[i]
         t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i] <span style="color: #666666">+</span> DeltaT
-</pre></div>
-<p>
-
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">SpringForce</span>(v,x,t):
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">SpringForce</span>(v,x,t):
 <span style="color: #408080; font-style: italic">#   note here that we have divided by mass and we return the acceleration</span>
     <span style="color: #008000; font-weight: bold">return</span>  <span style="color: #666666">-2*</span>gamma<span style="color: #666666">*</span>v<span style="color: #666666">-</span>x<span style="color: #666666">+</span>Ftilde<span style="color: #666666">*</span>cos(t<span style="color: #666666">*</span>Omegatilde)
-</pre></div>
-<p>
-It is easy to add a new method like the Euler-Cromer
-<p>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>It is easy to add a new method like the Euler-Cromer</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">ForwardEulerCromer</span>(v,x,t,n,Force):
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">ForwardEulerCromer</span>(v,x,t,n,Force):
     <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
         a <span style="color: #666666">=</span> Force(v[i],x[i],t[i])
         v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>a
         x[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> x[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>v[i<span style="color: #666666">+1</span>]
         t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i] <span style="color: #666666">+</span> DeltaT
-</pre></div>
-<p>
-and the Velocity Verlet method (be careful with time-dependence here, it is not an ideal method for non-conservative forces))
-<p>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>and the Velocity Verlet method (be careful with time-dependence here, it is not an ideal method for non-conservative forces))</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">VelocityVerlet</span>(v,x,t,n,Force):
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">VelocityVerlet</span>(v,x,t,n,Force):
     <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
         a <span style="color: #666666">=</span> Force(v[i],x[i],t[i])
         x[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> x[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>v[i]<span style="color: #666666">+0.5*</span>a<span style="color: #666666">*</span>DeltaT<span style="color: #666666">*</span>DeltaT
         anew <span style="color: #666666">=</span> Force(v[i],x[i<span style="color: #666666">+1</span>],t[i<span style="color: #666666">+1</span>])
         v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i] <span style="color: #666666">+</span> <span style="color: #666666">0.5*</span>DeltaT<span style="color: #666666">*</span>(a<span style="color: #666666">+</span>anew)
         t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i] <span style="color: #666666">+</span> DeltaT
-</pre></div>
-<p>
-Finally, we can now add the Runge-Kutta2 method via a new function
-<p>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>Finally, we can now add the Runge-Kutta2 method via a new function</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">RK2</span>(v,x,t,n,Force):
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">RK2</span>(v,x,t,n,Force):
     <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
 <span style="color: #408080; font-style: italic"># Setting up k1</span>
         k1x <span style="color: #666666">=</span> DeltaT<span style="color: #666666">*</span>v[i]
@@ -1031,14 +1143,31 @@ Finally, we can now add the Runge-Kutta2 method via a new function
         x[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> x[i]<span style="color: #666666">+</span>k2x
         v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i]<span style="color: #666666">+</span>k2v
 	t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i]<span style="color: #666666">+</span>DeltaT
-</pre></div>
-<p>
-Finally, we can now add the Runge-Kutta2 method via a new function
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
+<p>Finally, we can now add the Runge-Kutta2 method via a new function</p>
+
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">RK4</span>(v,x,t,n,Force):
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">RK4</span>(v,x,t,n,Force):
     <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
 <span style="color: #408080; font-style: italic"># Setting up k1</span>
         k1x <span style="color: #666666">=</span> DeltaT<span style="color: #666666">*</span>v[i]
@@ -1062,16 +1191,34 @@ Finally, we can now add the Runge-Kutta2 method via a new function
         x[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> x[i]<span style="color: #666666">+</span>(k1x<span style="color: #666666">+2*</span>k2x<span style="color: #666666">+2*</span>k3x<span style="color: #666666">+</span>k4x)<span style="color: #666666">/6.</span>
         v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i]<span style="color: #666666">+</span>(k1v<span style="color: #666666">+2*</span>k2v<span style="color: #666666">+2*</span>k3v<span style="color: #666666">+</span>k4v)<span style="color: #666666">/6.</span>
         t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i] <span style="color: #666666">+</span> DeltaT
-</pre></div>
-<p>
-The Runge-Kutta family of methods are particularly useful when we have a time-dependent acceleration.
-If we have forces which depend only the spatial degrees of freedom (no velocity and/or time-dependence), then energy conserving methods like the Velocity Verlet or the Euler-Cromer method are preferred. As soon as we introduce an explicit time-dependence and/or add dissipitave forces like friction or air resistance, then methods like the family of Runge-Kutta methods are well suited for this. 
-The code below uses the Runge-Kutta4 methods.
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
+<p>The Runge-Kutta family of methods are particularly useful when we have a time-dependent acceleration.
+If we have forces which depend only the spatial degrees of freedom (no velocity and/or time-dependence), then energy conserving methods like the Velocity Verlet or the Euler-Cromer method are preferred. As soon as we introduce an explicit time-dependence and/or add dissipitave forces like friction or air resistance, then methods like the family of Runge-Kutta methods are well suited for this. 
+The code below uses the Runge-Kutta4 methods. 
+</p>
+
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.001</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;">DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.001</span>
 <span style="color: #408080; font-style: italic">#set up arrays </span>
 tfinal <span style="color: #666666">=</span> <span style="color: #666666">20</span> <span style="color: #408080; font-style: italic"># in dimensionless time</span>
 n <span style="color: #666666">=</span> ceil(tfinal<span style="color: #666666">/</span>DeltaT)
@@ -1099,285 +1246,26 @@ ax<span style="color: #666666">.</span>plot(t, x)
 fig<span style="color: #666666">.</span>tight_layout()
 save_fig(<span style="color: #BA2121">&quot;ForcedBlockRK4&quot;</span>)
 plt<span style="color: #666666">.</span>show()
-</pre></div>
-<p>
-<!-- !split  -->
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<h2 id="principle-of-superposition-and-periodic-forces-fourier-transforms">Principle of Superposition and Periodic Forces (Fourier Transforms) </h2>
-
-<p>
-If one has several driving forces, \( F(t)=\sum_n F_n(t) \), one can find
-the particular solution to each \( F_n \), \( x_{pn}(t) \), and the particular
-solution for the entire driving force is
-
-$$
-\begin{equation}
-x_p(t)=\sum_nx_{pn}(t).
-\label{_auto22}
-\end{equation}
-$$
-
-<p>
-This is known as the principal of superposition. It only applies when
-the homogenous equation is linear. If there were an anharmonic term
-such as \( x^3 \) in the homogenous equation, then when one summed various
-solutions, \( x=(\sum_n x_n)^2 \), one would get cross
-terms. Superposition is especially useful when \( F(t) \) can be written
-as a sum of sinusoidal terms, because the solutions for each
-sinusoidal (sine or cosine)  term is analytic, as we saw above.
-
-<p>
-Driving forces are often periodic, even when they are not
-sinusoidal. Periodicity implies that for some time \( \tau \)
-
-$$
-\begin{eqnarray}
-F(t+\tau)=F(t). 
-\end{eqnarray}
-$$
-
-<p>
-One example of a non-sinusoidal periodic force is a square wave. Many
-components in electric circuits are non-linear, e.g. diodes, which
-makes many wave forms non-sinusoidal even when the circuits are being
-driven by purely sinusoidal sources.
-
-<p>
-The code here shows a typical example of such a square wave generated using the functionality included in the <b>scipy</b> Python package. We have used a period of \( \tau=0.2 \).
-
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
-<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">math</span>
-<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">scipy</span> <span style="color: #008000; font-weight: bold">import</span> signal
-<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
-
-<span style="color: #408080; font-style: italic"># number of points                                                                                       </span>
-n <span style="color: #666666">=</span> <span style="color: #666666">500</span>
-<span style="color: #408080; font-style: italic"># start and final times                                                                                  </span>
-t0 <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
-tn <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>
-<span style="color: #408080; font-style: italic"># Period                                                                                                 </span>
-t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linspace(t0, tn, n, endpoint<span style="color: #666666">=</span><span style="color: #008000; font-weight: bold">False</span>)
-SqrSignal <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
-SqrSignal <span style="color: #666666">=</span> <span style="color: #666666">1.0+</span>signal<span style="color: #666666">.</span>square(<span style="color: #666666">2*</span>np<span style="color: #666666">.</span>pi<span style="color: #666666">*5*</span>t)
-plt<span style="color: #666666">.</span>plot(t, SqrSignal)
-plt<span style="color: #666666">.</span>ylim(<span style="color: #666666">-0.5</span>, <span style="color: #666666">2.5</span>)
-plt<span style="color: #666666">.</span>show()
-</pre></div>
-<p>
-For the sinusoidal example studied above the
-period is \( \tau=2\pi/\omega \). However, higher harmonics can also
-satisfy the periodicity requirement. In general, any force that
-satisfies the periodicity requirement can be expressed as a sum over
-harmonics,
-
-$$
-\begin{equation}
-F(t)=\frac{f_0}{2}+\sum_{n>0} f_n\cos(2n\pi t/\tau)+g_n\sin(2n\pi t/\tau).
-\label{_auto23}
-\end{equation}
-$$
-
-<p>
-One can write down the answer for
-\( x_{pn}(t) \), by substituting \( f_n/m \) or \( g_n/m \) for \( F_0/m \) into Eq.s
-\eqref{eq:fastdriven1} or \eqref{eq:fastdriven2} respectively. By
-writing each factor \( 2n\pi t/\tau \) as \( n\omega t \), with \( \omega\equiv
-2\pi/\tau \),
-
-$$
-\begin{equation}
-\label{eq:fourierdef1}
-F(t)=\frac{f_0}{2}+\sum_{n>0}f_n\cos(n\omega t)+g_n\sin(n\omega t).
-\end{equation}
-$$
-
-<p>
-The solutions for \( x(t) \) then come from replacing \( \omega \) with
-\( n\omega \) for each term in the particular solution in Equations
-\eqref{eq:partform} and \eqref{eq:Ddrive},
-
-$$
-\begin{eqnarray}
-x_p(t)&=&\frac{f_0}{2k}+\sum_{n>0} \alpha_n\cos(n\omega t-\delta_n)+\beta_n\sin(n\omega t-\delta_n),\\
-\nonumber
-\alpha_n&=&\frac{f_n/m}{\sqrt{((n\omega)^2-\omega_0^2)+4\beta^2n^2\omega^2}},\\
-\nonumber
-\beta_n&=&\frac{g_n/m}{\sqrt{((n\omega)^2-\omega_0^2)+4\beta^2n^2\omega^2}},\\
-\nonumber
-\delta_n&=&\tan^{-1}\left(\frac{2\beta n\omega}{\omega_0^2-n^2\omega^2}\right).
-\end{eqnarray}
-$$
-
-<p>
-Because the forces have been applied for a long time, any non-zero
-damping eliminates the homogenous parts of the solution, so one need
-only consider the particular solution for each \( n \).
-
-<p>
-The problem will considered solved if one can find expressions for the
-coefficients \( f_n \) and \( g_n \), even though the solutions are expressed
-as an infinite sum. The coefficients can be extracted from the
-function \( F(t) \) by
-
-$$
-\begin{eqnarray}
-\label{eq:fourierdef2}
-f_n&=&\frac{2}{\tau}\int_{-\tau/2}^{\tau/2} dt~F(t)\cos(2n\pi t/\tau),\\
-\nonumber
-g_n&=&\frac{2}{\tau}\int_{-\tau/2}^{\tau/2} dt~F(t)\sin(2n\pi t/\tau).
-\end{eqnarray}
-$$
-
-<p>
-To check the consistency of these expressions and to verify
-Eq. \eqref{eq:fourierdef2}, one can insert the expansion of \( F(t) \) in
-Eq. \eqref{eq:fourierdef1} into the expression for the coefficients in
-Eq. \eqref{eq:fourierdef2} and see whether
-
-$$
-\begin{eqnarray}
-f_n&=?&\frac{2}{\tau}\int_{-\tau/2}^{\tau/2} dt~\left\{
-\frac{f_0}{2}+\sum_{m>0}f_m\cos(m\omega t)+g_m\sin(m\omega t)
-\right\}\cos(n\omega t).
-\end{eqnarray}
-$$
-
-<p>
-Immediately, one can throw away all the terms with \( g_m \) because they
-convolute an even and an odd function. The term with \( f_0/2 \)
-disappears because \( \cos(n\omega t) \) is equally positive and negative
-over the interval and will integrate to zero. For all the terms
-\( f_m\cos(m\omega t) \) appearing in the sum, one can use angle addition
-formulas to see that \( \cos(m\omega t)\cos(n\omega
-t)=(1/2)(\cos[(m+n)\omega t]+\cos[(m-n)\omega t] \). This will integrate
-to zero unless \( m=n \). In that case the \( m=n \) term gives
-
-$$
-\begin{equation}
-\int_{-\tau/2}^{\tau/2}dt~\cos^2(m\omega t)=\frac{\tau}{2},
-\label{_auto24}
-\end{equation}
-$$
-
-<p>
-and
-
-$$
-\begin{eqnarray}
-f_n&=?&\frac{2}{\tau}\int_{-\tau/2}^{\tau/2} dt~f_n/2\\
-\nonumber
-&=&f_n~\checkmark.
-\end{eqnarray}
-$$
-
-<p>
-The same method can be used to check for the consistency of \( g_n \).
-
-<p>
-Consider the driving force:
-
-$$
-\begin{equation}
-F(t)=At/\tau,~~-\tau/2 < t < \tau/2,~~~F(t+\tau)=F(t).
-\label{_auto25}
-\end{equation}
-$$
-
-<p>
-Find the Fourier coefficients \( f_n \) and \( g_n \) for all \( n \) using Eq. \eqref{eq:fourierdef2}.
-
-<p>
-Only the odd coefficients enter by symmetry, i.e. \( f_n=0 \). One can find \( g_n \) integrating by parts,
-
-$$
-\begin{eqnarray}
-\label{eq:fouriersolution}
-g_n&=&\frac{2}{\tau}\int_{-\tau/2}^{\tau/2}dt~\sin(n\omega t) \frac{At}{\tau}\\
-\nonumber
-u&=&t,~dv=\sin(n\omega t)dt,~v=-\cos(n\omega t)/(n\omega),\\
-\nonumber
-g_n&=&\frac{-2A}{n\omega \tau^2}\int_{-\tau/2}^{\tau/2}dt~\cos(n\omega t)
-+\left.2A\frac{-t\cos(n\omega t)}{n\omega\tau^2}\right|_{-\tau/2}^{\tau/2}.
-\end{eqnarray}
-$$
-
-<p>
-The first term is zero because \( \cos(n\omega t) \) will be equally
-positive and negative over the interval. Using the fact that
-\( \omega\tau=2\pi \),
-
-$$
-\begin{eqnarray}
-g_n&=&-\frac{2A}{2n\pi}\cos(n\omega\tau/2)\\
-\nonumber
-&=&-\frac{A}{n\pi}\cos(n\pi)\\
-\nonumber
-&=&\frac{A}{n\pi}(-1)^{n+1}.
-\end{eqnarray}
-$$
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="fourier-series">Fourier Series </h2>
-
-<p>
-More text will come here, chpater 5.7-5.8 of Taylor are discussed
-during the lectures. The code here uses the Fourier series discussed
-in chapter 5.7 for a square wave signal. The equations for the
-coefficients are are discussed in Taylor section 5.7, see Example
-5.4. The code here visualizes the various approximations given by
-Fourier series compared with a square wave with period \( T=0.2 \), witth
-\( 0.1 \) and max value \( F=2 \). We see that when we increase the number of
-components in the Fourier series, the Fourier series approximation gets closes and closes to the square wave signal.
-
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
-<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">math</span>
-<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">scipy</span> <span style="color: #008000; font-weight: bold">import</span> signal
-<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
-
-<span style="color: #408080; font-style: italic"># number of points                                                                                       </span>
-n <span style="color: #666666">=</span> <span style="color: #666666">500</span>
-<span style="color: #408080; font-style: italic"># start and final times                                                                                  </span>
-t0 <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
-tn <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>
-<span style="color: #408080; font-style: italic"># Period                                                                                                 </span>
-T <span style="color: #666666">=0.2</span>
-<span style="color: #408080; font-style: italic"># Max value of square signal                                                                             </span>
-Fmax<span style="color: #666666">=</span> <span style="color: #666666">2.0</span>
-<span style="color: #408080; font-style: italic"># Width of signal                                                                                        </span>
-Width <span style="color: #666666">=</span> <span style="color: #666666">0.1</span>
-t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linspace(t0, tn, n, endpoint<span style="color: #666666">=</span><span style="color: #008000; font-weight: bold">False</span>)
-SqrSignal <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
-FourierSeriesSignal <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
-SqrSignal <span style="color: #666666">=</span> <span style="color: #666666">1.0+</span>signal<span style="color: #666666">.</span>square(<span style="color: #666666">2*</span>np<span style="color: #666666">.</span>pi<span style="color: #666666">*5*</span>t<span style="color: #666666">+</span>np<span style="color: #666666">.</span>pi<span style="color: #666666">*</span>Width<span style="color: #666666">/</span>T)
-a0 <span style="color: #666666">=</span> Fmax<span style="color: #666666">*</span>Width<span style="color: #666666">/</span>T
-FourierSeriesSignal <span style="color: #666666">=</span> a0
-Factor <span style="color: #666666">=</span> <span style="color: #666666">2.0*</span>Fmax<span style="color: #666666">/</span>np<span style="color: #666666">.</span>pi
-<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">1</span>,<span style="color: #666666">500</span>):
-    FourierSeriesSignal <span style="color: #666666">+=</span> Factor<span style="color: #666666">/</span>(i)<span style="color: #666666">*</span>np<span style="color: #666666">.</span>sin(np<span style="color: #666666">.</span>pi<span style="color: #666666">*</span>i<span style="color: #666666">*</span>Width<span style="color: #666666">/</span>T)<span style="color: #666666">*</span>np<span style="color: #666666">.</span>cos(i<span style="color: #666666">*</span>t<span style="color: #666666">*2*</span>np<span style="color: #666666">.</span>pi<span style="color: #666666">/</span>T)
-plt<span style="color: #666666">.</span>plot(t, SqrSignal)
-plt<span style="color: #666666">.</span>plot(t, FourierSeriesSignal)
-plt<span style="color: #666666">.</span>ylim(<span style="color: #666666">-0.5</span>, <span style="color: #666666">2.5</span>)
-plt<span style="color: #666666">.</span>show()
-</pre></div>
-<p>
 
 <!-- ------------------- end of main content --------------- -->
-
-
 <center style="font-size:80%">
-<!-- copyright --> &copy; 1999-2021, "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/". Released under CC Attribution-NonCommercial 4.0 license
+<!-- copyright --> &copy; 1999-2022, "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/". Released under CC Attribution-NonCommercial 4.0 license
 </center>
-
-
 </body>
 </html>
-    
 

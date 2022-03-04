@@ -1,7 +1,7 @@
 %%
 %% Automatically generated file from DocOnce source
-%% (https://github.com/hplgit/doconce/)
-%%
+%% (https://github.com/doconce/doconce/)
+%% doconce format latex hw1.do.txt --minted_latex_style=trac --latex_admon=paragraph --no_mako
 %%
 
 
@@ -92,7 +92,7 @@ PHY321: Classical Mechanics 1
 % ----------------- author(s) -------------------------
 
 \begin{center}
-{\bf Homework 1, due Monday  January  25 (midnight)${}^{}$} \\ [0mm]
+{\bf Homework 1, due January 21 (midnight)${}^{}$} \\ [0mm]
 \end{center}
 
 \begin{center}
@@ -103,7 +103,7 @@ PHY321: Classical Mechanics 1
 
 % --- begin date ---
 \begin{center}
-Jan 22, 2021
+Jan 11, 2022
 \end{center}
 % --- end date ---
 
@@ -114,13 +114,13 @@ Jan 22, 2021
 \begin{enumerate}
 \item You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. \textbf{Remember to write your name(s)}!
 
-\item Homeworks are available approximately ten days before the  deadline. 
+\item Homeworks (final version) are available approximately ten days before the  deadline. 
 
-\item How do I(we)  hand in?  You can hand in the paper and pencil exercises as a scanned document. For this homework this applies to exercises 1-6. You should upload the scan to D2L. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise (exercise 7 here) should always be handed in as a jupyter notebook by the deadline at D2L. 
+\item How do I(we)  hand in?  You can hand in the paper and pencil exercises as a scanned document. For this homework this applies to exercises 1-5. You should upload the scan to D2L. Alternatively, you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical exercise (exercise 6 here) should always be handed in as a jupyter notebook by the deadline at D2L. 
 \end{enumerate}
 
 \noindent
-\paragraph{Exercise 1 (10 pt), math reminder, properties of exponential function.}
+\paragraph{Exercise 1 (12 pt), math reminder, properties of exponential function.}
 The first exercise is meant to remind ourselves about properties of
 the exponential function and imaginary numbers. This is highly
 relevant later in this course when we start analyzing oscillatory
@@ -128,9 +128,9 @@ motion and some wave mechanics. As physicists we should thus feel comfortable wi
 include $\exp{(\imath\omega t)}$. Here $t$ could be interpreted as time and $\omega$ as a frequency and $\imath$ is the imaginary unit number.
 
 \begin{itemize}
-\item 1a (2pt): Perform Taylor expansions in powers of $\omega t$ of the functions $\cos{(\omega t)}$ and $\sin{(\omega t)}$.
+\item 1a (3pt): Perform Taylor expansions in powers of $\omega t$ of the functions $\cos{(\omega t)}$ and $\sin{(\omega t)}$.
 
-\item 1b (2pt): Perform a Taylor expansion of $\exp{(i\omega t)}$.
+\item 1b (3pt): Perform a Taylor expansion of $\exp{(i\omega t)}$.
 
 \item 1c (3pt): Using parts (a) and (b) here, show that $\exp{(\imath\omega t)}=\cos{(\omega t)}+\imath\sin{(\omega t)}$.
 
@@ -138,9 +138,9 @@ include $\exp{(\imath\omega t)}$. Here $t$ could be interpreted as time and $\om
 \end{itemize}
 
 \noindent
-\paragraph{Exercise 2 (10 pt), Vector algebra.}
+\paragraph{Exercise 2 (12 pt), Vector algebra.}
 \begin{itemize}
-\item 2a (4pt) One of the many uses of the scalar product is to find the angle between two given vectors. Find the angle between the vectors $\bm{a}=(1,2,4)$ and $\bm{b}=(4,2,1)$ by evaluating their scalar product.
+\item 2a (6pt) One of the many uses of the scalar product is to find the angle between two given vectors. Find the angle between the vectors $\bm{a}=(1,2,4)$ and $\bm{b}=(4,2,1)$ by evaluating their scalar product.
 
 \item 2b (6pt) For a cube with sides of length 1, one vertex at the origin, and sides along the $x$, $y$, and $z$ axes, the vector of the body diagonal from the origin can be written $\bm{a}=(1, 1, 1)$ and the vector of the face diagonal in the $xy$ plane from the origin is $\bm{b}=(1,1,0)$. Find first the lengths of the body diagonal and the face diagonal. Use then part (2a) to find the angle between the body diagonal and the face diagonal.
 \end{itemize}
@@ -165,28 +165,8 @@ include $\exp{(\imath\omega t)}$. Here $t$ could be interpreted as time and $\om
 \paragraph{Exercise 5 (10 pt), Area of triangle and law of sines.}
 Exercise 1.18 in the textbook of Taylor, Classical Mechanics. Part (1.18a) gives 5pt and part (1.18b) gives also 5pt.
 
-\paragraph{Exercise 6 (10pt), Matrices and rotations in the $xy$ plane.}
-The rotation of a three-dimensional  vector $\bm{a}=(a_x,a_y,a_z)$ in the $xy$ plane around an angle $\phi$ results in a new vector $\bm{b}=(b_x,b_y,b_z)$.  This operation can be expressed in terms of linear algebra as a matrix (the rotation matrix) multiplied with a vector. We can write this as
-\[
-\begin{bmatrix} b_x \\ b_y \\ b_z \end{bmatrix} = \begin{bmatrix} \cos{\phi} & \sin{\phi} & 0 \\ -\sin{\phi} & \cos{\phi} & 0 \\ 0 & 0 & 1\end{bmatrix}\begin{bmatrix} a_x \\ a_y \\ a_z \end{bmatrix}.
-\]
-We can write this in a more compact form as $\bm{b} = \bm{R}\bm{a}$, where the rotation matrix is defined as
-\[
-\bm{R} = \begin{bmatrix} \cos{\phi} & \sin{\phi} & 0 \\ -\sin{\phi} & \cos{\phi} & 0 \\ 0 & 0 & 1\end{bmatrix}.
-\]
-
-\begin{itemize}
-\item 6a (4pt) Find the transpose of the matrix $\bm{R}$. We label this as $\bm{R}^T$.
-
-\item 6b (4pt)  This matrix is a so-called unitary/orthogonal matrix.  Show that $\bm{R}^T\bm{R}= \bm{I}$ where $\bm{I}$ is the so-called identity matrix with ones only along the diagonal. How would you interpret this result? For example, are scalar products changed under this transformations?
-
-\item 6c (2pt) Find the matrix for rotating a coordinate system by $90$ degrees about the $x$-axis.
-\end{itemize}
-
-\noindent
-\paragraph{Exercise 7 (40pt), Numerical elements, getting started with some simple data.}
+\paragraph{Exercise 6 (40pt), Numerical elements, getting started with some simple data.}
 \textbf{This exercise should be handed in as a jupyter-notebook} at D2L. Remember to write your name(s). 
-
 
 Our first numerical attempt will involve reading data from file or
 just setting up two vectors, one for position and one for time. Our data are from 
@@ -206,10 +186,15 @@ emphasis on
 \noindent
 For more information, see the \href{{https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html}}{introductory slides}.
 Here are some of the basic packages we will be using this week
+
+
+
+
 \begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 import numpy as np 
 import matplotlib.pyplot as plt
 %matplotlib inline
+
 \end{minted}
 
 
@@ -228,29 +213,35 @@ We will be working with vectors and matrices to get you familiar with them
 \end{enumerate}
 
 \noindent
+
+
+
+
+
 \begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 V1 = np.array([1,2,3])
 V2 = np.array([4,5,6])
 print("V1: ", V1)
 print("V2: ", V2)
+
 \end{minted}
+
 
 If this is not too familiar, here's a useful link for creating vectors in python
 \href{{https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html}}{\nolinkurl{https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html}}. Alternatively, look up the \href{{https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html}}{introductory slides}.
 
 Now lets do some basic mathematics with vectors.
 
-
 Compute and print the following, and double check with hand calculations:
 
 \begin{itemize}
-\item 7a (2pt)  Calculate $\bm{V}_1-\bm{V}_2$.
+\item 6a (2pt)  Calculate $\bm{V}_1-\bm{V}_2$.
 
-\item 7b (2pt)  Calculate $\bm{V}_2-\bm{V}_1$.
+\item 6b (2pt)  Calculate $\bm{V}_2-\bm{V}_1$.
 
-\item 7c (2pt) Calculate the dot product $\bm{V}_1\bm{V}_2$.
+\item 6c (2pt) Calculate the dot product $\bm{V}_1\bm{V}_2$.
 
-\item 7d (2pt) Calculate the cross product $\bm{V}_1\times\bm{V}_2$.
+\item 6d (2pt) Calculate the cross product $\bm{V}_1\times\bm{V}_2$.
 \end{itemize}
 
 \noindent
@@ -258,20 +249,38 @@ Here is some useful explanation on numpy array operations if you feel a bit conf
 see \href{{https://www.pluralsight.com/guides/overview-basic-numpy-operations}}{\nolinkurl{https://www.pluralsight.com/guides/overview-basic-numpy-operations}}.
 
 The following code prints the first two exercises
+
+
+
 \begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 print(V1-V2)
 print(V2-V1)
+
 \end{minted}
 
+
 For the dot product of V1 and V2 below we can use the \textbf{dot} function of \textbf{numpy} as follows
+
+
 \begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 print(V1.dot(V2))
+
 \end{minted}
+
 As a small challenge try to write your own function for the \textbf{dot} product of two vectors.
 
 Matrices can be created in a similar fashion in python.  In this
 language we can work with them through the package numpy (which we
 have already imported)
+
+
+
+
+
+
+
+
+
 
 
 \begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
@@ -284,34 +293,19 @@ M2 = np.matrix([[1,2],
 M3 = np.matrix([[9,8,7],
              [4,5,6],
              [7,6,9]])
+
 \end{minted}
+
 
 Matrices can be added in the same way vectors are added in python as shown here
+
+
 \begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 print("M1+M3: ", M1+M3)
+
 \end{minted}
+
 What happens if we try to do $M1+M2$?
-
-\begin{itemize}
-\item 7e (4pt) Let us go back to exercise 6. Define a vector $\bm{a}=(1,0,0)$ and set the angle $\phi$ in the rotation matrix (rotation in the $xy$ plane) to $45$ degrees. Set up the matrix $\bm{R}$ and find the vector $\bm{b}=\bm{R}\bm{a}$.
-\end{itemize}
-
-\noindent
-To perform a matrix-vector multiplication of the above type, the following python code may be of use. Here we just define a random vector and a random $3\times 3$ matrix
-\begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
-import numpy as np
-#We define a  3 dimensional vector with random numbers
-n = 3
-a = np.random.rand(n)
-# define a matrix of dimension 3 x 3 and set all elements to random numbers with x \in [0, 1]
-R = np.random.rand(n, n)
-#print the vector and the matrix
-print(a)
-print(R)
-# perform a matrix-vector multiplication. Note that we need to transpose the vector and the odd way to indicate a multiplication with @
-b = R @ a.T
-print(b)
-\end{minted}
 
 That's enough vectors and matrices for now. Let's move on to some physics problems! Yes, the actual subject we are studying for. 
 
@@ -332,11 +326,20 @@ t[s] & 1.85 & 2.87 & 3.78 & 4.65 & 5.50 & 6.32 & 7.14 & 7.96 & 8.79 & 9.69 \\
 
 \noindent
 \begin{itemize}
-\item 7f (4pt) You can here make a file with the above data and read them in and set up two vectors, one for time and one for position. Alternatively, you can just set up these two vectors directly and define two vectors in your Python code.
+\item 6e (6pt) You can here make a file with the above data and read them in and set up two vectors, one for time and one for position. Alternatively, you can just set up these two vectors directly and define two vectors in your Python code.
 \end{itemize}
 
 \noindent
 The following example code may help here
+
+
+
+
+
+
+
+
+
 \begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
 # we just initialize time and position
 x = np.array([10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0])
@@ -346,14 +349,16 @@ plt.xlabel("Time t[s]")
 plt.ylabel("Position x[m]")
 plt.title("Usain Bolt's world record run")
 plt.show()
+
 \end{minted}
 
+
 \begin{itemize}
-\item 7g (4pt) Plot the position as function of time
+\item 6f (6pt) Plot the position as function of time
 
-\item 7h (10pt) Compute thereafter the mean velocity for every interval $i$ and the total velocity (from $i=0$ to the given interval $i$) for each interval and plot these two quantities as function of time. Comment your results.
+\item 6g (10pt) Compute thereafter the mean velocity for every interval $i$ and the total velocity (from $i=0$ to the given interval $i$) for each interval and plot these two quantities as function of time. Comment your results.
 
-\item 7i (10pt) Finally, compute and plot the mean acceleration for each interval and the total acceleration. Again, comment your results. Can you see whether he slowed down during the last meters? 
+\item 6h (10pt) Finally, compute and plot the mean acceleration for each interval and the total acceleration. Again, comment your results. Can you see whether he slowed down during the last meters? 
 \end{itemize}
 
 \noindent

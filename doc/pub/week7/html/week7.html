@@ -1,41 +1,141 @@
 <!--
-Automatically generated HTML file from DocOnce source
+HTML file automatically generated from DocOnce source
 (https://github.com/doconce/doconce/)
+doconce format html week7.do.txt --pygments_html_style=default --html_style=bloodish --html_links_in_new_window --html_output=week7 --no_mako
 -->
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="PHY321: Conservative Forces, Examples and Theory">
-
-<title>PHY321: Conservative Forces, Examples and Theory</title>
-
-
+<meta name="description" content="PHY321: Conservative forces, examples and theory">
+<title>PHY321: Conservative forces, examples and theory</title>
 <style type="text/css">
 /* bloodish style */
-
 body {
   font-family: Helvetica, Verdana, Arial, Sans-serif;
   color: #404040;
   background: #ffffff;
 }
-h1 { font-size: 1.8em;  color: #8A0808; }
-h2 { font-size: 1.6em;  color: #8A0808; }
-h3 { font-size: 1.4em;  color: #8A0808; }
-h4 { color: #8A0808; }
+h1 { font-size: 1.8em; color: #8A0808; }
+h2 { font-size: 1.6em; color: #8A0808; }
+h3 { font-size: 1.4em; color: #8A0808; }
+h4 { font-size: 1.2em; color: #8A0808; }
 a { color: #8A0808; text-decoration:none; }
 tt { font-family: "Courier New", Courier; }
-/* pre style removed because it will interfer with pygments */
 p { text-indent: 0px; }
 hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
 p.caption { width: 80%; font-style: normal; text-align: left; }
-hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa; }div.highlight {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    line-height: 1.21429em;
+}
+div.cell {
+    width: 100%;
+    padding: 5px 5px 5px 0;
+    margin: 0;
+    outline: none;
+}
+div.input {
+    page-break-inside: avoid;
+    box-orient: horizontal;
+    box-align: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+div.inner_cell {
+    box-orient: vertical;
+    box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    box-flex: 1;
+    flex: 1;
+}
+div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 4px;
+    background: #f7f7f7;
+    line-height: 1.21429em;
+}
+div.input_area > div.highlight {
+    margin: .4em;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+}
+div.output_wrapper {
+    position: relative;
+    box-orient: vertical;
+    box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.output {
+    box-orient: vertical;
+    box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+div.output_area {
+    padding: 0;
+    page-break-inside: avoid;
+    box-orient: horizontal;
+    box-align: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+div.output_subarea {
+    padding: .4em .4em 0 .4em;
+    box-flex: 1;
+    flex: 1;
+}
+div.output_text {
+    text-align: left;
+    color: #000;
+    line-height: 1.21429em;
+}
+.alert-text-small   { font-size: 80%;  }
+.alert-text-large   { font-size: 130%; }
+.alert-text-normal  { font-size: 90%;  }
+.alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:1px solid #bababa;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  color: #555;
+  background-color: #f8f8f8;
+  background-position: 10px 5px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 55px;
+  width: 75%;
+ }
+.alert-block {padding-top:14px; padding-bottom:14px}
+.alert-block > p, .alert-block > ul {margin-bottom:1em}
+.alert li {margin-top: 1em}
+.alert-block p+p {margin-top:5px}
+.alert-notice { background-image: url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_notice.png); }
+.alert-summary  { background-image:url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_summary.png); }
+.alert-warning { background-image: url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_warning.png); }
+.alert-question {background-image:url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_question.png); }
 div { text-align: justify; text-justify: inter-word; }
+.tab {
+  padding-left: 1.5em;
+}
+div.toc p,a {
+  line-height: 1.3;
+  margin-top: 1.1;
+  margin-bottom: 1.1;
+}
 </style>
-
-
 </head>
 
 <!-- tocinfo
@@ -44,40 +144,37 @@ div { text-align: justify; text-justify: inter-word; }
                2,
                None,
                'aims-and-overarching-motivation'),
-              ('Monday', 3, None, 'monday'),
-              ('Wednesday', 3, None, 'wednesday'),
-              ('Friday', 3, None, 'friday'),
-              ('One Figure to Rule All Forces (thx to Julie)',
+              ('Monday February 14', 3, None, 'monday-february-14'),
+              ('Wednesday February 16', 3, None, 'wednesday-february-16'),
+              ('Friday February 18', 3, None, 'friday-february-18'),
+              ('The curl of a force and link between Line Integrals and '
+               'conservative forces',
                2,
                None,
-               'one-figure-to-rule-all-forces-thx-to-julie'),
-              ('Repetition from last week: Work, Energy, Momentum and '
-               'Conservation laws',
+               'the-curl-of-a-force-and-link-between-line-integrals-and-conservative-forces'),
+              ('Exactness and Independence of Path',
                2,
                None,
-               'repetition-from-last-week-work-energy-momentum-and-conservation-laws'),
-              ('Energy Conservation', 2, None, 'energy-conservation'),
-              ('Conservative forces', 2, None, 'conservative-forces'),
-              ('Forces and Potentials', 2, None, 'forces-and-potentials'),
-              ('Example (relevant for homework 5)',
+               'exactness-and-independence-of-path'),
+              ('Differential Forms', 2, None, 'differential-forms'),
+              ('In Vector Language', 2, None, 'in-vector-language'),
+              ('Path Independence Theorem',
                2,
                None,
-               'example-relevant-for-homework-5'),
-              ('Example Continues', 2, None, 'example-continues'),
-              ('The potential energy from this example',
+               'path-independence-theorem'),
+              ('Work-Energy Theorem again',
                2,
                None,
-               'the-potential-energy-from-this-example'),
-              ('Force and Potential', 2, None, 'force-and-potential'),
-              ('Getting to '
-               '$\\boldsymbol{F}(\\boldsymbol{r})=-\\boldsymbol{\\nabla} '
-               'V(\\boldsymbol{r})$',
+               'work-energy-theorem-again'),
+              ('Additional Theorem', 2, None, 'additional-theorem'),
+              ('Summarizing', 2, None, 'summarizing'),
+              ('Graphing the potential energy and what we can learn from that',
                2,
                None,
-               'getting-to-boldsymbol-f-boldsymbol-r-boldsymbol-nabla-v-boldsymbol-r'),
-              ('Final expression', 2, None, 'final-expression'),
-              ('Net Energy', 2, None, 'net-energy'),
-              ('In Vector Notation', 2, None, 'in-vector-notation'),
+               'graphing-the-potential-energy-and-what-we-can-learn-from-that'),
+              ('Making the plot', 2, None, 'making-the-plot'),
+              ('Interpreting the results', 2, None, 'interpreting-the-results'),
+              ('Final interpretations', 2, None, 'final-interpretations'),
               ('The Earth-Sun system', 2, None, 'the-earth-sun-system'),
               ("The Earth-Sun system, Newton's Laws",
                2,
@@ -119,27 +216,16 @@ div { text-align: justify; text-justify: inter-word; }
                2,
                None,
                'adding-the-velocity-verlet-method'),
-              ('Additional Material: Link between Line Integrals and '
-               'Conservative forces',
+              ('Hints for exercises 2 and 3',
                2,
                None,
-               'additional-material-link-between-line-integrals-and-conservative-forces'),
-              ('Exactness and Independence of Path',
+               'hints-for-exercises-2-and-3'),
+              ('Exercise 2', 2, None, 'exercise-2'),
+              ('Exercise 3, more rockets', 2, None, 'exercise-3-more-rockets'),
+              ('Some more manipulations which have to be done',
                2,
                None,
-               'exactness-and-independence-of-path'),
-              ('Differential Forms', 2, None, 'differential-forms'),
-              ('In Vector Language', 2, None, 'in-vector-language'),
-              ('Path Independence Theorem',
-               2,
-               None,
-               'path-independence-theorem'),
-              ('Work-Energy Theorem again',
-               2,
-               None,
-               'work-energy-theorem-again'),
-              ('Additional Theorem', 2, None, 'additional-theorem'),
-              ('Summarizing', 2, None, 'summarizing')]}
+               'some-more-manipulations-which-have-to-be-done')]}
 end of tocinfo -->
 
 <body>
@@ -159,463 +245,437 @@ MathJax.Hub.Config({
 </script>
 
 
-
-    
 <!-- ------------------- main content ---------------------- -->
+<center>
+<h1>PHY321: Conservative forces, examples and theory</h1>
+</center>  <!-- document title -->
 
-
-
-<center><h1>PHY321: Conservative Forces, Examples and Theory</h1></center>  <!-- document title -->
-
-<p>
 <!-- author(s): <a href="http://mhjgit.github.io/info/doc/web/" target="_blank">Morten Hjorth-Jensen</a> -->
-
 <center>
 <b><a href="http://mhjgit.github.io/info/doc/web/" target="_blank">Morten Hjorth-Jensen</a></b> [1, 2]
 </center>
-
-<p>
 <!-- institution(s) -->
+<center>
+[1] <b>Department of Physics and Astronomy and Facility for Rare Ion Beams (FRIB), Michigan State University, USA</b>
+</center>
+<center>
+[2] <b>Department of Physics, University of Oslo, Norway</b>
+</center>
+<br>
+<center>
+<h4>Feb 18, 2022</h4>
+</center> <!-- date -->
+<br>
 
-<center>[1] <b>Department of Physics and Astronomy and Facility for Rare Ion Beams (FRIB), Michigan State University, USA</b></center>
-<center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
-<br>
-<p>
-<center><h4>Mar 3, 2021</h4></center> <!-- date -->
-<br>
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
 <h2 id="aims-and-overarching-motivation">Aims and Overarching Motivation </h2>
+<h3 id="monday-february-14">Monday February 14 </h3>
 
-<h3 id="monday">Monday </h3>
+<p>Discussion of conditions for conservative forces and summing up our
+discussion on conservative forces. Discussion of potential surfaces
+and their interpretations.  
+</p>
 
-<p>
-Short repetition from last week about conservative forces. Discussion
-of conditions for conservative forces and the Earth-Sun gravitional
-force example.  <b>Reading suggestion</b>: Taylor sections 4.3, 4.4 and 4.8.
+<p><b>Reading suggestion</b>: Taylor sections 4.6, 4.9, 4.10 and 5.1 and 5.2 on harmonic oscillations.</p>
+<h3 id="wednesday-february-16">Wednesday February 16 </h3>
 
-<h3 id="wednesday">Wednesday </h3>
+<p>The Earth-Sun problem and energy-conserving algorithms and how to encode in more efficient ways various algorithms for solving the equations of motion (Euler, Euler-Cromer and Velocity Verlet).</p>
 
-<p>
-Potential curves and discussion of the Earth-Sun example, analytical and numerical considerations.
-<b>Reading suggestions</b>: Taylor section 4.6, 4.8 and 4.9.
+<ul>
+<li> <a href="https://github.com/mhjensen/Physics321/tree/master/doc/pub/week7/ipynb" target="_blank">Links to Julie's material on code reusability</a></li>
+</ul>
+<p><b>Reading suggestions</b>: Taylor section 4.8 and these notes</p>
+<h3 id="friday-february-18">Friday February 18 </h3>
+<p>Working on the Earth-Sun problem and hw 5. Hints on various exercises.</p>
 
-<h3 id="friday">Friday </h3>
+<p><b>Reading suggestions:</b> Taylor chapters 3 and 4 and these notes.</p>
 
-Earth-Sun,  conservative forces and potential energy.
-<b>Reading suggestion</b>: Taylor sections 4.8 and 4.9.
-
-<p>
-If we get time, we start with harmonic oscillations and Hooke's law. <b>Reading suggestion</b>: Taylor section 5.1.
-
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="the-curl-of-a-force-and-link-between-line-integrals-and-conservative-forces">The curl of a force and link between Line Integrals and conservative forces </h2>
 
-<h2 id="one-figure-to-rule-all-forces-thx-to-julie">One Figure to Rule All Forces (thx to Julie) </h2>
+<p>The concept of line integrals plays an important role in our discussion of energy conservation,
+our definition of potentials and conservative forces.
+</p>
 
-<p>
-<br /><br /><center><p><img src="figslides/ClassicalMechanicsJulie.png" align="bottom" width=600></p></center><br /><br />
+<p>Let us remind ourselves of some the basic elements (most of you may
+have seen this in a calculus course under the general topic of vector
+fields).
+</p>
 
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="repetition-from-last-week-work-energy-momentum-and-conservation-laws">Repetition from last week: Work, Energy, Momentum and Conservation laws </h2>
-
-<p>
-Energy conservation is most convenient as a strategy for addressing
-problems where time does not appear. For example, a particle goes
-from position \( x_0 \) with speed \( v_0 \), to position \( x_f \); what is its
-new speed? However, it can also be applied to problems where time
-does appear, such as in solving for the trajectory \( x(t) \), or
-equivalently \( t(x) \).
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="energy-conservation">Energy Conservation </h2>
-Energy is conserved in the case where the potential energy, \( V(\boldsymbol{r}) \), depends only on position, and not on time. The force is determined by \( V \),
+<p>We define a path integration \( C \), that is we integrate
+from a point \( \boldsymbol{r}_1 \) to a point \( \boldsymbol{r}_2 \). 
+Let us assume that the path \( C \) is represented by an arc length \( s \). In three dimension we have the following representation of \( C \)
+</p>
 $$
-\begin{equation}
-\boldsymbol{F}(\boldsymbol{r})=-\boldsymbol{\nabla} V(\boldsymbol{r}).
-\label{_auto1}
-\end{equation}
+\boldsymbol{r}(s)=x(s)\boldsymbol{e}_1+y(s)\boldsymbol{e}_2+z(s)\boldsymbol{e}_3,
 $$
 
-<p>
+<p>then our integral of a function \( f(x,y,z) \) along the path \( C \) is defined as </p>
+$$
+\int_Cf(x,y,z)ds=\int_a^bf\left(x(s),y(s),z(s)\right)ds,
+$$
+
+<p>where the initial and final points are \( a \) and \( b \), respectively.</p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="exactness-and-independence-of-path">Exactness and Independence of Path </h2>
 
-<h2 id="conservative-forces">Conservative forces </h2>
+<p>With the definition of a line integral, we can in turn set up the
+theorem of independence of integration path.
+</p>
 
-<p>
-We say a force is conservative if it satisfies the following conditions:
+<p>Let us define
+\( f(x,y,z) \), \( g(x,y,z) \) and \( h(x,y,z) \) to be functions which are
+defined and continuous in a domain \( D \) in space. Then a line integral
+like the above is said to be independent of path in \( D \), if for every
+pair of endpoints \( a \) and \( b \) in \( D \) the value of the integral is the
+same for all paths \( C \) in \( D \) starting from a point \( a \) and ending in
+a point \( b \). The integral depends thus only on the integration limits
+and not on the path.
+</p>
 
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="differential-forms">Differential Forms </h2>
+
+<p>An expression of the form</p>
+$$
+fdx+gdy+hdz,
+$$
+
+<p>where \( f \), \( g \) and \( h \) are functions defined in \( D \), is a called a first-order differential form
+in three variables.
+The form is said to be exact if it is the differential
+</p>
+$$
+du= \frac{\partial u}{\partial x}dx+\frac{\partial u}{\partial y}dy+\frac{\partial u}{\partial z}dz,
+$$
+
+<p>of a differentiable function \( u(x,y,z) \) everywhere in \( D \), that is</p>
+$$
+du=fdx+gdy+hdz.
+$$
+
+<p>It is said to be exact if and only if we can then set</p>
+$$
+f=\frac{\partial u}{\partial x},
+$$
+
+<p>and</p>
+$$
+g=\frac{\partial u}{\partial y},
+$$
+
+<p>and</p>
+$$
+h=\frac{\partial u}{\partial z},
+$$
+
+<p>everywhere in the domain \( D \).</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="in-vector-language">In Vector Language </h2>
+
+<p>In vector language the above means that the differential form </p>
+$$
+fdx+gdy+hdz,
+$$
+
+<p>is exact in \( D \) if and only if the vector function (it could be a force, or velocity, acceleration or other vectors we encounter in this course)</p>
+$$
+\boldsymbol{F}=f\boldsymbol{e}_1+g\boldsymbol{e}_2+h\boldsymbol{e}_3,
+$$
+
+<p>is the gradient of a function \( u(x,y,z) \)</p>
+$$
+\boldsymbol{v}=\boldsymbol{\nabla}u=\frac{\partial u}{\partial x}\boldsymbol{e}_1+\frac{\partial u}{\partial y}\boldsymbol{e}_2+\frac{\partial u}{\partial z}\boldsymbol{e}_3.
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="path-independence-theorem">Path Independence Theorem </h2>
+
+<p>If this is the case, we can state the path independence theorem which
+states that with functions \( f(x,y,z) \), \( g(x,y,z) \) and \( h(x,y,z) \) that fulfill the above
+exactness conditions,  the line integral
+</p>
+
+$$
+\int_C\left(fdx+gdy+hdz\right),
+$$
+
+<p>is independent of path in \( D \) if and only if the differential form under the integral sign is exact in \( D \).</p>
+
+<p>This is the path independence theorem. </p>
+
+<p>We will not give a proof of the theorem. You can find this in any vector analysis chapter in a mathematics textbook.</p>
+
+<p>We note however that the path integral from a point \( p \) to a final point \( q \) is given by</p>
+$$
+\int_p^q\left(fdx+gdy+hdz\right)=\int_p^q\left(\frac{\partial u}{\partial x}dx+\frac{\partial u}{\partial y}dy+\frac{\partial u}{\partial z}dz\right)=\int_p^qdu.
+$$
+
+<p>Assume now that we have a dependence on a variable \( s \) for \( x \), \( y \) and \( z \). We have then</p>
+$$
+\int_p^qdu=\int_{s_1}^{s_2}\frac{du}{ds}ds = u(x(s),y(s),z(s))\vert_{s=s_1}^{s=s_2}=u(q)-u(p).
+$$
+
+<p>This last equation</p>
+$$
+\int_p^q\left(fdx+gdy+hdz\right)=u(q)-u(p),
+$$
+
+<p>is the analogue of the usual formula</p>
+$$
+\int_a^bf(x)dx=F(x)\vert_a^b=F(b)-F(a),
+$$
+
+<p>with \( F'(x)=f(x) \).</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="work-energy-theorem-again">Work-Energy Theorem again </h2>
+
+<p>We remember that a the work done by a force
+\( \boldsymbol{F}=f\boldsymbol{e}_1+g\boldsymbol{e}_2+h\boldsymbol{e}_3 \) on a displacemnt \( d\boldsymbol{r} \)
+is
+</p>
+$$
+W=\int_C\boldsymbol{F}d\boldsymbol{r}=\int_C(fdx+gdy+hdz).
+$$
+
+<p>From the path independence theorem, we know that this has to result in
+the difference between the two endpoints only. This is exact if and
+only if the force is the force \( \boldsymbol{F} \) is the gradient of a scalar
+function \( u \). We call this scalar function, which depends only the
+positions \( x,y,z \) for the potential energy \( V(x,y,z)=V(\boldsymbol{r}) \).
+</p>
+
+<p>We have thus</p>
+$$
+\boldsymbol{F}(\boldsymbol{r})\propto \boldsymbol{\nabla}V(\boldsymbol{r}),
+$$
+
+<p>and we define  this as</p>
+$$
+\boldsymbol{F}(\boldsymbol{r})= -\boldsymbol{\nabla}V(\boldsymbol{r}).
+$$
+
+<p>Such a force is called <b>a conservative force</b>. The above expression can be used to demonstrate
+energy conservation.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="additional-theorem">Additional Theorem </h2>
+
+<p>Finally we can define the criterion for exactness and independence of
+path. This theorem states that if \( f(x,y,z) \), \( g(x,y,z) \) and
+\( h(x,y,z) \) are continuous functions with continuous first partial derivatives in the domain \( D \),
+then the line integral
+</p>
+$$
+\int_C\left(fdx+gdy+hdz\right),
+$$
+
+<p>is independent of path in \( D \) when</p>
+
+$$
+\frac{\partial h}{\partial y}=\frac{\partial g}{\partial z},
+$$
+
+<p>and</p>
+$$
+\frac{\partial f}{\partial z}=\frac{\partial h}{\partial x},
+$$
+
+<p>and</p>
+$$
+\frac{\partial g}{\partial x}=\frac{\partial f}{\partial y}.
+$$
+
+<p>This leads to the <b>curl</b> of \( \boldsymbol{F} \) being zero</p>
+$$
+\boldsymbol{\nabla}\times\boldsymbol{F}=\boldsymbol{\nabla}\times\left(-\boldsymbol{\nabla}V(\boldsymbol{r})\right)=0!
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="summarizing">Summarizing </h2>
+
+<p>A conservative force \( \boldsymbol{F} \) is a defined as the partial derivative of a scalar potential which depends only on the position,</p>
+$$
+\boldsymbol{F}(\boldsymbol{r})= -\boldsymbol{\nabla}V(\boldsymbol{r}).
+$$
+
+<p>This leads to conservation of energy and a path independent line integral as long as the curl of the force is zero, that is</p>
+$$
+\boldsymbol{\nabla}\times\boldsymbol{F}=\boldsymbol{\nabla}\times\left(-\boldsymbol{\nabla}V(\boldsymbol{r})\right)=0.
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="graphing-the-potential-energy-and-what-we-can-learn-from-that">Graphing the potential energy and what we can learn from that </h2>
+
+<p>This is taken from homework 4, exercises 5.</p>
+
+<p>A particle is under the influence of a force \( F=-kx+kx^3/\alpha^2 \), where \( k \) and \( \alpha \) are constants and \( k \) is positive.</p>
+
+<p>Determine \( V(x) \) and discuss the motion. It can be convenient here to
+make a sketch/plot of the potential as function of \( x \).
+</p>
+
+<p>We assume that the potential is zero at say \( x=0 \). Integrating the force from zero to \( x \) gives</p>
+$$
+V(x) = -\int_0^x F(x')dx'=\frac{kx^2}{2}-\frac{kx^4}{4\alpha^2}.
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="making-the-plot">Making the plot </h2>
+
+<p>The following code plots the potential. We have chosen values of \( \alpha=k=1.0 \). Feel free to experiment with other values. We plot \( V(x) \) for a domain of \( x\in [-2,2] \). </p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">math</span>
+
+x0<span style="color: #666666">=</span> <span style="color: #666666">-2.0</span>
+xn <span style="color: #666666">=</span> <span style="color: #666666">2.1</span>
+Deltax <span style="color: #666666">=</span> <span style="color: #666666">0.1</span>
+alpha <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>
+k <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>
+<span style="color: #408080; font-style: italic">#set up arrays</span>
+x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>arange(x0,xn,Deltax)
+n <span style="color: #666666">=</span> np<span style="color: #666666">.</span>size(x)
+V <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+V <span style="color: #666666">=</span> <span style="color: #666666">0.5*</span>k<span style="color: #666666">*</span>x<span style="color: #666666">*</span>x<span style="color: #666666">-0.25*</span>k<span style="color: #666666">*</span>(x<span style="color: #666666">**4</span>)<span style="color: #666666">/</span>(alpha<span style="color: #666666">*</span>alpha)
+plt<span style="color: #666666">.</span>plot(x, V)
+plt<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">&quot;x&quot;</span>)
+plt<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">&quot;V&quot;</span>)
+plt<span style="color: #666666">.</span>show()
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="interpreting-the-results">Interpreting the results </h2>
+
+<p>From the plot here (with the chosen parameters) </p>
 <ol>
-<li> The force \( \boldsymbol{F} \) acting on an object only depends on the position \( \boldsymbol{r} \), that is \( \boldsymbol{F}=\boldsymbol{F}(\boldsymbol{r}) \).</li>
-<li> For any two points \( \boldsymbol{r}_1 \) and \( \boldsymbol{r}_2 \), the work done by the force \( \boldsymbol{F} \) on the displacement between these two points is independent of the path taken.</li>
-<li> Finally, the <b>curl</b> of the force is zero \( \boldsymbol{\nabla}\times\boldsymbol{F}=0 \).</li>
+<li> we see that with a given initial velocity we can overcome the potential energy barrier</li>
 </ol>
+<p>and leave the potential well for good.</p>
+<ol>
+<li> If the initial velocity is smaller (see next exercise) than a certain value, it will remain trapped in the potential well and oscillate back and forth around \( x=0 \). This is where the potential has its minimum value.</li> 
+<li> If the kinetic energy at \( x=0 \) equals the maximum potential energy, the object will oscillate back and forth between the minimum potential energy at \( x=0 \) and the turning points where the kinetic energy turns zero. These are the so-called non-equilibrium points.</li> 
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="final-interpretations">Final interpretations </h2>
+
+<p>What happens when the energy of the particle is \( E=(1/4)k\alpha^2 \)? Hint: what is the maximum value of the potential energy?</p>
+
+<p>From the figure we see that
+the potential has a minimum at at \( x=0 \) then rises until \( x=\alpha \) before falling off again. The maximum
+potential, \( V(x\pm \alpha) = k\alpha^2/4 \). If the energy is higher, the particle cannot be contained in the
+well. The turning points are thus defined by \( x=\pm \alpha \). And from the previous plot you can easily see that this is the case (\( \alpha=1 \) in the abovementioned Python code). 
+</p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="forces-and-potentials">Forces and Potentials </h2>
-
-<p>
-The energy \( E \) of a given system is defined as the sum of kinetic and potential energies,
-$$
-E=K+V(\boldsymbol{r}).
-$$
-
-<p>
-We define the potential energy at a point \( \boldsymbol{r} \) as the negative work done from a starting point \( \boldsymbol{r}_0 \) to a final point \( \boldsymbol{r} \) 
-
-$$
-V(\boldsymbol{r})=-W(\boldsymbol{r}_0\rightarrow\boldsymbol{r})= -\int_{\boldsymbol{r}_0}^{\boldsymbol{r}}d\boldsymbol{r}'\boldsymbol{F}(\boldsymbol{r}').
-$$
-
-If the potential depends on the path taken between these two points there is no unique potential.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="example-relevant-for-homework-5">Example (relevant for homework 5) </h2>
-
-<p>
-We study a classical electron which moves in the \( x \)-direction along a surface. The force from the surface is
-$$
-\boldsymbol{F}(x)=-F_0\sin{(\frac{2\pi x}{b})}\boldsymbol{e}_1.
-$$
-
-The constant \( b \) represents the distance between atoms at the surface of the material, \( F_0 \) is a constant and \( x \) is the position of the electron.
-
-<p>
-This is indeed a conservative force since it depends only on position
-and its <b>curl</b> is zero, that is \( -\boldsymbol{\nabla}\times \boldsymbol{F}=0 \). This means that energy is conserved and the
-integral over the work done by the force is independent of the path
-taken.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="example-continues">Example Continues </h2>
-
-<p>
-Using the work-energy theorem we can find the work \( W \) done when
-moving an electron from a position \( x_0 \) to a final position \( x \)
-through the integral
-
-$$
-W=\int_{x_0}^x \boldsymbol{F}(x')dx' =  -\int_{x_0}^x F_0\sin{(\frac{2\pi x'}{b})} dx',
-$$
-
-which results in
-$$
-W=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right].
-$$
-
-Since this is related to the change in kinetic energy we have, with \( v_0 \) being the initial velocity at a  time \( t_0 \),
-$$
-v  = \pm\sqrt{\frac{2}{m}\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right]+v_0^2}.
-$$
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="the-potential-energy-from-this-example">The potential energy from this example </h2>
-
-<p>
-The potential energy, due to energy conservation is
-$$
-V(x)=V(x_0)+\frac{1}{2}mv_0^2-\frac{1}{2}mv^2,
-$$
-
-with \( v \) given by the velocity from above.
-
-<p>
-We can now, in order to find a more explicit expression for the
-potential energy at a given value \( x \), define a zero level value for
-the potential. The potential is defined, using the work-energy
-theorem, as
-
-$$
-V(x)=V(x_0)+\int_{x_0}^x (-F(x'))dx',
-$$
-
-<p>
-and if you recall the definition of the indefinite integral, we can rewrite this as
-
-$$
-V(x)=\int (-F(x'))dx'+C,
-$$
-
-<p>
-where \( C \) is an undefined constant. The force is defined as the
-gradient of the potential, and in that case the undefined constant
-vanishes. The constant does not affect the force we derive from the
-potential.
-
-<p>
-We have then
-$$
-V(x)=V(x_0)-\int_{x_0}^x \boldsymbol{F}(x')dx',
-$$
-
-which results in
-$$
-V(x)=-\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right]+V(x_0).
-$$
-
-We can now define
-$$
--\frac{F_0b}{2\pi}\cos{(\frac{2\pi x_0}{b})}=V(x_0),
-$$
-
-which gives 
-$$
-V(x)=-\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}\right].
-$$
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="force-and-potential">Force and Potential </h2>
-
-<p>
-We have defined work as the energy resulting from a net force acting
-on an object (or sseveral objects), that is
-
-$$
-W(\boldsymbol{r}\rightarrow \boldsymbol{r}+d\boldsymbol{r})= \boldsymbol{F}(\boldsymbol{r})d\boldsymbol{r}.
-$$
-
-<p>
-If we write out this for each component we have
-
-$$
-W(\boldsymbol{r}\rightarrow \boldsymbol{r}+d\boldsymbol{r})=\boldsymbol{F}(\boldsymbol{r})d\boldsymbol{r}=F_xdx+F_ydy+F_zdz.
-$$
-
-<p>
-The work done from an initial position to a final one defines also the difference in potential energies
-
-$$
-W(\boldsymbol{r}\rightarrow \boldsymbol{r}+d\boldsymbol{r})=-\left[V(\boldsymbol{r}+d\boldsymbol{r})-V(\boldsymbol{r})\right].
-$$
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="getting-to-boldsymbol-f-boldsymbol-r-boldsymbol-nabla-v-boldsymbol-r">Getting to \( \boldsymbol{F}(\boldsymbol{r})=-\boldsymbol{\nabla} V(\boldsymbol{r}) \) </h2>
-
-<p>
-We can write out the differences in potential energies as
-
-$$
-V(\boldsymbol{r}+d\boldsymbol{r})-V(\boldsymbol{r})=V(x+dx,y+dy,z+dz)-V(x,y,z)=dV,
-$$
-
-and using the expression the differential of a multi-variable function \( f(x,y,z) \) 
-$$
-df=\frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy+\frac{\partial f}{\partial z}dz,
-$$
-
-we can write the expression for the work done as
-$$
-W(\boldsymbol{r}\rightarrow \boldsymbol{r}+d\boldsymbol{r})=-dV=-\left[\frac{\partial V}{\partial x}dx+\frac{\partial V}{\partial y}dy+\frac{\partial V}{\partial z}dz \right].
-$$
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="final-expression">Final expression </h2>
-
-<p>
-Comparing the last equation with 
-$$
-W(\boldsymbol{r}\rightarrow \boldsymbol{r}+d\boldsymbol{r})=F_xdx+F_ydy+F_zdz,
-$$
-
-we have
-$$
-F_xdx+F_ydy+F_zdz=-\left[\frac{\partial V}{\partial x}dx+\frac{\partial V}{\partial y}dy+\frac{\partial V}{\partial z}dz \right],
-$$
-
-<p>
-leading to
-$$
-F_x=-\frac{\partial V}{\partial x},
-$$
-
-and
-$$
-F_y=-\frac{\partial V}{\partial y},
-$$
-
-and
-$$
-F_z=-\frac{\partial V}{\partial z},
-$$
-
-or just
-$$
-\boldsymbol{F}=-\frac{\partial V}{\partial x}\boldsymbol{e}_1-\frac{\partial V}{\partial y}\boldsymbol{e}_2-\frac{\partial V}{\partial z}\boldsymbol{e}_3=-\boldsymbol{\nabla}V(\boldsymbol{r}).
-$$
-
-And this connection is the one we wanted to show.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="net-energy">Net Energy  </h2>
-
-<p>
-The net energy, \( E=V+K \) where \( K \) is the kinetic energy, is then conserved,
-
-$$
-\begin{eqnarray}
-\frac{d}{dt}(K+V)&=&\frac{d}{dt}\left(\frac{m}{2}(v_x^2+v_y^2+v_z^2)+V(\boldsymbol{r})\right)\\
-\nonumber
-&=&m\left(v_x\frac{dv_x}{dt}+v_y\frac{dv_y}{dt}+v_z\frac{dv_z}{dt}\right)
-+\partial_xV\frac{dx}{dt}+\partial_yV\frac{dy}{dt}+\partial_zV\frac{dz}{dt}\\
-\nonumber
-&=&v_xF_x+v_yF_y+v_zF_z-F_xv_x-F_yv_y-F_zv_z=0.
-\end{eqnarray}
-$$
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="in-vector-notation">In Vector Notation  </h2>
-
-<p>
-The same proof can be written more compactly with vector notation,
-
-$$
-\begin{eqnarray}
-\frac{d}{dt}\left(\frac{m}{2}v^2+V(\boldsymbol{r})\right)
-&=&m\boldsymbol{v}\cdot\dot{\boldsymbol{v}}+\boldsymbol{\nabla} V(\boldsymbol{r})\cdot\dot{\boldsymbol{r}}\\
-\nonumber
-&=&\boldsymbol{v}\cdot\boldsymbol{F}-\boldsymbol{F}\cdot\boldsymbol{v}=0.
-\end{eqnarray}
-$$
-
-<p>
-Inverting the expression for kinetic energy,
-$$
-\begin{equation}
-v=\sqrt{2K/m}=\sqrt{2(E-V)/m},
-\label{_auto2}
-\end{equation}
-$$
-
-<p>
-allows one to solve for the one-dimensional trajectory \( x(t) \), by finding \( t(x) \),
-
-$$
-\begin{equation}
-t=\int_{x_0}^x \frac{dx'}{v(x')}=\int_{x_0}^x\frac{dx'}{\sqrt{2(E-V(x'))/m}}.
-\label{_auto3}
-\end{equation}
-$$
-
-<p>
-Note this would be much more difficult in higher dimensions, because
-you would have to determine which points, \( x,y,z \), the particles might
-reach in the trajectory, whereas in one dimension you can typically
-tell by simply seeing whether the kinetic energy is positive at every
-point between the old position and the new position.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
 <h2 id="the-earth-sun-system">The Earth-Sun system </h2>
 
-<p>
-We will now venture into a study of a system which is energy
+<p>We will now venture into a study of a system which is energy
 conserving. The aim is to see if we (since it is not possible to solve
 the general equations analytically) we can develop stable numerical
 algorithms whose results we can trust!
+</p>
 
-<p>
-We solve the equations of motion numerically. We will also compute
+<p>We solve the equations of motion numerically. We will also compute
 quantities like the energy numerically.
+</p>
 
-<p>
-We start with a simpler case first, the Earth-Sun system  in two dimensions only.  The gravitational force \( F_G \) on the earth from the sun is  
+<p>We start with a simpler case first, the Earth-Sun system  in two dimensions only.  The gravitational force \( F_G \) on the earth from the sun is  </p>
 $$
 \boldsymbol{F}_G=-\frac{GM_{\odot}M_E}{r^3}\boldsymbol{r},
 $$
 
-where \( G \) is the gravitational constant, 
+<p>where \( G \) is the gravitational constant, </p>
 $$
 M_E=6\times 10^{24}\mathrm{Kg},
 $$
 
-the mass of Earth, 
+<p>the mass of Earth, </p>
 $$
 M_{\odot}=2\times 10^{30}\mathrm{Kg}, 
 $$
 
-the mass of the Sun and 
+<p>the mass of the Sun and </p>
 $$
 r=1.5\times 10^{11}\mathrm{m}, 
 $$
 
-is the distance between Earth and the Sun. The latter defines what we call an astronomical unit <b>AU</b>.
+<p>is the distance between Earth and the Sun. The latter defines what we call an astronomical unit <b>AU</b>.</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
 <h2 id="the-earth-sun-system-newton-s-laws">The Earth-Sun system, Newton's Laws </h2>
 
-<p>
-From Newton's second law we have then for the \( x \) direction
+<p>From Newton's second law we have then for the \( x \) direction</p>
 $$
 \frac{d^2x}{dt^2}=-\frac{F_{x}}{M_E},
 $$
 
-and
+<p>and</p>
 $$
 \frac{d^2y}{dt^2}=-\frac{F_{y}}{M_E},
 $$
 
-for the \( y \) direction.
+<p>for the \( y \) direction.</p>
 
-<p>
-Here we will use  that  \( x=r\cos{(\theta)} \), \( y=r\sin{(\theta)} \) and
+<p>Here we will use  that  \( x=r\cos{(\theta)} \), \( y=r\sin{(\theta)} \) and</p>
 $$
 r = \sqrt{x^2+y^2}.
 $$
 
-We can rewrite 
+<p>We can rewrite </p>
 $$
 F_{x}=-\frac{GM_{\odot}M_E}{r^2}\cos{(\theta)}=-\frac{GM_{\odot}M_E}{r^3}x,
 $$
 
-and
+<p>and</p>
 $$
 F_{y}=-\frac{GM_{\odot}M_E}{r^2}\sin{(\theta)}=-\frac{GM_{\odot}M_E}{r^3}y,
 $$
 
-for the \( y \) direction.
+<p>for the \( y \) direction.</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
 <h2 id="the-earth-sun-system-rewriting-the-equations">The Earth-Sun system, rewriting the Equations </h2>
 
-<p>
-We can rewrite these two equations
+<p>We can rewrite these two equations</p>
 $$
 F_{x}=-\frac{GM_{\odot}M_E}{r^2}\cos{(\theta)}=-\frac{GM_{\odot}M_E}{r^3}x,
 $$
 
-and
+<p>and</p>
 $$
 F_{y}=-\frac{GM_{\odot}M_E}{r^2}\sin{(\theta)}=-\frac{GM_{\odot}M_E}{r^3}y,
 $$
 
-as four first-order coupled differential equations
+<p>as four first-order coupled differential equations</p>
 $$
 \frac{dv_x}{dt}=-\frac{GM_{\odot}}{r^3}x,
 $$
@@ -632,13 +692,11 @@ $$
 \frac{dy}{dt}=v_y.
 $$
 
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="building-a-code-for-the-solar-system-final-coupled-equations">Building a code for the solar system, final coupled equations </h2>
 
-<p>
-The four coupled differential equations
+<p>The four coupled differential equations</p>
 $$
 \frac{dv_x}{dt}=-\frac{GM_{\odot}}{r^3}x,
 $$
@@ -655,32 +713,30 @@ $$
 \frac{dy}{dt}=v_y,
 $$
 
-can be turned into dimensionless equations or we can introduce astronomical units with \( 1 \) AU = \( 1.5\times 10^{11} \).
+<p>can be turned into dimensionless equations or we can introduce astronomical units with \( 1 \) AU = \( 1.5\times 10^{11} \). </p>
 
-<p>
-Using the equations from circular motion (with \( r =1\mathrm{AU} \)) 
+<p>Using the equations from circular motion (with \( r =1\mathrm{AU} \)) </p>
 $$
 \frac{M_E v^2}{r} = F = \frac{GM_{\odot}M_E}{r^2},
 $$
 
-we have
+<p>we have</p>
 $$
 GM_{\odot}=v^2r,
 $$
 
-and using that the velocity of Earth (assuming circular motion) is
+<p>and using that the velocity of Earth (assuming circular motion) is
 \( v = 2\pi r/\mathrm{yr}=2\pi\mathrm{AU}/\mathrm{yr} \), we have
+</p>
 $$
 GM_{\odot}= v^2r = 4\pi^2 \frac{(\mathrm{AU})^3}{\mathrm{yr}^2}.
 $$
 
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="building-a-code-for-the-solar-system-discretized-equations">Building a code for the solar system, discretized equations </h2>
 
-<p>
-The four coupled differential equations can then be discretized using Euler's method as (with step length \( h \))
+<p>The four coupled differential equations can then be discretized using Euler's method as (with step length \( h \))</p>
 $$
 v_{x,i+1}=v_{x,i}-h\frac{4\pi^2}{r_i^3}x_i,
 $$
@@ -697,18 +753,20 @@ $$
 y_{i+1}=y_i+hv_{y,i},
 $$
 
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="code-example-with-euler-s-method">Code Example with Euler's Method </h2>
 
-<p>
-The code here implements Euler's method for the Earth-Sun system using a more compact way of representing the vectors. Alternatively, you could have spelled out all the variables \( v_x \), \( v_y \), \( x \) and \( y \) as one-dimensional arrays.
+<p>The code here implements Euler's method for the Earth-Sun system using a more compact way of representing the vectors. Alternatively, you could have spelled out all the variables \( v_x \), \( v_y \), \( x \) and \( y \) as one-dimensional arrays. </p>
 
-<p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #408080; font-style: italic"># Common imports</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic"># Common imports</span>
 <span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
 <span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">pandas</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">pd</span>
 <span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #666666">*</span>
@@ -772,172 +830,214 @@ ax<span style="color: #666666">.</span>plot(r[:,<span style="color: #666666">0</
 fig<span style="color: #666666">.</span>tight_layout()
 save_fig(<span style="color: #BA2121">&quot;EarthSunEuler&quot;</span>)
 plt<span style="color: #666666">.</span>show()
-</pre></div>
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="problems-with-euler-s-method">Problems with Euler's Method </h2>
 
-<p>
-We notice here that Euler's method doesn't give a stable orbit. It
+<p>We notice here that Euler's method doesn't give a stable orbit. It
 means that we cannot trust Euler's method. In a deeper way, as we will
 see in homework 5, Euler's method does not conserve energy. It is an
 example of an integrator which is not
 <a href="https://en.wikipedia.org/wiki/Symplectic_integrator" target="_blank">symplectic</a>.
+</p>
 
-<p>
-Here we present thus two methods, which with simple changes allow us to avoid these pitfalls. The simplest possible extension is the so-called Euler-Cromer method.
+<p>Here we present thus two methods, which with simple changes allow us to avoid these pitfalls. The simplest possible extension is the so-called Euler-Cromer method.
 The changes we need to make to our code are indeed marginal here.
 We need simply to replace
-<p>
+</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>    r[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> r[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>v[i]
-</pre></div>
-<p>
-in the above code with the velocity at the new time \( t_{i+1} \)
-<p>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;">    r[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> r[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>v[i]
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>in the above code with the velocity at the new time \( t_{i+1} \)</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>    r[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> r[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>v[i<span style="color: #666666">+1</span>]
-</pre></div>
-<p>
-By this simple caveat we get stable orbits.
-Below we derive the Euler-Cromer method as well as one of the most utlized algorithms for sovling the above type of problems, the so-called Velocity-Verlet method.
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;">    r[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> r[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>v[i<span style="color: #666666">+1</span>]
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
+<p>By this simple caveat we get stable orbits.
+Below we derive the Euler-Cromer method as well as one of the most utlized algorithms for sovling the above type of problems, the so-called Velocity-Verlet method. 
+</p>
+
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
 <h2 id="deriving-the-euler-cromer-method">Deriving the Euler-Cromer Method </h2>
 
-<p>
-Let us repeat Euler's method.
+<p>Let us repeat Euler's method.
 We have a differential equation
+</p>
 $$
 \begin{equation}
 y'(t_i)=f(t_i,y_i)   
-\label{_auto4}
+\label{_auto1}
 \end{equation}
 $$
 
-and if we truncate at the first derivative, we have from the Taylor expansion
+<p>and if we truncate at the first derivative, we have from the Taylor expansion</p>
 $$
 \begin{equation}
 y_{i+1}=y(t_i) + (\Delta t) f(t_i,y_i) + O(\Delta t^2), \label{eq:euler}
 \end{equation}
 $$
 
-which when complemented with \( t_{i+1}=t_i+\Delta t \) forms
+<p>which when complemented with \( t_{i+1}=t_i+\Delta t \) forms
 the algorithm for the well-known Euler method. 
 Note that at every step we make an approximation error
 of the order of \( O(\Delta t^2) \), however the total error is the sum over all
 steps \( N=(b-a)/(\Delta t) \) for \( t\in [a,b] \), yielding thus a global error which goes like
-\( NO(\Delta t^2)\approx O(\Delta t) \).
+\( NO(\Delta t^2)\approx O(\Delta t) \). 
+</p>
 
-<p>
-To make Euler's method more precise we can obviously
+<p>To make Euler's method more precise we can obviously
 decrease \( \Delta t \) (increase \( N \)), but this can lead to loss of numerical precision.
 Euler's method is not recommended for precision calculation,
 although it is handy to use in order to get a first
 view on how a solution may look like.
+</p>
 
-<p>
-Euler's method is asymmetric in time, since it uses information about the derivative at the beginning
+<p>Euler's method is asymmetric in time, since it uses information about the derivative at the beginning
 of the time interval. This means that we evaluate the position at \( y_1 \) using the velocity
 at \( v_0 \). A simple variation is to determine \( x_{n+1} \) using the velocity at
 \( v_{n+1} \), that is (in a slightly more generalized form)
+</p>
 $$
 \begin{equation} 
 y_{n+1}=y_{n}+ v_{n+1}+O(\Delta t^2)
-\label{_auto5}
+\label{_auto2}
 \end{equation}
 $$
 
-and 
+<p>and </p>
 $$
 \begin{equation}
 v_{n+1}=v_{n}+(\Delta t) a_{n}+O(\Delta t^2).
-\label{_auto6}
+\label{_auto3}
 \end{equation}
 $$
 
-The acceleration \( a_n \) is a function of \( a_n(y_n, v_n, t_n) \) and needs to be evaluated
+<p>The acceleration \( a_n \) is a function of \( a_n(y_n, v_n, t_n) \) and needs to be evaluated
 as well. This is the Euler-Cromer method.
+</p>
 
-<p>
-<b>Exercise</b>: go back to the above code with Euler's method and add the Euler-Cromer method.
+<p><b>Exercise</b>: go back to the above code with Euler's method and add the Euler-Cromer method. </p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
 <h2 id="deriving-the-velocity-verlet-method">Deriving the Velocity-Verlet Method </h2>
 
-<p>
-Let us stay with \( x \) (position) and \( v \) (velocity) as the quantities we are interested in.
+<p>Let us stay with \( x \) (position) and \( v \) (velocity) as the quantities we are interested in.</p>
 
-<p>
-We have the Taylor expansion for the position given by
+<p>We have the Taylor expansion for the position given by</p>
 $$
 x_{i+1} = x_i+(\Delta t)v_i+\frac{(\Delta t)^2}{2}a_i+O((\Delta t)^3).
 $$
 
-The corresponding expansion for the velocity is 
+<p>The corresponding expansion for the velocity is </p>
 $$
 v_{i+1} = v_i+(\Delta t)a_i+\frac{(\Delta t)^2}{2}v^{(2)}_i+O((\Delta t)^3).
 $$
 
-Via Newton's second law we have normally an analytical expression for the derivative of the velocity, namely
+<p>Via Newton's second law we have normally an analytical expression for the derivative of the velocity, namely</p>
 $$
 a_i= \frac{d^2 x}{dt^2}\vert_{i}=\frac{d v}{dt}\vert_{i}= \frac{F(x_i,v_i,t_i)}{m}.
 $$
 
-<p>
-If we add to this the corresponding expansion for the derivative of the velocity 
+<p>If we add to this the corresponding expansion for the derivative of the velocity </p>
 $$
 v^{(1)}_{i+1} = a_{i+1}= a_i+(\Delta t)v^{(2)}_i+O((\Delta t)^2)=a_i+(\Delta t)v^{(2)}_i+O((\Delta t)^2), 
 $$
 
-and retain only terms up to the second derivative of the velocity since our error goes as \( O(h^3) \), we have
+<p>and retain only terms up to the second derivative of the velocity since our error goes as \( O(h^3) \), we have</p>
 $$
 (\Delta t)v^{(2)}_i\approx a_{i+1}-a_i.
 $$
 
-We can then rewrite the Taylor expansion for the velocity as  
+<p>We can then rewrite the Taylor expansion for the velocity as  </p>
 $$
 v_{i+1} = v_i+\frac{(\Delta t)}{2}\left( a_{i+1}+a_{i}\right)+O((\Delta t)^3).
 $$
 
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="the-velocity-verlet-method">The velocity Verlet method </h2>
 
-<p>
-Our final equations for the position and the velocity become then 
+<p>Our final equations for the position and the velocity become then </p>
 $$
 x_{i+1} = x_i+(\Delta t)v_i+\frac{(\Delta t)^2}{2}a_{i}+O((\Delta t)^3),
 $$
 
-and
+<p>and</p>
 $$
 v_{i+1} = v_i+\frac{(\Delta t)}{2}\left(a_{i+1}+a_{i}\right)+O((\Delta t)^3). 
 $$
 
-Note well that the term \( a_{i+1} \) depends on the position at \( x_{i+1} \). This means that you need to calculate 
+<p>Note well that the term \( a_{i+1} \) depends on the position at \( x_{i+1} \). This means that you need to calculate 
 the position at the updated time \( t_{i+1} \) before the computing the next velocity.  Note also that the derivative of the velocity at the time
-\( t_i \) used in the updating of the position can be reused in the calculation of the velocity update as well.
+\( t_i \) used in the updating of the position can be reused in the calculation of the velocity update as well. 
+</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
 <h2 id="adding-the-velocity-verlet-method">Adding the Velocity-Verlet Method </h2>
 
-<p>
-We can now easily add the Verlet method to our original code as
-<p>
+<p>We can now easily add the Verlet method to our original code as</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.01</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;">DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.01</span>
 <span style="color: #408080; font-style: italic">#set up arrays </span>
 tfinal <span style="color: #666666">=</span> <span style="color: #666666">10</span> <span style="color: #408080; font-style: italic"># in years</span>
 n <span style="color: #666666">=</span> ceil(tfinal<span style="color: #666666">/</span>DeltaT)
@@ -971,263 +1071,120 @@ ax<span style="color: #666666">.</span>plot(r[:,<span style="color: #666666">0</
 fig<span style="color: #666666">.</span>tight_layout()
 save_fig(<span style="color: #BA2121">&quot;EarthSunVV&quot;</span>)
 plt<span style="color: #666666">.</span>show()
-</pre></div>
-<p>
-You can easily generalize the calculation of the forces by defining a function
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>You can easily generalize the calculation of the forces by defining a function
 which takes in as input the various variables. We leave this as a challenge to you.
+</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="hints-for-exercises-2-and-3">Hints for exercises 2 and 3 </h2>
 
-<h2 id="additional-material-link-between-line-integrals-and-conservative-forces">Additional Material: Link between Line Integrals and Conservative forces </h2>
-
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Taylor exercise 3.11:</b>
 <p>
-The concept of line integrals plays an important role in our discussion of energy conservation,
-our definition of potentials and conservative forces.
+<p>This exercise is discussed in Taylor's chapter 3.2.</p>
 
-<p>
-Let us remind ourselves of some the basic elements (most of you may
-have seen this in a calculus course under the general topic of vector
-fields).
+<p>Consider the rocket of mass \( M \) moving with velocity \( v \). After a
+brief instant, the velocity of the rocket is \( v+\Delta v \) and the mass
+is \( M-\Delta M \). Momentum conservation gives
+</p>
 
-<p>
-We define a path integration \( C \), that is we integrate
-from a point \( \boldsymbol{r}_1 \) to a point \( \boldsymbol{r}_2 \). 
-Let us assume that the path \( C \) is represented by an arc length \( s \). In three dimension we have the following representation of \( C \)
 $$
-\boldsymbol{r}(s)=x(s)\boldsymbol{e}_1+y(s)\boldsymbol{e}_2+z(s)\boldsymbol{e}_3,
+\begin{eqnarray*}
+Mv&=&(M-\Delta M)(v+\Delta v)+\Delta M(v-v_e)\\
+0&=&-\Delta Mv+M\Delta v+\Delta M(v-v_e),\\
+0&=&M\Delta v-\Delta Mv_e.
+\end{eqnarray*}
 $$
+</div>
 
-then our integral of a function \( f(x,y,z) \) along the path \( C \) is defined as 
-$$
-\int_Cf(x,y,z)ds=\int_a^bf\left(x(s),y(s),z(s)\right)ds,
-$$
 
-where the initial and final points are \( a \) and \( b \), respectively.
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="exercise-2">Exercise 2 </h2>
 
-<h2 id="exactness-and-independence-of-path">Exactness and Independence of Path </h2>
-
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
 <p>
-With the definition of a line integral, we can in tunrn set up the
-theorem of independence of integration path.
+<p>In the second step we ignored the term \( \Delta M\Delta v \) since we
+can assume it is small. The last equation gives
+</p>
 
-<p>
-Let us define
-\( f(x,y,z) \), \( g(x,y,z) \) and \( h(x,y,z) \) to be functions which are
-defined and continuous in a domain \( D \) in space. Then a line integral
-like the above is said to be independent of path in \( D \), if for every
-pair of endpoints \( a \) and \( b \) in \( D \) the value of the integral is the
-same for all paths \( C \) in \( D \) starting from a point \( a \) and ending in
-a point \( b \). The integral depends thus only on the integration limits
-and not on the path.
+$$
+\begin{eqnarray}
+\Delta v&=&\frac{v_e}{M}\Delta M,\\
+\nonumber
+\frac{dv}{dt}dt&=&\frac{v_e}{M}dM.
+\end{eqnarray}
+$$
 
-<p>
+<p>Here we let \( \Delta v\rightarrow dv \) and \( \Delta M\rightarrow dM \).
+We have also assumed that \( M(t) = M_0-kt \). 
+Integrating the expression with lower limits \( v_0=0 \) and \( M_0 \), one finds
+</p>
+
+$$
+\begin{eqnarray*}
+v&=&v_e\int_{M_0}^M \frac{dM'}{M'}\\
+v&=&v_e\ln(M/M_0)\\
+&=&v_e\ln[(M_0-k t)/M_0].
+\end{eqnarray*}
+$$
+
+<p>We have ignored gravity here. If we add gravity as the external force, we get when integrating an additional terms \( -gt \), that is</p>
+$$
+v(t)=v_e\ln[(M_0-k t)/M_0]-gt.
+$$
+</div>
+
+
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="exercise-3-more-rockets">Exercise 3, more rockets </h2>
 
-<h2 id="differential-forms">Differential Forms </h2>
+<p>This is a continuation of the previous exercise and most of the relevant background material can be found in Taylor chapter 3.2. </p>
 
-<p>
-An expression of the form
+<p>Taking the velocity from the previous exercise and integrating over time we find the height</p>
 $$
-fdx+gdy+hdz,
-$$
-
-where \( f \), \( g \) and \( h \) are functions defined in \( D \), is a called a first-order differential form
-in three variables.
-The form is said to be exact if it is the differential
-$$
-du= \frac{\partial u}{\partial x}dx+\frac{\partial u}{\partial y}dy+\frac{\partial u}{\partial z}dz,
+y(t) = y(t_0=0)+\int_0^tv(t')dt'.
 $$
 
-of a differentiable function \( u(x,y,z) \) everywhere in \( D \), that is
-$$
-du=fdx+gdy+hdz.
-$$
+<p>You need to insert \( v(t) \) from the previous exercise</p>
 
-It is said to be exact if and only if we can then set
-$$
-f=\frac{\partial u}{\partial x},
-$$
+<p>To do the integral over time we recall that \( M(t)=M_0-\Delta M t \). We assumed that \( \Delta M=k \) is a constant.
+We use that \( M_0-M=kt \) and assume that mass decreases by a constant \( k \) times time \( t \).
+</p>
 
-and
-$$
-g=\frac{\partial u}{\partial y},
-$$
-
-and
-$$
-h=\frac{\partial u}{\partial z},
-$$
-
-everywhere in the domain \( D \).
-
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="some-more-manipulations-which-have-to-be-done">Some more manipulations which have to be done </h2>
 
-<h2 id="in-vector-language">In Vector Language </h2>
-
-<p>
-In vector language the above means that the differential form 
+<p>We will need  to compute an integral which goes like</p>
 $$
-fdx+gdy+hdz,
+\int_0^t \ln{M(t')}dt' = \int_0^t \ln{(M_0-kt')}dt'.
 $$
 
-is exact in \( D \) if and only if the vector function (it could be a force, or velocity, acceleration or other vectors we encounter in this course)
+<p>and defining the variable \( u=M_0-kt' \), with \( du=-kdt' \) and the new limits \( M_0 \) when \( t=0 \) and \( M_0-kt \) when time is equal to \( t \), we have</p>
 $$
-\boldsymbol{F}=f\boldsymbol{e}_1+g\boldsymbol{e}_2+h\boldsymbol{e}_3,
-$$
-
-is the gradient of a function \( u(x,y,z) \)
-$$
-\boldsymbol{v}=\boldsymbol{\nabla}u=\frac{\partial u}{\partial x}\boldsymbol{e}_1+\frac{\partial u}{\partial y}\boldsymbol{e}_2+\frac{\partial u}{\partial z}\boldsymbol{e}_3.
-$$
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="path-independence-theorem">Path Independence Theorem </h2>
-
-<p>
-If this is the case, we can state the path independence theorem which
-states that with functions \( f(x,y,z) \), \( g(x,y,z) \) and \( h(x,y,z) \) that fulfill the above
-exactness conditions,  the line integral
-
-$$
-\int_C\left(fdx+gdy+hdz\right),
-$$
-
-is independent of path in \( D \) if and only if the differential form under the integral sign is exact in \( D \).
-
-<p>
-This is the path independence theorem.
-
-<p>
-We will not give a proof of the theorem. You can find this in any vector analysis chapter in a mathematics textbook.
-
-<p>
-We note however that the path integral from a point \( p \) to a final point \( q \) is given by
-$$
-\int_p^q\left(fdx+gdy+hdz\right)=\int_p^q\left(\frac{\partial u}{\partial x}dx+\frac{\partial u}{\partial y}dy+\frac{\partial u}{\partial z}dz\right)=\int_p^qdu.
-$$
-
-<p>
-Assume now that we have a dependence on a variable \( s \) for \( x \), \( y \) and \( z \). We have then
-$$
-\int_p^qdu=\int_{s_1}^{s_2}\frac{du}{ds}ds = u(x(s),y(s),z(s))\vert_{s=s_1}^{s=s_2}=u(q)-u(p).
-$$
-
-<p>
-This last equation
-$$
-\int_p^q\left(fdx+gdy+hdz\right)=u(q)-u(p),
-$$
-
-is the analogue of the usual formula
-$$
-\int_a^bf(x)dx=F(x)\vert_a^b=F(b)-F(a),
-$$
-
-with \( F'(x)=f(x) \).
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="work-energy-theorem-again">Work-Energy Theorem again </h2>
-
-<p>
-We remember that a the work done by a force
-\( \boldsymbol{F}=f\boldsymbol{e}_1+g\boldsymbol{e}_2+h\boldsymbol{e}_3 \) on a displacemnt \( d\boldsymbol{r} \)
-is
-$$
-W=\int_C\boldsymbol{F}d\boldsymbol{r}=\int_C(fdx+gdy+hdz).
-$$
-
-<p>
-From the path independence theorem, we know that this has to result in
-the difference between the two endpoints only. This is exact if and
-only if the force is the force \( \boldsymbol{F} \) is the gradient of a scalar
-function \( u \). We call this scalar function, which depends only the
-positions \( x,y,z \) for the potential energy \( V(x,y,z)=V(\boldsymbol{r}) \).
-
-<p>
-We have thus
-$$
-\boldsymbol{F}(\boldsymbol{r})\propto \boldsymbol{\nabla}V(\boldsymbol{r}),
-$$
-
-and we define  this as
-$$
-\boldsymbol{F}(\boldsymbol{r})= -\boldsymbol{\nabla}V(\boldsymbol{r}).
-$$
-
-<p>
-Such a force is called <b>a conservative force</b>. The above expression can be used to demonstrate
-energy conservation.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="additional-theorem">Additional Theorem </h2>
-
-<p>
-Finally we can define the criterion for exactness and independence of
-path. This theorem states that if \( f(x,y,z) \), \( g(x,y,z) \) and
-\( h(x,y,z) \) are continuous functions with continuous first partial derivatives in the domain \( D \),
-then the line integral
-$$
-\int_C\left(fdx+gdy+hdz\right),
-$$
-
-is independent of path in \( D \) when
-
-$$
-\frac{\partial h}{\partial y}=\frac{\partial g}{\partial z},
-$$
-
-and
-$$
-\frac{\partial f}{\partial z}=\frac{\partial h}{\partial x},
-$$
-
-and
-$$
-\frac{\partial g}{\partial x}=\frac{\partial f}{\partial y}.
-$$
-
-<p>
-This leads to the <b>curl</b> of \( \boldsymbol{F} \) being zero
-$$
-\boldsymbol{\nabla}\times\boldsymbol{F}=\boldsymbol{\nabla}\times\left(-\boldsymbol{\nabla}V(\boldsymbol{r})\right)=0!
-$$
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="summarizing">Summarizing </h2>
-
-<p>
-A conservative force \( \boldsymbol{F} \) is a defined as the partial derivative of a scalar potential which depends only on the position,
-$$
-\boldsymbol{F}(\boldsymbol{r})= -\boldsymbol{\nabla}V(\boldsymbol{r}).
-$$
-
-<p>
-This leads to conservation of energy and a path independent line integral as long as the curl of the force is zero, that is
-$$
-\boldsymbol{\nabla}\times\boldsymbol{F}=\boldsymbol{\nabla}\times\left(-\boldsymbol{\nabla}V(\boldsymbol{r})\right)=0.
+\int_0^t \ln{M(t')}dt' = \int_0^t \ln{(M_0-kt')}dt'=-\frac{1}{k}\int_{M_0}^{M_0-kt} \ln{(u)}du=-\frac{1}{k}\left[u\ln{(u)}-u\right]_{M_0}^{M_0-kt}.
 $$
 
 
 <!-- ------------------- end of main content --------------- -->
-
-
 <center style="font-size:80%">
-<!-- copyright --> &copy; 1999-2021, "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/". Released under CC Attribution-NonCommercial 4.0 license
+<!-- copyright --> &copy; 1999-2022, "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/". Released under CC Attribution-NonCommercial 4.0 license
 </center>
-
-
 </body>
 </html>
-    
 

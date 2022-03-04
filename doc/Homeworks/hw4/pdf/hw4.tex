@@ -1,7 +1,7 @@
 %%
 %% Automatically generated file from DocOnce source
-%% (https://github.com/hplgit/doconce/)
-%%
+%% (https://github.com/doconce/doconce/)
+%% doconce format latex hw4.do.txt --minted_latex_style=trac --latex_admon=paragraph --no_mako
 %%
 
 
@@ -88,7 +88,7 @@ PHY321: Classical Mechanics 1
 % ----------------- author(s) -------------------------
 
 \begin{center}
-{\bf Homework 4, due Monday  February 15${}^{}$} \\ [0mm]
+{\bf Homework 4, due Friday  February 11${}^{}$} \\ [0mm]
 \end{center}
 
 \begin{center}
@@ -99,7 +99,7 @@ PHY321: Classical Mechanics 1
 
 % --- begin date ---
 \begin{center}
-Feb 6, 2021
+Feb 7, 2022
 \end{center}
 % --- end date ---
 
@@ -123,12 +123,13 @@ energy, momentum and angular momentum. These conservation laws are
 central in Physics and understanding them properly lays the foundation
 for understanding and analyzing more complicated physics problems.
 
-
 The relevant reading background is
 \begin{enumerate}
 \item chapters 3, 4.1, 4.2 and 4.3 of Taylor (there are many good examples there) and
 
 \item chapters 10-13 of Malthe-Sørenssen.
+
+\item for the numerical exercise see Malthe-Sørenssen section 7.5
 \end{enumerate}
 
 \noindent
@@ -139,8 +140,6 @@ use the code you developed in homework 3, almost entirely. Please take
 a look at the posted solution (jupyter-notebook) for homework 3. You
 need only to change the forces at play. The numerical problem this time is based
 on your code from homework 3 and we will try to make the motion of a falling object in two dimensions more realistic by allowing to bounce up again due to a normal force from the floor. 
-
-
 
 \paragraph{Exercise 1 (10 pt), Conservation laws, Energy and momentum.}
 \begin{itemize}
@@ -162,7 +161,7 @@ on your code from homework 3 and we will try to make the motion of a falling obj
 \end{itemize}
 
 \noindent
-\paragraph{Exsercise 3 (10pt), Example of potential.}
+\paragraph{Exercise 3 (10pt), Example of potential.}
 Consider a particle of mass $m$ moving according to the potential
 \[
 V(x,y,z)=A\exp\left\{-\frac{x^2+z^2}{2a^2}\right\}.
@@ -203,7 +202,7 @@ A particle of mass $m$ has velocity $v=\alpha/x$, where $x$ is its displacement.
 A particle is thereafter under the influence of a force $F=-kx+kx^3/\alpha^2$, where $k$ and $\alpha$ are constants and $k$ is positive.
 
 \begin{itemize}
-\item 5b (5pt) Determine $U(x)$  and discuss the motion. It can be convenient here to make a sketch/plot of the potential as function of $x$.
+\item 5b (5pt) Determine the potential $U(x)$  and discuss the motion. It can be convenient here to make a sketch/plot of the potential as function of $x$.
 
 \item 5c (5pt)  What happens when the energy of the particle is $E=(1/4)k\alpha^2$? Hint: what is the maximum value of the potential energy?
 \end{itemize}
@@ -211,6 +210,8 @@ A particle is thereafter under the influence of a force $F=-kx+kx^3/\alpha^2$, w
 \noindent
 \paragraph{Exercise 6 (40pt), Bouncing object.}
 This exercise builds on the code you wrote for solving homework 3.
+We recommend strongly that you study the text of Malthe-Sørenssen, section 7.5.
+
 There we introduced gravity and air resistance and studied their
 effects via a constant acceleration due to gravity and the force
 arising from air resistance. But what happens when the ball hits the
@@ -227,9 +228,6 @@ model the interaction between the floor and the ball as a single
 spring. But the normal force is zero when there is no contact. Here we
 define a simple model that allows us to include such effects in our
 models.
-
-
-
 
 The normal force from the floor on the ball is represented by a spring force. This
 is a strong simplification of the actual deformation process occurring at the contact
@@ -274,7 +272,6 @@ place.
 The full information on extra credits is found at \href{{https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/}}{\nolinkurl{https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/}}. There you will also find examples on how to write a scientific article. 
 Below you can also find a description on how to gain extra credits by attending scientific talks.
 
-
 This assignment allows you to gain extra credit points by practicing
 your scientific writing.  For each of the remaining homeworks you can
 submit the specified section of a scientific report (written about the
@@ -316,10 +313,8 @@ HW 10                      & 4-26                       & Abstract              
 \end{quote}
 
 \noindent
-
 You can also gain extra credits if you attend scientific talks.
 This is described here.
-
 
 \paragraph{Integrating Classwork With Research.}
 This opportunity will allow you to earn up to 5 extra credit points on a Homework per week. These points can push you above 100\% or help make up for missed exercises.

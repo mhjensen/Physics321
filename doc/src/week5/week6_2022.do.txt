@@ -1,0 +1,1107 @@
+TITLE: PHY321: Work and Energy  and conservation theorems
+AUTHOR: "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/" {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and Facility for Rare Ion Beams (FRIB), Michigan State University, USA
+DATE: today
+
+
+!split
+===== Plans for the week January 31-February 4 =====
+
+=== Monday ===
+
+Short repetition from last week on the work-energy theorem with examples. Discussion of momentum and angular momentum.
+Reading suggestion: Taylor sections 3.1-3.4 and 4.1-4.3
+
+=== Wednesday ===
+
+More on angular momentum, Taylor sections 3.4 and 3.5. Discussion of potential energy and conservative forces.
+Reading suggestions: Taylor section 4.2
+
+===  Friday ===
+
+Conservative forces and potential energy. Reading suggestion: Taylor sections 4.2-4.4
+Solution of exercises and discussion of homework 3.
+
+If you wish to read more about conservative forces or not, Feyman's lectures from 1963 are quite interesting.
+He states for example that _All fundamental forces in nature appear to be conservative_.
+This statement was made while developing his argument that *there are no nonconservative forces*.
+You may enjoy the link to "Feynman's lecture":"http://www.feynmanlectures.caltech.edu/I_14.html".
+
+
+
+!split
+===== Work, Energy, Momentum and Conservation laws =====
+
+The systems we studied the first three weeks have shown us how to use Newton’s laws of
+motion to determine the motion of an object based on the forces acting
+on it. For some of the cases there is an underlying assumption that we can find an analytical solution to a continuous problem.
+With a continuous problem we mean a problem where the various variables can take any value within a finite or infinite interval. 
+
+Unfortunately, in many cases we
+cannot find an exact solution to the equations of motion we get from
+Newton’s second law. The numerical approach, where we discretize the continuous problem, allows us however to study a much richer set of problems.
+For problems involving Newton's laws and the various equations of motion we encounter, solving the equations numerically, is the standard approach.
+
+It allows us to focus on the underlying forces. Often we end up using the same numerical algorithm for different problems.
+
+Here we introduce a commonly used technique that allows us to find the
+velocity as a function of position without finding the position as a
+function of time—an alternate form of Newton’s second law. The method
+is based on a simple principle: Instead of solving the equations of
+motion directly, we integrate the equations of motion. Such a method
+is called an integration method. 
+
+This allows us also to introduce the _work-energy_ theorem. This
+theorem allows us to find the velocity as a function of position for
+an object even in cases when we cannot solve the equations of
+motion. This introduces us to the concept of work and kinetic energy,
+an energy related to the motion of an object.
+
+And finally, we will link the work-energy theorem with the principle of conservation of energy.
+
+!split
+=====  The Work-Energy Theorem =====
+
+Let us define the kinetic energy $K$ with a given velocity $\bm{v}$
+!bt
+\[
+K=\frac{1}{2}mv^2,
+\]
+!et
+where $m$ is the mass of the object we are considering.
+We assume also that there is a force $\bm{F}$ acting on the given object
+
+!bt
+\[
+\bm{F}=\bm{F}(\bm{r},\bm{v},t),
+\]
+!et
+with $\bm{r}$ the position and $t$ the time.
+In general we assume the force is a function of all these variables.
+Many of the more central forces in Nature however, depende only on the
+position. Examples are the gravitational force and the force derived
+from the Coulomb potential in electromagnetism.
+
+!split
+===== Rewriting the Kinetic Energy =====
+
+Let us study the derivative of the kinetic energy with respect to time $t$. Its continuous form is
+!bt
+\[
+\frac{dK}{dt}=\frac{1}{2}m\frac{d\bm{v}\cdot\bm{v}}{dt}. 
+\]
+!et
+
+Using our results from exercise 3 of homework 1, we can write the derivative of a vector dot product as
+
+!bt
+\[
+\frac{dK}{dt}=\frac{1}{2}m\frac{d\bm{v}\cdot\bm{v}}{dt}= \frac{1}{2}m\left(\frac{d\bm{v}}{dt}\cdot\bm{v}+\bm{v}\cdot\frac{d\bm{v}}{dt}\right)=m\frac{d\bm{v}}{dt}\cdot\bm{v}. 
+\]
+!et
+
+We know also that the acceleration is defined as
+!bt
+\[
+\bm{a}=\frac{\bm{F}}{m}=\frac{d\bm{v}}{dt}.
+\]
+!et
+
+We can then rewrite the equation for the derivative of the kinetic energy as 
+!bt
+\[
+\frac{dK}{dt}=m\frac{d\bm{v}}{dt}\bm{v}=\bm{F}\frac{d\bm{r}}{dt}, 
+\]
+!et
+where we defined the velocity as the derivative of the position with respect to time.
+
+!split
+===== Discretizing =====
+
+Let us now discretize the above equation by letting the instantaneous terms be replaced by a discrete quantity, that is
+we let $dK\rightarrow \Delta K$, $dt\rightarrow \Delta t$, $d\bm{r}\rightarrow \Delta \bm{r}$ and $d\bm{v}\rightarrow \Delta \bm{v}$.
+
+We have then
+
+!bt
+\[
+\frac{\Delta K}{\Delta t}=m\frac{\Delta \bm{v}}{\Delta t}\bm{v}=\bm{F}\frac{\Delta \bm{r}}{\Delta t}, 
+\]
+!et
+or by multiplying out $\Delta t$ we have
+!bt
+\[
+\Delta K=\bm{F}\Delta \bm{r}. 
+\]
+!et
+
+We define this quantity as the _work_ done by the force $\bm{F}$
+during the displacement $\Delta \bm{r}$. If we study the dimensionality
+of this problem we have mass times length squared divided by time
+squared, or just dimension energy.
+
+
+!split
+===== Difference in kinetic energy =====
+
+If we now define a series of such displacements $\Delta\bm{r}$ we have a difference in kinetic energy at a final position $\bm{r}_n$ and an 
+initial position $\bm{r}_0$ given by
+!bt
+\[
+\Delta K=\frac{1}{2}mv_n^2-\frac{1}{2}mv_0^2=\sum_{i=0}^n\bm{F}_i\Delta \bm{r},
+\]
+!et
+where $\bm{F}_i$ are the forces acting at every position $\bm{r}_i$.
+
+The work done by acting with a force on a set of displacements can
+then be as expressed as the difference between the initial and final
+kinetic energies.
+
+This defines the _work-energy_ theorem.
+
+!split
+===== From the discrete version to the continuous version =====
+
+If we take the limit $\Delta \bm{r}\rightarrow 0$, we can rewrite the sum over the various displacements in terms of an integral, that is
+!bt
+\[
+\Delta K=\frac{1}{2}mv_n^2-\frac{1}{2}mv_0^2=\sum_{i=0}^n\bm{F}_i\Delta \bm{r}\rightarrow \int_{\bm{r}_0}^{\bm{r}_n}\bm{F}(\bm{r},\bm{v},t)d\bm{r}.
+\]
+!et
+
+This integral defines a path integral since it will depend on the given path we take between the two end points. We will replace the limits with the symbol $c$ in order to indicate that we take a specific countour in space when the force acts on the system. That is the work $W_{n0}$ between two points $\bm{r}_n$ and $\bm{r}_0$ is labeled as
+!bt
+\[
+W_{n0}=\frac{1}{2}mv_n^2-\frac{1}{2}mv_0^2=\int_{c}\bm{F}(\bm{r},\bm{v},t)d\bm{r}.
+\]
+!et
+
+Note that if the force is perpendicular to the displacement, then the force does not affect the kinetic energy.
+
+Let us now study some examples of forces and how to find the velocity from the integration over a given path.
+
+Thereafter we study how to  evaluate an integral numerically.
+
+
+!split
+===== Studying the Work-energy Theorem numerically =====
+
+In order to study the work- energy, we will normally need to perform
+a numerical integration, unless we can integrate analytically. Here we
+present some of the simpler  methods such as the _rectangle_ rule, the _trapezoidal_ rule and higher-order methods like the Simpson family of methods.
+
+
+
+
+!split
+===== Example of an Electron moving along a Surface =====
+
+As an example, let us consider the following case.
+We have  classical electron which moves in the $x$-direction along a surface. The force from the surface is
+!bt
+\[
+\bm{F}(x)=-F_0\sin{(\frac{2\pi x}{b})}\bm{e}_1.
+\]
+!et
+The constant $b$ represents the distance between atoms at the surface of the material, $F_0$ is a constant and $x$ is the position of the electron.
+
+
+Using the work-energy theorem we can find the work $W$ done when moving an electron from a position $x_0$ to a final position $x$ through the
+ integral
+!bt
+\[
+W=\int_{x_0}^x \bm{F}(x')dx' =  -\int_{x_0}^x F_0\sin{(\frac{2\pi x'}{b})} dx', 
+\]
+!et
+which results in
+!bt
+\[
+W=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right].
+\]
+!et
+
+!split
+===== Finding the Velocity =====
+
+If we now use the work-energy theorem we can find the the velocity at a final position $x$ by setting up
+the differences in kinetic energies between the final position and the initial position $x_0$.
+
+We have that the work done by the force is given by the difference in kinetic energies as
+!bt
+\[
+W=\frac{1}{2}m\left(v^2(x)-v^2(x_0)\right)=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right],
+\]
+!et
+and labeling $v(x_0)=v_0$ (and assuming we know the initial velocity) we have
+!bt
+\[
+v(x)=\pm \sqrt{v_0^2+\frac{F_0b}{m\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right]},
+\]
+!et
+
+
+Choosing $x_0=0$m and $v_0=0$m/s we can simplify the above equation to
+!bt
+\[
+v(x)=\pm \sqrt{\frac{F_0b}{m\pi}\left[\cos{(\frac{2\pi x}{b})}-1\right]},
+\]
+!et
+
+
+!split
+===== Harmonic Oscillations =====
+
+Another well-known force (and we will derive when we come to Harmonic
+Oscillations) is the case of a sliding block attached to a wall
+through a spring. The block is attached to a spring with spring
+constant $k$. The other end of the spring is attached to the wall at
+the origin $x=0$.  We assume the spring has an equilibrium length
+$L_0$.
+
+The force $F_x$ from the spring on the block is then
+!bt
+\[
+F_x=-k(x-L_0).
+\]
+!et
+The position $x$ where the spring force is zero is called the equilibrium position. In our case this is
+$x=L_0$.
+
+We can now compute the work done by this force when we move our block from an initial position $x_0$ to a final position $x$
+!bt
+\[
+W=\int_{x_0}^{x}F_xdx'=-k\int_{x_0}^{x}(x'-L_0)dx'=\frac{1}{2}k(x_0-L_0)^2-\frac{1}{2}k(x-L_0)^2.
+\]
+!et
+If we now bring back the definition of the work-energy theorem in terms of the kinetic energy we have
+
+!bt
+\[
+W=\frac{1}{2}mv^2(x)-\frac{1}{2}mv_0^2=\frac{1}{2}k(x_0-L_0)^2-\frac{1}{2}k(x-L_0)^2,
+\]
+!et
+which we rewrite as
+
+!bt
+\[
+\frac{1}{2}mv^2(x)+\frac{1}{2}k(x-L_0)^2=\frac{1}{2}mv_0^2+\frac{1}{2}k(x_0-L_0)^2.
+\]
+!et
+
+What does this mean? The total energy, which is the sum of potential and kinetic energy, is conserved.
+Wow, this sounds interesting. We will analyze this next week in more detail when we study energy, momentum and angular momentum conservation.
+
+
+
+
+
+
+!split
+===== Work-Energy Theorem and Energy Conservation  =====
+
+We have made the observation that energy was conserved for a force which
+depends only on the position.
+In particular we considered a force acting on a block 
+attached to a spring with a so-called spring
+constant $k$. The other end of the spring was attached to the wall.  
+
+The force $F_x$ from the spring on the block was defined as
+!bt
+\[
+F_x=-kx.
+\]
+!et
+
+The work done on the block due to a displacement from a position $x_0$ to $x$ 
+!bt
+\[
+W=\int_{x_0}^{x}F_xdx'=\frac{1}{2}kx_0^2-\frac{1}{2}kx^2.
+\]
+!et
+
+
+!split
+===== Conservation of energy =====
+With the definition of the work-energy theorem in terms of the kinetic energy we obtained
+
+!bt
+\[
+W=\frac{1}{2}mv^2(x)-\frac{1}{2}mv_0^2=\frac{1}{2}kx_0^2-\frac{1}{2}kx^2,
+\]
+!et
+which we rewrote as
+
+!bt
+\[
+\frac{1}{2}mv^2(x)+\frac{1}{2}kx^2=\frac{1}{2}mv_0^2+\frac{1}{2}kx_0^2.
+\]
+!et
+
+The total energy, which is the sum of potential and kinetic energy, is conserved.
+We will analyze this interesting result now in more detail when we study energy, momentum and angular momentum conservation.
+
+But before we start with energy conservation, conservative forces and potential energies, we need to revisit our definitions of momentum and angular momentum.
+
+
+
+!split
+===== What is a Conservative Force? =====
+
+A conservative force is a force whose property is that the total work
+done in moving an object between two points is independent of the
+taken path. This means that the work on an object under the influence
+of a conservative force, is independent on the path of the object. It
+depends only on the spatial degrees of freedom and it is possible to
+assign a numerical value for the potential at any point. It leads to
+conservation of energy. The gravitational force is an example of a
+conservative force.
+
+
+!split
+===== Two important conditions =====
+
+First, a conservative force depends only on the spatial degrees of freedom. This is a necessary condition for obtaining a path integral which is independent of path.
+The  important condition for the final work to be independent of the path is that the _curl_ of the force is zero, that
+is
+!bt
+\[
+\bm{\nabla} \times \bm{F}=0
+\]
+!et
+
+!split
+===== Work-energy theorem to show that energy is conserved with a conservative force =====
+
+The work-energy theorem states that the work done $W$ by a force $\bm{F}$ that moves an object from a position $\bm{r}_0$ to a new position $\bm{r}_1$
+!bt
+\[
+W=\int_{\bm{r}_0}^{\bm{r}_1}\bm{F}\bm{dr}=\frac{1}{2}mv_1^2-\frac{1}{2}mv_0^2,
+\]
+!et
+where $v_1^2$ is the velocity squared at a time $t_1$ and $v_0^2$ the corresponding quantity at a time $t_0$.
+The work done is thus the difference in kinetic energies. We can rewrite the above equation as
+!bt
+\[
+\frac{1}{2}mv_1^2=\int_{\bm{r}_0}^{\bm{r}_1}\bm{F}\bm{dr}+\frac{1}{2}mv_0^2,
+\]
+!et
+that is the final kinetic energy is equal to the initial kinetic energy plus the work done by the force over a given path from a  position $\bm{r}_0$ at time $t_0$ to a final position position $\bm{r}_1$ at a later time $t_1$.
+
+
+
+
+!split
+===== Conservation of Momentum =====
+
+Before we move on however, we need to remind ourselves about important aspects like the linear momentum and angular momentum. After these considerations, we move back to more details about conservatives forces.
+
+
+Assume we have $N$ objects, each with velocity $\bm{v}_i$ with
+$i=1,2,\dots,N$ and mass $m_i$. The momentum of each object is
+$\bm{p}_i=m\bm{v}_i$ and the total linear (or mechanical) momentum is
+defined as
+
+!bt
+\[
+\bm{P}=\sum_{i=1}^N\bm{p}_i=\sum_{i=1}^Nm_i\bm{v}_i,
+\]
+!et
+
+
+!split
+===== Two objects first =====
+
+Let us assume we have two objects only that interact with each other and are influenced by an external force.
+
+We define also the total net force acting on object 1 as 
+
+!bt
+\[
+\bm{F}_1^{\mathrm{net}}=\bm{F}_1^{\mathrm{ext}}+\bm{F}_{12},
+\]
+!et
+
+where $\bm{F}_1^{\mathrm{ext}}$ is the external force
+(for example the force due to an electron moving in an electromagnetic field) and $\bm{F}_{12}$ is the
+force between object one and two. Similarly for object 2 we have
+
+
+!bt
+\[
+\bm{F}_2^{\mathrm{net}}=\bm{F}_2^{\mathrm{ext}}+\bm{F}_{21}.
+\]
+!et
+
+!split
+===== Newton's Third Law =====
+
+Newton's third law which we met earlier states that _for every action there is an equal and opposite reaction_.
+It is more accurately stated as
+
+_if two bodies exert forces on each other, these forces are equal in magnitude and opposite in direction_.
+
+This means that for two bodies $i$ and $j$, if the force on $i$ due to $j$ is called $\bm{F}_{ij}$, then 
+
+!bt
+\begin{equation}
+\bm{F}_{ij}=-\bm{F}_{ji}. 
+\end{equation}
+!et
+
+
+For the abovementioned two objects we have thus $\bm{F}_{12}=-\bm{F}_{21}$.
+
+
+!split
+===== Newton's Second Law and Momentum =====
+
+With the net forces acting on each object we can now related the momentum to the forces via
+
+!bt
+\[
+\bm{F}_1^{\mathrm{net}}=m_1\bm{a}_i=m_1\frac{d\bm{v}_1}{dt}=\bm{F}_1^{\mathrm{ext}}+\bm{F}_{12},
+\]
+!et
+
+and 
+
+!bt
+\[
+\bm{F}_2^{\mathrm{net}}=m_2\bm{a}_2=m_2\frac{d\bm{v}_2}{dt}=\bm{F}_2^{\mathrm{ext}}+\bm{F}_{21}.
+\]
+!et
+
+Recalling our definition for the linear momentum we have then
+
+!bt
+\[
+\frac{d\bm{p}_1}{dt}=\bm{F}_1^{\mathrm{ext}}+\bm{F}_{12},
+\]
+!et
+
+and 
+
+!bt
+\[
+\frac{d\bm{p}_2}{dt}=\bm{F}_2^{\mathrm{ext}}+\bm{F}_{21}.
+\]
+!et
+
+
+!split
+===== The total Momentum =====
+
+The total momentum $\bm{P}$ is defined as the sum of the individual momenta, meaning that we can rewrite
+
+!bt
+\[
+\bm{F}_1^{\mathrm{net}}+\bm{F}_2^{\mathrm{net}}=\frac{d\bm{p}_1}{dt}+\frac{d\bm{p}_2}{dt}=\frac{d\bm{P}}{dt},
+\]
+!et
+
+that is the derivate with respect to time of the total momentum. If we now
+write the net forces as sums of the external plus internal forces
+between the objects we have
+
+!bt
+\[
+\frac{d\bm{P}}{dt}=\bm{F}_1^{\mathrm{ext}}+\bm{F}_{12}+\bm{F}_2^{\mathrm{ext}}+\bm{F}_{21}=\bm{F}_1^{\mathrm{ext}}+\bm{F}_2^{\mathrm{ext}}.
+\]
+!et
+
+The derivative of the total momentum is just _the sum of the external
+forces_. If we assume that the external forces are zero and that only
+internal (here two-body forces) are at play, we obtain the important
+result that the derivative of the total momentum is zero. This means
+again that the total momentum is a constant of the motion and
+conserved quantity. This is a very important result that we will use
+in many applications to come.
+
+
+
+
+!split
+===== Newton's Second Law =====
+
+Let us now general to several objects $N$ and let us also assume that there are no external forces. We will label such a system as _an isolated system_. 
+
+
+Newton's second law, $\bm{F}=m\bm{a}$, can be written for a particle $i$ as
+
+!bt
+\begin{equation}
+\bm{F}_i=\sum_{j\ne i}^N \bm{F}_{ij}=m_i\bm{a}_i,
+\end{equation}
+!et
+
+where $\bm{F}_i$ (a single subscript) denotes the net force acting on $i$ from the other objects/particles.
+Because the mass of $i$ is fixed and we assume it does not change with time, one can see that
+
+!bt
+\begin{equation}
+\bm{F}_i=\frac{d}{dt}m_i\bm{v}_i=\sum_{j\ne i}^N\bm{F}_{ij}.
+\end{equation}
+!et
+
+
+!split
+===== Summing over all Objects/Particles =====
+
+Now, one can sum over all the objects/particles and obtain
+
+!bt
+\[
+\frac{d}{dt}\sum_i m_iv_i=\sum_{ij, i\ne j}^N\bm{F}_{ij}=0.
+\]
+!et
+
+How did we arrive at the last step?  We rewrote the double sum as
+
+!bt
+\[
+\sum_{ij, i\ne j}^N\bm{F}_{ij}=\sum_i^N\sum_{j>i}\left(\bm{F}_{ij}+\bm{F}_{ji}\right),
+\]
+!et
+
+and using Newton's third law which states that
+$\bm{F}_{ij}=-\bm{F}_{ji}$, we obtain that the net sum over all  the two-particle
+forces is zero when we only consider so-called _internal forces_.
+Stated differently, the last step made use of the fact that for every
+term $ij$, there is an equivalent term $ji$ with opposite
+force. Because the momentum is defined as $m\bm{v}$, for a system of
+particles, we have thus
+
+!bt
+\begin{equation}
+\frac{d}{dt}\sum_im_i\bm{v}_i=0,~~{\rm for~isolated~particles}.
+\end{equation}
+!et
+
+!split
+===== Conservation of total Momentum =====
+
+By "isolated" one means that the only force acting on any particle $i$
+are those originating from other particles in the sum, i.e. ``no
+external'' forces. Thus, Newton's third law leads to the conservation
+of total momentum,
+
+!bt
+\[
+\bm{P}=\sum_i m_i\bm{v}_i,
+\]
+!et
+and we have
+!bt
+\[
+\frac{d}{dt}\bm{P}=0.
+\]
+!et
+
+
+!split
+===== Example: Rocket Science =====
+
+Consider a rocket of mass $M$ moving with velocity $v$. After a
+brief instant, the velocity of the rocket is $v+\Delta v$ and the mass
+is $M-\Delta M$. Momentum conservation gives
+
+
+!bt
+\begin{eqnarray*}
+Mv&=&(M-\Delta M)(v+\Delta v)+\Delta M(v-v_e)\\
+0&=&-\Delta Mv+M\Delta v+\Delta M(v-v_e),\\
+0&=&M\Delta v-\Delta Mv_e.
+\end{eqnarray*}
+!et
+
+In the second step we ignored the term $\Delta M\Delta v$ because it is doubly small. The last equation gives
+
+!bt
+\begin{eqnarray}
+\Delta v&=&\frac{v_e}{M}\Delta M,\\
+\nonumber
+\frac{dv}{dt}&=&\frac{v_e}{M}\frac{dM}{dt}.
+\end{eqnarray}
+!et
+
+!split
+===== Integrating the Equations =====
+
+Integrating the expression with lower limits $v_0=0$ and $M_0$, one finds
+
+!bt
+\begin{eqnarray*}
+v&=&v_e\int_{M_0}^M \frac{dM'}{M'}\\
+v&=&v_e\ln(M/M_0)\\
+&=&v_e\ln[(M_0-\alpha t)/M_0].
+\end{eqnarray*}
+!et
+
+Because the total momentum of an isolated system is constant, one can
+also quickly see that the center of mass of an isolated system is also
+constant. The center of mass is the average position of a set of
+masses weighted by the mass,
+
+!bt
+\begin{equation}
+\bar{x}=\frac{\sum_im_ix_i}{\sum_i m_i}.
+\end{equation}
+!et
+
+!split
+===== Rate of Change =====
+
+The rate of change of $\bar{x}$ is
+
+!bt
+\[
+\dot{\bar{x}}=\frac{1}{M}\sum_i m_i\dot{x}_i=\frac{1}{M}P_x.
+\]
+!et
+
+Thus if the total momentum is constant the center of mass moves at a
+constant velocity, and if the total momentum is zero the center of
+mass is fixed.
+
+
+!split
+===== Conservation of Angular Momentum =====
+
+
+The angular momentum is defined as
+
+!bt
+\begin{equation}
+\bm{L}=\bm{r}\times\bm{p}=m\bm{r}\times\bm{v}.
+\end{equation}
+!et
+
+It means that the angular momentum is perpendicular to the plane defined by position $\bm{r}$ and the momentum $\bm{p}$ via $\bm{r}\times \bm{p}$. 
+
+!split
+===== Rate of Change of Angular Momentum =====
+
+The rate of change of the angular momentum is
+
+!bt
+\[
+\frac{d\bm{L}}{dt}=m\bm{v}\times\bm{v}+m\bm{r}\times\dot{\bm{v}}=\bm{r}\times{\bm{F}}
+\]
+!et
+
+The first term is zero because $\bm{v}$ is parallel to itself, and the
+second term defines the so-called torque. If $\bm{F}$ is parallel to $\bm{r}$ then the torque is zero and we say that angular momentum is conserved.
+
+
+
+If the force is not radial, $\bm{r}\times\bm{F}\ne 0$ as above, and angular momentum is no longer conserved,
+
+!bt
+\begin{equation}
+\frac{d\bm{L}}{dt}=\bm{r}\times\bm{F}\equiv\bm{\tau},
+\end{equation}
+!et
+
+where $\bm{\tau}$ is the torque.
+
+
+!split
+===== The Torque, Example 1 (hw 4, exercise 4) =====
+
+Let us assume we have an initial position $\bm{r}_0=x_0\bm{e}_1+y_0\bm{e}_2$ at a time $t_0=0$.
+We add now a force in the positive $x$-direction
+!bt
+\[
+\bm{F}=F_x\bm{e}_1=\frac{d\bm{p}}{dt},
+\]
+!et
+where we used the force as defined by the time derivative of the momentum.
+
+We can use this force (and its pertinent acceleration) to find the velocity via the relation
+!bt
+\[
+\bm{v}(t)=\bm{v}_0+\int_{t_0}^t\bm{a}dt',
+\]
+!et
+and with $\bm{v}_0=0$ we have
+!bt
+\[
+\bm{v}(t)=\int_{t_0}^t\frac{\bm{F}}{m}dt',
+\]
+!et
+where $m$ is the mass of the object.
+
+!split
+===== The Torque, Example 1 (hw 4, exercise 4) =====
+
+Since the force acts only in the $x$-direction, we have after integration
+!bt
+\[
+\bm{v}(t)=\frac{\bm{F}}{m}t=\frac{F_x}{m}t\bm{e}_1=v_x(t)\bm{e}_1.
+\]
+!et
+
+The momentum is in turn given by $\bm{p}=p_x\bm{e}_1=mv_x\bm{e}_1=F_xt\bm{e}_1$.
+
+Integrating over time again we find the final position as (note the force depends only on the $x$-direction)
+!bt
+\[
+\bm{r}(t)=(x_0+\frac{1}{2}\frac{F_x}{m}t^2) \bm{e}_1+y_0\bm{e}_2.
+\]
+!et
+There is no change in the position in the $y$-direction since the force acts only in the $x$-direction.
+
+!split
+===== The Torque, Example 1 (hw 4, exercise 4) =====
+
+We can now compute the angular momentum given by
+!bt
+\[
+\bm{l}=\bm{r}\times\bm{p}=\left[(x_0+\frac{1}{2}\frac{F_x}{m}t^2) \bm{e}_1+y_0\bm{e}_2\right]\times F_xt\bm{e}_1.
+\]
+!et
+Computing the cross product we find
+
+!bt
+\[
+\bm{l}=-y_0F_xt\bm{e}_3=-y_0F_xt\bm{e}_z.
+\]
+!et
+The torque is the time derivative of the angular momentum and we have
+
+!bt
+\[
+\bm{\tau}=-y_0F_x\bm{e}_3=-y_0F_x\bm{e}_z.
+\]
+!et
+The torque is non-zero and angular momentum is not conserved.
+
+
+!split
+===== The Torque, Example 2 =====
+
+One can write the torque about a given axis, which we will denote as $\hat{z}$, in polar coordinates, where
+
+!bt
+\begin{eqnarray}
+x&=&r\sin\theta\cos\phi,~~y=r\sin\theta\cos\phi,~~z=r\cos\theta,
+\end{eqnarray}
+!et
+to find the $z$ component of the torque,
+
+!bt
+\begin{eqnarray}
+\tau_z&=&xF_y-yF_x\\
+\nonumber
+&=&-r\sin\theta\left\{\cos\phi \partial_y-\sin\phi \partial_x\right\}V(x,y,z).
+\end{eqnarray}
+!et
+
+
+!split
+===== Chain Rule and Partial Derivatives =====
+
+One can use the chain rule to write the partial derivative w.r.t. $\phi$ (keeping $r$ and $\theta$ fixed),
+
+!bt
+\begin{eqnarray}
+\partial_\phi&=&\frac{\partial x}{\partial\phi}\partial_x+\frac{\partial_y}{\partial\phi}\partial_y
++\frac{\partial z}{\partial\phi}\partial_z\\
+\nonumber
+&=&-r\sin\theta\sin\phi\partial_x+\sin\theta\cos\phi\partial_y.
+\end{eqnarray}
+!et
+
+Combining the two equations,
+
+!bt
+\begin{eqnarray}
+\tau_z&=&-\partial_\phi V(r,\theta,\phi).
+\end{eqnarray}
+!et
+
+Thus, if the potential is independent of the azimuthal angle $\phi$,
+there is no torque about the $z$ axis and $L_z$ is conserved.
+
+
+
+
+!split
+===== System of Isolated Particles =====
+
+For a system of isolated particles, one can write
+
+
+!bt
+\begin{eqnarray}
+\frac{d}{dt}\sum_i\bm{L}_i&=&\sum_{i\ne j}\bm{r}_i\times \bm{F}_{ij}\\
+\nonumber
+&=&\frac{1}{2}\sum_{i\ne j} \bm{r}_i\times \bm{F}_{ij}+\bm{r}_j\times\bm{F}_{ji}\\
+\nonumber
+&=&\frac{1}{2}\sum_{i\ne j} (\bm{r}_i-\bm{r}_j)\times\bm{F}_{ij}=0,
+\end{eqnarray}
+!et
+
+where the last step used Newton's third law,
+$\bm{F}_{ij}=-\bm{F}_{ji}$. If the forces between the particles are
+radial, i.e. $\bm{F}_{ij} ~||~ (\bm{r}_i-\bm{r}_j)$, then each term in
+the sum is zero and the net angular momentum is fixed. Otherwise, you
+could imagine an isolated system that would start spinning
+spontaneously.
+
+
+
+!split
+===== Work, Energy, Momentum and Conservation laws =====
+
+Energy conservation is most convenient as a strategy for addressing
+problems where time does not appear. For example, a particle goes
+from position $x_0$ with speed $v_0$, to position $x_f$; what is its
+new speed? However, it can also be applied to problems where time
+does appear, such as in solving for the trajectory $x(t)$, or
+equivalently $t(x)$.
+
+
+
+
+!split
+===== Energy Conservation =====
+Energy is conserved in the case where the potential energy, $V(\bm{r})$, depends only on position, and not on time. The force is determined by $V$,
+!bt
+\begin{equation}
+\bm{F}(\bm{r})=-\bm{\nabla} V(\bm{r}).
+\end{equation}
+!et
+
+
+
+
+!split
+===== Conservative forces =====
+
+We say a force is conservative if it satisfies the following conditions:
+o The force $\bm{F}$ acting on an object only depends on the position $\bm{r}$, that is $\bm{F}=\bm{F}(\bm{r})$.
+o For any two points $\bm{r}_1$ and $\bm{r}_2$, the work done by the force $\bm{F}$ on the displacement between these two points is independent of the path taken.
+o Finally, the _curl_ of the force is zero $\bm{\nabla}\times\bm{F}=0$.
+
+
+!split
+===== Forces and Potentials =====
+
+The energy $E$ of a given system is defined as the sum of kinetic and potential energies,
+!bt
+\[
+E=K+V(\bm{r}).
+\]
+!et
+
+We define the potential energy at a point $\bm{r}$ as the negative work done from a starting point $\bm{r}_0$ to a final point $\bm{r}$ 
+
+!bt
+\[
+V(\bm{r})=-W(\bm{r}_0\rightarrow\bm{r})= -\int_{\bm{r}_0}^{\bm{r}}d\bm{r}'\bm{F}(\bm{r}').
+\]
+!et
+If the potential depends on the path taken between these two points there is no unique potential.
+
+
+!split
+===== Example (relevant for homework 5) =====
+
+We study a classical electron which moves in the $x$-direction along a surface. The force from the surface is
+!bt
+\[
+\bm{F}(x)=-F_0\sin{(\frac{2\pi x}{b})}\bm{e}_1.
+\]
+!et
+The constant $b$ represents the distance between atoms at the surface of the material, $F_0$ is a constant and $x$ is the position of the electron.
+
+This is indeed a conservative force since it depends only on position
+and its _curl_ is zero, that is $-\bm{\nabla}\times \bm{F}=0$. This means that energy is conserved and the
+integral over the work done by the force is independent of the path
+taken. We will come back to this in more detail next week.
+
+!split
+===== Example Continues =====
+
+
+Using the work-energy theorem we can find the work $W$ done when
+moving an electron from a position $x_0$ to a final position $x$
+through the integral
+
+!bt
+\[
+W=-\int_{x_0}^x \bm{F}(x')dx' =  \int_{x_0}^x F_0\sin{(\frac{2\pi x'}{b})} dx',
+\]
+!et
+which results in
+!bt
+\[
+W=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right].
+\]
+!et
+Since this is related to the change in kinetic energy we have, with $v_0$ being the initial velocity at a  time $t_0$,
+!bt
+\[
+v  = \pm\sqrt{\frac{2}{m}\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right]+v_0^2}.
+\]
+!et
+
+!split
+===== The potential energy from this example =====
+
+The potential energy, due to energy conservation is
+!bt
+\[
+V(x)=V(x_0)+\frac{1}{2}mv_0^2-\frac{1}{2}mv^2,
+\]
+!et
+with $v$ given by the velocity from above.
+
+We can now, in order to find a more explicit expression for the
+potential energy at a given value $x$, define a zero level value for
+the potential. The potential is defined, using the work-energy
+theorem, as
+
+
+!bt
+\[
+V(x)=V(x_0)+\int_{x_0}^x (-F(x'))dx',
+\]
+!et
+
+and if you recall the definition of the indefinite integral, we can rewrite this as
+
+!bt
+\[
+V(x)=\int (-F(x'))dx'+C,
+\]
+!et
+
+where $C$ is an undefined constant. The force is defined as the
+gradient of the potential, and in that case the undefined constant
+vanishes. The constant does not affect the force we derive from the
+potential.
+
+We have then
+!bt
+\[
+V(x)=V(x_0)-\int_{x_0}^x \bm{F}(x')dx',
+\]
+!et
+which results in
+!bt
+\[
+V(x)=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}-\cos{(\frac{2\pi x_0}{b})}\right]+V(x_0).
+\]
+!et
+We can now define
+!bt
+\[
+\frac{F_0b}{2\pi}\cos{(\frac{2\pi x_0}{b})}=V(x_0),
+\]
+!et
+which gives 
+!bt
+\[
+V(x)=\frac{F_0b}{2\pi}\left[\cos{(\frac{2\pi x}{b})}\right].
+\]
+!et
+
+!split
+===== Force and Potential =====
+
+We have defined work as the energy resulting from a net force acting
+on an object (or sseveral objects), that is
+
+!bt
+\[
+W(\bm{r}\rightarrow \bm{r}+d\bm{r})= \bm{F}(\bm{r})d\bm{r}.
+\]
+!et
+
+If we write out this for each component we have
+
+!bt
+\[
+W(\bm{r}\rightarrow \bm{r}+d\bm{r})=\bm{F}(\bm{r})d\bm{r}=F_xdx+F_ydy+F_zdz.
+\]
+!et
+
+The work done from an initial position to a final one defines also the difference in potential energies
+
+!bt
+\[
+W(\bm{r}\rightarrow \bm{r}+d\bm{r})=-\left[V(\bm{r}+d\bm{r})-V(\bm{r})\right].
+\]
+!et
+
+!split
+=====  Getting to $\bm{F}(\bm{r})=-\bm{\nabla} V(\bm{r})$ =====
+
+We can write out the differences in potential energies as
+
+!bt
+\[
+V(\bm{r}+d\bm{r})-V(\bm{r})=V(x+dx,y+dy,z+dz)-V(x,y,z)=dV,
+\]
+!et
+and using the expression the differential of a multi-variable function $f(x,y,z)$ 
+!bt
+\[
+df=\frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy+\frac{\partial f}{\partial z}dz,
+\]
+!et
+we can write the expression for the work done as
+!bt
+\[
+W(\bm{r}\rightarrow \bm{r}+d\bm{r})=-dV=-\left[\frac{\partial V}{\partial x}dx+\frac{\partial V}{\partial y}dy+\frac{\partial V}{\partial z}dz \right].
+\]
+!et
+
+!split
+===== Final expression =====
+
+Comparing the last equation with 
+!bt
+\[
+W(\bm{r}\rightarrow \bm{r}+d\bm{r})=F_xdx+F_ydy+F_zdz,
+\]
+!et
+we have
+!bt
+\[
+F_xdx+F_ydy+F_zdz=-\left[\frac{\partial V}{\partial x}dx+\frac{\partial V}{\partial y}dy+\frac{\partial V}{\partial z}dz \right],
+\]
+!et
+
+leading to
+!bt
+\[
+F_x=-\frac{\partial V}{\partial x},
+\]
+!et
+and
+!bt
+\[
+F_y=-\frac{\partial V}{\partial y},
+\]
+!et
+and
+!bt
+\[
+F_z=-\frac{\partial V}{\partial z},
+\]
+!et
+or just
+!bt
+\[
+\bm{F}=-\frac{\partial V}{\partial x}\bm{e}_1-\frac{\partial V}{\partial y}\bm{e}_2-\frac{\partial V}{\partial z}\bm{e}_3=-\bm{\nabla}V(\bm{r}).
+\]
+!et
+And this connection is the one we wanted to show.
+
+
+
+
+
+
