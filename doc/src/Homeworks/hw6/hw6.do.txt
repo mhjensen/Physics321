@@ -11,27 +11,27 @@ o How do I(we)  hand in?  You can hand in the paper and pencil exercises as a sc
 === Introduction to homework 6 ===
 
 This week's sets of classical pen and paper and computational
-exercises are again a continuation of the topics from the previous homework sets. We keep
+exercises are again a continuation of the topics from the previous homework sets and the first midterm. We keep
 discussing conservation laws, conservative forces, energy, momentum and angular momentum. These conservation laws are central in Physics and understanding them properly lays the foundation for understanding and analyzing more complicated physics problems.
 The relevant reading background is
 o chapters 3 and 4 of Taylor (there are many good examples there) and
 o chapters 10-14 of Malthe-Sørenssen.
-o For exercise 4 will also need sections 5.1-5.3 of Taylor.
+o For exercise 4 will also need sections 5.1-5.6 of Taylor.
 
-The numerical homework is based on what you did in homework 5 and you are going to test whether energy is conserved or not.
+The numerical homework is based on what you did in homework 5 and/or the first midterm.
 
+There are also two optional exercises, one is a simple survey after the midterm. We would love hearing back from you about how the course is progressing.
 
 === Exercise 1 (40pt), Summary of what we have done till now ===
 
 Compile a summary of the material covered in this class so far that
 covers the major topics (Newton’s Laws, conservative and
 nonconservative forces, and conservation of energy, momentum, and
-angular momentum).  This summary should not only contain a list of
+angular momentum and harmonic oscillations).  This summary should not only contain a list of
 equations but should also include important concepts, numerical
 elements, and mathematical methods, and show the connections between
-different concepts.  This assignment is meant to help you review to
-materials in the course in preparation for the first midterm project.
-Make this summary as long as you need to throughly review all of then
+different concepts.  
+Make this summary as long as you need to throughly review all of the
 covered topics.
 
 
@@ -63,30 +63,48 @@ $i$ and $j$, that is $r=\vert\bm{r}_i-\bm{r}_j\vert=\sqrt{(x_i-x_j)^2+(y_i-y_j)^
 * 3c (4pt) What is the force acting on one of the objects (an atom for example) from the other object? Is this a conservative force?
 
 
-=== Exercise 4 (10 pt), particle in a new potential ===
+=== Exercise 4 (50 pt+optional 30pts), particle/object in a harmonic oscillator  potential ===
 
-Relevant reading here is Taylor chapter 5 and the lecture notes on oscillations. In particular, you will find useful  sections 5.1, 5.2, and 5.4. They contain all material needed to solve this exercise.
+In the first midterm we looked at an
+object/particle moving in a potential which resulted in harmonic
+oscillations.  The aim here is to summarize in more detail the
+material from harmonic oscillations.
 
-Consider a particle of mass $m$ moving in a one-dimensional potential,
+Relevant reading here is Taylor chapter 5 and the lecture notes on oscillations. 
+
+We will consider a particle of mass $m$ moving in a one-dimensional potential,
 !bt
 \[
-V(x)=-\alpha\frac{x^2}{2}+\beta\frac{x^4}{4}.
+V(x)=k\frac{x^2}{2},
 \]
 !et
+where $k$ is a parameter.
 
-* 4a (3pt) Plot the potential and discuss eventual equilibrium points. Is this a conservative force?
-* 4b (3pt) Compute the second derivative of the potential and find its miminum position(s). Using the Taylor expansion of the potential around its minimum (see Taylor section 5.1) to define a spring constant $k$. Use the spring constant to find the natural (angular) frequency $\omega_0=\sqrt{k/m}$. We call the new spring constant for  an effective spring constant. 
-* 4c (4pt) We ignore the second term in the potential energy and keep only the term proportional to the effective spring constant, that is a force $F\propto kx$. Find the acceleration and set up the differential equation.  Find the general analytical solution for these harmonic oscillations.  You don't need to find the constants in the general solution.
+We will limit ourselves to a one-dimensional system. You will need to select values for the initial conditions and the various parameters $k$, $m$, $b$, $\omega$ and $F_0$ discussed here.
 
-=== Exercise 5 (30pt), Testing Energy Conservation ===
+* 4a (20pt)  Assume no driving force first and add a drag force $-bv$, where $v$ is the velocity. Find the forces acting on the object. Find the analytical solutions to the equations of motion. Discuss the three cases: _underdamping_, _critical damping_ and _overdamping_.
 
-This week we will reuse our code from homework 5 and test that energy is conserved numerically.
+* 4b (5pt) Scale your equations of motion in terms of a dimensionless time $\tau = \omega_0 t$, where $t$ is time and $\omega_0^2=k/m$ is the so-called natural frequency. 
 
-* 5a (10 pt) Show that the _curl_ of the gravitational force is zero and discuss whether the gravitational force is  a conservative force or not. Hint: see Taylor section 4.4.
+* 4c (25pt) You can use your codes from either the first midterm or from homework 5.  Study numerically the three cases from 4a, that is the underdamped motion, the critically damped one and finally the overdamped one. Compare your numerical results with the analytical ones from 4a. Discuss your results. You can use the Euler-Cromer method, or the Velocity-Verlet method or the Runge-Kutta methods discussed during the lectures, see for example URL:"https://mhjensen.github.io/Physics321/doc/pub/week8/html/week8.html". Alternatively, you could use the _odeint_ solvers included functionality in Python, see URL:"https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html". Give a short argument about the numerical algorithm you ended up using.  
+
+* 4d _Optional exercise_ (30pt) We add now a driving force $F=F_0\cos{(\omega t}$. Find the particular solution and its analytical solution. Include this force in your code (remember to scale the equations) and compare your numerical results with the analytical results. Discuss your results. How does the system evolve over time with a given frequency $\omega$ for the driving force?   Is energy conserved? If not, why? 
 
 
-* 5b (20pt) Using the code from homework 5 (see also the solution), compute the kinetic and potential energies as functions of time. You will need the velocties and positions to compute these quantities. Remember to define initial positions and velocities, as well as the  initial kinetic and potential energies. Use Euler's methods, the Euler-Cromer method or the Velocity-Verlet
-method from the code you developed in homework 5 and study if energy is conserved over time. For a circular motion, are the potential and kinetic energies conserved separately? Comment your results.
+===  Additional Bonus Exercise (10pt) ===
+
+You don't need to do this exercise, but it gives you a bonus score of 10 points.
+
+This time the additional bonus exercise is a simple survey. We are now moving
+into our second half of the semester and we would very much have your feedback on how
+things are functioning so that we can improve and correct. 
+
+* Is the weekly load with paper and pencil exercises and the numerical exercises reasonable?
+* Is there enough material (lectures and lecture material) to get you started with the exercises?  We are thinking of both the paper and pencil and the numerical exercises?
+* Is the pace during the lectures reasonable? And do the lectures link well with the exercises?
+* In the beginning there will always be some elements of repetition of material many of you have seen before. Do you find the choice of material the first 4 weeks adequate? Too easy? Too difficult?
+* For those of you who have taken CMSE 201 Introduction to Computational Modeling, do you feel the material taught there links well with the exercises you have done in this course? Is there is something we are missing?
+* Any other topic you would like to comment on?
 
 
 
@@ -163,9 +181,15 @@ Talks given by researchers through the following clubs:
 * Facility For Rare Isotope Beam (FRIB) Seminars: ​Occur multiple times a week
 
 
-If you have any questions please consult Jeremy Rebenstock, rebensto@msu.edu.
 
 All the material on extra credits is at URL:"https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/". 
+
+
+
+
+
+
+
 
 
 
