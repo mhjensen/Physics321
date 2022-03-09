@@ -1,6 +1,7 @@
 <!--
-Automatically generated HTML file from DocOnce source
+HTML file automatically generated from DocOnce source
 (https://github.com/doconce/doconce/)
+doconce format html week11.do.txt --pygments_html_style=default --html_style=bloodish --html_links_in_new_window --html_output=week11 --no_mako
 -->
 <html>
 <head>
@@ -8,34 +9,107 @@ Automatically generated HTML file from DocOnce source
 <meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="PHY321: Two-body problems and Gravitational Forces">
-
 <title>PHY321: Two-body problems and Gravitational Forces</title>
-
-
 <style type="text/css">
 /* bloodish style */
-
 body {
   font-family: Helvetica, Verdana, Arial, Sans-serif;
   color: #404040;
   background: #ffffff;
 }
-h1 { font-size: 1.8em;  color: #8A0808; }
-h2 { font-size: 1.6em;  color: #8A0808; }
-h3 { font-size: 1.4em;  color: #8A0808; }
-h4 { color: #8A0808; }
+h1 { font-size: 1.8em; color: #8A0808; }
+h2 { font-size: 1.6em; color: #8A0808; }
+h3 { font-size: 1.4em; color: #8A0808; }
+h4 { font-size: 1.2em; color: #8A0808; }
 a { color: #8A0808; text-decoration:none; }
 tt { font-family: "Courier New", Courier; }
-/* pre style removed because it will interfer with pygments */
 p { text-indent: 0px; }
 hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
 p.caption { width: 80%; font-style: normal; text-align: left; }
-hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa; }div.highlight {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    line-height: 1.21429em;
+}
+div.cell {
+    width: 100%;
+    padding: 5px 5px 5px 0;
+    margin: 0;
+    outline: none;
+}
+div.input {
+    page-break-inside: avoid;
+    box-orient: horizontal;
+    box-align: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+div.inner_cell {
+    box-orient: vertical;
+    box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    box-flex: 1;
+    flex: 1;
+}
+div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 4px;
+    background: #f7f7f7;
+    line-height: 1.21429em;
+}
+div.input_area > div.highlight {
+    margin: .4em;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+}
+div.output_wrapper {
+    position: relative;
+    box-orient: vertical;
+    box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.output {
+    box-orient: vertical;
+    box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+div.output_area {
+    padding: 0;
+    page-break-inside: avoid;
+    box-orient: horizontal;
+    box-align: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+div.output_subarea {
+    padding: .4em .4em 0 .4em;
+    box-flex: 1;
+    flex: 1;
+}
+div.output_text {
+    text-align: left;
+    color: #000;
+    line-height: 1.21429em;
+}
 div { text-align: justify; text-justify: inter-word; }
+.tab {
+  padding-left: 1.5em;
+}
+div.toc p,a {
+  line-height: 1.3;
+  margin-top: 1.1;
+  margin-bottom: 1.1;
+}
 </style>
-
-
 </head>
 
 <!-- tocinfo
@@ -92,68 +166,51 @@ MathJax.Hub.Config({
 </script>
 
 
-
-    
 <!-- ------------------- main content ---------------------- -->
+<center>
+<h1>PHY321: Two-body problems and Gravitational Forces</h1>
+</center>  <!-- document title -->
 
-
-
-<center><h1>PHY321: Two-body problems and Gravitational Forces</h1></center>  <!-- document title -->
-
-<p>
 <!-- author(s): <a href="http://mhjgit.github.io/info/doc/web/" target="_blank">Morten Hjorth-Jensen</a> -->
-
 <center>
 <b><a href="http://mhjgit.github.io/info/doc/web/" target="_blank">Morten Hjorth-Jensen</a></b> [1, 2]
 </center>
-
-<p>
 <!-- institution(s) -->
+<center>
+[1] <b>Department of Physics and Astronomy and Facility for Rare Ion Beams (FRIB), Michigan State University, USA</b>
+</center>
+<center>
+[2] <b>Department of Physics, University of Oslo, Norway</b>
+</center>
+<br>
+<center>
+<h4>Mar 8, 2022</h4>
+</center> <!-- date -->
+<br>
 
-<center>[1] <b>Department of Physics and Astronomy and Facility for Rare Ion Beams (FRIB), Michigan State University, USA</b></center>
-<center>[2] <b>Department of Physics, University of Oslo, Norway</b></center>
-<br>
-<p>
-<center><h4>Mar 19, 2021</h4></center> <!-- date -->
-<br>
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
 <h2 id="aims-and-overarching-motivation">Aims and Overarching Motivation </h2>
-
 <h3 id="monday">Monday </h3>
+<p>Definition of the two-body problem, rewriting the equations in relative and center-of-mass coordinates</p>
 
-Definition of the two-body problem, rewriting the equations in relative and center-of-mass coordinates
-
-<p>
-<b>Reading suggestion</b>: Taylor sections 8.2-8.3
-
+<p><b>Reading suggestion</b>: Taylor sections 8.2-8.3</p>
 <h3 id="wednesday">Wednesday </h3>
 
-<p>
-Preparing the ground for the  gravitional force and its solution in two dimensions
+<p>Preparing the ground for the  gravitional force and its solution in two dimensions</p>
 
-<p>
-<b>Reading suggestion</b>: Taylor chapter 8.4
-
+<p><b>Reading suggestion</b>: Taylor chapter 8.4</p>
 <h3 id="friday">Friday </h3>
 
-<p>
-Harmonic Oscillator example. Begin Kepler's laws and computing with classes.
+<p>Harmonic Oscillator example. Begin Kepler's laws and computing with classes.</p>
 
-<p>
-<b>Reading suggestion</b>: Taylor section 8.5-8.6
+<p><b>Reading suggestion</b>: Taylor section 8.5-8.6 </p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
 <h1 id="two-body-problems">Two-body Problems </h1>
 
-<p>
 <b>Note: more text to be added</b>.
 
-<p>
-The gravitational potential energy and forces involving two masses \( a \) and \( b \) are
+<p>The gravitational potential energy and forces involving two masses \( a \) and \( b \) are</p>
 $$
 \begin{eqnarray}
 V_{ab}&=&-\frac{Gm_am_b}{|\boldsymbol{r}_a-\boldsymbol{r}_b|},\\
@@ -164,11 +221,11 @@ F_{ba}&=&-\frac{Gm_am_b}{|\boldsymbol{r}_a-\boldsymbol{r}_b|^2}\hat{r}_{ab},\\
 \end{eqnarray}
 $$
 
-<p>
-Here \( G=6.67\times 10^{-11} \) Nm$^2$/kg$^2$, and \( F_{ba} \) is the force
+<p>Here \( G=6.67\times 10^{-11} \) Nm$^2$/kg$^2$, and \( F_{ba} \) is the force
 on \( b \) due to \( a \). By inspection, one can see that the force on \( b \)
 due to \( a \) and the force on \( a \) due to \( b \) are equal and opposite. The
 net potential energy for a large number of masses would be
+</p>
 
 $$
 \begin{equation}
@@ -177,13 +234,11 @@ V=\sum_{a < b}U_{ab}=\frac{1}{2}\sum_{a\ne b}V_{ab}.
 \end{equation}
 $$
 
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="relative-and-center-of-mass-motion">Relative and Center of Mass Motion </h2>
 
-<p>
-Thus far, we have considered the trajectory as if the force is
+<p>Thus far, we have considered the trajectory as if the force is
 centered around a fixed point. For two bodies interacting only with
 one another, both masses circulate around the center of mass. One
 might think that solutions would become more complex when both
@@ -192,6 +247,7 @@ to one with a single body moving according to a fixed force by
 expressing the trajectories for \( \boldsymbol{r}_1 \) and \( \boldsymbol{r}_2 \) into the
 center-of-mass coordinate \( \boldsymbol{R}_{\rm cm} \) and the relative
 coordinate \( \boldsymbol{r} \),
+</p>
 
 $$
 \begin{eqnarray}
@@ -201,10 +257,10 @@ $$
 \end{eqnarray}
 $$
 
-<p>
-Here, we assume the two particles interact only with one another, so
+<p>Here, we assume the two particles interact only with one another, so
 \( \boldsymbol{F}_{12}=-\boldsymbol{F}_{21} \) (where \( \boldsymbol{F}_{ij} \) is the force on \( i \)
 due to \( j \). The equations of motion then become
+</p>
 
 $$
 \begin{eqnarray}
@@ -217,10 +273,10 @@ $$
 \end{eqnarray}
 $$
 
-<p>
-The first expression simply states that the center of mass coordinate
+<p>The first expression simply states that the center of mass coordinate
 \( \boldsymbol{R}_{\rm cm} \) moves at a fixed velocity. The second expression
 can be rewritten in terms of the reduced mass \( \mu \).
+</p>
 
 $$
 \begin{eqnarray}
@@ -229,11 +285,11 @@ $$
 \end{eqnarray}
 $$
 
-<p>
-Thus, one can treat the trajectory as a one-body problem where the
+<p>Thus, one can treat the trajectory as a one-body problem where the
 reduced mass is \( \mu \), and a second trivial problem for the center of
 mass. The reduced mass is especially convenient when one is
 considering gravitational problems because then
+</p>
 
 $$
 \begin{eqnarray}
@@ -243,13 +299,13 @@ $$
 \end{eqnarray}
 $$
 
-<p>
-For the gravitational problem, the reduced mass then falls out and the
+<p>For the gravitational problem, the reduced mass then falls out and the
 trajectory depends only on the total mass \( M \).
+</p>
 
-<p>
-The kinetic energy and momenta also have analogues in center-of-mass
+<p>The kinetic energy and momenta also have analogues in center-of-mass
 coordinates. The total and relative momenta are
+</p>
 
 $$
 \begin{eqnarray}
@@ -259,8 +315,7 @@ $$
 \end{eqnarray}
 $$
 
-<p>
-With these definitions, a little algebra shows that the kinetic energy becomes
+<p>With these definitions, a little algebra shows that the kinetic energy becomes</p>
 
 $$
 \begin{eqnarray}
@@ -273,27 +328,25 @@ K&=&\frac{1}{2}m_1|\boldsymbol{v}_1|^2+\frac{1}{2}m_2|\boldsymbol{v}_2|^2\\
 \end{eqnarray}
 $$
 
-<p>
-The standard strategy is to transform into the center of mass frame,
+<p>The standard strategy is to transform into the center of mass frame,
 then treat the problem as one of a single particle of mass \( \mu \)
 undergoing a force \( \boldsymbol{F}_{12} \). Scattering angles can also be
 expressed in this frame, then transformed into the lab frame. In
 practice, one sees examples in the literature where \( d\sigma/d\Omega \)
 expressed in both the &quot;center-of-mass&quot; and in the &quot;laboratory&quot;
 frame.
+</p>
 
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
 <h2 id="deriving-elliptical-orbits">Deriving Elliptical Orbits </h2>
 
-<p>
-Kepler's laws state that a gravitational orbit should be an ellipse
+<p>Kepler's laws state that a gravitational orbit should be an ellipse
 with the source of the gravitational field at one focus. Deriving this
 is surprisingly messy. To do this, we first use angular momentum
 conservation to transform the equations of motion so that it is in
 terms of \( r \) and \( \theta \) instead of \( r \) and \( t \). The overall strategy
 is to
+</p>
 
 <ol>
 <li> Find equations of motion for \( r \) and \( t \) with no angle (\( \theta \)) mentioned, i.e. \( d^2r/dt^2=\cdots \). Angular momentum conservation will be used, and the equation will involve the angular momentum \( L \).</li>
@@ -301,8 +354,7 @@ is to
 <li> Use the chain rule to convert the equations of motions for \( r \), an expression involving \( r,\dot{r} \) and \( \ddot{r} \), to one involving \( r,dr/d\theta \) and \( d^2r/d\theta^2 \). This is quitecomplicated because the expressions will also involve a substitution \( u=1/r \) so that one finds an expression in terms of \( u \) and \( \theta \).</li>
 <li> Once \( u(\theta) \) is found, you need to show that this can be converted to the familiar form for an ellipse.</li>
 </ol>
-
-The equations of motion give
+<p>The equations of motion give</p>
 
 $$
 \begin{eqnarray}
@@ -317,8 +369,7 @@ $$
 \end{eqnarray}
 $$
 
-<p>
-Recognizing that the numerator of the third term is the velocity squared, and that it can be written in polar coordinates, 
+<p>Recognizing that the numerator of the third term is the velocity squared, and that it can be written in polar coordinates, </p>
 
 $$
 \begin{equation}
@@ -327,8 +378,7 @@ v^2=\dot{x}^2+\dot{y}^2=\dot{r}^2+r^2\dot{\theta}^2,
 \end{equation}
 $$
 
-<p>
-one can write \( \ddot{r} \) as
+<p>one can write \( \ddot{r} \) as</p>
 
 $$
 \begin{eqnarray}
@@ -341,21 +391,21 @@ m\ddot{r}&=&F+\frac{L^2}{mr^3}.
 \end{eqnarray}
 $$
 
-<p>
-This derivation used the fact that the force was radial,
+<p>This derivation used the fact that the force was radial,
 \( F=F_r=F_x\cos\theta+F_y\sin\theta \), and that angular momentum is
 \( L=mrv_{\theta}=mr^2\dot{\theta} \). The term \( L^2/mr^3=mv^2/r \) behaves
 like an additional force. Sometimes this is referred to as a
 centrifugal force, but it is not a force. Instead, it is the
 consequence of considering the motion in a rotating (and therefore
 accelerating) frame.
+</p>
 
-<p>
-Now, we switch to the particular case of an attractive inverse square
+<p>Now, we switch to the particular case of an attractive inverse square
 force, \( F=-\alpha/r^2 \), and show that the trajectory, \( r(\theta) \), is
 an ellipse. To do this we transform derivatives w.r.t. time to
 derivatives w.r.t. \( \theta \) using the chain rule combined with angular
 momentum conservation, \( \dot{\theta}=L/mr^2 \).
+</p>
 
 $$
 \begin{eqnarray}
@@ -373,8 +423,7 @@ $$
 \end{eqnarray}
 $$
 
-<p>
-Equating the two expressions for \( \ddot{r} \) in Eq.s \eqref{eq:radialeqofmotion2} and \eqref{eq:rtotheta} eliminates all the derivatives w.r.t. time, and provides a differential equation with only derivatives w.r.t. \( \theta \),
+<p>Equating the two expressions for \( \ddot{r} \) in Eq.s \eqref{eq:radialeqofmotion2} and \eqref{eq:rtotheta} eliminates all the derivatives w.r.t. time, and provides a differential equation with only derivatives w.r.t. \( \theta \),</p>
 
 $$
 \begin{equation}
@@ -385,15 +434,15 @@ $$
 \end{equation}
 $$
 
-<p>
-that when solved yields the trajectory, i.e. \( r(\theta) \). Up to this
+<p>that when solved yields the trajectory, i.e. \( r(\theta) \). Up to this
 point the expressions work for any radial force, not just forces that
 fall as \( 1/r^2 \).
+</p>
 
-<p>
-The trick to simplifying this differential equation for the inverse
+<p>The trick to simplifying this differential equation for the inverse
 square problems is to make a substitution, \( u\equiv 1/r \), and rewrite
 the differential equation for \( u(\theta) \).
+</p>
 
 $$
 \begin{eqnarray}
@@ -405,10 +454,10 @@ r&=&1/u,\\
 \end{eqnarray}
 $$
 
-<p>
-Plugging these expressions into Eq. \eqref{eq:rdotdot} gives an
+<p>Plugging these expressions into Eq. \eqref{eq:rdotdot} gives an
 expression in terms of \( u \), \( du/d\theta \), and \( d^2u/d\theta^2 \). After
 some tedious algebra,
+</p>
 
 $$
 \begin{equation}
@@ -417,8 +466,7 @@ $$
 \end{equation}
 $$
 
-<p>
-For the attractive inverse square law force, \( F=-\alpha u^2 \),
+<p>For the attractive inverse square law force, \( F=-\alpha u^2 \),</p>
 
 $$
 \begin{equation}
@@ -427,8 +475,7 @@ $$
 \end{equation}
 $$
 
-<p>
-The solution has two arbitrary constants, \( A \) and \( \theta_0 \),
+<p>The solution has two arbitrary constants, \( A \) and \( \theta_0 \),</p>
 
 $$
 \begin{eqnarray}
@@ -439,23 +486,23 @@ r&=&\frac{1}{(m\alpha/L^2)+A\cos(\theta-\theta_0)}.
 \end{eqnarray}
 $$
 
-<p>
-The radius will be at a minimum when \( \theta=\theta_0 \) and at a
+<p>The radius will be at a minimum when \( \theta=\theta_0 \) and at a
 maximum when \( \theta=\theta_0+\pi \). The constant \( A \) is related to the
 eccentricity of the orbit. When \( A=0 \) the radius is a constant
 \( r=L^2/(m\alpha) \), and the motion is circular. If one solved the
 expression \( mv^2/r=-\alpha/r^2 \) for a circular orbit, using the
 substitution \( v=L/(mr) \), one would reproduce the expression
 \( r=L^2/(m\alpha) \).
+</p>
 
-<p>
-The form describing the elliptical trajectory in
+<p>The form describing the elliptical trajectory in
 Eq. \eqref{eq:Ctrajectory} can be identified as an ellipse with one
 focus being the center of the ellipse by considering the definition of
 an ellipse as being the points such that the sum of the two distances
 between the two foci are a constant. Making that distance \( 2D \), the
 distance between the two foci as \( 2a \), and putting one focus at the
 origin,
+</p>
 
 $$
 \begin{eqnarray}
@@ -467,15 +514,17 @@ r&=&\frac{D^2-a^2}{D+a\cos\theta}=\frac{1}{D/(D^2-a^2)-a\cos\theta/(D^2-a^2)}.
 \end{eqnarray}
 $$
 
-<p>
-By inspection, this is the same form as Eq. \eqref{eq:Ctrajectory} with \( D/(D^2-a^2)=m\alpha/L^2 \) and \( a/(D^2-a^2)=A \).
+<p>By inspection, this is the same form as Eq. \eqref{eq:Ctrajectory} with \( D/(D^2-a^2)=m\alpha/L^2 \) and \( a/(D^2-a^2)=A \).</p>
 
-<p>
-Let us remind ourselves about what an ellipse is before we proceed.
-<p>
+<p>Let us remind ourselves about what an ellipse is before we proceed.</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
 <span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">matplotlib</span> <span style="color: #008000; font-weight: bold">import</span> pyplot <span style="color: #008000; font-weight: bold">as</span> plt
 <span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> pi
 
@@ -488,14 +537,26 @@ t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>l
 plt<span style="color: #666666">.</span>plot( u<span style="color: #666666">+</span>a<span style="color: #666666">*</span>np<span style="color: #666666">.</span>cos(t) , v<span style="color: #666666">+</span>b<span style="color: #666666">*</span>np<span style="color: #666666">.</span>sin(t) )
 plt<span style="color: #666666">.</span>grid(color<span style="color: #666666">=</span><span style="color: #BA2121">&#39;lightgray&#39;</span>,linestyle<span style="color: #666666">=</span><span style="color: #BA2121">&#39;--&#39;</span>)
 plt<span style="color: #666666">.</span>show()
-</pre></div>
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="effective-or-centrifugal-potential">Effective or Centrifugal Potential </h2>
 
-<p>
-The total energy of a particle is
+<p>The total energy of a particle is</p>
 
 $$
 \begin{eqnarray}
@@ -507,12 +568,12 @@ E&=&V(r)+\frac{1}{2}mv_\theta^2+\frac{1}{2}m\dot{r}^2\\
 \end{eqnarray}
 $$
 
-<p>
-The second term then contributes to the energy like an additional
+<p>The second term then contributes to the energy like an additional
 repulsive potential. The term is sometimes referred to as the
 "centrifugal" potential, even though it is actually the kinetic energy
 of the angular motion. Combined with \( V(r) \), it is sometimes referred
 to as the "effective" potential,
+</p>
 
 $$
 \begin{eqnarray}
@@ -520,8 +581,7 @@ V_{\rm eff}(r)&=&V(r)+\frac{L^2}{2mr^2}.
 \end{eqnarray}
 $$
 
-<p>
-Note that if one treats the effective potential like a real potential, one would expect to be able to generate an effective force,
+<p>Note that if one treats the effective potential like a real potential, one would expect to be able to generate an effective force,</p>
 
 $$
 \begin{eqnarray}
@@ -531,15 +591,17 @@ F_{\rm eff}&=&-\frac{d}{dr}V(r) -\frac{d}{dr}\frac{L^2}{2mr^2}\\
 \end{eqnarray}
 $$
 
-<p>
-which is indeed matches the form for \( m\ddot{r} \) in Eq. \eqref{eq:radialeqofmotion2}, which included the <b>centrifugal</b> force.
+<p>which is indeed matches the form for \( m\ddot{r} \) in Eq. \eqref{eq:radialeqofmotion2}, which included the <b>centrifugal</b> force.</p>
 
-<p>
-The following code plots this effective potential for a simple choice of parameters, with a standard gravitational potential \( -\alpha/r \). Here we have chosen \( L=m=\alpha=1 \). 
-<p>
+<p>The following code plots this effective potential for a simple choice of parameters, with a standard gravitational potential \( -\alpha/r \). Here we have chosen \( L=m=\alpha=1 \). </p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #408080; font-style: italic"># Common imports</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic"># Common imports</span>
 <span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
 <span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #666666">*</span>
 <span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
@@ -564,17 +626,33 @@ ax<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&
 ax<span style="color: #666666">.</span>plot(x, V)
 fig<span style="color: #666666">.</span>tight_layout()
 plt<span style="color: #666666">.</span>show()
-</pre></div>
-
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <h3 id="gravitational-force-example">Gravitational force example </h3>
 
-<p>
-Using the above parameters, we can now study the evolution of the system using for example the velocity Verlet method.
+<p>Using the above parameters, we can now study the evolution of the system using for example the velocity Verlet method.
 This is done in the code here for an initial radius equal to the minimum of the potential well.  We seen then that the radius is always the same and corresponds to a circle (the radius is always constant).
-<p>
+</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #408080; font-style: italic"># Common imports</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic"># Common imports</span>
 <span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
 <span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">pandas</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">pd</span>
 <span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #666666">*</span>
@@ -646,29 +724,43 @@ ax[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>se
 ax[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>plot(t,v)
 save_fig(<span style="color: #BA2121">&quot;RadialGVV&quot;</span>)
 plt<span style="color: #666666">.</span>show()
-</pre></div>
-<p>
-Changing the value of the initial position to a value where the energy is positive, leads to an increasing radius with time, a so-called unbound orbit. Choosing on the other hand an initial radius that corresponds to a negative energy and different from the minimum value leads to a radius that oscillates back and forth between two values.
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+<p>Changing the value of the initial position to a value where the energy is positive, leads to an increasing radius with time, a so-called unbound orbit. Choosing on the other hand an initial radius that corresponds to a negative energy and different from the minimum value leads to a radius that oscillates back and forth between two values. </p>
 <h3 id="harmonic-oscillator-in-two-dimensions">Harmonic Oscillator in two dimensions </h3>
 
-<p>
-Consider a particle of mass \( m \) in a 2-dimensional harmonic oscillator with potential
+<p>Consider a particle of mass \( m \) in a 2-dimensional harmonic oscillator with potential</p>
 
 $$
 V=\frac{1}{2}kr^2=\frac{1}{2}k(x^2+y^2).
 $$
 
-<p>
-If the orbit has angular momentum \( L \), we can find the radius and angular velocity of the circular orbit as well as the b) the angular frequency of small radial perturbations.
+<p>If the orbit has angular momentum \( L \), we can find the radius and angular velocity of the circular orbit as well as the b) the angular frequency of small radial perturbations.</p>
 
-<p>
-We consider the effective potential. The radius of a circular orbit is at the minimum of the potential (where the effective force is zero).
+<p>We consider the effective potential. The radius of a circular orbit is at the minimum of the potential (where the effective force is zero).
 The potential is plotted here with the parameters \( k=m=0.1 \) and \( L=1.0 \).
-<p>
+</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #408080; font-style: italic"># Common imports</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic"># Common imports</span>
 <span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
 <span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #666666">*</span>
 <span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
@@ -693,18 +785,33 @@ ax<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&
 ax<span style="color: #666666">.</span>plot(x, V)
 fig<span style="color: #666666">.</span>tight_layout()
 plt<span style="color: #666666">.</span>show()
-</pre></div>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 $$
 \begin{eqnarray*}
 V_{\rm eff}&=&\frac{1}{2}kr^2+\frac{L^2}{2mr^2}
 \end{eqnarray*}
 $$
 
-<p>
-The effective potential looks like that of a harmonic oscillator for
+<p>The effective potential looks like that of a harmonic oscillator for
 large \( r \), but for small \( r \), the centrifugal potential repels the
 particle from the origin. The combination of the two potentials has a
 minimum for at some radius \( r_{\rm min} \). 
+</p>
 
 $$
 \begin{eqnarray*}
@@ -714,17 +821,15 @@ r_{\rm min}&=&\left(\frac{L^2}{mk}\right)^{1/4},\\
 \end{eqnarray*}
 $$
 
-<p>
-For particles at \( r_{\rm min} \) with \( \dot{r}=0 \), the particle does not
+<p>For particles at \( r_{\rm min} \) with \( \dot{r}=0 \), the particle does not
 accelerate and \( r \) stays constant, i.e. a circular orbit. The radius
 of the circular orbit can be adjusted by changing the angular momentum
 \( L \).
+</p>
 
-<p>
-For the above parameters this minimum is at \( r_{\rm min}=1 \).
+<p>For the above parameters this minimum is at \( r_{\rm min}=1 \).</p>
 
-<p>
- Now consider small vibrations about \( r_{\rm min} \). The effective spring constant is the curvature of the effective potential.
+<p> Now consider small vibrations about \( r_{\rm min} \). The effective spring constant is the curvature of the effective potential.</p>
 
 $$
 \begin{eqnarray*}
@@ -734,16 +839,15 @@ k_{\rm eff}&=&\left.\frac{d^2}{dr^2}V_{\rm eff}(r)\right|_{r=r_{\rm min}}=k+\fra
 \end{eqnarray*}
 $$
 
-<p>
-Because the radius oscillates with twice the angular frequency,
+<p>Because the radius oscillates with twice the angular frequency,
 the orbit has two places where \( r \) reaches a minimum in one
 cycle. This differs from the inverse-square force where there is one
 minimum in an orbit. One can show that the orbit for the harmonic
 oscillator is also elliptical, but in this case the center of the
 potential is at the center of the ellipse, not at one of the foci.
+</p>
 
-<p>
-The solution is also simple to write down exactly in Cartesian coordinates. The \( x \) and \( y \) equations of motion separate,
+<p>The solution is also simple to write down exactly in Cartesian coordinates. The \( x \) and \( y \) equations of motion separate,</p>
 
 $$
 \begin{eqnarray*}
@@ -752,8 +856,7 @@ $$
 \end{eqnarray*}
 $$
 
-<p>
-The general solution can be expressed as
+<p>The general solution can be expressed as</p>
 
 $$
 \begin{eqnarray*}
@@ -762,14 +865,13 @@ y&=&C\cos\omega_0 t+D\sin\omega_0 t.
 \end{eqnarray*}
 $$
 
-<p>
-The code here finds the solution for \( x \) and \( y \) using the code we
+<p>The code here finds the solution for \( x \) and \( y \) using the code we
 developed in homework 5 and 6 and the midterm.  Note that this code is
 tailored to run in Cartesian coordinates. There is thus no angular
 momentum dependent term.
+</p>
 
-<p>
-Here we have chose initial conditions that
+<p>Here we have chose initial conditions that
 correspond to the minimum of the effective potential
 \( r_{\mathrm{min}} \). We have chosen \( x_0=r_{\mathrm{min}} \) and
 \( y_0=0 \). Similarly, we use the centripetal acceleration to determine
@@ -777,20 +879,24 @@ the initial velocity so that we have a circular motion (see back to the
 last question of the midterm). This means that we set the centripetal
 acceleration \( v^2/r \) equal to the force from the harmonic oscillator \( -k\boldsymbol{r} \). Taking the
 magnitude of \( \boldsymbol{r} \) we have then
-\( v^2/r=k/mr \), which gives \( v=\pm\omega_0r \).
+\( v^2/r=k/mr \), which gives \( v=\pm\omega_0r \). 
+</p>
 
-<p>
-Since the code here solves the equations of motion in cartesian
+<p>Since the code here solves the equations of motion in cartesian
 coordinates and the harmonic oscillator potential leads to forces in
 the \( x \)- and \( y \)-directions that are decoupled, we have to select the initial velocities and positions so that we don't get that for example \( y(t)=0 \).
+</p>
 
-<p>
-We set \( x_0 \) to be different from zero and \( v_{y0} \) to be different from zero.
+<p>We set \( x_0 \) to be different from zero and \( v_{y0} \) to be different from zero.</p>
 
-<p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.001</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;">DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.001</span>
 <span style="color: #408080; font-style: italic">#set up arrays </span>
 tfinal <span style="color: #666666">=</span> <span style="color: #666666">10.0</span>
 n <span style="color: #666666">=</span> ceil(tfinal<span style="color: #666666">/</span>DeltaT)
@@ -838,19 +944,36 @@ ax[<span style="color: #666666">2</span>]<span style="color: #666666">.</span>pl
 fig<span style="color: #666666">.</span>tight_layout()
 save_fig(<span style="color: #BA2121">&quot;2DimHOVV&quot;</span>)
 plt<span style="color: #666666">.</span>show()
-</pre></div>
-<p>
-We see that the radius (to within a given error), we obtain a constant radius.
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-The following code shows first how we can solve this problem using the radial degrees of freedom only.
+<p>We see that the radius (to within a given error), we obtain a constant radius.</p>
+
+<p>The following code shows first how we can solve this problem using the radial degrees of freedom only.
 Here we need to add the explicit centrifugal barrier.  Note that the variable \( r \) depends only on time. There is no \( x \) and \( y \) directions
 since we have transformed the equations to polar coordinates.
+</p>
 
-<p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.01</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;">DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.01</span>
 <span style="color: #408080; font-style: italic">#set up arrays </span>
 tfinal <span style="color: #666666">=</span> <span style="color: #666666">10.0</span>
 n <span style="color: #666666">=</span> ceil(tfinal<span style="color: #666666">/</span>DeltaT)
@@ -893,9 +1016,22 @@ ax[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>se
 ax[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>plot(t,E)
 save_fig(<span style="color: #BA2121">&quot;RadialHOVV&quot;</span>)
 plt<span style="color: #666666">.</span>show()
-</pre></div>
-<p>
-With some work using double angle formulas, one can calculate
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>With some work using double angle formulas, one can calculate</p>
 
 $$
 \begin{eqnarray*}
@@ -909,15 +1045,13 @@ r^2&=&\alpha+(\beta^2+\gamma^2)^{1/2}\cos(2\omega_0 t-\delta),~~~\delta=\arctan(
 \end{eqnarray*}
 $$
 
-<p>
-and see that radius oscillates with frequency \( 2\omega_0 \). The
+<p>and see that radius oscillates with frequency \( 2\omega_0 \). The
 factor of two comes because the oscillation \( x=A\cos\omega_0t \) has two
 maxima for \( x^2 \), one at \( t=0 \) and one a half period later.
-
+</p>
 <h2 id="stability-of-orbits">Stability of Orbits </h2>
 
-<p>
-The effective force can be extracted from the effective potential, \( V_{\rm eff} \). Beginning from the equations of motion, Eq. \eqref{eq:radialeqofmotion}, for \( r \),
+<p>The effective force can be extracted from the effective potential, \( V_{\rm eff} \). Beginning from the equations of motion, Eq. \eqref{eq:radialeqofmotion}, for \( r \),</p>
 
 $$
 \begin{eqnarray}
@@ -931,8 +1065,7 @@ F_{\rm eff}&=&-\partial_r\left[V(r)+(L^2/2mr^2)\right].
 \end{eqnarray}
 $$
 
-<p>
-For a circular orbit, the radius must be fixed as a function of time,
+<p>For a circular orbit, the radius must be fixed as a function of time,
 so one must be at a maximum or a minimum of the effective
 potential. However, if one is at a maximum of the effective potential
 the radius will be unstable. For the attractive Coulomb force the
@@ -942,32 +1075,32 @@ large \( r \) because the centrifugal part falls off more quickly, \( \sim
 potential is repulsive. Thus, the potential must have a minimum
 somewhere with negative potential. The circular orbits are then stable
 to perturbation.
+</p>
 
-<p>
-The effective potential is sketched for two cases, a \( 1/r \) attractive
+<p>The effective potential is sketched for two cases, a \( 1/r \) attractive
 potential and a \( 1/r^3 \) attractive potential. The \( 1/r \) case has a
 stable minimum, whereas the circular orbit in the \( 1/r^3 \) case is
 unstable.
+</p>
 
-<p>
-If one considers a potential that falls as \( 1/r^3 \), the situation is
+<p>If one considers a potential that falls as \( 1/r^3 \), the situation is
 reversed and the point where \( \partial_rV \) disappears will be a local
 maximum rather than a local minimum. <b>Fig to come here with code</b>
+</p>
 
-<p>
-The repulsive centrifugal piece dominates at large \( r \) and the attractive
+<p>The repulsive centrifugal piece dominates at large \( r \) and the attractive
 Coulomb piece wins out at small \( r \). The circular orbit is then at a
 maximum of the effective potential and the orbits are unstable. It is
 the clear that for potentials that fall as \( r^n \), that one must have
 \( n>-2 \) for the orbits to be stable.
+</p>
 
-<p>
-Consider a potential \( V(r)=\beta r \). For a particle of mass \( m \) with
+<p>Consider a potential \( V(r)=\beta r \). For a particle of mass \( m \) with
 angular momentum \( L \), find the angular frequency of a circular
 orbit. Then find the angular frequency for small radial perturbations.
+</p>
 
-<p>
-For the circular orbit you search for the position \( r_{\rm min} \) where the effective potential is minimized,
+<p>For the circular orbit you search for the position \( r_{\rm min} \) where the effective potential is minimized,</p>
 
 $$
 \begin{eqnarray*}
@@ -978,8 +1111,7 @@ r_{\rm min}&=&\left(\frac{L^2}{\beta m}\right)^{1/3},\\
 \end{eqnarray*}
 $$
 
-<p>
-Now, we can find the angular frequency of small perturbations about the circular orbit. To do this we find the effective spring constant for the effective potential,
+<p>Now, we can find the angular frequency of small perturbations about the circular orbit. To do this we find the effective spring constant for the effective potential,</p>
 
 $$
 \begin{eqnarray*}
@@ -990,24 +1122,26 @@ k_{\rm eff}&=&\partial_r^2 \left.V_{\rm eff}\right|_{r_{\rm min}}\\
 \end{eqnarray*}
 $$
 
-<p>
-If the two frequencies, \( \dot{\theta} \) and \( \omega \), differ by an
+<p>If the two frequencies, \( \dot{\theta} \) and \( \omega \), differ by an
 integer factor, the orbit's trajectory will repeat itself each time
 around. This is the case for the inverse-square force,
 \( \omega=\dot{\theta} \), and for the harmonic oscillator,
 \( \omega=2\dot{\theta} \). In this case, \( \omega=\sqrt{3}\dot{\theta} \),
 and the angles at which the maxima and minima occur change with each
 orbit.
-
+</p>
 <h3 id="code-example-with-gravitional-force">Code example with gravitional force </h3>
 
-<p>
-The code example here is meant to illustrate how we can make a plot of the final orbit. We solve the equations in polar coordinates (the example here uses the minimum of the potential as initial value) and then we transform back to cartesian coordinates and plot \( x \) versus \( y \). We see that we get a perfect circle when we place ourselves at the minimum of the potential energy, as expected.
+<p>The code example here is meant to illustrate how we can make a plot of the final orbit. We solve the equations in polar coordinates (the example here uses the minimum of the potential as initial value) and then we transform back to cartesian coordinates and plot \( x \) versus \( y \). We see that we get a perfect circle when we place ourselves at the minimum of the potential energy, as expected.</p>
 
-<p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #408080; font-style: italic"># Simple Gravitational Force   -alpha/r</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic"># Simple Gravitational Force   -alpha/r</span>
     
 DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.01</span>
 <span style="color: #408080; font-style: italic">#set up arrays </span>
@@ -1059,18 +1193,35 @@ ax[<span style="color: #666666">2</span>]<span style="color: #666666">.</span>pl
 
 save_fig(<span style="color: #BA2121">&quot;Phasespace&quot;</span>)
 plt<span style="color: #666666">.</span>show()
-</pre></div>
-<p>
-Try to change the initial value for \( r \) and see what kind of orbits you get.
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>Try to change the initial value for \( r \) and see what kind of orbits you get.
 In order to test different energies, it can be useful to look at the plot of the effective potential discussed above.
+</p>
 
-<p>
-However, for orbits different from a circle the above code would need modifications in order to allow us to display say an ellipse. For the latter, it is much easier to run our code in cartesian coordinates, as done here. In this code we test also energy conservation and see that it is conserved to numerical precision. The code here is a simple extension of the code we developed for homework 4.
+<p>However, for orbits different from a circle the above code would need modifications in order to allow us to display say an ellipse. For the latter, it is much easier to run our code in cartesian coordinates, as done here. In this code we test also energy conservation and see that it is conserved to numerical precision. The code here is a simple extension of the code we developed for homework 4.</p>
 
-<p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #408080; font-style: italic"># Common imports</span>
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic"># Common imports</span>
 <span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
 <span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">pandas</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">pd</span>
 <span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #666666">*</span>
@@ -1124,18 +1275,26 @@ fig<span style="color: #666666">.</span>tight_layout()
 save_fig(<span style="color: #BA2121">&quot;2DimGravity&quot;</span>)
 plt<span style="color: #666666">.</span>show()
 <span style="color: #008000">print</span>(E)
-</pre></div>
-<p>
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <!-- ------------------- end of main content --------------- -->
-
-
 <center style="font-size:80%">
-<!-- copyright --> &copy; 1999-2021, "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/". Released under CC Attribution-NonCommercial 4.0 license
+<!-- copyright --> &copy; 1999-2022, "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/". Released under CC Attribution-NonCommercial 4.0 license
 </center>
-
-
 </body>
 </html>
-    
 
