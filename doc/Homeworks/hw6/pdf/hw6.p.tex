@@ -125,7 +125,7 @@ PHY321: Classical Mechanics 1
 
 % --- begin date ---
 \begin{center}
-Mar 8, 2022
+Mar 12, 2022
 \end{center}
 % --- end date ---
 
@@ -159,8 +159,9 @@ The relevant reading background is
 The numerical homework is based on what you did in homework 5 and/or the first midterm.
 
 There are also two optional exercises, one is a simple survey after the midterm. We would love hearing back from you about how the course is progressing.
+The other exercise is an optional exercises on harmonic oscillations.
 
-\paragraph{Exercise 1 (40pt), Summary of what we have done till now.}
+\paragraph{Exercise 1 (40pt), Summary of what we have done till now (and getting started after spring break).}
 Compile a summary of the material covered in this class so far that
 covers the major topics (Newton’s Laws, conservative and
 nonconservative forces, and conservation of energy, momentum, and
@@ -180,7 +181,7 @@ Which of the following force are conservative?
 
 \item 2c (2pt) $\bm{F}=k(-y\bm{e}_1+x\bm{e}_2+0\bm{e}_3)$ where $k$ is a constant.
 
-\item 2d (4pt) For those which are conservative, find the corresponding potential energy $V$ and verify that direct differentiation gives$\bm{F}=-\bm{\nabla} V$.
+\item 2d (4pt) For those which are conservative, find the corresponding potential energy $V$ and verify that direct differentiation gives $\bm{F}=-\bm{\nabla}V$.
 \end{itemize}
 
 \noindent
@@ -198,7 +199,7 @@ $i$ and $j$, that is $r=\vert\bm{r}_i-\bm{r}_j\vert=\sqrt{(x_i-x_j)^2+(y_i-y_j)^
 \begin{itemize}
 \item 3a (3pt) Sketch/plot the potential (choose some values for the constants in doing so).
 
-\item 3b (3pt) Find and classify the equilibrium points.
+\item 3b (3pt) Find and classify the equilibrium point(s).
 
 \item 3c (4pt) What is the force acting on one of the objects (an atom for example) from the other object? Is this a conservative force?
 \end{itemize}
@@ -227,7 +228,7 @@ We will limit ourselves to a one-dimensional system. You will need to select val
 
 \item 4c (25pt) You can use your codes from either the first midterm or from homework 5.  Study numerically the three cases from 4a, that is the underdamped motion, the critically damped one and finally the overdamped one. Compare your numerical results with the analytical ones from 4a. Discuss your results. You can use the Euler-Cromer method, or the Velocity-Verlet method or the Runge-Kutta methods discussed during the lectures, see for example \href{{https://mhjensen.github.io/Physics321/doc/pub/week8/html/week8.html}}{\nolinkurl{https://mhjensen.github.io/Physics321/doc/pub/week8/html/week8.html}}. Alternatively, you could use the \textbf{odeint} solvers included functionality in Python, see \href{{https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html}}{\nolinkurl{https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html}}. Give a short argument about the numerical algorithm you ended up using.  
 
-\item 4d \textbf{Optional exercise} (30pt) We add now a driving force $F=F_0\cos{(\omega t}$. Find the particular solution and its analytical solution. Include this force in your code (remember to scale the equations) and compare your numerical results with the analytical results. Discuss your results. How does the system evolve over time with a given frequency $\omega$ for the driving force?   Is energy conserved? If not, why? 
+\item 4d \textbf{Optional exercise} (30pt additional score) We add now a driving force $F=F_0\cos{(\omega t}$. Find the particular solution and its analytical solution. Include this force in your code (remember to scale the equations) and compare your numerical results with the analytical results. Discuss your results. How does the system evolve over time with a given frequency $\omega$ for the driving force?   Is energy conserved? If not, why? 
 \end{itemize}
 
 \noindent

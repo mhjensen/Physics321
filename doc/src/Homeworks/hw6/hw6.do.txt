@@ -21,8 +21,9 @@ o For exercise 4 will also need sections 5.1-5.6 of Taylor.
 The numerical homework is based on what you did in homework 5 and/or the first midterm.
 
 There are also two optional exercises, one is a simple survey after the midterm. We would love hearing back from you about how the course is progressing.
+The other exercise is an optional exercises on harmonic oscillations.
 
-=== Exercise 1 (40pt), Summary of what we have done till now ===
+=== Exercise 1 (40pt), Summary of what we have done till now (and getting started after spring break) ===
 
 Compile a summary of the material covered in this class so far that
 covers the major topics (Newton’s Laws, conservative and
@@ -42,7 +43,7 @@ Which of the following force are conservative?
 * 2a (2pt) $\bm{F}=k(x\bm{e}_1+2y\bm{e}_2+3z\bm{e}_3)$ where $k$ is a consttant.
 * 2b (2pt) $\bm{F}=y\bm{e}_1+x\bm{e}_2+0\bm{e}_3$.
 * 2c (2pt) $\bm{F}=k(-y\bm{e}_1+x\bm{e}_2+0\bm{e}_3)$ where $k$ is a constant.
-* 2d (4pt) For those which are conservative, find the corresponding potential energy $V$ and verify that direct differentiation gives$\bm{F}=-\bm{\nabla} V$.
+* 2d (4pt) For those which are conservative, find the corresponding potential energy $V$ and verify that direct differentiation gives $\bm{F}=-\bm{\nabla}V$.
 
 === Exercise 3 (10 pt), The Lennard-Jones potential ===
 
@@ -59,7 +60,7 @@ where $V_0$, $a$ and $b$ are constants and the potential depends only on the rel
 $i$ and $j$, that is $r=\vert\bm{r}_i-\bm{r}_j\vert=\sqrt{(x_i-x_j)^2+(y_i-y_j)^2+(z_i-z_j)^2}$.
 
 * 3a (3pt) Sketch/plot the potential (choose some values for the constants in doing so).
-* 3b (3pt) Find and classify the equilibrium points.
+* 3b (3pt) Find and classify the equilibrium point(s).
 * 3c (4pt) What is the force acting on one of the objects (an atom for example) from the other object? Is this a conservative force?
 
 
@@ -88,7 +89,7 @@ We will limit ourselves to a one-dimensional system. You will need to select val
 
 * 4c (25pt) You can use your codes from either the first midterm or from homework 5.  Study numerically the three cases from 4a, that is the underdamped motion, the critically damped one and finally the overdamped one. Compare your numerical results with the analytical ones from 4a. Discuss your results. You can use the Euler-Cromer method, or the Velocity-Verlet method or the Runge-Kutta methods discussed during the lectures, see for example URL:"https://mhjensen.github.io/Physics321/doc/pub/week8/html/week8.html". Alternatively, you could use the _odeint_ solvers included functionality in Python, see URL:"https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html". Give a short argument about the numerical algorithm you ended up using.  
 
-* 4d _Optional exercise_ (30pt) We add now a driving force $F=F_0\cos{(\omega t}$. Find the particular solution and its analytical solution. Include this force in your code (remember to scale the equations) and compare your numerical results with the analytical results. Discuss your results. How does the system evolve over time with a given frequency $\omega$ for the driving force?   Is energy conserved? If not, why? 
+* 4d _Optional exercise_ (30pt additional score) We add now a driving force $F=F_0\cos{(\omega t}$. Find the particular solution and its analytical solution. Include this force in your code (remember to scale the equations) and compare your numerical results with the analytical results. Discuss your results. How does the system evolve over time with a given frequency $\omega$ for the driving force?   Is energy conserved? If not, why? 
 
 
 ===  Additional Bonus Exercise (10pt) ===

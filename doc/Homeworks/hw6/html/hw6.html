@@ -122,10 +122,11 @@ div.toc p,a {
                3,
                None,
                'introduction-to-homework-6'),
-              ('Exercise 1 (40pt), Summary of what we have done till now',
+              ('Exercise 1 (40pt), Summary of what we have done till now (and '
+               'getting started after spring break)',
                3,
                None,
-               'exercise-1-40pt-summary-of-what-we-have-done-till-now'),
+               'exercise-1-40pt-summary-of-what-we-have-done-till-now-and-getting-started-after-spring-break'),
               ('Exercise 2 (10 pt), Conservative forces',
                3,
                None,
@@ -183,7 +184,7 @@ MathJax.Hub.Config({
 <!-- institution(s) -->
 <br>
 <center>
-<h4>Mar 8, 2022</h4>
+<h4>Mar 12, 2022</h4>
 </center> <!-- date -->
 <br>
 <h3 id="practicalities-about-homeworks-and-projects">Practicalities about  homeworks and projects </h3>
@@ -207,8 +208,10 @@ The relevant reading background is
 </ol>
 <p>The numerical homework is based on what you did in homework 5 and/or the first midterm.</p>
 
-<p>There are also two optional exercises, one is a simple survey after the midterm. We would love hearing back from you about how the course is progressing.</p>
-<h3 id="exercise-1-40pt-summary-of-what-we-have-done-till-now">Exercise 1 (40pt), Summary of what we have done till now </h3>
+<p>There are also two optional exercises, one is a simple survey after the midterm. We would love hearing back from you about how the course is progressing.
+The other exercise is an optional exercises on harmonic oscillations.
+</p>
+<h3 id="exercise-1-40pt-summary-of-what-we-have-done-till-now-and-getting-started-after-spring-break">Exercise 1 (40pt), Summary of what we have done till now (and getting started after spring break) </h3>
 
 <p>Compile a summary of the material covered in this class so far that
 covers the major topics (Newton&#8217;s Laws, conservative and
@@ -226,7 +229,7 @@ covered topics.
 <li> 2a (2pt) \( \boldsymbol{F}=k(x\boldsymbol{e}_1+2y\boldsymbol{e}_2+3z\boldsymbol{e}_3) \) where \( k \) is a consttant.</li>
 <li> 2b (2pt) \( \boldsymbol{F}=y\boldsymbol{e}_1+x\boldsymbol{e}_2+0\boldsymbol{e}_3 \).</li>
 <li> 2c (2pt) \( \boldsymbol{F}=k(-y\boldsymbol{e}_1+x\boldsymbol{e}_2+0\boldsymbol{e}_3) \) where \( k \) is a constant.</li>
-<li> 2d (4pt) For those which are conservative, find the corresponding potential energy \( V \) and verify that direct differentiation gives$\boldsymbol{F}=-\boldsymbol{\nabla} V$.</li>
+<li> 2d (4pt) For those which are conservative, find the corresponding potential energy \( V \) and verify that direct differentiation gives \( \boldsymbol{F}=-\boldsymbol{\nabla}V \).</li>
 </ul>
 <h3 id="exercise-3-10-pt-the-lennard-jones-potential">Exercise 3 (10 pt), The Lennard-Jones potential </h3>
 
@@ -245,7 +248,7 @@ $$
 
 <ul>
 <li> 3a (3pt) Sketch/plot the potential (choose some values for the constants in doing so).</li>
-<li> 3b (3pt) Find and classify the equilibrium points.</li>
+<li> 3b (3pt) Find and classify the equilibrium point(s).</li>
 <li> 3c (4pt) What is the force acting on one of the objects (an atom for example) from the other object? Is this a conservative force?</li>
 </ul>
 <h3 id="exercise-4-50-pt-optional-30pts-particle-object-in-a-harmonic-oscillator-potential">Exercise 4 (50 pt+optional 30pts), particle/object in a harmonic oscillator  potential </h3>
@@ -271,7 +274,7 @@ $$
 <li> 4a (20pt)  Assume no driving force first and add a drag force \( -bv \), where \( v \) is the velocity. Find the forces acting on the object. Find the analytical solutions to the equations of motion. Discuss the three cases: <b>underdamping</b>, <b>critical damping</b> and <b>overdamping</b>.</li>
 <li> 4b (5pt) Scale your equations of motion in terms of a dimensionless time \( \tau = \omega_0 t \), where \( t \) is time and \( \omega_0^2=k/m \) is the so-called natural frequency.</li> 
 <li> 4c (25pt) You can use your codes from either the first midterm or from homework 5.  Study numerically the three cases from 4a, that is the underdamped motion, the critically damped one and finally the overdamped one. Compare your numerical results with the analytical ones from 4a. Discuss your results. You can use the Euler-Cromer method, or the Velocity-Verlet method or the Runge-Kutta methods discussed during the lectures, see for example <a href="https://mhjensen.github.io/Physics321/doc/pub/week8/html/week8.html" target="_blank"><tt>https://mhjensen.github.io/Physics321/doc/pub/week8/html/week8.html</tt></a>. Alternatively, you could use the <b>odeint</b> solvers included functionality in Python, see <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html" target="_blank"><tt>https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html</tt></a>. Give a short argument about the numerical algorithm you ended up using.</li>  
-<li> 4d <b>Optional exercise</b> (30pt) We add now a driving force \( F=F_0\cos{(\omega t} \). Find the particular solution and its analytical solution. Include this force in your code (remember to scale the equations) and compare your numerical results with the analytical results. Discuss your results. How does the system evolve over time with a given frequency \( \omega \) for the driving force?   Is energy conserved? If not, why?</li> 
+<li> 4d <b>Optional exercise</b> (30pt additional score) We add now a driving force \( F=F_0\cos{(\omega t} \). Find the particular solution and its analytical solution. Include this force in your code (remember to scale the equations) and compare your numerical results with the analytical results. Discuss your results. How does the system evolve over time with a given frequency \( \omega \) for the driving force?   Is energy conserved? If not, why?</li> 
 </ul>
 <h3 id="additional-bonus-exercise-10pt">Additional Bonus Exercise (10pt) </h3>
 
