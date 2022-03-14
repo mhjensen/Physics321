@@ -207,9 +207,11 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 ### Week 10 Spring break, no lectures
 
 ### Week 11, March  14-18, 2022
-- Monday 3/14:  Gravity and central force problems, center of mass coordinates. Lecture notes and Taylor chapter 8. 
-- Wednesday 3/16: Gravity and central force problems. 
-- Friday 3/18:  Gravity and central force problems, centrifugal barriers. Deadline sixth homework.
+- Monday 3/14:  Harmonic oscillations and driving forces
+  - Video of lecture at https://youtu.be/xV3sIH6AXiE
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesMarch14.pdf      
+- Wednesday 3/16: Harmonic oscillations and driving forces
+- Friday 3/18:  Discussion and work on homework 6. Deadline sixth homework.
 
 ### Week 12, March 21-25, 2022
 - Monday 3/21: Gravity and central force problems, elliptical orbits and Kepler's laws
