@@ -1,5 +1,5 @@
 TITLE: PHY321: Classical Mechanics 1
-AUTHOR: Homework 7, due Monday  March 25
+AUTHOR: Homework 7, due Monday  March 22
 DATE: today
 
 ===  Practicalities about  homeworks and projects ===
@@ -11,104 +11,42 @@ o How do I(we)  hand in?  Due to the corona virus and many of you not being on c
 === Introduction to homework 7 ===
 
 In this week's homework we will apply our insights about harmonic
-oscillations. The relevant material to survey is chapter 5 of Taylor.
+oscillations and link this with our activity from the lecture on
+Friday March 12. The relevant material to survey is chapter 5 of Taylor.
 
 We have also added an exercise (exercise 2) related to our discussion of two-body problems. 
-The relevant reading background for exercise 2 is given by sections 8.1-8.2 of Taylor.
+The relevant reading background for exercise 2 is sections 8.1-8.2 of Taylor.
 
 
 
-=== Exercise 1 (80 pts), the mathematical pendulum ===
+=== Exercise 1 (80 pt), particle/object in a harmonic oscillator  potential ===
+
+In the midterm and in exercise 4 of homework 6, we looked at an
+object/particle moving in a potential which resulted in harmonic
+oscillations.  The aim here is to summarize in more detail the
+material from harmonic oscillations. See also the bonus exercise below
+here (from the discussions of Friday March 12).
 
 
 Relevant reading here is Taylor chapter 5 and the lecture notes on oscillations. 
 
-The angular equation of motion of the pendulum is given by
-Newton's equation and with no external force it reads 
+We will consider a particle of mass $m$ moving in a one-dimensional potential,
 !bt
-\begin{equation}
-  ml\frac{d^2\theta}{dt^2}+mgsin(\theta)=0,
-\end{equation}
+\[
+V(x)=k\frac{x^2}{2},
+\]
 !et
-with an angular velocity and acceleration given by
-!bt
-\begin{equation}
-     v=l\frac{d\theta}{dt},
-\end{equation}
-!et
-and
-!bt
-\begin{equation}
-     a=l\frac{d^2\theta}{dt^2}.
-\end{equation}
-!et
+where $k$ is a parameter.
 
-We do however expect that the motion will gradually come to an end
-due a viscous drag torque acting on the pendulum. 
-In the presence of the drag, the above equation becomes
-!bt
-\begin{equation}
-   ml\frac{d^2\theta}{dt^2}+\nu\frac{d\theta}{dt}  +mgsin(\theta)=0,
-label{eq:pend1}
-\end{equation}
-!et
-where $\nu$ is now a positive constant parameterizing the viscosity
-of the medium in question. In order to maintain the motion against
-viscosity, it is necessary to add some external driving force. 
-We choose here a periodic driving force. The last equation becomes then
-!bt
-\begin{equation}
-   ml\frac{d^2\theta}{dt^2}+\nu\frac{d\theta}{dt}  +mgsin(\theta)=Asin(\omega t),
-label{eq:pend2}
-\end{equation}
-!et
-with $A$ and $\omega$ two constants representing the amplitude and 
-the angular frequency respectively. The latter is called the driving frequency.
+We will limit ourselves to a one-dimensional system. You will need to select values for the initial conditions and the various parameters $k$, $m$, $b$, $\omega$ and $F_0$ discussed here.
 
+* 1a (20pt)  Assume no driving force first and add a drag force $-bv$, where $v$ is the velocity. Find the forces acting on the object. Find the analytical solutions to the equations of motion. Discuss the three cases: _underdamping_, _critical damping_ and _overdamping_.
 
+* 1b (5pt) Scale your equations of motion in terms of a dimensionless time $\tau = \omega_0 t$, where $t$ is time and $\omega_0^2=k/m$ is the so-called natural frequency. 
 
-* 1a (10pts)
-Rewrite Eqs.~(ref{eq:pend1}) and (ref{eq:pend2}) as dimensionless
-equations in time. 
+* 1c (25pt) You can use your codes from either the first midterm or from homeworks 5 and/or 6.  Study numerically the three cases from 1a, that is the underdamped motion, the critically damped one and finally the overdamped one. Compare your numerical results with the analytical ones from 1a. Discuss your results. You can use the Euler-Cromer method, or the Velocity-Verlet method or the Runge-Kutta methods discussed during the lectures, see for example URL:"https://mhjensen.github.io/Physics321/doc/pub/week10/html/week10.html". Alternatively, you could use the _odeint_ solvers included functionality in Python, see URL:"https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html". Give a short argument about the numerical algorithm you ended up using.  
 
-* 1b (40pts)
-Write then a code which solves Eq.~(ref{eq:pend1}) using the
-Euler-Cromer method or for example the fourth-order Runge Kutta method. Perform
-calculations for at least ten periods with $N=100$, $N=1000$ and
-$N=10000$ mesh points and values of $\nu = 1$, $\nu = 5$ and $\nu
-=10$.  Set $l=1.0$ m, $g=1$ m/s$^2$ and $m=1$ kg.  Choose as initial
-conditions $\theta(0) = 0.2$ (radians) and $v(0) = 0$ (radians/s).
-Make plots of $\theta$ (in radians) as function of time and phase
-space plots of $\theta$ versus the velocity $v$.  Check the stability
-of your results as functions of time and number of mesh points.  Which
-case corresponds to damped, underdamped and overdamped oscillatory
-motion?  Comment your results.
-
-
-* 1c (30pts) 
-Now we switch to Eq.~(ref{eq:pend2}) for the rest of the exercise. Add
-an external driving force and set $l=g=1$, $m=1$, $\nu = 1/2$ and
-$\omega = 2/3$.  Choose as initial conditions $\theta(0) = 0.2$ and
-$v(0) = 0$ and $A=0.5$ and $A=1.2$.  Make plots of $\theta$ (in
-radians) as function of time for at least 300 periods and phase space
-plots of $\theta$ versus the velocity $v$. Choose an appropriate time
-step. Comment and explain the results for the different values of $A$.
-
-* 1d _optional exercise_ (20pts) 
-Keep now the constants from the previous exercise fixed but
-set now $A=1.35$, $A=1.44$ and $A=1.465$. Plot $\theta$ (in radians)
-as function of time for at least 300 periods for these values of $A$
-and comment your results.
-
-
-* 1e _optional exercise_ (20pts)
-We want to analyse further these results by making phase space plots
-of $\theta$ versus the velocity $v$ using only the points where we
-have $\omega t=2n\pi$ where $n$ is an integer. These are normally
-called the drive periods.  This is an example of what is called a
-Poincare section and is a very useful way to plot and analyze the
-behavior of a dynamical system. Comment your results.
-
+* 1d (30pt) We add now a driving force $F=F_0\cos{(\omega t}$. Find the particular solution and its analytical solution. Include this force in your code (remember to scale the equations) and compare your numerical results with the analytical results. Discuss your results. How does the system evolve over time with a given frequency $\omega$ for the driving force?   Is energy conserved? If not, why? 
 
 
 
@@ -232,8 +170,6 @@ Talks given by researchers through the following clubs:
 If you have any questions please consult Jeremy Rebenstock, rebensto@msu.edu.
 
 All the material on extra credits is at URL:"https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/". 
-
-
 
 
 

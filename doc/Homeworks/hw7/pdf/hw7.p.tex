@@ -1,0 +1,383 @@
+%%
+%% Automatically generated file from DocOnce source
+%% (https://github.com/doconce/doconce/)
+%% doconce format latex hw7.do.txt --no_mako
+%%
+% #ifdef PTEX2TEX_EXPLANATION
+%%
+%% The file follows the ptex2tex extended LaTeX format, see
+%% ptex2tex: https://code.google.com/p/ptex2tex/
+%%
+%% Run
+%%      ptex2tex myfile
+%% or
+%%      doconce ptex2tex myfile
+%%
+%% to turn myfile.p.tex into an ordinary LaTeX file myfile.tex.
+%% (The ptex2tex program: https://code.google.com/p/ptex2tex)
+%% Many preprocess options can be added to ptex2tex or doconce ptex2tex
+%%
+%%      ptex2tex -DMINTED myfile
+%%      doconce ptex2tex myfile envir=minted
+%%
+%% ptex2tex will typeset code environments according to a global or local
+%% .ptex2tex.cfg configure file. doconce ptex2tex will typeset code
+%% according to options on the command line (just type doconce ptex2tex to
+%% see examples). If doconce ptex2tex has envir=minted, it enables the
+%% minted style without needing -DMINTED.
+% #endif
+
+% #define PREAMBLE
+
+% #ifdef PREAMBLE
+%-------------------- begin preamble ----------------------
+
+\documentclass[%
+oneside,                 % oneside: electronic viewing, twoside: printing
+final,                   % draft: marks overfull hboxes, figures with paths
+10pt]{article}
+
+\listfiles               %  print all files needed to compile this document
+
+\usepackage{relsize,makeidx,color,setspace,amsmath,amsfonts,amssymb}
+\usepackage[table]{xcolor}
+\usepackage{bm,ltablex,microtype}
+
+\usepackage[pdftex]{graphicx}
+
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{lmodern}         % Latin Modern fonts derived from Computer Modern
+
+% Hyperlinks in PDF:
+\definecolor{linkcolor}{rgb}{0,0,0.4}
+\usepackage{hyperref}
+\hypersetup{
+    breaklinks=true,
+    colorlinks=true,
+    linkcolor=linkcolor,
+    urlcolor=linkcolor,
+    citecolor=black,
+    filecolor=black,
+    %filecolor=blue,
+    pdfmenubar=true,
+    pdftoolbar=true,
+    bookmarksdepth=3   % Uncomment (and tweak) for PDF bookmarks with more levels than the TOC
+    }
+%\hyperbaseurl{}   % hyperlinks are relative to this root
+
+\setcounter{tocdepth}{2}  % levels in table of contents
+
+% prevent orhpans and widows
+\clubpenalty = 10000
+\widowpenalty = 10000
+
+% --- end of standard preamble for documents ---
+
+
+% insert custom LaTeX commands...
+
+\raggedbottom
+\makeindex
+\usepackage[totoc]{idxlayout}   % for index in the toc
+\usepackage[nottoc]{tocbibind}  % for references/bibliography in the toc
+
+%-------------------- end preamble ----------------------
+
+\begin{document}
+
+% matching end for #ifdef PREAMBLE
+% #endif
+
+\newcommand{\exercisesection}[1]{\subsection*{#1}}
+
+
+% ------------------- main content ----------------------
+
+
+
+% ----------------- title -------------------------
+
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE\bf
+\begin{spacing}{1.25}
+PHY321: Classical Mechanics 1
+\end{spacing}
+}
+\end{center}
+
+% ----------------- author(s) -------------------------
+
+\begin{center}
+{\bf Homework 7, due Monday  March 25${}^{}$} \\ [0mm]
+\end{center}
+
+\begin{center}
+% List of all institutions:
+\end{center}
+    
+% ----------------- end author(s) -------------------------
+
+% --- begin date ---
+\begin{center}
+Mar 15, 2022
+\end{center}
+% --- end date ---
+
+\vspace{1cm}
+
+
+\paragraph{Practicalities about  homeworks and projects.}
+\begin{enumerate}
+\item You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. \textbf{Remember to write your name(s)}!
+
+\item Homeworks are available  the week before the deadline. 
+
+\item How do I(we)  hand in?  Due to the corona virus and many of you not being on campus, we recommend that you scan your handwritten notes and upload them to D2L. If you are ok with typing mathematical formulae using say Latex, you can hand in everything as a single jupyter notebook at D2L. The numerical exercise(s) should always be handed in as a jupyter notebook by the deadline at D2L. 
+\end{enumerate}
+
+\noindent
+\paragraph{Introduction to homework 7.}
+In this week's homework we will apply our insights about harmonic
+oscillations. The relevant material to survey is chapter 5 of Taylor.
+
+We have also added an exercise (exercise 2) related to our discussion of two-body problems. 
+The relevant reading background for exercise 2 is given by sections 8.1-8.2 of Taylor.
+
+\paragraph{Exercise 1 (80 pts), the mathematical pendulum.}
+Relevant reading here is Taylor chapter 5 and the lecture notes on oscillations. 
+
+The angular equation of motion of the pendulum is given by
+Newton's equation and with no external force it reads 
+\begin{equation}
+  ml\frac{d^2\theta}{dt^2}+mgsin(\theta)=0,
+\end{equation}
+with an angular velocity and acceleration given by
+\begin{equation}
+     v=l\frac{d\theta}{dt},
+\end{equation}
+and
+\begin{equation}
+     a=l\frac{d^2\theta}{dt^2}.
+\end{equation}
+
+We do however expect that the motion will gradually come to an end
+due a viscous drag torque acting on the pendulum. 
+In the presence of the drag, the above equation becomes
+\begin{equation}
+   ml\frac{d^2\theta}{dt^2}+\nu\frac{d\theta}{dt}  +mgsin(\theta)=0,
+\label{eq:pend1}
+\end{equation}
+where $\nu$ is now a positive constant parameterizing the viscosity
+of the medium in question. In order to maintain the motion against
+viscosity, it is necessary to add some external driving force. 
+We choose here a periodic driving force. The last equation becomes then
+\begin{equation}
+   ml\frac{d^2\theta}{dt^2}+\nu\frac{d\theta}{dt}  +mgsin(\theta)=Asin(\omega t),
+\label{eq:pend2}
+\end{equation}
+with $A$ and $\omega$ two constants representing the amplitude and 
+the angular frequency respectively. The latter is called the driving frequency.
+
+\begin{itemize}
+\item 1a (10pts)
+\end{itemize}
+
+\noindent
+Rewrite Eqs.~(\ref{eq:pend1}) and (\ref{eq:pend2}) as dimensionless
+equations in time. 
+
+\begin{itemize}
+\item 1b (40pts)
+\end{itemize}
+
+\noindent
+Write then a code which solves Eq.~(\ref{eq:pend1}) using the
+Euler-Cromer method or for example the fourth-order Runge Kutta method. Perform
+calculations for at least ten periods with $N=100$, $N=1000$ and
+$N=10000$ mesh points and values of $\nu = 1$, $\nu = 5$ and $\nu
+=10$.  Set $l=1.0$ m, $g=1$ m/s$^2$ and $m=1$ kg.  Choose as initial
+conditions $\theta(0) = 0.2$ (radians) and $v(0) = 0$ (radians/s).
+Make plots of $\theta$ (in radians) as function of time and phase
+space plots of $\theta$ versus the velocity $v$.  Check the stability
+of your results as functions of time and number of mesh points.  Which
+case corresponds to damped, underdamped and overdamped oscillatory
+motion?  Comment your results.
+
+\begin{itemize}
+\item 1c (30pts) 
+\end{itemize}
+
+\noindent
+Now we switch to Eq.~(\ref{eq:pend2}) for the rest of the exercise. Add
+an external driving force and set $l=g=1$, $m=1$, $\nu = 1/2$ and
+$\omega = 2/3$.  Choose as initial conditions $\theta(0) = 0.2$ and
+$v(0) = 0$ and $A=0.5$ and $A=1.2$.  Make plots of $\theta$ (in
+radians) as function of time for at least 300 periods and phase space
+plots of $\theta$ versus the velocity $v$. Choose an appropriate time
+step. Comment and explain the results for the different values of $A$.
+
+\begin{itemize}
+\item 1d \textbf{optional exercise} (20pts) 
+\end{itemize}
+
+\noindent
+Keep now the constants from the previous exercise fixed but
+set now $A=1.35$, $A=1.44$ and $A=1.465$. Plot $\theta$ (in radians)
+as function of time for at least 300 periods for these values of $A$
+and comment your results.
+
+\begin{itemize}
+\item 1e \textbf{optional exercise} (20pts)
+\end{itemize}
+
+\noindent
+We want to analyse further these results by making phase space plots
+of $\theta$ versus the velocity $v$ using only the points where we
+have $\omega t=2n\pi$ where $n$ is an integer. These are normally
+called the drive periods.  This is an example of what is called a
+Poincare section and is a very useful way to plot and analyze the
+behavior of a dynamical system. Comment your results.
+
+\paragraph{Exercise 2 (20pt), Center-of-Mass and Relative Coordinates and Reference Frames.}
+We define the two-body center-of-mass coordinate and relative coordinate by expressing the trajectories for
+$\bm{r}_1$ and $\bm{r}_2$ into the center-of-mass coordinate
+$\bm{R}_{\rm cm}$ 
+\[
+\bm{R}_{\rm cm}\equiv\frac{m_1\bm{r}_1+m_2\bm{r}_2}{m_1+m_2},
+\]
+and the relative coordinate 
+\[
+\bm{r}\equiv\bm{r}_1-\bm{r_2}.
+\]
+Here, we assume the two particles interact only with one another, so $\bm{F}_{12}=-\bm{F}_{21}$ (where $\bm{F}_{ij}$ is the force on $i$ due to $j$.
+
+\begin{itemize}
+\item 2a (5pt) Show that the equations of motion then become $\ddot{\bm{R}}_{\rm cm}=0$ and $\mu\ddot{\bm{r}}=\bm{F}_{12}$, with the reduced mass $\mu=m_1m_2/(m_1+m_2)$.
+\end{itemize}
+
+\noindent
+The first expression simply states that the center of mass coordinate $\bm{R}_{\rm cm}$ moves at a fixed velocity. The second expression can be rewritten in terms of the reduced mass $\mu$.
+
+\begin{itemize}
+\item 2b (5pt) Show that the linear momenta for the center-of-mass $\bm{P}$ motion and the relative motion $\bm{q}$ are given by $\bm{P}=M\dot{\bm{R}}_{\rm cm}$ with $M=m_1+m_2$ and $\bm{q}=\mu\dot{\bm{r}}$.  The linear momentum of the relative motion is defined $\bm{q} = (m_2\bm{p}_1-m_1\bm{p}_2)/(m_1+m_2)$.
+
+\item 2c (5pt) Show then the kinetic energy for two objects can then be written as
+\end{itemize}
+
+\noindent
+\[
+K=\frac{P^2}{2M}+\frac{q^2}{2\mu}.
+\]
+
+\begin{itemize}
+\item 2d (5pt) Show that the total angular momentum for two-particles in the center-of-mass frame $\bm{R}=0$, is given by
+\end{itemize}
+
+\noindent
+\[
+\bm{L}=\bm{r}\times \mu\dot{\bm{r}}.
+\]
+
+\paragraph{Bonus exercise from lecture Friday March 12.}
+This bonus exercise gives you an additional score of \textbf{10pt} and summarizes what we discussed during the lecture of March 12. It is useful in connection with solving exercise 1 as well.
+\textbf{Your task is to write a summary page on the harmonic oscillator including all relevant equations, concepts, and especially how things are connected}. Your summary should be concise, not more than one page.
+
+\paragraph{Classical Mechanics Extra Credit Assignment: Scientific Writing and attending Talks.}
+The following gives you an opportunity to earn \textbf{five extra credit
+points} on each of the remaining homeworks and \textbf{ten extra credit points}
+on the midterms and finals.  This assignment also covers an aspect of
+the scientific process that is not taught in most undergraduate
+programs: scientific writing.  Writing scientific reports is how
+scientist communicate their results to the rest of the field.  Knowing
+how to assemble a well written scientific report will greatly benefit
+you in you upper level classes, in graduate school, and in the work
+place.
+
+The full information on extra credits is found at \href{{https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/}}{\nolinkurl{https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/}}. There you will also find examples on how to write a scientific article. 
+Below you can also find a description on how to gain extra credits by attending scientific talks.
+
+This assignment allows you to gain extra credit points by practicing
+your scientific writing.  For each of the remaining homeworks you can
+submit the specified section of a scientific report (written about the
+numerical aspect of the homework) for five extra credit points on the
+assignment.  For the two midterms and the final, submitting a full
+scientific report covering the numerical analysis problem will be
+worth ten extra points.  For credit the grader must be able to tell
+that you put effort into the assignment (i.e.~well written, well
+formatted, etc.).  If you are unfamiliar with writing scientific
+reports, \href{{https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/IntroductionScientificWriting.md}}{see the information here}
+
+The following table explains what aspect of a scientific report is due
+with which homework.  You can submit the assignment in any format you
+like, in the same document as your homework, or in a different one.
+Remember to cite any external references you use and include a
+reference list.  There are no length requirements, but make sure what
+you turn in is complete and through.  If you have any questions,
+please contact Julie Butler at butler@frib.msu.edu.
+
+
+\begin{quote}
+\begin{tabular}{ccc}
+\hline
+\multicolumn{1}{c}{ HW/Project } & \multicolumn{1}{c}{ Due Date } & \multicolumn{1}{c}{ Extra Credit Assignment } \\
+\hline
+HW 3               & 2-8           & Abstract                   \\
+HW 4               & 2-15          & Introduction               \\
+HW 5               & 2-22          & Methods                    \\
+HW 6               & 3-1           & Results and Discussion     \\
+\textbf{Midterm 1} & \textbf{3-12} & \emph{Full Written Report} \\
+HW 7               & 3-22          & Abstract                   \\
+HW 8               & 3-29          & Introduction               \\
+HW 9               & 4-5           & Results and Discussion     \\
+\textbf{Midterm 2} & \textbf{4-16} & \emph{Full Written Report} \\
+HW 10              & 4-26          & Abstract                   \\
+\textbf{Final}     & \textbf{4-30} & \emph{Full Written Report} \\
+\hline
+\end{tabular}
+\end{quote}
+
+\noindent
+You can also gain extra credits if you attend scientific talks.
+This is described here.
+
+\paragraph{Integrating Classwork With Research.}
+This opportunity will allow you to earn up to 5 extra credit points on a Homework per week. These points can push you above 100\% or help make up for missed exercises.
+In order to earn all points you must:
+
+\begin{enumerate}
+\item Attend an MSU research talk (recommended research oriented Clubs is  provided below)
+
+\item Summarize the talk using at least 150 words
+
+\item Turn in the summary along with your Homework.
+\end{enumerate}
+
+\noindent
+Approved talks:
+Talks given by researchers through the following clubs:
+\begin{itemize}
+\item Research and Idea Sharing Enterprise (RAISE)​: Meets Wednesday Nights Society for Physics Students (SPS)​: Meets Monday Nights
+
+\item Astronomy Club​: Meets Monday Nights
+
+\item Facility For Rare Isotope Beam (FRIB) Seminars: ​Occur multiple times a week
+\end{itemize}
+
+\noindent
+If you have any questions please consult Jeremy Rebenstock, rebensto@msu.edu.
+
+All the material on extra credits is at \href{{https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/}}{\nolinkurl{https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/}}. 
+
+
+% ------------------- end of main content ---------------
+
+% #ifdef PREAMBLE
+\end{document}
+% #endif
+
