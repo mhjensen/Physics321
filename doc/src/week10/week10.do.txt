@@ -424,7 +424,7 @@ plt.show()
 !split
 ===== Example: The classical pendulum and scaling the equations =====
 
-Let us end our discussion of oscillations with another classical case, the pendulum.
+Let us end our discussion of oscillations with another classical case, the pendulum. You will find the material here useful for homework 7.
 
 The angular equation of motion of the pendulum is given by
 Newton's equation and with no external force it reads 
@@ -447,8 +447,9 @@ and
 !et
 
 
-We do however expect that the motion will gradually come to an end due a viscous drag torque acting on the pendulum. 
-In the presence of the drag, the above equation becomes
+We do however expect that the motion will gradually come to an end due
+a viscous drag torque acting on the pendulum.  In the presence of the
+drag, the above equation becomes
 !bt
 \begin{equation}
    ml\frac{d^2\theta}{dt^2}+\nu\frac{d\theta}{dt}  +mgsin(\theta)=0, label{eq:pend1}
@@ -535,7 +536,11 @@ frequency.
 !split
 =====  The Pendulum code =====
 
-We need to define a new force, which we simply call the pendulum force. The only thing which changes from our previous spring-force problem is the non-linearity introduced by angle $\theta$  due to the $\sin{\theta}$ term.  Here we have kept a generic variable $x$ instead. This makes our codes very similar.
+We need to define a new force, which we simply call the pendulum
+force. The only thing which changes from our previous spring-force
+problem is the non-linearity introduced by angle $\theta$ due to the
+$\sin{\theta}$ term.  Here we have kept a generic variable $x$
+instead. This makes our codes very similar.  Feel free to use these examples for homework seven.
 
 !bc pycod
 def PendulumForce(v,x,t):

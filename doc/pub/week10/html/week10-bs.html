@@ -146,7 +146,7 @@ MathJax.Hub.Config({
 </center>
 <br>
 <center>
-<h4>Mar 14, 2022</h4>
+<h4>Mar 15, 2022</h4>
 </center> <!-- date -->
 <br>
 
@@ -725,7 +725,7 @@ plt<span style="color: #666666">.</span>show()
 <!-- !split -->
 <h2 id="example-the-classical-pendulum-and-scaling-the-equations" class="anchor">Example: The classical pendulum and scaling the equations </h2>
 
-<p>Let us end our discussion of oscillations with another classical case, the pendulum.</p>
+<p>Let us end our discussion of oscillations with another classical case, the pendulum. You will find the material here useful for homework 7.</p>
 
 <p>The angular equation of motion of the pendulum is given by
 Newton's equation and with no external force it reads 
@@ -753,8 +753,9 @@ $$
 \end{equation}
 $$
 
-<p>We do however expect that the motion will gradually come to an end due a viscous drag torque acting on the pendulum. 
-In the presence of the drag, the above equation becomes
+<p>We do however expect that the motion will gradually come to an end due
+a viscous drag torque acting on the pendulum.  In the presence of the
+drag, the above equation becomes
 </p>
 $$
 \begin{equation}
@@ -834,7 +835,12 @@ frequency.
 <!-- !split -->
 <h2 id="the-pendulum-code" class="anchor">The Pendulum code </h2>
 
-<p>We need to define a new force, which we simply call the pendulum force. The only thing which changes from our previous spring-force problem is the non-linearity introduced by angle \( \theta \)  due to the \( \sin{\theta} \) term.  Here we have kept a generic variable \( x \) instead. This makes our codes very similar.</p>
+<p>We need to define a new force, which we simply call the pendulum
+force. The only thing which changes from our previous spring-force
+problem is the non-linearity introduced by angle \( \theta \) due to the
+\( \sin{\theta} \) term.  Here we have kept a generic variable \( x \)
+instead. This makes our codes very similar.  Feel free to use these examples for homework seven.
+</p>
 
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
