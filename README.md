@@ -207,42 +207,53 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 ### Week 10 Spring break, no lectures
 
 ### Week 11, March  14-18, 2022
-- Monday 3/14:  Harmonic oscillations and driving forces
+- Monday 3/14:  Harmonic oscillations, damping and driven oscillations
   - Video of lecture at https://youtu.be/xV3sIH6AXiE
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesMarch14.pdf      
-- Wednesday 3/16: Harmonic oscillations and driving forces
+- Wednesday 3/16: Harmonic oscillations, damping and driven oscillations
 - Friday 3/18:  Discussion and work on homework 6. Deadline sixth homework.
+- Reading suggestions for week 11: Taylor sections 5.6-5.8 and lecture notes at URL:"https://mhjensen.github.io/Physics321/doc/pub/week10/html/week10-reveal.html"
 
 ### Week 12, March 21-25, 2022
-- Monday 3/21: Gravity and central force problems, elliptical orbits and Kepler's laws
-- Wednesday 3/23: Gravity and central force problems, elliptical orbits. 
-- Friday 3/25:  Elliptical orbits, examples and two-body scattering problems.  Deadline seventh homework.
+- Monday 3/21: Two-body problems and gravitational forces. Definition of the two-body problem, rewriting the equations in relative and center-of-mass coordinates
+  - Reading suggestion: Taylor sections 8.2-8.3 and lecture notes
+- Wednesday 3/23: Preparing the ground for the  gravitional force and its solution in two dimensions
+  - Reading suggestion: Taylor chapter 8.4 and lecture notes
+- Friday 3/25:  Summary and discussions of two-body problems and work on homework 7.  Deadline seventh homework.
 
 
 ### Week 13, March 28-April 1, 2020
-- Monday 3/28: Central force problems, summary and discussion of two-body scattering problems. 
-- Wednesday 3/30: Two-body scattering. Taylor chapter 14 covers parts of the material.  
-- Friday 4/1:  Two-body scattering (Taylor chapter 14).  Discussion of second midterm
+- Monday 3/28: Computational topics: functions and classes, the harmonic oscillator to the gravitational force
+  - Reading suggestion: Lecture notes and Taylor section 8.4 
+- Wednesday 3/30: Discussion of elliptical orbits and Kepler's laws
+  - Reading suggestion: lecture notes and Taylor sections 8.5-8.6
+- Friday 4/1:  Summary of week and discussion of second midterm
 
 ### Week 14, April 4-8, 2022
-- Monday 4/4: Wrapping up two-body scattering and begin Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. 
-- Wednesday 4/6: Variational Calculus, chapter 6 of Taylor. 
-- Friday 4/8: Variational calculus and the Euler-Lagrange equations. Deadline second midterm
+- Monday 4/4: Physical interpretation of various orbit types
+  - Reading suggestions: lecture notes and Taylor section 8.5-8.8 
+- Wednesday 4/6: Interpretation of various orbit types and start discussion two-body scattering
+  - Reading suggestions: lecture notes and Taylor section 8.5-8.8 and sections 14.1-14.2 
+- Friday 4/8: Summary of week and discussion of second midterm. Deadline second midterm
 
 ### Week 15, April  11-15, 2022
-- Monday 4/11: Variational calculus and the Euler-Lagrange equations, chapter 6 of Taylor and lecture notes. 
-- Wednesday 4/14: Variational calculus and the Euler-Lagrange equations, chapters 6-7 of Taylor and lecture notes.  
-- Friday 4/16: Euler-Lagrange equations and Lagrangian formalism. Taylor chapters 6-7 and lecture notes. Deadline eigth homework.
+- Monday 4/11: Two-body scattering
+  - Reading suggestion: Lecture notes and Taylor sections 14.3-14.6 
+- Wednesday 4/14: Finalizing discussion of two-body scattering and start Lagrangian formalism
+  - Reading suggestions: lecture notes and Taylor sections 14.3-14.6 and 6.1-6.3
+- Friday 4/16: Summary of week and discussion of eigth homework. Deadline eigth homework.
 
 
 ### Week 16, April 18-22, 2022
-- Monday 4/18:  Langrangian formalism, discussion of examples. Taylor chapters 6 and 7. 
-- Wednesday 4/20: Lagrangian formalism, examples such as the linear chain and double pendulum. 
-- Friday 4/22:  TBA. Deadline ninth homework.
+- Monday 4/18:  Lagrangian formalism and Variational Calculus
+  - Reading suggestions: lecture notes and Taylor sections 6.3-6.4
+- Wednesday 4/20: Euler-Lagrange equations and the Lagrangian with examples and Principle of Least Action
+  - Reading suggestions: lecture notes and Taylor sections 6.3-6.4
+- Friday 4/22:  Summary of week and work on homework nine. Deadline ninth homework.
 
 ### Week 17, April 25- April 29, 2022
-- Monday 4/25:  TBA
-- Wednesday 4/27: TBA
+- Monday 4/25:  Lagrangian formalism, constrained and unconstrained motion
+- Wednesday 4/27: Variational calculus with examples
 - Friday 4/29:  Summary of course and discussion of final exam project. Additional homework ten.
 
 
