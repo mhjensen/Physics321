@@ -211,6 +211,8 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Video of lecture at https://youtu.be/xV3sIH6AXiE
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesMarch14.pdf      
 - Wednesday 3/16: Harmonic oscillations, damping and driven oscillations
+  - Video of lecture at https://youtu.be/RDzLMV5ymxc
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesMarch16.pdf        
 - Friday 3/18:  Discussion and work on homework 6. Deadline sixth homework.
 - Reading suggestions for week 11: Taylor sections 5.6-5.8 and lecture notes at URL:"https://mhjensen.github.io/Physics321/doc/pub/week10/html/week10-reveal.html"
 
