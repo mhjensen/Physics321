@@ -1,0 +1,812 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html solutionhw6.do.txt 
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="PHY321: Classical Mechanics 1">
+<title>PHY321: Classical Mechanics 1</title>
+<style type="text/css">
+/* blueish style */
+body {
+  margin-top: 1.0em;
+  background-color: #ffffff;
+  font-family: Helvetica, Arial, FreeSans, san-serif;
+  color: #000000;
+}
+h1 { font-size: 1.8em; color: #1e36ce; }
+h2 { font-size: 1.6em; color: #1e36ce; }
+h3 { font-size: 1.4em; color: #1e36ce; }
+h4 { font-size: 1.2em; color: #1e36ce; }
+a { color: #1e36ce; text-decoration:none; }
+tt { font-family: "Courier New", Courier; }
+p { text-indent: 0px; }
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-style: normal; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa; }
+/* pre style removed because it will interfer with pygments */
+div.highlight {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    line-height: 1.21429em;
+}
+div.cell {
+    width: 100%;
+    padding: 5px 5px 5px 0;
+    margin: 0;
+    outline: none;
+}
+div.input {
+    page-break-inside: avoid;
+    box-orient: horizontal;
+    box-align: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+div.inner_cell {
+    box-orient: vertical;
+    box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    box-flex: 1;
+    flex: 1;
+}
+div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 4px;
+    background: #f7f7f7;
+    line-height: 1.21429em;
+}
+div.input_area > div.highlight {
+    margin: .4em;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+}
+div.output_wrapper {
+    position: relative;
+    box-orient: vertical;
+    box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.output {
+    box-orient: vertical;
+    box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+div.output_area {
+    padding: 0;
+    page-break-inside: avoid;
+    box-orient: horizontal;
+    box-align: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+div.output_subarea {
+    padding: .4em .4em 0 .4em;
+    box-flex: 1;
+    flex: 1;
+}
+div.output_text {
+    text-align: left;
+    color: #000;
+    line-height: 1.21429em;
+}
+div { text-align: justify; text-justify: inter-word; }
+.tab {
+  padding-left: 1.5em;
+}
+div.toc p,a {
+  line-height: 1.3;
+  margin-top: 1.1;
+  margin-bottom: 1.1;
+}
+</style>
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('Exercise 1 (40pt) Summary of course',
+               3,
+               None,
+               'exercise-1-40pt-summary-of-course'),
+              ('Exercise 2 (10 pt), Conservative forces',
+               3,
+               None,
+               'exercise-2-10-pt-conservative-forces'),
+              ('Exercise 3 (10 pt), The Lennard-Jones potential',
+               3,
+               None,
+               'exercise-3-10-pt-the-lennard-jones-potential'),
+              ('Exercise 4 (10 pt), particle in a new potential',
+               3,
+               None,
+               'exercise-4-10-pt-particle-in-a-new-potential'),
+              ('Exercise 5 (40pt), Testing Energy conservation',
+               3,
+               None,
+               'exercise-5-40pt-testing-energy-conservation'),
+              ("Code Example with Euler's Method",
+               2,
+               None,
+               'code-example-with-euler-s-method'),
+              ('Adding the Euler-Cromer Method',
+               2,
+               None,
+               'adding-the-euler-cromer-method'),
+              ('The velocity Verlet method',
+               2,
+               None,
+               'the-velocity-verlet-method'),
+              ('Adding the Velocity-Verlet Method',
+               2,
+               None,
+               'adding-the-velocity-verlet-method')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- ------------------- main content ---------------------- -->
+<center>
+<h1>PHY321: Classical Mechanics 1</h1>
+</center>  <!-- document title -->
+
+<!-- author(s): Solution Homework 6, due March 1 -->
+<center>
+<b>Solution Homework 6, due March 1</b> 
+</center>
+<!-- institution(s) -->
+<br>
+<center>
+<h4>Mar 17, 2022</h4>
+</center> <!-- date -->
+<br>
+<h3 id="exercise-1-40pt-summary-of-course">Exercise 1 (40pt) Summary of course </h3>
+
+<p>This was meant as your personal summary of what we have done till now.
+One possible solution is the illustration made by Julie, also at the
+end of every chapter of Taylor's textbook, you will find excellent
+summaries of what we have covered till now.
+</p>
+<h3 id="exercise-2-10-pt-conservative-forces">Exercise 2 (10 pt), Conservative forces </h3>
+
+<p>Which of the following force are conservative?  All three forces depend only on \( \boldsymbol{r} \) and satisfy the first condition for being conservative.</p>
+<ul>
+<li> 2a (2pt) \( \boldsymbol{F}=k(x\boldsymbol{i}+2y\boldsymbol{j}+3z\boldsymbol{k}) \) where \( k \) is a constant.</li>
+</ul>
+<p>The <b>curl</b> is zero and the force is conservative.  The potential energy is upon integration \( V(x)=-k(1/2x^2+y^2+3/2z^2) \). Taking the derivative shows that this is indeed the case since it gives back the force.</p>
+<ul>
+<li> 2b (2pt) \( \boldsymbol{F}=y\boldsymbol{i}+x\boldsymbol{j}+0\boldsymbol{k} \).</li> 
+</ul>
+<p>This force is also conservative since it depends only on the coordinates and its curl is zero. To find the potential energy, since the integral is path independent, we can choose to integrate along any direction. The simplest is start from \( x=0 \) as origin and follow a path along the \( x \)-axis (which gives zero) and then parallel to the \( y \)-axis, which results in \( V(x,y) = -xy \). Taking the derivative with respect to \( x \) and \( y \) gives us back the expression for the force.</p>
+
+<ul>
+<li> 2c (2pt) \( \boldsymbol{F}=k(-y\boldsymbol{i}+x\boldsymbol{j}+0\boldsymbol{k}) \) where \( k \) is a constant.</li>
+</ul>
+<p>Here the <b>curl</b> is \( (0,0,2) \) and the force is not conservative.</p>
+
+<ul>
+<li> 2d (4pt) For those which are conservative, find the corresponding potential energy \( V \) and verify that direct differentiation that \( \boldsymbol{F}=-\boldsymbol{\nabla} V \).</li>
+</ul>
+<p>See the answers to each exercise above.</p>
+<h3 id="exercise-3-10-pt-the-lennard-jones-potential">Exercise 3 (10 pt), The Lennard-Jones potential </h3>
+
+<p><a href="https://en.wikipedia.org/wiki/Lennard-Jones_potential" target="_self">The Lennard-Jones potential</a> is often used to describe
+the interaction between two atoms or ions or molecules. If you end up doing materals science and molecular dynamics calculations, it is very likely that you will encounter this potential model.
+The expression for the potential energy is
+</p>
+$$
+V(r) = V_0\left((\frac{a}{r})^{12}-(\frac{b}{r})^{6}\right),
+$$
+
+<p>where \( V_0 \), \( a \) and \( b \) are constants and the potential depends only on the relative distance between two objects
+\( i \) and \( j \), that is \( r=\vert\vert\boldsymbol{r}_i-\boldsymbol{r}_j\vert\vert=\sqrt{(x_i-x_j)^2+(y_i-y_j)^2+(z_i-z_j)^2} \).
+</p>
+
+<ul>
+<li> 3a (3pt) Sketch/plot the potential (choose some values for the constants in doing so).</li>
+</ul>
+<p>The following Python code plots the potential</p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic"># Common imports</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #666666">*</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+
+Deltar <span style="color: #666666">=</span> <span style="color: #666666">0.01</span>
+<span style="color: #408080; font-style: italic">#set up arrays</span>
+rinitial <span style="color: #666666">=</span> <span style="color: #666666">1.8</span>
+rfinal <span style="color: #666666">=</span> <span style="color: #666666">3.</span>
+n <span style="color: #666666">=</span> ceil((rfinal<span style="color: #666666">-</span>rinitial)<span style="color: #666666">/</span>Deltar)
+r <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n):
+    r[i] <span style="color: #666666">=</span> rinitial<span style="color: #666666">+</span>i<span style="color: #666666">*</span>Deltar
+V <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+<span style="color: #408080; font-style: italic"># Initial conditions as compact 2-dimensional arrays</span>
+a <span style="color: #666666">=</span> <span style="color: #666666">2.0</span>
+b <span style="color: #666666">=</span> <span style="color: #666666">2.0</span>
+V0 <span style="color: #666666">=</span> <span style="color: #666666">10.0</span>
+V <span style="color: #666666">=</span> V0<span style="color: #666666">*</span>((a<span style="color: #666666">/</span>r)<span style="color: #666666">**</span>(<span style="color: #666666">12</span>)<span style="color: #666666">-</span>(b<span style="color: #666666">/</span>r)<span style="color: #666666">**6</span>)
+<span style="color: #408080; font-style: italic"># Plot position as function of time    </span>
+fig, ax <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots()
+<span style="color: #408080; font-style: italic">#ax.set_xlim(0, tfinal)</span>
+ax<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;V&#39;</span>)
+ax<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;r&#39;</span>)
+ax<span style="color: #666666">.</span>plot(r, V)
+fig<span style="color: #666666">.</span>tight_layout()
+plt<span style="color: #666666">.</span>show()
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<ul>
+<li> 3b (3pt) Find and classify the equilibrium points.</li>
+</ul>
+<p>Here there is  only one equilibrium point when we take the derivative of the potential with respect to the relative distance.</p>
+
+<p>The derivative with respect to \( r \), the relative distance, is</p>
+$$
+\frac{dV}{dr} = -6V_0\left(2\frac{a^{12}}{r^{13}}-\frac{b^6}{r^7}\right),
+$$
+
+<p>and this is zero when</p>
+$$
+r = 2^{1/6}\frac{a^2}{b}.
+$$
+
+<p>If we choose \( a=2 \) and \( b=2 \) then \( r=2\times 2^{1/6} \). Since the second derivative is positive for all \( r \) for our choices of \( a \) and \( b \)  (convince yourself about  this), then this value of \( r \) has to correspond to a minimum of the potential. This agrees with our graph from the figure above (run the code to produce the figure). </p>
+
+<ul>
+<li> 3c (4pt) What is the force acting on one of the objects (an atom for example) from the other object? Is this a conservative force?</li>
+</ul>
+<p>From the previous exercise we have</p>
+$$
+\frac{dV}{dr} = -6V_0\left(2\frac{a^{12}}{r^{13}}-\frac{b^6}{r^7}\right).
+$$
+
+<p>We need the gradient and since the force on particle \( i \) is given by \( \boldsymbol{F}_i=\boldsymbol{\nabla}_i V(\boldsymbol{r}_i-\boldsymbol{r}_j) \), we obtain</p>
+$$
+\boldsymbol{F}_i=6V_0\left(2(\frac{a}{\vert\vert\boldsymbol{r}_i-\boldsymbol{r}_j\vert\vert})^{12}-(\frac{b}{\vert\vert\boldsymbol{r}_i-\boldsymbol{r}_j\vert\vert})^6\right)\frac{\boldsymbol{r}_i-\boldsymbol{r}_j}{\vert\vert\boldsymbol{r}_i-\boldsymbol{r}_j\vert\vert^2}.
+$$
+
+<p>Here \( r = \vert\vert \boldsymbol{r}_i-\boldsymbol{r}_j\vert \vert \).
+If we have more than two particles, we need to sum over all other particles \( j \). We have thus to introduce a sum over all particles \( N \). 
+The force on particle \( i \) at position \( \boldsymbol{r}_i \) from all particles  \( j \) at their positions \( \boldsymbol{r}_j \) results in the equation of motion (note that we have divided by the mass \( m \) here)
+</p>
+$$
+\boldsymbol{a}_i=\frac{d^2\boldsymbol{r}_i}{dt^2} = \frac{6V_0}{m} \sum_{j \neq i}^{N}\left(2(\frac{a}{\vert\vert\boldsymbol{r}_i-\boldsymbol{r}_j\vert\vert})^{12}-(\frac{b}{\vert\vert\boldsymbol{r}_i-\boldsymbol{r}_j\vert\vert})^6\right)\frac{\boldsymbol{r}_i-\boldsymbol{r}_j}{\vert\vert\boldsymbol{r}_i-\boldsymbol{r}_j\vert\vert^2}.
+$$
+
+<p>This is also a conservative force, with zero <b>curl</b> as well. </p>
+<h3 id="exercise-4-10-pt-particle-in-a-new-potential">Exercise 4 (10 pt), particle in a new potential </h3>
+
+<p>Relevant reading here is Taylor chapter 5 and the lecture notes on oscillations. Similalry, Taylor section 4.8 and Malthe-S&#248;renssen section 11.3 on the potential surfaces are of relevance here.</p>
+
+<p>Consider a particle of mass \( m \) moving in a one-dimensional potential,</p>
+$$
+V(x)=-\alpha\frac{x^2}{2}+\beta\frac{x^4}{4}.
+$$
+
+
+<ul>
+<li> 4a (3pt) Plot the potential and discuss eventual equilibrium points. Is this a conservative force?</li>
+</ul>
+<p>The following Python code gives a plot of potential</p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic"># Common imports</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #666666">*</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+
+Deltax <span style="color: #666666">=</span> <span style="color: #666666">0.01</span>
+<span style="color: #408080; font-style: italic">#set up arrays</span>
+xinitial <span style="color: #666666">=</span> <span style="color: #666666">-2.0</span>
+xfinal <span style="color: #666666">=</span> <span style="color: #666666">2.0</span> 
+n <span style="color: #666666">=</span> ceil((xfinal<span style="color: #666666">-</span>xinitial)<span style="color: #666666">/</span>Deltax)
+x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n):
+    x[i] <span style="color: #666666">=</span> xinitial<span style="color: #666666">+</span>i<span style="color: #666666">*</span>Deltax
+V <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+<span style="color: #408080; font-style: italic"># Initial conditions as compact 2-dimensional arrays</span>
+alpha <span style="color: #666666">=</span> <span style="color: #666666">0.81</span>
+beta <span style="color: #666666">=</span> <span style="color: #666666">0.5</span>
+<span style="color: #008000">print</span>(sqrt(alpha<span style="color: #666666">/</span>beta))
+V <span style="color: #666666">=</span> <span style="color: #666666">-</span>alpha<span style="color: #666666">*</span>x<span style="color: #666666">*</span>x<span style="color: #666666">*0.5</span> <span style="color: #666666">+</span> beta<span style="color: #666666">*</span>(x<span style="color: #666666">**4</span>)<span style="color: #666666">*0.25</span>
+<span style="color: #408080; font-style: italic"># Plot position as function of time    </span>
+fig, ax <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots()
+<span style="color: #408080; font-style: italic">#ax.set_xlim(0, tfinal)</span>
+ax<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;x&#39;</span>)
+ax<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;V[s]&#39;</span>)
+ax<span style="color: #666666">.</span>plot(x, V)
+fig<span style="color: #666666">.</span>tight_layout()
+plt<span style="color: #666666">.</span>show()
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>Here we have chosen \( \alpha=0.81 \) and \( \beta=0.5 \). Taking the derivative of \( V \) with respect to \( x \) gives two minima (and it is easy to see here that the second derivative is positive) at \( x\pm\sqrt{\alpha/\beta} \) and a maximum at \( x=0 \). The derivative is</p>
+$$
+\frac{dV}{dx} = -\alpha x + \beta x^3,
+$$
+
+<p>which gives when we require that it should equal zero the above values. As we can see from the plot (run the above Python code), we have two so-called stable equilibrium points (where the potential has its minima) and an unstable equilibrium point.</p>
+
+<p>The force is conservative since it depends only on \( x \) and has a <b>curl</b> which is zero.</p>
+
+<ul>
+<li> 4b (3pt) Compute the second derivative of the potential and find its miminum position(s). Using the Taylor expansion of the potential around its minimum (see Taylor section 5.1) to define a spring constant \( k \). Use the spring constant to find the natural (angular) frequency \( \omega_0=\sqrt{k/m} \). We call the new spring constant for  an effective spring constant.</li>
+</ul>
+<p>In the solution to the previous exercise we listed the values where the derivatives of the potential are zero.
+Taking the second derivatives we have that
+</p>
+
+$$
+\frac{d^2V}{dx^2} = -\alpha  + 3\beta x^2,
+$$
+
+<p>and for \( \alpha,\beta > 0 \) (we assume they are positive constants) we see that when \( x=0 \) that the 
+the second derivative is negative, which means this is a maximum. For \( x=\pm\sqrt{\alpha/\beta} \) we see that the second derivative is positive. Thus these points correspond to two minima.
+</p>
+
+<p>Assume now we Taylor-expand the potential around one of these minima, say \( x_{\mathrm{min}}=\sqrt{\alpha/\beta} \). We have thus</p>
+$$
+V(x) = V(x_{\mathrm{min}})+(x-x_{\mathrm{min}})\frac{dV}{dx}\vert_{x_{\mathrm{min}}}+\frac{1}{2}(x-x_{\mathrm{min}})^2\frac{d^2V}{dx^2}\vert_{x_{\mathrm{min}}}+\dots
+$$
+
+<p>Since we are at point where the first derivative is zero and inserting the value for the second derivative of \( V \), keeping only terms up to the second derivative and finally taking the derivative with respect to \( x \), we find the expression for the force</p>
+$$
+F(x) = -(x-x_{\mathrm{min}})\frac{d^2V}{dx^2}\vert_{x_{\mathrm{min}}},
+$$
+
+<p>and setting in the expression for the second derivative at the minimum we find </p>
+$$
+F(x) = -2\alpha(x-\sqrt{\frac{\alpha}{\beta}}).
+$$
+
+<p>Thus our effective spring constant \( k=2\alpha \).</p>
+
+<ul>
+<li> 4c (4pt) We ignore the second term in the potential energy and keep only the term proportional to the effective spring constant, that is a force \( F\propto kx \). Find the acceleration and set up the differential equation.  Find the general analytical solution for these harmonic oscillations.  You don't need to find the constants in the general solution.</li>
+</ul>
+<p>Here we simplify our force by rescaling our zeroth point so that we have a force (setting \( x_{\mathrm{min}}=0 \))</p>
+$$
+F(x) = -kx,
+$$
+
+<p>with \( k=2\alpha \). Defining a natural frequency \( \omega_0 = \sqrt{k/m} \), where \( m \) is the mass of our particle, we have the following equation of motion</p>
+$$
+\frac{d^2x}{dt^2}=-\omega_0^2x,
+$$
+
+<p>which has as analytical solution \( x(t)=A\cos{(\omega_0t)}+B\sin{(\omega_0t)} \) and velocity
+\( x(t)=-\omega_0A\sin{(\omega_0t)}+\omega_0B\cos{(\omega_0t)} \). The initial conditions are used to define \( A \) and \( B \).
+</p>
+<h3 id="exercise-5-40pt-testing-energy-conservation">Exercise 5 (40pt), Testing Energy conservation </h3>
+
+<ul>
+<li> 5a, See Taylor chapter 4.4</li>
+</ul>
+<!-- !split -->
+<h2 id="code-example-with-euler-s-method">Code Example with Euler's Method </h2>
+
+<p>The code here implements Euler's method for the Earth-Sun system using
+a more compact way of representing the vectors. Alternatively, you
+could have spelled out all the variables \( v_x \), \( v_y \), \( x \) and \( y \) as
+one-dimensional arrays.  It tests conservation of potential and
+kinetic energy as functions of time, in addition to the total energy,
+again as function of time
+</p>
+
+<p><b>Note</b>: in all codes we have used scaled equations so that the gravitational constant times the mass of the sum is given by \( 4\pi^2 \) and the mass of the earth is set to <b>one</b> in the calculations of kinetic and potential energies. Else, we would get very large results. </p>
+
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic"># Common imports</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">pandas</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">pd</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #666666">*</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">os</span>
+
+<span style="color: #408080; font-style: italic"># Where to save the figures and data files</span>
+PROJECT_ROOT_DIR <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Results&quot;</span>
+FIGURE_ID <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Results/FigureFiles&quot;</span>
+DATA_ID <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;DataFiles/&quot;</span>
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>exists(PROJECT_ROOT_DIR):
+    os<span style="color: #666666">.</span>mkdir(PROJECT_ROOT_DIR)
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>exists(FIGURE_ID):
+    os<span style="color: #666666">.</span>makedirs(FIGURE_ID)
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>exists(DATA_ID):
+    os<span style="color: #666666">.</span>makedirs(DATA_ID)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">image_path</span>(fig_id):
+    <span style="color: #008000; font-weight: bold">return</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>join(FIGURE_ID, fig_id)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">data_path</span>(dat_id):
+    <span style="color: #008000; font-weight: bold">return</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>join(DATA_ID, dat_id)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">save_fig</span>(fig_id):
+    plt<span style="color: #666666">.</span>savefig(image_path(fig_id) <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;.png&quot;</span>, <span style="color: #008000">format</span><span style="color: #666666">=</span><span style="color: #BA2121">&#39;png&#39;</span>)
+
+<span style="color: #408080; font-style: italic"># Initial values, time step, positions and velocites</span>
+
+DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.0001</span>
+<span style="color: #408080; font-style: italic">#set up arrays </span>
+tfinal <span style="color: #666666">=</span> <span style="color: #666666">100</span> <span style="color: #408080; font-style: italic"># in years</span>
+n <span style="color: #666666">=</span> ceil(tfinal<span style="color: #666666">/</span>DeltaT)
+<span style="color: #408080; font-style: italic"># set up arrays for t, a, v, and x</span>
+t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+v <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((n,<span style="color: #666666">2</span>))
+r <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((n,<span style="color: #666666">2</span>))
+
+<span style="color: #408080; font-style: italic"># setting up the kinetic, potential and total energy, note only functions of time</span>
+EKinetic <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+EPotential <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+ETotal <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+
+<span style="color: #408080; font-style: italic"># Initial conditions as compact 2-dimensional arrays</span>
+
+
+r0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">1.0</span>,<span style="color: #666666">0.0</span>])
+v0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">0.0</span>,<span style="color: #666666">2*</span>pi])
+r[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> r0
+v[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> v0
+Fourpi2 <span style="color: #666666">=</span> <span style="color: #666666">4*</span>pi<span style="color: #666666">*</span>pi
+<span style="color: #408080; font-style: italic"># Setting up variables for the calculation of energies</span>
+<span style="color: #408080; font-style: italic">#  distance that defines rabs in potential energy</span>
+rabs0 <span style="color: #666666">=</span> sqrt(<span style="color: #008000">sum</span>(r[<span style="color: #666666">0</span>]<span style="color: #666666">*</span>r[<span style="color: #666666">0</span>]))
+<span style="color: #408080; font-style: italic">#  Initial kinetic energy. Note that we skip the mass of the Earth here, that is MassEarth=1 in all codes</span>
+EKinetic[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> <span style="color: #666666">0.5*</span><span style="color: #008000">sum</span>(v0<span style="color: #666666">*</span>v0)
+<span style="color: #408080; font-style: italic">#  Initial potential energy  (note negative sign, why?)</span>
+EPotential[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> <span style="color: #666666">-4*</span>pi<span style="color: #666666">*</span>pi<span style="color: #666666">/</span>rabs0
+<span style="color: #408080; font-style: italic">#  Initial total energy </span>
+ETotal[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> EPotential[<span style="color: #666666">0</span>]<span style="color: #666666">+</span>EKinetic[<span style="color: #666666">0</span>]
+<span style="color: #408080; font-style: italic"># Start integrating using Euler&#39;s method</span>
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
+    <span style="color: #408080; font-style: italic"># Set up the acceleration</span>
+    <span style="color: #408080; font-style: italic"># Here you could have defined your own function for this</span>
+    rabs <span style="color: #666666">=</span> sqrt(<span style="color: #008000">sum</span>(r[i]<span style="color: #666666">*</span>r[i]))
+    a <span style="color: #666666">=</span>  <span style="color: #666666">-</span>Fourpi2<span style="color: #666666">*</span>r[i]<span style="color: #666666">/</span>(rabs<span style="color: #666666">**3</span>)
+    <span style="color: #408080; font-style: italic"># update Energies, velocity, time and position using Euler&#39;s forward method</span>
+    v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>a
+    r[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> r[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>v[i]
+    t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i] <span style="color: #666666">+</span> DeltaT
+    EKinetic[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> <span style="color: #666666">0.5*</span><span style="color: #008000">sum</span>(v[i<span style="color: #666666">+1</span>]<span style="color: #666666">*</span>v[i<span style="color: #666666">+1</span>])
+    EPotential[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> <span style="color: #666666">-4*</span>pi<span style="color: #666666">*</span>pi<span style="color: #666666">/</span>sqrt(<span style="color: #008000">sum</span>(r[i<span style="color: #666666">+1</span>]<span style="color: #666666">*</span>r[i<span style="color: #666666">+1</span>]))
+    ETotal[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> EPotential[i<span style="color: #666666">+1</span>]<span style="color: #666666">+</span>EKinetic[i<span style="color: #666666">+1</span>]
+<span style="color: #408080; font-style: italic"># Plot energies as functions of time    </span>
+
+fig, axs <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots(<span style="color: #666666">3</span>, <span style="color: #666666">1</span>)
+axs[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>plot(t, EKinetic)
+axs[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>set_xlim(<span style="color: #666666">0</span>, tfinal)
+axs[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;Kinetic energy&#39;</span>)
+axs[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>plot(t, EPotential)
+axs[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;Potential Energy&#39;</span>)
+axs[<span style="color: #666666">2</span>]<span style="color: #666666">.</span>plot(t, ETotal)
+axs[<span style="color: #666666">2</span>]<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;Time [yr]&#39;</span>)
+axs[<span style="color: #666666">2</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;Total Energy&#39;</span>)
+fig<span style="color: #666666">.</span>tight_layout()
+save_fig(<span style="color: #BA2121">&quot;EarthSunEuler&quot;</span>)
+plt<span style="color: #666666">.</span>show()
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>We see very clearly that Euler's method does not conserve energy!! Try to reduce the time step \( \Delta t \). What do you see?</p>
+
+<!-- !split -->
+<h2 id="adding-the-euler-cromer-method">Adding the Euler-Cromer Method </h2>
+
+<p>With the Euler-Cromer method, the only thing we need is to update the
+position at a time \( t+1 \) with the update velocity from the same
+time. Thus, the change in the code is extremely simply, and <b>energy is
+suddenly conserved</b>. Note that the error runs like \( O(\Delta t) \) and
+this is why we see the larger oscillations. But within this
+oscillating energy envelope, we see that the energies swing between a
+max and a min value and never exceed these values.
+</p>
+
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic"># Common imports</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">pandas</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">pd</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #666666">*</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">os</span>
+
+<span style="color: #408080; font-style: italic"># Where to save the figures and data files</span>
+PROJECT_ROOT_DIR <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Results&quot;</span>
+FIGURE_ID <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Results/FigureFiles&quot;</span>
+DATA_ID <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;DataFiles/&quot;</span>
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>exists(PROJECT_ROOT_DIR):
+    os<span style="color: #666666">.</span>mkdir(PROJECT_ROOT_DIR)
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>exists(FIGURE_ID):
+    os<span style="color: #666666">.</span>makedirs(FIGURE_ID)
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>exists(DATA_ID):
+    os<span style="color: #666666">.</span>makedirs(DATA_ID)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">image_path</span>(fig_id):
+    <span style="color: #008000; font-weight: bold">return</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>join(FIGURE_ID, fig_id)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">data_path</span>(dat_id):
+    <span style="color: #008000; font-weight: bold">return</span> os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>join(DATA_ID, dat_id)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">save_fig</span>(fig_id):
+    plt<span style="color: #666666">.</span>savefig(image_path(fig_id) <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;.png&quot;</span>, <span style="color: #008000">format</span><span style="color: #666666">=</span><span style="color: #BA2121">&#39;png&#39;</span>)
+
+<span style="color: #408080; font-style: italic"># Initial values, time step, positions and velocites</span>
+
+DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.0001</span>
+<span style="color: #408080; font-style: italic">#set up arrays </span>
+tfinal <span style="color: #666666">=</span> <span style="color: #666666">100</span> <span style="color: #408080; font-style: italic"># in years</span>
+n <span style="color: #666666">=</span> ceil(tfinal<span style="color: #666666">/</span>DeltaT)
+<span style="color: #408080; font-style: italic"># set up arrays for t, a, v, and x</span>
+t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+v <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((n,<span style="color: #666666">2</span>))
+r <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((n,<span style="color: #666666">2</span>))
+
+<span style="color: #408080; font-style: italic"># setting up the kinetic, potential and total energy, note only functions of time</span>
+EKinetic <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+EPotential <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+ETotal <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+
+<span style="color: #408080; font-style: italic"># Initial conditions as compact 2-dimensional arrays</span>
+
+
+r0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">1.0</span>,<span style="color: #666666">0.0</span>])
+v0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">0.0</span>,<span style="color: #666666">2*</span>pi])
+r[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> r0
+v[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> v0
+Fourpi2 <span style="color: #666666">=</span> <span style="color: #666666">4*</span>pi<span style="color: #666666">*</span>pi
+<span style="color: #408080; font-style: italic"># Setting up variables for the calculation of energies</span>
+<span style="color: #408080; font-style: italic">#  distance that defines rabs in potential energy</span>
+rabs0 <span style="color: #666666">=</span> sqrt(<span style="color: #008000">sum</span>(r[<span style="color: #666666">0</span>]<span style="color: #666666">*</span>r[<span style="color: #666666">0</span>]))
+<span style="color: #408080; font-style: italic">#  Initial kinetic energy. Note that we skip the mass of the Earth here, that is MassEarth=1 in all codes</span>
+EKinetic[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> <span style="color: #666666">0.5*</span><span style="color: #008000">sum</span>(v0<span style="color: #666666">*</span>v0)
+<span style="color: #408080; font-style: italic">#  Initial potential energy </span>
+EPotential[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> <span style="color: #666666">-4*</span>pi<span style="color: #666666">*</span>pi<span style="color: #666666">/</span>rabs0
+<span style="color: #408080; font-style: italic">#  Initial total energy </span>
+ETotal[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> EPotential[<span style="color: #666666">0</span>]<span style="color: #666666">+</span>EKinetic[<span style="color: #666666">0</span>]
+<span style="color: #408080; font-style: italic"># Start integrating using Euler&#39;s method</span>
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
+    <span style="color: #408080; font-style: italic"># Set up the acceleration</span>
+    <span style="color: #408080; font-style: italic"># Here you could have defined your own function for this</span>
+    rabs <span style="color: #666666">=</span> sqrt(<span style="color: #008000">sum</span>(r[i]<span style="color: #666666">*</span>r[i]))
+    a <span style="color: #666666">=</span>  <span style="color: #666666">-</span>Fourpi2<span style="color: #666666">*</span>r[i]<span style="color: #666666">/</span>(rabs<span style="color: #666666">**3</span>)
+    <span style="color: #408080; font-style: italic"># update velocity, time and position using Euler&#39;s forward method</span>
+    v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>a
+<span style="color: #408080; font-style: italic">#   Only change when we add the Euler-Cromer method    </span>
+    r[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> r[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>v[i<span style="color: #666666">+1</span>]
+    t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i] <span style="color: #666666">+</span> DeltaT
+    EKinetic[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> <span style="color: #666666">0.5*</span><span style="color: #008000">sum</span>(v[i<span style="color: #666666">+1</span>]<span style="color: #666666">*</span>v[i<span style="color: #666666">+1</span>])
+    EPotential[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> <span style="color: #666666">-4*</span>pi<span style="color: #666666">*</span>pi<span style="color: #666666">/</span>sqrt(<span style="color: #008000">sum</span>(r[i<span style="color: #666666">+1</span>]<span style="color: #666666">*</span>r[i<span style="color: #666666">+1</span>]))
+    ETotal[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> EPotential[i<span style="color: #666666">+1</span>]<span style="color: #666666">+</span>EKinetic[i<span style="color: #666666">+1</span>]
+<span style="color: #408080; font-style: italic"># Plot energies as functions of time    </span>
+
+fig, axs <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots(<span style="color: #666666">3</span>, <span style="color: #666666">1</span>)
+axs[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>plot(t, EKinetic)
+axs[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>set_xlim(<span style="color: #666666">0</span>, tfinal)
+axs[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;Kinetic energy&#39;</span>)
+axs[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>plot(t, EPotential)
+axs[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;Potential Energy&#39;</span>)
+axs[<span style="color: #666666">2</span>]<span style="color: #666666">.</span>plot(t, ETotal)
+axs[<span style="color: #666666">2</span>]<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;Time [yr]&#39;</span>)
+axs[<span style="color: #666666">2</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;Total Energy&#39;</span>)
+fig<span style="color: #666666">.</span>tight_layout()
+save_fig(<span style="color: #BA2121">&quot;EarthSunEulerCromer&quot;</span>)
+plt<span style="color: #666666">.</span>show()
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- !split -->
+<h2 id="the-velocity-verlet-method">The velocity Verlet method </h2>
+
+<p>Our final equations for the position and the velocity become then </p>
+$$
+x_{i+1} = x_i+(\Delta t)v_i+\frac{(\Delta t)^2}{2}a_{i}+O((\Delta t)^3),
+$$
+
+<p>and</p>
+$$
+v_{i+1} = v_i+\frac{(\Delta t)}{2}\left(a_{i+1}+a_{i}\right)+O((\Delta t)^3). 
+$$
+
+<p>Note well that the term \( a_{i+1} \) depends on the position at \( x_{i+1} \). This means that you need to calculate 
+the position at the updated time \( t_{i+1} \) before the computing the next velocity.  Note also that the derivative of the velocity at the time
+\( t_i \) used in the updating of the position can be reused in the calculation of the velocity update as well. 
+</p>
+
+<!-- !split -->
+<h2 id="adding-the-velocity-verlet-method">Adding the Velocity-Verlet Method </h2>
+
+<p>We can now easily add the Verlet method to our original code as</p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;">DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.001</span>
+<span style="color: #408080; font-style: italic">#set up arrays </span>
+tfinal <span style="color: #666666">=</span> <span style="color: #666666">100</span>
+n <span style="color: #666666">=</span> ceil(tfinal<span style="color: #666666">/</span>DeltaT)
+<span style="color: #408080; font-style: italic"># set up arrays for t, a, v, and x</span>
+t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+v <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((n,<span style="color: #666666">2</span>))
+r <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((n,<span style="color: #666666">2</span>))
+<span style="color: #408080; font-style: italic"># Initial conditions as compact 2-dimensional arrays</span>
+r0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">1.0</span>,<span style="color: #666666">0.0</span>])
+v0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">0.0</span>,<span style="color: #666666">2*</span>pi])
+r[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> r0
+v[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> v0
+Fourpi2 <span style="color: #666666">=</span> <span style="color: #666666">4*</span>pi<span style="color: #666666">*</span>pi
+
+<span style="color: #408080; font-style: italic"># setting up the kinetic, potential and total energy, note only functions of time</span>
+EKinetic <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+EPotential <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+ETotal <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+
+<span style="color: #408080; font-style: italic"># Setting up variables for the calculation of energies</span>
+<span style="color: #408080; font-style: italic">#  distance that defines rabs in potential energy</span>
+rabs0 <span style="color: #666666">=</span> sqrt(<span style="color: #008000">sum</span>(r[<span style="color: #666666">0</span>]<span style="color: #666666">*</span>r[<span style="color: #666666">0</span>]))
+<span style="color: #408080; font-style: italic">#  Initial kinetic energy. Note that we skip the mass of the Earth here, that is MassEarth=1 in all codes</span>
+EKinetic[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> <span style="color: #666666">0.5*</span><span style="color: #008000">sum</span>(v0<span style="color: #666666">*</span>v0)
+<span style="color: #408080; font-style: italic">#  Initial potential energy </span>
+EPotential[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> <span style="color: #666666">-4*</span>pi<span style="color: #666666">*</span>pi<span style="color: #666666">/</span>rabs0
+<span style="color: #408080; font-style: italic">#  Initial total energy </span>
+ETotal[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> EPotential[<span style="color: #666666">0</span>]<span style="color: #666666">+</span>EKinetic[<span style="color: #666666">0</span>]
+
+<span style="color: #408080; font-style: italic"># Start integrating using the Velocity-Verlet  method</span>
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
+    <span style="color: #408080; font-style: italic"># Set up forces, air resistance FD, note now that we need the norm of the vecto</span>
+    <span style="color: #408080; font-style: italic"># Here you could have defined your own function for this</span>
+    rabs <span style="color: #666666">=</span> sqrt(<span style="color: #008000">sum</span>(r[i]<span style="color: #666666">*</span>r[i]))
+    a <span style="color: #666666">=</span>  <span style="color: #666666">-</span>Fourpi2<span style="color: #666666">*</span>r[i]<span style="color: #666666">/</span>(rabs<span style="color: #666666">**3</span>)
+    <span style="color: #408080; font-style: italic"># update velocity, time and position using the Velocity-Verlet method</span>
+    r[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> r[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>v[i]<span style="color: #666666">+0.5*</span>(DeltaT<span style="color: #666666">**2</span>)<span style="color: #666666">*</span>a
+    rabs <span style="color: #666666">=</span> sqrt(<span style="color: #008000">sum</span>(r[i<span style="color: #666666">+1</span>]<span style="color: #666666">*</span>r[i<span style="color: #666666">+1</span>]))
+    anew <span style="color: #666666">=</span> <span style="color: #666666">-4*</span>(pi<span style="color: #666666">**2</span>)<span style="color: #666666">*</span>r[i<span style="color: #666666">+1</span>]<span style="color: #666666">/</span>(rabs<span style="color: #666666">**3</span>)
+    v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i] <span style="color: #666666">+</span> <span style="color: #666666">0.5*</span>DeltaT<span style="color: #666666">*</span>(a<span style="color: #666666">+</span>anew)
+    t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i] <span style="color: #666666">+</span> DeltaT
+    EKinetic[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> <span style="color: #666666">0.5*</span><span style="color: #008000">sum</span>(v[i<span style="color: #666666">+1</span>]<span style="color: #666666">*</span>v[i<span style="color: #666666">+1</span>])
+    EPotential[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> <span style="color: #666666">-4*</span>pi<span style="color: #666666">*</span>pi<span style="color: #666666">/</span>sqrt(<span style="color: #008000">sum</span>(r[i<span style="color: #666666">+1</span>]<span style="color: #666666">*</span>r[i<span style="color: #666666">+1</span>]))
+    ETotal[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> EPotential[i<span style="color: #666666">+1</span>]<span style="color: #666666">+</span>EKinetic[i<span style="color: #666666">+1</span>]
+<span style="color: #408080; font-style: italic"># Plot energies as functions of time    </span>
+
+fig, axs <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots(<span style="color: #666666">3</span>, <span style="color: #666666">1</span>)
+axs[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>plot(t, EKinetic)
+axs[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>set_xlim(<span style="color: #666666">0</span>, tfinal)
+axs[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;Kinetic energy&#39;</span>)
+axs[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>plot(t, EPotential)
+axs[<span style="color: #666666">1</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;Potential Energy&#39;</span>)
+axs[<span style="color: #666666">2</span>]<span style="color: #666666">.</span>plot(t, ETotal)
+axs[<span style="color: #666666">2</span>]<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;Time [yr]&#39;</span>)
+axs[<span style="color: #666666">2</span>]<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;Total Energy&#39;</span>)
+fig<span style="color: #666666">.</span>tight_layout()
+save_fig(<span style="color: #BA2121">&quot;EarthSunVelocityVerlet&quot;</span>)
+plt<span style="color: #666666">.</span>show()
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>And we see that due to the smaller truncation error that energy conservation is improved as a function of time.
+Try out different time steps \( \Delta t \) and see if the results improve or worsen.
+</p>
+<!-- ------------------- end of main content --------------- -->
+</body>
+</html>
+
