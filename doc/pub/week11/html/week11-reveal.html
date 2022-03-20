@@ -184,7 +184,7 @@ MathJax.Hub.Config({
 </center>
 <br>
 <center>
-<h4>Mar 8, 2022</h4>
+<h4>Mar 20, 2022</h4>
 </center> <!-- date -->
 <br>
 
@@ -196,26 +196,40 @@ MathJax.Hub.Config({
 
 <section>
 <h2 id="aims-and-overarching-motivation">Aims and Overarching Motivation </h2>
-<h3 id="monday">Monday </h3>
+<h3 id="monday-march-21">Monday March 21 </h3>
+
 <p>Definition of the two-body problem, rewriting the equations in relative and center-of-mass coordinates</p>
 
 <p><b>Reading suggestion</b>: Taylor sections 8.2-8.3</p>
-<h3 id="wednesday">Wednesday </h3>
+<h3 id="wednesday-march-23">Wednesday March 23 </h3>
 
-<p>Preparing the ground for the  gravitional force and its solution in two dimensions</p>
+<p>Preparing the ground for the  gravitional force and its solution in two dimensions. 
+Harmonic Oscillator example in two dimensions (if we get time).
+</p>
 
-<p><b>Reading suggestion</b>: Taylor chapter 8.4</p>
-<h3 id="friday">Friday </h3>
+<p><b>Reading suggestion</b>: Taylor chapter 8.4-8.5</p>
+<h3 id="friday-march-25">Friday  March 25 </h3>
 
-<p>Harmonic Oscillator example. Begin Kepler's laws and computing with classes.</p>
-
-<p><b>Reading suggestion</b>: Taylor section 8.5-8.6 </p>
+<p>Discussion and work on homework 7</p>
 </section>
 
 <section>
 <h1 id="two-body-problems">Two-body Problems </h1>
 
-<b>Note: more text to be added</b>.
+<p>Two-body problems play a central role in physics. Some of these problems can, with appropriate transformations, be solved analytically. The gravitional force problem (as well as the Coulomb potential problem for two particles) is an example of this.</p>
+
+<p>There are several small steps which we need to do in order to reach this solution. These are</p>
+<ol>
+<p><li> Rewriting the equations in terms of the degrees of freedom of the relative motion and the center of mass motion</li>
+<p><li> Making a transformation either to polar (two dimensions) or to spherical coordinates (three dimensions)</li>
+<p><li> This gives us uncoupled differential equations for each coordinate that we can solve analytically</li>
+</ol>
+<p>
+<p>The advantage in doing so is that we can extract a lot of interesting insights about the motion and the physics of these important physics problems. These insights can be transferred to other physics problems where the potentials are given by expressions proportional with the inverse relative distance.</p>
+</section>
+
+<section>
+<h2 id="the-gravitational-force">The gravitational force </h2>
 
 <p>The gravitational potential energy and forces involving two masses \( a \) and \( b \) are</p>
 <p>&nbsp;<br>
@@ -269,6 +283,10 @@ $$
 \end{eqnarray}
 $$
 <p>&nbsp;<br>
+</section>
+
+<section>
+<h2 id="relative-and-center-of-mass-motion-assumptions">Relative and Center of Mass Motion, assumptions </h2>
 
 <p>Here, we assume the two particles interact only with one another, so
 \( \boldsymbol{F}_{12}=-\boldsymbol{F}_{21} \) (where \( \boldsymbol{F}_{ij} \) is the force on \( i \)
@@ -301,6 +319,10 @@ $$
 \end{eqnarray}
 $$
 <p>&nbsp;<br>
+</section>
+
+<section>
+<h2 id="trajectory-as-a-one-body-problem">Trajectory as a one-body problem </h2>
 
 <p>Thus, one can treat the trajectory as a one-body problem where the
 reduced mass is \( \mu \), and a second trivial problem for the center of
@@ -335,6 +357,10 @@ $$
 \end{eqnarray}
 $$
 <p>&nbsp;<br>
+</section>
+
+<section>
+<h2 id="kinetic-energy">Kinetic energy </h2>
 
 <p>With these definitions, a little algebra shows that the kinetic energy becomes</p>
 
@@ -378,7 +404,10 @@ is to
 <p><li> Use the chain rule to convert the equations of motions for \( r \), an expression involving \( r,\dot{r} \) and \( \ddot{r} \), to one involving \( r,dr/d\theta \) and \( d^2r/d\theta^2 \). This is quitecomplicated because the expressions will also involve a substitution \( u=1/r \) so that one finds an expression in terms of \( u \) and \( \theta \).</li>
 <p><li> Once \( u(\theta) \) is found, you need to show that this can be converted to the familiar form for an ellipse.</li>
 </ol>
-<p>
+</section>
+
+<section>
+<h2 id="euqations-of-motion">Euqations of motion </h2>
 <p>The equations of motion give</p>
 
 <p>&nbsp;<br>
@@ -395,7 +424,10 @@ $$
 \end{eqnarray}
 $$
 <p>&nbsp;<br>
+</section>
 
+<section>
+<h2 id="reordering-the-equations">Reordering the equations </h2>
 <p>Recognizing that the numerator of the third term is the velocity squared, and that it can be written in polar coordinates, </p>
 
 <p>&nbsp;<br>
@@ -421,6 +453,10 @@ m\ddot{r}&=&F+\frac{L^2}{mr^3}.
 \end{eqnarray}
 $$
 <p>&nbsp;<br>
+</section>
+
+<section>
+<h2 id="force-depends-on-r-only">Force depends on \( r \) only </h2>
 
 <p>This derivation used the fact that the force was radial,
 \( F=F_r=F_x\cos\theta+F_y\sin\theta \), and that angular momentum is
@@ -455,6 +491,10 @@ $$
 \end{eqnarray}
 $$
 <p>&nbsp;<br>
+</section>
+
+<section>
+<h2 id="further-manipulations">Further manipulations </h2>
 
 <p>Equating the two expressions for \( \ddot{r} \) in Eq.s <a href="#mjx-eqn-4">(4)</a> and <a href="#mjx-eqn-5">(5)</a> eliminates all the derivatives w.r.t. time, and provides a differential equation with only derivatives w.r.t. \( \theta \),</p>
 
@@ -473,6 +513,10 @@ $$
 point the expressions work for any radial force, not just forces that
 fall as \( 1/r^2 \).
 </p>
+</section>
+
+<section>
+<h2 id="final-manipulations-part-1">Final manipulations, part 1  </h2>
 
 <p>The trick to simplifying this differential equation for the inverse
 square problems is to make a substitution, \( u\equiv 1/r \), and rewrite
@@ -504,6 +548,10 @@ $$
 \end{equation}
 $$
 <p>&nbsp;<br>
+</section>
+
+<section>
+<h2 id="final-manipulations-part-2">Final manipulations, part 2  </h2>
 
 <p>For the attractive inverse square law force, \( F=-\alpha u^2 \),</p>
 
@@ -537,6 +585,10 @@ expression \( mv^2/r=-\alpha/r^2 \) for a circular orbit, using the
 substitution \( v=L/(mr) \), one would reproduce the expression
 \( r=L^2/(m\alpha) \).
 </p>
+</section>
+
+<section>
+<h2 id="final-manipulations-part-3">Final manipulations, part 3  </h2>
 
 <p>The form describing the elliptical trajectory in
 Eq. <a href="#mjx-eqn-9">(9)</a> can be identified as an ellipse with one
@@ -560,6 +612,10 @@ $$
 <p>&nbsp;<br>
 
 <p>By inspection, this is the same form as Eq. <a href="#mjx-eqn-9">(9)</a> with \( D/(D^2-a^2)=m\alpha/L^2 \) and \( a/(D^2-a^2)=A \).</p>
+</section>
+
+<section>
+<h2 id="ellipse-reminder">Ellipse reminder  </h2>
 
 <p>Let us remind ourselves about what an ellipse is before we proceed.</p>
 
@@ -643,6 +699,10 @@ $$
 <p>&nbsp;<br>
 
 <p>which is indeed matches the form for \( m\ddot{r} \) in Eq. <a href="#mjx-eqn-4">(4)</a>, which included the <b>centrifugal</b> force.</p>
+</section>
+
+<section>
+<h2 id="code-example">Code example </h2>
 
 <p>The following code plots this effective potential for a simple choice of parameters, with a standard gravitational potential \( -\alpha/r \). Here we have chosen \( L=m=\alpha=1 \). </p>
 
@@ -691,7 +751,10 @@ plt.show()
     </div>
   </div>
 </div>
-<h3 id="gravitational-force-example">Gravitational force example </h3>
+</section>
+
+<section>
+<h2 id="gravitational-force-example">Gravitational force example </h2>
 
 <p>Using the above parameters, we can now study the evolution of the system using for example the velocity Verlet method.
 This is done in the code here for an initial radius equal to the minimum of the potential well.  We seen then that the radius is always the same and corresponds to a circle (the radius is always constant).
@@ -791,7 +854,10 @@ plt.show()
 </div>
 
 <p>Changing the value of the initial position to a value where the energy is positive, leads to an increasing radius with time, a so-called unbound orbit. Choosing on the other hand an initial radius that corresponds to a negative energy and different from the minimum value leads to a radius that oscillates back and forth between two values. </p>
-<h3 id="harmonic-oscillator-in-two-dimensions">Harmonic Oscillator in two dimensions </h3>
+</section>
+
+<section>
+<h2 id="harmonic-oscillator-in-two-dimensions">Harmonic Oscillator in two dimensions </h2>
 
 <p>Consider a particle of mass \( m \) in a 2-dimensional harmonic oscillator with potential</p>
 
@@ -860,7 +926,10 @@ V_{\rm eff}&=&\frac{1}{2}kr^2+\frac{L^2}{2mr^2}
 \end{eqnarray*}
 $$
 <p>&nbsp;<br>
+</section>
 
+<section>
+<h2 id="harmonic-oscillator-in-two-dimensions-and-effective-potential">Harmonic oscillator in two dimensions and effective potential </h2>
 <p>The effective potential looks like that of a harmonic oscillator for
 large \( r \), but for small \( r \), the centrifugal potential repels the
 particle from the origin. The combination of the two potentials has a
@@ -1113,6 +1182,9 @@ $$
 factor of two comes because the oscillation \( x=A\cos\omega_0t \) has two
 maxima for \( x^2 \), one at \( t=0 \) and one a half period later.
 </p>
+</section>
+
+<section>
 <h2 id="stability-of-orbits">Stability of Orbits </h2>
 
 <p>The effective force can be extracted from the effective potential, \( V_{\rm eff} \). Beginning from the equations of motion, Eq. <a href="#mjx-eqn-2">(2)</a>, for \( r \),</p>

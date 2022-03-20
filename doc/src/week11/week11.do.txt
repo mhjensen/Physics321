@@ -7,30 +7,39 @@ DATE: today
 =====   Aims and Overarching Motivation =====
 
 
-=== Monday ===
+=== Monday March 21 ===
+
 Definition of the two-body problem, rewriting the equations in relative and center-of-mass coordinates
 
 _Reading suggestion_: Taylor sections 8.2-8.3
 
 
-=== Wednesday ===
+=== Wednesday March 23 ===
 
-Preparing the ground for the  gravitional force and its solution in two dimensions
+Preparing the ground for the  gravitional force and its solution in two dimensions. 
+Harmonic Oscillator example in two dimensions (if we get time).
 
-_Reading suggestion_: Taylor chapter 8.4
+_Reading suggestion_: Taylor chapter 8.4-8.5
 
-===  Friday ===
+===  Friday  March 25 ===
 
-Harmonic Oscillator example. Begin Kepler's laws and computing with classes.
-
-_Reading suggestion_: Taylor section 8.5-8.6 
-
+Discussion and work on homework 7
 
 
 !split
 ======= Two-body Problems =======
 
-_Note: more text to be added_.
+Two-body problems play a central role in physics. Some of these problems can, with appropriate transformations, be solved analytically. The gravitional force problem (as well as the Coulomb potential problem for two particles) is an example of this.
+
+There are several small steps which we need to do in order to reach this solution. These are
+o Rewriting the equations in terms of the degrees of freedom of the relative motion and the center of mass motion
+o Making a transformation either to polar (two dimensions) or to spherical coordinates (three dimensions)
+o This gives us uncoupled differential equations for each coordinate that we can solve analytically
+
+The advantage in doing so is that we can extract a lot of interesting insights about the motion and the physics of these important physics problems. These insights can be transferred to other physics problems where the potentials are given by expressions proportional with the inverse relative distance.
+
+!split
+===== The gravitational force =====
 
 The gravitational potential energy and forces involving two masses $a$ and $b$ are
 !bt
@@ -75,6 +84,11 @@ coordinate $\bm{r}$,
 \end{eqnarray}
 !et
 
+
+!split
+===== Relative and Center of Mass Motion, assumptions =====
+
+
 Here, we assume the two particles interact only with one another, so
 $\bm{F}_{12}=-\bm{F}_{21}$ (where $\bm{F}_{ij}$ is the force on $i$
 due to $j$. The equations of motion then become
@@ -100,6 +114,10 @@ can be rewritten in terms of the reduced mass $\mu$.
 \frac{1}{\mu}&=&\frac{1}{m_1}+\frac{1}{m_2},~~~~\mu=\frac{m_1m_2}{m_1+m_2}.
 \end{eqnarray}
 !et
+
+!split
+===== Trajectory as a one-body problem =====
+
 
 Thus, one can treat the trajectory as a one-body problem where the
 reduced mass is $\mu$, and a second trivial problem for the center of
@@ -127,6 +145,11 @@ coordinates. The total and relative momenta are
 \bm{q}&\equiv&\mu\dot{\bm{r}}.
 \end{eqnarray}
 !et
+
+
+!split
+===== Kinetic energy =====
+
 
 With these definitions, a little algebra shows that the kinetic energy becomes
 
@@ -168,6 +191,8 @@ o Use the chain rule to convert the equations of motions for $r$, an expression 
 o Once $u(\theta)$ is found, you need to show that this can be converted to the familiar form for an ellipse.
 
 
+!split
+===== Euqations of motion =====
 The equations of motion give
 
 !bt
@@ -183,6 +208,8 @@ label{eq:radialeqofmotion}
 \end{eqnarray}
 !et
 
+!split
+===== Reordering the equations =====
 Recognizing that the numerator of the third term is the velocity squared, and that it can be written in polar coordinates, 
 
 !bt
@@ -203,6 +230,9 @@ label{eq:radialeqofmotion2}
 m\ddot{r}&=&F+\frac{L^2}{mr^3}.
 \end{eqnarray}
 !et
+
+!split
+===== Force depends on $r$ only =====
 
 This derivation used the fact that the force was radial,
 $F=F_r=F_x\cos\theta+F_y\sin\theta$, and that angular momentum is
@@ -234,6 +264,8 @@ label{eq:rtotheta}
 \end{eqnarray}
 !et
 
+!split
+===== Further manipulations =====
 
 Equating the two expressions for $\ddot{r}$ in Eq.s (ref{eq:radialeqofmotion2}) and (ref{eq:rtotheta}) eliminates all the derivatives w.r.t. time, and provides a differential equation with only derivatives w.r.t. $\theta$,
 
@@ -250,6 +282,10 @@ label{eq:rdotdot}
 that when solved yields the trajectory, i.e. $r(\theta)$. Up to this
 point the expressions work for any radial force, not just forces that
 fall as $1/r^2$.
+
+
+!split
+===== Final manipulations, part 1  =====
 
 The trick to simplifying this differential equation for the inverse
 square problems is to make a substitution, $u\equiv 1/r$, and rewrite
@@ -275,6 +311,11 @@ some tedious algebra,
 \frac{d^2u}{d\theta^2}=-u-\frac{F m}{L^2u^2}.
 \end{equation}
 !et
+
+
+!split
+===== Final manipulations, part 2  =====
+
 
 For the attractive inverse square law force, $F=-\alpha u^2$,
 
@@ -303,6 +344,10 @@ expression $mv^2/r=-\alpha/r^2$ for a circular orbit, using the
 substitution $v=L/(mr)$, one would reproduce the expression
 $r=L^2/(m\alpha)$.
 
+!split
+===== Final manipulations, part 3  =====
+
+
 The form describing the elliptical trajectory in
 Eq. (ref{eq:Ctrajectory}) can be identified as an ellipse with one
 focus being the center of the ellipse by considering the definition of
@@ -322,6 +367,10 @@ r&=&\frac{D^2-a^2}{D+a\cos\theta}=\frac{1}{D/(D^2-a^2)-a\cos\theta/(D^2-a^2)}.
 !et
 
 By inspection, this is the same form as Eq. (ref{eq:Ctrajectory}) with $D/(D^2-a^2)=m\alpha/L^2$ and $a/(D^2-a^2)=A$.
+
+
+!split
+===== Ellipse reminder  =====
 
 
 Let us remind ourselves about what an ellipse is before we proceed.
@@ -382,6 +431,9 @@ F_{\rm eff}&=&-\frac{d}{dr}V(r) -\frac{d}{dr}\frac{L^2}{2mr^2}\\
 
 which is indeed matches the form for $m\ddot{r}$ in Eq. (ref{eq:radialeqofmotion2}), which included the _centrifugal_ force.
 
+!split
+===== Code example =====
+
 The following code plots this effective potential for a simple choice of parameters, with a standard gravitational potential $-\alpha/r$. Here we have chosen $L=m=\alpha=1$. 
 !bc pycod
 # Common imports
@@ -414,8 +466,8 @@ plt.show()
 
 
 
-
-=== Gravitational force example ===
+!split
+===== Gravitational force example =====
 
 Using the above parameters, we can now study the evolution of the system using for example the velocity Verlet method.
 This is done in the code here for an initial radius equal to the minimum of the potential well.  We seen then that the radius is always the same and corresponds to a circle (the radius is always constant).
@@ -496,7 +548,8 @@ plt.show()
 
 Changing the value of the initial position to a value where the energy is positive, leads to an increasing radius with time, a so-called unbound orbit. Choosing on the other hand an initial radius that corresponds to a negative energy and different from the minimum value leads to a radius that oscillates back and forth between two values. 
 
-=== Harmonic Oscillator in two dimensions ===
+!split
+===== Harmonic Oscillator in two dimensions =====
 
 Consider a particle of mass $m$ in a 2-dimensional harmonic oscillator with potential
 
@@ -546,6 +599,9 @@ V_{\rm eff}&=&\frac{1}{2}kr^2+\frac{L^2}{2mr^2}
 \end{eqnarray*}
 !et
 
+
+!split
+===== Harmonic oscillator in two dimensions and effective potential =====
 The effective potential looks like that of a harmonic oscillator for
 large $r$, but for small $r$, the centrifugal potential repels the
 particle from the origin. The combination of the two potentials has a
@@ -750,7 +806,7 @@ maxima for $x^2$, one at $t=0$ and one a half period later.
 
 
 
-
+!split
 ===== Stability of Orbits =====
 
 The effective force can be extracted from the effective potential, $V_{\rm eff}$. Beginning from the equations of motion, Eq. (ref{eq:radialeqofmotion}), for $r$,
