@@ -1015,3 +1015,465 @@ print(E)
 !ec
 
 
+
+Central forces are forces which are directed towards or away from a
+reference point. A familiar force is the gravitional
+force  with the motion of our Earth around the Sun as a classic. The Sun, being
+approximately sixth order of magnitude heavier than the Earth serves
+as our origin. A force like the gravitational force is a function of the
+relative distance $\bm{r}=\bm{r}_1-\bm{r}_2$ only, where 
+$\bm{r}_1$ and $\bm{r}_2$ are the positions relative to a defined
+origin for object one and object two, respectively.
+
+These forces depend on the spatial degrees of freedom only (the
+positions of the interacting objects/particles). As discussed earlier, from such forces we can infer
+that  the total internal energy, the total linear momentum and total angular momentum are so-called constants of the motion, that is they stay constant  over time. We say that energy, linear and anuglar momentum are conserved.
+
+With a scalar potential $V(\bm{r})$ we define the force as the gradient of the potential
+
+!bt
+\[
+\bm{F}(\bm{r})=-\bm{\nabla}V(\bm{r}).
+\]
+!et
+
+In general these potentials depend only on the magnitude of the
+relative position and we will write the potential as $V(r)$ where $r$
+is defined as,
+
+!bt
+\[
+r = |\bm{r}_1-\bm{r}_2|.
+\]
+!et
+
+In three dimensions our vectors are defined as (for a given object/particle $i$)
+!bt
+\[
+\bm{r}_i = x_i\bm{e}_1+y_i\bm{e}_2+z_i\bm{e}_3,
+\]
+!et
+while in two dimensions we have
+!bt
+\[
+\bm{r}_i = x_i\bm{e}_1+y_i\bm{e}_2.
+\]
+!et
+
+In two dimensions the radius $r$ is defined as 
+!bt
+\[
+r = |\bm{r}_1-\bm{r}_2|=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}.
+\]
+!et
+
+If we consider the gravitational potential involving two masses $1$ and $2$, we have
+!bt
+\[
+V_{12}(r)=V(r)=-\frac{Gm_1m_2}{|\bm{r}_1-\bm{r}_2|}=-\frac{Gm_1m_2}{r}.
+\]
+!et
+
+Calculating the gradient of this potential we obtain the force
+!bt
+\[
+\bm{F}(\bm{r})=-\frac{Gm_1m_2}{|\bm{r}_1-\bm{r}_1|^2}\hat{\bm{r}}_{12}=-\frac{Gm_am_b}{r^2}\hat{\bm{r}},
+\]
+!et
+where we have the unit vector
+!bt
+\[
+\hat{\bm{r}}=\hat{\bm{r}}_{12}=\frac{\bm{r}_2-\bm{r}_1}{|\bm{r}_1-\bm{r}_2|}.
+\]
+!et
+
+Here $G=6.67\times 10^{-11}$ Nm$^2$/kg$^2$, and $\bm{F}$ is the force
+on $2$ due to $1$. By inspection, one can see that the force on $2$
+due to $1$ and the force on $1$ due to $2$ are equal and opposite. The
+net potential energy for a large number of masses would be
+
+!bt
+\[
+V=\sum_{i<j}V_{ij}=\frac{1}{2}\sum_{i\ne j}V_{ij}.
+\]
+!et
+
+
+In general, the central forces that we will study can be written mathematically as
+!bt
+\[
+\bm{F}(\bm{r})=f(r)\hat{r},
+\]
+!et
+where $f(r)$ is  a scalar function. For the above gravitational force this scalar term is
+$-Gm_1m_2/r^2$.
+In general we will simply write this scalar function $f(r)=\alpha/r^2$ where $\alpha$ is a constant that can be either negative or positive. We will also see examples of other types of potentials in the examples below.
+
+Besides general expressions for the potentials/forces, we will discuss
+in detail different types of motion that arise, from circular to
+elliptical or hyperbolic or parabolic. By transforming to either polar
+coordinates or spherical coordinates, we will be able to obtain
+analytical solutions for the equations of motion and thereby obtain
+new insights about the properties of a system. Where possible, we will
+compare our analytical equations with numerical studies.
+
+However, before we arrive at these lovely insights, we need to
+introduce some mathematical manipulations and definitions. We conclude
+this chapter with a discussion of two-body scattering.
+
+
+===== Center of Mass and Relative Coordinates =====
+
+
+Thus far, we have considered the trajectory as if the force is
+centered around a fixed point. For two bodies interacting only with
+one another, both masses circulate around the center of mass. One
+might think that solutions would become more complex when both
+particles move, but we will see here that the problem can be reduced
+to one with a single body moving according to a fixed force by
+expressing the trajectories for $\bm{r}_1$ and $\bm{r}_2$ into the
+center-of-mass coordinate $\bm{R}$ and the relative
+coordinate $\bm{r}$. We define the center-of-mass (CoM) coordinate as 
+
+!bt
+\[
+\bm{R}\equiv\frac{m_1\bm{r}_1+m_2\bm{r}_2}{m_1+m_2},
+\]
+!et
+and the relative coordinate as
+!bt
+\[
+\bm{r}\equiv\bm{r}_1-\bm{r_2}.
+\]
+!et
+
+We can then rewrite $\bm{r}_1$ and $\bm{r}_2$ in terms of the relative and CoM coordinates as
+
+!bt
+\[
+\bm{r}_1=\bm{R}+\frac{m_2}{M}\bm{r},
+\]
+!et
+and
+
+!bt
+\[
+\bm{r}_2=\bm{R}-\frac{m_1}{M}\bm{r}.
+\]
+!et
+
+
+===  Conservation of total  Linear Momentum ===
+
+In our discussions on conservative forces we defined 
+the total linear momentum as
+
+!bt
+\[
+\bm{P}=\sum_{i=1}^Nm_i\frac{d\bm{r}_i}{dt},
+\]
+!et
+where $N=2$ in our case. With the above definition of the center of mass position, we see that we can rewrite the total linear momentum as (multiplying the CoM coordinate  with $M$)
+
+!bt
+\[
+\bm{P}=M\frac{d\bm{R}}{dt}=M\dot{\bm{R}}.
+\]
+!et
+
+The net force acting on the system is given by the time derivative of the linear momentum (assuming mass is time independent)
+and we have
+
+!bt
+\[
+\bm{F}^{\mathrm{net}}=\dot{\bm{P}}=M\ddot{\bm{R}}.
+\]
+!et
+
+The net force acting on the system is given by the sum of the forces acting on the two bodies, that is we have
+
+!bt
+\[
+\bm{F}^{\mathrm{net}}=\bm{F}_1+\bm{F}_2=\dot{\bm{P}}=M\ddot{\bm{R}}.
+\]
+!et
+
+
+In our case the forces are given by the internal forces only. The force acting on object $1$ is thus $\bm{F}_{12}$ and the one acting on object $2$ is $\bm{F}_{12}$. We have also defined that $\bm{F}_{12}=-\bm{F}_{21}$. This means thar we have
+!bt
+\[
+\bm{F}_1+\bm{F}_2=\bm{F}_{12}+\bm{F}_{21}=0=\dot{\bm{P}}=M\ddot{\bm{R}}.
+\]
+!et
+We could alternatively had write this
+!bt
+\[
+\ddot{\bm{R}}_{\rm cm}=\frac{1}{m_1+m_2}\left\{m_1\ddot{\bm{r}}_1+m_2\ddot{\bm{r}}_2\right\}=\frac{1}{m_1+m_2}\left\{\bm{F}_{12}+\bm{F}_{21}\right\}=0.
+\]
+!et
+
+This has the important consequence that the CoM velocity is a constant
+of the motion. And since the total linear momentum is given by the
+time-derivative of the CoM coordinate times the total mass
+$M=m_1+m_2$, it means that linear momentum is also conserved.
+Stated differently,  the center-of-mass coordinate
+$\bm{R}$ moves at a fixed velocity.
+
+This has also another important consequence for our forces. If we
+assume that our force depends only on the relative coordinate, it
+means that the gradient of the potential with respect to the center of
+mass position is zero, that is
+!bt
+\[
+M\ddot{d\bm{R}}=-\bm{\nabla}_{\bm{R}}V =0!
+\]
+!et
+
+
+If we now switch to the equation of motion for the relative coordinate, we have 
+!bt
+\[
+\ddot{\bm{r}}=\ddot{\bm{r}}_1-\ddot{\bm{r}}_2=\left(\frac{\bm{F}_{12}}{m_1}-\frac{\bm{F}_{21}}{m_2}\right)=\left(\frac{1}{m_1}+\frac{1}{m_2}\right)\bm{F}_{12},
+\]
+!et
+which we can rewrite in terms of the reduced mass
+!bt
+\[
+\mu=\frac{m_1m_2}{m_1+m_2},
+\]
+!et
+as
+!bt
+\[
+\mu \ddot{\bm{r}}=\bm{F}_{12}.
+\]
+!et
+
+This has a very important consequence for our coming analysis of the equations of motion for the two-body problem.
+Since the acceleration for the CoM coordinate is zero, we can now
+treat the trajectory as a one-body problem where the mass is given by 
+the reduced mass $\mu$ plus a second trivial problem for the center of
+mass. The reduced mass is especially convenient when one is
+considering forces that depend only on the relative coordinate (like the Gravitational force or the electrostatic force between two charges)  because then for say the gravitational force we have
+
+!bt
+\[
+\mu \ddot{\bm{r}}=-\frac{Gm_1m_2}{r^2}\hat{\bm{r}}=-\frac{GM\mu}{r^2}\hat{\bm{r}},
+\]
+!et
+where we have defined $M= m_1+m_2$.  It means that the acceleration of the relative coordinate is
+!bt
+\[
+\ddot{\bm{r}}=-\frac{GM}{r^2}\hat{\bm{r}},
+\]
+!et
+and we have that for the gravitational problem, the reduced mass then falls out and the
+trajectory depends only on the total mass $M$.
+
+The standard strategy is to transform into the center of mass frame,
+then treat the problem as one of a single particle of mass $\mu$
+undergoing a force $\bm{F}_{12}$. Scattering angles, see our discussion of scattering problems below, can also be
+expressed in this frame.  Before we proceed to our definition of the CoM frame we need to set up the expression for the energy in terms of the relative and CoM coordinates.
+
+
+=== Kinetic and total Energy ===
+
+The kinetic energy and momenta also have analogues in center-of-mass
+coordinates. 
+We have defined the total linear momentum as 
+
+!bt
+\[
+\bm{P}=\sum_{i=1}^Nm_i\frac{d\bm{r}_i}{dt}=M\dot{\bm{R}}.
+\]
+!et
+
+For the relative momentum $\bm{q}$, we have that the time derivative of $\bm{r}$ is
+!bt
+\[
+\dot{\bm{r}} =\dot{\bm{r}}_1-\dot{\bm{r}}_2,
+\]
+!et
+
+We know also that the momenta $\bm{p}_1=m_1\dot{\bm{r}}_1$ and
+$\bm{p}_2=m_2\dot{\bm{r}}_2$. Using these expressions we can rewrite
+
+!bt
+\[
+\dot{\bm{r}} =\frac{\bm{p}_1}{m_1}-\frac{\bm{p}_2}{m_2},
+\]
+!et
+
+which gives
+
+!bt
+\[
+\dot{\bm{r}} =\frac{m_2\bm{p}_1-m_1\bm{p}_2}{m_1m_2},
+\]
+!et
+
+and dividing both sides with $M$ we have
+
+!bt
+\[
+\frac{m_1m_2}{M}\dot{\bm{r}} =\frac{m_2\bm{p}_1-m_1\bm{p}_2}{M}.
+\]
+!et
+
+Introducing the reduced mass $\mu=m_1m_2/M$ we have finally
+
+!bt
+\[
+\mu\dot{\bm{r}} =\frac{m_2\bm{p}_1-m_1\bm{p}_2}{M}.
+\]
+!et
+And $\mu\dot{\bm{r}}$ defines the relative momentum $\bm{q}=\mu\dot{\bm{r}}$. 
+
+With these definitions we can then calculate the kinetic energy in terms of the relative and CoM coordinates.
+
+We have that
+
+!bt
+\[
+K=\frac{p_1^2}{2m_1}+\frac{p_2^2}{2m_2},
+\]
+!et
+
+and with $\bm{p}_1=m_1\dot{\bm{r}}_1$ and $\bm{p}_2=m_2\dot{\bm{r}}_2$ and using
+
+!bt
+\[
+\dot{\bm{r}}_1=\dot{\bm{R}}+\frac{m_2}{M}\dot{\bm{r}},
+\]
+!et
+and
+
+!bt
+\[
+\dot{\bm{r}}_2=\dot{\bm{R}}-\frac{m_1}{M}\dot{\bm{r}},
+\]
+!et
+
+we obtain after squaring the expressions for $\dot{\bm{r}}_1$ and $\dot{\bm{r}}_2$
+
+!bt
+\[
+K=\frac{(m_1+m_2)\dot{\bm{R}}^2}{2}+\frac{(m_1+m_2)m_1m_2\dot{\bm{r}}^2}{2M^2},
+\]
+!et
+which we simplify to 
+
+!bt
+\[
+K=\frac{\dot{\bm{P}}^2}{2M}+\frac{\mu\dot{\bm{q}}^2}{2}.
+\]
+!et
+
+Below we will define a reference frame, the so-called CoM-frame, where
+$\bm{R}=0$. This is going to simplify our equations further.
+
+
+=== Conservation of Angular Momentum ===
+
+
+The angular momentum (the total one) is the sum of the individual angular momenta. In our case we have two bodies only, meaning that our angular momentum is defined as
+
+!bt
+\[
+\bm{L} = \bm{r}_1 \times \bm{p}_1+\bm{r}_2 \times \bm{p}_2,
+\]
+!et
+and using that $m_1\dot{\bm{r}}_1=\bm{p}_1$ and $m_2\dot{\bm{r}}_2=\bm{p}_2$ we have
+
+!bt
+\[
+\bm{L} = m_1\bm{r}_1 \times \dot{\bm{r}}_1+m_2\bm{r}_2 \times \dot{\bm{r}}_2.
+\]
+!et
+
+We define now the CoM-Frame where we set $\bm{R}=0$. This means that the equations 
+for $\bm{r}_1$ and $\bm{r}_2$ in terms of the relative motion simplify and  we have
+!bt
+\[
+\bm{r}_1=\frac{m_2}{M}\bm{r},
+\]
+!et
+and
+
+!bt
+\[
+\bm{r}_2=-\frac{m_1}{M}\bm{r}.
+\]
+!et
+resulting in 
+!bt
+\[
+\bm{L} = m_1 \frac{m_2}{M}\bm{r}\times\frac{m_2}{M}\bm{r} +m_2 \frac{m_1}{M}\bm{r} \times \frac{m_1}{M}\dot{\bm{r}}.
+\]
+!et
+
+We see that can rewrite this equation as 
+!bt
+\[
+\bm{L}=\bm{r}\times \mu\dot{\bm{r}}=\mu\bm{r}\times \dot{\bm{r}}.
+\]
+!et
+If we now use a central force, we have that
+!bt
+\[
+\mu\dot{\bm{r}}=\bm{F}(\bm{r})=f(r)\hat{\bm{r}}, 
+\]
+!et
+and inserting this in the equation for the angular momentum we have
+!bt
+\[
+\bm{L}=\bm{r}\times f(r)\hat{\bm{r}},
+\]
+!et
+
+which equals zero since we are taking the cross product of the vector
+$\bm{r}$ with itself.  Angular momentum is thus conserved and in
+addition to the total linear momentum being conserved, we know that
+energy is also conserved with forces that depend only on position and
+the relative coordinate only.
+
+Since angular momentum is conserved, we can idealize
+the motion of our two objects as two bodies moving in a plane spanned by the
+relative coordinate and the relative momentum. The angular
+momentum is perpendicular to the plane spanned by these two vectors.
+
+
+It means also, since $\bm{L}$ is conserved, that we can reduce our
+problem to a motion in say the $xy$-plane.  What we have done then is to
+reduce a two-body problem in three-dimensions with six degrees of
+freedom (the six coordinates of the two objects) to a problem defined
+entirely by the relative coordinate in two dimensions.  We have thus
+moved from a problem with six degrees of freedom to one with two degrees of freedom only.
+
+Since we deal with central forces that depend only on the
+relative coordinate, we will show below that transforming to polar
+coordinates, we cna find analytical solution to
+the equation of motion
+!bt
+\[
+\mu\dot{\bm{r}}=\bm{F}(\bm{r})=f(r)\hat{\bm{r}}.
+\]
+!et
+
+Note the boldfaced symbols for the relative position $\bm{r}$. Our vector $\bm{r}$ is defined as
+
+!bt
+\[
+\bm{r}=x\bm{e}_1+y\bm{e}_2
+\]
+!et
+and introducing polar coordinates $r\in[0,\infty)$ and $\phi\in [0,2\pi]$ and the transformation 
+!bt
+\[
+r=\sqrt{x^2+y^2},
+\]
+!et
+and $x=r\cos\phi$ and $y=r\sin\phi$, we will rewrite our equation of motion by transforming from Cartesian coordinates to Polar coordinates. By so doing, we end up with two differential equations which can be solved analytically (it depends on the form of the potential).
+
+What follows now is a rewrite of these equations and the introduction of Kepler's laws as well.
+
