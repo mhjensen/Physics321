@@ -1,6 +1,7 @@
 ##  Teaching schedule with links to material
 
 
+
 ###  Week 2, January 10-14, 2022
 
 - Monday 1/10: Introduction to the course and reminder  on vectors, space, time and motion, JRT chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). Python programming reminder, elements from CMSE 201 and how they are used in this course. Installing software (anaconda). See slides at https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). 
@@ -105,14 +106,24 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 
 ### Week 10 Spring break, no lectures
 
-
 ### Week 11, March  14-18, 2022
 - Monday 3/14:  Harmonic oscillations, damping and driven oscillations
   - Video of lecture at https://youtu.be/xV3sIH6AXiE
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesMarch14.pdf      
 - Wednesday 3/16: Harmonic oscillations, damping and driven oscillations
+  - Video of lecture at https://youtu.be/RDzLMV5ymxc
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesMarch16.pdf        
+  - Video on solving differential equations numerically at https://youtu.be/7nYIfV0z1VM
+  - Video on Fourier aanalysis at https://youtu.be/neXZ4fb-4Rs
+  - Handwritten notes for Fourier analysis at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesFourierAnalysisMarch21.pdf
+
 - Friday 3/18:  Discussion and work on homework 6. Deadline sixth homework.
 - Reading suggestions for week 11: Taylor sections 5.6-5.8 and lecture notes at URL:"https://mhjensen.github.io/Physics321/doc/pub/week10/html/week10-reveal.html"
+  - Video of discussion of exercise 3 at https://youtu.be/F6v8-TPhHPA
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesMarch18.pdf
+
+
+
 
 ### Week 12, March 21-25, 2022
 - Monday 3/21: Two-body problems and gravitational forces. Definition of the two-body problem, rewriting the equations in relative and center-of-mass coordinates
