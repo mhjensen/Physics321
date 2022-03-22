@@ -2,6 +2,7 @@
 
 
 
+
 ###  Week 2, January 10-14, 2022
 
 - Monday 1/10: Introduction to the course and reminder  on vectors, space, time and motion, JRT chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). Python programming reminder, elements from CMSE 201 and how they are used in this course. Installing software (anaconda). See slides at https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). 
@@ -128,6 +129,8 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 ### Week 12, March 21-25, 2022
 - Monday 3/21: Two-body problems and gravitational forces. Definition of the two-body problem, rewriting the equations in relative and center-of-mass coordinates
   - Reading suggestion: Taylor sections 8.2-8.3 and lecture notes
+  - Video of lecture at https://youtu.be/xNFsZsnORRY
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesMarch21.pdf  
 - Wednesday 3/23: Preparing the ground for the  gravitional force and its solution in two dimensions
   - Reading suggestion: Taylor chapter 8.4 and lecture notes
 - Friday 3/25:  Summary and discussions of two-body problems and work on homework 7.  Deadline seventh homework.
@@ -138,21 +141,21 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Reading suggestion: Lecture notes and Taylor section 8.4 
 - Wednesday 3/30: Discussion of elliptical orbits and Kepler's laws
   - Reading suggestion: lecture notes and Taylor sections 8.5-8.6
-- Friday 4/1:  Summary of week and discussion of second midterm
+- Friday 4/1:  Summary of week and discussion of homework 8
 
 ### Week 14, April 4-8, 2022
 - Monday 4/4: Physical interpretation of various orbit types
   - Reading suggestions: lecture notes and Taylor section 8.5-8.8 
 - Wednesday 4/6: Interpretation of various orbit types and start discussion two-body scattering
   - Reading suggestions: lecture notes and Taylor section 8.5-8.8 and sections 14.1-14.2 
-- Friday 4/8: Summary of week and discussion of second midterm. Deadline second midterm
+- Friday 4/8: Summary of week and discussion of second midterm. 
 
 ### Week 15, April  11-15, 2022
 - Monday 4/11: Two-body scattering
   - Reading suggestion: Lecture notes and Taylor sections 14.3-14.6 
 - Wednesday 4/14: Finalizing discussion of two-body scattering and start Lagrangian formalism
   - Reading suggestions: lecture notes and Taylor sections 14.3-14.6 and 6.1-6.3
-- Friday 4/16: Summary of week and discussion of eigth homework. Deadline eigth homework.
+- Friday 4/16: Summary of week and discussion of eigth homework. Deadline second midterm.
 
 
 ### Week 16, April 18-22, 2022
