@@ -62,8 +62,8 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Office Hours Julie Butler | Times | Location | 
 |---------------------------|-------|----------|
-| Wednesday | 10-11:30am | In person, BPS 1248 |
 | Thursday | 10-11:30am | Virtual, https://msu.zoom.us/j/91499308414 (passcode: phy321) |
+| Friday| 1:30-3pm | In person, STEM 1202 |
 
 | Learning Assistant | Email | Office Hour | Zoom Link |
 |--------------------|-------|-------------|-----------|
