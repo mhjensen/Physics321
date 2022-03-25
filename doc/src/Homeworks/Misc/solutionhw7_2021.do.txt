@@ -1,0 +1,887 @@
+TITLE: PHY321: Classical Mechanics 1
+AUTHOR: Solution Homework 7, due to March 22
+DATE: today
+
+=== Introduction to homework 7 ===
+
+In this week's homework we will apply our insights about harmonic
+oscillations and link this with our activity from the lecture on
+Friday March 12. The relevant material to survey is chapter 5 of Taylor.
+
+We have also added an exercise (exercise 2) related to our discussion of two-body problems. 
+The relevant reading background for exercise 2 is sections 8.1-8.2 of Taylor.
+
+
+
+=== Exercise 1 (80 pt), particle/object in a harmonic oscillator  potential ===
+
+In the midterm and in exercise 4 of homework 6, we looked at an
+object/particle moving in a potential which resulted in harmonic
+oscillations.  The aim here is to summarize in more detail the
+material from harmonic oscillations. See also the bonus exercise below
+here (from the discussions of Friday March 12).
+
+
+Relevant reading here is Taylor chapter 5 and the lecture notes on oscillations. 
+
+We will consider a particle of mass $m$ moving in a one-dimensional potential,
+!bt
+\[
+V(x)=k\frac{x^2}{2},
+\]
+!et
+where $k$ is a parameter.
+
+We will limit ourselves to a one-dimensional system. You will need to select values for the initial conditions and the various parameters $k$, $m$, $b$, $\omega$ and $F_0$ discussed here.
+
+* 1a (20pt)  Assume no driving force first and add a drag force $-bv$, where $v$ is the velocity. Find the forces acting on the object. Find the analytical solutions to the equations of motion. Discuss the three cases: _underdamping_, _critical damping_ and _overdamping_.
+
+The text here is taken from the lecture notes of week 9. We have made this text more extensive than needed. This is done for the sake of completeness.  We don't expect that you would provide this level of detail.
+
+We consider only the case where the damping force is proportional to
+the velocity. This is counter to dragging friction, where the force is
+proportional in strength to the normal force and independent of
+velocity, and is also inconsistent with wind resistance, where the
+magnitude of the drag force is proportional the square of the
+velocity. Rolling resistance does seem to be mainly proportional to
+the velocity. However, the main motivation for considering damping
+forces proportional to the velocity is that the math is more
+friendly. This is because the differential equation is linear,
+i.e. each term is of order $x$, $\dot{x}$, $\ddot{x}\cdots$, or even
+terms with no mention of $x$, and there are no terms such as $x^2$ or
+$x\ddot{x}$. The equations of motion for a spring with damping force
+$-b\dot{x}$ are
+
+!bt
+\begin{equation}
+m\ddot{x}+b\dot{x}+kx=0.
+\end{equation}
+!et
+
+
+Just to make the solution a bit less messy, we rewrite this equation as
+
+!bt
+\begin{equation}
+label{eq:dampeddiffyq}
+\ddot{x}+2\beta\dot{x}+\omega_0^2x=0,~~~~\beta\equiv b/2m,~\omega_0\equiv\sqrt{k/m}.
+\end{equation}
+!et
+
+Both $\beta$ and $\omega$ have dimensions of inverse time. To find solutions (see appendix C in the text) you must make an educated guess at the form of the solution. To do this, first realize that the solution will need an arbitrary normalization $A$ because the equation is linear. Secondly, realize that if the form is
+
+!bt
+\begin{equation}
+x=Ae^{rt}
+\end{equation}
+!et
+
+that each derivative simply brings out an extra power of $r$. This
+means that the $Ae^{rt}$ factors out and one can simply solve for an
+equation for $r$. Plugging this form into Eq. (ref{eq:dampeddiffyq}),
+
+!bt
+\begin{equation}
+r^2+2\beta r+\omega_0^2=0.
+\end{equation}
+!et
+
+
+Because this is a quadratic equation there will be two solutions,
+
+!bt
+\begin{equation}
+r=-\beta\pm\sqrt{\beta^2-\omega_0^2}.
+\end{equation}
+!et
+
+We refer to the two solutions as $r_1$ and $r_2$ corresponding to the
+$+$ and $-$ roots. As expected, there should be two arbitrary
+constants involved in the solution,
+
+!bt
+\begin{equation}
+x=A_1e^{r_1t}+A_2e^{r_2t},
+\end{equation}
+!et
+
+where the coefficients $A_1$ and $A_2$ are determined by initial
+conditions.
+
+The roots listed above, $\sqrt{\omega_0^2-\beta_0^2}$, will be
+imaginary if the damping is small and $\beta<\omega_0$. In that case,
+$r$ is complex and the factor $\exp{(rt)}$ will have some oscillatory
+behavior. If the roots are real, there will only be exponentially
+decaying solutions. There are three cases:
+
+
+
+=== Underdamped: $\beta<\omega_0$ ===
+
+!bt
+\begin{eqnarray}
+x&=&A_1e^{-\beta t}e^{i\omega't}+A_2e^{-\beta t}e^{-i\omega't},~~\omega'\equiv\sqrt{\omega_0^2-\beta^2}\\
+\nonumber
+&=&(A_1+A_2)e^{-\beta t}\cos\omega't+i(A_1-A_2)e^{-\beta t}\sin\omega't.
+\end{eqnarray}
+!et
+
+Here we have made use of the identity
+$e^{i\omega't}=\cos\omega't+i\sin\omega't$. Because the constants are
+arbitrary, and because the real and imaginary parts are both solutions
+individually, we can simply consider the real part of the solution
+alone:
+
+!bt
+\begin{eqnarray}
+label{eq:homogsolution}
+x&=&B_1e^{-\beta t}\cos\omega't+B_2e^{-\beta t}\sin\omega't,\\
+\nonumber 
+\omega'&\equiv&\sqrt{\omega_0^2-\beta^2}.
+\end{eqnarray}
+!et
+
+
+=== Critical dampling: $\beta=\omega_0$ ===
+
+In this case the two terms involving $r_1$ and $r_2$ are identical
+because $\omega'=0$. Because we need to arbitrary constants, there
+needs to be another solution. This is found by simply guessing, or by
+taking the limit of $\omega'\rightarrow 0$ from the underdamped
+solution. The solution is then
+
+!bt
+\begin{equation}
+label{eq:criticallydamped}
+x=Ae^{-\beta t}+Bte^{-\beta t}.
+\end{equation}
+!et
+
+The critically damped solution is interesting because the solution
+approaches zero quickly, but does not oscillate. For a problem with
+zero initial velocity, the solution never crosses zero. This is a good
+choice for designing shock absorbers or swinging doors.
+
+
+=== Overdamped: $\beta>\omega_0$ ===
+
+
+!bt
+\begin{eqnarray}
+x&=&A_1\exp{-(\beta+\sqrt{\beta^2-\omega_0^2})t}+A_2\exp{-(\beta-\sqrt{\beta^2-\omega_0^2})t}
+\end{eqnarray}
+!et
+
+This solution will also never pass the origin more than once, and then
+only if the initial velocity is strong and initially toward zero.
+
+
+
+
+Given $b$, $m$ and $\omega_0$, find $x(t)$ for a particle whose
+initial position is $x=0$ and has initial velocity $v_0$ (assuming an
+underdamped solution).
+
+The solution is of the form,
+
+!bt
+\begin{eqnarray*}
+x&=&e^{-\beta t}\left[A_1\cos(\omega' t)+A_2\sin\omega't\right],\\
+\dot{x}&=&-\beta x+\omega'e^{-\beta t}\left[-A_1\sin\omega't+A_2\cos\omega't\right].\\
+\omega'&\equiv&\sqrt{\omega_0^2-\beta^2},~~~\beta\equiv b/2m.
+\end{eqnarray*}
+!et
+
+From the initial conditions, $A_1=0$ because $x(0)=0$ and $\omega'A_2=v_0$. So 
+
+!bt
+\[
+x=\frac{v_0}{\omega'}e^{-\beta t}\sin\omega't.
+\]
+!et
+
+
+
+* 1b (5pt) Scale your equations of motion in terms of a dimensionless time $\tau = \omega_0 t$, where $t$ is time and $\omega_0^2=k/m$ is the so-called natural frequency. 
+
+To scale the equations we start again with the full equation
+!bt
+\begin{equation}
+m\ddot{x}+b\dot{x}+kx=0.
+\end{equation}
+!et
+
+We divide by $m$ and get
+!bt
+\begin{equation}
+\ddot{x}+\frac{b}{m}\dot{x}+\frac{k}{m}x=0.
+\end{equation}
+!et
+
+Defining the natural frequency $\omega_0^2=k/m$   we introduce a dimensionless time $\tau = \omega_0 t$ and replace $t$ with $\tau$.
+This leads to us rewriting
+
+!bt
+\begin{equation}
+\frac{d^2 x}{dt^2}+\frac{b}{m}\frac{dx}{dt}+\frac{k}{m}x=0,
+\end{equation}
+!et
+
+as
+
+!bt
+\begin{equation}
+\omega_0^2\frac{d^2 x}{d\tau^2}+\frac{\omega_0b}{m}\frac{dx}{d\tau}+\omega_0^2x=0,
+\end{equation}
+!et
+and dividing by $\omega_0^2$ and defining $\gamma = b/(2m\omega_0)$ we have the final scaled equation
+
+!bt
+\begin{equation}
+\frac{d^2 x}{d\tau^2}+2\gamma\frac{dx}{d\tau}+x=0.
+\end{equation}
+!et
+
+
+This equation has dimension length only and time $\tau$ is dimensionless.  It means also that our solutions become now
+
+In this case the variable $r$ becomes
+!bt
+\begin{equation}
+r=-\gamma\pm\sqrt{\gamma^2-1}.
+\end{equation}
+!et
+
+We refer to the two solutions as $r_1$ and $r_2$ corresponding to the
+$+$ and $-$ roots. As expected, there should be two arbitrary
+constants involved in the solution,
+
+!bt
+\begin{equation}
+x=A_1e^{r_1\tau}+A_2e^{r_2\tau},
+\end{equation}
+!et
+
+where the coefficients $A_1$ and $A_2$ are determined by initial
+conditions.
+
+For the roots listed above, $\sqrt{\gamma^2-1}$, will be
+imaginary if the damping is small and $\gamma < 1$. In that case,
+$r$ is complex and the factor $\exp{(rt)}$ will have some oscillatory
+behavior. If the roots are real, there will only be exponentially
+decaying solutions. For $\gamma =1$, we have what we labeled as critical damping while for $\gamma > 1$, we have over-critical damping.
+
+In the codes below, we have implemented the dimensionless  equations.
+
+
+
+* 1c (25pt) You can use your codes from either the first midterm or from homeworks 5 and/or 6.  Study numerically the three cases from 1a, that is the underdamped motion, the critically damped one and finally the overdamped one. Compare your numerical results with the analytical ones from 1a. Discuss your results. You can use the Euler-Cromer method, or the Velocity-Verlet method or the Runge-Kutta methods discussed during the lectures, see for example URL:"https://mhjensen.github.io/Physics321/doc/pub/week10/html/week10.html". Alternatively, you could use the _odeint_ solvers included functionality in Python, see URL:"https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html". Give a short argument about the numerical algorithm you ended up using.  
+
+
+We have chosen to implement the Runge-Kutta4 method since this has a
+truncation error in terms of the step size $\Delta t$ to the power of
+five. The codes are included after part 1d.
+
+
+
+* 1d (30pt) We add now a driving force $F=F_0\cos{(\omega t}$. Find the particular solution and its analytical solution. Include this force in your code (remember to scale the equations) and compare your numerical results with the analytical results. Discuss your results. How does the system evolve over time with a given frequency $\omega$ for the driving force?   Is energy conserved? If not, why? 
+
+
+To find a particular solution, one first guesses at the form,
+
+
+!bt
+\begin{equation}
+label{eq:partform}
+x_p(t)=D\cos(\omega t-\delta),
+\end{equation}
+!et
+
+and rewrite the differential equation as
+
+!bt
+\begin{equation}
+D\left\{-\omega^2\cos(\omega t-\delta)-2\beta\omega\sin(\omega t-\delta)+\omega_0^2\cos(\omega t-\delta)\right\}=\frac{F_0}{m}\cos(\omega t).
+\end{equation}
+!et
+
+One can now use angle addition formulas to get
+
+!bt
+\begin{eqnarray}
+D\left\{(-\omega^2\cos\delta+2\beta\omega\sin\delta+\omega_0^2\cos\delta)\cos(\omega t)\right.&&\\
+\nonumber
+\left.+(-\omega^2\sin\delta-2\beta\omega\cos\delta+\omega_0^2\sin\delta)\sin(\omega t)\right\}
+&=&\frac{F_0}{m}\cos(\omega t).
+\end{eqnarray}
+!et
+
+Both the $\cos$ and $\sin$ terms need to equate if the expression is to hold at all times. Thus, this becomes two equations
+
+!bt
+\begin{eqnarray}
+D\left\{-\omega^2\cos\delta+2\beta\omega\sin\delta+\omega_0^2\cos\delta\right\}&=&\frac{F_0}{m}\\
+\nonumber
+-\omega^2\sin\delta-2\beta\omega\cos\delta+\omega_0^2\sin\delta&=&0.
+\end{eqnarray}
+!et
+
+After dividing by $\cos\delta$, the lower expression leads to
+
+!bt
+\begin{equation}
+\tan\delta=\frac{2\beta\omega}{\omega_0^2-\omega^2}.
+\end{equation}
+!et
+
+
+Using the identities $\tan^2+1=\csc^2$ and $\sin^2+\cos^2=1$, one can also express $\sin\delta$ and $\cos\delta$,
+
+!bt
+\begin{eqnarray}
+\sin\delta&=&\frac{2\beta\omega}{\sqrt{(\omega_0^2-\omega^2)^2+4\omega^2\beta^2}},\\
+\nonumber
+\cos\delta&=&\frac{(\omega_0^2-\omega^2)}{\sqrt{(\omega_0^2-\omega^2)^2+4\omega^2\beta^2}}
+\end{eqnarray}
+!et
+
+Inserting the expressions for $\cos\delta$ and $\sin\delta$ into the expression for $D$,
+
+!bt
+\begin{equation}
+label{eq:Ddrive}
+D=\frac{F_0/m}{\sqrt{(\omega_0^2-\omega^2)^2+4\omega^2\beta^2}}.
+\end{equation}
+!et
+
+For a given initial condition, e.g. initial displacement and velocity,
+one must add the homogenous solution then solve for the two arbitrary
+constants. However, because the homogenous solutions decay with time
+as $e^{-\beta t}$, the particular solution is all that remains at
+large times, and is therefore the steady state solution. Because the
+arbitrary constants are all in the homogenous solution, all memory of
+the initial conditions are lost at large times, $t>>1/\beta$.
+
+The amplitude of the motion, $D$, is linearly proportional to the
+driving force ($F_0/m$), but also depends on the driving frequency
+$\omega$. For small $\beta$ the maximum will occur at
+$\omega=\omega_0$. This is referred to as a resonance. In the limit
+$\beta\rightarrow 0$ the amplitude at resonance approaches infinity.
+
+
+
+
+Let us now for simplicty assume that our external force is given by
+
+!bt
+\[
+F_{\mathrm{ext}}(t) = F_0\cos{(\omega t)},
+\]
+!et
+where $F_0$ is a constant (what is its dimension?) and $\omega$ is the frequency of the applied external driving force.
+
+
+Introducing the external force into our lovely differential equation
+and dividing by $m$ and introducing $\omega_0^2=\sqrt{k/m}$ we have
+!bt
+\[
+\frac{d^2x}{dt^2} + \frac{b}{m}\frac{dx}{dt}+\omega_0^2x(t) =\frac{F_0}{m}\cos{(\omega t)},
+\]
+!et
+
+Thereafter we introduce a dimensionless time $\tau = t\omega_0$
+and a dimensionless frequency $\tilde{\omega}=\omega/\omega_0$. We have then
+!bt
+\[
+\frac{d^2x}{d\tau^2} + \frac{b}{m\omega_0}\frac{dx}{d\tau}+x(\tau) =\frac{F_0}{m\omega_0^2}\cos{(\tilde{\omega}\tau)},
+\]
+!et
+Introducing a new amplitude $\tilde{F} =F_0/(m\omega_0^2)$ (check dimensionality again) we have
+!bt
+\[
+\frac{d^2x}{d\tau^2} + \frac{b}{m\omega_0}\frac{dx}{d\tau}+x(\tau) =\tilde{F}\cos{(\tilde{\omega}\tau)}.
+\]
+!et
+
+Our final step, as we did in the case of various types of damping, is
+to define $\gamma = b/(2m\omega_0)$ and rewrite our equations as
+!bt
+\[
+\frac{d^2x}{d\tau^2} + 2\gamma\frac{dx}{d\tau}+x(\tau) =\tilde{F}\cos{(\tilde{\omega}\tau)}.
+\]
+!et
+
+These are the equations implemented in the codes below. In the code example below we have chosen the initial position to be
+$x_0=1.0$ (skipping the units), the initial velocity $v_0=0$, $k=m=1$ giving $\omega_0 =1.0$ and $\gamma=1.0$, $\tilde{\omega}=0.0$ and $\tilde{F_0}=0.0$.
+These definitions gives us for the homogenous solution a classical critical case since $\gamma = 1$, resulting in the homogenous solution only (show this with the given initial conditions))
+!bt
+\[
+x_h(\tau)=x_0(\exp{-(\tau)}+\tau\exp{-(\tau)}).
+\]
+!et
+
+
+
+Energy is not conserved since we have a time and velocity dependent total net force acting on the system.
+
+Note that here the forward Euler method does not know the specific force function to be called.
+It receives just an input the name. We can easily change the force by adding another function.
+!bc pycod
+def ForwardEuler(v,x,t,n,Force):
+    for i in range(n-1):
+        v[i+1] = v[i] + DeltaT*Force(v[i],x[i],t[i])
+        x[i+1] = x[i] + DeltaT*v[i]
+        t[i+1] = t[i] + DeltaT
+!ec
+
+!bc pycod
+def SpringForce(v,x,t):
+#   note here that we have divided by mass and we return the acceleration
+    return  -2*gamma*v-x+Ftilde*cos(t*Omegatilde)
+!ec
+
+It is easy to add a new method like the Euler-Cromer
+!bc pycod
+def ForwardEulerCromer(v,x,t,n,Force):
+    for i in range(n-1):
+        a = Force(v[i],x[i],t[i])
+        v[i+1] = v[i] + DeltaT*a
+        x[i+1] = x[i] + DeltaT*v[i+1]
+        t[i+1] = t[i] + DeltaT
+!ec
+and the Velocity Verlet method (be careful with time-dependence here, it is not an ideal method for non-conservative forces))
+!bc pycod
+def VelocityVerlet(v,x,t,n,Force):
+    for i in range(n-1):
+        a = Force(v[i],x[i],t[i])
+        x[i+1] = x[i] + DeltaT*v[i]+0.5*a*DeltaT*DeltaT
+        anew = Force(v[i],x[i+1],t[i+1])
+        v[i+1] = v[i] + 0.5*DeltaT*(a+anew)
+        t[i+1] = t[i] + DeltaT
+!ec
+
+Finally, we can now add the Runge-Kutta2 method via a new function
+!bc pycod
+def RK2(v,x,t,n,Force):
+    for i in range(n-1):
+# Setting up k1
+        k1x = DeltaT*v[i]
+        k1v = DeltaT*Force(v[i],x[i],t[i])
+# Setting up k2
+        vv = v[i]+k1v*0.5
+        xx = x[i]+k1x*0.5
+        k2x = DeltaT*vv
+        k2v = DeltaT*Force(vv,xx,t[i]+DeltaT*0.5)
+# Final result
+        x[i+1] = x[i]+k2x
+        v[i+1] = v[i]+k2v
+	t[i+1] = t[i]+DeltaT
+!ec
+
+Finally, we can now add the Runge-Kutta2 method via a new function
+
+!bc pycod
+def RK4(v,x,t,n,Force):
+    for i in range(n-1):
+# Setting up k1
+        k1x = DeltaT*v[i]
+        k1v = DeltaT*Force(v[i],x[i],t[i])
+# Setting up k2
+        vv = v[i]+k1v*0.5
+        xx = x[i]+k1x*0.5
+        k2x = DeltaT*vv
+        k2v = DeltaT*Force(vv,xx,t[i]+DeltaT*0.5)
+# Setting up k3
+        vv = v[i]+k2v*0.5
+        xx = x[i]+k2x*0.5
+        k3x = DeltaT*vv
+        k3v = DeltaT*Force(vv,xx,t[i]+DeltaT*0.5)
+# Setting up k4
+        vv = v[i]+k3v
+        xx = x[i]+k3x
+        k4x = DeltaT*vv
+        k4v = DeltaT*Force(vv,xx,t[i]+DeltaT)
+# Final result
+        x[i+1] = x[i]+(k1x+2*k2x+2*k3x+k4x)/6.
+        v[i+1] = v[i]+(k1v+2*k2v+2*k3v+k4v)/6.
+        t[i+1] = t[i] + DeltaT
+!ec
+
+
+The code below uses the Runge-Kutta4 methods. 
+
+!bc pycod
+# Common imports
+import numpy as np
+import pandas as pd
+from math import *
+import matplotlib.pyplot as plt
+import os
+
+# Where to save the figures and data files
+PROJECT_ROOT_DIR = "Results"
+FIGURE_ID = "Results/FigureFiles"
+DATA_ID = "DataFiles/"
+
+if not os.path.exists(PROJECT_ROOT_DIR):
+    os.mkdir(PROJECT_ROOT_DIR)
+
+if not os.path.exists(FIGURE_ID):
+    os.makedirs(FIGURE_ID)
+
+if not os.path.exists(DATA_ID):
+    os.makedirs(DATA_ID)
+
+def image_path(fig_id):
+    return os.path.join(FIGURE_ID, fig_id)
+
+def data_path(dat_id):
+    return os.path.join(DATA_ID, dat_id)
+
+def save_fig(fig_id):
+    plt.savefig(image_path(fig_id) + ".png", format='png')
+
+
+DeltaT = 0.001
+#set up arrays 
+tfinal = 20 # in dimensionless time
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, v, and x
+t = np.zeros(n)
+v = np.zeros(n)
+x = np.zeros(n)
+# Initial conditions (can change to more than one dim)
+x0 =  1.0 
+v0 = 0.0
+x[0] = x0
+v[0] = v0
+gamma = 1.0
+Omegatilde = 0.0
+Ftilde = 0.0
+# Start integrating using Euler's method
+# Note that we define the force function as a SpringForce
+RK4(v,x,t,n,SpringForce)
+# Here we define the analytical solution for the critical damping case
+xanalytic = np.zeros(n)
+xanalytic = x0*np.exp(-t)+x0*t*np.exp(-t)
+
+# Plot position as function of time    
+fig, ax = plt.subplots()
+ax.set_ylabel('x[m]')
+ax.set_xlabel('t[s]')
+ax.plot(t, np.abs(x-xanalytic))
+fig.tight_layout()
+save_fig("ForcedBlockRK4")
+plt.show()
+!ec
+
+Here we have plotted the difference (absolute value) between the analytical solution and numerical one and we see that the error is extremely small with the chosen parameters. Feel free to explore other situations.
+
+
+
+
+
+
+
+
+=== Exercise 2 (20pt), Center-of-Mass and Relative Coordinates and Reference Frames  ===
+
+We define the two-body center-of-mass coordinate and relative coordinate by expressing the trajectories for
+$\bm{r}_1$ and $\bm{r}_2$ into the center-of-mass coordinate
+$\bm{R}_{\rm cm}$ 
+!bt
+\[
+\bm{R}_{\rm cm}\equiv\frac{m_1\bm{r}_1+m_2\bm{r}_2}{m_1+m_2},
+\]
+!et
+and the relative coordinate 
+!bt
+\[
+\bm{r}\equiv\bm{r}_1-\bm{r_2}.
+\]
+!et
+Here, we assume the two particles interact only with one another, so $\bm{F}_{12}=-\bm{F}_{21}$ (where $\bm{F}_{ij}$ is the force on $i$ due to $j$.
+
+* 2a (5pt) Show that the equations of motion then become $\ddot{\bm{R}}_{\rm cm}=0$ and $\mu\ddot{\bm{r}}=\bm{F}_{12}$, with the reduced mass $\mu=m_1m_2/(m_1+m_2)$.
+
+The first expression simply states that the center of mass coordinate $\bm{R}_{\rm cm}$ moves at a fixed velocity. The second expression can be rewritten in terms of the reduced mass $\mu$.
+
+Let us first start with some basic definitions. We have the center of mass coordinate $\bm{R}$ defined as (for two particles)
+!bt
+\[
+\bm{R}=\frac{m_1\bm{r}_1+m_2\bm{r}_2}{M},
+\]
+!et
+where $m_1$ and $m_2$ are the masses of the two objects and $\bm{r}_1$ and $\bm{r}_2$ their respective positions defined according to a chosen origin. Here $M=m_1+m_2$ is the total mass.
+
+The relative position is defined as
+
+!bt
+\[
+\bm{r} =\bm{r}_1-\bm{r}_2,
+\]
+!et
+
+and we then define $\bm{r}_1$ and $\bm{r}_2$ in terms of the relative and center of mass positions as
+
+!bt
+\[
+\bm{r}_1=\bm{R}+\frac{m_2}{M}\bm{r},
+\]
+!et
+and
+
+!bt
+\[
+\bm{r}_2=\bm{R}-\frac{m_1}{M}\bm{r},
+\]
+!et
+
+
+
+The total linear momentum is then defined as
+
+!bt
+\[
+\bm{P}=\sum_{i=1}^Nm_i\frac{\bm{r}_i}{dt},
+\]
+!et
+where $N=2$ in our case. With the above definition of the center of mass position, we see that we can rewrite the total linear momentum as (multiplying the center of mass position with $M$)
+
+!bt
+\[
+\bm{P}=M\frac{d\bm{R}}{dt}=M\dot{\bm{R}}.
+\]
+!et
+This result is also an answer to a part of exercise 2b, see below.
+
+The net force acting on the system is given by the time derivative of the linear momentum (assuming mass is time independent)
+and we have
+
+!bt
+\[
+\bm{F}^{\mathrm{net}}=\dot{\bm{P}}=M\ddot{\bm{R}}.
+\]
+!et
+
+The net force acting on the system is given by the sum of the forces acting on the two object, that is we have
+
+!bt
+\[
+\bm{F}^{\mathrm{net}}=\bm{F}_1+\bm{F}_2=\dot{\bm{P}}=M\ddot{\bm{R}}.
+\]
+!et
+In our case the forces are given by the internal forces only. The force acting on object $1$ is thus $\bm{F}_{12}$ and the one acting on object $2$ is $\bm{F}_{12}$. We have also defined that $\bm{F}_{12}=-\bm{F}_{21}$. This means thar we have
+!bt
+\[
+\bm{F}_1+\bm{F}_2=\bm{F}_{12}+\bm{F}_{21}=0=\dot{\bm{P}}=M\ddot{\bm{R}},
+\]
+!et
+which is what we wanted to show. The center of mass velocity is thus a constant of the motion. We could also define the so-called center of mass reference frame where we simply set $\bm{R}=0$.
+
+This has also another important consequence for our forces. If we assume that our force depends only on the positions, it means that the gradient of the potential with respect to the center of mass position is zero, that is
+!bt
+\[
+M\ddot{d\bm{R}}=-\bm{\nabla}_{\bm{R}}V =0!
+\]
+!et
+
+
+
+
+An alternative way is 
+
+
+!bt
+\begin{eqnarray}
+\ddot{\bm{R}}_{\rm cm}&=&\frac{1}{m_1+m_2}\left\{m_1\ddot{\bm{r}}_1+m_2\ddot{\bm{r}}_2\right\}\\
+\nonumber
+&=&\frac{1}{m_1+m_2}\left\{\bm{F}_{12}+\bm{F}_{21}\right\}=0.\\
+\ddot{\bm{r}}&=&\ddot{\bm{r}}_1-\ddot{\bm{r}}_2=\left(\frac{\bm{F}_{12}}{m_1}-\frac{\bm{F}_{21}}{m_2}\right)\\
+\nonumber
+&=&\left(\frac{1}{m_1}+\frac{1}{m_2}\right)\bm{F}_{12}.
+\end{eqnarray}
+!et
+
+The first expression simply states that the center of mass coordinate
+$\bm{R}_{\rm cm}$ moves at a fixed velocity. The second expression
+can be rewritten in terms of the reduced mass $\mu$.
+
+!bt
+\begin{eqnarray}
+\mu \ddot{\bm{r}}&=&\bm{F}_{12},\\
+\frac{1}{\mu}&=&\frac{1}{m_1}+\frac{1}{m_2},~~~~\mu=\frac{m_1m_2}{m_1+m_2}.
+\end{eqnarray}
+!et
+
+Thus, one can treat the trajectory as a one-body problem where the
+reduced mass is $\mu$, and a second trivial problem for the center of
+mass. The reduced mass is especially convenient when one is
+considering gravitational problems, as we have seen during the lectures of weeks 11-13.
+
+
+
+
+* 2b (5pt) Show that the linear momenta for the center-of-mass $\bm{P}$ motion and the relative motion $\bm{q}$ are given by $\bm{P}=M\dot{\bm{R}}_{\rm cm}$ with $M=m_1+m_2$ and $\bm{q}=\mu\dot{\bm{r}}$.  The linear momentum of the relative motion is defined $\bm{q} = (m_2\bm{p}_1-m_1\bm{p}_2)/(m_1+m_2)$.
+
+In 2a we showed, as an intermediate step that the total linear momentum is given by
+!bt
+\[
+\bm{P}=\sum_{i=1}^Nm_i\frac{d\bm{r}_i}{dt}=M\dot{\bm{R}}.
+\]
+!et
+
+For the relative momentum $\bm{q}$, we have that the time derivative of $\bm{r}$ is
+!bt
+\[
+\dot{\bm{r}} =\dot{\bm{r}}_1-\dot{\bm{r}}_2,
+\]
+!et
+
+We now also that the momenta $\bm{p}_1=m_1\dot{\bm{r}}_1$ and
+$\bm{p}_2=m_2\dot{\bm{r}}_2$. Using these expressions we can rewrite
+
+!bt
+\[
+\dot{\bm{r}} =\frac{\bm{p}_1}{m_1}-\frac{\bm{p}_2}{m_2},
+\]
+!et
+
+which we can rewrite as
+
+!bt
+\[
+\dot{\bm{r}} =\frac{m_2\bm{p}_1-m_1\bm{p}_2}{m_1m_2},
+\]
+!et
+
+and dividing both sides with $M$ we have
+
+!bt
+\[
+\frac{m_1m_2}{M}\dot{\bm{r}} =\frac{m_2\bm{p}_1-m_1\bm{p}_2}{M}.
+\]
+!et
+
+Introducing the reduced mass $\mu=m_1m_2/M$ we have finally
+
+!bt
+\[
+\mu\dot{\bm{r}} =\frac{m_2\bm{p}_1-m_1\bm{p}_2}{M}.
+\]
+!et
+And $\mu\dot{\bm{r}}$ defines the relative momentum $\bm{q}=\mu\dot{\bm{r}}$. 
+
+When we introduce the Lagrangian formalism we will see that it is much easier to derive these equations.
+
+* 2c (5pt) Show then that the  kinetic energy for two objects can then be written as
+!bt
+\[
+K=\frac{P^2}{2M}+\frac{q^2}{2\mu}.
+\]
+!et
+
+Here we just need to use our definitions of kinetic energy in terms of the coordinates $\bm{r}_1$ and $\bm{r}_2$.
+
+We have that
+
+!bt
+\[
+K=\frac{p_1^2}{2m_1}+\frac{p_2^2}{2m_2},
+\]
+!et
+
+and with $\bm{p}_1=m_1\dot{\bm{r}}_1$ and $\bm{p}_2=m_2\dot{\bm{r}}_2$ and using
+
+!bt
+\[
+\dot{\bm{r}}_1=\dot{\bm{R}}+\frac{m_2}{M}\dot{\bm{r}},
+\]
+!et
+and
+
+!bt
+\[
+\dot{\bm{r}}_2=\dot{\bm{R}}-\frac{m_1}{M}\dot{\bm{r}},
+\]
+!et
+
+we obtain (after squaring the expressions for $\dot{\bm{r}}_1$ and $\dot{\bm{r}}_2$) we have
+
+!bt
+\[
+K=\frac{(m_1+m_2)\dot{\bm{R}}^2}{2}+\frac{(m_1+m_2)m_1m_2\dot{\bm{r}}^2}{2M^2},
+\]
+!et
+which we simplify to 
+
+!bt
+\[
+K=\frac{\dot{\bm{P}}^2}{2M}+\frac{\mu\dot{\bm{q}}^2}{2},
+\]
+!et
+which is what we wanted to show.
+
+* 2d (5pt) Show that the total angular momentum for two-particles in the center-of-mass frame $\bm{R}=0$, is given by
+!bt
+\[
+\bm{L}=\bm{r}\times \mu\dot{\bm{r}}.
+\]
+!et
+
+
+Here we need again that 
+
+!bt
+\[
+\bm{r} =\bm{r}_1-\bm{r}_2,
+\]
+!et
+
+and we then define $\bm{r}_1$ and $\bm{r}_2$ in terms of the relative and center of mass positions with $\bm{R}=0$
+
+!bt
+\[
+\bm{r}_1=\frac{m_2}{M}\bm{r},
+\]
+!et
+and
+
+!bt
+\[
+\bm{r}_2=-\frac{m_1}{M}\bm{r},
+\]
+!et
+
+The angular momentum (the total one) is the sum of the individual angular momenta (see homework 4) and we have
+
+!bt
+\[
+\bm{L} = \bm{r}_1 \times \bm{p}_1+\bm{r}_2 \times \bm{p}_2,
+\]
+!et
+and using that $m_1\dot{\bm{r}}_1=\bm{p}_1$ and $m_2\dot{\bm{r}}_2=\bm{p}_2$ we have
+
+!bt
+\[
+\bm{L} = m_1\bm{r}_1 \times \dot{\bm{r}}_1+m_2\bm{r}_2 \times \dot{\bm{r}}_2.
+\]
+!et
+
+Inserting the equations for $\bm{r}_1$ and $\bm{r}_2$ in terms of the relative motion, we have
+
+!bt
+\[
+\bm{L} = m_1 \frac{m_2}{M}\bm{r}\times\frac{m_2}{M}\bm{r} +m_2 \frac{m_1}{M}\bm{r} \times \frac{m_1}{M}\dot{\bm{r}}.
+\]
+!et
+
+We see that can rewrite this equation as 
+!bt
+\[
+\bm{L}=\bm{r}\times \mu\dot{\bm{r}},
+\]
+!et
+which is what we wanted to derive.
+
+
