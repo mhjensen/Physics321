@@ -240,9 +240,13 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 ### Week 13, March 28-April 1, 2020
 - Monday 3/28: Computational topics: functions and classes, the harmonic oscillator as warm-up case
   - Reading suggestion: Lecture notes and Taylor section 8.4 
+  - whiteboard part https://youtu.be/JTvzfQ_hjO4
+  - jupyter-notebook part at https://youtu.be/EEQq6vRYUYE
+  - See handwritten notes as well at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesMarch27.pdf.
 - Wednesday 3/30: Discussion of elliptical orbits and Kepler's laws
   - Reading suggestion: lecture notes and Taylor sections 8.5-8.6
 - Friday 4/1:  Summary of week and discussion of homework 8
+
 
 ### Week 14, April 4-8, 2022
 - Monday 4/4: Physical interpretation of various orbit types
@@ -309,6 +313,8 @@ computations, we would like to emphasize
 - understanding how algorithms are used to solve mathematical problems
 - Making science (your results) reproducible
 - algorithmic thinking for gaining deeper insights about scientific problems
+
+
 
 
 
