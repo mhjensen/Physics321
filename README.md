@@ -238,7 +238,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 
 
 ### Week 13, March 28-April 1, 2020
-- Monday 3/28: Computational topics: functions and classes, the harmonic oscillator to the gravitational force
+- Monday 3/28: Computational topics: functions and classes, the harmonic oscillator as warm-up case
   - Reading suggestion: Lecture notes and Taylor section 8.4 
 - Wednesday 3/30: Discussion of elliptical orbits and Kepler's laws
   - Reading suggestion: lecture notes and Taylor sections 8.5-8.6
