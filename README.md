@@ -239,7 +239,9 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 
 ### Week 13, March 28-April 1, 2020
 - Monday 3/28: Computational topics: functions and classes, the harmonic oscillator as warm-up case
-  - Reading suggestion: Lecture notes and Taylor section 8.4 
+  - Reading suggestion: Lecture notes and Taylor section 8.4
+  - Video of lecture at https://www.youtube.com/watch?v=beY5BF-_jMc
+  - Handwritten notes for Fourier analysis at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesFourierAnalysisMarch28.pdf
   - whiteboard part https://youtu.be/JTvzfQ_hjO4
   - jupyter-notebook part at https://youtu.be/EEQq6vRYUYE
   - See handwritten notes as well at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesMarch27.pdf.
