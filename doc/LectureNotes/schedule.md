@@ -1,8 +1,6 @@
 ##  Teaching schedule with links to material
 
 
-
-
 ###  Week 2, January 10-14, 2022
 
 - Monday 1/10: Introduction to the course and reminder  on vectors, space, time and motion, JRT chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). Python programming reminder, elements from CMSE 201 and how they are used in this course. Installing software (anaconda). See slides at https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). 
@@ -132,16 +130,24 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Video of lecture at https://youtu.be/xNFsZsnORRY
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesMarch21.pdf  
 - Wednesday 3/23: Preparing the ground for the  gravitional force and its solution in two dimensions
-  - Reading suggestion: Taylor chapter 8.4 and lecture notes
+  - Video of lecture at https://youtu.be/XWhgk6MhZQA
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesMarch23.pdf
+- Reading suggestion: Taylor chapter 8.4 and lecture notes
 - Friday 3/25:  Summary and discussions of two-body problems and work on homework 7.  Deadline seventh homework.
 
 
 ### Week 13, March 28-April 1, 2020
-- Monday 3/28: Computational topics: functions and classes, the harmonic oscillator to the gravitational force
-  - Reading suggestion: Lecture notes and Taylor section 8.4 
+- Monday 3/28: Computational topics: functions and classes, the harmonic oscillator as warm-up case
+  - Reading suggestion: Lecture notes and Taylor section 8.4
+  - Video of lecture at https://www.youtube.com/watch?v=beY5BF-_jMc
+  - Handwritten notes for lecture at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesFourierAnalysisMarch28.pdf
+  - whiteboard part https://youtu.be/JTvzfQ_hjO4
+  - jupyter-notebook part at https://youtu.be/EEQq6vRYUYE
+  - See handwritten notes as well at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesMarch27.pdf.
 - Wednesday 3/30: Discussion of elliptical orbits and Kepler's laws
   - Reading suggestion: lecture notes and Taylor sections 8.5-8.6
 - Friday 4/1:  Summary of week and discussion of homework 8
+
 
 ### Week 14, April 4-8, 2022
 - Monday 4/4: Physical interpretation of various orbit types
