@@ -218,6 +218,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Handwritten notes for Fourier analysis at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesFourierAnalysisMarch21.pdf
 
 - Friday 3/18:  Discussion and work on homework 6. Deadline sixth homework.
+- Solution sixth assignment at https://github.com/mhjensen/Physics321/tree/master/doc/Homeworks/hw6/solution
 - Reading suggestions for week 11: Taylor sections 5.6-5.8 and lecture notes at URL:"https://mhjensen.github.io/Physics321/doc/pub/week10/html/week10-reveal.html"
   - Video of discussion of exercise 3 at https://youtu.be/F6v8-TPhHPA
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesMarch18.pdf
@@ -235,7 +236,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesMarch23.pdf
 - Reading suggestion: Taylor chapter 8.4 and lecture notes
 - Friday 3/25:  Summary and discussions of two-body problems and work on homework 7.  Deadline seventh homework.
-
+- Solution seventh assignment at https://github.com/mhjensen/Physics321/tree/master/doc/Homeworks/hw7/solution
 
 ### Week 13, March 28-April 1, 2020
 - Monday 3/28: Computational topics: functions and classes, the harmonic oscillator as warm-up case
