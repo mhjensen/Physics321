@@ -248,6 +248,8 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - See handwritten notes as well at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesMarch27.pdf.
 - Wednesday 3/30: Discussion of elliptical orbits and Kepler's laws
   - Reading suggestion: lecture notes and Taylor sections 8.5-8.6
+  - Video of lecture https://youtu.be/1D8JHpdYeM0
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesMarch30.pdf
 - Friday 4/1:  Summary of week and discussion of homework 8
 
 
