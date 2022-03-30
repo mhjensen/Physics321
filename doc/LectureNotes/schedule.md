@@ -1,6 +1,7 @@
 ##  Teaching schedule with links to material
 
 
+
 ###  Week 2, January 10-14, 2022
 
 - Monday 1/10: Introduction to the course and reminder  on vectors, space, time and motion, JRT chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). Python programming reminder, elements from CMSE 201 and how they are used in this course. Installing software (anaconda). See slides at https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). 
@@ -117,6 +118,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Handwritten notes for Fourier analysis at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesFourierAnalysisMarch21.pdf
 
 - Friday 3/18:  Discussion and work on homework 6. Deadline sixth homework.
+- Solution sixth assignment at https://github.com/mhjensen/Physics321/tree/master/doc/Homeworks/hw6/solution
 - Reading suggestions for week 11: Taylor sections 5.6-5.8 and lecture notes at URL:"https://mhjensen.github.io/Physics321/doc/pub/week10/html/week10-reveal.html"
   - Video of discussion of exercise 3 at https://youtu.be/F6v8-TPhHPA
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesMarch18.pdf
@@ -134,7 +136,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesMarch23.pdf
 - Reading suggestion: Taylor chapter 8.4 and lecture notes
 - Friday 3/25:  Summary and discussions of two-body problems and work on homework 7.  Deadline seventh homework.
-
+- Solution seventh assignment at https://github.com/mhjensen/Physics321/tree/master/doc/Homeworks/hw7/solution
 
 ### Week 13, March 28-April 1, 2020
 - Monday 3/28: Computational topics: functions and classes, the harmonic oscillator as warm-up case
@@ -144,7 +146,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - whiteboard part https://youtu.be/JTvzfQ_hjO4
   - jupyter-notebook part at https://youtu.be/EEQq6vRYUYE
   - See handwritten notes as well at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesMarch27.pdf.
-- Wednesday 3/30: Discussion of elliptical orbits and Kepler's laws. Analytical solution of equations of motion
+- Wednesday 3/30: Discussion of elliptical orbits and Kepler's laws
   - Reading suggestion: lecture notes and Taylor sections 8.5-8.6
 - Friday 4/1:  Summary of week and discussion of homework 8
 
