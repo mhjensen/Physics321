@@ -1,0 +1,536 @@
+TITLE: PHY321: Classical Mechanics 1
+AUTHOR: Solution Homework 6, due March 1
+DATE: today
+
+=== Exercise 1 (40pt) Summary of course ===
+
+This was meant as your personal summary of what we have done till now.
+One possible solution is the illustration made by Julie, also at the
+end of every chapter of Taylor's textbook, you will find excellent
+summaries of what we have covered till now.
+
+
+
+
+
+=== Exercise 2 (10 pt), Conservative forces ===
+
+Which of the following force are conservative?  All three forces depend only on $\bm{r}$ and satisfy the first condition for being conservative.
+* 2a (2pt) $\bm{F}=k(x\bm{i}+2y\bm{j}+3z\bm{k})$ where $k$ is a constant.
+The _curl_ is zero and the force is conservative.  The potential energy is upon integration $V(x)=-k(1/2x^2+y^2+3/2z^2)$. Taking the derivative shows that this is indeed the case since it gives back the force.
+* 2b (2pt) $\bm{F}=y\bm{i}+x\bm{j}+0\bm{k}$. 
+This force is also conservative since it depends only on the coordinates and its curl is zero. To find the potential energy, since the integral is path independent, we can choose to integrate along any direction. The simplest is start from $x=0$ as origin and follow a path along the $x$-axis (which gives zero) and then parallel to the $y$-axis, which results in $V(x,y) = -xy$. Taking the derivative with respect to $x$ and $y$ gives us back the expression for the force.
+
+* 2c (2pt) $\bm{F}=k(-y\bm{i}+x\bm{j}+0\bm{k})$ where $k$ is a constant.
+Here the _curl_ is $(0,0,2)$ and the force is not conservative.
+
+* 2d (4pt) For those which are conservative, find the corresponding potential energy $V$ and verify that direct differentiation that $\bm{F}=-\bm{\nabla} V$.
+See the answers to each exercise above.
+
+=== Exercise 3 (10 pt), The Lennard-Jones potential ===
+
+"The Lennard-Jones potential":"https://en.wikipedia.org/wiki/Lennard-Jones_potential" is often used to describe
+the interaction between two atoms or ions or molecules. If you end up doing materals science and molecular dynamics calculations, it is very likely that you will encounter this potential model.
+The expression for the potential energy is
+!bt
+\[
+V(r) = V_0\left((\frac{a}{r})^{12}-(\frac{b}{r})^{6}\right),
+\]
+!et
+where $V_0$, $a$ and $b$ are constants and the potential depends only on the relative distance between two objects
+$i$ and $j$, that is $r=\vert\vert\bm{r}_i-\bm{r}_j\vert\vert=\sqrt{(x_i-x_j)^2+(y_i-y_j)^2+(z_i-z_j)^2}$.
+
+* 3a (3pt) Sketch/plot the potential (choose some values for the constants in doing so).
+The following Python code plots the potential
+!bc pycod
+# Common imports
+import numpy as np
+from math import *
+import matplotlib.pyplot as plt
+
+Deltar = 0.01
+#set up arrays
+rinitial = 1.8
+rfinal = 3.
+n = ceil((rfinal-rinitial)/Deltar)
+r = np.zeros(n)
+for i in range(n):
+    r[i] = rinitial+i*Deltar
+V = np.zeros(n)
+# Initial conditions as compact 2-dimensional arrays
+a = 2.0
+b = 2.0
+V0 = 10.0
+V = V0*((a/r)**(12)-(b/r)**6)
+# Plot position as function of time    
+fig, ax = plt.subplots()
+#ax.set_xlim(0, tfinal)
+ax.set_ylabel('V')
+ax.set_xlabel('r')
+ax.plot(r, V)
+fig.tight_layout()
+plt.show()
+!ec
+
+* 3b (3pt) Find and classify the equilibrium points.
+Here there is  only one equilibrium point when we take the derivative of the potential with respect to the relative distance.
+
+The derivative with respect to $r$, the relative distance, is
+!bt
+\[
+\frac{dV}{dr} = -6V_0\left(2\frac{a^{12}}{r^{13}}-\frac{b^6}{r^7}\right),
+\]
+!et
+and this is zero when
+!bt
+\[
+r = 2^{1/6}\frac{a^2}{b}.
+\]
+!et
+
+If we choose $a=2$ and $b=2$ then $r=2\times 2^{1/6}$. Since the second derivative is positive for all $r$ for our choices of $a$ and $b$  (convince yourself about  this), then this value of $r$ has to correspond to a minimum of the potential. This agrees with our graph from the figure above (run the code to produce the figure). 
+
+* 3c (4pt) What is the force acting on one of the objects (an atom for example) from the other object? Is this a conservative force?
+
+From the previous exercise we have
+!bt
+\[
+\frac{dV}{dr} = -6V_0\left(2\frac{a^{12}}{r^{13}}-\frac{b^6}{r^7}\right).
+\]
+!et
+
+We need the gradient and since the force on particle $i$ is given by $\bm{F}_i=\bm{\nabla}_i V(\bm{r}_i-\bm{r}_j)$, we obtain
+!bt
+\[
+\bm{F}_i=6V_0\left(2(\frac{a}{\vert\vert\bm{r}_i-\bm{r}_j\vert\vert})^{12}-(\frac{b}{\vert\vert\bm{r}_i-\bm{r}_j\vert\vert})^6\right)\frac{\bm{r}_i-\bm{r}_j}{\vert\vert\bm{r}_i-\bm{r}_j\vert\vert^2}.
+\]
+!et
+Here $r = \vert\vert \bm{r}_i-\bm{r}_j\vert \vert$.
+If we have more than two particles, we need to sum over all other particles $j$. We have thus to introduce a sum over all particles $N$. 
+The force on particle $i$ at position $\bm{r}_i$ from all particles  $j$ at their positions $\bm{r}_j$ results in the equation of motion (note that we have divided by the mass $m$ here)
+!bt
+\[
+\bm{a}_i=\frac{d^2\bm{r}_i}{dt^2} = \frac{6V_0}{m} \sum_{j \neq i}^{N}\left(2(\frac{a}{\vert\vert\bm{r}_i-\bm{r}_j\vert\vert})^{12}-(\frac{b}{\vert\vert\bm{r}_i-\bm{r}_j\vert\vert})^6\right)\frac{\bm{r}_i-\bm{r}_j}{\vert\vert\bm{r}_i-\bm{r}_j\vert\vert^2}.
+\]
+!et
+
+This is also a conservative force, with zero _curl_ as well. 
+
+=== Exercise 4 (10 pt), particle in a new potential ===
+
+Relevant reading here is Taylor chapter 5 and the lecture notes on oscillations. Similalry, Taylor section 4.8 and Malthe-Sørenssen section 11.3 on the potential surfaces are of relevance here.
+
+Consider a particle of mass $m$ moving in a one-dimensional potential,
+!bt
+\[
+V(x)=-\alpha\frac{x^2}{2}+\beta\frac{x^4}{4}.
+\]
+!et
+
+* 4a (3pt) Plot the potential and discuss eventual equilibrium points. Is this a conservative force?
+The following Python code gives a plot of potential
+!bc pycod
+# Common imports
+import numpy as np
+from math import *
+import matplotlib.pyplot as plt
+
+Deltax = 0.01
+#set up arrays
+xinitial = -2.0
+xfinal = 2.0 
+n = ceil((xfinal-xinitial)/Deltax)
+x = np.zeros(n)
+for i in range(n):
+    x[i] = xinitial+i*Deltax
+V = np.zeros(n)
+# Initial conditions as compact 2-dimensional arrays
+alpha = 0.81
+beta = 0.5
+print(sqrt(alpha/beta))
+V = -alpha*x*x*0.5 + beta*(x**4)*0.25
+# Plot position as function of time    
+fig, ax = plt.subplots()
+#ax.set_xlim(0, tfinal)
+ax.set_xlabel('x')
+ax.set_ylabel('V[s]')
+ax.plot(x, V)
+fig.tight_layout()
+plt.show()
+!ec
+Here we have chosen $\alpha=0.81$ and $\beta=0.5$. Taking the derivative of $V$ with respect to $x$ gives two minima (and it is easy to see here that the second derivative is positive) at $x\pm\sqrt{\alpha/\beta}$ and a maximum at $x=0$. The derivative is
+!bt
+\[
+\frac{dV}{dx} = -\alpha x + \beta x^3,
+\]
+!et
+which gives when we require that it should equal zero the above values. As we can see from the plot (run the above Python code), we have two so-called stable equilibrium points (where the potential has its minima) and an unstable equilibrium point.
+
+The force is conservative since it depends only on $x$ and has a _curl_ which is zero.
+
+* 4b (3pt) Compute the second derivative of the potential and find its miminum position(s). Using the Taylor expansion of the potential around its minimum (see Taylor section 5.1) to define a spring constant $k$. Use the spring constant to find the natural (angular) frequency $\omega_0=\sqrt{k/m}$. We call the new spring constant for  an effective spring constant.
+
+In the solution to the previous exercise we listed the values where the derivatives of the potential are zero.
+Taking the second derivatives we have that
+
+!bt
+\[
+\frac{d^2V}{dx^2} = -\alpha  + 3\beta x^2,
+\]
+!et
+and for $\alpha,\beta > 0$ (we assume they are positive constants) we see that when $x=0$ that the 
+the second derivative is negative, which means this is a maximum. For $x=\pm\sqrt{\alpha/\beta}$ we see that the second derivative is positive. Thus these points correspond to two minima.
+
+Assume now we Taylor-expand the potential around one of these minima, say $x_{\mathrm{min}}=\sqrt{\alpha/\beta}$. We have thus
+!bt
+\[
+V(x) = V(x_{\mathrm{min}})+(x-x_{\mathrm{min}})\frac{dV}{dx}\vert_{x_{\mathrm{min}}}+\frac{1}{2}(x-x_{\mathrm{min}})^2\frac{d^2V}{dx^2}\vert_{x_{\mathrm{min}}}+\dots
+\]
+!et
+
+Since we are at point where the first derivative is zero and inserting the value for the second derivative of $V$, keeping only terms up to the second derivative and finally taking the derivative with respect to $x$, we find the expression for the force
+!bt
+\[
+F(x) = -(x-x_{\mathrm{min}})\frac{d^2V}{dx^2}\vert_{x_{\mathrm{min}}},
+\]
+!et
+and setting in the expression for the second derivative at the minimum we find 
+!bt
+\[
+F(x) = -2\alpha(x-\sqrt{\frac{\alpha}{\beta}}).
+\]
+!et
+Thus our effective spring constant $k=2\alpha$.
+
+* 4c (4pt) We ignore the second term in the potential energy and keep only the term proportional to the effective spring constant, that is a force $F\propto kx$. Find the acceleration and set up the differential equation.  Find the general analytical solution for these harmonic oscillations.  You don't need to find the constants in the general solution.
+
+Here we simplify our force by rescaling our zeroth point so that we have a force (setting $x_{\mathrm{min}}=0$)
+!bt
+\[
+F(x) = -kx,
+\]
+!et
+with $k=2\alpha$. Defining a natural frequency $\omega_0 = \sqrt{k/m}$, where $m$ is the mass of our particle, we have the following equation of motion
+!bt
+\[
+\frac{d^2x}{dt^2}=-\omega_0^2x,
+\]
+!et
+which has as analytical solution $x(t)=A\cos{(\omega_0t)}+B\sin{(\omega_0t)}$ and velocity
+$x(t)=-\omega_0A\sin{(\omega_0t)}+\omega_0B\cos{(\omega_0t)}$. The initial conditions are used to define $A$ and $B$.
+
+
+
+
+
+===  Exercise 5 (40pt), Testing Energy conservation ===
+
+
+* 5a, See Taylor chapter 4.4
+
+
+!split
+===== Code Example with Euler's Method =====
+
+The code here implements Euler's method for the Earth-Sun system using
+a more compact way of representing the vectors. Alternatively, you
+could have spelled out all the variables $v_x$, $v_y$, $x$ and $y$ as
+one-dimensional arrays.  It tests conservation of potential and
+kinetic energy as functions of time, in addition to the total energy,
+again as function of time
+
+_Note_: in all codes we have used scaled equations so that the gravitational constant times the mass of the sum is given by $4\pi^2$ and the mass of the earth is set to _one_ in the calculations of kinetic and potential energies. Else, we would get very large results. 
+
+
+!bc pycod
+# Common imports
+import numpy as np
+import pandas as pd
+from math import *
+import matplotlib.pyplot as plt
+import os
+
+# Where to save the figures and data files
+PROJECT_ROOT_DIR = "Results"
+FIGURE_ID = "Results/FigureFiles"
+DATA_ID = "DataFiles/"
+
+if not os.path.exists(PROJECT_ROOT_DIR):
+    os.mkdir(PROJECT_ROOT_DIR)
+
+if not os.path.exists(FIGURE_ID):
+    os.makedirs(FIGURE_ID)
+
+if not os.path.exists(DATA_ID):
+    os.makedirs(DATA_ID)
+
+def image_path(fig_id):
+    return os.path.join(FIGURE_ID, fig_id)
+
+def data_path(dat_id):
+    return os.path.join(DATA_ID, dat_id)
+
+def save_fig(fig_id):
+    plt.savefig(image_path(fig_id) + ".png", format='png')
+
+# Initial values, time step, positions and velocites
+
+DeltaT = 0.0001
+#set up arrays 
+tfinal = 100 # in years
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, a, v, and x
+t = np.zeros(n)
+v = np.zeros((n,2))
+r = np.zeros((n,2))
+
+# setting up the kinetic, potential and total energy, note only functions of time
+EKinetic = np.zeros(n)
+EPotential = np.zeros(n)
+ETotal = np.zeros(n)
+
+# Initial conditions as compact 2-dimensional arrays
+
+
+r0 = np.array([1.0,0.0])
+v0 = np.array([0.0,2*pi])
+r[0] = r0
+v[0] = v0
+Fourpi2 = 4*pi*pi
+# Setting up variables for the calculation of energies
+#  distance that defines rabs in potential energy
+rabs0 = sqrt(sum(r[0]*r[0]))
+#  Initial kinetic energy. Note that we skip the mass of the Earth here, that is MassEarth=1 in all codes
+EKinetic[0] = 0.5*sum(v0*v0)
+#  Initial potential energy  (note negative sign, why?)
+EPotential[0] = -4*pi*pi/rabs0
+#  Initial total energy 
+ETotal[0] = EPotential[0]+EKinetic[0]
+# Start integrating using Euler's method
+for i in range(n-1):
+    # Set up the acceleration
+    # Here you could have defined your own function for this
+    rabs = sqrt(sum(r[i]*r[i]))
+    a =  -Fourpi2*r[i]/(rabs**3)
+    # update Energies, velocity, time and position using Euler's forward method
+    v[i+1] = v[i] + DeltaT*a
+    r[i+1] = r[i] + DeltaT*v[i]
+    t[i+1] = t[i] + DeltaT
+    EKinetic[i+1] = 0.5*sum(v[i+1]*v[i+1])
+    EPotential[i+1] = -4*pi*pi/sqrt(sum(r[i+1]*r[i+1]))
+    ETotal[i+1] = EPotential[i+1]+EKinetic[i+1]
+# Plot energies as functions of time    
+
+fig, axs = plt.subplots(3, 1)
+axs[0].plot(t, EKinetic)
+axs[0].set_xlim(0, tfinal)
+axs[0].set_ylabel('Kinetic energy')
+axs[1].plot(t, EPotential)
+axs[1].set_ylabel('Potential Energy')
+axs[2].plot(t, ETotal)
+axs[2].set_xlabel('Time [yr]')
+axs[2].set_ylabel('Total Energy')
+fig.tight_layout()
+save_fig("EarthSunEuler")
+plt.show()
+!ec
+
+
+We see very clearly that Euler's method does not conserve energy!! Try to reduce the time step $\Delta t$. What do you see?
+
+!split
+===== Adding the Euler-Cromer Method =====
+
+With the Euler-Cromer method, the only thing we need is to update the
+position at a time $t+1$ with the update velocity from the same
+time. Thus, the change in the code is extremely simply, and _energy is
+suddenly conserved_. Note that the error runs like $O(\Delta t)$ and
+this is why we see the larger oscillations. But within this
+oscillating energy envelope, we see that the energies swing between a
+max and a min value and never exceed these values.
+
+
+!bc pycod
+# Common imports
+import numpy as np
+import pandas as pd
+from math import *
+import matplotlib.pyplot as plt
+import os
+
+# Where to save the figures and data files
+PROJECT_ROOT_DIR = "Results"
+FIGURE_ID = "Results/FigureFiles"
+DATA_ID = "DataFiles/"
+
+if not os.path.exists(PROJECT_ROOT_DIR):
+    os.mkdir(PROJECT_ROOT_DIR)
+
+if not os.path.exists(FIGURE_ID):
+    os.makedirs(FIGURE_ID)
+
+if not os.path.exists(DATA_ID):
+    os.makedirs(DATA_ID)
+
+def image_path(fig_id):
+    return os.path.join(FIGURE_ID, fig_id)
+
+def data_path(dat_id):
+    return os.path.join(DATA_ID, dat_id)
+
+def save_fig(fig_id):
+    plt.savefig(image_path(fig_id) + ".png", format='png')
+
+# Initial values, time step, positions and velocites
+
+DeltaT = 0.0001
+#set up arrays 
+tfinal = 100 # in years
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, a, v, and x
+t = np.zeros(n)
+v = np.zeros((n,2))
+r = np.zeros((n,2))
+
+# setting up the kinetic, potential and total energy, note only functions of time
+EKinetic = np.zeros(n)
+EPotential = np.zeros(n)
+ETotal = np.zeros(n)
+
+# Initial conditions as compact 2-dimensional arrays
+
+
+r0 = np.array([1.0,0.0])
+v0 = np.array([0.0,2*pi])
+r[0] = r0
+v[0] = v0
+Fourpi2 = 4*pi*pi
+# Setting up variables for the calculation of energies
+#  distance that defines rabs in potential energy
+rabs0 = sqrt(sum(r[0]*r[0]))
+#  Initial kinetic energy. Note that we skip the mass of the Earth here, that is MassEarth=1 in all codes
+EKinetic[0] = 0.5*sum(v0*v0)
+#  Initial potential energy 
+EPotential[0] = -4*pi*pi/rabs0
+#  Initial total energy 
+ETotal[0] = EPotential[0]+EKinetic[0]
+# Start integrating using Euler's method
+for i in range(n-1):
+    # Set up the acceleration
+    # Here you could have defined your own function for this
+    rabs = sqrt(sum(r[i]*r[i]))
+    a =  -Fourpi2*r[i]/(rabs**3)
+    # update velocity, time and position using Euler's forward method
+    v[i+1] = v[i] + DeltaT*a
+#   Only change when we add the Euler-Cromer method    
+    r[i+1] = r[i] + DeltaT*v[i+1]
+    t[i+1] = t[i] + DeltaT
+    EKinetic[i+1] = 0.5*sum(v[i+1]*v[i+1])
+    EPotential[i+1] = -4*pi*pi/sqrt(sum(r[i+1]*r[i+1]))
+    ETotal[i+1] = EPotential[i+1]+EKinetic[i+1]
+# Plot energies as functions of time    
+
+fig, axs = plt.subplots(3, 1)
+axs[0].plot(t, EKinetic)
+axs[0].set_xlim(0, tfinal)
+axs[0].set_ylabel('Kinetic energy')
+axs[1].plot(t, EPotential)
+axs[1].set_ylabel('Potential Energy')
+axs[2].plot(t, ETotal)
+axs[2].set_xlabel('Time [yr]')
+axs[2].set_ylabel('Total Energy')
+fig.tight_layout()
+save_fig("EarthSunEulerCromer")
+plt.show()
+!ec
+
+
+
+!split
+===== The velocity Verlet method =====
+
+Our final equations for the position and the velocity become then 
+!bt
+\[
+x_{i+1} = x_i+(\Delta t)v_i+\frac{(\Delta t)^2}{2}a_{i}+O((\Delta t)^3),
+\]
+!et
+and
+!bt
+\[
+v_{i+1} = v_i+\frac{(\Delta t)}{2}\left(a_{i+1}+a_{i}\right)+O((\Delta t)^3). 
+\]
+!et
+Note well that the term $a_{i+1}$ depends on the position at $x_{i+1}$. This means that you need to calculate 
+the position at the updated time $t_{i+1}$ before the computing the next velocity.  Note also that the derivative of the velocity at the time
+$t_i$ used in the updating of the position can be reused in the calculation of the velocity update as well. 
+
+
+!split
+===== Adding the Velocity-Verlet Method =====
+
+We can now easily add the Verlet method to our original code as
+!bc pycod
+DeltaT = 0.001
+#set up arrays 
+tfinal = 100
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, a, v, and x
+t = np.zeros(n)
+v = np.zeros((n,2))
+r = np.zeros((n,2))
+# Initial conditions as compact 2-dimensional arrays
+r0 = np.array([1.0,0.0])
+v0 = np.array([0.0,2*pi])
+r[0] = r0
+v[0] = v0
+Fourpi2 = 4*pi*pi
+
+# setting up the kinetic, potential and total energy, note only functions of time
+EKinetic = np.zeros(n)
+EPotential = np.zeros(n)
+ETotal = np.zeros(n)
+
+# Setting up variables for the calculation of energies
+#  distance that defines rabs in potential energy
+rabs0 = sqrt(sum(r[0]*r[0]))
+#  Initial kinetic energy. Note that we skip the mass of the Earth here, that is MassEarth=1 in all codes
+EKinetic[0] = 0.5*sum(v0*v0)
+#  Initial potential energy 
+EPotential[0] = -4*pi*pi/rabs0
+#  Initial total energy 
+ETotal[0] = EPotential[0]+EKinetic[0]
+
+# Start integrating using the Velocity-Verlet  method
+for i in range(n-1):
+    # Set up forces, air resistance FD, note now that we need the norm of the vecto
+    # Here you could have defined your own function for this
+    rabs = sqrt(sum(r[i]*r[i]))
+    a =  -Fourpi2*r[i]/(rabs**3)
+    # update velocity, time and position using the Velocity-Verlet method
+    r[i+1] = r[i] + DeltaT*v[i]+0.5*(DeltaT**2)*a
+    rabs = sqrt(sum(r[i+1]*r[i+1]))
+    anew = -4*(pi**2)*r[i+1]/(rabs**3)
+    v[i+1] = v[i] + 0.5*DeltaT*(a+anew)
+    t[i+1] = t[i] + DeltaT
+    EKinetic[i+1] = 0.5*sum(v[i+1]*v[i+1])
+    EPotential[i+1] = -4*pi*pi/sqrt(sum(r[i+1]*r[i+1]))
+    ETotal[i+1] = EPotential[i+1]+EKinetic[i+1]
+# Plot energies as functions of time    
+
+fig, axs = plt.subplots(3, 1)
+axs[0].plot(t, EKinetic)
+axs[0].set_xlim(0, tfinal)
+axs[0].set_ylabel('Kinetic energy')
+axs[1].plot(t, EPotential)
+axs[1].set_ylabel('Potential Energy')
+axs[2].plot(t, ETotal)
+axs[2].set_xlabel('Time [yr]')
+axs[2].set_ylabel('Total Energy')
+fig.tight_layout()
+save_fig("EarthSunVelocityVerlet")
+plt.show()
+!ec
+
+And we see that due to the smaller truncation error that energy conservation is improved as a function of time.
+Try out different time steps $\Delta t$ and see if the results improve or worsen.
