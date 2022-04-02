@@ -224,8 +224,6 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesMarch18.pdf
 
 
-
-
 ### Week 12, March 21-25, 2022
 - Monday 3/21: Two-body problems and gravitational forces. Definition of the two-body problem, rewriting the equations in relative and center-of-mass coordinates
   - Reading suggestion: Taylor sections 8.2-8.3 and lecture notes
@@ -256,17 +254,17 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 
 ### Week 14, April 4-8, 2022
 - Monday 4/4: Physical interpretation of various orbit types
-  - Reading suggestions: lecture notes and Taylor section 8.5-8.8 
-- Wednesday 4/6: Interpretation of various orbit types and start discussion two-body scattering
-  - Reading suggestions: lecture notes and Taylor section 8.5-8.8 and sections 14.1-14.2 
-- Friday 4/8: Summary of week and discussion of second midterm. 
+  - Reading suggestions: lecture notes and Taylor section 8.5-8.8. Second midterm available April 4 
+- Wednesday 4/6: Start discussion two-body scattering
+  - Reading suggestions: lecture notes and Taylor sections 14.1-14.2 
+- Friday 4/8: Summary of week, short discussion of two-body scattering  and discussion of and work on second midterm. Deadline 2nd midterm is April 15
 
 ### Week 15, April  11-15, 2022
 - Monday 4/11: Two-body scattering
   - Reading suggestion: Lecture notes and Taylor sections 14.3-14.6 
-- Wednesday 4/14: Finalizing discussion of two-body scattering and start Lagrangian formalism
-  - Reading suggestions: lecture notes and Taylor sections 14.3-14.6 and 6.1-6.3
-- Friday 4/16: Summary of week and discussion of eigth homework. Deadline second midterm.
+- Wednesday 4/14: Lagrangian formalism
+  - Reading suggestions: lecture notes and Taylor sections 6.1-6.3
+- Friday 4/16: Summary of week and work on second midterm. Deadline second midterm.
 
 
 ### Week 16, April 18-22, 2022
@@ -284,7 +282,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 
 ### Week 18, May 2-6, 2022
 Depending on your availability, we can have at least two sessions in order to discuss the final project.
-- Final Exam:  The final exam will be a project similar to the two midterm projects. Deadline May 6.
+- Final Exam:  The final exam will be a project similar to the two midterm projects. Deadline May 6 at midnight.
 
 
 ## Learning outcomes
