@@ -1,5 +1,5 @@
 TITLE: PHY321: Classical Mechanics 1
-AUTHOR: Homework 9, due Friday  April 22
+AUTHOR: Homework 9, due Monday  April 5
 DATE: today
 
 ===  Practicalities about  homeworks and projects ===
@@ -11,14 +11,14 @@ o How do I(we)  hand in?  Due to the corona virus and many of you not being on c
 === Introduction to homework 9 ===
 
 This week's exercises focus on solving
-two-body  problems with central forces and the Lagrangian formalism (exercise 5). There are no numerical exercises. 
+two-body  problems with central forces. It is based on what you did in hw7 and hw8, see also their respective solutions.
 
 === Exercise 1: Attractive Potential (10pt) ===
 
 Consider a particle in an attractive potential
 !bt
 \[
-V(r)=-\alpha/r.
+U(r)=-\alpha/r.
 \]
 !et
 
@@ -65,8 +65,7 @@ Here $V(r)$ is any central force which depends only on the relative coordinate.
 * 2d (5pt) What is the angular frequency for small vibrations about the minimum? How does this compare with the answer to 2b?
 
 === Exercise 3, Inverse-square force again (10pt) ===
-
-Consider again a  particle of mass $m$ in the same attractive potential, $V(r)=-\alpha/r$, with angular momentum $L$ with just the right energy so that
+Consider again a  particle of mass $m$ in the same attractive potential, $U(r)=-\alpha/r$, with angular momentum $L$ with just the right energy so that
 
 !bt
 \[
@@ -113,49 +112,84 @@ while for $\epsilon > 1$ (or energy positive) the orbit becomes a hyperbola. The
 !et
 For a hyperbola, identify the constants $\alpha$, $\beta$ and $\delta$ in terms of the constants $c$ and $\epsilon$ for $r(\phi)$. 
 
+===  Exercise 5, Testing orbit types (50 pt) ===
+
+In this exercise we can use the program for $r(\phi)$ we developed in hw8. We will use an inverse-square-law force as in exercises 1, 2, 3 and 4. The aim is to see that the orbits we get for $E<0$ become ellipses (or circles), parabola for $E=0$ and hyperbola for $E>0$.  An example code is shown here.
+
+Here we have defined the constants $L=m=\alpha=1$. Feel free to set new values. _You need also to set the initial conditions_ in order to study the different types of orbits. It may be useful to plot the potential here and find the values for the initial conditions that fit $E<0$, $E=0$ and $E>0$. 
+
+!bc pycode
+# Common imports
+import numpy as np
+import pandas as pd
+from math import *
+import matplotlib.pyplot as plt
+# Simple Gravitational Force   -alpha/r
+    
+DeltaT = 0.01
+#set up arrays 
+tfinal = 100.0
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, v and r
+t = np.zeros(n)
+v = np.zeros(n)
+r = np.zeros(n)
+# Constants of the model, setting all variables to one for simplicity
+alpha = 1.0
+AngMom = 1.0  #  The angular momentum
+m = 1.0  # scale mass to one
+c1 = AngMom*AngMom/(m*m)
+c2 = AngMom*AngMom/m
+# You need to specify the initial conditions
+r0 = 0.0
+v0 = 0.0
+r[0] = r0
+v[0] = v0
+# Start integrating using the Velocity-Verlet  method
+for i in range(n-1):
+    # Set up acceleration
+    a = -alpha/(r[i]**2)+c1/(r[i]**3)
+    # update velocity, time and position using the Velocity-Verlet method
+    r[i+1] = r[i] + DeltaT*v[i]+0.5*(DeltaT**2)*a
+    anew = -alpha/(r[i+1]**2)+c1/(r[i+1]**3)
+    v[i+1] = v[i] + 0.5*DeltaT*(a+anew)
+    t[i+1] = t[i] + DeltaT
+    # Plot position as function of time
+fig, ax = plt.subplots(2,1)
+ax[0].set_xlabel('time')
+ax[0].set_ylabel('radius')
+ax[0].plot(t,r)
+ax[1].set_xlabel('time')
+ax[1].set_ylabel('Velocity')
+ax[1].plot(t,v)
+
+plt.show()
+
+!ec
 
 
-=== Exercise 5 (40pt), Pendulum and Lagrangians (Taylor chapters 6-7) ===
-
-A mathematical pendulum consists of a point mass $m$ suspended by a massless thread/rod of length $l$ in a gravitational field, as shown in the figure here. The constraining force is labeled by $\bm{T}$
-and the gravitational force is labeled $\bm{F}_g$.
-
-FIGURE: [figures/Simplependulum.png, width=600 frac=0.6] 
-
-We assume that the length $l$ is constant and we define the coordinates involved as
-
-!bt
-\[
-\bm{r} = l\sin(\phi)\bm{\hat{x}}+l\cos(\phi)\bm{\hat{y}},
-\]
-!et
-where $\bm{\hat{x}}$ and $\bm{\hat{y}}$ are the unit vectors in the $x$ and $y$ directions, respectively.
-
-* _5a (10pt):_ Set up the forces acting on the system and show that the equation of motion is $m\ddot{\bm{r}}=\bm{F}_g+\bm{T}$.
-
-* _5b (10pt):_ Show that you can rewrite the above equation of motion as two independent equations of motion, one for $\phi$ and one for the constraining force. Show that these equations are $\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}$ with $\omega_0^2=g/l$ and $T=ml\dot{\phi}^2+mg\cos{(\phi)}$.
-
-The equation for $\phi$ is a second-order differential equation
-!bt
-\[
-\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}.
-\]
-!et
-
-This equation can be solved analytically if we assume that the angle $\phi$ is very small. Then we can approximate our equation as
-
-!bt
-\[
-\ddot{\phi}(t)=-\omega_0^2\phi(t).
-\]
-!et
-
-* _5c (5pt):_ Find the analytical solution for the last equation. Hint, look back at the solutions for the simple harmonic oscillator problem in one dimension in for example homework 7.
+Run your code and study and discuss the situations where you have
+elliptical, parabolic and hyperbolic orbits. Discuss the physics of
+these cases. The results from exercises 1, 2, 3 and 4 may be useful
+here.
 
 
-* _5d (5pt):_ Find the expressions for the kinetic and potential energies in terms of the variables $r$ and $\phi$. 
+===  Additional Bonus Exercise (10pt) ===
 
-* _5e (10pt):_ With the potential $V$  and kinetic $T$ energies, define the Lagrangian for the mathematical pendulum discussed here. Add the constraint $r=l$ via a Lagrange multiplier $\lambda$ and derive the equations of motion. Show that these result in  $\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}$ with $\omega_0^2=g/l$ and $\lambda=ml\dot{\phi}^2+mg\cos{(\phi)}$.  How would you interpret $\lambda$? 
+You don't need to do this exercise, but it gives you a bonus score of 10 points.
+
+This time the additional bonus exercise is a simple survey. We are now moving
+into our last month  and we would very much have your feedback on how
+things are functioning so that we can improve and correct. 
+
+* Is the weekly load with paper and pencil exercises and the numerical exercises reasonable?
+* Is there enough material (lectures and lecture material) to get you started with the exercises?  We are thinking of both the paper and pencil and the numerical exercises?
+* Is the pace during the lectures reasonable? And do the lectures link well with the exercises?
+* In the beginning there will always be some elements of repetition of material many of you have seen before. Do you find the choice of material the first 4 weeks adequate? Too easy? Too difficult?
+* For those of you who have taken CMSE 201 Introduction to Computational Modeling, do you feel the material taught there links well with the exercises you have done in this course? Is there is something we are missing?
+* Any other topic you would like to comment on?
+
+
 
 
 
@@ -232,6 +266,11 @@ Talks given by researchers through the following clubs:
 * Research and Idea Sharing Enterprise (RAISE)​: Meets Wednesday Nights Society for Physics Students (SPS)​: Meets Monday Nights
 * Astronomy Club​: Meets Monday Nights
 * Facility For Rare Isotope Beam (FRIB) Seminars: ​Occur multiple times a week
+
+
+If you have any questions please consult Jeremy Rebenstock, rebensto@msu.edu.
+
+All the material on extra credits is at URL:"https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/". 
 
 
 

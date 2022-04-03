@@ -1,0 +1,581 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html hw9-reveal.html hw9-reveal reveal --html_slide_theme=beige
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="PHY321: Classical Mechanics 1">
+<title>PHY321: Classical Mechanics 1</title>
+
+<!-- reveal.js: https://lab.hakim.se/reveal-js/ -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<!--
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/beigesmall.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/solarized.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/serif.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/moon.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/darkgray.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/cbc.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simula.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/league.css" id="theme">
+-->
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+<!-- Printing and PDF exports -->
+<script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+
+<style type="text/css">
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-size: 60%; font-style: italic; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+.reveal .alert-text-small   { font-size: 80%;  }
+.reveal .alert-text-large   { font-size: 130%; }
+.reveal .alert-text-normal  { font-size: 90%;  }
+.reveal .alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:5px solid #bababa;
+  -webkit-border-radius: 14px; -moz-border-radius: 14px;
+  border-radius:14px;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 30px; /* 55px; if icon */
+}
+.reveal .alert-block {padding-top:14px; padding-bottom:14px}
+.reveal .alert-block > p, .alert-block > ul {margin-bottom:1em}
+/*.reveal .alert li {margin-top: 1em}*/
+.reveal .alert-block p+p {margin-top:5px}
+/*.reveal .alert-notice { background-image: url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_notice.png); }
+.reveal .alert-summary  { background-image:url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_summary.png); }
+.reveal .alert-warning { background-image: url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_warning.png); }
+.reveal .alert-question {background-image:url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_question.png); } */
+/* Override reveal.js table border */
+.reveal table td {
+  border: 0;
+}
+
+<style type="text/css">
+/* Override h1, h2, ... styles */
+h1 { font-size: 2.8em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.4em; }
+h4 { font-size: 1.3em; }
+h1, h2, h3, h4 { font-weight: bold; line-height: 1.2; }
+body { overflow: auto; } /* vertical scrolling */
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-size: 60%; font-style: italic; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+.slide .alert-text-small   { font-size: 80%;  }
+.slide .alert-text-large   { font-size: 130%; }
+.slide .alert-text-normal  { font-size: 90%;  }
+.slide .alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:5px solid #bababa;
+    -webkit-border-radius:14px; -moz-border-radius:14px;
+  border-radius:14px
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 30px; /* 55px; if icon */
+}
+.slide .alert-block {padding-top:14px; padding-bottom:14px}
+.slide .alert-block > p, .alert-block > ul {margin-bottom:0}
+/*.slide .alert li {margin-top: 1em}*/
+.deck .alert-block p+p {margin-top:5px}
+/*.slide .alert-notice { background-image: url(https://hplgit.github.io/doconce/
+bundled/html_images//small_gray_notice.png); }
+.slide .alert-summary  { background-image:url(https://hplgit.github.io/doconce/
+bundled/html_images//small_gray_summary.png); }
+.slide .alert-warning { background-image: url(https://hplgit.github.io/doconce/
+bundled/html_images//small_gray_warning.png); }
+.slide .alert-question {background-image:url(https://hplgit.github.io/doconce/
+bundled/html_images/small_gray_question.png); } */
+.dotable table, .dotable th, .dotable tr, .dotable tr td {
+  border: 2px solid black;
+  border-collapse: collapse;
+  padding: 2px;
+}
+</style>
+
+
+<!-- Styles for table layout of slides -->
+<style type="text/css">
+td.padding {
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-right:50px;
+  padding-left:50px;
+}
+</style>
+
+</head>
+
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+
+<section>
+<!-- ------------------- main content ---------------------- -->
+<center>
+<h1 style="text-align: center;">PHY321: Classical Mechanics 1</h1>
+</center>  <!-- document title -->
+
+<!-- author(s): Homework 9, due Friday  April 22 -->
+<center>
+<b>Homework 9, due Friday  April 22</b> 
+</center>
+<!-- institution(s) -->
+<br>
+<center>
+<h4>Apr 3, 2022</h4>
+</center> <!-- date -->
+<br>
+<h3 id="practicalities-about-homeworks-and-projects">Practicalities about  homeworks and projects </h3>
+
+<ol>
+<p><li> You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. <b>Remember to write your name(s)</b>!</li>
+<p><li> Homeworks are available  the week before the deadline.</li> 
+<p><li> How do I(we)  hand in?  Due to the corona virus and many of you not being on campus, we recommend that you scan your handwritten notes and upload them to D2L. If you are ok with typing mathematical formulae using say Latex, you can hand in everything as a single jupyter notebook at D2L. The numerical exercise(s) should always be handed in as a jupyter notebook by the deadline at D2L.</li> 
+</ol>
+<p>
+<h3 id="introduction-to-homework-9">Introduction to homework 9 </h3>
+
+<p>This week's exercises focus on solving
+two-body  problems with central forces and the Lagrangian formalism (exercise 5). There are no numerical exercises. 
+</p>
+<h3 id="exercise-1-attractive-potential-10pt">Exercise 1: Attractive Potential (10pt) </h3>
+
+<p>Consider a particle in an attractive potential</p>
+<p>&nbsp;<br>
+$$
+V(r)=-\alpha/r.
+$$
+<p>&nbsp;<br>
+
+<p>The quantity \( r \) is the absolute value of the relative position. We
+will use the reduced mass \( \mu \) and the angular momentum \( L \), as
+discussed during the lectures. With the transformation of a two-body
+problem to the center-of-mass frame, the actual equations look like an
+<em>effective</em> one-body problem. The energy of the system is \( E \) and the
+minimum of the effective potential is \( r_{\rm min} \).
+</p>
+
+<p>The analytical solution to the radial equation of motion is</p>
+<p>&nbsp;<br>
+$$
+r(\phi) = \frac{1}{\frac{\mu\alpha}{L^2}+A\cos{(\phi)}}.
+$$
+<p>&nbsp;<br>
+
+<p>Find the value of \( A \). Hint: Use the fact that at \( r_{\rm min} \)
+there is no radial kinetic energy and \( E=-\alpha/r_{\rm min}+L^2/2mr_{\rm min}^2 \).
+</p>
+<h3 id="exercise-2-20pt-inverse-square-force">Exercise 2 (20pt) Inverse-square force </h3>
+
+<p>Consider again the same effective potential as in exercise 1. This leads to an attractive inverse-square-law force, \( F=-\alpha/r^2 \). Consider a particle of mass \( m \) with angular momentum \( L \). Taylor sections 8.4-8.7 are relevant background material.  See also the harmonic oscillator potential from hw8. The equation of motion for the radial degrees of freedom is (see also hw8) in the center-of-mass frame in two dimensions with \( x=r\cos{(\phi)} \) and \( y=r\sin{(\phi)} \) and
+\( r\in [0,\infty) \), \( \phi\in [0,2\pi] \) and \( r=\sqrt{x^2+y^2} \) are given by
+</p>
+<p>&nbsp;<br>
+$$
+\ddot{r}=-\frac{1}{m}\frac{dV(r)}{dr}+r\dot{\phi}^2,
+$$
+<p>&nbsp;<br>
+
+<p>and</p>
+<p>&nbsp;<br>
+$$
+\dot{\phi}=\frac{L}{m r^2}.
+$$
+<p>&nbsp;<br>
+
+<p>Here \( V(r) \) is any central force which depends only on the relative coordinate.</p>
+
+<ul>
+<p><li> 2a (5pt)  Find the radius of a circular orbit by solving for the position of the minimum of the effective potential.</li> 
+<p><li> 2b (5pt) At the minimum, the radial velocity is zero and it is only the <a href="https://en.wikipedia.org/wiki/Centripetal_force" target="_blank">centripetal velocity</a> which is nonzero. This implies that \( \ddot{r}=0 \).  What is the angular frequency, \( \dot{\theta} \), of the orbit? Solve this by setting \( \ddot{r}=0=F/m+\dot{\theta}^2r \).</li>
+<p><li> 2c (5pt) Find the effective spring constant for the particle at the minimum.</li>
+<p><li> 2d (5pt) What is the angular frequency for small vibrations about the minimum? How does this compare with the answer to 2b?</li>
+</ul>
+<p>
+<h3 id="exercise-3-inverse-square-force-again-10pt">Exercise 3, Inverse-square force again (10pt) </h3>
+
+<p>Consider again a  particle of mass \( m \) in the same attractive potential, \( V(r)=-\alpha/r \), with angular momentum \( L \) with just the right energy so that</p>
+
+<p>&nbsp;<br>
+$$
+A=m\alpha/L^2
+$$
+<p>&nbsp;<br>
+
+<p>where \( A \) comes from the expression</p>
+<p>&nbsp;<br>
+$$
+r=\frac{1}{(m\alpha/L^2)+A\cos{(\phi)}}.
+$$
+<p>&nbsp;<br>
+
+<p>The trajectory can then be rewritten as</p>
+<p>&nbsp;<br>
+$$
+r=\frac{2r_0}{1+\cos\theta},~~~r_0=\frac{L^2}{2m\alpha}.
+$$
+<p>&nbsp;<br>
+
+
+<ul>
+<p><li> 3a (5pt) Show that for this case the total energy \( E \) approaches zero.</li>
+<p><li> 3b (5pt) With zero energy \( E=0 \), write this trajectory in a more recognizable parabolic form, that is express \( x_0 \) and \( R \) in terms of \( r_0 \) using</li> 
+</ul>
+<p>
+<p>&nbsp;<br>
+$$
+x=x_0-\frac{y^2}{R}.
+$$
+<p>&nbsp;<br>
+<h3 id="exercise-4-parabolic-and-hyperbolic-orbits-10pt">Exercise 4, parabolic and hyperbolic orbits (10pt) </h3>
+
+<p>The solution to the radial function for an inverse-square-law force, see for example Taylor equation (8.59) or the equation above, is</p>
+<p>&nbsp;<br>
+$$
+r(\phi) = \frac{c}{1+\epsilon\cos{(\phi)}}.
+$$
+<p>&nbsp;<br>
+
+<p>For \( \epsilon=1 \) (or the energy \( E=0 \)) the orbit reduces to a parabola as we saw in the previous exercise,
+while for \( \epsilon > 1 \) (or energy positive) the orbit becomes a hyperbola. The equation for a hyperbola in Cartesian coordinates is
+</p>
+<p>&nbsp;<br>
+$$
+\frac{(x-\delta)^2}{\alpha^2}-\frac{y^2}{\beta^2}=1.
+$$
+<p>&nbsp;<br>
+
+<p>For a hyperbola, identify the constants \( \alpha \), \( \beta \) and \( \delta \) in terms of the constants \( c \) and \( \epsilon \) for \( r(\phi) \). </p>
+<h3 id="exercise-5-40pt-pendulum-and-lagrangians-taylor-chapters-6-7">Exercise 5 (40pt), Pendulum and Lagrangians (Taylor chapters 6-7) </h3>
+
+<p>A mathematical pendulum consists of a point mass \( m \) suspended by a massless thread/rod of length \( l \) in a gravitational field, as shown in the figure here. The constraining force is labeled by \( \boldsymbol{T} \)
+and the gravitational force is labeled \( \boldsymbol{F}_g \).
+</p>
+
+<br/><br/>
+<center>
+<p><img src="figures/Simplependulum.png" width="600" align="bottom"></p>
+</center>
+<br/><br/>
+
+<p>We assume that the length \( l \) is constant and we define the coordinates involved as</p>
+
+<p>&nbsp;<br>
+$$
+\boldsymbol{r} = l\sin(\phi)\boldsymbol{\hat{x}}+l\cos(\phi)\boldsymbol{\hat{y}},
+$$
+<p>&nbsp;<br>
+
+<p>where \( \boldsymbol{\hat{x}} \) and \( \boldsymbol{\hat{y}} \) are the unit vectors in the \( x \) and \( y \) directions, respectively.</p>
+
+<ul>
+<p><li> <b>5a (10pt):</b> Set up the forces acting on the system and show that the equation of motion is \( m\ddot{\boldsymbol{r}}=\boldsymbol{F}_g+\boldsymbol{T} \).</li>
+<p><li> <b>5b (10pt):</b> Show that you can rewrite the above equation of motion as two independent equations of motion, one for \( \phi \) and one for the constraining force. Show that these equations are \( \ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))} \) with \( \omega_0^2=g/l \) and \( T=ml\dot{\phi}^2+mg\cos{(\phi)} \).</li>
+</ul>
+<p>
+<p>The equation for \( \phi \) is a second-order differential equation</p>
+<p>&nbsp;<br>
+$$
+\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}.
+$$
+<p>&nbsp;<br>
+
+<p>This equation can be solved analytically if we assume that the angle \( \phi \) is very small. Then we can approximate our equation as</p>
+
+<p>&nbsp;<br>
+$$
+\ddot{\phi}(t)=-\omega_0^2\phi(t).
+$$
+<p>&nbsp;<br>
+
+
+<ul>
+<p><li> <b>5c (5pt):</b> Find the analytical solution for the last equation. Hint, look back at the solutions for the simple harmonic oscillator problem in one dimension in for example homework 7.</li>
+<p><li> <b>5d (5pt):</b> Find the expressions for the kinetic and potential energies in terms of the variables \( r \) and \( \phi \).</li> 
+<p><li> <b>5e (10pt):</b> With the potential \( V \)  and kinetic \( T \) energies, define the Lagrangian for the mathematical pendulum discussed here. Add the constraint \( r=l \) via a Lagrange multiplier \( \lambda \) and derive the equations of motion. Show that these result in  \( \ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))} \) with \( \omega_0^2=g/l \) and \( \lambda=ml\dot{\phi}^2+mg\cos{(\phi)} \).  How would you interpret \( \lambda \)?</li> 
+</ul>
+<p>
+<h3 id="classical-mechanics-extra-credit-assignment-scientific-writing-and-attending-talks">Classical Mechanics Extra Credit Assignment: Scientific Writing and attending Talks </h3>
+
+<p>The following gives you an opportunity to earn <b>five extra credit
+points</b> on each of the remaining homeworks and <b>ten extra credit points</b>
+on the midterms and finals.  This assignment also covers an aspect of
+the scientific process that is not taught in most undergraduate
+programs: scientific writing.  Writing scientific reports is how
+scientist communicate their results to the rest of the field.  Knowing
+how to assemble a well written scientific report will greatly benefit
+you in you upper level classes, in graduate school, and in the work
+place.
+</p>
+
+<p>The full information on extra credits is found at <a href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/" target="_blank"><tt>https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/</tt></a>. There you will also find examples on how to write a scientific article. 
+Below you can also find a description on how to gain extra credits by attending scientific talks.
+</p>
+
+<p>This assignment allows you to gain extra credit points by practicing
+your scientific writing.  For each of the remaining homeworks you can
+submit the specified section of a scientific report (written about the
+numerical aspect of the homework) for five extra credit points on the
+assignment.  For the two midterms and the final, submitting a full
+scientific report covering the numerical analysis problem will be
+worth ten extra points.  For credit the grader must be able to tell
+that you put effort into the assignment (i.e. well written, well
+formatted, etc.).  If you are unfamiliar with writing scientific
+reports, <a href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/IntroductionScientificWriting.md" target="_blank">see the information here</a>
+</p>
+
+<p>The following table explains what aspect of a scientific report is due
+with which homework.  You can submit the assignment in any format you
+like, in the same document as your homework, or in a different one.
+Remember to cite any external references you use and include a
+reference list.  There are no length requirements, but make sure what
+you turn in is complete and through.  If you have any questions,
+please contact Julie Butler at butler@frib.msu.edu.
+</p>
+
+<table class="dotable" border="1">
+<thead>
+<tr><th align="center">   HW/Project   </th> <th align="center">  Due Date </th> <th align="center">  Extra Credit Assignment   </th> </tr>
+</thead>
+<tbody>
+<tr><td align="center">   HW 3                </td> <td align="center">   2-8            </td> <td align="center">   Abstract                        </td> </tr>
+<tr><td align="center">   HW 4                </td> <td align="center">   2-15           </td> <td align="center">   Introduction                    </td> </tr>
+<tr><td align="center">   HW 5                </td> <td align="center">   2-22           </td> <td align="center">   Methods                         </td> </tr>
+<tr><td align="center">   HW 6                </td> <td align="center">   3-1            </td> <td align="center">   Results and Discussion          </td> </tr>
+<tr><td align="center">   <b>Midterm 1</b>    </td> <td align="center">   <b>3-12</b>    </td> <td align="center">   <em>Full Written Report</em>    </td> </tr>
+<tr><td align="center">   HW 7                </td> <td align="center">   3-22           </td> <td align="center">   Abstract                        </td> </tr>
+<tr><td align="center">   HW 8                </td> <td align="center">   3-29           </td> <td align="center">   Introduction                    </td> </tr>
+<tr><td align="center">   HW 9                </td> <td align="center">   4-5            </td> <td align="center">   Results and Discussion          </td> </tr>
+<tr><td align="center">   <b>Midterm 2</b>    </td> <td align="center">   <b>4-16</b>    </td> <td align="center">   <em>Full Written Report</em>    </td> </tr>
+<tr><td align="center">   HW 10               </td> <td align="center">   4-26           </td> <td align="center">   Abstract                        </td> </tr>
+<tr><td align="center">   <b>Final</b>        </td> <td align="center">   <b>4-30</b>    </td> <td align="center">   <em>Full Written Report</em>    </td> </tr>
+</tbody>
+</table>
+
+<p>You can also gain extra credits if you attend scientific talks.
+This is described here.
+</p>
+<h3 id="integrating-classwork-with-research">Integrating Classwork With Research </h3>
+
+<p>This opportunity will allow you to earn up to 5 extra credit points on a Homework per week. These points can push you above 100% or help make up for missed exercises.
+In order to earn all points you must:
+</p>
+
+<ol>
+<p><li> Attend an MSU research talk (recommended research oriented Clubs is  provided below)</li>
+<p><li> Summarize the talk using at least 150 words</li>
+<p><li> Turn in the summary along with your Homework.</li>
+</ol>
+<p>
+<p>Approved talks:
+Talks given by researchers through the following clubs:
+</p>
+<ul>
+<p><li> Research and Idea Sharing Enterprise (RAISE)&#8203;: Meets Wednesday Nights Society for Physics Students (SPS)&#8203;: Meets Monday Nights</li>
+<p><li> Astronomy Club&#8203;: Meets Monday Nights</li>
+<p><li> Facility For Rare Isotope Beam (FRIB) Seminars: &#8203;Occur multiple times a week</li>
+</ul>
+</section>
+
+
+
+</div> <!-- class="slides" -->
+</div> <!-- class="reveal" -->
+
+<script src="reveal.js/lib/js/head.min.js"></script>
+<script src="reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+  // Display navigation controls in the bottom right corner
+  controls: true,
+
+  // Display progress bar (below the horiz. slider)
+  progress: true,
+
+  // Display the page number of the current slide
+  slideNumber: true,
+
+  // Push each slide change to the browser history
+  history: false,
+
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+
+  // Enable the slide overview mode
+  overview: true,
+
+  // Vertical centering of slides
+  //center: true,
+  center: false,
+
+  // Enables touch navigation on devices with touch input
+  touch: true,
+
+  // Loop the presentation
+  loop: false,
+
+  // Change the presentation direction to be RTL
+  rtl: false,
+
+  // Turns fragments on and off globally
+  fragments: true,
+
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+
+  // Transition style
+  transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+  // Transition speed
+  transitionSpeed: 'default', // default/fast/slow
+
+  // Transition style for full page slide backgrounds
+  backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
+
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+
+  // Parallax background image
+    //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+  // Parallax background size
+  //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+
+  theme: Reveal.getQueryHash().theme, // available themes are in reveal.js/css/theme
+    transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/none
+
+});
+
+Reveal.initialize({
+  dependencies: [
+      // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+      { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+      // Interpret Markdown in <section> elements
+      { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+      // Syntax highlight for <code> elements
+      { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+      // Zoom in and out with Alt+click
+      { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+
+      // Speaker notes
+      { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+      // Remote control your reveal.js presentation using a touch device
+      //{ src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+      // MathJax
+      //{ src: 'reveal.js/plugin/math/math.js', async: true }
+  ]
+});
+
+Reveal.initialize({
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 1170,  // original: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.0
+
+});
+</script>
+
+<!-- begin footer logo
+<div style="position: absolute; bottom: 0px; left: 0; margin-left: 0px">
+<img src="somelogo.png">
+</div>
+   end footer logo -->
+
+
+
+
+</body>
+</html>
