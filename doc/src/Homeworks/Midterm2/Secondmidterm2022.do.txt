@@ -5,13 +5,13 @@ DATE: today
 ===  Practicalities about  homeworks and projects ===
 
 o You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. _Remember to write your name(s)_!
-o How do I(we)  hand in?  Due to the extraordinary situation we are in now, the midterm should be handed in fully via D2L. You can scan your handwritten notes and upload to D2L or you can hand in everything (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical part should always be handed in as a jupyter notebook.
+o How do I(we)  hand in?  The midterm should be handed in fully via D2L. You can scan your handwritten notes and upload to D2L or you can hand in everything (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical part should always be handed in as a jupyter notebook.
 
 === Introduction to the second midterm project, total score 100 points ===
 
 In this midterm we will attempt at writing a program that simulates
 the solar system. We start with the Earth-Sun system we studied in
-homeworks 5 and 6 and study elliptical orbits and their properties. We test
+homework 5  and study elliptical orbits and their properties. We test
 also elliptical orbits and their dependence on powers $\beta$ of
 $r^{\beta}$. We will test other aspects of the Earth-Sun system and
 link these to the theoretical discussion on two-body problems with
@@ -23,12 +23,15 @@ attempt at making a code which simulates the solar system.
 The relevant reading background is
 o chapter 8 of  Taylor.
 o Lecture notes on central forces and two-body problems, see also the Jupyter-Book at URL:"https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/" and go "Two-body problems, from the Gravitational Force to Two-body Scattering":"https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter6.html".
-o Homeworks 5-9
+o Homework assignments  5-8
+
+
+
 
 
 === Part 1 (50pt), the inverse-square law and the stability of planetary orbits ===
 
-In homework 9 we studied an attractive potential
+In our lectures (see also Taylor chapter 8)  we have studied an attractive potential
 !bt
 \[
 V(r)=-\alpha/r,
@@ -63,16 +66,16 @@ planets have more elliptical orbits. For example, Mars has its
 perihelion at 206,655,215 km and its apehelion at 249,232,432 km.
 
 In this part we will limit ourselves to the Earth-Sun system we
-studied in homeworks 5 and 6. You can reuse your code with either the
-Velocity-Verlet or the Euler-Cromer algorithms from homework 5 or 6.
+studied in homework 5. You can reuse your code with either the
+Velocity-Verlet or the Euler-Cromer algorithms from homework 5.
 
 This means also that $\alpha=GM_{\odot}M_{\mathrm{Earth}}$. We will
 use $\alpha$ as a shorthand in the equations here. Keep in mind that
 in homework 5 you scaled $GM_{\odot}=4\pi^2$ in your code.
 
-The exercises here are all based on you analyzing the results from your code from homeworks 5, 6, 7 and 8.
+The exercises here are all based on you analyzing the results from your codes from homework 5. Homework 8 is also useful.
 
-As a reminder, we list the equations we studied in homeworks 5 and 6.
+As a reminder, we list the equations we studied in homework 5.
 Newton's law of gravitation is given by a force $F_G$ (we assume this
 is the force acting on Earth from the Sun)
 
@@ -88,7 +91,7 @@ the distance between the Earth and the Sun.  We assumed that the Sun
 has a mass which is much larger than that of the Earth. We could
 therefore safely neglect the motion of the Sun.
 
-In homeworks 5 and 6 we assumed that the orbit of the Earth around the Sun 
+In homework 5 we assumed that the orbit of the Earth around the Sun 
 was co-planar, and we took this to be the $xy$-plane.
 Using Newton's second law of motion we got the following equations
 
@@ -108,13 +111,13 @@ and
 where $F_{G,x}$ and $F_{G,y}$ are the $x$ and $y$ components of the
 gravitational force.
 
-You can obviously set $\alpha=GM_{\odot}M_{\mathrm{Earth}}$ as we did in homeworks 5 and 6.
+You can obviously set $\alpha=GM_{\odot}M_{\mathrm{Earth}}$.
 
 
 
 
 
-* 1a (10pt) Use now your code from homework 5 (in cartesian coordinates). Start with a circular orbit (this corresponds to  setting $\epsilon=0$ for the equations in Polar coordinates), and plot $x$ versus $y$. How would you choose the initial conditions to obtain a circular orbit?  _Note_ the your code will be run in Cartesian coordinates.
+* 1a (10pt) Use now your code from homework 5 (in cartesian coordinates). Start with a circular orbit (this corresponds to  setting $\epsilon=0$ for the equations in Polar coordinates), and plot $x$ versus $y$. How would you choose the initial conditions to obtain a circular orbit?  _Note_ that your code should be set up  in Cartesian coordinates.
 
 * 1b (10pt) Check that for the case of a circular orbit that both the kinetic and the potential energies are conserved. Why do we expect such a result if we have a circular orbit? 
 
@@ -283,9 +286,10 @@ Talks given by researchers through the following clubs:
 * Facility For Rare Isotope Beam (FRIB) Seminars: ​Occur multiple times a week
 
 
-If you have any questions please consult Jeremy Rebenstock, rebensto@msu.edu.
 
 All the material on extra credits is at URL:"https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/". 
+
+
 
 
 
