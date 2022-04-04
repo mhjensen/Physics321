@@ -1,6 +1,7 @@
 ##  Teaching schedule with links to material
 
 
+
 ###  Week 2, January 10-14, 2022
 
 - Monday 1/10: Introduction to the course and reminder  on vectors, space, time and motion, JRT chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). Python programming reminder, elements from CMSE 201 and how they are used in this course. Installing software (anaconda). See slides at https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). 
@@ -102,6 +103,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Video of lecture at https://youtu.be/jQ-l6P3qW18
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesMarch2.pdf      
 - Friday 3/4:  Discussion  of first midterm. Deadline for first midterm.
+- Solution first midterm  at https://github.com/mhjensen/Physics321/tree/master/doc/MidTermProjects/Firstmidterm2022/solution
 
 ### Week 10 Spring break, no lectures
 
@@ -121,8 +123,6 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 - Reading suggestions for week 11: Taylor sections 5.6-5.8 and lecture notes at URL:"https://mhjensen.github.io/Physics321/doc/pub/week10/html/week10-reveal.html"
   - Video of discussion of exercise 3 at https://youtu.be/F6v8-TPhHPA
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesMarch18.pdf
-
-
 
 
 ### Week 12, March 21-25, 2022
@@ -152,20 +152,21 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 - Friday 4/1:  Summary of week and discussion of homework 8
   - Video of lecture https://youtu.be/haXRjRByjJs
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesApril1.pdf
+- Solution eight assignment at https://github.com/mhjensen/Physics321/tree/master/doc/Homeworks/hw8/solution
 
 ### Week 14, April 4-8, 2022
 - Monday 4/4: Physical interpretation of various orbit types
-  - Reading suggestions: lecture notes and Taylor section 8.5-8.8 
-- Wednesday 4/6: Interpretation of various orbit types and start discussion two-body scattering
-  - Reading suggestions: lecture notes and Taylor section 8.5-8.8 and sections 14.1-14.2 
-- Friday 4/8: Summary of week and discussion of second midterm. 
+  - Reading suggestions: lecture notes and Taylor section 8.5-8.8. Second midterm available April 4 
+- Wednesday 4/6: Start discussion two-body scattering
+  - Reading suggestions: lecture notes and Taylor sections 14.1-14.2 
+- Friday 4/8: Summary of week, short discussion of two-body scattering  and discussion of and work on second midterm. Deadline 2nd midterm is April 15
 
 ### Week 15, April  11-15, 2022
 - Monday 4/11: Two-body scattering
   - Reading suggestion: Lecture notes and Taylor sections 14.3-14.6 
-- Wednesday 4/14: Finalizing discussion of two-body scattering and start Lagrangian formalism
-  - Reading suggestions: lecture notes and Taylor sections 14.3-14.6 and 6.1-6.3
-- Friday 4/16: Summary of week and discussion of eigth homework. Deadline second midterm.
+- Wednesday 4/14: Lagrangian formalism
+  - Reading suggestions: lecture notes and Taylor sections 6.1-6.3
+- Friday 4/16: Summary of week and work on second midterm. Deadline second midterm.
 
 
 ### Week 16, April 18-22, 2022
@@ -183,43 +184,6 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 
 ### Week 18, May 2-6, 2022
 Depending on your availability, we can have at least two sessions in order to discuss the final project.
-- Final Exam:  The final exam will be a project similar to the two midterm projects. Deadline May 6.
-
-
-## Learning outcomes
-
-After the course you should:
-
-- be able to analyze forces that act on objects, apply Newton’s laws to determine the equations of motion, and solve these analytically and numerically,
-- Know about  inertial frames and their relation to accelerating and rotating frames (non-inertial frames)
-- Know about forces, work, energy, angular momentum, linear momentum and conservation laws
-- Know about  various types of motions, falling objects, objects moving in various fields
-- Know how to analyze energy diagrams and defining effective potential
-- Have knowledge about small oscillations, Harmonic oscillator potential and equations of motion
-- Have knowledge about transformation of variables that allow for analytical solutions, example two-body problems
-- Have knowledge about central forces and two-body problems, center-of-mass and relative coordinates as reference frame
-- Have knowledge about two-body scattering problems, classical scattering cross section
-- Have knowledge about Variational calculus and Lagrangian formalism
-- Know how to derive the equations of motion from the Lagrangian formalism with and without constraints (Lagrangian multipliers)
-
-To solve many of these problems, we have through different projects and weekly exercises studied many systems numerically, from falling objects with and without friction/air resistance, small oscillations (harmonic oscillator), gravitational problems and other central force problems, rotations and the classical pendulum. To solve these systems, we have applied different algorithms for solving differential equations. These are
-- Euler-Cromer and Velocity-Verlet as energy conserving algorithms (time-independent forces)
-- Runge-Kutta family of algorithms for time-dependent forces
-We have also, in connection with for example the work-energy theorem studied methods for evaluating integrals. These are
-- Numerical integration using the Trapezoidal, midpoint and Simpson's rule.
-
-You should also have acquired skills in structuring a numerical project, as well as having developed a critical understanding of the pros and cons of the methods and an understanding of their limits and what can go wrong.  Computing means solving scientific problems using computers. It covers numerical as well as symbolic computing. Computing is also about developing an understanding of the scientific process by enhancing algorithmic thinking when solving problems.  Computing competence has
-always been a central part of the science and engineering education.
-In particular, some of the competences that are important in the development of your own understanding of
-computations, we would like to emphasize
-- derivation, verification, and implementation of algorithms
-- understanding what can go wrong with algorithms
-- overview of important, known algorithms for solving mechanics problems (To a extent large differential equations and integration)
-- understanding how algorithms are used to solve mathematical problems
-- Making science (your results) reproducible
-- algorithmic thinking for gaining deeper insights about scientific problems
-
-
-
+- Final Exam:  The final exam will be a project similar to the two midterm projects. Deadline May 6 at midnight.
 
 
