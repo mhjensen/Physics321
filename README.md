@@ -203,6 +203,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Video of lecture at https://youtu.be/jQ-l6P3qW18
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesMarch2.pdf      
 - Friday 3/4:  Discussion  of first midterm. Deadline for first midterm.
+- Solution first midterm  at https://github.com/mhjensen/Physics321/tree/master/doc/MidTermProjects/Firstmidterm2022/solution
 
 ### Week 10 Spring break, no lectures
 
@@ -251,6 +252,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 - Friday 4/1:  Summary of week and discussion of homework 8
   - Video of lecture https://youtu.be/haXRjRByjJs
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesApril1.pdf
+- Solution eight assignment at https://github.com/mhjensen/Physics321/tree/master/doc/Homeworks/hw8/solution
 
 ### Week 14, April 4-8, 2022
 - Monday 4/4: Physical interpretation of various orbit types
