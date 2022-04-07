@@ -259,9 +259,11 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Reading suggestions: lecture notes and Taylor section 8.5-8.8. Second midterm available April 4 
   - Video of lecture at https://youtu.be/Kk6cfqhxxRo
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesApril4.pdf  
-- Wednesday 4/6: Start discussion two-body scattering
-  - Reading suggestions: lecture notes and Taylor sections 14.1-14.2 
-- Friday 4/8: Summary of week, short discussion of two-body scattering  and discussion of and work on second midterm. Deadline 2nd midterm is April 15
+- Wednesday 4/6:  Discussion of second midterm, hints and tips plus Kepler orbit analysis
+  - Video of Lecture at https://youtu.be/4l6nLXgF6Hw
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesApril6.pdf
+
+- Friday 4/8: Summary of week and discussion of and work on second midterm. Deadline 2nd midterm is April 15
 
 ### Week 15, April  11-15, 2022
 - Monday 4/11: Two-body scattering
