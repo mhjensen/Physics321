@@ -1,7 +1,6 @@
 ##  Teaching schedule with links to material
 
 
-
 ###  Week 2, January 10-14, 2022
 
 - Monday 1/10: Introduction to the course and reminder  on vectors, space, time and motion, JRT chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). Python programming reminder, elements from CMSE 201 and how they are used in this course. Installing software (anaconda). See slides at https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). 
@@ -157,13 +156,19 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 ### Week 14, April 4-8, 2022
 - Monday 4/4: Physical interpretation of various orbit types
   - Reading suggestions: lecture notes and Taylor section 8.5-8.8. Second midterm available April 4 
-- Wednesday 4/6: Start discussion two-body scattering
-  - Reading suggestions: lecture notes and Taylor sections 14.1-14.2 
-- Friday 4/8: Summary of week, short discussion of two-body scattering  and discussion of and work on second midterm. Deadline 2nd midterm is April 15
+  - Video of lecture at https://youtu.be/Kk6cfqhxxRo
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesApril4.pdf  
+- Wednesday 4/6:  Discussion of second midterm, hints and tips plus Kepler orbit analysis
+  - Video of Lecture at https://youtu.be/4l6nLXgF6Hw
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesApril6.pdf
 
+- Friday 4/8: Summary of week and discussion of and work on second midterm. Deadline 2nd midterm is April 15
+  - Video at https://youtu.be/tIO5OWGZ76c
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesApril8.pdf
+  
 ### Week 15, April  11-15, 2022
 - Monday 4/11: Two-body scattering
-  - Reading suggestion: Lecture notes and Taylor sections 14.3-14.6 
+  - Reading suggestion: Lecture notes and Taylor sections 14.1-14.6 
 - Wednesday 4/14: Lagrangian formalism
   - Reading suggestions: lecture notes and Taylor sections 6.1-6.3
 - Friday 4/16: Summary of week and work on second midterm. Deadline second midterm.
