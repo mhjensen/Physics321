@@ -269,7 +269,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   
 ### Week 15, April  11-15, 2022
 - Monday 4/11: Two-body scattering
-  - Reading suggestion: Lecture notes and Taylor sections 14.1-14.6 
+  - Reading suggestion: Lecture notes and Taylor sections 14.1-14.3
 - Wednesday 4/14: Lagrangian formalism
   - Reading suggestions: lecture notes and Taylor sections 6.1-6.3
 - Friday 4/16: Summary of week and work on second midterm. Deadline second midterm.
