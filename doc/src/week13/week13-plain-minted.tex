@@ -50,29 +50,6 @@ final,                   % draft: marks overfull hboxes, figures with paths
 
 \setcounter{tocdepth}{2}  % levels in table of contents
 
-% --- fancyhdr package for fancy headers ---
-\usepackage{fancyhdr}
-\fancyhf{} % sets both header and footer to nothing
-\renewcommand{\headrulewidth}{0pt}
-\fancyfoot[LE,RO]{\thepage}
-% Ensure copyright on titlepage (article style) and chapter pages (book style)
-\fancypagestyle{plain}{
-  \fancyhf{}
-  \fancyfoot[C]{{\footnotesize \copyright\ 1999-2022, "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/". Released under CC Attribution-NonCommercial 4.0 license}}
-%  \renewcommand{\footrulewidth}{0mm}
-  \renewcommand{\headrulewidth}{0mm}
-}
-% Ensure copyright on titlepages with \thispagestyle{empty}
-\fancypagestyle{empty}{
-  \fancyhf{}
-  \fancyfoot[C]{{\footnotesize \copyright\ 1999-2022, "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/". Released under CC Attribution-NonCommercial 4.0 license}}
-  \renewcommand{\footrulewidth}{0mm}
-  \renewcommand{\headrulewidth}{0mm}
-}
-
-\pagestyle{fancy}
-
-
 % prevent orhpans and widows
 \clubpenalty = 10000
 \widowpenalty = 10000
@@ -115,12 +92,12 @@ PHY321: Two-body problems, gravitational forces and two-body scattering
 % ----------------- author(s) -------------------------
 
 \begin{center}
-{\bf \href{{http://mhjgit.github.io/info/doc/web/}}{Morten Hjorth-Jensen}${}^{1, 2}$} \\ [0mm]
+{\bf \href{{http://mhjgit.github.io/info}}{Morten Hjorth-Jensen}${}^{1, 2}$} \\ [0mm]
 \end{center}
 
 \begin{center}
 % List of all institutions:
-\centerline{{\small ${}^1$Department of Physics and Astronomy and Facility for Rare Ion Beams (FRIB), Michigan State University, USA}}
+\centerline{{\small ${}^1$Department of Physics and Astronomy and Facility for Rare Isotope Beams (FRIB), Michigan State University, USA}}
 \centerline{{\small ${}^2$Department of Physics, University of Oslo, Norway}}
 \end{center}
     
@@ -128,7 +105,7 @@ PHY321: Two-body problems, gravitational forces and two-body scattering
 
 % --- begin date ---
 \begin{center}
-Apr 8, 2022
+Apr 11, 2022
 \end{center}
 % --- end date ---
 
