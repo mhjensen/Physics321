@@ -1,8 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# <!-- HTML file automatically generated from DocOnce source (https://github.com/doconce/doconce/)
+# doconce format html chapter6.do.txt  -->
+
 # # Two-body problems, from the Gravitational Force to Two-body Scattering
-# 
+
 # ## Introduction and Definitions
 # 
 # Central forces are forces which are directed towards or away from a
@@ -98,10 +101,8 @@
 # However, before we arrive at these lovely insights, we need to
 # introduce some mathematical manipulations and definitions. We conclude
 # this chapter with a discussion of two-body scattering.
-# 
-# 
+
 # ## Center of Mass and Relative Coordinates
-# 
 # 
 # Thus far, we have considered the trajectory as if the force is
 # centered around a fixed point. For two bodies interacting only with
@@ -233,8 +234,7 @@
 # then treat the problem as one of a single particle of mass $\mu$
 # undergoing a force $\boldsymbol{F}_{12}$. Scattering angles, see our discussion of scattering problems below, can also be
 # expressed in this frame.  Before we proceed to our definition of the CoM frame we need to set up the expression for the energy in terms of the relative and CoM coordinates.
-# 
-# 
+
 # ### Kinetic and total Energy
 # 
 # The kinetic energy and momenta also have analogues in center-of-mass
@@ -312,8 +312,7 @@
 
 # Below we will define a reference frame, the so-called CoM-frame, where
 # $\boldsymbol{R}=0$. This is going to simplify our equations further.
-# 
-# 
+
 # ### Conservation of Angular Momentum
 # 
 # The angular momentum (the total one) is the sum of the individual angular momenta. In our case we have two bodies only, meaning that our angular momentum is defined as
@@ -376,7 +375,6 @@
 # relative coordinate and the relative momentum. The angular
 # momentum is perpendicular to the plane spanned by these two vectors.
 # 
-# 
 # It means also, since $\boldsymbol{L}$ is conserved, that we can reduce our
 # problem to a motion in say the $xy$-plane.  What we have done then is to
 # reduce a two-body problem in three-dimensions with six degrees of
@@ -408,7 +406,7 @@
 # and $x=r\cos\phi$ and $y=r\sin\phi$, we will rewrite our equation of motion by transforming from Cartesian coordinates to Polar coordinates. By so doing, we end up with two differential equations which can be solved analytically (it depends on the form of the potential).
 # 
 # What follows now is a rewrite of these equations and the introduction of Kepler's laws as well.
-# 
+
 # ## Deriving Elliptical Orbits
 # 
 # Kepler's laws state that a gravitational orbit should be an ellipse
@@ -417,7 +415,6 @@
 # conservation to transform the equations of motion so that it is in
 # terms of $r$ and $\phi$ instead of $r$ and $t$. The overall strategy
 # is to
-# 
 # 
 # 1. Find equations of motion for $r$ and $t$ with no angle ($\phi$) mentioned, i.e. $d^2r/dt^2=\cdots$. Angular momentum conservation will be used, and the equation will involve the angular momentum $L$.
 # 
@@ -632,7 +629,6 @@
 
 # By inspection, this is the same form as Eq. ([9](#eq:Ctrajectory)) with $D/(D^2-a^2)=m\alpha/L^2$ and $a/(D^2-a^2)=A$.
 # 
-# 
 # Let us remind ourselves about what an ellipse is before we proceed.
 
 # In[1]:
@@ -807,8 +803,8 @@ save_fig("RadialGVV")
 plt.show()
 
 
-# Changing the value of the initial position to a value where the energy is positive, leads to an increasing radius with time, a so-called unbound orbit. Choosing on the other hand an initial radius that corresponds to a negative energy and different from the minimum value leads to a radius that oscillates back and forth between two values. 
-# 
+# Changing the value of the initial position to a value where the energy is positive, leads to an increasing radius with time, a so-called unbound orbit. Choosing on the other hand an initial radius that corresponds to a negative energy and different from the minimum value leads to a radius that oscillates back and forth between two values.
+
 # ### Harmonic Oscillator in two dimensions
 # 
 # Consider a particle of mass $m$ in a 2-dimensional harmonic oscillator with potential
@@ -974,7 +970,7 @@ plt.show()
 # \begin{eqnarray*}
 # r^2&=&x^2+y^2\\
 # \nonumber
-# &=&(A^2+C^2)\cos^2(\omega_0t)+(B^2+D^2)\sin^2\omega_0t+(AB+CD)\cos(\omega_0t)\sin(\omega_0t)\\
+# &=&(A^2+C^2)\cos^2(\omega_0t)+(B^2+D^2)\sin^2\omega_0t+2(AB+CD)\cos(\omega_0t)\sin(\omega_0t)\\
 # \nonumber
 # &=&\alpha+\beta\cos 2\omega_0 t+\gamma\sin 2\omega_0 t,\\
 # \alpha&=&\frac{A^2+B^2+C^2+D^2}{2},~~\beta=\frac{A^2-B^2+C^2-D^2}{2},~~\gamma=AB+CD,\\
@@ -1063,12 +1059,10 @@ plt.show()
 # somewhere with negative potential. The circular orbits are then stable
 # to perturbation.
 # 
-# 
 # The effective potential is sketched for two cases, a $1/r$ attractive
 # potential and a $1/r^3$ attractive potential. The $1/r$ case has a
 # stable minimum, whereas the circular orbit in the $1/r^3$ case is
 # unstable.
-# 
 # 
 # If one considers a potential that falls as $1/r^3$, the situation is
 # reversed and the point where $\partial_rV$ disappears will be a local
@@ -1080,11 +1074,9 @@ plt.show()
 # the clear that for potentials that fall as $r^n$, that one must have
 # $n>-2$ for the orbits to be stable.
 # 
-# 
 # Consider a potential $V(r)=\beta r$. For a particle of mass $m$ with
 # angular momentum $L$, find the angular frequency of a circular
 # orbit. Then find the angular frequency for small radial perturbations.
-# 
 # 
 # For the circular orbit you search for the position $r_{\rm min}$ where the effective potential is minimized,
 
@@ -1115,8 +1107,7 @@ plt.show()
 # $\omega=2\dot{\phi}$. In this case, $\omega=\sqrt{3}\dot{\phi}$,
 # and the angles at which the maxima and minima occur change with each
 # orbit.
-# 
-# 
+
 # ### Code example with gravitional force
 # 
 # The code example here is meant to illustrate how we can make a plot of the final orbit. We solve the equations in polar coordinates (the example here uses the minimum of the potential as initial value) and then we transform back to cartesian coordinates and plot $x$ versus $y$. We see that we get a perfect circle when we place ourselves at the minimum of the potential energy, as expected.
@@ -1396,11 +1387,10 @@ print(E)
 # can still have a finite differential cross section as we will see
 # later on.
 # 
-# 
 # An asteroid of mass $m$ and kinetic energy $E$ approaches a planet of
 # radius $R$ and mass $M$. What is the cross section for the asteroid to
 # impact the planet?
-# 
+
 # ### Solution
 # 
 # Calculate the maximum impact parameter, $b_{\rm max}$, for which the asteroid will hit the planet. The total cross  section for impact is $\sigma_{\rm impact}=\pi b_{\rm max}^2$. The maximum cross-section can be found with the help of angular momentum conservation. The asteroid's incoming momentum is $p_0=\sqrt{2mE}$ and the angular momentum is $L=p_0b$. If the asteroid just grazes the planet, it is moving with zero radial kinetic energy at impact. Combining energy and angular momentum conservation and having $p_f$ refer to the momentum of the asteroid at a distance $R$,
@@ -1437,8 +1427,6 @@ print(E)
 # of the nucleus tended to be roughly 4 orders of magnitude smaller than
 # that of the atom, which is less than the size of a football relative
 # to Spartan Stadium.
-# 
-# 
 # 
 # The incoming and outgoing angles of the trajectory are at
 # $\pm\phi'$. They are related to the scattering angle by
@@ -1614,12 +1602,11 @@ print(E)
 # $d\sigma/d\Omega$ is the same whether the interaction is positive or
 # negative.
 # 
-# 
 # Consider a particle of mass $m$ and charge $z$ with kinetic energy $E$
 # (Let it be the center-of-mass energy) incident on a heavy nucleus of
 # mass $M$ and charge $Z$ and radius $R$. Find the angle at which the
 # Rutherford scattering formula breaks down.
-# 
+
 # ### Solution
 # 
 # Let $\alpha=Zze^2/(4\pi\epsilon_0)$. The scattering angle in Eq. ([23](#eq:scattangle)) is
@@ -1651,8 +1638,6 @@ print(E)
 # $d\sigma/d\Omega$ from the Rutherford formula that allowed Rutherford
 # to infer the radius of the gold nucleus, $R$.
 # 
-# 
-# 
 # Just like electrodynamics, one can define "fields", which for a small
 # additional mass $m$ are the force per mass and the additional
 # potential energy per mass. The {\it gravitational field} related to
@@ -1683,7 +1668,6 @@ print(E)
 # number of gallons per minute of paint leaving the nozzle. If the
 # nozzle is at the center of a sphere of radius $r$, the paint per
 # square meter per minute that is deposited on some part of the sphere
-# is
 
 # $$
 # \begin{eqnarray}
@@ -1715,7 +1699,6 @@ print(E)
 # by $GM$, and one quickly "derives" Gauss's law for gravity,
 # Eq. ([25](#eq:GravGauss)).
 # 
-# 
 # Consider Earth to have its mass $M$ uniformly distributed in a sphere
 # of radius $R$. Find the magnitude of the gravitational acceleration as
 # a function of the radius $r$ in terms of the acceleration of gravity
@@ -1734,9 +1717,8 @@ print(E)
 # $$
 
 # The potential energy per mass is similar conceptually to the voltage, or electric potential energy per charge, that was studied in electromagnetism, if $V\equiv U/m$, $\boldsymbol{g}=-\nabla V$.
-# 
+
 # ## Tidal Forces
-# 
 # 
 # Consider a spherical planet of radius $r$ a distance $D$ from another
 # body of mass $M$. The magnitude of the force due to $M$ on an small
@@ -1799,7 +1781,6 @@ print(E)
 
 # This first force is the "tidal" force. It pulls objects outward from the center of the object. If the object were covered with water, it would distort the objects shape so that the shape would be elliptical, stretched out along the axis pointing toward the large mass $M$. The force is always along (either parallel or antiparallel to) the $\hat{z}$ direction.
 # 
-# 
 # Consider the Earth to be a sphere of radius $R$ covered with water,
 # with the gravitational acceleration at the surface noted by $g$. Now
 # assume that a distant body provides an additional constant
@@ -1811,8 +1792,6 @@ print(E)
 # field $a$ would seem invisible in the accelerating frame. A tidal
 # force would only appear if $a$ depended on position, i.e. $\nabla
 # \boldsymbol{a}\ne 0$.
-# 
-# 
 # 
 # Now consider that the field is no longer constant, but that instead $a=-kz$ with $|kR|<<g$.
 # 
@@ -1860,12 +1839,9 @@ print(E)
 # $$
 
 # The Moon more strongly affects tides than the Sun.
-# 
-# 
-# 
+
 # ## Exercises
-# 
-# 
+
 # ### The Earth-Sun System
 # 
 # We start with a simpler case first, the Earth-Sun system  in two dimensions only.  The gravitational force $F_G$ on the earth from the sun is
@@ -2118,7 +2094,6 @@ r[i+1] = r[i] + DeltaT*v[i+1]
 # solving the above type of problems, the so-called Velocity-Verlet
 # method.
 # 
-# 
 # Let us repeat Euler's method.
 # We have a differential equation
 
@@ -2186,7 +2161,6 @@ r[i+1] = r[i] + DeltaT*v[i+1]
 # The acceleration $a_n$ is a function of $a_n(y_n, v_n, t_n)$ and needs to be evaluated
 # as well. This is the Euler-Cromer method. It is easy to change the above code and see that with the same 
 # time step we get stable results.
-# 
 # 
 # Let us stay with $x$ (position) and $v$ (velocity) as the quantities we are interested in.
 # 
@@ -2452,7 +2426,6 @@ plt.show()
 
 # We see very clearly that Euler's method does not conserve energy!! Try to reduce the time step $\Delta t$. What do you see?
 # 
-# 
 # With the Euler-Cromer method, the only thing we need is to update the
 # position at a time $t+1$ with the update velocity from the same
 # time. Thus, the change in the code is extremely simply, and **energy is
@@ -2575,8 +2548,6 @@ plt.show()
 # the position at the updated time $t_{i+1}$ before the computing the next velocity.  Note also that the derivative of the velocity at the time
 # $t_i$ used in the updating of the position can be reused in the calculation of the velocity update as well. 
 # 
-# 
-# 
 # We can now easily add the Verlet method to our original code as
 
 # In[16]:
@@ -2645,11 +2616,7 @@ plt.show()
 
 # And we see that due to the smaller truncation error that energy conservation is improved as a function of time.
 # Try out different time steps $\Delta t$ and see if the results improve or worsen.
-# 
-# 
-# 
-# 
-# 
+
 # ### Exercise: Center-of-Mass and Relative Coordinates and Reference Frames
 # 
 # We define the two-body center-of-mass coordinate and relative coordinate by expressing the trajectories for
@@ -2767,9 +2734,6 @@ plt.show()
 # reduced mass is $\mu$, and a second trivial problem for the center of
 # mass. The reduced mass is especially convenient when one is
 # considering gravitational problems, as we have seen during the lectures of weeks 11-13.
-# 
-# 
-# 
 # 
 # * 2b (5pt) Show that the linear momenta for the center-of-mass $\boldsymbol{P}$ motion and the relative motion $\boldsymbol{q}$ are given by $\boldsymbol{P}=M\dot{\boldsymbol{R}}_{\rm cm}$ with $M=m_1+m_2$ and $\boldsymbol{q}=\mu\dot{\boldsymbol{r}}$.  The linear momentum of the relative motion is defined $\boldsymbol{q} = (m_2\boldsymbol{p}_1-m_1\boldsymbol{p}_2)/(m_1+m_2)$.
 # 
@@ -2903,10 +2867,7 @@ plt.show()
 # $$
 
 # which is what we wanted to derive.
-# 
-# 
-# 
-# 
+
 # ### Exercise: Conservation of Energy
 # 
 # The equations of motion in the center-of-mass frame in two dimensions with $x=r\cos{(\phi)}$ and $y=r\sin{(\phi)}$ and
@@ -3075,7 +3036,7 @@ plt.show()
 # If we select a potential energy larger than zero, then, since the
 # kinetic energy is always larger or equal to zero, the object will move
 # away from the origin. See also the discussion in Taylor, sections 8.4-8.6.
-# 
+
 # ### Exercise: Harmonic oscillator again
 # 
 # Consider a particle of mass $m$ in a $2$-dimensional harmonic oscillator with potential
@@ -3089,7 +3050,6 @@ plt.show()
 # $r$, but for small $r$, the centrifugal potential repels the particle
 # from the origin. The combination of the two potentials has a minimum
 # for at some radius $r_{\rm min}$.
-# 
 # 
 # Set up the effective potential and plot it. Find $r_{\rm min}$ and $\dot{\phi}$. Show that the latter is given by $\dot{\phi}=\sqrt{k/m}$.  At $r_{\rm min}$ the particle does not accelerate and $r$ stays constant and the motion is circular. With fixed $k$ and $m$, which parameter can we adjust to change the value of $r$ at $r_{\rm min}$?
 # 
@@ -3154,8 +3114,6 @@ plt.show()
 # 
 # For the above parameters this minimum is at $r_{\rm min}=1$.
 # 
-# 
-# 
 # Now consider small vibrations about $r_{\rm min}$. The effective spring constant is the curvature of the effective potential.  Use the curvature at $r_{\rm min}$ to find the effective spring constant (hint, look at  exercise 4 in homework 6) $k_{\mathrm{eff}}$. Show also that $\omega=\sqrt{k_{\mathrm{eff}}/m}=2\dot{\phi}$
 
 # $$
@@ -3172,9 +3130,6 @@ plt.show()
 # minimum in an orbit. One can show that the orbit for the harmonic
 # oscillator is also elliptical, but in this case the center of the
 # potential is at the center of the ellipse, not at one of the foci.
-# 
-# 
-# 
 # 
 # The solution to the equations of motion in Cartesian coordinates is simple. The $x$ and $y$ equations of motion separate, and we have $\ddot{x}=-kx/m$ and $\ddot{y}=-ky/m$. The harmonic oscillator is indeed a system where the degrees of freedom separate and we can find analytical solutions. Define a natural frequency $\omega_0=\sqrt{k/m}$ and show that (where $A$, $B$, $C$ and $D$ are arbitrary constants defined by the initial conditions)
 
@@ -3337,18 +3292,11 @@ plt.show()
 # \end{equation}
 # $$
 
-# which is what we wanted to show.  
-# 
-# 
-# 
-# 
-# 
-# 
-# 
+# which is what we wanted to show.
+
 # ### Exercise: Numerical Solution of the Harmonic Oscillator
 # 
 # Using the code we developed in homeworks 5 and/or 6 for the Earth-Sun system, we can solve the above harmonic oscillator problem in two dimensions using our code from this homework. We need however to change the acceleration from the gravitational force to the one given by the harmonic oscillator potential.
-# 
 # 
 # * 3a (20pt) Use for example the  code in the exercise set to set up the acceleration and use the initial conditions fixed by for example $r_{\rm min}$ from exercise 2. Which value should the initial velocity take if you place yourself at $r_{\rm min}$ and you require a circular motion? Hint: see the first midterm, part 2. There you used the centripetal acceleration.  
 # 
@@ -3473,7 +3421,6 @@ plt.show()
 
 # We see that the radius (to within a given error), we obtain a constant radius.
 # 
-# 
 # The following code shows first how we can solve this problem using the radial degrees of freedom only.
 # Here we need to add the explicit centrifugal barrier.  Note that the variable $r$ depends only on time. There is no $x$ and $y$ directions
 # since we have transformed the equations to polar coordinates.
@@ -3558,10 +3505,8 @@ plt.show()
 # \\ \frac{x^2}{D^2} + \frac{y^2}{D^2-a^2} = 1,
 # $$
 
-# where the last line is indeed the equation for an ellipse. 
-# 
-# 
-# 
+# where the last line is indeed the equation for an ellipse.
+
 # ### Exercise: Attractive Potential
 # 
 # Consider a particle in an attractive potential
@@ -3576,7 +3521,6 @@ plt.show()
 # problem to the center-of-mass frame, the actual equations look like an
 # *effective* one-body problem. The energy of the system is $E$ and the
 # minimum of the effective potential is $r_{\rm min}$.
-# 
 # 
 # The analytical solution to the radial equation of motion is
 
@@ -3625,7 +3569,6 @@ plt.show()
 # $$
 
 # Here $V(r)$ is any central force which depends only on the relative coordinate.
-# 
 # 
 # Find the radius of a circular orbit by solving for the position of the minimum of the effective potential.
 
@@ -3842,8 +3785,7 @@ plt.show()
 # $$
 
 # This is in fact equal to the expression for $\dot{\theta}$. This means that small perturbations oscillate in sync with the orbit and this traces out an ellipse with a very small eccentricity, a very nice physical result.
-# 
-# 
+
 # ### Exercise: Inverse-square force again
 # 
 # Consider again a  particle of mass $m$ in the same attractive potential, $U(r)=-\alpha/r$, with angular momentum $L$ with just the right energy so that
@@ -4159,8 +4101,7 @@ plt.show()
 # $$
 
 # which is nothing but the equation for a hyperbola.
-# 
-# 
+
 # ### Exercise: Testing orbit types
 # 
 # In this exercise we can use the program for $r(\phi)$ we developed in hw8. We will use an inverse-square-law force as in the previous four exercises. The aim is to see that the orbits we get for $E<0$ become ellipses (or circles), parabola for $E=0$ and hyperbola for $E>0$.  An example code is shown here.
@@ -4238,10 +4179,7 @@ plt.show()
 # have $0<r_{\mathrm{min}} <\frac{L^2}{m\alpha}$. Try out these
 # different initial conditions in order to test these different types of
 # motion.
-# 
-# 
-# 
-# 
+
 # ### Exercise: New reference frame
 # 
 # Show that if one transforms to a reference frame where the total
@@ -4249,14 +4187,13 @@ plt.show()
 # $\boldsymbol{q}$ corresponds to either $\boldsymbol{p}_1$ or $-\boldsymbol{p}_2$. This
 # means that in this frame the magnitude of $\boldsymbol{q}$ is one half the
 # magnitude of $\boldsymbol{p}_1-\boldsymbol{p}_2$.
-# 
+
 # ### Exercise: Center of mass and relative coordinates
 # 
 # Given the center of mass and relative coordinates $\boldsymbol{R}$ and $\boldsymbol{r}$, respectively, for
 # particles of mass $m_1$ and $m_2$, find the coordinates $\boldsymbol{r}_1$
 # and $\boldsymbol{r}_2$ in terms of the masses, $\boldsymbol{R}$ and $\boldsymbol{r}$.
-# 
-# 
+
 # ### Exercise: Two-body problems
 # 
 # Consider a particle of mass $m$ moving in a potential
