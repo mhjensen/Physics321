@@ -276,7 +276,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Reading suggestions: lecture notes and Taylor sections 6.1-6.3
   - Video of lecture at https://indico.frib.msu.edu/event/54/
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesApril13.pdf    
-- Friday 4/15: Summary of week and work on second midterm. Deadline second midterm.
+- Friday 4/16: Summary of week and work on second midterm. Deadline second midterm.
 
 
 ### Week 16, April 18-22, 2022
