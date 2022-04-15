@@ -1,5 +1,5 @@
 TITLE: PHY321: Classical Mechanics 1
-AUTHOR: First midterm project, due Wednesday March 12
+AUTHOR: First midterm project, due Friday March 3
 DATE: An attempt at a solution
 
 
@@ -348,7 +348,7 @@ and dividing by the mass $m$ we find the acceleration
 
 
 
-o (10pt) Rewrite your program to find the velocity and position of the atom using the new expression for the force $\bm{F}$. Use vectorized expressions in your code as you did in homework 6 for the Earth-Sun system. See eventually the code from the "lectures":"https://mhjensen.github.io/Physics321/doc/pub/energyconserv/html/energyconserv.html".  We recommend to revisit the Earth-Sun problem from homework 6 since it has several similarities with the problem here.
+o (10pt) Rewrite your program to find the velocity and position of the atom using the new expression for the force $\bm{F}$. Use vectorized expressions in your code as you did in homework 5 for the Earth-Sun system. See eventually the code from the "lectures":"https://mhjensen.github.io/Physics321/doc/pub/energyconserv/html/energyconserv.html".  We recommend to revisit the Earth-Sun problem from homework 5 since it has several similarities with the problem here.
 
 o (10pt) Plot the motion of a particle starting in $\bm{r}_0=(d,0)$ from $t=0$ s to $t=20$ s for the initial velocities $\bm{v}_0=(0,0.5)$ m/s, $\bm{v}_0=(0,1)$ m/s, and $\bm{v}_0=(0,1.5)$ m/s. The parameters $d$ and $V_0$ are as before.
 
@@ -367,6 +367,100 @@ radius vector)
 \\ v_0 & = \sqrt{\frac{4 V_0}{m d^4}(r_0^4 - r_0^2d^2)} \text{ for } r_0 \neq d
 \end{align}
 !et
+
+
+The code which can be used for studying the various situations
+discussed above is included here. The code uses a circular motion as
+initial conditions. Note also that we have defined a function which calculates the explicit force.
+
+!bc pycod
+# Common imports
+import numpy as np
+import pandas as pd
+from math import *
+import matplotlib.pyplot as plt
+import os
+
+# Where to save the figures and data files
+PROJECT_ROOT_DIR = "Results"
+FIGURE_ID = "Results/FigureFiles"
+DATA_ID = "DataFiles/"
+
+if not os.path.exists(PROJECT_ROOT_DIR):
+    os.mkdir(PROJECT_ROOT_DIR)
+
+if not os.path.exists(FIGURE_ID):
+    os.makedirs(FIGURE_ID)
+
+if not os.path.exists(DATA_ID):
+    os.makedirs(DATA_ID)
+
+def image_path(fig_id):
+    return os.path.join(FIGURE_ID, fig_id)
+
+def data_path(dat_id):
+    return os.path.join(DATA_ID, dat_id)
+
+def save_fig(fig_id):
+    plt.savefig(image_path(fig_id) + ".png", format='png')
+
+def ForceMidterm(v,r,t):
+    rabs = np.sqrt(sum(r*r))
+    return  -V0*(4*(rabs**2)-4*d*d)*r/m/(d**4)
+
+def ForwardEulerCromer(v,r,t,n,Force):
+    for i in range(n-1):
+        a = Force(v[i],r[i],t[i])
+        v[i+1] = v[i] + DeltaT*a
+        r[i+1] = r[i] + DeltaT*v[i+1]
+        t[i+1] = t[i] + DeltaT
+
+def VelocityVerlet(v,r,t,n,Force):
+    for i in range(n-1):
+        a = Force(v[i],r[i],t[i])
+        r[i+1] = r[i] + DeltaT*v[i]+0.5*a*DeltaT*DeltaT
+        anew = Force(v[i],r[i+1],t[i+1])
+        v[i+1] = v[i] + 0.5*DeltaT*(a+anew)
+        t[i+1] = t[i] + DeltaT
+
+
+DeltaT = 0.01
+#set up arrays 
+tfinal = 10
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, a, v, and x
+t = np.zeros(n)
+v = np.zeros((n,2))
+r = np.zeros((n,2))
+# define constants
+V0= 1.0
+m = 1.0
+d = 1.0
+# Initial conditions as compact 2-dimensional arrays
+r0 = np.array([2.0,0.0])
+r[0] = r0
+r0abs = np.sqrt(sum(r[0]*r[0]))
+# circular motion velocity as initial velocity
+vcirc = sqrt(4*V0*(r0abs**4-(r0abs**2)*d*d)/m/(d**4))
+v0 = np.array([0.0,vcirc]
+v[0] = v0
+
+
+# Start integrating using the Velocity-Verlet  method
+VelocityVerlet(v,r,t,n,ForceMidterm)
+
+# Plot position as function of time    
+fig, ax = plt.subplots()
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.plot(r[:,0], r[:,1])
+fig.tight_layout()
+save_fig("Part2Firstmid")
+plt.show()
+!ec
+
+
+
 
 
 

@@ -1,0 +1,102 @@
+TITLE: PHY321: Classical Mechanics 1
+AUTHOR: Second midterm project, due Friday April 15
+DATE: An attempt at a solution
+
+
+=== Part 1 ===
+
+!bc pycod
+# Common imports
+import numpy as np
+import pandas as pd
+from math import *
+import matplotlib.pyplot as plt
+import os
+
+# Where to save the figures and data files
+PROJECT_ROOT_DIR = "Results"
+FIGURE_ID = "Results/FigureFiles"
+DATA_ID = "DataFiles/"
+
+if not os.path.exists(PROJECT_ROOT_DIR):
+    os.mkdir(PROJECT_ROOT_DIR)
+
+if not os.path.exists(FIGURE_ID):
+    os.makedirs(FIGURE_ID)
+
+if not os.path.exists(DATA_ID):
+    os.makedirs(DATA_ID)
+
+def image_path(fig_id):
+    return os.path.join(FIGURE_ID, fig_id)
+
+def data_path(dat_id):
+    return os.path.join(DATA_ID, dat_id)
+
+def save_fig(fig_id):
+    plt.savefig(image_path(fig_id) + ".png", format='png')
+
+def ForceMidterm(v,r,t):
+    rabs = np.sqrt(sum(r*r))
+    return  -V0*(4*(rabs**2)-4*d*d)*r/m/(d**4)
+
+def ForwardEulerCromer(v,r,t,n,Force):
+    for i in range(n-1):
+        a = Force(v[i],r[i],t[i])
+        v[i+1] = v[i] + DeltaT*a
+        r[i+1] = r[i] + DeltaT*v[i+1]
+        t[i+1] = t[i] + DeltaT
+
+def VelocityVerlet(v,r,t,n,Force):
+    for i in range(n-1):
+        a = Force(v[i],r[i],t[i])
+        r[i+1] = r[i] + DeltaT*v[i]+0.5*a*DeltaT*DeltaT
+        anew = Force(v[i],r[i+1],t[i+1])
+        v[i+1] = v[i] + 0.5*DeltaT*(a+anew)
+        t[i+1] = t[i] + DeltaT
+
+
+DeltaT = 0.01
+#set up arrays 
+tfinal = 10
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, a, v, and x
+t = np.zeros(n)
+v = np.zeros((n,2))
+r = np.zeros((n,2))
+# define constants
+V0= 1.0
+m = 1.0
+d = 1.0
+# Initial conditions as compact 2-dimensional arrays
+r0 = np.array([2.0,0.0])
+r[0] = r0
+r0abs = np.sqrt(sum(r[0]*r[0]))
+# circular motion velocity as initial velocity
+vcirc = sqrt(4*V0*(r0abs**4-(r0abs**2)*d*d)/m/(d**4))
+v0 = np.array([0.0,vcirc]
+v[0] = v0
+
+
+# Start integrating using the Velocity-Verlet  method
+VelocityVerlet(v,r,t,n,ForceMidterm)
+
+# Plot position as function of time    
+fig, ax = plt.subplots()
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.plot(r[:,0], r[:,1])
+fig.tight_layout()
+save_fig("Part2Firstmid")
+plt.show()
+!ec
+
+
+
+
+
+
+
+
+
+
