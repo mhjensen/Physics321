@@ -1,0 +1,118 @@
+TITLE: PHY321: Classical Mechanics 1
+AUTHOR: Second midterm project, due Friday April 15
+DATE: An attempt at a solution
+
+
+
+=== Part 2, Earth, Sun and Jupyter ===
+
+!bc pycod
+# Defining a general class for all of the planets considered (and the sun)
+class planet_object:
+
+    def __init__(self, mass, name, position, velocity, acceleration):
+        
+        self.mass = mass
+        self.name = name
+        self.position = position
+        self.velocity = velocity
+        self.acceleration = acceleration
+
+# Defining a newe class to store the arrays for the planet objects
+class vector:
+
+    def __init__(self, x, y):
+
+        x_array = np.zeros(1200)
+        y_array = np.zeros(1200)
+        x_array[0] = x
+        y_array[0] = y
+        self.x = x_array
+        self.y = y_array
+
+
+
+i] - jupiter.position.y[i])) / (np.sqrt((earth.position.x[i] - jupiter.position.x[i])**2 + (earth.position.y[i] - jupiter.position.y[i])**2))**3'  # earth acceleration in y-direction
+a_e = [ax_e, ay_e]
+
+
+
+ax_j = '-4 * np.pi**2 * jupiter.position.x[i] / (np.sqrt(jupiter.position.x[i]**2 + jupiter.position.y[i]**2))**3 -  ((3 * 10**(-6)) * 4 * np.pi**2 * (jupiter.position.x[i] - earth.position.x[i])) / (np.sqrt((jupiter.position.x[i] - earth.position.x[i])**2 + (jupiter.position.y[i] - earth.position.y[i])**2))**3'  # jupiter acceleration in x-direction
+ay_j = '-4 * np.pi**2 * jupiter.position.y[i] / (np.sqrt(jupiter.position.x[i]**2 + jupiter.position.y[i]**2))**3 -  ((3 * 10**(-6)) * 4 * np.pi**2 * (jupiter.position.y[i] - earth.position.y[i])) / (np.sqrt((jupiter.position.x[i] - earth.position.x[i])**2 + (jupiter.position.y[i] - earth.position.y[i])**2))**3'  # jupiter acceleration in y-direction
+a_j = [ax_j, ay_j]
+
+
+
+time = np.zeros(1200)
+dt = 0.01
+
+
+
+def euler_cromer(sun, earth, jupiter, a_e, a_j):
+
+        '''
+	        equations of motion using the euler cromer method
+		        inputs:
+
+            self: numeric_solver object
+
+        returns:
+
+            data_frame: pandas df
+
+                df of time, acceleration, velocity, and position
+
+        '''
+
+
+
+        for i in range(len(time)-1):
+
+            earth.acceleration.x[i] = eval(a_e[0])  # acceleration in x direction
+	                earth.acceleration.y[i] = eval(a_e[1])  # acceleration in y direction
+
+            jupiter.acceleration.x[i] = eval(a_j[0])  # acceleration in x direction
+	                jupiter.acceleration.y[i] = eval(a_j[1])  # acceleration in y direction
+
+
+
+            earth.velocity.x[i+1] = earth.velocity.x[i] + dt * earth.acceleration.x[i]  # velocity in x direction
+	                earth.velocity.y[i+1] = earth.velocity.y[i] + dt * earth.acceleration.y[i]  # velocity in x direction
+
+
+            jupiter.velocity.x[i+1] = jupiter.velocity.x[i] + dt * jupiter.acceleration.x[i]  # velocity in x direction
+	                jupiter.velocity.y[i+1] = jupiter.velocity.y[i] + dt * jupiter.acceleration.y[i]  # velocity in x direction
+
+
+            earth.position.x[i+1] = earth.position.x[i] + dt * earth.velocity.x[i+1]  # x position
+	                earth.position.y[i+1] = earth.position.y[i] + dt * earth.velocity.y[i+1]  # x position
+
+
+            jupiter.position.x[i+1] = jupiter.position.x[i] + dt * jupiter.velocity.x[i+1]  # x position
+	                jupiter.position.y[i+1] = jupiter.position.y[i] + dt * jupiter.velocity.y[i+1]  # x position
+
+            time[i+1] = time[i] + dt  # updates time array
+
+
+
+        # adds last element to numerical accelerations
+
+        earth.acceleration.x[-1] = eval(a_e[0])  # acceleration in x direction
+	        earth.acceleration.y[-1] = eval(a_e[1])  # acceleration in y direction
+
+        jupiter.acceleration.x[-1] = eval(a_j[0])  # acceleration in x direction
+	        jupiter.acceleration.y[-1] = eval(a_j[1])  # acceleration in y direction
+		        pass
+
+euler_cromer(sun, earth, jupiter, a_e, a_j)
+
+plt.figure(figsize=(8, 8))
+plt.plot(earth.position.x, earth.position.y, label = 'earth')
+plt.plot(jupiter.position.x, jupiter.position.y, label = 'jupiter')
+plt.scatter([0], [0], color="red", label="Sun")
+plt.legend()
+plt.xlabel("X-position (AU)")
+plt.ylabel("Y-position (AU)")
+
+!ec
+

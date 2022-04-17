@@ -3,9 +3,11 @@ AUTHOR: Second midterm project, due Friday April 15
 DATE: An attempt at a solution
 
 
-=== Part 1 ===
+=== Part 1e, $\beta=2$  ===
 
 !bc pycod
+%matplotlib inline
+
 # Common imports
 import numpy as np
 import pandas as pd
@@ -36,9 +38,9 @@ def data_path(dat_id):
 def save_fig(fig_id):
     plt.savefig(image_path(fig_id) + ".png", format='png')
 
-def ForceMidterm(v,r,t):
+def ForceGravity(v,r,t):
     rabs = np.sqrt(sum(r*r))
-    return  -V0*(4*(rabs**2)-4*d*d)*r/m/(d**4)
+    return  -alpha*r/(rabs**3)/m
 
 def ForwardEulerCromer(v,r,t,n,Force):
     for i in range(n-1):
@@ -56,30 +58,28 @@ def VelocityVerlet(v,r,t,n,Force):
         t[i+1] = t[i] + DeltaT
 
 
-DeltaT = 0.01
+DeltaT = 0.001
 #set up arrays 
-tfinal = 10
+tfinal = 10  # in years
 n = ceil(tfinal/DeltaT)
 # set up arrays for t, a, v, and x
 t = np.zeros(n)
 v = np.zeros((n,2))
 r = np.zeros((n,2))
 # define constants
-V0= 1.0
-m = 1.0
-d = 1.0
+alpha= 4*pi*pi
+m = 1.0   # scaled mass of the earth
 # Initial conditions as compact 2-dimensional arrays
-r0 = np.array([2.0,0.0])
+r0 = np.array([1.0,0.0])
 r[0] = r0
 r0abs = np.sqrt(sum(r[0]*r[0]))
-# circular motion velocity as initial velocity
-vcirc = sqrt(4*V0*(r0abs**4-(r0abs**2)*d*d)/m/(d**4))
-v0 = np.array([0.0,vcirc]
+# Can easily change to other initial conditions
+v0 = np.array([0.0,5.0])
 v[0] = v0
-
+v0abs = np.sqrt(sum(v[0]*v[0]))
 
 # Start integrating using the Velocity-Verlet  method
-VelocityVerlet(v,r,t,n,ForceMidterm)
+VelocityVerlet(v,r,t,n,ForceGravity)
 
 # Plot position as function of time    
 fig, ax = plt.subplots()
@@ -87,16 +87,226 @@ ax.set_xlabel('x')
 ax.set_ylabel('y')
 ax.plot(r[:,0], r[:,1])
 fig.tight_layout()
-save_fig("Part2Firstmid")
+save_fig("Part1Secondmid")
 plt.show()
+
+
+# Using the solutions for r and v we can now calculate the energies
+Ekin = np.zeros(n)
+Vpot = np.zeros(n)
+ETotal = np.zeros(n)
+# Use r and v to set up the energies
+for i in range(n):
+    rabs = np.sqrt(sum(r[i]*r[i]))
+    vabs = np.sqrt(sum(v[i]*v[i]))
+    Ekin[i] = 0.5*m*vabs*vabs
+    Vpot[i] = -alpha/rabs
+    ETotal[i] = Ekin[i]+Vpot[i]
+
+fig, ax = plt.subplots()
+ax.set_xlabel('t')
+ax.set_ylabel('E')
+ax.plot(t, ETotal)
+ax.plot(t, Ekin)
+ax.plot(t, Vpot)
+fig.tight_layout()
+save_fig("EnergySecondmid")
+plt.show()
+
+!ec
+
+
+=== Part 1e, $\beta=3$  ===
+
+!bc pycod
+%matplotlib inline
+
+# Common imports
+import numpy as np
+import pandas as pd
+from math import *
+import matplotlib.pyplot as plt
+import os
+
+# Where to save the figures and data files
+PROJECT_ROOT_DIR = "Results"
+FIGURE_ID = "Results/FigureFiles"
+DATA_ID = "DataFiles/"
+
+if not os.path.exists(PROJECT_ROOT_DIR):
+    os.mkdir(PROJECT_ROOT_DIR)
+
+if not os.path.exists(FIGURE_ID):
+    os.makedirs(FIGURE_ID)
+
+if not os.path.exists(DATA_ID):
+    os.makedirs(DATA_ID)
+
+def image_path(fig_id):
+    return os.path.join(FIGURE_ID, fig_id)
+
+def data_path(dat_id):
+    return os.path.join(DATA_ID, dat_id)
+
+def save_fig(fig_id):
+    plt.savefig(image_path(fig_id) + ".png", format='png')
+
+def ForceGravity(v,r,t):
+    rabs = np.sqrt(sum(r*r))
+    return  -alpha*r/(rabs**4)/m
+
+def ForwardEulerCromer(v,r,t,n,Force):
+    for i in range(n-1):
+        a = Force(v[i],r[i],t[i])
+        v[i+1] = v[i] + DeltaT*a
+        r[i+1] = r[i] + DeltaT*v[i+1]
+        t[i+1] = t[i] + DeltaT
+
+def VelocityVerlet(v,r,t,n,Force):
+    for i in range(n-1):
+        a = Force(v[i],r[i],t[i])
+        r[i+1] = r[i] + DeltaT*v[i]+0.5*a*DeltaT*DeltaT
+        anew = Force(v[i],r[i+1],t[i+1])
+        v[i+1] = v[i] + 0.5*DeltaT*(a+anew)
+        t[i+1] = t[i] + DeltaT
+
+
+DeltaT = 0.001
+#set up arrays 
+tfinal = 10  # in years
+n = ceil(tfinal/DeltaT)
+# set up arrays for t, a, v, and x
+t = np.zeros(n)
+v = np.zeros((n,2))
+r = np.zeros((n,2))
+# define constants
+alpha= 4*pi*pi
+m = 1.0   # scaled mass of the earth
+# Initial conditions as compact 2-dimensional arrays
+r0 = np.array([1.0,0.0])
+r[0] = r0
+r0abs = np.sqrt(sum(r[0]*r[0]))
+# circular motion velocity as initial velocity
+# Can easily change to other initial conditions
+v0 = np.array([0.0,5.0)
+v[0] = v0
+v0abs = np.sqrt(sum(v[0]*v[0]))
+
+# Start integrating using the Velocity-Verlet  method
+VelocityVerlet(v,r,t,n,ForceGravity)
+
+# Plot position as function of time    
+fig, ax = plt.subplots()
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.plot(r[:,0], r[:,1])
+fig.tight_layout()
+save_fig("Part1Secondmid")
+plt.show()
+
+
+# Using the solutions for r and v we can now calculate the energies
+Ekin = np.zeros(n)
+Vpot = np.zeros(n)
+ETotal = np.zeros(n)
+# Use r and v to set up the energies
+for i in range(n):
+    rabs = np.sqrt(sum(r[i]*r[i]))
+    vabs = np.sqrt(sum(v[i]*v[i]))
+    Ekin[i] = 0.5*m*vabs*vabs
+    Vpot[i] = -alpha*0.5/(rabs*rabs)
+    ETotal[i] = Ekin[i]+Vpot[i]
+
+fig, ax = plt.subplots()
+ax.set_xlabel('t')
+ax.set_ylabel('E')
+ax.plot(t, ETotal)
+ax.plot(t, Ekin)
+ax.plot(t, Vpot)
+fig.tight_layout()
+save_fig("EnergySecondmid")
+plt.show()
+
 !ec
 
 
 
+=== Part 2, Earth, Sun and Jupyter ===
+
+!bc pycod
+#2a
+
+DeltaT = 0.001
+
+t_final = 10 # in years
+n = ceil(t_final/DeltaT)
+# arrays for time, velocity, and position
+t = np.zeros(n)
+ve = np.zeros((n,3))
+vj = np.zeros((n,3))
+re = np.zeros((n,3))
+rj = np.zeros((n,3))
+
+# Initial conditions as 2-d arrays
+
+Mj = 1.9*10**27 #kg
+Me = 6*10**24 #kg
+Ms = 2*10**30 #kg
+alpha = (6.67e-11)*(Ms) #in m/s
+AU = 1.5*10**11 #m
+#re_j = 4.2*AU #m
+r0_e = 1000*np.array([-1.44*10**8,-4.55*10**7,3.066*10**4]) #m
+r0_j = 1000*np.array([7.26*10**8,-1.58*10**8,-1.56*10**7]) #m
+v0_e = 1000*np.array([8.65, -28.5, 7.97*10**-4]) #m/s
+v0_j = 1000*np.array([2.626,13.38,0.114]) #m/s
+
+re[0] = r0_e
+rj[0] = r0_j
+ve[0] = v0_e
+vj[0] = v0_j
+
+xj_e_sq = (rj[0]-re[0])**2
+yj_e_sq = (rj[1]-re[1])**2
+zj_e_sq = (rj[2]-re[2])**2
+
+a_j_den = xj_e_sq + yj_e_sq + zj_e_sq
 
 
+xe_j_sq = (re[0]-rj[0])**2
+ye_j_sq = (re[1]-rj[1])**2
+ze_j_sq = (re[2]-rj[2])**2
 
+a_e_den = xe_j_sq + ye_j_sq + ze_j_sq
 
+for i in range(n-1):
+    # Set up the acceleration
+    r_abs_e = sqrt(sum(re[i]*re[i]))
+    r_abs_j = sqrt(sum(rj[i]*rj[i]))
+    a_e =  (-alpha*re[i])/(r_abs_e**3)-((alpha*(Mj/Ms)*(re[i]-rj[i]))/(a_e_den)**3)
+    #a_j = -a_e
+    a_j =  (-alpha*rj[i])/(r_abs_j**3)-((alpha*(Me/Ms)*(rj[i]-re[i]))/(a_j_den)**3)
 
+    re[i+1] = re[i] + DeltaT*ve[i]+0.5*(DeltaT**2)*a_e
+    rj[i+1] = rj[i] + DeltaT*vj[i]+0.5*(DeltaT**2)*a_j
+    r_abs_e = sqrt(sum(re[i+1]*re[i+1]))
+    r_abs_j = sqrt(sum(rj[i+1]*rj[i+1]))
+   
+    a_e_new = (-alpha*(Mj/Ms)*(re[i+1]-rj[i+1]))/(a_e_den)**3
+    #a_j_new = -a_e_new
+    a_j_new = (-alpha*rj[i+1])/(r_abs_j**3)-((alpha*(Me/Ms)*(rj[i+1]-re[i+1]))/(a_j_den)**3)
+    ve[i+1] = ve[i] + 0.5*DeltaT*(a_e+a_e_new)
+    vj[i+1] = vj[i] + 0.5*DeltaT*(a_j+a_j_new)    
+   
+    t[i+1] = t[i] + DeltaT
 
+    # Plot position as function of time    
+
+plt.ylabel('')
+plt.xlabel('')
+plt.plot(re[:,0], re[:,1])
+plt.plot(rj[:,0], rj[:,1])
+plt.title('')
+plt.show()
+
+!ec
 
