@@ -43,6 +43,16 @@ doconce format html week15.do.txt --html_style=bootstrap --pygments_html_style=d
               ('Monday April 18', 3, None, 'monday-april-18'),
               ('Wednesday April 20', 3, None, 'wednesday-april-20'),
               ('Friday April 22', 3, None, 'friday-april-22'),
+              ('Why is Lagrangian defined as the difference between kinetic '
+               'and potential energy?',
+               2,
+               None,
+               'why-is-lagrangian-defined-as-the-difference-between-kinetic-and-potential-energy'),
+              ('What if we plot the difference between kinetic and potential '
+               'energy instead?',
+               2,
+               None,
+               'what-if-we-plot-the-difference-between-kinetic-and-potential-energy-instead'),
               ('Variational Calculus', 2, None, 'variational-calculus'),
               ('Variational Calculus, introducing the action',
                2,
@@ -64,7 +74,7 @@ doconce format html week15.do.txt --html_style=bootstrap --pygments_html_style=d
                2,
                None,
                'variational-calculus-alpha-dependence'),
-              ('INtegrating by Parts', 2, None, 'integrating-by-parts'),
+              ('Integrating by Parts', 2, None, 'integrating-by-parts'),
               ('Euler-Lagrange Equations', 2, None, 'euler-lagrange-equations'),
               ('Constrained motion', 2, None, 'constrained-motion'),
               ('Constrained motion, Condition for a Minimum',
@@ -148,13 +158,15 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="#monday-april-18" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Monday April 18</a></li>
      <!-- navigation toc: --> <li><a href="#wednesday-april-20" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Wednesday April 20</a></li>
      <!-- navigation toc: --> <li><a href="#friday-april-22" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Friday April 22</a></li>
+     <!-- navigation toc: --> <li><a href="#why-is-lagrangian-defined-as-the-difference-between-kinetic-and-potential-energy" style="font-size: 80%;"><b>Why is Lagrangian defined as the difference between kinetic and potential energy?</b></a></li>
+     <!-- navigation toc: --> <li><a href="#what-if-we-plot-the-difference-between-kinetic-and-potential-energy-instead" style="font-size: 80%;"><b>What if we plot the difference between kinetic and potential energy instead?</b></a></li>
      <!-- navigation toc: --> <li><a href="#variational-calculus" style="font-size: 80%;"><b>Variational Calculus</b></a></li>
      <!-- navigation toc: --> <li><a href="#variational-calculus-introducing-the-action" style="font-size: 80%;"><b>Variational Calculus, introducing the action</b></a></li>
      <!-- navigation toc: --> <li><a href="#variational-calculus-general-action" style="font-size: 80%;"><b>Variational Calculus, general Action</b></a></li>
      <!-- navigation toc: --> <li><a href="#variational-calculus-optimal-path" style="font-size: 80%;"><b>Variational Calculus, Optimal Path</b></a></li>
      <!-- navigation toc: --> <li><a href="#variational-calculus-condition-for-an-extreme-value" style="font-size: 80%;"><b>Variational Calculus, Condition for an Extreme Value</b></a></li>
      <!-- navigation toc: --> <li><a href="#variational-calculus-alpha-dependence" style="font-size: 80%;"><b>Variational Calculus. \( \alpha \) Dependence</b></a></li>
-     <!-- navigation toc: --> <li><a href="#integrating-by-parts" style="font-size: 80%;"><b>INtegrating by Parts</b></a></li>
+     <!-- navigation toc: --> <li><a href="#integrating-by-parts" style="font-size: 80%;"><b>Integrating by Parts</b></a></li>
      <!-- navigation toc: --> <li><a href="#euler-lagrange-equations" style="font-size: 80%;"><b>Euler-Lagrange Equations</b></a></li>
      <!-- navigation toc: --> <li><a href="#constrained-motion" style="font-size: 80%;"><b>Constrained motion</b></a></li>
      <!-- navigation toc: --> <li><a href="#constrained-motion-condition-for-a-minimum" style="font-size: 80%;"><b>Constrained motion, Condition for a Minimum</b></a></li>
@@ -235,6 +247,135 @@ MathJax.Hub.Config({
 <li> Variational Calculus with examples</li>
 <li> Discussions and work on hw9, note changed deadline for hw9. The deadline is changed to April 28.  An additional homework 10 will be made availbale towards the end of this week for those of you who would like to get an additional score of \( 10\% \).</li> 
 </ul>
+<!-- !split -->
+<h2 id="why-is-lagrangian-defined-as-the-difference-between-kinetic-and-potential-energy" class="anchor">Why is Lagrangian defined as the difference between kinetic and potential energy? </h2>
+
+<p>To understand this let us develop some intuition before the math by looking at what we did in the second midterm. There we studied energy conservation.</p>
+
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic"># let&#39;s start by importing useful packages we are familiar with</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #666666">*</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">seaborn</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">sns</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">math</span> 
+
+<span style="color: #408080; font-style: italic">#Velocity-Verlet Method</span>
+DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.001</span>
+<span style="color: #408080; font-style: italic">#set up arrays </span>
+tfinal <span style="color: #666666">=</span> <span style="color: #666666">100</span> <span style="color: #408080; font-style: italic"># in years</span>
+n <span style="color: #666666">=</span> ceil(tfinal<span style="color: #666666">/</span>DeltaT)
+<span style="color: #408080; font-style: italic"># set up arrays for time t, velocity v, and position r</span>
+t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+v <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((n,<span style="color: #666666">2</span>))
+r <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((n,<span style="color: #666666">2</span>))
+<span style="color: #408080; font-style: italic"># Initial conditions as compact 2-dimensional arrays. Here: circular orbit conditions.</span>
+r0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">1.0</span>,<span style="color: #666666">0.0</span>])
+v0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">0.0</span>,<span style="color: #666666">2*</span>pi])
+r[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> r0
+v[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> v0
+Fourpi2 <span style="color: #666666">=</span> <span style="color: #666666">4*</span>pi<span style="color: #666666">*</span>pi
+<span style="color: #408080; font-style: italic"># Start integrating using the Velocity-Verlet method</span>
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
+    <span style="color: #408080; font-style: italic"># Set up the accelerationn</span>
+    rabs <span style="color: #666666">=</span> sqrt(<span style="color: #008000">sum</span>(r[i]<span style="color: #666666">*</span>r[i]))
+    a <span style="color: #666666">=</span> <span style="color: #666666">-</span>Fourpi2<span style="color: #666666">*</span>r[i]<span style="color: #666666">/</span>(rabs<span style="color: #666666">**3</span>)
+    <span style="color: #408080; font-style: italic"># update velocity, time and position using the Velocity-Verlet  method</span>
+    r[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> r[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>v[i] <span style="color: #666666">+</span> ((DeltaT<span style="color: #666666">**2</span>)<span style="color: #666666">/2</span>)<span style="color: #666666">*</span>(a)
+    rabs <span style="color: #666666">=</span> sqrt(<span style="color: #008000">sum</span>(r[i<span style="color: #666666">+1</span>]<span style="color: #666666">*</span>r[i<span style="color: #666666">+1</span>]))
+    anew <span style="color: #666666">=</span> <span style="color: #666666">-4*</span>(pi<span style="color: #666666">**2</span>)<span style="color: #666666">*</span>r[i<span style="color: #666666">+1</span>]<span style="color: #666666">/</span>(rabs<span style="color: #666666">**3</span>)
+    v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i] <span style="color: #666666">+</span> DeltaT<span style="color: #666666">*</span>(<span style="color: #666666">0.5</span>)<span style="color: #666666">*</span>(a <span style="color: #666666">+</span> anew)
+    t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i] <span style="color: #666666">+</span> DeltaT
+sns<span style="color: #666666">.</span>set()
+plt<span style="color: #666666">.</span>plot(r[:,<span style="color: #666666">0</span>], r[:,<span style="color: #666666">1</span>])
+
+
+<span style="color: #408080; font-style: italic"># We check that the total energy is conserved. For a circular orbit, potential and kinetic energy do not change since the radius is a constant. </span>
+
+<span style="color: #408080; font-style: italic"># Note that we have set the mass of the Earth = 1</span>
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">kinetic_energy</span>(v):
+    KE <span style="color: #666666">=</span> []
+    step <span style="color: #666666">=</span> <span style="color: #008000">len</span>(t)
+    <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(step):
+        KE<span style="color: #666666">.</span>append(<span style="color: #666666">0</span>)
+        KE[i] <span style="color: #666666">+=</span> <span style="color: #666666">0.5</span> <span style="color: #666666">*</span>np<span style="color: #666666">.</span>sum(v[i]<span style="color: #666666">*</span>v[i])
+    <span style="color: #008000; font-weight: bold">return</span> np<span style="color: #666666">.</span>array(KE)
+
+
+<span style="color: #408080; font-style: italic"># Note that G x Mass_sun = 4*pi*pi and the mass of the Earth = 1</span>
+<span style="color: #408080; font-style: italic"># Note also that if you change the exponent in the force you need also to change the potential energy!</span>
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">pot</span>():
+    Pot <span style="color: #666666">=</span> []
+    step <span style="color: #666666">=</span> <span style="color: #008000">len</span>(t)
+    <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(step):
+        Pot<span style="color: #666666">.</span>append(<span style="color: #666666">0</span>)
+        Pot[i] <span style="color: #666666">+=</span>  <span style="color: #666666">-</span> <span style="color: #666666">4*</span>pi<span style="color: #666666">*</span>pi<span style="color: #666666">/</span> sqrt(np<span style="color: #666666">.</span>sum(r[i]<span style="color: #666666">*</span>r[i]))
+    <span style="color: #008000; font-weight: bold">return</span> np<span style="color: #666666">.</span>array(Pot)
+
+fig, ax <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots(<span style="color: #666666">1</span>,<span style="color: #666666">1</span>,figsize<span style="color: #666666">=</span>(<span style="color: #666666">12</span>,<span style="color: #666666">6</span>))
+ax<span style="color: #666666">.</span>plot(t,kinetic_energy(v)<span style="color: #666666">+</span>pot(),label<span style="color: #666666">=</span><span style="color: #BA2121">&#39;Total&#39;</span>)
+ax<span style="color: #666666">.</span>plot(t,kinetic_energy(v),label<span style="color: #666666">=</span><span style="color: #BA2121">&#39;Kinetic&#39;</span>)
+ax<span style="color: #666666">.</span>plot(t,pot(),label<span style="color: #666666">=</span><span style="color: #BA2121">&#39;Potential&#39;</span>)
+ax<span style="color: #666666">.</span>set_title(<span style="color: #BA2121">&#39;Energy vs time&#39;</span>)
+ax<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;t [yr]&#39;</span>)
+ax<span style="color: #666666">.</span>legend()
+ax<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">r&#39;E&#39;</span>)
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- !split -->
+<h2 id="what-if-we-plot-the-difference-between-kinetic-and-potential-energy-instead" class="anchor">What if we plot the difference between kinetic and potential energy instead? </h2>
+
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;">fig, ax <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots(<span style="color: #666666">1</span>,<span style="color: #666666">1</span>,figsize<span style="color: #666666">=</span>(<span style="color: #666666">12</span>,<span style="color: #666666">6</span>))
+ax<span style="color: #666666">.</span>plot(t,kinetic_energy(v)<span style="color: #666666">-</span>pot(),label<span style="color: #666666">=</span><span style="color: #BA2121">&#39;L=K-V&#39;</span>)
+ax<span style="color: #666666">.</span>plot(t,kinetic_energy(v),label<span style="color: #666666">=</span><span style="color: #BA2121">&#39;Kinetic&#39;</span>)
+ax<span style="color: #666666">.</span>plot(t,pot(),label<span style="color: #666666">=</span><span style="color: #BA2121">&#39;Potential&#39;</span>)
+ax<span style="color: #666666">.</span>set_title(<span style="color: #BA2121">&#39;Energy vs time&#39;</span>)
+ax<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;t [yr]&#39;</span>)
+ax<span style="color: #666666">.</span>legend()
+ax<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">r&#39;E&#39;</span>)
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <!-- !split -->
 <h2 id="variational-calculus" class="anchor">Variational Calculus </h2>
 
@@ -380,7 +521,7 @@ $$
 
 
 <!-- !split -->
-<h2 id="integrating-by-parts" class="anchor">INtegrating by Parts </h2>
+<h2 id="integrating-by-parts" class="anchor">Integrating by Parts </h2>
 
 <p>Using</p>
 
