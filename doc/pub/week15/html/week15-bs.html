@@ -269,7 +269,7 @@ MathJax.Hub.Config({
 <span style="color: #408080; font-style: italic">#Velocity-Verlet Method</span>
 DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.001</span>
 <span style="color: #408080; font-style: italic">#set up arrays </span>
-tfinal <span style="color: #666666">=</span> <span style="color: #666666">100</span> <span style="color: #408080; font-style: italic"># in years</span>
+tfinal <span style="color: #666666">=</span> <span style="color: #666666">10</span> <span style="color: #408080; font-style: italic"># in years</span>
 n <span style="color: #666666">=</span> ceil(tfinal<span style="color: #666666">/</span>DeltaT)
 <span style="color: #408080; font-style: italic"># set up arrays for time t, velocity v, and position r</span>
 t <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
@@ -277,7 +277,7 @@ v <span style="color: #666666">=</span> np<span style="color: #666666">.</span>z
 r <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((n,<span style="color: #666666">2</span>))
 <span style="color: #408080; font-style: italic"># Initial conditions as compact 2-dimensional arrays. Here: circular orbit conditions.</span>
 r0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">1.0</span>,<span style="color: #666666">0.0</span>])
-v0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">0.0</span>,<span style="color: #666666">2*</span>pi])
+v0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">0.0</span>,<span style="color: #666666">5.0</span>])
 r[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> r0
 v[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> v0
 Fourpi2 <span style="color: #666666">=</span> <span style="color: #666666">4*</span>pi<span style="color: #666666">*</span>pi
@@ -341,6 +341,7 @@ ax<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">r
   </div>
 </div>
 
+<p>The energy is conserved and does not say much about the variations in position and velocity as functions of time.</p>
 
 <!-- !split -->
 <h2 id="what-if-we-plot-the-difference-between-kinetic-and-potential-energy-instead" class="anchor">What if we plot the difference between kinetic and potential energy instead? </h2>

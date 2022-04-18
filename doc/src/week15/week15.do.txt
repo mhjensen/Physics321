@@ -44,7 +44,7 @@ import math
 #Velocity-Verlet Method
 DeltaT = 0.001
 #set up arrays 
-tfinal = 100 # in years
+tfinal = 10 # in years
 n = ceil(tfinal/DeltaT)
 # set up arrays for time t, velocity v, and position r
 t = np.zeros(n)
@@ -52,7 +52,7 @@ v = np.zeros((n,2))
 r = np.zeros((n,2))
 # Initial conditions as compact 2-dimensional arrays. Here: circular orbit conditions.
 r0 = np.array([1.0,0.0])
-v0 = np.array([0.0,2*pi])
+v0 = np.array([0.0,5.0])
 r[0] = r0
 v[0] = v0
 Fourpi2 = 4*pi*pi
@@ -105,6 +105,8 @@ ax.set_ylabel(r'E')
 
 
 !ec
+
+The energy is conserved and does not say much about the variations in position and velocity as functions of time.
 
 !split
 ===== What if we plot the difference between kinetic and potential energy instead? =====

@@ -205,7 +205,7 @@ MathJax.Hub.Config({
 <span style="color: #228B22">#Velocity-Verlet Method</span>
 DeltaT = <span style="color: #B452CD">0.001</span>
 <span style="color: #228B22">#set up arrays </span>
-tfinal = <span style="color: #B452CD">100</span> <span style="color: #228B22"># in years</span>
+tfinal = <span style="color: #B452CD">10</span> <span style="color: #228B22"># in years</span>
 n = ceil(tfinal/DeltaT)
 <span style="color: #228B22"># set up arrays for time t, velocity v, and position r</span>
 t = np.zeros(n)
@@ -213,7 +213,7 @@ v = np.zeros((n,<span style="color: #B452CD">2</span>))
 r = np.zeros((n,<span style="color: #B452CD">2</span>))
 <span style="color: #228B22"># Initial conditions as compact 2-dimensional arrays. Here: circular orbit conditions.</span>
 r0 = np.array([<span style="color: #B452CD">1.0</span>,<span style="color: #B452CD">0.0</span>])
-v0 = np.array([<span style="color: #B452CD">0.0</span>,<span style="color: #B452CD">2</span>*pi])
+v0 = np.array([<span style="color: #B452CD">0.0</span>,<span style="color: #B452CD">5.0</span>])
 r[<span style="color: #B452CD">0</span>] = r0
 v[<span style="color: #B452CD">0</span>] = v0
 Fourpi2 = <span style="color: #B452CD">4</span>*pi*pi
@@ -277,6 +277,7 @@ ax.set_ylabel(<span style="color: #CD5555">r&#39;E&#39;</span>)
   </div>
 </div>
 
+<p>The energy is conserved and does not say much about the variations in position and velocity as functions of time.</p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="what-if-we-plot-the-difference-between-kinetic-and-potential-energy-instead">What if we plot the difference between kinetic and potential energy instead? </h2>
