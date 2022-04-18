@@ -281,10 +281,12 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 
 ### Week 16, April 18-22, 2022
 - Monday 4/18:  Lagrangian formalism and Variational Calculus
-  - Reading suggestions: lecture notes and Taylor sections 6.3-6.4
+  - Reading suggestions: lecture notes and Taylor sections 6.1-6.4
+  - Video of lecture at https://youtu.be/coxkj2Zyd-w
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesApril18.pdf    
 - Wednesday 4/20: Euler-Lagrange equations and the Lagrangian with examples and Principle of Least Action
   - Reading suggestions: lecture notes and Taylor sections 6.3-6.4
-- Friday 4/22:  Summary of week and work on homework nine. Deadline ninth homework.
+- Friday 4/22:  Summary of week and work on homework nine. Deadline ninth homework April 28.
 
 ### Week 17, April 25- April 29, 2022
 - Monday 4/25:  Lagrangian formalism, constrained and unconstrained motion
