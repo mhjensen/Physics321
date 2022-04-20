@@ -285,6 +285,8 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Video of lecture at https://youtu.be/coxkj2Zyd-w
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesApril18.pdf    
 - Wednesday 4/20: Euler-Lagrange equations and the Lagrangian with examples and Principle of Least Action
+  - Video of lecture at https://youtu.be/W0zXId80DPU
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesApril20.pdf
   - Reading suggestions: lecture notes and Taylor sections 6.3-6.4
 - Friday 4/22:  Summary of week, examples of Lagrangians  and work on homework nine. Deadline ninth homework April 28.
 
