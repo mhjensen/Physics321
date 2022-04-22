@@ -289,6 +289,8 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesApril20.pdf
   - Reading suggestions: lecture notes and Taylor sections 6.3-6.4
 - Friday 4/22:  Summary of week, examples of Lagrangians  and work on homework nine. Deadline ninth homework April 28.
+  - Video of Lecture at https://youtu.be/GlNPTJtGykg
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesApril22.pdf  
 
 ### Week 17, April 25- April 29, 2022
 - Monday 4/25:  Lagrangian formalism, constrained and unconstrained motion
