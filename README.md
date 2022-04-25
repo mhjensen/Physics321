@@ -85,7 +85,7 @@ Here you will find a general overview of the course, with learning outcomes, tea
 | First Midterm Project, _due Friday March  4_ | 25% |
 | Second  Midterm Project, _due  Friday April 15_ | 25% |
 | Final Exam project, _due Friday May 6_ |  30%  |
-| Extra Credit Assignment, homework 10,  (due Friday  April 29)| 10% |
+| Extra Credit Assignment, homework 10,  (due Monday May 2)| 10% |
 
 | Grading scale | | | | | | | 
 |-----|-----|-------|------|--------|--------|--------|
@@ -295,7 +295,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 ### Week 17, April 25- April 29, 2022
 - Monday 4/25:  Lagrangian formalism, constrained and unconstrained motion
 - Wednesday 4/27: Variational calculus with examples
-- Friday 4/29:  Summary of course and discussion of final exam project. Additional homework ten due May 6.
+- Friday 4/29:  Summary of course and discussion of final exam project. Additional homework ten due May 2.
 
 
 ### Week 18, May 2-6, 2022
