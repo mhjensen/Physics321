@@ -294,6 +294,8 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 
 ### Week 17, April 25- April 29, 2022
 - Monday 4/25:  Lagrangian formalism, constrained and unconstrained motion
+  - Video of lecture at https://youtu.be/woJNrxcA6MY
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesApril25.pdf    
 - Wednesday 4/27: Variational calculus with examples
 - Friday 4/29:  Summary of course and discussion of final exam project. Additional homework ten due May 2.
 
