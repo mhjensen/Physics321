@@ -1,5 +1,5 @@
 TITLE: PHY321: Classical Mechanics 1
-AUTHOR: Homework 10, due Friday  May 6
+AUTHOR: Homework 10, due Friday  April 26
 DATE: today
 
 ===  Practicalities about  homeworks and projects ===
@@ -59,24 +59,48 @@ Consider a mass $m$ connected to a spring with spring constant $k$. Rather than 
 * 4b (5pt) Write down the Lagrangian and find the equations of motion for $y$
 
 
-=== Exercise 5 (30pt), Coupled Harmonic Oscillators  (Taylor chapters 6-7) ===
+=== Exercise 5 (40pt), Pendulum and Lagrangians (Taylor chapters 6-7) ===
 
-The relevant chapters from Taylor are chapters 5-7 and the lectures notes on "harmonic oscillations":"https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter5.html" and the "Lagrangian Formalism and Calculus of Variations":"https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter8.html". 
+A mathematical pendulum consists of a point mass $m$ suspended by a massless thread/rod of length $l$ in a gravitational field, as shown in the figure here. The constraining force is labeled by $\bm{T}$
+and the gravitational force is labeled $\bm{F}_g$.
 
-Consider a mass $m$ that is connected to a wall by a spring with
-spring constant $k$. A second identical mass $m$ is connected to the
-first mass by an identical spring. Motion is confined to the $x$ direction only.
+FIGURE: [figures/Simplependulum.png, width=600 frac=0.6] 
 
-* _5a (5pt):_ Make a drawing of the system, set up forces and define variables $x_1$ and $x_2$ for the two masses.
-* _5b (5pt):_ Write the Lagrangian in terms of the positions of the two masses $x_1$ and $x_2$.
-* _5c (5pt):_ Use the Euler-Lagrange equations to find the analytical expressions for the  equations of motion.
-* _5d (10pt):_ Find the analytical  solutions using a guess of  the type
+We assume that the length $l$ is constant and we define the coordinates involved as
+
 !bt
 \[
-x_1=Ae^{i\omega t},~~~x_2=Be^{i\omega t}.
+\bm{r} = l\sin(\phi)\bm{\hat{x}}+l\cos(\phi)\bm{\hat{y}},
 \]
 !et
-Solve for $A/B$ and $\omega$. Express your answers in terms of $\omega_0^2=k/m$.
+where $\bm{\hat{x}}$ and $\bm{\hat{y}}$ are the unit vectors in the $x$ and $y$ directions, respectively.
+
+* _5a (10pt):_ Set up the forces acting on the system and show that the equation of motion is $m\ddot{\bm{r}}=\bm{F}_g+\bm{T}$.
+
+* _5b (10pt):_ Show that you can rewrite the above equation of motion as two independent equations of motion, one for $\phi$ and one for the constraining force. Show that these equations are $\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}$ with $\omega_0^2=g/l$ and $T=ml\dot{\phi}^2+mg\cos{(\phi)}$.
+
+The equation for $\phi$ is a second-order differential equation
+!bt
+\[
+\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}.
+\]
+!et
+
+This equation can be solved analytically if we assume that the angle $\phi$ is very small. Then we can approximate our equation as
+
+!bt
+\[
+\ddot{\phi}(t)=-\omega_0^2\phi(t).
+\]
+!et
+
+* _5c (5pt):_ Find the analytical solution for the last equation. Hint, look back at the solutions for the simple harmonic oscillator problem in one dimension in for example homework 7.
+
+
+* _5d (5pt):_ Find the expressions for the kinetic and potential energies in terms of the variables $r$ and $\phi$. 
+
+* _5e (10pt):_ With the potential $V$  and kinetic $T$ energies, define the Lagrangian for the mathematical pendulum discussed here. Add the constraint $r=l$ via a Lagrange multiplier $\lambda$ and derive the equations of motion. Show that these result in  $\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}$ with $\omega_0^2=g/l$ and $\lambda=ml\dot{\phi}^2+mg\cos{(\phi)}$.  How would you interpret $\lambda$? 
+
 
 
 
@@ -152,12 +176,9 @@ Talks given by researchers through the following clubs:
 * Facility For Rare Isotope Beam (FRIB) Seminars: ​Occur multiple times a week
 
 
+If you have any questions please consult Jeremy Rebenstock, rebensto@msu.edu.
 
 All the material on extra credits is at URL:"https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/". 
-
-
-
-
 
 
 
