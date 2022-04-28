@@ -2,6 +2,7 @@
 
 
 
+
 ###  Week 2, January 10-14, 2022
 
 - Monday 1/10: Introduction to the course and reminder  on vectors, space, time and motion, JRT chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). Python programming reminder, elements from CMSE 201 and how they are used in this course. Installing software (anaconda). See slides at https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). 
@@ -185,13 +186,21 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Video of lecture at https://youtu.be/coxkj2Zyd-w
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesApril18.pdf    
 - Wednesday 4/20: Euler-Lagrange equations and the Lagrangian with examples and Principle of Least Action
+  - Video of lecture at https://youtu.be/W0zXId80DPU
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesApril20.pdf
   - Reading suggestions: lecture notes and Taylor sections 6.3-6.4
 - Friday 4/22:  Summary of week, examples of Lagrangians  and work on homework nine. Deadline ninth homework April 28.
+  - Video of Lecture at https://youtu.be/GlNPTJtGykg
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesApril22.pdf  
 
 ### Week 17, April 25- April 29, 2022
 - Monday 4/25:  Lagrangian formalism, constrained and unconstrained motion
+  - Video of lecture at https://youtu.be/woJNrxcA6MY
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesApril25.pdf    
 - Wednesday 4/27: Variational calculus with examples
-- Friday 4/29:  Summary of course and discussion of final exam project. Additional homework ten due May 6.
+  - Video of lecture at https://youtu.be/0q6DAQtO8tI
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesApril27.pdf    
+- Friday 4/29:  Summary of course and discussion of final exam project. Additional homework ten due May 2.
 
 
 ### Week 18, May 2-6, 2022
