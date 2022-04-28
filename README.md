@@ -297,6 +297,8 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Video of lecture at https://youtu.be/woJNrxcA6MY
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesApril25.pdf    
 - Wednesday 4/27: Variational calculus with examples
+  - Video of lecture at https://youtu.be/0q6DAQtO8tI
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesApril27.pdf    
 - Friday 4/29:  Summary of course and discussion of final exam project. Additional homework ten due May 2.
 
 
