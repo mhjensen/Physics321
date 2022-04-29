@@ -1,7 +1,7 @@
 %%
 %% Automatically generated file from DocOnce source
-%% (https://github.com/hplgit/doconce/)
-%%
+%% (https://github.com/doconce/doconce/)
+%% doconce format latex final.do.txt --no_mako
 %%
 % #ifdef PTEX2TEX_EXPLANATION
 %%
@@ -114,19 +114,18 @@ PHY321 Classical Mechanics 1
 % ----------------- author(s) -------------------------
 
 \begin{center}
-{\bf Final  project, due Friday April 30}
+{\bf Final project, due Friday May 6 midnight (1159pm)${}^{}$} \\ [0mm]
 \end{center}
 
-    \begin{center}
+\begin{center}
 % List of all institutions:
-\centerline{{\small midnight (1159pm)}}
 \end{center}
     
 % ----------------- end author(s) -------------------------
 
 % --- begin date ---
 \begin{center}
-Apr 29, 2021
+Apr 29, 2022
 \end{center}
 % --- end date ---
 
@@ -142,7 +141,7 @@ Apr 29, 2021
 \end{enumerate}
 
 \noindent
-\paragraph{Introduction to the final project, total score: 120  points.}
+\paragraph{Introduction to the final project, total score: 110  points.}
 The relevant reading background is
 \begin{enumerate}
 \item chapters 2-8 and 14 of Taylor
@@ -156,14 +155,13 @@ discussed during the semester. You should feel free to use either
 paper and pencil and/or symbolic software (sympy, Mathematica or
 similar) for the non-computational exercises.
 
-
 \paragraph{Exercise 1, Two-body Problems and Conservative Forces (total 35pt).}
-The relevant material from Taylor are chapters 4 and 8. Homework sets 4, 6-9 and the chapters on \href{{https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter4.html}}{forces} and \href{{https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter6.html}}{two-body problems} from the lecture notes may also be of use. 
+The relevant material can be found in Taylor chapters 4 and 8. Homework sets 5, 6-9 and the chapters on \href{{https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter4.html}}{forces} and \href{{https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter6.html}}{two-body problems} from the lecture notes may also be of use. 
 
-This exercise and the next are  follow-ups of hw6. There we studied the so-called
-Lennard-Jones potential which is widely used in molecular dynamics
-calculations. This potential is based on parametrizations from
-expertiments. In molecular dynamics calculations the assumption is
+This exercise and the next are  follow-ups of homework 6. There we studied the so-called
+\href{{https://en.wikipedia.org/wiki/Lennard-Jones_potential}}{Lennard-Jones potential} which is widely used in molecular dynamics
+calculations and in the simulations of \href{{https://journals.aps.org/prb/abstract/10.1103/PhysRevB.40.11070}}{quantum liquids}. This potential is based on parametrizations from
+experiments. In \href{{https://en.wikipedia.org/wiki/Molecular_dynamics}}{molecular dynamics calculations} the assumption is
 that atoms move according to the laws of Newton, given the correct
 model for interactions. We can say then that quantum-mechanical
 degrees of freedom stemming from complicated interactions between electrons
@@ -214,8 +212,7 @@ Then we switch our attention to the equations of motion.
   \frac{d^2\bm{r}_i}{dt^2} = \frac{24\varepsilon}{m} \sum_{j \neq i} \left(2(\frac{\sigma}{\vert\bm{r}_i-\bm{r}_j}\vert)^{12}-(\frac{\sigma}{\vert\bm{r}_i-\bm{r}_j}\vert)^6\right)\frac{\bm{r}_i-\bm{r}_j}{\vert\bm{r}_i-\bm{r}_j\vert^2}.
 \]
 
-
-\paragraph{Exercise 2, Two-body Problems and Conservative Forces, Numerical Studies (40pt).}
+\paragraph{Exercise 2, Two-body Problems and Conservative Forces, Numerical Studies (50pt).}
 In this exercise we will solve the previous equations of motion numerically and study the solutions.
 Here you can use the same codes you developed in homework sets 5-9 and the second midterm.
 
@@ -246,39 +243,37 @@ We switch now to a numerical procedure and study the simulation of two interacti
 \begin{itemize}
 \item \textbf{2c (10pt):} Write a function which solves (\ref{eq:undim}) for two atoms and find the positions and velocities of the atoms as a function of time. Implement either the Euler-Cromer or the Velocity-Verlet methods to solve the equations of motion (you can reuse your codes from homework sets 5-9 or the second midterm).
 
-\item \textbf{2d (5pt):} Simulate the motion of two atoms which start at rest separated by a distance of ${1.5}\sigma$. Use $\Delta t'={0.01}$, simulate until $t'=5$ and integrate with one of the above methods. Plot the distance between the atoms as a function of time. How does the motion fit with your expectations?
+\item \textbf{2d (5pt):} Simulate the motion of two atoms which start at rest separated by a distance of ${1.5}\sigma$. Use $\Delta t'={0.01}$, simulate until $t'=5$ and integrate with one of the above methods. Plot the distance between the atoms as a function of time. How does the motion fit with your expectations? What type of motion do you expect?
 
-\item \textbf{2e (5pt):} Repeat the previous tasks, but now with an initial separation of $0.95\sigma$. Explain your results.
+\item \textbf{2e (5pt):} Repeat the previous tasks, but now with an initial separation of $0.95\sigma$. Explain your results. 
 
-\item \textbf{2f (10pt):} Compute and plot the kinetic, potential and total energy as a function of time for the time interval in 2d and the initial conditions from 2d and 2e. Should the total energy be conserved? Why, or why not? 
+\item \textbf{2f (10pt):} Compute and plot the kinetic, potential and total energy as a function of time for the time interval from exercise  2d and the initial conditions from 2d and 2e. Should the total energy be conserved? Why, or why not? Here you can use your codes from the second midterm for computing the energies.
+
+\item \textbf{2g (10pt):} Is angular momentum conserved (see your answers to 1f). How would you show this numerically? Hint: see your answers to the second midterm, exercise 1c. 
 \end{itemize}
 
 \noindent
-\paragraph{Exercise 3, Coupled Harmonic Oscillators (45pt).}
-The relevant chapters from Taylor are chapters 5-7 and the lectures notes on \href{{https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter5.html}}{harmonic oscillations} and the \href{{https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter8.html}}{Lagrangian Formalism and Calculus of Variations}. Your codes from homework sets 5-8 and the first midterm may also be of interest.
+\paragraph{Exercise 3, Lagrangian formalism and the Lennard-Jones potential (35pt).}
+The relevant chapters from Taylor are chapters 6-7 and 8. In addition he lectures
+notes on the \href{{https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter8.html}}{Lagrangian Formalism and Calculus of
+Variations} can be of use. You
+need also results from the two-body problem of chapter 8 of Taylor and
+the lecture notes \href{{https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter6.html}}{two-body
+problems}.
 
-Consider a mass $m$ that is connected to a wall by a spring with
-spring constant $k$. A second identical mass $m$ is connected to the
-first mass by an identical spring. Motion is confined to the $x$ direction only.
-
-\begin{itemize}
-\item \textbf{3a (5pt):} Make a drawing of the system, set up forces and define variables $x_1$ and $x_2$ for the two masses.
-
-\item \textbf{3b (5pt):} Write the Lagrangian in terms of the positions of the two masses $x_1$ and $x_2$.
-
-\item \textbf{3c (5pt):} Use the Euler-Lagrange equations to find the analytical expressions for the  equations of motion.
-
-\item \textbf{3d (10pt):} Find the analytical  solutions using a guess of  the type
-\end{itemize}
-
-\noindent
-\[
-x_1=Ae^{i\omega t},~~~x_2=Be^{i\omega t}.
-\]
-Solve for $A/B$ and $\omega$. Express your answers in terms of $\omega_0^2=k/m$.
+We will stay with a two-body problem only with particles $1$ and $2$, as in the two previous exercises.  
+We introduce the relative mass $\mu=m_1m_2/M$ where the total mass $M=m_1+m_2$, the sum of the masses $m_1$ and $m_2$.
 
 \begin{itemize}
-\item \textbf{3e (20pt):} Write now a program which solves these two coupled differential equations for $x_1$ and $x_2$. Compute the positions $x_1$ and $x_2$ by choosing your initial conditions and compare with the analytical answers from 3d.   
+\item \textbf{3a (5pt):} Define the center-of-mass position $\bm{R}$ and the relative position $\bm{r}$ in terms of the masses and the positions of particles one and two $\bm{r}_1$ and $\bm{r}_2$, respectively. Define then the center-of-mass frame by setting $\bm{R}=0$. Show then that you can write the total angular momentum as $\bm{L}=\mu(\bm{r}\times \ddot{\bm{r}}$. Hint: See Taylor section 8.3. How do you interpret the angular momentum?  Why can we reduce the motion of two particles to a problem in two dimensions only?
+
+\item \textbf{3b (10pt):} We introduce polar coordinates with $r\in [0,\infty)$ and $\phi\in[0,2\pi]$. The quantity $r$ is the absolute value (magnitude) of the relative distance. Show that you can write the kinetic energy as $K=1/2\mu(\ddot{r}^2+r^2\ddot{\phi}^2)$.
+
+\item \textbf{3c (5pt):} Include the potential energy for the Lennard-Jones potential and write out the Lagrangian using the coordinates $r$ and $\phi$. Does the potential energy depend on $phi$?
+
+\item \textbf{3d (10pt):} Use the Euler-Lagrange equations to find the equations of motion for $r$ and $\phi$. Does the equation of motion for $r$ agree with what you derived in exercise 1? Comment your results.
+
+\item \textbf{3e (5pt):} Use the equation of motion for $\phi$ to show that angular momentum is conserved. Comment your results. Can you infer this from the form of the potential? Hint: see your answer to 3c.
 \end{itemize}
 
 \noindent
@@ -295,7 +290,6 @@ place.
 
 The full information on extra credits is found at \href{{https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/}}{\nolinkurl{https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/}}. There you will also find examples on how to write a scientific article. 
 Below you can also find a description on how to gain extra credits by attending scientific talks.
-
 
 This assignment allows you to gain extra credit points by practicing
 your scientific writing.  For each of the remaining homeworks you can
@@ -338,10 +332,8 @@ HW 10              & 4-26          & Abstract                   \\
 \end{quote}
 
 \noindent
-
 You can also gain extra credits if you attend scientific talks.
 This is described here.
-
 
 \paragraph{Integrating Classwork With Research.}
 This opportunity will allow you to earn up to 5 extra credit points on a Homework per week. These points can push you above 100\% or help make up for missed exercises.
@@ -367,12 +359,9 @@ Talks given by researchers through the following clubs:
 \end{itemize}
 
 \noindent
-If you have any questions please consult Jeremy Rebenstock, rebensto@msu.edu.
+If you have any questions please write us.
 
 All the material on extra credits is at \href{{https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/}}{\nolinkurl{https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/}}. 
-
-
-
 
 
 % ------------------- end of main content ---------------

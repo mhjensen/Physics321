@@ -1,6 +1,7 @@
 <!--
-Automatically generated HTML file from DocOnce source
+HTML file automatically generated from DocOnce source
 (https://github.com/doconce/doconce/)
+doconce format html final.do.txt --pygments_html_style=perldoc --html_style=solarized3 --html_links_in_new_window --html_output=final-solarized --no_mako
 -->
 <html>
 <head>
@@ -8,14 +9,10 @@ Automatically generated HTML file from DocOnce source
 <meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="PHY321 Classical Mechanics 1">
-
 <title>PHY321 Classical Mechanics 1</title>
-
-
 <link href="https://cdn.rawgit.com/doconce/doconce/master/bundled/html_styles/style_solarized_box/css/solarized_light_code.css" rel="stylesheet" type="text/css" title="light"/>
 <script src="https://cdn.rawgit.com/doconce/doconce/master/bundled/html_styles/style_solarized_box/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-
 <link href="https://thomasf.github.io/solarized-css/solarized-light.min.css" rel="stylesheet">
 <style type="text/css">
 h1 {color: #b58900;}  /* yellow */
@@ -26,11 +23,16 @@ pre {
   border: 0pt solid #93a1a1;
   box-shadow: none;
 }
-
 div { text-align: justify; text-justify: inter-word; }
+.tab {
+  padding-left: 1.5em;
+}
+div.toc p,a {
+  line-height: 1.3;
+  margin-top: 1.1;
+  margin-bottom: 1.1;
+}
 </style>
-
-
 </head>
 
 <!-- tocinfo
@@ -39,24 +41,25 @@ div { text-align: justify; text-justify: inter-word; }
                2,
                None,
                'practicalities-about-homeworks-and-projects'),
-              ('Introduction to the final project, total score: 120  points',
+              ('Introduction to the final project, total score: 110  points',
                3,
                None,
-               'introduction-to-the-final-project-total-score-120-points'),
+               'introduction-to-the-final-project-total-score-110-points'),
               ('Exercise 1, Two-body Problems and Conservative Forces (total '
                '35pt)',
                3,
                None,
                'exercise-1-two-body-problems-and-conservative-forces-total-35pt'),
               ('Exercise 2, Two-body Problems and Conservative Forces, '
-               'Numerical Studies (40pt)',
+               'Numerical Studies (50pt)',
                3,
                None,
-               'exercise-2-two-body-problems-and-conservative-forces-numerical-studies-40pt'),
-              ('Exercise 3, Coupled Harmonic Oscillators (45pt)',
+               'exercise-2-two-body-problems-and-conservative-forces-numerical-studies-50pt'),
+              ('Exercise 3, Lagrangian formalism and the Lennard-Jones '
+               'potential (35pt)',
                3,
                None,
-               'exercise-3-coupled-harmonic-oscillators-45pt'),
+               'exercise-3-lagrangian-formalism-and-the-lennard-jones-potential-35pt'),
               ('Classical Mechanics Extra Credit Assignment: Scientific '
                'Writing and attending Talks',
                3,
@@ -85,75 +88,60 @@ MathJax.Hub.Config({
 </script>
 
 
-
-    
 <!-- ------------------- main content ---------------------- -->
-
-
-
-<center><h1>PHY321 Classical Mechanics 1</h1></center>  <!-- document title -->
-
-<p>
-<!-- author(s): Final  project, due Friday April 30 -->
-
 <center>
-<b>Final  project, due Friday April 30</b> 
+<h1>PHY321 Classical Mechanics 1</h1>
+</center>  <!-- document title -->
+
+<!-- author(s): Final project, due Friday May 6 midnight (1159pm) -->
+<center>
+<b>Final project, due Friday May 6 midnight (1159pm)</b> 
 </center>
-
-<p>
-<!-- institution -->
-
-<center><b>midnight (1159pm)</b></center>
+<!-- institution(s) -->
 <br>
-<p>
-<center><h4>Apr 29, 2021</h4></center> <!-- date -->
+<center>
+<h4>Apr 29, 2022</h4>
+</center> <!-- date -->
 <br>
-
 <h2 id="practicalities-about-homeworks-and-projects">Practicalities about  homeworks and projects </h2>
 
 <ol>
 <li> You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. <b>Remember to write your name(s)</b>!</li>
 <li> How do I(we)  hand in?  Due to the extraordinary situation we are in now, the final projec should be handed in fully via D2L. You can scan your handwritten notes and upload to D2L or you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical part should always be handed in as a jupyter notebook.</li>
 </ol>
+<h3 id="introduction-to-the-final-project-total-score-110-points">Introduction to the final project, total score: 110  points </h3>
 
-<h3 id="introduction-to-the-final-project-total-score-120-points">Introduction to the final project, total score: 120  points </h3>
-
-<p>
-The relevant reading background is
-
+<p>The relevant reading background is</p>
 <ol>
 <li> chapters 2-8 and 14 of Taylor</li>
 <li> lecture notes throughout the semester and previous homework and midterm projects.</li>
 </ol>
-
-The final project aims at covering most of the topics we have
+<p>The final project aims at covering most of the topics we have
 discussed during the semester. You should feel free to use either
 paper and pencil and/or symbolic software (sympy, Mathematica or
 similar) for the non-computational exercises.
-
+</p>
 <h3 id="exercise-1-two-body-problems-and-conservative-forces-total-35pt">Exercise 1, Two-body Problems and Conservative Forces (total 35pt) </h3>
 
-<p>
-The relevant material from Taylor are chapters 4 and 8. Homework sets 4, 6-9 and the chapters on <a href="https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter4.html" target="_blank">forces</a> and <a href="https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter6.html" target="_blank">two-body problems</a> from the lecture notes may also be of use.
+<p>The relevant material can be found in Taylor chapters 4 and 8. Homework sets 5, 6-9 and the chapters on <a href="https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter4.html" target="_blank">forces</a> and <a href="https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter6.html" target="_blank">two-body problems</a> from the lecture notes may also be of use. </p>
 
-<p>
-This exercise and the next are  follow-ups of hw6. There we studied the so-called
-Lennard-Jones potential which is widely used in molecular dynamics
-calculations. This potential is based on parametrizations from
-expertiments. In molecular dynamics calculations the assumption is
+<p>This exercise and the next are  follow-ups of homework 6. There we studied the so-called
+<a href="https://en.wikipedia.org/wiki/Lennard-Jones_potential" target="_blank">Lennard-Jones potential</a> which is widely used in molecular dynamics
+calculations and in the simulations of <a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.40.11070" target="_blank">quantum liquids</a>. This potential is based on parametrizations from
+experiments. In <a href="https://en.wikipedia.org/wiki/Molecular_dynamics" target="_blank">molecular dynamics calculations</a> the assumption is
 that atoms move according to the laws of Newton, given the correct
 model for interactions. We can say then that quantum-mechanical
 degrees of freedom stemming from complicated interactions between electrons
 and protons in an atom, are parametrized in terms of an effective
 potential.
+</p>
 
-<p>
-We will limit ourselves to a two-body problem.
+<p>We will limit ourselves to a two-body problem.</p>
 
-<p>
-The goal of this exercise is to model a gas of argon atoms (here two
+<p>The goal of this exercise is to model a gas of argon atoms (here two
 atoms only interacting), where the atoms interact according to the
 famous Lennard-Jones potential,
+</p>
 
 $$
 \begin{equation}
@@ -161,15 +149,14 @@ $$
 \end{equation}
 $$
 
-<p>
-where \( r \) is the distance between two atoms,
+<p>where \( r \) is the distance between two atoms,
 \( r=\vert\boldsymbol{r}_i-\boldsymbol{r}_j\vert \), that is the norm of the relative
 distance vector \( \boldsymbol{r} \). The quantities \( \sigma \) and \( \varepsilon \) are
 parameters which determine which chemical compound is modelled. This
 potential is a good approximation for noble gases like helium, neon, argon and other.
+</p>
 
-<p>
-We start first with a basic study of the potential
+<p>We start first with a basic study of the potential</p>
 
 <ul>
 <li> <b>1a (5pt):</b> Plot the potential as a function of \( r \) with \( \varepsilon=1 \) and \( \sigma=1 \), for example for \( r \in [0.9,3] \).</li>
@@ -177,92 +164,78 @@ We start first with a basic study of the potential
 <li> <b>1c (5pt):</b> Find and characterize the equilibrium points of the potential.</li>
 <li> <b>1d (5pt):</b> Describe qualitatively the motion of two atoms which start at rest separated by a distance of \( {1.5}\sigma \). What if they start with a separation of \( {0.95}\sigma \)?  (Hint: use the graph of the potential.)</li>
 </ul>
-
-Then we switch our attention to the equations of motion.
+<p>Then we switch our attention to the equations of motion.</p>
 
 <ul>
 <li> <b>1e (5pt):</b> Find the force on atom \( i \) at position \( \boldsymbol{r}_i \) from atom \( j \) at position \( \boldsymbol{r}_j \). Is this a conservative force?</li>
 <li> <b>1f (5pt):</b>  Are linear and angular momentum conserved? You need to show this by calculating the relevant quantities. Hint: see homework set 4 and exercise 2.</li>
 <li> <b>1g (5pt):</b> Show that the equation of motion for atom \( i \) is</li>
 </ul>
-
 $$
   \frac{d^2\boldsymbol{r}_i}{dt^2} = \frac{24\varepsilon}{m} \sum_{j \neq i} \left(2(\frac{\sigma}{\vert\boldsymbol{r}_i-\boldsymbol{r}_j}\vert)^{12}-(\frac{\sigma}{\vert\boldsymbol{r}_i-\boldsymbol{r}_j}\vert)^6\right)\frac{\boldsymbol{r}_i-\boldsymbol{r}_j}{\vert\boldsymbol{r}_i-\boldsymbol{r}_j\vert^2}.
 $$
+<h3 id="exercise-2-two-body-problems-and-conservative-forces-numerical-studies-50pt">Exercise 2, Two-body Problems and Conservative Forces, Numerical Studies (50pt) </h3>
 
-<h3 id="exercise-2-two-body-problems-and-conservative-forces-numerical-studies-40pt">Exercise 2, Two-body Problems and Conservative Forces, Numerical Studies (40pt) </h3>
-
-<p>
-In this exercise we will solve the previous equations of motion numerically and study the solutions.
+<p>In this exercise we will solve the previous equations of motion numerically and study the solutions.
 Here you can use the same codes you developed in homework sets 5-9 and the second midterm.
+</p>
 
-<p>
-Numerical accuracy is reduced when computing with values which are
+<p>Numerical accuracy is reduced when computing with values which are
 many orders of magnitude apart. This is often an issue in physics, and
 molecular dynamics is no exception. For example, the mass of argon is
 smaller than 10E-25kg, while typical length scales are
 on the order of nanometers, 10E-9m.
+</p>
 
-<p>
-The remedy is to change units so that most quantities are close to
+<p>The remedy is to change units so that most quantities are close to
 \( 1 \). From \eqref{eq:lj} it is clear that \( \sigma \) and \( \varepsilon \)
 are the typical scales for length and energy.
+</p>
 
 <ul>
 <li> <b>2a (5pt):</b> Introduce the scaled coordinates \( \boldsymbol{r}_i\,'=\boldsymbol{r}_i/\sigma \) and show that the equation of motion can be rewritten in terms of these coordinates as (where \( t'=t/\tau \) for a suitable choice of \( \tau \).)</li>
 </ul>
-
 $$
 \begin{equation}
 \frac{d^2\boldsymbol{r}_i\,'}{{dt'^2}} = 24 \sum_{j \neq i} \left(2\vert\boldsymbol{r}_i\,'-\boldsymbol{r}_j\,'\vert^{-12}-\vert\boldsymbol{r}_i\,'-\boldsymbol{r}_j\,'\vert^{-6}\right)\frac{\boldsymbol{r}_i\,'-\boldsymbol{r}_j\,'}{\vert\boldsymbol{r}_i\,'-\boldsymbol{r}_j\,'\vert^2}, \label{eq:undim}
 \end{equation}
 $$
 
-
 <ul>
 <li> <b>2b (5pt):</b> What is the characteristic time scale \( \tau \), and what is its value for argon, which has \( \sigma=3.405 \)&#197; (1&#197;=1E-10m), \( m = 39.95u \) (with 1u=1.66E-27kg) and \( \varepsilon=1.0318 \) E-2eV (1eV=1.602E-19J)?</li>
 </ul>
-
-We switch now to a numerical procedure and study the simulation of two interacting atoms.
-
+<p>We switch now to a numerical procedure and study the simulation of two interacting atoms.</p>
 <ul>
 <li> <b>2c (10pt):</b> Write a function which solves \eqref{eq:undim} for two atoms and find the positions and velocities of the atoms as a function of time. Implement either the Euler-Cromer or the Velocity-Verlet methods to solve the equations of motion (you can reuse your codes from homework sets 5-9 or the second midterm).</li>
-<li> <b>2d (5pt):</b> Simulate the motion of two atoms which start at rest separated by a distance of \( {1.5}\sigma \). Use \( \Delta t'={0.01} \), simulate until \( t'=5 \) and integrate with one of the above methods. Plot the distance between the atoms as a function of time. How does the motion fit with your expectations?</li>
-<li> <b>2e (5pt):</b> Repeat the previous tasks, but now with an initial separation of \( 0.95\sigma \). Explain your results.</li>
-<li> <b>2f (10pt):</b> Compute and plot the kinetic, potential and total energy as a function of time for the time interval in 2d and the initial conditions from 2d and 2e. Should the total energy be conserved? Why, or why not?</li> 
+<li> <b>2d (5pt):</b> Simulate the motion of two atoms which start at rest separated by a distance of \( {1.5}\sigma \). Use \( \Delta t'={0.01} \), simulate until \( t'=5 \) and integrate with one of the above methods. Plot the distance between the atoms as a function of time. How does the motion fit with your expectations? What type of motion do you expect?</li>
+<li> <b>2e (5pt):</b> Repeat the previous tasks, but now with an initial separation of \( 0.95\sigma \). Explain your results.</li> 
+<li> <b>2f (10pt):</b> Compute and plot the kinetic, potential and total energy as a function of time for the time interval from exercise  2d and the initial conditions from 2d and 2e. Should the total energy be conserved? Why, or why not? Here you can use your codes from the second midterm for computing the energies.</li>
+<li> <b>2g (10pt):</b> Is angular momentum conserved (see your answers to 1f). How would you show this numerically? Hint: see your answers to the second midterm, exercise 1c.</li> 
 </ul>
+<h3 id="exercise-3-lagrangian-formalism-and-the-lennard-jones-potential-35pt">Exercise 3, Lagrangian formalism and the Lennard-Jones potential (35pt) </h3>
 
-<h3 id="exercise-3-coupled-harmonic-oscillators-45pt">Exercise 3, Coupled Harmonic Oscillators (45pt) </h3>
+<p>The relevant chapters from Taylor are chapters 6-7 and 8. In addition he lectures
+notes on the <a href="https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter8.html" target="_blank">Lagrangian Formalism and Calculus of
+Variations</a> can be of use. You
+need also results from the two-body problem of chapter 8 of Taylor and
+the lecture notes <a href="https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter6.html" target="_blank">two-body
+problems</a>.
+</p>
 
-<p>
-The relevant chapters from Taylor are chapters 5-7 and the lectures notes on <a href="https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter5.html" target="_blank">harmonic oscillations</a> and the <a href="https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter8.html" target="_blank">Lagrangian Formalism and Calculus of Variations</a>. Your codes from homework sets 5-8 and the first midterm may also be of interest.
-
-<p>
-Consider a mass \( m \) that is connected to a wall by a spring with
-spring constant \( k \). A second identical mass \( m \) is connected to the
-first mass by an identical spring. Motion is confined to the \( x \) direction only.
+<p>We will stay with a two-body problem only with particles \( 1 \) and \( 2 \), as in the two previous exercises.  
+We introduce the relative mass \( \mu=m_1m_2/M \) where the total mass \( M=m_1+m_2 \), the sum of the masses \( m_1 \) and \( m_2 \).
+</p>
 
 <ul>
-<li> <b>3a (5pt):</b> Make a drawing of the system, set up forces and define variables \( x_1 \) and \( x_2 \) for the two masses.</li>
-<li> <b>3b (5pt):</b> Write the Lagrangian in terms of the positions of the two masses \( x_1 \) and \( x_2 \).</li>
-<li> <b>3c (5pt):</b> Use the Euler-Lagrange equations to find the analytical expressions for the  equations of motion.</li>
-<li> <b>3d (10pt):</b> Find the analytical  solutions using a guess of  the type</li>
+<li> <b>3a (5pt):</b> Define the center-of-mass position \( \boldsymbol{R} \) and the relative position \( \boldsymbol{r} \) in terms of the masses and the positions of particles one and two \( \boldsymbol{r}_1 \) and \( \boldsymbol{r}_2 \), respectively. Define then the center-of-mass frame by setting \( \boldsymbol{R}=0 \). Show then that you can write the total angular momentum as \( \boldsymbol{L}=\mu(\boldsymbol{r}\times \ddot{\boldsymbol{r}} \). Hint: See Taylor section 8.3. How do you interpret the angular momentum?  Why can we reduce the motion of two particles to a problem in two dimensions only?</li>
+<li> <b>3b (10pt):</b> We introduce polar coordinates with \( r\in [0,\infty) \) and \( \phi\in[0,2\pi] \). The quantity \( r \) is the absolute value (magnitude) of the relative distance. Show that you can write the kinetic energy as \( K=1/2\mu(\ddot{r}^2+r^2\ddot{\phi}^2) \).</li>
+<li> <b>3c (5pt):</b> Include the potential energy for the Lennard-Jones potential and write out the Lagrangian using the coordinates \( r \) and \( \phi \). Does the potential energy depend on \( phi \)?</li>
+<li> <b>3d (10pt):</b> Use the Euler-Lagrange equations to find the equations of motion for \( r \) and \( \phi \). Does the equation of motion for \( r \) agree with what you derived in exercise 1? Comment your results.</li>
+<li> <b>3e (5pt):</b> Use the equation of motion for \( \phi \) to show that angular momentum is conserved. Comment your results. Can you infer this from the form of the potential? Hint: see your answer to 3c.</li>
 </ul>
-
-$$
-x_1=Ae^{i\omega t},~~~x_2=Be^{i\omega t}.
-$$
-
-Solve for \( A/B \) and \( \omega \). Express your answers in terms of \( \omega_0^2=k/m \).
-
-<ul>
-<li> <b>3e (20pt):</b> Write now a program which solves these two coupled differential equations for \( x_1 \) and \( x_2 \). Compute the positions \( x_1 \) and \( x_2 \) by choosing your initial conditions and compare with the analytical answers from 3d.</li>   
-</ul>
-
 <h3 id="classical-mechanics-extra-credit-assignment-scientific-writing-and-attending-talks">Classical Mechanics Extra Credit Assignment: Scientific Writing and attending Talks </h3>
 
-<p>
-The following gives you an opportunity to earn <b>five extra credit
+<p>The following gives you an opportunity to earn <b>five extra credit
 points</b> on each of the remaining homeworks and <b>ten extra credit points</b>
 on the midterms and finals.  This assignment also covers an aspect of
 the scientific process that is not taught in most undergraduate
@@ -271,13 +244,13 @@ scientist communicate their results to the rest of the field.  Knowing
 how to assemble a well written scientific report will greatly benefit
 you in you upper level classes, in graduate school, and in the work
 place.
+</p>
 
-<p>
-The full information on extra credits is found at <a href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/" target="_blank"><tt>https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/</tt></a>. There you will also find examples on how to write a scientific article. 
+<p>The full information on extra credits is found at <a href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/" target="_blank"><tt>https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/</tt></a>. There you will also find examples on how to write a scientific article. 
 Below you can also find a description on how to gain extra credits by attending scientific talks.
+</p>
 
-<p>
-This assignment allows you to gain extra credit points by practicing
+<p>This assignment allows you to gain extra credit points by practicing
 your scientific writing.  For each of the remaining homeworks you can
 submit the specified section of a scientific report (written about the
 numerical aspect of the homework) for five extra credit points on the
@@ -287,18 +260,18 @@ worth ten extra points.  For credit the grader must be able to tell
 that you put effort into the assignment (i.e. well written, well
 formatted, etc.).  If you are unfamiliar with writing scientific
 reports, <a href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/IntroductionScientificWriting.md" target="_blank">see the information here</a>
+</p>
 
-<p>
-The following table explains what aspect of a scientific report is due
+<p>The following table explains what aspect of a scientific report is due
 with which homework.  You can submit the assignment in any format you
 like, in the same document as your homework, or in a different one.
 Remember to cite any external references you use and include a
 reference list.  There are no length requirements, but make sure what
 you turn in is complete and through.  If you have any questions,
 please contact Julie Butler at butler@frib.msu.edu.
+</p>
 
-<p>
-<table border="1">
+<table class="dotable" border="1">
 <thead>
 <tr><th align="center">   HW/Project   </th> <th align="center">  Due Date </th> <th align="center">  Extra Credit Assignment   </th> </tr>
 </thead>
@@ -316,42 +289,34 @@ please contact Julie Butler at butler@frib.msu.edu.
 <tr><td align="center">   <b>Final</b>        </td> <td align="center">   <b>4-30</b>    </td> <td align="center">   <em>Full Written Report</em>    </td> </tr>
 </tbody>
 </table>
-<p>
-You can also gain extra credits if you attend scientific talks.
-This is described here.
 
+<p>You can also gain extra credits if you attend scientific talks.
+This is described here.
+</p>
 <h3 id="integrating-classwork-with-research">Integrating Classwork With Research </h3>
 
-<p>
-This opportunity will allow you to earn up to 5 extra credit points on a Homework per week. These points can push you above 100% or help make up for missed exercises.
+<p>This opportunity will allow you to earn up to 5 extra credit points on a Homework per week. These points can push you above 100% or help make up for missed exercises.
 In order to earn all points you must:
+</p>
 
 <ol>
 <li> Attend an MSU research talk (recommended research oriented Clubs is  provided below)</li>
 <li> Summarize the talk using at least 150 words</li>
 <li> Turn in the summary along with your Homework.</li>
 </ol>
-
-Approved talks:
+<p>Approved talks:
 Talks given by researchers through the following clubs:
-
+</p>
 <ul>
 <li> Research and Idea Sharing Enterprise (RAISE)&#8203;: Meets Wednesday Nights Society for Physics Students (SPS)&#8203;: Meets Monday Nights</li>
 <li> Astronomy Club&#8203;: Meets Monday Nights</li>
 <li> Facility For Rare Isotope Beam (FRIB) Seminars: &#8203;Occur multiple times a week</li>
 </ul>
+<p>If you have any questions please write us.</p>
 
-If you have any questions please consult Jeremy Rebenstock, rebensto@msu.edu.
-
-<p>
-All the material on extra credits is at <a href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/" target="_blank"><tt>https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/</tt></a>.
-
-<p>
+<p>All the material on extra credits is at <a href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/" target="_blank"><tt>https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/</tt></a>. </p>
 
 <!-- ------------------- end of main content --------------- -->
-
-
 </body>
 </html>
-    
 

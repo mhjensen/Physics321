@@ -1,5 +1,5 @@
 TITLE: PHY321 Classical Mechanics 1
-AUTHOR: Final project, due Friday May 6 midnight (1159pm)
+AUTHOR: Final  project, due Friday April 30 at midnight (1159pm)
 DATE: today
 
 
@@ -9,7 +9,7 @@ o You can work in groups (optimal groups are often 2-3 people) or by yourself. I
 o How do I(we)  hand in?  Due to the extraordinary situation we are in now, the final projec should be handed in fully via D2L. You can scan your handwritten notes and upload to D2L or you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical part should always be handed in as a jupyter notebook.
 
 
-=== Introduction to the final project, total score: 110  points ===
+=== Introduction to the final project, total score: 120  points ===
 
 The relevant reading background is
 o chapters 2-8 and 14 of Taylor
@@ -23,12 +23,12 @@ similar) for the non-computational exercises.
 
 === Exercise 1, Two-body Problems and Conservative Forces (total 35pt) ===
 
-The relevant material can be found in Taylor chapters 4 and 8. Homework sets 5, 6-9 and the chapters on "forces":"https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter4.html" and "two-body problems":"https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter6.html" from the lecture notes may also be of use. 
+The relevant material from Taylor are chapters 4 and 8. Homework sets 4, 6-9 and the chapters on "forces":"https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter4.html" and "two-body problems":"https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter6.html" from the lecture notes may also be of use. 
 
-This exercise and the next are  follow-ups of homework 6. There we studied the so-called
-"Lennard-Jones potential":"https://en.wikipedia.org/wiki/Lennard-Jones_potential" which is widely used in molecular dynamics
-calculations and in the simulations of "quantum liquids":"https://journals.aps.org/prb/abstract/10.1103/PhysRevB.40.11070". This potential is based on parametrizations from
-experiments. In "molecular dynamics calculations":"https://en.wikipedia.org/wiki/Molecular_dynamics" the assumption is
+This exercise and the next are  follow-ups of hw6. There we studied the so-called
+Lennard-Jones potential which is widely used in molecular dynamics
+calculations. This potential is based on parametrizations from
+expertiments. In molecular dynamics calculations the assumption is
 that atoms move according to the laws of Newton, given the correct
 model for interactions. We can say then that quantum-mechanical
 degrees of freedom stemming from complicated interactions between electrons
@@ -72,7 +72,7 @@ Then we switch our attention to the equations of motion.
 !et
 
 
-=== Exercise 2, Two-body Problems and Conservative Forces, Numerical Studies (50pt) ===
+=== Exercise 2, Two-body Problems and Conservative Forces, Numerical Studies (40pt) ===
 
 In this exercise we will solve the previous equations of motion numerically and study the solutions.
 Here you can use the same codes you developed in homework sets 5-9 and the second midterm.
@@ -101,33 +101,36 @@ We switch now to a numerical procedure and study the simulation of two interacti
 * _2c (10pt):_ Write a function which solves (ref{eq:undim}) for two atoms and find the positions and velocities of the atoms as a function of time. Implement either the Euler-Cromer or the Velocity-Verlet methods to solve the equations of motion (you can reuse your codes from homework sets 5-9 or the second midterm).
 
 
-* _2d (5pt):_ Simulate the motion of two atoms which start at rest separated by a distance of ${1.5}\sigma$. Use $\Delta t'={0.01}$, simulate until $t'=5$ and integrate with one of the above methods. Plot the distance between the atoms as a function of time. How does the motion fit with your expectations? What type of motion do you expect?
-* _2e (5pt):_ Repeat the previous tasks, but now with an initial separation of $0.95\sigma$. Explain your results. 
-* _2f (10pt):_ Compute and plot the kinetic, potential and total energy as a function of time for the time interval from exercise  2d and the initial conditions from 2d and 2e. Should the total energy be conserved? Why, or why not? Here you can use your codes from the second midterm for computing the energies.
-* _2g (10pt):_ Is angular momentum conserved (see your answers to 1f). How would you show this numerically? Hint: see your answers to the second midterm, exercise 1c. 
+* _2d (5pt):_ Simulate the motion of two atoms which start at rest separated by a distance of ${1.5}\sigma$. Use $\Delta t'={0.01}$, simulate until $t'=5$ and integrate with one of the above methods. Plot the distance between the atoms as a function of time. How does the motion fit with your expectations?
+* _2e (5pt):_ Repeat the previous tasks, but now with an initial separation of $0.95\sigma$. Explain your results.
+* _2f (10pt):_ Compute and plot the kinetic, potential and total energy as a function of time for the time interval in 2d and the initial conditions from 2d and 2e. Should the total energy be conserved? Why, or why not? 
 
 
 
 
-=== Exercise 3, Lagrangian formalism and the Lennard-Jones potential (35pt) ===
+
+=== Exercise 3, Coupled Harmonic Oscillators (45pt) ===
+
+The relevant chapters from Taylor are chapters 5-7 and the lectures notes on "harmonic oscillations":"https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter5.html" and the "Lagrangian Formalism and Calculus of Variations":"https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter8.html". Your codes from homework sets 5-8 and the first midterm may also be of interest.
+
+Consider a mass $m$ that is connected to a wall by a spring with
+spring constant $k$. A second identical mass $m$ is connected to the
+first mass by an identical spring. Motion is confined to the $x$ direction only.
+
+* _3a (5pt):_ Make a drawing of the system, set up forces and define variables $x_1$ and $x_2$ for the two masses.
+* _3b (5pt):_ Write the Lagrangian in terms of the positions of the two masses $x_1$ and $x_2$.
+* _3c (5pt):_ Use the Euler-Lagrange equations to find the analytical expressions for the  equations of motion.
+* _3d (10pt):_ Find the analytical  solutions using a guess of  the type
+!bt
+\[
+x_1=Ae^{i\omega t},~~~x_2=Be^{i\omega t}.
+\]
+!et
+Solve for $A/B$ and $\omega$. Express your answers in terms of $\omega_0^2=k/m$.
+
+* _3e (20pt):_ Write now a program which solves these two coupled differential equations for $x_1$ and $x_2$. Compute the positions $x_1$ and $x_2$ by choosing your initial conditions and compare with the analytical answers from 3d.   
 
 
-The relevant chapters from Taylor are chapters 6-7 and 8. In addition he lectures
-notes on the "Lagrangian Formalism and Calculus of
-Variations":"https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter8.html" can be of use. You
-need also results from the two-body problem of chapter 8 of Taylor and
-the lecture notes "two-body
-problems":"https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter6.html".
-
-
-We will stay with a two-body problem only with particles $1$ and $2$, as in the two previous exercises.  
-We introduce the relative mass $\mu=m_1m_2/M$ where the total mass $M=m_1+m_2$, the sum of the masses $m_1$ and $m_2$.
-
-* _3a (5pt):_ Define the center-of-mass position $\bm{R}$ and the relative position $\bm{r}$ in terms of the masses and the positions of particles one and two $\bm{r}_1$ and $\bm{r}_2$, respectively. Define then the center-of-mass frame by setting $\bm{R}=0$. Show then that you can write the total angular momentum as $\bm{L}=\mu(\bm{r}\times \ddot{\bm{r}}$. Hint: See Taylor section 8.3. How do you interpret the angular momentum?  Why can we reduce the motion of two particles to a problem in two dimensions only?
-* _3b (10pt):_ We introduce polar coordinates with $r\in [0,\infty)$ and $\phi\in[0,2\pi]$. The quantity $r$ is the absolute value (magnitude) of the relative distance. Show that you can write the kinetic energy as $K=1/2\mu(\ddot{r}^2+r^2\ddot{\phi}^2)$.
-* _3c (5pt):_ Include the potential energy for the Lennard-Jones potential and write out the Lagrangian using the coordinates $r$ and $\phi$. Does the potential energy depend on $phi$?
-* _3d (10pt):_ Use the Euler-Lagrange equations to find the equations of motion for $r$ and $\phi$. Does the equation of motion for $r$ agree with what you derived in exercise 1? Comment your results.
-* _3e (5pt):_ Use the equation of motion for $\phi$ to show that angular momentum is conserved. Comment your results. Can you infer this from the form of the potential? Hint: see your answer to 3c.
 
 
 
@@ -203,7 +206,7 @@ Talks given by researchers through the following clubs:
 * Facility For Rare Isotope Beam (FRIB) Seminars: ​Occur multiple times a week
 
 
-If you have any questions please write us.
+If you have any questions please consult Jeremy Rebenstock, rebensto@msu.edu.
 
 All the material on extra credits is at URL:"https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/". 
 
