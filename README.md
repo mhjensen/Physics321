@@ -300,8 +300,9 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Video of lecture at https://youtu.be/0q6DAQtO8tI
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesApril27.pdf    
 - Friday 4/29:  Summary of course and discussion of final exam project. Additional homework ten due May 2.
-
-
+  - Video of Lecture at https://youtu.be/6BchF14pki0
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesApril29.pdf
+  
 ### Week 18, May 2-6, 2022
 Depending on your availability, we can have at least two sessions in order to discuss the final project.
 - Final Exam:  The final exam will be a project similar to the two midterm projects. Deadline May 6 at midnight.
