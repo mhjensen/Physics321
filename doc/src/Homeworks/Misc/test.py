@@ -1,6 +1,5 @@
 # Common imports
 import numpy as np
-import pandas as pd
 from math import *
 import matplotlib.pyplot as plt
 import os
@@ -28,6 +27,11 @@ def data_path(dat_id):
 def save_fig(fig_id):
     plt.savefig(image_path(fig_id) + ".png", format='png')
 
+
+def AngMomentum(r,v):
+    return np.cross(r,v)
+
+
 def ForceLennardJones(r1,r2):
     r = np.sqrt(sum((r1-r2)**2))
     return  24*(2.0*r**(-14)-r**(-8))*(r1-r2)
@@ -50,9 +54,9 @@ def VelocityVerlet(v1,r1,v2,r2,t,n,Force):
         t[i+1] = t[i] + DeltaT
 
 
-DeltaT = 0.001
+DeltaT = 0.0001
 #set up arrays 
-tfinal = 10 
+tfinal = 5
 n = ceil(tfinal/DeltaT)
 # set up arrays for t, a, v, and x
 t = np.zeros(n)
@@ -61,10 +65,10 @@ r1 = np.zeros((n,3))
 r2 = np.zeros((n,3))
 v2 = np.zeros((n,3))
 
-# Initial conditions as compact 2-dimensional arrays
-r10 = np.array([1.0,0.0,0.0])
+# Initial conditions as compact arrays as functions of time (n) and x, y and z
+r10 = np.array([1.0,1.0,1.0])
 r1[0] = r10
-r20 = np.array([0.0,1.0,0.0])
+r20 = np.array([2.0,0.0,2.0])
 r2[0] = r20
 # Can easily change to other initial conditions
 v10 = np.array([0.0,0.0,0.0])
@@ -74,17 +78,46 @@ v2[0] = v20
 
 # Start integrating using the Velocity-Verlet  method
 VelocityVerlet(v1,r1,v2,r2,t,n,ForceLennardJones)
-r = np.zeros(n)
-r = np.sqrt(sum((r1-r2)**2))
-print(r)
+
+
+# Compute total energy
+E = np.zeros(n)
+Ekin = np.zeros(n)
+Epot = np.zeros(n)
+for i in range(n):
+    v1abs = np.sum(v1[i]**2)
+    v2abs = np.sum(v2[i]**2)
+    Ekin[i] = 0.5*(v1abs+v2abs)
+    Epot[i] = PotentialLennardJones(r1[i],r2[i])
+    E[i] = Ekin[i]+Epot[i]
+# Plot Energy as function of time    
+fig, ax = plt.subplots()
+ax.set_xlabel('t')
+ax.set_ylabel('Energy')
+ax.plot(t, E)
+ax.plot(t, Ekin)
+ax.plot(t, Epot)
+fig.tight_layout()
+save_fig("Energy")
+plt.show()
+
+
+# Compute total angular momentum
+L = np.zeros((n,3))
+absL = np.zeros(n)
+for i in range(n):
+    L[i] = AngMomentum(r1[i],v1[i])+AngMomentum(r2[i],v2[i])
+    absL[i] = sqrt(np.sum(L[i]**2))
 # Plot position as function of time    
 fig, ax = plt.subplots()
 ax.set_xlabel('t')
-ax.set_ylabel('r')
-#ax.plot(t, r)
+ax.set_ylabel('Absolute value of Angular Momentum')
+ax.plot(t, absL)
 fig.tight_layout()
-save_fig("Positions")
+save_fig("AngMom")
 plt.show()
+
+
 
 """
 # Using the solutions for r and v we can now calculate the energies
