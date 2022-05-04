@@ -51,7 +51,7 @@ r_{\min} = - \frac{\alpha}{2E} \pm \frac{1}{2} \sqrt{\frac{\alpha^2}{E^2} + 2\fr
 !et
 
 
-Since we're looking for the minimum, the  ±  sign must be negative (then  𝑟min  will not be negative since  𝐸<0 ). Therefore, we have
+Since we're looking for the minimum, the  $\pm$  sign must be negative (then  $r_min$  will not be negative since  $E<0$ ). Therefore, we have
 
 !bt
 \[
@@ -354,174 +354,179 @@ we can rewrite the above equation as
 which is nothing but the equation for a hyperbola.
 
 
-===  Exercise 5, Testing orbit types (50 pt) ===
 
-In this exercise we can use the program for $r(\phi)$ we developed in hw8. We will use an inverse-square-law force as in exercises 1, 2, 3 and 4. The aim is to see that the orbits we get for $E<0$ become ellipses (or circles), parabola for $E=0$ and hyperbola for $E>0$.  An example code is shown here.
+=== Exercise 5 (40pt), Pendulum and Lagrangians (Taylor chapters 6-7) ===
 
-Here we have defined the constants $L=m=\alpha=1$. Feel free to set new values. _You need also to set the initial conditions_ in order to study the different types of orbits. It may be useful to plot the potential here and find the values for the initial conditions that fit $E<0$, $E=0$ and $E>0$. 
+A mathematical pendulum consists of a point mass $m$ suspended by a massless thread/rod of length $l$ in a gravitational field, as shown in the figure here. The constraining force is labeled by $\bm{T}$
+and the gravitational force.
 
-!bc pycode
-# Common imports
-import numpy as np
-import pandas as pd
-from math import *
-import matplotlib.pyplot as plt
-# Simple Gravitational Force   -alpha/r
-    
-DeltaT = 0.01
-#set up arrays 
-tfinal = 100.0
-n = ceil(tfinal/DeltaT)
-# set up arrays for t, v and r
-t = np.zeros(n)
-v = np.zeros(n)
-r = np.zeros(n)
-# Constants of the model, setting all variables to one for simplicity
-alpha = 1.0
-AngMom = 1.0  #  The angular momentum
-m = 1.0  # scale mass to one
-c1 = AngMom*AngMom/(m*m)
-c2 = AngMom*AngMom/m
-# You need to specify the initial conditions
-# Here we have chosen the conditions which lead to circular orbit and thereby a constant r
-r0 = (AngMom*AngMom/m/alpha)
-v0 = 0.0
-r[0] = r0
-v[0] = v0
-# Start integrating using the Velocity-Verlet  method
-for i in range(n-1):
-    # Set up acceleration
-    a = -alpha/(r[i]**2)+c1/(r[i]**3)
-    # update velocity, time and position using the Velocity-Verlet method
-    r[i+1] = r[i] + DeltaT*v[i]+0.5*(DeltaT**2)*a
-    anew = -alpha/(r[i+1]**2)+c1/(r[i+1]**3)
-    v[i+1] = v[i] + 0.5*DeltaT*(a+anew)
-    t[i+1] = t[i] + DeltaT
-    # Plot position as function of time
-fig, ax = plt.subplots(2,1)
-ax[0].set_xlabel('time')
-ax[0].set_ylabel('radius')
-ax[0].plot(t,r)
-ax[1].set_xlabel('time')
-ax[1].set_ylabel('Velocity')
-ax[1].plot(t,v)
+We assume that the length $l$ is constant and we define the coordinates involved as
 
-plt.show()
-
-!ec
-
-
-Run your code and study and discuss the situations where you have
-elliptical, parabolic and hyperbolic orbits. Discuss the physics of
-these cases. The results from exercises 1, 2, 3 and 4 may be useful
-here.  In the code here we have chosen initial conditions which correspond to circular motion.
-This corresponds to
 !bt
 \[
-r_{\mathrm{min}} = \frac{L^2}{m\alpha}.
+\bm{r} = l\sin(\phi)\bm{\hat{x}}+l\cos(\phi)\bm{\hat{y}},
+\]
+!et
+where $\bm{\hat{x}}$ and $\bm{\hat{y}}$ are the unit vectors in the $x$ and $y$ directions, respectively.
+
+* _5a (10pt):_ Set up the forces acting on the system and show that the equation of motion is $m\ddot{\bm{r}}=\bm{F}_g+\bm{T}$.
+
+The pendulum consists of a rod and a small object attached to the rod. The mass of this object is $m$ and it is the motion of this object we are concerned with. The distance from the object to the roof is $\bm{r}$ and we have $\vert \bm{r}\vert =l$. We keep the length fixed as function of time.
+
+The angle between the $y$-axis and the rod is $\phi$. The forces at
+play are the gravitational force and a tension force from the rod to
+the object. The net force is
+
+!bt
+\[
+\bm{F}^{\mathrm{net}}=\bm{T}+\bm{G}=T\sin{(\phi)}\bm{i}+T\cos{(\phi)}\bm{j}-mg\bm{j},
+\]
+!et
+and with
+!bt
+\[
+\bm{r}=l\sin{(\phi)}\bm{i}+l\cos{(\phi)}\bm{j},
+\]
+!et
+the equation of motion becomes
+
+!bt
+\[
+m\frac{d^2\bm{r}}{dt^2}=\bm{T}+\bm{G}=T\sin{(\phi)}\bm{i}+T\cos{(\phi)}\bm{j}-mg\bm{j}.
 \]
 !et
 
-Note well that the velocity is now the radial velocity. If we want to study the angular velocity we would need to add the equations for this quantity. The solution to exercises 1-4 give you the minimum $r$ values needed to find the elliptical, parabolic and hyperbolic orbits. For elliptical orbits you should have  $\frac{L^2}{2m\alpha} < r_{\mathrm{min}} <\frac{L^2}{m\alpha}$. For parabolic orbits $r_{\mathrm{min}} =\frac{L^2}{m\alpha}$ and for hyperbolic orbits we have $0<r_{\mathrm{min}} <\frac{L^2}{m\alpha}$. Try out these different initial conditions in order to test these different types of motion.
+
+* _5b (10pt):_ Show that you can rewrite the above equation of motion as two independent equations of motion, one for $\phi$ and one for the constraining force. Show that these equations are $\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}$ with $\omega_0^2=g/l$ and $T=ml\dot{\phi}^2+mg\cos{(\phi)}$.
+
+Using the chain rule we can find the first derivative of $\bm{r}$
+!bt
+\[
+\frac{d\bm{r}}{dt}=l\frac{d\phi}{dt}\cos{(\phi)}\bm{i}-l\frac{d\phi}{dt}\sin{(\phi)}\bm{j},
+\]
+!et
+and thereafter the second derivative in the $x$-direction as
+!bt
+\[
+\frac{d^2\bm{r}}{dt^2}\bm{i}=l\frac{d^2\phi}{dt^2}\cos{(\phi)}-l(\frac{d\phi}{dt})^2\sin{(\phi)},
+\]
+!et
+and in the $y$ direction
+!bt
+\[
+\frac{d^2\bm{r}}{dt^2}\bm{e}_2=-l\frac{d^2\phi}{dt^2}\sin{(\phi)}-l(\frac{d\phi}{dt})^2\cos{(\phi)}.
+\]
+!et
+
+We can now set up the equations of motion in the $x$ and $y$ directions and get for the $x$-direction
+!bt
+\[
+ml\frac{d^2\phi}{dt^2}\cos{(\phi)}-ml(\frac{d\phi}{dt})^2\sin{(\phi)}=T\sin{(\phi)},
+\]
+!et
+and for the $y$-direction
+!bt
+\[
+-ml\frac{d^2\phi}{dt^2}\sin{(\phi)}-ml(\frac{d\phi}{dt})^2\cos{(\phi)}=T\cos{(\phi)}-mg.
+\]
+!et
+
+This looks ugly!
+
+Let us rewrite
+!bt
+\[
+ml\frac{d^2\phi}{dt^2}\cos{(\phi)}=\left[ml(\frac{d\phi}{dt})^2+T\right]\sin{(\phi)},
+\]
+!et
+and
+!bt
+\[
+-ml\frac{d^2\phi}{dt^2}\sin{(\phi)}+mg=\left[ml(\frac{d\phi}{dt})^2+T\cos{(\phi)}\right].
+\]
+!et
+
+We can in turn rewrite the equations as
+!bt
+\[
+ml\frac{d^2\phi}{dt^2}\cos{(\phi)}=\left[ml(\frac{d\phi}{dt})^2+T\right]\sin{(\phi)},
+\]
+!et
+and
+!bt
+\[
+-ml\frac{d^2\phi}{dt^2}\sin{(\phi)}+mg=\left[ml(\frac{d\phi}{dt})^2+T\right]\cos{(\phi)}.
+\]
+!et
+We multiply the first equation with $\cos\phi$ and the second one with $\sin\phi$ and then subtract the two equations.
+We get then
+
+!bt
+\[
+-ml\frac{d^2\phi}{dt^2}(\cos{(\phi)})^2-ml\frac{d^2\phi}{dt^2}(\sin{(\phi)})^2+mg\sin{(\phi)}=0,
+\]
+!et
+leading to 
+!bt
+\[
+ml\frac{d^2\phi}{dt^2}=-mg\sin{(\phi)}.
+\]
+!et
+We are almost there.
+
+We divide by $m$ and $l$ and we have the famous non-linear in $\phi$ (due to the sine function) equation for the pendulumn
+!bt
+\[
+\frac{d^2\phi}{dt^2}=-\frac{g}{l}\sin{(\phi)}.
+\]
+!et
+Introducing the natural frequency $\omega_0^2=g/l$ we can rewrite the equation as
+!bt
+\[
+\frac{d^2\phi}{dt^2}=-\omega_0^2\sin{(\phi)}.
+\]
+!et
 
 
-===  Additional Bonus Exercise (10pt) ===
-
-You don't need to do this exercise, but it gives you a bonus score of 10 points.
-
-This time the additional bonus exercise is a simple survey. We are now moving
-into our last month  and we would very much have your feedback on how
-things are functioning so that we can improve and correct. 
-
-* Is the weekly load with paper and pencil exercises and the numerical exercises reasonable?
-* Is there enough material (lectures and lecture material) to get you started with the exercises?  We are thinking of both the paper and pencil and the numerical exercises?
-* Is the pace during the lectures reasonable? And do the lectures link well with the exercises?
-* In the beginning there will always be some elements of repetition of material many of you have seen before. Do you find the choice of material the first 4 weeks adequate? Too easy? Too difficult?
-* For those of you who have taken CMSE 201 Introduction to Computational Modeling, do you feel the material taught there links well with the exercises you have done in this course? Is there is something we are missing?
-* Any other topic you would like to comment on?
 
 
+The equation for $\phi$ is a second-order differential equation
+!bt
+\[
+\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}.
+\]
+!et
+
+This equation can be solved analytically if we assume that the angle $\phi$ is very small. Then we can approximate our equation as
+
+!bt
+\[
+\ddot{\phi}(t)=-\omega_0^2\phi(t).
+\]
+!et
+
+* _5c (5pt):_ Find the analytical solution for the last equation. Hint, look back at the solutions for the simple harmonic oscillator problem in one dimension in for example homework 8.
+
+If we now assume that the angle is very small, we can approximate $\sin{(\phi)}\approx \phi$ and we have essentially the same equation as we had for harmonic oscillations, that is
+!bt
+\[
+\frac{d^2\phi}{dt^2}=-\omega_0^2\phi.
+\]
+!et
+
+The solution to this equation is again given by
+!bt
+\[
+\phi(t) = A\cos{(\omega_0 t)}+B\sin{(\omega_0 t)}.
+\]
+!et
+
+For the general case, we have to resort to numerical solutions.
 
 
+* _5d (5pt):_ Find the expressions for the kinetic and potential energies in terms of the variables $r$ and $\phi$. 
 
-
-
-
-=== Classical Mechanics Extra Credit Assignment: Scientific Writing and attending Talks ===
-
-The following gives you an opportunity to earn _five extra credit
-points_ on each of the remaining homeworks and _ten extra credit points_
-on the midterms and finals.  This assignment also covers an aspect of
-the scientific process that is not taught in most undergraduate
-programs: scientific writing.  Writing scientific reports is how
-scientist communicate their results to the rest of the field.  Knowing
-how to assemble a well written scientific report will greatly benefit
-you in you upper level classes, in graduate school, and in the work
-place.
-
-The full information on extra credits is found at URL:"https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/". There you will also find examples on how to write a scientific article. 
-Below you can also find a description on how to gain extra credits by attending scientific talks.
-
-
-This assignment allows you to gain extra credit points by practicing
-your scientific writing.  For each of the remaining homeworks you can
-submit the specified section of a scientific report (written about the
-numerical aspect of the homework) for five extra credit points on the
-assignment.  For the two midterms and the final, submitting a full
-scientific report covering the numerical analysis problem will be
-worth ten extra points.  For credit the grader must be able to tell
-that you put effort into the assignment (i.e. well written, well
-formatted, etc.).  If you are unfamiliar with writing scientific
-reports, "see the information here":"https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/IntroductionScientificWriting.md"
-
-The following table explains what aspect of a scientific report is due
-with which homework.  You can submit the assignment in any format you
-like, in the same document as your homework, or in a different one.
-Remember to cite any external references you use and include a
-reference list.  There are no length requirements, but make sure what
-you turn in is complete and through.  If you have any questions,
-please contact Julie Butler at butler@frib.msu.edu.
-
-|-------------------------------------------------|
-| HW/Project | Due Date | Extra Credit Assignment |
-|-----------------------------------------------|
-| HW 3       | 2-8      | Abstract                |
-| HW 4       | 2-15     | Introduction            |
-| HW 5       | 2-22     | Methods                 |
-| HW 6       | 3-1      | Results and Discussion  |
-| _Midterm 1_ |  _3-12_    | *Full Written Report*     |
-| HW 7       | 3-22     | Abstract                |
-| HW 8       | 3-29     | Introduction            |
-| HW 9       | 4-5      | Results and Discussion  |
-| _Midterm 2_ | _4-16_    | *Full Written Report*     |
-|HW 10       | 4-26     | Abstract                |
-| _Final_   | _4-30_     | *Full Written Report*     |
-|--------------------------------------------------|
-
-
-You can also gain extra credits if you attend scientific talks.
-This is described here.
-
-
-=== Integrating Classwork With Research ===
-
-This opportunity will allow you to earn up to 5 extra credit points on a Homework per week. These points can push you above 100% or help make up for missed exercises.
-In order to earn all points you must:
-
-o Attend an MSU research talk (recommended research oriented Clubs is  provided below)
-o Summarize the talk using at least 150 words
-o Turn in the summary along with your Homework.
-
-Approved talks:
-Talks given by researchers through the following clubs:
-* Research and Idea Sharing Enterprise (RAISE)​: Meets Wednesday Nights Society for Physics Students (SPS)​: Meets Monday Nights
-* Astronomy Club​: Meets Monday Nights
-* Facility For Rare Isotope Beam (FRIB) Seminars: ​Occur multiple times a week
-
-
-If you have any questions please consult Jeremy Rebenstock, rebensto@msu.edu.
-
-All the material on extra credits is at URL:"https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/". 
+* _5e (10pt):_ With the potential $V$  and kinetic $T$ energies, define the Lagrangian for the mathematical pendulum discussed here. Add the constraint $r=l$ via a Lagrange multiplier $\lambda$ and derive the equations of motion. Show that these result in  $\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}$ with $\omega_0^2=g/l$ and $\lambda=ml\dot{\phi}^2+mg\cos{(\phi)}$.  How would you interpret $\lambda$? 
 
 
 
