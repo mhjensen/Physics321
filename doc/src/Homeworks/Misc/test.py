@@ -66,9 +66,9 @@ r2 = np.zeros((n,3))
 v2 = np.zeros((n,3))
 
 # Initial conditions as compact arrays as functions of time (n) and x, y and z
-r10 = np.array([1.0,1.0,1.0])
+r10 = np.array([1.5,0.0,0.0])
 r1[0] = r10
-r20 = np.array([2.0,0.0,2.0])
+r20 = np.array([0.0,0.0,0.0])
 r2[0] = r20
 # Can easily change to other initial conditions
 v10 = np.array([0.0,0.0,0.0])
