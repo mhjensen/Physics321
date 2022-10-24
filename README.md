@@ -307,7 +307,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 ### Week 18, May 2-6, 2022
 Depending on your availability, we can have at least two sessions in order to discuss the final project.
 - Final Exam:  The final exam will be a project similar to the two midterm projects. Deadline May 6 at midnight.
-
+- Solution final 2022  at https://github.com/mhjensen/Physics321/tree/master/doc/FinalProject/final/solution
 
 ## Learning outcomes
 
