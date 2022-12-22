@@ -1,19 +1,19 @@
 # PHY321, Classical Mechanics I, Michigan State University, Spring 2023
 
 
-We have planned this class as partly a flipped class where we would like to
+We have planned this class _partly_ as a flipped class where we would like to
 - use Mondays as regular lecture days
 - Wednesdays as a mix of lectures and problem solving (or just one of them depending on needs and feedback from you). The first two weeks we will lecture both Monday and Wednesday.
 - Fridays are planned as flipped classes, with problem solving and more.
 
-We will have at our disposal room 1202 in the new STEM building.
+We will have at our disposal room 2202 in the new STEM building.
 
 
-The lectures will be available online as well via
+The lectures are in person but will be available online as well via
 zoom. This will be done throughout the semester. It means that if you
 cannot be there physically (for many reasons), you can always attend
 via zoom. All lectures will be recorded and uploaded and made
-available to you via D2L and MSU media space and the website of the
+available to you via D2L and the website of the
 course. 
 
 
@@ -22,7 +22,7 @@ We will thus have in-person classes and the lectures/sessions will be
 - the videos will be posted right afterwards in case you could not attend (that is the video of the actual lecture, it is like a kind of podcast with movie). You can thus review the material which was discussed in peace whenever you want;
 - We use always a whiteboard (iPad) instead of a blackboard and these handwritten notes are also posted after the lectures;
 - We have  extensive online material, lecture notes, exercises, projects and more, see the GitHub site of the course at
-https://github.com/mhjensen/Physics321, see https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter1.html for the online textbook land https://mhjensen.github.io/Physics321/doc/web/course.html for the weekly material.
+https://github.com/mhjensen/Physics321, see https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter1.html for the online textbook and https://mhjensen.github.io/Physics321/doc/web/course.html for the weekly material.
 - We are going to make shorter videos which cover various topics and how to solve different exercises and more. They will be posted as we move on during the semester;
 
 
@@ -37,39 +37,37 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Lectures |   |    |   Location |
 |---------|----|----|----|
-| Monday 3:00-3:50pm| Wednesday 3:00-3:50pm | Friday 3:00-3:50pm | Room 1202 STEM building and digital |
+| Monday 3:00-3:50pm| Wednesday 3:00-3:50pm | Friday 3:00-3:50pm | Room 2202 STEM building and digital (see zoom link below) |
 
 
 |  Instructor  | Email | Office  | Office phone/cellphone  |
 |--------------|------|-----|----| 
 | _Morten Hjorth-Jensen_ https://github.com/mhjensen | hjensen@msu.edu | Office: NSCL/FRIB 2131 | 5179087290/5172491375/ |
 
+|-----------------------------------|
+| Zoom link for lectures and more: |
+| https://msu.zoom.us/j/91523293661?pwd=akpyelF3dDBlQy9vVm4xN3pmd1BQdz09 |
+| Meeting ID: 915 2329 3661 |
+| Passcode: 739577 |
+|--------------------------|
 
-https://msu.zoom.us/j/91523293661?pwd=akpyelF3dDBlQy9vVm4xN3pmd1BQdz09
-
-Meeting ID: 915 2329 3661
-Passcode: 739577
-
-| Office Hours|   |  
+| Office Hours for Morten |   |  
 |----------|----------|
 | Monday/Wednesday/Friday 4-5:00pm | or immediately after class |
 
-| Homework Grader | Email | 
-|--------------|------| 
-| _Julie Butler_ | butle222@msu.edu |
 
-| Office Hours Julie Butler | Times | Location | 
-|---------------------------|-------|----------|
-| Thursday | 10-11:30am | Virtual, https://msu.zoom.us/j/91499308414 (passcode: phy321) |
-| Friday| 1:30-3pm | In person, STEM 1202 |
+| Teaching assistant | Email | Office Hour | Zoom Link |
+|--------------------|-------|-------------|-----------|
+| _Shuyue Xue_ | xueshuy1@msu.edu@msu.edu | TBA | TBA |
+
 
 | Learning Assistant | Email | Office Hour | Zoom Link |
 |--------------------|-------|-------------|-----------|
-| _Abby Baratta_ | fallona1@msu.edu | Thursday 12:30-1:30pm | https://msu.zoom.us/j/95324154476 (passcode: phy321) |
+| _Abby Baratta_ | baratta2@msu.edu | TBA | TBA |
 
 | Additional office hours|  Zoom link |
 |---|----|
-| Tuesdays and Thursdays 9pm-10pm | |
+| TBA | |
 
 
 
@@ -78,10 +76,10 @@ Passcode: 739577
 | Activity | Percentage of total score |
 |------|-----|
 |Homeworks, 9 in total and due Fridays the week after | 20% |
-| First Midterm Project, _due Friday March  4_ | 25% |
-| Second  Midterm Project, _due  Friday April 15_ | 25% |
-| Final Exam project, _due Friday May 6_ |  30%  |
-| Extra Credit Assignment, homework 10,  (due Monday May 2)| 10% |
+| First Midterm Project, _due Friday March  3_ | 25% |
+| Second  Midterm Project, _due  Friday April 14_ | 25% |
+| Final Exam project, _due Friday May 5_ |  30%  |
+| Extra Credit Assignment, homework 10,  (due Monday May 1)| 10% |
 
 | Grading scale | | | | | | | 
 |-----|-----|-------|------|--------|--------|--------|
