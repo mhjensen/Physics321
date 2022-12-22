@@ -45,6 +45,10 @@ Here you will find a general overview of the course, with learning outcomes, tea
 | _Morten Hjorth-Jensen_ https://github.com/mhjensen | hjensen@msu.edu | Office: NSCL/FRIB 2131 | 5179087290/5172491375/ |
 
 
+https://msu.zoom.us/j/91523293661?pwd=akpyelF3dDBlQy9vVm4xN3pmd1BQdz09
+
+Meeting ID: 915 2329 3661
+Passcode: 739577
 
 | Office Hours|   |  
 |----------|----------|
@@ -61,7 +65,7 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Learning Assistant | Email | Office Hour | Zoom Link |
 |--------------------|-------|-------------|-----------|
-| _Abbey Fallon_ | fallona1@msu.edu | Thursday 12:30-1:30pm | https://msu.zoom.us/j/95324154476 (passcode: phy321) |
+| _Abby Baratta_ | fallona1@msu.edu | Thursday 12:30-1:30pm | https://msu.zoom.us/j/95324154476 (passcode: phy321) |
 
 | Additional office hours|  Zoom link |
 |---|----|
@@ -95,6 +99,14 @@ _Additional textbooks_:
 Weekly mails (Weekends/Mondays) with updates, plans for lectures etc will be sent to everybody. 
 
 ###  Week 2, January 9-13, 2022
+
+
+https://msu.zoom.us/j/91523293661?pwd=akpyelF3dDBlQy9vVm4xN3pmd1BQdz09
+
+Meeting ID: 915 2329 3661
+Passcode: 739577
+
+
 
 - Monday 1/9: Introduction to the course and reminder  on vectors, space, time and motion, JRT chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). Python programming reminder, elements from CMSE 201 and how they are used in this course. Installing software (anaconda). See slides at https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). 
 AMS chapters 2 and 4 are very useful. 1st homework due January 21.
