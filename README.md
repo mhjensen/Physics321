@@ -94,30 +94,25 @@ _Additional textbooks_:
 ##  Teaching schedule with links to material
 Weekly mails (Weekends/Mondays) with updates, plans for lectures etc will be sent to everybody. 
 
-###  Week 2, January 10-14, 2022
+###  Week 2, January 9-13, 2022
 
-- Monday 1/10: Introduction to the course and reminder  on vectors, space, time and motion, JRT chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). Python programming reminder, elements from CMSE 201 and how they are used in this course. Installing software (anaconda). See slides at https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). 
+- Monday 1/9: Introduction to the course and reminder  on vectors, space, time and motion, JRT chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). Python programming reminder, elements from CMSE 201 and how they are used in this course. Installing software (anaconda). See slides at https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). 
 AMS chapters 2 and 4 are very useful. 1st homework due January 21.
-  - Video of lecture at https://mediaspace.msu.edu/media/t/1_ronomlmv without subtitles. 
-  - Lecture video with subtitles at https://youtu.be/v2kSDkzBXqM
-  - Handwritten notes from lecture at https://github.com/mhjensen/Physics321/tree/master/doc/HandWrittenNotes/Spring2022/NotesJanuary10.pdf
-- Wednesday 1/12: Forces and Newton's laws of motion. Free fall problems. JRT chapter 1.4 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). AMS chapters 2 and 4 are very useful.
-  - Video of lecture January 12 at https://mediaspace.msu.edu/media/t/1_yfmpmg57 without subtitles. 
-  - Lecture video with subtitles at https://youtu.be/eAGq310mMVc
+  - Lecture video with subtitles at TBA
+  - Handwritten notes from lecture at https://github.com/mhjensen/Physics321/tree/master/doc/HandWrittenNotes/Spring2023/NotesJanuary9.pdf
+- Wednesday 1/11: Forces and Newton's laws of motion. Free fall problems. JRT chapter 1.4 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). AMS chapters 2 and 4 are very useful.
+  - Lecture video with subtitles at TBA
   - Handwritten notes at https://github.com/mhjensen/Physics321/tree/master/doc/HandWrittenNotes/Spring2022/NotesJanuary12.pdf
-- Friday 1/14: Discussions and problem solving and discussion of first homework. 
-  - The first ten minutes were recorded and the video can be found at https://mediaspace.msu.edu/media/t/1_7gxzfsr9
+- Friday 1/13: Discussions and problem solving and discussion of first homework. 
 
-###  Week 3, January 17-21, 2022
+###  Week 3, January 16-20, 2022
 
-- Monday 1/17: MLK day, no classes
-- Wednesday 1/19: Motion and forces, Newton's laws, examples.
+- Monday 1/16: MLK day, no classes
+- Wednesday 1/18: Motion and forces, Newton's laws, examples.
   - Handwritten notes from lecture at https://github.com/mhjensen/Physics321/tree/master/doc/HandWrittenNotes/Spring2022/NotesJanuary19.pdf
-  - Video of lecture January 19 (no subtitles) at https://mediaspace.msu.edu/media/t/1_amp782uz. Video with subtitles at https://youtu.be/csjr4c_6A7c
-- Friday 1/21: Motion and forces, Newton's laws, examples. Problems solving. Deadline first homework.
-  - Video of first 25 minutes at https://www.youtube.com/watch?v=gNbTBqOajus.
+  - Video of lecture at TBA
+- Friday 1/20: Motion and forces, Newton's laws, examples. Problems solving. Deadline first homework.
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesJanuary21.pdf from first 25 minutes
-- Solution first assignment at https://github.com/mhjensen/Physics321/tree/master/doc/Homeworks/hw1/solution
 - Good reads are Taylor chapters 1.4, 1.5, 1.6, 2.1-2.4 and AMS chapters 4.2 and  5 and and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week3/html/week3.html).
 
 
