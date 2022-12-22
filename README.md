@@ -1,21 +1,15 @@
-# PHY321, Classical Mechanics I, Michigan State University, Spring 2022
+# PHY321, Classical Mechanics I, Michigan State University, Spring 2023
 
 
-We have planned this class as a flipped class where we would like to
+We have planned this class as partly a flipped class where we would like to
 - use Mondays as regular lecture days
 - Wednesdays as a mix of lectures and problem solving (or just one of them depending on needs and feedback from you). The first two weeks we will lecture both Monday and Wednesday.
 - Fridays are planned as flipped classes, with problem solving and more.
 
 We will have at our disposal room 1202 in the new STEM building.
 
-You have probably seen that MSU plans to have most lectures in an
-online format the first three weeks. Since we have a lots of space in
-the new STEM building, we believe there is no problem in having
-in-person lectures.
 
-This means that for those of you who want and can
-attend, we will have in-person lectures starting on Monday January
-10. However, the lectures will be available online as well via
+The lectures will be available online as well via
 zoom. This will be done throughout the semester. It means that if you
 cannot be there physically (for many reasons), you can always attend
 via zoom. All lectures will be recorded and uploaded and made
@@ -43,7 +37,7 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Lectures |   |    |   Location |
 |---------|----|----|----|
-| Monday 3:00-3:50pm| Wednesday 3:00-3:50pm | Friday 3:00-3:50pm | Room tbd and digital |
+| Monday 3:00-3:50pm| Wednesday 3:00-3:50pm | Friday 3:00-3:50pm | Room 1202 STEM building and digital |
 
 
 |  Instructor  | Email | Office  | Office phone/cellphone  |
@@ -68,12 +62,10 @@ Here you will find a general overview of the course, with learning outcomes, tea
 | Learning Assistant | Email | Office Hour | Zoom Link |
 |--------------------|-------|-------------|-----------|
 | _Abbey Fallon_ | fallona1@msu.edu | Thursday 12:30-1:30pm | https://msu.zoom.us/j/95324154476 (passcode: phy321) |
-| _George McClure_ | mcclur97@msu.edu | Tuesday 2-3pm | https://msu.zoom.us/j/92372186803 (passcode: phy321) |
-
 
 | Additional office hours|  Zoom link |
 |---|----|
-| Tuesdays and Thursdays 9pm-10pm | https://msu.zoom.us/j/99175597088?pwd=NXVzTVczekphd21tUi9qYU94czhVQT09 Passcode: 334331|
+| Tuesdays and Thursdays 9pm-10pm | |
 
 
 
