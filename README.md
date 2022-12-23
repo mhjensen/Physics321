@@ -44,12 +44,10 @@ Here you will find a general overview of the course, with learning outcomes, tea
 |--------------|------|-----|----| 
 | _Morten Hjorth-Jensen_ https://github.com/mhjensen | hjensen@msu.edu | Office: NSCL/FRIB 2131 | 5179087290/5172491375/ |
 
-
-| Zoom link for lectures |
-| https://msu.zoom.us/j/91523293661?pwd=akpyelF3dDBlQy9vVm4xN3pmd1BQdz09 |
-| Meeting ID: 915 2329 3661 |
-| Passcode: 739577 |
-
+|------------------------|------------|----------|
+| Zoom link for lectures | Meeting ID | Passcode |
+| https://msu.zoom.us/j/91523293661?pwd=akpyelF3dDBlQy9vVm4xN3pmd1BQdz09 | 915 2329 3661 | Passcode: 739577 |
+|------------------------------------------------------------------------|---------------|------------------|
 
 | Office Hours for Morten |   |  
 |----------|----------|
@@ -58,7 +56,7 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Teaching assistant | Email | Office Hour | Zoom Link |
 |--------------------|-------|-------------|-----------|
-| _Shuyue Xue_ | xueshuy1@msu.edu@msu.edu | TBA | TBA |
+| _Shuyue Xue_ | xueshuy1@msu.edu | TBA | TBA |
 
 
 | Learning Assistant | Email | Office Hour | Zoom Link |
@@ -97,11 +95,6 @@ _Additional textbooks_:
 Weekly mails (Weekends/Mondays) with updates, plans for lectures etc will be sent to everybody before the week begins. 
 
 
-
-|  Zoom link                |
-| https://msu.zoom.us/j/91523293661?pwd=akpyelF3dDBlQy9vVm4xN3pmd1BQdz09 |
-| Meeting ID: 915 2329 3661 |
-|Passcode: 739577  |
 
 
 
