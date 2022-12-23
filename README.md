@@ -98,13 +98,11 @@ Weekly mails (Weekends/Mondays) with updates, plans for lectures etc will be sen
 
 
 
-|---------------------------|
 |  Zoom link                |
-|---------------------------|
 | https://msu.zoom.us/j/91523293661?pwd=akpyelF3dDBlQy9vVm4xN3pmd1BQdz09 |
 | Meeting ID: 915 2329 3661 |
 |Passcode: 739577  |
-|---------------------------|
+
 
 
 ###  Week 2, January 9-13, 2023
