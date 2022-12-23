@@ -48,7 +48,7 @@ Here you will find a general overview of the course, with learning outcomes, tea
 | Zoom link for lectures | Meeting ID | Passcode |
 |------------------------------------------------------------------------|---------------|------------------|
 | https://msu.zoom.us/j/91523293661?pwd=akpyelF3dDBlQy9vVm4xN3pmd1BQdz09 | 915 2329 3661 | Passcode: 739577 |
-|------------------------------------------------------------------------|---------------|------------------|
+
 
 | Office Hours for Morten |   |  
 |----------|----------|
