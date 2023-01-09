@@ -131,7 +131,7 @@ PHY321: Classical Mechanics 1
 
 % --- begin date ---
 \begin{center}
-Dec 23, 2022
+Jan 9, 2023
 \end{center}
 % --- end date ---
 
@@ -228,7 +228,7 @@ import matplotlib.pyplot as plt
 
 The first exercise here deals with simply getting familiar with vectors and matrices.
 
-We will be working with vectors and matrices to get you familiar with them
+We will be working with vectors and matrices to get you familiar with them.
 
 \begin{enumerate}
 \item Initalize two three-dimensional $xyz$ vectors in the below cell using np.array([x,y,z]). Vectors are represented through arrays in python
@@ -258,9 +258,9 @@ print("V2: ", V2)
 If this is not too familiar, here's a useful link for creating vectors in python
 \href{{https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html}}{\nolinkurl{https://docs.scipy.org/doc/numpy-1.13.0/user/basics.creation.html}}. Alternatively, look up the \href{{https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html}}{introductory slides}.
 
-Now lets do some basic mathematics with vectors.
+Now let us do some basic mathematics with vectors.
 
-Compute and print the following, and double check with hand calculations:
+Compute and print the following, and double check with your own paper and pencil calculations:
 
 \begin{itemize}
 \item 6a (2pt)  Calculate $\bm{V}_1-\bm{V}_2$.
@@ -335,9 +335,14 @@ print("M1+M3: ", M1+M3)
 
 What happens if we try to do $M1+M2$?
 
-That's enough vectors and matrices for now. Let's move on to some physics problems! Yes, the actual subject we are studying for. 
+That's enough vectors and matrices for now. Let's move on to some physics problems! 
 
-We can opt for two different ways of handling the data. The data is listed in the table here and represents the total time Usain Bolt used in steps of  10 meters of distance. The label $i$ is just a counter and we start from zero since Python arrays are by default set from zero. The variable $t$ is time in seconds and $x$ is the position in meters.
+We can opt for two different ways of handling the data. The data are
+listed in the table here and represents the total time Usain Bolt used
+in steps of 10 meters of distance. The label $i$ is just a counter and
+we start from zero since Python arrays are by default set from
+zero. The variable $t$ is time in seconds and $x$ is the position in
+meters. You may find it useful to include results at time $t=0$ as well. The position is obviously then $x=0$ m.
 
 
 \begin{quote}
@@ -354,7 +359,7 @@ t[s] & 1.85 & 2.87 & 3.78 & 4.65 & 5.50 & 6.32 & 7.14 & 7.96 & 8.79 & 9.69 \\
 
 \noindent
 \begin{itemize}
-\item 6e (6pt) You can here make a file with the above data and read them in and set up two vectors, one for time and one for position. Alternatively, you can just set up these two vectors directly and define two vectors in your Python code.
+\item 6e (6pt) You can make a file with the above data and read them in and set up two vectors, one for time and one for position. Alternatively, you can just set up these two vectors directly and define two vectors in your Python code.
 \end{itemize}
 
 \noindent
