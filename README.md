@@ -60,9 +60,9 @@ Here you will find a general overview of the course, with learning outcomes, tea
 | _Shuyue Xue_ | xueshuy1@msu.edu | TBA | TBA |
 
 
-| Learning Assistant | Email | Office Hour | Zoom Link |
+| Learning Assistant | Email | Office Hour | Where |
 |--------------------|-------|-------------|-----------|
-| _Abby Baratta_ | baratta2@msu.edu | TBA | TBA |
+| _Abby Baratta_ | baratta2@msu.edu | Thursdays 10am-12pm | Helproom BPS |
 
 | Additional office hours|  Zoom link |
 |---|----|
