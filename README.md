@@ -27,7 +27,7 @@ https://github.com/mhjensen/Physics321, see https://mhjensen.github.io/Physics32
 
 
 We have also created a Slack channel, see 
-https://join.slack.com/t/classicalmech-rg52464/shared_invite/zt-11lsnqzdc-XXV4KD_xtXKvhAy1a9kcyw
+https://join.slack.com/t/slack-yog2159/shared_invite/zt-1n2ynisck-C_dQ7X67VpRDPqZGOvYzhA
 
 
 
