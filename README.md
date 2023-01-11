@@ -26,8 +26,9 @@ https://github.com/mhjensen/Physics321, see https://mhjensen.github.io/Physics32
 - We are going to make shorter videos which cover various topics and how to solve different exercises and more. They will be posted as we move on during the semester;
 
 
-We have also created a Slack channel, see 
-https://join.slack.com/t/slack-yog2159/shared_invite/zt-1n2ynisck-C_dQ7X67VpRDPqZGOvYzhA
+We have also created a Slack channel, see the link here to join
+https://join.slack.com/t/classicalmech-qzd7435/shared_invite/zt-1n2ynisck-C_dQ7X67VpRDPqZGOvYzhA
+
 
 
 
