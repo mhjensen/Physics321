@@ -9,7 +9,7 @@ AMS chapters 2 and 4 are very useful. 1st homework due January 21.
   - Lecture video at https://youtu.be/BT2pSnYNYHE
   - Handwritten notes from lecture at https://github.com/mhjensen/Physics321/tree/master/doc/HandWrittenNotes/Spring2023/NotesJanuary9.pdf
 - Wednesday 1/11: Forces and Newton's laws of motion. Free fall problems. JRT chapter 1.4 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). AMS chapters 2 and 4 are very useful.
-  - Lecture video at TBA
+  - Lecture video at https://youtu.be/s-cqtSfOZ1Q
   - Handwritten notes at https://github.com/mhjensen/Physics321/tree/master/doc/HandWrittenNotes/Spring2023/NotesJanuary11.pdf
 - Friday 1/13: Discussions and problem solving and discussion of first homework. 
 
