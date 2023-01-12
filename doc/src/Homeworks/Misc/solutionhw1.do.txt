@@ -347,57 +347,6 @@ print("M1+M3: ", M1+M3)
 !ec
 What happens if we try to do $M1+M2$?
 
-=== 6e (4pt), solution ===
-
-Let us go back to exercise 6. Define a vector $\bm{a}=(1,0,0)$ and set
-the angle $\phi$ in the rotation matrix (rotation in the $xy$ plane)
-to $45$ degrees. Set up the matrix $\bm{R}$ and find the vector
-$\bm{b}=\bm{R}\bm{a}$.
-
-
-
-To perform a matrix-vector multiplication of the above type, the following python code may be of use. Here we just define a random vector and a random $3\times 3$ matrix
-!bc pycod
-import numpy as np
-#We define a  3 dimensional vector with random numbers
-n = 3
-a = np.random.rand(n)
-# define a matrix of dimension 3 x 3 and set all elements to random numbers with x \in [0, 1]
-R = np.random.rand(n, n)
-#print the vector and the matrix
-print(a)
-print(R)
-# perform a matrix-vector multiplication. Note that we need to transpose the vector and the odd way to indicate a multiplication with @
-b = R @ a.T
-print(b)
-!ec
-
-
-
-
-The code which solves the problem of 6e can be written as
-
-!bc pycod
-import numpy as np
-from math import sin, cos, pi
-#We define a  the vector a (3-dim)
-a = np.array([1,0,0])
-# define the angle in Radians
-phi = 45*pi/180.
-#define cos and sin
-c = cos(phi)
-s = sin(phi)
-# define a matrix of dimension 3 x 3 and set the elements
-R = np.array([[c, s, 0], [-s,c,0],[0,0,1]])
-#print the vector and the matrix
-print(a)
-print(R)
-# perform a matrix-vector multiplication. Note that we need to transpose the vector and the odd way to indicate a multiplication with @
-b = R @ a.T
-print(b)
-!ec
-
-
 
 
 That's enough vectors and matrices for now. Let's move on to some physics problems! Yes, the actual subject we are studying for. 
@@ -412,7 +361,7 @@ We can opt for two different ways of handling the data. The data is listed in th
 | t[s] | 1.85 | 2.87 | 3.78 |  4.65 | 5.50 | 6.32 | 7.14 | 7.96 | 8.79 | 9.69 |
 |-------------------------------------------|
 
-=== 6f-6g (4pt)+(4pt), solution  ===
+=== 6e-6f (6pt)+(6pt), solution  ===
 
 You can here make a file with the above data and read them in and set
 up two vectors, one for time and one for position. Alternatively, you
@@ -433,7 +382,7 @@ plt.show()
 !ec
 
 
-=== 6h (10pt), solution ===
+=== 6g (10pt), solution ===
 
 Compute thereafter the mean velocity for every interval $i$ and the total velocity (from $i=0$ to the given interval $i$) for each interval and plot these two quantities as function of time. Comment your results.
 
@@ -448,13 +397,15 @@ for i in range(1,n):
     TotalVaverage[i] = (x[i]-x[0])/(t[i]-t[0])
 !ec
 
-=== 6i (10pt), solution ===
+=== 6h (10pt), solution ===
 
 Finally, compute and print and plot the mean velocities, total average velocity, acceleration for each interval and the total acceleration. 
 
 
 !bc pycod
 # Now we can compute the mean acceleration using our data
+# inport pandas first
+import pandas as pd
 # We define first an array Aaverage
 n = np.size(t)
 Aaverage = np.zeros(n)

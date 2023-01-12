@@ -56,18 +56,18 @@ Here you will find a general overview of the course, with learning outcomes, tea
 | Monday/Wednesday/Friday 4-5:00pm | or immediately after class |
 
 
-| Teaching assistant | Email | Office Hour | Zoom Link |
+| Teaching assistant | Email | Office Hour | Where |Zoom Link |
 |--------------------|-------|-------------|-----------|
-| _Shuyue Xue_ | xueshuy1@msu.edu | TBA | TBA |
+| _Shuyue Xue_ | xueshuy1@msu.edu | Friday 1.50-2.50pm  | STEM 2202 | https://msu.zoom.us/j/8131454131 (Passcode: 8131) |
 
 
 | Learning Assistant | Email | Office Hour | Where |
 |--------------------|-------|-------------|-----------|
 | _Abby Baratta_ | baratta2@msu.edu | Thursdays 10am-12pm | Helproom BPS |
 
-| Additional office hours|  Zoom link |
+| Additional office hour by Morten |  Zoom link |
 |---|----|
-| TBA | |
+| Tuesdays 8pm-9pm | Same as lecture link above |
 
 
 
