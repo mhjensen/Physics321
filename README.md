@@ -56,9 +56,9 @@ Here you will find a general overview of the course, with learning outcomes, tea
 | Monday/Wednesday/Friday 4-5:00pm | or immediately after class |
 
 
-| Teaching assistant | Email | Office Hour | Where |Zoom Link |
+| Teaching assistant | Email | Office Hour | Zoom Link |
 |--------------------|-------|-------------|-----------|
-| _Shuyue Xue_ | xueshuy1@msu.edu | Thursday 1.00-2.00pm  | zoom only | https://msu.zoom.us/j/8131454131 (Passcode: 8131) |
+| _Shuyue Xue_ | xueshuy1@msu.edu | Thursday 1.00-2.00pm | https://msu.zoom.us/j/8131454131 (Passcode: 8131) |
 
 
 | Learning Assistant | Email | Office Hour | Where |
