@@ -58,7 +58,7 @@ Here you will find a general overview of the course, with learning outcomes, tea
 
 | Teaching assistant | Email | Office Hour | Where |Zoom Link |
 |--------------------|-------|-------------|-----------|
-| _Shuyue Xue_ | xueshuy1@msu.edu | Friday 1.50-2.50pm  | STEM 2202 | https://msu.zoom.us/j/8131454131 (Passcode: 8131) |
+| _Shuyue Xue_ | xueshuy1@msu.edu | Thursday 1.00-2.00pm  | zoom only | https://msu.zoom.us/j/8131454131 (Passcode: 8131) |
 
 
 | Learning Assistant | Email | Office Hour | Where |
