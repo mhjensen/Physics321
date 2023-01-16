@@ -111,6 +111,7 @@ AMS chapters 2 and 4 are very useful. 1st homework due January 21.
   - Handwritten notes at https://github.com/mhjensen/Physics321/tree/master/doc/HandWrittenNotes/Spring2023/NotesJanuary11.pdf
 - Friday 1/13: Discussions and problem solving and discussion of first homework. 
   - Short video on practicalities about exercises and the Friday sessions https://youtu.be/Rt5q3uFQGsk
+
 ###  Week 3, January 16-20, 2023
 - Monday 1/16: MLK day, no classes
 - Wednesday 1/18: Motion and forces, Newton's laws, examples.
