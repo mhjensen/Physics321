@@ -116,7 +116,7 @@ AMS chapters 2 and 4 are very useful. 1st homework due January 21.
 - Monday 1/16: MLK day, no classes
 - Wednesday 1/18: Motion and forces, Newton's laws, examples.
   - Handwritten notes from lecture at https://github.com/mhjensen/Physics321/tree/master/doc/HandWrittenNotes/Spring2023/NotesJanuary18.pdf
-  - Video of lecture at TBA
+  - Video of lecture at https://youtu.be/-nfzGH56v_w
 - Friday 1/20: Motion and forces, Newton's laws, examples. Problems solving. Deadline first homework.
 - Good reads are Taylor chapters 1.4, 1.5, 1.6, 2.1-2.4 and AMS chapters 4.2 and  5 and and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week3/html/week3.html).
 
