@@ -105,17 +105,17 @@ Weekly mails (Weekends/Mondays) with updates, plans for lectures etc will be sen
 - Monday 1/9: Introduction to the course and reminder  on vectors, space, time and motion, JRT chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). Python programming reminder, elements from CMSE 201 and how they are used in this course. Installing software (anaconda). See slides at https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). 
 AMS chapters 2 and 4 are very useful. 1st homework due January 21.
   - Lecture video at https://youtu.be/BT2pSnYNYHE
-  - Handwritten notes from lecture at https://github.com/mhjensen/Physics321/tree/master/doc/HandWrittenNotes/Spring2023/NotesJanuary9.pdf
+  - Handwritten notes from lecture at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesJanuary92023.pdf
 - Wednesday 1/11: Forces and Newton's laws of motion. Free fall problems. JRT chapter 1.4 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). AMS chapters 2 and 4 are very useful.
   - Lecture video at https://youtu.be/s-cqtSfOZ1Q
-  - Handwritten notes at https://github.com/mhjensen/Physics321/tree/master/doc/HandWrittenNotes/Spring2023/NotesJanuary11.pdf
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesJanuary112023.pdf
 - Friday 1/13: Discussions and problem solving and discussion of first homework. 
   - Short video on practicalities about exercises and the Friday sessions https://youtu.be/Rt5q3uFQGsk
 
 ###  Week 3, January 16-20, 2023
 - Monday 1/16: MLK day, no classes
 - Wednesday 1/18: Motion and forces, Newton's laws, examples.
-  - Handwritten notes from lecture at https://github.com/mhjensen/Physics321/tree/master/doc/HandWrittenNotes/Spring2023/NotesJanuary18.pdf
+  - Handwritten notes from lecture at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesJanuary182023.pdf
   - Video of lecture at https://youtu.be/-nfzGH56v_w
 - Friday 1/20: Motion and forces, Newton's laws, examples. Problems solving. Deadline first homework.
 - Good reads are Taylor chapters 1.4, 1.5, 1.6, 2.1-2.4 and AMS chapters 4.2 and  5 and and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week3/html/week3.html).
