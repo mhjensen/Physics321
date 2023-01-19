@@ -2,21 +2,24 @@
 
 
 
+
+
 ###  Week 2, January 9-13, 2023
 
 - Monday 1/9: Introduction to the course and reminder  on vectors, space, time and motion, JRT chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). Python programming reminder, elements from CMSE 201 and how they are used in this course. Installing software (anaconda). See slides at https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). 
 AMS chapters 2 and 4 are very useful. 1st homework due January 21.
   - Lecture video at https://youtu.be/BT2pSnYNYHE
-  - Handwritten notes from lecture at https://github.com/mhjensen/Physics321/tree/master/doc/HandWrittenNotes/Spring2023/NotesJanuary9.pdf
+  - Handwritten notes from lecture at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesJanuary92023.pdf
 - Wednesday 1/11: Forces and Newton's laws of motion. Free fall problems. JRT chapter 1.4 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). AMS chapters 2 and 4 are very useful.
   - Lecture video at https://youtu.be/s-cqtSfOZ1Q
-  - Handwritten notes at https://github.com/mhjensen/Physics321/tree/master/doc/HandWrittenNotes/Spring2023/NotesJanuary11.pdf
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesJanuary112023.pdf
 - Friday 1/13: Discussions and problem solving and discussion of first homework. 
-  - Short video	on practicalities about	exercises and the Friday sessions https://youtu.be/Rt5q3uFQGsk
+  - Short video on practicalities about exercises and the Friday sessions https://youtu.be/Rt5q3uFQGsk
+
 ###  Week 3, January 16-20, 2023
 - Monday 1/16: MLK day, no classes
 - Wednesday 1/18: Motion and forces, Newton's laws, examples.
-  - Handwritten notes from lecture at https://github.com/mhjensen/Physics321/tree/master/doc/HandWrittenNotes/Spring2023/NotesJanuary18.pdf
+  - Handwritten notes from lecture at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesJanuary182023.pdf
   - Video of lecture at https://youtu.be/-nfzGH56v_w
 - Friday 1/20: Motion and forces, Newton's laws, examples. Problems solving. Deadline first homework.
 - Good reads are Taylor chapters 1.4, 1.5, 1.6, 2.1-2.4 and AMS chapters 4.2 and  5 and and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week3/html/week3.html).
@@ -181,4 +184,41 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 ### Week 18, May 1-5, 2023
 Depending on your availability, we can have at least two sessions in order to discuss the final project.
 - Final Exam:  The final exam will be a project similar to the two midterm projects. Deadline May 5 at midnight.
+
+## Learning outcomes
+
+After the course you should:
+
+- be able to analyze forces that act on objects, apply Newton’s laws to determine the equations of motion, and solve these analytically and numerically,
+- Know about  inertial frames and their relation to accelerating and rotating frames (non-inertial frames)
+- Know about forces, work, energy, angular momentum, linear momentum and conservation laws
+- Know about  various types of motions, falling objects, objects moving in various fields
+- Know how to analyze energy diagrams and defining effective potential
+- Have knowledge about small oscillations, Harmonic oscillator potential and equations of motion
+- Have knowledge about transformation of variables that allow for analytical solutions, example two-body problems
+- Have knowledge about central forces and two-body problems, center-of-mass and relative coordinates as reference frame
+- Have knowledge about two-body scattering problems, classical scattering cross section
+- Have knowledge about Variational calculus and Lagrangian formalism
+- Know how to derive the equations of motion from the Lagrangian formalism with and without constraints (Lagrangian multipliers)
+
+To solve many of these problems, we have through different projects and weekly exercises studied many systems numerically, from falling objects with and without friction/air resistance, small oscillations (harmonic oscillator), gravitational problems and other central force problems, rotations and the classical pendulum. To solve these systems, we have applied different algorithms for solving differential equations. These are
+- Euler-Cromer and Velocity-Verlet as energy conserving algorithms (time-independent forces)
+- Runge-Kutta family of algorithms for time-dependent forces
+We have also, in connection with for example the work-energy theorem studied methods for evaluating integrals. These are
+- Numerical integration using the Trapezoidal, midpoint and Simpson's rule.
+
+You should also have acquired skills in structuring a numerical project, as well as having developed a critical understanding of the pros and cons of the methods and an understanding of their limits and what can go wrong.  Computing means solving scientific problems using computers. It covers numerical as well as symbolic computing. Computing is also about developing an understanding of the scientific process by enhancing algorithmic thinking when solving problems.  Computing competence has
+always been a central part of the science and engineering education.
+In particular, some of the competences that are important in the development of your own understanding of
+computations, we would like to emphasize
+- derivation, verification, and implementation of algorithms
+- understanding what can go wrong with algorithms
+- overview of important, known algorithms for solving mechanics problems (To a extent large differential equations and integration)
+- understanding how algorithms are used to solve mathematical problems
+- Making science (your results) reproducible
+- algorithmic thinking for gaining deeper insights about scientific problems
+
+
+
+
 
