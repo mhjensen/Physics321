@@ -121,6 +121,7 @@ AMS chapters 2 and 4 are very useful. 1st homework due January 21.
   - Video of first 20 min at https://youtu.be/iLX21OKuhp0
 - Good reads are Taylor chapters 1.4, 1.5, 1.6, 2.1-2.4 and AMS chapters 4.2 and  5 and and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week3/html/week3.html).
 
+- Solution to first hw at https://github.com/mhjensen/Physics321/tree/master/doc/Homeworks/Solutions
 
 ### Week 4, January 23-27, 2023
 - Monday 1/24: We discuss various forces and their pertinent equations of motion. Recommended reading: Taylor 2.1-2.4. Malthe-Sørenssen chapter 6-7 contains many examples. We will cover in particular a falling object in two dimensions with linear air resistance relevant for homework 3.
