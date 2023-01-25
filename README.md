@@ -128,7 +128,7 @@ AMS chapters 2 and 4 are very useful. 1st homework due January 21.
   - Video of lecture at https://youtu.be/Izx1W4qqgmo
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesJanuary23.pdf
 - Wednesday 1/25: We discuss other force models with examples such as the gravitational force and a spring force. See Malthe-Sørenssen chapter 7.3-7.5. We start also our discussion of energy and work, see Taylor 4.1
-  - Video of lecture at TBA
+  - Video of lecture at https://youtu.be/f9hqy6o6XCg
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesJanuary25.pdf
 - Friday 1/27:  We discuss several examples of energy and work. Taylor 4.1-4.3. Problem solving. Deadline second homework. 
   - Video of lecture at TBA
