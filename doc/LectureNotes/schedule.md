@@ -40,7 +40,7 @@ AMS chapters 2 and 4 are very useful. 1st homework due January 21.
 
 ### Week 5, January 30- February 3, 2023
 - Monday 1/30: Work energy theorem, conservative forces and momentum conservation, 4th homework available
-  - Video with subtitles at TBA
+  - Video with subtitles at https://youtu.be/H_TuYjM9csk
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesJanuary30.pdf
 - Wednesday 2/1: Examples of applications of conservation laws, angular momentum conservation.
   - Video of lecture at TBA
