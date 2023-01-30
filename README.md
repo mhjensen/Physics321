@@ -133,6 +133,7 @@ AMS chapters 2 and 4 are very useful. 1st homework due January 21.
 - Friday 1/27:  We discuss several examples of energy and work. Taylor 4.1-4.3. Problem solving. Deadline second homework. 
   - Video of exercise session at https://youtu.be/MDO5fe2Rw70
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesJanuary27.pdf
+- Solution to second hw at https://github.com/mhjensen/Physics321/tree/master/doc/Homeworks/Solutions
 
 ### Week 5, January 30- February 3, 2023
 - Monday 1/30: Work energy theorem, conservative forces and momentum conservation, 4th homework available
