@@ -140,7 +140,7 @@ AMS chapters 2 and 4 are very useful. 1st homework due January 21.
   - Video with subtitles at https://youtu.be/H_TuYjM9csk
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesJanuary30.pdf
 - Wednesday 2/1: Examples of applications of conservation laws, angular momentum conservation.
-  - Video of lecture at TBA
+  - Video of lecture at https://youtu.be/t_bStzWIVJY
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesFebruary1.pdf
 - Friday 2/3:  Conservation laws and problem solving. Deadline third homework.
 - Good reads are Taylor sections 3.1-3.5 and 4.1-4.3 and AMS chapters 10-14.
