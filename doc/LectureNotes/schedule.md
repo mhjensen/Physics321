@@ -52,7 +52,7 @@ AMS chapters 2 and 4 are very useful. 1st homework due January 21.
 
 ### Week 6, February 6-10, 2023
 - Monday 2/6: Conservation laws and examples.
-  - Video of lecture at TBA
+  - Video of lecture at https://youtu.be/plcIWuGXoms
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesFebruary6.pdf
 - Wednesday 2/8: Examples of application of conservations laws (see chapter 4 of Taylor).
   - Video of lecture at TBA
