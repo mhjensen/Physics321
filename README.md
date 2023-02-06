@@ -145,7 +145,7 @@ AMS chapters 2 and 4 are very useful. 1st homework due January 21.
 - Friday 2/3:  Conservation laws and problem solving. Deadline third homework.
   - Video of exercise session, first 20 min, hints for exercises 5 and 6 at https://youtu.be/SN6Rms9LlNs
 - Good reads are Taylor sections 3.1-3.5 and 4.1-4.3 and AMS chapters 10-14.
-
+- Solution to third  hw at https://github.com/mhjensen/Physics321/tree/master/doc/Homeworks/Solutions
 
 ### Week 6, February 6-10, 2023
 - Monday 2/6: Conservation laws and examples.
