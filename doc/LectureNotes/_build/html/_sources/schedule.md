@@ -55,7 +55,7 @@ AMS chapters 2 and 4 are very useful. 1st homework due January 21.
   - Video of lecture at https://youtu.be/plcIWuGXoms
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesFebruary6.pdf
 - Wednesday 2/8: Examples of application of conservations laws (see chapter 4 of Taylor).
-  - Video of lecture at TBA
+  - Video of lecture at https://youtu.be/iKtX3EIzb0A
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesFebruary8.pdf
 - Friday 2/10: Discussion of fourth homework. Deadline fourth homework.
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesFebruary10.pdf
