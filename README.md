@@ -165,7 +165,7 @@ AMS chapters 2 and 4 are very useful. 1st homework due January 21.
 discussion on conservative forces. Discussion of potential surfaces and their interpretations.  Start discussion of harmonic oscillations.
   - Reading suggestion: Taylor sections 4.6, 4.9, 4.10 and 5.1 and 5.2 on harmonic oscillations and lecture notes
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesFebruary13.pdf
-  - Video of lecture at TBA
+  - Video of lecture at https://youtu.be/3GCGhSN4nIw
 - Wednesday 2/15: The Earth-Sun problem and energy-conserving algorithms and how to encode in more efficient ways various algorithms for solving the equations of motion (Euler, Euler-Cromer and Velocity Verlet).
   - Video of lecture at TBA
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesFebruary15.pdf  
