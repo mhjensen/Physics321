@@ -173,6 +173,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 - Friday 2/17:  Working on the Earth-Sun problem and hw 5.
   - Reading suggestions: Taylor chapters 3 and 4 and lecture notes
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesFebruary17.pdf  
+- Solution to fifth  hw at https://github.com/mhjensen/Physics321/tree/master/doc/Homeworks/Solutions
 
 ### Week 8, February 20-24
 - Monday 2/20: Harmonic oscillations and Damped Oscillations. Reading suggestions Taylor 5.1-5.3
