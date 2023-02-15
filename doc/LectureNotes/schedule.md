@@ -4,31 +4,32 @@
 
 
 
+
 ###  Week 2, January 9-13, 2023
 
 - Monday 1/9: Introduction to the course and reminder  on vectors, space, time and motion, JRT chapters 1.2 and 1.3 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). Python programming reminder, elements from CMSE 201 and how they are used in this course. Installing software (anaconda). See slides at https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). 
 AMS chapters 2 and 4 are very useful. 1st homework due January 21.
   - Lecture video at https://youtu.be/BT2pSnYNYHE
-  - Handwritten notes from lecture at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesJanuary92023.pdf
+  - Handwritten notes from lecture at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesJanuary9.pdf
 - Wednesday 1/11: Forces and Newton's laws of motion. Free fall problems. JRT chapter 1.4 and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week2/html/week2.html). AMS chapters 2 and 4 are very useful.
   - Lecture video at https://youtu.be/s-cqtSfOZ1Q
-  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesJanuary112023.pdf
+  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesJanuary11.pdf
 - Friday 1/13: Discussions and problem solving and discussion of first homework. 
   - Short video on practicalities about exercises and the Friday sessions https://youtu.be/Rt5q3uFQGsk
 
 ###  Week 3, January 16-20, 2023
 - Monday 1/16: MLK day, no classes
 - Wednesday 1/18: Motion and forces, Newton's laws, examples.
-  - Handwritten notes from lecture at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesJanuary182023.pdf
+  - Handwritten notes from lecture at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesJanuary18.pdf
   - Video of lecture at https://youtu.be/-nfzGH56v_w
 - Friday 1/20: Motion and forces, Newton's laws, examples. Problems solving. Deadline first homework.
-  - Video of first 20 min as summary of week https://youtu.be/iLX21OKuhp0
+  - Video of first 20 min at https://youtu.be/iLX21OKuhp0
 - Good reads are Taylor chapters 1.4, 1.5, 1.6, 2.1-2.4 and AMS chapters 4.2 and  5 and and lecture notes (https://mhjensen.github.io/Physics321/doc/pub/week3/html/week3.html).
 
 - Solution to first hw at https://github.com/mhjensen/Physics321/tree/master/doc/Homeworks/Solutions
 
 ### Week 4, January 23-27, 2023
-- Monday 1/23: We discuss various forces and their pertinent equations of motion. Recommended reading: Taylor 2.1-2.4. Malthe-Sørenssen chapter 6-7 contains many examples. We will cover in particular a falling object in two dimensions with linear air resistance relevant for homework 3.
+- Monday 1/24: We discuss various forces and their pertinent equations of motion. Recommended reading: Taylor 2.1-2.4. Malthe-Sørenssen chapter 6-7 contains many examples. We will cover in particular a falling object in two dimensions with linear air resistance relevant for homework 3.
   - Video of lecture at https://youtu.be/Izx1W4qqgmo
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesJanuary23.pdf
 - Wednesday 1/25: We discuss other force models with examples such as the gravitational force and a spring force. See Malthe-Sørenssen chapter 7.3-7.5. We start also our discussion of energy and work, see Taylor 4.1
@@ -37,6 +38,7 @@ AMS chapters 2 and 4 are very useful. 1st homework due January 21.
 - Friday 1/27:  We discuss several examples of energy and work. Taylor 4.1-4.3. Problem solving. Deadline second homework. 
   - Video of exercise session at https://youtu.be/MDO5fe2Rw70
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesJanuary27.pdf
+- Solution to second hw at https://github.com/mhjensen/Physics321/tree/master/doc/Homeworks/Solutions
 
 ### Week 5, January 30- February 3, 2023
 - Monday 1/30: Work energy theorem, conservative forces and momentum conservation, 4th homework available
@@ -46,9 +48,9 @@ AMS chapters 2 and 4 are very useful. 1st homework due January 21.
   - Video of lecture at https://youtu.be/t_bStzWIVJY
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesFebruary1.pdf
 - Friday 2/3:  Conservation laws and problem solving. Deadline third homework.
-  - Video of exercise session, first 20	min, hints for exercises 5 and 6 at https://youtu.be/SN6Rms9LlNs
+  - Video of exercise session, first 20 min, hints for exercises 5 and 6 at https://youtu.be/SN6Rms9LlNs
 - Good reads are Taylor sections 3.1-3.5 and 4.1-4.3 and AMS chapters 10-14.
-
+- Solution to third  hw at https://github.com/mhjensen/Physics321/tree/master/doc/Homeworks/Solutions
 
 ### Week 6, February 6-10, 2023
 - Monday 2/6: Conservation laws and examples.
@@ -60,7 +62,8 @@ AMS chapters 2 and 4 are very useful. 1st homework due January 21.
 - Friday 2/10: Discussion of fourth homework. Deadline fourth homework.
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesFebruary10.pdf
 - Taylor chapter 4 is the essential reading. See also chapter 7 of Malthe-Sørenssen for exercise 6 in homework 4
-- Video with hints and tips for hw 4 at https://youtu.be/nTQSb7-5xy0	
+- Video with hints and tips for hw 4 at https://youtu.be/nTQSb7-5xy0 
+- Solution to fourth  hw at https://github.com/mhjensen/Physics321/tree/master/doc/Homeworks/Solutions
 
 ### Week 7, February 13-17, 2023
 - Monday 2/13: Discussion of conditions for conservative forces and summing up our
@@ -75,6 +78,9 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 - Friday 2/17:  Working on the Earth-Sun problem and hw 5.
   - Reading suggestions: Taylor chapters 3 and 4 and lecture notes
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesFebruary17.pdf  
+- Solution to fifth  hw at https://github.com/mhjensen/Physics321/tree/master/doc/Homeworks/Solutions
+
+
 
 ### Week 8, February 20-24
 - Monday 2/20: Harmonic oscillations and Damped Oscillations. Reading suggestions Taylor 5.1-5.3
