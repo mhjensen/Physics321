@@ -1099,7 +1099,7 @@ Epot[<span style="color: #666666">0</span>] <span style="color: #666666">=</span
     rabs <span style="color: #666666">=</span> sqrt(<span style="color: #008000">sum</span>(r[i<span style="color: #666666">+1</span>]<span style="color: #666666">*</span>r[i<span style="color: #666666">+1</span>]))
     anew <span style="color: #666666">=</span> <span style="color: #666666">-4*</span>(pi<span style="color: #666666">**2</span>)<span style="color: #666666">*</span>r[i<span style="color: #666666">+1</span>]<span style="color: #666666">/</span>(rabs<span style="color: #666666">**3</span>)
     v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i] <span style="color: #666666">+</span> <span style="color: #666666">0.5*</span>DeltaT<span style="color: #666666">*</span>(a<span style="color: #666666">+</span>anew)
-    Ekin[i<span style="color: #666666">+1</span>] <span style="color: #666666">+=</span> <span style="color: #666666">0.5*</span>(<span style="color: #008000">sum</span>(v[i]<span style="color: #666666">*</span>v[i]))
+    Ekin[i<span style="color: #666666">+1</span>] <span style="color: #666666">+=</span> <span style="color: #666666">0.5*</span>(<span style="color: #008000">sum</span>(v[i<span style="color: #666666">+1</span>]<span style="color: #666666">*</span>v[i<span style="color: #666666">+1</span>]))
     Epot[i<span style="color: #666666">+1</span>] <span style="color: #666666">+=</span> <span style="color: #666666">-</span>Fourpi2<span style="color: #666666">/</span>rabs
     t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i] <span style="color: #666666">+</span> DeltaT
 <span style="color: #408080; font-style: italic"># Plot energy as function of time    </span>
