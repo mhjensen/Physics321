@@ -806,12 +806,8 @@ we have updated the positions and the velocities. Note that we are
 keeping the Sun at rest, meaning that it is only the Earth which
 moves.
 
-!split
-===== Adding the Velocity-Verlet Method =====
-
-We can now easily add the Verlet method to our original code as
 !bc pycod
-DeltaT = 0.01
+DeltaT = 0.0001
 #set up arrays 
 tfinal = 10 # in years
 n = ceil(tfinal/DeltaT)
@@ -823,13 +819,13 @@ Ekin = np.zeros(n)
 Epot = np.zeros(n)
 # Initial conditions as compact 2-dimensional arrays
 r0 = np.array([1.0,0.0])
-v0 = np.array([0.0,2*pi])
+v0 = np.array([0.0,2.0*pi])
 r[0] = r0
 v[0] = v0
 Fourpi2 = 4*pi*pi
-# Mass of Earth set to 1
+# Mass of Earth set to 1 and setting up initial Ekin and Epot
 Ekin[0] = 0.5*sum(v[0]*v[0])
-Epot[0] = -Fourpi1/sqrt(sum(r[0]*r[0]))
+Epot[0] = -Fourpi2/sqrt(sum(r[0]*r[0]))
 # Start integrating using the Velocity-Verlet  method
 for i in range(n-1):
     # Set up forces, air resistance FD, note now that we need the norm of the vecto
@@ -841,10 +837,10 @@ for i in range(n-1):
     rabs = sqrt(sum(r[i+1]*r[i+1]))
     anew = -4*(pi**2)*r[i+1]/(rabs**3)
     v[i+1] = v[i] + 0.5*DeltaT*(a+anew)
-    Ekin += 0.5*(sum(v[i]*v[i]))
-    Epot += -Fourpi2/rabs
+    Ekin[i+1] += 0.5*(sum(v[i]*v[i]))
+    Epot[i+1] += -Fourpi2/rabs
     t[i+1] = t[i] + DeltaT
-# Plot position as function of time    
+# Plot energy as function of time    
 fig, ax = plt.subplots()
 ax.set_ylabel('E')
 ax.set_xlabel('t[yr]')

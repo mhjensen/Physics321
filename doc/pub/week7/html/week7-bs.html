@@ -113,10 +113,6 @@ doconce format html week7.do.txt --html_style=bootstrap --pygments_html_style=de
                None,
                'adding-the-velocity-verlet-method'),
               ('Energy conservation', 2, None, 'energy-conservation'),
-              ('Adding the Velocity-Verlet Method',
-               2,
-               None,
-               'adding-the-velocity-verlet-method'),
               ('Hints for exercises 2 and 3',
                2,
                None,
@@ -189,7 +185,6 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="#the-velocity-verlet-method" style="font-size: 80%;"><b>The velocity Verlet method</b></a></li>
      <!-- navigation toc: --> <li><a href="#adding-the-velocity-verlet-method" style="font-size: 80%;"><b>Adding the Velocity-Verlet Method</b></a></li>
      <!-- navigation toc: --> <li><a href="#energy-conservation" style="font-size: 80%;"><b>Energy conservation</b></a></li>
-     <!-- navigation toc: --> <li><a href="#adding-the-velocity-verlet-method" style="font-size: 80%;"><b>Adding the Velocity-Verlet Method</b></a></li>
      <!-- navigation toc: --> <li><a href="#hints-for-exercises-2-and-3" style="font-size: 80%;"><b>Hints for exercises 2 and 3</b></a></li>
      <!-- navigation toc: --> <li><a href="#exercise-2" style="font-size: 80%;"><b>Exercise 2</b></a></li>
      <!-- navigation toc: --> <li><a href="#exercise-3-more-rockets" style="font-size: 80%;"><b>Exercise 3, more rockets</b></a></li>
@@ -1067,10 +1062,6 @@ keeping the Sun at rest, meaning that it is only the Earth which
 moves.
 </p>
 
-<!-- !split -->
-<h2 id="adding-the-velocity-verlet-method" class="anchor">Adding the Velocity-Verlet Method </h2>
-
-<p>We can now easily add the Verlet method to our original code as</p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
 <div class="cell border-box-sizing code_cell rendered">
@@ -1078,7 +1069,7 @@ moves.
     <div class="inner_cell">
       <div class="input_area">
         <div class="highlight" style="background: #f8f8f8">
-  <pre style="line-height: 125%;">DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.01</span>
+  <pre style="line-height: 125%;">DeltaT <span style="color: #666666">=</span> <span style="color: #666666">0.0001</span>
 <span style="color: #408080; font-style: italic">#set up arrays </span>
 tfinal <span style="color: #666666">=</span> <span style="color: #666666">10</span> <span style="color: #408080; font-style: italic"># in years</span>
 n <span style="color: #666666">=</span> ceil(tfinal<span style="color: #666666">/</span>DeltaT)
@@ -1090,13 +1081,13 @@ Ekin <span style="color: #666666">=</span> np<span style="color: #666666">.</spa
 Epot <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
 <span style="color: #408080; font-style: italic"># Initial conditions as compact 2-dimensional arrays</span>
 r0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">1.0</span>,<span style="color: #666666">0.0</span>])
-v0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">0.0</span>,<span style="color: #666666">2*</span>pi])
+v0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">0.0</span>,<span style="color: #666666">2.0*</span>pi])
 r[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> r0
 v[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> v0
 Fourpi2 <span style="color: #666666">=</span> <span style="color: #666666">4*</span>pi<span style="color: #666666">*</span>pi
-<span style="color: #408080; font-style: italic"># Mass of Earth set to 1</span>
+<span style="color: #408080; font-style: italic"># Mass of Earth set to 1 and setting up initial Ekin and Epot</span>
 Ekin[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> <span style="color: #666666">0.5*</span><span style="color: #008000">sum</span>(v[<span style="color: #666666">0</span>]<span style="color: #666666">*</span>v[<span style="color: #666666">0</span>])
-Epot[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> <span style="color: #666666">-</span>Fourpi1<span style="color: #666666">/</span>sqrt(<span style="color: #008000">sum</span>(r[<span style="color: #666666">0</span>]<span style="color: #666666">*</span>r[<span style="color: #666666">0</span>]))
+Epot[<span style="color: #666666">0</span>] <span style="color: #666666">=</span> <span style="color: #666666">-</span>Fourpi2<span style="color: #666666">/</span>sqrt(<span style="color: #008000">sum</span>(r[<span style="color: #666666">0</span>]<span style="color: #666666">*</span>r[<span style="color: #666666">0</span>]))
 <span style="color: #408080; font-style: italic"># Start integrating using the Velocity-Verlet  method</span>
 <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n<span style="color: #666666">-1</span>):
     <span style="color: #408080; font-style: italic"># Set up forces, air resistance FD, note now that we need the norm of the vecto</span>
@@ -1108,10 +1099,10 @@ Epot[<span style="color: #666666">0</span>] <span style="color: #666666">=</span
     rabs <span style="color: #666666">=</span> sqrt(<span style="color: #008000">sum</span>(r[i<span style="color: #666666">+1</span>]<span style="color: #666666">*</span>r[i<span style="color: #666666">+1</span>]))
     anew <span style="color: #666666">=</span> <span style="color: #666666">-4*</span>(pi<span style="color: #666666">**2</span>)<span style="color: #666666">*</span>r[i<span style="color: #666666">+1</span>]<span style="color: #666666">/</span>(rabs<span style="color: #666666">**3</span>)
     v[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> v[i] <span style="color: #666666">+</span> <span style="color: #666666">0.5*</span>DeltaT<span style="color: #666666">*</span>(a<span style="color: #666666">+</span>anew)
-    Ekin <span style="color: #666666">+=</span> <span style="color: #666666">0.5*</span>(<span style="color: #008000">sum</span>(v[i]<span style="color: #666666">*</span>v[i]))
-    Epot <span style="color: #666666">+=</span> <span style="color: #666666">-</span>Fourpi2<span style="color: #666666">/</span>rabs
+    Ekin[i<span style="color: #666666">+1</span>] <span style="color: #666666">+=</span> <span style="color: #666666">0.5*</span>(<span style="color: #008000">sum</span>(v[i]<span style="color: #666666">*</span>v[i]))
+    Epot[i<span style="color: #666666">+1</span>] <span style="color: #666666">+=</span> <span style="color: #666666">-</span>Fourpi2<span style="color: #666666">/</span>rabs
     t[i<span style="color: #666666">+1</span>] <span style="color: #666666">=</span> t[i] <span style="color: #666666">+</span> DeltaT
-<span style="color: #408080; font-style: italic"># Plot position as function of time    </span>
+<span style="color: #408080; font-style: italic"># Plot energy as function of time    </span>
 fig, ax <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots()
 ax<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;E&#39;</span>)
 ax<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;t[yr]&#39;</span>)
