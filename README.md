@@ -167,17 +167,14 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesFebruary13.pdf
   - Video of lecture at https://youtu.be/3GCGhSN4nIw
 - Wednesday 2/15: The Earth-Sun problem and energy-conserving algorithms and how to encode in more efficient ways various algorithms for solving the equations of motion (Euler, Euler-Cromer and Velocity Verlet).
-  - Video of lecture at TBA
-  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesFebruary15.pdf  
   - Reading suggestions: Taylor section 4.8 and lecture notes
 - Friday 2/17:  Working on the Earth-Sun problem and hw 5.
   - Reading suggestions: Taylor chapters 3 and 4 and lecture notes
-  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesFebruary17.pdf  
 - Solution to fifth  hw at https://github.com/mhjensen/Physics321/tree/master/doc/Homeworks/Solutions
 
 ### Week 8, February 20-24
 - Monday 2/20: Harmonic oscillations and Damped Oscillations. Reading suggestions Taylor 5.1-5.3
-  - Video of Lecture at TBA
+  - Video of Lecture at https://youtu.be/3otwJIm796s
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesFebruary20.pdf    
 - Wednesday 2/22:  Damped  oscillations
   - Video of Lecture at TBA
