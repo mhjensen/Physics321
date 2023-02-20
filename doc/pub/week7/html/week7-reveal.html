@@ -1170,6 +1170,87 @@ which takes in as input the various variables. We leave this as a challenge to y
 </section>
 
 <section>
+<h2 id="energy-conservation">Energy conservation </h2>
+
+<p>Here we show how we can set up a code which conserves the total
+energy. We need then to compute the kinetic energy and the potential
+energy. Here we have defined two simple arrays as functions of time
+for the kinetic and the potential energies which we update as soon as
+we have updated the positions and the velocities. Note that we are
+keeping the Sun at rest, meaning that it is only the Earth which
+moves.
+</p>
+</section>
+
+<section>
+<h2 id="adding-the-velocity-verlet-method">Adding the Velocity-Verlet Method </h2>
+
+<p>We can now easily add the Verlet method to our original code as</p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="font-size: 80%; line-height: 125%;">DeltaT = <span style="color: #B452CD">0.01</span>
+<span style="color: #228B22">#set up arrays </span>
+tfinal = <span style="color: #B452CD">10</span> <span style="color: #228B22"># in years</span>
+n = ceil(tfinal/DeltaT)
+<span style="color: #228B22"># set up arrays for t, a, v, and x</span>
+t = np.zeros(n)
+v = np.zeros((n,<span style="color: #B452CD">2</span>))
+r = np.zeros((n,<span style="color: #B452CD">2</span>))
+Ekin = np.zeros(n)
+Epot = np.zeros(n)
+<span style="color: #228B22"># Initial conditions as compact 2-dimensional arrays</span>
+r0 = np.array([<span style="color: #B452CD">1.0</span>,<span style="color: #B452CD">0.0</span>])
+v0 = np.array([<span style="color: #B452CD">0.0</span>,<span style="color: #B452CD">2</span>*pi])
+r[<span style="color: #B452CD">0</span>] = r0
+v[<span style="color: #B452CD">0</span>] = v0
+Fourpi2 = <span style="color: #B452CD">4</span>*pi*pi
+<span style="color: #228B22"># Mass of Earth set to 1</span>
+Ekin[<span style="color: #B452CD">0</span>] = <span style="color: #B452CD">0.5</span>*<span style="color: #658b00">sum</span>(v[<span style="color: #B452CD">0</span>]*v[<span style="color: #B452CD">0</span>])
+Epot[<span style="color: #B452CD">0</span>] = -Fourpi1/sqrt(<span style="color: #658b00">sum</span>(r[<span style="color: #B452CD">0</span>]*r[<span style="color: #B452CD">0</span>]))
+<span style="color: #228B22"># Start integrating using the Velocity-Verlet  method</span>
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n-<span style="color: #B452CD">1</span>):
+    <span style="color: #228B22"># Set up forces, air resistance FD, note now that we need the norm of the vecto</span>
+    <span style="color: #228B22"># Here you could have defined your own function for this</span>
+    rabs = sqrt(<span style="color: #658b00">sum</span>(r[i]*r[i]))
+    a =  -Fourpi2*r[i]/(rabs**<span style="color: #B452CD">3</span>)
+    <span style="color: #228B22"># update velocity, time and position using the Velocity-Verlet method</span>
+    r[i+<span style="color: #B452CD">1</span>] = r[i] + DeltaT*v[i]+<span style="color: #B452CD">0.5</span>*(DeltaT**<span style="color: #B452CD">2</span>)*a
+    rabs = sqrt(<span style="color: #658b00">sum</span>(r[i+<span style="color: #B452CD">1</span>]*r[i+<span style="color: #B452CD">1</span>]))
+    anew = -<span style="color: #B452CD">4</span>*(pi**<span style="color: #B452CD">2</span>)*r[i+<span style="color: #B452CD">1</span>]/(rabs**<span style="color: #B452CD">3</span>)
+    v[i+<span style="color: #B452CD">1</span>] = v[i] + <span style="color: #B452CD">0.5</span>*DeltaT*(a+anew)
+    Ekin += <span style="color: #B452CD">0.5</span>*(<span style="color: #658b00">sum</span>(v[i]*v[i]))
+    Epot += -Fourpi2/rabs
+    t[i+<span style="color: #B452CD">1</span>] = t[i] + DeltaT
+<span style="color: #228B22"># Plot position as function of time    </span>
+fig, ax = plt.subplots()
+ax.set_ylabel(<span style="color: #CD5555">&#39;E&#39;</span>)
+ax.set_xlabel(<span style="color: #CD5555">&#39;t[yr]&#39;</span>)
+ax.plot(t, Epot+Ekin)
+fig.tight_layout()
+save_fig(<span style="color: #CD5555">&quot;EnergyEarthSunVV&quot;</span>)
+plt.show()
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section>
 <h2 id="hints-for-exercises-2-and-3">Hints for exercises 2 and 3 </h2>
 
 <div class="alert alert-block alert-block alert-text-normal">
