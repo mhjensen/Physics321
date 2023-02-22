@@ -177,7 +177,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Video of Lecture at https://youtu.be/3otwJIm796s
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesFebruary20.pdf    
 - Wednesday 2/22:  Damped  oscillations
-  - Video of Lecture at TBA
+  - Video of Lecture at https://youtu.be/Y1QfsBplX9k
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesFebruary22.pdf    
 - Friday 2/24: Discussion of first midterm.
 - Good reads are sections 5.4-5.7 of Taylor on oscillations. 
