@@ -182,7 +182,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 - Friday 2/24: Discussion of first midterm.
 - Good reads are sections 5.4-5.7 of Taylor on oscillations. 
 - First midterm project, available Feb 20 and due March 3, 2023
-
+  - Video with hints and tips for first midterm https://youtu.be/9rLx7MdLWs0
 ### Week 9, February 27- March 3, 2023
 - Monday 2/27: Damped and driven oscillations
   - Video of lecture at TBA
