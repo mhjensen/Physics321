@@ -189,7 +189,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Video of lecture at https://youtu.be/39bqKrnEddk
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesFebruary27.pdf    
 - Wednesday 3/1: Discussions  of oscillations and time-dependent forces.  Discussion of first midterm.  
-  - Video of lecture at TBA
+  - Video of lecture at https://youtu.be/OeaBq13izhM
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesMarch1.pdf      
 - Friday 3/3:  Discussion  of first midterm. Deadline for first midterm.
 
