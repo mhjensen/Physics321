@@ -104,8 +104,8 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 ### Week 10 Spring break, no lectures
 
 ### Week 11, March  13-17, 2023
-- Monday 3/13:  Harmonic oscillations, damping and driven oscillations
-  - Video of lecture at TBA
+- Monday 3/13:  Harmonic oscillations, damped and driven oscillations
+  - Video of lecture at https://youtu.be/3j2xxCGcqs4
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesMarch13.pdf      
 - Wednesday 3/15: Harmonic oscillations, damping and driven oscillations
   - Video of lecture at TBA
