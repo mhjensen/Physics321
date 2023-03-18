@@ -114,7 +114,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Video on Fourier aanalysis at https://youtu.be/neXZ4fb-4Rs
 - Friday 3/17:  Discussion and work on homework 6. Deadline sixth homework.
 - Reading suggestions for week 11: Taylor sections 5.6-5.8 and lecture notes at URL:"https://mhjensen.github.io/Physics321/doc/pub/week10/html/week10-reveal.html"
-  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesMarch17.pdf
+  - Short video at https://youtu.be/WqqD4zel-zg
 
 
 ### Week 12, March 20-24, 2023
