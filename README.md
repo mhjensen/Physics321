@@ -192,7 +192,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Video of lecture at https://youtu.be/OeaBq13izhM
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesMarch1.pdf      
 - Friday 3/3:  Discussion  of first midterm. Deadline for first midterm.
-
+- Solution  to first midterm   hw at https://github.com/mhjensen/Physics321/tree/master/doc/Homeworks/Solutions. See also codes for part 1 and part 2 in the same folder.
 
 ### Week 10 Spring break, no lectures
 
