@@ -120,7 +120,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 ### Week 12, March 20-24, 2023
 - Monday 3/20: Two-body problems and gravitational forces. Definition of the two-body problem, rewriting the equations in relative and center-of-mass coordinates
   - Reading suggestion: Taylor sections 8.2-8.3 and lecture notes
-  - Video of lecture at TBA
+  - Video of lecture at https://youtu.be/z2jyJI-dryg
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesMarch20.pdf  
 - Wednesday 3/21: Preparing the ground for the  gravitional force and its solution in two dimensions
   - Video of lecture at TBA
