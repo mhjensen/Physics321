@@ -215,7 +215,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Video of lecture at https://youtu.be/z2jyJI-dryg
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesMarch20.pdf  
 - Wednesday 3/21: Preparing the ground for the  gravitional force and its solution in two dimensions
-  - Video of lecture at TBA
+  - Video of lecture at https://youtu.be/Di-WVWTjKuw
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesMarch22.pdf
 - Reading suggestion: Taylor chapter 8.4 and lecture notes
 - Friday 3/24:  Summary and discussions of two-body problems and work on homework 7.  Deadline seventh homework.
