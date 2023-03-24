@@ -115,7 +115,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 - Friday 3/17:  Discussion and work on homework 6. Deadline sixth homework.
 - Reading suggestions for week 11: Taylor sections 5.6-5.8 and lecture notes at URL:"https://mhjensen.github.io/Physics321/doc/pub/week10/html/week10-reveal.html"
   - Short video at https://youtu.be/WqqD4zel-zg
-
+- Solution to sixth homework at https://github.com/mhjensen/Physics321/tree/master/doc/Homeworks/Solutions
 
 ### Week 12, March 20-24, 2023
 - Monday 3/20: Two-body problems and gravitational forces. Definition of the two-body problem, rewriting the equations in relative and center-of-mass coordinates
