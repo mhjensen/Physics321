@@ -128,11 +128,11 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 - Reading suggestion: Taylor chapter 8.4 and lecture notes
 - Friday 3/24:  Summary and discussions of two-body problems and work on homework 7.  Deadline seventh homework.
 
-### Week 13, March 27-31, 2020
+### Week 13, March 27-31, 2023
 - Monday 3/27: Computational topics: functions and classes, the harmonic oscillator as warm-up case
   - Reading suggestion: Lecture notes and Taylor section 8.4
-  - Video of lecture at TBA
-  - Handwritten notes for lecture at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesFourierAnalysisMarch27.pdf
+  - Video of lecture at https://youtu.be/SIaY-RTV4VE
+  - Handwritten notes for lecture at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesMarch27.pdf
  - Wednesday 3/29: Discussion of elliptical orbits and Kepler's laws
   - Reading suggestion: lecture notes and Taylor sections 8.5-8.6
   - Video of lecture at TBA
