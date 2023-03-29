@@ -127,7 +127,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesMarch22.pdf
 - Reading suggestion: Taylor chapter 8.4 and lecture notes
 - Friday 3/24:  Summary and discussions of two-body problems and work on homework 7.  Deadline seventh homework.
-
+- Solution to seventh homework at https://github.com/mhjensen/Physics321/tree/master/doc/Homeworks/Solutions
 ### Week 13, March 27-31, 2023
 - Monday 3/27: Computational topics: functions and classes, the harmonic oscillator as warm-up case
   - Reading suggestion: Lecture notes and Taylor section 8.4
