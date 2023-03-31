@@ -221,6 +221,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 - Reading suggestion: Taylor chapter 8.4 and lecture notes
 - Friday 3/24:  Summary and discussions of two-body problems and work on homework 7.  Deadline seventh homework.
 - Solution to seventh homework at https://github.com/mhjensen/Physics321/tree/master/doc/Homeworks/Solutions
+
 ### Week 13, March 27-31, 2020
 - Monday 3/27: Computational topics: functions and classes, the harmonic oscillator as warm-up case
   - Reading suggestion: Lecture notes and Taylor section 8.4
@@ -231,7 +232,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Video of lecture at https://youtu.be/TlcHXrzVY-I
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesMarch29.pdf
 - Friday 3/31:  Summary of week and discussion of homework 8
-  - Video of lecture at TBA
+  - Video of lecture at https://youtu.be/uTvuXu5J1N0
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesMarch31.pdf
 
 ### Week 14, April 3-7, 2023
