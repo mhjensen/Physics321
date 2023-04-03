@@ -144,7 +144,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 ### Week 14, April 3-7, 2023
 - Monday 4/3: Physical interpretation of various orbit types
   - Reading suggestions: lecture notes and Taylor section 8.5-8.8. Second midterm available April 4 
-  - Video of lecture at TBA
+  - Video of lecture at https://youtu.be/HwaxZFeJ4eg
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesApril3.pdf  
 - Wednesday 4/5:  Discussion of second midterm, hints and tips plus Kepler orbit analysis
   - Video of Lecture at TBA
