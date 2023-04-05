@@ -148,7 +148,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Video of lecture at https://youtu.be/HwaxZFeJ4eg
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesApril3.pdf  
 - Wednesday 4/5:  Discussion of second midterm, hints and tips plus Kepler orbit analysis
-  - Video of Lecture at TBA
+  - Video of Lecture at https://youtu.be/xnMIkLE_rzM
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesApril5.pdf
 
 - Friday 4/7: Summary of week and discussion of and work on second midterm. Deadline 2nd midterm is April 15
