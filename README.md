@@ -234,6 +234,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 - Friday 3/31:  Summary of week and discussion of homework 8
   - Video of lecture at https://youtu.be/uTvuXu5J1N0
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesMarch31.pdf
+- Solution to eighth hw at https://github.com/mhjensen/Physics321/tree/master/doc/Homeworks/Solutions
 
 ### Week 14, April 3-7, 2023
 - Monday 4/3: Physical interpretation of various orbit types
