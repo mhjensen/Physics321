@@ -246,7 +246,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesApril5.pdf
 
 - Friday 4/7: Summary of week and discussion of and work on second midterm. Deadline 2nd midterm is April 15
-  - Video at TBA
+  - Video at https://youtu.be/_JZbimHBwSI with hints for part 2.
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesApril7.pdf
   
 ### Week 15, April  10-14, 2023
