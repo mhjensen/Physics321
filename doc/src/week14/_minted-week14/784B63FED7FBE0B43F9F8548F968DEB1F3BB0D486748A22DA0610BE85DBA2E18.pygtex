@@ -1,0 +1,73 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{c+c1}{\PYGZsh{} let\PYGZsq{}s start by importing useful packages we are familiar with}
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+\PYG{k+kn}{from} \PYG{n+nn}{math} \PYG{k+kn}{import} \PYG{o}{*}
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib.pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+\PYG{k+kn}{import} \PYG{n+nn}{seaborn} \PYG{k}{as} \PYG{n+nn}{sns}
+\PYG{k+kn}{import} \PYG{n+nn}{math}
+
+\PYG{c+c1}{\PYGZsh{}Velocity\PYGZhy{}Verlet Method}
+\PYG{n}{DeltaT} \PYG{o}{=} \PYG{l+m+mf}{0.001}
+\PYG{c+c1}{\PYGZsh{}set up arrays}
+\PYG{n}{tfinal} \PYG{o}{=} \PYG{l+m+mi}{10} \PYG{c+c1}{\PYGZsh{} in years}
+\PYG{n}{n} \PYG{o}{=} \PYG{n}{ceil}\PYG{p}{(}\PYG{n}{tfinal}\PYG{o}{/}\PYG{n}{DeltaT}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} set up arrays for time t, velocity v, and position r}
+\PYG{n}{t} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{n}\PYG{p}{)}
+\PYG{n}{v} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{((}\PYG{n}{n}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{))}
+\PYG{n}{r} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{((}\PYG{n}{n}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{))}
+\PYG{c+c1}{\PYGZsh{} Initial conditions as compact 2\PYGZhy{}dimensional arrays. Here: circular orbit conditions.}
+\PYG{n}{r0} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{([}\PYG{l+m+mf}{1.0}\PYG{p}{,}\PYG{l+m+mf}{0.0}\PYG{p}{])}
+\PYG{n}{v0} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{([}\PYG{l+m+mf}{0.0}\PYG{p}{,}\PYG{l+m+mf}{5.0}\PYG{p}{])}
+\PYG{n}{r}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{r0}
+\PYG{n}{v}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{v0}
+\PYG{n}{Fourpi2} \PYG{o}{=} \PYG{l+m+mi}{4}\PYG{o}{*}\PYG{n}{pi}\PYG{o}{*}\PYG{n}{pi}
+\PYG{c+c1}{\PYGZsh{} Start integrating using the Velocity\PYGZhy{}Verlet method}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{n}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{):}
+    \PYG{c+c1}{\PYGZsh{} Set up the accelerationn}
+    \PYG{n}{rabs} \PYG{o}{=} \PYG{n}{sqrt}\PYG{p}{(}\PYG{n+nb}{sum}\PYG{p}{(}\PYG{n}{r}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{*}\PYG{n}{r}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]))}
+    \PYG{n}{a} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{Fourpi2}\PYG{o}{*}\PYG{n}{r}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{/}\PYG{p}{(}\PYG{n}{rabs}\PYG{o}{**}\PYG{l+m+mi}{3}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} update velocity, time and position using the Velocity\PYGZhy{}Verlet  method}
+    \PYG{n}{r}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{r}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{+} \PYG{n}{DeltaT}\PYG{o}{*}\PYG{n}{v}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{+} \PYG{p}{((}\PYG{n}{DeltaT}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{o}{*}\PYG{p}{(}\PYG{n}{a}\PYG{p}{)}
+    \PYG{n}{rabs} \PYG{o}{=} \PYG{n}{sqrt}\PYG{p}{(}\PYG{n+nb}{sum}\PYG{p}{(}\PYG{n}{r}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{*}\PYG{n}{r}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]))}
+    \PYG{n}{anew} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{4}\PYG{o}{*}\PYG{p}{(}\PYG{n}{pi}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{o}{*}\PYG{n}{r}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{/}\PYG{p}{(}\PYG{n}{rabs}\PYG{o}{**}\PYG{l+m+mi}{3}\PYG{p}{)}
+    \PYG{n}{v}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{v}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{+} \PYG{n}{DeltaT}\PYG{o}{*}\PYG{p}{(}\PYG{l+m+mf}{0.5}\PYG{p}{)}\PYG{o}{*}\PYG{p}{(}\PYG{n}{a} \PYG{o}{+} \PYG{n}{anew}\PYG{p}{)}
+    \PYG{n}{t}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{t}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{+} \PYG{n}{DeltaT}
+\PYG{n}{sns}\PYG{o}{.}\PYG{n}{set}\PYG{p}{()}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{r}\PYG{p}{[:,}\PYG{l+m+mi}{0}\PYG{p}{],} \PYG{n}{r}\PYG{p}{[:,}\PYG{l+m+mi}{1}\PYG{p}{])}
+
+
+\PYG{c+c1}{\PYGZsh{} We check that the total energy is conserved. For a circular orbit, potential and kinetic energy do not change since the radius is a constant.}
+
+\PYG{c+c1}{\PYGZsh{} Note that we have set the mass of the Earth = 1}
+\PYG{k}{def} \PYG{n+nf}{kinetic\PYGZus{}energy}\PYG{p}{(}\PYG{n}{v}\PYG{p}{):}
+    \PYG{n}{KE} \PYG{o}{=} \PYG{p}{[]}
+    \PYG{n}{step} \PYG{o}{=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{step}\PYG{p}{):}
+        \PYG{n}{KE}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)}
+        \PYG{n}{KE}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{+=} \PYG{l+m+mf}{0.5} \PYG{o}{*}\PYG{n}{np}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{n}{v}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{*}\PYG{n}{v}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])}
+    \PYG{k}{return} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{n}{KE}\PYG{p}{)}
+
+
+\PYG{c+c1}{\PYGZsh{} Note that G x Mass\PYGZus{}sun = 4*pi*pi and the mass of the Earth = 1}
+\PYG{c+c1}{\PYGZsh{} Note also that if you change the exponent in the force you need also to change the potential energy!}
+\PYG{k}{def} \PYG{n+nf}{pot}\PYG{p}{():}
+    \PYG{n}{Pot} \PYG{o}{=} \PYG{p}{[]}
+    \PYG{n}{step} \PYG{o}{=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{step}\PYG{p}{):}
+        \PYG{n}{Pot}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)}
+        \PYG{n}{Pot}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{+=}  \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{4}\PYG{o}{*}\PYG{n}{pi}\PYG{o}{*}\PYG{n}{pi}\PYG{o}{/} \PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{n}{r}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{*}\PYG{n}{r}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]))}
+    \PYG{k}{return} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{n}{Pot}\PYG{p}{)}
+
+\PYG{n}{fig}\PYG{p}{,} \PYG{n}{ax} \PYG{o}{=} \PYG{n}{plt}\PYG{o}{.}\PYG{n}{subplots}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{figsize}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mi}{12}\PYG{p}{,}\PYG{l+m+mi}{6}\PYG{p}{))}
+\PYG{n}{ax}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{n}{kinetic\PYGZus{}energy}\PYG{p}{(}\PYG{n}{v}\PYG{p}{)}\PYG{o}{+}\PYG{n}{pot}\PYG{p}{(),}\PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}Total\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{ax}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{n}{kinetic\PYGZus{}energy}\PYG{p}{(}\PYG{n}{v}\PYG{p}{),}\PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}Kinetic\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{ax}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{n}{pot}\PYG{p}{(),}\PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}Potential\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{ax}\PYG{o}{.}\PYG{n}{set\PYGZus{}title}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Energy vs time\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{ax}\PYG{o}{.}\PYG{n}{set\PYGZus{}xlabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}t [yr]\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{ax}\PYG{o}{.}\PYG{n}{legend}\PYG{p}{()}
+\PYG{n}{ax}\PYG{o}{.}\PYG{n}{set\PYGZus{}ylabel}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}E\PYGZsq{}}\PYG{p}{)}
+
+
+
+
+\end{Verbatim}
