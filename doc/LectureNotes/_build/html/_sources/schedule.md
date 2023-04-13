@@ -156,12 +156,12 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesApril7.pdf
   
 ### Week 15, April  10-14, 2023
-- Monday 4/10: Two-body scattering
-  - Reading suggestion: Lecture notes and Taylor sections 14.1-14.3
+- Monday 4/10: Lagrangian formalism
+  - Reading suggestion: Lecture notes and Taylor sections 6.1-6.4
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesApril10.pdf   - Video of lecture at https://youtu.be/Sfkdnq9JKB8
-- Wednesday 4/12: Lagrangian formalism
-  - Reading suggestions: lecture notes and Taylor sections 6.1-6.3
-  - Video of lecture at TBA
+- Wednesday 4/12: Lagrangian formalism and derivation of Euler-Lagrange equations
+  - Reading suggestions: lecture notes and Taylor sections 6.1-6.4
+  - Video of lecture at https://youtu.be/vNKn1HyC9kw
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesApril12.pdf    
 - Friday 4/14: Summary of week and work on second midterm. Deadline second midterm.
 
