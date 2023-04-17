@@ -1,5 +1,5 @@
 TITLE: PHY321: Classical Mechanics 1
-AUTHOR: Homework 9, due Friday  April 28 (note changed deadline)
+AUTHOR: Homework 9, due Thursday  April 28
 DATE: today
 
 ===  Practicalities about  homeworks and projects ===
@@ -115,52 +115,25 @@ while for $\epsilon > 1$ (or energy positive) the orbit becomes a hyperbola. The
 !et
 For a hyperbola, identify the constants $\alpha$, $\beta$ and $\delta$ in terms of the constants $c$ and $\epsilon$ for $r(\phi)$. 
 
+=== Exercise 5, Lagrangian formalism and the Lennard-Jones potential (40pt) ===
 
 
-=== Exercise 5 (40pt), Pendulum and Lagrangians (Taylor chapters 6-7) ===
-
-A mathematical pendulum consists of a point mass $m$ suspended by a massless thread/rod of length $l$ in a gravitational field, as shown in the figure here. The constraining force is labeled by $\bm{T}$
-and the gravitational force is labeled $\bm{F}_g$.
-
-FIGURE: [figures/Simplependulum.png, width=600 frac=0.6] 
-
-We assume that the length $l$ is constant and we define the coordinates involved as
-
-!bt
-\[
-\bm{r} = l\sin(\phi)\bm{\hat{x}}+l\cos(\phi)\bm{\hat{y}},
-\]
-!et
-where $\bm{\hat{x}}$ and $\bm{\hat{y}}$ are the unit vectors in the $x$ and $y$ directions, respectively.
-
-* _5a (10pt):_ Set up the forces acting on the system and show that the equation of motion is $m\ddot{\bm{r}}=\bm{F}_g+\bm{T}$.
-
-* _5b (10pt):_ Show that you can rewrite the above equation of motion as two independent equations of motion, one for $\phi$ and one for the constraining force. Show that these equations are $\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}$ with $\omega_0^2=g/l$ and $T=ml\dot{\phi}^2+mg\cos{(\phi)}$.
-
-The equation for $\phi$ is a second-order differential equation
-!bt
-\[
-\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}.
-\]
-!et
-
-This equation can be solved analytically if we assume that the angle $\phi$ is very small. Then we can approximate our equation as
-
-!bt
-\[
-\ddot{\phi}(t)=-\omega_0^2\phi(t).
-\]
-!et
-
-* _5c (5pt):_ Find the analytical solution for the last equation. Hint, look back at the solutions for the simple harmonic oscillator problem in one dimension in for example homework 8.
+The relevant chapters from Taylor are chapters 6-7 and 8. In addition he lectures
+notes on the "Lagrangian Formalism and Calculus of
+Variations":"https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter8.html" can be of use. You
+need also results from the two-body problem of chapter 8 of Taylor and
+the lecture notes "two-body
+problems":"https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter6.html".
 
 
-* _5d (5pt):_ Find the expressions for the kinetic and potential energies in terms of the variables $r$ and $\phi$. 
+We will stay with a two-body problem only with particles $1$ and $2$.
+We introduce the relative mass $\mu=m_1m_2/M$ where the total mass $M=m_1+m_2$, the sum of the masses $m_1$ and $m_2$.
 
-* _5e (10pt):_ With the potential $V$  and kinetic $T$ energies, define the Lagrangian for the mathematical pendulum discussed here. Add the constraint $r=l$ via a Lagrange multiplier $\lambda$ and derive the equations of motion. Show that these result in  $\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}$ with $\omega_0^2=g/l$ and $\lambda=ml\dot{\phi}^2+mg\cos{(\phi)}$.  How would you interpret $\lambda$? 
-
-
-
+* _5a (10pt):_ Define the center-of-mass position $\bm{R}$ and the relative position $\bm{r}$ in terms of the masses and the positions of particles one and two $\bm{r}_1$ and $\bm{r}_2$, respectively. Define then the center-of-mass frame by setting $\bm{R}=0$. Show then that you can write the total angular momentum as $\bm{L}=\mu(\bm{r}\times \dot{\bm{r}})$. Hint: See Taylor section 8.3. How do you interpret the angular momentum?  Why can we reduce the motion of two particles to a problem in two dimensions only?
+* _5b (10pt):_ We introduce polar coordinates with $r\in [0,\infty)$ and $\phi\in[0,2\pi]$. The quantity $r$ is the absolute value (magnitude) of the relative distance. Show that you can write the kinetic energy as $K=1/2\mu(\dot{r}^2+r^2\dot{\phi}^2)$.
+* _5c (5pt):_ Include the potential energy for the Lennard-Jones potential and write out the Lagrangian using the coordinates $r$ and $\phi$. Does the potential energy depend on $\phi$?
+* _5d (10pt):_ Use the Euler-Lagrange equations to find the equations of motion for $r$ and $\phi$. Does the equation of motion for $r$ agree with what you derived in exercise 1? Comment your results.
+* _5e (5pt):_ Use the equation of motion for $\phi$ to show that angular momentum is conserved. Comment your results. Can you infer this from the form of the potential? Hint: see your answer to 5c.
 
 
 
@@ -197,7 +170,7 @@ like, in the same document as your homework, or in a different one.
 Remember to cite any external references you use and include a
 reference list.  There are no length requirements, but make sure what
 you turn in is complete and through.  If you have any questions,
-please contact Julie Butler at butler@frib.msu.edu.
+please contact us.
 
 |-------------------------------------------------|
 | HW/Project | Due Date | Extra Credit Assignment |
@@ -234,6 +207,8 @@ Talks given by researchers through the following clubs:
 * Research and Idea Sharing Enterprise (RAISE)​: Meets Wednesday Nights Society for Physics Students (SPS)​: Meets Monday Nights
 * Astronomy Club​: Meets Monday Nights
 * Facility For Rare Isotope Beam (FRIB) Seminars: ​Occur multiple times a week
+
+
 
 
 

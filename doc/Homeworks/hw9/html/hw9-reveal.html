@@ -171,14 +171,14 @@ MathJax.Hub.Config({
 <h1 style="text-align: center;">PHY321: Classical Mechanics 1</h1>
 </center>  <!-- document title -->
 
-<!-- author(s): Homework 9, due Friday  April 28 (note changed deadline) -->
+<!-- author(s): Homework 9, due Thursday  April 28 -->
 <center>
-<b>Homework 9, due Friday  April 28 (note changed deadline)</b> 
+<b>Homework 9, due Thursday  April 28</b> 
 </center>
 <!-- institution(s) -->
 <br>
 <center>
-<h4>Apr 20, 2022</h4>
+<h4>Apr 17, 2023</h4>
 </center> <!-- date -->
 <br>
 <h3 id="practicalities-about-homeworks-and-projects">Practicalities about  homeworks and projects </h3>
@@ -303,53 +303,26 @@ $$
 <p>&nbsp;<br>
 
 <p>For a hyperbola, identify the constants \( \alpha \), \( \beta \) and \( \delta \) in terms of the constants \( c \) and \( \epsilon \) for \( r(\phi) \). </p>
-<h3 id="exercise-5-40pt-pendulum-and-lagrangians-taylor-chapters-6-7">Exercise 5 (40pt), Pendulum and Lagrangians (Taylor chapters 6-7) </h3>
+<h3 id="exercise-5-lagrangian-formalism-and-the-lennard-jones-potential-40pt">Exercise 5, Lagrangian formalism and the Lennard-Jones potential (40pt) </h3>
 
-<p>A mathematical pendulum consists of a point mass \( m \) suspended by a massless thread/rod of length \( l \) in a gravitational field, as shown in the figure here. The constraining force is labeled by \( \boldsymbol{T} \)
-and the gravitational force is labeled \( \boldsymbol{F}_g \).
+<p>The relevant chapters from Taylor are chapters 6-7 and 8. In addition he lectures
+notes on the <a href="https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter8.html" target="_blank">Lagrangian Formalism and Calculus of
+Variations</a> can be of use. You
+need also results from the two-body problem of chapter 8 of Taylor and
+the lecture notes <a href="https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter6.html" target="_blank">two-body
+problems</a>.
 </p>
 
-<br/><br/>
-<center>
-<p><img src="figures/Simplependulum.png" width="600" align="bottom"></p>
-</center>
-<br/><br/>
-
-<p>We assume that the length \( l \) is constant and we define the coordinates involved as</p>
-
-<p>&nbsp;<br>
-$$
-\boldsymbol{r} = l\sin(\phi)\boldsymbol{\hat{x}}+l\cos(\phi)\boldsymbol{\hat{y}},
-$$
-<p>&nbsp;<br>
-
-<p>where \( \boldsymbol{\hat{x}} \) and \( \boldsymbol{\hat{y}} \) are the unit vectors in the \( x \) and \( y \) directions, respectively.</p>
+<p>We will stay with a two-body problem only with particles \( 1 \) and \( 2 \).
+We introduce the relative mass \( \mu=m_1m_2/M \) where the total mass \( M=m_1+m_2 \), the sum of the masses \( m_1 \) and \( m_2 \).
+</p>
 
 <ul>
-<p><li> <b>5a (10pt):</b> Set up the forces acting on the system and show that the equation of motion is \( m\ddot{\boldsymbol{r}}=\boldsymbol{F}_g+\boldsymbol{T} \).</li>
-<p><li> <b>5b (10pt):</b> Show that you can rewrite the above equation of motion as two independent equations of motion, one for \( \phi \) and one for the constraining force. Show that these equations are \( \ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))} \) with \( \omega_0^2=g/l \) and \( T=ml\dot{\phi}^2+mg\cos{(\phi)} \).</li>
-</ul>
-<p>
-<p>The equation for \( \phi \) is a second-order differential equation</p>
-<p>&nbsp;<br>
-$$
-\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}.
-$$
-<p>&nbsp;<br>
-
-<p>This equation can be solved analytically if we assume that the angle \( \phi \) is very small. Then we can approximate our equation as</p>
-
-<p>&nbsp;<br>
-$$
-\ddot{\phi}(t)=-\omega_0^2\phi(t).
-$$
-<p>&nbsp;<br>
-
-
-<ul>
-<p><li> <b>5c (5pt):</b> Find the analytical solution for the last equation. Hint, look back at the solutions for the simple harmonic oscillator problem in one dimension in for example homework 8.</li>
-<p><li> <b>5d (5pt):</b> Find the expressions for the kinetic and potential energies in terms of the variables \( r \) and \( \phi \).</li> 
-<p><li> <b>5e (10pt):</b> With the potential \( V \)  and kinetic \( T \) energies, define the Lagrangian for the mathematical pendulum discussed here. Add the constraint \( r=l \) via a Lagrange multiplier \( \lambda \) and derive the equations of motion. Show that these result in  \( \ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))} \) with \( \omega_0^2=g/l \) and \( \lambda=ml\dot{\phi}^2+mg\cos{(\phi)} \).  How would you interpret \( \lambda \)?</li> 
+<p><li> <b>5a (10pt):</b> Define the center-of-mass position \( \boldsymbol{R} \) and the relative position \( \boldsymbol{r} \) in terms of the masses and the positions of particles one and two \( \boldsymbol{r}_1 \) and \( \boldsymbol{r}_2 \), respectively. Define then the center-of-mass frame by setting \( \boldsymbol{R}=0 \). Show then that you can write the total angular momentum as \( \boldsymbol{L}=\mu(\boldsymbol{r}\times \dot{\boldsymbol{r}}) \). Hint: See Taylor section 8.3. How do you interpret the angular momentum?  Why can we reduce the motion of two particles to a problem in two dimensions only?</li>
+<p><li> <b>5b (10pt):</b> We introduce polar coordinates with \( r\in [0,\infty) \) and \( \phi\in[0,2\pi] \). The quantity \( r \) is the absolute value (magnitude) of the relative distance. Show that you can write the kinetic energy as \( K=1/2\mu(\dot{r}^2+r^2\dot{\phi}^2) \).</li>
+<p><li> <b>5c (5pt):</b> Include the potential energy for the Lennard-Jones potential and write out the Lagrangian using the coordinates \( r \) and \( \phi \). Does the potential energy depend on \( \phi \)?</li>
+<p><li> <b>5d (10pt):</b> Use the Euler-Lagrange equations to find the equations of motion for \( r \) and \( \phi \). Does the equation of motion for \( r \) agree with what you derived in exercise 1? Comment your results.</li>
+<p><li> <b>5e (5pt):</b> Use the equation of motion for \( \phi \) to show that angular momentum is conserved. Comment your results. Can you infer this from the form of the potential? Hint: see your answer to 5c.</li>
 </ul>
 <p>
 <h3 id="classical-mechanics-extra-credit-assignment-scientific-writing-and-attending-talks">Classical Mechanics Extra Credit Assignment: Scientific Writing and attending Talks </h3>
@@ -387,7 +360,7 @@ like, in the same document as your homework, or in a different one.
 Remember to cite any external references you use and include a
 reference list.  There are no length requirements, but make sure what
 you turn in is complete and through.  If you have any questions,
-please contact Julie Butler at butler@frib.msu.edu.
+please contact us.
 </p>
 
 <table class="dotable" border="1">
