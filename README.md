@@ -263,7 +263,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 ### Week 16, April 17-21, 2023
 - Monday 4/17:  Lagrangian formalism and Variational Calculus
   - Reading suggestions: lecture notes and Taylor sections 6.1-6.4
-  - Video of lecture at TBA
+  - Video of lecture at https://youtu.be/IwVDDlQgJ60
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesApril17.pdf    
 - Wednesday 4/19: Euler-Lagrange equations and the Lagrangian with examples and Principle of Least Action
   - Video of lecture at TBA
