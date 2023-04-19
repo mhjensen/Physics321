@@ -178,7 +178,7 @@ MathJax.Hub.Config({
 <!-- institution(s) -->
 <br>
 <center>
-<h4>Apr 17, 2023</h4>
+<h4>Apr 19, 2023</h4>
 </center> <!-- date -->
 <br>
 <h3 id="practicalities-about-homeworks-and-projects">Practicalities about  homeworks and projects </h3>
@@ -305,23 +305,42 @@ $$
 <p>For a hyperbola, identify the constants \( \alpha \), \( \beta \) and \( \delta \) in terms of the constants \( c \) and \( \epsilon \) for \( r(\phi) \). </p>
 <h3 id="exercise-5-lagrangian-formalism-and-the-lennard-jones-potential-40pt">Exercise 5, Lagrangian formalism and the Lennard-Jones potential (40pt) </h3>
 
-<p>The relevant chapters from Taylor are chapters 6-7 and 8. In addition he lectures
-notes on the <a href="https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter8.html" target="_blank">Lagrangian Formalism and Calculus of
-Variations</a> can be of use. You
-need also results from the two-body problem of chapter 8 of Taylor and
-the lecture notes <a href="https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter6.html" target="_blank">two-body
-problems</a>.
+<p>This exercise is a   follow-up of homework 6. There we studied the so-called
+<a href="https://en.wikipedia.org/wiki/Lennard-Jones_potential" target="_blank">Lennard-Jones potential</a> which is widely used in molecular dynamics
+calculations and in the simulations of <a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.40.11070" target="_blank">quantum liquids</a>. This potential is based on parametrizations from
+experiments. In <a href="https://en.wikipedia.org/wiki/Molecular_dynamics" target="_blank">molecular dynamics calculations</a> the assumption is
+that atoms move according to the laws of Newton, given the correct
+model for interactions. We can say then that quantum-mechanical
+degrees of freedom stemming from complicated interactions between electrons
+and protons in an atom, are parametrized in terms of an effective
+potential.
 </p>
 
-<p>We will stay with a two-body problem only with particles \( 1 \) and \( 2 \).
-We introduce the relative mass \( \mu=m_1m_2/M \) where the total mass \( M=m_1+m_2 \), the sum of the masses \( m_1 \) and \( m_2 \).
+<p>We will limit ourselves to a two-body problem and the
+famous Lennard-Jones potential,
+</p>
+
+<p>&nbsp;<br>
+$$
+\begin{equation}
+    V(r) = 4\varepsilon\left((\frac{\sigma}{r})^{12} - (\frac{\sigma}{r})^6\right), 
+\tag{1}
+\end{equation}
+$$
+<p>&nbsp;<br>
+
+<p>where \( r \) is the distance between two atoms,
+\( r=\vert\boldsymbol{r}_i-\boldsymbol{r}_j\vert \), that is the norm of the relative
+distance vector \( \boldsymbol{r} \). The quantities \( \sigma \) and \( \varepsilon \) are
+parameters which determine which chemical compound is modelled. This
+potential is a good approximation for noble gases like helium, neon, argon and other.
 </p>
 
 <ul>
 <p><li> <b>5a (10pt):</b> Define the center-of-mass position \( \boldsymbol{R} \) and the relative position \( \boldsymbol{r} \) in terms of the masses and the positions of particles one and two \( \boldsymbol{r}_1 \) and \( \boldsymbol{r}_2 \), respectively. Define then the center-of-mass frame by setting \( \boldsymbol{R}=0 \). Show then that you can write the total angular momentum as \( \boldsymbol{L}=\mu(\boldsymbol{r}\times \dot{\boldsymbol{r}}) \). Hint: See Taylor section 8.3. How do you interpret the angular momentum?  Why can we reduce the motion of two particles to a problem in two dimensions only?</li>
 <p><li> <b>5b (10pt):</b> We introduce polar coordinates with \( r\in [0,\infty) \) and \( \phi\in[0,2\pi] \). The quantity \( r \) is the absolute value (magnitude) of the relative distance. Show that you can write the kinetic energy as \( K=1/2\mu(\dot{r}^2+r^2\dot{\phi}^2) \).</li>
 <p><li> <b>5c (5pt):</b> Include the potential energy for the Lennard-Jones potential and write out the Lagrangian using the coordinates \( r \) and \( \phi \). Does the potential energy depend on \( \phi \)?</li>
-<p><li> <b>5d (10pt):</b> Use the Euler-Lagrange equations to find the equations of motion for \( r \) and \( \phi \). Does the equation of motion for \( r \) agree with what you derived in exercise 1? Comment your results.</li>
+<p><li> <b>5d (10pt):</b> Use the Euler-Lagrange equations to find the equations of motion for \( r \) and \( \phi \). Does the equation of motion for \( r \) agree with what you would expect? Comment your results. Hint: think of the gravitational two-body problem</li>
 <p><li> <b>5e (5pt):</b> Use the equation of motion for \( \phi \) to show that angular momentum is conserved. Comment your results. Can you infer this from the form of the potential? Hint: see your answer to 5c.</li>
 </ul>
 <p>

@@ -118,21 +118,37 @@ For a hyperbola, identify the constants $\alpha$, $\beta$ and $\delta$ in terms 
 === Exercise 5, Lagrangian formalism and the Lennard-Jones potential (40pt) ===
 
 
-The relevant chapters from Taylor are chapters 6-7 and 8. In addition he lectures
-notes on the "Lagrangian Formalism and Calculus of
-Variations":"https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter8.html" can be of use. You
-need also results from the two-body problem of chapter 8 of Taylor and
-the lecture notes "two-body
-problems":"https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter6.html".
 
+This exercise is a   follow-up of homework 6. There we studied the so-called
+"Lennard-Jones potential":"https://en.wikipedia.org/wiki/Lennard-Jones_potential" which is widely used in molecular dynamics
+calculations and in the simulations of "quantum liquids":"https://journals.aps.org/prb/abstract/10.1103/PhysRevB.40.11070". This potential is based on parametrizations from
+experiments. In "molecular dynamics calculations":"https://en.wikipedia.org/wiki/Molecular_dynamics" the assumption is
+that atoms move according to the laws of Newton, given the correct
+model for interactions. We can say then that quantum-mechanical
+degrees of freedom stemming from complicated interactions between electrons
+and protons in an atom, are parametrized in terms of an effective
+potential.
 
-We will stay with a two-body problem only with particles $1$ and $2$.
-We introduce the relative mass $\mu=m_1m_2/M$ where the total mass $M=m_1+m_2$, the sum of the masses $m_1$ and $m_2$.
+We will limit ourselves to a two-body problem and the
+famous Lennard-Jones potential,
+
+!bt
+\begin{equation}
+    V(r) = 4\varepsilon\left((\frac{\sigma}{r})^{12} - (\frac{\sigma}{r})^6\right), 
+\end{equation}
+!et
+
+where $r$ is the distance between two atoms,
+$r=\vert\bm{r}_i-\bm{r}_j\vert$, that is the norm of the relative
+distance vector $\bm{r}$. The quantities $\sigma$ and $\varepsilon$ are
+parameters which determine which chemical compound is modelled. This
+potential is a good approximation for noble gases like helium, neon, argon and other.
+
 
 * _5a (10pt):_ Define the center-of-mass position $\bm{R}$ and the relative position $\bm{r}$ in terms of the masses and the positions of particles one and two $\bm{r}_1$ and $\bm{r}_2$, respectively. Define then the center-of-mass frame by setting $\bm{R}=0$. Show then that you can write the total angular momentum as $\bm{L}=\mu(\bm{r}\times \dot{\bm{r}})$. Hint: See Taylor section 8.3. How do you interpret the angular momentum?  Why can we reduce the motion of two particles to a problem in two dimensions only?
 * _5b (10pt):_ We introduce polar coordinates with $r\in [0,\infty)$ and $\phi\in[0,2\pi]$. The quantity $r$ is the absolute value (magnitude) of the relative distance. Show that you can write the kinetic energy as $K=1/2\mu(\dot{r}^2+r^2\dot{\phi}^2)$.
 * _5c (5pt):_ Include the potential energy for the Lennard-Jones potential and write out the Lagrangian using the coordinates $r$ and $\phi$. Does the potential energy depend on $\phi$?
-* _5d (10pt):_ Use the Euler-Lagrange equations to find the equations of motion for $r$ and $\phi$. Does the equation of motion for $r$ agree with what you derived in exercise 1? Comment your results.
+* _5d (10pt):_ Use the Euler-Lagrange equations to find the equations of motion for $r$ and $\phi$. Does the equation of motion for $r$ agree with what you would expect? Comment your results. Hint: think of the gravitational two-body problem
 * _5e (5pt):_ Use the equation of motion for $\phi$ to show that angular momentum is conserved. Comment your results. Can you infer this from the form of the potential? Hint: see your answer to 5c.
 
 
@@ -207,6 +223,7 @@ Talks given by researchers through the following clubs:
 * Research and Idea Sharing Enterprise (RAISE)​: Meets Wednesday Nights Society for Physics Students (SPS)​: Meets Monday Nights
 * Astronomy Club​: Meets Monday Nights
 * Facility For Rare Isotope Beam (FRIB) Seminars: ​Occur multiple times a week
+
 
 
 
