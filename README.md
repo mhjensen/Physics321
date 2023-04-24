@@ -273,15 +273,13 @@ discussion on conservative forces. Discussion of potential surfaces and their in
 
 
 ### Week 17, April 24- April 28, 2023
-- Monday 4/24:  Lagrangian formalism, constrained and unconstrained motion
-  - Video of lecture at TBA
+- Monday 4/24:  Lagrangian formalism and discussion of final from 2022
+  - Video of lecture at https://youtu.be/YwVy79eJ8uU
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesApril24.pdf    
-- Wednesday 4/26: Variational calculus with examples
+- Wednesday 4/26: Summary of course and discussion of final
   - Video of lecture at TBA
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesApril26.pdf    
-- Friday 4/28:  Summary of course and discussion of final exam project. Additional homework ten due May 2.
-  - Video of Lecture at TBA
-  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesApril28.pdf
+- Friday 4/28:  Discussion and work on final project
 ### Week 18, May 1-5, 2023
 Depending on your availability, we can have at least two sessions in order to discuss the final project.
 - Final Exam:  The final exam will be a project similar to the two midterm projects. Deadline May 5 at midnight.
