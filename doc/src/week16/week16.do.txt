@@ -1,41 +1,38 @@
 TITLE: PHY321: Variational calculus and Summary of Course
 AUTHOR: "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/" {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and Facility for Rare Ion Beams (FRIB), Michigan State University, USA & Department of Physics, University of Oslo, Norway
-DATE: today
+DATE: April 24-28, 2023
 
 
 !split
 =====   Aims and Overarching Motivation =====
 
 
-=== Monday April 25 ===
+=== Monday April 24 ===
 
 * Variational Calculus, constrained motion and Lagrange multiplier, and Lagrangians with examples
-  * "Video of lecture":"https://youtu.be/woJNrxcA6MY"
-  * "Handwritten notes":"https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesApril25.pdf"
-
-* Additional HW 10 available at URL:"https://mhjensen.github.io/Physics321/doc/Homeworks/hw10/html/hw10.html". The deadline is et for May 2.
-
-_Reading suggestion_: Taylor chapter 7 (except 7.8 and 7.9)
-
-
-=== Wednesday April 27 ===
-
-* Variational Calculus, Lagrangians and examples
-  * "Video of lecture":"https://youtu.be/0q6DAQtO8tI"
-  * "Handwritten notes":"https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesApril27.pdf"
-
+* Discussion of problems from exam from 2022, see the included material here. See the solution at URL:"https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/Solutions/Final2022.ipynb"
+  * "Video of lecture":"https://youtu.be/"
+  * "Handwritten notes":"https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesApril24.pdf"
 
 _Reading suggestion_: Taylor chapter 7 (except 7.8 and 7.9)
 
 
-=== Friday April 29 ===
+=== Wednesday April 26 ===
 
-* Summary of course and discussion of exam project
-  * "Video of Lecture":"https://youtu.be/6BchF14pki0"
-  * "Handwritten notes":"https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesApril29.pdf"
+* Summary of course and discussion of final exam project
+  * "Video of lecture":"https://youtu.be/"
+  * "Handwritten notes":"https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2022/NotesApril26.pdf"
 
 
-The final exam will be available on Friday the 29th at 8am. The deadline is Friday May 6 at midnight (1159pm). 
+_Reading suggestion_: Taylor chapter 7 (except 7.8 and 7.9)
+
+
+=== Friday April 28 ===
+
+* Discussion and work on exam project
+  * "Video of Lecture":"https://youtu.be/"
+
+The final exam will be available on Wednesday the 26th at 8am. We will discuss it on Wednesday and Friday this week. The deadline is Friday May 5 at midnight (1159pm). 
 
 
 !split
@@ -44,1065 +41,9 @@ The final exam will be available on Friday the 29th at 8am. The deadline is Frid
 We will keep our zoom sessions MWF 3pm-5pm open for discussions and more, feel free to swing by or just schedule a separate zoom session if these hours don't fit. We will also have zoom sessions Tuesday and Thursday 9pm-10.
 
 
-!split
-===== Variational Calculus =====
-
-The calculus of variations involves 
-problems where the quantity to be minimized or maximized is an integral. 
-
-
-The usual minimization problem one faces involves taking a function
-$\cal{L}(x)$, then finding the single value $x$ for which $\cal{L}$
-is either a maximum or minimum. In multivariate calculus one also
-learns to solve problems where you minimize for multiple variables,
-$\cal{L}(x_1,x_2,\cdots x_n)$, and finding the points $(x_1\cdots
-y_n)$ in an $n$-dimensional space that maximize or minimize the
-function. Here, we consider what seems to be a much more ambitious
-problem. Imagine you have a function $\cal{L}(x(t),\dot{x}(t),t)$,
-and you wish to find the extrema for an infinite number of values of
-$x$, i.e. $x$ at each point $t$. The function $\cal{L}$ will not only
-depend on $x$ at each point $t$, but also on the slope at each point,
-plus an additional dependence on $t$. Note we are NOT finding an
-optimum value of $t$, we are finding the set of optimum values of $x$
-at each point $t$, or equivalently, finding the function $x(t)$.
-
 
 !split
-===== Variational Calculus, introducing the action =====
-
-One treats the function $x(t)$ as being unknown while minimizing the action
-
-!bt
-\[
-S=\int_{t_1}^{t_2}dt~\cal{L}(x(t),\dot{x}(t),t).
-\]
-!et
-
-Thus, we are minimizing $S$ with respect to an infinite number of
-values of $x(t_i)$ at points $t_i$. As an additional criteria, we will
-assume that $x(t_1)$ and $x(t_2)$ are fixed, and that that we will
-only consider variations of $x$ between the boundaries. The dependence
-on the derivative, $\dot{x}=dx/dt$, is crucial because otherwise the
-solution would involve simply finding the one value of $x$ that
-minimized $\cal{L}$, and $x(t)$ would equal a constant if there were no
-explicit $t$ dependence. Furthermore, $x$ wouldn't need to be
-continuous at the boundary.
-
-
-!split
-===== Variational Calculus, general Action =====
-
-
-In the general case we have an integral of the type
-!bt
-\[ 
-S[q]= \int_{t_1}^{t_2} \cal{L}(q(t),\dot{q}(t),t)dt,
-\]
-!et
-
-where $S$ is the quantity which is sought minimized or maximized.  The
-problem is that although $\cal{L}$  is a function of the general variables
-$q(t),\dot{q}(t),t$ (note our change of variables), the exact dependence of $q$ on $t$ is not known.
-This means again that even though the integral has fixed limits $t_1$
-and $t_2$, the path of integration is not known. In our case the unknown
-quantities are the positions and general velocities of a given number
-of objects and we wish to choose an integration path which makes the
-functional $S[q]$ stationary. This means that we want to find minima,
-or maxima or saddle points. In physics we search normally for minima.
-Our task is therefore to find the minimum of $S[q]$ so that its
-variation $\delta S$ is zero subject to specific constraints.  The
-constraints can be treated via the technique of Lagrangian multipliers
-as we will see below.
-
-
-!split
-===== Variational Calculus, Optimal Path =====
-
-
-We assume the existence of an optimum path, that is a path for which
-$S[q]$ is stationary. There are infinitely many such paths.  The
-difference between two paths $\delta q$ is called the variation of
-$q$.
-
-We call the variation $\eta(t)$ and it is scaled by a factor $\alpha$.
-The function $\eta(t)$ is arbitrary except for
-
-!bt
-\[
-\eta(t_1)=\eta(t_2)=0,
-\]
-!et
-
-and we assume that we can model the change in $q$ as
-
-!bt
-\[
-q(t,\alpha) = q(t)+\alpha\eta(t),
-\]
-!et
-
-and
-
-!bt
-\[
-\delta q = q(t,\alpha) -q(t,0)=\alpha\eta(t).
-\]
-!et
-
-
-!split
-===== Variational Calculus, Condition for an Extreme Value =====
-
-
-We choose $q(t,\alpha=0)$ as the unkonwn path  that will minimize $S$.  The value
-$q(t,\alpha\ne 0)$  describes a neighbouring path.
-
-We have
-
-!bt
-\[
-S[q(\alpha)]= \int_{t_1}^{t_2} \cal{L}(q(t,\alpha),\dot{q}(t,\alpha),t)dt.
-\]
-!et
-
-
-The condition for an extreme of
-
-!bt
-\[
-S[q(\alpha)]= \int_{t_1}^{t_2} \cal{L}(q(t,\alpha),\dot{q}(t,\alpha),t)dt,
-\]
-!et
-
-is
-
-!bt
-\[
-\left[\frac{\partial  S[q(\alpha)]}{\partial t}\right]_{\alpha=0} =0.
-\]
-!et
-
-
-!split
-===== Variational Calculus. $\alpha$ Dependence =====
-
-
-The $\alpha$ dependence is contained in $q(t,\alpha)$ and $\dot{q}(t,\alpha)$ meaning that
-
-!bt
-\[
-\left[\frac{\partial  E[q(\alpha)]}{\partial \alpha}\right]=\int_{t_1}^{t_2} \left( \frac{\partial \cal{l}}{\partial q}\frac{\partial q}{\partial \alpha}+\frac{\partial \cal{L}}{\partial \dot{q}}\frac{\partial \dot{q}}{\partial \alpha}\right)dt.
-\]
-!et
-We have defined
-
-!bt
-\[
-\frac{\partial q(x,\alpha)}{\partial \alpha}=\eta(x)
-\]
-!et
-and thereby
-
-!bt
-\[
-\frac{\partial \dot{q}(t,\alpha)}{\partial \alpha}=\frac{d(\eta(t))}{dt}.
-\]
-!et
-
-
-
-!split
-===== INtegrating by Parts =====
-
-Using
-
-!bt
-\[
-\frac{\partial q(t,\alpha)}{\partial \alpha}=\eta(t),
-\]
-!et
-
-and
-
-!bt
-\[
-\frac{\partial \dot{q}(t,\alpha)}{\partial \alpha}=\frac{d(\eta(t))}{dt},
-\]
-!et
-
-in the integral gives
-
-!bt
-\[
-\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]=\int_{t_1}^{t_2} \left( \frac{\partial \cal{L}}{\partial q}\eta(t)+\frac{\partial \cal{L}}{\partial \dot{q}}\frac{d(\eta(t))}{dt}\right)dt.
-\]
-!et
-
-Integrating the second term by parts
-
-!bt
-\[
-\int_{t_1}^{t_2} \frac{\partial \cal{L}}{\partial \dot{q}}\frac{d(\eta(t))}{dt}dt =\eta(t)\frac{\partial \cal{L}}{\partial \dot{q}}|_{t_1}^{t_2}-
-\int_a^b \eta(t)\frac{d}{dx}\frac{\partial \cal{L}}{\partial \dot{q}}dt,
-\]
-!et
-
-
-and since the first term dissappears due to $\eta(a)=\eta(b)=0$, we obtain
-
-
-!bt
-\[
-\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]=\int_{t_1}^{t_2} \left( \frac{\partial \cal{L}}{\partial q}-\frac{d}{dx}\frac{\partial \cal{L}}{\partial \dot{q}}
-\right)\eta(t)dt=0.
-\]
-!et
-
-!split
-===== Euler-Lagrange Equations =====
-
-
-The latter can be written as
-
-!bt
-\[
-\left[\frac{\partial  S[q(\alpha)]}{\partial \alpha}\right]_{\alpha=0}=\int_{t_1}^{t_2} \left( \frac{\partial \cal{L}}{\partial q}-\frac{d}{\
-dx}\frac{\partial \cal{L}}{\partial \dot{q}}\right)\delta q(t)dt=\delta S = 0.
-\]
-!et
-
-
-The condition for a stationary value is thus a partial differential equation
-
-!bt
-\[
-\frac{\partial \cal{L}}{\partial q}-\frac{d}{dx}\frac{\partial \cal{L}}{\partial \dot{q}}=0,
-\]
-!et
-
-known as the _Euler-Lagrange_ equation.
-
-
-
-
-!split
-===== Constrained motion =====
-
-Sometimes an auxiliary constraint is added to the problem (beyond
-fixing the end poits $y_1$ and $y_2$). Just ahead, we will work on the
-example of a hanging chain. The shape of the curve minimizes the
-potential energy, under the constraint of a fixed length of
-chain. Before presenting such an example we first review the method of
-Lagrange multipliers as a method for finding minima or maxima under
-constraints.
-
-Imagine a function $f(x_1,x_2\cdots x_n)$ for which you wish to find
-the minima. Additionally, you are given a constraint
-
-!bt
-\begin{eqnarray}
-C(x_1\cdots x_n)=0
-\end{eqnarray}
-!et
-
-
-!split
-===== Constrained motion, Condition for a Minimum =====
-
-The usual condition for a a minimum is
-
-!bt
-\begin{eqnarray}
-\frac{\partial f}{\partial x_i}=0{\rm ,~~or~}\nabla f=0.
-\end{eqnarray}
-!et
-
-which would be $n$ equations for the $n$ variables. The gradient of a
-scalar is a vector, so you should think of $\nabla$ as
-$\bm{\nabla}$. However, the solution will likely not satisfy the
-constraint, i.e. the point at which $f(x_1\cdots x_n)$ has an extrema,
-may not be a point where $C(x_1\cdots x_n)=0$.
-
-
-!split
-===== Constrained motion, Necessary Conditions  =====
-
-A necessary condition for the solution is that
-
-!bt
-\begin{equation}
-\nabla f\cdot\bm{\epsilon}=0,
-\end{equation}
-!et
-
-for any infinitesimal vector $\bm{\epsilon}$ if $\bm{\epsilon}$
-satisfies the condition
-
-!bt
-\begin{equation}
-\delta C=\nabla C\cdot\bm{\epsilon}=0.
-\end{equation}
-!et
-
-!split
-===== Constrained motion =====
-
-
-That is to say if I take a small step in a direction that doesn't
-change the constraint, then $f$ must not change if it is an
-extrema. Not changing the constraint implies the step is orthogonal to
-$\nabla C$. As there are $n$ dimensions of $x$, the vector $\nabla C$
-defines one direction, and $\bm{\epsilon}$ can be in any of the $n-1$
-directions orthogonal to $\nabla C$. If $\nabla f\cdot\bm{\epsilon}=0$
-for ANY of the $n-1$ directions of $\bm{\epsilon}$ orthogonal to
-$\nabla C$, then
-
-!bt
-\begin{equation}
-\nabla f ~||~ \nabla C.
-\end{equation}
-!et
-
-Because the two vectors are parallel you can say there must exist some
-constant $\lambda$ such that
-
-!bt
-\begin{equation}
-\nabla(f-\lambda C)=0.
-\end{equation}
-!et
-
-
-!split
-===== Constrained motion, Lagrange Multiplier  =====
-
-Here, $\lambda$ is known as a Lagrange multiplier. Satisfying
-this equation  is a necessary, but not a sufficient
-condition. One could add a constant to the constraint and the gradient
-would not change. One must find the correct value of $\lambda$ that
-satisfies the constraint $C=0$, rather than $C=$ some other
-constant. The strategy is then to solve
-thw above equation  then adjust $\lambda$ until one
-finds the $x_1\cdots x_n$ that gives $C(x_1\cdots x_n)=0$.
-
-The method of Lagrange multipliers is counter-intuitive to one's
-intuition to use the constraint to reduce the dimensionality of the
-problem. Normally, minimizing a function of $n$ variables, leads to
-$n$ equations and $n$ unknowns. A constraint could be used, by
-substitution, to replace the $n$ variables with $n-1$
-variables. Instead, we add an unknown parameter, $\lambda$, and change
-the equation to $n+1$ equations with $n+1$ unknowns, with the extra
-unknown being the Lagrange multiplier $\lambda$. Often, it is rather
-easy to solve for $x_1\cdots x_n$. Then one is left with the usually
-difficult problem of finding $\lambda$, often requiring the solution
-of a transcendental equation.
-
-!split
-===== Lagrange Multipliers  =====
-
-
-Let us try to formalize this. We consider a function of three independent variables $f(x,y,z)$ . For
-the function $f$ to be an extreme we have
-
-!bt
-\[
-df=0.
-\]
-!et
-
-A necessary and sufficient condition is
-
-!bt
-\[
-\frac{\partial f}{\partial x} =\frac{\partial f}{\partial y}=\frac{\partial f}{\partial z}=0,
-\]
-!et
-
-due to
-
-!bt
-\[
-df = \frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy+\frac{\partial f}{\partial z}dz.
-\]
-!et
-
-!split
-===== Independent Variables =====
-
-
-In physical problems the variables $x,y,z$ are often subject to constraints (in our case $q$ and the orthogonality constraint)
-so that they are no longer all independent. It is possible at least in principle to use each constraint to eliminate one variable
-and to proceed with a new and smaller set of independent varables.
-
-The use of so-called Lagrangian  multipliers is an alternative technique  when the elimination of
-of variables is incovenient or undesirable.  Assume that we have an equation of constraint on the variables $x,y,z$
-
-
-!bt
-\[
-\phi(x,y,z) = 0,
-\]
-!et
-
- resulting in
-
-!bt
-\[
-d\phi = \frac{\partial \phi}{\partial x}dx+\frac{\partial \phi}{\partial y}dy+\frac{\partial \phi}{\partial z}dz =0.
-\]
-!et
-
-!split
-===== More on Independent Variables =====
-
-
-Now we cannot set anymore
-
-!bt
-\[
-\frac{\partial f}{\partial x} =\frac{\partial f}{\partial y}=\frac{\partial f}{\partial z}=0,
-\]
-!et
-
-if $df=0$ is wanted
-because there are now only two independent variables!  Assume $x$ and $y$ are the independent variables.
-Then $dz$ is no longer arbitrary.
-
-
-
-However, we can add to
-
-!bt
-\[
-df = \frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy+\frac{\partial f}{\partial z}dz,
-\]
-!et
-
-a multiplum of $d\phi$, viz. $\lambda d\phi$, resulting  in
-
-!bt
-\[
-df+\lambda d\phi = (\frac{\partial f}{\partial z}+\lambda\frac{\partial \phi}{\partial x})dx+(\frac{\partial f}{\partial y}+\lambda\frac{\partial \phi}{\partial y})dy+(\frac{\partial f}{\partial z}+\lambda\frac{\partial \phi}{\partial z})dz =0.
-\]
-!et
-
-!split
-===== Choice of Multiplier  =====
-
-
-Our multiplier is chosen so that
-
-!bt
-\[
-\frac{\partial f}{\partial z}+\lambda\frac{\partial \phi}{\partial z} =0.
-\]
-!et
-
-However, we took $dx$ and $dy$ as to be arbitrary and thus we must have
-
-!bt
-\[
-\frac{\partial f}{\partial x}+\lambda\frac{\partial \phi}{\partial x} =0,
-\]
-!et
-
-and
-
-!bt
-\[
-\frac{\partial f}{\partial y}+\lambda\frac{\partial \phi}{\partial y} =0.
-\]
-!et
-
-When all these equations are satisfied, $df=0$.  We have four
-unknowns, $x,y,z$ and $\lambda$. Actually we want only $x,y,z$,
-$\lambda$ need not to be determined, it is therefore often called
-Lagrange's undetermined multiplier.  If we have a set of constraints
-$\phi_k$ we have the equations
-
-
-!bt
-\[
-\frac{\partial f}{\partial x_i}+\sum_k\lambda_k\frac{\partial \phi_k}{\partial x_i} =0.
-\]
-!et
-
-!split
-===== Example: brachiostone I =====
-
-Consider a particle constrained to move along a path (like a bead
-moving without friction on a wire) and you need to design a path from
-$x=y=0$ to some final point $x_f,y_f$. Assume there is a constant
-force in the $x$ direction, $F_x=mg$. Design the path so that the time
-the bead travels is a minimum.
-
-
-The net time is
-
-!bt
-\[
-T=\int \frac{d\ell}{v}=\int_0^{x_f} dx~\frac{\sqrt{1+y'^2}}{\sqrt{2gx}}={\rm minimum}.
-\]
-!et
-
-!split
-===== Example: brachiostone II =====
-
-
-Here we made use of the fact that $d\ell=\sqrt{dx^2+dy^2}$ and that
-the velocity is determined by $KE=mv^2/2=mgx$. The Euler equations can
-be applied if you first define the function as
-
-!bt
-\begin{eqnarray*}
-f(y,y';x)&=&\frac{\sqrt{1+y'^2}}{\sqrt{x}}.
-\end{eqnarray*}
-!et
-
-
-The equations are then
-
-!bt
-\begin{eqnarray*}
-\frac{d}{dx}\frac{\partial f}{\partial y'}&=&0.
-\end{eqnarray*}
-!et
-
-!split
-===== Example: brachiostone III =====
-
-
-The simplification ensued from $f$ not having any dependence on $y$. This yields the differential equation
-
-!bt
-\begin{eqnarray}
-\frac{y'}{x^{1/2}(1+y'^2)^{1/2}}&=&(2a)^{-1/2},
-\end{eqnarray}
-!et
-
-
-
-because $\partial f/\partial y'$ must be a constant, which with some
-foresight we label $(2a)^{-1/2}$. One can now solve for $y'$,
-
-!bt
-\begin{eqnarray*}
-(y')^2&=&2ax(1+y'^2)\\
-\nonumber
-y'&=&\sqrt{\frac{x}{2a-x}},\\
-\nonumber
-y(t)&=&\int_0^x dx'~\frac{\sqrt{x'}dx'}{\sqrt{2a-x'}}=\int_0^x dx'~\frac{x'dx'}{\sqrt{2ax'-x'^2}}\\
-\nonumber
-&=&\frac{1}{2}\int_0^x\frac{(2x'-2a)dx'}{(2ax'-x'^2)^{1/2}}+a\int_0^x\frac{dx'}{\sqrt{2ax'-x'^2}}\\
-\nonumber
-&=&\frac{-1}{2}\int_0^{2ax-x^2}\frac{du}{\sqrt{u}}+a\int_0^x\frac{dx'}{\sqrt{a^2-(x'-a)^2}}\\
-&=&-\sqrt{2ax-x^2}+a\cos^{-1}(1-x/a).
-\end{eqnarray*}
-!et
-
-This turns out to be the equation for a {\it cycloid} or a {\it
-brachiostone}. If you rolled a wheel of radius $a$ down the $y$ axis
-and followed a point on the rim, it would trace out a cycloid. Here,
-the constant $a$ must be chosen to match the boundary condition,
-$y_2=y(x_2)$. You can see the textbook for more details, plus you get
-a chance to work with cycloids in the exercises at the end of this
-chapter.
-
-
-
-!split
-===== Maximizing a Function  =====
-
-As an example of using Lagrange multipliers for a standard
-optimization formula we attempt to maximize the following function,
-
-!bt
-\[
-F(x_1\cdots x_n)=-\sum_{i=1}^n x_i\ln(x_i), 
-\]
-!et
-
-with respect to the $n$ variables $x_i$. With no constraints, each
-$x_i$ would maximize the function for
-
-!bt
-\begin{eqnarray*}
-\frac{d}{dx_j}~\left[-\sum_i x_i\ln(x_i)\right]&=&0\\
--\ln(x_j)-1&=&0,~~~~x_j=e^{-1}.
-\end{eqnarray*}
-!et
-
-!split
-===== Two Constraints =====
-
-
-Now, we repeat the problem but with two constraints,
-
-!bt
-\[
-\sum_ix_i=1~,~~~~\sum_ix_i\epsilon_i=E.
-\]
-!et
-
-Here, $\epsilon_i$ and $E$ are fixed constants. We go forward by
-finding the extrema for
-
-!bt
-\begin{eqnarray*}
-G(x_1\cdots x_n)&=&F-\alpha\sum_i x_i-\beta\sum_i\epsilon_ix_i
-=\sum_i \left\{-x_i\ln(x_i)-\alpha x_i-\beta\epsilon_ix_i\right\}.
-\end{eqnarray*}
-!et
-
-!split
-===== Two Multipliers =====
-
-
-There are two Lagrange multipliers, $\alpha$ and $\beta$,
-corresponding to the two constraints. One then solves for the extrema
-
-!bt
-\begin{eqnarray*}
-\frac{d}{dx_j}G&=&0\\
-&=&-\ln(x_j)-1-\alpha-\beta\epsilon_j,\\
-x_j&=&\exp\left\{-1-\alpha-\beta\epsilon_j\right\}.
-\end{eqnarray*}
-!et
-
-!split
-===== Lagrange multipliers =====
-
-For any given $\alpha$ and $\beta$ this provides a solution for
-constraining $\sum_i x_i$ and $\sum_i\epsilon_ix_i$ to some values,
-just not the values of unity and $E$ that you wish. One would then
-have to search for the correct values by adjusting $\alpha$ and
-$\beta$ until the constraint are actually matched by solving a
-transcendental equation. Although this can be complicated, it is
-certainly less expensive than searching over all $N$ values of
-$x_i$. This particular example corresponds to maximizing the entropy
-for a system, $S=-\sum_i x_i\ln(x_i)$, where $x_i$ is the probability
-of the system being in a particular discrete level $i$ that has energy
-$\epsilon_i$. One wishes to maximize the entropy subject to the
-constraints that the probabilities sum to unity and the average energy
-has some given value. The result that $x_i\sim e^{-\beta\epsilon_i}$
-demonstrates the origin of the Boltzmann factor, with the inverse
-temperature $\beta=1/T$.
-
-
-!split
-===== Lagrange multipliers =====
-
-
-Lagrange multipliers also assist with the Euler-Lagrange equation. If
-one breaks an interval $x_1<x<x_2$ into a large number
-$n\rightarrow\infty$ points separated by $dx$, the Euler-Lagrange
-equation involves finding the $n$ values $y_i$ at each point so that
-$\sum_i dx f\left\{y_i,y'_i=(y_{i+1}-y_{i-1})/(2dx)\right\}$ is
-maximized for some given function $f$. If an additional auxiliary
-constraint is added, also some function of the $n$ values $y_i$, one
-can use the method of Lagrange multipliers. In the constraint can also
-be written as some function of $C(y_i,y'_i)$, then one simply adds a
-term $\lambda C(y,y')$ to the function $f$ and uses the Euler-Lagrange
-equation to find the extrema of.
-
-
-!bt
-\begin{eqnarray}
-J&=&\int_{x_1}^{x_2}dx~f\left\{y(t),y'(t),x\right\}-\lambda C\left\{y(t),y'(t),x\right\},
-\end{eqnarray}
-!et
-
-the one difference being that
-
-!bt
-\begin{equation}
-f\left\{y(t),y'(t),x\right\}\rightarrow f\left\{y(t),y'(t),x\right\}-\lambda C\left\{y(t),y'(t),x\right\}
-\end{equation}
-!et
-
-
-!split
-===== Example =====
-
-
-Consider a chain of length $L$ and mass per unit length $\kappa$ that
-hangs from point $x=0,y=0$ to point $x_f,y_f$. The shape must minimize
-the potential energy. Find general expressions for the shape in terms
-of three constants which must be chosen to match $y(0)=0, y(x_f)=y_f$
-and the fixed length. Equivalently, one finds the function $y(t)$ that
-provides an extrema for the integral,
-
-One must minimize
-
-!bt
-\[
-\int d\ell~\kappa gy-\lambda\int d\ell=
-\int_0^{x_f} dx~\sqrt{1+y'^2}\kappa gy-\lambda \int_0^{x_f} dx\sqrt{1+y'^2}.
-\]
-!et
-
-Here $\lambda$ is the Lagrange multiplier associated with constraining
-the length of the chain. The constrained length $L$ appears nowhere in
-the expression. Instead, one solves for form of the answer, then
-adjusts $\lambda$ to give the correct length. For the purposes of the
-Euler-Lagrange minimization one considers the function
-
-!bt
-\begin{eqnarray}
-f(y,y';x)&=&\kappa gy\sqrt{1+y'^2}-\lambda\sqrt{1+y'^2}.
-\end{eqnarray}
-!et
-
-Because $\lambda$ is an unknown constant and because minimizing a
-function multiplied by a constant is the same as minimizing the
-function, we can equivlently minimize the integral using the function
-
-!bt
-\begin{eqnarray}
-\tilde{f}(y,y';x)&=&y\sqrt{1+y'^2}-\tilde{\lambda}\sqrt{1+y'^2},\\
-\nonumber
-\tilde{\lambda}&\equiv&\frac{\lambda}{\kappa g}.
-\end{eqnarray}
-!et
-
-The Euler-Lagrange equations then become
-
-!bt
-\begin{eqnarray*}
-\frac{d}{dx}\left\{
-\frac{y'}{\sqrt{1+y'^2}}y-\tilde{\lambda}\frac{y'}{\sqrt{1+y'^2}}
-\right\}&=&\sqrt{1+y'^2}.
-\end{eqnarray*}
-!et
-
-!split
-===== Example, guessing =====
-
-Here, we will guess at the form of the solution,
-
-!bt
-\begin{eqnarray*}
-y'&=&\sinh[(x-x_0)/a],~~y=a\cosh[(x-x_0)/a]+y_0.
-\end{eqnarray*}
-!et
-
-Plugging into the Euler-Lagange equations,
-
-!bt
-\begin{eqnarray*}
-\frac{d}{dx}\left\{(a\cosh[(x-x_0)/a]+y_0)\frac{\sinh[(x-x_0)/a]}{\cosh[(x-x_0)/a]}-\tilde{\lambda}\frac{\sinh[(x-x_0)/a]}{\cosh[(x-x_0)/a]}\right\}&=&\cosh[(x-x_0)/a],\\
-\nonumber
-\frac{d}{dx}\left\{(y_0-\tilde{\lambda})\tanh[(x-x_0)/a]\right\}=0.
-\end{eqnarray*}
-!et
-
-
-This solution works if $y_0=\tilde{\lambda}$. So the general form of
-the solution is
-
-!bt
-\[
-y=\tilde{\lambda}+a\cosh[(x-x_0)/a].
-\]
-!et
-
-!split
-===== Example, getting there =====
-
-
-One must find $\tilde{\lambda}$, $x_0$ and $a$ to satisfy three
-conditions, $y(x=0)=0$, $y(x=x_f)=y_f$ and that the length is $L$. For
-a hanging chain $a$ is positive. A solution with negative $a$ would
-represent a maximum of the potential energy. A remarkable property of
-the solution is that once you define the length and the end-point
-positions $y_1$ and $y_2$, the solution does not depend on $\kappa$ or
-$g$. Thus, the shape of the chain would be the same if you took it to
-the moon. These solutions are known as "catenaries":"http://en.wikipedia.org/wiki/Catenary}{http://en.wikipedia.org/wiki/Catenary".
-
-
-!split
-===== Lagrangians =====
-
-Lagrangians represent a powerful method for solving problems that
-would be nearly impossible by direct application of Newton's third
-law, $\bm{F}=m\bm{a}$. The method works well for problems where a
-system is well described by a few \textit{generalized coordinates}. A
-generalized coordinate might be the angle describing the position of a
-pendulum. This one angle takes the place of using $x$ and $y$ to
-describe the position of the pendulum, then applying a clumsy
-constraint.
-
-
-!split
-===== Equations of Motions  =====
-
-The Lagrangian equations of motion can be derived from a principle of
-least action, where the action $S$ is defined as
-
-!bt
-\begin{equation}
-S=\int dt~ L(q,\dot{q},t),
-\end{equation}
-!et
-
-where $q$ is some coordinate that describes the orientation of a
-system and the Lagrangian $L$ is defined as
-
-!bt
-\begin{equation}
-L=T-U,
-\end{equation}
-!et
-
-the difference of the kinetic and potential energies. Minimizing the
-action through the Euler-Lagrange equations gives the Lagrangian
-equations of motion,
-
-
-!bt
-\begin{equation}
-\frac{d}{dt}\frac{\partial L}{\partial \dot{q}}=\frac{\partial L}{\partial q}.
-\end{equation}
-!et
-
-!split
-===== Two simple Examples =====
-
-
-We begin with two simple examples, neither of which gains from the Lagrangian approach.
-
-
-Consider a particle of mass $m$ connected to a spring with stiffness $k$. Derive the Lagrangian equations of motion.
-
-!bt
-\begin{eqnarray*}
-L&=&\frac{1}{2}m\dot{x}^2-\frac{1}{2}kx^2,\\
-\frac{d}{dt}\frac{\partial L}{\partial \dot{x}}&=&\frac{\partial L}{\partial x},\\
-m\ddot{x}&=&-kx.
-\end{eqnarray*}
-!et
-
-
-Derive the Lagrangian equations of motion for a pendulum of mass $m$
-and length $\ell$.
-
-!bt
-\begin{eqnarray*}
-L&=&\frac{m}{2}\ell^2\dot{\theta}^2-mg\ell(1-\cos\theta),\\
-\frac{d}{dt}\frac{\partial L}{\partial \dot{\theta}}&=&\frac{\partial L}{\partial \theta},\\
-m\ell^2\ddot{\theta}&=&-mg\ell\sin\theta,\\
-\ddot{\theta}&=&-\frac{g}{\ell}\sin\theta,\\
-\ddot{\theta}&\approx&-\frac{g}{\ell}\theta.
-\end{eqnarray*}
-!et
-
-
-!split
-===== Proving Lagrange's Equations of Motion from Newton's Laws =====
-
-Lagrange's equations of motion can only be applied for the following conditions:
-
-
-
-* The potential energy is a function of the generalized coordinates $q_i$, but not of $\dot{q}_i$.
-* The relation between the original coordinates $x,y,z\cdots$ and the generalized coordinates does not depend on $\dot{q}_i$, e.g. $x(q,t)$ not $x(q,\dot{q},t)$.
-* Any constraints used to reduce the number of degrees of freedom are functions of $\bm{q}$, but not of $\dot{\bm{q}}$.
-* The motion is not dissipative (no damping or friction).
-
-
-!split
-===== Proving Lagrange's Equations of Motion from Newton's Laws =====
-
-Going forward with the proof, consider $x_i(q_1,q_2\cdots,t)$ and look
-at the l.h.s. of Lagrange's equations of motion.
-
-!bt
-\begin{eqnarray}
-\frac{\partial T}{\partial\dot{q}_j}&=&\sum_i\frac{\partial T}{\partial\dot{x}_i}\frac{\partial\dot{x}_i}{\partial\dot{q_j}}
-+\sum_i\frac{\partial T}{\partial x_i}\frac{\partial x_i}{\partial\dot{q_j}}\\
-\nonumber
-&=&\sum_i m\dot{x}_i\frac{\partial \dot{x}_i}{\partial\dot{q_j}}\\
-\nonumber
-&=&\sum_i m\dot{x}_i\frac{(\delta x_i/\delta t)|_{{\rm fixed~}q_{j'\ne j}}}{\delta q_j/\delta t}\\
-\nonumber
-&=&\sum_im\dot{x}_i\frac{\delta{x}_i|_{{\rm fixed~}q_{j'\ne j}}}{\delta q_j}\\
-\nonumber
-&=&\sum_i m\dot{x}_i\frac{\partial x_i}{\partial q_j}.
-\end{eqnarray}
-!et
-
-
-In the first line we used the fact that $T$ does not depend on
-$x$. Continuing with taking the derivative of $U$,
-
-!bt
-\begin{eqnarray}
--\frac{\partial U}{\partial\dot{q}_j}&=&-\sum_i\frac{\partial U}{\partial x_i}\frac{\partial x_i}{\partial\dot{q}_j}=0.
-\end{eqnarray}
-!et
-
-!split
-===== Proving Lagrange's Equations of Motion from Newton's Laws, continued =====
-
-In the first line above we used the fact that $U$ does not depend on $\dot{x}$ then we used the second condition that $x$ does not depend on $\dot{q}$. Adding the two pieces together, then taking the derivative w.r.t. time,
-
-!bt
-\begin{eqnarray}
-\nonumber
-\frac{d}{dt}\frac{\partial}{\partial\dot{q}}(T-U)&=&\sum_im\ddot{x}_i\frac{\partial x_i}{\partial q_j}
-+\sum_i m\dot{x}_i\frac{\partial\dot{x}_i}{\partial q_j}.
-\end{eqnarray}
-!et
-
-Now, we consider the r.h.s. of Lagrange's equations. Because the
-kinetic energy depends only on $\dot{x}$ and not $x$, and because the
-potential depends on $x$ but not $\dot{x}$,
-
-!bt
-\begin{eqnarray}
-\frac{\partial}{\partial q_j}(T-U)&=&\sum_i\frac{\partial T}{\partial\dot{x}_i}\frac{\partial\dot{x_i}}{\partial q_j}
--\sum_i\frac{\partial U}{\partial x_i}\frac{\partial x_i}{\partial q_j}\\
-\nonumber
-&=&\sum_i m\dot{x}_i\frac{\partial\dot{x_i}}{\partial q_j}
--\sum_i\frac{\partial U}{\partial x_i}\frac{\partial x_i}{\partial q_j}
-\end{eqnarray}
-!et
-
-Using the fact that $m\ddot{x}_i=-(\partial/\partial x_i)U$, one can
-see that the bottom expressions above are identical,
-
-!bt
-\begin{equation}
-\frac{d}{dt}\frac{\partial}{\partial\dot{q}_i}(T-U)=\frac{\partial}{\partial q_i}(T-U).
-\end{equation}
-!et
-
-
-!split
-===== Lagrangian Examples =====
-
-Two examples are presented here. In the first, there are two
-generalized coordinates, but the two equations of motion can be
-reduced to one through conservation laws (angular momentum in this
-case). In the second, there is a time-dependent constraint.
-
-
-Consider a cone of half angle $\alpha$ standing on its tip at the
-origin. The surface of the cone is defined as
-
-!bt
-\[
-r=\sqrt{x^2+y^2}=z\tan \alpha.
-\]
-!et
-
-Find the equations of motion for a particle of mass $m$ moving along the surface under the influence of a constant gravitational force, $-mg\hat{z}$. For generalized coordinates use the azimuthal angle $\phi$ and $r$.
-
-
-!split
-===== Cone Example =====
-
-The kinetic energy is 
-
-!bt
-\begin{eqnarray*}
-T&=&\frac{1}{2}mr^2\dot{\theta}^2+\frac{1}{2}m(\dot{r}^2+\dot{z}^2)\\
-&=&\frac{1}{2}mr^2\dot{\theta}^2+\frac{1}{2}m\dot{r}^2\left(1+\cot^2\alpha\right)\\
-&=&\frac{1}{2}mr^2\dot{\theta}^2+\frac{1}{2}m\dot{r}^2\csc^2\alpha.
-\end{eqnarray*}
-!et
-
-The potential energy is 
-
-!bt
-\[
-U=mgr\cot\alpha,
-\]
-!et
-
-so Lagrange's equations give
-
-!bt
-\begin{eqnarray*}
-\frac{d}{dt}\left(mr^2\dot{\theta}\right)&=&0,\\
-\frac{d}{dt}\left(m\csc^2\alpha \dot{r}\right)&=&mr\dot{\theta}^2-mg\cot\alpha,\\
-\ddot{r}&=&r\dot{\theta}^2\sin^2\alpha-g\cos\alpha\sin\alpha
-\end{eqnarray*}
-!et
-
-
-!split
-===== More on the Cone Example =====
-
-The first equation is a statement of the conservation of angular
-momentum with $L=mr^2\dot{\theta}$, so the second equation can also be
-expressed as
-
-!bt
-\[
-\ddot{r}=\frac{L^2\sin^2\alpha}{m^2r^3}-g\sin\alpha\cos\alpha.
-\]
-!et
-
-
-!split
-===== Sliding Bead =====
-
-A bead slides along a wire bent in the shape of a parabola, 
-
-!bt
-\[
-z=\frac{1}{2}kr^2,~~r^2=x^2+y^2.
-\]
-!et
-
-
-
-Also, the parabolic wire is rotating about the $z$ axis with angular
-velocity $\omega$. Derive the equations of motion. Are there any
-stable configurations?
-
-
-Using the fact that
-
-!bt
-\[
-\dot{z}=\dot{r}\frac{\partial z}{\partial r}=kr\dot{r},
-\]
-!et
-
-the kinetic and potential energies are
-
-!bt
-\begin{eqnarray*}
-T&=&\frac{1}{2}m\left(\dot{r}^2+\dot{z}^2+r^2\omega^2\right)\\
-&=&\frac{1}{2}m\left(\dot{r}^2+(kr\dot{r})^2+r^2\omega^2\right),\\
-U&=&mgkr^2/2.
-\end{eqnarray*}
-!et
-
-!split
-===== And then the Equations of Motion =====
-
-
-The equations of motion are then
-
-!bt
-\begin{eqnarray*}
-\frac{d}{dt}\left\{m\dot{r}(1+k^2r^2)\right\}&=&-mgkr+mk^2\dot{r}^2r+m\omega^2r,\\
-\ddot{r}&=&\frac{-gkr+\omega^2r-k^2\dot{r}^2r}{1+k^2r^2}
-\end{eqnarray*}
-!et
-
-For a stable configuration, there needs to be a solution with
-$\dot{r}=0$ and $\ddot{r}=0$. This can only happen at $r=0$, and then
-for the acceleration to be inward for small deviations of $r$ one
-needs to have $gk>\omega^2$. If $\omega^2>gk$ the bead will move
-outward indefinitely.
-
-
-!split
-===== Small Vibrations and Normal Modes =====
+===== Examples of Lagrangian theory: Small Vibrations and Normal Modes =====
 
 Two examples are provided for solving for normal modes. These are
 solutions with multiple generalized coordinates, where the motion is
@@ -1779,6 +720,120 @@ instance, you may need to write the Lagrangian in terms of angles.
 # Double pendulum and Foucalt's pendulum
 # Revisit oscillations and example on earthquake models
 
+
+
+
+!split
+===== Final exam from spring semester 2022 =====
+
+
+=== Exercise 1, Two-body Problems and Conservative Forces (total 35pt) ===
+
+The relevant material can be found in Taylor chapters 4 and 8. Homework sets 5, 6-9 and the chapters on "forces":"https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter4.html" and "two-body problems":"https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter6.html" from the lecture notes may also be of use. 
+
+This exercise and the next are  follow-ups of homework 6. There we studied the so-called
+"Lennard-Jones potential":"https://en.wikipedia.org/wiki/Lennard-Jones_potential" which is widely used in molecular dynamics
+calculations and in the simulations of "quantum liquids":"https://journals.aps.org/prb/abstract/10.1103/PhysRevB.40.11070". This potential is based on parametrizations from
+experiments. In "molecular dynamics calculations":"https://en.wikipedia.org/wiki/Molecular_dynamics" the assumption is
+that atoms move according to the laws of Newton, given the correct
+model for interactions. We can say then that quantum-mechanical
+degrees of freedom stemming from complicated interactions between electrons
+and protons in an atom, are parametrized in terms of an effective
+potential.
+
+We will limit ourselves to a two-body problem.
+
+The goal of this exercise is to model a gas of argon atoms (here two
+atoms only interacting), where the atoms interact according to the
+famous Lennard-Jones potential,
+
+!bt
+\begin{equation}
+    V(r) = 4\varepsilon\left((\frac{\sigma}{r})^{12} - (\frac{\sigma}{r})^6\right), label{eq:lj}
+\end{equation}
+!et
+
+where $r$ is the distance between two atoms,
+$r=\vert\bm{r}_i-\bm{r}_j\vert$, that is the norm of the relative
+distance vector $\bm{r}$. The quantities $\sigma$ and $\varepsilon$ are
+parameters which determine which chemical compound is modelled. This
+potential is a good approximation for noble gases like helium, neon, argon and other.
+
+We start first with a basic study of the potential
+
+* _1a (5pt):_ Plot the potential as a function of $r$ with $\varepsilon=1$ and $\sigma=1$, for example for $r \in [0.9,3]$.
+* _1b (5pt):_ The behaviour of $V(r)$ is vastly different for $r < \sigma$ and $r > \sigma$. Which term in the potential, (ref{eq:lj}), dominates in each case and what is the effect?
+* _1c (5pt):_ Find and characterize the equilibrium points of the potential.
+* _1d (5pt):_ Describe qualitatively the motion of two atoms which start at rest separated by a distance of ${1.5}\sigma$. What if they start with a separation of ${0.95}\sigma$?  (Hint: use the graph of the potential.)
+
+Then we switch our attention to the equations of motion.
+
+* _1e (5pt):_ Find the force on atom $i$ at position $\bm{r}_i$ from atom $j$ at position $\bm{r}_j$. Is this a conservative force?
+* _1f (5pt):_  Are linear and angular momentum conserved? You need to show this by calculating the relevant quantities. Hint: see homework set 4 and exercise 2.
+* _1g (5pt):_ Show that the equation of motion for atom $i$ is
+!bt
+\[
+  \frac{d^2\bm{r}_i}{dt^2} = \frac{24\varepsilon}{m} \sum_{j \neq i} \left(2(\frac{\sigma}{\vert\bm{r}_i-\bm{r}_j}\vert)^{12}-(\frac{\sigma}{\vert\bm{r}_i-\bm{r}_j}\vert)^6\right)\frac{\bm{r}_i-\bm{r}_j}{\vert\bm{r}_i-\bm{r}_j\vert^2}.
+\]
+!et
+
+
+=== Exercise 2, Two-body Problems and Conservative Forces, Numerical Studies (50pt) ===
+
+In this exercise we will solve the previous equations of motion numerically and study the solutions.
+Here you can use the same codes you developed in homework sets 5-9 and the second midterm.
+
+Numerical accuracy is reduced when computing with values which are
+many orders of magnitude apart. This is often an issue in physics, and
+molecular dynamics is no exception. For example, the mass of argon is
+smaller than 10E-25kg, while typical length scales are
+on the order of nanometers, 10E-9m.
+
+The remedy is to change units so that most quantities are close to
+$1$. From (ref{eq:lj}) it is clear that $\sigma$ and $\varepsilon$
+are the typical scales for length and energy.
+
+* _2a (5pt):_ Introduce the scaled coordinates $\bm{r}_i\,'=\bm{r}_i/\sigma$ and show that the equation of motion can be rewritten in terms of these coordinates as (where $t'=t/\tau$ for a suitable choice of $\tau$.)
+!bt
+\begin{equation}
+\frac{d^2\bm{r}_i\,'}{{dt'^2}} = 24 \sum_{j \neq i} \left(2\vert\bm{r}_i\,'-\bm{r}_j\,'\vert^{-12}-\vert\bm{r}_i\,'-\bm{r}_j\,'\vert^{-6}\right)\frac{\bm{r}_i\,'-\bm{r}_j\,'}{\vert\bm{r}_i\,'-\bm{r}_j\,'\vert^2}, label{eq:undim}
+\end{equation}
+!et
+* _2b (5pt):_ What is the characteristic time scale $\tau$, and what is its value for argon, which has $\sigma=3.405$Å (1Å=1E-10m), $m = 39.95u$ (with 1u=1.66E-27kg) and $\varepsilon=1.0318$ E-2eV (1eV=1.602E-19J)?
+
+
+
+We switch now to a numerical procedure and study the simulation of two interacting atoms.
+* _2c (10pt):_ Write a function which solves (ref{eq:undim}) for two atoms and find the positions and velocities of the atoms as a function of time. Implement either the Euler-Cromer or the Velocity-Verlet methods to solve the equations of motion (you can reuse your codes from homework sets 5-9 or the second midterm).
+
+
+* _2d (5pt):_ Simulate the motion of two atoms which start at rest separated by a distance of ${1.5}\sigma$. Use $\Delta t'={0.01}$, simulate until $t'=5$ and integrate with one of the above methods. Plot the distance between the atoms as a function of time. How does the motion fit with your expectations? What type of motion do you expect?
+* _2e (5pt):_ Repeat the previous tasks, but now with an initial separation of $0.95\sigma$. Explain your results. 
+* _2f (10pt):_ Compute and plot the kinetic, potential and total energy as a function of time for the time interval from exercise  2d and the initial conditions from 2d and 2e. Should the total energy be conserved? Why, or why not? Here you can use your codes from the second midterm for computing the energies.
+* _2g (10pt):_ Is angular momentum conserved (see your answers to 1f). How would you show this numerically? Hint: see your answers to the second midterm, exercise 1c. 
+
+
+
+
+=== Exercise 3, Lagrangian formalism and the Lennard-Jones potential (35pt) ===
+
+
+The relevant chapters from Taylor are chapters 6-7 and 8. In addition he lectures
+notes on the "Lagrangian Formalism and Calculus of
+Variations":"https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter8.html" can be of use. You
+need also results from the two-body problem of chapter 8 of Taylor and
+the lecture notes "two-body
+problems":"https://mhjensen.github.io/Physics321/doc/LectureNotes/_build/html/chapter6.html".
+
+
+We will stay with a two-body problem only with particles $1$ and $2$, as in the two previous exercises.  
+We introduce the relative mass $\mu=m_1m_2/M$ where the total mass $M=m_1+m_2$, the sum of the masses $m_1$ and $m_2$.
+
+* _3a (5pt):_ Define the center-of-mass position $\bm{R}$ and the relative position $\bm{r}$ in terms of the masses and the positions of particles one and two $\bm{r}_1$ and $\bm{r}_2$, respectively. Define then the center-of-mass frame by setting $\bm{R}=0$. Show then that you can write the total angular momentum as $\bm{L}=\mu(\bm{r}\times \dot{\bm{r}})$. Hint: See Taylor section 8.3. How do you interpret the angular momentum?  Why can we reduce the motion of two particles to a problem in two dimensions only?
+* _3b (10pt):_ We introduce polar coordinates with $r\in [0,\infty)$ and $\phi\in[0,2\pi]$. The quantity $r$ is the absolute value (magnitude) of the relative distance. Show that you can write the kinetic energy as $K=1/2\mu(\dot{r}^2+r^2\dot{\phi}^2)$.
+* _3c (5pt):_ Include the potential energy for the Lennard-Jones potential and write out the Lagrangian using the coordinates $r$ and $\phi$. Does the potential energy depend on $\phi$?
+* _3d (10pt):_ Use the Euler-Lagrange equations to find the equations of motion for $r$ and $\phi$. Does the equation of motion for $r$ agree with what you derived in exercise 1? Comment your results.
+* _3e (5pt):_ Use the equation of motion for $\phi$ to show that angular momentum is conserved. Comment your results. Can you infer this from the form of the potential? Hint: see your answer to 3c.
 
 
 
