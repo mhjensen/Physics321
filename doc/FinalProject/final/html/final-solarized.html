@@ -1,0 +1,312 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html final.do.txt --pygments_html_style=perldoc --html_style=solarized3 --html_links_in_new_window --html_output=final-solarized --no_mako
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="PHY321 Classical Mechanics 1">
+<title>PHY321 Classical Mechanics 1</title>
+<link href="https://cdn.rawgit.com/doconce/doconce/master/bundled/html_styles/style_solarized_box/css/solarized_light_code.css" rel="stylesheet" type="text/css" title="light"/>
+<script src="https://cdn.rawgit.com/doconce/doconce/master/bundled/html_styles/style_solarized_box/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<link href="https://thomasf.github.io/solarized-css/solarized-light.min.css" rel="stylesheet">
+<style type="text/css">
+h1 {color: #b58900;}  /* yellow */
+/* h1 {color: #cb4b16;}  orange */
+/* h1 {color: #d33682;}  magenta, the original choice of thomasf */
+code { padding: 0px; background-color: inherit; }
+pre {
+  border: 0pt solid #93a1a1;
+  box-shadow: none;
+}
+div { text-align: justify; text-justify: inter-word; }
+.tab {
+  padding-left: 1.5em;
+}
+div.toc p,a {
+  line-height: 1.3;
+  margin-top: 1.1;
+  margin-bottom: 1.1;
+}
+</style>
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('Practicalities about  homeworks and projects (midterms and '
+               'final)',
+               2,
+               None,
+               'practicalities-about-homeworks-and-projects-midterms-and-final'),
+              ('Introduction to the final project, total score: 160  points',
+               3,
+               None,
+               'introduction-to-the-final-project-total-score-160-points'),
+              ('Exercise 1, motion of a balloon (75pt)',
+               3,
+               None,
+               'exercise-1-motion-of-a-balloon-75pt'),
+              ('Exercise 2: Mathematical pendulum (85pt)',
+               3,
+               None,
+               'exercise-2-mathematical-pendulum-85pt'),
+              ('Classical Mechanics Extra Credit Assignment: Scientific '
+               'Writing and attending Talks',
+               3,
+               None,
+               'classical-mechanics-extra-credit-assignment-scientific-writing-and-attending-talks'),
+              ('Integrating Classwork With Research',
+               3,
+               None,
+               'integrating-classwork-with-research')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- ------------------- main content ---------------------- -->
+<center>
+<h1>PHY321 Classical Mechanics 1</h1>
+</center>  <!-- document title -->
+
+<!-- author(s): Final  project Spring semester 2023, due Friday May 5 -->
+<center>
+<b>Final  project Spring semester 2023, due Friday May 5</b> 
+</center>
+<!-- institution -->
+<center>
+<b>midnight (1159pm)</b>
+</center>
+<br>
+<center>
+<h4>April 26, 2023</h4>
+</center> <!-- date -->
+<br>
+<h2 id="practicalities-about-homeworks-and-projects-midterms-and-final">Practicalities about  homeworks and projects (midterms and final) </h2>
+
+<ol>
+<li> You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. <b>Remember to write your name(s)</b>!</li>
+<li> How do I(we)  hand in?  Due to the extraordinary situation we are in now, the final projec should be handed in fully via D2L. You can scan your handwritten notes and upload to D2L or you can hand in everyhting (if you are ok with typing mathematical formulae using say Latex) as a jupyter notebook at D2L. The numerical part should always be handed in as a jupyter notebook.</li>
+</ol>
+<h3 id="introduction-to-the-final-project-total-score-160-points">Introduction to the final project, total score: 160  points </h3>
+
+<p>The relevant reading background is</p>
+<ol>
+<li> chapters 2-8 and 14 of Taylor</li>
+<li> lecture notes throughout the semester and homework assignments and midterm projects.</li>
+</ol>
+<h3 id="exercise-1-motion-of-a-balloon-75pt">Exercise 1, motion of a balloon (75pt) </h3>
+
+<p>This exercise brings us back to the beginning of the semester and
+homework assignments 2 and 3, in particular exercises 5 and 6 of
+homework 3. The relevant chapter of Taylor's text is chapter 2 and
+partly chapter 3. The code you wrote for homework 3 may be useful.
+</p>
+
+<p>In this exercise we will develop a model to determine the motion of a
+weather balloon released from the ground. We start from a simplified
+model and gradually add features to make to model more realistic.
+</p>
+
+<p>After the balloon is released, it is driven by buoyancy. Initially, we will assume that the buoyancy force is given by a constant force, \( \boldsymbol{B} \).
+We assume that the motion is vertical only and label this in terms of the \( z \)-axis.  That is our system is one-dimensional only.
+The constant buoyancy force is then given by its \( z \)-component only, that is \( \boldsymbol{B}=B_z\boldsymbol{k} \).
+</p>
+<ul>
+<li> <b>1a (5pt)</b>: Draw a diagram of the balloon and identify the forces and introduce symbols.</li> 
+<li> <b>1b (5pt)</b>: First, let us neglect air resistance. What is the acceleration of the balloon?</li>
+<li> <b>1c (5pt)</b>: Find the position and velocity of the balloon as a function of time.</li>
+</ul>
+<p>Let us now introduce air resistance, using a quadratic law: \( \boldsymbol{F}_D = &#8722;D \vert \boldsymbol{v}\vert \boldsymbol{v} \), where \( D \) is a constant and \( \boldsymbol{v} \) is the velocity. We are still in one dimension but have introduced forces and velocities as vectors (boldfaced quantities).</p>
+
+<ul>
+<li> <b>1d (5pt):</b> Show that the acceleration of the balloon in the upward \( z \) direction is \( a_z = (B_z/m)&#8722;g&#8722;(D/m)|v_z|v_z \),where \( v_z \) is the velocity in the \( z \)-direction.</li>
+<li> <b>1e (5pt):</b> Find the asymptotic (terminal) velocity of the balloon. Sketch the acceleration and velocity as a function of time for the model including air resistancewith given initial conditions.</li>
+</ul>
+<p>The balloon is released on a windy day, with a wind blowing with a velocity
+given by \( \boldsymbol{w} = w_x \boldsymbol{i} \) along the horizontal \( x \)-axis.
+</p>
+
+<ul>
+<li> <b>1f (5pt):</b> How does the wind modify the air resistance force \( \boldsymbol{F}_D \) on the balloon?</li>
+<li> <b>1g (5pt):</b> Draw a diagram of the system (the balloon) in this case and identify the forces and introduce symbols.</li>
+<li> <b>1h (5pt):</b> Find an expression for the acceleration \( \boldsymbol{a} \) of the balloon. Define the initial conditions for the motion of the balloon.</li>
+<li> <b>1i (5pt):</b> Why do we call the motion in the \( z \) and the \( x \) directions as <em>coupled</em> in this case? Can you determine the motion of the balloon analytically?</li>
+<li> <b>1j (20pt):</b> Use now your codes from homework 3 or similar and find the velocity and position of the balloon as functions of time. Plot the position and the velocity with chosen initial conditions and discuss the motion of the balloon. Find the asymptotic (terminal) velocity of the balloon.</li>
+</ul>
+<p>In a real situation, the wind velocity is smaller near the ground and
+increases gradually to the full velocity w0 as the balloon moves
+upward. Typically, the velocity of the wind can be described
+by
+</p>
+$$
+\boldsymbol{w} = w_0 (1−\exp{(−z/d)}) \boldsymbol{i},
+$$
+
+<p>where $d = 10$m is a length determining the change in height.</p>
+
+<ul>
+<li> <b>1k (10pt):</b> Rewrite your program to include this effect and plot the velocity and position as functions of time. What is the terminal velocity of the balloon now?</li>
+</ul>
+<h3 id="exercise-2-mathematical-pendulum-85pt">Exercise 2: Mathematical pendulum (85pt)  </h3>
+
+<p>A mathematical pendulum consists of a point mass \( m \) suspended by a
+massless thread/rod of length \( l \) in a gravitational field, as shown
+in the figure here. The constraining force is labeled by \( \boldsymbol{T} \) and
+the gravitational force is labeled \( \boldsymbol{F}_g \).  Homework assignments 6 and 7 may be useful to study here. Taylor chapter 5 is the relevant reference for this exercise.
+</p>
+
+<!-- FIGURE: [figures/Simplependulum.png, width=600 frac=0.6] -->
+
+<p>We assume that the length \( l \) is constant and we define the coordinates involved as</p>
+
+$$
+\boldsymbol{r} = l\sin(\phi)\boldsymbol{\hat{x}}+l\cos(\phi)\boldsymbol{\hat{y}},
+$$
+
+<p>where \( \boldsymbol{\hat{x}} \) and \( \boldsymbol{\hat{y}} \) are the unit vectors in the \( x \) and \( y \) directions, respectively.</p>
+
+<ul>
+<li> <b>2a (10pt):</b> Set up the forces acting on the system and show that the equation of motion is \( m\ddot{\boldsymbol{r}}=\boldsymbol{F}_g+\boldsymbol{T} \).</li>
+</ul>
+<p>Transforming to polar coordinates \( r \) and \( \phi \), 
+the equation for \( \phi \) is a second-order differential equation (you don't need to show this)
+</p>
+$$
+\ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))}.
+$$
+
+<p>This equation can be solved analytically if we assume that the angle \( \phi \) is very small. Then we can approximate our equation as</p>
+
+$$
+\ddot{\phi}(t)=-\omega_0^2\phi(t).
+$$
+
+
+<ul>
+<li> <b>2b (10pt):</b> Find the analytical solution for the last equation. Hint, look back at the solutions for the simple harmonic oscillator problem in one dimension in for example homework 6.</li>
+</ul>
+<p>For our numerical treatment of the full second-order differential  equation, we can proceed as we have done before and split the second-order differential in two first-order differential equations
+as shown here
+</p>
+
+$$
+\frac{d\dot{\phi}}{dt}=-\omega_0^2\sin{(\phi)}.
+$$
+
+<p>and</p>
+
+$$
+\frac{d\phi}{dt}=\dot{\phi}.
+$$
+
+
+<ul>
+<li> <b>2c (10pt):</b> Scale the equations in terms of a dimensionless time \( \hat{t}=\omega_0t \). Choose between the Euler-Cromer, the Velocity-Verlet or the Runge-Kutta to fourth order and <b>write down</b> the algorithm for solving the last two equations numerically. Explain briefly your choice of numerical algorithm. Hint, look back at what you did in homework assignments 6 and 7 and the  midterms.</li>
+<li> <b>2d (15pt):</b> Choose initial conditions and compare your numerical solution with the analytical one. For which range of angles \( \phi \) (determined by your initial conditions) are the analytical solutions comparable to your numerical results? Discuss the implications of your results.</li>
+<li> <b>2e (20pt):</b> Find the expressions for the kinetic and potential energies in terms of the variables \( r \) and \( \phi \). Remember that \( r=l \) and is a constant throughout the calculations. In your code, check then whether energy is conserved by calculating the total energy, the kinetic and potential energies ad functions of time. Discuss your results. Do you expect energy to be conserved?</li> 
+<li> <b>2f (20pt):</b> With the potential \( V \)  and kinetic \( T \) energy, define the Lagrangian for the mathematical pendulum discussed here. Add the constraint \( r=l \) via a Lagrange multiplier \( \lambda \) and derive the equations of motion. Show that these result in  \( \ddot{\phi}(t)=-\omega_0^2\sin{(\phi(t))} \) with \( \omega_0^2=g/l \) and \( \lambda=ml\dot{\phi}^2+mg\cos{(\phi)} \).  How would you interpret \( \lambda \)?</li> 
+</ul>
+<h3 id="classical-mechanics-extra-credit-assignment-scientific-writing-and-attending-talks">Classical Mechanics Extra Credit Assignment: Scientific Writing and attending Talks </h3>
+
+<p>The following gives you an opportunity to earn <b>five extra credit
+points</b> on each of the remaining homeworks and <b>ten extra credit points</b>
+on the midterms and finals.  This assignment also covers an aspect of
+the scientific process that is not taught in most undergraduate
+programs: scientific writing.  Writing scientific reports is how
+scientist communicate their results to the rest of the field.  Knowing
+how to assemble a well written scientific report will greatly benefit
+you in you upper level classes, in graduate school, and in the work
+place.
+</p>
+
+<p>The full information on extra credits is found at <a href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/" target="_blank"><tt>https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/</tt></a>. There you will also find examples on how to write a scientific article. 
+Below you can also find a description on how to gain extra credits by attending scientific talks.
+</p>
+
+<p>This assignment allows you to gain extra credit points by practicing
+your scientific writing.  For each of the remaining homeworks you can
+submit the specified section of a scientific report (written about the
+numerical aspect of the homework) for five extra credit points on the
+assignment.  For the two midterms and the final, submitting a full
+scientific report covering the numerical analysis problem will be
+worth ten extra points.  For credit the grader must be able to tell
+that you put effort into the assignment (i.e. well written, well
+formatted, etc.).  If you are unfamiliar with writing scientific
+reports, <a href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/IntroductionScientificWriting.md" target="_blank">see the information here</a>
+</p>
+
+<p>The following table explains what aspect of a scientific report is due
+with which homework.  You can submit the assignment in any format you
+like, in the same document as your homework, or in a different one.
+Remember to cite any external references you use and include a
+reference list.  There are no length requirements, but make sure what
+you turn in is complete and through.  If you have any questions,
+please contact us.
+</p>
+
+<table class="dotable" border="1">
+<thead>
+<tr><th align="center">   HW/Project   </th> <th align="center">  Due Date </th> <th align="center">  Extra Credit Assignment   </th> </tr>
+</thead>
+<tbody>
+<tr><td align="center">   HW 3                </td> <td align="center">   2-8            </td> <td align="center">   Abstract                        </td> </tr>
+<tr><td align="center">   HW 4                </td> <td align="center">   2-15           </td> <td align="center">   Introduction                    </td> </tr>
+<tr><td align="center">   HW 5                </td> <td align="center">   2-22           </td> <td align="center">   Methods                         </td> </tr>
+<tr><td align="center">   HW 6                </td> <td align="center">   3-1            </td> <td align="center">   Results and Discussion          </td> </tr>
+<tr><td align="center">   <b>Midterm 1</b>    </td> <td align="center">   <b>3-12</b>    </td> <td align="center">   <em>Full Written Report</em>    </td> </tr>
+<tr><td align="center">   HW 7                </td> <td align="center">   3-22           </td> <td align="center">   Abstract                        </td> </tr>
+<tr><td align="center">   HW 8                </td> <td align="center">   3-29           </td> <td align="center">   Introduction                    </td> </tr>
+<tr><td align="center">   HW 9                </td> <td align="center">   4-5            </td> <td align="center">   Results and Discussion          </td> </tr>
+<tr><td align="center">   <b>Midterm 2</b>    </td> <td align="center">   <b>4-16</b>    </td> <td align="center">   <em>Full Written Report</em>    </td> </tr>
+<tr><td align="center">   HW 10               </td> <td align="center">   4-26           </td> <td align="center">   Abstract                        </td> </tr>
+<tr><td align="center">   <b>Final</b>        </td> <td align="center">   <b>4-30</b>    </td> <td align="center">   <em>Full Written Report</em>    </td> </tr>
+</tbody>
+</table>
+
+<p>You can also gain extra credits if you attend scientific talks.
+This is described here.
+</p>
+<h3 id="integrating-classwork-with-research">Integrating Classwork With Research </h3>
+
+<p>This opportunity will allow you to earn up to 5 extra credit points on a Homework per week. These points can push you above 100% or help make up for missed exercises.
+In order to earn all points you must:
+</p>
+
+<ol>
+<li> Attend an MSU research talk (recommended research oriented Clubs is  provided below)</li>
+<li> Summarize the talk using at least 150 words</li>
+<li> Turn in the summary along with your Homework.</li>
+</ol>
+<p>Approved talks:
+Talks given by researchers through the following clubs:
+</p>
+<ul>
+<li> Research and Idea Sharing Enterprise (RAISE)&#8203;: Meets Wednesday Nights Society for Physics Students (SPS)&#8203;: Meets Monday Nights</li>
+<li> Astronomy Club&#8203;: Meets Monday Nights</li>
+<li> Facility For Rare Isotope Beam (FRIB) Seminars: &#8203;Occur multiple times a week</li>
+</ul>
+<p>All the material on extra credits is at <a href="https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/" target="_blank"><tt>https://github.com/mhjensen/Physics321/blob/master/doc/Homeworks/ExtraCredits/</tt></a>. </p>
+
+<!-- ------------------- end of main content --------------- -->
+</body>
+</html>
+
