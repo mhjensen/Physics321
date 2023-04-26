@@ -143,8 +143,8 @@ MathJax.Hub.Config({
 
 <p>The relevant reading background is</p>
 <ol>
-<li> chapters 2-8 and 14 of Taylor</li>
-<li> lecture notes throughout the semester and homework assignments and midterm projects.</li>
+<li> Chapters 2-8 and 14 of Taylor</li>
+<li> Lecture notes throughout the semester and homework assignments and midterm projects.</li>
 </ol>
 <h3 id="exercise-1-motion-of-a-balloon-75pt" class="anchor">Exercise 1, motion of a balloon (75pt) </h3>
 
@@ -156,23 +156,27 @@ partly chapter 3. The code you wrote for homework 3 may be useful.
 
 <p>In this exercise we will develop a model to determine the motion of a
 weather balloon released from the ground. We start from a simplified
-model and gradually add features to make to model more realistic.
+model and gradually add features to make our model more realistic.
 </p>
 
 <p>After the balloon is released, it is driven by buoyancy. Initially, we will assume that the buoyancy force is given by a constant force, \( \boldsymbol{B} \).
 We assume that the motion is vertical only and label this in terms of the \( z \)-axis.  That is our system is one-dimensional only.
-The constant buoyancy force is then given by its \( z \)-component only, that is \( \boldsymbol{B}=B_z\boldsymbol{k} \).
+The constant buoyancy force is then given by its \( z \)-component only, that is \( \boldsymbol{B}=B_z\boldsymbol{k} \), where \( \boldsymbol{k} \) is the unit vector along the \( z \)-axis.
 </p>
 <ul>
-<li> <b>1a (5pt)</b>: Draw a diagram of the balloon and identify the forces and introduce symbols.</li> 
-<li> <b>1b (5pt)</b>: First, let us neglect air resistance. What is the acceleration of the balloon?</li>
+<li> <b>1a (5pt)</b>: Draw a diagram of the balloon and identify and label the forces.</li> 
+<li> <b>1b (5pt)</b>: We neglect air resistance here. What is the acceleration of the balloon?</li>
 <li> <b>1c (5pt)</b>: Find the position and velocity of the balloon as a function of time.</li>
 </ul>
-<p>Let us now introduce air resistance, using a quadratic law: \( \boldsymbol{F}_D = &#8722;D \vert \boldsymbol{v}\vert \boldsymbol{v} \), where \( D \) is a constant and \( \boldsymbol{v} \) is the velocity. We are still in one dimension but have introduced forces and velocities as vectors (boldfaced quantities).</p>
+<p>Let us now introduce air resistance, using a quadratic law: \( \boldsymbol{F}_D
+= &#8722;D \vert \boldsymbol{v}\vert \boldsymbol{v} \), where \( D \) is a constant and \( \boldsymbol{v} \)
+is the velocity. We are still in one dimension but have introduced
+forces and velocities as vectors (boldfaced quantities).
+</p>
 
 <ul>
 <li> <b>1d (5pt):</b> Show that the acceleration of the balloon in the upward \( z \) direction is \( a_z = (B_z/m)&#8722;g&#8722;(D/m)|v_z|v_z \),where \( v_z \) is the velocity in the \( z \)-direction.</li>
-<li> <b>1e (5pt):</b> Find the asymptotic (terminal) velocity of the balloon. Sketch the acceleration and velocity as a function of time for the model including air resistancewith given initial conditions.</li>
+<li> <b>1e (5pt):</b> Find the asymptotic (terminal) velocity of the balloon. Sketch the acceleration and velocity as a function of time for the model including air resistance and define the initial conditions.</li>
 </ul>
 <p>The balloon is released on a windy day, with a wind blowing with a velocity
 given by \( \boldsymbol{w} = w_x \boldsymbol{i} \) along the horizontal \( x \)-axis.
@@ -180,18 +184,18 @@ given by \( \boldsymbol{w} = w_x \boldsymbol{i} \) along the horizontal \( x \)-
 
 <ul>
 <li> <b>1f (5pt):</b> How does the wind modify the air resistance force \( \boldsymbol{F}_D \) on the balloon?</li>
-<li> <b>1g (5pt):</b> Draw a diagram of the system (the balloon) in this case and identify the forces and introduce symbols.</li>
+<li> <b>1g (5pt):</b> Draw a diagram of the system (the balloon) in this case and identify and label the forces, as you did in <b>1a</b>.</li>
 <li> <b>1h (5pt):</b> Find an expression for the acceleration \( \boldsymbol{a} \) of the balloon. Define the initial conditions for the motion of the balloon.</li>
 <li> <b>1i (5pt):</b> Why do we call the motion in the \( z \) and the \( x \) directions as <em>coupled</em> in this case? Can you determine the motion of the balloon analytically?</li>
 <li> <b>1j (20pt):</b> Use now your codes from homework 3 or similar and find the velocity and position of the balloon as functions of time. Plot the position and the velocity with chosen initial conditions and discuss the motion of the balloon. Find the asymptotic (terminal) velocity of the balloon.</li>
 </ul>
 <p>In a real situation, the wind velocity is smaller near the ground and
-increases gradually to the full velocity w0 as the balloon moves
-upward. Typically, the velocity of the wind can be described
+increases gradually to the full velocity \( w_0 \) as the balloon moves
+upward. Typically, the velocity of the wind as function of the height \( z \) can be described
 by
 </p>
 $$
-\boldsymbol{w} = w_0 (1−\exp{(−z/d)}) \boldsymbol{i},
+\boldsymbol{w}(z) = w_0 (1−\exp{(−z/d)}) \boldsymbol{i},
 $$
 
 <p>where $d = 10$m is a length determining the change in height.</p>
@@ -207,15 +211,19 @@ in the figure here. The constraining force is labeled by \( \boldsymbol{T} \) an
 the gravitational force is labeled \( \boldsymbol{F}_g \).  Homework assignments 6 and 7 may be useful to study here. Taylor chapter 5 is the relevant reference for this exercise.
 </p>
 
-<!-- FIGURE: [figures/Simplependulum.png, width=600 frac=0.6] -->
+<br/><br/>
+<center>
+<p><img src="figures/Simplependulum.png" width="600" align="bottom"></p>
+</center>
+<br/><br/>
 
 <p>We assume that the length \( l \) is constant and we define the coordinates involved as</p>
 
 $$
-\boldsymbol{r} = l\sin(\phi)\boldsymbol{\hat{x}}+l\cos(\phi)\boldsymbol{\hat{y}},
+\boldsymbol{r} = l\sin(\phi)\boldsymbol{i}+l\cos(\phi)\boldsymbol{j},
 $$
 
-<p>where \( \boldsymbol{\hat{x}} \) and \( \boldsymbol{\hat{y}} \) are the unit vectors in the \( x \) and \( y \) directions, respectively.</p>
+<p>where \( \boldsymbol{i} \) and \( \boldsymbol{j} \) are the unit vectors in the \( x \) and \( y \) directions, respectively.</p>
 
 <ul>
 <li> <b>2a (10pt):</b> Set up the forces acting on the system and show that the equation of motion is \( m\ddot{\boldsymbol{r}}=\boldsymbol{F}_g+\boldsymbol{T} \).</li>
@@ -235,7 +243,7 @@ $$
 
 
 <ul>
-<li> <b>2b (10pt):</b> Find the analytical solution for the last equation. Hint, look back at the solutions for the simple harmonic oscillator problem in one dimension in for example homework 6.</li>
+<li> <b>2b (10pt):</b> Find the analytical solution for the last equation. Hint, look back at the solutions for the simple harmonic oscillator problem in one dimension in for example homework 6 and chapter 5 of Taylor.</li>
 </ul>
 <p>For our numerical treatment of the full second-order differential  equation, we can proceed as we have done before and split the second-order differential in two first-order differential equations
 as shown here

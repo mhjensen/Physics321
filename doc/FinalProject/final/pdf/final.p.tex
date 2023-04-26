@@ -160,9 +160,9 @@ April 26, 2023
 \paragraph{Introduction to the final project, total score: 160  points.}
 The relevant reading background is
 \begin{enumerate}
-\item chapters 2-8 and 14 of Taylor
+\item Chapters 2-8 and 14 of Taylor
 
-\item lecture notes throughout the semester and homework assignments and midterm projects.
+\item Lecture notes throughout the semester and homework assignments and midterm projects.
 \end{enumerate}
 
 \noindent
@@ -174,26 +174,29 @@ partly chapter 3. The code you wrote for homework 3 may be useful.
 
 In this exercise we will develop a model to determine the motion of a
 weather balloon released from the ground. We start from a simplified
-model and gradually add features to make to model more realistic.
+model and gradually add features to make our model more realistic.
 
 After the balloon is released, it is driven by buoyancy. Initially, we will assume that the buoyancy force is given by a constant force, $\bm{B}$.
 We assume that the motion is vertical only and label this in terms of the $z$-axis.  That is our system is one-dimensional only.
-The constant buoyancy force is then given by its $z$-component only, that is $\bm{B}=B_z\bm{k}$.
+The constant buoyancy force is then given by its $z$-component only, that is $\bm{B}=B_z\bm{k}$, where $\bm{k}$ is the unit vector along the $z$-axis.
 \begin{itemize}
-\item \textbf{1a (5pt)}: Draw a diagram of the balloon and identify the forces and introduce symbols. 
+\item \textbf{1a (5pt)}: Draw a diagram of the balloon and identify and label the forces. 
 
-\item \textbf{1b (5pt)}: First, let us neglect air resistance. What is the acceleration of the balloon?
+\item \textbf{1b (5pt)}: We neglect air resistance here. What is the acceleration of the balloon?
 
 \item \textbf{1c (5pt)}: Find the position and velocity of the balloon as a function of time.
 \end{itemize}
 
 \noindent
-Let us now introduce air resistance, using a quadratic law: $\bm{F}_D = −D \vert \bm{v}\vert \bm{v}$, where $D$ is a constant and $\bm{v}$ is the velocity. We are still in one dimension but have introduced forces and velocities as vectors (boldfaced quantities).
+Let us now introduce air resistance, using a quadratic law: $\bm{F}_D
+= −D \vert \bm{v}\vert \bm{v}$, where $D$ is a constant and $\bm{v}$
+is the velocity. We are still in one dimension but have introduced
+forces and velocities as vectors (boldfaced quantities).
 
 \begin{itemize}
 \item \textbf{1d (5pt):} Show that the acceleration of the balloon in the upward $z$ direction is $a_z = (B_z/m)−g−(D/m)|v_z|v_z$,where $v_z$ is the velocity in the $z$-direction.
 
-\item \textbf{1e (5pt):} Find the asymptotic (terminal) velocity of the balloon. Sketch the acceleration and velocity as a function of time for the model including air resistancewith given initial conditions.
+\item \textbf{1e (5pt):} Find the asymptotic (terminal) velocity of the balloon. Sketch the acceleration and velocity as a function of time for the model including air resistance and define the initial conditions.
 \end{itemize}
 
 \noindent
@@ -203,7 +206,7 @@ given by $\bm{w} = w_x \bm{i}$ along the horizontal $x$-axis.
 \begin{itemize}
 \item \textbf{1f (5pt):} How does the wind modify the air resistance force $\bm{F}_D$ on the balloon?
 
-\item \textbf{1g (5pt):} Draw a diagram of the system (the balloon) in this case and identify the forces and introduce symbols.
+\item \textbf{1g (5pt):} Draw a diagram of the system (the balloon) in this case and identify and label the forces, as you did in \textbf{1a}.
 
 \item \textbf{1h (5pt):} Find an expression for the acceleration $\bm{a}$ of the balloon. Define the initial conditions for the motion of the balloon.
 
@@ -214,11 +217,11 @@ given by $\bm{w} = w_x \bm{i}$ along the horizontal $x$-axis.
 
 \noindent
 In a real situation, the wind velocity is smaller near the ground and
-increases gradually to the full velocity w0 as the balloon moves
-upward. Typically, the velocity of the wind can be described
+increases gradually to the full velocity $w_0$ as the balloon moves
+upward. Typically, the velocity of the wind as function of the height $z$ can be described
 by
 \[
-\bm{w} = w_0 (1−\exp{(−z/d)}) \bm{i},
+\bm{w}(z) = w_0 (1−\exp{(−z/d)}) \bm{i},
 \]
 where $d = 10$m is a length determining the change in height.
 
@@ -233,14 +236,19 @@ massless thread/rod of length $l$ in a gravitational field, as shown
 in the figure here. The constraining force is labeled by $\bm{T}$ and
 the gravitational force is labeled $\bm{F}_g$.  Homework assignments 6 and 7 may be useful to study here. Taylor chapter 5 is the relevant reference for this exercise.
 
-% FIGURE: [figures/Simplependulum.png, width=600 frac=0.6]
+\vspace{6mm}
+
+% inline figure
+\centerline{\includegraphics[width=0.6\linewidth]{figures/Simplependulum.png}}
+
+\vspace{6mm}
 
 We assume that the length $l$ is constant and we define the coordinates involved as
 
 \[
-\bm{r} = l\sin(\phi)\bm{\hat{x}}+l\cos(\phi)\bm{\hat{y}},
+\bm{r} = l\sin(\phi)\bm{i}+l\cos(\phi)\bm{j},
 \]
-where $\bm{\hat{x}}$ and $\bm{\hat{y}}$ are the unit vectors in the $x$ and $y$ directions, respectively.
+where $\bm{i}$ and $\bm{j}$ are the unit vectors in the $x$ and $y$ directions, respectively.
 
 \begin{itemize}
 \item \textbf{2a (10pt):} Set up the forces acting on the system and show that the equation of motion is $m\ddot{\bm{r}}=\bm{F}_g+\bm{T}$.
@@ -260,7 +268,7 @@ This equation can be solved analytically if we assume that the angle $\phi$ is v
 \]
 
 \begin{itemize}
-\item \textbf{2b (10pt):} Find the analytical solution for the last equation. Hint, look back at the solutions for the simple harmonic oscillator problem in one dimension in for example homework 6.
+\item \textbf{2b (10pt):} Find the analytical solution for the last equation. Hint, look back at the solutions for the simple harmonic oscillator problem in one dimension in for example homework 6 and chapter 5 of Taylor.
 \end{itemize}
 
 \noindent
