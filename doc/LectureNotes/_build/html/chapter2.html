@@ -1519,18 +1519,7 @@ The following code for  the trapezoidal rule allows you  to plot the relative er
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [2],</span> in <span class="ni">&lt;cell line: 5&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">log10</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">integrate</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># function for the trapezoidal rule</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sympy&#39;
-</pre></div>
-</div>
+<img alt="_images/chapter2_113_0.png" src="_images/chapter2_113_0.png" />
 </div>
 </div>
 <div class="section" id="analyzing-the-above-example">
@@ -1647,6 +1636,12 @@ developed in the 1970s, namely EISPACK and LINPACK.  We describe them shortly he
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1.83408226 -0.4118334  -1.21071409 -0.59684054  0.70333963  0.0289105
+  0.75626664 -1.48393448  0.76111648  0.37006943]
+</pre></div>
+</div>
+</div>
 </div>
 <p>We defined a vector <span class="math notranslate nohighlight">\(x\)</span> with <span class="math notranslate nohighlight">\(n=10\)</span> elements with its values given by the Normal distribution <span class="math notranslate nohighlight">\(N(0,1)\)</span>.
 Another alternative is to declare a vector as follows</p>
@@ -1658,6 +1653,11 @@ Another alternative is to declare a vector as follows</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 3]
+</pre></div>
+</div>
+</div>
 </div>
 <p>Here we have defined a vector with three elements, with <span class="math notranslate nohighlight">\(x_0=1\)</span>, <span class="math notranslate nohighlight">\(x_1=2\)</span> and <span class="math notranslate nohighlight">\(x_2=3\)</span>. Note that both Python and C++
 start numbering array elements from <span class="math notranslate nohighlight">\(0\)</span> and on. This means that a vector with <span class="math notranslate nohighlight">\(n\)</span> elements has a sequence of entities <span class="math notranslate nohighlight">\(x_0, x_1, x_2, \dots, x_{n-1}\)</span>. We could also let (recommended) Numpy to compute the logarithms of a specific array as</p>
@@ -1666,6 +1666,11 @@ start numbering array elements from <span class="math notranslate nohighlight">\
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.38629436 1.94591015 2.07944154]
 </pre></div>
 </div>
 </div>
@@ -1688,6 +1693,11 @@ logarithms of a vector would be to write</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 1 2]
+</pre></div>
+</div>
+</div>
 </div>
 <p>We note that our code is much longer already and we need to import the <strong>log</strong> function from the <strong>math</strong> module.
 The attentive reader will also notice that the output is <span class="math notranslate nohighlight">\([1, 1, 2]\)</span>. Python interprets automagically our numbers as integers (like the <strong>automatic</strong> keyword in C++). To change this we could define our array elements to be double precision numbers as</p>
@@ -1699,6 +1709,11 @@ The attentive reader will also notice that the output is <span class="math notra
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.38629436 1.94591015 2.07944154]
+</pre></div>
+</div>
+</div>
 </div>
 <p>or simply write them as double precision numbers (Python uses 64 bits as default for floating point type variables), that is</p>
 <div class="cell docutils container">
@@ -1706,6 +1721,14 @@ The attentive reader will also notice that the output is <span class="math notra
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
 </pre></div>
 </div>
 </div>

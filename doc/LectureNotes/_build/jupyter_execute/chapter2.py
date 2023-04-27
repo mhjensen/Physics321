@@ -1112,7 +1112,7 @@ plt.show()
 # 
 # [Numpy](http://www.numpy.org/) provides an easy way to handle arrays in Python. The standard way to import this library is as
 
-# In[ ]:
+# In[3]:
 
 
 import numpy as np
@@ -1120,7 +1120,7 @@ import numpy as np
 
 # Here follows a simple example where we set up an array of ten elements, all determined by random numbers drawn according to the normal distribution,
 
-# In[ ]:
+# In[4]:
 
 
 n = 10
@@ -1131,7 +1131,7 @@ print(x)
 # We defined a vector $x$ with $n=10$ elements with its values given by the Normal distribution $N(0,1)$.
 # Another alternative is to declare a vector as follows
 
-# In[ ]:
+# In[5]:
 
 
 import numpy as np
@@ -1142,7 +1142,7 @@ print(x)
 # Here we have defined a vector with three elements, with $x_0=1$, $x_1=2$ and $x_2=3$. Note that both Python and C++
 # start numbering array elements from $0$ and on. This means that a vector with $n$ elements has a sequence of entities $x_0, x_1, x_2, \dots, x_{n-1}$. We could also let (recommended) Numpy to compute the logarithms of a specific array as
 
-# In[ ]:
+# In[6]:
 
 
 import numpy as np
@@ -1158,7 +1158,7 @@ print(x)
 # **np.log** function. The alternative, and slower way to compute the
 # logarithms of a vector would be to write
 
-# In[ ]:
+# In[7]:
 
 
 import numpy as np
@@ -1172,7 +1172,7 @@ print(x)
 # We note that our code is much longer already and we need to import the **log** function from the **math** module. 
 # The attentive reader will also notice that the output is $[1, 1, 2]$. Python interprets automagically our numbers as integers (like the **automatic** keyword in C++). To change this we could define our array elements to be double precision numbers as
 
-# In[ ]:
+# In[8]:
 
 
 import numpy as np
@@ -1182,7 +1182,7 @@ print(x)
 
 # or simply write them as double precision numbers (Python uses 64 bits as default for floating point type variables), that is
 
-# In[ ]:
+# In[9]:
 
 
 import numpy as np

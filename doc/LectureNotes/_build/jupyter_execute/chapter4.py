@@ -447,7 +447,7 @@ print("Relative error= ", abs( (Rectangular(a,b,function,n)-Exact)/Exact))
 # 
 # We use the same function and integrate now using the trapoezoidal rule.
 
-# In[ ]:
+# In[2]:
 
 
 import numpy as np
@@ -549,7 +549,7 @@ print("Relative error= ", abs( (Trapez(a,b,function,n)-Exact)/Exact))
 # 
 #   * Multiply the final result by $\frac{h}{3}$.
 
-# In[ ]:
+# In[3]:
 
 
 from math import sin, pi
@@ -586,7 +586,7 @@ print("Relative error= ", abs( (Simpson(a,b,function,n)-Exact)/Exact))
 # $\int_0^1 dx x^2 = 1/3$.
 # The following code for  the trapezoidal rule allows you  to plot the relative error by comparing with the exact result. By increasing to $10^8$ points one arrives at a region where numerical errors start to accumulate.
 
-# In[ ]:
+# In[4]:
 
 
 get_ipython().run_line_magic('matplotlib', 'inline')
@@ -1194,7 +1194,7 @@ plt.show()
 
 # The code here implements Euler's method for the Earth-Sun system using a more compact way of representing the vectors. Alternatively, you could have spelled out all the variables $v_x$, $v_y$, $x$ and $y$ as one-dimensional arrays.
 
-# In[ ]:
+# In[5]:
 
 
 # Common imports
@@ -1273,7 +1273,7 @@ plt.show()
 # The changes we need to make to our code are indeed marginal here.
 # We need simply to replace
 
-# In[ ]:
+# In[6]:
 
 
 r[i+1] = r[i] + DeltaT*v[i]
@@ -1281,7 +1281,7 @@ r[i+1] = r[i] + DeltaT*v[i]
 
 # in the above code with the velocity at the new time $t_{i+1}$
 
-# In[ ]:
+# In[7]:
 
 
 r[i+1] = r[i] + DeltaT*v[i+1]
@@ -1419,7 +1419,7 @@ r[i+1] = r[i] + DeltaT*v[i+1]
 # 
 # We can now easily add the Verlet method to our original code as
 
-# In[ ]:
+# In[8]:
 
 
 DeltaT = 0.01
@@ -1991,7 +1991,7 @@ plt.show()
 
 # The following code plots the potential. We have chosen values of $\alpha=k=1.0$. Feel free to experiment with other values. We plot $V(x)$ for a domain of $x\in [-2,2]$.
 
-# In[ ]:
+# In[9]:
 
 
 import numpy as np
@@ -2117,7 +2117,7 @@ plt.show()
 # 
 # The following Python code plots the potential
 
-# In[ ]:
+# In[10]:
 
 
 import numpy as np
@@ -2453,7 +2453,7 @@ plt.show()
 
 # The code here implements Euler's method for the Earth-Sun system using a more compact way of representing the vectors. Alternatively, you could have spelled out all the variables $v_x$, $v_y$, $x$ and $y$ as one-dimensional arrays.
 
-# In[ ]:
+# In[11]:
 
 
 # Common imports
@@ -2532,7 +2532,7 @@ plt.show()
 # so-called Euler-Cromer method.  The changes we need to make to our
 # code are indeed marginal here.  We need simply to replace
 
-# In[ ]:
+# In[12]:
 
 
 r[i+1] = r[i] + DeltaT*v[i]
@@ -2540,7 +2540,7 @@ r[i+1] = r[i] + DeltaT*v[i]
 
 # in the above code with the velocity at the new time $t_{i+1}$
 
-# In[ ]:
+# In[13]:
 
 
 r[i+1] = r[i] + DeltaT*v[i+1]
@@ -2672,7 +2672,7 @@ r[i+1] = r[i] + DeltaT*v[i+1]
 # 
 # We can now easily add the Verlet method to our original code as
 
-# In[ ]:
+# In[14]:
 
 
 DeltaT = 0.01
@@ -2732,7 +2732,7 @@ plt.show()
 
 # and with $GM_{\odot}=4\pi^2$ we obtain the above relation for the velocity. Setting an initial velocity say equal to $9$ in the above code, yields a planet (Earth) which escapes a stable orbit around the sun, as seen by running the code here.
 
-# In[ ]:
+# In[15]:
 
 
 DeltaT = 0.01
@@ -2807,7 +2807,7 @@ plt.show()
 # 
 # The following Python code plots the potential
 
-# In[ ]:
+# In[16]:
 
 
 # Common imports
@@ -2893,7 +2893,7 @@ plt.show()
 # 
 # The following Python code gives a plot of potential
 
-# In[ ]:
+# In[17]:
 
 
 # Common imports
@@ -2999,7 +2999,7 @@ plt.show()
 # 
 # **Note**: in all codes we have used scaled equations so that the gravitational constant times the mass of the sum is given by $4\pi^2$ and the mass of the earth is set to **one** in the calculations of kinetic and potential energies. Else, we would get very large results.
 
-# In[ ]:
+# In[18]:
 
 
 # Common imports
@@ -3105,7 +3105,7 @@ plt.show()
 # oscillating energy envelope, we see that the energies swing between a
 # max and a min value and never exceed these values.
 
-# In[ ]:
+# In[19]:
 
 
 # Common imports
@@ -3222,7 +3222,7 @@ plt.show()
 # 
 # We can now easily add the Verlet method to our original code as
 
-# In[ ]:
+# In[20]:
 
 
 DeltaT = 0.001

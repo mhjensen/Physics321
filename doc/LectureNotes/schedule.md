@@ -183,8 +183,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Video of lecture at	https://youtu.be/YwVy79eJ8uU
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesApril24.pdf
 - Wednesday 4/26: Summary of course and	discussion of final
-  - Video of lecture at TBA
-  - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesApril26.pdf
+  - Video of lecture at https://youtu.be/k-C6FU3hzNQ
 - Friday 4/28:	Discussion and work on final project
 ### Week 18, May 1-5, 2023
 Depending on your availability, we can have at least two sessions in order to discuss the final project.
