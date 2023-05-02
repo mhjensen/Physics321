@@ -164,7 +164,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Video of lecture at https://youtu.be/vNKn1HyC9kw
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesApril12.pdf    
 - Friday 4/14: Summary of week and work on second midterm. Deadline second midterm.
-
+- Solution to second midterm at https://github.com/mhjensen/Physics321/tree/master/doc/Homeworks/Solutions
 
 ### Week 16, April 17-21, 2023
 - Monday 4/17:  Lagrangian formalism and Variational Calculus
@@ -176,7 +176,7 @@ discussion on conservative forces. Discussion of potential surfaces and their in
   - Handwritten notes at https://github.com/mhjensen/Physics321/blob/master/doc/HandWrittenNotes/Spring2023/NotesApril19.pdf
   - Reading suggestions: lecture notes and Taylor sections 6.3-6.4
 - Friday 4/21:  Work on homework nine. Deadline ninth homework April 28.
-
+- Solution to ninth  hw at https://github.com/mhjensen/Physics321/tree/master/doc/Homeworks/Solutions
 
 ### Week 17, April 24- April 28, 2023
 - Monday 4/24:  Lagrangian formalism and discussion of final from 2022
